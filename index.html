@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/styles-v2.css" />
 </head>
 <body>
   <header class="site-header">
@@ -22,7 +22,6 @@
         <span class="brand-name">AniNexus</span>
         <span class="beta-pill">beta</span>
       </a>
-
       <nav class="main-nav" aria-label="Navegação principal">
         <a href="/" data-link data-route="home" class="nav-item"><span class="nav-icon" data-icon="home"></span><span>Início</span></a>
         <a href="/animes/catalogo" data-link data-route="catalogo" class="nav-item"><span class="nav-icon" data-icon="grid"></span><span>Animes</span></a>
@@ -30,60 +29,32 @@
         <a href="/animes/temporadas" data-link data-route="temporadas" class="nav-item"><span class="nav-icon" data-icon="season"></span><span>Temporadas</span></a>
         <a href="/animes/catalogo?sort=POPULARITY_DESC" data-link data-route="descubra" class="nav-item"><span class="nav-icon" data-icon="users"></span><span>Descubra</span></a>
       </nav>
-
       <div class="header-actions">
         <button class="header-icon-button" type="button" id="globalSearchButton" aria-label="Pesquisar"><span data-icon="search"></span></button>
         <button class="header-icon-button" type="button" aria-label="Tema"><span data-icon="moon"></span></button>
         <button class="login-button" type="button">Entrar</button>
         <button class="signup-button" type="button">Criar conta <span data-icon="arrow"></span></button>
       </div>
-
       <button class="mobile-menu-button" id="mobileMenuButton" type="button" aria-label="Abrir menu"><span data-icon="menu"></span></button>
     </div>
   </header>
-
   <div class="mobile-drawer" id="mobileDrawer" hidden>
     <div class="mobile-drawer-backdrop" data-close-drawer></div>
     <aside class="mobile-drawer-panel">
-      <div class="mobile-drawer-head">
-        <a class="brand" href="/" data-link><img class="brand-logo" src="/assets/logo.png" alt="" /><span class="brand-name">AniNexus</span><span class="beta-pill">beta</span></a>
-        <button class="header-icon-button" data-close-drawer><span data-icon="close"></span></button>
-      </div>
-      <nav class="mobile-nav">
-        <a href="/" data-link><span data-icon="home"></span>Início</a>
-        <a href="/animes/catalogo" data-link><span data-icon="grid"></span>Animes</a>
-        <a href="/animes/programacao" data-link><span data-icon="calendar"></span>Programação</a>
-        <a href="/animes/temporadas" data-link><span data-icon="season"></span>Temporadas</a>
-        <a href="/animes/catalogo?sort=POPULARITY_DESC" data-link><span data-icon="users"></span>Descubra</a>
-      </nav>
+      <div class="mobile-drawer-head"><a class="brand" href="/" data-link><img class="brand-logo" src="/assets/logo.png" alt="" /><span class="brand-name">AniNexus</span><span class="beta-pill">beta</span></a><button class="header-icon-button" data-close-drawer><span data-icon="close"></span></button></div>
+      <nav class="mobile-nav"><a href="/" data-link><span data-icon="home"></span>Início</a><a href="/animes/catalogo" data-link><span data-icon="grid"></span>Animes</a><a href="/animes/programacao" data-link><span data-icon="calendar"></span>Programação</a><a href="/animes/temporadas" data-link><span data-icon="season"></span>Temporadas</a><a href="/animes/catalogo?sort=POPULARITY_DESC" data-link><span data-icon="users"></span>Descubra</a></nav>
     </aside>
   </div>
-
   <main id="app" tabindex="-1"></main>
-
   <footer class="site-footer">
     <div class="footer-inner shell">
-      <div class="footer-brand-col">
-        <a class="brand" href="/" data-link><img class="brand-logo" src="/assets/logo.png" alt="" /><span class="brand-name">AniNexus</span></a>
-        <p>Anime brasileiro. Feito para quem acompanha, descobre e organiza o que assiste.</p>
-      </div>
-      <div class="footer-links-grid">
-        <div><strong>AniNexus</strong><a href="/" data-link>Início</a><a href="/animes/catalogo" data-link>Catálogo</a><a href="/animes/temporadas" data-link>Temporadas</a></div>
-        <div><strong>Animes</strong><a href="/animes/programacao" data-link>Calendário de Animes</a><a href="/animes/catalogo" data-link>Catálogo de Animes</a><a href="/animes/temporadas" data-link>Animes da Temporada</a></div>
-      </div>
+      <div class="footer-brand-col"><a class="brand" href="/" data-link><img class="brand-logo" src="/assets/logo.png" alt="" /><span class="brand-name">AniNexus</span></a><p>Anime brasileiro. Feito para quem acompanha, descobre e organiza o que assiste.</p></div>
+      <div class="footer-links-grid"><div><strong>AniNexus</strong><a href="/" data-link>Início</a><a href="/animes/catalogo" data-link>Catálogo</a><a href="/animes/temporadas" data-link>Temporadas</a></div><div><strong>Animes</strong><a href="/animes/programacao" data-link>Calendário de Animes</a><a href="/animes/catalogo" data-link>Catálogo de Animes</a><a href="/animes/temporadas" data-link>Animes da Temporada</a></div></div>
     </div>
     <div class="footer-bottom shell"><span>© <span id="copyrightYear"></span> AniNexus</span><span>Imagens e títulos pertencem aos seus respectivos detentores.</span></div>
   </footer>
-
-  <div class="search-layer" id="searchLayer" hidden>
-    <div class="search-layer-backdrop" data-close-search></div>
-    <section class="search-dialog" role="dialog" aria-modal="true" aria-label="Pesquisar anime">
-      <div class="search-box-large"><span data-icon="search"></span><input id="globalSearchInput" type="search" placeholder="Pesquisar anime..." autocomplete="off" /><kbd>ESC</kbd></div>
-      <div id="globalSearchResults" class="global-search-results"></div>
-    </section>
-  </div>
-
+  <div class="search-layer" id="searchLayer" hidden><div class="search-layer-backdrop" data-close-search></div><section class="search-dialog" role="dialog" aria-modal="true" aria-label="Pesquisar anime"><div class="search-box-large"><span data-icon="search"></span><input id="globalSearchInput" type="search" placeholder="Pesquisar anime..." autocomplete="off" /><kbd>ESC</kbd></div><div id="globalSearchResults" class="global-search-results"></div></section></div>
   <div class="toast-root" id="toastRoot"></div>
-  <script src="/app.js" defer></script>
+  <script src="/app-v2.js" defer></script>
 </body>
 </html>
