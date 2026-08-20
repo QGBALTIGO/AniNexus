@@ -84,14 +84,16 @@
   }
 
   function polishHeadlines() {
-    if (pathNow() === '/') {
-      const h = document.querySelector('.hero h1');
-      if (h && !h.dataset.polished) {
-        h.dataset.polished = '1';
-        h.innerHTML = `Avalie. Descubra.<br><span class="accent">Compartilhe.</span>`;
-      }
-      const awards = [...document.querySelectorAll('.feature-band h2')][0];
-      if (awards) awards.textContent = 'Crunchyroll Anime Awards';
+    if (pathNow() !== '/') return;
+    const h = document.querySelector('.hero h1');
+    if (h && !h.dataset.polished) {
+      h.dataset.polished = '1';
+      h.innerHTML = `Avalie. Descubra.<br><span class="accent">Compartilhe.</span>`;
+    }
+    const awards = document.querySelector('.feature-band h2');
+    if (awards && !awards.dataset.polished) {
+      awards.dataset.polished = '1';
+      awards.textContent = 'Crunchyroll Anime Awards';
     }
   }
 
@@ -101,7 +103,12 @@
     enrichDetail();
   }
 
-  const obs = new MutationObserver(() => requestAnimationFrame(run));
+  let queued = false;
+  const obs = new MutationObserver(() => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; run(); });
+  });
   obs.observe(document.documentElement, {childList:true, subtree:true});
   window.addEventListener('popstate', () => setTimeout(run, 50));
   setTimeout(run, 0);
