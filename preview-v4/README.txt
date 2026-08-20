@@ -1,0 +1,1 @@
+Static preview assets for GitHub Pages. Full backend remains in server.mjs/lib/sql/public.
