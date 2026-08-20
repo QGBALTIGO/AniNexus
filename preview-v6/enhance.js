@@ -2,6 +2,30 @@
 (() => {
   const done = new WeakSet();
 
+  bindImageFallback = function () {
+    document.querySelectorAll('img').forEach(img => {
+      if (img.dataset.fallback) return;
+      img.dataset.fallback = '1';
+      img.addEventListener('error', () => {
+        const stream = img.closest('.stream-mark');
+        if (stream) {
+          img.remove();
+          stream.classList.add('fallback');
+          return;
+        }
+        if (img.closest('.stream-link')) {
+          img.remove();
+          return;
+        }
+        img.src = BASE + '/assets/logo.png';
+        img.style.objectFit = 'contain';
+        img.style.padding = '12px';
+        img.style.background = '#100b14';
+      }, {once:true});
+    });
+  };
+  bindImageFallback();
+
   function addHomeDepth() {
     if (pathNow() !== '/') return;
     const tag = document.querySelector('.tag-cloud');
@@ -47,6 +71,7 @@
     if (tabs && !tabs.querySelector('[data-share-tab]')) {
       const share = document.createElement('button');
       share.dataset.shareTab = '1';
+      share.dataset.tab = 'share-custom';
       share.textContent = 'Compartilhar';
       share.onclick = () => {
         tabs.querySelectorAll('button').forEach(b => b.classList.remove('active'));
@@ -101,6 +126,7 @@
     polishHeadlines();
     addHomeDepth();
     enrichDetail();
+    bindImageFallback();
   }
 
   let queued = false;
