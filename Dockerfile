@@ -8,6 +8,7 @@ COPY --chown=node:node lib ./lib
 COPY --chown=node:node sql ./sql
 COPY --chown=node:node public ./public
 COPY --chown=node:node preview-v6 ./public/preview-v6
+COPY --chown=node:node preview-v7 ./public/preview-v7
 COPY --chown=node:node index.html ./public/index.html
 RUN sed -i 's|<head>|<head><base href="/">|' ./public/index.html
 COPY --chown=node:node assets ./assets
