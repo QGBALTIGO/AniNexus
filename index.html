@@ -1,107 +1,18 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#09070d" />
-  <meta name="color-scheme" content="dark" />
-  <meta name="description" content="AniNexus — catálogo, temporadas e programação semanal de animes." />
-  <title>AniNexus</title>
-  <link rel="icon" type="image/png" href="/AniNexus/assets/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/QGBALTIGO/AniNexus@9fe0ac27a32c47dddef9e97311a267f67f4b6704/styles-v2.css" />
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#09070d"><meta name="color-scheme" content="dark light"><meta name="description" content="AniNexus — animes, mangás, temporadas, calendário, notícias, rankings e comunidade."><title>AniNexus</title>
+<link rel="icon" href="./assets/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://graphql.anilist.co" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="./preview-v4/base.css?v=4"><link rel="stylesheet" href="./preview-v4/v4.css?v=4">
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner shell">
-      <a class="brand" href="/AniNexus/" data-link aria-label="AniNexus">
-        <img class="brand-logo" src="/AniNexus/assets/logo.png" alt="" />
-        <span class="brand-name">AniNexus</span>
-        <span class="beta-pill">beta</span>
-      </a>
-
-      <nav class="main-nav" aria-label="Navegação principal">
-        <a href="/AniNexus/" data-link data-route="home" class="nav-item"><span class="nav-icon" data-icon="home"></span><span>Início</span></a>
-        <a href="/AniNexus/animes/catalogo" data-link data-route="catalogo" class="nav-item"><span class="nav-icon" data-icon="grid"></span><span>Animes</span></a>
-        <a href="/AniNexus/animes/programacao" data-link data-route="programacao" class="nav-item"><span class="nav-icon" data-icon="calendar"></span><span>Programação</span></a>
-        <a href="/AniNexus/animes/temporadas" data-link data-route="temporadas" class="nav-item"><span class="nav-icon" data-icon="season"></span><span>Temporadas</span></a>
-        <a href="/AniNexus/animes/catalogo?sort=POPULARITY_DESC" data-link data-route="descubra" class="nav-item"><span class="nav-icon" data-icon="users"></span><span>Descubra</span></a>
-      </nav>
-
-      <div class="header-actions">
-        <button class="header-icon-button" type="button" id="globalSearchButton" aria-label="Pesquisar"><span data-icon="search"></span></button>
-        <button class="header-icon-button" type="button" aria-label="Tema"><span data-icon="moon"></span></button>
-        <button class="login-button" type="button">Entrar</button>
-        <button class="signup-button" type="button">Criar conta <span data-icon="arrow"></span></button>
-      </div>
-
-      <button class="mobile-menu-button" id="mobileMenuButton" type="button" aria-label="Abrir menu"><span data-icon="menu"></span></button>
-    </div>
-  </header>
-
-  <div class="mobile-drawer" id="mobileDrawer" hidden>
-    <div class="mobile-drawer-backdrop" data-close-drawer></div>
-    <aside class="mobile-drawer-panel">
-      <div class="mobile-drawer-head">
-        <a class="brand" href="/AniNexus/" data-link><img class="brand-logo" src="/AniNexus/assets/logo.png" alt="" /><span class="brand-name">AniNexus</span><span class="beta-pill">beta</span></a>
-        <button class="header-icon-button" data-close-drawer><span data-icon="close"></span></button>
-      </div>
-      <nav class="mobile-nav">
-        <a href="/AniNexus/" data-link><span data-icon="home"></span>Início</a>
-        <a href="/AniNexus/animes/catalogo" data-link><span data-icon="grid"></span>Animes</a>
-        <a href="/AniNexus/animes/programacao" data-link><span data-icon="calendar"></span>Programação</a>
-        <a href="/AniNexus/animes/temporadas" data-link><span data-icon="season"></span>Temporadas</a>
-        <a href="/AniNexus/animes/catalogo?sort=POPULARITY_DESC" data-link><span data-icon="users"></span>Descubra</a>
-      </nav>
-    </aside>
-  </div>
-
-  <main id="app" tabindex="-1"></main>
-
-  <footer class="site-footer">
-    <div class="footer-inner shell">
-      <div class="footer-brand-col">
-        <a class="brand" href="/AniNexus/" data-link><img class="brand-logo" src="/AniNexus/assets/logo.png" alt="" /><span class="brand-name">AniNexus</span></a>
-        <p>Anime brasileiro. Feito para quem acompanha, descobre e organiza o que assiste.</p>
-      </div>
-      <div class="footer-links-grid">
-        <div><strong>AniNexus</strong><a href="/AniNexus/" data-link>Início</a><a href="/AniNexus/animes/catalogo" data-link>Catálogo</a><a href="/AniNexus/animes/temporadas" data-link>Temporadas</a></div>
-        <div><strong>Animes</strong><a href="/AniNexus/animes/programacao" data-link>Calendário de Animes</a><a href="/AniNexus/animes/catalogo" data-link>Catálogo de Animes</a><a href="/AniNexus/animes/temporadas" data-link>Animes da Temporada</a></div>
-      </div>
-    </div>
-    <div class="footer-bottom shell"><span>© <span id="copyrightYear"></span> AniNexus</span><span>Imagens e títulos pertencem aos seus respectivos detentores.</span></div>
-  </footer>
-
-  <div class="search-layer" id="searchLayer" hidden>
-    <div class="search-layer-backdrop" data-close-search></div>
-    <section class="search-dialog" role="dialog" aria-modal="true" aria-label="Pesquisar anime">
-      <div class="search-box-large"><span data-icon="search"></span><input id="globalSearchInput" type="search" placeholder="Pesquisar anime..." autocomplete="off" /><kbd>ESC</kbd></div>
-      <div id="globalSearchResults" class="global-search-results"></div>
-    </section>
-  </div>
-
-  <div class="toast-root" id="toastRoot"></div>
-  <script>
-    (() => {
-      const BASE='/AniNexus';
-      const fixUrl=u=>typeof u==='string'&&u.startsWith('/')&&!u.startsWith(BASE)?BASE+u:u;
-      const push=history.pushState.bind(history), replace=history.replaceState.bind(history);
-      history.pushState=(s,t,u)=>push(s,t,fixUrl(u));
-      history.replaceState=(s,t,u)=>replace(s,t,fixUrl(u));
-      const fixNode=root=>{
-        if(!root||root.nodeType!==1)return;
-        const nodes=[root,...root.querySelectorAll?.('img[src^="/assets/"],a[href^="/"]')||[]];
-        for(const el of nodes){
-          if(el.tagName==='IMG'){const v=el.getAttribute('src');if(v?.startsWith('/assets/'))el.setAttribute('src',BASE+v)}
-          if(el.tagName==='A'){const v=el.getAttribute('href');if(v?.startsWith('/')&&!v.startsWith(BASE))el.setAttribute('href',BASE+v)}
-        }
-      };
-      new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(fixNode))).observe(document.documentElement,{childList:true,subtree:true});
-      addEventListener('DOMContentLoaded',()=>fixNode(document.body));
-    })();
-  </script>
-  <script src="https://cdn.jsdelivr.net/gh/QGBALTIGO/AniNexus@9fe0ac27a32c47dddef9e97311a267f67f4b6704/app-v2.js" defer></script>
-</body>
-</html>
+<header class="topbar"><div class="shell topbar__inner"><a class="brand" href="/" data-route data-path="/"><img class="brand__logo" src="./assets/logo.png" alt=""><span class="brand__name">AniNexus</span><span class="brand__beta">beta</span></a><nav class="desktop-nav"><a href="/" data-route data-path="/" data-nav="home"><span data-icon="home"></span>Início</a><a href="/animes/catalogo" data-route data-path="/animes/catalogo" data-nav="catalog"><span data-icon="grid"></span>Animes</a><a href="/animes/programacao" data-route data-path="/animes/programacao" data-nav="schedule"><span data-icon="calendar"></span>Programação</a><a href="/animes/temporadas" data-route data-path="/animes/temporadas" data-nav="seasons"><span data-icon="season"></span>Temporadas</a><a href="/noticias" data-route data-path="/noticias" data-nav="news"><span data-icon="news"></span>Notícias</a><a href="/descubra" data-route data-path="/descubra" data-nav="discover"><span data-icon="sparkles"></span>Descubra</a></nav><div class="top-actions"><button class="icon-btn" data-action="search" aria-label="Pesquisar"><span data-icon="search"></span></button><button class="icon-btn" data-action="theme" aria-label="Tema"><span data-icon="moon"></span></button><div class="auth-inline"><button class="btn btn--ghost btn--compact" data-action="login">Entrar</button><button class="btn btn--primary btn--compact" data-action="register">Criar conta <span data-icon="arrow"></span></button></div><button class="icon-btn menu-trigger" data-action="drawer-open" aria-label="Menu"><span data-icon="menu"></span></button></div></div></header>
+<aside class="drawer" id="drawer" hidden aria-hidden="true"><button class="drawer__backdrop" data-action="drawer-close" aria-label="Fechar"></button><section class="drawer__panel"><div class="drawer__head"><a class="brand" href="/" data-route data-path="/"><img class="brand__logo" src="./assets/logo.png" alt=""><span class="brand__name">AniNexus</span></a><button class="icon-btn" data-action="drawer-close"><span data-icon="close"></span></button></div><div class="drawer__account"><div class="drawer__avatar"><img src="./assets/logo.png" alt=""></div><div><strong>Seu universo anime</strong><span>Listas, notas, notícias, leitura e comunidade.</span></div></div><div class="drawer__cta"><button class="btn btn--ghost" data-action="login">Entrar</button><button class="btn btn--primary" data-action="register">Criar conta</button></div><nav class="drawer__nav"><div class="drawer__section"><span>Explorar</span><a href="/" data-route data-path="/"><i class="nav-bubble" data-icon="home"></i>Início</a><a href="/animes/catalogo" data-route data-path="/animes/catalogo"><i class="nav-bubble" data-icon="grid"></i>Catálogo de animes</a><a href="/animes/temporadas" data-route data-path="/animes/temporadas"><i class="nav-bubble" data-icon="season"></i>Temporadas</a><a href="/animes/programacao" data-route data-path="/animes/programacao"><i class="nav-bubble" data-icon="calendar"></i>Programação</a><a href="/animes/onde-assistir" data-route data-path="/animes/onde-assistir"><i class="nav-bubble" data-icon="play"></i>Onde assistir</a><a href="/animes/estudios" data-route data-path="/animes/estudios"><i class="nav-bubble" data-icon="building"></i>Estúdios</a><a href="/anime-awards" data-route data-path="/anime-awards"><i class="nav-bubble" data-icon="trophy"></i>Anime Awards</a></div><div class="drawer__section"><span>Leitura</span><a href="/mangas" data-route data-path="/mangas"><i class="nav-bubble" data-icon="book"></i>Mangás</a><a href="/light-novels" data-route data-path="/light-novels"><i class="nav-bubble" data-icon="novel"></i>Light novels</a></div><div class="drawer__section"><span>Atualizações & comunidade</span><a href="/noticias" data-route data-path="/noticias"><i class="nav-bubble" data-icon="news"></i>Notícias</a><a href="/comunidade" data-route data-path="/comunidade"><i class="nav-bubble" data-icon="comment"></i>Comunidade</a><a href="/listas-de-animes" data-route data-path="/listas-de-animes"><i class="nav-bubble" data-icon="list"></i>Listas e rankings</a><a href="/conquistas" data-route data-path="/conquistas"><i class="nav-bubble" data-icon="medal"></i>Conquistas</a></div><div class="drawer__section"><span>AniNexus</span><a href="/quem-somos" data-route data-path="/quem-somos"><i class="nav-bubble" data-icon="info"></i>Sobre nós</a><a href="/dmca" data-route data-path="/dmca"><i class="nav-bubble" data-icon="shield"></i>DMCA</a></div></nav></section></aside>
+<main id="app" tabindex="-1"></main>
+<section class="footer-shortcuts"><div class="shell footer-shortcuts__grid"><a class="footer-shortcut" href="/animes/catalogo" data-route data-path="/animes/catalogo"><i data-icon="grid"></i><div><strong>Todos os Animes</strong><span>Explore o catálogo</span></div></a><a class="footer-shortcut" href="/animes/estudios" data-route data-path="/animes/estudios"><i data-icon="building"></i><div><strong>Todos os Estúdios</strong><span>Conheça produtoras</span></div></a><a class="footer-shortcut" href="/animes/onde-assistir" data-route data-path="/animes/onde-assistir"><i data-icon="play"></i><div><strong>Onde Assistir</strong><span>Links oficiais</span></div></a><a class="footer-shortcut" href="/animes/programacao" data-route data-path="/animes/programacao"><i data-icon="calendar"></i><div><strong>Calendário</strong><span>Próximos episódios</span></div></a><a class="footer-shortcut" href="/noticias" data-route data-path="/noticias"><i data-icon="news"></i><div><strong>Notícias</strong><span>Radar 24 horas</span></div></a><a class="footer-shortcut" href="/comunidade" data-route data-path="/comunidade"><i data-icon="comment"></i><div><strong>Comunidade</strong><span>Converse com fãs</span></div></a></div></section>
+<footer class="site-footer"><div class="shell footer-grid"><div class="footer-brand"><a class="brand" href="/" data-route data-path="/"><img class="brand__logo" src="./assets/logo.png" alt=""><span class="brand__name">AniNexus</span></a><p>Descubra, acompanhe e organize anime, mangá e light novel em português.</p><div class="social-row"><button class="social-icon" data-social="instagram" aria-label="Instagram"><span data-icon="instagram"></span></button><button class="social-icon" data-social="tiktok" aria-label="TikTok"><span data-icon="tiktok"></span></button></div></div><div><h3>AniNexus</h3><a href="/quem-somos" data-route data-path="/quem-somos">Quem Somos</a><a href="/colabore" data-route data-path="/colabore">Colabore</a><a href="/contato" data-route data-path="/contato">Contato</a><a href="/termos-de-uso" data-route data-path="/termos-de-uso">Termos</a><a href="/politica-de-privacidade" data-route data-path="/politica-de-privacidade">Privacidade</a><a href="/dmca" data-route data-path="/dmca">DMCA</a></div><div><h3>Descobrir</h3><a href="/animes/temporadas" data-route data-path="/animes/temporadas">Temporadas</a><a href="/animes/programacao" data-route data-path="/animes/programacao">Programação</a><a href="/anime-awards" data-route data-path="/anime-awards">Anime Awards</a><a href="/noticias" data-route data-path="/noticias">Notícias</a><a href="/comunidade" data-route data-path="/comunidade">Comunidade</a></div><div><h3>Leitura</h3><a href="/mangas" data-route data-path="/mangas">Mangás</a><a href="/light-novels" data-route data-path="/light-novels">Light novels</a><a href="/listas-de-animes" data-route data-path="/listas-de-animes">Listas</a><a href="/conquistas" data-route data-path="/conquistas">Conquistas</a></div></div><div class="shell footer-bottom"><span>© <span id="year"></span> AniNexus</span><span>Obras, marcas e personagens pertencem aos respectivos titulares.</span></div></footer>
+<nav class="mobile-bottom-nav"><a href="/" data-route data-path="/" data-mobile="home"><span data-icon="home"></span><b>Início</b></a><a href="/animes/catalogo" data-route data-path="/animes/catalogo" data-mobile="catalog"><span data-icon="grid"></span><b>Animes</b></a><a href="/animes/programacao" data-route data-path="/animes/programacao" data-mobile="schedule"><span data-icon="calendar"></span><b>Agenda</b></a><a href="/noticias" data-route data-path="/noticias" data-mobile="news"><span data-icon="news"></span><b>Notícias</b></a><button data-action="drawer-open"><span data-icon="menu"></span><b>Mais</b></button></nav>
+<div class="schedule-float" id="scheduleFloat" hidden><div id="scheduleFloatDays" class="schedule-float__days"></div></div>
+<section class="search-layer" id="searchLayer" hidden aria-hidden="true"><button class="overlay" data-action="search-close"></button><div class="search-dialog"><div class="search-line"><span data-icon="search"></span><input id="globalSearch" type="search" autocomplete="off" placeholder="Pesquisar anime, mangá ou novel..."><kbd>ESC</kbd></div><div class="search-tabs"><button class="active" data-search-type="ANIME">Animes</button><button data-search-type="MANGA">Mangás & novels</button></div><div class="search-results" id="searchResults"><p>Digite para encontrar títulos.</p></div></div></section>
+<section class="modal-layer" id="authLayer" hidden aria-hidden="true"><button class="overlay" data-action="auth-close"></button><div class="auth-modal"><button class="icon-btn auth-close" data-action="auth-close"><span data-icon="close"></span></button><div class="auth-logo"><img src="./assets/logo.png" alt=""></div><div id="authContent"></div></div></section><div class="toast-stack" id="toastStack"></div>
+<script src="./preview-v4/app-01.js?v=4"></script><script src="./preview-v4/app-02.js?v=4"></script><script src="./preview-v4/app-03.js?v=4"></script><script src="./preview-v4/app-04.js?v=4"></script><script src="./preview-v4/app-05.js?v=4"></script><script src="./preview-v4/app-06.js?v=4"></script>
+</body></html>
