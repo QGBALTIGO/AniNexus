@@ -1,12 +1,13 @@
 {
   "name": "aninexus",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
+    "worker:news": "node lib/news-worker.mjs",
     "dev": "NODE_ENV=development node --watch server.mjs",
-    "check": "node --check server.mjs && node --check public/app.js"
+    "check": "node --check server.mjs && node --check public/app.js && node --check lib/news-worker.mjs"
   },
   "engines": { "node": ">=22" },
   "dependencies": {
