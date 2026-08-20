@@ -16,6 +16,8 @@
       localStorage.removeItem(key);
     }
   }
+  if (!window.requestIdleCallback) window.requestIdleCallback = cb => setTimeout(() => cb({didTimeout:false,timeRemaining:()=>0}), 900);
+  if (!window.cancelIdleCallback) window.cancelIdleCallback = id => clearTimeout(id);
   document.documentElement.classList.add('aninexus-js');
-  window.__ANINEXUS_PREVIEW_VERSION__ = '5.0.0';
+  window.__ANINEXUS_PREVIEW_VERSION__ = '5.0.1';
 })();
