@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ef233c" />
+  <meta name="description" content="AniNexus — calendário semanal de animes com horários atualizados automaticamente." />
+  <meta name="color-scheme" content="light" />
+  <title>AniNexus — Programação de Animes</title>
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="preconnect" href="https://graphql.anilist.co" />
+  <link rel="preconnect" href="https://s4.anilist.co" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar" id="top">
+      <div class="topbar__inner container">
+        <a class="brand" href="#top" aria-label="AniNexus - início">
+          <span class="brand__mark"><img src="./assets/logo.png" alt="" /></span>
+          <span class="brand__word">AniNexus</span>
+          <span class="brand__beta">beta</span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Navegação principal">
+          <a href="#programacao" class="nav-link nav-link--active">Programação</a>
+          <button class="nav-link nav-link--button" type="button" data-action="all-anime">Animes</button>
+          <button class="nav-link nav-link--button" type="button" data-action="streaming">Onde assistir</button>
+        </nav>
+
+        <div class="top-actions">
+          <button class="icon-button" id="searchButton" type="button" aria-label="Pesquisar anime" title="Pesquisar (Ctrl+K)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.1-5.4a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+          </button>
+          <button class="profile-button" id="profileButton" type="button" aria-label="Abrir meus animes" title="Meus animes">
+            <img src="./assets/logo-192.png" alt="" />
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="programacao">
+      <section class="hero container">
+        <div class="hero__copy">
+          <div class="eyebrow">PROGRAMAÇÃO</div>
+          <h1>Calendário de Animes da Semana</h1>
+          <p>Acompanhe os dias e horários de lançamento dos episódios dos animes, no horário de Brasília.</p>
+        </div>
+        <div class="sync-pill" id="syncPill" aria-live="polite">
+          <span class="sync-dot" aria-hidden="true"></span>
+          <span id="syncText">Sincronizando…</span>
+        </div>
+      </section>
+
+      <section class="calendar-toolbar" aria-label="Navegação da semana">
+        <div class="container calendar-toolbar__inner">
+          <div class="days-strip" id="daysStrip" role="tablist" aria-label="Dias da semana"></div>
+          <div class="filters" aria-label="Filtros">
+            <button class="filter-button" id="favoritesFilter" type="button" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 4.75h11a1 1 0 0 1 1 1v14l-6.5-3.7-6.5 3.7v-14a1 1 0 0 1 1-1Z"/></svg>
+              <span>Meus animes</span>
+            </button>
+            <button class="filter-button" id="streamingFilter" type="button" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="13.5" rx="2.2"/><path d="m10 9 5 2.75-5 2.75V9Z"/></svg>
+              <span>Onde assistir</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="schedule container" id="scheduleRoot" aria-live="polite">
+        <div class="skeleton-wrap" id="skeletonRoot" aria-label="Carregando programação">
+          <div class="skeleton-day">
+            <div class="skeleton-title skeleton"></div>
+            <div class="anime-grid">
+              <div class="skeleton-card skeleton"></div><div class="skeleton-card skeleton"></div><div class="skeleton-card skeleton"></div>
+              <div class="skeleton-card skeleton"></div><div class="skeleton-card skeleton"></div><div class="skeleton-card skeleton"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="empty-state container" id="emptyState" hidden>
+        <div class="empty-state__icon"><img src="./assets/logo-192.png" alt="" /></div>
+        <h2 id="emptyTitle">Nenhum anime encontrado</h2>
+        <p id="emptyText">Tente alterar os filtros ou pesquisar por outro título.</p>
+        <button class="primary-button" id="emptyAction" type="button">Limpar filtros</button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a class="brand brand--footer" href="#top">
+            <span class="brand__mark"><img src="./assets/logo.png" alt="" /></span>
+            <span class="brand__word">AniNexus</span>
+          </a>
+          <p>Calendário automático para fãs de anime. Horários exibidos no fuso de Brasília.</p>
+        </div>
+        <div class="footer__links">
+          <div>
+            <strong>Plataforma</strong>
+            <a href="#programacao">Programação</a>
+            <button type="button" data-action="all-anime">Todos os animes</button>
+            <button type="button" data-action="streaming">Onde assistir</button>
+          </div>
+          <div>
+            <strong>Dados</strong>
+            <a href="https://anilist.co" target="_blank" rel="noreferrer">AniList</a>
+            <a href="https://jikan.moe" target="_blank" rel="noreferrer">Jikan / MAL</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer__bottom">
+        <span>© <span id="year"></span> AniNexus</span>
+        <span>Dados de terceiros podem sofrer alterações na fonte.</span>
+      </div>
+    </footer>
+  </div>
+
+  <div class="search-overlay" id="searchOverlay" hidden>
+    <div class="search-backdrop" data-close="search"></div>
+    <div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
+      <div class="search-panel__top">
+        <svg class="search-panel__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.1-5.4a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+        <label class="sr-only" id="searchTitle" for="searchInput">Pesquisar anime</label>
+        <input id="searchInput" type="search" autocomplete="off" spellcheck="false" placeholder="Pesquisar anime…" />
+        <kbd>ESC</kbd>
+      </div>
+      <div class="search-panel__meta"><span id="searchCount">Digite para pesquisar na programação desta semana</span></div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="animeModal" hidden>
+    <div class="modal__backdrop" data-close="modal"></div>
+    <section class="anime-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close icon-button" type="button" data-close="modal" aria-label="Fechar detalhes">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
