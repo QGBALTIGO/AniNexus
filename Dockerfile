@@ -7,6 +7,8 @@ COPY --chown=node:node server.mjs ./
 COPY --chown=node:node lib ./lib
 COPY --chown=node:node sql ./sql
 COPY --chown=node:node public ./public
+COPY --chown=node:node preview-v4 ./public/preview-v4
+COPY --chown=node:node preview-v5 ./public/preview-v5
 COPY --chown=node:node assets ./assets
 ENV NODE_ENV=production PORT=3000 HOST=0.0.0.0
 USER node
