@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0710" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="AniNexus — catálogo, temporadas, programação e comunidade de animes." />
+  <title>AniNexus</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="site">
+    <header class="topbar" id="topbar">
+      <div class="shell topbar__inner">
+        <a class="brand" href="/" data-route aria-label="AniNexus - Início">
+          <img class="brand__logo" src="/assets/logo-192-small.png" alt="" />
+          <span class="brand__name">AniNexus</span>
+          <span class="brand__beta">beta</span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Navegação principal">
+          <a href="/" data-route data-nav="home"><span class="nav-ico" data-icon="home"></span>Início</a>
+          <a href="/animes/catalogo" data-route data-nav="catalog"><span class="nav-ico" data-icon="grid"></span>Animes</a>
+          <a href="/animes/programacao" data-route data-nav="schedule"><span class="nav-ico" data-icon="calendar"></span>Programação</a>
+          <a href="/animes/temporadas" data-route data-nav="seasons"><span class="nav-ico" data-icon="season"></span>Temporadas</a>
+          <a href="/listas-de-animes" data-route data-nav="discover"><span class="nav-ico" data-icon="users"></span>Descubra</a>
+        </nav>
+
+        <div class="topbar__actions">
+          <button class="round-action" type="button" data-action="search" aria-label="Pesquisar" title="Pesquisar (Ctrl+K)"><span data-icon="search"></span></button>
+          <button class="round-action" type="button" data-action="theme" aria-label="Alternar tema"><span data-icon="moon"></span></button>
+          <div class="auth-actions" id="authActions">
+            <button class="btn btn--ghost btn--small" type="button" data-action="login">Entrar</button>
+            <button class="btn btn--primary btn--small" type="button" data-action="register">Criar conta <span data-icon="arrow"></span></button>
+          </div>
+          <button class="round-action mobile-menu-button" type="button" data-action="mobile-menu" aria-label="Abrir menu"><span data-icon="menu"></span></button>
+        </div>
+      </div>
+    </header>
+
+    <aside class="mobile-drawer" id="mobileDrawer" hidden aria-label="Menu móvel">
+      <button class="drawer-backdrop" data-action="mobile-menu-close" aria-label="Fechar menu"></button>
+      <div class="drawer-panel">
+        <div class="drawer-head">
+          <a class="brand" href="/" data-route><img class="brand__logo" src="/assets/logo-192-small.png" alt="" /><span class="brand__name">AniNexus</span></a>
+          <button class="round-action" data-action="mobile-menu-close"><span data-icon="close"></span></button>
+        </div>
+        <nav class="drawer-nav">
+          <a href="/" data-route><span data-icon="home"></span>Início</a>
+          <a href="/animes/catalogo" data-route><span data-icon="grid"></span>Catálogo</a>
+          <a href="/animes/temporadas" data-route><span data-icon="season"></span>Temporadas</a>
+          <a href="/animes/programacao" data-route><span data-icon="calendar"></span>Programação</a>
+          <a href="/animes/onde-assistir" data-route><span data-icon="play"></span>Onde assistir</a>
+          <a href="/animes/dublados" data-route><span data-icon="mic"></span>Dublados</a>
+          <a href="/animes/estudios" data-route><span data-icon="building"></span>Estúdios</a>
+          <a href="/listas-de-animes" data-route><span data-icon="sparkles"></span>Listas</a>
+        </nav>
+        <div class="drawer-auth" id="drawerAuth"></div>
+      </div>
+    </aside>
+
+    <main id="app" tabindex="-1"></main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <section class="footer-brand">
+          <a class="brand brand--footer" href="/" data-route><img class="brand__logo" src="/assets/logo-192-small.png" alt="" /><span class="brand__name">AniNexus</span></a>
+          <p>Descubra, acompanhe e organize animes em uma experiência criada para o público brasileiro.</p>
+        </section>
+        <section><h3>AniNexus</h3><a href="/quem-somos" data-route>Quem Somos</a><a href="/colabore" data-route>Colabore</a><a href="/contato" data-route>Contato</a><a href="/termos-de-uso" data-route>Termos de Serviço</a><a href="/politica-de-privacidade" data-route>Política de Privacidade</a><a href="/dmca" data-route>DMCA</a></section>
+        <section><h3>Animes</h3><a href="/animes/catalogo" data-route>Catálogo de Animes</a><a href="/animes/temporadas" data-route>Animes da Temporada</a><a href="/animes/programacao" data-route>Calendário de Animes</a><a href="/animes/onde-assistir" data-route>Onde Assistir</a><a href="/animes/dublados" data-route>Animes Dublados</a><a href="/animes/estudios" data-route>Estúdios de Anime</a></section>
+        <section><h3>Listas</h3><a href="/melhores-animes-para-assistir" data-route>Melhores Animes</a><a href="/animes-mais-assistidos" data-route>Mais Assistidos</a><a href="/animes-mais-aguardados" data-route>Mais Aguardados</a><a href="/listas-de-animes" data-route>Todas as Listas</a></section>
+      </div>
+      <div class="shell footer-bottom"><span>© <span id="year"></span> AniNexus</span><span>Marcas, personagens e obras pertencem aos respectivos titulares.</span></div>
+    </footer>
+  </div>
+
+  <section class="search-layer" id="searchLayer" hidden aria-hidden="true">
+    <button class="overlay-backdrop" data-action="search-close" aria-label="Fechar busca"></button>
+    <div class="search-box" role="dialog" aria-modal="true" aria-label="Pesquisar animes">
+      <div class="search-input-row"><span data-icon="search"></span><input id="globalSearch" type="search" autocomplete="off" placeholder="Pesquisar animes..." /><kbd>ESC</kbd></div>
+      <div id="globalSearchResults" class="search-results"><div class="search-tip">Digite o nome de um anime para pesquisar.</div></div>
+    </div>
+  </section>
+
+  <section class="modal-layer" id="authLayer" hidden aria-hidden="true">
+    <button class="overlay-backdrop" data-action="auth-close" aria-label="Fechar"></button>
+    <div class="auth-modal" role="dialog" aria-modal="true">
+      <button class="modal-close round-action" data-action="auth-close"><span data-icon="close"></span></button>
+      <div class="auth-mark"><img src="/assets/logo-192-small.png" alt="" /></div>
+      <div id="authContent"></div>
+    </div>
+  </section>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
