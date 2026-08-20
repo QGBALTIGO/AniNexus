@@ -9,6 +9,8 @@ COPY --chown=node:node sql ./sql
 COPY --chown=node:node public ./public
 COPY --chown=node:node preview-v4 ./public/preview-v4
 COPY --chown=node:node preview-v5 ./public/preview-v5
+COPY --chown=node:node index.html ./public/index.html
+RUN sed -i 's|<head>|<head><base href="/">|' ./public/index.html
 COPY --chown=node:node assets ./assets
 ENV NODE_ENV=production PORT=3000 HOST=0.0.0.0
 USER node
