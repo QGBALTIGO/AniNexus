@@ -8,6 +8,6 @@
   if(IS_PAGES&&!restored)route=route.replace(/^\/AniNexus/,'')||'/';
   route=route.replace(/\/+$/,'')||'/';
   if(route!=='/animes/programacao')return;
-  window.__ANINEXUS_SCHEDULE_V18__={route,build:u.searchParams.get('build')||'19.0.0'};
+  window.__ANINEXUS_SCHEDULE_V18__={route,build:u.searchParams.get('build')||'20.0.0'};
   history.replaceState({},'',BASE+'/__schedule_v18_boot__');
 })();
