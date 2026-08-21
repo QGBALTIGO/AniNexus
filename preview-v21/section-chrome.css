@@ -1,3 +1,4 @@
+@import url("./design-system.css?v=21.0.0");
 /* AniNexus V21 — one shared chrome for anime sections */
 :root{--nx-section-top:66px;--nx-section-motion:cubic-bezier(.2,.85,.2,1)}
 body.nx-section-page .topbar{transition:transform .28s var(--nx-section-motion),background .2s ease,border-color .2s ease!important;will-change:transform}
