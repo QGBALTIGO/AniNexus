@@ -23,7 +23,11 @@
       if(IS_PAGES)a.href=pagesUrl(p);
     });
   }
-  rewrite();
+  function helpers(){
+    if(document.querySelector('script[data-nx23-news-i18n]'))return;
+    const s=document.createElement('script');s.src=`${BASE}/preview-v23/news-i18n-v23.js?v=${BUILD}`;s.defer=true;s.dataset.nx23NewsI18n='1';document.head.append(s);
+  }
+  rewrite();helpers();
   addEventListener('DOMContentLoaded',()=>rewrite(),{once:true});
   new MutationObserver(rs=>{for(const r of rs)for(const n of r.addedNodes)if(n.nodeType===1)rewrite(n)}).observe(document.documentElement,{subtree:true,childList:true});
   addEventListener('click',e=>{
@@ -32,7 +36,7 @@
     const p=a.dataset.nx23Dedicated||cleanPathFromUrl(a.href);if(!isDedicated(p))return;
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
     document.body?.classList.remove('modal-open');
-    document.querySelector('#drawer')?.setAttribute('hidden','');
+    const drawer=document.querySelector('#drawer');if(drawer){drawer.hidden=true;drawer.setAttribute('aria-hidden','true')}
     location.assign(IS_PAGES?pagesUrl(p):p);
   },true);
 })();
