@@ -6,11 +6,11 @@
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
   const TARGET='/animes/catalogo';
-  const BUILD='20.3.0';
+  const BUILD='21.0.0';
   const ENDPOINT='https://graphql.anilist.co';
   const PER_PAGE=24;
   const CACHE_TTL=8*60*1000;
-  const CACHE_PREFIX='nx:v203:catalog:';
+  const CACHE_PREFIX='nx:v21:catalog:';
 
   const GENRES=[['Action','Ação'],['Adventure','Aventura'],['Comedy','Comédia'],['Drama','Drama'],['Fantasy','Fantasia'],['Horror','Terror'],['Mystery','Mistério'],['Romance','Romance'],['Sci-Fi','Ficção Científica'],['Slice of Life','Cotidiano'],['Sports','Esportes'],['Supernatural','Sobrenatural'],['Thriller','Suspense'],['Psychological','Psicológico'],['Music','Música'],['Mecha','Mecha']];
   const FORMATS=[['','Todos os formatos'],['TV','Séries'],['MOVIE','Filmes'],['OVA','OVA'],['ONA','ONA'],['SPECIAL','Especiais']];
@@ -22,7 +22,6 @@
     ['POPULAR','Mais Populares','fire','orange'],
     ['MEMBERS','Mais Membros','heart','pink']
   ];
-
   const ICON={
     grid:'<svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.7"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.7"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.7"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.7"/></svg>',
     clock:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.7"/><path d="M12 7.4v5l3.4 2"/></svg>',
@@ -35,243 +34,195 @@
     plus:'<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>',
     sliders:'<svg viewBox="0 0 24 24"><path d="M4 7h8M16 7h4M4 17h4M12 17h8M12 4v6M8 14v6"/></svg>',
     close:'<svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>',
-    retry:'<svg viewBox="0 0 24 24"><path d="M20 7v5h-5"/><path d="M19 12a7 7 0 1 0-2 5"/></svg>',
-    chevron:'<svg viewBox="0 0 24 24"><path d="m7 9 5 5 5-5"/></svg>'
+    retry:'<svg viewBox="0 0 24 24"><path d="M20 7v5h-5"/><path d="M19 12a7 7 0 1 0-2 5"/></svg>'
   };
 
-  const state={mode:'ALL',page:1,search:'',genre:'',format:'',year:'',controller:null,token:0,mounted:false,filtersOpen:false,lastY:Math.max(0,scrollY),scrollRaf:0};
+  const state={mode:'ALL',page:1,search:'',genre:'',format:'',year:'',controller:null,token:0,mounted:false,filtersOpen:false,items:new Map(),searchTimer:0};
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const titleOf=m=>m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||'Anime';
   const imageOf=m=>m?.coverImage?.extraLarge||m?.coverImage?.large||`${BASE}/assets/logo.png`;
   const scoreOf=m=>m?.averageScore?(m.averageScore/10).toFixed(1).replace('.0',''):'';
-  const fmtNum=n=>new Intl.NumberFormat('pt-BR',{notation:'compact',maximumFractionDigits:1}).format(Number(n)||0);
   const slug=s=>String(s||'anime').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,90);
   const formatLabel=f=>({TV:'Série',TV_SHORT:'Série curta',MOVIE:'Filme',OVA:'OVA',ONA:'ONA',SPECIAL:'Especial',MUSIC:'Música'})[f]||f||'Anime';
   const statusLabel=s=>({RELEASING:'Em exibição',FINISHED:'Finalizado',NOT_YET_RELEASED:'Em breve',HIATUS:'Em hiato',CANCELLED:'Cancelado'})[s]||'';
   const genreLabel=g=>GENRES.find(x=>x[0]===g)?.[1]||g;
 
-  function route(){const u=new URL(location.href),p=u.searchParams.get('p');if(p)return p.split('?')[0].replace(/\/+$/,'')||'/';let path=u.pathname;if(IS_PAGES)path=path.replace(/^\/AniNexus/,'')||'/';return path.replace(/\/+$/,'')||'/'}
+  function route(){
+    const u=new URL(location.href),p=u.searchParams.get('p');
+    if(p)return p.split('?')[0].replace(/\/+$/,'')||'/';
+    let path=u.pathname;
+    if(IS_PAGES)path=path.replace(/^\/AniNexus/,'')||'/';
+    return path.replace(/\/+$/,'')||'/';
+  }
   function onCatalog(){return route()===TARGET||!!window.__NX_CATALOG_BOOT__}
-  function currentSeason(){const now=new Date(),month=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',month:'numeric'}).format(now)),year=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',year:'numeric'}).format(now));return{year,season:month<=3?'WINTER':month<=6?'SPRING':month<=9?'SUMMER':'FALL'}}
-  function hardGo(path){location.href=IS_PAGES?`${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`:path}
-  function openAnime(m){cleanup();history.pushState({},'',`${BASE}/anime/${slug(titleOf(m))}-${m.id}`);window.dispatchEvent(new PopStateEvent('popstate'))}
-
-  function cacheRead(key){try{const x=JSON.parse(sessionStorage.getItem(CACHE_PREFIX+key)||'null');if(x&&Date.now()-x.t<CACHE_TTL&&Array.isArray(x.d?.items))return x.d}catch{}return null}
-  function cacheWrite(key,data){try{sessionStorage.setItem(CACHE_PREFIX+key,JSON.stringify({t:Date.now(),d:data}))}catch{}}
+  function normalizeUrl(){
+    if(!onCatalog())return;
+    if(IS_PAGES){
+      const u=new URL(location.href);u.pathname=`${BASE}/`;u.search='';u.searchParams.set('build',BUILD);u.searchParams.set('p',TARGET);history.replaceState({},'',u.pathname+u.search);
+    }else history.replaceState({},'',TARGET);
+    window.__NX_CATALOG_BOOT__=false;
+  }
+  function currentSeason(){
+    const now=new Date();
+    const month=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',month:'numeric'}).format(now));
+    const year=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',year:'numeric'}).format(now));
+    return{year,season:month<=3?'WINTER':month<=6?'SPRING':month<=9?'SUMMER':'FALL'};
+  }
+  function cacheRead(key){try{const x=JSON.parse(sessionStorage.getItem(CACHE_PREFIX+key)||'null');if(x&&Date.now()-x.t<CACHE_TTL&&Array.isArray(x.data?.items))return x.data}catch{}return null}
+  function cacheWrite(key,data){try{sessionStorage.setItem(CACHE_PREFIX+key,JSON.stringify({t:Date.now(),data}))}catch{}}
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+  const FIELDS=`id title{romaji english native userPreferred} coverImage{extraLarge large} averageScore popularity favourites episodes format status seasonYear genres startDate{year month day}`;
 
-  const FULL_FIELDS=`id title{romaji english native userPreferred} coverImage{extraLarge large color} averageScore popularity favourites episodes format status season seasonYear genres startDate{year month day} studios(isMain:true){nodes{name}}`;
-  const SAFE_FIELDS=`id title{romaji english native userPreferred} coverImage{extraLarge large} averageScore popularity favourites episodes format status seasonYear genres startDate{year month day}`;
-
-  async function gql(query,variables,signal,retries=2){
+  async function gql(query,variables,signal){
     let last;
-    for(let attempt=0;attempt<retries;attempt++){
+    for(let attempt=0;attempt<3;attempt++){
       try{
         const res=await fetch(ENDPOINT,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables}),signal});
         if(res.status===429||res.status>=500)throw new Error(`HTTP ${res.status}`);
         if(!res.ok)throw new Error(`HTTP ${res.status}`);
         const json=await res.json();
-        if(json.errors?.length)throw new Error(json.errors[0]?.message||'Consulta inválida');
-        if(!json.data)throw new Error('Resposta vazia');
-        return json.data;
+        if(json.errors?.length)throw new Error(json.errors[0]?.message||'Falha ao consultar catálogo');
+        if(!json.data?.Page||!Array.isArray(json.data.Page.media))throw new Error('Resposta inválida');
+        return json.data.Page;
       }catch(err){
         last=err;
         if(err?.name==='AbortError')throw err;
-        if(attempt<retries-1)await sleep(340+Math.floor(Math.random()*180));
+        if(attempt<2)await sleep(420*(attempt+1)+Math.floor(Math.random()*140));
       }
     }
     throw last||new Error('Falha de rede');
   }
 
-  function options(){
-    const o={page:state.page,perPage:PER_PAGE,search:state.search||null,genre:state.genre||null,format:state.format||null,season:null,year:state.year?Number(state.year):null,status:null,sort:['POPULARITY_DESC']};
-    if(state.mode==='SOON'){o.status='NOT_YET_RELEASED';o.sort=['POPULARITY_DESC']}
-    else if(state.mode==='SEASON'){const s=currentSeason();o.season=s.season;o.year=state.year?Number(state.year):s.year;o.sort=['POPULARITY_DESC']}
-    else if(state.mode==='TOP')o.sort=['SCORE_DESC','POPULARITY_DESC'];
-    else if(state.mode==='POPULAR')o.sort=['POPULARITY_DESC'];
-    else if(state.mode==='MEMBERS')o.sort=['FAVOURITES_DESC','POPULARITY_DESC'];
-    if(state.search)o.sort=['SEARCH_MATCH','POPULARITY_DESC'];
-    return o;
-  }
+  function buildRequest(){
+    const defs=['$page:Int!','$perPage:Int!'];
+    const vars={page:state.page,perPage:PER_PAGE};
+    const args=['type:ANIME','isAdult:false'];
+    let sort='POPULARITY_DESC';
 
-  async function directQuery(o,fields,signal){
-    const q=`query($page:Int,$perPage:Int,$search:String,$genre:String,$format:MediaFormat,$season:MediaSeason,$year:Int,$status:MediaStatus,$sort:[MediaSort]){Page(page:$page,perPage:$perPage){pageInfo{total currentPage lastPage hasNextPage}media(type:ANIME,isAdult:false,search:$search,genre:$genre,format:$format,season:$season,seasonYear:$year,status:$status,sort:$sort){${fields}}}}`;
-    const d=await gql(q,o,signal,2);
-    const page=d?.Page;
-    if(!page||!Array.isArray(page.media))throw new Error('Catálogo inválido');
-    return{pageInfo:page.pageInfo||{},items:page.media};
+    if(state.search.trim()){
+      defs.push('$search:String!');vars.search=state.search.trim();args.push('search:$search');sort='SEARCH_MATCH';
+    }
+    if(state.genre){defs.push('$genre:String!');vars.genre=state.genre;args.push('genre:$genre')}
+    if(state.format){defs.push('$format:MediaFormat!');vars.format=state.format;args.push('format:$format')}
+    if(state.year&&state.mode!=='SEASON'){defs.push('$year:Int!');vars.year=Number(state.year);args.push('seasonYear:$year')}
+
+    if(state.mode==='SOON'){args.push('status:NOT_YET_RELEASED');sort='POPULARITY_DESC'}
+    else if(state.mode==='SEASON'){
+      const cur=currentSeason();
+      defs.push('$season:MediaSeason!','$year:Int!');vars.season=cur.season;vars.year=state.year?Number(state.year):cur.year;args.push('season:$season','seasonYear:$year');sort='POPULARITY_DESC';
+    }else if(state.mode==='TOP')sort='SCORE_DESC';
+    else if(state.mode==='POPULAR')sort='POPULARITY_DESC';
+    else if(state.mode==='MEMBERS')sort='FAVOURITES_DESC';
+
+    args.push(`sort:[${sort}]`);
+    const query=`query(${defs.join(',')}){Page(page:$page,perPage:$perPage){pageInfo{total currentPage lastPage hasNextPage}media(${args.join(',')}){${FIELDS}}}}`;
+    return{query,vars,key:JSON.stringify({mode:state.mode,page:state.page,search:state.search,genre:state.genre,format:state.format,year:state.year})};
   }
 
   async function fetchCatalog(){
-    const o=options();
-    const key=JSON.stringify(o);
-    const cached=cacheRead(key);
-    if(cached)return cached;
-    let result;
-    try{result=await directQuery(o,FULL_FIELDS,state.controller?.signal)}catch(err){
-      if(err?.name==='AbortError')throw err;
-      result=await directQuery(o,SAFE_FIELDS,state.controller?.signal);
-    }
-    cacheWrite(key,result);
+    const req=buildRequest();
+    const cached=cacheRead(req.key);if(cached)return cached;
+    const page=await gql(req.query,req.vars,state.controller?.signal);
+    const result={pageInfo:page.pageInfo||{},items:page.media||[]};
+    if(result.items.length)cacheWrite(req.key,result);
     return result;
   }
 
+  function years(){const y=new Date().getFullYear()+1;return Array.from({length:36},(_,i)=>y-i)}
   function modeLabel(){return({ALL:'Todos os animes',SOON:'Em breve',SEASON:'Animes da temporada',TOP:'Top Animes',POPULAR:'Mais populares',MEMBERS:'Mais membros'})[state.mode]||'Todos os animes'}
-  function modeButtons(){return MODES.map(([k,n,ic,color])=>`<button type="button" class="nx23-mode nx23-mode-${color} ${state.mode===k?'active':''}" data-nx23-mode="${k}"><i>${ICON[ic]}</i><span>${n}</span></button>`).join('')}
-  function years(){const y=new Date().getFullYear()+1;return Array.from({length:34},(_,i)=>y-i)}
-  function skeletons(n=PER_PAGE){return `<div class="nx23-cat-grid">${Array.from({length:n},()=>'<div class="nx23-skeleton"></div>').join('')}</div>`}
-
-  function filterMarkup(){
-    return `<label class="nx23-search">${ICON.search}<input id="nx23Search" type="search" autocomplete="off" placeholder="Buscar anime pelo título..." value="${esc(state.search)}"><button type="button" data-nx23-clear aria-label="Limpar busca">${ICON.close}</button></label><select id="nx23Genre"><option value="">Todos os gêneros</option>${GENRES.map(([v,n])=>`<option value="${v}" ${state.genre===v?'selected':''}>${n}</option>`).join('')}</select><select id="nx23Format">${FORMATS.map(([v,n])=>`<option value="${v}" ${state.format===v?'selected':''}>${n}</option>`).join('')}</select><select id="nx23Year"><option value="">Todos os anos</option>${years().map(y=>`<option value="${y}" ${String(state.year)===String(y)?'selected':''}>${y}</option>`).join('')}</select><button type="button" class="nx23-reset" data-nx23-reset>${ICON.sliders}<span>Limpar</span></button>`;
-  }
+  function tabs(){return MODES.map(([key,label,icon,color])=>`<button type="button" class="nx21-tab nx21-tab-${color}${state.mode===key?' active':''}" data-nx21-mode="${key}"><i>${ICON[icon]}</i><span>${label}</span></button>`).join('')}
+  function filterMarkup(){return `<label class="nx21-search">${ICON.search}<input id="nx21Search" type="search" autocomplete="off" placeholder="Buscar anime pelo título…" value="${esc(state.search)}"><button type="button" data-nx21-clear aria-label="Limpar">${ICON.close}</button></label><select id="nx21Genre"><option value="">Todos os gêneros</option>${GENRES.map(([v,n])=>`<option value="${v}"${state.genre===v?' selected':''}>${n}</option>`).join('')}</select><select id="nx21Format">${FORMATS.map(([v,n])=>`<option value="${v}"${state.format===v?' selected':''}>${n}</option>`).join('')}</select><select id="nx21Year"><option value="">Todos os anos</option>${years().map(y=>`<option value="${y}"${String(state.year)===String(y)?' selected':''}>${y}</option>`).join('')}</select><button type="button" class="nx21-reset" data-nx21-reset>${ICON.close}<span>Limpar filtros</span></button>`}
+  function skeletons(){return `<div class="nx21-grid">${Array.from({length:18},()=>'<div class="nx21-skeleton"></div>').join('')}</div>`}
 
   function card(m){
-    const score=scoreOf(m),year=m.seasonYear||m.startDate?.year||'',studio=m.studios?.nodes?.[0]?.name||'',st=statusLabel(m.status);
-    return `<article class="nx23-card" tabindex="0" data-nx23-open="${m.id}"><div class="nx23-poster"><img loading="lazy" decoding="async" src="${esc(imageOf(m))}" alt="${esc(titleOf(m))}"><div class="nx23-shade"></div>${score?`<span class="nx23-score">${ICON.star}<b>${score}</b></span>`:''}${st?`<span class="nx23-status ${m.status==='NOT_YET_RELEASED'?'soon':''}">${esc(st)}</span>`:''}<div class="nx23-card-actions"><button type="button" data-list="${m.id}" aria-label="Adicionar à lista">${ICON.plus}</button><button type="button" data-fav="${m.id}" aria-label="Favoritar">${ICON.heart}</button></div></div><div class="nx23-copy"><h3>${esc(titleOf(m))}</h3><div class="nx23-meta"><span>${esc(formatLabel(m.format))}</span>${year?`<i></i><span>${year}</span>`:''}${m.episodes?`<i></i><span>${m.episodes} eps</span>`:''}</div><p>${esc((m.genres||[]).slice(0,2).map(genreLabel).join(' · ')||studio||'Anime')}</p></div></article>`;
+    const title=titleOf(m),score=scoreOf(m),year=m.seasonYear||m.startDate?.year||'',status=statusLabel(m.status);
+    state.items.set(Number(m.id),m);
+    return `<article class="nx21-card" data-nx21-open="${m.id}" tabindex="0"><div class="nx21-poster"><img src="${esc(imageOf(m))}" loading="lazy" decoding="async" alt="${esc(title)}"><div class="nx21-shade"></div>${score?`<span class="nx21-score">${ICON.star}<b>${score}</b></span>`:''}${status?`<span class="nx21-status${m.status==='NOT_YET_RELEASED'?' soon':''}">${esc(status)}</span>`:''}<div class="nx21-actions"><button type="button" data-list="${m.id}" aria-label="Adicionar à lista">${ICON.plus}</button><button type="button" data-fav="${m.id}" aria-label="Favoritar">${ICON.heart}</button></div></div><h3>${esc(title)}</h3><p>${esc([formatLabel(m.format),year,m.episodes?`${m.episodes} eps`:null].filter(Boolean).join(' · '))}</p><small>${esc((m.genres||[]).slice(0,2).map(genreLabel).join(' · '))}</small></article>`;
+  }
+
+  function pagination(info){
+    const cur=Number(info.currentPage||state.page),last=Math.min(Number(info.lastPage||cur),500);
+    if(last<=1)return'';
+    const nums=[1,cur-1,cur,cur+1,last].filter(n=>n>=1&&n<=last).filter((n,i,a)=>a.indexOf(n)===i).sort((a,b)=>a-b);
+    let prev=0,html='';
+    for(const n of nums){if(prev&&n-prev>1)html+='<span>…</span>';html+=`<button type="button" data-nx21-page="${n}"${n===cur?' class="active"':''}>${n}</button>`;prev=n}
+    return `<nav class="nx21-pages" aria-label="Paginação"><button type="button" data-nx21-page="${Math.max(1,cur-1)}"${cur<=1?' disabled':''}>‹</button>${html}<button type="button" data-nx21-page="${Math.min(last,cur+1)}"${!info.hasNextPage?' disabled':''}>›</button></nav>`;
   }
 
   function renderShell(){
-    document.body.classList.add('nx23-catalog-active');
+    document.body.classList.add('nx21-catalog');
     document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav==='anime'));
-    app.innerHTML=`<section class="nx23-cat-hero" id="nx23CatHero"><div class="shell"><div class="nx23-cat-title"><h1>Catálogo de <em>Animes</em></h1><p>Todos os animes do catálogo, dos clássicos aos lançamentos da temporada.</p></div></div></section><section class="nx23-cat-dock" id="nx23CatDock"><div class="shell"><button type="button" class="nx23-dock-head" data-nx23-expand aria-expanded="false"><span class="nx23-dock-icon">${ICON.grid}</span><span class="nx23-dock-copy"><strong>Catálogo de <em>Animes</em></strong><small>CATÁLOGO DE ANIMES</small></span><span class="nx23-dock-toggle">${ICON.chevron}</span></button><div class="nx23-cat-nav"><button type="button" class="nx23-filter-icon" data-nx23-filters aria-label="Abrir filtros" aria-expanded="false">${ICON.sliders}</button><div class="nx23-cat-tabs">${modeButtons()}</div></div><div class="nx23-filter-panel" id="nx23FilterPanel"><div class="nx23-tools">${filterMarkup()}</div><div class="nx23-chips" id="nx23Chips"></div></div></div></section><section class="nx23-body"><div class="shell"><div class="nx23-line"><div><small>EXPLORAR</small><h2 id="nx23Title">${modeLabel()}</h2></div><span id="nx23PageLabel">Carregando…</span></div><div id="nx23Grid">${skeletons()}</div><nav class="nx23-pages" id="nx23Pages" aria-label="Paginação"></nav></div></section>`;
-    bindControls();
-    renderChips();
-    load();
-    setupScroll();
-  }
-
-  function renderChips(){
-    const el=document.querySelector('#nx23Chips');if(!el)return;
-    const chips=[];
-    if(state.search)chips.push(['search',`Busca: ${state.search}`]);
-    if(state.genre)chips.push(['genre',genreLabel(state.genre)]);
-    if(state.format)chips.push(['format',formatLabel(state.format)]);
-    if(state.year)chips.push(['year',String(state.year)]);
-    el.innerHTML=chips.map(([k,v])=>`<button type="button" data-nx23-chip="${k}">${esc(v)} ${ICON.close}</button>`).join('');
-    el.querySelectorAll('[data-nx23-chip]').forEach(b=>b.onclick=()=>{state[b.dataset.nx23Chip]='';state.page=1;syncInputs();renderChips();load()});
-  }
-
-  function syncInputs(){const s=document.querySelector('#nx23Search'),g=document.querySelector('#nx23Genre'),f=document.querySelector('#nx23Format'),y=document.querySelector('#nx23Year');if(s)s.value=state.search;if(g)g.value=state.genre;if(f)f.value=state.format;if(y)y.value=state.year}
-  function syncModes(){document.querySelectorAll('[data-nx23-mode]').forEach(b=>b.classList.toggle('active',b.dataset.nx23Mode===state.mode));const t=document.querySelector('#nx23Title');if(t)t.textContent=modeLabel()}
-
-  function setFilters(open){
-    state.filtersOpen=!!open;
-    const dock=document.querySelector('#nx23CatDock');
-    dock?.classList.toggle('filters-open',state.filtersOpen);
-    document.querySelectorAll('[data-nx23-filters],[data-nx23-expand]').forEach(b=>b.setAttribute('aria-expanded',state.filtersOpen?'true':'false'));
-    if(state.filtersOpen){document.body.classList.add('nx23-scroll-up');document.body.classList.remove('nx23-scroll-down');dock?.classList.add('expanded')}
-  }
-
-  function bindControls(){
-    document.querySelectorAll('[data-nx23-mode]').forEach(b=>b.onclick=()=>{state.mode=b.dataset.nx23Mode;state.page=1;syncModes();if(innerWidth<720)setFilters(false);load()});
-    document.querySelector('[data-nx23-filters]').onclick=()=>setFilters(!state.filtersOpen);
-    document.querySelector('[data-nx23-expand]').onclick=()=>setFilters(!state.filtersOpen);
-    let timer;
-    const search=document.querySelector('#nx23Search');
-    search.oninput=()=>{clearTimeout(timer);timer=setTimeout(()=>{state.search=search.value.trim();state.page=1;renderChips();load()},300)};
-    document.querySelector('[data-nx23-clear]').onclick=()=>{state.search='';state.page=1;search.value='';renderChips();load();search.focus()};
-    document.querySelector('#nx23Genre').onchange=e=>{state.genre=e.target.value;state.page=1;renderChips();load()};
-    document.querySelector('#nx23Format').onchange=e=>{state.format=e.target.value;state.page=1;renderChips();load()};
-    document.querySelector('#nx23Year').onchange=e=>{state.year=e.target.value;state.page=1;renderChips();load()};
-    document.querySelector('[data-nx23-reset]').onclick=()=>{state.search=state.genre=state.format=state.year='';state.page=1;syncInputs();renderChips();load()};
-  }
-
-  function renderPages(info){
-    const root=document.querySelector('#nx23Pages');if(!root)return;
-    const cur=Number(info.currentPage||state.page||1),last=Math.min(Number(info.lastPage||1),999);
-    if(last<=1){root.innerHTML='';return}
-    const nums=[1,cur-1,cur,cur+1,last].filter((n,i,a)=>n>=1&&n<=last&&a.indexOf(n)===i).sort((a,b)=>a-b);
-    let prev=0,out='';
-    for(const n of nums){if(prev&&n-prev>1)out+='<span>…</span>';out+=`<button type="button" class="${n===cur?'active':''}" data-nx23-page="${n}">${n}</button>`;prev=n}
-    root.innerHTML=`<button type="button" class="nav" data-nx23-page="${Math.max(1,cur-1)}" ${cur===1?'disabled':''}>‹</button>${out}<button type="button" class="nav" data-nx23-page="${Math.min(last,cur+1)}" ${cur===last?'disabled':''}>›</button>`;
-    root.querySelectorAll('[data-nx23-page]').forEach(b=>b.onclick=()=>{const p=Number(b.dataset.nx23Page);if(!p||p===cur)return;state.page=p;load();document.querySelector('.nx23-body')?.scrollIntoView({behavior:'smooth',block:'start'})});
-  }
-
-  function bindCards(items){
-    const byId=new Map(items.map(m=>[String(m.id),m]));
-    document.querySelectorAll('[data-nx23-open]').forEach(el=>{
-      const open=()=>{const m=byId.get(el.dataset.nx23Open);if(m)openAnime(m)};
-      el.onclick=e=>{if(e.target.closest('button,a'))return;open()};
-      el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}};
-    });
-    document.querySelectorAll('.nx23-poster>img').forEach(img=>img.addEventListener('error',()=>{img.src=`${BASE}/assets/logo.png`;img.classList.add('fallback')},{once:true}));
-    window.AniNexusMediaState?.sync?.();
+    app.innerHTML=`<section class="nx21-hero"><div class="shell"><h1>Catálogo de <em>Animes</em></h1><p>Todos os animes do catálogo, dos clássicos aos lançamentos da temporada.</p></div></section><section class="nx21-strip" id="nx21Strip"><div class="shell nx21-strip-inner"><button type="button" class="nx21-filter-button" data-nx21-filters aria-label="Busca e filtros">${ICON.sliders}</button><div class="nx21-tabs">${tabs()}</div></div><div class="nx21-filter-panel${state.filtersOpen?' open':''}" id="nx21FilterPanel"><div class="shell nx21-filter-grid">${filterMarkup()}</div></div></section><section class="nx21-body"><div class="shell"><div class="nx21-section-head"><div><small>EXPLORAR</small><h2 id="nx21ModeTitle">${modeLabel()}</h2></div><span id="nx21Count"></span></div><div id="nx21Results">${skeletons()}</div><div id="nx21Pagination"></div></div></section>`;
   }
 
   async function load(){
-    const grid=document.querySelector('#nx23Grid');if(!grid)return;
-    state.controller?.abort();state.controller=new AbortController();
-    const token=++state.token;
-    grid.innerHTML=skeletons();
-    const label=document.querySelector('#nx23PageLabel');if(label)label.textContent='Carregando…';
-    document.querySelector('#nx23Pages').innerHTML='';
+    const box=document.querySelector('#nx21Results');if(!box)return;
+    state.controller?.abort();state.controller=new AbortController();const token=++state.token;
+    box.innerHTML=skeletons();
+    document.querySelector('#nx21Pagination').innerHTML='';
+    document.querySelector('#nx21ModeTitle').textContent=modeLabel();
     try{
-      const result=await fetchCatalog();
-      if(token!==state.token||route()!==TARGET)return;
-      const items=result.items||[],info=result.pageInfo||{},total=Number(info.total||items.length);
-      if(label)label.textContent=`${total.toLocaleString('pt-BR')} títulos · Página ${info.currentPage||state.page} de ${Math.min(info.lastPage||1,999)}`;
-      const title=document.querySelector('#nx23Title');if(title)title.textContent=modeLabel();
-      grid.innerHTML=items.length?`<div class="nx23-cat-grid">${items.map(card).join('')}</div>`:`<div class="nx23-empty"><img src="${BASE}/assets/logo.png" alt=""><h3>Nenhum anime encontrado</h3><p>Tente remover um filtro ou pesquisar outro título.</p><button type="button" data-nx23-empty-reset>Limpar filtros</button></div>`;
-      grid.querySelector('[data-nx23-empty-reset]')?.addEventListener('click',()=>{state.search=state.genre=state.format=state.year='';state.page=1;syncInputs();renderChips();load()});
-      renderPages(info);bindCards(items);
+      const result=await fetchCatalog();if(token!==state.token)return;
+      state.items.clear();
+      document.querySelector('#nx21Count').textContent=result.pageInfo?.total?`${Number(result.pageInfo.total).toLocaleString('pt-BR')} títulos`:'';
+      box.innerHTML=result.items.length?`<div class="nx21-grid">${result.items.map(card).join('')}</div>`:`<div class="nx21-empty"><strong>Nenhum anime encontrado</strong><span>Tente remover algum filtro ou pesquisar outro título.</span></div>`;
+      document.querySelector('#nx21Pagination').innerHTML=pagination(result.pageInfo||{});
+      window.dispatchEvent(new CustomEvent('aninexus:media-state-refresh'));
     }catch(err){
       if(err?.name==='AbortError'||token!==state.token)return;
-      grid.innerHTML=`<div class="nx23-error">${ICON.retry}<h3>Não foi possível carregar o catálogo</h3><p>A consulta falhou. Tente novamente; seus filtros foram mantidos.</p><button type="button" data-nx23-retry>${ICON.retry} Tentar novamente</button></div>`;
-      if(label)label.textContent='Falha ao carregar';
-      grid.querySelector('[data-nx23-retry]')?.addEventListener('click',load);
+      box.innerHTML=`<div class="nx21-error">${ICON.retry}<strong>Não foi possível carregar o catálogo</strong><p>${esc(err?.message||'Falha de conexão')}. A página pode tentar novamente sem perder seus filtros.</p><button type="button" data-nx21-retry>${ICON.retry} Tentar novamente</button></div>`;
     }
   }
 
-  function setupScroll(){
-    state.lastY=Math.max(0,scrollY);
-    const update=()=>{
-      state.scrollRaf=0;
-      if(route()!==TARGET)return;
-      const hero=document.querySelector('#nx23CatHero'),dock=document.querySelector('#nx23CatDock'),top=document.querySelector('#topbar');
-      if(!hero||!dock)return;
-      const y=Math.max(0,scrollY),headerH=top?.offsetHeight||54,stuck=hero.getBoundingClientRect().bottom<=headerH+1;
-      dock.classList.toggle('is-stuck',stuck);
-      if(!stuck){document.body.classList.remove('nx23-scroll-down','nx23-scroll-up');dock.classList.remove('expanded');state.lastY=y;return}
-      const delta=y-state.lastY;
-      if(!state.filtersOpen){
-        if(delta>8){document.body.classList.add('nx23-scroll-down');document.body.classList.remove('nx23-scroll-up');dock.classList.remove('expanded')}
-        else if(delta<-8){document.body.classList.add('nx23-scroll-up');document.body.classList.remove('nx23-scroll-down');dock.classList.add('expanded')}
-      }
-      state.lastY=y;
-    };
-    const onScroll=()=>{if(!state.scrollRaf)state.scrollRaf=requestAnimationFrame(update)};
-    if(window.__NX23_CAT_SCROLL__)removeEventListener('scroll',window.__NX23_CAT_SCROLL__);
-    window.__NX23_CAT_SCROLL__=onScroll;
-    addEventListener('scroll',onScroll,{passive:true});
-    update();
+  function setMode(mode){
+    if(!MODES.some(x=>x[0]===mode))return;
+    state.mode=mode;state.page=1;
+    document.querySelectorAll('[data-nx21-mode]').forEach(b=>b.classList.toggle('active',b.dataset.nx21Mode===mode));
+    if(matchMedia('(max-width:720px)').matches)closeFilters();
+    load();
+  }
+  function closeFilters(){state.filtersOpen=false;document.querySelector('#nx21FilterPanel')?.classList.remove('open');document.querySelector('[data-nx21-filters]')?.classList.remove('active')}
+  function toggleFilters(){state.filtersOpen=!state.filtersOpen;document.querySelector('#nx21FilterPanel')?.classList.toggle('open',state.filtersOpen);document.querySelector('[data-nx21-filters]')?.classList.toggle('active',state.filtersOpen)}
+  function openAnime(id){
+    const m=state.items.get(Number(id));if(!m)return;
+    cleanup();
+    const path=`/anime/${slug(titleOf(m))}-${m.id}`;
+    if(IS_PAGES)location.href=`${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`;
+    else{history.pushState({},'',path);window.dispatchEvent(new PopStateEvent('popstate'))}
   }
 
   function cleanup(){
-    state.controller?.abort();state.mounted=false;state.filtersOpen=false;
-    document.body.classList.remove('nx23-catalog-active','nx23-scroll-down','nx23-scroll-up','nx20-catalog-active','nx21-catalog-active','nx21-cat-scroll-down','nx21-cat-scroll-up');
-    const top=document.querySelector('#topbar');if(top)top.style.transform='';
-    if(window.__NX23_CAT_SCROLL__){removeEventListener('scroll',window.__NX23_CAT_SCROLL__);window.__NX23_CAT_SCROLL__=null}
+    state.controller?.abort();state.controller=null;state.mounted=false;
+    document.body.classList.remove('nx21-catalog');
   }
-
-  function mount(force=false){
-    if(!onCatalog()&&!force)return;
-    if(window.__NX_CATALOG_BOOT__){history.replaceState({},'',`${BASE}${TARGET}`);window.__NX_CATALOG_BOOT__=false}
-    if(route()!==TARGET)return;
-    if(state.mounted&&document.querySelector('.nx23-cat-hero'))return;
-    state.mounted=true;renderShell();
+  function mount(){
+    if(!onCatalog())return;
+    normalizeUrl();cleanup();state.mounted=true;renderShell();load();
   }
 
   document.addEventListener('click',e=>{
-    if(route()===TARGET&&!e.target.closest('#nx23CatDock')&&state.filtersOpen)setFilters(false);
-    const a=e.target.closest('a[href]');if(!a)return;
-    try{
-      const u=new URL(a.href,location.href);let p=u.pathname;if(IS_PAGES)p=p.replace(/^\/AniNexus/,'')||'/';p=p.replace(/\/+$/,'')||'/';
-      if(p!==TARGET)return;
-      if((e.button&&e.button!==0)||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
-      e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();hardGo(TARGET);
-    }catch{}
+    if(!document.body.classList.contains('nx21-catalog'))return;
+    const mode=e.target.closest('[data-nx21-mode]');if(mode){e.preventDefault();setMode(mode.dataset.nx21Mode);return}
+    if(e.target.closest('[data-nx21-filters]')){e.preventDefault();toggleFilters();return}
+    if(e.target.closest('[data-nx21-clear]')){e.preventDefault();state.search='';const i=document.querySelector('#nx21Search');if(i)i.value='';state.page=1;load();return}
+    if(e.target.closest('[data-nx21-reset]')){state.search=state.genre=state.format=state.year='';state.page=1;renderShell();load();return}
+    const pg=e.target.closest('[data-nx21-page]');if(pg&&!pg.disabled){state.page=Number(pg.dataset.nx21Page)||1;load();document.querySelector('.nx21-body')?.scrollIntoView({behavior:'smooth',block:'start'});return}
+    if(e.target.closest('[data-nx21-retry]')){load();return}
+    if(e.target.closest('[data-list],[data-fav]'))return;
+    const open=e.target.closest('[data-nx21-open]');if(open){openAnime(open.dataset.nx21Open);return}
   },true);
 
-  addEventListener('popstate',()=>setTimeout(()=>{route()===TARGET?mount(true):cleanup()},0));
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>mount(),{once:true});else mount();
+  document.addEventListener('change',e=>{
+    if(!document.body.classList.contains('nx21-catalog'))return;
+    if(e.target.id==='nx21Genre'){state.genre=e.target.value;state.page=1;load();if(innerWidth<=720)closeFilters()}
+    if(e.target.id==='nx21Format'){state.format=e.target.value;state.page=1;load();if(innerWidth<=720)closeFilters()}
+    if(e.target.id==='nx21Year'){state.year=e.target.value;state.page=1;load();if(innerWidth<=720)closeFilters()}
+  });
+  document.addEventListener('input',e=>{
+    if(e.target.id!=='nx21Search')return;
+    clearTimeout(state.searchTimer);state.search=e.target.value;state.page=1;
+    state.searchTimer=setTimeout(load,360);
+  });
+  addEventListener('popstate',()=>{if(onCatalog())mount();else cleanup()});
+  if(onCatalog())mount();
 })();
