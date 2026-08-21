@@ -31,7 +31,6 @@
     pending.set(k,p);return p;
   }
 
-  // Reuse the prefetch when the season renderer asks for the exact same page.
   window.fetch=async function(input,init){
     try{
       const url=typeof input==='string'?input:input?.url;
@@ -48,23 +47,29 @@
     return nativeFetch(input,init);
   };
 
-  // Start before the season renderer. Page two is prefetched only on normal connections.
   const saveData=navigator.connection?.saveData||/2g/.test(navigator.connection?.effectiveType||'');
-  const p1=fetchPage(1);
-  const p2=saveData?Promise.resolve(null):new Promise(resolve=>setTimeout(()=>resolve(fetchPage(2)),70)).then(x=>x);
-  Promise.allSettled([p1,p2]).then(results=>{
+  const parse=text=>{try{return text?JSON.parse(text):null}catch{return null}};
+  async function warm(){
+    const pages=[];
+    const first=await fetchPage(1);pages.push(parse(first));
+    if(saveData||!pages[0]?.data?.Page?.pageInfo?.hasNextPage)return pages;
+    // Warm the next page immediately; only continue when the API says there is more.
+    for(let page=2;page<=5;page++){
+      if(page>2)await new Promise(r=>setTimeout(r,55));
+      const text=await fetchPage(page).catch(()=>null),json=parse(text);if(!json)break;
+      pages.push(json);
+      if(!json?.data?.Page?.pageInfo?.hasNextPage)break;
+    }
+    return pages;
+  }
+  warm().then(pages=>{
     try{
-      const j1=results[0].status==='fulfilled'?JSON.parse(results[0].value):null;
-      const j2=results[1].status==='fulfilled'&&results[1].value?JSON.parse(results[1].value):null;
-      const a1=j1?.data?.Page?.media||[],a2=j2?.data?.Page?.media||[];
-      const firstHasNext=!!j1?.data?.Page?.pageInfo?.hasNextPage;
-      const secondHasNext=!!j2?.data?.Page?.pageInfo?.hasNextPage;
-      if(!j1)return;
-      if(firstHasNext&&!j2)return;
-      if(firstHasNext&&secondHasNext)return;
-      const items=[...new Map([...a1,...a2].filter(x=>x?.id).map(x=>[x.id,x])).values()];
-      const data={items,apiTotal:Number(j1?.data?.Page?.pageInfo?.total||items.length),hash:items.map(x=>`${x.id}:${x.averageScore||0}:${x.status||''}`).join('|')};
+      if(!pages?.length)return;
+      const last=pages[pages.length-1],complete=!last?.data?.Page?.pageInfo?.hasNextPage;
+      if(!complete)return;
+      const items=[...new Map(pages.flatMap(j=>j?.data?.Page?.media||[]).filter(x=>x?.id).map(x=>[x.id,x])).values()];
+      const data={items,apiTotal:Number(pages[0]?.data?.Page?.pageInfo?.total||items.length),hash:items.map(x=>`${x.id}:${x.averageScore||0}:${x.status||''}`).join('|')};
       localStorage.setItem(`nx:v8:season:${sel.year}:${sel.season}`,JSON.stringify({savedAt:Date.now(),data}));
     }catch{}
-  });
+  }).catch(()=>{});
 })();
