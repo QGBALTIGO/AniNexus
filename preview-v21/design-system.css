@@ -16,6 +16,10 @@ body:not(.nx-season-active) .nav-icon.violet,body:not(.nx-season-active) .nav-ic
 body:not(.nx-season-active) .hero{background:radial-gradient(ellipse 48% 110% at 77% 0%,rgba(227,38,79,.15),transparent 66%),radial-gradient(ellipse 30% 80% at 25% 5%,rgba(120,61,75,.055),transparent 65%),linear-gradient(180deg,#0d090c,#080608)}
 body:not(.nx-season-active) .pill:hover,body:not(.nx-season-active) .pill.active{border-color:rgba(227,38,79,.34);background:rgba(227,38,79,.09)}
 
+/* Catalog's leading control matches the compact three-line control used by the reference layout. */
+.nx21-filter-button>svg{display:none!important}
+.nx21-filter-button:before{content:"";width:15px;height:2px;border-radius:99px;background:currentColor;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor;opacity:.92}
+
 /* Shared motion and focus language. */
 :where(button,a,[tabindex]):focus-visible{outline:2px solid rgba(244,76,105,.75);outline-offset:2px}
 button{transition-timing-function:var(--ease)}
