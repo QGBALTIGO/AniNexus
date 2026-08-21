@@ -1,5 +1,5 @@
 /* AniNexus V21 — one shared chrome for anime sections */
-:root{--nx-section-top:58px;--nx-section-motion:cubic-bezier(.2,.85,.2,1)}
+:root{--nx-section-top:66px;--nx-section-motion:cubic-bezier(.2,.85,.2,1)}
 body.nx-section-page .topbar{transition:transform .28s var(--nx-section-motion),background .2s ease,border-color .2s ease!important;will-change:transform}
 body.nx-section-page.nx-scroll-down .topbar{transform:translateY(-102%)!important}
 body.nx-section-page.nx-scroll-up .topbar{transform:translateY(0)!important}
