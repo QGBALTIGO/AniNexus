@@ -31,4 +31,20 @@
     const out=await abortable(pending.get(key),init?.signal);
     return new Response(out.text,{status:out.status,statusText:out.statusText,headers:out.headers});
   };
+
+  /* V16 direct-load guard: stop the legacy schedule renderer from starting
+     its own multi-page request before the dedicated schedule runtime mounts. */
+  try{
+    const isPages=location.hostname.endsWith('github.io');
+    const base=isPages?'/AniNexus':'';
+    const u=new URL(location.href);
+    const restored=u.searchParams.get('p');
+    let path=restored?restored.split('?')[0]:location.pathname;
+    if(isPages&&!restored)path=path.replace(/^\/AniNexus/,'')||'/';
+    path=path.replace(/\/+$/,'')||'/';
+    if(path==='/animes/programacao'){
+      window.__NX_SCHEDULE_BOOT__=true;
+      history.replaceState({},'',`${base}/__nx_schedule_boot`);
+    }
+  }catch{}
 })();
