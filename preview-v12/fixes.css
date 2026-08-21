@@ -1,0 +1,28 @@
+/* AniNexus 12.1 — regression fixes */
+.brand small{display:none!important}
+
+/* Restore each season's real identity everywhere, including the fixed mobile bar. */
+.nx-season[data-season="WINTER"],.nx-v10-seasonbar[data-season="WINTER"]{--accent:#62baf6!important;--accent2:#317fc8!important;--glow:98,186,246!important}
+.nx-season[data-season="SPRING"],.nx-v10-seasonbar[data-season="SPRING"]{--accent:#ff6896!important;--accent2:#dc335f!important;--glow:255,104,150!important}
+.nx-season[data-season="SUMMER"],.nx-v10-seasonbar[data-season="SUMMER"]{--accent:#ffb533!important;--accent2:#f28220!important;--glow:255,181,51!important}
+.nx-season[data-season="FALL"],.nx-v10-seasonbar[data-season="FALL"]{--accent:#f07852!important;--accent2:#c84830!important;--glow:240,120,82!important}
+.nx-v10-seasonbar{background:radial-gradient(circle at 74% 0,rgba(var(--glow),.14),transparent 38%),linear-gradient(180deg,rgba(14,9,16,.985),rgba(8,6,10,.975))!important;border-bottom-color:rgba(var(--glow),.22)!important}
+.nx-v10-seasonbar::after{background:linear-gradient(90deg,transparent,var(--accent),transparent)!important;box-shadow:0 0 14px rgba(var(--glow),.42)!important}
+
+@media(max-width:720px){
+  /* The totals were still rendered by the app; an old V9 rule hid them. */
+  .nx-season-stats{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:min(292px,86vw)!important;gap:10px!important;margin:20px auto 19px!important;text-align:center!important}
+  .nx-season-stats strong{display:block!important;font:800 25px/1 var(--nx-display)!important;letter-spacing:-.04em!important;color:#fff!important}
+  .nx-season-stats span{display:block!important;margin-top:5px!important;font-size:8.5px!important;line-height:1!important;font-weight:900!important;letter-spacing:.055em!important;color:#b8adbb!important}
+
+  body.nx-season-active .topbar-inner,body.nx-detail-active .topbar-inner{padding-inline:12px!important;gap:7px!important}
+  body.nx-season-active .brand,body.nx-detail-active .brand{gap:6px!important;min-width:0!important}
+  body.nx-season-active .brand img,body.nx-detail-active .brand img{width:34px!important;height:34px!important;flex:0 0 34px!important}
+  body.nx-season-active .brand span,body.nx-detail-active .brand span{font-size:18px!important;letter-spacing:-.55px!important}
+  body.nx-season-active .top-actions,body.nx-detail-active .top-actions{gap:5px!important}
+  body.nx-season-active .login-btn,body.nx-detail-active .login-btn{height:36px!important;min-width:65px!important;padding:0 10px!important;border-radius:8px!important;font-size:11px!important}
+  body.nx-season-active .signup-btn,body.nx-detail-active .signup-btn{display:inline-flex!important;height:36px!important;min-width:86px!important;max-width:92px!important;padding:0 10px!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:8px!important;background:linear-gradient(135deg,#a90c2c,#e71f45)!important;color:#fff!important;box-shadow:0 6px 16px rgba(231,31,69,.22)!important;filter:none!important;font-size:10.5px!important;line-height:1!important;white-space:nowrap!important;overflow:hidden!important}
+  body.nx-season-active .signup-btn [data-icon],body.nx-detail-active .signup-btn [data-icon]{display:none!important}
+  body.nx-season-active .signup-btn:before,body.nx-season-active .signup-btn:after,body.nx-detail-active .signup-btn:before,body.nx-detail-active .signup-btn:after{display:none!important;content:none!important}
+}
+@media(max-width:390px){body.nx-season-active .signup-btn,body.nx-detail-active .signup-btn{display:none!important}.nx-season-stats{width:min(270px,88vw)!important}}
