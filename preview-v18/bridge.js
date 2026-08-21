@@ -8,7 +8,7 @@
     const a=e.target.closest('a[href]');if(!a||pathOf(a)!==target)return;
     if(e.button&&e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
-    location.href=IS_PAGES?`${BASE}/?build=19.0.0&p=${encodeURIComponent(target)}`:`${target}`;
+    location.href=IS_PAGES?`${BASE}/?build=20.0.0&p=${encodeURIComponent(target)}`:`${target}`;
   },true);
   document.addEventListener('error',e=>{
     const img=e.target;if(!(img instanceof HTMLImageElement)||!img.closest('.nx18-provider-logo'))return;
