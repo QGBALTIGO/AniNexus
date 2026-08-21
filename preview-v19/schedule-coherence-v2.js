@@ -5,7 +5,7 @@
   const BUILD='20.0.0';
   const SCHEDULE='/animes/programacao';
   const icon=`<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="13" width="44" height="40" rx="7"/><path d="M20 7v12M44 7v12M10 25h44"/><path d="M20 34h7M33 34h11M20 43h11"/></g></svg>`;
-  const localLogo={crunchyroll:`${BASE}/assets/streaming/crunchyroll.svg`,netflix:`${BASE}/assets/streaming/netflix.svg`,prime:`${BASE}/assets/streaming/amazon.svg`,apple:`${BASE}/assets/streaming/apple.svg`};
+  const localLogo={crunchyroll:`${BASE}/assets/streaming/crunchyroll.svg`,netflix:`${BASE}/assets/streaming/netflix.svg`};
   let raf=0,lastY=Math.max(0,scrollY);
 
   function route(){const u=new URL(location.href),p=u.searchParams.get('p');if(p)return p.split('?')[0].replace(/\/+$/,'')||'/';let path=u.pathname;if(IS_PAGES)path=path.replace(/^\/AniNexus/,'')||'/';return path.replace(/\/+$/,'')||'/'}
