@@ -1,13 +1,13 @@
 {
   "name": "aninexus",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "private": true,
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
     "worker:news": "node lib/news-worker.mjs",
     "dev": "NODE_ENV=development node --watch server.mjs",
-    "check": "node --check server.mjs && node --check lib/news-worker.mjs && node --check preview-v6/app.js && node --check preview-v6/enhance.js && node --check preview-v8/app.js && node --check preview-v8/hotfix.js"
+    "check": "node --check server.mjs && node --check lib/news-worker.mjs && node --check preview-v6/app.js && node --check preview-v6/enhance.js && node --check preview-v8/app.js && node --check preview-v8/hotfix.js && node --check preview-v23/route-guard-v23.js && node --check preview-v23/router-v23.js && node --check preview-v23/schedule-hotfix-v23.js && node --check preview-v23/catalog-filter-bridge-v23.js && node --check preview-v23/detail-v23.js && node --check preview-v22/news-v22.js"
   },
   "engines": { "node": ">=22" },
   "dependencies": {
