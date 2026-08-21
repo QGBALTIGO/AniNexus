@@ -1,0 +1,85 @@
+/* AniNexus V9 — season-page polish and adaptive mobile chrome */
+.nx-season-title>div{display:grid;justify-items:center;text-align:center;min-width:0}.nx-season-title h1,.nx-season-title p{text-align:center!important}.nx-season-controls{transition:opacity .18s ease,transform .18s ease}.nx-season-tabs button{width:100%;min-width:0;padding-inline:0}.nx-season-filter-line .nx-filter-pill{flex:0 0 auto}.topbar{will-change:transform;transition:transform .24s cubic-bezier(.2,.75,.2,1),background-color .2s ease,box-shadow .2s ease,backdrop-filter .2s ease}.nx-header-raised .topbar{background:rgba(9,6,11,.95)!important;box-shadow:0 10px 34px rgba(0,0,0,.28)!important;backdrop-filter:blur(18px) saturate(1.12)}.nx-header-hidden .topbar{transform:translateY(calc(-100% - 2px))}
+
+/* compact anchored popovers — avoid full-screen sheets */
+@media(max-width:720px){
+ body.nx-popover-open{overflow:auto}
+ .nx-popover-layer{pointer-events:none}
+ .nx-popover-backdrop{pointer-events:auto;background:rgba(0,0,0,.22);backdrop-filter:none}
+ .nx-popover{left:50%!important;right:auto!important;top:calc(env(safe-area-inset-top) + 78px)!important;bottom:auto!important;width:min(292px,calc(100vw - 30px))!important;max-height:min(318px,calc(100dvh - 155px));padding:0 8px 8px;border-radius:14px;transform:translateX(-50%);box-shadow:0 18px 52px rgba(0,0,0,.62);animation:nxV9Pop .17s cubic-bezier(.2,.8,.2,1) both;pointer-events:auto}
+ .nx-popover.nx-year-menu{width:min(258px,calc(100vw - 42px))!important;max-height:min(300px,calc(100dvh - 165px))}
+ .nx-popover.nx-type-menu{width:min(276px,calc(100vw - 36px))!important}
+ .nx-popover.nx-tag-menu{width:min(300px,calc(100vw - 30px))!important}
+ .nx-popover-mobile-head{height:43px;padding:0 5px;background:#09060b;border-bottom:1px solid #211a24}
+ .nx-popover-mobile-head strong{font:800 13px var(--nx-display)}
+ .nx-popover-mobile-head button{width:31px;height:31px;font-size:19px}
+ .nx-popover-list{padding-top:6px;gap:1px}
+ .nx-popover-list button{min-height:41px;padding:0 11px;border-radius:7px;font-size:14px}
+ .nx-popover-list small{font-size:10px}
+}
+
+/* compact season dock shown after the hero controls leave the viewport */
+.nx-v9-season-dock{display:none}
+@media(max-width:720px){
+ body.nx-season-active .topbar{height:64px}
+ body.nx-season-active .topbar-inner{min-height:64px!important;height:64px!important;width:100%!important;max-width:none!important;padding:0 13px!important;gap:7px!important}
+ body.nx-season-active .brand{gap:6px;min-width:0}
+ body.nx-season-active .brand img{width:39px!important;height:39px!important;flex:0 0 39px}
+ body.nx-season-active .brand span{font-size:19px!important;letter-spacing:-.65px;white-space:nowrap}
+ body.nx-season-active .brand small{display:inline-flex!important;font-size:6px!important;padding:2px 4px!important;flex:0 0 auto}
+ body.nx-season-active .top-actions{margin-left:auto;gap:5px!important;min-width:0}
+ body.nx-season-active .top-actions>.icon-button{display:none!important}
+ body.nx-season-active .login-btn{display:inline-flex!important;min-width:58px!important;height:35px!important;padding:0 10px!important;border-radius:8px!important;font-size:11px!important}
+ body.nx-season-active .signup-btn{display:inline-flex!important;min-width:82px!important;height:35px!important;padding:0 10px!important;border-radius:8px!important;font-size:10.5px!important;white-space:nowrap}
+ body.nx-season-active .signup-btn [data-icon]{display:none}
+ body.nx-season-active .menu-btn{display:grid!important;width:35px!important;height:35px!important;flex:0 0 35px}
+
+ .nx-season-shell{width:calc(100% - 28px)!important}
+ .nx-season-hero>.nx-season-shell{padding:31px 0 24px!important}
+ .nx-season-title{width:max-content;max-width:100%;margin-inline:auto;justify-content:center!important;gap:10px!important}
+ .nx-season-icon{width:42px!important;height:42px!important;flex:0 0 42px}
+ .nx-season-title>div{justify-items:center!important;text-align:center!important}
+ .nx-season-title h1{font-size:clamp(28px,8.4vw,37px)!important;line-height:1.02!important;letter-spacing:-.045em!important;white-space:nowrap}
+ .nx-season-title p{margin-top:7px!important;font-size:9.5px!important;line-height:1!important;letter-spacing:.16em!important;white-space:nowrap}
+ .nx-season-stats{margin:24px 0 22px!important;gap:4px!important;grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ .nx-season-stats strong{font-size:26px!important}
+ .nx-season-stats span{font-size:8.5px!important;margin-top:4px!important;letter-spacing:.04em}
+ .nx-season-controls{width:min(100%,430px)!important;margin-inline:auto!important}
+ .nx-season-control-line{grid-template-columns:minmax(0,1fr) 82px!important;gap:7px!important}
+ .nx-season-tabs{height:43px!important;padding:2px!important;gap:0!important;border-width:1px!important}
+ .nx-season-tabs button{font-size:11.5px!important;letter-spacing:-.02em!important;padding:0!important}
+ .nx-filter-pill{height:43px!important;border-width:1px!important;padding:0 10px!important;gap:5px!important}
+ .nx-filter-pill strong{font-size:12px!important}
+ .nx-year-pill strong{font-size:13px!important}
+ .nx-filter-pill svg{width:16px!important;height:16px!important}
+ .nx-filter-pill svg:last-child{width:13px!important;height:13px!important}
+ .nx-season-filter-line{margin-top:9px!important;gap:8px!important;justify-content:center!important}
+ .nx-season-filter-line .nx-filter-pill{width:126px!important;max-width:calc(50% - 4px)!important}
+ .nx-season-content{padding-top:27px!important}
+
+ .nx-v9-season-dock{position:fixed;z-index:82;left:8px;right:8px;top:64px;height:48px;padding:5px;display:flex;align-items:center;gap:5px;border:1px solid rgba(255,255,255,.11);border-radius:0 0 14px 14px;background:rgba(11,7,13,.94);backdrop-filter:blur(18px) saturate(1.15);box-shadow:0 12px 34px rgba(0,0,0,.30);transform:translateY(-140%);opacity:0;pointer-events:none;transition:top .24s cubic-bezier(.2,.75,.2,1),transform .22s cubic-bezier(.2,.75,.2,1),opacity .17s ease}
+ .nx-v9-season-dock.show{transform:translateY(0);opacity:1;pointer-events:auto}
+ .nx-header-hidden .nx-v9-season-dock{top:0;border-radius:0 0 14px 14px}
+ .nx-v9-dock-seasons{display:grid;grid-template-columns:repeat(4,minmax(44px,1fr));gap:2px;min-width:224px;flex:1;height:36px;padding:2px;border:1px solid #382f3c;border-radius:999px;background:#171219}
+ .nx-v9-dock-seasons button,.nx-v9-dock-action{height:30px;border:0;border-radius:999px;background:transparent;color:#a99eac;font:800 9px var(--nx-body);cursor:pointer;white-space:nowrap}
+ .nx-v9-dock-seasons button.active{color:#fff;background:linear-gradient(135deg,var(--accent,#e5324f),var(--accent2,#b71631));box-shadow:0 5px 14px rgba(var(--glow,229,50,79),.16)}
+ .nx-v9-dock-action{flex:0 0 auto;min-width:37px;padding:0 8px;border:1px solid #382f3c;background:#171219;color:#d3c9d5;font-size:9.5px}
+ .nx-v9-dock-action.year{min-width:54px}
+ .nx-v9-dock-action.has-filter{border-color:rgba(var(--glow,229,50,79),.46);color:#fff;background:rgba(var(--glow,229,50,79),.10)}
+}
+@media(max-width:400px){
+ body.nx-season-active .topbar-inner{padding-inline:9px!important;gap:4px!important}
+ body.nx-season-active .brand img{width:34px!important;height:34px!important;flex-basis:34px}
+ body.nx-season-active .brand span{font-size:17px!important}
+ body.nx-season-active .brand small{display:none!important}
+ body.nx-season-active .login-btn{min-width:51px!important;height:33px!important;padding:0 7px!important;font-size:10px!important}
+ body.nx-season-active .signup-btn{min-width:69px!important;height:33px!important;padding:0 7px!important;font-size:9.5px!important}
+ body.nx-season-active .menu-btn{width:33px!important;height:33px!important;flex-basis:33px}
+ .nx-season-title{gap:8px!important}.nx-season-icon{width:38px!important;height:38px!important;flex-basis:38px}.nx-season-title h1{font-size:clamp(26px,8.2vw,32px)!important}.nx-season-title p{font-size:8.5px!important}
+ .nx-season-tabs button{font-size:10.5px!important}.nx-season-control-line{grid-template-columns:minmax(0,1fr) 72px!important}.nx-season-filter-line .nx-filter-pill{width:116px!important}
+ .nx-v9-season-dock{left:5px;right:5px;padding-inline:4px}.nx-v9-dock-seasons{min-width:205px;grid-template-columns:repeat(4,minmax(40px,1fr))}.nx-v9-dock-seasons button{font-size:8px}.nx-v9-dock-action{padding-inline:6px}.nx-v9-dock-action.label{display:none}
+}
+@media(max-width:350px){body.nx-season-active .login-btn{display:none!important}.nx-v9-dock-seasons{min-width:190px}.nx-v9-dock-action.label{display:none}}
+@media(min-width:721px){.nx-season-title>div{justify-items:center}.nx-season-title h1,.nx-season-title p{text-align:center!important}.nx-season-filter-line .nx-filter-pill{width:220px}.nx-popover.nx-year-menu{width:min(220px,var(--menu-width))!important}}
+@media(prefers-reduced-motion:reduce){.topbar,.nx-v9-season-dock{transition:none!important}}
+@keyframes nxV9Pop{from{opacity:0;transform:translate(-50%,-7px) scale(.985)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
