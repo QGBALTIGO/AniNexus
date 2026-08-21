@@ -31,11 +31,11 @@
     }
     if(kind==='schedule'){
       body.classList.remove('nx18-header-hidden','nx18-schedule-active');
-      document.querySelectorAll('.nx18-modal').forEach(n=>n.remove());
+      document.querySelectorAll('.nx18-island,.nx18-modal').forEach(n=>n.remove());
     }
     if(kind==='season'){
-      body.classList.remove('nx-v11-fixed-popover','nx-popover-open');
-      document.querySelectorAll('.nx-popover-layer').forEach(n=>n.remove());
+      body.classList.remove('nx-season-active','season-v7-active','season-v8-active','nx-v11-fixed-popover','nx-popover-open');
+      document.querySelectorAll('.nx-v10-seasonbar,.nx-popover-layer').forEach(n=>n.remove());
       delete body.dataset.nxSeasonTheme;
     }
   }
@@ -66,12 +66,14 @@
     if(activeSection==='schedule')body.classList.toggle('nx18-header-hidden',down);
   }
 
+  function chromeTop(){return matchMedia('(max-width:720px)').matches?54:66}
+
   function syncSticky(){
     if(activeSection!=='catalog')return;
     const strip=document.querySelector('.nx21-strip');
     const hero=document.querySelector('.nx21-hero');
     if(!strip||!hero)return;
-    const top=body.classList.contains('nx-scroll-down')?0:(matchMedia('(max-width:720px)').matches?54:58);
+    const top=body.classList.contains('nx-scroll-down')?0:chromeTop();
     strip.classList.toggle('is-stuck',hero.getBoundingClientRect().bottom<=top+2);
   }
 
@@ -99,7 +101,11 @@
     let dest=href;
     try{dest=new URL(href,location.href).pathname;if(IS_PAGES)dest=dest.replace(/^\/AniNexus/,'')||'/'}catch{}
     const stays=(old==='catalog'&&dest.includes('/animes/catalogo'))||(old==='schedule'&&dest.includes('/animes/programacao'))||(old==='season'&&dest.includes('/animes/temporadas'));
-    if(!stays){removeSectionArtifacts(old);body.classList.remove('nx-section-page','nx-scroll-down','nx-scroll-up');activeSection=null}
+    if(!stays){
+      removeSectionArtifacts(old);
+      body.classList.remove('nx-section-page','nx-scroll-down','nx-scroll-up');
+      activeSection=null;
+    }
   },true);
 
   addEventListener('scroll',onScroll,{passive:true});
