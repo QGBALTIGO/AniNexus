@@ -2,8 +2,8 @@
 (() => {
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='23.0.0';
-  const DEDICATED=['/animes/catalogo','/animes/programacao','/animes/temporadas','/noticias'];
+  const BUILD='24.0.0';
+  const DEDICATED=['/','/animes/catalogo','/animes/programacao','/animes/temporadas','/noticias'];
   function cleanPathFromUrl(href){
     try{
       const u=new URL(href,location.href);
