@@ -83,3 +83,18 @@
   new MutationObserver(records=>{for(const rec of records)for(const n of rec.addedNodes)if(n.nodeType===1&&n.matches?.('.nx-popover-layer')){cleanYears(n);setTimeout(positionCurrentPopover,0)}}).observe(body,{childList:true,subtree:false});
   scan();
 })();
+
+/* V16 schedule handoff. The synchronous network-cache script temporarily
+   moves direct schedule loads away from the legacy route; restore it only
+   after the legacy app has finished booting, then let schedule.js own it. */
+(() => {
+  try{
+    const isPages=location.hostname.endsWith('github.io');
+    const base=isPages?'/AniNexus':'';
+    if(window.__NX_SCHEDULE_BOOT__){
+      history.replaceState({},'',`${base}/animes/programacao`);
+      window.__NX_SCHEDULE_BOOT__=false;
+    }
+    if(typeof schedulePage==='function') schedulePage=async function(){};
+  }catch{}
+})();
