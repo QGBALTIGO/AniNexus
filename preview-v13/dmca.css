@@ -1,0 +1,43 @@
+/* AniNexus V13 — institutional DMCA page */
+body.nx-dmca-active{background:#08060b}
+.nx-dmca{--d:#ee3556;--d2:#9f1430;--dm:#a99ead;color:var(--text);background:radial-gradient(circle at 78% 2%,rgba(231,31,69,.09),transparent 25%),linear-gradient(180deg,#0a070d 0,#08060b 360px);min-height:72vh}
+.nx-dmca-hero{border-bottom:1px solid var(--line-soft)}
+.nx-dmca-hero .shell{padding:54px 0 42px}
+.nx-dmca-kicker{display:flex;align-items:center;gap:8px;color:#f16a82;font-size:10px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+.nx-dmca-kicker svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
+.nx-dmca h1{font:800 clamp(38px,5vw,64px)/1 var(--display);letter-spacing:-.055em;margin:13px 0 10px}
+.nx-dmca-updated{color:#8f8392;font-size:12px;font-weight:700}
+.nx-dmca-layout{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:56px;padding:46px 0 78px}
+.nx-dmca-main{min-width:0;max-width:850px}
+.nx-dmca-lead{font-size:15px;line-height:1.78;color:#c9becb;margin:0 0 20px}
+.nx-dmca-lead strong{color:#fff}
+.nx-dmca a.nx-inline-link{color:#ff7088;text-decoration:underline;text-decoration-color:rgba(255,112,136,.35);text-underline-offset:3px}
+.nx-dmca-rule{height:1px;background:linear-gradient(90deg,#302733,transparent);margin:34px 0}
+.nx-dmca-section{scroll-margin-top:95px;margin:0 0 38px}
+.nx-dmca-section h2{font:800 24px/1.15 var(--display);letter-spacing:-.03em;margin:0 0 14px}
+.nx-dmca-section h3{font:800 17px/1.2 var(--display);margin:22px 0 9px}
+.nx-dmca-section p,.nx-dmca-section li{font-size:14px;line-height:1.72;color:#bcb1bf}
+.nx-dmca-list{counter-reset:dmca;list-style:none;padding:0;margin:16px 0;display:grid;gap:10px}
+.nx-dmca-list li{counter-increment:dmca;position:relative;padding:13px 14px 13px 48px;border:1px solid #2c2330;border-radius:11px;background:rgba(255,255,255,.018)}
+.nx-dmca-list li:before{content:counter(dmca);position:absolute;left:13px;top:12px;width:25px;height:25px;border-radius:8px;display:grid;place-items:center;background:rgba(231,31,69,.12);border:1px solid rgba(231,31,69,.22);color:#ff768d;font-size:11px;font-weight:900}
+.nx-dmca-callout{display:flex;gap:13px;padding:16px 17px;border:1px solid rgba(231,31,69,.2);border-radius:13px;background:linear-gradient(135deg,rgba(231,31,69,.075),rgba(121,64,144,.035));margin:18px 0}
+.nx-dmca-callout svg{width:24px;height:24px;flex:0 0 auto;color:#ff6982;fill:none;stroke:currentColor;stroke-width:1.7}
+.nx-dmca-callout strong{display:block;font-size:13px}.nx-dmca-callout span{display:block;margin-top:3px;font-size:11px;line-height:1.55;color:#9f939f}
+.nx-dmca-side{align-self:start;position:sticky;top:92px;border-left:1px solid #251d28;padding-left:24px}
+.nx-dmca-side strong{display:block;margin-bottom:12px;font:800 12px var(--display);color:#ddd4df}
+.nx-dmca-side a{display:block;padding:7px 0;color:#897f8c;font-size:11px;font-weight:800;transition:.16s}
+.nx-dmca-side a:hover{color:#fff;transform:translateX(2px)}
+.nx-dmca-side a.active{color:#ff6c84}
+.nx-dmca-form-wrap{margin:28px 0 42px;border:1px solid #302633;border-radius:16px;background:linear-gradient(145deg,#100b13,#0b080e);overflow:hidden;box-shadow:0 18px 46px rgba(0,0,0,.18)}
+.nx-dmca-form-head{padding:20px 20px 17px;border-bottom:1px solid #251e29;background:radial-gradient(circle at 90% 0,rgba(231,31,69,.1),transparent 45%)}
+.nx-dmca-form-head h2{font:800 20px var(--display);margin:0}.nx-dmca-form-head p{margin:5px 0 0;color:#95899a;font-size:11px;line-height:1.5}
+.nx-dmca-form{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.nx-dmca-field{display:grid;gap:6px}.nx-dmca-field.full{grid-column:1/-1}.nx-dmca-field label{font-size:10px;font-weight:900;color:#a99dab;letter-spacing:.035em}.nx-dmca-field input,.nx-dmca-field textarea{width:100%;border:1px solid #352b39;border-radius:10px;background:#0a070c;color:#f8f4f8;padding:11px 12px;outline:0;transition:border-color .16s,box-shadow .16s}.nx-dmca-field input{height:43px}.nx-dmca-field textarea{min-height:130px;resize:vertical;line-height:1.5}.nx-dmca-field input:focus,.nx-dmca-field textarea:focus{border-color:rgba(238,53,86,.7);box-shadow:0 0 0 3px rgba(238,53,86,.09)}
+.nx-dmca-check{grid-column:1/-1;display:flex;align-items:flex-start;gap:9px;color:#a89cab;font-size:10.5px;line-height:1.5}.nx-dmca-check input{margin-top:2px;accent-color:#e71f45}
+.nx-dmca-submit-row{grid-column:1/-1;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-top:3px}.nx-dmca-submit{height:42px;padding:0 17px;border:0;border-radius:9px;background:linear-gradient(135deg,#b20f31,#eb3151);box-shadow:0 8px 24px rgba(231,31,69,.2);color:white;font-size:11px;font-weight:900;cursor:pointer}.nx-dmca-submit:disabled{opacity:.55;cursor:wait}.nx-dmca-mail{height:42px;padding:0 15px;border:1px solid #392e3d;border-radius:9px;background:#151018;color:#d7cdd9;display:inline-flex;align-items:center;font-size:11px;font-weight:900}.nx-dmca-status{grid-column:1/-1;min-height:18px;font-size:10.5px;color:#9e929f}.nx-dmca-status.ok{color:#76d9a4}.nx-dmca-status.err{color:#ff7b8f}.nx-dmca-preview-note{grid-column:1/-1;padding:10px 12px;border:1px solid #3b3025;border-radius:9px;background:#151007;color:#c8b27e;font-size:10px;line-height:1.5}
+.nx-dmca-english{margin-top:58px;padding-top:35px;border-top:1px solid #28202b}
+.nx-dmca-english>h2{font:800 28px var(--display);letter-spacing:-.035em;margin:0 0 22px}
+html[data-theme='light'] .nx-dmca{background:#fbf8fc;color:#211722}.nx-dmca html[data-theme='light']{}
+html[data-theme='light'] .nx-dmca-lead strong{color:#211722}html[data-theme='light'] .nx-dmca-lead,html[data-theme='light'] .nx-dmca-section p,html[data-theme='light'] .nx-dmca-section li{color:#675b6a}html[data-theme='light'] .nx-dmca-list li,html[data-theme='light'] .nx-dmca-form-wrap{background:#fff;border-color:#e4dbe7}html[data-theme='light'] .nx-dmca-field input,html[data-theme='light'] .nx-dmca-field textarea{background:#fbf8fc;color:#211722;border-color:#ddd2e1}
+@media(max-width:850px){.nx-dmca-layout{grid-template-columns:1fr;gap:0}.nx-dmca-side{display:none}.nx-dmca-main{max-width:none}}
+@media(max-width:600px){.nx-dmca-hero .shell{padding:36px 0 28px}.nx-dmca h1{font-size:40px}.nx-dmca-layout{padding:30px 0 58px}.nx-dmca-lead{font-size:13px;line-height:1.7}.nx-dmca-section h2{font-size:21px}.nx-dmca-section p,.nx-dmca-section li{font-size:12.5px}.nx-dmca-list li{padding:12px 12px 12px 44px}.nx-dmca-form{grid-template-columns:1fr;padding:15px}.nx-dmca-field{grid-column:1/-1}.nx-dmca-form-head{padding:17px 15px}.nx-dmca-submit-row{display:grid;grid-template-columns:1fr 1fr}.nx-dmca-submit,.nx-dmca-mail{width:100%;justify-content:center}.nx-dmca-english{margin-top:44px}}
