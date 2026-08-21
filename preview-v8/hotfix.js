@@ -4,6 +4,7 @@
   const BASE=IS_PAGES?'/AniNexus':'';
   const cleanPath=()=>{let p=location.pathname;if(IS_PAGES)p=p.replace(/^\/AniNexus/,'')||'/';return p.replace(/\/+$/,'')||'/'};
   function cleanupYears(scope=document){const max=new Date().getFullYear()+1;scope.querySelectorAll?.('[data-nx-year]').forEach(b=>{if(Number(b.dataset.nxYear)>max)b.remove()})}
+  function cleanupCatalog(){document.body.classList.remove('nx20-catalog-active','nx21-catalog-active','nx21-cat-scroll-down','nx21-cat-scroll-up');const top=document.querySelector('#topbar');if(top)top.style.transform='';}
   cleanupYears();
 
   document.addEventListener('click',e=>{
@@ -11,11 +12,11 @@
     const generic=e.target.closest('[data-open]');
     if(generic&&!e.target.closest('[data-list],[data-fav]')){
       const nearest=e.target.closest('button,a');
-      if(!nearest||nearest===generic){const id=Number(generic.dataset.open),type=String(generic.dataset.type||'anime').toLowerCase();if(Number.isFinite(id)&&type==='anime'){e.preventDefault();e.stopImmediatePropagation();history.pushState({},'',`${BASE}/anime/titulo-${id}`);window.dispatchEvent(new PopStateEvent('popstate'));return}}
+      if(!nearest||nearest===generic){const id=Number(generic.dataset.open),type=String(generic.dataset.type||'anime').toLowerCase();if(Number.isFinite(id)&&type==='anime'){e.preventDefault();e.stopImmediatePropagation();cleanupCatalog();history.pushState({},'',`${BASE}/anime/titulo-${id}`);window.dispatchEvent(new PopStateEvent('popstate'));return}}
     }
-    const link=e.target.closest('a[data-link]');
-    if(link&&!String(link.getAttribute('href')||'').includes('/animes/temporadas')){document.body.classList.remove('nx-season-active','nx-detail-active','nx-popover-open','nx-v11-fixed-popover');document.querySelector('.nx-popover-layer')?.remove()}
+    const link=e.target.closest('a[data-link],a[href]');
+    if(link){let href=String(link.getAttribute('href')||'');if(href&&!href.startsWith('#')&&!href.startsWith('http')){if(!href.includes('/animes/catalogo'))cleanupCatalog();if(!href.includes('/animes/temporadas')){document.body.classList.remove('nx-season-active','nx-detail-active','nx-popover-open','nx-v11-fixed-popover');document.querySelector('.nx-popover-layer')?.remove()}}}
   },true);
 
-  window.addEventListener('popstate',()=>{cleanupYears();const p=cleanPath();if(!p.startsWith('/animes/temporadas')&&!/^\/anime\/.+-\d+$/.test(p)){document.body.classList.remove('nx-season-active','nx-detail-active','nx-popover-open','nx-v11-fixed-popover');document.querySelector('.nx-popover-layer')?.remove()}});
+  window.addEventListener('popstate',()=>{cleanupYears();const p=cleanPath();if(p!=='/animes/catalogo')cleanupCatalog();if(!p.startsWith('/animes/temporadas')&&!/^\/anime\/.+-\d+$/.test(p)){document.body.classList.remove('nx-season-active','nx-detail-active','nx-popover-open','nx-v11-fixed-popover');document.querySelector('.nx-popover-layer')?.remove()}});
 })();
