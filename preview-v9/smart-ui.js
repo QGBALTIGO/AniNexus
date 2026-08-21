@@ -27,7 +27,7 @@
   function ensureDock(){
     if(!MOBILE.matches || !onSeason()){
       dock?.remove(); dock=null;
-      body.classList.remove('nx-header-hidden','nx-header-raised');
+      body.classList.remove('nx-header-hidden','nx-header-raised','nx-v9-dock-visible');
       return;
     }
     if(!dock){
@@ -65,9 +65,11 @@
   function updateDockVisibility(){
     if(!dock || !MOBILE.matches || !onSeason()) return;
     const controls=document.querySelector('.nx-season-controls');
-    if(!controls){dock.classList.remove('show');return;}
+    if(!controls){dock.classList.remove('show');body.classList.remove('nx-v9-dock-visible');return;}
     const threshold=(topbar?.getBoundingClientRect().height||64)+6;
-    dock.classList.toggle('show',controls.getBoundingClientRect().bottom < threshold);
+    const visible=controls.getBoundingClientRect().bottom < threshold;
+    dock.classList.toggle('show',visible);
+    body.classList.toggle('nx-v9-dock-visible',visible);
   }
 
   function updateScrollChrome(){
@@ -98,7 +100,6 @@
   });
   mo.observe(document.querySelector('#app')||document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['class','data-season']});
 
-  // Also keep the dock in sync when V8 swaps filters without replacing the whole page.
   document.addEventListener('click',e=>{
     if(e.target.closest('[data-nx-season],[data-nx-menu],[data-nx-year],[data-nx-tag],[data-nx-type]')) setTimeout(()=>{ensureDock();syncDock();scheduleScroll()},45);
   });
