@@ -1,0 +1,14 @@
+'use strict';
+(() => {
+  const IS_PAGES=location.hostname.endsWith('github.io'),BASE=IS_PAGES?'/AniNexus':'';
+  const icon=`<svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="13" width="44" height="40" rx="7"/><path d="M20 7v12M44 7v12M10 25h44"/><path d="M20 34h7M33 34h11M20 43h11"/></g></svg>`;
+  const localLogo={crunchyroll:`${BASE}/assets/streaming/crunchyroll.svg`,netflix:`${BASE}/assets/streaming/netflix.svg`,prime:`${BASE}/assets/streaming/amazon.svg`,apple:`${BASE}/assets/streaming/apple.svg`};let raf=0;
+  const onSchedule=()=>!!document.querySelector('.nx18-schedule')||document.body.classList.contains('nx18-schedule-active');
+  function hero(){const shell=document.querySelector('.nx18-hero .nx18-shell');if(!shell||shell.dataset.nx19Hero==='1')return;const h1=shell.querySelector(':scope > h1');if(!h1)return;shell.dataset.nx19Hero='1';const wrap=document.createElement('div');wrap.className='nx19-schedule-identity';wrap.innerHTML=`<span class="nx19-schedule-identity-icon">${icon}</span><div class="nx19-schedule-identity-copy"></div>`;shell.insertBefore(wrap,h1);wrap.querySelector('.nx19-schedule-identity-copy').append(h1);h1.insertAdjacentHTML('afterend','<small>PROGRAMAÇÃO DE ANIMES</small>')}
+  function island(){const bar=document.querySelector('.nx18-island');if(!bar)return;bar.classList.add('nx19-coherent-island');const ico=bar.querySelector('.nx18-island-icon');if(ico&&ico.dataset.nx19!=='1'){ico.dataset.nx19='1';ico.innerHTML=icon}const strong=bar.querySelector('.nx18-island-copy strong');if(strong)strong.textContent='Calendário de Animes'}
+  function logos(){document.querySelectorAll('.nx18-provider-logo[data-provider]').forEach(box=>{const k=box.dataset.provider;if(box.dataset.nx19Logo===k)return;const src=localLogo[k];box.dataset.nx19Logo=k||'other';if(src){box.innerHTML=`<img class="nx19-local-stream-logo" src="${src}" alt="" decoding="async">`;return}box.querySelector('img')?.classList.add('nx19-external-stream-logo')})}
+  function sync(){if(!onSchedule())return;hero();island();logos();window.AniNexusMediaState?.sync?.()}
+  function schedule(){if(raf)return;raf=requestAnimationFrame(()=>{raf=0;sync()})}
+  const relevant='.nx18-schedule,.nx18-island,.nx18-provider-logo,[data-nx18-status],[data-nx18-fav]';const app=document.querySelector('#app');if(app)new MutationObserver(records=>{for(const r of records)for(const n of r.addedNodes)if(n.nodeType===1&&(n.matches?.(relevant)||n.querySelector?.(relevant))){schedule();return}}).observe(app,{childList:true,subtree:true});
+  addEventListener('resize',schedule,{passive:true});document.addEventListener('aninexus:media-state-changed',schedule);document.addEventListener('aninexus:favorite-changed',schedule);schedule();
+})();
