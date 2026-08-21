@@ -32,8 +32,7 @@
     return new Response(out.text,{status:out.status,statusText:out.statusText,headers:out.headers});
   };
 
-  /* V16 direct-load guard: stop the legacy schedule renderer from starting
-     its own multi-page request before the dedicated schedule runtime mounts. */
+  /* Direct-load guards: keep legacy renderers from racing dedicated runtimes. */
   try{
     const isPages=location.hostname.endsWith('github.io');
     const base=isPages?'/AniNexus':'';
@@ -45,6 +44,9 @@
     if(path==='/animes/programacao'){
       window.__NX_SCHEDULE_BOOT__=true;
       history.replaceState({},'',`${base}/__nx_schedule_boot`);
+    }else if(path==='/animes/catalogo'){
+      window.__NX_CATALOG_BOOT__=true;
+      history.replaceState({},'',`${base}/__nx_catalog_boot`);
     }
   }catch{}
 })();
