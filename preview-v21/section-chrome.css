@@ -1,0 +1,61 @@
+/* AniNexus V21 — one shared chrome for anime sections */
+:root{--nx-section-top:58px;--nx-section-motion:cubic-bezier(.2,.85,.2,1)}
+body.nx-section-page .topbar{transition:transform .28s var(--nx-section-motion),background .2s ease,border-color .2s ease!important;will-change:transform}
+body.nx-section-page.nx-scroll-down .topbar{transform:translateY(-102%)!important}
+body.nx-section-page.nx-scroll-up .topbar{transform:translateY(0)!important}
+
+/* Section accent contract. Seasons retain their own accent, generic anime tools use AniNexus red. */
+body.nx18-schedule-active,body.nx21-catalog{--nx-section-accent:#e3264f;--nx-section-rgb:227,38,79}
+body[data-nx-season-theme]{--nx-section-accent:var(--accent);--nx-section-rgb:var(--glow)}
+
+/* The three persistent surfaces now share material, shadow, movement and edge treatment. */
+body.nx-section-page .nx-v10-seasonbar,
+body.nx-section-page .nx18-island,
+body.nx-section-page .nx21-strip{
+  background:radial-gradient(circle at 76% -28%,rgba(var(--nx-section-rgb,227,38,79),.14),transparent 45%),linear-gradient(180deg,rgba(16,10,14,.985),rgba(8,6,9,.975))!important;
+  border-bottom:1px solid rgba(var(--nx-section-rgb,227,38,79),.18)!important;
+  box-shadow:0 12px 34px rgba(0,0,0,.30),0 1px 0 rgba(255,255,255,.025) inset!important;
+  backdrop-filter:blur(20px) saturate(1.08)!important;
+  -webkit-backdrop-filter:blur(20px) saturate(1.08)!important;
+  transition:top .28s var(--nx-section-motion),transform .30s var(--nx-section-motion),opacity .22s ease,filter .26s ease,box-shadow .22s ease!important;
+}
+body.nx-section-page.nx-scroll-up .nx-v10-seasonbar,
+body.nx-section-page.nx-scroll-up .nx18-island,
+body.nx-section-page.nx-scroll-up .nx21-strip{top:var(--nx-section-top)!important}
+body.nx-section-page.nx-scroll-down .nx-v10-seasonbar,
+body.nx-section-page.nx-scroll-down .nx18-island,
+body.nx-section-page.nx-scroll-down .nx21-strip{top:0!important}
+
+/* One accent line language. */
+body.nx-section-page .nx-v10-seasonbar:after,
+body.nx-section-page .nx18-island:after{background:linear-gradient(90deg,transparent,var(--nx-section-accent,#e3264f),transparent)!important;box-shadow:0 0 14px rgba(var(--nx-section-rgb,227,38,79),.38)!important}
+
+/* Common visual hierarchy for contextual headers. */
+body.nx-section-page .nx-v10-seasonbar__head,
+body.nx-section-page .nx18-island-head{min-height:68px!important}
+body.nx-section-page .nx-v10-seasonbar__toggle,
+body.nx-section-page .nx18-island-chevron{border-color:rgba(255,255,255,.095)!important;background:rgba(255,255,255,.035)!important;color:#bdb1b6!important}
+body.nx-section-page .nx-v10-seasonbar__sub,
+body.nx-section-page .nx18-island-copy small{color:var(--nx-section-accent,#e3264f)!important;letter-spacing:.17em!important}
+
+/* Global title/subtitle rhythm across the three anime hubs. */
+.nx-season-title h1,.nx18-hero h1,.nx21-hero h1{font-family:var(--display,'Manrope',sans-serif)!important;font-weight:800!important;letter-spacing:-.045em!important}
+.nx-season-title p,.nx18-hero p,.nx21-hero p{font-family:'Nunito Sans',system-ui,sans-serif!important;font-weight:600!important}
+
+/* Shared small-screen proportions. */
+@media(max-width:720px){
+  :root{--nx-section-top:54px}
+  body.nx-section-page .nx-v10-seasonbar,
+  body.nx-section-page .nx18-island,
+  body.nx-section-page .nx21-strip{border-bottom-color:rgba(var(--nx-section-rgb,227,38,79),.16)!important;box-shadow:0 11px 30px rgba(0,0,0,.31),0 1px 0 rgba(255,255,255,.02) inset!important}
+  body.nx-section-page .nx-v10-seasonbar__head,
+  body.nx-section-page .nx18-island-head{height:68px!important;min-height:68px!important}
+  .nx-season-title h1,.nx18-hero h1,.nx21-hero h1{font-size:clamp(25px,7vw,30px)!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  body.nx-section-page .topbar,
+  body.nx-section-page .nx-v10-seasonbar,
+  body.nx-section-page .nx18-island,
+  body.nx-section-page .nx21-strip{transition:none!important}
+}
