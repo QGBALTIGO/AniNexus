@@ -1,0 +1,33 @@
+/* AniNexus V21 — global visual coherence layer */
+:root{--nx-red:#e3264f;--nx-red-2:#ff526e;--nx-red-dark:#a91638;--nx-surface:#0d090c;--nx-surface-2:#130d11;--nx-border:rgba(255,255,255,.09);--nx-muted:#978a90;--accent:#e3264f;--accent-2:#a91638;--accent-3:#ff5c77;--accent-rgb:227,38,79;--ease:cubic-bezier(.2,.85,.2,1)}
+
+/* One header across the whole product. */
+.topbar{background:linear-gradient(180deg,rgba(12,8,11,.97),rgba(8,6,8,.94));border-bottom-color:rgba(255,255,255,.065);box-shadow:0 1px 0 rgba(255,255,255,.018) inset}
+.brand img{filter:drop-shadow(0 0 14px rgba(227,38,79,.20))}
+.main-nav a{color:#978b90}.main-nav a [data-icon]{color:#7d7277}.main-nav a:hover,.main-nav a.active{color:var(--text)}.main-nav a.active [data-icon]{color:#ef506c}.main-nav a.active:after{background:linear-gradient(90deg,#aa1738,#f14a68);box-shadow:0 0 13px rgba(227,38,79,.32)}
+.icon-button,.menu-btn{color:#91878b}.icon-button:hover,.menu-btn:hover{border-color:rgba(255,255,255,.09);background:rgba(255,255,255,.045);color:#fff}
+.login-btn{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.11)}
+.signup-btn,.btn.primary{background:linear-gradient(135deg,#b7183b,#eb2b53);border-color:rgba(255,89,116,.27);box-shadow:0 8px 22px rgba(191,27,64,.20)}
+.signup-btn:hover,.btn.primary:hover{background:linear-gradient(135deg,#c51e43,#f23c5f);filter:none}
+
+/* Remove legacy generic violet from common chrome without touching seasonal content. */
+body:not(.nx-season-active) .nav-icon.violet,body:not(.nx-season-active) .nav-icon.purple{color:#ef5a73!important;background:rgba(227,38,79,.10)!important}
+.drawer-profile{background:linear-gradient(135deg,rgba(227,38,79,.10),rgba(255,255,255,.018))!important}
+body:not(.nx-season-active) .hero{background:radial-gradient(ellipse 48% 110% at 77% 0%,rgba(227,38,79,.15),transparent 66%),radial-gradient(ellipse 30% 80% at 25% 5%,rgba(120,61,75,.055),transparent 65%),linear-gradient(180deg,#0d090c,#080608)}
+body:not(.nx-season-active) .pill:hover,body:not(.nx-season-active) .pill.active{border-color:rgba(227,38,79,.34);background:rgba(227,38,79,.09)}
+
+/* Shared motion and focus language. */
+:where(button,a,[tabindex]):focus-visible{outline:2px solid rgba(244,76,105,.75);outline-offset:2px}
+button{transition-timing-function:var(--ease)}
+
+/* Drawers and overlays use the same dark-red material family. */
+.drawer-panel{background:linear-gradient(165deg,#120c10,#090709 62%);border-left-color:rgba(255,255,255,.085)}
+.search-modal,.auth-card{border-color:rgba(255,255,255,.09)}
+
+html[data-theme='light'] .topbar{background:rgba(255,255,255,.94)}
+html[data-theme='light'] .drawer-panel{background:linear-gradient(165deg,#fff,#f8f4f5)}
+
+@media(max-width:720px){
+  .topbar .brand{gap:7px}.topbar .brand img{width:36px;height:36px}.topbar .brand span{font-size:20px}
+  .top-actions{gap:6px}.top-actions .login-btn,.top-actions .signup-btn{height:36px;padding-inline:13px;border-radius:8px}
+}
