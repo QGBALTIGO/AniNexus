@@ -2,14 +2,12 @@
 (() => {
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='32.0.0';
+  const BUILD='33.0.0';
   const DEDICATED=['/','/animes/catalogo','/animes/programacao','/animes/temporadas','/noticias'];
   const CARD_SELECTOR='[data-nx21-open],[data-nx-media],[data-nx18-open],[data-nx22-open],[data-nx-still],[data-open][data-type="anime"]';
   const ACTION_SELECTOR='button,a,input,select,textarea,[data-list],[data-fav],[data-nx-list],[data-nx-fav],[data-nx18-status],[data-nx18-fav]';
 
-  function cleanPathFromUrl(href){
-    try{const u=new URL(href,location.href);const restored=u.searchParams.get('p');if(restored)return restored.split('?')[0].replace(/\/+$/,'')||'/';let p=u.pathname;if(IS_PAGES)p=p.replace(/^\/AniNexus/,'')||'/';return p.replace(/\/+$/,'')||'/'}catch{return''}
-  }
+  function cleanPathFromUrl(href){try{const u=new URL(href,location.href);const restored=u.searchParams.get('p');if(restored)return restored.split('?')[0].replace(/\/+$/,'')||'/';let p=u.pathname;if(IS_PAGES)p=p.replace(/^\/AniNexus/,'')||'/';return p.replace(/\/+$/,'')||'/'}catch{return''}}
   function isDedicated(p){return DEDICATED.includes(p)||/^\/animes\/temporadas\//.test(p)||/^\/anime\/.+-\d+$/.test(p)||/^\/noticias\/[a-z0-9-]+$/.test(p)}
   function pagesUrl(path){return `${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`}
   function slug(value='anime'){return String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,90)||'anime'}
