@@ -16,7 +16,7 @@ concurrency:
 jobs:
   checks:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -24,14 +24,45 @@ jobs:
           node-version: 22
       - name: Install project dependencies
         run: npm install --ignore-scripts
-      - name: Syntax and contract smoke tests
+      - name: Syntax, news, core and smoke contracts
         run: npm run check
+      - name: Validate production frontend assembly
+        run: npm run build:public
       - name: Critical dependency audit
         run: npm audit --omit=dev --audit-level=critical
 
+  production-container:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Docker Compose model
+        env:
+          POSTGRES_PASSWORD: ci-only-password-not-for-production-1234567890
+          IP_HASH_SALT: ci-only-ip-salt-not-for-production-1234567890
+          PUBLIC_ORIGIN: https://example.invalid
+        run: docker compose config --quiet
+      - name: Validate Nginx configuration
+        run: |
+          cp nginx.conf /tmp/aninexus-nginx.conf
+          sed -i 's/server app:3000;/server 127.0.0.1:3000;/' /tmp/aninexus-nginx.conf
+          docker run --rm \
+            -v /tmp/aninexus-nginx.conf:/etc/nginx/conf.d/default.conf:ro \
+            nginx:1.27-alpine nginx -t
+      - name: Build real production image
+        run: docker build --pull -t aninexus-ci:${{ github.sha }} .
+      - name: Verify current shell exists inside production image
+        run: |
+          CID=$(docker create aninexus-ci:${{ github.sha }})
+          trap 'docker rm -f "$CID" >/dev/null 2>&1 || true' EXIT
+          docker cp "$CID:/app/public/index.html" /tmp/aninexus-index.html
+          grep -q '2026-08-22-v38.0.0' /tmp/aninexus-index.html
+          docker cp "$CID:/app/public/preview-v38/auth-v38.js" /tmp/auth-v38.js
+          test -s /tmp/auth-v38.js
+
   browser-e2e:
     runs-on: ubuntu-latest
-    timeout-minutes: 22
+    timeout-minutes: 24
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -52,8 +83,6 @@ jobs:
           rm -rf /tmp/aninexus-e2e-root
           mkdir -p /tmp/aninexus-e2e-root/AniNexus
           rsync -a --exclude '.git' --exclude 'node_modules' ./ /tmp/aninexus-e2e-root/AniNexus/
-          # Production keeps upgrade-insecure-requests. The local test server is
-          # intentionally HTTP, so remove only this directive in the temp copy.
           sed -i 's/; upgrade-insecure-requests//' /tmp/aninexus-e2e-root/AniNexus/index.html
           (cd /tmp/aninexus-e2e-root && python3 -m http.server 4173 > /tmp/aninexus-http.log 2>&1) &
           SERVER_PID=$!
