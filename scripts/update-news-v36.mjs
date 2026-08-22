@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import {collectEditorialStories,likelyPortuguese} from '../lib/news-sources-v36.mjs';
+import {collectEditorialStories,likelyPortuguese} from '../lib/news-sources-v36-normalized.mjs';
 
 const OUT=path.resolve('data/news.json');
 const RETENTION_DAYS=Math.max(3,Math.min(10,Number(process.env.NEWS_RETENTION_DAYS||7)));
