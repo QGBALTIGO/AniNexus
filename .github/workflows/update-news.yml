@@ -6,7 +6,8 @@ on:
     - cron: '17 * * * *'
   push:
     paths:
-      - 'scripts/update-news.mjs'
+      - 'scripts/update-news-v34.mjs'
+      - 'lib/news-sources-v34.mjs'
       - 'lib/news-core.mjs'
       - '.github/workflows/update-news.yml'
 
@@ -14,25 +15,30 @@ permissions:
   contents: write
 
 concurrency:
-  group: aninexus-news
+  group: aninexus-news-v34
   cancel-in-progress: true
 
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Buscar, enriquecer e traduzir fontes editoriais
+      - name: Validar coletor
+        run: |
+          node --check lib/news-sources-v34.mjs
+          node --check scripts/update-news-v34.mjs
+      - name: Buscar, enriquecer e localizar matérias
         env:
-          NEWS_RETENTION_DAYS: 5
-          NEWS_MIN_QUALITY: 0.48
-        run: node scripts/update-news.mjs
-      - name: Validar feed antes de publicar
-        run: node --check scripts/update-news.mjs && node tests/news-system.mjs
+          NEWS_RETENTION_DAYS: '5'
+          NEWS_MAX_SOURCE_AGE_HOURS: '120'
+          NEWS_MIN_QUALITY: '0.52'
+        run: node scripts/update-news-v34.mjs
+      - name: Validar feed
+        run: node tests/news-system.mjs
       - name: Publicar feed local
         run: |
           if git diff --quiet -- data/news.json; then
@@ -42,5 +48,5 @@ jobs:
           git config user.name "AniNexus News Bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/news.json
-          git commit -m "chore: atualizar notícias [skip ci]"
+          git commit -m "chore: atualizar notícias V34 [skip ci]"
           git push
