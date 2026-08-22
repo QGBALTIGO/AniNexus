@@ -1,8 +1,14 @@
 'use strict';
 (() => {
+  const NativeDateTimeFormat=Intl.DateTimeFormat;
+  function SafeDateTimeFormat(locales,options){return new NativeDateTimeFormat(locales==='yyyy-MM-dd'?'en-CA':locales,options)}
+  SafeDateTimeFormat.prototype=NativeDateTimeFormat.prototype;
+  SafeDateTimeFormat.supportedLocalesOf=NativeDateTimeFormat.supportedLocalesOf.bind(NativeDateTimeFormat);
+  Intl.DateTimeFormat=SafeDateTimeFormat;
+
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='27.0.0';
+  const BUILD='28.0.0';
 
   const aliases=new Map([
     ['/animes','/animes/catalogo'],
@@ -32,9 +38,7 @@
     }catch{return null}
   }
 
-  function pagesUrl(path){
-    return `${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`;
-  }
+  function pagesUrl(path){return `${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`}
 
   function normalizeLink(a){
     if(!a||a.target==='_blank'||a.hasAttribute('download'))return;
@@ -56,9 +60,7 @@
 
   new MutationObserver(records=>{
     for(const record of records){
-      for(const node of record.addedNodes){
-        if(node.nodeType===1)rewrite(node);
-      }
+      for(const node of record.addedNodes){if(node.nodeType===1)rewrite(node)}
     }
   }).observe(document.documentElement,{subtree:true,childList:true});
 
