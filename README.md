@@ -1,10 +1,10 @@
 # AniNexus
 
-Plataforma full-stack de descoberta, catálogo, temporadas, programação, rankings, perfis e listas pessoais de animes.
+Plataforma full-stack de descoberta, catálogo, temporadas, programação, rankings, perfis, listas pessoais, comunidade e notícias de animes.
 
 ## O que já está implementado
 
-- página inicial com destaques, temporada, próximos episódios e populares;
+- página inicial com identidade visual própria do AniNexus, temporada, próximos episódios, notícias, mangás/light novels, rankings, premiações, impressões e comunidade;
 - catálogo com busca, gênero, formato, ordenação e paginação;
 - temporadas por estação e ano;
 - calendário semanal em horário de Brasília com atualização silenciosa;
@@ -13,6 +13,10 @@ Plataforma full-stack de descoberta, catálogo, temporadas, programação, ranki
 - criação de conta, login, logout, sessões persistentes e listas pessoais;
 - status Quero Ver, Assistindo, Terminei, Pausei e Desisti;
 - impressões/comentários por anime com marcação de spoiler;
+- notícias nativas: `/noticias` e `/noticias/:slug`, sem depender de mandar o usuário para outro site para leitura;
+- PostgreSQL para notícias com título, resumo, corpo editorial, imagem, metadados de origem e expiração;
+- retenção configurável por `NEWS_RETENTION_DAYS` (padrão: 5 dias) para manter o feed recente;
+- pipeline de tradução/síntese em português que gera texto próprio do AniNexus a partir de informações públicas, sem copiar integralmente matérias externas;
 - tema claro/escuro;
 - busca global com Ctrl/Cmd + K;
 - páginas Quem Somos, Colabore, Contato, Termos, Privacidade e DMCA;
@@ -38,33 +42,7 @@ Acesse `http://IP_DA_VPS:8080`.
 
 Quando o domínio estiver atrás de HTTPS, altere no `.env`:
 
-```env
+```bash
+PUBLIC_ORIGIN=https://seu-dominio.com
 COOKIE_SECURE=true
 ```
-
-Depois:
-
-```bash
-docker compose up -d
-```
-
-## Banco de dados
-
-O schema é aplicado automaticamente ao iniciar. Os volumes `postgres_data` e `redis_data` preservam dados entre atualizações.
-
-## Segurança
-
-- senhas: Argon2id;
-- sessão opaca em cookie HttpOnly, SameSite=Lax e Secure quando HTTPS está ativado;
-- rate limit em autenticação, comentários e formulários;
-- validação de payload com Zod;
-- validação de origem em operações mutáveis;
-- Content-Security-Policy, Referrer-Policy e Permissions-Policy;
-- limite de corpo HTTP;
-- IP armazenado apenas como hash salgado em sessões.
-
-Antes de produção pública, mantenha o banco e Redis sem portas públicas e use HTTPS/WAF/CDN no domínio.
-
-## Curadoria interna
-
-A tabela `media_annotations` existe para o AniNexus confirmar informações próprias, como título em português, sinopse editorial, dublagem, legendas e disponibilidade. Informações de dublagem só são exibidas como confirmadas quando cadastradas nessa tabela.
