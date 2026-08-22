@@ -28,7 +28,7 @@ test('native feed exposes only live Portuguese-ready articles',()=>{includes(nat
 test('news schema has revisions and ingest observability',()=>['news_article_revisions','news_ingest_runs','content_version','translation_status','source_count'].forEach(x=>includes(migration,x)));
 test('short retention and quality threshold are configurable in deployment',()=>{includes(env,'NEWS_RETENTION_DAYS=5');includes(env,'NEWS_MIN_QUALITY=0.54');includes(compose,'NEWS_MIN_QUALITY: ${NEWS_MIN_QUALITY:-0.54}')});
 
-test('news hub and reader stay internal',()=>{includes(news,'Ler no AniNexus');includes(news,"p==='/noticias'");includes(news,'nx32-reading-progress');notIncludes(news,'Ler na fonte');notIncludes(news,'window.open(')});
+test('news hub and reader stay internal',()=>{includes(news,'Ler no AniNexus');includes(news,"path==='/noticias'");includes(news,'nx32-reading-progress');notIncludes(news,'Ler na fonte');notIncludes(news,'window.open(')});
 test('V33 news visual polish fixes oversized fallbacks and supports scroll fades',()=>{includes(news33Css,'aspect-ratio:16/9');includes(news33Css,'.nx32-image-fallback img');includes(news33Css,'.nx33-news-edge');includes(news33,'scrollWidth-scroller.clientWidth')});
 test('anime detail contracts remain intact',()=>{includes(detail,'https://www.youtube-nocookie.com/embed/');['LANÇAMENTO','TÉRMINO','Personagens','Franquia e relações','Recomendações'].forEach(x=>includes(detail,x));includes(detailCss,'aspect-ratio:16/9')});
 test('shared media state remains unified',()=>{['PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED'].forEach(x=>includes(mediaState,`${x}:`));includes(catalog,'data-list=');includes(catalog,'data-fav=');ok(/data-nx18-(?:status|fav)/.test(schedule));ok(/data-nx-(?:list|fav)/.test(season))});
