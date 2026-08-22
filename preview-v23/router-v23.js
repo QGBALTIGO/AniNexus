@@ -4,7 +4,7 @@
   const BASE=IS_PAGES?'/AniNexus':'';
   const BUILD='25.0.0';
   const DEDICATED=['/','/animes/catalogo','/animes/programacao','/animes/temporadas','/noticias'];
-  const CARD_SELECTOR='[data-nx21-open],[data-nx-media],[data-nx18-open],[data-nx22-open],[data-nx-still]';
+  const CARD_SELECTOR='[data-nx21-open],[data-nx-media],[data-nx18-open],[data-nx22-open],[data-nx-still],[data-open][data-type="anime"]';
   const ACTION_SELECTOR='button,a,input,select,textarea,[data-list],[data-fav],[data-nx-list],[data-nx-fav],[data-nx18-status],[data-nx18-fav]';
 
   function cleanPathFromUrl(href){
@@ -21,7 +21,9 @@
   function slug(value='anime'){return String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,90)||'anime'}
   function cardInfo(card){
     if(!card)return null;
-    const raw=card.dataset.nx21Open||card.dataset.nxMedia||card.dataset.nx18Open||card.dataset.nx22Open||card.dataset.nxStill;
+    const kind=String(card.dataset.kind||card.dataset.type||'anime').toLowerCase();
+    if(kind&&kind!=='anime')return null;
+    const raw=card.dataset.nx21Open||card.dataset.nxMedia||card.dataset.nx18Open||card.dataset.nx22Open||card.dataset.nxStill||card.dataset.open;
     const id=Number(raw||0);if(!id)return null;
     const name=card.dataset.title||card.querySelector('h3,strong,h2')?.textContent?.trim()||'anime';
     return{id,path:`/anime/${slug(name)}-${id}`};
@@ -50,8 +52,8 @@
   addEventListener('click',e=>{
     if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
 
-    // All anime cards use one dedicated detail route. This prevents Seasons,
-    // Schedule and Catalog from each rendering a different detail experience.
+    // All anime cards use one dedicated detail route. Manga/novel cards remain
+    // in their own reading flow even when a component reuses data-nx-media.
     const card=e.target.closest?.(CARD_SELECTOR);
     if(card&&!e.target.closest(ACTION_SELECTOR)){
       const info=cardInfo(card);if(info){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();navigate(info.path);return}
