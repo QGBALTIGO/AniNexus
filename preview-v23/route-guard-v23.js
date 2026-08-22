@@ -3,7 +3,7 @@
   try {
     const IS_PAGES=location.hostname.endsWith('github.io');
     const BASE=IS_PAGES?'/AniNexus':'';
-    const BUILD='25.0.0';
+    const BUILD='26.0.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=restored?restored.split('?')[0]:u.pathname;
@@ -17,17 +17,12 @@
     const html=document.documentElement;
     const bootClass=isDetail?'nx22-detail-boot':'nx22-news-boot';
     html.classList.add(bootClass);
-
-    // Keep the real route in the address bar. Older guards used a temporary
-    // /__nx_detail_* route, which allowed the legacy renderer to paint a 404.
     window.__NX_DEDICATED_BOOT_PATH__=path;
     if(isDetail){
       window.__NX_USE_V22_DETAIL__=true;
       window.__NX_DETAIL_ROLLBACK_PATH__=path;
     }
 
-    // Hide only #app while the dedicated renderer takes ownership. Header and
-    // navigation remain usable, so there is no full-screen white/404 flash.
     const style=document.createElement('style');
     style.dataset.nxDedicatedBoot='1';
     style.textContent=`
@@ -66,8 +61,6 @@
         bridge.dataset.nx25StateUi='1';
         document.body.append(bridge);
       }
-
-      // Anime detail is intentionally owned by the stable V22 renderer.
       if(isDetail&&!document.querySelector('script[data-nx22-detail-runtime]')){
         const s=document.createElement('script');
         s.src=`${BASE}/preview-v22/detail-stable-v22.js?v=${BUILD}`;
@@ -78,8 +71,6 @@
       }
 
       finish();
-      // Never leave the application permanently hidden if an upstream API is
-      // unavailable; the dedicated renderer can then show its own retry state.
       timer=setTimeout(()=>{mo.disconnect();html.classList.remove(bootClass);style.remove()},8000);
     };
 
