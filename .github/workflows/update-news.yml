@@ -8,6 +8,7 @@ on:
     paths:
       - 'scripts/update-news-v36.mjs'
       - 'lib/news-sources-v36.mjs'
+      - 'lib/news-sources-v36-normalized.mjs'
       - 'lib/news-sources-v34.mjs'
       - 'lib/news-worker-v34.mjs'
       - 'lib/news-core.mjs'
@@ -33,6 +34,7 @@ jobs:
       - name: Validar coletor V36
         run: |
           node --check lib/news-sources-v36.mjs
+          node --check lib/news-sources-v36-normalized.mjs
           node --check scripts/update-news-v36.mjs
           node --check lib/news-worker-v34.mjs
       - name: Buscar e aprofundar JBox, Crunchyroll e fontes complementares
