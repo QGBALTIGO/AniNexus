@@ -25,3 +25,21 @@ CREATE INDEX IF NOT EXISTS news_articles_feed_idx
 
 CREATE INDEX IF NOT EXISTS news_articles_last_seen_idx
   ON news_articles(last_seen_at DESC);
+
+CREATE TABLE IF NOT EXISTS news_source_health (
+  source_key text PRIMARY KEY,
+  source_name text NOT NULL,
+  last_attempt_at timestamptz,
+  last_success_at timestamptz,
+  last_error_at timestamptz,
+  last_error text,
+  last_item_count integer NOT NULL DEFAULT 0 CHECK (last_item_count >= 0),
+  consecutive_failures integer NOT NULL DEFAULT 0 CHECK (consecutive_failures >= 0),
+  total_successes bigint NOT NULL DEFAULT 0 CHECK (total_successes >= 0),
+  total_failures bigint NOT NULL DEFAULT 0 CHECK (total_failures >= 0),
+  average_latency_ms integer NOT NULL DEFAULT 0 CHECK (average_latency_ms >= 0),
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS news_source_health_status_idx
+  ON news_source_health(consecutive_failures DESC,last_success_at DESC);
