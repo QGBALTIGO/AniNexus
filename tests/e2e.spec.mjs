@@ -1,12 +1,12 @@
 import {test,expect} from '@playwright/test';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
-const pageUrl=route=>`${ORIGIN}?build=35.0.0&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=38.0.0&p=${encodeURIComponent(route)}`;
 async function noLegacy404(page){await expect(page.locator('body')).not.toContainText('Página não encontrada')}
 async function noHorizontalOverflow(page,tolerance=7){const x=await page.evaluate(()=>({scroll:document.documentElement.scrollWidth,inner:innerWidth}));expect(x.scroll).toBeLessThanOrEqual(x.inner+tolerance)}
 async function waitForAny(page,selectors,timeout=25000){await Promise.any(selectors.map(s=>page.locator(s).first().waitFor({state:'visible',timeout})))}
 test.describe.configure({mode:'serial'});
 
-test('V35 Home is the first and only visible Home renderer',async({page})=>{
+test('V35 Home remains the single visible Home renderer under V38 shell',async({page})=>{
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
   await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});
   await expect(page.locator('.aqx-home')).toHaveCount(0);
@@ -35,7 +35,7 @@ test('all overflowing Home rails expose weak directional fade state',async({page
   await noHorizontalOverflow(page);
 });
 
-test('Top 10 and achievements stay aligned to AniNexus V35',async({page})=>{
+test('Top 10 and achievements stay aligned to AniNexus',async({page})=>{
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('#nx35Top .nx35-rank').first()).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeVisible();const align=await page.locator('.nx35-achievement-section .nx35-head').evaluate(el=>getComputedStyle(el).textAlign);expect(align).toBe('center');
 });
 
@@ -57,6 +57,18 @@ test('catalog and dedicated anime detail remain healthy',async({page})=>{
   await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx21-card').first()).toBeVisible({timeout:30000});expect(await page.locator('.nx21-card').count()).toBeGreaterThan(3);const card=page.locator('.nx21-card').first(),target=card.locator('h3').first();await (await target.count()?target:card).click();await page.waitForURL(u=>(new URL(u)).searchParams.get('p')?.startsWith('/anime/')===true,{timeout:15000});await expect(page.locator('.nx22-detail')).toBeVisible({timeout:30000});await noLegacy404(page);
 });
 
-test('season, Programação, search and auth chrome remain functional',async({page})=>{
-  await page.goto(pageUrl('/animes/temporadas'),{waitUntil:'domcontentloaded'});await waitForAny(page,['.nx-season-card','.nx-season']);await noLegacy404(page);await page.goto(pageUrl('/animes/programacao'),{waitUntil:'domcontentloaded'});await waitForAny(page,['[data-nx18-open]','.nx18-card','.nx18-island'],30000);await noLegacy404(page);await page.locator('[data-action="search"]').first().click();await expect(page.locator('#searchOverlay')).toBeVisible();await page.keyboard.press('Escape');await page.locator('[data-action="login"]').first().click();await expect(page.locator('#authOverlay')).toBeVisible();
+test('season, Programação and search remain functional',async({page})=>{
+  await page.goto(pageUrl('/animes/temporadas'),{waitUntil:'domcontentloaded'});await waitForAny(page,['.nx-season-card','.nx-season']);await noLegacy404(page);await page.goto(pageUrl('/animes/programacao'),{waitUntil:'domcontentloaded'});await waitForAny(page,['[data-nx18-open]','.nx18-card','.nx18-island'],30000);await noLegacy404(page);await page.locator('[data-action="search"]').first().click();await expect(page.locator('#searchOverlay')).toBeVisible();await page.keyboard.press('Escape');
+});
+
+test('Entrar opens the dedicated V38 login page instead of the legacy modal',async({page})=>{
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await page.locator('[data-action="login"]').first().click();await page.waitForURL(u=>(new URL(u)).searchParams.get('p')==='/login',{timeout:10000});await expect(page.locator('.nx38-auth-page')).toBeVisible({timeout:10000});await expect(page.locator('.nx38-auth-card h2')).toHaveText('Entre na sua conta');await expect(page.locator('#authOverlay')).toBeHidden();await noLegacy404(page);
+});
+
+test('Criar conta has confirmation, password requirements and terms',async({page})=>{
+  await page.goto(pageUrl('/criar-conta'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx38-auth-page')).toBeVisible({timeout:10000});await expect(page.locator('#nx38-username')).toBeVisible();await expect(page.locator('#nx38-email')).toBeVisible();await expect(page.locator('#nx38-password')).toBeVisible();await expect(page.locator('#nx38-confirm')).toBeVisible();await expect(page.locator('#nx38Rules')).toContainText('10 ou mais caracteres');await expect(page.locator('.nx38-auth-check')).toContainText('Termos de Serviço');await noHorizontalOverflow(page);await noLegacy404(page);
+});
+
+test('mobile authentication pages fit without horizontal overflow',async({page})=>{
+  await page.setViewportSize({width:390,height:844});for(const route of ['/login','/criar-conta','/minha-conta']){await page.goto(pageUrl(route),{waitUntil:'domcontentloaded'});await waitForAny(page,['.nx38-auth-page','.nx38-account-page'],10000);await noHorizontalOverflow(page);await noLegacy404(page)}
 });
