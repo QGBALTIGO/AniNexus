@@ -14,6 +14,12 @@
   function syncButton(button){
     if(!button?.isConnected)return;
     const id=Number(button.dataset.list||button.dataset.nxDetailList||0);if(!id)return;
+    const detail=button.closest('.nx22-detail');
+    if(detail){
+      detail.dataset.nxMedia=String(id);
+      const h=detail.querySelector('.nx22-headcopy h1');
+      if(h?.textContent)detail.dataset.title=h.textContent.trim();
+    }
     const state=window.AniNexusMediaState?.get?.(id)||{};
     const status=state.status||'';
     const label=LABEL[status]||'Adicionar à lista';
