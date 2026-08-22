@@ -11,7 +11,7 @@ on:
       - 'lib/news-sources-v36.mjs'
       - 'lib/news-sources-v36-normalized.mjs'
       - 'lib/news-sources-v34.mjs'
-      - 'lib/news-worker-v34.mjs'
+      - 'lib/news-worker-v37.mjs'
       - 'lib/news-core.mjs'
       - 'preview-v35/news-data-v35.js'
       - 'preview-v35/news-ui-v35.js'
@@ -35,13 +35,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Validar coletor e mídia
+      - name: Validar coletor, mídia e worker
         run: |
           node --check lib/news-sources-v36.mjs
           node --check lib/news-sources-v36-normalized.mjs
           node --check lib/news-rich-v37.mjs
           node --check scripts/update-news-v36.mjs
-          node --check lib/news-worker-v34.mjs
+          node --check lib/news-worker-v37.mjs
           node --check preview-v35/news-data-v35.js
           node --check preview-v35/news-ui-v35.js
       - name: Buscar, aprofundar e capturar mídia
