@@ -30,7 +30,7 @@ const migration=read('sql/005_news_quality_and_revisions.sql');
 const updater=read('scripts/update-news.mjs');
 const home=read('preview-v33/home-v33.js');
 const homeCss=read('preview-v33/home-v33.css');
-const newsUi=read('preview-v32/news-v32.js');
+const newsUi=read('preview-v33/news-v33.js');
 const newsPolish=read('preview-v33/news-v33.css');
 const index=read('index.html');
 
@@ -47,9 +47,9 @@ test('static fallback enriches article HTML and refuses failed translations',()=
 test('Home V33 removes Tags and all legacy duplicate hero injectors',()=>{assert.ok(home.includes("t==='Tags'"));['.nx30-kicker','.nx30-hero-actions','.nx31-universe-strip','.nx31-hero-sigil','.nx31-live-brand'].forEach(x=>assert.ok(home.includes(x),x));assert.ok(home.includes('nx33-brand-lockup'));assert.ok(home.includes('nx33-hero-actions'))});
 test('Home V33 implements real side fades for scrollable rails',()=>{assert.ok(home.includes('data-nx33-right'));assert.ok(home.includes('scrollWidth-el.clientWidth'));assert.ok(homeCss.includes('.nx33-edge-host[data-nx33-right="1"]:after'))});
 test('Home news routes internally and never opens an external source',()=>{assert.ok(home.includes('/noticias/${x.slug}'));assert.equal(home.includes('window.open('),false)});
-test('Native reader remains internal and structured',()=>{assert.ok(newsUi.includes('Ler no AniNexus'));assert.ok(newsUi.includes('nx32-reading-progress'));assert.ok(newsUi.includes('content_sections'));assert.equal(newsUi.includes('Ler na fonte'),false)});
+test('Native reader remains internal and structured',()=>{assert.ok(newsUi.includes('Ler no AniNexus'));assert.ok(newsUi.includes('nx32-reading-progress'));assert.ok(newsUi.includes('content_sections'));assert.ok(newsUi.includes('contentSections'));assert.equal(newsUi.includes('Ler na fonte'),false)});
 test('V33 news polish constrains hero images and supports mobile edge fades',()=>{assert.ok(newsPolish.includes('aspect-ratio:16/9'));assert.ok(newsPolish.includes('.nx33-news-edge'));assert.ok(newsPolish.includes('@media(max-width:760px)'))});
-test('Index activates only V28 base plus V33 Home enhancer',()=>{assert.ok(index.includes('preview-v28/home-v28.js'));assert.ok(index.includes('preview-v33/home-v33.js'));assert.equal(index.includes('preview-v29/home-fidelity-v29.js'),false);assert.equal(index.includes('preview-v30/home-content-v30.js'),false);assert.equal(index.includes('preview-v31/home-runtime-v31.js'),false);assert.equal(index.includes('preview-v32/home-news-v32.js'),false)});
+test('Index activates only V28 base plus V33 Home enhancer',()=>{assert.ok(index.includes('preview-v28/home-v28.js'));assert.ok(index.includes('preview-v33/home-v33.js'));assert.equal(index.includes('preview-v29/home-fidelity-v29.js'),false);assert.equal(index.includes('preview-v30/home-content-v30.js'),false);assert.equal(index.includes('preview-v31/home-runtime-v31.js'),false);assert.equal(index.includes('preview-v32/home-news-v32.js'),false);assert.equal(index.includes('preview-v32/news-v32.js'),false)});
 
 if(process.exitCode)throw new Error('News system tests failed');
 console.log(`\nAniNexus V33 news system: ${passed} tests passed`);
