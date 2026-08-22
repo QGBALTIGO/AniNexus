@@ -1,17 +1,3 @@
 'use strict';
-(() => {
-  const app=document.querySelector('#app');if(!app)return;
-  const IS_PAGES=location.hostname.endsWith('github.io'),BASE=IS_PAGES?'/AniNexus':'';
-  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const clean=s=>{const d=document.createElement('div');d.innerHTML=String(s||'');return d.textContent||''};
-  const slug=s=>String(s||'noticia').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,110)||'noticia';
-  function pathNow(){const u=new URL(location.href),p=u.searchParams.get('p');if(p)return p.split('?')[0].replace(/\/+$/,'')||'/';let x=u.pathname;if(IS_PAGES)x=x.replace(/^\/AniNexus/,'')||'/';return x.replace(/\/+$/,'')||'/'}
-  function fmt(v){const d=new Date(v);return Number.isNaN(d.getTime())?'':new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short',year:'numeric'}).format(d).replace('.','')}
-  async function items(){if(!IS_PAGES){try{const r=await fetch('/api/news?limit=40',{headers:{accept:'application/json'}});if(r.ok){const j=await r.json();if(j.items?.length)return j.items}}catch{}}try{const r=await fetch(`${BASE}/data/news.json?v=31`,{cache:'no-store'});if(!r.ok)return[];const j=await r.json();return j.items||[]}catch{return[]}}
-  function norm(x){return{title:clean(x.title),summary:clean(x.summary),category:x.event_type||x.category||'Notícias',published:x.source_published_at||x.published_at||x.publishedAt,image:x.image_url||x.image||'',slug:x.slug||slug(x.title)}}
-  function card(x,i){return `<article class="nx31-hub-card ${i===0?'lead':''}" data-nx31-native-news-card="${esc(x.slug)}">${x.image?`<div class="nx31-hub-img"><img src="${esc(x.image)}" alt="${esc(x.title)}" loading="${i<3?'eager':'lazy'}" referrerpolicy="no-referrer"></div>`:''}<div class="nx31-hub-copy"><div class="nx31-hub-meta"><span>${esc(x.category)}</span><small>${esc(fmt(x.published))}</small></div><h2>${esc(x.title)}</h2>${x.summary?`<p>${esc(x.summary)}</p>`:''}<b>Ler no AniNexus →</b></div></article>`}
-  async function render(){if(pathNow()!=='/noticias')return;document.body.classList.remove('aqx-home-active');document.title='Notícias | AniNexus';app.innerHTML='<section class="nx31-news-hub"><div class="nx31-news-hub-shell"><div class="nx31-news-hub-intro"><span>ANINEXUS NOTÍCIAS</span><h1>O que está acontecendo<br><em>no mundo dos animes.</em></h1><p>Novas temporadas, trailers, mangás, anúncios e acontecimentos importantes — organizados e apresentados em português dentro do AniNexus.</p></div><div class="nx31-news-hub-grid" id="nx31NewsHub"><div class="nx31-hub-loading">Atualizando notícias…</div></div></div></section>';const list=(await items()).map(norm).filter(x=>x.title);const root=document.querySelector('#nx31NewsHub');if(!root)return;root.innerHTML=list.length?list.slice(0,30).map(card).join(''):'<div class="nx31-hub-loading">Ainda não há notícias recentes no banco.</div>'}
-  document.addEventListener('click',e=>{const c=e.target.closest('[data-nx31-native-news-card]');if(!c)return;e.preventDefault();const p=`/noticias/${encodeURIComponent(c.dataset.nx31NativeNewsCard)}`;location.assign(IS_PAGES?`${BASE}/?build=31.0.0&p=${encodeURIComponent(p)}`:p)},true);
-  const mo=new MutationObserver(()=>{if(pathNow()==='/noticias'&&!app.querySelector('.nx31-news-hub'))render()});mo.observe(app,{childList:true});
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',render,{once:true});else render();
-})();
+// V31.2: list and detail rendering are unified in native-news-v31.js.
+(()=>{})();
