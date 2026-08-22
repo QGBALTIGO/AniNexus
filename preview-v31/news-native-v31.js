@@ -1,0 +1,145 @@
+'use strict';
+(() => {
+  const app=document.querySelector('#app');if(!app)return;
+  const IS_PAGES=location.hostname.endsWith('github.io');
+  const BASE=IS_PAGES?'/AniNexus':'';
+  const BUILD='31.0.0';
+  const TRANSLATE='https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=pt&dt=t&q=';
+  const CACHE='aninexus:news:v31';
+  const TTL=5*60*1000;
+  let items=[];
+  let active='Tudo';
+  let query='';
+  let observer=null;
+
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const strip=s=>{const d=document.createElement('div');d.innerHTML=String(s||'');return(d.textContent||'').replace(/\s+/g,' ').trim()};
+  const slugify=s=>String(s||'noticia').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,105)||'noticia';
+  const hash=s=>{let h=2166136261;for(const c of String(s||'')){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return(h>>>0).toString(36)};
+  const icon={
+    news:'<svg viewBox="0 0 24 24"><path d="M4 5h12v14H4zM7 8h6M7 11.5h6M7 15h4M16 8h4v11h-4"/></svg>',
+    search:'<svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.3 15.3 5 5"/></svg>',
+    arrow:'<svg viewBox="0 0 24 24"><path d="M5 12h13M14 7.5 18.5 12 14 16.5"/></svg>',
+    back:'<svg viewBox="0 0 24 24"><path d="m14.5 5-7 7 7 7"/></svg>',
+    clock:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'
+  };
+
+  function pathNow(){
+    try{
+      const u=new URL(location.href),p=u.searchParams.get('p');
+      if(p)return p.split('?')[0].replace(/\/+$/,'')||'/';
+      let x=u.pathname;if(IS_PAGES)x=x.replace(/^\/AniNexus/,'')||'/';
+      return x.replace(/\/+$/,'')||'/';
+    }catch{return'/'}
+  }
+  function isNewsPath(){return pathNow()==='/noticias'||/^\/noticias\/[a-z0-9-]+$/.test(pathNow())}
+  function routeTo(path){location.assign(IS_PAGES?`${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`:path)}
+  function date(v,long=false){const d=new Date(v);if(Number.isNaN(d.getTime()))return'';return new Intl.DateTimeFormat('pt-BR',long?{day:'2-digit',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'}:{day:'2-digit',month:'short',year:'numeric'}).format(d).replace('.','')}
+  function relative(v){const d=new Date(v);if(Number.isNaN(d.getTime()))return'';const ms=Date.now()-d.getTime(),h=Math.floor(ms/36e5),days=Math.floor(ms/864e5);if(h<1)return'Agora há pouco';if(h<24)return`Há ${h}h`;if(days===1)return'Ontem';if(days<7)return`Há ${days} dias`;return date(v)}
+  function eventLabel(v){return({TRAILER:'Trailers',MANGA:'Mangás & novels',SEASON:'Animes',EPISODE:'Episódios',TRENDING:'Em alta',OTHER:'Notícias'})[String(v||'').toUpperCase()]||v||'Notícias'}
+  function parseBody(body){if(!body)return{};try{const x=JSON.parse(body);return x&&typeof x==='object'?x:{}}catch{return{lead:strip(body),details:[]}}}
+  function cacheGet(){try{const x=JSON.parse(sessionStorage.getItem(CACHE)||'null');return x?.at&&Date.now()-x.at<TTL?x.items:null}catch{return null}}
+  function cacheSet(value){try{sessionStorage.setItem(CACHE,JSON.stringify({at:Date.now(),items:value}))}catch{}}
+
+  async function translate(value){
+    const text=strip(value);if(!text)return'';
+    const key='nx31:pt:'+hash(text);try{const c=localStorage.getItem(key);if(c)return c}catch{}
+    try{const r=await fetch(TRANSLATE+encodeURIComponent(text.slice(0,3800)));if(!r.ok)return text;const j=await r.json();const out=strip((j?.[0]||[]).map(x=>x?.[0]||'').join(''))||text;try{localStorage.setItem(key,out)}catch{}return out}catch{return text}
+  }
+  async function localizeFallback(raw){
+    const source=String(raw.sourceType||raw.source||'').toUpperCase();
+    const needs=source.includes('ANN')||source.includes('MAL')||String(raw.source||'').includes('Anime News Network')||String(raw.source||'').includes('MyAnimeList');
+    if(!needs)return raw;
+    const marker=' <<<NX31SEP>>> ';
+    const t=await translate(`${raw.title}${marker}${raw.summary||''}`),parts=t.split(/\s*<<<NX31SEP>>>\s*/);
+    return{...raw,title:parts[0]||raw.title,summary:parts.slice(1).join(' ')||raw.summary};
+  }
+
+  function normalizeApi(x,meta={}){
+    return{
+      id:String(x.id||x.slug),slug:x.slug,title:strip(x.title),summary:strip(x.summary),category:eventLabel(x.event_type),publishedAt:x.published_at,
+      source:meta.sourceName||(x.source_kind==='EDITORIAL'?'AniNexus Editorial':'AniNexus Notícias'),image:meta.imageUrl||'',sourceUrl:meta.sourceUrl||x.external_url||'',
+      bodyMeta:meta,body:x.body||''
+    };
+  }
+  async function fetchDetail(slug){
+    if(IS_PAGES)return null;
+    try{const r=await fetch(`/api/news/${encodeURIComponent(slug)}`,{headers:{accept:'application/json'}});if(!r.ok)return null;const x=await r.json();return normalizeApi(x,parseBody(x.body))}catch{return null}
+  }
+  async function apiFeed(){
+    if(IS_PAGES)return[];
+    try{
+      const r=await fetch('/api/news?limit=36',{headers:{accept:'application/json'}});if(!r.ok)return[];
+      const j=await r.json(),base=Array.isArray(j?.items)?j.items:[];
+      const enriched=await Promise.all(base.map(async x=>await fetchDetail(x.slug)||normalizeApi(x)));
+      return enriched;
+    }catch{return[]}
+  }
+  async function pagesFeed(){
+    try{
+      const r=await fetch(`${BASE}/data/news.json?v=${BUILD}`,{headers:{accept:'application/json'}});if(!r.ok)return[];const j=await r.json(),raw=(j?.items||[]).slice(0,36),localized=[];
+      for(const x of raw)localized.push(await localizeFallback(x));
+      return localized.map(x=>({id:String(x.id||hash(x.url||x.title)),slug:`${slugify(x.title)}-${String(x.id||hash(x.url||x.title)).replace(/[^a-z0-9-]/gi,'')}`,title:strip(x.title),summary:strip(x.summary),category:x.category||'Notícias',publishedAt:x.publishedAt,source:x.source||'AniNexus Notícias',image:x.image||'',sourceUrl:x.url||'',bodyMeta:{sourceName:x.source||'',sourceUrl:x.url||'',sourcePublishedAt:x.publishedAt||'',imageUrl:x.image||'',lead:strip(x.summary),details:['Esta publicação é apresentada como resumo editorial dentro do AniNexus.']}}));
+    }catch{return[]}
+  }
+  async function load(force=false){
+    if(!force){const c=cacheGet();if(c?.length){items=c;return items}}
+    let data=await apiFeed();if(!data.length)data=await pagesFeed();
+    data=data.filter(x=>x.title&&x.slug).sort((a,b)=>new Date(b.publishedAt||0)-new Date(a.publishedAt||0));items=data;cacheSet(data);return data;
+  }
+
+  function activate(){
+    document.body.classList.add('nx22-news-active','nx31-news-active');
+    document.body.classList.remove('aqx-home-active','nx30-home-identity','nx22-detail-active','nx-season-active');
+    document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav==='news'));
+  }
+  function categories(){return ['Tudo','Animes','Mangás & novels','Trailers','Episódios','Notícias']}
+  function filtered(){const q=query.trim().toLowerCase();return items.filter(x=>(active==='Tudo'||x.category===active)&&(!q||`${x.title} ${x.summary} ${x.source} ${x.category}`.toLowerCase().includes(q)))}
+  function newsPath(x){return `/noticias/${x.slug}`}
+
+  function card(x,featured=false){
+    return `<a class="nx31-card ${featured?'featured':''}" href="${newsPath(x)}" data-nx31-route="${newsPath(x)}">
+      <div class="nx31-card-media">${x.image?`<img loading="lazy" decoding="async" src="${esc(x.image)}" alt="">`:`<span class="nx31-placeholder">N</span>`}<i>${esc(x.category)}</i></div>
+      <div class="nx31-card-copy"><div class="nx31-card-meta"><strong>${esc(x.source)}</strong><span>${esc(relative(x.publishedAt))}</span></div><h2>${esc(x.title)}</h2>${x.summary?`<p>${esc(x.summary)}</p>`:''}<b>Ler no AniNexus ${icon.arrow}</b></div>
+    </a>`;
+  }
+  function drawList(){
+    const host=app.querySelector('#nx31Results');if(!host)return;const list=filtered(),count=app.querySelector('#nx31Count');if(count)count.textContent=`${list.length} ${list.length===1?'publicação':'publicações'}`;
+    if(!list.length){host.innerHTML='<div class="nx31-empty">Nenhuma notícia encontrada com esses filtros.</div>';return}
+    const hero=list[0],rest=list.slice(1);
+    host.innerHTML=`<div class="nx31-feature-grid">${card(hero,true)}<div class="nx31-side-stack">${rest.slice(0,3).map(x=>card(x)).join('')}</div></div>${rest.length>3?`<div class="nx31-grid">${rest.slice(3).map(x=>card(x)).join('')}</div>`:''}`;
+  }
+  function listShell(){
+    activate();app.innerHTML=`<main class="nx22-news nx31-news"><section class="nx31-hero"><div class="nx31-shell"><div class="nx31-hero-mark"><img src="${BASE}/assets/logo.png" alt=""><span>NOTÍCIAS ANINEXUS</span></div><h1>O que está acontecendo<br><em>no universo anime.</em></h1><p>Anúncios, trailers, novas temporadas, mangás e lançamentos em português — organizados e publicados dentro do AniNexus.</p><div class="nx31-hero-pills"><span>Atualização automática</span><span>Leitura no próprio site</span><span>Feed recente</span></div></div></section><section class="nx31-toolbar"><div class="nx31-shell"><div class="nx31-cats">${categories().map(x=>`<button class="${x===active?'active':''}" data-nx31-cat="${esc(x)}">${esc(x)}</button>`).join('')}</div><label>${icon.search}<input id="nx31Search" type="search" placeholder="Buscar notícia, anime ou assunto…" value="${esc(query)}"></label></div></section><section class="nx31-body"><div class="nx31-shell"><div class="nx31-head"><div><small>AGORA NO ANINEXUS</small><h2>Notícias recentes</h2></div><span id="nx31Count">Carregando…</span></div><div id="nx31Results"><div class="nx31-loading"></div></div><div class="nx31-retention"><strong>Feed vivo</strong><p>As notícias automáticas ficam por poucos dias no AniNexus para manter esta área focada no que está acontecendo agora. Publicações editoriais próprias podem permanecer por mais tempo.</p></div></div></section></main>`;
+    app.querySelectorAll('[data-nx31-cat]').forEach(b=>b.onclick=()=>{active=b.dataset.nx31Cat;app.querySelectorAll('[data-nx31-cat]').forEach(x=>x.classList.toggle('active',x===b));drawList()});
+    const input=app.querySelector('#nx31Search');if(input)input.oninput=()=>{query=input.value;drawList()};
+    document.title='Notícias | AniNexus';
+  }
+
+  function paragraph(text){return strip(text)?`<p>${esc(strip(text))}</p>`:''}
+  function articleShell(item){
+    activate();const meta=item.bodyMeta||parseBody(item.body),lead=strip(meta.lead||item.summary),details=Array.isArray(meta.details)?meta.details:[],image=item.image||meta.imageUrl||'';
+    app.innerHTML=`<main class="nx22-news nx31-news nx31-article"><article><header class="nx31-article-hero ${image?'has-image':''}">${image?`<img src="${esc(image)}" alt="">`:''}<div class="nx31-article-shade"></div><div class="nx31-shell nx31-article-head"><button type="button" class="nx31-back" data-nx31-back>${icon.back} Notícias</button><div class="nx31-article-meta"><span>${esc(item.category||meta.category||'Notícias')}</span><strong>${esc(item.source||meta.sourceName||'AniNexus Notícias')}</strong><time>${esc(date(item.publishedAt||meta.sourcePublishedAt,true))}</time></div><h1>${esc(item.title)}</h1>${lead?`<p>${esc(lead)}</p>`:''}</div></header><div class="nx31-shell nx31-article-layout"><div class="nx31-article-body"><div class="nx31-dropcap">A</div>${lead?paragraph(lead):''}${details.map(paragraph).join('')}<h2>Contexto da publicação</h2><p>Esta notícia foi organizada pelo sistema editorial do AniNexus a partir de uma fonte identificada e apresentada em português. O conteúdo aqui é um resumo próprio do anúncio, não uma cópia integral da matéria de origem.</p>${meta.originalTitle&&meta.originalTitle!==item.title?`<div class="nx31-original"><small>TÍTULO ORIGINAL DA FONTE</small><span>${esc(meta.originalTitle)}</span></div>`:''}</div><aside class="nx31-article-side"><div><img src="${BASE}/assets/logo.png" alt=""><strong>AniNexus Notícias</strong><p>Feed automático com retenção curta, tradução e organização editorial dentro do próprio site.</p></div><div><small>FONTE MONITORADA</small><strong>${esc(item.source||meta.sourceName||'Fonte editorial')}</strong><p>O endereço original é mantido apenas nos metadados internos para rastreabilidade.</p></div></aside></div><section class="nx31-related"><div class="nx31-shell"><div class="nx31-head"><div><small>CONTINUE POR AQUI</small><h2>Mais notícias</h2></div></div><div id="nx31Related" class="nx31-grid"></div></div></section></article></main>`;
+    app.querySelector('[data-nx31-back]')?.addEventListener('click',()=>routeTo('/noticias'));
+    const rel=items.filter(x=>x.slug!==item.slug).slice(0,3),host=app.querySelector('#nx31Related');if(host)host.innerHTML=rel.map(x=>card(x)).join('');
+    document.title=`${item.title} | AniNexus`;
+  }
+
+  async function render(){
+    if(!isNewsPath())return false;
+    const path=pathNow();
+    if(path==='/noticias'){listShell();await load();if(pathNow()==='/noticias')drawList();return true}
+    const target=decodeURIComponent(path.split('/').pop());
+    let item=null;
+    if(!IS_PAGES)item=await fetchDetail(target);
+    if(!item){await load();item=items.find(x=>x.slug===target)}
+    if(!item){activate();app.innerHTML='<main class="nx22-news nx31-news"><div class="nx31-shell nx31-not-found"><h1>Notícia não encontrada</h1><p>Ela pode ter saído do feed recente.</p><button data-nx31-back>Voltar para Notícias</button></div></main>';app.querySelector('[data-nx31-back]')?.addEventListener('click',()=>routeTo('/noticias'));return true}
+    if(!items.length)await load();articleShell(item);return true;
+  }
+
+  document.addEventListener('click',e=>{const a=e.target.closest('[data-nx31-route]');if(!a)return;e.preventDefault();routeTo(a.dataset.nx31Route)},true);
+  addEventListener('popstate',()=>setTimeout(render,0));
+  document.addEventListener('aninexus:routechange',()=>setTimeout(render,0));
+  observer=new MutationObserver(()=>{if(isNewsPath()&&!app.firstElementChild?.classList.contains('nx31-news'))render()});observer.observe(app,{childList:true});
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',render,{once:true});else render();
+})();
