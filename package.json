@@ -1,16 +1,18 @@
 {
   "name": "aninexus",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "private": true,
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
     "worker:news": "node lib/news-worker-v37.mjs",
     "update:news": "node scripts/update-news-v36.mjs",
+    "build:public": "node scripts/build-public.mjs",
     "dev": "NODE_ENV=development node --watch server.mjs",
     "smoke": "node tests/smoke.mjs",
     "test:news": "node tests/news-system.mjs",
-    "check": "node --check server.mjs && node --check lib/news-core.mjs && node --check lib/native-news.mjs && node --check lib/news-sources-v36.mjs && node --check lib/news-sources-v36-normalized.mjs && node --check lib/news-rich-v37.mjs && node --check lib/news-sources-v34.mjs && node --check lib/news-worker-v37.mjs && node --check scripts/update-news-v36.mjs && node --check preview-v23/router-v23.js && node --check preview-v24/home-guard-v24.js && node --check preview-v27/navigation-v27.js && node --check preview-v33/home-v33.js && node --check preview-v35/home-v35.js && node --check preview-v35/news-data-v35.js && node --check preview-v35/news-ui-v35.js && node tests/news-system.mjs && node tests/smoke.mjs"
+    "test:core": "node tests/core-v38.mjs",
+    "check": "node --check server.mjs && node --check lib/auth.mjs && node --check lib/cache.mjs && node --check lib/db.mjs && node --check lib/analytics.mjs && node --check lib/provider.mjs && node --check lib/news-core.mjs && node --check lib/native-news.mjs && node --check lib/news-sources-v36.mjs && node --check lib/news-sources-v36-normalized.mjs && node --check lib/news-rich-v37.mjs && node --check lib/news-sources-v34.mjs && node --check lib/news-worker-v37.mjs && node --check scripts/update-news-v36.mjs && node --check scripts/build-public.mjs && node --check preview-v23/router-v23.js && node --check preview-v24/home-guard-v24.js && node --check preview-v27/navigation-v27.js && node --check preview-v33/home-v33.js && node --check preview-v35/home-v35.js && node --check preview-v35/news-data-v35.js && node --check preview-v35/news-ui-v35.js && node --check preview-v38/runtime-v38.js && node --check preview-v38/auth-guard-v38.js && node --check preview-v38/auth-v38.js && node tests/news-system.mjs && node tests/core-v38.mjs && node tests/smoke.mjs"
   },
   "engines": { "node": ">=22" },
   "dependencies": {
