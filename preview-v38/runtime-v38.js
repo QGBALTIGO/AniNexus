@@ -2,6 +2,72 @@
 (() => {
   if(window.__NX38_RUNTIME__)return;window.__NX38_RUNTIME__=true;
   window.__NX38_BOOT_AT=performance.now();
+  const IS_PAGES=location.hostname.endsWith('github.io');
+  const ANILIST='https://graphql.anilist.co';
+  const nativeFetch=window.fetch.bind(window);
+
+  // In production, repeated public AniList reads should be shared through AniNexus
+  // (Nginx -> Fastify -> Redis) instead of being repeated by every visitor.
+  if(!IS_PAGES){
+    const toGraph=m=>{
+      if(!m)return m;
+      if(m.coverImage&&typeof m.title==='object')return m;
+      const n=Number(m.score),averageScore=Number.isFinite(n)?Math.round(n*10):(m.averageScore||null);
+      return{
+        id:m.id,
+        title:{english:m.title||'',romaji:m.titleRomaji||m.title||'',native:m.titleNative||'',userPreferred:m.title||m.titleRomaji||''},
+        coverImage:{extraLarge:m.cover||'',large:m.cover||'',color:m.coverColor||null},bannerImage:m.banner||'',description:m.description||'',genres:m.genres||[],
+        tags:(m.tags||[]).map(x=>typeof x==='string'?{name:x,rank:0,isMediaSpoiler:false}:x),averageScore,popularity:m.popularity||0,favourites:m.favourites||0,
+        episodes:m.episodes||null,chapters:m.chapters||null,volumes:m.volumes||null,duration:m.duration||null,format:m.format||'',status:m.status||'',season:m.season||'',seasonYear:m.seasonYear||null,countryOfOrigin:m.country||'',source:m.source||'',startDate:m.startDate||null,endDate:m.endDate||null,
+        studios:{nodes:m.studios||[]},nextAiringEpisode:m.nextAiringEpisode||null,trailer:m.trailer||null,
+        externalLinks:(m.streaming||m.externalLinks||[]).map(x=>({site:x.site||'',url:x.url||'',type:x.type||'STREAMING',icon:x.icon||'',color:x.color||''}))
+      };
+    };
+    const jsonResponse=data=>new Response(JSON.stringify({data}),{status:200,headers:{'content-type':'application/json; charset=utf-8','x-aninexus-bridge':'v38'}});
+    const apiJson=async(path,signal)=>{const r=await nativeFetch(path,{signal,credentials:'same-origin',headers:{accept:'application/json'}});if(!r.ok)throw new Error(`AniNexus API ${r.status}`);return r.json()};
+    const seasonNow=()=>{const d=new Date(),m=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',month:'numeric'}).format(d)),year=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',year:'numeric'}).format(d));return{year,season:m<=3?'WINTER':m<=6?'SPRING':m<=9?'SUMMER':'FALL'}};
+    const rawSoon=async(signal)=>{
+      const fields='id title{romaji english native userPreferred}coverImage{extraLarge large}bannerImage averageScore popularity genres episodes format status seasonYear externalLinks{site url type icon color}';
+      const query=`query{Page(page:1,perPage:22){media(type:ANIME,isAdult:false,status:NOT_YET_RELEASED,sort:[POPULARITY_DESC]){${fields}}}}`;
+      const r=await nativeFetch(ANILIST,{method:'POST',headers:{'content-type':'application/json',accept:'application/json'},body:JSON.stringify({query}),signal});if(!r.ok)throw new Error(`AniList soon ${r.status}`);const j=await r.json();if(j.errors?.length)throw new Error(j.errors[0]?.message||'AniList soon');return j?.data?.Page?.media||[];
+    };
+    const bridgeHome=async(body,signal)=>{
+      const vars=body.variables||{},s=seasonNow(),season=vars.season||s.season,year=Number(vars.year||s.year),now=Math.floor(Date.now()/1000),end=now+7*86400;
+      const [seasonData,schedule,top,popular,reading,soon]=await Promise.all([
+        apiJson(`/api/catalog?page=1&perPage=22&season=${encodeURIComponent(season)}&year=${year}&sort=POPULAR`,signal),
+        apiJson(`/api/schedule?start=${now}&end=${end}`,signal),
+        apiJson('/api/catalog?page=1&perPage=10&sort=SCORE',signal),
+        apiJson('/api/catalog?page=1&perPage=22&sort=POPULAR',signal),
+        apiJson('/api/reading?page=1&perPage=18&sort=POPULAR',signal),
+        rawSoon(signal)
+      ]);
+      return jsonResponse({season:{media:(seasonData.items||[]).map(toGraph)},schedule:{airingSchedules:(schedule||[]).slice(0,8).map(x=>({airingAt:x.airingAt,episode:x.episode,media:toGraph(x.media)}))},top:{media:(top.items||[]).map(toGraph)},popular:{media:(popular.items||[]).map(toGraph)},soon:{media:soon},reading:{media:(reading.items||[]).map(toGraph)}});
+    };
+    const mapSort=q=>q.includes('SCORE_DESC')?'SCORE':q.includes('TRENDING_DESC')?'TRENDING':q.includes('START_DATE_DESC')?'NEW':q.includes('TITLE_ROMAJI')?'TITLE':'POPULAR';
+    const bridgePage=async(body,signal,type)=>{
+      const q=String(body.query||''),v=body.variables||{};
+      // Keep rare modes/search direct until the internal provider has an exact semantic match.
+      if(/SEARCH_MATCH|FAVOURITES_DESC|status:NOT_YET_RELEASED/.test(q))return null;
+      const params=new URLSearchParams({page:String(v.page||1),perPage:String(v.perPage||24),sort:mapSort(q)});
+      for(const k of ['search','genre','format','season','year'])if(v[k]!=null&&v[k]!=='')params.set(k,String(v[k]));
+      const endpoint=type==='MANGA'?'/api/reading':'/api/catalog',data=await apiJson(`${endpoint}?${params}`,signal);
+      return jsonResponse({Page:{pageInfo:data.pageInfo||{},media:(data.items||[]).map(toGraph)}});
+    };
+    window.fetch=async function(input,init={}){
+      const target=typeof input==='string'?input:input?.url||String(input||'');
+      const method=String(init.method||input?.method||'GET').toUpperCase();
+      if(target===ANILIST&&method==='POST'&&typeof init.body==='string'){
+        let body;try{body=JSON.parse(init.body)}catch{return nativeFetch(input,init)}
+        const q=String(body?.query||'');
+        try{
+          if(q.includes('season:Page')&&q.includes('schedule:Page')&&q.includes('reading:Page'))return await bridgeHome(body,init.signal);
+          if(q.includes('Page(page:$page,perPage:$perPage)')&&q.includes('media(type:ANIME')&&!q.includes('airingSchedules')){const r=await bridgePage(body,init.signal,'ANIME');if(r)return r}
+          if(q.includes('Page(page:$page,perPage:$perPage)')&&q.includes('media(type:MANGA')){const r=await bridgePage(body,init.signal,'MANGA');if(r)return r}
+        }catch(err){console.warn('[AniNexus bridge] fallback to upstream:',err?.message||err)}
+      }
+      return nativeFetch(input,init);
+    };
+  }
 
   // The old PWA shell predates the current multi-route runtime and can replay stale UI.
   if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>Promise.allSettled(rs.map(r=>r.unregister()))).catch(()=>{})}
