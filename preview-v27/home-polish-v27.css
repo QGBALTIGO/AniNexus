@@ -1,0 +1,943 @@
+/* AniNexus V27 — home visual polish
+   A final override layer focused on hierarchy, spacing, responsiveness and perceived performance. */
+
+body.nx24-home-active{
+  background:#09070a;
+}
+
+body.nx24-home-active .nx24-home{
+  --nx-bg:#09070a;
+  --nx-surface:#100c10;
+  --nx-surface-2:#151015;
+  --nx-surface-3:#1b1319;
+  --nx-line:rgba(255,255,255,.085);
+  --nx-line-strong:rgba(255,255,255,.14);
+  --nx-text:#fff8fb;
+  --nx-muted:#a99ca3;
+  --nx-muted-2:#7e7278;
+  --nx-red:#e72d54;
+  --nx-red-2:#ff5f7c;
+  --nx-gold:#efbd55;
+  background:var(--nx-bg);
+  color:var(--nx-text);
+}
+
+body.nx24-home-active .nx24-shell{
+  width:min(1216px,calc(100% - 48px));
+}
+
+/* HERO ------------------------------------------------------------------- */
+body.nx24-home-active .nx24-hero{
+  background:
+    radial-gradient(circle at 18% 8%,rgba(231,45,84,.13),transparent 28%),
+    radial-gradient(circle at 88% 18%,rgba(132,39,71,.16),transparent 28%),
+    linear-gradient(180deg,#100a0f 0%,#09070a 88%);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+body.nx24-home-active .nx24-hero:before{
+  opacity:.38;
+  background-size:56px 56px;
+}
+
+body.nx24-home-active .nx24-hero-inner{
+  min-height:560px;
+  grid-template-columns:minmax(0,1.04fr) minmax(430px,.96fr);
+  gap:64px;
+  padding:72px 0 62px;
+}
+
+body.nx24-home-active .nx24-hero-copy{
+  max-width:720px;
+}
+
+body.nx24-home-active .nx24-kicker{
+  padding:7px 10px;
+  border:1px solid rgba(255,91,123,.18);
+  border-radius:999px;
+  background:rgba(231,45,84,.07);
+  color:#ff7890;
+  letter-spacing:.12em;
+}
+
+body.nx24-home-active .nx24-hero-copy h1{
+  margin:17px 0 18px;
+  font-size:clamp(48px,5.1vw,74px);
+  line-height:1;
+  letter-spacing:-.055em;
+  text-wrap:balance;
+}
+
+body.nx24-home-active .nx24-hero-copy>p{
+  max-width:650px;
+  color:#b9adb3;
+  font-size:17px;
+  line-height:1.62;
+}
+
+body.nx24-home-active .nx24-hero-actions{
+  display:grid;
+  grid-template-columns:max-content max-content;
+  align-items:center;
+  justify-content:start;
+  gap:12px;
+  margin-top:30px;
+}
+
+body.nx24-home-active .nx24-hero-actions a{
+  min-width:188px;
+  height:50px;
+  justify-content:center;
+  padding:0 19px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:12px;
+  background:#151015;
+  color:#f8f1f4;
+  box-shadow:0 10px 30px rgba(0,0,0,.16);
+  font-size:13px;
+  font-weight:900;
+}
+
+body.nx24-home-active .nx24-hero-actions a.primary{
+  border-color:rgba(255,97,126,.32);
+  background:linear-gradient(135deg,#bd1b40,#ec3158 75%,#ff5573);
+  color:#fff;
+  box-shadow:0 14px 34px rgba(201,27,67,.25);
+}
+
+body.nx24-home-active .nx24-hero-actions a:hover{
+  transform:translateY(-2px);
+  border-color:rgba(255,255,255,.21);
+}
+
+body.nx24-home-active .nx24-hero-points{
+  gap:20px;
+  margin-top:24px;
+  color:#91858b;
+}
+
+/* Turn the old floating collage into a contained editorial showcase. */
+body.nx24-home-active .nx24-showcase{
+  height:390px;
+  isolation:isolate;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(231,45,84,.13),transparent 48%),
+    linear-gradient(145deg,rgba(24,16,22,.96),rgba(10,8,10,.98));
+  box-shadow:0 36px 80px rgba(0,0,0,.34),inset 0 1px rgba(255,255,255,.025);
+  overflow:hidden;
+}
+
+body.nx24-home-active .nx24-showcase:before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(255,255,255,.045);
+  border-radius:22px;
+  pointer-events:none;
+}
+
+body.nx24-home-active .nx24-showcase-glow{
+  inset:18% 12% 8%;
+  background:radial-gradient(circle,rgba(231,45,84,.22),transparent 66%);
+  filter:blur(22px);
+}
+
+body.nx24-home-active .nx24-poster{
+  width:148px;
+  border-radius:17px;
+  border:1px solid rgba(255,255,255,.11);
+  box-shadow:0 22px 48px rgba(0,0,0,.46);
+  transform:none!important;
+  transition:transform .22s ease,box-shadow .22s ease,filter .22s ease;
+}
+
+body.nx24-home-active .nx24-poster.one{
+  left:30px;
+  top:74px;
+  z-index:1;
+}
+
+body.nx24-home-active .nx24-poster.two{
+  right:30px;
+  top:50px;
+  z-index:1;
+}
+
+body.nx24-home-active .nx24-poster.three{
+  left:50%;
+  right:auto;
+  bottom:28px;
+  z-index:2;
+  transform:translateX(-50%)!important;
+}
+
+body.nx24-home-active .nx24-showcase:hover .nx24-poster.one{
+  transform:translateY(-4px)!important;
+}
+
+body.nx24-home-active .nx24-showcase:hover .nx24-poster.two{
+  transform:translateY(-4px)!important;
+}
+
+body.nx24-home-active .nx24-showcase:hover .nx24-poster.three{
+  transform:translate(-50%,-5px)!important;
+}
+
+body.nx24-home-active .nx24-showcase-logo{
+  left:50%;
+  top:42%;
+  width:92px;
+  height:92px;
+  padding:13px;
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(8,6,8,.92);
+  box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 42px rgba(231,45,84,.18);
+}
+
+/* ACTIVITY BAND ----------------------------------------------------------- */
+body.nx24-home-active .nx24-account-band{
+  padding:18px 0;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  background:#0b080b;
+}
+
+body.nx24-home-active .nx24-account-inner{
+  min-height:unset;
+  display:grid;
+  grid-template-columns:max-content minmax(0,1fr);
+  gap:22px;
+  padding:15px 17px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;
+  background:linear-gradient(135deg,#120d11,#0e0a0d);
+}
+
+body.nx24-home-active .nx24-account-title{
+  gap:11px;
+}
+
+body.nx24-home-active .nx24-account-title>div{
+  display:grid;
+  gap:2px;
+}
+
+body.nx24-home-active .nx24-account-title strong{
+  font-size:12px;
+  font-weight:900;
+}
+
+body.nx24-home-active .nx24-account-title span{
+  max-width:260px;
+  white-space:normal;
+  color:#857980;
+  font-size:10px;
+}
+
+body.nx24-home-active .nx24-activity-rail{
+  align-items:center;
+  padding:0;
+}
+
+body.nx24-home-active .nx24-activity{
+  max-width:430px;
+  padding:10px 13px;
+  border-radius:10px;
+  background:#151014;
+  color:#b9adb3;
+  white-space:normal;
+  line-height:1.35;
+}
+
+/* SECTIONS ---------------------------------------------------------------- */
+body.nx24-home-active .nx24-section{
+  padding:64px 0;
+  content-visibility:auto;
+  contain-intrinsic-size:620px;
+}
+
+body.nx24-home-active .nx24-section.soft{
+  background:#0c090c;
+  border-block-color:rgba(255,255,255,.045);
+}
+
+body.nx24-home-active .nx24-section-head{
+  align-items:flex-end;
+  margin-bottom:24px;
+}
+
+body.nx24-home-active .nx24-section-head h2{
+  font-size:29px;
+  letter-spacing:-.04em;
+}
+
+body.nx24-home-active .nx24-section-head p{
+  max-width:660px;
+  color:#8f8389;
+  line-height:1.5;
+}
+
+body.nx24-home-active .nx24-section-head>a{
+  min-height:34px;
+  padding:0 10px;
+  border-radius:9px;
+  color:#c8bcc2;
+}
+
+body.nx24-home-active .nx24-section-head>a:hover{
+  background:rgba(255,255,255,.04);
+}
+
+body.nx24-home-active .nx24-rail{
+  grid-auto-columns:174px;
+  gap:16px;
+  padding-bottom:8px;
+}
+
+body.nx24-home-active .nx24-card-poster{
+  border-radius:14px;
+  border-color:rgba(255,255,255,.075);
+  background:#151014;
+}
+
+body.nx24-home-active .nx24-card h3{
+  margin-top:10px;
+  color:#f8f2f5;
+  font-size:13.5px;
+}
+
+body.nx24-home-active .nx24-card>p{
+  color:#81757b;
+}
+
+body.nx24-home-active .nx24-rail-btn{
+  width:42px;
+  height:42px;
+  border-color:rgba(255,255,255,.14);
+  background:rgba(13,9,12,.96);
+  box-shadow:0 14px 32px rgba(0,0,0,.35);
+}
+
+/* SCHEDULE ---------------------------------------------------------------- */
+body.nx24-home-active .nx24-schedule-grid{
+  gap:14px;
+}
+
+body.nx24-home-active .nx24-schedule-card{
+  min-height:156px;
+  grid-template-columns:102px minmax(0,1fr);
+  border-radius:16px;
+  background:linear-gradient(140deg,#141014,#0d0a0d);
+}
+
+body.nx24-home-active .nx24-schedule-copy{
+  padding:15px 46px 14px 14px;
+}
+
+body.nx24-home-active .nx24-countdown{
+  display:inline-flex;
+  padding:4px 7px;
+  border:1px solid rgba(231,45,84,.13);
+  border-radius:7px;
+  background:rgba(231,45,84,.06);
+  color:#e3d8dd;
+}
+
+/* AWARDS ------------------------------------------------------------------ */
+body.nx24-home-active .nx24-awards{
+  padding:30px;
+  border-radius:22px;
+  border-color:rgba(239,189,85,.17);
+  background:
+    radial-gradient(circle at 84% 0,rgba(239,189,85,.10),transparent 34%),
+    linear-gradient(145deg,#151008,#0d0a09 58%,#100a0d);
+  box-shadow:0 24px 58px rgba(0,0,0,.18);
+}
+
+body.nx24-home-active .nx24-awards-head{
+  margin-bottom:25px;
+}
+
+body.nx24-home-active .nx24-awards-head>a{
+  display:inline-flex;
+  align-items:center;
+  min-height:36px;
+  padding:0 10px;
+  border-radius:9px;
+}
+
+body.nx24-home-active .nx24-awards-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-auto-rows:222px;
+  gap:12px;
+}
+
+body.nx24-home-active .nx24-award-card,
+body.nx24-home-active .nx24-award-card:first-child{
+  min-height:0;
+  grid-row:auto;
+  border-radius:16px;
+  border-color:rgba(255,255,255,.085);
+  background:#17110d;
+}
+
+body.nx24-home-active .nx24-award-card:first-child{
+  grid-column:span 2;
+}
+
+body.nx24-home-active .nx24-award-card:nth-child(4){
+  grid-column:span 2;
+}
+
+body.nx24-home-active .nx24-award-card img{
+  object-fit:cover;
+  object-position:center 24%;
+  transform:none;
+}
+
+body.nx24-home-active .nx24-award-card:after{
+  background:linear-gradient(180deg,rgba(5,4,4,.02) 24%,rgba(6,5,5,.94) 100%);
+}
+
+body.nx24-home-active .nx24-award-copy,
+body.nx24-home-active .nx24-award-card:first-child .nx24-award-copy{
+  left:16px;
+  right:16px;
+  bottom:15px;
+}
+
+body.nx24-home-active .nx24-award-copy strong,
+body.nx24-home-active .nx24-award-card:first-child .nx24-award-copy strong{
+  max-width:92%;
+  margin-top:5px;
+  font-size:15px;
+  line-height:1.18;
+  text-shadow:0 2px 12px rgba(0,0,0,.55);
+}
+
+/* JOURNEY / PANEL --------------------------------------------------------- */
+body.nx24-home-active .nx24-user-grid{
+  grid-template-columns:minmax(0,1.16fr) minmax(360px,.84fr);
+  gap:18px;
+  align-items:stretch;
+}
+
+body.nx24-home-active .nx24-user-card{
+  height:100%;
+  padding:24px;
+  border-radius:18px;
+  border-color:rgba(255,255,255,.08);
+  background:linear-gradient(145deg,#131014,#0d0a0d);
+  box-shadow:0 18px 44px rgba(0,0,0,.13);
+}
+
+body.nx24-home-active .nx24-user-card h3{
+  font-size:20px;
+}
+
+body.nx24-home-active .nx24-user-card>p{
+  margin:7px 0 20px;
+  color:#8b7f85;
+  line-height:1.45;
+}
+
+body.nx24-home-active .nx24-achievements{
+  grid-template-columns:1fr;
+  gap:10px;
+}
+
+body.nx24-home-active .nx24-achievement{
+  min-height:76px;
+  grid-template-columns:48px minmax(0,1fr);
+  gap:12px;
+  padding:13px 14px;
+  border-radius:13px;
+  background:#100c10;
+}
+
+body.nx24-home-active .nx24-achievement i{
+  width:46px;
+  height:46px;
+  border-radius:12px;
+}
+
+body.nx24-home-active .nx24-achievement strong{
+  font-size:12px;
+}
+
+body.nx24-home-active .nx24-achievement span{
+  margin-top:3px;
+  font-size:10px;
+}
+
+body.nx24-home-active .nx24-progress{
+  height:4px;
+  margin-top:8px;
+}
+
+body.nx24-home-active .nx24-stats{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+body.nx24-home-active .nx24-stat{
+  min-height:96px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:16px 10px;
+  border-radius:13px;
+  background:#100c10;
+  text-align:center;
+}
+
+body.nx24-home-active .nx24-stat strong{
+  font-size:30px;
+}
+
+body.nx24-home-active .nx24-stat span{
+  margin-top:7px;
+  font-size:9px;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+}
+
+body.nx24-home-active #nx24Continue{
+  margin-top:12px!important;
+}
+
+body.nx24-home-active #nx24Continue>.nx24-empty{
+  min-height:96px!important;
+  border-radius:13px;
+  background:rgba(255,255,255,.012);
+}
+
+/* EXPLORE ---------------------------------------------------------------- */
+body.nx24-home-active .nx24-explore-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+
+body.nx24-home-active .nx24-explore{
+  min-height:112px;
+  display:grid;
+  grid-template-columns:46px minmax(0,1fr);
+  align-items:center;
+  justify-content:unset;
+  gap:14px;
+  padding:18px;
+  border-radius:16px;
+  background:linear-gradient(145deg,#121013,#0e0b0e);
+}
+
+body.nx24-home-active .nx24-explore i{
+  width:46px;
+  height:46px;
+  margin:0;
+  border:1px solid rgba(231,45,84,.10);
+  border-radius:13px;
+  background:rgba(231,45,84,.09);
+}
+
+body.nx24-home-active .nx24-explore strong{
+  font-size:13px;
+}
+
+body.nx24-home-active .nx24-explore span{
+  max-width:230px;
+  margin-top:4px;
+  color:#84787e;
+  font-size:10px;
+  line-height:1.35;
+}
+
+/* PERFORMANCE / MOTION --------------------------------------------------- */
+body.nx24-home-active .nx24-card-poster,
+body.nx24-home-active .nx24-award-card,
+body.nx24-home-active .nx24-schedule-card,
+body.nx24-home-active .nx24-user-card,
+body.nx24-home-active .nx24-explore{
+  contain:layout paint style;
+}
+
+@media (hover:none){
+  body.nx24-home-active .nx24-showcase:hover .nx24-poster.one{transform:none!important}
+  body.nx24-home-active .nx24-showcase:hover .nx24-poster.two{transform:none!important}
+  body.nx24-home-active .nx24-showcase:hover .nx24-poster.three{transform:translateX(-50%)!important}
+  body.nx24-home-active .nx24-card:hover .nx24-card-poster,
+  body.nx24-home-active .nx24-award-card:hover img,
+  body.nx24-home-active .nx24-explore:hover,
+  body.nx24-home-active .nx24-schedule-card:hover{
+    transform:none;
+  }
+}
+
+/* TABLET ----------------------------------------------------------------- */
+@media(max-width:980px){
+  body.nx24-home-active .nx24-hero-inner{
+    grid-template-columns:1fr;
+    gap:34px;
+    padding:54px 0 46px;
+  }
+
+  body.nx24-home-active .nx24-hero-copy{
+    max-width:760px;
+  }
+
+  body.nx24-home-active .nx24-showcase{
+    width:min(620px,100%);
+    height:340px;
+    margin-inline:auto;
+  }
+
+  body.nx24-home-active .nx24-poster{
+    width:135px;
+  }
+
+  body.nx24-home-active .nx24-poster.one{left:10%;top:64px}
+  body.nx24-home-active .nx24-poster.two{right:10%;top:46px}
+  body.nx24-home-active .nx24-poster.three{bottom:22px}
+
+  body.nx24-home-active .nx24-account-inner{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  body.nx24-home-active .nx24-user-grid{
+    grid-template-columns:1fr;
+  }
+
+  body.nx24-home-active .nx24-awards-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-auto-rows:218px;
+  }
+
+  body.nx24-home-active .nx24-award-card:first-child,
+  body.nx24-home-active .nx24-award-card:nth-child(4){
+    grid-column:auto;
+  }
+}
+
+/* MOBILE ----------------------------------------------------------------- */
+@media(max-width:720px){
+  body.nx24-home-active .nx24-shell{
+    width:calc(100% - 30px);
+  }
+
+  body.nx24-home-active .nx24-hero-inner{
+    gap:28px;
+    padding:40px 0 34px;
+  }
+
+  body.nx24-home-active .nx24-hero-copy{
+    text-align:left;
+  }
+
+  body.nx24-home-active .nx24-kicker{
+    justify-content:flex-start;
+  }
+
+  body.nx24-home-active .nx24-hero-copy h1{
+    margin:15px 0 14px;
+    font-size:clamp(38px,11vw,54px);
+    line-height:1.02;
+  }
+
+  body.nx24-home-active .nx24-hero-copy>p{
+    margin:0;
+    font-size:14px;
+    line-height:1.55;
+  }
+
+  body.nx24-home-active .nx24-hero-actions{
+    grid-template-columns:1fr 1fr;
+    width:100%;
+    gap:9px;
+    margin-top:22px;
+  }
+
+  body.nx24-home-active .nx24-hero-actions a{
+    min-width:0;
+    width:100%;
+    height:48px;
+    padding:0 12px;
+    border-radius:11px;
+    font-size:11px;
+    line-height:1.15;
+    text-align:center;
+  }
+
+  body.nx24-home-active .nx24-hero-points{
+    justify-content:flex-start;
+    gap:9px 14px;
+    margin-top:18px;
+    font-size:9px;
+  }
+
+  body.nx24-home-active .nx24-showcase{
+    height:286px;
+    border-radius:22px;
+  }
+
+  body.nx24-home-active .nx24-showcase:before{
+    inset:12px;
+    border-radius:16px;
+  }
+
+  body.nx24-home-active .nx24-poster{
+    width:102px;
+    border-radius:12px;
+  }
+
+  body.nx24-home-active .nx24-poster.one{
+    left:18px;
+    top:64px;
+  }
+
+  body.nx24-home-active .nx24-poster.two{
+    right:18px;
+    top:42px;
+  }
+
+  body.nx24-home-active .nx24-poster.three{
+    bottom:18px;
+  }
+
+  body.nx24-home-active .nx24-showcase-logo{
+    top:42%;
+    width:76px;
+    height:76px;
+    padding:11px;
+  }
+
+  body.nx24-home-active .nx24-account-band{
+    padding:14px 0;
+  }
+
+  body.nx24-home-active .nx24-account-inner{
+    padding:14px;
+    border-radius:14px;
+  }
+
+  body.nx24-home-active .nx24-account-title{
+    align-items:flex-start;
+    white-space:normal;
+  }
+
+  body.nx24-home-active .nx24-account-title span{
+    font-size:9px;
+  }
+
+  body.nx24-home-active .nx24-activity{
+    max-width:100%;
+    width:100%;
+    border-radius:10px;
+    font-size:10px;
+  }
+
+  body.nx24-home-active .nx24-section{
+    padding:46px 0;
+    contain-intrinsic-size:520px;
+  }
+
+  body.nx24-home-active .nx24-section-head{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    align-items:start;
+    gap:10px;
+    margin-bottom:18px;
+  }
+
+  body.nx24-home-active .nx24-section-head h2{
+    font-size:22px;
+    line-height:1.08;
+  }
+
+  body.nx24-home-active .nx24-section-head p{
+    max-width:100%;
+    margin-top:6px;
+    font-size:11px;
+  }
+
+  body.nx24-home-active .nx24-section-head>a{
+    min-height:30px;
+    padding:2px 4px;
+    font-size:9px;
+    white-space:nowrap;
+  }
+
+  body.nx24-home-active .nx24-rail{
+    grid-auto-columns:148px;
+    gap:12px;
+  }
+
+  body.nx24-home-active .nx24-card h3{
+    font-size:12.5px;
+  }
+
+  body.nx24-home-active .nx24-schedule-card{
+    grid-template-columns:92px minmax(0,1fr);
+    min-height:142px;
+  }
+
+  body.nx24-home-active .nx24-awards{
+    padding:17px;
+    border-radius:18px;
+  }
+
+  body.nx24-home-active .nx24-awards-head{
+    align-items:flex-start;
+    margin-bottom:17px;
+  }
+
+  body.nx24-home-active .nx24-awards-title{
+    gap:10px;
+  }
+
+  body.nx24-home-active .nx24-awards-title h2{
+    font-size:20px;
+  }
+
+  body.nx24-home-active .nx24-awards-icon{
+    width:42px;
+    height:42px;
+  }
+
+  body.nx24-home-active .nx24-awards-head>a{
+    max-width:92px;
+    min-height:32px;
+    padding:0;
+    font-size:9px;
+    text-align:right;
+  }
+
+  body.nx24-home-active .nx24-awards-grid{
+    display:grid;
+    grid-template-columns:none;
+    grid-auto-flow:column;
+    grid-auto-columns:78%;
+    grid-auto-rows:300px;
+    gap:10px;
+    overflow-x:auto;
+    padding:1px 1px 8px;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+  }
+
+  body.nx24-home-active .nx24-awards-grid::-webkit-scrollbar{display:none}
+
+  body.nx24-home-active .nx24-award-card,
+  body.nx24-home-active .nx24-award-card:first-child{
+    min-height:300px;
+    grid-column:auto;
+    scroll-snap-align:start;
+  }
+
+  body.nx24-home-active .nx24-award-copy strong,
+  body.nx24-home-active .nx24-award-card:first-child .nx24-award-copy strong{
+    font-size:15px;
+  }
+
+  body.nx24-home-active .nx24-user-card{
+    padding:18px;
+    border-radius:16px;
+  }
+
+  body.nx24-home-active .nx24-user-card h3{
+    font-size:18px;
+  }
+
+  body.nx24-home-active .nx24-achievement{
+    min-height:72px;
+    padding:11px 12px;
+  }
+
+  body.nx24-home-active .nx24-stats{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  body.nx24-home-active .nx24-stat{
+    min-height:88px;
+  }
+
+  body.nx24-home-active .nx24-explore-grid{
+    grid-template-columns:1fr;
+    gap:9px;
+  }
+
+  body.nx24-home-active .nx24-explore{
+    min-height:88px;
+    grid-template-columns:42px minmax(0,1fr) 18px;
+    gap:12px;
+    padding:14px;
+    border-radius:14px;
+  }
+
+  body.nx24-home-active .nx24-explore:after{
+    content:'›';
+    color:#62575d;
+    font-size:26px;
+    font-weight:400;
+    line-height:1;
+  }
+
+  body.nx24-home-active .nx24-explore i{
+    width:42px;
+    height:42px;
+    border-radius:11px;
+  }
+
+  body.nx24-home-active .nx24-explore strong{
+    font-size:12px;
+  }
+
+  body.nx24-home-active .nx24-explore span{
+    font-size:9px;
+  }
+}
+
+@media(max-width:430px){
+  body.nx24-home-active .nx24-shell{
+    width:calc(100% - 24px);
+  }
+
+  body.nx24-home-active .nx24-hero-actions{
+    grid-template-columns:1fr;
+  }
+
+  body.nx24-home-active .nx24-hero-actions a{
+    height:47px;
+  }
+
+  body.nx24-home-active .nx24-showcase{
+    height:264px;
+  }
+
+  body.nx24-home-active .nx24-poster{
+    width:91px;
+  }
+
+  body.nx24-home-active .nx24-poster.one{left:14px;top:58px}
+  body.nx24-home-active .nx24-poster.two{right:14px;top:38px}
+  body.nx24-home-active .nx24-poster.three{bottom:15px}
+
+  body.nx24-home-active .nx24-showcase-logo{
+    width:68px;
+    height:68px;
+    padding:10px;
+  }
+
+  body.nx24-home-active .nx24-section-head{
+    grid-template-columns:1fr;
+  }
+
+  body.nx24-home-active .nx24-section-head>a{
+    justify-self:start;
+  }
+
+  body.nx24-home-active .nx24-awards-grid{
+    grid-auto-columns:86%;
+  }
+}
