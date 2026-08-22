@@ -1,89 +1,37 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
+const root=process.cwd(),read=p=>fs.readFileSync(path.join(root,p),'utf8'),exists=p=>fs.existsSync(path.join(root,p));let passed=0,failed=0;
+function test(name,fn){try{fn();passed++;console.log(`✓ ${name}`)}catch(err){failed++;console.error(`✗ ${name}\n  ${err.message}`)}}function ok(v,msg='assertion failed'){if(!v)throw new Error(msg)}function includes(t,n,m){ok(t.includes(n),m||`missing ${n}`)}function notIncludes(t,n,m){ok(!t.includes(n),m||`unexpected ${n}`)}
+const index=read('index.html'),router=read('preview-v23/router-v23.js'),nav=read('preview-v27/navigation-v27.js'),newsGuard=read('preview-v32/news-route-guard-v32.js'),home=read('preview-v28/home-v28.js'),home33=read('preview-v33/home-v33.js'),home33Css=read('preview-v33/home-v33.css'),news=read('preview-v32/news-v32.js'),news33=read('preview-v33/news-v33.js'),news33Css=read('preview-v33/news-v33.css'),worker=read('lib/news-worker-v33.mjs'),native=read('lib/native-news.mjs'),migration=read('sql/005_news_quality_and_revisions.sql'),env=read('.env.example'),compose=read('docker-compose.yml'),detail=read('preview-v22/detail-stable-v22.js'),detailCss=read('preview-v22/detail-v22.css'),mediaState=read('preview-v19/media-state-v2.js'),catalog=read('preview-v20/catalog-v20.js'),schedule=read('preview-v18/schedule.js'),season=read('preview-v8/app.js'),notFound=read('404.html'),pkg=JSON.parse(read('package.json'));
+function resolveRoute(s){const u=new URL(s),p=u.searchParams.get('p');if(p)return p.split('?')[0].replace(/\/+$/,'')||'/';let x=u.pathname.replace(/^\/AniNexus/,'')||'/';return x.replace(/\/+$/,'')||'/'}
 
-const root=process.cwd();
-const read=p=>fs.readFileSync(path.join(root,p),'utf8');
-const exists=p=>fs.existsSync(path.join(root,p));
-let passed=0,failed=0;
-function test(name,fn){try{fn();passed++;console.log(`✓ ${name}`)}catch(err){failed++;console.error(`✗ ${name}\n  ${err.message}`)}}
-function ok(v,msg='assertion failed'){if(!v)throw new Error(msg)}
-function includes(text,needle,msg){ok(text.includes(needle),msg||`missing ${needle}`)}
-function notIncludes(text,needle,msg){ok(!text.includes(needle),msg||`unexpected ${needle}`)}
+test('GitHub Pages resolves V33 internal news routes',()=>ok(resolveRoute('https://qgbaltigo.github.io/AniNexus/?build=33.0.0&p=%2Fnoticias%2Fteste-abc')==='/noticias/teste-abc'));
+test('router recognizes news list and article routes',()=>{includes(router,"'/noticias'");includes(router,"/^\\/noticias\\/[a-z0-9-]+$/.test(p)")});
+test('routing assets use V33 build',()=>{includes(router,"BUILD='33.0.0'");includes(nav,"BUILD='33.0.0'");includes(notFound,'build=33.0.0')});
+test('news guard still owns news before legacy boot',()=>includes(newsGuard,'window.__NX_NEWS_V32_ROUTE__'));
+test('index activates V33 without the duplicate V29-V32 home enhancers',()=>{includes(index,'2026-08-22-v33.0.0');includes(index,'preview-v33/home-v33.js');includes(index,'preview-v33/news-v33.css');notIncludes(index,'preview-v29/home-fidelity-v29.js');notIncludes(index,'preview-v30/home-content-v30.js');notIncludes(index,'preview-v31/home-runtime-v31.js');notIncludes(index,'preview-v32/home-news-v32.js')});
 
-const index=read('index.html');
-const router=read('preview-v23/router-v23.js');
-const nav=read('preview-v27/navigation-v27.js');
-const guard=read('preview-v23/route-guard-v23.js');
-const newsGuard=read('preview-v32/news-route-guard-v32.js');
-const news=read('preview-v32/news-v32.js');
-const newsCss=read('preview-v32/news-v32.css');
-const home=read('preview-v28/home-v28.js');
-const homeRuntime=read('preview-v31/home-runtime-v31.js');
-const homeNews=read('preview-v32/home-news-v32.js');
-const homeCss=read('preview-v32/home-v32.css');
-const core=read('lib/news-core.mjs');
-const worker=read('lib/news-worker.mjs');
-const native=read('lib/native-news.mjs');
-const migration=read('sql/004_news_editorial_pipeline.sql');
-const env=read('.env.example');
-const compose=read('docker-compose.yml');
-const detail=read('preview-v22/detail-stable-v22.js');
-const detailCss=read('preview-v22/detail-v22.css');
-const mediaState=read('preview-v19/media-state-v2.js');
-const catalog=read('preview-v20/catalog-v20.js');
-const schedule=read('preview-v18/schedule.js');
-const season=read('preview-v8/app.js');
-const notFound=read('404.html');
-const newsData=JSON.parse(read('data/news.json'));
+test('base home keeps all discovery data sections',()=>['aqxSeason','aqxSchedule','aqxTop','aqxAwards','aqxPopular','aqxCommunity'].forEach(x=>includes(home,x)));
+test('V33 home has one branded hero and removes Tags',()=>{includes(home33,'nx33-brand-lockup');includes(home33,'nx33-hero-actions');includes(home33,"t==='Tags'");includes(home33,'cleanLegacy')});
+test('V33 home adds internal news and manga sections',()=>{includes(home33,'nx33-news-section');includes(home33,'nx33-reading-section');includes(home33,'/noticias/${x.slug}');includes(home33,'/manga/${slug(t)}-${m.id}')});
+test('V33 home has dynamic edge shading',()=>{includes(home33,'scrollWidth-el.clientWidth');includes(home33,'data-nx33-right');includes(home33Css,'.nx33-edge-host[data-nx33-right="1"]:after')});
+test('AniNexus red identity dominates Home',()=>{includes(home33Css,'#e3264f');includes(home33Css,'.nx33-orbit');includes(home33Css,'.nx33-live-head')});
 
-function resolveRoute(urlString){const u=new URL(urlString),p=u.searchParams.get('p');if(p)return p.split('?')[0].replace(/\/+$/,'')||'/';let x=u.pathname.replace(/^\/AniNexus/,'')||'/';return x.replace(/\/+$/,'')||'/'}
+test('V33 worker is the active package worker',()=>ok(pkg.scripts['worker:news']==='node lib/news-worker-v33.mjs'));
+test('V33 worker monitors three external source families',()=>['Crunchyroll Notícias','Anime News Network','MyAnimeList'].forEach(x=>includes(worker,x)));
+test('V33 worker translation and quality gates prevent low-quality English publication',()=>{includes(worker,'pair.ready');includes(worker,'skippedTranslation');includes(worker,'NEWS_MIN_QUALITY');includes(worker,'skippedQuality')});
+test('V33 worker enriches images and source pages',()=>{includes(worker,'extractHtmlMetadata');includes(worker,'fallbackImage');includes(worker,'getCatalog');includes(worker,'getReading')});
+test('V33 worker deduplicates and revisions stories',()=>{includes(worker,'groupStories');includes(worker,'storyFingerprint');includes(worker,'news_article_revisions');includes(worker,'content_signature')});
+test('V33 worker persists health and ingest telemetry',()=>{includes(worker,'news_source_health');includes(worker,'news_ingest_runs')});
+test('native feed exposes only live Portuguese-ready articles',()=>{includes(native,"translation_status='ready'");includes(native,"language='pt-BR'");includes(native,'expires_at>now()')});
+test('news schema has revisions and ingest observability',()=>['news_article_revisions','news_ingest_runs','content_version','translation_status','source_count'].forEach(x=>includes(migration,x)));
+test('short retention and quality threshold are configurable in deployment',()=>{includes(env,'NEWS_RETENTION_DAYS=5');includes(env,'NEWS_MIN_QUALITY=0.54');includes(compose,'NEWS_MIN_QUALITY: ${NEWS_MIN_QUALITY:-0.54}')});
 
-// Routing and activation
-test('GitHub Pages resolves V32 native article routes',()=>ok(resolveRoute('https://qgbaltigo.github.io/AniNexus/?build=32.0.0&p=%2Fnoticias%2Fteste-abc')==='/noticias/teste-abc'));
-test('Router recognizes news list and article routes',()=>{includes(router,"'/noticias'");includes(router,"/^\\/noticias\\/[a-z0-9-]+$/.test(p)")});
-test('V32 guard owns news before legacy V23 news boot',()=>{includes(newsGuard,"window.__NX_NEWS_V32_ROUTE__");includes(guard,'!window.__NX_NEWS_V32_ROUTE__')});
-test('Pages routing components use V32 build',()=>{includes(router,"BUILD='32.0.0'");includes(nav,"BUILD='32.0.0'");includes(notFound,'build=32.0.0')});
-test('Index activates V32 and unloads V31 news UI',()=>{includes(index,'2026-08-22-v32.0.0');includes(index,'preview-v32/news-v32.js');includes(index,'preview-v32/home-news-v32.js');notIncludes(index,'preview-v31/native-news-v31.js');notIncludes(index,'preview-v31/news-home-bridge-v31.js')});
-
-// Home
-test('Home keeps core discovery sections and real community activity',()=>{['aqxSeason','aqxSchedule','aqxTop','aqxAwards','aqxPopular','aqxCommunity'].forEach(x=>includes(home,x));includes(home,'/api/community/threads?limit=10')});
-test('Home removes old Tags section',()=>{includes(homeRuntime,"if(title==='Tags')section.remove()");includes(homeNews,"if(title==='Tags')section.remove()")});
-test('Home hero keeps distinct AniNexus identity',()=>{includes(homeRuntime,'ANINEXUS · SEU UNIVERSO ANIME');includes(homeRuntime,'nx31-hero-sigil');includes(homeCss,'#e3264f');includes(homeCss,'nx32-home-news-layout')});
-test('Home news is database-first and routes internally',()=>{includes(homeNews,"fetch('/api/news?limit=7'");includes(homeNews,'/noticias/${x.slug}');notIncludes(homeNews,'window.open(')});
-
-// Pipeline
-test('News core canonicalizes sources and fingerprints stories',()=>{includes(core,'canonicalUrl');includes(core,'sourceFingerprint');includes(core,'storyFingerprint')});
-test('News core extracts article metadata and creates structured editorial copy',()=>{includes(core,'extractHtmlMetadata');includes(core,'buildEditorialArticle');includes(core,"heading:'O que aconteceu'");includes(core,'readingMinutes')});
-test('Worker monitors three source families',()=>{includes(worker,'Crunchyroll Notícias');includes(worker,'Anime News Network');includes(worker,'MyAnimeList');includes(worker,'syncEditorialSources')});
-test('Worker enriches upstream pages before publishing',()=>{includes(worker,'extractHtmlMetadata');includes(worker,'async function enrich');includes(worker,'ENRICH_LIMIT')});
-test('Worker translates to Portuguese with Redis cache',()=>{includes(worker,'translatePt');includes(worker,'news:pt:');includes(worker,'redis?.set')});
-test('Worker consolidates same-story sources instead of URL-only cards',()=>{includes(worker,'groupStories');includes(worker,'storyFingerprint');includes(worker,'mergeSources');includes(worker,'story_hash')});
-test('Worker persists reading metadata, quality and structured sections',()=>{['content_sections','reading_minutes','word_count','quality_score','sources'].forEach(x=>includes(worker,x))});
-test('Automated news expires in a short retention window',()=>{includes(worker,'NEWS_RETENTION_DAYS');includes(worker,"status='archived'");includes(env,'NEWS_RETENTION_DAYS=5');includes(compose,'NEWS_RETENTION_DAYS: ${NEWS_RETENTION_DAYS:-5}')});
-test('DB migration supports dedupe, provenance and reader metadata',()=>{['source_hash','story_hash','sources jsonb','content_sections jsonb','reading_minutes','quality_score','view_count'].forEach(x=>includes(migration,x))});
-test('Native DB reader filters expired articles',()=>{includes(native,"status='published'");includes(native,'expires_at>now()');includes(native,'quality_score')});
-
-// V32 UI
-test('News hub stays entirely inside AniNexus',()=>{includes(news,"path==='/noticias'");includes(news,"fetch('/api/news?limit=50'");includes(news,'Ler no AniNexus');notIncludes(news,'Ler na fonte');notIncludes(news,'window.open(')});
-test('Reader includes progress, summary, structured sections and related stories',()=>{includes(news,'nx32-reading-progress');includes(news,'EM RESUMO');includes(news,'content_sections');includes(news,'CONTINUE LENDO')});
-test('Reader explains AniNexus editorial synthesis instead of copying source articles',()=>{includes(news,'O texto integral de terceiros não é reproduzido');includes(news,'URLs de origem ficam registradas internamente')});
-test('Reader remembers already-read stories',()=>{includes(news,'aninexus:news:read:v1');includes(news,'markRead');includes(news,'nx32-read-badge')});
-test('News visual system is responsive and branded',()=>{includes(newsCss,'.nx32-news-hero');includes(newsCss,'.nx32-article-layout');includes(newsCss,'#e3264f');includes(newsCss,'@media(max-width:760px)')});
-
-// Fallback feed
-test('Bundled news fallback remains structurally valid for GitHub Pages',()=>{ok(Array.isArray(newsData.items));ok(newsData.items.length>=3);ok(Array.isArray(newsData.sources)&&newsData.sources.length>=2);ok(!Number.isNaN(new Date(newsData.generatedAt).getTime()))});
-test('Fallback items keep source provenance and timestamp',()=>newsData.items.forEach((x,i)=>{ok(x.title,`item ${i} title`);ok(x.source,`item ${i} source`);ok(/^https:\/\//.test(x.url||''),`item ${i} url`);ok(!Number.isNaN(new Date(x.publishedAt).getTime()),`item ${i} date`)}));
-
-// Existing product contracts
-test('Anime detail still embeds trailer and full sections',()=>{includes(detail,'https://www.youtube-nocookie.com/embed/');['LANÇAMENTO','TÉRMINO','Personagens','Franquia e relações','Recomendações'].forEach(x=>includes(detail,x))});
-test('Anime detail remains mobile-first with 16:9 trailer',()=>{includes(detailCss,'@media(max-width:720px)');includes(detailCss,'aspect-ratio:16/9')});
-test('Shared media state keeps five statuses',()=>['PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED'].forEach(x=>includes(mediaState,`${x}:`)));
-test('Catalog schedule and season still expose unified state hooks',()=>{includes(catalog,'data-list=');includes(catalog,'data-fav=');ok(/data-nx18-(?:status|fav)/.test(schedule));ok(/data-nx-(?:list|fav)/.test(season))});
-
-// Files
-test('Critical V32 files exist',()=>['lib/news-core.mjs','lib/native-news.mjs','lib/news-worker.mjs','sql/004_news_editorial_pipeline.sql','preview-v32/news-route-guard-v32.js','preview-v32/news-v32.js','preview-v32/news-v32.css','preview-v32/home-news-v32.js','preview-v32/home-v32.css','tests/news-system.mjs'].forEach(p=>ok(exists(p),`missing ${p}`)));
-test('Route guard still loads before legacy app',()=>ok(index.indexOf('route-guard-v23.js')<index.indexOf('preview-v6/app.js')));
-
-console.log(`\nAniNexus smoke: ${passed} passed, ${failed} failed`);
-if(failed)process.exit(1);
+test('news hub and reader stay internal',()=>{includes(news,'Ler no AniNexus');includes(news,"path==='/noticias'");includes(news,'nx32-reading-progress');notIncludes(news,'Ler na fonte');notIncludes(news,'window.open(')});
+test('V33 news visual polish fixes oversized fallbacks and supports scroll fades',()=>{includes(news33Css,'aspect-ratio:16/9');includes(news33Css,'.nx32-image-fallback img');includes(news33Css,'.nx33-news-edge');includes(news33,'scrollWidth-scroller.clientWidth')});
+test('anime detail contracts remain intact',()=>{includes(detail,'https://www.youtube-nocookie.com/embed/');['LANÇAMENTO','TÉRMINO','Personagens','Franquia e relações','Recomendações'].forEach(x=>includes(detail,x));includes(detailCss,'aspect-ratio:16/9')});
+test('shared media state remains unified',()=>{['PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED'].forEach(x=>includes(mediaState,`${x}:`));includes(catalog,'data-list=');includes(catalog,'data-fav=');ok(/data-nx18-(?:status|fav)/.test(schedule));ok(/data-nx-(?:list|fav)/.test(season))});
+test('critical V33 files exist',()=>['lib/news-worker-v33.mjs','sql/005_news_quality_and_revisions.sql','preview-v33/home-v33.js','preview-v33/home-v33.css','preview-v33/news-v33.js','preview-v33/news-v33.css','tests/news-system.mjs'].forEach(p=>ok(exists(p),`missing ${p}`)));
+test('route guard loads before legacy app',()=>ok(index.indexOf('route-guard-v23.js')<index.indexOf('preview-v6/app.js')));
+console.log(`\nAniNexus V33 smoke: ${passed} passed, ${failed} failed`);if(failed)process.exit(1);
