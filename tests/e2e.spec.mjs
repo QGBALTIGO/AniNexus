@@ -28,6 +28,9 @@ test('home boots with shared header, search and auth controls',async({page})=>{
   await expect(page.locator('#authOverlay')).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(page.locator('#authOverlay')).toBeHidden();
+  await page.locator('[data-action="register"]').first().click();
+  await expect(page.locator('#authOverlay')).toBeVisible();
+  await page.keyboard.press('Escape');
   await noLegacy404(page);
 });
 
@@ -44,6 +47,17 @@ test('catalog loads real anime cards and mode switching works',async({page})=>{
   }
 });
 
+test('catalog card always opens the dedicated V25 anime detail',async({page})=>{
+  await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});
+  const card=page.locator('.nx21-card').first();
+  await expect(card).toBeVisible({timeout:30000});
+  const clickTarget=card.locator('h3').first();
+  await (await clickTarget.count()?clickTarget:card).click();
+  await page.waitForURL(u=>(new URL(u)).searchParams.get('p')?.startsWith('/anime/')===true,{timeout:15000});
+  await expect(page.locator('.nx22-detail')).toBeVisible({timeout:30000});
+  await noLegacy404(page);
+});
+
 test('anime detail no longer flashes or lands on not-found',async({page})=>{
   await page.goto(pageUrl('/anime/demon-slayer-kimetsu-no-yaiba-101922'),{waitUntil:'domcontentloaded'});
   await expect(page.locator('.nx22-detail')).toBeVisible({timeout:30000});
@@ -57,15 +71,42 @@ test('anime detail no longer flashes or lands on not-found',async({page})=>{
   await expect(page.locator('.nx22-info-card').first()).toContainText('Estúdio');
 });
 
-test('anime detail shares + and favorite state with global system',async({page})=>{
+test('shared + obeys status-specific rules and keeps the labeled detail button',async({page})=>{
   await page.goto(pageUrl('/anime/demon-slayer-kimetsu-no-yaiba-101922'),{waitUntil:'domcontentloaded'});
   await expect(page.locator('.nx22-detail')).toBeVisible({timeout:30000});
   const list=page.locator('.nx22-list');
   await expect(list).toBeVisible();
+  await expect(list).toContainText('Adicionar à lista');
+
   await list.click();
-  await expect(page.locator('.nx20-media-layer')).toBeVisible({timeout:12000});
-  await expect(page.locator('.nx20-statuses')).toBeVisible();
-  await page.keyboard.press('Escape');
+  const modal=page.locator('.nx20-media-layer');
+  await expect(modal).toBeVisible({timeout:12000});
+  await expect(page.locator('.nx20-statuses button.active')).toHaveCount(0);
+
+  // Quero Ver: expectation is allowed, but progress and rating make no sense.
+  await page.locator('[data-nx20-status="PLANNING"]').click();
+  await expect(page.locator('.nx20-progress')).toHaveCount(0);
+  await expect(page.locator('.nx20-rating')).toHaveCount(0);
+  await expect(page.locator('.nx20-feedback')).toBeVisible();
+  await page.locator('[data-nx20-save]').click();
+  await expect(modal).toHaveCount(0);
+  await expect(list).toHaveAttribute('data-nx-unified-status','PLANNING');
+  await expect(list).toContainText('Quero Ver');
+
+  // Assistindo: at ep. 0 reaction/rating stay locked; ep. 1 unlocks them.
+  await list.click();
+  await expect(page.locator('.nx20-media-layer')).toBeVisible();
+  await page.locator('[data-nx20-status="CURRENT"]').click();
+  await expect(page.locator('.nx20-progress')).toBeVisible();
+  await expect(page.locator('.nx20-feedback')).toHaveClass(/locked/);
+  await expect(page.locator('.nx20-rating')).toHaveClass(/locked/);
+  await page.locator('[data-nx20-step="1"]').click();
+  await expect(page.locator('[data-nx20-score]')).toBeVisible();
+  await expect(page.locator('[data-nx20-reaction]').first()).toBeVisible();
+  await page.locator('[data-nx20-save]').click();
+  await expect(list).toHaveAttribute('data-nx-unified-status','CURRENT');
+  await expect(list).toContainText('Assistindo');
+
   const fav=page.locator('.nx22-fav');
   await fav.click();
   await expect(fav).toHaveClass(/active/);
