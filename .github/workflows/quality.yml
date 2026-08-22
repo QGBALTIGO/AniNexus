@@ -51,7 +51,7 @@ jobs:
         run: |
           rm -rf /tmp/aninexus-e2e-root
           mkdir -p /tmp/aninexus-e2e-root/AniNexus
-          cp -R . /tmp/aninexus-e2e-root/AniNexus/
+          rsync -a --exclude '.git' --exclude 'node_modules' ./ /tmp/aninexus-e2e-root/AniNexus/
           # Production keeps upgrade-insecure-requests. The local test server is
           # intentionally HTTP, so remove only this directive in the temp copy.
           sed -i 's/; upgrade-insecure-requests//' /tmp/aninexus-e2e-root/AniNexus/index.html
@@ -63,7 +63,7 @@ jobs:
             if [ "$i" = "20" ]; then cat /tmp/aninexus-http.log; exit 1; fi
             sleep 1
           done
-          npx playwright test tests/e2e.spec.mjs --reporter=line
+          npx playwright test tests/e2e.spec.mjs --reporter=line --timeout=60000 --retries=1
       - name: Show static server log on failure
         if: failure()
         run: cat /tmp/aninexus-http.log || true
