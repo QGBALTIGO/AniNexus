@@ -3,10 +3,11 @@ name: Atualizar notícias
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 */3 * * *'
+    - cron: '17 * * * *'
   push:
     paths:
       - 'scripts/update-news.mjs'
+      - 'lib/news-core.mjs'
       - '.github/workflows/update-news.yml'
 
 permissions:
@@ -19,14 +20,19 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Buscar fontes editoriais
+      - name: Buscar, enriquecer e traduzir fontes editoriais
+        env:
+          NEWS_RETENTION_DAYS: 5
+          NEWS_MIN_QUALITY: 0.48
         run: node scripts/update-news.mjs
+      - name: Validar feed antes de publicar
+        run: node --check scripts/update-news.mjs && node tests/news-system.mjs
       - name: Publicar feed local
         run: |
           if git diff --quiet -- data/news.json; then
