@@ -1,11 +1,16 @@
 'use strict';
 (() => {
   try{
-    const u=new URL(location.href),isPages=location.hostname.endsWith('github.io');
-    let p=u.searchParams.get('p')||u.pathname;
-    if(isPages&&!u.searchParams.get('p'))p=p.replace(/^\/AniNexus/,'')||'/';
-    p=String(p||'/').split('?')[0].replace(/\/+$/,'')||'/';
-    if(!['/login','/criar-conta','/minha-conta'].includes(p))return;
+    const isPages=location.hostname.endsWith('github.io');
+    const authPath=()=>{const u=new URL(location.href);let p=u.searchParams.get('p')||u.pathname;if(isPages&&!u.searchParams.get('p'))p=p.replace(/^\/AniNexus/,'')||'/';return String(p||'/').split('?')[0].replace(/\/+$/,'')||'/'};
+    const routes=['/login','/criar-conta','/minha-conta'];
+    if(!routes.includes(authPath()))return;
+
+    // If the auth renderer replaces an invalid session-gated route while its own
+    // render lock is active, reload that final route once instead of leaving URL/UI apart.
+    const nativeReplace=history.replaceState.bind(history);
+    history.replaceState=function(state,title,url){const before=location.href,result=nativeReplace(state,title,url);if(before!==location.href&&routes.includes(authPath())&&document.body?.classList.contains('nx38-auth-active'))setTimeout(()=>location.replace(location.href),0);return result};
+
     document.documentElement.classList.add('nx38-auth-boot');
     const style=document.createElement('style');
     style.dataset.nx38AuthBoot='1';
