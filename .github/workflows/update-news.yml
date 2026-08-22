@@ -9,7 +9,9 @@ on:
       - 'scripts/update-news-v36.mjs'
       - 'lib/news-sources-v36.mjs'
       - 'lib/news-sources-v34.mjs'
+      - 'lib/news-worker-v34.mjs'
       - 'lib/news-core.mjs'
+      - 'tests/news-system.mjs'
       - '.github/workflows/update-news.yml'
 
 permissions:
@@ -32,6 +34,7 @@ jobs:
         run: |
           node --check lib/news-sources-v36.mjs
           node --check scripts/update-news-v36.mjs
+          node --check lib/news-worker-v34.mjs
       - name: Buscar e aprofundar JBox, Crunchyroll e fontes complementares
         env:
           NEWS_RETENTION_DAYS: '7'
