@@ -3,7 +3,7 @@
   try {
     const IS_PAGES=location.hostname.endsWith('github.io');
     const BASE=IS_PAGES?'/AniNexus':'';
-    const BUILD='31.2.0';
+    const BUILD='32.0.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=restored?restored.split('?')[0]:u.pathname;
@@ -11,7 +11,7 @@
     path=String(path||'/').replace(/\/+$/,'')||'/';
 
     const isDetail=/^\/anime\/.+-\d+$/.test(path);
-    const isNews=path==='/noticias'||/^\/noticias\/[a-z0-9-]+$/.test(path);
+    const isNews=!window.__NX_NEWS_V32_ROUTE__&&(path==='/noticias'||/^\/noticias\/[a-z0-9-]+$/.test(path));
     if(!isDetail&&!isNews)return;
 
     const html=document.documentElement;
