@@ -16,14 +16,14 @@ concurrency:
 jobs:
   checks:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci
+      - name: Install project dependencies
+        run: npm install --ignore-scripts
       - name: Syntax and contract smoke tests
         run: npm run check
       - name: Critical dependency audit
@@ -31,14 +31,14 @@ jobs:
 
   browser-e2e:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 22
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci
+      - name: Install project dependencies
+        run: npm install --ignore-scripts
       - name: Install browser test runner
         run: |
           npm install --no-save --no-package-lock @playwright/test@1.55.0
