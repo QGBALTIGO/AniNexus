@@ -8,7 +8,7 @@
 
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='32.0.0';
+  const BUILD='33.0.0';
 
   const aliases=new Map([
     ['/animes','/animes/catalogo'],
@@ -19,60 +19,13 @@
     ['/community','/comunidade'],
     ['/manga','/mangas']
   ]);
-
   const excludedPrefixes=['/assets/','/data/','/lib/','/preview-','/.github/'];
   const excludedFiles=/\.(?:css|js|json|png|jpe?g|webp|gif|svg|ico|xml|txt|map|woff2?|ttf|otf|mp4|webm|pdf|zip)$/i;
-
-  function routeFromUrl(value){
-    try{
-      const u=new URL(value,location.href);
-      if(u.origin!==location.origin)return null;
-      const restored=u.searchParams.get('p');
-      let path=restored||u.pathname;
-      if(IS_PAGES)path=path.replace(/^\/AniNexus(?=\/|$)/,'')||'/';
-      path=path.split('#')[0].split('?')[0].replace(/\/{2,}/g,'/');
-      if(path.length>1)path=path.replace(/\/+$/,'');
-      path=aliases.get(path)||path||'/';
-      if(excludedFiles.test(path)||excludedPrefixes.some(prefix=>path.startsWith(prefix)))return null;
-      return path;
-    }catch{return null}
-  }
-
+  function routeFromUrl(value){try{const u=new URL(value,location.href);if(u.origin!==location.origin)return null;const restored=u.searchParams.get('p');let path=restored||u.pathname;if(IS_PAGES)path=path.replace(/^\/AniNexus(?=\/|$)/,'')||'/';path=path.split('#')[0].split('?')[0].replace(/\/{2,}/g,'/');if(path.length>1)path=path.replace(/\/+$/,'');path=aliases.get(path)||path||'/';if(excludedFiles.test(path)||excludedPrefixes.some(prefix=>path.startsWith(prefix)))return null;return path}catch{return null}}
   function pagesUrl(path){return `${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`}
-
-  function normalizeLink(a){
-    if(!a||a.target==='_blank'||a.hasAttribute('download'))return;
-    const raw=a.getAttribute('href');
-    if(!raw||raw.startsWith('#')||raw.startsWith('mailto:')||raw.startsWith('tel:')||raw.startsWith('javascript:'))return;
-    const path=routeFromUrl(a.href);
-    if(!path)return;
-    a.dataset.nx27Path=path;
-    if(IS_PAGES)a.href=pagesUrl(path);
-  }
-
-  function rewrite(root=document){
-    if(root.matches?.('a[href]'))normalizeLink(root);
-    root.querySelectorAll?.('a[href]').forEach(normalizeLink);
-  }
-
-  rewrite();
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>rewrite(),{once:true});
-
-  new MutationObserver(records=>{
-    for(const record of records){
-      for(const node of record.addedNodes){if(node.nodeType===1)rewrite(node)}
-    }
-  }).observe(document.documentElement,{subtree:true,childList:true});
-
-  if(IS_PAGES){
-    addEventListener('click',event=>{
-      if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
-      const a=event.target.closest?.('a[href]');
-      if(!a||a.target==='_blank'||a.hasAttribute('download'))return;
-      const path=a.dataset.nx27Path||routeFromUrl(a.href);
-      if(!path)return;
-      event.preventDefault();
-      location.assign(pagesUrl(path));
-    },false);
-  }
+  function normalizeLink(a){if(!a||a.target==='_blank'||a.hasAttribute('download'))return;const raw=a.getAttribute('href');if(!raw||raw.startsWith('#')||raw.startsWith('mailto:')||raw.startsWith('tel:')||raw.startsWith('javascript:'))return;const path=routeFromUrl(a.href);if(!path)return;a.dataset.nx27Path=path;if(IS_PAGES)a.href=pagesUrl(path)}
+  function rewrite(root=document){if(root.matches?.('a[href]'))normalizeLink(root);root.querySelectorAll?.('a[href]').forEach(normalizeLink)}
+  rewrite();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>rewrite(),{once:true});
+  new MutationObserver(records=>{for(const record of records){for(const node of record.addedNodes){if(node.nodeType===1)rewrite(node)}}}).observe(document.documentElement,{subtree:true,childList:true});
+  if(IS_PAGES){addEventListener('click',event=>{if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;const a=event.target.closest?.('a[href]');if(!a||a.target==='_blank'||a.hasAttribute('download'))return;const path=a.dataset.nx27Path||routeFromUrl(a.href);if(!path)return;event.preventDefault();location.assign(pagesUrl(path))},false)}
 })();
