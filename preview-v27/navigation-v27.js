@@ -8,7 +8,7 @@
 
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='35.0.0';
+  const BUILD='38.0.0';
 
   const aliases=new Map([
     ['/animes','/animes/catalogo'],
@@ -17,7 +17,10 @@
     ['/temporadas','/animes/temporadas'],
     ['/news','/noticias'],
     ['/community','/comunidade'],
-    ['/manga','/mangas']
+    ['/manga','/mangas'],
+    ['/entrar','/login'],
+    ['/cadastro','/criar-conta'],
+    ['/conta','/minha-conta']
   ]);
   const excludedPrefixes=['/assets/','/data/','/lib/','/preview-','/.github/'];
   const excludedFiles=/\.(?:css|js|json|png|jpe?g|webp|gif|svg|ico|xml|txt|map|woff2?|ttf|otf|mp4|webm|pdf|zip)$/i;
