@@ -2,7 +2,7 @@
 (() => {
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='25.0.0';
+  const BUILD='26.0.0';
   const DEDICATED=['/','/animes/catalogo','/animes/programacao','/animes/temporadas','/noticias'];
   const CARD_SELECTOR='[data-nx21-open],[data-nx-media],[data-nx18-open],[data-nx22-open],[data-nx-still],[data-open][data-type="anime"]';
   const ACTION_SELECTOR='button,a,input,select,textarea,[data-list],[data-fav],[data-nx-list],[data-nx-fav],[data-nx18-status],[data-nx18-fav]';
@@ -51,14 +51,10 @@
 
   addEventListener('click',e=>{
     if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
-
-    // All anime cards use one dedicated detail route. Manga/novel cards remain
-    // in their own reading flow even when a component reuses data-nx-media.
     const card=e.target.closest?.(CARD_SELECTOR);
     if(card&&!e.target.closest(ACTION_SELECTOR)){
       const info=cardInfo(card);if(info){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();navigate(info.path);return}
     }
-
     const a=e.target.closest?.('a[href]');if(!a||a.target==='_blank')return;
     const p=a.dataset.nx23Dedicated||cleanPathFromUrl(a.href);if(!isDedicated(p))return;
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();navigate(p);
