@@ -1,0 +1,43 @@
+/* AniNexus Notícias V37 media layer — additive over preview-v35/news-v35.css */
+.nx35-news-cats button{display:inline-flex;align-items:center;gap:5px}
+.nx35-news-cats button sup{font-size:6px;line-height:1;color:#6f6369;font-weight:900}
+.nx35-news-cats button.active sup{color:#f08aa0}
+.nx35-news-hero p{max-width:820px}
+.nx35-ncopy>small{display:flex;gap:4px;flex-wrap:wrap}
+.nx35-article-head>p{max-width:860px}
+.nx35-article-main{min-width:0}
+.nx35-article-section{padding-bottom:3px}
+.nx35-article-section p{max-width:760px}
+.nx35-summary li{max-width:720px}
+
+.nx37-media-section{margin:38px 0 36px;padding-top:4px}
+.nx37-media-section>header{display:flex;align-items:center;gap:11px;margin-bottom:15px}
+.nx37-media-section>header>span{width:37px;height:37px;display:grid;place-items:center;border:1px solid rgba(227,38,79,.16);border-radius:11px;background:rgba(227,38,79,.06);color:#e24d6a}
+.nx37-media-section>header svg{width:17px;height:17px}
+.nx37-media-section>header small{display:block;color:#b3485f;font-size:6.4px;font-weight:900;letter-spacing:.15em}
+.nx37-media-section>header h2{margin:3px 0 0;font:800 19px/1.1 'Manrope',sans-serif;letter-spacing:-.03em}
+.nx37-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.nx37-gallery.single{grid-template-columns:1fr}
+.nx37-gallery figure{min-width:0;margin:0;overflow:hidden;border:1px solid rgba(255,255,255,.07);border-radius:13px;background:#100b0f}
+.nx37-gallery figure.wide{grid-column:1/-1}
+.nx37-gallery img{width:100%;height:280px;display:block;object-fit:cover;object-position:center 28%;background:#0c090b}
+.nx37-gallery figure.wide img{height:390px}
+.nx37-gallery figcaption{min-height:33px;display:flex;align-items:flex-start;justify-content:space-between;gap:8px;padding:9px 10px;color:#887b81;font-size:8px;line-height:1.35}
+.nx37-gallery figcaption span{max-width:78%}
+.nx37-gallery figcaption small{margin-left:auto;color:#645960;font-size:7px;white-space:nowrap}
+.nx37-embeds{display:grid;gap:12px}
+.nx37-embeds>div{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(255,255,255,.07);border-radius:14px;background:#050405}
+.nx37-embeds iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.nx35-sidebar>div:first-child{border-color:rgba(227,38,79,.12);background:linear-gradient(145deg,rgba(227,38,79,.055),#0f0b0e)}
+.nx35-sidebar>div:first-child strong{color:#ebc9d1}
+
+@media(max-width:760px){
+  .nx35-news-cats{padding-right:14px;scroll-snap-type:x proximity}
+  .nx35-news-cats button{scroll-snap-align:start}
+  .nx37-media-section{margin:30px 0}
+  .nx37-gallery{grid-template-columns:1fr;gap:9px}
+  .nx37-gallery figure.wide{grid-column:auto}
+  .nx37-gallery img,.nx37-gallery figure.wide img{height:auto;max-height:460px;aspect-ratio:16/10;object-fit:cover}
+  .nx37-gallery figcaption{font-size:7.5px}
+  .nx37-gallery figcaption small{white-space:normal;text-align:right}
+}
