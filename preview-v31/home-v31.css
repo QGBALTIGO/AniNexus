@@ -1,0 +1,44 @@
+/* AniNexus V31 — stronger home signature */
+body.nx31-home .nx31-hero{isolation:isolate;min-height:505px}
+body.nx31-home .nx31-hero .aqx-hero-grid{position:relative;z-index:3;min-height:505px}
+body.nx31-home .nx31-hero .aqx-hero-copy{position:relative;z-index:4}
+body.nx31-home .nx31-hero .aqx-live{position:relative;z-index:4;margin-top:18px;border-color:rgba(227,38,79,.17);box-shadow:0 30px 76px rgba(0,0,0,.33),0 0 0 1px rgba(255,255,255,.018) inset}
+body.nx31-home .nx31-hero .aqx-live:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 55px rgba(227,38,79,.025);pointer-events:none}
+
+.nx31-hero-sigil{position:absolute;z-index:1;right:4.5%;top:50%;width:430px;height:430px;transform:translateY(-50%);pointer-events:none;opacity:.95}
+.nx31-hero-sigil>i{position:absolute;border-radius:50%;border:1px solid rgba(227,38,79,.12)}
+.nx31-hero-sigil .r1{inset:16px;animation:nx31Ring 18s linear infinite}
+.nx31-hero-sigil .r2{inset:72px;border-style:dashed;border-color:rgba(227,38,79,.15);animation:nx31RingReverse 24s linear infinite}
+.nx31-hero-sigil .r3{inset:128px;border-color:rgba(255,255,255,.07);box-shadow:0 0 70px rgba(227,38,79,.06)}
+.nx31-hero-sigil>div{position:absolute;inset:145px;display:grid;place-items:center;border:1px solid rgba(227,38,79,.17);border-radius:34px;background:radial-gradient(circle at 50% 35%,rgba(227,38,79,.13),rgba(11,7,10,.75) 72%);backdrop-filter:blur(10px);transform:rotate(7deg);box-shadow:0 24px 55px rgba(0,0,0,.28)}
+.nx31-hero-sigil img{width:74px;height:74px;object-fit:contain;filter:drop-shadow(0 0 22px rgba(227,38,79,.42));transform:rotate(-7deg)}
+.nx31-hero-sigil span{position:absolute;bottom:28px;color:rgba(255,255,255,.17);font:900 9px 'Manrope',sans-serif;letter-spacing:.22em;transform:rotate(-7deg)}
+.nx31-hero-sigil:before,.nx31-hero-sigil:after{content:"";position:absolute;left:50%;top:-22px;width:1px;height:474px;background:linear-gradient(transparent,rgba(227,38,79,.17),transparent)}
+.nx31-hero-sigil:after{transform:rotate(90deg)}
+
+.nx31-universe-strip{position:relative;display:flex;align-items:center;gap:10px;max-width:max-content;margin-top:18px;padding:9px 11px;border-top:1px solid rgba(255,255,255,.055);border-bottom:1px solid rgba(255,255,255,.035);color:#776a70;font-size:7px;font-weight:900;letter-spacing:.11em;overflow:hidden}
+.nx31-universe-strip:before{content:"";position:absolute;left:0;bottom:-1px;width:40%;height:1px;background:linear-gradient(90deg,#e3264f,transparent);animation:nx31Signal 3.2s ease-in-out infinite alternate}
+.nx31-universe-strip i{width:3px;height:3px;border-radius:50%;background:#a42b46;box-shadow:0 0 7px rgba(227,38,79,.42)}
+
+.nx31-live-brand{display:grid;grid-template-columns:36px minmax(0,1fr) 8px;gap:10px;align-items:center;margin:-2px -1px 11px;padding:10px 11px;border:1px solid rgba(227,38,79,.11);border-radius:12px;background:linear-gradient(90deg,rgba(227,38,79,.075),rgba(255,255,255,.01))}
+.nx31-live-brand img{width:32px;height:32px;filter:drop-shadow(0 0 12px rgba(227,38,79,.34))}.nx31-live-brand small{display:block;color:#ad5367;font-size:6.5px;font-weight:900;letter-spacing:.15em}.nx31-live-brand strong{display:block;margin-top:2px;color:#eee5e9;font-size:10px}.nx31-live-brand>span{width:7px;height:7px;border-radius:50%;background:#e3264f;box-shadow:0 0 0 5px rgba(227,38,79,.08),0 0 16px rgba(227,38,79,.65);animation:nx30Pulse 1.8s ease-in-out infinite}
+body.nx31-home .aqx-live-title{padding-top:0}
+
+body.nx31-home .aqx-hero h1{max-width:690px;font-size:clamp(52px,5.7vw,82px);line-height:.94;letter-spacing:-.065em}
+body.nx31-home .aqx-hero-copy>p{max-width:600px}
+body.nx31-home .nx30-kicker{box-shadow:0 9px 28px rgba(137,16,45,.12),inset 0 1px rgba(255,255,255,.03)}
+body.nx31-home .nx30-hero-actions a:first-child{position:relative;overflow:hidden}
+body.nx31-home .nx30-hero-actions a:first-child:after{content:"";position:absolute;top:-90%;left:-25%;width:18px;height:250%;background:rgba(255,255,255,.14);transform:rotate(24deg);transition:left .55s cubic-bezier(.2,.85,.2,1)}
+body.nx31-home .nx30-hero-actions a:first-child:hover:after{left:120%}
+
+body.nx31-home .nx31-read-here{display:inline-flex;margin-top:12px;color:#ef5873;font-size:8px;font-weight:900;letter-spacing:.02em}
+body.nx31-home .nx30-news-feature,body.nx31-home .nx30-news-row{color:inherit;text-decoration:none}
+body.nx31-home .nx30-news-feature:hover .nx31-read-here{color:#ff7890}
+
+@keyframes nx31Ring{to{transform:rotate(360deg)}}
+@keyframes nx31RingReverse{to{transform:rotate(-360deg)}}
+@keyframes nx31Signal{from{transform:translateX(-10%)}to{transform:translateX(145%)}}
+
+@media(max-width:980px){.nx31-hero-sigil{right:-100px;top:39%;opacity:.42}.nx31-hero-sigil>div{opacity:.7}body.nx31-home .nx31-hero .aqx-hero-grid{grid-template-columns:1fr;gap:22px}.nx31-live-brand{max-width:620px}}
+@media(max-width:720px){body.nx31-home .nx31-hero{min-height:0}body.nx31-home .nx31-hero .aqx-hero-grid{min-height:0;padding-top:34px}.nx31-hero-sigil{width:290px;height:290px;right:-135px;top:23%;opacity:.31}.nx31-hero-sigil>div{inset:100px;border-radius:23px}.nx31-hero-sigil img{width:46px;height:46px}.nx31-hero-sigil span{display:none}.nx31-hero-sigil:before,.nx31-hero-sigil:after{height:320px;top:-15px}.nx31-hero-sigil .r2{inset:46px}.nx31-hero-sigil .r3{inset:84px}body.nx31-home .aqx-hero h1{font-size:clamp(42px,12.8vw,61px)}.nx31-universe-strip{gap:7px;margin-top:15px;padding-inline:3px;font-size:6px;max-width:100%;overflow-x:auto;scrollbar-width:none}.nx31-universe-strip::-webkit-scrollbar{display:none}.nx31-universe-strip span{white-space:nowrap}.nx31-live-brand{grid-template-columns:32px minmax(0,1fr) 7px;padding:9px}.nx31-live-brand img{width:28px;height:28px}}
+@media(prefers-reduced-motion:reduce){.nx31-hero-sigil>i,.nx31-live-brand>span,.nx31-universe-strip:before{animation:none!important}}
