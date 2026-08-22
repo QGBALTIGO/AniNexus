@@ -1,19 +1,18 @@
 FROM node:22-alpine
 WORKDIR /app
 RUN apk add --no-cache libc6-compat
+
 COPY --chown=node:node package*.json ./
 RUN npm install --omit=dev && npm cache clean --force
-COPY --chown=node:node server.mjs ./
-COPY --chown=node:node lib ./lib
-COPY --chown=node:node sql ./sql
-COPY --chown=node:node public ./public
-COPY --chown=node:node preview-v6 ./public/preview-v6
-COPY --chown=node:node preview-v8 ./public/preview-v8
-COPY --chown=node:node index.html ./public/index.html
-RUN sed -i 's|<head>|<head><base href="/">|' ./public/index.html
-COPY --chown=node:node assets ./assets
+
+# Copy the repository runtime, then build /public from the same shell used by GitHub Pages.
+COPY --chown=node:node . .
+RUN node scripts/build-public.mjs \
+  && rm -rf tests docs .github \
+  && find . -maxdepth 1 -type d -name 'preview-v*' -exec rm -rf {} +
+
 ENV NODE_ENV=production PORT=3000 HOST=0.0.0.0
 USER node
 EXPOSE 3000
-HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 CMD wget -qO- http://127.0.0.1:3000/health >/dev/null || exit 1
+HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 CMD wget -qO- http://127.0.0.1:3000/health/ready >/dev/null || exit 1
 CMD ["npm","start"]
