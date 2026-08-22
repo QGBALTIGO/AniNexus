@@ -45,21 +45,19 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Map GitHub Pages hostname locally
         run: echo "127.0.0.1 qgbaltigo.github.io" | sudo tee -a /etc/hosts
-      - name: Start static preview with GitHub Pages path semantics
-        run: |
-          cd ..
-          python3 -m http.server 4173 > /tmp/aninexus-http.log 2>&1 &
-          echo $! > /tmp/aninexus-http.pid
-          for i in {1..20}; do
-            if curl -fsS http://qgbaltigo.github.io:4173/AniNexus/ >/dev/null; then exit 0; fi
-            sleep 1
-          done
-          cat /tmp/aninexus-http.log
-          exit 1
       - name: Browser E2E — desktop and mobile
         env:
           ANINEXUS_E2E_ORIGIN: http://qgbaltigo.github.io:4173/AniNexus/
-        run: npx playwright test tests/e2e.spec.mjs --project=chromium --reporter=line
+        run: |
+          (cd .. && python3 -m http.server 4173 > /tmp/aninexus-http.log 2>&1) &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          for i in {1..20}; do
+            if curl --noproxy '*' -fsS http://qgbaltigo.github.io:4173/AniNexus/ >/dev/null; then break; fi
+            if [ "$i" = "20" ]; then cat /tmp/aninexus-http.log; exit 1; fi
+            sleep 1
+          done
+          npx playwright test tests/e2e.spec.mjs --reporter=line
       - name: Show static server log on failure
         if: failure()
         run: cat /tmp/aninexus-http.log || true
