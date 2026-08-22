@@ -8,7 +8,7 @@
 
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='28.0.0';
+  const BUILD='31.2.0';
 
   const aliases=new Map([
     ['/animes','/animes/catalogo'],
