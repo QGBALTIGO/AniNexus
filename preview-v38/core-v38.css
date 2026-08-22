@@ -1,0 +1,16 @@
+/* AniNexus V38 — global stability/accessibility layer. No page redesigns here. */
+html{scrollbar-gutter:stable;text-size-adjust:100%;-webkit-text-size-adjust:100%}
+body{overflow-x:clip;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+#app{min-width:0;overflow-x:clip}
+img{max-width:100%}
+button,input,select,textarea{font:inherit}
+button,a,[role=button]{-webkit-tap-highlight-color:transparent}
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:2px solid rgba(239,69,103,.9);outline-offset:3px}
+:where(.nx24-rail,.aqx-rail,.nx35-news-side,.nx35-related .nx35-news-grid,[data-scroll-rail]){overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
+.nx38-img-error{visibility:hidden!important}
+.nx38-media-fallback{position:relative!important;background:radial-gradient(circle at 50% 42%,rgba(227,38,79,.10),transparent 35%),linear-gradient(145deg,#130d11,#0b080a)!important}
+.nx38-media-fallback:after{content:'Imagem indisponível';position:absolute;inset:auto 10px 10px;z-index:2;color:#695c63;font-size:7px;font-weight:800;letter-spacing:.04em;text-align:center;pointer-events:none}
+html.nx38-offline body:after{content:'Você está offline';position:fixed;z-index:9999;left:50%;bottom:14px;transform:translateX(-50%);padding:7px 11px;border:1px solid rgba(255,255,255,.10);border-radius:999px;background:rgba(10,7,9,.94);color:#cbbfc5;font-size:8px;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+@media(max-width:760px){:where(button,.btn,.login-btn,.signup-btn,.icon-button,.menu-btn){min-height:40px}:where(.nx24-rail,.aqx-rail,.nx35-news-side,[data-scroll-rail]){scroll-snap-type:x proximity}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+html.nx38-save-data *,html.nx38-save-data *:before,html.nx38-save-data *:after{animation-duration:.001ms!important;animation-iteration-count:1!important}
