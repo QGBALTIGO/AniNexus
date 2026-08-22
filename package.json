@@ -1,6 +1,6 @@
 {
   "name": "aninexus",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
     "dev": "NODE_ENV=development node --watch server.mjs",
     "smoke": "node tests/smoke.mjs",
     "test:news": "node tests/news-system.mjs",
-    "check": "node --check server.mjs && node --check lib/news-core.mjs && node --check lib/native-news.mjs && node --check lib/news-sources-v34.mjs && node --check lib/news-worker-v34.mjs && node --check scripts/update-news-v34.mjs && node --check preview-v6/app.js && node --check preview-v8/app.js && node --check preview-v12/network-cache.js && node --check preview-v18/schedule.js && node --check preview-v19/media-state-v2.js && node --check preview-v20/catalog-v20.js && node --check preview-v23/route-guard-v23.js && node --check preview-v23/router-v23.js && node --check preview-v27/navigation-v27.js && node --check preview-v28/home-v28.js && node --check preview-v33/home-v33.js && node --check preview-v33/news-v33.js && node --check preview-v34/home-core-v34.js && node --check preview-v34/home-data-v34.js && node --check preview-v34/news-data-v34.js && node --check preview-v34/news-ui-v34.js && node tests/news-system.mjs && node tests/smoke.mjs"
+    "check": "node --check server.mjs && node --check lib/news-core.mjs && node --check lib/native-news.mjs && node --check lib/news-sources-v35.mjs && node --check lib/news-sources-v34.mjs && node --check lib/news-worker-v34.mjs && node --check scripts/update-news-v35.mjs && node --check preview-v23/router-v23.js && node --check preview-v24/home-guard-v24.js && node --check preview-v27/navigation-v27.js && node --check preview-v33/home-v33.js && node --check preview-v33/news-v33.js && node --check preview-v35/home-v35.js && node --check preview-v35/news-data-v35.js && node --check preview-v35/news-ui-v35.js && node tests/news-system.mjs && node tests/smoke.mjs"
   },
   "engines": { "node": ">=22" },
   "dependencies": {
