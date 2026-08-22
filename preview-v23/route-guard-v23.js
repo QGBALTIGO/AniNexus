@@ -59,6 +59,14 @@
       const mo=new MutationObserver(()=>{if(finish())mo.disconnect()});
       mo.observe(app,{childList:true,subtree:true});
 
+      if(isDetail&&!document.querySelector('script[data-nx25-state-ui]')){
+        const bridge=document.createElement('script');
+        bridge.src=`${BASE}/preview-v25/state-ui-bridge-v25.js?v=${BUILD}`;
+        bridge.async=false;
+        bridge.dataset.nx25StateUi='1';
+        document.body.append(bridge);
+      }
+
       // Anime detail is intentionally owned by the stable V22 renderer.
       if(isDetail&&!document.querySelector('script[data-nx22-detail-runtime]')){
         const s=document.createElement('script');
