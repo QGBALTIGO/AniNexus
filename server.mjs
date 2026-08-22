@@ -46,7 +46,7 @@ app.post('/api/auth/register',authRate,async(req,reply)=>{
   if(!parsed.success)return reply.code(400).send({error:'INVALID_INPUT'});
   const {email,username,password}=parsed.data;
   const exists=await q('SELECT 1 FROM users WHERE email=$1 OR username=$2',[email,username]); if(exists.rowCount)return reply.code(409).send({error:'ACCOUNT_UNAVAILABLE'});
-  const passwordHash=await hashPassword(password); const {rows}=await q('INSERT INTO users(email,username,password_hash) VALUES($1,$2,$3,$4) RETURNING *',[email,username,passwordHash]);
+  const passwordHash=await hashPassword(password); const {rows}=await q('INSERT INTO users(email,username,password_hash) VALUES($1,$2,$3) RETURNING *',[email,username,passwordHash]);
   await createSession(reply,rows[0],req); return {user:safeUser(rows[0])};
 });
 app.post('/api/auth/login',authRate,async(req,reply)=>{
