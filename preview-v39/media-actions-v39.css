@@ -1,0 +1,147 @@
+/* AniNexus V39 — one media-action component across the entire site.
+   Interaction proportions follow the compact ANIQuim pattern while colors stay AniNexus. */
+:root{
+  --nx39-action-size:34px;
+  --nx39-action-gap:7px;
+  --nx39-action-bg:rgba(8,6,9,.82);
+  --nx39-action-bg-hover:rgba(20,13,17,.94);
+  --nx39-action-line:rgba(255,255,255,.20);
+  --nx39-action-line-hover:rgba(255,255,255,.34);
+  --nx39-action-fg:#f6eef2;
+  --nx39-accent:#ef3159;
+  --nx39-accent-dark:#a91336;
+}
+
+/* Compact actions: the same physical control on Home, Catalog, Schedule, Seasons and My Anime. */
+:where(
+  button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],
+  button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]
+):not(:has(>span)){
+  width:var(--nx39-action-size)!important;
+  height:var(--nx39-action-size)!important;
+  min-width:var(--nx39-action-size)!important;
+  min-height:var(--nx39-action-size)!important;
+  max-width:var(--nx39-action-size)!important;
+  max-height:var(--nx39-action-size)!important;
+  padding:0!important;
+  margin:0!important;
+  display:grid!important;
+  place-items:center!important;
+  border-radius:50%!important;
+  border:1px solid var(--nx39-action-line)!important;
+  background:var(--nx39-action-bg)!important;
+  color:var(--nx39-action-fg)!important;
+  box-shadow:0 5px 14px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.035)!important;
+  -webkit-backdrop-filter:blur(9px) saturate(1.08)!important;
+  backdrop-filter:blur(9px) saturate(1.08)!important;
+  cursor:pointer!important;
+  touch-action:manipulation;
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color:transparent;
+  transform:translateZ(0);
+  transform-origin:center;
+  transition:transform .14s cubic-bezier(.2,.85,.2,1),background-color .16s ease,border-color .16s ease,color .16s ease,box-shadow .18s ease!important;
+}
+
+:where(
+  button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],
+  button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]
+):not(:has(>span))>.nx-media-icon,
+:where(
+  button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],
+  button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]
+):not(:has(>span))>svg{
+  width:17px!important;
+  height:17px!important;
+  min-width:17px!important;
+  min-height:17px!important;
+  display:block!important;
+  fill:none!important;
+  stroke:currentColor!important;
+  stroke-width:1.85!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+  pointer-events:none!important;
+}
+
+@media(hover:hover) and (pointer:fine){
+  :where(
+    button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],
+    button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]
+  ):not(:has(>span)):hover{
+    background:var(--nx39-action-bg-hover)!important;
+    border-color:var(--nx39-action-line-hover)!important;
+    color:#fff!important;
+    transform:translateY(-1px) scale(1.045)!important;
+    box-shadow:0 7px 18px rgba(0,0,0,.38),0 0 0 1px rgba(255,255,255,.025) inset!important;
+  }
+}
+
+:where(
+  button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],
+  button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]
+):not(:has(>span)):active,
+:where(
+  button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],
+  button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]
+).nx39-press:not(:has(>span)){
+  transform:scale(.89)!important;
+  transition-duration:.07s!important;
+}
+
+:where(
+  button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],
+  button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]
+).nx39-pop:not(:has(>span)){
+  animation:nx39ActionPop .24s cubic-bezier(.18,.9,.3,1.35);
+}
+@keyframes nx39ActionPop{0%{transform:scale(.88)}55%{transform:scale(1.10)}100%{transform:scale(1)}}
+
+/* ANIQuim communicates list state mostly with the icon. AniNexus keeps its own red identity
+   instead of painting every status a different color. */
+:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list]).active:not(:has(>span)){
+  color:#fff!important;
+  border-color:rgba(255,102,133,.62)!important;
+  background:linear-gradient(145deg,#f43a61 0%,#d51f49 54%,#a91336 100%)!important;
+  box-shadow:0 7px 19px rgba(221,31,72,.31),inset 0 1px 0 rgba(255,255,255,.15)!important;
+}
+
+/* Favorite is a separate independent toggle. */
+:where(button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).active:not(:has(>span)){
+  color:#fff!important;
+  border-color:rgba(255,94,126,.55)!important;
+  background:rgba(189,24,59,.93)!important;
+  box-shadow:0 6px 17px rgba(194,24,60,.26),inset 0 1px 0 rgba(255,255,255,.12)!important;
+}
+:where(button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).active:not(:has(>span))>.nx-media-heart,
+:where(button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).active:not(:has(>span))>svg{fill:currentColor!important}
+
+/* Pending/rapid tap protection should feel responsive, never disabled/grey. */
+:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav])[data-nx39-busy="1"]{pointer-events:none}
+
+/* Normalize the action stacks used by the current card families. */
+:where(.nx21-actions,.nx18-cover-actions,.nx35-cover>aside,.nx17-actions,.nx-season-actions,.aqx-actions){
+  gap:var(--nx39-action-gap)!important;
+}
+:where(.nx21-actions,.nx18-cover-actions){right:7px!important;bottom:7px!important}
+.nx35-cover>aside{right:7px!important;bottom:7px!important}
+
+/* Detail buttons keep text labels and width, but share the same icon/state language. */
+:where(button[data-nx-detail-list],button[data-nx-detail-fav]){
+  min-height:40px!important;
+  border-radius:10px!important;
+  transition:transform .14s ease,border-color .16s ease,background-color .16s ease,box-shadow .18s ease!important;
+  touch-action:manipulation;
+}
+:where(button[data-nx-detail-list],button[data-nx-detail-fav]):active{transform:scale(.975)!important}
+:where(button[data-nx-detail-list]).active{border-color:rgba(239,49,89,.52)!important;background:rgba(239,49,89,.13)!important;color:#fff!important}
+:where(button[data-nx-detail-fav]).active{border-color:rgba(239,49,89,.45)!important;background:rgba(184,24,58,.18)!important;color:#ff8aa2!important}
+:where(button[data-nx-detail-fav]).active>.nx-media-heart{fill:currentColor!important}
+
+@media(max-width:760px){
+  :root{--nx39-action-size:34px;--nx39-action-gap:6px}
+}
+@media(prefers-reduced-motion:reduce){
+  :where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).nx39-pop{animation:none!important}
+}
