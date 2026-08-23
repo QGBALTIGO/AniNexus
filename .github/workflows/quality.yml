@@ -51,14 +51,20 @@ jobs:
             nginx:1.27-alpine nginx -t
       - name: Build real production image
         run: docker build --pull -t aninexus-ci:${{ github.sha }} .
-      - name: Verify current shell exists inside production image
+      - name: Verify V39 shell and media actions inside production image
         run: |
           CID=$(docker create aninexus-ci:${{ github.sha }})
           trap 'docker rm -f "$CID" >/dev/null 2>&1 || true' EXIT
           docker cp "$CID:/app/public/index.html" /tmp/aninexus-index.html
-          grep -q '2026-08-22-v38.0.0' /tmp/aninexus-index.html
+          grep -q '2026-08-23-v39.0.0' /tmp/aninexus-index.html
           docker cp "$CID:/app/public/preview-v38/auth-v38.js" /tmp/auth-v38.js
+          docker cp "$CID:/app/public/preview-v39/media-actions-v39.js" /tmp/media-actions-v39.js
+          docker cp "$CID:/app/public/preview-v39/media-actions-v39.css" /tmp/media-actions-v39.css
+          docker cp "$CID:/app/public/preview-v39/media-sync-v39.js" /tmp/media-sync-v39.js
           test -s /tmp/auth-v38.js
+          test -s /tmp/media-actions-v39.js
+          test -s /tmp/media-actions-v39.css
+          test -s /tmp/media-sync-v39.js
 
   browser-e2e:
     runs-on: ubuntu-latest
