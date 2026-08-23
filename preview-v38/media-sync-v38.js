@@ -36,7 +36,8 @@
     const u=await user();if(!u)return false;
     const path=`/api/me/favorites/${id}${on?'':'?mediaType=ANIME'}`;
     try{
-      await request(path,{method:on?'PUT':'DELETE',body:on?JSON.stringify({mediaType:'ANIME'}):undefined});
+      const result=await request(path,{method:on?'PUT':'DELETE',body:on?JSON.stringify({mediaType:'ANIME'}):undefined});
+      if(result===null)return false;
       clearPending(FAV_PENDING,id);return true;
     }catch{return false}
   }
@@ -44,8 +45,10 @@
   async function remoteState(id,state){
     const u=await user();if(!u)return false;
     try{
-      if(!state?.status)await request(`/api/me/list/${id}`,{method:'DELETE'});
-      else await request(`/api/me/list/${id}`,{method:'PUT',body:JSON.stringify({status:state.status,score:state.score==null?null:Number(state.score),progress:Math.max(0,Number(state.progress)||0),reaction:null})});
+      const result=!state?.status
+        ?await request(`/api/me/list/${id}`,{method:'DELETE'})
+        :await request(`/api/me/list/${id}`,{method:'PUT',body:JSON.stringify({status:state.status,score:state.score==null?null:Number(state.score),progress:Math.max(0,Number(state.progress)||0),reaction:null})});
+      if(result===null)return false;
       clearPending(STATE_PENDING,id);return true;
     }catch{return false}
   }
@@ -76,15 +79,27 @@
   async function hydrateStates(){
     const data=await request('/api/me/list').catch(()=>null);if(!data)return;
     const local=localStates(),next={...local},remote=new Map();
-    for(const row of data.items||[]){const id=Number(row.media_id);if(!Number.isSafeInteger(id)||id<=0)continue;const state=rowState(row);remote.set(id,state);const here=local[id];if(!here||state.updatedAt>Number(here.updatedAt||0))next[id]=state}
+    for(const row of data.items||[]){
+      const id=Number(row.media_id);if(!Number.isSafeInteger(id)||id<=0)continue;
+      const state=rowState(row);remote.set(id,state);const here=local[id];
+      if(!here||state.updatedAt>Number(here.updatedAt||0))next[id]=state;
+    }
     const changes=pending(STATE_PENDING);
-    for(const [raw,state] of Object.entries(changes)){const id=Number(raw);if(!Number.isSafeInteger(id)||id<=0)continue;if(state?.status)next[id]=state;else delete next[id]}
+    for(const [raw,state] of Object.entries(changes)){
+      const id=Number(raw);if(!Number.isSafeInteger(id)||id<=0)continue;
+      if(state?.status)next[id]=state;else delete next[id];
+    }
     write(STATE_KEY,next);write('aninexus:mediaState:v1',next);
     window.AniNexusMediaState?.sync?.();
 
     const jobs=[];
-    for(const [raw,state] of Object.entries(next)){const id=Number(raw);const server=remote.get(id);if(!server||Number(state.updatedAt||0)>Number(server.updatedAt||0))jobs.push(remoteState(id,state))}
-    for(const [raw,state] of Object.entries(changes)){const id=Number(raw);if(Number.isSafeInteger(id)&&id>0)jobs.push(remoteState(id,state)}
+    for(const [raw,state] of Object.entries(next)){
+      const id=Number(raw),server=remote.get(id);
+      if(!server||Number(state.updatedAt||0)>Number(server.updatedAt||0))jobs.push(remoteState(id,state));
+    }
+    for(const [raw,state] of Object.entries(changes)){
+      const id=Number(raw);if(Number.isSafeInteger(id)&&id>0)jobs.push(remoteState(id,state));
+    }
     await Promise.allSettled(jobs);
   }
 
