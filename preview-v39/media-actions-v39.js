@@ -4,7 +4,7 @@
 
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='40.0.1';
+  const BUILD='40.0.2';
   const FAV='[data-fav],[data-nx-fav],[data-nx-detail-fav],[data-nx18-fav],[data-nx17-fav]';
   const LIST='[data-list],[data-nx-list],[data-nx-detail-list],[data-nx18-status],[data-nx17-list]';
   const ACTION=`${FAV},${LIST}`;
@@ -29,29 +29,34 @@
   const busy=(b,ms)=>{if(!b)return;b.dataset.nx39Busy='1';setTimeout(()=>{if(b.isConnected)delete b.dataset.nx39Busy},ms)};
 
   function releaseList(){listOpening=false;clearTimeout(listTimer)}
-  function waitApi(timeout=1800){
-    const ready=api();if(ready)return Promise.resolve(ready);
-    return new Promise(resolve=>{const started=performance.now(),timer=setInterval(()=>{const a=api();if(a||performance.now()-started>=timeout){clearInterval(timer);resolve(a||null)}},20)});
-  }
+  function waitApi(timeout=1800){const ready=api();if(ready)return Promise.resolve(ready);return new Promise(resolve=>{const started=performance.now(),timer=setInterval(()=>{const a=api();if(a||performance.now()-started>=timeout){clearInterval(timer);resolve(a||null)}},20)})}
   function forceSync(){if(syncRaf)return;syncRaf=requestAnimationFrame(()=>{syncRaf=0;api()?.sync?.()})}
   function syncBurst(){forceSync();setTimeout(forceSync,40);setTimeout(forceSync,180);setTimeout(forceSync,520)}
 
   function preserveLabel(button){
-    if(!button||button.querySelector(':scope > span'))return;
-    const textNodes=[...button.childNodes].filter(n=>n.nodeType===Node.TEXT_NODE&&n.textContent.trim());
-    const label=textNodes.map(n=>n.textContent.trim()).join(' ').trim();
-    if(!/[A-Za-zÀ-ÿ]{2}/.test(label))return;
-    textNodes.forEach(n=>n.remove());
-    const span=document.createElement('span');span.textContent=label;button.append(span);
+    if(!button)return;
+    const directText=[...button.childNodes].filter(n=>n.nodeType===Node.TEXT_NODE&&n.textContent.trim());
+    const label=directText.map(n=>n.textContent.trim()).join(' ').trim();
+    if(/[A-Za-zÀ-ÿ]{2}/.test(label)){
+      directText.forEach(n=>n.remove());
+      const span=document.createElement('span');span.textContent=label;button.append(span);
+    }
+  }
+  function classify(button){
+    preserveLabel(button);
+    const explicitDetail=button.matches('[data-nx-detail-list],[data-nx-detail-fav]');
+    const visibleText=String(button.textContent||'').replace(/[＋+♡♥✓×Ⅱ]/g,'').trim();
+    const labeled=explicitDetail||/[A-Za-zÀ-ÿ]{2}/.test(visibleText);
+    button.dataset.nxActionKind=labeled?'labeled':'compact';
   }
 
-  /* Legacy renderers may create cards, but they never own action clicks or destroy labels. */
+  /* Renderers may create cards, but interaction and geometry have one explicit owner. */
   function neutralize(root=document){
     const buttons=[];
     if(root?.nodeType===1&&root.matches?.(ACTION))buttons.push(root);
     root?.querySelectorAll?.(ACTION).forEach(b=>buttons.push(b));
     for(const b of buttons){
-      preserveLabel(b);
+      classify(b);
       b.onclick=null;
       b.dataset.nxActionOwner='global';
       if(b.tagName==='BUTTON'&&!b.getAttribute('type'))b.type='button';
@@ -59,13 +64,7 @@
     if(buttons.length)forceSync();
   }
 
-  document.addEventListener('click',e=>{
-    if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
-    const a=e.target.closest?.('a[href]');if(!a||a.target==='_blank')return;
-    if(routeFrom(a.href)!=='/comunidade')return;
-    stop(e);location.assign(communityUrl());
-  },true);
-
+  document.addEventListener('click',e=>{if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const a=e.target.closest?.('a[href]');if(!a||a.target==='_blank'||routeFrom(a.href)!=='/comunidade')return;stop(e);location.assign(communityUrl())},true);
   document.addEventListener('pointerdown',e=>{const b=e.target.closest?.(ACTION);if(b&&!b.disabled)b.classList.add('nx39-press')},true);
   for(const type of ['pointerup','pointercancel','pointerleave'])document.addEventListener(type,e=>{const b=e.target.closest?.(ACTION);if(b){b.classList.remove('nx39-press');if(type==='pointerup')requestAnimationFrame(()=>pop(b))}},true);
 
@@ -74,10 +73,8 @@
     const last=favLock.get(id)||0;if(now()-last<340)return;
     favLock.set(id,now());busy(b,280);pop(b);
     const a=await waitApi();if(!a)return;
-    a.favorite(id,!a.isFavorite(id));
-    syncBurst();
+    a.favorite(id,!a.isFavorite(id));syncBurst();
   }
-
   async function listAction(b){
     const id=idList(b);if(!Number.isSafeInteger(id)||id<=0)return;
     if(listOpening||document.querySelector('.nx20-media-layer'))return;
@@ -85,15 +82,9 @@
     try{const a=await waitApi();if(!a)return;await a.open(id)}catch{}finally{releaseList();syncBurst()}
   }
 
-  /* Window capture precedes every document/element legacy handler. */
-  window.addEventListener('click',e=>{
-    const b=e.target.closest?.(ACTION);if(!b||b.disabled)return;
-    stop(e);
-    if(b.matches(FAV)){void favoriteAction(b);return}
-    void listAction(b);
-  },true);
+  /* Window capture precedes all document/element legacy handlers. */
+  window.addEventListener('click',e=>{const b=e.target.closest?.(ACTION);if(!b||b.disabled)return;stop(e);if(b.matches(FAV)){void favoriteAction(b);return}void listAction(b)},true);
   window.addEventListener('dblclick',e=>{if(e.target.closest?.(ACTION))stop(e)},true);
-
   document.addEventListener('keydown',e=>{if(e.key==='Escape')releaseList()},true);
   document.addEventListener('aninexus:media-state-changed',()=>syncBurst());
   document.addEventListener('aninexus:favorite-changed',()=>syncBurst());
@@ -110,5 +101,5 @@
   const start=()=>{neutralize(document);observer.observe(document.body,{subtree:true,childList:true})};
   if(document.body)start();else document.addEventListener('DOMContentLoaded',start,{once:true});
 
-  window.AniNexusMediaActions={favoriteSelector:FAV,listSelector:LIST,sync:syncBurst,neutralize,communityUrl,owner:'global-v40.0.1'};
+  window.AniNexusMediaActions={favoriteSelector:FAV,listSelector:LIST,sync:syncBurst,neutralize,communityUrl,owner:'global-v40.0.2'};
 })();
