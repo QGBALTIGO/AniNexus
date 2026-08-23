@@ -39,6 +39,25 @@ test('Top 10 and achievements stay aligned to AniNexus',async({page})=>{
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('#nx35Top .nx35-rank').first()).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeVisible();const align=await page.locator('.nx35-achievement-section .nx35-head').evaluate(el=>getComputedStyle(el).textAlign);expect(align).toBe('center');
 });
 
+test('favorite toggles independently and list status changes then removes like ANIQuim',async({page})=>{
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});
+  await page.evaluate(()=>{localStorage.removeItem('aninexus:favorites');localStorage.removeItem('aninexus:mediaState:v2');localStorage.removeItem('aninexus:mediaState:v1');localStorage.removeItem('aninexus:list');localStorage.removeItem('aninexus:listStatus');window.AniNexusMediaState?.sync?.()});
+  const ids=await page.evaluate(()=>{
+    const out=[];for(const b of document.querySelectorAll('button[data-fav]')){const id=Number(b.dataset.fav);if(id&&!out.includes(id))out.push(id);if(out.length===2)break}return out;
+  });
+  expect(ids.length).toBe(2);
+  const [a,b]=ids,fa=page.locator(`button[data-fav="${a}"]`),fb=page.locator(`button[data-fav="${b}"]`);
+  await fa.first().click();await expect(fa.first()).toHaveClass(/active/);
+  await fb.first().click();await expect(fb.first()).toHaveClass(/active/);await expect(fa.first()).toHaveClass(/active/);
+  await fa.first().click();await expect(fa.first()).not.toHaveClass(/active/);await expect(fb.first()).toHaveClass(/active/);
+  expect(await page.evaluate(([a,b])=>{const s=new Set(JSON.parse(localStorage.getItem('aninexus:favorites')||'[]').map(Number));return !s.has(a)&&s.has(b)},[a,b])).toBe(true);
+
+  const list=page.locator(`button[data-list="${a}"]`).first();await list.click();await expect(page.locator('.nx20-modal')).toBeVisible();
+  await page.locator('[data-nx20-status="PLANNING"]').click();await page.locator('[data-nx20-save]').click();await expect(list).toHaveAttribute('data-nx-unified-status','PLANNING');await expect(list).toHaveAttribute('aria-label',/Quero Ver/);
+  await list.click();await page.locator('[data-nx20-status="CURRENT"]').click();await page.locator('[data-nx20-save]').click();await expect(list).toHaveAttribute('data-nx-unified-status','CURRENT');await expect(list).toHaveAttribute('aria-label',/Assistindo/);
+  await list.click();await page.locator('[data-nx20-remove]').click();await expect(list).toHaveAttribute('data-nx-unified-status','');await expect(list).not.toHaveClass(/active/);await expect(list).toHaveAttribute('aria-label','Adicionar à lista');
+});
+
 test('news hub is Portuguese-only or deliberately empty',async({page})=>{
   await page.goto(pageUrl('/noticias'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-news-page')).toBeVisible({timeout:30000});await expect(page.locator('#nx35NewsSearch')).toBeVisible();
   const cards=page.locator('.nx35-ncard');if(await cards.count()){const text=(await cards.allTextContents()).join(' ');expect(text).not.toMatch(/All the News and Reviews|Interest Fool Night/i);await expect(cards.first()).toContainText('Ler no AniNexus')}else await expect(page.locator('.nx35-news-empty')).toBeVisible();
