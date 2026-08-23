@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
-const pageUrl=route=>`${ORIGIN}?build=38.0.0&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=38.1.0&p=${encodeURIComponent(route)}`;
 async function noLegacy404(page){await expect(page.locator('body')).not.toContainText('Página não encontrada')}
 async function noHorizontalOverflow(page,tolerance=7){const x=await page.evaluate(()=>({scroll:document.documentElement.scrollWidth,inner:innerWidth}));expect(x.scroll).toBeLessThanOrEqual(x.inner+tolerance)}
 async function waitForAny(page,selectors,timeout=25000){await Promise.any(selectors.map(s=>page.locator(s).first().waitFor({state:'visible',timeout})))}
@@ -56,6 +56,27 @@ test('favorite toggles independently and list status changes then removes like A
   await page.locator('[data-nx20-status="PLANNING"]').click();await page.locator('[data-nx20-save]').click();await expect(list).toHaveAttribute('data-nx-unified-status','PLANNING');await expect(list).toHaveAttribute('aria-label',/Quero Ver/);
   await list.click();await page.locator('[data-nx20-status="CURRENT"]').click();await page.locator('[data-nx20-save]').click();await expect(list).toHaveAttribute('data-nx-unified-status','CURRENT');await expect(list).toHaveAttribute('aria-label',/Assistindo/);
   await list.click();await page.locator('[data-nx20-remove]').click();await expect(list).toHaveAttribute('data-nx-unified-status','');await expect(list).not.toHaveClass(/active/);await expect(list).toHaveAttribute('aria-label','Adicionar à lista');
+});
+
+test('Meus Animes filters the library, publishes an impression and surfaces it on Home',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});
+  const ids=await page.evaluate(()=>{
+    const out=[];for(const b of document.querySelectorAll('button[data-fav]')){const id=Number(b.dataset.fav);if(id&&!out.includes(id))out.push(id);if(out.length===2)break}return out;
+  });
+  expect(ids.length).toBe(2);
+  await page.evaluate(([a,b])=>{
+    const now=Date.now();
+    localStorage.setItem('aninexus:favorites',JSON.stringify([a]));
+    const states={};states[a]={status:'CURRENT',progress:3,reaction:'',score:8.5,updatedAt:now};states[b]={status:'PLANNING',progress:0,reaction:'',score:null,updatedAt:now-1000};
+    localStorage.setItem('aninexus:mediaState:v2',JSON.stringify(states));localStorage.setItem('aninexus:mediaState:v1',JSON.stringify(states));localStorage.setItem('aninexus:impressions:v1','[]');
+  },ids);
+  await page.goto(pageUrl('/meus-animes'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx38-library')).toBeVisible({timeout:30000});await noLegacy404(page);await noHorizontalOverflow(page);
+  await expect(page.locator('.nx38-library-stat').nth(0)).toContainText('1');await expect(page.locator('.nx38-library-grid .nx38-library-card')).toHaveCount(2);
+  await page.locator('[data-lib-filter="CURRENT"]').first().click();await expect(page.locator('.nx38-library-grid .nx38-library-card')).toHaveCount(1);
+  await page.locator('[data-lib-impression]').first().click();await expect(page.locator('#nx38ImpressionModal')).toBeVisible();await page.locator('#nx38ImpressionForm textarea').fill('Gostei bastante do ritmo deste episódio.');await page.locator('.nx38-impression-submit').click();
+  await expect(page.locator('.nx38-library-stat').nth(3)).toContainText('1');
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('#nx38HomeImpressions')).toBeVisible({timeout:10000});await expect(page.locator('.nx38-impression-home-card').first()).toContainText('Gostei bastante do ritmo deste episódio.');await noHorizontalOverflow(page);
 });
 
 test('news hub is Portuguese-only or deliberately empty',async({page})=>{
