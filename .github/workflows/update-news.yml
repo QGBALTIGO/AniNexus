@@ -26,8 +26,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: aninexus-news-v39
-  cancel-in-progress: false
+  group: aninexus-news-v39-${{ github.event_name }}
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 
 jobs:
   update:
