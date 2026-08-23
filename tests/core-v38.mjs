@@ -21,6 +21,7 @@ const analytics=read('lib/analytics.mjs');
 const build=read('scripts/build-public.mjs');
 const migration=read('sql/006_scale_indexes.sql');
 const favoriteMigration=read('sql/007_user_favorites.sql');
+const libraryMigration=read('sql/008_library_impressions.sql');
 const runtime=read('preview-v38/runtime-v38.js');
 const mediaSync=read('preview-v38/media-sync-v38.js');
 const coreCss=read('preview-v38/core-v38.css');
@@ -28,6 +29,9 @@ const mediaState=read('preview-v19/media-state-v2.js');
 const authUi=read('preview-v38/auth-v38.js');
 const authCss=read('preview-v38/auth-v38.css');
 const authGuard=read('preview-v38/auth-guard-v38.js');
+const library=read('preview-v38/library-v38.js');
+const libraryCss=read('preview-v38/library-v38.css');
+const libraryGuard=read('preview-v38/library-guard-v38.js');
 const router=read('preview-v23/router-v23.js');
 const nav=read('preview-v27/navigation-v27.js');
 const page404=read('404.html');
@@ -35,11 +39,12 @@ const page404=read('404.html');
 function includes(text,needle){assert.ok(text.includes(needle),`missing: ${needle}`)}
 function notIncludes(text,needle){assert.ok(!text.includes(needle),`unexpected: ${needle}`)}
 
-test('V38 shell is active and local runtime references exist',()=>{
-  includes(index,'2026-08-22-v38.0.0');
-  ['preview-v38/core-v38.css','preview-v38/auth-v38.css','preview-v38/runtime-v38.js','preview-v38/auth-guard-v38.js','preview-v38/auth-v38.js','preview-v38/media-sync-v38.js'].forEach(p=>{includes(index,p);assert.ok(exists(p),`missing ${p}`)});
+test('V38.1 shell is active and local runtime references exist',()=>{
+  includes(index,'2026-08-22-v38.1.0');
+  ['preview-v38/core-v38.css','preview-v38/auth-v38.css','preview-v38/runtime-v38.js','preview-v38/auth-guard-v38.js','preview-v38/auth-v38.js','preview-v38/media-sync-v38.js','preview-v38/library-v38.css','preview-v38/library-guard-v38.js','preview-v38/library-v38.js'].forEach(p=>{includes(index,p);assert.ok(exists(p),`missing ${p}`)});
   includes(index,'preview-v19/media-state-v2.js?v=38.0.2');
   assert.ok(index.indexOf('preview-v19/media-state-v2.js')<index.indexOf('preview-v38/media-sync-v38.js'),'account sync must load after local state controller');
+  assert.ok(index.indexOf('preview-v38/auth-v38.js')<index.indexOf('preview-v38/library-v38.js'),'library enhancement should load after auth routes');
 });
 
 test('all Pages route helpers use one V38 build marker',()=>{
@@ -81,14 +86,17 @@ test('analytics writes are batched instead of one insert per event request',()=>
   includes(server,'enqueueAnalytics');notIncludes(server,"q('INSERT INTO analytics_events(event_name,path,media_id)");includes(analytics,'jsonb_to_recordset');includes(analytics,'BATCH');includes(analytics,'flushAnalytics');
 });
 
-test('database migrations are serialized across horizontally-scaled processes',()=>{includes(db,'pg_advisory_lock');includes(db,'pg_advisory_unlock')});
+test('database migrations are serialized and base schema always runs first',()=>{
+  includes(db,'pg_advisory_lock');includes(db,'pg_advisory_unlock');includes(db,"filter(x=>x!=='schema.sql')");includes(db,"['schema.sql',...migrations]");
+});
 
 test('hot database access paths have V38 indexes',()=>{
   ['sessions_user_created_idx','user_anime_user_updated_idx','notifications_user_unread_idx','impressions_media_visible_idx','community_posts_visible_thread_idx','news_articles_live_idx'].forEach(x=>includes(migration,x));
+  includes(libraryMigration,'impressions_user_visible_idx');includes(libraryMigration,'impressions_visible_time_idx');
 });
 
 test('Nginx caches only public GET models and locks cache stampedes',()=>{
-  includes(nginx,'proxy_cache_path');includes(nginx,'proxy_cache_lock on');includes(nginx,'proxy_cache_use_stale');includes(nginx,'X-AniNexus-Cache');includes(nginx,'location ^~ /api/auth/');includes(nginx,'location /api/');
+  includes(nginx,'proxy_cache_path');includes(nginx,'proxy_cache_lock on');includes(nginx,'proxy_cache_use_stale');includes(nginx,'X-AniNexus-Cache');includes(nginx,'community/impressions');includes(nginx,'location ^~ /api/auth/');includes(nginx,'location /api/');
   notIncludes(nginx,'/api/me');
 });
 
@@ -158,12 +166,24 @@ test('login, registration and account are real routes with a guarded first frame
   includes(authCss,'.nx38-auth-page');includes(authCss,'.nx38-account-page');
 });
 
+test('Meus Animes owns a guarded route with full status navigation and personal views',()=>{
+  includes(libraryGuard,"p!=='/meus-animes'");includes(library,"const LIB_ROUTE='/meus-animes'");
+  ['AIRING','ALL','FAVORITES','CURRENT','PLANNING','COMPLETED','PAUSED','DROPPED','IMPRESSIONS','ACHIEVEMENTS','RANK'].forEach(x=>includes(library,x));
+  includes(library,'Revisar meus animes');includes(libraryCss,'.nx38-library-grid');includes(libraryCss,'.nx38-library-drawer');
+});
+
+test('library and Home impressions use consolidated real APIs',()=>{
+  includes(server,"app.get('/api/me/library'");includes(server,"app.get('/api/community/impressions'");includes(server,"app.post('/api/anime/:id/impressions'");
+  includes(library,"request('/api/me/library')");includes(library,"request('/api/community/impressions?limit=12')");includes(library,"request(`/api/anime/${id}/impressions`");
+  includes(libraryCss,'.nx38-impressions-home');includes(index,'Meus Animes<small>Lista, favoritos, progresso e impressões</small>');
+});
+
 test('community replies are paginated instead of returning 500 rows forever',()=>{includes(server,"Math.min(200,Number(req.query?.limit||100))");includes(server,"offset=Math.max(0,Math.min(10000");includes(server,'hasMore:rows.length===limit')});
 
-test('package check includes media state, sync and core regression suite',()=>{
+test('package check includes media state, sync, library and core regression suite',()=>{
   assert.equal(pkg.scripts['test:core'],'node tests/core-v38.mjs');
-  ['lib/analytics.mjs','scripts/build-public.mjs','preview-v19/media-state-v2.js','preview-v38/media-sync-v38.js','preview-v38/auth-v38.js','tests/core-v38.mjs'].forEach(x=>includes(pkg.scripts.check,x));
+  ['lib/analytics.mjs','scripts/build-public.mjs','preview-v19/media-state-v2.js','preview-v38/media-sync-v38.js','preview-v38/auth-v38.js','preview-v38/library-v38.js','tests/core-v38.mjs'].forEach(x=>includes(pkg.scripts.check,x));
 });
 
 if(process.exitCode)throw new Error('AniNexus core V38 tests failed');
-console.log(`\nAniNexus Core V38: ${passed} tests passed`);
+console.log(`\nAniNexus Core V38.1: ${passed} tests passed`);
