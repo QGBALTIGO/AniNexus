@@ -1,4 +1,5 @@
-/* AniNexus V38 — global stability/accessibility layer. No page redesigns here. */
+/* AniNexus V38 — global stability/accessibility layer.
+   Media list/favorite visuals are intentionally owned only by preview-v39/media-actions-v39.css. */
 html{scrollbar-gutter:stable;text-size-adjust:100%;-webkit-text-size-adjust:100%}
 body{overflow-x:clip;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
 #app{min-width:0;overflow-x:clip}
@@ -12,95 +13,9 @@ button,a,[role=button]{-webkit-tap-highlight-color:transparent}
 .nx38-media-fallback:after{content:'Imagem indisponível';position:absolute;inset:auto 10px 10px;z-index:2;color:#695c63;font-size:7px;font-weight:800;letter-spacing:.04em;text-align:center;pointer-events:none}
 html.nx38-offline body:after{content:'Você está offline';position:fixed;z-index:9999;left:50%;bottom:14px;transform:translateX(-50%);padding:7px 11px;border:1px solid rgba(255,255,255,.10);border-radius:999px;background:rgba(10,7,9,.94);color:#cbbfc5;font-size:8px;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.3)}
 
-/* V38.2 — visuals follow media-state-v2.js; CSS never invents interaction state. */
-:root{
-  --nx38-action-size:36px;
-  --nx38-action-radius:11px;
-  --nx38-action-bg:rgba(12,9,13,.84);
-  --nx38-action-line:rgba(255,255,255,.14);
-  --nx38-action-red:#ed3158;
-  --nx38-planning:#d15477;
-  --nx38-current:#ef365c;
-  --nx38-completed:#35b779;
-  --nx38-paused:#d99a3e;
-  --nx38-dropped:#9c6672;
-}
-
-:where(button[data-list],button[data-nx-list],button[data-nx-detail-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx-detail-fav],button[data-nx18-fav],button[data-nx17-fav]){
-  box-sizing:border-box;
-  line-height:1;
-  transition:background-color .16s ease,border-color .16s ease,color .16s ease,transform .16s ease,box-shadow .16s ease;
-}
-
-:where(button[data-list],button[data-nx-list],button[data-nx-detail-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx-detail-fav],button[data-nx18-fav],button[data-nx17-fav])>.nx-media-icon{
-  display:block!important;
-  width:18px!important;
-  height:18px!important;
-  min-width:18px!important;
-  min-height:18px!important;
-  flex:0 0 18px!important;
-  fill:none!important;
-  stroke:currentColor!important;
-  stroke-width:1.9!important;
-  stroke-linecap:round!important;
-  stroke-linejoin:round!important;
-  vector-effect:non-scaling-stroke;
-  pointer-events:none;
-}
-
-/* Compact card controls only. Detail-page labeled controls keep their own dimensions. */
-:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]):not(:has(>span)){
-  width:var(--nx38-action-size)!important;
-  height:var(--nx38-action-size)!important;
-  min-width:var(--nx38-action-size)!important;
-  min-height:var(--nx38-action-size)!important;
-  max-width:var(--nx38-action-size)!important;
-  max-height:var(--nx38-action-size)!important;
-  padding:0!important;
-  border-radius:var(--nx38-action-radius)!important;
-  display:grid!important;
-  place-items:center!important;
-  gap:0!important;
-  border:1px solid var(--nx38-action-line)!important;
-  background:var(--nx38-action-bg)!important;
-  color:#f5edf1!important;
-  box-shadow:0 6px 18px rgba(0,0,0,.22)!important;
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-}
-
-:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]):not(:has(>span)):hover{
-  border-color:rgba(237,49,88,.42)!important;
-  background:rgba(231,42,82,.12)!important;
-  color:#fff!important;
-  transform:translateY(-1px);
-}
-:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]):not(:has(>span)):active{transform:translateY(0) scale(.96)}
-
-/* Favorito is independent from list status. */
-:where(button[data-fav],button[data-nx-fav],button[data-nx-detail-fav],button[data-nx18-fav],button[data-nx17-fav]).active{
-  color:#fff!important;
-  border-color:rgba(255,255,255,.18)!important;
-  background:linear-gradient(145deg,#f03a62,#bd173b)!important;
-  box-shadow:0 7px 20px rgba(220,31,72,.28)!important;
-}
-:where(button[data-fav],button[data-nx-fav],button[data-nx-detail-fav],button[data-nx18-fav],button[data-nx17-fav]).active>.nx-media-heart{fill:currentColor!important;stroke:currentColor!important}
-:where(button[data-fav],button[data-nx-fav],button[data-nx-detail-fav],button[data-nx18-fav],button[data-nx17-fav]):not(.active)>.nx-media-heart{fill:none!important}
-
-/* List button reflects exactly one mutually-exclusive status. */
-:where(button[data-list],button[data-nx-list],button[data-nx-detail-list],button[data-nx18-status],button[data-nx17-list]).active{--nx38-state:var(--nx38-current);color:#fff!important;border-color:color-mix(in srgb,var(--nx38-state) 55%,rgba(255,255,255,.18))!important;background:color-mix(in srgb,var(--nx38-state) 24%,#100c10)!important;box-shadow:0 7px 20px color-mix(in srgb,var(--nx38-state) 20%,transparent)!important}
-:where(button[data-list],button[data-nx-list],button[data-nx-detail-list],button[data-nx18-status],button[data-nx17-list]).status-planning{--nx38-state:var(--nx38-planning)}
-:where(button[data-list],button[data-nx-list],button[data-nx-detail-list],button[data-nx18-status],button[data-nx17-list]).status-current{--nx38-state:var(--nx38-current)}
-:where(button[data-list],button[data-nx-list],button[data-nx-detail-list],button[data-nx18-status],button[data-nx17-list]).status-completed{--nx38-state:var(--nx38-completed)}
-:where(button[data-list],button[data-nx-list],button[data-nx-detail-list],button[data-nx18-status],button[data-nx17-list]).status-paused{--nx38-state:var(--nx38-paused)}
-:where(button[data-list],button[data-nx-list],button[data-nx-detail-list],button[data-nx18-status],button[data-nx17-list]).status-dropped{--nx38-state:var(--nx38-dropped)}
-
-:where(button[data-nx-detail-list],button[data-nx-detail-fav],.nx22-list,.nx22-fav){align-items:center;justify-content:center}
-:where(button[data-nx-detail-list],button[data-nx-detail-fav])>.nx-media-icon{margin-right:8px!important}
-
+/* Shared sizing for ordinary controls only. Media actions are excluded because V39 owns them. */
 @media(max-width:760px){
-  :where(button,.btn,.login-btn,.signup-btn,.icon-button,.menu-btn):not([data-list]):not([data-nx-list]):not([data-nx18-status]):not([data-nx17-list]):not([data-fav]):not([data-nx-fav]):not([data-nx18-fav]):not([data-nx17-fav]){min-height:40px}
-  :where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]):not(:has(>span)){width:36px!important;height:36px!important;min-width:36px!important;min-height:36px!important;max-width:36px!important;max-height:36px!important}
+  :where(button,.btn,.login-btn,.signup-btn,.icon-button,.menu-btn):not([data-list]):not([data-nx-list]):not([data-nx-detail-list]):not([data-nx18-status]):not([data-nx17-list]):not([data-fav]):not([data-nx-fav]):not([data-nx-detail-fav]):not([data-nx18-fav]):not([data-nx17-fav]){min-height:40px}
   :where(.nx24-rail,.aqx-rail,.nx35-news-side,[data-scroll-rail]){scroll-snap-type:x proximity}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
