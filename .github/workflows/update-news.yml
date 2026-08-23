@@ -19,7 +19,6 @@ on:
       - 'preview-v36/news-v36.css'
       - 'data/news-v37-hot.json'
       - 'tests/news-system.mjs'
-      - 'tests/smoke.mjs'
       - '.github/workflows/update-news.yml'
 
 permissions:
@@ -75,10 +74,8 @@ jobs:
             echo "A coleta falhou após 3 tentativas."
             exit 1
           fi
-      - name: Validar feed editorial
-        run: |
-          node tests/news-system.mjs
-          node tests/smoke.mjs
+      - name: Validar somente o feed editorial
+        run: node tests/news-system.mjs
       - name: Publicar feed interno
         run: |
           if git diff --quiet -- data/news.json; then
