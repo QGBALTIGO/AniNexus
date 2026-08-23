@@ -1,48 +1,75 @@
 # AniNexus
 
-Plataforma full-stack de descoberta, catálogo, temporadas, programação, rankings, perfis, listas pessoais, comunidade e notícias de animes.
+Plataforma full-stack brasileira para descobrir, acompanhar e conversar sobre animes, mangás e light novels.
 
-## O que já está implementado
+## Comece por aqui
 
-- página inicial com identidade visual própria do AniNexus, temporada, próximos episódios, notícias, mangás/light novels, rankings, premiações, impressões e comunidade;
-- catálogo com busca, gênero, formato, ordenação e paginação;
-- temporadas por estação e ano;
-- calendário semanal em horário de Brasília com atualização silenciosa;
-- páginas individuais de anime com banner, capa, notas, gêneros, detalhes, personagens, equipe, relações, recomendações e opções de streaming quando disponíveis;
-- páginas Onde Assistir, Dublados, Estúdios e rankings;
-- criação de conta, login, logout, sessões persistentes e listas pessoais;
-- status Quero Ver, Assistindo, Terminei, Pausei e Desisti;
-- impressões/comentários por anime com marcação de spoiler;
-- notícias nativas: `/noticias` e `/noticias/:slug`, sem depender de mandar o usuário para outro site para leitura;
-- PostgreSQL para notícias com título, resumo, corpo editorial, imagem, metadados de origem e expiração;
-- retenção configurável por `NEWS_RETENTION_DAYS` (padrão: 5 dias) para manter o feed recente;
-- pipeline de tradução/síntese em português que gera texto próprio do AniNexus a partir de informações públicas, sem copiar integralmente matérias externas;
-- tema claro/escuro;
-- busca global com Ctrl/Cmd + K;
-- páginas Quem Somos, Colabore, Contato, Termos, Privacidade e DMCA;
-- formulários de contato e DMCA armazenados no banco;
-- PostgreSQL, Redis, rate limits, CSP, headers de segurança e hash Argon2id;
-- Docker Compose com aplicação, Nginx, PostgreSQL e Redis;
-- cache de dados e sincronização de programação no backend;
-- PWA e navegação responsiva para desktop, tablet, celular e telas grandes.
+Para trabalhar no código, leia primeiro:
 
-## Subir na VPS
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — fonte de verdade, runtime atual e mapa das camadas;
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — regras para alterações e organização;
+- [`legacy/README.md`](legacy/README.md) — o que é histórico e não deve receber código novo.
+
+## Estrutura
+
+```text
+AniNexus/
+├── assets/          recursos estáticos permanentes
+├── data/            snapshots/fallbacks de notícias
+├── docs/            documentação técnica
+├── legacy/          versões históricas fora do runtime
+├── lib/             serviços do backend
+├── preview-v*/      somente camadas que ainda participam do runtime
+├── public/          saída/fallback servido pelo backend
+├── scripts/         build, manutenção e validações
+├── sql/             schema e migrações
+├── tests/           regressão, smoke e E2E
+├── index.html       shell/fonte de verdade do frontend
+└── server.mjs       composição HTTP/API Fastify
+```
+
+As pastas `preview-vXX` que ainda estão na raiz são módulos de compatibilidade ativos do mesmo frontend; versões totalmente substituídas ficam em `legacy/`.
+
+## Desenvolvimento
+
+```bash
+npm install
+npm run check
+npm run build:public
+npm run dev
+```
+
+`npm run check` valida sintaxe, regressões e também a organização do repositório. Uma nova pasta `preview-vXX` não classificada faz o check falhar.
+
+## Produção
 
 ```bash
 cp .env.example .env
-nano .env
-# troque POSTGRES_PASSWORD e IP_HASH_SALT
+# configure POSTGRES_PASSWORD, IP_HASH_SALT e demais variáveis
 
 docker compose up -d --build
 ```
 
-Acesse `http://IP_DA_VPS:8080`.
+Por padrão a aplicação fica disponível na porta pública configurada pelo Compose.
 
-### HTTPS / domínio
-
-Quando o domínio estiver atrás de HTTPS, altere no `.env`:
+Para HTTPS/domínio:
 
 ```bash
 PUBLIC_ORIGIN=https://seu-dominio.com
 COOKIE_SECURE=true
 ```
+
+## Principais áreas
+
+- Home, catálogo, temporadas e programação;
+- detalhes de anime e opções oficiais de streaming;
+- conta, autenticação, favoritos, listas e progresso;
+- comunidade, impressões e discussões;
+- notícias internas em português;
+- PostgreSQL, Redis, cache, rate limits e headers de segurança;
+- Docker Compose + Nginx;
+- GitHub Pages para o frontend estático.
+
+## Regra importante
+
+Não crie uma nova `preview-vXX` para cada correção. Corrija o módulo atual responsável pela funcionalidade. Uma nova camada versionada só deve existir quando houver necessidade real de rollout/cache/compatibilidade e isso deve ser documentado.
