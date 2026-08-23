@@ -33,18 +33,25 @@
     const ready=api();if(ready)return Promise.resolve(ready);
     return new Promise(resolve=>{const started=performance.now(),timer=setInterval(()=>{const a=api();if(a||performance.now()-started>=timeout){clearInterval(timer);resolve(a||null)}},20)});
   }
-  function forceSync(){
-    if(syncRaf)return;
-    syncRaf=requestAnimationFrame(()=>{syncRaf=0;api()?.sync?.()});
-  }
+  function forceSync(){if(syncRaf)return;syncRaf=requestAnimationFrame(()=>{syncRaf=0;api()?.sync?.()})}
   function syncBurst(){forceSync();setTimeout(forceSync,40);setTimeout(forceSync,180);setTimeout(forceSync,520)}
 
-  /* Legacy renderers are allowed to render cards, but they no longer own action clicks. */
+  function preserveLabel(button){
+    if(!button||button.querySelector(':scope > span'))return;
+    const textNodes=[...button.childNodes].filter(n=>n.nodeType===Node.TEXT_NODE&&n.textContent.trim());
+    const label=textNodes.map(n=>n.textContent.trim()).join(' ').trim();
+    if(!/[A-Za-zÀ-ÿ]{2}/.test(label))return;
+    textNodes.forEach(n=>n.remove());
+    const span=document.createElement('span');span.textContent=label;button.append(span);
+  }
+
+  /* Legacy renderers may create cards, but they never own action clicks or destroy labels. */
   function neutralize(root=document){
     const buttons=[];
     if(root?.nodeType===1&&root.matches?.(ACTION))buttons.push(root);
     root?.querySelectorAll?.(ACTION).forEach(b=>buttons.push(b));
     for(const b of buttons){
+      preserveLabel(b);
       b.onclick=null;
       b.dataset.nxActionOwner='global';
       if(b.tagName==='BUTTON'&&!b.getAttribute('type'))b.type='button';
@@ -52,7 +59,6 @@
     if(buttons.length)forceSync();
   }
 
-  /* Dedicated Community owns its route. */
   document.addEventListener('click',e=>{
     if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
     const a=e.target.closest?.('a[href]');if(!a||a.target==='_blank')return;
@@ -68,8 +74,7 @@
     const last=favLock.get(id)||0;if(now()-last<340)return;
     favLock.set(id,now());busy(b,280);pop(b);
     const a=await waitApi();if(!a)return;
-    const wanted=!a.isFavorite(id);
-    a.favorite(id,wanted);
+    a.favorite(id,!a.isFavorite(id));
     syncBurst();
   }
 
@@ -80,7 +85,7 @@
     try{const a=await waitApi();if(!a)return;await a.open(id)}catch{}finally{releaseList();syncBurst()}
   }
 
-  /* Window capture runs before every document/element legacy handler. There is exactly one owner. */
+  /* Window capture precedes every document/element legacy handler. */
   window.addEventListener('click',e=>{
     const b=e.target.closest?.(ACTION);if(!b||b.disabled)return;
     stop(e);
