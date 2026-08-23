@@ -7,7 +7,7 @@
 <meta name="color-scheme" content="dark light">
 <meta name="description" content="AniNexus — descubra, acompanhe e compartilhe animes, mangás, light novels e notícias.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="aninexus-build" content="2026-08-22-v38.0.0">
+<meta name="aninexus-build" content="2026-08-22-v38.1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https://graphql.anilist.co https://api.jikan.moe https://api.mymemory.translated.net https://translate.googleapis.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://www.dailymotion.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
 <title>AniNexus</title>
 <link rel="icon" href="./assets/favicon.png">
@@ -37,10 +37,12 @@
 <link rel="stylesheet" href="./preview-v33/news-v33.css?v=37.0.2">
 <link rel="stylesheet" href="./preview-v38/core-v38.css?v=38.0.2">
 <link rel="stylesheet" href="./preview-v38/auth-v38.css?v=38.0.0">
+<link rel="stylesheet" href="./preview-v38/library-v38.css?v=38.1.0">
 <script src="./preview-v38/runtime-v38.js?v=38.0.2"></script>
 <script src="./preview-v12/network-cache.js?v=26.0.0"></script>
 <script src="./preview-v32/news-route-guard-v32.js?v=37.0.2"></script>
 <script src="./preview-v38/auth-guard-v38.js?v=38.0.0"></script>
+<script src="./preview-v38/library-guard-v38.js?v=38.1.0"></script>
 <script src="./preview-v23/route-guard-v23.js?v=35.0.1"></script>
 <script src="./preview-v24/home-guard-v24.js?v=35.0.1"></script>
 <script src="./preview-v18/guard.js?v=26.0.0"></script>
@@ -81,6 +83,7 @@
       <a href="/animes/onde-assistir" data-link><i class="nav-icon orange" data-icon="play"></i><span>Onde assistir<small>Plataformas oficiais</small></span></a>
       <a href="/anime-awards" data-link><i class="nav-icon yellow" data-icon="trophy"></i><span>Anime Awards<small>Categorias e edições</small></span></a>
       <h4>Leitura & comunidade</h4>
+      <a href="/meus-animes"><i class="nav-icon red" data-icon="heart"></i><span>Meus Animes<small>Lista, favoritos, progresso e impressões</small></span></a>
       <a href="/mangas" data-link><i class="nav-icon green" data-icon="book"></i><span>Mangás<small>Catálogo de leitura</small></span></a>
       <a href="/light-novels" data-link><i class="nav-icon cyan" data-icon="novel"></i><span>Light novels<small>Histórias e volumes</small></span></a>
       <a href="/noticias" data-link><i class="nav-icon pink" data-icon="news"></i><span>Notícias<small>Estreias, trailers e novidades</small></span></a>
@@ -99,7 +102,7 @@
     <div class="footer-about"><a class="brand" href="/" data-link><img src="./assets/logo.png" alt=""><span>AniNexus</span></a><p>Uma casa brasileira para descobrir, acompanhar e conversar sobre anime, mangá e light novel.</p><div class="socials"><a href="https://t.me/AniNexus_Oficial" target="_blank" rel="noopener noreferrer" aria-label="Telegram AniNexus"><svg viewBox="0 0 24 24"><path d="m3 11 17-7-4 16-6-5-3 3 1-5 8-6-10 5-3-1Z"/></svg></a><a href="https://www.instagram.com/AniNexus_Oficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram AniNexus"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".7"/></svg></a><a href="https://www.tiktok.com/@aninexus_oficial" target="_blank" rel="noopener noreferrer" aria-label="TikTok AniNexus"><svg viewBox="0 0 24 24"><path d="M14 3v10.7a4.7 4.7 0 1 1-4-4.6"/><path d="M14 3c.8 3 2.5 4.4 5.3 4.6"/></svg></a></div></div>
     <div class="footer-col"><h3>AniNexus</h3><a href="/quem-somos" data-nx-inst="/quem-somos">Quem Somos</a><a href="/colabore" data-nx-inst="/colabore">Colabore</a><a href="/contato" data-nx-inst="/contato">Contato</a><a href="/termos-de-uso" data-nx-legal="/termos-de-uso">Termos de Serviço</a><a href="/politica-de-privacidade" data-nx-legal="/politica-de-privacidade">Política de Privacidade</a><a href="/dmca" data-nx-legal="/dmca">DMCA</a></div>
     <div class="footer-col"><h3>Animes</h3><a href="/animes/catalogo" data-link>Catálogo de Animes</a><a href="/animes/temporadas" data-link>Animes da Temporada</a><a href="/animes/programacao" data-link>Calendário de Animes</a><a href="/animes/onde-assistir" data-link>Onde Assistir Animes</a><a href="/animes/dublados" data-link>Animes Dublados</a><a href="/animes/estudios" data-link>Estúdios de Anime</a></div>
-    <div class="footer-col"><h3>Listas</h3><a href="/melhores-animes-para-assistir" data-link>Melhores Animes Para Assistir</a><a href="/animes-mais-assistidos" data-link>Animes Mais Assistidos</a><a href="/animes-mais-aguardados" data-link>Animes Mais Aguardados</a><a href="/listas-de-animes" data-link>Todas as Listas</a><a href="/noticias" data-link>Notícias</a><a href="/comunidade" data-link>Comunidade</a></div>
+    <div class="footer-col"><h3>Listas</h3><a href="/meus-animes">Meus Animes</a><a href="/melhores-animes-para-assistir" data-link>Melhores Animes Para Assistir</a><a href="/animes-mais-assistidos" data-link>Animes Mais Assistidos</a><a href="/animes-mais-aguardados" data-link>Animes Mais Aguardados</a><a href="/listas-de-animes" data-link>Todas as Listas</a><a href="/noticias" data-link>Notícias</a><a href="/comunidade" data-link>Comunidade</a></div>
   </div>
   <div class="shell footer-note"><span>© <span id="year"></span> AniNexus</span><span>Obras, marcas e personagens pertencem aos respectivos titulares.</span></div>
 </footer>
@@ -130,5 +133,6 @@
 <script src="./preview-v35/news-ui-v35.js?v=37.0.2" defer></script>
 <script src="./preview-v33/home-v33.js?v=35.0.1" defer></script>
 <script src="./preview-v38/auth-v38.js?v=38.0.0" defer></script>
+<script src="./preview-v38/library-v38.js?v=38.1.0" defer></script>
 </body>
 </html>
