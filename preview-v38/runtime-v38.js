@@ -83,9 +83,31 @@
     img.closest('.nx35-nmedia,.nx37-gallery-item,.nx24-card-poster,.aqx-media,.nx18-cover,.nx35-community-cover,.media,.poster,.nx21-poster,.nx22-cover,.nx22-hero-bg')?.classList.add('nx38-media-fallback');
   },true);
 
+  // Canonical action artwork. Legacy renderers may draw their own plus/heart,
+  // but V38 normalizes them before the unified media-state layer takes over.
+  const LIST_ACTION='button[data-list],button[data-nx-list],button[data-nx-detail-list],button[data-nx18-status],button[data-nx17-list]';
+  const FAV_ACTION='button[data-fav],button[data-nx-fav],button[data-nx-detail-fav],button[data-nx18-fav],button[data-nx17-fav]';
+  const ACTION_SELECTOR=`${LIST_ACTION},${FAV_ACTION}`;
+  const PLUS_ICON='<svg class="nx38-action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.25v13.5M5.25 12h13.5"/></svg>';
+  const HEART_ICON='<svg class="nx38-action-icon nx38-heart-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg>';
+  const standardizeAction=button=>{
+    if(!(button instanceof HTMLButtonElement)||!button.matches(ACTION_SELECTOR))return;
+    const favorite=button.matches(FAV_ACTION),current=button.querySelector(':scope > svg');
+    if(favorite){
+      if(!current?.classList.contains('nx38-heart-icon')){current?.remove();button.insertAdjacentHTML('afterbegin',HEART_ICON)}
+      button.dataset.nx38Action='favorite';
+      return;
+    }
+    button.dataset.nx38Action='list';
+    if(!button.classList.contains('active')&&!button.dataset.nxUnifiedStatus&&!current?.classList.contains('nx38-action-icon')){current?.remove();button.insertAdjacentHTML('afterbegin',PLUS_ICON)}
+  };
+
   const tune=root=>{
     if(root instanceof HTMLImageElement){if(!root.hasAttribute('decoding'))root.decoding='async';if(!root.hasAttribute('loading')&&!root.closest('.hero,.nx35-article-hero,.nx24-hero,.aqx-hero,.nx22-hero'))root.loading='lazy'}
+    if(root instanceof SVGElement)standardizeAction(root.closest('button'));
+    if(root instanceof HTMLButtonElement)standardizeAction(root);
     root.querySelectorAll?.('img').forEach(img=>{if(!img.hasAttribute('decoding'))img.decoding='async';if(!img.hasAttribute('loading')&&!img.closest('.hero,.nx35-article-hero,.nx24-hero,.aqx-hero,.nx22-hero'))img.loading='lazy'});
+    root.querySelectorAll?.(ACTION_SELECTOR).forEach(standardizeAction);
     root.querySelectorAll?.('a[target="_blank"]').forEach(a=>{const rel=new Set(String(a.rel||'').split(/\s+/).filter(Boolean));rel.add('noopener');rel.add('noreferrer');a.rel=[...rel].join(' ')})
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>tune(document),{once:true});else tune(document);
