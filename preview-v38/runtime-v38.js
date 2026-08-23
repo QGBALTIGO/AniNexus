@@ -62,8 +62,8 @@
         const q=String(body?.query||'');
         try{
           if(q.includes('season:Page')&&q.includes('schedule:Page')&&q.includes('reading:Page'))return await bridgeHome(body,init.signal);
-          if(q.includes('Media(id:$id,type:ANIME)'){const r=await bridgeDetail(body,init.signal,'ANIME');if(r)return r}
-          if(q.includes('Media(id:$id,type:MANGA)'){const r=await bridgeDetail(body,init.signal,'MANGA');if(r)return r}
+          if(q.includes('Media(id:$id,type:ANIME)')){const r=await bridgeDetail(body,init.signal,'ANIME');if(r)return r}
+          if(q.includes('Media(id:$id,type:MANGA)')){const r=await bridgeDetail(body,init.signal,'MANGA');if(r)return r}
           if(q.includes('Page(page:$page,perPage:$perPage)')&&q.includes('media(type:ANIME')&&!q.includes('airingSchedules'))return await bridgePage(body,init.signal,'ANIME');
           if(q.includes('Page(page:$page,perPage:$perPage)')&&q.includes('media(type:MANGA'))return await bridgePage(body,init.signal,'MANGA');
         }catch(err){console.warn('[AniNexus bridge] fallback to upstream:',err?.message||err)}
