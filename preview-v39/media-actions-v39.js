@@ -1,67 +1,59 @@
 'use strict';
 (() => {
-  if(window.__NX39_MEDIA_ACTIONS__)return;window.__NX39_MEDIA_ACTIONS__=true;
+  if(window.__NX40_MEDIA_ACTIONS__)return;window.__NX40_MEDIA_ACTIONS__=true;
 
   const FAV='[data-fav],[data-nx-fav],[data-nx-detail-fav],[data-nx18-fav],[data-nx17-fav]';
   const LIST='[data-list],[data-nx-list],[data-nx-detail-list],[data-nx18-status],[data-nx17-list]';
   const ACTION=`${FAV},${LIST}`;
   const favLock=new Map();
-  let listOpening=false;
-  let listTimer=0;
+  let listOpening=false,listTimer=0;
 
   const now=()=>performance.now();
-  const clearPop=b=>{b.classList.remove('nx39-pop');void b.offsetWidth;b.classList.add('nx39-pop');setTimeout(()=>b.classList.remove('nx39-pop'),260)};
-  const release=b=>{b?.classList.remove('nx39-press');if(b)clearPop(b)};
+  const idFav=b=>Number(b?.dataset?.fav||b?.dataset?.nxFav||b?.dataset?.nxDetailFav||b?.dataset?.nx18Fav||b?.dataset?.nx17Fav||0);
+  const idList=b=>Number(b?.dataset?.list||b?.dataset?.nxList||b?.dataset?.nxDetailList||b?.dataset?.nx18Status||b?.dataset?.nx17List||0);
+  const stop=e=>{e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()};
+  const pop=b=>{if(!b)return;b.classList.remove('nx39-pop');void b.offsetWidth;b.classList.add('nx39-pop');setTimeout(()=>b.classList.remove('nx39-pop'),260)};
+  const busy=(b,ms)=>{if(!b)return;b.dataset.nx39Busy='1';setTimeout(()=>{if(b.isConnected)delete b.dataset.nx39Busy},ms)};
+  const api=()=>window.AniNexusMediaState||null;
 
-  function markBusy(button,ms){
-    button.dataset.nx39Busy='1';
-    setTimeout(()=>{if(button?.isConnected)delete button.dataset.nx39Busy},ms);
-  }
+  function releaseList(){listOpening=false;clearTimeout(listTimer)}
+  function withApi(fn){const a=api();if(a){fn(a);return}let tries=0;const timer=setInterval(()=>{const x=api();if(x||++tries>20){clearInterval(timer);if(x)fn(x)}},25)}
 
-  document.addEventListener('pointerdown',event=>{
-    const b=event.target.closest?.(ACTION);if(!b||b.disabled)return;
-    b.classList.add('nx39-press');
-  },true);
-  document.addEventListener('pointerup',event=>{const b=event.target.closest?.(ACTION);if(b)requestAnimationFrame(()=>release(b))},true);
-  document.addEventListener('pointercancel',event=>{event.target.closest?.(ACTION)?.classList.remove('nx39-press')},true);
-  document.addEventListener('pointerleave',event=>{event.target.closest?.(ACTION)?.classList.remove('nx39-press')},true);
+  document.addEventListener('pointerdown',e=>{const b=e.target.closest?.(ACTION);if(b&&!b.disabled)b.classList.add('nx39-press')},true);
+  for(const type of ['pointerup','pointercancel','pointerleave'])document.addEventListener(type,e=>{const b=e.target.closest?.(ACTION);if(b){b.classList.remove('nx39-press');if(type==='pointerup')requestAnimationFrame(()=>pop(b))}},true);
 
-  /* Capture before the legacy controller. A double click / burst means one deliberate action,
-     not two toggles and certainly not multiple async modals. */
-  document.addEventListener('click',event=>{
-    const b=event.target.closest?.(ACTION);if(!b||b.disabled)return;
+  /* V40 owns the action in capture phase. Legacy Programação, Temporadas and V6 handlers never
+     receive the event, so there is one state controller on every route. */
+  document.addEventListener('click',e=>{
+    const b=e.target.closest?.(ACTION);if(!b||b.disabled)return;
+    stop(e);
+
     if(b.matches(FAV)){
-      const id=Number(b.dataset.fav||b.dataset.nxFav||b.dataset.nxDetailFav||b.dataset.nx18Fav||b.dataset.nx17Fav||0);
-      if(!id)return;
-      const last=favLock.get(id)||0;
-      if(now()-last<360){event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return}
-      favLock.set(id,now());markBusy(b,300);clearPop(b);return;
+      const id=idFav(b);if(!id)return;
+      const last=favLock.get(id)||0;if(now()-last<340)return;
+      favLock.set(id,now());busy(b,280);pop(b);
+      withApi(a=>a.favorite(id));
+      return;
     }
-    if(b.matches(LIST)){
-      if(listOpening){event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();return}
-      listOpening=true;markBusy(b,500);clearTimeout(listTimer);listTimer=setTimeout(()=>{listOpening=false},9000);
-    }
+
+    const id=idList(b);if(!id)return;
+    if(listOpening||document.querySelector('.nx20-media-layer'))return;
+    listOpening=true;busy(b,650);pop(b);clearTimeout(listTimer);listTimer=setTimeout(releaseList,10000);
+    withApi(a=>Promise.resolve(a.open(id)).catch(()=>{}).finally(()=>{if(document.querySelector('.nx20-media-layer'))releaseList()}));
   },true);
 
-  document.addEventListener('dblclick',event=>{
-    if(!event.target.closest?.(ACTION))return;
-    event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();
-  },true);
+  document.addEventListener('dblclick',e=>{if(e.target.closest?.(ACTION))stop(e)},true);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')releaseList()},true);
 
-  /* The list controller currently fetches media before mounting its dialog. Unlock as soon as
-     the dialog appears; from then on the controller itself owns the modal. */
   const observer=new MutationObserver(records=>{
-    if(!listOpening)return;
-    for(const record of records){
-      for(const node of record.addedNodes){
-        if(node.nodeType!==1)continue;
-        if(node.matches?.('.nx20-media-layer')||node.querySelector?.('.nx20-media-layer')){
-          listOpening=false;clearTimeout(listTimer);return;
-        }
-      }
+    for(const r of records)for(const n of r.addedNodes){
+      if(n.nodeType!==1)continue;
+      if(listOpening&&(n.matches?.('.nx20-media-layer')||n.querySelector?.('.nx20-media-layer')))releaseList();
+      if(n.matches?.(ACTION)||n.querySelector?.(ACTION))requestAnimationFrame(()=>api()?.sync?.());
     }
   });
   const start=()=>observer.observe(document.body,{subtree:true,childList:true});
   if(document.body)start();else document.addEventListener('DOMContentLoaded',start,{once:true});
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'){listOpening=false;clearTimeout(listTimer)}});
+
+  window.AniNexusMediaActions={favoriteSelector:FAV,listSelector:LIST,sync:()=>api()?.sync?.()};
 })();
