@@ -1,0 +1,82 @@
+'use strict';
+(() => {
+  if(window.__NX40_COMMUNITY__)return;window.__NX40_COMMUNITY__=true;
+  const app=document.querySelector('#app');if(!app)return;
+  const IS_PAGES=location.hostname.endsWith('github.io');
+  const BASE=IS_PAGES?'/AniNexus':'';
+  const BUILD='40.0.0';
+  const API='https://graphql.anilist.co';
+  const LOCAL_THREADS='aninexus:community:threads:v40';
+  let active='ALL',items=[],mounted=false;
+
+  const STATUS={
+    PLANNING:{label:'Quero Ver',verb:'quer ver',emoji:'👀'},
+    CURRENT:{label:'Assistindo',verb:'está assistindo',emoji:'▶'},
+    COMPLETED:{label:'Terminei',verb:'terminou',emoji:'✓'},
+    PAUSED:{label:'Pausei',verb:'pausou',emoji:'⏸'},
+    DROPPED:{label:'Desisti',verb:'desistiu de',emoji:'×'}
+  };
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const read=(k,f)=>{try{return JSON.parse(localStorage.getItem(k)||'null')??f}catch{return f}};
+  const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};
+  const slug=s=>String(s||'anime').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,90)||'anime';
+  const route=()=>{try{const u=new URL(location.href),raw=u.searchParams.get('p');if(raw)return raw.split('?')[0].replace(/\/+$/,'')||'/';let p=u.pathname;if(IS_PAGES)p=p.replace(/^\/AniNexus(?:\/AniNexus)?/,'')||'/';return p.replace(/\/+$/,'')||'/'}catch{return'/'}};
+  const owns=()=>route()==='/comunidade';
+  const pageUrl=p=>IS_PAGES?`${BASE}/?build=${BUILD}&p=${encodeURIComponent(p)}`:p;
+  const go=p=>location.assign(pageUrl(p));
+  const time=v=>{const t=Date.parse(v||'');if(!Number.isFinite(t))return'';const d=Math.max(0,Date.now()-t);if(d<60000)return'agora';if(d<3600000)return`há ${Math.max(1,Math.floor(d/60000))}min`;if(d<86400000)return`há ${Math.floor(d/3600000)}h`;if(d<604800000)return`há ${Math.floor(d/86400000)}d`;return new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'}).format(new Date(t)).replace('.','')};
+  const mediaTitle=m=>typeof m?.title==='string'?m.title:(m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||'');
+  const mediaCover=m=>m?.cover||m?.coverImage?.extraLarge||m?.coverImage?.large||'';
+  const mediaBanner=m=>m?.banner||m?.bannerImage||'';
+
+  async function json(path){try{const r=await fetch(path,{credentials:'same-origin',cache:'no-store',headers:{accept:'application/json'}});if(!r.ok)return[];const j=await r.json();return Array.isArray(j)?j:j?.items||[]}catch{return[]}}
+  async function mediaByIds(ids){ids=[...new Set(ids.map(Number).filter(Boolean))].slice(0,35);if(!ids.length)return new Map();try{const query='query($ids:[Int]){Page(page:1,perPage:35){media(id_in:$ids,type:ANIME){id title{romaji english native userPreferred}coverImage{extraLarge large}bannerImage}}}',r=await fetch(API,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables:{ids}})});if(!r.ok)return new Map();const j=await r.json();return new Map((j?.data?.Page?.media||[]).map(m=>[Number(m.id),m]))}catch{return new Map()}}
+
+  function localActivity(){return window.AniNexusCommunityActivity?.local?.(50)||[]}
+  function localThreads(){const v=read(LOCAL_THREADS,[]);return(Array.isArray(v)?v:[]).map(x=>({...x,kind:'thread',local:true}))}
+  async function load(){
+    const local=localActivity(),lt=localThreads();
+    let activity=[],impressions=[],threads=[];
+    if(!IS_PAGES){[activity,impressions,threads]=await Promise.all([json('/api/community/activity?limit=40'),json('/api/community/impressions?limit=24'),json('/api/community/threads?limit=30')])}
+    const normalized=[
+      ...activity.map(x=>({...x,kind:'state',created_at:x.created_at||x.updated_at})),
+      ...local,
+      ...impressions.map(x=>({...x,kind:'impression'})),
+      ...threads.map(x=>({...x,kind:'thread'})),
+      ...lt
+    ];
+    const missing=normalized.filter(x=>x.media_id&&!x.media&&!x.title).map(x=>x.media_id),map=await mediaByIds(missing);
+    const seen=new Set();items=normalized.map(x=>{
+      const m=x.media||map.get(Number(x.media_id))||null;
+      const id=x.id||`${x.kind}:${x.media_id||'none'}:${x.created_at||''}:${x.username||''}:${x.status||''}`;
+      return{...x,id,media:m,title:x.title||mediaTitle(m),cover:x.cover||mediaCover(m),banner:x.banner||mediaBanner(m),created_at:x.created_at||x.updated_at||new Date().toISOString()}
+    }).filter(x=>{const k=String(x.id);if(seen.has(k))return false;seen.add(k);return true}).sort((a,b)=>Date.parse(b.created_at||0)-Date.parse(a.created_at||0));
+    render();
+  }
+
+  function reactionText(v){const raw=String(v||'').trim();if(!raw)return'';return({LIKE:'👍 Curtindo',DISLIKE:'🫤 Não curti',LOVE:'😍 Amei',WOW:'😮 Uau'})[raw]||raw}
+  function avatar(x){const name=x.username||'membro';return `<div class="nx40-avatar">${x.avatar_url?`<img src="${esc(x.avatar_url)}" alt="">`:esc(name.charAt(0).toUpperCase())}</div>`}
+  function mediaBlock(x){if(!x.media_id&&!x.title)return'';const meta=[x.progress?`ep. ${x.progress}`:'',x.score!=null?`★ ${Number(x.score).toFixed(1).replace('.0','')}`:''].filter(Boolean).join(' · ');return `<div class="nx40-media">${x.cover?`<img src="${esc(x.cover)}" alt="${esc(x.title||'Anime')}" loading="lazy" decoding="async">`:'<div class="nx40-media-placeholder">◫</div>'}<div><small>ANIME</small><h3>${esc(x.title||`Anime ${x.media_id}`)}</h3>${meta?`<span>${esc(meta)}</span>`:''}</div></div>`}
+  function stateCard(x){const st=STATUS[x.status]||{label:'Lista',verb:'atualizou',emoji:'•'},name=x.username||'você',r=reactionText(x.reaction),title=x.title||`Anime ${x.media_id}`;return `<article class="nx40-card state" ${x.media_id?`data-open-anime="${x.media_id}" data-title="${esc(title)}"`:''}>${avatar(x)}<div class="nx40-copy"><p><b>@${esc(name)}</b> ${esc(st.verb)} <strong>${esc(title)}</strong>${x.progress?` <em>no ep. ${x.progress}</em>`:''}</p><div class="nx40-meta"><span>${st.emoji} ${esc(st.label)}</span><i></i><span>${esc(time(x.created_at))}</span>${r?`<span class="nx40-reaction">${esc(r)}</span>`:''}${x.score!=null?`<span>★ ${Number(x.score).toFixed(1).replace('.0','')}</span>`:''}</div>${mediaBlock(x)}</div></article>`}
+  function impressionCard(x){const name=x.username||'membro',title=x.title||mediaTitle(x.media)||`Anime ${x.media_id||''}`;return `<article class="nx40-card impression" ${x.media_id?`data-open-anime="${x.media_id}" data-title="${esc(title)}"`:''}>${avatar(x)}<div class="nx40-copy"><p><b>@${esc(name)}</b> publicou uma impressão${title?` sobre <strong>${esc(title)}</strong>`:''}</p><div class="nx40-meta"><span>✎ Impressão</span><i></i><span>${esc(time(x.created_at))}</span>${x.status&&STATUS[x.status]?`<span>${esc(STATUS[x.status].label)}</span>`:''}${x.score!=null?`<span>★ ${Number(x.score).toFixed(1).replace('.0','')}</span>`:''}</div>${x.spoiler?'<p class="nx40-thread-body"><span class="nx40-spoiler">Spoiler oculto · abra o anime para ver com contexto</span></p>':`<p class="nx40-thread-body">${esc(x.body||'')}</p>`}${mediaBlock({...x,title,cover:x.cover||mediaCover(x.media)})}</div></article>`}
+  function threadCard(x){const name=x.username||'membro';return `<article class="nx40-card thread">${avatar(x)}<div class="nx40-copy"><p><b>@${esc(name)}</b> abriu uma discussão</p><h3 class="nx40-thread-title">${esc(x.title||'Discussão')}</h3>${x.spoiler?'<p class="nx40-thread-body"><span class="nx40-spoiler">Discussão marcada como spoiler</span></p>':`<p class="nx40-thread-body">${esc(x.body||'')}</p>`}<div class="nx40-meta"><span>💬 ${Number(x.replies||0)} respostas</span><i></i><span>${esc(time(x.created_at))}</span></div></div></article>`}
+  const card=x=>x.kind==='impression'?impressionCard(x):x.kind==='thread'?threadCard(x):stateCard(x);
+  function filtered(){if(active==='ACTIVITY')return items.filter(x=>x.kind==='state');if(active==='IMPRESSIONS')return items.filter(x=>x.kind==='impression');if(active==='THREADS')return items.filter(x=>x.kind==='thread');return items}
+  function stats(){const stateItems=items.filter(x=>x.kind==='state'),unique=new Set(items.map(x=>x.username).filter(Boolean));return{activity:stateItems.length,members:unique.size,watching:stateItems.filter(x=>x.status==='CURRENT').length,done:stateItems.filter(x=>x.status==='COMPLETED').length}}
+  function trends(){const map=new Map();for(const x of items){if(!x.media_id)continue;const id=Number(x.media_id),cur=map.get(id)||{id,count:0,title:x.title||mediaTitle(x.media)||`Anime ${id}`,cover:x.cover||mediaCover(x.media)||''};cur.count++;if(!cur.cover)cur.cover=x.cover||mediaCover(x.media)||'';if(!cur.title)cur.title=x.title||mediaTitle(x.media)||`Anime ${id}`;map.set(id,cur)}return[...map.values()].sort((a,b)=>b.count-a.count).slice(0,6)}
+
+  function shell(){
+    app.innerHTML=`<main class="nx40-community"><section class="nx40-hero"><div class="nx40-shell"><span class="nx40-kicker">ANINEXUS SOCIAL</span><h1>Agora na <em>Comunidade</em></h1><p>O que as pessoas estão assistindo, terminando, pausando e comentando — ligado diretamente às listas e às obras.</p></div></section><div class="nx40-tabs-wrap"><div class="nx40-shell"><nav class="nx40-tabs" aria-label="Filtros da comunidade"><button class="nx40-tab active" data-nx40-tab="ALL">Tudo</button><button class="nx40-tab" data-nx40-tab="ACTIVITY">Atividade</button><button class="nx40-tab" data-nx40-tab="IMPRESSIONS">Impressões</button><button class="nx40-tab" data-nx40-tab="THREADS">Discussões</button></nav></div></div><div class="nx40-shell nx40-body"><section class="nx40-main"><header class="nx40-toolbar"><div><small>EM TEMPO REAL</small><h2 id="nx40FeedTitle">Atividade recente</h2></div><button type="button" class="nx40-new-thread" data-nx40-new>Nova discussão</button></header><div class="nx40-feed" id="nx40Feed"><div class="nx40-empty"><div><strong>Carregando comunidade…</strong><p>Organizando atividade, impressões e discussões recentes.</p></div></div></div></section><aside class="nx40-side"><section class="nx40-panel"><header><small>COMUNIDADE</small><strong>Movimento agora</strong></header><div class="nx40-stats" id="nx40Stats"></div></section><section class="nx40-panel"><header><small>EM ALTA</small><strong>Obras mais movimentadas</strong></header><div class="nx40-trending" id="nx40Trending"></div></section><section class="nx40-panel nx40-cta"><strong>Sua lista alimenta a comunidade</strong><p>Quando você começa, pausa ou termina um anime, essa atividade pode aparecer aqui e também na tela inicial.</p><a href="${pageUrl('/meus-animes')}">Abrir Meus Animes</a></section></aside></div></main><div class="nx40-modal" id="nx40ThreadModal" hidden><button class="nx40-modal-backdrop" data-nx40-close aria-label="Fechar"></button><form class="nx40-modal-card" id="nx40ThreadForm"><header><div><span class="nx40-kicker">NOVA DISCUSSÃO</span><h2>Converse com a comunidade</h2></div><button type="button" data-nx40-close aria-label="Fechar">×</button></header><label>TÍTULO<input name="title" maxlength="180" minlength="3" required placeholder="Sobre o que você quer conversar?"></label><label>MENSAGEM<textarea name="body" maxlength="6000" required placeholder="Escreva sua discussão…"></textarea></label><label style="display:flex;align-items:center;gap:8px;letter-spacing:0"><input name="spoiler" type="checkbox" style="width:auto;margin:0"> contém spoiler</label><div class="nx40-form-error" id="nx40FormError"></div><div class="nx40-modal-actions"><button type="button" data-nx40-close>Cancelar</button><button class="primary" type="submit">Publicar</button></div></form></div>`;
+    document.title='Comunidade | AniNexus';document.body.classList.add('nx40-community-active');document.querySelectorAll('[data-nav]').forEach(a=>a.classList.remove('active'));bind();mounted=true;requestAnimationFrame(()=>{document.documentElement.classList.add('nx40-community-ready');document.documentElement.classList.remove('nx40-community-boot')});
+  }
+  function render(){if(!mounted)return;const feed=app.querySelector('#nx40Feed'),list=filtered(),title={ALL:'Atividade recente',ACTIVITY:'Lista e acompanhamento',IMPRESSIONS:'Impressões da comunidade',THREADS:'Discussões recentes'}[active];app.querySelector('#nx40FeedTitle').textContent=title;app.querySelectorAll('[data-nx40-tab]').forEach(b=>b.classList.toggle('active',b.dataset.nx40Tab===active));feed.innerHTML=list.length?list.slice(0,50).map(card).join(''):`<div class="nx40-empty"><div><strong>Nada por aqui ainda.</strong><p>${active==='ACTIVITY'?'Use o + em qualquer anime para começar sua atividade.':'Mude o filtro ou seja a primeira pessoa a movimentar esta área.'}</p><a href="${pageUrl('/animes/catalogo')}">Explorar animes</a></div></div>`;const s=stats();app.querySelector('#nx40Stats').innerHTML=`<div class="nx40-stat"><b>${s.activity}</b><span>atividades</span></div><div class="nx40-stat"><b>${s.members}</b><span>membros</span></div><div class="nx40-stat"><b>${s.watching}</b><span>assistindo</span></div><div class="nx40-stat"><b>${s.done}</b><span>terminaram</span></div>`;const tr=trends();app.querySelector('#nx40Trending').innerHTML=tr.length?tr.map(x=>`<div class="nx40-trend" data-nx40-trend="${x.id}" data-title="${esc(x.title)}">${x.cover?`<img src="${esc(x.cover)}" alt="">`:'<i>◫</i>'}<div><strong>${esc(x.title)}</strong><small>atividade recente</small></div><b>${x.count}</b></div>`).join(''):'<div class="nx40-cta"><p>Ainda não há atividade suficiente para formar tendências.</p></div>';bindCards()}
+  function bindCards(){app.querySelectorAll('[data-open-anime]').forEach(el=>{if(el.dataset.nx40Bound)return;el.dataset.nx40Bound='1';el.onclick=e=>{if(e.target.closest('button,a,input,textarea'))return;const id=Number(el.dataset.openAnime),name=el.dataset.title||'anime';if(id)go(`/anime/${slug(name)}-${id}`)}});app.querySelectorAll('[data-nx40-trend]').forEach(el=>{if(el.dataset.nx40Bound)return;el.dataset.nx40Bound='1';el.onclick=()=>go(`/anime/${slug(el.dataset.title)}-${Number(el.dataset.nx40Trend)}`)})}
+  function openModal(){document.querySelector('#nx40ThreadModal').hidden=false;document.body.classList.add('modal-open');setTimeout(()=>document.querySelector('#nx40ThreadForm input[name="title"]')?.focus(),0)}
+  function closeModal(){const m=document.querySelector('#nx40ThreadModal');if(m)m.hidden=true;document.body.classList.remove('modal-open')}
+  async function submitThread(e){e.preventDefault();const form=e.currentTarget,error=document.querySelector('#nx40FormError'),fd=new FormData(form),data={title:String(fd.get('title')||'').trim(),body:String(fd.get('body')||'').trim(),spoiler:fd.get('spoiler')==='on'};if(data.title.length<3||!data.body){error.textContent='Preencha título e mensagem.';return}const submit=form.querySelector('button[type="submit"]');submit.disabled=true;submit.textContent='Publicando…';try{if(IS_PAGES){const list=read(LOCAL_THREADS,[]);list.unshift({id:`local-${Date.now()}`,kind:'thread',username:'você',...data,replies:0,created_at:new Date().toISOString(),local:true});write(LOCAL_THREADS,list.slice(0,30))}else{const r=await fetch('/api/community/threads',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify(data)});if(r.status===401)throw new Error('Entre na sua conta para publicar.');if(!r.ok)throw new Error('Não foi possível publicar agora.')}form.reset();closeModal();await load()}catch(err){error.textContent=err.message||'Não foi possível publicar.'}finally{submit.disabled=false;submit.textContent='Publicar'}}
+  function bind(){app.querySelectorAll('[data-nx40-tab]').forEach(b=>b.onclick=()=>{active=b.dataset.nx40Tab;render()});app.querySelector('[data-nx40-new]')?.addEventListener('click',openModal);document.querySelectorAll('[data-nx40-close]').forEach(b=>b.onclick=closeModal);document.querySelector('#nx40ThreadForm')?.addEventListener('submit',submitThread);document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()})}
+  async function mount(){if(!owns())return;if(!mounted)shell();await load()}
+  addEventListener('aninexus:community-activity-changed',()=>{if(owns())load()});
+  addEventListener('popstate',mount);addEventListener('aninexus:navigate',mount);addEventListener('aninexus:route-changed',mount);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
+})();
