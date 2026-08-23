@@ -65,12 +65,10 @@
 :where(button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).active:not(:has(>span))>.nx-media-heart,
 :where(button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).active:not(:has(>span))>svg{fill:currentColor!important}
 
-/* Busy is deliberately visual-only: pointer-events stays enabled so a blocked second tap is
-   still captured by the action guard instead of falling through and opening the anime card. */
 :where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav])[data-nx39-busy="1"]{filter:saturate(1.04)}
 
-:where(.nx21-actions,.nx18-cover-actions,.nx35-cover>aside,.nx17-actions,.nx-season-actions,.aqx-actions){gap:var(--nx39-action-gap)!important}
-:where(.nx21-actions,.nx18-cover-actions){right:7px!important;bottom:7px!important}
+:where(.nx21-actions,.nx18-cover-actions,.nx35-cover>aside,.nx17-actions,.nx-season-actions,.aqx-actions,.nx38-library-card-actions){gap:var(--nx39-action-gap)!important}
+:where(.nx21-actions,.nx18-cover-actions,.nx38-library-card-actions){right:7px!important;bottom:7px!important}
 .nx35-cover>aside{right:7px!important;bottom:7px!important}
 
 :where(button[data-nx-detail-list],button[data-nx-detail-fav]){
