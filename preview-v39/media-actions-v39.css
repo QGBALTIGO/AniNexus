@@ -80,5 +80,38 @@
 :where(button[data-nx-detail-fav]).active{border-color:rgba(239,49,89,.45)!important;background:rgba(184,24,58,.18)!important;color:#ff8aa2!important}
 :where(button[data-nx-detail-fav]).active>.nx-media-heart{fill:currentColor!important}
 
+/* V40.0.2: explicit component classification replaces fragile DOM-shape detection.
+   A compact action stays compact even when an old renderer wraps its icon in a span. */
+button[data-nx-action-kind="compact"]{
+  width:var(--nx39-action-size)!important;height:var(--nx39-action-size)!important;
+  min-width:var(--nx39-action-size)!important;min-height:var(--nx39-action-size)!important;
+  max-width:var(--nx39-action-size)!important;max-height:var(--nx39-action-size)!important;
+  padding:0!important;margin:0!important;display:grid!important;place-items:center!important;
+  border-radius:50%!important;border:1px solid var(--nx39-action-line)!important;
+  background:var(--nx39-action-bg)!important;color:var(--nx39-action-fg)!important;
+  box-shadow:0 5px 14px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.035)!important;
+  -webkit-backdrop-filter:blur(9px) saturate(1.08)!important;backdrop-filter:blur(9px) saturate(1.08)!important;
+  cursor:pointer!important;touch-action:manipulation!important;user-select:none!important;-webkit-user-select:none!important;-webkit-tap-highlight-color:transparent!important;
+  transform:translateZ(0);transform-origin:center;
+  transition:transform .14s cubic-bezier(.2,.85,.2,1),background-color .16s ease,border-color .16s ease,color .16s ease,box-shadow .18s ease!important;
+}
+button[data-nx-action-kind="compact"] :where(svg,.nx-media-icon){
+  width:17px!important;height:17px!important;min-width:17px!important;min-height:17px!important;
+  display:block!important;fill:none!important;stroke:currentColor!important;stroke-width:1.85!important;stroke-linecap:round!important;stroke-linejoin:round!important;pointer-events:none!important;
+}
+button[data-nx-action-kind="compact"].active[data-fav],button[data-nx-action-kind="compact"].active[data-nx-fav],button[data-nx-action-kind="compact"].active[data-nx18-fav],button[data-nx-action-kind="compact"].active[data-nx17-fav]{
+  color:#fff!important;border-color:rgba(255,94,126,.55)!important;background:rgba(189,24,59,.93)!important;
+  box-shadow:0 6px 17px rgba(194,24,60,.26),inset 0 1px 0 rgba(255,255,255,.12)!important;
+}
+button[data-nx-action-kind="compact"].active[data-list],button[data-nx-action-kind="compact"].active[data-nx-list],button[data-nx-action-kind="compact"].active[data-nx18-status],button[data-nx-action-kind="compact"].active[data-nx17-list]{
+  color:#fff!important;border-color:rgba(255,102,133,.62)!important;background:linear-gradient(145deg,#f43a61 0%,#d51f49 54%,#a91336 100%)!important;
+  box-shadow:0 7px 19px rgba(221,31,72,.31),inset 0 1px 0 rgba(255,255,255,.15)!important;
+}
+button[data-nx-action-kind="compact"].active :where(.nx-media-heart){fill:currentColor!important}
+button[data-nx-action-kind="compact"].nx39-press,button[data-nx-action-kind="compact"]:active{transform:scale(.89)!important;transition-duration:.07s!important}
+button[data-nx-action-kind="compact"].nx39-pop{animation:nx39ActionPop .24s cubic-bezier(.18,.9,.3,1.35)}
+@media(hover:hover) and (pointer:fine){button[data-nx-action-kind="compact"]:hover{background:var(--nx39-action-bg-hover)!important;border-color:var(--nx39-action-line-hover)!important;color:#fff!important;transform:translateY(-1px) scale(1.045)!important;box-shadow:0 7px 18px rgba(0,0,0,.38),0 0 0 1px rgba(255,255,255,.025) inset!important}}
+button[data-nx-action-kind="labeled"]{max-width:none!important;max-height:none!important}
+
 @media(max-width:760px){:root{--nx39-action-size:34px;--nx39-action-gap:6px}}
-@media(prefers-reduced-motion:reduce){:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).nx39-pop{animation:none!important}}
+@media(prefers-reduced-motion:reduce){:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).nx39-pop,button[data-nx-action-kind="compact"].nx39-pop{animation:none!important}}
