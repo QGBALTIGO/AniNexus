@@ -21,6 +21,7 @@ const analytics=read('lib/analytics.mjs');
 const build=read('scripts/build-public.mjs');
 const migration=read('sql/006_scale_indexes.sql');
 const runtime=read('preview-v38/runtime-v38.js');
+const coreCss=read('preview-v38/core-v38.css');
 const authUi=read('preview-v38/auth-v38.js');
 const authCss=read('preview-v38/auth-v38.css');
 const authGuard=read('preview-v38/auth-guard-v38.js');
@@ -92,7 +93,18 @@ test('container configuration exposes graceful-shutdown and scale tuning',()=>{
 
 test('legacy service-worker shell is actively retired',()=>{includes(runtime,'getRegistrations()');includes(runtime,'unregister()');includes(runtime,"/^aninexus-shell-/i")});
 
-test('global runtime handles broken images without replacing everything with a giant logo',()=>{includes(runtime,'nx38-img-error');includes(runtime,'nx38-media-fallback');includes(runtime,"document.addEventListener('error'");includes(read('preview-v38/core-v38.css'),'.nx38-media-fallback')});
+test('global runtime handles broken images without replacing everything with a giant logo',()=>{includes(runtime,'nx38-img-error');includes(runtime,'nx38-media-fallback');includes(runtime,"document.addEventListener('error'");includes(coreCss,'.nx38-media-fallback')});
+
+test('list and favorite actions use canonical V38 artwork and compact geometry',()=>{
+  includes(runtime,"const PLUS_ICON='<svg class=\"nx38-action-icon\"");
+  includes(runtime,"const HEART_ICON='<svg class=\"nx38-action-icon nx38-heart-icon\"");
+  includes(runtime,"button.dataset.nx38Action='favorite'");
+  includes(runtime,"root.querySelectorAll?.(ACTION_SELECTOR).forEach(standardizeAction)");
+  includes(coreCss,'--nx38-action-size:36px');
+  includes(coreCss,':not(:has(>span))');
+  includes(coreCss,'min-height:36px!important');
+  includes(coreCss,'.active>svg{fill:currentColor!important');
+});
 
 test('login, registration and account are real routes with a guarded first frame',()=>{
   ['/login','/criar-conta','/minha-conta'].forEach(x=>{includes(authUi,x);includes(authGuard,x);includes(router,x)});
