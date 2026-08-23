@@ -116,7 +116,7 @@
 
   function setButtonIcon(button,markup,label){
     if(!button)return;
-    const labeled=button.matches('[data-nx-detail-list],[data-nx-detail-fav]')||button.querySelector(':scope > span');
+    const labeled=button.dataset.nxActionKind==='labeled'||button.matches('[data-nx-detail-list],[data-nx-detail-fav]')||button.querySelector(':scope > span');
     if(labeled){
       button.querySelectorAll(':scope > svg').forEach(x=>x.remove());
       button.insertAdjacentHTML('afterbegin',markup);
@@ -169,12 +169,12 @@
 
   async function media(id){
     const n=validId(id);if(!n)return null;
-    if(cache.has(n))return cache.get(n);
-    const seed=seedFromDom(n);if(seed)cache.set(n,seed);
+    if(cache.has(n)&&cache.get(n)?.__full)return cache.get(n);
+    const seed=cache.get(n)||seedFromDom(n);if(seed&&!cache.has(n))cache.set(n,seed);
     const q=`query($id:Int){Media(id:$id,type:ANIME){id title{romaji english native userPreferred} coverImage{extraLarge large} genres episodes format seasonYear}}`;
     try{
       const r=await fetch(API,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query:q,variables:{id:n}})});
-      if(r.ok){const j=await r.json(),m=j?.data?.Media;if(m){cache.set(n,m);return m}}
+      if(r.ok){const j=await r.json(),m=j?.data?.Media;if(m){const full={...m,__full:true};cache.set(n,full);return full}}
     }catch{}
     return cache.get(n)||{id:n,title:{userPreferred:'Anime'},coverImage:{},genres:[],episodes:null,format:'TV',seasonYear:null};
   }
@@ -207,17 +207,21 @@
   async function open(id){
     const n=validId(id);if(!n)return;
     close();document.querySelector('.nx18-tracker-layer')?.remove();
-    const m=await media(n),existing=get(n),hadSavedState=!!existing.status,d={...existing};
-    const total=Math.max(0,Number(m?.episodes)||0);if(d.status==='COMPLETED'&&total)d.progress=total;
+    const seed=cache.get(n)||seedFromDom(n)||{id:n,title:{userPreferred:'Anime'},coverImage:{},genres:[],episodes:null,format:'TV',seasonYear:null};
+    if(!cache.has(n))cache.set(n,seed);
+    let m=seed,total=Math.max(0,Number(seed?.episodes)||0);
+    const existing=get(n),hadSavedState=!!existing.status,d={...existing};
+    if(d.status==='COMPLETED'&&total)d.progress=total;
     let showAll=false;
     layer=document.createElement('div');layer.className='nx20-media-layer';document.body.append(layer);document.body.classList.add('modal-open','nx20-media-open');
+    const ownedLayer=layer;
 
     function feedbackHTML(){const x=FEEDBACK[d.status];if(!x)return'';return x.items.map(([emoji,label],i)=>`<button type="button" class="nx20-reaction ${d.reaction===label?'active':''} ${i>=8&&!showAll?'extra':''}" data-nx20-reaction="${esc(label)}"><span>${emoji}</span>${esc(label)}</button>`).join('')}
     function html(){
       const r=rules(d,total),p=Math.min(total||9999,Math.max(0,Number(d.progress)||0)),meta=[m?.seasonYear,FORMAT[m?.format]||m?.format,(m?.genres||[]).slice(0,3).map(g=>GENRE[g]||g).join(', ')].filter(Boolean).join(' · '),score=d.score==null?'':Number(d.score),noStatus=!d.status;
       return `<button class="nx20-backdrop" data-nx20-close aria-label="Fechar"></button><section class="nx20-modal" role="dialog" aria-modal="true" aria-labelledby="nx20Title"><button class="nx20-close" data-nx20-close aria-label="Fechar">${SVG.close}</button><header class="nx20-head"><img src="${esc(cover(m)||'')}" alt=""><div><small>${hadSavedState?'MEU ACOMPANHAMENTO':'ADICIONAR À MINHA LISTA'}</small><h2 id="nx20Title">${esc(title(m))}</h2><p>${esc(meta)}</p></div></header><div class="nx20-label"><span>SEU STATUS</span><small>${noStatus?'escolha uma opção':'você pode alterar quando quiser'}</small></div><nav class="nx20-statuses">${Object.entries(STATUS).map(([k,v])=>`<button type="button" class="${d.status===k?'active':''}" data-nx20-status="${k}" data-tone="${v.color}"><i>${v.icon}</i><span>${v.label}</span></button>`).join('')}</nav>${noStatus?`<section class="nx20-empty-state"><strong>Como você está com este anime?</strong><p>Escolha um status. Apenas um deles pode ficar ativo por vez.</p></section>`:`<section class="nx20-context" data-tone="${STATUS[d.status].color}"><strong>${STATUS[d.status].title}</strong><p>${STATUS[d.status].help}</p></section>`}${r.progress?`<section class="nx20-progress"><div><span>EPISÓDIOS</span><strong>${total?`ep. ${p} de ${total}`:`${p} assistido${p===1?'':'s'}`}</strong></div><div class="nx20-stepper"><button type="button" data-nx20-step="-1">${SVG.minus}</button><input type="number" min="0" ${total?`max="${total}"`:''} value="${p}" inputmode="numeric" data-nx20-progress><button type="button" data-nx20-step="1">${SVG.plus}</button></div></section>`:''}${d.status?`<section class="nx20-feedback ${r.feedback?'':'locked'}"><div class="nx20-label"><span>${FEEDBACK[d.status]?.label||'SUA REAÇÃO'}</span><small>opcional</small></div>${r.feedback?`<div class="nx20-reactions">${feedbackHTML()}</div>${(FEEDBACK[d.status]?.items||[]).length>8?`<button type="button" class="nx20-more" data-nx20-more>${showAll?'ver menos':'ver mais'}</button>`:''}`:`<div class="nx20-locked">Marque pelo menos 1 episódio assistido para liberar esta parte.</div>`}</section>`:''}${d.status&&d.status!=='PLANNING'?`<section class="nx20-rating ${r.score?'':'locked'}"><div class="nx20-label"><span>${d.status==='COMPLETED'?'SUA NOTA FINAL':d.status==='DROPPED'?'SUA NOTA ATÉ AQUI':'SUA NOTA PARCIAL'}</span><small>opcional</small></div>${r.score?`<div class="nx20-rating-row"><output>${score===''?'–':String(score).replace('.0','')}</output><div><input type="range" min="0" max="10" step="0.5" value="${score===''?0:score}" data-nx20-score><div><span>0</span><span>10</span></div></div></div>${score!==''?'<button type="button" class="nx20-clear-score" data-nx20-clear-score>remover nota</button>':''}`:`<div class="nx20-locked">A nota só é liberada depois que houver algo assistido.</div>`}</section>`:''}<footer class="nx20-footer"><button type="button" class="ghost" data-nx20-remove ${hadSavedState?'':'disabled'}>Remover da lista</button><button type="button" class="save" data-nx20-save ${noStatus?'disabled':''}>${noStatus?'Escolha um status':`Salvar · ${STATUS[d.status].label}`}</button></footer></section>`;
     }
-    function render(){if(!layer)return;layer.innerHTML=html();bind()}
+    function render(){if(layer!==ownedLayer)return;layer.innerHTML=html();bind()}
     function bind(){
       layer.querySelectorAll('[data-nx20-close]').forEach(b=>b.onclick=close);
       layer.querySelectorAll('[data-nx20-status]').forEach(b=>b.onclick=()=>{adapt(d,b.dataset.nx20Status,total);render()});
@@ -231,6 +235,13 @@
       layer.querySelector('[data-nx20-save]')?.addEventListener('click',()=>{if(!d.status)return;persistState(n,d,total);close()});
     }
     render();
+
+    void media(n).then(fresh=>{
+      if(!fresh||layer!==ownedLayer)return;
+      m=fresh;total=Math.max(0,Number(fresh?.episodes)||0);
+      if(d.status==='COMPLETED'&&total)d.progress=total;
+      render();
+    });
   }
 
   function scheduleSync(){if(syncRaf)return;syncRaf=requestAnimationFrame(()=>{syncRaf=0;syncUI()})}
@@ -238,13 +249,7 @@
   const observer=new MutationObserver(records=>{for(const r of records)for(const node of r.addedNodes)if(node.nodeType===1&&(node.matches?.(selector)||node.querySelector?.(selector))){scheduleSync();return}});
   if(document.body)observer.observe(document.body,{childList:true,subtree:true});else document.addEventListener('DOMContentLoaded',()=>observer.observe(document.body,{childList:true,subtree:true}),{once:true});
 
-  document.addEventListener('click',event=>{
-    if(layer)return;
-    const favButton=event.target.closest?.('[data-fav],[data-nx-fav],[data-nx-detail-fav],[data-nx18-fav],[data-nx17-fav]');
-    if(favButton&&!favButton.disabled){const id=idFav(favButton);if(id){event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();favorite(id);return}}
-    const listButton=event.target.closest?.('[data-list],[data-nx-list],[data-nx-detail-list],[data-nx18-status],[data-nx17-list]');
-    if(listButton&&!listButton.disabled){const id=idStatus(listButton);if(id){event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();open(id);return}}
-  },true);
+  /* Interaction is intentionally NOT bound here. preview-v39/media-actions-v39.js is the only click owner. */
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&layer){event.preventDefault();close()}},true);
   addEventListener('storage',event=>{if([KEY,LEGACY_KEY,FAV_KEY,LIST_KEY,LEGACY_STATUS].includes(event.key))scheduleSync()});
 
