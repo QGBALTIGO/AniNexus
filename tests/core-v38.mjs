@@ -20,7 +20,9 @@ const db=read('lib/db.mjs');
 const analytics=read('lib/analytics.mjs');
 const build=read('scripts/build-public.mjs');
 const migration=read('sql/006_scale_indexes.sql');
+const favoriteMigration=read('sql/007_user_favorites.sql');
 const runtime=read('preview-v38/runtime-v38.js');
+const mediaSync=read('preview-v38/media-sync-v38.js');
 const coreCss=read('preview-v38/core-v38.css');
 const mediaState=read('preview-v19/media-state-v2.js');
 const authUi=read('preview-v38/auth-v38.js');
@@ -35,8 +37,9 @@ function notIncludes(text,needle){assert.ok(!text.includes(needle),`unexpected: 
 
 test('V38 shell is active and local runtime references exist',()=>{
   includes(index,'2026-08-22-v38.0.0');
-  ['preview-v38/core-v38.css','preview-v38/auth-v38.css','preview-v38/runtime-v38.js','preview-v38/auth-guard-v38.js','preview-v38/auth-v38.js'].forEach(p=>{includes(index,p);assert.ok(exists(p),`missing ${p}`)});
+  ['preview-v38/core-v38.css','preview-v38/auth-v38.css','preview-v38/runtime-v38.js','preview-v38/auth-guard-v38.js','preview-v38/auth-v38.js','preview-v38/media-sync-v38.js'].forEach(p=>{includes(index,p);assert.ok(exists(p),`missing ${p}`)});
   includes(index,'preview-v19/media-state-v2.js?v=38.0.2');
+  assert.ok(index.indexOf('preview-v19/media-state-v2.js')<index.indexOf('preview-v38/media-sync-v38.js'),'account sync must load after local state controller');
 });
 
 test('all Pages route helpers use one V38 build marker',()=>{
@@ -132,6 +135,23 @@ test('list and favorite controls use compact geometry without owning state in CS
   includes(coreCss,'.nx-media-heart');
 });
 
+test('favorites have their own database collection and API, separate from follows',()=>{
+  includes(favoriteMigration,'CREATE TABLE IF NOT EXISTS user_favorites');
+  includes(favoriteMigration,'PRIMARY KEY(user_id, media_id, media_type)');
+  includes(server,"app.get('/api/me/favorites'");includes(server,"app.put('/api/me/favorites/:mediaId'");includes(server,"app.delete('/api/me/favorites/:mediaId'");
+  includes(server,'INSERT INTO user_favorites');includes(server,'DELETE FROM user_favorites');
+  notIncludes(favoriteMigration,'user_follows');
+});
+
+test('account sync is offline-first and preserves pending unfavorites/removals',()=>{
+  includes(mediaSync,"const FAV_PENDING='aninexus:favorites:pending:v1'");
+  includes(mediaSync,"const STATE_PENDING='aninexus:mediaState:pending:v1'");
+  includes(mediaSync,"value?desired.add(id):desired.delete(id)");
+  includes(mediaSync,"document.addEventListener('aninexus:favorite-changed'");
+  includes(mediaSync,"document.addEventListener('aninexus:media-state-changed'");
+  includes(mediaSync,"/api/me/favorites/");includes(mediaSync,"/api/me/list/");
+});
+
 test('login, registration and account are real routes with a guarded first frame',()=>{
   ['/login','/criar-conta','/minha-conta'].forEach(x=>{includes(authUi,x);includes(authGuard,x);includes(router,x)});
   includes(authUi,'Confirmar senha');includes(authUi,'Pelo menos um número');includes(authUi,'reportValidity()');includes(authUi,'Processando…');includes(authUi,'INVALID_CREDENTIALS');includes(authUi,'ACCOUNT_UNAVAILABLE');includes(authUi,"'/api/me/list'");includes(authUi,"'/api/me/follows'");includes(authUi,"'/api/me/notifications?limit=100'");
@@ -140,7 +160,10 @@ test('login, registration and account are real routes with a guarded first frame
 
 test('community replies are paginated instead of returning 500 rows forever',()=>{includes(server,"Math.min(200,Number(req.query?.limit||100))");includes(server,"offset=Math.max(0,Math.min(10000");includes(server,'hasMore:rows.length===limit')});
 
-test('package check includes core V38 regression suite and production helpers',()=>{assert.equal(pkg.scripts['test:core'],'node tests/core-v38.mjs');includes(pkg.scripts.check,'lib/analytics.mjs');includes(pkg.scripts.check,'scripts/build-public.mjs');includes(pkg.scripts.check,'preview-v38/auth-v38.js');includes(pkg.scripts.check,'tests/core-v38.mjs')});
+test('package check includes media state, sync and core regression suite',()=>{
+  assert.equal(pkg.scripts['test:core'],'node tests/core-v38.mjs');
+  ['lib/analytics.mjs','scripts/build-public.mjs','preview-v19/media-state-v2.js','preview-v38/media-sync-v38.js','preview-v38/auth-v38.js','tests/core-v38.mjs'].forEach(x=>includes(pkg.scripts.check,x));
+});
 
 if(process.exitCode)throw new Error('AniNexus core V38 tests failed');
 console.log(`\nAniNexus Core V38: ${passed} tests passed`);
