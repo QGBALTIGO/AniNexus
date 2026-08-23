@@ -27,6 +27,7 @@ permissions:
 
 concurrency:
   group: aninexus-news-v39-${{ github.event_name }}
+  # Scheduled executions intentionally behave as cancel-in-progress: false; only a newer push supersedes an older push.
   cancel-in-progress: ${{ github.event_name == 'push' }}
 
 jobs:
