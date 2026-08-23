@@ -22,6 +22,7 @@ const build=read('scripts/build-public.mjs');
 const migration=read('sql/006_scale_indexes.sql');
 const runtime=read('preview-v38/runtime-v38.js');
 const coreCss=read('preview-v38/core-v38.css');
+const mediaState=read('preview-v19/media-state-v2.js');
 const authUi=read('preview-v38/auth-v38.js');
 const authCss=read('preview-v38/auth-v38.css');
 const authGuard=read('preview-v38/auth-guard-v38.js');
@@ -35,6 +36,7 @@ function notIncludes(text,needle){assert.ok(!text.includes(needle),`unexpected: 
 test('V38 shell is active and local runtime references exist',()=>{
   includes(index,'2026-08-22-v38.0.0');
   ['preview-v38/core-v38.css','preview-v38/auth-v38.css','preview-v38/runtime-v38.js','preview-v38/auth-guard-v38.js','preview-v38/auth-v38.js'].forEach(p=>{includes(index,p);assert.ok(exists(p),`missing ${p}`)});
+  includes(index,'preview-v19/media-state-v2.js?v=38.0.2');
 });
 
 test('all Pages route helpers use one V38 build marker',()=>{
@@ -95,15 +97,39 @@ test('legacy service-worker shell is actively retired',()=>{includes(runtime,'ge
 
 test('global runtime handles broken images without replacing everything with a giant logo',()=>{includes(runtime,'nx38-img-error');includes(runtime,'nx38-media-fallback');includes(runtime,"document.addEventListener('error'");includes(coreCss,'.nx38-media-fallback')});
 
-test('list and favorite actions use canonical V38 artwork and compact geometry',()=>{
-  includes(runtime,"const PLUS_ICON='<svg class=\"nx38-action-icon\"");
-  includes(runtime,"const HEART_ICON='<svg class=\"nx38-action-icon nx38-heart-icon\"");
-  includes(runtime,"button.dataset.nx38Action='favorite'");
-  includes(runtime,"root.querySelectorAll?.(ACTION_SELECTOR).forEach(standardizeAction)");
+test('runtime never rewrites list or favorite state artwork',()=>{
+  notIncludes(runtime,'standardizeAction');notIncludes(runtime,'ACTION_SELECTOR');notIncludes(runtime,'HEART_ICON');notIncludes(runtime,'PLUS_ICON');
+  includes(runtime,'List/favorite state is owned exclusively by media-state-v2.js');
+});
+
+test('media controller keeps favorite independent and fully toggleable',()=>{
+  includes(mediaState,"const FAV_KEY='aninexus:favorites'");
+  includes(mediaState,"on=typeof value==='boolean'?value:!set.has(n)");
+  includes(mediaState,'if(on)set.add(n);else set.delete(n)');
+  includes(mediaState,"setButtonIcon(button,SVG.heart,on?'Favoritado':'Favoritar')");
+  includes(mediaState,"event.target.closest?.('[data-fav]");
+});
+
+test('media controller uses distinct icons for no status and Quero Ver',()=>{
+  includes(mediaState,"plus:'<svg class=\"nx-media-icon\"");
+  includes(mediaState,"eye:'<svg class=\"nx-media-icon\"");
+  includes(mediaState,"PLANNING:{label:'Quero Ver',icon:SVG.eye");
+  notIncludes(mediaState,"PLANNING:{label:'Quero Ver',icon:SVG.plus");
+});
+
+test('list state is mutually exclusive, changeable and removable',()=>{
+  includes(mediaState,"d.status=status");
+  includes(mediaState,"button.classList.toggle(`status-${key.toLowerCase()}`,state.status===key)");
+  includes(mediaState,"persistState(n,{},total);close()");
+  includes(mediaState,"persistState(n,d,total);close()");
+  includes(mediaState,"button.setAttribute('aria-label',has?`${label}. Clique para alterar`:'Adicionar à lista')");
+});
+
+test('list and favorite controls use compact geometry without owning state in CSS',()=>{
   includes(coreCss,'--nx38-action-size:36px');
   includes(coreCss,':not(:has(>span))');
-  includes(coreCss,'min-height:36px!important');
-  includes(coreCss,'.active>svg{fill:currentColor!important');
+  includes(coreCss,'status-planning');includes(coreCss,'status-current');includes(coreCss,'status-completed');includes(coreCss,'status-paused');includes(coreCss,'status-dropped');
+  includes(coreCss,'.nx-media-heart');
 });
 
 test('login, registration and account are real routes with a guarded first frame',()=>{
