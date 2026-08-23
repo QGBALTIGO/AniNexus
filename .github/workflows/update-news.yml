@@ -3,7 +3,7 @@ name: Atualizar notícias
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17,47 * * * *'
+    - cron: '7,22,37,52 * * * *'
   push:
     paths:
       - 'scripts/update-news-v36.mjs'
@@ -18,6 +18,7 @@ on:
       - 'preview-v35/news-ui-v35.js'
       - 'preview-v36/news-v36.css'
       - 'data/news-v37-hot.json'
+      - 'data/news-v36-seed.json'
       - 'tests/news-system.mjs'
       - '.github/workflows/update-news.yml'
 
@@ -25,13 +26,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: aninexus-news-v37
-  cancel-in-progress: true
+  group: aninexus-news-v39
+  cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,6 +40,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+
       - name: Validar coletor, mídia e worker
         run: |
           node --check lib/news-sources-v36.mjs
@@ -49,9 +51,11 @@ jobs:
           node --check preview-v35/news-data-v35.js
           node --check preview-v37/news-hot-v37.js
           node --check preview-v35/news-ui-v35.js
+
       - name: Buscar, aprofundar e capturar mídia
         env:
           NEWS_RETENTION_DAYS: '7'
+          NEWS_STALE_GRACE_DAYS: '14'
           NEWS_MAX_SOURCE_AGE_HOURS: '168'
           NEWS_MAX_PER_SOURCE: '45'
           NEWS_MAX_STORIES: '60'
@@ -74,8 +78,10 @@ jobs:
             echo "A coleta falhou após 3 tentativas."
             exit 1
           fi
+
       - name: Validar somente o feed editorial
         run: node tests/news-system.mjs
+
       - name: Publicar feed interno
         run: |
           if git diff --quiet -- data/news.json; then
@@ -86,7 +92,7 @@ jobs:
           git config user.name "AniNexus News Bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/news.json
-          git commit -m "chore: atualizar notícias V37 [skip ci]"
+          git commit -m "chore: atualizar notícias V39 [skip ci]"
 
           for attempt in 1 2 3; do
             echo "Publicação do feed — tentativa ${attempt}/3"
