@@ -32,9 +32,11 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -57,7 +59,22 @@ jobs:
           NEWS_STATIC_MAX_ITEMS: '60'
           NEWS_MIN_SAFE_FEED: '10'
           NEWS_MIN_QUALITY: '0.50'
-        run: node scripts/update-news-v36.mjs
+        run: |
+          ok=0
+          for attempt in 1 2 3; do
+            echo "Coleta de notícias — tentativa ${attempt}/3"
+            if node scripts/update-news-v36.mjs; then
+              ok=1
+              break
+            fi
+            if [ "$attempt" -lt 3 ]; then
+              sleep $((attempt * 8))
+            fi
+          done
+          if [ "$ok" -ne 1 ]; then
+            echo "A coleta falhou após 3 tentativas."
+            exit 1
+          fi
       - name: Validar feed editorial
         run: |
           node tests/news-system.mjs
@@ -68,8 +85,27 @@ jobs:
             echo "Sem mudanças no feed."
             exit 0
           fi
+
           git config user.name "AniNexus News Bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/news.json
           git commit -m "chore: atualizar notícias V37 [skip ci]"
-          git push
+
+          for attempt in 1 2 3; do
+            echo "Publicação do feed — tentativa ${attempt}/3"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            echo "A main mudou durante a coleta; atualizando a base antes de tentar novamente."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              git rebase --abort || true
+              echo "Não foi possível reaplicar o feed sobre a main atual."
+              exit 1
+            fi
+            sleep $((attempt * 5))
+          done
+
+          echo "Não foi possível publicar o feed após 3 tentativas."
+          exit 1
