@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T19:59:51.122Z",
+  "generatedAt": "2026-08-24T20:39:52.979Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -51,15 +51,15 @@
     "collected": 155,
     "grouped": 128,
     "published": 37,
-    "newStories": 28,
+    "newStories": 27,
     "deepArticles": 19,
     "avgWords": 370,
     "withHeroImage": 29,
     "withGallery": 5,
-    "withEmbeds": 8,
-    "skippedTranslation": 97,
+    "withEmbeds": 11,
+    "skippedTranslation": 98,
     "skippedQuality": 3,
-    "durationMs": 119140
+    "durationMs": 123795
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-24T19:58:06.233Z",
+      "updatedAt": "2026-08-24T20:38:05.060Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -526,7 +526,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-24T19:58:18.210Z",
+      "updatedAt": "2026-08-24T20:38:17.129Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1509,7 +1509,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-24T19:58:23.555Z",
+      "updatedAt": "2026-08-24T20:38:22.376Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1603,7 +1603,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-24T19:58:23.555Z",
+      "updatedAt": "2026-08-24T20:38:22.377Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1685,7 +1685,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-24T19:58:25.796Z",
+      "updatedAt": "2026-08-24T20:38:24.354Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1845,7 +1845,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-20T14:03:00.000Z",
-      "updatedAt": "2026-08-24T19:58:34.691Z",
+      "updatedAt": "2026-08-24T20:38:33.023Z",
       "expiresAt": "2026-08-27T14:03:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2135,7 +2135,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T22:25:00.000Z",
-      "updatedAt": "2026-08-24T19:58:35.752Z",
+      "updatedAt": "2026-08-24T20:38:34.145Z",
       "expiresAt": "2026-08-26T22:25:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2223,7 +2223,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T18:28:00.000Z",
-      "updatedAt": "2026-08-24T19:58:36.891Z",
+      "updatedAt": "2026-08-24T20:38:35.001Z",
       "expiresAt": "2026-08-26T18:28:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2514,7 +2514,13 @@
       "mediaQuery": "Oshi no Ko: Divulgado teaser visual da 4ª temporada",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "id": "0d_R4vXRens",
+          "url": "https://www.youtube-nocookie.com/embed/0d_R4vXRens"
+        }
+      ],
       "publishedAt": "2026-08-19T14:45:36.000Z",
       "updatedAt": "2026-08-19T14:46:21.000Z",
       "expiresAt": "2026-08-26T14:45:36.000Z",
@@ -2608,7 +2614,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 0,
+        "embedCount": 1,
         "sourcePagesRead": 1
       }
     },
@@ -2630,7 +2636,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T02:55:00.000Z",
-      "updatedAt": "2026-08-24T19:58:37.898Z",
+      "updatedAt": "2026-08-24T20:38:36.113Z",
       "expiresAt": "2026-08-26T02:55:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2718,7 +2724,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T02:15:00.000Z",
-      "updatedAt": "2026-08-24T19:58:37.899Z",
+      "updatedAt": "2026-08-24T20:38:36.114Z",
       "expiresAt": "2026-08-26T02:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2800,7 +2806,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-18T21:55:00.000Z",
-      "updatedAt": "2026-08-24T19:58:37.899Z",
+      "updatedAt": "2026-08-24T20:38:36.114Z",
       "expiresAt": "2026-08-25T21:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2892,7 +2898,13 @@
       "mediaQuery": "LicensingCon Latam 2026 mostra interesse das marcas em animês e planos de longo prazo",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "id": "LfOYwhivOSk",
+          "url": "https://www.youtube-nocookie.com/embed/LfOYwhivOSk"
+        }
+      ],
       "publishedAt": "2026-08-18T19:35:12.000Z",
       "updatedAt": "2026-08-18T22:55:00.000Z",
       "expiresAt": "2026-08-25T19:35:12.000Z",
@@ -2991,7 +3003,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 0,
+        "embedCount": 1,
         "sourcePagesRead": 1
       }
     },
@@ -3287,7 +3299,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-18T15:15:00.000Z",
-      "updatedAt": "2026-08-24T19:58:40.169Z",
+      "updatedAt": "2026-08-24T20:38:38.225Z",
       "expiresAt": "2026-08-25T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -3561,7 +3573,13 @@
       "mediaQuery": "Skip & Loafer: 2ª temporada é anunciada para 2027 com transmissão confirmada na Crunchyroll",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "id": "SizD56s6guU",
+          "url": "https://www.youtube-nocookie.com/embed/SizD56s6guU"
+        }
+      ],
       "publishedAt": "2026-08-18T14:44:23.000Z",
       "updatedAt": "2026-08-18T14:45:00.000Z",
       "expiresAt": "2026-08-25T14:44:23.000Z",
@@ -3665,7 +3683,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 0,
+        "embedCount": 1,
         "sourcePagesRead": 1
       }
     },
