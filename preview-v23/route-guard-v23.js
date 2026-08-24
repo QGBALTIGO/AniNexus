@@ -3,7 +3,7 @@
   try {
     const IS_PAGES=location.hostname.endsWith('github.io');
     const BASE=IS_PAGES?'/AniNexus':'';
-    const BUILD='32.0.0';
+    const BUILD='40.2.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=restored?restored.split('?')[0]:u.pathname;
