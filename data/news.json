@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T20:39:52.979Z",
+  "generatedAt": "2026-08-24T21:14:22.738Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -56,10 +56,10 @@
     "avgWords": 370,
     "withHeroImage": 29,
     "withGallery": 5,
-    "withEmbeds": 11,
+    "withEmbeds": 7,
     "skippedTranslation": 98,
     "skippedQuality": 3,
-    "durationMs": 123795
+    "durationMs": 123107
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-24T20:38:05.060Z",
+      "updatedAt": "2026-08-24T21:12:37.460Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -526,7 +526,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-24T20:38:17.129Z",
+      "updatedAt": "2026-08-24T21:12:49.425Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1509,7 +1509,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-24T20:38:22.376Z",
+      "updatedAt": "2026-08-24T21:12:55.132Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1603,7 +1603,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-24T20:38:22.377Z",
+      "updatedAt": "2026-08-24T21:12:55.132Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1685,7 +1685,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-24T20:38:24.354Z",
+      "updatedAt": "2026-08-24T21:12:57.252Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1845,7 +1845,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-20T14:03:00.000Z",
-      "updatedAt": "2026-08-24T20:38:33.023Z",
+      "updatedAt": "2026-08-24T21:13:05.799Z",
       "expiresAt": "2026-08-27T14:03:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1925,13 +1925,7 @@
       "mediaQuery": "Túmulo dos Vagalumes: Card colecionável é brinde em exibição nos cinemas",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "T40PH7YSfII",
-          "url": "https://www.youtube-nocookie.com/embed/T40PH7YSfII"
-        }
-      ],
+      "mediaEmbeds": [],
       "publishedAt": "2026-08-20T12:06:57.000Z",
       "updatedAt": "2026-08-20T12:08:30.000Z",
       "expiresAt": "2026-08-27T12:06:57.000Z",
@@ -2038,7 +2032,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 1,
+        "embedCount": 0,
         "sourcePagesRead": 1
       }
     },
@@ -2135,7 +2129,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T22:25:00.000Z",
-      "updatedAt": "2026-08-24T20:38:34.145Z",
+      "updatedAt": "2026-08-24T21:13:06.728Z",
       "expiresAt": "2026-08-26T22:25:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2223,7 +2217,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T18:28:00.000Z",
-      "updatedAt": "2026-08-24T20:38:35.001Z",
+      "updatedAt": "2026-08-24T21:13:07.691Z",
       "expiresAt": "2026-08-26T18:28:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2514,13 +2508,7 @@
       "mediaQuery": "Oshi no Ko: Divulgado teaser visual da 4ª temporada",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "0d_R4vXRens",
-          "url": "https://www.youtube-nocookie.com/embed/0d_R4vXRens"
-        }
-      ],
+      "mediaEmbeds": [],
       "publishedAt": "2026-08-19T14:45:36.000Z",
       "updatedAt": "2026-08-19T14:46:21.000Z",
       "expiresAt": "2026-08-26T14:45:36.000Z",
@@ -2614,7 +2602,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 1,
+        "embedCount": 0,
         "sourcePagesRead": 1
       }
     },
@@ -2636,7 +2624,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T02:55:00.000Z",
-      "updatedAt": "2026-08-24T20:38:36.113Z",
+      "updatedAt": "2026-08-24T21:13:08.883Z",
       "expiresAt": "2026-08-26T02:55:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2724,7 +2712,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T02:15:00.000Z",
-      "updatedAt": "2026-08-24T20:38:36.114Z",
+      "updatedAt": "2026-08-24T21:13:08.883Z",
       "expiresAt": "2026-08-26T02:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2806,7 +2794,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-18T21:55:00.000Z",
-      "updatedAt": "2026-08-24T20:38:36.114Z",
+      "updatedAt": "2026-08-24T21:13:08.884Z",
       "expiresAt": "2026-08-25T21:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2898,13 +2886,7 @@
       "mediaQuery": "LicensingCon Latam 2026 mostra interesse das marcas em animês e planos de longo prazo",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "LfOYwhivOSk",
-          "url": "https://www.youtube-nocookie.com/embed/LfOYwhivOSk"
-        }
-      ],
+      "mediaEmbeds": [],
       "publishedAt": "2026-08-18T19:35:12.000Z",
       "updatedAt": "2026-08-18T22:55:00.000Z",
       "expiresAt": "2026-08-25T19:35:12.000Z",
@@ -3003,7 +2985,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 1,
+        "embedCount": 0,
         "sourcePagesRead": 1
       }
     },
@@ -3299,7 +3281,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-18T15:15:00.000Z",
-      "updatedAt": "2026-08-24T20:38:38.225Z",
+      "updatedAt": "2026-08-24T21:13:11.160Z",
       "expiresAt": "2026-08-25T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -3573,13 +3555,7 @@
       "mediaQuery": "Skip & Loafer: 2ª temporada é anunciada para 2027 com transmissão confirmada na Crunchyroll",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "SizD56s6guU",
-          "url": "https://www.youtube-nocookie.com/embed/SizD56s6guU"
-        }
-      ],
+      "mediaEmbeds": [],
       "publishedAt": "2026-08-18T14:44:23.000Z",
       "updatedAt": "2026-08-18T14:45:00.000Z",
       "expiresAt": "2026-08-25T14:44:23.000Z",
@@ -3683,7 +3659,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 1,
+        "embedCount": 0,
         "sourcePagesRead": 1
       }
     },
