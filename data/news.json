@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T14:07:19.769Z",
+  "generatedAt": "2026-08-25T14:59:12.123Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -49,17 +49,17 @@
   ],
   "stats": {
     "collected": 155,
-    "grouped": 128,
-    "published": 37,
-    "newStories": 27,
-    "deepArticles": 19,
-    "avgWords": 369,
-    "withHeroImage": 29,
+    "grouped": 126,
+    "published": 34,
+    "newStories": 26,
+    "deepArticles": 17,
+    "avgWords": 373,
+    "withHeroImage": 28,
     "withGallery": 5,
-    "withEmbeds": 9,
-    "skippedTranslation": 98,
+    "withEmbeds": 7,
+    "skippedTranslation": 97,
     "skippedQuality": 3,
-    "durationMs": 74671
+    "durationMs": 123329
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-25T14:06:17.547Z",
+      "updatedAt": "2026-08-25T14:57:24.570Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -162,7 +162,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-25T14:06:19.432Z",
+      "updatedAt": "2026-08-25T14:57:27.908Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -608,7 +608,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-25T14:06:25.726Z",
+      "updatedAt": "2026-08-25T14:57:40.015Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1591,7 +1591,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-25T14:06:28.806Z",
+      "updatedAt": "2026-08-25T14:57:45.580Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1685,7 +1685,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-25T14:06:28.806Z",
+      "updatedAt": "2026-08-25T14:57:45.580Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1767,7 +1767,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-25T14:06:29.971Z",
+      "updatedAt": "2026-08-25T14:57:47.913Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1927,7 +1927,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-20T14:03:00.000Z",
-      "updatedAt": "2026-08-25T14:06:34.788Z",
+      "updatedAt": "2026-08-25T14:57:56.676Z",
       "expiresAt": "2026-08-27T14:03:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2007,13 +2007,7 @@
       "mediaQuery": "Túmulo dos Vagalumes: Card colecionável é brinde em exibição nos cinemas",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "T40PH7YSfII",
-          "url": "https://www.youtube-nocookie.com/embed/T40PH7YSfII"
-        }
-      ],
+      "mediaEmbeds": [],
       "publishedAt": "2026-08-20T12:06:57.000Z",
       "updatedAt": "2026-08-20T12:08:30.000Z",
       "expiresAt": "2026-08-27T12:06:57.000Z",
@@ -2120,7 +2114,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 1,
+        "embedCount": 0,
         "sourcePagesRead": 1
       }
     },
@@ -2217,7 +2211,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T22:25:00.000Z",
-      "updatedAt": "2026-08-25T14:06:35.323Z",
+      "updatedAt": "2026-08-25T14:57:57.876Z",
       "expiresAt": "2026-08-26T22:25:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2305,7 +2299,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T18:28:00.000Z",
-      "updatedAt": "2026-08-25T14:06:35.753Z",
+      "updatedAt": "2026-08-25T14:57:59.198Z",
       "expiresAt": "2026-08-26T18:28:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2596,13 +2590,7 @@
       "mediaQuery": "Oshi no Ko: Divulgado teaser visual da 4ª temporada",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "0d_R4vXRens",
-          "url": "https://www.youtube-nocookie.com/embed/0d_R4vXRens"
-        }
-      ],
+      "mediaEmbeds": [],
       "publishedAt": "2026-08-19T14:45:36.000Z",
       "updatedAt": "2026-08-19T14:46:21.000Z",
       "expiresAt": "2026-08-26T14:45:36.000Z",
@@ -2696,7 +2684,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 1,
+        "embedCount": 0,
         "sourcePagesRead": 1
       }
     },
@@ -2718,7 +2706,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T02:55:00.000Z",
-      "updatedAt": "2026-08-25T14:06:36.316Z",
+      "updatedAt": "2026-08-25T14:58:00.236Z",
       "expiresAt": "2026-08-26T02:55:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2806,7 +2794,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T02:15:00.000Z",
-      "updatedAt": "2026-08-25T14:06:36.316Z",
+      "updatedAt": "2026-08-25T14:58:00.236Z",
       "expiresAt": "2026-08-26T02:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2888,7 +2876,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-18T21:55:00.000Z",
-      "updatedAt": "2026-08-25T14:06:36.317Z",
+      "updatedAt": "2026-08-25T14:58:00.236Z",
       "expiresAt": "2026-08-25T21:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -3566,272 +3554,6 @@
         "mediaCount": 0,
         "embedCount": 0,
         "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox-lera-abova-imagineland",
-      "slug": "lera-abova-nico-robin-vem-ao-brasil-para-imagineland-2026-jbox-one-piece",
-      "source": "JBox",
-      "sourceType": "JBOX_MANGA",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Lera Abova, a Nico Robin de One Piece, vem ao Brasil para o Imagineland 2026",
-      "summary": "Lera Abova, intérprete de Nico Robin no live-action de One Piece, foi confirmada no Imagineland On The Road 2026. A atriz participa do evento em Campina Grande no dia 27 de setembro.",
-      "url": "https://www.jbox.com.br/2026/08/18/lera-abova-a-nico-robin-de-one-piece-a-serie-vira-ao-brasil-para-o-imagineland-on-the-road-2026/",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/18/lera-abova-a-nico-robin-de-one-piece-a-serie-vira-ao-brasil-para-o-imagineland-on-the-road-2026/",
-      "image": "",
-      "mediaQuery": "One Piece",
-      "mediaType": "anime",
-      "publishedAt": "2026-08-18T14:57:00.000Z",
-      "updatedAt": "2026-08-18T14:57:00.000Z",
-      "expiresAt": "2026-08-25T14:57:00.000Z",
-      "category": "Notícias",
-      "eventType": "TRENDING",
-      "facts": [
-        "Lera Abova foi anunciada como atração do Imagineland On The Road 2026.",
-        "A atriz estará no evento em 27 de setembro.",
-        "A edição acontece em Campina Grande, na Paraíba."
-      ],
-      "contentSections": [
-        {
-          "heading": "A confirmação",
-          "paragraphs": [
-            "A intérprete de Nico Robin no live-action de One Piece está entre as atrações internacionais do evento."
-          ]
-        },
-        {
-          "heading": "Quando e onde",
-          "bullets": [
-            "O evento ocorre de 25 a 27 de setembro.",
-            "A participação de Lera Abova está prevista para o dia 27.",
-            "A edição acontece em Campina Grande."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Horários, atividades e novos convidados relacionados a One Piece podem ser incluídos nesta página."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/18/lera-abova-a-nico-robin-de-one-piece-a-serie-vira-ao-brasil-para-o-imagineland-on-the-road-2026/",
-          "publishedAt": "2026-08-18T14:57:00.000Z"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 180,
-      "qualityScore": 0.74,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 3,
-        "sections": 3,
-        "sourceCount": 1,
-        "ingestMode": "recovery-seed"
-      }
-    },
-    {
-      "id": "jbox_anime-b388b923",
-      "slug": "skip-loafer-2-temporada-e-anunciada-para-2027-com-transmissao-confirmada-na-crunchyroll-jbox_anime-b388b923",
-      "source": "JBox",
-      "sourceType": "JBOX_ANIME",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Skip & Loafer: 2ª temporada é anunciada para 2027 com transmissão confirmada na Crunchyroll",
-      "originalTitle": null,
-      "summary": "Retorno de Mitsumi e Sousuke pelas mãos do estúdio P.A. Works ganha primeiro trailer.",
-      "url": "https://www.jbox.com.br/2026/08/18/skip-loafer-2a-temporada-e-anunciada-para-2027-com-transmissao-confirmada-na-crunchyroll",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/18/skip-loafer-2a-temporada-e-anunciada-para-2027-com-transmissao-confirmada-na-crunchyroll",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/skip-and-loafer-segunda-temporada-destacado.jpg",
-      "mediaQuery": "Skip & Loafer: 2ª temporada é anunciada para 2027 com transmissão confirmada na Crunchyroll",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-18T14:44:23.000Z",
-      "updatedAt": "2026-08-18T14:45:00.000Z",
-      "expiresAt": "2026-08-25T14:44:23.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [
-        "Retorno de Mitsumi e Sousuke pelas mãos do estúdio P.A.",
-        "Works ganha primeiro trailer.",
-        "Saudades da Mitsumi e do Sousuke?",
-        "Pois hoje (17) foi anunciada a segunda temporada do animê de Skip & Loafer .",
-        "A sequência irá ao ar em abril, na temporada de primavera de 2027 .",
-        "E a Crunchyroll já confirmou a exibição..",
-        "O animê segue no estúdio P.A.",
-        "Works , com a direção ainda nas mãos de Kotomi Deai e roteiro agora feito por Yoko Yonaiyama .",
-        "A primeira temporada foi lançada em 2023 e foi dublada em português pelo estúdio Dubrasil , sob direção de André Rinaldi e Filipe Teófilo .",
-        "Mitsumi é interpretada por Naiaame Belle (Nadia em Nanatsu ) e Sousuke é encarnado por Vitor Mello (Relâmpago Genji em One-Punch Man )..",
-        "A obra adapta o mangá homônimo escrito por Misaki Takamatsu , em publicação desde 2018 na revista Monthly Afternoon , atualmente com 13 volumes fechados.",
-        "Aqui no Brasil, o gibi é publicado pela editora JBC..",
-        "Na trama, acompanhamos a saga de Mitsumi Iwakura, uma estudante do primeiro ano do ensino médio que vai do interior da cidade de Suzu para uma escola de alto nível em Tóquio.",
-        "Os choques culturais de uma menina rural com o movimento cosmopolita são grandes, inclusive na maneira como ela usa o japonês, mas as coisas se tornam bem mais fáceis pela companhia de Sousuke Shima, pelo qual ela descobre desenvolver um sentimento ainda mais forte que a amizade..",
-        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Retorno de Mitsumi e Sousuke pelas mãos do estúdio P.A. Works ganha primeiro trailer."
-          ],
-          "bullets": [
-            "Retorno de Mitsumi e Sousuke pelas mãos do estúdio P.A.",
-            "Works ganha primeiro trailer.",
-            "Saudades da Mitsumi e do Sousuke?"
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "A sequência irá ao ar em abril, na temporada de primavera de 2027 .",
-            "E a Crunchyroll já confirmou a exibição..",
-            "A primeira temporada foi lançada em 2023 e foi dublada em português pelo estúdio Dubrasil , sob direção de André Rinaldi e Filipe Teófilo .",
-            "A obra adapta o mangá homônimo escrito por Misaki Takamatsu , em publicação desde 2018 na revista Monthly Afternoon , atualmente com 13 volumes fechados.",
-            "Aqui no Brasil, o gibi é publicado pela editora JBC.."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "Retorno de Mitsumi e Sousuke pelas mãos do estúdio P.A.",
-            "O animê segue no estúdio P.A.",
-            "Works , com a direção ainda nas mãos de Kotomi Deai e roteiro agora feito por Yoko Yonaiyama .",
-            "A primeira temporada foi lançada em 2023 e foi dublada em português pelo estúdio Dubrasil , sob direção de André Rinaldi e Filipe Teófilo .",
-            "Aqui no Brasil, o gibi é publicado pela editora JBC.."
-          ]
-        },
-        {
-          "heading": "Materiais divulgados",
-          "bullets": [
-            "Works ganha primeiro trailer."
-          ]
-        },
-        {
-          "heading": "História e contexto da obra",
-          "bullets": [
-            "A obra adapta o mangá homônimo escrito por Misaki Takamatsu , em publicação desde 2018 na revista Monthly Afternoon , atualmente com 13 volumes fechados.",
-            "Na trama, acompanhamos a saga de Mitsumi Iwakura, uma estudante do primeiro ano do ensino médio que vai do interior da cidade de Suzu para uma escola de alto nível em Tóquio."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "Saudades da Mitsumi e do Sousuke?",
-            "Pois hoje (17) foi anunciada a segunda temporada do animê de Skip & Loafer .",
-            "Mitsumi é interpretada por Naiaame Belle (Nadia em Nanatsu ) e Sousuke é encarnado por Vitor Mello (Relâmpago Genji em One-Punch Man )..",
-            "Os choques culturais de uma menina rural com o movimento cosmopolita são grandes, inclusive na maneira como ela usa o japonês, mas as coisas se tornam bem mais fáceis pela companhia de Sousuke Shima, pelo qual ela descobre desenvolver um sentimento ainda mais forte que a amizade..",
-            "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Novos trailers, datas, elenco e plataformas confirmadas podem ser incorporados nesta mesma página enquanto a notícia estiver ativa."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/18/skip-loafer-2a-temporada-e-anunciada-para-2027-com-transmissao-confirmada-na-crunchyroll",
-          "publishedAt": "2026-08-18T14:44:23.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 387,
-      "qualityScore": 0.91,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 15,
-        "sections": 7,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox-skip-loafer-s2-2026",
-      "slug": "skip-loafer-2-temporada-e-anunciada-para-2027-com-transmissao-na-crunchyroll-jbox-skip",
-      "source": "JBox",
-      "sourceType": "JBOX_ANIME",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Skip & Loafer: 2ª temporada é anunciada para 2027 com transmissão na Crunchyroll",
-      "summary": "A segunda temporada de Skip & Loafer foi anunciada para abril de 2027. A produção continua no estúdio P.A. Works e a Crunchyroll já confirmou a exibição da nova fase.",
-      "url": "https://www.jbox.com.br/2026/08/18/skip-loafer-2a-temporada-e-anunciada-para-2027-com-transmissao-confirmada-na-crunchyroll/",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/18/skip-loafer-2a-temporada-e-anunciada-para-2027-com-transmissao-confirmada-na-crunchyroll/",
-      "image": "",
-      "mediaQuery": "Skip and Loafer",
-      "mediaType": "anime",
-      "publishedAt": "2026-08-18T14:44:00.000Z",
-      "updatedAt": "2026-08-18T14:44:00.000Z",
-      "expiresAt": "2026-08-25T14:44:00.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [
-        "A segunda temporada estreia em abril de 2027.",
-        "A Crunchyroll confirmou a transmissão da nova fase.",
-        "O estúdio P.A. Works continua responsável pela animação.",
-        "Kotomi Deai permanece na direção.",
-        "Yoko Yonaiyama assume o roteiro.",
-        "A primeira temporada foi lançada em 2023.",
-        "O mangá é de Misaki Takamatsu.",
-        "A obra é publicada no Brasil pela JBC."
-      ],
-      "contentSections": [
-        {
-          "heading": "Estreia e transmissão",
-          "bullets": [
-            "A nova temporada chega em abril de 2027.",
-            "A Crunchyroll confirmou a exibição internacional."
-          ]
-        },
-        {
-          "heading": "Produção",
-          "bullets": [
-            "P.A. Works segue como estúdio.",
-            "Kotomi Deai continua na direção.",
-            "Yoko Yonaiyama assume o roteiro."
-          ]
-        },
-        {
-          "heading": "Mangá e contexto",
-          "paragraphs": [
-            "A adaptação é baseada no mangá de Misaki Takamatsu, publicado no Brasil pela JBC."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Novos trailers, elenco e data exata serão incorporados nesta mesma matéria quando confirmados."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/18/skip-loafer-2a-temporada-e-anunciada-para-2027-com-transmissao-confirmada-na-crunchyroll/",
-          "publishedAt": "2026-08-18T14:44:00.000Z"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 390,
-      "qualityScore": 0.94,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 8,
-        "sections": 4,
-        "sourceCount": 1,
-        "ingestMode": "recovery-seed"
       }
     }
   ]
