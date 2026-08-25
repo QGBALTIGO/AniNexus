@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T16:22:39.284Z",
+  "generatedAt": "2026-08-25T17:02:00.490Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -49,17 +49,17 @@
   ],
   "stats": {
     "collected": 155,
-    "grouped": 125,
-    "published": 32,
-    "newStories": 24,
-    "deepArticles": 16,
-    "avgWords": 374,
-    "withHeroImage": 26,
-    "withGallery": 5,
-    "withEmbeds": 7,
+    "grouped": 124,
+    "published": 30,
+    "newStories": 23,
+    "deepArticles": 14,
+    "avgWords": 369,
+    "withHeroImage": 25,
+    "withGallery": 4,
+    "withEmbeds": 9,
     "skippedTranslation": 98,
     "skippedQuality": 3,
-    "durationMs": 124723
+    "durationMs": 123563
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-25T16:20:48.366Z",
+      "updatedAt": "2026-08-25T17:00:14.193Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -162,7 +162,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-25T16:20:51.630Z",
+      "updatedAt": "2026-08-25T17:00:17.501Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -608,7 +608,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-25T16:21:03.579Z",
+      "updatedAt": "2026-08-25T17:00:29.535Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1591,7 +1591,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-25T16:21:09.201Z",
+      "updatedAt": "2026-08-25T17:00:34.776Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1685,7 +1685,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-25T16:21:09.202Z",
+      "updatedAt": "2026-08-25T17:00:34.776Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1767,7 +1767,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-25T16:21:11.513Z",
+      "updatedAt": "2026-08-25T17:00:37.204Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1927,7 +1927,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-20T14:03:00.000Z",
-      "updatedAt": "2026-08-25T16:21:20.622Z",
+      "updatedAt": "2026-08-25T17:00:45.471Z",
       "expiresAt": "2026-08-27T14:03:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2007,7 +2007,13 @@
       "mediaQuery": "Túmulo dos Vagalumes: Card colecionável é brinde em exibição nos cinemas",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "id": "T40PH7YSfII",
+          "url": "https://www.youtube-nocookie.com/embed/T40PH7YSfII"
+        }
+      ],
       "publishedAt": "2026-08-20T12:06:57.000Z",
       "updatedAt": "2026-08-20T12:08:30.000Z",
       "expiresAt": "2026-08-27T12:06:57.000Z",
@@ -2114,7 +2120,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 0,
+        "embedCount": 1,
         "sourcePagesRead": 1
       }
     },
@@ -2211,7 +2217,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T22:25:00.000Z",
-      "updatedAt": "2026-08-25T16:21:21.932Z",
+      "updatedAt": "2026-08-25T17:00:46.608Z",
       "expiresAt": "2026-08-26T22:25:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2299,7 +2305,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T18:28:00.000Z",
-      "updatedAt": "2026-08-25T16:21:22.985Z",
+      "updatedAt": "2026-08-25T17:00:47.888Z",
       "expiresAt": "2026-08-26T18:28:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2590,7 +2596,13 @@
       "mediaQuery": "Oshi no Ko: Divulgado teaser visual da 4ª temporada",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "id": "0d_R4vXRens",
+          "url": "https://www.youtube-nocookie.com/embed/0d_R4vXRens"
+        }
+      ],
       "publishedAt": "2026-08-19T14:45:36.000Z",
       "updatedAt": "2026-08-19T14:46:21.000Z",
       "expiresAt": "2026-08-26T14:45:36.000Z",
@@ -2684,7 +2696,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 0,
+        "embedCount": 1,
         "sourcePagesRead": 1
       }
     },
@@ -2706,7 +2718,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T02:55:00.000Z",
-      "updatedAt": "2026-08-25T16:21:23.893Z",
+      "updatedAt": "2026-08-25T17:00:49.078Z",
       "expiresAt": "2026-08-26T02:55:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2794,7 +2806,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T02:15:00.000Z",
-      "updatedAt": "2026-08-25T16:21:23.894Z",
+      "updatedAt": "2026-08-25T17:00:49.078Z",
       "expiresAt": "2026-08-26T02:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -3130,217 +3142,6 @@
       "coverage": {
         "facts": 3,
         "sections": 3,
-        "sourceCount": 1,
-        "ingestMode": "recovery-seed"
-      }
-    },
-    {
-      "id": "jbox_manga-1e215e1e",
-      "slug": "to-love-ru-ganha-volume-especial-este-ano-jbox_manga-1e215e1e",
-      "source": "JBox",
-      "sourceType": "JBOX_MANGA",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘To Love-Ru’ ganha volume especial este ano",
-      "originalTitle": null,
-      "summary": "Edição vai compilar histórias não encadernadas anteriormente, sendo um lançamento em comemoração aos 20 anos do mangá.",
-      "url": "https://www.jbox.com.br/2026/08/18/to-love-ru-ganha-volume-especial-este-ano",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/18/to-love-ru-ganha-volume-especial-este-ano",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/to-love-ru-destacada.jpg",
-      "mediaQuery": "‘To Love-Ru’ ganha volume especial este ano",
-      "mediaType": "manga",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/2026/08/18/to-love-ru-ganha-volume-especial-este-ano",
-          "alt": "",
-          "caption": "",
-          "source": "figure",
-          "credit": "JBox"
-        }
-      ],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-18T16:59:23.000Z",
-      "updatedAt": "2026-08-18T17:01:24.000Z",
-      "expiresAt": "2026-08-25T16:59:23.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [
-        "Edição vai compilar histórias não encadernadas anteriormente, sendo um lançamento em comemoração aos 20 anos do mangá.",
-        "Foi anunciado pela Shueisha que o mangá To Love-Ru vai ganhar um volume especial este ano.",
-        "O livro, chamado To Love-Ru Parade , vai compilar capítulos especiais que nunca antes foram lançados em um encadernado, tanto da série original quanto da continuação To Love-Ru Darkness .",
-        "O lançamento acontece no dia 2 de outubro ..",
-        "Junto ao anúncio, a série ganhou uma história one-shot comemorando os 20 anos da obra , que também deve ser compilada no lançamento do novo volume.",
-        "A história conta com 25 páginas..",
-        "To Love-Ru é um mangá escrito por Saki Hasemi e ilustrado por Kentarou Yabuki que foi publicado entre 2006 e 2009 na Shonen Jump , ganhando continuação em 2010 que ficou em lançamento até 2017.",
-        "As duas obras somam 36 volumes ao todo, com cada uma contando com 18 edições..",
-        "No Brasil, a JBC publicou To Love-Ru por completo pelo selo Ink Comics.",
-        "Na época, a editora comentou que não tinha planos para lançar Darkness , posição que até hoje se mantém..",
-        "A história é protagonizada por Rito Yuuki, um rapaz apaixonado por uma colega de escola que não consegue se declarar.",
-        "No entanto, certo dia outra garota se envolve em sua vida, mas não da maneira que ele imaginava.",
-        "Um dia Lala aparece de repente dentro da banheira do rapaz, revelando ser uma extraterrestre herdeira do trono de seu planeta natal.",
-        "No entanto, por estar sendo forçada a achar um pretendente para casar, ela decidiu fugir..",
-        "To Love-Ru e sua continuação foram adaptados para animê entre 2008 e 2017 em quatro temporadas e alguns especiais, produções do estúdio Xebec .",
-        "A animação não está disponível oficialmente no Brasil..",
-        "Fonte : Anime News Network.",
-        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Edição vai compilar histórias não encadernadas anteriormente, sendo um lançamento em comemoração aos 20 anos do mangá."
-          ],
-          "bullets": [
-            "Edição vai compilar histórias não encadernadas anteriormente, sendo um lançamento em comemoração aos 20 anos do mangá.",
-            "Foi anunciado pela Shueisha que o mangá To Love-Ru vai ganhar um volume especial este ano.",
-            "O livro, chamado To Love-Ru Parade , vai compilar capítulos especiais que nunca antes foram lançados em um encadernado, tanto da série original quanto da continuação To Love-Ru Darkness ."
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "Edição vai compilar histórias não encadernadas anteriormente, sendo um lançamento em comemoração aos 20 anos do mangá.",
-            "O lançamento acontece no dia 2 de outubro ..",
-            "Junto ao anúncio, a série ganhou uma história one-shot comemorando os 20 anos da obra , que também deve ser compilada no lançamento do novo volume.",
-            "To Love-Ru é um mangá escrito por Saki Hasemi e ilustrado por Kentarou Yabuki que foi publicado entre 2006 e 2009 na Shonen Jump , ganhando continuação em 2010 que ficou em lançamento até 2017.",
-            "As duas obras somam 36 volumes ao todo, com cada uma contando com 18 edições..",
-            "No Brasil, a JBC publicou To Love-Ru por completo pelo selo Ink Comics.",
-            "A animação não está disponível oficialmente no Brasil.."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "Na época, a editora comentou que não tinha planos para lançar Darkness , posição que até hoje se mantém..",
-            "To Love-Ru e sua continuação foram adaptados para animê entre 2008 e 2017 em quatro temporadas e alguns especiais, produções do estúdio Xebec .",
-            "A animação não está disponível oficialmente no Brasil.."
-          ]
-        },
-        {
-          "heading": "História e contexto da obra",
-          "bullets": [
-            "Edição vai compilar histórias não encadernadas anteriormente, sendo um lançamento em comemoração aos 20 anos do mangá.",
-            "Junto ao anúncio, a série ganhou uma história one-shot comemorando os 20 anos da obra , que também deve ser compilada no lançamento do novo volume.",
-            "A história conta com 25 páginas..",
-            "A história é protagonizada por Rito Yuuki, um rapaz apaixonado por uma colega de escola que não consegue se declarar.",
-            "To Love-Ru e sua continuação foram adaptados para animê entre 2008 e 2017 em quatro temporadas e alguns especiais, produções do estúdio Xebec ."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "Foi anunciado pela Shueisha que o mangá To Love-Ru vai ganhar um volume especial este ano.",
-            "O livro, chamado To Love-Ru Parade , vai compilar capítulos especiais que nunca antes foram lançados em um encadernado, tanto da série original quanto da continuação To Love-Ru Darkness .",
-            "No entanto, certo dia outra garota se envolve em sua vida, mas não da maneira que ele imaginava.",
-            "Um dia Lala aparece de repente dentro da banheira do rapaz, revelando ser uma extraterrestre herdeira do trono de seu planeta natal.",
-            "No entanto, por estar sendo forçada a achar um pretendente para casar, ela decidiu fugir..",
-            "Fonte : Anime News Network.",
-            "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "A matéria permanece no feed recente para receber atualizações sobre publicação, volumes, licenciamento e disponibilidade no Brasil."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/18/to-love-ru-ganha-volume-especial-este-ano",
-          "publishedAt": "2026-08-18T16:59:23.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 505,
-      "qualityScore": 0.91,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 18,
-        "sections": 6,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox-toloveru-parade-2026",
-      "slug": "to-love-ru-ganha-volume-especial-este-ano-jbox-toloveru",
-      "source": "JBox",
-      "sourceType": "JBOX_MANGA",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "To Love-Ru ganha volume especial em comemoração aos 20 anos",
-      "summary": "A Shueisha anunciou To Love-Ru Parade, volume especial previsto para 2 de outubro. A edição reunirá capítulos que nunca haviam sido encadernados e também deverá incluir o novo one-shot comemorativo da franquia.",
-      "url": "https://www.jbox.com.br/2026/08/18/to-love-ru-ganha-volume-especial-este-ano/",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/18/to-love-ru-ganha-volume-especial-este-ano/",
-      "image": "",
-      "mediaQuery": "To Love-Ru",
-      "mediaType": "manga",
-      "publishedAt": "2026-08-18T16:59:00.000Z",
-      "updatedAt": "2026-08-18T16:59:00.000Z",
-      "expiresAt": "2026-08-25T16:59:00.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [
-        "O novo volume se chama To Love-Ru Parade.",
-        "O lançamento japonês está marcado para 2 de outubro.",
-        "A edição compilará capítulos especiais que não haviam sido reunidos em volume.",
-        "O conteúdo inclui material da série original e de To Love-Ru Darkness.",
-        "Um one-shot de 25 páginas foi produzido para o aniversário da obra.",
-        "O especial deverá integrar o novo volume.",
-        "To Love-Ru foi escrito por Saki Hasemi e ilustrado por Kentarou Yabuki.",
-        "A série original teve publicação brasileira pela JBC."
-      ],
-      "contentSections": [
-        {
-          "heading": "O novo volume",
-          "bullets": [
-            "To Love-Ru Parade chega em 2 de outubro.",
-            "A proposta é reunir histórias especiais que ficaram fora dos encadernados anteriores."
-          ]
-        },
-        {
-          "heading": "Especial de aniversário",
-          "bullets": [
-            "A franquia recebeu um novo one-shot comemorativo.",
-            "O material deverá integrar o volume especial."
-          ]
-        },
-        {
-          "heading": "Publicação no Brasil",
-          "paragraphs": [
-            "A série original já teve edição brasileira; ainda não há confirmação local para este volume comemorativo."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Informações de edição brasileira, conteúdo final e lançamento internacional serão acrescentadas quando surgirem."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/18/to-love-ru-ganha-volume-especial-este-ano/",
-          "publishedAt": "2026-08-18T16:59:00.000Z"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 400,
-      "qualityScore": 0.93,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 8,
-        "sections": 4,
         "sourceCount": 1,
         "ingestMode": "recovery-seed"
       }
