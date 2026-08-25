@@ -1,6 +1,8 @@
 import {test,expect} from '@playwright/test';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
+const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
 const pageUrl=route=>`${ORIGIN}?build=40.0.0&p=${encodeURIComponent(route)}`;
+async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),local=new URL(requested.pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,50*(attempt+1)))}}throw lastError}
 async function noOverflow(page,t=7){const x=await page.evaluate(()=>({s:document.documentElement.scrollWidth,w:innerWidth}));expect(x.s).toBeLessThanOrEqual(x.w+t)}
 async function clear(page){await page.evaluate(()=>{for(const k of ['aninexus:favorites','aninexus:mediaState:v2','aninexus:mediaState:v1','aninexus:list','aninexus:listStatus','aninexus:community:activity:v40','aninexus:community:threads:v40'])localStorage.removeItem(k);window.AniNexusMediaState?.sync?.()})}
 const pixel='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
@@ -14,7 +16,7 @@ function graphData(query='',variables={}){
   return{Page};
 }
 test.describe.configure({mode:'serial'});
-test.beforeEach(async({page})=>{await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})})});
+test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})})});
 
 test('V40 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-08-24-v40.2.0')});
 
@@ -38,6 +40,12 @@ test('Community V40 exposes activity impressions discussions trends and local co
 
 test('Catalog opens dedicated anime detail without action click leaking to card',async({page})=>{await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});const card=page.locator('.nx21-card').first();await expect(card).toBeVisible({timeout:30000});const before=page.url(),fav=card.locator('button[data-fav]').first();await fav.click();expect(page.url()).toBe(before);await page.waitForTimeout(380);await card.locator('h3').click();await page.waitForURL(u=>(new URL(u)).searchParams.get('p')?.startsWith('/anime/')===true,{timeout:15000});await expect(page.locator('.nx22-detail')).toBeVisible({timeout:30000})});
 
-test('News and authentication remain healthy after V40',async({page})=>{await page.goto(pageUrl('/noticias'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-news-page')).toBeVisible({timeout:30000});await noOverflow(page);await page.goto(pageUrl('/login'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx38-auth-page')).toBeVisible({timeout:15000});await expect(page.locator('.nx38-auth-card h2')).toHaveText('Entre na sua conta');await noOverflow(page)});
+test('News and authentication remain healthy after V40',async({page})=>{await page.goto(pageUrl('/noticias'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-news-page')).toBeVisible({timeout:30000});await noOverflow(page);await page.goto(pageUrl('/login'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx38-auth-page')).toBeVisible({timeout:15000});await expect(page.locator('.nx38-auth-card h2')).toHaveText('Ativação segura em andamento');await expect(page.locator('.nx38-auth-unavailable')).toContainText('Nenhum dado privado');await noOverflow(page)});
+
+test('menu keeps exactly the eight approved destinations and one main landmark',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});const labels=await page.locator('.main-nav>a').allTextContents();expect(labels.map(x=>x.trim())).toEqual(['Início','Catálogo','Temporadas','Programação','Anime Awards','Meus Animes','Notícias','Comunidade']);await expect(page.locator('#app main')).toHaveCount(1);await expect(page.locator('main main')).toHaveCount(0)});
+
+test('all required widths stay inside the viewport',async({page,browserName})=>{test.skip(browserName!=='chromium','A matriz completa de larguras roda uma vez; Firefox e WebKit executam os fluxos críticos.');for(const width of [320,360,375,390,414,768,820,1024,1280,1440,1920]){await page.setViewportSize({width,height:width<600?844:900});await page.goto(pageUrl(width<600?'/animes/catalogo':'/'),{waitUntil:'domcontentloaded'});await page.locator('#app main').first().waitFor({state:'visible',timeout:30000});await noOverflow(page,8)}});
+
+test('public navigation degrades gracefully when AniList is unavailable',async({page})=>{await page.unroute('https://graphql.anilist.co/');await page.route('https://graphql.anilist.co/',route=>route.abort('failed'));await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});await expect(page.locator('#app main').first()).toBeVisible({timeout:30000});await expect(page.locator('body')).not.toContainText('HTTP 500');await noOverflow(page)});
 
 test('mobile Community and Programação do not overflow',async({page})=>{await page.setViewportSize({width:390,height:844});for(const route of ['/comunidade','/animes/programacao']){await page.goto(pageUrl(route),{waitUntil:'domcontentloaded'});await expect(page.locator(route==='/comunidade'?'.nx40-community':'.nx18-schedule').first()).toBeVisible({timeout:30000});await noOverflow(page)}});

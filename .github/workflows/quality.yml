@@ -19,19 +19,29 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: pnpm
       - name: Install project dependencies
-        run: npm install --ignore-scripts
+        run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Syntax, news, core and smoke contracts
-        run: npm run check
+        run: pnpm run check
       - name: Validate production frontend assembly
         run: |
-          npm run build:public
-          npm run validate:deploy
-      - name: Critical dependency audit
-        run: npm audit --omit=dev --audit-level=critical
+          pnpm run build:public
+          pnpm run validate:deploy
+      - name: High-severity dependency audit
+        run: pnpm audit --prod --audit-level high
+      - name: Detect committed secrets
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   production-container:
     runs-on: ubuntu-latest
@@ -77,15 +87,17 @@ jobs:
     timeout-minutes: 24
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: pnpm
       - name: Install project dependencies
-        run: npm install --ignore-scripts
+        run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Install browser test runner
-        run: |
-          npm install --no-save --no-package-lock @playwright/test@1.55.0
-          npx playwright install --with-deps chromium
+        run: pnpm exec playwright install --with-deps chromium firefox webkit
       - name: Map GitHub Pages hostname locally
         run: echo "127.0.0.1 qgbaltigo.github.io" | sudo tee -a /etc/hosts
       - name: Browser E2E — desktop and mobile
@@ -104,7 +116,7 @@ jobs:
             if [ "$i" = "20" ]; then cat /tmp/aninexus-http.log; exit 1; fi
             sleep 1
           done
-          npx playwright test tests/e2e.spec.mjs --reporter=line --timeout=60000 --retries=1
+          pnpm exec playwright test tests/e2e.spec.mjs tests/accessibility.spec.mjs --reporter=line --timeout=60000 --retries=1
       - name: Show static server log on failure
         if: failure()
         run: cat /tmp/aninexus-http.log || true
