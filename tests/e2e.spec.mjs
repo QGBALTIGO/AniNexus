@@ -3,7 +3,18 @@ const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/A
 const pageUrl=route=>`${ORIGIN}?build=40.0.0&p=${encodeURIComponent(route)}`;
 async function noOverflow(page,t=7){const x=await page.evaluate(()=>({s:document.documentElement.scrollWidth,w:innerWidth}));expect(x.s).toBeLessThanOrEqual(x.w+t)}
 async function clear(page){await page.evaluate(()=>{for(const k of ['aninexus:favorites','aninexus:mediaState:v2','aninexus:mediaState:v1','aninexus:list','aninexus:listStatus','aninexus:community:activity:v40','aninexus:community:threads:v40'])localStorage.removeItem(k);window.AniNexusMediaState?.sync?.()})}
+const pixel='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+function anime(id=101){return{id,title:{romaji:`Anime Teste ${id}`,english:`Anime Teste ${id}`,native:`Teste ${id}`,userPreferred:`Anime Teste ${id}`},coverImage:{extraLarge:pixel,large:pixel},bannerImage:pixel,averageScore:82,popularity:1000,genres:['Action','Adventure'],episodes:12,format:'TV',status:'RELEASING',seasonYear:2026,description:'Uma história de teste.',externalLinks:[],startDate:{year:2026,month:1,day:1},endDate:null,studios:{nodes:[]},relations:{edges:[]},recommendations:{nodes:[]},characters:{edges:[]},staff:{edges:[]}}}
+function graphData(query='',variables={}){
+  const ids=Array.isArray(variables.ids)&&variables.ids.length?variables.ids:[101,102,103,104],media=ids.map(Number).filter(Boolean).map(anime),airingAt=Number(variables.start)||Math.floor(Date.now()/1000)+3600;
+  const Page={pageInfo:{total:media.length,currentPage:1,lastPage:1,hasNextPage:false},media,airingSchedules:media.map((item,i)=>({airingAt:airingAt+3600*(i+1),episode:i+1,media:item}))};
+  if(/\bseason:Page/.test(query))return{season:Page,schedule:Page,top:Page,popular:Page,soon:Page,reading:Page};
+  const aliases=[...query.matchAll(/\b(a\d+):Media/g)].map(x=>x[1]);if(aliases.length)return Object.fromEntries(aliases.map((key,i)=>[key,anime(201+i)]));
+  if(/\bMedia\s*\(/.test(query)&&!/\bmedia\s*\(/.test(query))return{Media:anime(Number(variables.id)||101)};
+  return{Page};
+}
 test.describe.configure({mode:'serial'});
+test.beforeEach(async({page})=>{await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})})});
 
 test('V40 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-08-24-v40.2.0')});
 
