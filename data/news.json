@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T14:59:12.123Z",
+  "generatedAt": "2026-08-25T15:52:36.763Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -49,17 +49,17 @@
   ],
   "stats": {
     "collected": 155,
-    "grouped": 126,
-    "published": 34,
-    "newStories": 26,
-    "deepArticles": 17,
-    "avgWords": 373,
-    "withHeroImage": 28,
+    "grouped": 125,
+    "published": 32,
+    "newStories": 24,
+    "deepArticles": 16,
+    "avgWords": 374,
+    "withHeroImage": 26,
     "withGallery": 5,
-    "withEmbeds": 7,
-    "skippedTranslation": 97,
+    "withEmbeds": 9,
+    "skippedTranslation": 98,
     "skippedQuality": 3,
-    "durationMs": 123329
+    "durationMs": 130491
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-25T14:57:24.570Z",
+      "updatedAt": "2026-08-25T15:50:45.279Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -162,7 +162,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-25T14:57:27.908Z",
+      "updatedAt": "2026-08-25T15:50:48.569Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -608,7 +608,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-25T14:57:40.015Z",
+      "updatedAt": "2026-08-25T15:51:00.906Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1591,7 +1591,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-25T14:57:45.580Z",
+      "updatedAt": "2026-08-25T15:51:06.766Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1685,7 +1685,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-25T14:57:45.580Z",
+      "updatedAt": "2026-08-25T15:51:06.767Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1767,7 +1767,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-25T14:57:47.913Z",
+      "updatedAt": "2026-08-25T15:51:08.910Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1927,7 +1927,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-20T14:03:00.000Z",
-      "updatedAt": "2026-08-25T14:57:56.676Z",
+      "updatedAt": "2026-08-25T15:51:18.184Z",
       "expiresAt": "2026-08-27T14:03:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2007,7 +2007,13 @@
       "mediaQuery": "Túmulo dos Vagalumes: Card colecionável é brinde em exibição nos cinemas",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "id": "T40PH7YSfII",
+          "url": "https://www.youtube-nocookie.com/embed/T40PH7YSfII"
+        }
+      ],
       "publishedAt": "2026-08-20T12:06:57.000Z",
       "updatedAt": "2026-08-20T12:08:30.000Z",
       "expiresAt": "2026-08-27T12:06:57.000Z",
@@ -2114,7 +2120,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 0,
+        "embedCount": 1,
         "sourcePagesRead": 1
       }
     },
@@ -2211,7 +2217,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T22:25:00.000Z",
-      "updatedAt": "2026-08-25T14:57:57.876Z",
+      "updatedAt": "2026-08-25T15:51:19.126Z",
       "expiresAt": "2026-08-26T22:25:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2299,7 +2305,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T18:28:00.000Z",
-      "updatedAt": "2026-08-25T14:57:59.198Z",
+      "updatedAt": "2026-08-25T15:51:20.119Z",
       "expiresAt": "2026-08-26T18:28:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2590,7 +2596,13 @@
       "mediaQuery": "Oshi no Ko: Divulgado teaser visual da 4ª temporada",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "id": "0d_R4vXRens",
+          "url": "https://www.youtube-nocookie.com/embed/0d_R4vXRens"
+        }
+      ],
       "publishedAt": "2026-08-19T14:45:36.000Z",
       "updatedAt": "2026-08-19T14:46:21.000Z",
       "expiresAt": "2026-08-26T14:45:36.000Z",
@@ -2684,7 +2696,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 0,
+        "embedCount": 1,
         "sourcePagesRead": 1
       }
     },
@@ -2706,7 +2718,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T02:55:00.000Z",
-      "updatedAt": "2026-08-25T14:58:00.236Z",
+      "updatedAt": "2026-08-25T15:51:21.187Z",
       "expiresAt": "2026-08-26T02:55:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2794,7 +2806,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T02:15:00.000Z",
-      "updatedAt": "2026-08-25T14:58:00.236Z",
+      "updatedAt": "2026-08-25T15:51:21.188Z",
       "expiresAt": "2026-08-26T02:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -3343,217 +3355,6 @@
         "sections": 4,
         "sourceCount": 1,
         "ingestMode": "recovery-seed"
-      }
-    },
-    {
-      "id": "crunchyroll-d3310ec8",
-      "slug": "filme-compilatorio-do-anime-de-takopi-s-original-sin-ganha-data-de-lancamento-crunchyroll-d3310ec8",
-      "source": "Crunchyroll Notícias",
-      "sourceType": "CRUNCHYROLL",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Filme compilatório do anime de Takopi's Original Sin ganha data de lançamento",
-      "originalTitle": null,
-      "summary": "O projeto de produção da Takopi tem previsão de lançamento Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!",
-      "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/18/anime-takopis-original-sin-filme-compilatorio-estreia-27-novembro-2026",
-      "sourceUrl": "https://crunchyroll.com/pt-br/news/latest/2026/8/18/anime-takopis-original-sin-filme-compilatorio-estreia-27-novembro-2026",
-      "image": "https://a.storyblok.com/f/178900/960x540/70da656375/takopi-original-sin-compilation-film-header.png",
-      "mediaQuery": "Filme compilatório do anime de Takopi's Original Sin ganha data de lançamento",
-      "mediaType": "manga",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-18T15:15:00.000Z",
-      "updatedAt": "2026-08-24T22:35:52.231Z",
-      "expiresAt": "2026-08-25T15:15:00.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [
-        "O projeto de produção da Takopi tem previsão de lançamento Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-        "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-        "You heard it here first!"
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "O projeto de produção da Takopi tem previsão de lançamento Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!"
-          ],
-          "bullets": [
-            "O projeto de produção da Takopi tem previsão de lançamento Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "O projeto de produção da Takopi tem previsão de lançamento Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "O projeto de produção da Takopi tem previsão de lançamento Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "A matéria permanece no feed recente para receber atualizações sobre publicação, volumes, licenciamento e disponibilidade no Brasil."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "Crunchyroll Notícias",
-          "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/18/anime-takopis-original-sin-filme-compilatorio-estreia-27-novembro-2026",
-          "publishedAt": "2026-08-18T15:15:00.000Z",
-          "author": "Samir Fraiha"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 230,
-      "qualityScore": 0.97,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 3,
-        "sections": 5,
-        "sourceCount": 1,
-        "ingestMode": "html",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox_manga-00ec0993",
-      "slug": "lera-abova-a-nico-robin-de-one-piece-a-serie-vira-ao-brasil-para-o-imagineland-on-the-road-2026-jbox_manga-00ec0993",
-      "source": "JBox",
-      "sourceType": "JBOX_MANGA",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Lera Abova, a Nico Robin de ‘One Piece: A Série’, virá ao Brasil para o Imagineland On The Road 2026",
-      "originalTitle": null,
-      "summary": "Evento será realizado em setembro, em Campina Grande, Paraíba.",
-      "url": "https://www.jbox.com.br/2026/08/18/lera-abova-a-nico-robin-de-one-piece-a-serie-vira-ao-brasil-para-o-imagineland-on-the-road-2026",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/18/lera-abova-a-nico-robin-de-one-piece-a-serie-vira-ao-brasil-para-o-imagineland-on-the-road-2026",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/Lera-abova-imagineland-destacada.jpg",
-      "mediaQuery": "Lera Abova, a Nico Robin de ‘One Piece: A Série’, virá ao Brasil para o Imagineland On The Road 2026",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-18T14:57:41.000Z",
-      "updatedAt": "2026-08-18T14:58:36.000Z",
-      "expiresAt": "2026-08-25T14:57:41.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [
-        "Evento será realizado em setembro, em Campina Grande, Paraíba.",
-        "O Brasil vai receber uma visita de peso para os fãs de One Piece no próximo mês.",
-        "A atriz Lera Abova , que interpreta Nico Robin na adaptação em live-action produzida pela Netflix , foi anunciada como atração do Imagineland On The Road 2026 ..",
-        "A novidade foi divulgada pelos organizadores nas redes sociais, confirmando que a atriz estará no evento no dia 27 de setembro , em Campina Grande, na Paraíba:.",
-        "View this post on Instagram.",
-        "Realizado desde 2023, o Imagineland é conhecido por ser um dos grandes eventos de cultura pop do Nordeste do Brasil, contando também com atrações internacionais.",
-        "Em outras edições, a convenção recebeu nomes como Frank Miller (quadrinista), Edgar Vivar (o Sr.",
-        "Barriga da série Chaves ), Vincent Martella (o Greg de Todo Mundo Odeia o Chris ), Christian Chávez (do RBD e da novela Rebelde ), entre outros..",
-        "Para 2026, além de Lera Abova, também já foram anunciados Lee Jin-hyuk (músico e ator coreano), Zach Roerig (o Matt Donovan de Diários de um Vampiro ), Corbin Bleu , Monique Coleman e Lucas Grabeel (os três de High School Musical ) e Walter Jones (de Power Rangers ), além de atrações nacionais..",
-        "Os ingressos para a edição 2026 seguem à venda e, segundo a organização, há opções de combos com foto + autógrafo..",
-        "Enquanto isso, a série live-action segue a todo o vapor, com a produção da 3ª temporada em andamento desde o mês de maio .",
-        "Já as duas primeiras temporadas da série seguem disponíveis na Netflix , nas opções dublada e legendada..",
-        "Evento: Imagineland On The Road 2026.",
-        "Datas: 25, 26 e 27 de setembro de 2026.",
-        "Local: Centro de Convenções de Campina Grande.",
-        "Endereço: Alça Leste – Nova Brasília, Campina Grande – PB.",
-        "Ingressos: à venda no site https://imagineland.com.br/pt/ingressos.",
-        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Evento será realizado em setembro, em Campina Grande, Paraíba."
-          ],
-          "bullets": [
-            "Evento será realizado em setembro, em Campina Grande, Paraíba.",
-            "O Brasil vai receber uma visita de peso para os fãs de One Piece no próximo mês.",
-            "A atriz Lera Abova , que interpreta Nico Robin na adaptação em live-action produzida pela Netflix , foi anunciada como atração do Imagineland On The Road 2026 .."
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "O Brasil vai receber uma visita de peso para os fãs de One Piece no próximo mês.",
-            "A atriz Lera Abova , que interpreta Nico Robin na adaptação em live-action produzida pela Netflix , foi anunciada como atração do Imagineland On The Road 2026 ..",
-            "A novidade foi divulgada pelos organizadores nas redes sociais, confirmando que a atriz estará no evento no dia 27 de setembro , em Campina Grande, na Paraíba:.",
-            "Realizado desde 2023, o Imagineland é conhecido por ser um dos grandes eventos de cultura pop do Nordeste do Brasil, contando também com atrações internacionais.",
-            "Em outras edições, a convenção recebeu nomes como Frank Miller (quadrinista), Edgar Vivar (o Sr.",
-            "Para 2026, além de Lera Abova, também já foram anunciados Lee Jin-hyuk (músico e ator coreano), Zach Roerig (o Matt Donovan de Diários de um Vampiro ), Corbin Bleu , Monique Coleman e Lucas Grabeel (os três de High School Musical ) e Walter Jones (de Power Rangers ), além de atrações nacionais..",
-            "Os ingressos para a edição 2026 seguem à venda e, segundo a organização, há opções de combos com foto + autógrafo.."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "Para 2026, além de Lera Abova, também já foram anunciados Lee Jin-hyuk (músico e ator coreano), Zach Roerig (o Matt Donovan de Diários de um Vampiro ), Corbin Bleu , Monique Coleman e Lucas Grabeel (os três de High School Musical ) e Walter Jones (de Power Rangers ), além de atrações nacionais..",
-            "Enquanto isso, a série live-action segue a todo o vapor, com a produção da 3ª temporada em andamento desde o mês de maio .",
-            "Já as duas primeiras temporadas da série seguem disponíveis na Netflix , nas opções dublada e legendada.."
-          ]
-        },
-        {
-          "heading": "História e contexto da obra",
-          "bullets": [
-            "A atriz Lera Abova , que interpreta Nico Robin na adaptação em live-action produzida pela Netflix , foi anunciada como atração do Imagineland On The Road 2026 .."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "Evento será realizado em setembro, em Campina Grande, Paraíba.",
-            "View this post on Instagram.",
-            "Barriga da série Chaves ), Vincent Martella (o Greg de Todo Mundo Odeia o Chris ), Christian Chávez (do RBD e da novela Rebelde ), entre outros..",
-            "Evento: Imagineland On The Road 2026.",
-            "Datas: 25, 26 e 27 de setembro de 2026.",
-            "Local: Centro de Convenções de Campina Grande.",
-            "Endereço: Alça Leste – Nova Brasília, Campina Grande – PB.",
-            "Ingressos: à venda no site https://imagineland.com.br/pt/ingressos."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "A mesma URL é atualizada quando surgem fatos relevantes adicionais, evitando várias matérias rasas sobre o mesmo assunto."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/18/lera-abova-a-nico-robin-de-one-piece-a-serie-vira-ao-brasil-para-o-imagineland-on-the-road-2026",
-          "publishedAt": "2026-08-18T14:57:41.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 477,
-      "qualityScore": 0.91,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 18,
-        "sections": 6,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
       }
     }
   ]
