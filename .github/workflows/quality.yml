@@ -68,7 +68,7 @@ jobs:
           CID=$(docker create aninexus-ci:${{ github.sha }})
           trap 'docker rm -f "$CID" >/dev/null 2>&1 || true' EXIT
           docker cp "$CID:/app/public/index.html" /tmp/aninexus-index.html
-          grep -q '2026-08-24-v40.2.0' /tmp/aninexus-index.html
+          grep -q '2026-08-25-v40.4.0' /tmp/aninexus-index.html
           for FILE in \
             preview-v39/media-actions-v39.js \
             preview-v39/media-actions-v39.css \

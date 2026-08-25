@@ -427,6 +427,7 @@
   function handleRoute(){
     const p=routePath();
     if(isSeasonRoute(p)){loadSeason(selectionFromPath());return true;}
+    if(window.__NX_ROUTE_OWNER__==='detail'){deactivateV8();return false;}
     const id=animeIdFromPath(p);
     if(id){renderAnimeDetail(id,mediaCache(id));return true;}
     deactivateV8();return false;
