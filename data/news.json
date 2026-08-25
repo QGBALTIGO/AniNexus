@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T00:03:38.790Z",
+  "generatedAt": "2026-08-25T01:41:55.432Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -56,10 +56,10 @@
     "avgWords": 369,
     "withHeroImage": 29,
     "withGallery": 5,
-    "withEmbeds": 10,
+    "withEmbeds": 7,
     "skippedTranslation": 98,
     "skippedQuality": 3,
-    "durationMs": 121361
+    "durationMs": 121897
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-25T00:01:51.492Z",
+      "updatedAt": "2026-08-25T01:40:08.265Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -162,7 +162,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-25T00:01:54.437Z",
+      "updatedAt": "2026-08-25T01:40:11.313Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -608,7 +608,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-25T00:02:05.800Z",
+      "updatedAt": "2026-08-25T01:40:23.200Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1591,7 +1591,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-25T00:02:10.680Z",
+      "updatedAt": "2026-08-25T01:40:28.519Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1685,7 +1685,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-25T00:02:10.682Z",
+      "updatedAt": "2026-08-25T01:40:28.519Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1767,7 +1767,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-25T00:02:12.540Z",
+      "updatedAt": "2026-08-25T01:40:30.765Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1927,7 +1927,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-20T14:03:00.000Z",
-      "updatedAt": "2026-08-25T00:02:21.932Z",
+      "updatedAt": "2026-08-25T01:40:39.095Z",
       "expiresAt": "2026-08-27T14:03:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2007,13 +2007,7 @@
       "mediaQuery": "Túmulo dos Vagalumes: Card colecionável é brinde em exibição nos cinemas",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "T40PH7YSfII",
-          "url": "https://www.youtube-nocookie.com/embed/T40PH7YSfII"
-        }
-      ],
+      "mediaEmbeds": [],
       "publishedAt": "2026-08-20T12:06:57.000Z",
       "updatedAt": "2026-08-20T12:08:30.000Z",
       "expiresAt": "2026-08-27T12:06:57.000Z",
@@ -2120,7 +2114,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 1,
+        "embedCount": 0,
         "sourcePagesRead": 1
       }
     },
@@ -2217,7 +2211,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T22:25:00.000Z",
-      "updatedAt": "2026-08-25T00:02:22.764Z",
+      "updatedAt": "2026-08-25T01:40:40.102Z",
       "expiresAt": "2026-08-26T22:25:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2305,7 +2299,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T18:28:00.000Z",
-      "updatedAt": "2026-08-25T00:02:23.914Z",
+      "updatedAt": "2026-08-25T01:40:41.093Z",
       "expiresAt": "2026-08-26T18:28:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2596,13 +2590,7 @@
       "mediaQuery": "Oshi no Ko: Divulgado teaser visual da 4ª temporada",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "0d_R4vXRens",
-          "url": "https://www.youtube-nocookie.com/embed/0d_R4vXRens"
-        }
-      ],
+      "mediaEmbeds": [],
       "publishedAt": "2026-08-19T14:45:36.000Z",
       "updatedAt": "2026-08-19T14:46:21.000Z",
       "expiresAt": "2026-08-26T14:45:36.000Z",
@@ -2696,7 +2684,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 1,
+        "embedCount": 0,
         "sourcePagesRead": 1
       }
     },
@@ -2718,7 +2706,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T02:55:00.000Z",
-      "updatedAt": "2026-08-25T00:02:24.919Z",
+      "updatedAt": "2026-08-25T01:40:42.204Z",
       "expiresAt": "2026-08-26T02:55:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2806,7 +2794,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T02:15:00.000Z",
-      "updatedAt": "2026-08-25T00:02:24.919Z",
+      "updatedAt": "2026-08-25T01:40:42.205Z",
       "expiresAt": "2026-08-26T02:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2888,7 +2876,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-18T21:55:00.000Z",
-      "updatedAt": "2026-08-25T00:02:24.920Z",
+      "updatedAt": "2026-08-25T01:40:42.205Z",
       "expiresAt": "2026-08-25T21:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2980,13 +2968,7 @@
       "mediaQuery": "LicensingCon Latam 2026 mostra interesse das marcas em animês e planos de longo prazo",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "LfOYwhivOSk",
-          "url": "https://www.youtube-nocookie.com/embed/LfOYwhivOSk"
-        }
-      ],
+      "mediaEmbeds": [],
       "publishedAt": "2026-08-18T19:35:12.000Z",
       "updatedAt": "2026-08-18T22:55:00.000Z",
       "expiresAt": "2026-08-25T19:35:12.000Z",
@@ -3085,7 +3067,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 1,
+        "embedCount": 0,
         "sourcePagesRead": 1
       }
     },
