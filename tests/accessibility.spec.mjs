@@ -50,7 +50,7 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
-for (const route of ['/', '/animes/catalogo', '/animes/programacao', '/comunidade', '/login']) {
+for (const route of ['/', '/animes/catalogo', '/animes/programacao', '/anime/anime-teste-101', '/comunidade', '/login', '/quem-somos', '/termos-de-uso']) {
   test(`WCAG AA sem falhas sérias em ${route}`, async ({ page }) => {
     await page.goto(pageUrl(route), { waitUntil: 'domcontentloaded' });
     await page.locator('#app main').first().waitFor({ state: 'visible', timeout: 30_000 });

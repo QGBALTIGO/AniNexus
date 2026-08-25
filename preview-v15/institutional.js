@@ -121,7 +121,7 @@
     document.body.classList.remove('nx-legal-active','nx-season-active','nx-detail-active');document.body.classList.add('nx-institution-active');
     if(mountedPath===p&&document.querySelector('.nx-inst'))return;mountedPath=p;
     const content=p==='/quem-somos'?renderWho():p==='/colabore'?renderCollaborate():renderContact();
-    app.innerHTML=`<main>${content}</main>`;if(p==='/contato')bindForm();
+    app.innerHTML=content;const legacyRoot=app.querySelector(':scope>.nx-inst');if(legacyRoot&&legacyRoot.tagName!=='MAIN'){const primary=document.createElement('main');primary.className=legacyRoot.className;primary.append(...legacyRoot.childNodes);legacyRoot.replaceWith(primary)}if(p==='/contato')bindForm();
   }
   document.addEventListener('click',e=>{
     const a=e.target.closest('[data-nx-inst]');if(!a)return;const target=a.dataset.nxInst;if(!target)return;e.preventDefault();e.stopImmediatePropagation();
