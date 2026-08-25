@@ -61,6 +61,10 @@ rollback(){
   else
     rm -f -- "$CURRENT_LINK"
   fi
+  if [[ -d "$release_dir" ]]; then
+    chmod -R u+rwX "$release_dir" 2>/dev/null || true
+    rm -rf -- "$release_dir"
+  fi
 }
 
 finish(){
