@@ -20,6 +20,8 @@ O deploy valida código, HTML, CSS, JavaScript, referências locais, checksum e 
 - `VPS_SSH_KEY`
 - `VPS_KNOWN_HOSTS`
 
+As variáveis públicas opcionais `PUBLIC_API_ORIGIN`, `PUBLIC_CLERK_PUBLISHABLE_KEY` e `PUBLIC_AUTH_ENABLED` são lidas durante o build. Mantenha `PUBLIC_AUTH_ENABLED=false` até a API estar atrás de HTTPS válido. Consulte `docs/AUTHENTICATION.md` para a configuração do backend e do webhook.
+
 ## Rollback manual
 
 Liste as releases em `/var/www/aninexus/releases`, escolha uma versão válida e troque o symlink com `ln -s` seguido de `mv -T`. Depois, confirme `nginx -t`, `release.json`, a página inicial e o favicon. O workflow já executa esse procedimento automaticamente quando uma ativação falha.

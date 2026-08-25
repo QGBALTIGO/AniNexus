@@ -30,8 +30,10 @@ Correções normais devem acontecer no módulo atual.
 Rode:
 
 ```bash
-npm run check
-npm run build:public
+pnpm install --frozen-lockfile
+pnpm run check
+pnpm run build:public
+pnpm run validate:deploy
 ```
 
 O `check` também valida a organização da raiz e falha se uma nova camada `preview-vXX` aparecer sem ser classificada.
