@@ -1,0 +1,122 @@
+name: Deploy AniNexus na VPS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: aninexus-vps-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependências
+        run: npm install --ignore-scripts
+
+      - name: Validar código e contratos
+        run: npm run check
+
+      - name: Montar e validar publicação estática
+        run: |
+          npm run build:public
+          npm run validate:deploy
+
+      - name: Criar release versionada
+        id: release
+        shell: bash
+        run: |
+          RELEASE_ID="$(date -u +%Y%m%dT%H%M%SZ)-${GITHUB_SHA:0:12}"
+          export RELEASE_ID
+          node --input-type=module -e "import fs from 'node:fs'; fs.writeFileSync('public/release.json', JSON.stringify({release:process.env.RELEASE_ID,commit:process.env.GITHUB_SHA,builtAt:new Date().toISOString()},null,2)+'\n')"
+          tar -C public -czf "aninexus-release-${RELEASE_ID}.tar.gz" .
+          ARCHIVE_SHA256="$(sha256sum "aninexus-release-${RELEASE_ID}.tar.gz" | awk '{print $1}')"
+          echo "id=${RELEASE_ID}" >> "$GITHUB_OUTPUT"
+          echo "archive=aninexus-release-${RELEASE_ID}.tar.gz" >> "$GITHUB_OUTPUT"
+          echo "sha256=${ARCHIVE_SHA256}" >> "$GITHUB_OUTPUT"
+
+      - name: Conferir configuração SSH
+        shell: bash
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_PORT: ${{ secrets.VPS_PORT }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+        run: |
+          missing=0
+          for name in VPS_HOST VPS_USER VPS_PORT VPS_SSH_KEY VPS_KNOWN_HOSTS; do
+            if [ -z "${!name:-}" ]; then echo "Secret obrigatório ausente: ${name}"; missing=1; fi
+          done
+          [ "$missing" -eq 0 ]
+
+      - name: Preparar conexão SSH com host fixado
+        shell: bash
+        env:
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+        run: |
+          install -d -m 700 "$HOME/.ssh"
+          install -m 600 /dev/null "$HOME/.ssh/aninexus"
+          printf '%s\n' "$VPS_SSH_KEY" > "$HOME/.ssh/aninexus"
+          printf '%s\n' "$VPS_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/known_hosts"
+
+      - name: Enviar pacote para a VPS
+        shell: bash
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_PORT: ${{ secrets.VPS_PORT }}
+          RELEASE_ID: ${{ steps.release.outputs.id }}
+          ARCHIVE: ${{ steps.release.outputs.archive }}
+        run: |
+          scp -i "$HOME/.ssh/aninexus" -P "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            "$ARCHIVE" "${VPS_USER}@${VPS_HOST}:/var/www/aninexus/incoming/${RELEASE_ID}.tar.gz"
+
+      - name: Ativar release com rollback automático
+        shell: bash
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_PORT: ${{ secrets.VPS_PORT }}
+          RELEASE_ID: ${{ steps.release.outputs.id }}
+          ARCHIVE_SHA256: ${{ steps.release.outputs.sha256 }}
+        run: |
+          ssh -i "$HOME/.ssh/aninexus" -p "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            "${VPS_USER}@${VPS_HOST}" \
+            "bash -s -- '${RELEASE_ID}' '/var/www/aninexus/incoming/${RELEASE_ID}.tar.gz' '${GITHUB_SHA}' '${ARCHIVE_SHA256}'" \
+            < ops/deploy-vps.sh
+
+      - name: Health check externo
+        shell: bash
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+        run: |
+          for attempt in {1..10}; do
+            if response="$(curl --fail --silent --show-error --max-time 10 "http://${VPS_HOST}/release.json")" \
+              && node --input-type=module -e 'const body=JSON.parse(process.argv[1]); process.exit(body.commit===process.env.GITHUB_SHA?0:1)' "$response" \
+              && curl --fail --silent --show-error --max-time 10 "http://${VPS_HOST}/" | grep -Fq '<meta name="aninexus-build"'; then
+              exit 0
+            fi
+            sleep 2
+          done
+          echo 'Health check externo falhou.' >&2
+          exit 1
+
+      - name: Remover chave temporária do runner
+        if: always()
+        run: rm -f "$HOME/.ssh/aninexus"

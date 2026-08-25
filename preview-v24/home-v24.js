@@ -101,7 +101,16 @@
     if(popR.status==='fulfilled')document.querySelector('#nx24Popular').innerHTML=rail('nx24PopularRail',popR.value.map(m=>card(m)).join(''));
     if(soonR.status==='fulfilled')document.querySelector('#nx24Soon').innerHTML=rail('nx24SoonRail',soonR.value.map(m=>card(m)).join(''));
     if(readR.status==='fulfilled')document.querySelector('#nx24Reading').innerHTML=rail('nx24ReadingRail',readR.value.map(m=>card(m,'manga')).join(''));
-    if(personalR.status==='fulfilled'){updateActivity(personalR.value,p);const currentIds=new Set(p.entries.filter(x=>x.status==='CURRENT'||x.status==='PAUSED').map(x=>x.id));const continueItems=personalR.value.filter(m=>currentIds.has(Number(m.id))).slice(0,3);document.querySelector('#nx24Continue').innerHTML=continueItems.length?`<div style="display:grid;gap:7px">${continueItems.map(m=>{const st=p.states[m.id]||{};return `<button type="button" data-nx24-open="${m.id}" data-kind="anime" style="width:100%;border:1px solid rgba(255,255,255,.07);border-radius:10px;background:#100b0f;color:#fff;padding:9px;display:grid;grid-template-columns:38px 1fr auto;gap:9px;align-items:center;text-align:left;cursor:pointer"><img src="${esc(image(m))}" style="width:38px;height:50px;object-fit:cover;border-radius:6px"><span style="min-width:0"><b style="display:block;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(title(m))}</b><small style="color:#80747a">${STATUS[st.status]||st.status}${st.progress?` · ep. ${st.progress}`:''}</small></span>${I.arrow}</button>`}).join('')}</div>`:'<div class="nx24-empty" style="min-height:75px">Marque um anime como Assistindo para ele aparecer aqui.</div>`}
+    if(personalR.status==='fulfilled'){
+      updateActivity(personalR.value,p);
+      const currentIds=new Set(p.entries.filter(x=>x.status==='CURRENT'||x.status==='PAUSED').map(x=>x.id));
+      const continueItems=personalR.value.filter(m=>currentIds.has(Number(m.id))).slice(0,3);
+      const continueCards=continueItems.map(m=>{
+        const st=p.states[m.id]||{},progress=st.progress?` · ep. ${st.progress}`:'';
+        return `<button type="button" data-nx24-open="${m.id}" data-kind="anime" style="width:100%;border:1px solid rgba(255,255,255,.07);border-radius:10px;background:#100b0f;color:#fff;padding:9px;display:grid;grid-template-columns:38px 1fr auto;gap:9px;align-items:center;text-align:left;cursor:pointer"><img src="${esc(image(m))}" style="width:38px;height:50px;object-fit:cover;border-radius:6px"><span style="min-width:0"><b style="display:block;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(title(m))}</b><small style="color:#80747a">${STATUS[st.status]||st.status}${progress}</small></span>${I.arrow}</button>`;
+      }).join('');
+      document.querySelector('#nx24Continue').innerHTML=continueItems.length?`<div style="display:grid;gap:7px">${continueCards}</div>`:'<div class="nx24-empty" style="min-height:75px">Marque um anime como Assistindo para ele aparecer aqui.</div>';
+    }
     wire();topMotion();timers()}
 
   addEventListener('DOMContentLoaded',()=>{if(homeWanted())mount()},{once:true});if(document.readyState!=='loading'&&homeWanted())mount();addEventListener('popstate',()=>{if(route()==='/'){cleanup();mount()}else cleanup()});

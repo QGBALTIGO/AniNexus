@@ -1,104 +1,142 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0a0710" />
-  <meta name="color-scheme" content="dark light" />
-  <meta name="description" content="AniNexus — catálogo, temporadas, programação e comunidade de animes." />
-  <title>AniNexus</title>
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <link rel="manifest" href="/manifest.webmanifest" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08060b">
+<meta name="color-scheme" content="dark light">
+<meta name="description" content="AniNexus — descubra, acompanhe e compartilhe animes, mangás, light novels e notícias.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="aninexus-build" content="2026-08-24-v40.2.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https://graphql.anilist.co https://api.jikan.moe https://api.mymemory.translated.net https://translate.googleapis.com https://api.animethemes.moe; media-src 'self' https://v.animethemes.moe; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://www.dailymotion.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+<title>AniNexus</title>
+<link rel="icon" href="./assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://graphql.anilist.co" crossorigin>
+<link rel="preconnect" href="https://api.animethemes.moe" crossorigin>
+<link rel="preconnect" href="https://v.animethemes.moe" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Nunito+Sans:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./preview-v6/styles.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v6/enhance.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v8/styles.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v8/hotfix.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v9/polish.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v10/mobile.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v11/season-experience.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v12/fixes.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v14/legal.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v15/institutional.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v18/schedule.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v19/media-state.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v19/schedule-coherence.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v19/palette.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v20/catalog-v20.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v21/design-system.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v21/section-chrome.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v23/detail-v23.css?v=26.0.0">
+<link rel="stylesheet" href="./preview-v33/home-v33.css?v=35.0.1">
+<link rel="stylesheet" href="./preview-v33/news-v33.css?v=37.0.2">
+<link rel="stylesheet" href="./preview-v38/core-v38.css?v=40.1.0">
+<link rel="stylesheet" href="./preview-v38/auth-v38.css?v=38.0.0">
+<link rel="stylesheet" href="./preview-v38/library-v38.css?v=38.1.0">
+<link rel="stylesheet" href="./preview-v39/media-actions-v39.css?v=40.0.2">
+<script src="./preview-v38/runtime-v38.js?v=38.0.2"></script>
+<script src="./preview-v12/network-cache.js?v=26.0.0"></script>
+<script src="./preview-v32/news-route-guard-v32.js?v=37.0.2"></script>
+<script src="./preview-v38/auth-guard-v38.js?v=38.0.0"></script>
+<script src="./preview-v38/library-guard-v38.js?v=38.1.0"></script>
+<script src="./preview-v23/route-guard-v23.js?v=40.2.0"></script>
+<script src="./preview-v24/home-guard-v24.js?v=35.0.1"></script>
+<script src="./preview-v18/guard.js?v=26.0.0"></script>
 </head>
 <body>
-  <div id="site">
-    <header class="topbar" id="topbar">
-      <div class="shell topbar__inner">
-        <a class="brand" href="/" data-route aria-label="AniNexus - Início">
-          <img class="brand__logo" src="/assets/logo-192-small.png" alt="" />
-          <span class="brand__name">AniNexus</span>
-          <span class="brand__beta">beta</span>
-        </a>
-
-        <nav class="desktop-nav" aria-label="Navegação principal">
-          <a href="/" data-route data-nav="home"><span class="nav-ico" data-icon="home"></span>Início</a>
-          <a href="/animes/catalogo" data-route data-nav="catalog"><span class="nav-ico" data-icon="grid"></span>Animes</a>
-          <a href="/animes/programacao" data-route data-nav="schedule"><span class="nav-ico" data-icon="calendar"></span>Programação</a>
-          <a href="/animes/temporadas" data-route data-nav="seasons"><span class="nav-ico" data-icon="season"></span>Temporadas</a>
-          <a href="/listas-de-animes" data-route data-nav="discover"><span class="nav-ico" data-icon="users"></span>Descubra</a>
-        </nav>
-
-        <div class="topbar__actions">
-          <button class="round-action" type="button" data-action="search" aria-label="Pesquisar" title="Pesquisar (Ctrl+K)"><span data-icon="search"></span></button>
-          <button class="round-action" type="button" data-action="theme" aria-label="Alternar tema"><span data-icon="moon"></span></button>
-          <div class="auth-actions" id="authActions">
-            <button class="btn btn--ghost btn--small" type="button" data-action="login">Entrar</button>
-            <button class="btn btn--primary btn--small" type="button" data-action="register">Criar conta <span data-icon="arrow"></span></button>
-          </div>
-          <button class="round-action mobile-menu-button" type="button" data-action="mobile-menu" aria-label="Abrir menu"><span data-icon="menu"></span></button>
-        </div>
-      </div>
-    </header>
-
-    <aside class="mobile-drawer" id="mobileDrawer" hidden aria-label="Menu móvel">
-      <button class="drawer-backdrop" data-action="mobile-menu-close" aria-label="Fechar menu"></button>
-      <div class="drawer-panel">
-        <div class="drawer-head">
-          <a class="brand" href="/" data-route><img class="brand__logo" src="/assets/logo-192-small.png" alt="" /><span class="brand__name">AniNexus</span></a>
-          <button class="round-action" data-action="mobile-menu-close"><span data-icon="close"></span></button>
-        </div>
-        <nav class="drawer-nav">
-          <a href="/" data-route><span data-icon="home"></span>Início</a>
-          <a href="/animes/catalogo" data-route><span data-icon="grid"></span>Catálogo</a>
-          <a href="/animes/temporadas" data-route><span data-icon="season"></span>Temporadas</a>
-          <a href="/animes/programacao" data-route><span data-icon="calendar"></span>Programação</a>
-          <a href="/animes/onde-assistir" data-route><span data-icon="play"></span>Onde assistir</a>
-          <a href="/animes/dublados" data-route><span data-icon="mic"></span>Dublados</a>
-          <a href="/animes/estudios" data-route><span data-icon="building"></span>Estúdios</a>
-          <a href="/listas-de-animes" data-route><span data-icon="sparkles"></span>Listas</a>
-        </nav>
-        <div class="drawer-auth" id="drawerAuth"></div>
-      </div>
-    </aside>
-
-    <main id="app" tabindex="-1"></main>
-
-    <footer class="site-footer">
-      <div class="shell footer-grid">
-        <section class="footer-brand">
-          <a class="brand brand--footer" href="/" data-route><img class="brand__logo" src="/assets/logo-192-small.png" alt="" /><span class="brand__name">AniNexus</span></a>
-          <p>Descubra, acompanhe e organize animes em uma experiência criada para o público brasileiro.</p>
-        </section>
-        <section><h3>AniNexus</h3><a href="/quem-somos" data-route>Quem Somos</a><a href="/colabore" data-route>Colabore</a><a href="/contato" data-route>Contato</a><a href="/termos-de-uso" data-route>Termos de Serviço</a><a href="/politica-de-privacidade" data-route>Política de Privacidade</a><a href="/dmca" data-route>DMCA</a></section>
-        <section><h3>Animes</h3><a href="/animes/catalogo" data-route>Catálogo de Animes</a><a href="/animes/temporadas" data-route>Animes da Temporada</a><a href="/animes/programacao" data-route>Calendário de Animes</a><a href="/animes/onde-assistir" data-route>Onde Assistir</a><a href="/animes/dublados" data-route>Animes Dublados</a><a href="/animes/estudios" data-route>Estúdios de Anime</a></section>
-        <section><h3>Listas</h3><a href="/melhores-animes-para-assistir" data-route>Melhores Animes</a><a href="/animes-mais-assistidos" data-route>Mais Assistidos</a><a href="/animes-mais-aguardados" data-route>Mais Aguardados</a><a href="/listas-de-animes" data-route>Todas as Listas</a></section>
-      </div>
-      <div class="shell footer-bottom"><span>© <span id="year"></span> AniNexus</span><span>Marcas, personagens e obras pertencem aos respectivos titulares.</span></div>
-    </footer>
+<header class="topbar" id="topbar">
+  <div class="shell topbar-inner">
+    <a class="brand" href="/" data-link><img src="./assets/logo.png" alt=""><span>AniNexus</span></a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="/" data-link data-nav="home"><span data-icon="home"></span>Início</a>
+      <a href="/animes/catalogo" data-link data-nav="anime"><span data-icon="grid"></span>Catálogo</a>
+      <a href="/animes/temporadas" data-link data-nav="season"><span data-icon="season"></span>Temporadas</a>
+      <a href="/animes/programacao" data-link data-nav="schedule"><span data-icon="calendar"></span>Programação</a>
+      <a href="/noticias" data-link data-nav="news"><span data-icon="news"></span>Notícias</a>
+      <a href="/comunidade" data-link data-nav="community"><span data-icon="chat"></span>Comunidade</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-button" data-action="search" aria-label="Pesquisar"><span data-icon="search"></span></button>
+      <button class="icon-button" data-action="theme" aria-label="Alternar tema"><span data-icon="moon"></span></button>
+      <button class="login-btn" data-action="login">Entrar</button>
+      <button class="signup-btn" data-action="register">Criar conta <span data-icon="arrow"></span></button>
+      <button class="menu-btn" data-action="drawer-open" aria-label="Abrir menu" aria-controls="drawer" aria-expanded="false"><span data-icon="menu"></span></button>
+    </div>
   </div>
-
-  <section class="search-layer" id="searchLayer" hidden aria-hidden="true">
-    <button class="overlay-backdrop" data-action="search-close" aria-label="Fechar busca"></button>
-    <div class="search-box" role="dialog" aria-modal="true" aria-label="Pesquisar animes">
-      <div class="search-input-row"><span data-icon="search"></span><input id="globalSearch" type="search" autocomplete="off" placeholder="Pesquisar animes..." /><kbd>ESC</kbd></div>
-      <div id="globalSearchResults" class="search-results"><div class="search-tip">Digite o nome de um anime para pesquisar.</div></div>
+</header>
+<aside class="drawer" id="drawer" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+  <button class="drawer-backdrop" data-action="drawer-close" aria-label="Fechar menu"></button>
+  <div class="drawer-panel">
+    <header class="drawer-head">
+      <div><span class="drawer-kicker">SEU UNIVERSO ANIME</span><h2 id="drawerTitle">Menu</h2></div>
+      <button class="icon-button drawer-close" data-action="drawer-close" aria-label="Fechar menu"><span data-icon="close"></span></button>
+    </header>
+    <div class="drawer-content">
+      <section class="drawer-auth-card" aria-label="Acesso à conta">
+        <div class="drawer-auth-copy"><span>CONTA ANINEXUS</span><h3>Entre na sua conta</h3><p>Salve sua lista, acompanhe episódios e participe da comunidade.</p></div>
+        <div class="drawer-auth-actions"><button class="login-btn" data-action="login">Entrar</button><button class="signup-btn" data-action="register">Criar conta</button></div>
+      </section>
+      <nav class="drawer-nav" aria-label="Menu AniNexus">
+        <div class="drawer-nav-intro"><div><span>NAVEGAÇÃO</span><strong>Explore o AniNexus</strong></div><small>8 destinos</small></div>
+        <div class="drawer-nav-grid">
+          <a href="/" data-link data-drawer-nav="home"><i class="drawer-card-icon tone-red" data-icon="home"></i><span><strong>Início</strong><small>Destaques e novidades</small></span></a>
+          <a href="/animes/catalogo" data-link data-drawer-nav="anime"><i class="drawer-card-icon tone-rose" data-icon="grid"></i><span><strong>Catálogo</strong><small>Encontre seu próximo anime</small></span></a>
+          <a href="/animes/temporadas" data-link data-drawer-nav="season"><i class="drawer-card-icon tone-gold" data-icon="season"></i><span><strong>Temporadas</strong><small>Estreias de cada estação</small></span></a>
+          <a href="/animes/programacao" data-link data-drawer-nav="schedule"><i class="drawer-card-icon tone-blue" data-icon="calendar"></i><span><strong>Programação</strong><small>Próximos episódios</small></span></a>
+          <a href="/anime-awards" data-link data-drawer-nav="awards"><i class="drawer-card-icon tone-gold" data-icon="trophy"></i><span><strong>Anime Awards</strong><small>Categorias e edições</small></span></a>
+          <a href="/meus-animes" data-drawer-nav="library"><i class="drawer-card-icon tone-red" data-icon="heart"></i><span><strong>Meus Animes</strong><small>Lista, notas e progresso</small></span></a>
+          <a href="/noticias" data-link data-drawer-nav="news"><i class="drawer-card-icon tone-rose" data-icon="news"></i><span><strong>Notícias</strong><small>Estreias, trailers e novidades</small></span></a>
+          <a href="/comunidade" data-link data-drawer-nav="community"><i class="drawer-card-icon tone-violet" data-icon="chat"></i><span><strong>Comunidade</strong><small>Impressões e discussões</small></span></a>
+        </div>
+      </nav>
     </div>
-  </section>
-
-  <section class="modal-layer" id="authLayer" hidden aria-hidden="true">
-    <button class="overlay-backdrop" data-action="auth-close" aria-label="Fechar"></button>
-    <div class="auth-modal" role="dialog" aria-modal="true">
-      <button class="modal-close round-action" data-action="auth-close"><span data-icon="close"></span></button>
-      <div class="auth-mark"><img src="/assets/logo-192-small.png" alt="" /></div>
-      <div id="authContent"></div>
-    </div>
-  </section>
-
-  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
-  <script src="/app.js" defer></script>
+  </div>
+</aside>
+<main id="app" tabindex="-1"></main>
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-about"><a class="brand" href="/" data-link><img src="./assets/logo.png" alt=""><span>AniNexus</span></a><p>Uma casa brasileira para descobrir, acompanhar e conversar sobre anime, mangá e light novel.</p><div class="socials"><a href="https://t.me/AniNexus_Oficial" target="_blank" rel="noopener noreferrer" aria-label="Telegram AniNexus"><svg viewBox="0 0 24 24"><path d="m3 11 17-7-4 16-6-5-3 3 1-5 8-6-10 5-3-1Z"/></svg></a><a href="https://www.instagram.com/AniNexus_Oficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram AniNexus"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".7"/></svg></a><a href="https://www.tiktok.com/@aninexus_oficial" target="_blank" rel="noopener noreferrer" aria-label="TikTok AniNexus"><svg viewBox="0 0 24 24"><path d="M14 3v10.7a4.7 4.7 0 1 1-4-4.6"/><path d="M14 3c.8 3 2.5 4.4 5.3 4.6"/></svg></a></div></div>
+    <div class="footer-col"><h3>AniNexus</h3><a href="/quem-somos" data-nx-inst="/quem-somos">Quem Somos</a><a href="/colabore" data-nx-inst="/colabore">Colabore</a><a href="/contato" data-nx-inst="/contato">Contato</a><a href="/termos-de-uso" data-nx-legal="/termos-de-uso">Termos de Serviço</a><a href="/politica-de-privacidade" data-nx-legal="/politica-de-privacidade">Política de Privacidade</a><a href="/dmca" data-nx-legal="/dmca">DMCA</a></div>
+    <div class="footer-col"><h3>Animes</h3><a href="/animes/catalogo" data-link>Catálogo de Animes</a><a href="/animes/temporadas" data-link>Animes da Temporada</a><a href="/animes/programacao" data-link>Calendário de Animes</a><a href="/animes/onde-assistir" data-link>Onde Assistir Animes</a><a href="/animes/dublados" data-link>Animes Dublados</a><a href="/animes/estudios" data-link>Estúdios de Anime</a></div>
+    <div class="footer-col"><h3>Listas</h3><a href="/meus-animes">Meus Animes</a><a href="/melhores-animes-para-assistir" data-link>Melhores Animes Para Assistir</a><a href="/animes-mais-assistidos" data-link>Animes Mais Assistidos</a><a href="/animes-mais-aguardados" data-link>Animes Mais Aguardados</a><a href="/listas-de-animes" data-link>Todas as Listas</a><a href="/noticias" data-link>Notícias</a><a href="/comunidade" data-link>Comunidade</a></div>
+  </div>
+  <div class="shell footer-note"><span>© <span id="year"></span> AniNexus</span><span>Obras, marcas e personagens pertencem aos respectivos titulares.</span></div>
+</footer>
+<div class="search-overlay" id="searchOverlay" hidden><button class="overlay-backdrop" data-action="search-close" aria-label="Fechar busca"></button><div class="search-modal"><div class="search-input-row"><span data-icon="search"></span><input id="searchInput" type="search" autocomplete="off" placeholder="Pesquisar anime, mangá ou novel..."><kbd>ESC</kbd></div><div class="search-kinds"><button class="active" data-search-kind="ANIME">Animes</button><button data-search-kind="MANGA">Mangás & novels</button></div><div class="search-results" id="searchResults"><p>Digite para pesquisar.</p></div></div></div>
+<div class="auth-overlay" id="authOverlay" hidden><button class="overlay-backdrop" data-action="auth-close"></button><div class="auth-card"><button class="auth-close" data-action="auth-close"><span data-icon="close"></span></button><img src="./assets/logo.png" alt=""><div id="authBody"></div></div></div>
+<div class="toast-root" id="toastRoot" aria-live="polite"></div>
+<script src="./preview-v23/router-v23.js?v=35.0.1" defer></script>
+<script src="./preview-v27/navigation-v27.js?v=35.0.1" defer></script>
+<script src="./preview-v18/bridge.js?v=26.0.0" defer></script>
+<script src="./preview-v19/state-normalizer.js?v=26.0.0" defer></script>
+<script src="./preview-v39/media-actions-v39.js?v=40.0.2" defer></script>
+<script src="./preview-v19/media-state-v2.js?v=40.0.3" defer></script>
+<script src="./preview-v39/media-sync-v39.js?v=40.0.0" defer></script>
+<script src="./preview-v6/app.js?v=40.1.1" defer></script>
+<script src="./preview-v8/app.js?v=26.0.0" defer></script>
+<script src="./preview-v8/hotfix.js?v=26.0.0" defer></script>
+<script src="./preview-v12/runtime.js?v=26.0.0" defer></script>
+<script src="./preview-v14/legal.js?v=26.0.0" defer></script>
+<script src="./preview-v15/institutional.js?v=26.0.0" defer></script>
+<script src="./preview-v18/schedule.js?v=26.0.0" defer></script>
+<script src="./preview-v19/schedule-coherence-v2.js?v=26.0.0" defer></script>
+<script src="./preview-v23/schedule-hotfix-v23.js?v=26.0.0" defer></script>
+<script src="./preview-v20/catalog-v20.js?v=26.0.0" defer></script>
+<script src="./preview-v23/catalog-filter-bridge-v23.js?v=26.0.0" defer></script>
+<script src="./preview-v21/section-chrome.js?v=26.0.0" defer></script>
+<script src="./preview-v23/detail-v23.js?v=40.2.0" defer></script>
+<script src="./preview-v35/news-data-v35.js?v=37.0.2" defer></script>
+<script src="./preview-v37/news-hot-v37.js?v=37.0.2" defer></script>
+<script src="./preview-v35/news-ui-v35.js?v=37.0.2" defer></script>
+<script src="./preview-v33/home-v33.js?v=35.0.1" defer></script>
+<script src="./preview-v38/auth-v38.js?v=38.0.0" defer></script>
+<script src="./preview-v38/library-v38.js?v=38.1.0" defer></script>
 </body>
 </html>

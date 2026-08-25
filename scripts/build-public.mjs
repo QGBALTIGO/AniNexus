@@ -11,6 +11,14 @@ await fs.mkdir(pub,{recursive:true});
 // Production uses the same shell as GitHub Pages. Only classified runtime layers are copied.
 await fs.copyFile(path.join(root,'index.html'),path.join(pub,'index.html'));
 
+// The VPS release is served directly by Nginx, so /public must be self-contained.
+// Fastify also serves these files from /assets; keeping a copy here preserves that
+// behavior while allowing the same artifact to run without the application server.
+const publicAssets=path.join(pub,'assets');
+await fs.rm(publicAssets,{recursive:true,force:true});
+await fs.cp(path.join(root,'assets'),publicAssets,{recursive:true,force:true});
+await fs.copyFile(path.join(root,'.nojekyll'),path.join(pub,'.nojekyll'));
+
 for(const name of await fs.readdir(pub)){
   if(/^preview-v\d+$/.test(name)&&!ACTIVE_PREVIEW_DIRS.includes(name)){
     await fs.rm(path.join(pub,name),{recursive:true,force:true});
@@ -40,4 +48,4 @@ for(const ref of refs){
 }
 if(missing.length)throw new Error(`Production shell references missing files: ${[...new Set(missing)].join(', ')}`);
 
-console.log(`[build-public] copied ${ACTIVE_PREVIEW_DIRS.length} runtime layers + ${refs.length} validated local references`);
+console.log(`[build-public] copied assets + ${ACTIVE_PREVIEW_DIRS.length} runtime layers + ${refs.length} validated local references`);

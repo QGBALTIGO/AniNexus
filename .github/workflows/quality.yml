@@ -27,7 +27,9 @@ jobs:
       - name: Syntax, news, core and smoke contracts
         run: npm run check
       - name: Validate production frontend assembly
-        run: npm run build:public
+        run: |
+          npm run build:public
+          npm run validate:deploy
       - name: Critical dependency audit
         run: npm audit --omit=dev --audit-level=critical
 
@@ -56,7 +58,7 @@ jobs:
           CID=$(docker create aninexus-ci:${{ github.sha }})
           trap 'docker rm -f "$CID" >/dev/null 2>&1 || true' EXIT
           docker cp "$CID:/app/public/index.html" /tmp/aninexus-index.html
-          grep -q '2026-08-23-v40.0.0' /tmp/aninexus-index.html
+          grep -q '2026-08-24-v40.2.0' /tmp/aninexus-index.html
           for FILE in \
             preview-v39/media-actions-v39.js \
             preview-v39/media-actions-v39.css \

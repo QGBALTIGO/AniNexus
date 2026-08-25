@@ -6,7 +6,7 @@ async function clear(page){await page.evaluate(()=>{for(const k of ['aninexus:fa
 async function geometry(b){return b.evaluate(el=>{const s=getComputedStyle(el);return{w:parseFloat(s.width),h:parseFloat(s.height),r:s.borderRadius,d:s.display}})}
 test.describe.configure({mode:'serial'});
 
-test('V40 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-08-23-v40.0.0')});
+test('V40 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-08-24-v40.2.0')});
 
 test('Home Catalog Programação Temporadas and Meus Animes share compact circular actions',async({page})=>{
   const targets=[['/','button[data-fav]'],['/animes/catalogo','.nx21-actions button[data-fav]'],['/animes/programacao','.nx18-cover-actions button[data-nx18-fav]'],['/animes/temporadas','button[data-nx-fav]']];
