@@ -47,9 +47,9 @@ body.nx21-catalog *{box-sizing:border-box}
 
 .nx21-body{padding:27px 0 64px;scroll-margin-top:108px;min-height:58vh}
 .nx21-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:17px}
-.nx21-section-head small{display:block;color:#a64058;font:900 7px/1 'Nunito Sans',sans-serif;letter-spacing:.18em}
+.nx21-section-head small{display:block;color:#dc7188;font:900 7px/1 'Nunito Sans',sans-serif;letter-spacing:.18em}
 .nx21-section-head h2{margin:3px 0 0;font:800 20px/1.08 var(--display,'Manrope',sans-serif);letter-spacing:-.4px;color:#f8f1f4}
-.nx21-section-head>span{font:700 9px 'Nunito Sans',sans-serif;color:#786a70}
+.nx21-section-head>span{font:700 9px 'Nunito Sans',sans-serif;color:#a99da2}
 .nx21-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px 14px}
 .nx21-card{min-width:0;cursor:pointer;outline:0}
 .nx21-poster{position:relative;aspect-ratio:2/3;overflow:hidden;border-radius:10px;border:1px solid rgba(255,255,255,.085);background:#120c10;box-shadow:0 10px 28px rgba(0,0,0,.19);transition:transform .22s ease,border-color .2s ease,box-shadow .22s ease}
@@ -68,7 +68,7 @@ body.nx21-catalog *{box-sizing:border-box}
 .nx21-actions button[data-nx-unified-status="PLANNING"]{background:#287bc3;border-color:#58a9ed;color:#fff}.nx21-actions button[data-nx-unified-status="CURRENT"]{background:#d82749;border-color:#f25672;color:#fff}.nx21-actions button[data-nx-unified-status="COMPLETED"]{background:#238b58;border-color:#4ed08b;color:#fff}.nx21-actions button[data-nx-unified-status="PAUSED"]{background:#bd7616;border-color:#e6aa45;color:#fff}.nx21-actions button[data-nx-unified-status="DROPPED"]{background:#72404b;border-color:#aa6e7a;color:#fff}
 .nx21-card h3{margin:8px 1px 0;color:#f5eef1;font:800 11.7px/1.28 var(--display,'Manrope',sans-serif);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;min-height:30px}
 .nx21-card>p{margin:4px 1px 0;color:#8c7e84;font:700 8.4px/1.25 'Nunito Sans',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.nx21-card>small{display:block;margin:3px 1px 0;color:#685b60;font:600 7.8px/1.25 'Nunito Sans',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nx21-card>small{display:block;margin:3px 1px 0;color:#a99da2;font:600 7.8px/1.25 'Nunito Sans',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .nx21-skeleton{aspect-ratio:2/3;border-radius:10px;border:1px solid rgba(255,255,255,.05);background:#110c0f;position:relative;overflow:hidden}
 .nx21-skeleton:after{content:"";position:absolute;inset:0;transform:translateX(-110%);background:linear-gradient(100deg,transparent,rgba(255,255,255,.055),transparent);animation:nx21-shimmer 1.05s infinite}@keyframes nx21-shimmer{to{transform:translateX(110%)}}
 .nx21-pages{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:34px}.nx21-pages button,.nx21-pages span{min-width:34px;height:34px;border-radius:8px;display:grid;place-items:center}.nx21-pages button{border:1px solid rgba(255,255,255,.09);background:#120c10;color:#9d8f95;font:800 10px 'Nunito Sans',sans-serif;cursor:pointer}.nx21-pages button:hover:not(:disabled){color:#fff;border-color:rgba(231,42,82,.32);background:rgba(231,42,82,.08)}.nx21-pages button.active{color:#fff;background:linear-gradient(135deg,#d9254c,#a91638);border-color:#e34867}.nx21-pages button:disabled{opacity:.28;cursor:default}.nx21-pages span{color:#5e5257}

@@ -1,7 +1,9 @@
 'use strict';
 (() => {
   if(window.__NX39_MEDIA_SYNC__)return;window.__NX39_MEDIA_SYNC__=true;
-  if(location.hostname.endsWith('github.io'))return;
+  const IS_PAGES=location.hostname.endsWith('github.io');
+  const remoteAuth=window.AniNexusAuth?.enabled===true?window.AniNexusAuth:null;
+  if(IS_PAGES&&!remoteAuth)return;
 
   const FAV_KEY='aninexus:favorites';
   const STATE_KEY='aninexus:mediaState:v2';
@@ -18,6 +20,9 @@
   const same=(a,b)=>JSON.stringify(a??null)===JSON.stringify(b??null);
 
   async function request(path,options={}){
+    if(remoteAuth){
+      try{return await remoteAuth.api(path,options)}catch(error){if(error?.status===401)return null;throw error}
+    }
     const response=await fetch(path,{credentials:'same-origin',cache:'no-store',...options,headers:{accept:'application/json',...(options.body?{'content-type':'application/json'}:{}),...(options.headers||{})}});
     if(response.status===401)return null;
     if(!response.ok)throw new Error(`HTTP ${response.status}`);

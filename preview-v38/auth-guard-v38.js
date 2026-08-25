@@ -6,11 +6,6 @@
     const routes=['/login','/criar-conta','/minha-conta'];
     if(!routes.includes(authPath()))return;
 
-    // If the auth renderer replaces an invalid session-gated route while its own
-    // render lock is active, reload that final route once instead of leaving URL/UI apart.
-    const nativeReplace=history.replaceState.bind(history);
-    history.replaceState=function(state,title,url){const before=location.href,result=nativeReplace(state,title,url);if(before!==location.href&&routes.includes(authPath())&&document.body?.classList.contains('nx38-auth-active'))setTimeout(()=>location.replace(location.href),0);return result};
-
     document.documentElement.classList.add('nx38-auth-boot');
     const style=document.createElement('style');
     style.dataset.nx38AuthBoot='1';

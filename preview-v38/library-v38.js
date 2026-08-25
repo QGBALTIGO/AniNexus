@@ -3,6 +3,7 @@
   if(window.__NX38_LIBRARY__)return;window.__NX38_LIBRARY__=true;
   const app=document.querySelector('#app');if(!app)return;
   const IS_PAGES=location.hostname.endsWith('github.io');
+  const REMOTE=window.AniNexusAuth?.enabled===true;
   const BASE=IS_PAGES?'/AniNexus':'';
   const BUILD='38.1.0';
   const API='https://graphql.anilist.co';
@@ -38,8 +39,14 @@
   function normalizeImp(row){const id=Number(row?.media_id||row?.mediaId||row?.media?.id);return{id:String(row?.id||crypto?.randomUUID?.()||Date.now()),mediaId:id,body:String(row?.body||''),spoiler:!!row?.spoiler,createdAt:row?.created_at||row?.createdAt||new Date().toISOString(),username:String(row?.username||'você'),avatarUrl:row?.avatar_url||row?.avatarUrl||'',status:String(row?.status||''),score:row?.score==null?null:Number(row.score),progress:Math.max(0,Number(row?.progress)||0),media:mediaOf(row?.media,id)}}
 
   async function request(path,options={}){
+    if(REMOTE){try{return await window.AniNexusAuth.api(path,options)}catch(error){if(error?.status===401)return{__unauth:true};throw error}}
     const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),12000);
     try{const r=await fetch(path,{credentials:'same-origin',cache:'no-store',...options,signal:ctl.signal,headers:{accept:'application/json',...(options.body?{'content-type':'application/json'}:{}),...(options.headers||{})}});if(r.status===401)return{__unauth:true};if(!r.ok)throw new Error(`HTTP ${r.status}`);return await r.json().catch(()=>({}))}finally{clearTimeout(timer)}
+  }
+  async function publicRequest(path){
+    if(REMOTE)return window.AniNexusAuth.publicApi(path);
+    const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),12000);
+    try{const r=await fetch(path,{credentials:'same-origin',cache:'no-store',signal:ctl.signal,headers:{accept:'application/json'}});if(!r.ok)throw new Error(`HTTP ${r.status}`);return await r.json().catch(()=>({}))}finally{clearTimeout(timer)}
   }
 
   async function gqlIds(ids){
@@ -54,7 +61,7 @@
   }
 
   async function loadLibrary(){
-    if(IS_PAGES){
+    if(IS_PAGES&&!REMOTE){
       const local={...read('aninexus:mediaState:v1',{}),...read(STATE_KEY,{})},favIds=(read(FAV_KEY,[])||[]).map(Number),ids=[...new Set([...Object.keys(local).map(Number),...favIds])].filter(Boolean),media=await gqlIds(ids),map=new Map(media.map(m=>[m.id,m]));
       const list=Object.entries(local).filter(([,s])=>s?.status).map(([id,s])=>({media_id:Number(id),status:s.status,score:s.score??null,reaction:s.reaction||'',progress:s.progress||0,updated_at:s.updatedAt?new Date(s.updatedAt).toISOString():new Date().toISOString(),media:map.get(Number(id))||null}));
       const favorites=favIds.map(id=>({media_id:id,created_at:new Date().toISOString(),media:map.get(id)||null}));
@@ -119,16 +126,16 @@
     const item=mergedItems(state.data).find(x=>x.id===id);if(!item)return;const modal=document.querySelector('#nx38ImpressionModal');if(!modal)return;
     modal.hidden=false;modal.innerHTML=`<button class="nx38-impression-backdrop" type="button" data-imp-close aria-label="Fechar"></button><div class="nx38-impression-card-modal"><header><div><h2>Nova impressão</h2><div class="anime">${esc(item.media.title)}</div></div><button type="button" data-imp-close>×</button></header><form id="nx38ImpressionForm"><textarea name="body" maxlength="1200" required placeholder="O que você está achando? Uma impressão curta, sem precisar escrever uma resenha inteira."></textarea><div class="nx38-impression-meta"><label><input type="checkbox" name="spoiler"> contém spoiler</label><span data-imp-count>0/1200</span></div><div class="nx38-impression-error" data-imp-error></div><div class="nx38-impression-actions"><button class="nx38-impression-cancel" type="button" data-imp-close>Cancelar</button><button class="nx38-impression-submit" type="submit">Publicar impressão</button></div></form></div>`;
     const close=()=>{modal.hidden=true;modal.innerHTML=''};modal.querySelectorAll('[data-imp-close]').forEach(b=>b.onclick=close);const ta=modal.querySelector('textarea'),count=modal.querySelector('[data-imp-count]');ta?.addEventListener('input',()=>count.textContent=`${ta.value.length}/1200`);ta?.focus();
-    modal.querySelector('form').onsubmit=async e=>{e.preventDefault();const body=ta.value.trim(),spoiler=!!modal.querySelector('[name="spoiler"]').checked,err=modal.querySelector('[data-imp-error]'),submit=modal.querySelector('.nx38-impression-submit');if(!body){err.textContent='Escreva alguma coisa antes de publicar.';return}submit.disabled=true;submit.textContent='Publicando…';try{let row;if(IS_PAGES){row={id:`local-${Date.now()}`,mediaId:id,body,spoiler,createdAt:new Date().toISOString(),username:'você',status:item.status,score:item.score,progress:item.progress,media:item.media};const all=read(DEMO_IMP,[]);all.unshift(row);write(DEMO_IMP,all.slice(0,100))}else{await request(`/api/anime/${id}/impressions`,{method:'POST',body:JSON.stringify({body,spoiler})});row={id:`new-${Date.now()}`,mediaId:id,body,spoiler,createdAt:new Date().toISOString(),username:state.data.user?.username||'você',status:item.status,score:item.score,progress:item.progress,media:item.media}}
+    modal.querySelector('form').onsubmit=async e=>{e.preventDefault();const body=ta.value.trim(),spoiler=!!modal.querySelector('[name="spoiler"]').checked,err=modal.querySelector('[data-imp-error]'),submit=modal.querySelector('.nx38-impression-submit');if(!body){err.textContent='Escreva alguma coisa antes de publicar.';return}submit.disabled=true;submit.textContent='Publicando…';try{let row;if(IS_PAGES&&!REMOTE){row={id:`local-${Date.now()}`,mediaId:id,body,spoiler,createdAt:new Date().toISOString(),username:'você',status:item.status,score:item.score,progress:item.progress,media:item.media};const all=read(DEMO_IMP,[]);all.unshift(row);write(DEMO_IMP,all.slice(0,100))}else{await request(`/api/anime/${id}/impressions`,{method:'POST',body:JSON.stringify({body,spoiler})});row={id:`new-${Date.now()}`,mediaId:id,body,spoiler,createdAt:new Date().toISOString(),username:state.data.user?.username||'você',status:item.status,score:item.score,progress:item.progress,media:item.media}}
       state.data.impressions=[normalizeImp(row),...(state.data.impressions||[])];state.data.impressionCount=Number(state.data.impressionCount||0)+1;close();toast('Impressão publicada');shell(state.data);if(route()==='/')mountHomeImpressions(true)}catch(ex){err.textContent='Não foi possível publicar agora. Tente novamente.';submit.disabled=false;submit.textContent='Publicar impressão'}};
   }
 
   function loginRequired(){document.body.classList.add('nx38-library-active');app.innerHTML=`<main class="nx38-library"><div class="nx38-library-shell"><section class="nx38-library-login"><img src="${BASE}/assets/logo.png" alt=""><h1>Seus animes ficam aqui.</h1><p>Entre para sincronizar favoritos, progresso, notas e impressões em todos os seus dispositivos.</p><div class="nx38-library-login-actions"><a class="nx38-library-primary" href="${pageUrl('/login')}">Entrar</a><a class="nx38-library-ghost" href="${pageUrl('/criar-conta')}">Criar conta</a></div></section></div></main>`;document.documentElement.classList.remove('nx38-library-boot')}
-  async function mountLibrary(){if(route()!==LIB_ROUTE)return;const token=++state.renderToken;document.documentElement.classList.add('nx38-library-boot');const data=await loadLibrary();if(token!==state.renderToken||route()!==LIB_ROUTE)return;state.data=data;if(!IS_PAGES&&!data.user){loginRequired();return}shell(data)}
+  async function mountLibrary(){if(route()!==LIB_ROUTE)return;const token=++state.renderToken;document.documentElement.classList.add('nx38-library-boot');const data=await loadLibrary();if(token!==state.renderToken||route()!==LIB_ROUTE)return;state.data=data;if((REMOTE||!IS_PAGES)&&!data.user){loginRequired();return}shell(data)}
 
   async function loadPublicImpressions(){
-    if(IS_PAGES)return(read(DEMO_IMP,[])||[]).slice(0,10).map(normalizeImp);
-    try{const d=await request('/api/community/impressions?limit=12');return(d?.items||[]).map(normalizeImp)}catch{return[]}
+    if(IS_PAGES&&!REMOTE)return(read(DEMO_IMP,[])||[]).slice(0,10).map(normalizeImp);
+    try{const d=await publicRequest('/api/community/impressions?limit=12');return(d?.items||[]).map(normalizeImp)}catch{return[]}
   }
   function homeImpCard(x){const name=x.username||'membro',m=x.media||mediaOf(null,x.mediaId),context=[x.status?STATUS[x.status]:null,x.progress?`ep. ${x.progress}`:null,x.score!=null?`★ ${Number(x.score).toFixed(1).replace('.0','')}`:null].filter(Boolean).join(' · ');return `<article class="nx38-impression-home-card" ${m.id?`data-lib-home-open="${m.id}" data-title="${esc(m.title)}"`:''}><div class="nx38-impression-user"><span class="nx38-impression-avatar">${x.avatarUrl?`<img src="${esc(x.avatarUrl)}" alt="">`:esc(name.charAt(0).toUpperCase())}</span><strong>@${esc(name)}</strong><time>${esc(fmtRel(x.createdAt))}</time></div><p class="nx38-impression-body${x.spoiler?' spoiler':''}">${x.spoiler?'Impressão marcada como spoiler. Abra o anime para ler com contexto.':esc(x.body)}</p><div class="nx38-impression-context">${m.cover?`<img src="${esc(m.cover)}" alt="">`:'<div></div>'}<div><strong>${esc(m.title)}</strong><small>${esc(context||'Impressão da comunidade')}</small></div></div></article>`}
   async function mountHomeImpressions(force=false){
