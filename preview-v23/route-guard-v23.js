@@ -3,7 +3,7 @@
   try {
     const IS_PAGES=location.hostname.endsWith('github.io');
     const BASE=IS_PAGES?'/AniNexus':'';
-    const BUILD='40.4.0';
+    const BUILD='40.4.1';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=restored?restored.split('?')[0]:u.pathname;
@@ -46,7 +46,6 @@
       let timer=0;
       const finish=()=>{if(!app.querySelector(route.selector))return false;html.classList.remove(bootClass);style.remove();if(timer)clearTimeout(timer);dispatchEvent(new CustomEvent('aninexus:route-ready',{detail:{owner:route.owner,path}}));return true};
       const mo=new MutationObserver(()=>{if(finish())mo.disconnect()});mo.observe(app,{childList:true,subtree:true});
-      if(isDetail&&!document.querySelector('script[data-nx25-state-ui]')){const bridge=document.createElement('script');bridge.src=`${BASE}/preview-v25/state-ui-bridge-v25.js?v=${BUILD}`;bridge.async=false;bridge.dataset.nx25StateUi='1';document.body.append(bridge)}
       if(isDetail&&!document.querySelector('script[data-nx22-detail-runtime]')){const s=document.createElement('script');s.src=`${BASE}/preview-v22/detail-stable-v22.js?v=${BUILD}`;s.async=false;s.dataset.nx22DetailRuntime='1';s.addEventListener('load',finish,{once:true});document.body.append(s)}
       finish();timer=setTimeout(()=>{mo.disconnect();if(!finish()&&!app.firstElementChild)app.innerHTML='<main class="nx-route-fail" style="min-height:65vh;display:grid;place-items:center;padding:28px;text-align:center"><div><img src="'+BASE+'/assets/logo.png" alt="" style="width:64px;height:64px"><h1 style="font:800 24px Manrope,sans-serif">Esta página demorou para responder</h1><p style="color:#9c9095">Tente atualizar. Seus dados neste aparelho foram preservados.</p></div></main>';html.classList.remove(bootClass);style.remove()},10000);
     };

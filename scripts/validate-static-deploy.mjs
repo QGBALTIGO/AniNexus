@@ -50,6 +50,7 @@ if(await exists('index.html')){
   for(const marker of ['<!doctype html','<html','<head','<body','<meta name="aninexus-build"','</html>']){
     if(!html.toLowerCase().includes(marker))errors.push(`index.html sem ${marker}`);
   }
+  if(!html.includes('<base href="/">'))errors.push('index.html de produção sem base absoluta /');
   for(const match of html.matchAll(/\b(?:src|href)=["']([^"']+)["']/gi)){
     const ref=localReference(match[1]);
     if(ref?.error)errors.push(ref.error);

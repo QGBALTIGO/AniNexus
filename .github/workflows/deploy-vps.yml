@@ -46,6 +46,7 @@ jobs:
       - name: Montar e validar publicação estática
         env:
           PUBLIC_SITE_ORIGIN: https://qgbaltigo.github.io/AniNexus
+          PUBLIC_BASE_PATH: /
           PUBLIC_API_ORIGIN: ${{ vars.PUBLIC_API_ORIGIN }}
           PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ vars.PUBLIC_CLERK_PUBLISHABLE_KEY }}
           PUBLIC_AUTH_ENABLED: ${{ vars.PUBLIC_AUTH_ENABLED || 'false' }}
