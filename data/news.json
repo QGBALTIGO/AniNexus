@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T19:21:04.446Z",
+  "generatedAt": "2026-08-25T19:50:46.926Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -49,17 +49,17 @@
   ],
   "stats": {
     "collected": 155,
-    "grouped": 124,
-    "published": 30,
-    "newStories": 22,
-    "deepArticles": 14,
-    "avgWords": 369,
-    "withHeroImage": 25,
+    "grouped": 123,
+    "published": 28,
+    "newStories": 21,
+    "deepArticles": 13,
+    "avgWords": 370,
+    "withHeroImage": 24,
     "withGallery": 4,
-    "withEmbeds": 8,
+    "withEmbeds": 9,
     "skippedTranslation": 99,
     "skippedQuality": 3,
-    "durationMs": 126334
+    "durationMs": 122899
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-25T19:19:18.669Z",
+      "updatedAt": "2026-08-25T19:49:01.431Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -162,7 +162,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-25T19:19:21.717Z",
+      "updatedAt": "2026-08-25T19:49:04.689Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -608,7 +608,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-25T19:19:33.074Z",
+      "updatedAt": "2026-08-25T19:49:16.619Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1591,7 +1591,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-25T19:19:38.308Z",
+      "updatedAt": "2026-08-25T19:49:22.574Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1685,7 +1685,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-25T19:19:38.308Z",
+      "updatedAt": "2026-08-25T19:49:22.574Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1767,7 +1767,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-25T19:19:40.556Z",
+      "updatedAt": "2026-08-25T19:49:24.565Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1927,7 +1927,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-20T14:03:00.000Z",
-      "updatedAt": "2026-08-25T19:19:49.154Z",
+      "updatedAt": "2026-08-25T19:49:33.315Z",
       "expiresAt": "2026-08-27T14:03:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2217,7 +2217,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T22:25:00.000Z",
-      "updatedAt": "2026-08-25T19:19:50.156Z",
+      "updatedAt": "2026-08-25T19:49:34.413Z",
       "expiresAt": "2026-08-26T22:25:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2305,7 +2305,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T18:28:00.000Z",
-      "updatedAt": "2026-08-25T19:19:51.456Z",
+      "updatedAt": "2026-08-25T19:49:35.532Z",
       "expiresAt": "2026-08-26T18:28:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2596,7 +2596,13 @@
       "mediaQuery": "Oshi no Ko: Divulgado teaser visual da 4ª temporada",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "id": "0d_R4vXRens",
+          "url": "https://www.youtube-nocookie.com/embed/0d_R4vXRens"
+        }
+      ],
       "publishedAt": "2026-08-19T14:45:36.000Z",
       "updatedAt": "2026-08-19T14:46:21.000Z",
       "expiresAt": "2026-08-26T14:45:36.000Z",
@@ -2690,7 +2696,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 0,
+        "embedCount": 1,
         "sourcePagesRead": 1
       }
     },
@@ -2712,7 +2718,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T02:55:00.000Z",
-      "updatedAt": "2026-08-25T19:19:52.636Z",
+      "updatedAt": "2026-08-25T19:49:36.670Z",
       "expiresAt": "2026-08-26T02:55:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2956,188 +2962,6 @@
         "mediaCount": 0,
         "embedCount": 0,
         "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox_anime-5c5fa619",
-      "slug": "licensingcon-latam-2026-mostra-interesse-das-marcas-em-animes-e-planos-de-longo-prazo-jbox_anime-5c5fa619",
-      "source": "JBox",
-      "sourceType": "JBOX_ANIME",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "LicensingCon Latam 2026 mostra interesse das marcas em animês e planos de longo prazo",
-      "originalTitle": null,
-      "summary": "Visitamos a feira de B2B realizada em São Paulo, que teve a participação de empresas e licenciantes do setor.",
-      "url": "https://www.jbox.com.br/2026/08/18/licensingcon-latam-2026-mostra-interesse-das-marcas-em-animes-e-planos-de-longo-prazo",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/18/licensingcon-latam-2026-mostra-interesse-das-marcas-em-animes-e-planos-de-longo-prazo",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/licensingconlatam2026-destacada.jpg",
-      "mediaQuery": "LicensingCon Latam 2026 mostra interesse das marcas em animês e planos de longo prazo",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-18T19:35:12.000Z",
-      "updatedAt": "2026-08-18T22:55:00.000Z",
-      "expiresAt": "2026-08-25T19:35:12.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [
-        "Visitamos a feira de B2B realizada em São Paulo, que teve a participação de empresas e licenciantes do setor.",
-        "Quando alguma área da cultura pop começa a ter mais destaque entre os fãs, um dos movimentos naturais é o aumento de produtos disponíveis para compra.",
-        "Isso aconteceu no universo dos jogos, dos super-heróis, e segue agora em alta no universo dos animês e mangás..",
-        "Prova disso é a presença significativa de tais propriedades intelectuais na LicensingCon Latam 2026 , evento de negócios realizado este mês em São Paulo.",
-        "A convite da Angelotti Licensing , o JBox esteve no primeiro dia do evento, que contou com empresas conhecidas por grandes obras no segmento dos animês e licenciantes nacionais dispostos a viabilizar cada vez mais itens físicos e experiências no Brasil..",
-        "Existem alguns fatores que contribuíram para alta de consumo de animês e mangás nos últimos anos, desde questões geracionais, até uma mudança nos hábitos ligados à cultura pop, como a pandemia de COVID-19 e a diminuição do interesse geral em filmes de super-heróis (ao menos em grande quantidade)..",
-        "Luiz Angelotti , CEO da Angelotti Licensing & Entertainment Business , começou a observar uma virada desde meados de 2018, com o lançamento nos cinemas de Dragon Ball Super: Broly (que chegou ao Brasil em janeiro de 2019)..",
-        "“Esse filme chamou a atenção do mercado para o fato de que o público de animê não era necessariamente somente o público otaku, mas também a nomenclatura ‘geek’ englobava esse público de maneira mais abrangente .",
-        "Com a pandemia, o consumo de Naruto , Dragon Ball e One Piece teve uma explosão.",
-        "Em 2022 a gente teve Naruto em praticamente todas as empresas licenciadas [da Angelotti], e ele era o nº 1 em vendas.",
-        "E Dragon Ball e One Piece estavam sempre entre os cinco mais vendidos.",
-        "Junto a eles nós tínhamos o Spider-Man , Superman , heróis mais tradicionais e tudo o mais.”.",
-        "Angelotti também afirma que uma grande vantagem do universo de animês para os varejistas interessados em vender produtos é que há uma faixa grande de idade para trabalhar:.",
-        "“Você começa dos seis anos e vai até os 40.",
-        "Hoje nós temos as três marcas mais procuradas, que estão no radar das principais empresas, junto com super-heróis, que são Naruto , Dragon Ball e One Piece .",
-        "E isso abriu a possibilidade que novos animês entrem no mercado, como Hunter x Hunter , Dan Dan Dan , Jojo’s Bizarre Adventure , Bleach , Death Note .”.",
-        "Parte do espaço da Angelotti Licensing na LicensingCon Latam 2026 | Foto: Cakes Sousa/JBox.",
-        "Outra empresa nacional presente no evento foi a Vertical Licensing , que representa o grupo Sony em questões de licenciamento, incluindo obras do cinema, TV, games, o filme live-action de Zelda e a Crunchyroll ..",
-        "E Claudia Archela , sócia-diretora da empresa, repete o mesmo argumento: atualmente os animês alcançam um público mais abrangente, embora ainda existam algumas obras preferidas..",
-        "“O interesse aumentou nos últimos anos.",
-        "Porque você não fala só com o público mais maduro, 18+, 16+.",
-        "Há, por exemplo, Spy x Family , que fala com um público mais familiar, temos também o Bananya ."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Visitamos a feira de B2B realizada em São Paulo, que teve a participação de empresas e licenciantes do setor."
-          ],
-          "bullets": [
-            "Visitamos a feira de B2B realizada em São Paulo, que teve a participação de empresas e licenciantes do setor.",
-            "Quando alguma área da cultura pop começa a ter mais destaque entre os fãs, um dos movimentos naturais é o aumento de produtos disponíveis para compra.",
-            "Isso aconteceu no universo dos jogos, dos super-heróis, e segue agora em alta no universo dos animês e mangás.."
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "Isso aconteceu no universo dos jogos, dos super-heróis, e segue agora em alta no universo dos animês e mangás..",
-            "Prova disso é a presença significativa de tais propriedades intelectuais na LicensingCon Latam 2026 , evento de negócios realizado este mês em São Paulo.",
-            "A convite da Angelotti Licensing , o JBox esteve no primeiro dia do evento, que contou com empresas conhecidas por grandes obras no segmento dos animês e licenciantes nacionais dispostos a viabilizar cada vez mais itens físicos e experiências no Brasil..",
-            "Existem alguns fatores que contribuíram para alta de consumo de animês e mangás nos últimos anos, desde questões geracionais, até uma mudança nos hábitos ligados à cultura pop, como a pandemia de COVID-19 e a diminuição do interesse geral em filmes de super-heróis (ao menos em grande quantidade)..",
-            "Luiz Angelotti , CEO da Angelotti Licensing & Entertainment Business , começou a observar uma virada desde meados de 2018, com o lançamento nos cinemas de Dragon Ball Super: Broly (que chegou ao Brasil em janeiro de 2019)..",
-            "Angelotti também afirma que uma grande vantagem do universo de animês para os varejistas interessados em vender produtos é que há uma faixa grande de idade para trabalhar:.",
-            "E isso abriu a possibilidade que novos animês entrem no mercado, como Hunter x Hunter , Dan Dan Dan , Jojo’s Bizarre Adventure , Bleach , Death Note .”."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "E Claudia Archela , sócia-diretora da empresa, repete o mesmo argumento: atualmente os animês alcançam um público mais abrangente, embora ainda existam algumas obras preferidas.."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "Visitamos a feira de B2B realizada em São Paulo, que teve a participação de empresas e licenciantes do setor.",
-            "Quando alguma área da cultura pop começa a ter mais destaque entre os fãs, um dos movimentos naturais é o aumento de produtos disponíveis para compra.",
-            "“Esse filme chamou a atenção do mercado para o fato de que o público de animê não era necessariamente somente o público otaku, mas também a nomenclatura ‘geek’ englobava esse público de maneira mais abrangente .",
-            "Com a pandemia, o consumo de Naruto , Dragon Ball e One Piece teve uma explosão.",
-            "Em 2022 a gente teve Naruto em praticamente todas as empresas licenciadas [da Angelotti], e ele era o nº 1 em vendas.",
-            "E Dragon Ball e One Piece estavam sempre entre os cinco mais vendidos.",
-            "Junto a eles nós tínhamos o Spider-Man , Superman , heróis mais tradicionais e tudo o mais.”.",
-            "“Você começa dos seis anos e vai até os 40."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "A mesma URL é atualizada quando surgem fatos relevantes adicionais, evitando várias matérias rasas sobre o mesmo assunto."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/18/licensingcon-latam-2026-mostra-interesse-das-marcas-em-animes-e-planos-de-longo-prazo",
-          "publishedAt": "2026-08-18T19:35:12.000Z",
-          "author": "Equipe JBox"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 531,
-      "qualityScore": 0.91,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 22,
-        "sections": 5,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox-licensingcon-anime",
-      "slug": "licensingcon-latam-mostra-crescimento-de-animes-no-mercado-brasileiro-jbox-licensing",
-      "source": "JBox",
-      "sourceType": "JBOX_ANIME",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "LicensingCon Latam mostra crescimento de animes no mercado brasileiro",
-      "summary": "Empresas presentes na LicensingCon Latam 2026 destacaram o avanço de marcas de anime no mercado brasileiro. Naruto, Dragon Ball e One Piece continuam entre as propriedades mais procuradas, enquanto outras franquias ganham espaço.",
-      "url": "https://www.jbox.com.br/2026/08/18/licensingcon-latam-2026-mostra-interesse-das-marcas-em-animes-e-planos-de-longo-prazo/",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/18/licensingcon-latam-2026-mostra-interesse-das-marcas-em-animes-e-planos-de-longo-prazo/",
-      "image": "",
-      "mediaQuery": "Naruto",
-      "mediaType": "anime",
-      "publishedAt": "2026-08-18T19:35:00.000Z",
-      "updatedAt": "2026-08-18T19:35:00.000Z",
-      "expiresAt": "2026-08-25T19:35:00.000Z",
-      "category": "Em alta",
-      "eventType": "TRENDING",
-      "facts": [
-        "Empresas de licenciamento apontaram crescimento do interesse por marcas de anime no Brasil.",
-        "Naruto, Dragon Ball e One Piece seguem entre as franquias mais procuradas.",
-        "Outras propriedades japonesas aparecem com mais frequência em negociações e produtos."
-      ],
-      "contentSections": [
-        {
-          "heading": "O cenário",
-          "paragraphs": [
-            "A feira B2B reforçou a expansão de propriedades de anime em licenciamento, produtos e ativações no Brasil."
-          ]
-        },
-        {
-          "heading": "Marcas em destaque",
-          "paragraphs": [
-            "Franquias consolidadas seguem fortes, enquanto títulos mais recentes ganham espaço em planos de médio prazo."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Novos licenciamentos, produtos e iniciativas voltadas ao mercado brasileiro podem ser relacionados a esta cobertura."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/18/licensingcon-latam-2026-mostra-interesse-das-marcas-em-animes-e-planos-de-longo-prazo/",
-          "publishedAt": "2026-08-18T19:35:00.000Z"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 190,
-      "qualityScore": 0.76,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 3,
-        "sections": 3,
-        "sourceCount": 1,
-        "ingestMode": "recovery-seed"
       }
     }
   ]
