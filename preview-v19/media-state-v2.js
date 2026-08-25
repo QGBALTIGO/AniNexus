@@ -212,9 +212,12 @@
     let m=seed,total=Math.max(0,Number(seed?.episodes)||0);
     const existing=get(n),hadSavedState=!!existing.status,d={...existing};
     if(d.status==='COMPLETED'&&total)d.progress=total;
-    let showAll=false;
+    let showAll=false,editing=false;
     layer=document.createElement('div');layer.className='nx20-media-layer';document.body.append(layer);document.body.classList.add('modal-open','nx20-media-open');
     const ownedLayer=layer;
+    /* Do not replace controls while a pointer or keyboard action is in flight. */
+    ownedLayer.addEventListener('pointerdown',()=>{editing=true},true);
+    ownedLayer.addEventListener('keydown',()=>{editing=true},true);
 
     function feedbackHTML(){const x=FEEDBACK[d.status];if(!x)return'';return x.items.map(([emoji,label],i)=>`<button type="button" class="nx20-reaction ${d.reaction===label?'active':''} ${i>=8&&!showAll?'extra':''}" data-nx20-reaction="${esc(label)}"><span>${emoji}</span>${esc(label)}</button>`).join('')}
     function html(){
@@ -224,13 +227,13 @@
     function render(){if(layer!==ownedLayer)return;layer.innerHTML=html();bind()}
     function bind(){
       layer.querySelectorAll('[data-nx20-close]').forEach(b=>b.onclick=close);
-      layer.querySelectorAll('[data-nx20-status]').forEach(b=>b.onclick=()=>{adapt(d,b.dataset.nx20Status,total);render()});
-      layer.querySelectorAll('[data-nx20-reaction]').forEach(b=>b.onclick=()=>{d.reaction=d.reaction===b.dataset.nx20Reaction?'':b.dataset.nx20Reaction;render()});
-      layer.querySelector('[data-nx20-more]')?.addEventListener('click',()=>{showAll=!showAll;render()});
-      const input=layer.querySelector('[data-nx20-progress]');if(input)input.onchange=()=>{d.progress=Math.max(0,Math.min(total||9999,Number(input.value)||0));const r=rules(d,total);if(!r.score)d.score=null;if(!r.feedback&&d.status!=='DROPPED')d.reaction='';render()};
-      layer.querySelectorAll('[data-nx20-step]').forEach(b=>b.onclick=()=>{d.progress=Math.max(0,Math.min(total||9999,(Number(d.progress)||0)+Number(b.dataset.nx20Step)));const r=rules(d,total);if(!r.score)d.score=null;if(!r.feedback&&d.status!=='DROPPED')d.reaction='';render()});
-      const slider=layer.querySelector('[data-nx20-score]');if(slider)slider.oninput=()=>{d.score=Number(slider.value);const o=layer.querySelector('.nx20-rating output');if(o)o.textContent=String(d.score).replace('.0','')};
-      layer.querySelector('[data-nx20-clear-score]')?.addEventListener('click',()=>{d.score=null;render()});
+      layer.querySelectorAll('[data-nx20-status]').forEach(b=>b.onclick=()=>{editing=true;adapt(d,b.dataset.nx20Status,total);render()});
+      layer.querySelectorAll('[data-nx20-reaction]').forEach(b=>b.onclick=()=>{editing=true;d.reaction=d.reaction===b.dataset.nx20Reaction?'':b.dataset.nx20Reaction;render()});
+      layer.querySelector('[data-nx20-more]')?.addEventListener('click',()=>{editing=true;showAll=!showAll;render()});
+      const input=layer.querySelector('[data-nx20-progress]');if(input)input.onchange=()=>{editing=true;d.progress=Math.max(0,Math.min(total||9999,Number(input.value)||0));const r=rules(d,total);if(!r.score)d.score=null;if(!r.feedback&&d.status!=='DROPPED')d.reaction='';render()};
+      layer.querySelectorAll('[data-nx20-step]').forEach(b=>b.onclick=()=>{editing=true;d.progress=Math.max(0,Math.min(total||9999,(Number(d.progress)||0)+Number(b.dataset.nx20Step)));const r=rules(d,total);if(!r.score)d.score=null;if(!r.feedback&&d.status!=='DROPPED')d.reaction='';render()});
+      const slider=layer.querySelector('[data-nx20-score]');if(slider)slider.oninput=()=>{editing=true;d.score=Number(slider.value);const o=layer.querySelector('.nx20-rating output');if(o)o.textContent=String(d.score).replace('.0','')};
+      layer.querySelector('[data-nx20-clear-score]')?.addEventListener('click',()=>{editing=true;d.score=null;render()});
       layer.querySelector('[data-nx20-remove]')?.addEventListener('click',()=>{persistState(n,{},total);close()});
       layer.querySelector('[data-nx20-save]')?.addEventListener('click',()=>{if(!d.status)return;persistState(n,d,total);close()});
     }
@@ -238,7 +241,9 @@
 
     void media(n).then(fresh=>{
       if(!fresh||layer!==ownedLayer)return;
-      m=fresh;total=Math.max(0,Number(fresh?.episodes)||0);
+      m=fresh;
+      if(editing)return;
+      total=Math.max(0,Number(fresh?.episodes)||0);
       if(d.status==='COMPLETED'&&total)d.progress=total;
       render();
     });
