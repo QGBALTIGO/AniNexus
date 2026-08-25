@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /*p=%2Fminha-conta
+Disallow: /*p=%2Fmeus-animes
+Disallow: /*p=%2Flogin
+Disallow: /*p=%2Fcriar-conta
+Sitemap: https://qgbaltigo.github.io/AniNexus/sitemap.xml

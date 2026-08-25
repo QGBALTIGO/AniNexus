@@ -1,33 +1,233 @@
 'use strict';
 (() => {
-  if(window.__NX38_AUTH__)return;window.__NX38_AUTH__=true;
-  const app=document.querySelector('#app');if(!app)return;
-  const IS_PAGES=location.hostname.endsWith('github.io'),BASE=IS_PAGES?'/AniNexus':'',BUILD='38.0.0';
-  let currentUser=null,loadingUser=null,rendering=false;
-  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  function route(){try{const u=new URL(location.href),p=u.searchParams.get('p');if(p)return p.split('?')[0].replace(/\/+$/,'')||'/';let x=u.pathname;if(IS_PAGES)x=x.replace(/^\/AniNexus/,'')||'/';return x.replace(/\/+$/,'')||'/'}catch{return'/'}}
-  const owns=()=>['/login','/criar-conta','/minha-conta'].includes(route());
-  function url(path){return IS_PAGES?`${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`:path}
-  function go(path,replace=false){if(IS_PAGES){location.assign(url(path));return}history[replace?'replaceState':'pushState']({},'',path);render()}
-  async function api(path,options={}){
-    const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),12000);
-    try{const r=await fetch(path,{credentials:'same-origin',cache:'no-store',...options,signal:ctl.signal,headers:{accept:'application/json',...(options.body?{'content-type':'application/json'}:{}),...(options.headers||{})}});let data={};try{data=await r.json()}catch{}if(!r.ok){const e=new Error(data?.error||`HTTP_${r.status}`);e.status=r.status;e.code=data?.error;throw e}return data}finally{clearTimeout(timer)}
+  if (window.__ANINEXUS_AUTH_V38__) return;
+  window.__ANINEXUS_AUTH_V38__ = true;
+  const app = document.querySelector('#app');
+  if (!app) return;
+  const config = window.__ANINEXUS_CONFIG__ || {};
+  const IS_PAGES = location.hostname.endsWith('github.io');
+  const BASE = IS_PAGES ? '/AniNexus' : '';
+  const API_ORIGIN = String(config.apiOrigin || '').replace(/\/+$/, '');
+  const PUBLISHABLE_KEY = String(config.clerkPublishableKey || '');
+  const ENABLED = config.authEnabled === true && /^https:\/\//.test(API_ORIGIN) && /^pk_(?:test|live)_/.test(PUBLISHABLE_KEY);
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+  const routeUrl = path => IS_PAGES ? `${BASE}/?build=40.0.0&p=${encodeURIComponent(path)}` : path;
+  const go = (path, replace = false) => location[replace ? 'replace' : 'assign'](routeUrl(path));
+  let clerkPromise = null;
+  let apiUser = null;
+
+  function clerkDomain() {
+    try { return atob(PUBLISHABLE_KEY.split('_')[2]).slice(0, -1); } catch { return ''; }
   }
-  function errorText(err){if(err?.status===429)return'Tentativas demais em pouco tempo. Aguarde um minuto e tente novamente.';return({INVALID_CREDENTIALS:'E-mail/usuário ou senha incorretos.',ACCOUNT_UNAVAILABLE:'Esse e-mail ou nome de usuário já está em uso.',INVALID_INPUT:'Confira os campos e tente novamente.',INVALID_ORIGIN:'A sessão de segurança expirou. Atualize a página e tente de novo.',INTERNAL_ERROR:'O AniNexus teve um problema interno. Tente novamente em instantes.'})[err?.code]||(/abort/i.test(err?.name||'')?'A conexão demorou demais. Verifique sua internet e tente novamente.':'Não foi possível concluir agora. Tente novamente.')}
-  async function getUser(force=false){if(IS_PAGES)return null;if(currentUser&&!force)return currentUser;if(loadingUser&&!force)return loadingUser;loadingUser=api('/api/me').then(x=>currentUser=x?.user||null).catch(()=>currentUser=null).finally(()=>loadingUser=null);return loadingUser}
-  function activate(){document.body.classList.remove('nx35-news-active','nx35-home-active','aqx-home-active');document.body.classList.add('nx38-auth-active');document.querySelectorAll('[data-nav]').forEach(a=>a.classList.remove('active'))}
-  function story(mode){const create=mode==='register';return `<section class="nx38-auth-story"><a class="nx38-auth-brand" href="${url('/')}" data-auth-home><img src="${BASE}/assets/logo.png" alt=""><strong>AniNexus</strong></a><div class="nx38-auth-copy"><span class="nx38-auth-kicker">SUA CONTA ANINEXUS</span><h1>${create?'Monte sua jornada.<br><em>Do seu jeito.</em>':'Seu universo<br><em>continua aqui.</em>'}</h1><p>${create?'Uma conta conecta sua lista, favoritos, progresso, comunidade, notícias e conquistas em todos os seus dispositivos.':'Entre para continuar acompanhando episódios, listas, favoritos, notícias e conversas sem perder o que já construiu.'}</p><div class="nx38-auth-benefits"><div class="nx38-auth-benefit"><i>✓</i><div><strong>Uma lista só</strong><span>Assistindo, concluídos, pausados e quero ver.</span></div></div><div class="nx38-auth-benefit"><i>✦</i><div><strong>Experiência pessoal</strong><span>Home e recomendações evoluem com você.</span></div></div><div class="nx38-auth-benefit"><i>●</i><div><strong>Comunidade</strong><span>Impressões, discussões e atividades ligadas aos títulos.</span></div></div></div></div><span class="nx38-auth-footnote">AniNexus · feito para acompanhar anime e mangá em português.</span></section>`}
-  function passwordField(name='password',label='Senha',autocomplete='current-password'){return `<div class="nx38-auth-field"><label for="nx38-${name}">${label}</label><div class="nx38-auth-input-wrap"><input class="nx38-auth-input" id="nx38-${name}" name="${name}" type="password" autocomplete="${autocomplete}" minlength="10" maxlength="128" required><button class="nx38-password-toggle" type="button" data-toggle-password="nx38-${name}" aria-label="Mostrar senha">MOSTRAR</button></div></div>`}
-  function authCard(mode){const create=mode==='register';return `<section class="nx38-auth-panel"><div class="nx38-auth-card"><header class="nx38-auth-card-head"><small>${create?'CRIAR CONTA':'BEM-VINDO DE VOLTA'}</small><h2>${create?'Comece no AniNexus':'Entre na sua conta'}</h2><p>${create?'Leva menos de um minuto. Seus dados de acesso ficam protegidos e a senha nunca é armazenada em texto puro.':'Use seu e-mail ou nome de usuário para continuar de onde parou.'}</p></header>${IS_PAGES?'<div class="nx38-pages-note">O GitHub Pages é apenas o preview estático. Login e criação de conta funcionam no servidor oficial do AniNexus.</div>':''}<form class="nx38-auth-form" id="nx38AuthForm" novalidate>${create?`<div class="nx38-auth-field"><label for="nx38-username">Nome de usuário</label><input class="nx38-auth-input" id="nx38-username" name="username" autocomplete="username" minlength="3" maxlength="30" pattern="[A-Za-zÀ-ÿ0-9_.-]+" placeholder="Como você aparecerá na comunidade" required></div><div class="nx38-auth-field"><label for="nx38-email">E-mail</label><input class="nx38-auth-input" id="nx38-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="voce@exemplo.com" required></div>`:`<div class="nx38-auth-field"><label for="nx38-login">E-mail ou usuário</label><input class="nx38-auth-input" id="nx38-login" name="login" autocomplete="username" maxlength="254" required></div>`}${passwordField('password','Senha',create?'new-password':'current-password')}${create?`${passwordField('confirm','Confirmar senha','new-password')}<div class="nx38-password-rules" id="nx38Rules"><span data-rule="length">10 ou mais caracteres</span><span data-rule="letter">Pelo menos uma letra</span><span data-rule="number">Pelo menos um número</span><span data-rule="match">As duas senhas coincidem</span></div><label class="nx38-auth-check"><input type="checkbox" name="terms" required><span>Li e concordo com os <a class="nx38-auth-link" href="${url('/termos-de-uso')}">Termos de Serviço</a> e a <a class="nx38-auth-link" href="${url('/politica-de-privacidade')}">Política de Privacidade</a>.</span></label>`:''}<div class="nx38-auth-error" id="nx38AuthError" role="alert" aria-live="polite"></div><button class="nx38-auth-submit" type="submit" ${IS_PAGES?'disabled':''}><span>${create?'Criar minha conta':'Entrar'}</span></button></form><div class="nx38-auth-switch">${create?'Já tem uma conta?':'Ainda não tem conta?'} <button type="button" class="nx38-auth-link" data-auth-switch="${create?'login':'register'}">${create?'Entrar':'Criar conta'}</button></div></div></section>`}
-  function setError(msg=''){const el=document.querySelector('#nx38AuthError');if(!el)return;el.textContent=msg;el.classList.toggle('show',!!msg)}
-  function setPending(on,label){const btn=document.querySelector('.nx38-auth-submit');if(!btn)return;btn.disabled=on||IS_PAGES;btn.innerHTML=on?'<i class="nx38-spin"></i><span>Processando…</span>':`<span>${label}</span>`}
-  function updateRules(){const p=document.querySelector('#nx38-password')?.value||'',c=document.querySelector('#nx38-confirm')?.value||'';const state={length:p.length>=10,letter:/[A-Za-zÀ-ÿ]/.test(p),number:/\d/.test(p),match:p.length>0&&p===c};for(const [k,v] of Object.entries(state))document.querySelector(`[data-rule="${k}"]`)?.classList.toggle('ok',v);return Object.values(state).every(Boolean)}
-  function wireForm(mode){document.querySelectorAll('[data-toggle-password]').forEach(b=>b.onclick=()=>{const input=document.getElementById(b.dataset.togglePassword);if(!input)return;const show=input.type==='password';input.type=show?'text':'password';b.textContent=show?'OCULTAR':'MOSTRAR';b.setAttribute('aria-label',show?'Ocultar senha':'Mostrar senha')});document.querySelectorAll('[data-auth-switch]').forEach(b=>b.onclick=()=>go(b.dataset.authSwitch==='login'?'/login':'/criar-conta'));document.querySelector('[data-auth-home]')?.addEventListener('click',e=>{if(IS_PAGES)return;e.preventDefault();location.assign('/')});if(mode==='register'){document.querySelector('#nx38-password')?.addEventListener('input',updateRules);document.querySelector('#nx38-confirm')?.addEventListener('input',updateRules)}const f=document.querySelector('#nx38AuthForm');if(!f||IS_PAGES)return;f.onsubmit=async e=>{e.preventDefault();setError('');if(!f.reportValidity())return;if(mode==='register'&&!updateRules()){setError('A senha ainda não atende aos requisitos.');return}const fd=new FormData(f),payload=mode==='login'?{login:String(fd.get('login')||'').trim(),password:String(fd.get('password')||'')}:{username:String(fd.get('username')||'').trim(),email:String(fd.get('email')||'').trim(),password:String(fd.get('password')||'')};setPending(true,mode==='login'?'Entrar':'Criar minha conta');try{const data=await api(`/api/auth/${mode}`,{method:'POST',body:JSON.stringify(payload)});currentUser=data.user||null;syncHeader();location.assign('/')}catch(err){setError(errorText(err));setPending(false,mode==='login'?'Entrar':'Criar minha conta')}}}
-  async function renderAuth(mode){activate();document.title=`${mode==='login'?'Entrar':'Criar conta'} | AniNexus`;const user=await getUser();if(user){go('/minha-conta',true);return}app.innerHTML=`<main class="nx38-auth-page">${story(mode)}${authCard(mode)}</main>`;wireForm(mode);dispatchEvent(new CustomEvent('aninexus:auth-v38-ready'))}
-  async function renderAccount(){activate();document.title='Minha conta | AniNexus';if(IS_PAGES){app.innerHTML='<main class="nx38-account-page"><div class="nx38-account-shell"><div class="nx38-pages-note">A conta real está disponível no servidor oficial do AniNexus.</div></div></main>';dispatchEvent(new CustomEvent('aninexus:auth-v38-ready'));return}const user=await getUser(true);if(!user){go('/login',true);return}app.innerHTML='<main class="nx38-account-page"><div class="nx38-account-shell"><div class="nx38-auth-card" style="margin:auto"><i class="nx38-spin"></i></div></div></main>';let list=[],follows=[],notes=[];try{const r=await Promise.allSettled([api('/api/me/list'),api('/api/me/follows'),api('/api/me/notifications?limit=100')]);list=r[0].status==='fulfilled'?r[0].value.items||[]:[];follows=r[1].status==='fulfilled'?r[1].value.items||[]:[];notes=r[2].status==='fulfilled'?r[2].value.items||[]:[]}catch{}const initial=String(user.username||'?').trim().charAt(0).toUpperCase(),watching=list.filter(x=>x.status==='CURRENT').length,done=list.filter(x=>x.status==='COMPLETED').length,unread=notes.filter(x=>!x.read_at).length;app.innerHTML=`<main class="nx38-account-page"><div class="nx38-account-shell"><header class="nx38-account-head"><div class="nx38-account-person"><div class="nx38-account-avatar">${user.avatarUrl?`<img src="${esc(user.avatarUrl)}" alt="">`:esc(initial)}</div><div><h1>${esc(user.username)}</h1><p>${esc(user.email)}</p></div></div><button class="nx38-account-logout" data-logout>Sair da conta</button></header><div class="nx38-account-grid"><div class="nx38-account-stat"><small>ASSISTINDO</small><strong>${watching}</strong></div><div class="nx38-account-stat"><small>CONCLUÍDOS</small><strong>${done}</strong></div><div class="nx38-account-stat"><small>SEGUINDO</small><strong>${follows.length}</strong></div><div class="nx38-account-stat"><small>NOTIFICAÇÕES</small><strong>${unread}</strong></div></div><section class="nx38-account-info"><h2>Conta</h2><dl><dt>Nome de usuário</dt><dd>${esc(user.username)}</dd><dt>E-mail</dt><dd>${esc(user.email)}</dd><dt>Verificação</dt><dd>${user.emailVerified?'E-mail verificado':'Verificação de e-mail ainda não concluída'}</dd><dt>Membro desde</dt><dd>${user.createdAt?new Intl.DateTimeFormat('pt-BR',{dateStyle:'long'}).format(new Date(user.createdAt)):'—'}</dd></dl></section></div></main>`;document.querySelector('[data-logout]')?.addEventListener('click',async e=>{e.currentTarget.disabled=true;try{await api('/api/auth/logout',{method:'POST',body:'{}'})}catch{}currentUser=null;syncHeader();location.assign('/')});dispatchEvent(new CustomEvent('aninexus:auth-v38-ready'))}
-  async function render(){if(rendering||!owns())return false;rendering=true;try{const p=route();if(p==='/login')await renderAuth('login');else if(p==='/criar-conta')await renderAuth('register');else await renderAccount();return true}finally{rendering=false}}
-  async function syncHeader(){if(IS_PAGES)return;const user=await getUser();const actions=document.querySelector('.top-actions');if(!actions)return;actions.querySelector('.nx38-account-chip')?.remove();const login=actions.querySelector('[data-action="login"]'),register=actions.querySelector('[data-action="register"]');if(user){if(login)login.hidden=true;if(register)register.hidden=true;const b=document.createElement('button');b.className='nx38-account-chip';b.type='button';b.innerHTML=`<i>${esc(String(user.username||'?').charAt(0).toUpperCase())}</i><span>${esc(user.username)}</span>`;b.onclick=()=>go('/minha-conta');actions.insertBefore(b,actions.querySelector('.menu-btn')||null)}else{if(login)login.hidden=false;if(register)register.hidden=false}}
-  document.addEventListener('click',e=>{const b=e.target.closest?.('[data-action="login"],[data-action="register"]');if(!b)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();go(b.dataset.action==='login'?'/login':'/criar-conta')},true);
-  addEventListener('popstate',()=>setTimeout(render,0));
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{syncHeader();render()},{once:true});else{syncHeader();render()}
+  const loadScript = (src, attributes = {}) => new Promise((resolve, reject) => {
+    const existing = [...document.scripts].find(node => node.src === src);
+    if (existing?.dataset.loaded === 'true') return resolve(existing);
+    const script = existing || document.createElement('script');
+    script.src = src; script.async = true; script.crossOrigin = 'anonymous';
+    for (const [name, value] of Object.entries(attributes)) script.setAttribute(name, value);
+    script.addEventListener('load', () => { script.dataset.loaded = 'true'; resolve(script); }, { once: true });
+    script.addEventListener('error', () => reject(new Error('AUTH_SDK_UNAVAILABLE')), { once: true });
+    if (!existing) document.head.append(script);
+  });
+  async function loadClerk() {
+    if (!ENABLED) return null;
+    if (clerkPromise) return clerkPromise;
+    clerkPromise = (async () => {
+      const domain = clerkDomain();
+      if (!/^[a-z0-9.-]+$/i.test(domain)) throw new Error('AUTH_CONFIGURATION_INVALID');
+      await loadScript(`https://${domain}/npm/@clerk/clerk-js@6/dist/clerk.browser.js`, { 'data-clerk-publishable-key': PUBLISHABLE_KEY });
+      if (!window.Clerk) throw new Error('AUTH_SDK_UNAVAILABLE');
+      await window.Clerk.load({
+        signInFallbackRedirectUrl: routeUrl('/minha-conta'),
+        signUpFallbackRedirectUrl: routeUrl('/minha-conta'),
+      });
+      return window.Clerk;
+    })().catch(error => { clerkPromise = null; throw error; });
+    return clerkPromise;
+  }
+  async function api(path, options = {}) {
+    if (!ENABLED) throw Object.assign(new Error('AUTH_NOT_CONFIGURED'), { status: 503 });
+    const clerk = await loadClerk();
+    const token = await clerk?.session?.getToken();
+    if (!token) throw Object.assign(new Error('AUTH_REQUIRED'), { status: 401 });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), Number(options.timeout || 12_000));
+    try {
+      const response = await fetch(`${API_ORIGIN}${path}`, {
+        ...options,
+        signal: options.signal || controller.signal,
+        cache: 'no-store',
+        credentials: 'omit',
+        headers: { accept: 'application/json', authorization: `Bearer ${token}`, ...(options.body ? { 'content-type': 'application/json' } : {}), ...(options.headers || {}) },
+      });
+      if (response.status === 204) return null;
+      let body = {}; try { body = await response.json(); } catch {}
+      if (!response.ok) throw Object.assign(new Error(body?.error || `HTTP_${response.status}`), { status: response.status, code: body?.error, body });
+      return body;
+    } finally { clearTimeout(timeout); }
+  }
+  async function publicApi(path, options = {}) {
+    if (!ENABLED) throw Object.assign(new Error('API_NOT_CONFIGURED'), { status: 503 });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), Number(options.timeout || 12_000));
+    try {
+      const response = await fetch(`${API_ORIGIN}${path}`, {
+        ...options,
+        signal: options.signal || controller.signal,
+        cache: 'no-store',
+        credentials: 'omit',
+        headers: { accept: 'application/json', ...(options.headers || {}) },
+      });
+      if (response.status === 204) return null;
+      let body = {}; try { body = await response.json(); } catch {}
+      if (!response.ok) throw Object.assign(new Error(body?.error || `HTTP_${response.status}`), { status: response.status, body });
+      return body;
+    } finally { clearTimeout(timeout); }
+  }
+  async function getUser() {
+    const clerk = await loadClerk();
+    return clerk?.user || null;
+  }
+  async function signOut() {
+    const clerk = await loadClerk();
+    await clerk?.signOut({ redirectUrl: routeUrl('/') });
+  }
+  window.AniNexusAuth = Object.freeze({ enabled: ENABLED, ready: loadClerk, api, publicApi, getUser, signOut, apiOrigin: API_ORIGIN });
+
+  function activate() {
+    document.body.classList.remove('nx35-news-active', 'nx35-home-active', 'aqx-home-active');
+    document.body.classList.add('nx38-auth-active');
+    document.querySelectorAll('[data-nav]').forEach(link => link.classList.remove('active'));
+  }
+  function story(mode) {
+    const create = mode === 'register';
+    return `<section class="nx38-auth-story"><a class="nx38-auth-brand" href="${routeUrl('/')}" data-auth-home><img src="${BASE}/assets/logo.png" alt=""><strong>AniNexus</strong></a><div class="nx38-auth-copy"><span class="nx38-auth-kicker">SUA CONTA ANINEXUS</span><h1>${create ? 'Monte sua jornada.<br><em>Do seu jeito.</em>' : 'Seu universo<br><em>continua aqui.</em>'}</h1><p>${create ? 'Uma conta conecta lista, favoritos, progresso, comunidade, notícias e preferências em todos os seus dispositivos.' : 'Entre para continuar acompanhando episódios, listas, favoritos, notícias e conversas sem perder o que você construiu.'}</p><div class="nx38-auth-benefits"><div class="nx38-auth-benefit"><i>✓</i><div><strong>Uma lista só</strong><span>Assistindo, concluídos, pausados e quero ver.</span></div></div><div class="nx38-auth-benefit"><i>✦</i><div><strong>Proteção real</strong><span>E-mail verificado, recuperação e sessões gerenciadas pelo Clerk.</span></div></div><div class="nx38-auth-benefit"><i>●</i><div><strong>Comunidade</strong><span>Impressões, discussões e atividades ligadas aos títulos.</span></div></div></div></div><span class="nx38-auth-footnote">AniNexus · feito para acompanhar anime e mangá em português.</span></section>`;
+  }
+  function unavailableCard() {
+    return `<section class="nx38-auth-panel"><div class="nx38-auth-card nx38-auth-unavailable" role="status"><header class="nx38-auth-card-head"><small>CONTA PROTEGIDA</small><h2>Ativação segura em andamento</h2><p>A navegação pública e os dados deste dispositivo continuam funcionando. Login e sincronização serão liberados somente quando a API possuir HTTPS válido e as chaves públicas estiverem configuradas.</p></header><div class="nx38-pages-note">Nenhum dado privado será enviado por uma conexão HTTP insegura.</div><a class="nx38-auth-submit" href="${routeUrl('/')}"><span>Continuar como visitante</span></a></div></section>`;
+  }
+  function clerkCard(mode) {
+    return `<section class="nx38-auth-panel"><div class="nx38-auth-card nx38-clerk-card"><header class="nx38-auth-card-head"><small>${mode === 'register' ? 'CRIAR CONTA' : 'BEM-VINDO DE VOLTA'}</small><h2>${mode === 'register' ? 'Comece no AniNexus' : 'Entre na sua conta'}</h2><p>Conta verificada, recuperação de acesso e gerenciamento seguro de sessões.</p></header><div class="nx38-clerk-loading" id="nx38ClerkLoading" role="status">Preparando acesso seguro…</div><div id="nx38ClerkMount"></div><div class="nx38-auth-error" id="nx38AuthError" role="alert" aria-live="polite"></div></div></section>`;
+  }
+  async function renderAuth(mode) {
+    activate();
+    document.title = `${mode === 'login' ? 'Entrar' : 'Criar conta'} | AniNexus`;
+    if (!ENABLED) {
+      app.innerHTML = `<main class="nx38-auth-page">${story(mode)}${unavailableCard()}</main>`;
+      dispatchEvent(new CustomEvent('aninexus:auth-v38-ready'));
+      return;
+    }
+    app.innerHTML = `<main class="nx38-auth-page">${story(mode)}${clerkCard(mode)}</main>`;
+    try {
+      const clerk = await loadClerk();
+      if (clerk.user) { go('/minha-conta', true); return; }
+      const mount = document.querySelector('#nx38ClerkMount');
+      const props = { routing: 'virtual', fallbackRedirectUrl: routeUrl('/minha-conta'), signUpUrl: routeUrl('/criar-conta'), signInUrl: routeUrl('/login') };
+      if (mode === 'register') clerk.mountSignUp(mount, props); else clerk.mountSignIn(mount, props);
+      document.querySelector('#nx38ClerkLoading')?.remove();
+    } catch {
+      const message = document.querySelector('#nx38AuthError');
+      if (message) message.textContent = 'Não foi possível abrir o acesso seguro agora. Tente novamente em instantes.';
+      document.querySelector('#nx38ClerkLoading')?.remove();
+    }
+    dispatchEvent(new CustomEvent('aninexus:auth-v38-ready'));
+  }
+
+  function localPayload() {
+    const read = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key) || 'null') ?? fallback; } catch { return fallback; } };
+    const state = { ...read('aninexus:mediaState:v1', {}), ...read('aninexus:mediaState:v2', {}) };
+    const favorites = [...new Set((read('aninexus:favorites', []) || []).map(Number).filter(Number.isSafeInteger))];
+    const states = Object.entries(state).map(([mediaId, value]) => ({ mediaId: Number(mediaId), status: value?.status, score: value?.score == null ? null : Number(value.score), progress: Math.max(0, Number(value?.progress) || 0), updatedAt: Math.max(1, Number(value?.updatedAt) || Date.now()) })).filter(item => Number.isSafeInteger(item.mediaId) && ['PLANNING', 'CURRENT', 'COMPLETED', 'PAUSED', 'DROPPED'].includes(item.status));
+    const watched = (read('aninexus:watchedEpisodes:v1', []) || []).map(item => ({ mediaId: Number(item.mediaId), episode: Number(item.episode), watchedAt: Number(item.watchedAt) || Date.now() })).filter(item => Number.isSafeInteger(item.mediaId) && Number.isSafeInteger(item.episode) && item.mediaId > 0 && item.episode > 0);
+    return { sourceVersion: 'browser-v2', favorites, states, watched };
+  }
+  const hasLocalData = payload => payload.favorites.length || payload.states.length || payload.watched.length;
+  function importCard(payload) {
+    const count = payload.favorites.length + payload.states.length + payload.watched.length;
+    return `<section class="nx38-account-info nx38-import-card" id="nx38ImportCard"><h2>Levar dados deste dispositivo para sua conta?</h2><p>Encontramos ${count} ${count === 1 ? 'registro local' : 'registros locais'}. A importação une os dados sem duplicar e preserva a alteração mais recente. Nada será apagado deste navegador.</p><div class="nx38-account-actions"><button type="button" data-import-local>Importar agora</button><button type="button" data-ignore-local>Agora não</button></div><p class="nx38-import-feedback" role="status" aria-live="polite"></p></section>`;
+  }
+  async function downloadExport(button) {
+    button.disabled = true;
+    try {
+      const data = await api('/api/me/export');
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const href = URL.createObjectURL(blob), link = document.createElement('a');
+      link.href = href; link.download = `aninexus-${new Date().toISOString().slice(0, 10)}.json`; document.body.append(link); link.click(); link.remove(); URL.revokeObjectURL(href);
+    } catch { button.closest('.nx38-account-info')?.querySelector('[role="status"]')?.replaceChildren('Não foi possível exportar agora. Tente novamente.'); }
+    finally { button.disabled = false; }
+  }
+  function deleteDialog() {
+    const dialog = document.createElement('div');
+    dialog.className = 'nx38-delete-layer'; dialog.setAttribute('role', 'dialog'); dialog.setAttribute('aria-modal', 'true'); dialog.setAttribute('aria-labelledby', 'nx38DeleteTitle');
+    dialog.innerHTML = `<div class="nx38-delete-card"><h2 id="nx38DeleteTitle">Excluir conta e dados</h2><p>Esta ação remove sua conta AniNexus e todos os dados associados. Ela não pode ser desfeita.</p><label for="nx38DeleteConfirm">Digite <strong>EXCLUIR</strong> para confirmar</label><input id="nx38DeleteConfirm" autocomplete="off"><div><button type="button" data-delete-cancel>Cancelar</button><button type="button" data-delete-confirm disabled>Excluir permanentemente</button></div><p role="alert"></p></div>`;
+    document.body.append(dialog); const input = dialog.querySelector('input'), confirm = dialog.querySelector('[data-delete-confirm]'); input.addEventListener('input', () => { confirm.disabled = input.value !== 'EXCLUIR'; });
+    dialog.querySelector('[data-delete-cancel]').onclick = () => dialog.remove();
+    confirm.onclick = async () => { confirm.disabled = true; try { await api('/api/me/account', { method: 'DELETE', body: JSON.stringify({ confirmation: 'EXCLUIR' }) }); await signOut(); } catch { dialog.querySelector('[role="alert"]').textContent = 'Não foi possível concluir a exclusão. Nenhum dado adicional foi removido.'; confirm.disabled = false; } };
+    input.focus();
+  }
+  async function renderAccount() {
+    activate(); document.title = 'Minha conta | AniNexus';
+    if (!ENABLED) { app.innerHTML = `<main class="nx38-account-page"><div class="nx38-account-shell">${unavailableCard()}</div></main>`; dispatchEvent(new CustomEvent('aninexus:auth-v38-ready')); return; }
+    app.innerHTML = '<main class="nx38-account-page"><div class="nx38-account-shell"><div class="nx38-auth-card" style="margin:auto"><i class="nx38-spin"></i><span class="sr-only">Carregando conta</span></div></div></main>';
+    try {
+      const clerk = await loadClerk(); if (!clerk.user) { go('/login', true); return; }
+      const [me, list, follows, notes, importStatus] = await Promise.all([api('/api/me'), api('/api/me/list'), api('/api/me/follows'), api('/api/me/notifications?limit=100'), api('/api/me/import-status')]);
+      apiUser = me?.user || null; if (!apiUser) throw new Error('AUTH_REQUIRED');
+      const items = list?.items || [], notifications = notes?.items || [], payload = localPayload(), showImport = !importStatus?.imported && hasLocalData(payload) && localStorage.getItem('aninexus:local-import:ignored') !== 'true';
+      const initial = String(apiUser.displayName || apiUser.username || '?').trim().charAt(0).toUpperCase(), watching = items.filter(item => item.status === 'CURRENT').length, done = items.filter(item => item.status === 'COMPLETED').length, unread = notifications.filter(item => !item.read_at).length;
+      app.innerHTML = `<main class="nx38-account-page"><div class="nx38-account-shell"><header class="nx38-account-head"><div class="nx38-account-person"><div class="nx38-account-avatar">${apiUser.avatarUrl ? `<img src="${esc(apiUser.avatarUrl)}" alt="">` : esc(initial)}</div><div><h1>${esc(apiUser.displayName || apiUser.username)}</h1><p>${esc(apiUser.email)}</p></div></div><div class="nx38-account-head-actions"><button type="button" data-manage-account>Segurança e sessões</button><button class="nx38-account-logout" type="button" data-logout>Sair</button></div></header><div class="nx38-account-grid"><div class="nx38-account-stat"><small>ASSISTINDO</small><strong>${watching}</strong></div><div class="nx38-account-stat"><small>CONCLUÍDOS</small><strong>${done}</strong></div><div class="nx38-account-stat"><small>SEGUINDO</small><strong>${(follows?.items || []).length}</strong></div><div class="nx38-account-stat"><small>NOTIFICAÇÕES</small><strong>${unread}</strong></div></div>${showImport ? importCard(payload) : ''}<section class="nx38-account-info"><h2>Conta e privacidade</h2><dl><dt>Nome de exibição</dt><dd>${esc(apiUser.displayName || apiUser.username)}</dd><dt>E-mail</dt><dd>${esc(apiUser.email)}</dd><dt>Verificação</dt><dd>${apiUser.emailVerified ? 'E-mail verificado' : 'Verificação pendente'}</dd><dt>Privacidade</dt><dd>${esc(apiUser.privacy || 'public')}</dd><dt>Membro desde</dt><dd>${apiUser.createdAt ? new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' }).format(new Date(apiUser.createdAt)) : '—'}</dd></dl><div class="nx38-account-actions"><button type="button" data-export>Exportar meus dados</button><button type="button" class="danger" data-delete>Excluir conta</button></div><p role="status" aria-live="polite"></p></section></div></main>`;
+      document.querySelector('[data-manage-account]').onclick = () => clerk.openUserProfile();
+      document.querySelector('[data-logout]').onclick = async event => { event.currentTarget.disabled = true; await signOut(); };
+      document.querySelector('[data-export]').onclick = event => downloadExport(event.currentTarget);
+      document.querySelector('[data-delete]').onclick = deleteDialog;
+      const importButton = document.querySelector('[data-import-local]');
+      if (importButton) importButton.onclick = async () => { const feedback = document.querySelector('.nx38-import-feedback'); importButton.disabled = true; try { const result = await api('/api/me/import-local', { method: 'POST', body: JSON.stringify(payload), timeout: 20_000 }); localStorage.setItem('aninexus:local-import:completed', new Date().toISOString()); feedback.textContent = `${result.itemCount || 0} registros foram sincronizados. Os dados locais foram preservados.`; setTimeout(() => document.querySelector('#nx38ImportCard')?.remove(), 2200); } catch (error) { feedback.textContent = error.status === 409 ? 'Esta conta já recebeu uma importação inicial.' : 'A importação não foi concluída. Seus dados locais continuam intactos.'; importButton.disabled = false; } };
+      const ignore = document.querySelector('[data-ignore-local]'); if (ignore) ignore.onclick = () => { localStorage.setItem('aninexus:local-import:ignored', 'true'); document.querySelector('#nx38ImportCard')?.remove(); };
+    } catch (error) {
+      if (error.status === 401) { go('/login', true); return; }
+      app.innerHTML = `<main class="nx38-account-page"><div class="nx38-account-shell"><div class="nx38-pages-note">Não foi possível carregar sua conta agora. Seus dados locais foram preservados. <button type="button" data-retry-account>Tentar novamente</button></div></div></main>`;
+      document.querySelector('[data-retry-account]')?.addEventListener('click', () => location.reload());
+    }
+    dispatchEvent(new CustomEvent('aninexus:auth-v38-ready'));
+  }
+  async function syncHeader() {
+    const actions = document.querySelector('.top-actions'); if (!actions) return;
+    actions.querySelector('.nx38-account-chip')?.remove();
+    const login = actions.querySelector('[data-action="login"]'), register = actions.querySelector('[data-action="register"]');
+    if (!ENABLED) { if (login) login.hidden = false; if (register) register.hidden = false; return; }
+    try {
+      const user = await getUser();
+      if (user) {
+        if (login) login.hidden = true; if (register) register.hidden = true;
+        const button = document.createElement('button'); button.className = 'nx38-account-chip'; button.type = 'button'; button.setAttribute('aria-label', 'Abrir minha conta'); button.innerHTML = `<i>${user.imageUrl ? `<img src="${esc(user.imageUrl)}" alt="">` : esc(String(user.firstName || user.username || '?').charAt(0).toUpperCase())}</i><span>${esc(user.firstName || user.username || 'Minha conta')}</span>`; button.onclick = () => go('/minha-conta'); actions.insertBefore(button, actions.querySelector('.menu-btn') || null);
+      } else { if (login) login.hidden = false; if (register) register.hidden = false; }
+    } catch { if (login) login.hidden = false; if (register) register.hidden = false; }
+  }
+  window.AniNexusAuthV38 = { renderAuth, renderAccount, syncHeader, getUser, api };
+  function currentRoute() {
+    const url = new URL(location.href), requested = url.searchParams.get('p');
+    if (requested) return requested.split('?')[0].replace(/\/+$/, '') || '/';
+    let path = location.pathname;
+    if (IS_PAGES) path = path.replace(/^\/AniNexus/, '') || '/';
+    return path.replace(/\/+$/, '') || '/';
+  }
+  function mountRoute() {
+    const path = currentRoute();
+    if (path === '/login') return renderAuth('login');
+    if (path === '/criar-conta') return renderAuth('register');
+    if (path === '/minha-conta') return renderAccount();
+    document.body.classList.remove('nx38-auth-active');
+  }
+  const authPush = history.pushState.bind(history), authReplace = history.replaceState.bind(history);
+  history.pushState = function (...args) { const result = authPush(...args); queueMicrotask(mountRoute); return result; };
+  history.replaceState = function (...args) { const result = authReplace(...args); queueMicrotask(mountRoute); return result; };
+  addEventListener('popstate', () => queueMicrotask(mountRoute));
+  document.addEventListener('click', event => {
+    const action = event.target.closest('[data-action]')?.dataset.action;
+    if (action !== 'login' && action !== 'register') return;
+    event.preventDefault(); event.stopImmediatePropagation();
+    location.assign(routeUrl(action === 'login' ? '/login' : '/criar-conta'));
+  }, true);
+  syncHeader();
+  setTimeout(mountRoute, 0);
 })();

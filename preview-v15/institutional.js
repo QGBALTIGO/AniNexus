@@ -120,7 +120,8 @@
     if(!ROUTES.has(p)){document.body.classList.remove('nx-institution-active');mountedPath='';return}
     document.body.classList.remove('nx-legal-active','nx-season-active','nx-detail-active');document.body.classList.add('nx-institution-active');
     if(mountedPath===p&&document.querySelector('.nx-inst'))return;mountedPath=p;
-    app.innerHTML=p==='/quem-somos'?renderWho():p==='/colabore'?renderCollaborate():renderContact();if(p==='/contato')bindForm();
+    const content=p==='/quem-somos'?renderWho():p==='/colabore'?renderCollaborate():renderContact();
+    app.innerHTML=`<main>${content}</main>`;if(p==='/contato')bindForm();
   }
   document.addEventListener('click',e=>{
     const a=e.target.closest('[data-nx-inst]');if(!a)return;const target=a.dataset.nxInst;if(!target)return;e.preventDefault();e.stopImmediatePropagation();

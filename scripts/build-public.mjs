@@ -11,6 +11,24 @@ await fs.rm(path.join(pub,'release.json'),{force:true});
 
 // Production uses the same shell as GitHub Pages. Only classified runtime layers are copied.
 await fs.copyFile(path.join(root,'index.html'),path.join(pub,'index.html'));
+for(const file of ['404.html','robots.txt','sitemap.xml']){
+  if(await exists(path.join(root,file)))await fs.copyFile(path.join(root,file),path.join(pub,file));
+}
+
+const publicSiteOrigin=String(process.env.PUBLIC_SITE_ORIGIN||'https://qgbaltigo.github.io/AniNexus').replace(/\/+$/,'');
+const publicApiOrigin=String(process.env.PUBLIC_API_ORIGIN||'').replace(/\/+$/,'');
+const clerkPublishableKey=String(process.env.PUBLIC_CLERK_PUBLISHABLE_KEY||process.env.CLERK_PUBLISHABLE_KEY||'');
+const requestedAuth=String(process.env.PUBLIC_AUTH_ENABLED||'').toLowerCase()==='true';
+const authEnabled=requestedAuth&&/^https:\/\//.test(publicApiOrigin)&&/^pk_(?:test|live)_/.test(clerkPublishableKey);
+if(requestedAuth&&!authEnabled)throw new Error('PUBLIC_AUTH_ENABLED requires an HTTPS PUBLIC_API_ORIGIN and a valid public Clerk key');
+const runtimeConfig={environment:process.env.NODE_ENV==='production'?'production':'preview',siteOrigin:publicSiteOrigin,apiOrigin:publicApiOrigin,clerkPublishableKey,authEnabled};
+await fs.writeFile(path.join(pub,'runtime-config.js'),`window.__ANINEXUS_CONFIG__ = Object.freeze(${JSON.stringify(runtimeConfig).replace(/</g,'\\u003c')});\n`,'utf8');
+if (authEnabled) {
+  const shellPath=path.join(pub,'index.html');
+  const shell=await fs.readFile(shellPath,'utf8');
+  const apiOrigin=new URL(publicApiOrigin).origin;
+  await fs.writeFile(shellPath,shell.replace("connect-src 'self'",`connect-src 'self' ${apiOrigin}`),'utf8');
+}
 
 // The VPS release is served directly by Nginx, so /public must be self-contained.
 // Fastify also serves these files from /assets; keeping a copy here preserves that

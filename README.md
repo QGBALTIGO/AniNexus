@@ -33,13 +33,13 @@ As pastas `preview-vXX` que ainda estão na raiz são módulos de compatibilidad
 ## Desenvolvimento
 
 ```bash
-npm install
-npm run check
-npm run build:public
-npm run dev
+pnpm install
+pnpm run check
+pnpm run build:public
+pnpm run dev
 ```
 
-`npm run check` valida sintaxe, regressões e também a organização do repositório. Uma nova pasta `preview-vXX` não classificada faz o check falhar.
+`pnpm run check` valida HTML, CSS, sintaxe JavaScript, regressões e também a organização do repositório. Uma nova pasta `preview-vXX` não classificada faz o check falhar.
 
 ## Produção
 
@@ -58,6 +58,8 @@ Para HTTPS/domínio:
 PUBLIC_ORIGIN=https://seu-dominio.com
 COOKIE_SECURE=true
 ```
+
+A conta usa Clerk como provedor de identidade e a API mantém listas, progresso e comunidade no PostgreSQL. A integração permanece desativada no frontend enquanto não existirem chaves válidas e uma `PUBLIC_API_ORIGIN` HTTPS. Consulte [`docs/AUTHENTICATION.md`](docs/AUTHENTICATION.md).
 
 ## Principais áreas
 

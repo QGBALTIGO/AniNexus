@@ -3,29 +3,44 @@
   "version": "2.4.0",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@11.19.0",
   "scripts": {
     "start": "node server.mjs",
     "worker:news": "node lib/news-worker-v37.mjs",
     "update:news": "node scripts/update-news-v36.mjs",
     "build:public": "node scripts/build-public.mjs",
     "validate:deploy": "node scripts/validate-static-deploy.mjs public",
+    "validate:source": "node scripts/validate-source.mjs",
+    "test:e2e": "playwright test tests/e2e.spec.mjs",
+    "test:a11y": "playwright test tests/accessibility.spec.mjs",
     "dev": "NODE_ENV=development node --watch server.mjs",
     "smoke": "node tests/smoke.mjs",
     "test:news": "node tests/news-system.mjs",
     "test:core": "node tests/core-v38.mjs",
     "check:layout": "node scripts/check-repository-layout.mjs",
-    "check": "node scripts/check-repository-layout.mjs && node --check server.mjs && node --check lib/auth.mjs && node --check lib/cache.mjs && node --check lib/db.mjs && node --check lib/analytics.mjs && node --check lib/provider.mjs && node --check lib/news-core.mjs && node --check lib/native-news.mjs && node --check lib/news-sources-v36.mjs && node --check lib/news-sources-v36-normalized.mjs && node --check lib/news-rich-v37.mjs && node --check lib/news-sources-v34.mjs && node --check lib/news-worker-v37.mjs && node --check scripts/repository-layout.mjs && node --check scripts/check-repository-layout.mjs && node --check scripts/update-news-v36.mjs && node --check scripts/build-public.mjs && node --check scripts/validate-static-deploy.mjs && node --check preview-v19/media-state-v2.js && node --check preview-v23/router-v23.js && node --check preview-v24/home-guard-v24.js && node --check preview-v27/navigation-v27.js && node --check preview-v33/home-v33.js && node --check preview-v35/home-v35.js && node --check preview-v35/news-data-v35.js && node --check preview-v35/news-ui-v35.js && node --check preview-v38/runtime-v38.js && node --check preview-v38/auth-guard-v38.js && node --check preview-v38/auth-v38.js && node --check preview-v38/library-guard-v38.js && node --check preview-v38/library-v38.js && node --check preview-v39/media-actions-v39.js && node --check preview-v39/media-sync-v39.js && node --check preview-v40/activity-v40.js && node --check preview-v40/community-v40.js && node --check preview-v40/home-community-v40.js && node tests/news-system.mjs && node tests/core-v38.mjs && node tests/smoke.mjs"
+    "check": "node scripts/check-repository-layout.mjs && node scripts/validate-source.mjs && node --check server.mjs && node --check lib/auth.mjs && node --check lib/clerk-webhook.mjs && node --check lib/cache.mjs && node --check lib/db.mjs && node --check lib/analytics.mjs && node --check lib/provider.mjs && node --check lib/news-core.mjs && node --check lib/native-news.mjs && node --check lib/news-sources-v36.mjs && node --check lib/news-sources-v36-normalized.mjs && node --check lib/news-rich-v37.mjs && node --check lib/news-sources-v34.mjs && node --check lib/news-worker-v37.mjs && node --check scripts/repository-layout.mjs && node --check scripts/check-repository-layout.mjs && node --check scripts/update-news-v36.mjs && node --check scripts/build-public.mjs && node --check scripts/validate-static-deploy.mjs && node --check preview-v19/media-state-v2.js && node --check preview-v23/router-v23.js && node --check preview-v24/home-guard-v24.js && node --check preview-v27/navigation-v27.js && node --check preview-v33/home-v33.js && node --check preview-v35/home-v35.js && node --check preview-v35/news-data-v35.js && node --check preview-v35/news-ui-v35.js && node --check preview-v38/runtime-v38.js && node --check preview-v38/auth-guard-v38.js && node --check preview-v38/auth-v38.js && node --check preview-v38/library-guard-v38.js && node --check preview-v38/library-v38.js && node --check preview-v38/seo-v38.js && node --check preview-v39/media-actions-v39.js && node --check preview-v39/media-sync-v39.js && node --check preview-v40/activity-v40.js && node --check preview-v40/community-v40.js && node --check preview-v40/home-community-v40.js && node tests/news-system.mjs && node tests/core-v38.mjs && node tests/smoke.mjs"
   },
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
+    "@clerk/backend": "3.16.10",
     "@fastify/cookie": "^11.0.2",
+    "@fastify/cors": "11.3.0",
     "@fastify/helmet": "^13.0.1",
     "@fastify/rate-limit": "^10.3.0",
-    "@fastify/static": "^8.2.0",
-    "argon2": "^0.44.0",
+    "@fastify/static": "^10.1.3",
+    "argon2": "^0.45.1",
     "fastify": "^5.6.1",
+    "fastify-raw-body": "5.0.0",
     "pg": "^8.16.3",
     "redis": "^5.8.2",
     "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.55.0",
+    "css-tree": "3.1.0",
+    "html-validate": "10.4.0"
   }
 }

@@ -3,6 +3,7 @@
   if(window.__NX40_COMMUNITY__)return;window.__NX40_COMMUNITY__=true;
   const app=document.querySelector('#app');if(!app)return;
   const IS_PAGES=location.hostname.endsWith('github.io');
+  const REMOTE=window.AniNexusAuth?.enabled===true;
   const BASE=IS_PAGES?'/AniNexus':'';
   const BUILD='40.0.0';
   const API='https://graphql.anilist.co';
@@ -29,7 +30,7 @@
   const mediaCover=m=>m?.cover||m?.coverImage?.extraLarge||m?.coverImage?.large||'';
   const mediaBanner=m=>m?.banner||m?.bannerImage||'';
 
-  async function json(path){try{const r=await fetch(path,{credentials:'same-origin',cache:'no-store',headers:{accept:'application/json'}});if(!r.ok)return[];const j=await r.json();return Array.isArray(j)?j:j?.items||[]}catch{return[]}}
+  async function json(path){try{if(REMOTE){const j=await window.AniNexusAuth.publicApi(path);return Array.isArray(j)?j:j?.items||[]}const r=await fetch(path,{credentials:'same-origin',cache:'no-store',headers:{accept:'application/json'}});if(!r.ok)return[];const j=await r.json();return Array.isArray(j)?j:j?.items||[]}catch{return[]}}
   async function mediaByIds(ids){ids=[...new Set(ids.map(Number).filter(Boolean))].slice(0,35);if(!ids.length)return new Map();try{const query='query($ids:[Int]){Page(page:1,perPage:35){media(id_in:$ids,type:ANIME){id title{romaji english native userPreferred}coverImage{extraLarge large}bannerImage}}}',r=await fetch(API,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables:{ids}})});if(!r.ok)return new Map();const j=await r.json();return new Map((j?.data?.Page?.media||[]).map(m=>[Number(m.id),m]))}catch{return new Map()}}
 
   function localActivity(){return window.AniNexusCommunityActivity?.local?.(50)||[]}
@@ -37,7 +38,7 @@
   async function load(){
     const local=localActivity(),lt=localThreads();
     let activity=[],impressions=[],threads=[];
-    if(!IS_PAGES){[activity,impressions,threads]=await Promise.all([json('/api/community/activity?limit=40'),json('/api/community/impressions?limit=24'),json('/api/community/threads?limit=30')])}
+    if(!IS_PAGES||REMOTE){[activity,impressions,threads]=await Promise.all([json('/api/community/activity?limit=40'),json('/api/community/impressions?limit=24'),json('/api/community/threads?limit=30')])}
     const normalized=[
       ...activity.map(x=>({...x,kind:'state',created_at:x.created_at||x.updated_at})),
       ...local,
@@ -73,7 +74,7 @@
   function bindCards(){app.querySelectorAll('[data-open-anime]').forEach(el=>{if(el.dataset.nx40Bound)return;el.dataset.nx40Bound='1';el.onclick=e=>{if(e.target.closest('button,a,input,textarea'))return;const id=Number(el.dataset.openAnime),name=el.dataset.title||'anime';if(id)go(`/anime/${slug(name)}-${id}`)}});app.querySelectorAll('[data-nx40-trend]').forEach(el=>{if(el.dataset.nx40Bound)return;el.dataset.nx40Bound='1';el.onclick=()=>go(`/anime/${slug(el.dataset.title)}-${Number(el.dataset.nx40Trend)}`)})}
   function openModal(){document.querySelector('#nx40ThreadModal').hidden=false;document.body.classList.add('modal-open');setTimeout(()=>document.querySelector('#nx40ThreadForm input[name="title"]')?.focus(),0)}
   function closeModal(){const m=document.querySelector('#nx40ThreadModal');if(m)m.hidden=true;document.body.classList.remove('modal-open')}
-  async function submitThread(e){e.preventDefault();const form=e.currentTarget,error=document.querySelector('#nx40FormError'),fd=new FormData(form),data={title:String(fd.get('title')||'').trim(),body:String(fd.get('body')||'').trim(),spoiler:fd.get('spoiler')==='on'};if(data.title.length<3||!data.body){error.textContent='Preencha título e mensagem.';return}const submit=form.querySelector('button[type="submit"]');submit.disabled=true;submit.textContent='Publicando…';try{if(IS_PAGES){const list=read(LOCAL_THREADS,[]);list.unshift({id:`local-${Date.now()}`,kind:'thread',username:'você',...data,replies:0,created_at:new Date().toISOString(),local:true});write(LOCAL_THREADS,list.slice(0,30))}else{const r=await fetch('/api/community/threads',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify(data)});if(r.status===401)throw new Error('Entre na sua conta para publicar.');if(!r.ok)throw new Error('Não foi possível publicar agora.')}form.reset();closeModal();await load()}catch(err){error.textContent=err.message||'Não foi possível publicar.'}finally{submit.disabled=false;submit.textContent='Publicar'}}
+  async function submitThread(e){e.preventDefault();const form=e.currentTarget,error=document.querySelector('#nx40FormError'),fd=new FormData(form),data={title:String(fd.get('title')||'').trim(),body:String(fd.get('body')||'').trim(),spoiler:fd.get('spoiler')==='on'};if(data.title.length<3||!data.body){error.textContent='Preencha título e mensagem.';return}const submit=form.querySelector('button[type="submit"]');submit.disabled=true;submit.textContent='Publicando…';try{if(IS_PAGES&&!REMOTE){const list=read(LOCAL_THREADS,[]);list.unshift({id:`local-${Date.now()}`,kind:'thread',username:'você',...data,replies:0,created_at:new Date().toISOString(),local:true});write(LOCAL_THREADS,list.slice(0,30))}else if(REMOTE){await window.AniNexusAuth.api('/api/community/threads',{method:'POST',body:JSON.stringify(data)})}else{const r=await fetch('/api/community/threads',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify(data)});if(r.status===401)throw new Error('Entre na sua conta para publicar.');if(!r.ok)throw new Error('Não foi possível publicar agora.')}form.reset();closeModal();await load()}catch(err){error.textContent=err?.status===401?'Entre na sua conta para publicar.':'Não foi possível publicar agora. Tente novamente.'}finally{submit.disabled=false;submit.textContent='Publicar'}}
   function bind(){app.querySelectorAll('[data-nx40-tab]').forEach(b=>b.onclick=()=>{active=b.dataset.nx40Tab;render()});app.querySelector('[data-nx40-new]')?.addEventListener('click',openModal);document.querySelectorAll('[data-nx40-close]').forEach(b=>b.onclick=closeModal);document.querySelector('#nx40ThreadForm')?.addEventListener('submit',submitThread);document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()})}
   async function mount(){if(!owns())return;if(!mounted)shell();await load()}
   addEventListener('aninexus:community-activity-changed',()=>{if(owns())load()});
