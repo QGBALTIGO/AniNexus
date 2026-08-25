@@ -5,6 +5,8 @@ import {spawnSync} from 'node:child_process';
 const root=path.resolve(process.argv[2]||'public');
 const errors=[];
 const required=['index.html','.nojekyll','assets/favicon.png','assets/logo.png'];
+const expectedBase=String(process.env.PUBLIC_BASE_PATH||'/').trim();
+if(!/^\/(?:[A-Za-z0-9._~-]+\/)*$/.test(expectedBase))errors.push('PUBLIC_BASE_PATH inválido para a publicação');
 
 const exists=async file=>fs.access(path.join(root,file)).then(()=>true).catch(()=>false);
 for(const file of required)if(!(await exists(file)))errors.push(`arquivo obrigatório ausente: ${file}`);
@@ -50,7 +52,7 @@ if(await exists('index.html')){
   for(const marker of ['<!doctype html','<html','<head','<body','<meta name="aninexus-build"','</html>']){
     if(!html.toLowerCase().includes(marker))errors.push(`index.html sem ${marker}`);
   }
-  if(!html.includes('<base href="/">'))errors.push('index.html de produção sem base absoluta /');
+  if(!html.includes(`<base href="${expectedBase}">`))errors.push(`index.html sem a base esperada ${expectedBase}`);
   for(const match of html.matchAll(/\b(?:src|href)=["']([^"']+)["']/gi)){
     const ref=localReference(match[1]);
     if(ref?.error)errors.push(ref.error);

@@ -1,0 +1,54 @@
+{
+  "auth_phone": {
+    "required_for_sign_up": false,
+    "used_for_sign_up": false,
+    "used_for_sign_in": false,
+    "used_for_second_factor": false,
+    "sign_in_strategies": [],
+    "verification_strategies": [],
+    "second_factor_strategies": [],
+    "verify_at_sign_up": false
+  },
+  "auth_username": {
+    "required_for_sign_up": false,
+    "used_for_sign_up": false,
+    "used_for_sign_in": false
+  },
+  "auth_password": {
+    "required": false
+  },
+  "auth_multi_factor": {
+    "authenticator_app": {
+      "enabled": true
+    },
+    "backup_code": {
+      "enabled": true
+    },
+    "required_for_sign_in": false,
+    "required_for_sign_up": false
+  },
+  "connection_oauth_github": {
+    "enabled": true,
+    "authenticatable": true,
+    "block_email_subaddresses": false
+  },
+  "connection_oauth_apple": {
+    "enabled": false
+  },
+  "connection_oauth_facebook": {
+    "enabled": false
+  },
+  "connection_oauth_google": {
+    "enabled": false
+  },
+  "connection_oauth_x": {
+    "enabled": false
+  },
+  "compliance": {
+    "legal_consent": {
+      "enabled": true,
+      "privacy_policy_url": "https://qgbaltigo.github.io/AniNexus/?p=%2Fprivacidade",
+      "terms_of_service_url": "https://qgbaltigo.github.io/AniNexus/?p=%2Ftermos"
+    }
+  }
+}

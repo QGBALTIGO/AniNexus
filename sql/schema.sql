@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS notifications (
   title text NOT NULL CHECK (char_length(title) BETWEEN 1 AND 180),
   body text CHECK (body IS NULL OR char_length(body) <= 1200),
   media_id bigint,
-  url text,
+  url text CHECK (url IS NULL OR char_length(url) <= 1200),
   read_at timestamptz,
   created_at timestamptz NOT NULL DEFAULT now()
 );

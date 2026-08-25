@@ -6,7 +6,7 @@
   const API='https://graphql.anilist.co';
   const STATUS={PLANNING:{verb:'quer ver',emoji:'👀'},CURRENT:{verb:'está assistindo',emoji:'▶'},COMPLETED:{verb:'terminou',emoji:'✓'},PAUSED:{verb:'pausou',emoji:'⏸'},DROPPED:{verb:'desistiu de',emoji:'×'}};
   let token=0,timer=0;
-  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const title=m=>typeof m?.title==='string'?m.title:(m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||'');
   const cover=m=>m?.cover||m?.coverImage?.extraLarge||m?.coverImage?.large||'';
   const banner=m=>m?.banner||m?.bannerImage||'';
