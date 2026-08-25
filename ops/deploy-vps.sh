@@ -46,7 +46,10 @@ verified=0
 
 cleanup(){
   rm -f -- "$archive" "$temporary_link"
-  if [[ -d "$staging_dir" ]]; then rm -rf -- "$staging_dir"; fi
+  if [[ -d "$staging_dir" ]]; then
+    chmod -R u+rwX "$staging_dir" 2>/dev/null || true
+    rm -rf -- "$staging_dir"
+  fi
 }
 
 rollback(){
@@ -69,7 +72,10 @@ finish(){
 trap finish EXIT
 
 [[ ! -e "$release_dir" ]] || { echo 'Esta release já existe.' >&2; exit 4; }
-rm -rf -- "$staging_dir"
+if [[ -d "$staging_dir" ]]; then
+  chmod -R u+rwX "$staging_dir" 2>/dev/null || true
+  rm -rf -- "$staging_dir"
+fi
 mkdir -p "$staging_dir"
 
 python3 - "$archive" <<'PY'
@@ -89,7 +95,10 @@ with tarfile.open(sys.argv[1], 'r:gz') as package:
             raise SystemExit(f'Tipo de arquivo não permitido: {member.name}')
 PY
 
-tar --extract --gzip --file "$archive" --directory "$staging_dir" --no-same-owner --no-same-permissions
+tar --extract --gzip --file "$archive" --directory "$staging_dir" \
+  --no-same-owner --no-same-permissions --delay-directory-restore
+find "$staging_dir" -type d -exec chmod 0755 {} +
+find "$staging_dir" -type f -exec chmod 0644 {} +
 
 for required in index.html .nojekyll assets/favicon.png assets/logo.png release.json; do
   [[ -f "${staging_dir}/${required}" ]] || { echo "Arquivo obrigatório ausente: ${required}" >&2; exit 5; }
