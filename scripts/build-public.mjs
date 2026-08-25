@@ -16,6 +16,8 @@ for(const file of ['404.html','robots.txt','sitemap.xml']){
 }
 
 const publicSiteOrigin=String(process.env.PUBLIC_SITE_ORIGIN||'https://qgbaltigo.github.io/AniNexus').replace(/\/+$/,'');
+const publicBasePath=String(process.env.PUBLIC_BASE_PATH||'/').trim();
+if(!/^\/(?:[A-Za-z0-9._~-]+\/)*$/.test(publicBasePath))throw new Error('PUBLIC_BASE_PATH must be an absolute directory path ending in /');
 const publicApiOrigin=String(process.env.PUBLIC_API_ORIGIN||'').replace(/\/+$/,'');
 const clerkPublishableKey=String(process.env.PUBLIC_CLERK_PUBLISHABLE_KEY||process.env.CLERK_PUBLISHABLE_KEY||'');
 const requestedAuth=String(process.env.PUBLIC_AUTH_ENABLED||'').toLowerCase()==='true';
@@ -23,8 +25,11 @@ const authEnabled=requestedAuth&&/^https:\/\//.test(publicApiOrigin)&&/^pk_(?:te
 if(requestedAuth&&!authEnabled)throw new Error('PUBLIC_AUTH_ENABLED requires an HTTPS PUBLIC_API_ORIGIN and a valid public Clerk key');
 const runtimeConfig={environment:process.env.NODE_ENV==='production'?'production':'preview',siteOrigin:publicSiteOrigin,apiOrigin:publicApiOrigin,clerkPublishableKey,authEnabled};
 await fs.writeFile(path.join(pub,'runtime-config.js'),`window.__ANINEXUS_CONFIG__ = Object.freeze(${JSON.stringify(runtimeConfig).replace(/</g,'\\u003c')});\n`,'utf8');
+const shellPath=path.join(pub,'index.html');
+const sourceShell=await fs.readFile(shellPath,'utf8');
+if(!sourceShell.includes('<base href="/AniNexus/">'))throw new Error('GitHub Pages base marker is missing from index.html');
+await fs.writeFile(shellPath,sourceShell.replace('<base href="/AniNexus/">',`<base href="${publicBasePath}">`),'utf8');
 if (authEnabled) {
-  const shellPath=path.join(pub,'index.html');
   const shell=await fs.readFile(shellPath,'utf8');
   const apiOrigin=new URL(publicApiOrigin).origin;
   await fs.writeFile(shellPath,shell.replace("connect-src 'self'",`connect-src 'self' ${apiOrigin}`),'utf8');

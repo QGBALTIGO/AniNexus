@@ -23,6 +23,23 @@ for(const name of ARCHIVED_PREVIEW_DIRS){
   try{await fs.access(archived)}catch{throw new Error(`Missing archived layer: legacy/${name}`)}
 }
 
+async function sourceFiles(directory){
+  const files=[];
+  for(const entry of await fs.readdir(directory,{withFileTypes:true})){
+    const target=path.join(directory,entry.name);
+    if(entry.isDirectory())files.push(...await sourceFiles(target));
+    else if(entry.isFile()&&/\.(?:css|html|js|mjs)$/.test(entry.name))files.push(target);
+  }
+  return files;
+}
+const runtimeSources=[path.join(root,'index.html')];
+for(const name of ACTIVE_PREVIEW_DIRS)runtimeSources.push(...await sourceFiles(path.join(root,name)));
+for(const file of runtimeSources){
+  const source=await fs.readFile(file,'utf8');
+  const archivedReference=ARCHIVED_PREVIEW_DIRS.find(name=>source.includes(`${name}/`));
+  if(archivedReference)throw new Error(`Active runtime references archived layer ${archivedReference}: ${path.relative(root,file)}`);
+}
+
 for(const required of ['docs/ARCHITECTURE.md','legacy/README.md','CONTRIBUTING.md']){
   try{await fs.access(path.join(root,required))}catch{throw new Error(`Missing repository guide: ${required}`)}
 }
