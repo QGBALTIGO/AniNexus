@@ -7,6 +7,7 @@ const pub=path.join(root,'public');
 const exists=async p=>fs.access(p).then(()=>true).catch(()=>false);
 
 await fs.mkdir(pub,{recursive:true});
+await fs.rm(path.join(pub,'release.json'),{force:true});
 
 // Production uses the same shell as GitHub Pages. Only classified runtime layers are copied.
 await fs.copyFile(path.join(root,'index.html'),path.join(pub,'index.html'));
