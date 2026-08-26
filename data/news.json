@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T00:04:49.481Z",
+  "generatedAt": "2026-08-26T01:52:20.120Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -50,18 +50,100 @@
   "stats": {
     "collected": 155,
     "grouped": 126,
-    "published": 31,
+    "published": 32,
     "newStories": 24,
     "deepArticles": 16,
-    "avgWords": 373,
-    "withHeroImage": 27,
+    "avgWords": 368,
+    "withHeroImage": 28,
     "withGallery": 4,
     "withEmbeds": 7,
     "skippedTranslation": 99,
     "skippedQuality": 3,
-    "durationMs": 126892
+    "durationMs": 127322
   },
   "items": [
+    {
+      "id": "crunchyroll-4e16cffb",
+      "slug": "3-temporada-de-100-namoradas-que-te-amam-muuuuuito-revela-ilustracao-promocional-de-yaku-yakuzen-e-nova-inte-crunchyroll-4e16cffb",
+      "source": "Crunchyroll Notícias",
+      "sourceType": "CRUNCHYROLL",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "3ª temporada de 100 Namoradas Que Te Amam Muuuuuito revela ilustração promocional de Yaku Yakuzen e nova integrante do elenco",
+      "originalTitle": null,
+      "summary": "Uma versão atualizada da ilustração promocional também foi compartilhada Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!",
+      "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/26/100-namoradas-que-te-amam-muuuuuito-3-temporada-yaku-yakuzen-ilustracao-promocional-elenco",
+      "sourceUrl": "https://crunchyroll.com/pt-br/news/latest/2026/8/26/100-namoradas-que-te-amam-muuuuuito-3-temporada-yaku-yakuzen-ilustracao-promocional-elenco",
+      "image": "https://a.storyblok.com/f/178900/800x450/7d4c895e00/the-100-girlfriends-who-really-really-really-really-really-love-you-season-3.jpg",
+      "mediaQuery": "3ª temporada de 100 Namoradas Que Te Amam Muuuuuito revela ilustração promocional de Yaku Yakuzen e nova integrante do elenco",
+      "mediaType": "manga",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "publishedAt": "2026-08-26T01:45:00.000Z",
+      "updatedAt": "2026-08-26T01:50:30.631Z",
+      "expiresAt": "2026-09-02T01:45:00.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [
+        "Uma versão atualizada da ilustração promocional também foi compartilhada Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
+        "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
+        "You heard it here first!"
+      ],
+      "contentSections": [
+        {
+          "heading": "O que aconteceu",
+          "paragraphs": [
+            "Uma versão atualizada da ilustração promocional também foi compartilhada Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!"
+          ],
+          "bullets": [
+            "Uma versão atualizada da ilustração promocional também foi compartilhada Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
+            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
+            "You heard it here first!"
+          ]
+        },
+        {
+          "heading": "Estreia, lançamento e disponibilidade",
+          "bullets": [
+            "Uma versão atualizada da ilustração promocional também foi compartilhada Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
+          ]
+        },
+        {
+          "heading": "Outros detalhes confirmados",
+          "bullets": [
+            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
+            "You heard it here first!"
+          ]
+        },
+        {
+          "heading": "Acompanhamento AniNexus",
+          "paragraphs": [
+            "A matéria permanece no feed recente para receber atualizações sobre publicação, volumes, licenciamento e disponibilidade no Brasil."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Crunchyroll Notícias",
+          "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/26/100-namoradas-que-te-amam-muuuuuito-3-temporada-yaku-yakuzen-ilustracao-promocional-elenco",
+          "publishedAt": "2026-08-26T01:45:00.000Z",
+          "author": "Fábio Portugal"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 201,
+      "qualityScore": 0.93,
+      "contentVersion": 1,
+      "coverage": {
+        "facts": 3,
+        "sections": 4,
+        "sourceCount": 1,
+        "ingestMode": "html",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 1
+      }
+    },
     {
       "id": "jbox_anime-5b32cd10",
       "slug": "one-piece-e-detective-conan-ganham-colaboracao-com-jurassic-park-e-de-volta-para-o-futuro-jbox_anime-5b32cd10",
@@ -198,7 +280,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-26T00:02:59.245Z",
+      "updatedAt": "2026-08-26T01:50:32.969Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -512,7 +594,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-26T00:03:02.297Z",
+      "updatedAt": "2026-08-26T01:50:36.242Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -594,7 +676,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-26T00:03:05.812Z",
+      "updatedAt": "2026-08-26T01:50:39.583Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1040,7 +1122,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-26T00:03:17.670Z",
+      "updatedAt": "2026-08-26T01:50:51.187Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2023,7 +2105,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-26T00:03:23.464Z",
+      "updatedAt": "2026-08-26T01:50:56.443Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2117,7 +2199,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-26T00:03:23.465Z",
+      "updatedAt": "2026-08-26T01:50:56.444Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2199,7 +2281,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-26T00:03:25.682Z",
+      "updatedAt": "2026-08-26T01:50:58.696Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2359,7 +2441,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-20T14:03:00.000Z",
-      "updatedAt": "2026-08-26T00:03:34.270Z",
+      "updatedAt": "2026-08-26T01:51:07.507Z",
       "expiresAt": "2026-08-27T14:03:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2643,7 +2725,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T22:25:00.000Z",
-      "updatedAt": "2026-08-26T00:03:35.154Z",
+      "updatedAt": "2026-08-26T01:51:08.675Z",
       "expiresAt": "2026-08-26T22:25:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
