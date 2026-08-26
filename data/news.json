@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T14:53:23.332Z",
+  "generatedAt": "2026-08-26T16:08:29.751Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -50,18 +50,102 @@
   "stats": {
     "collected": 155,
     "grouped": 125,
-    "published": 29,
+    "published": 30,
     "newStories": 22,
     "deepArticles": 15,
-    "avgWords": 378,
-    "withHeroImage": 25,
+    "avgWords": 372,
+    "withHeroImage": 26,
     "withGallery": 4,
     "withEmbeds": 7,
     "skippedTranslation": 100,
     "skippedQuality": 3,
-    "durationMs": 128262
+    "durationMs": 124393
   },
   "items": [
+    {
+      "id": "crunchyroll-145e9d45",
+      "slug": "2-temporada-de-blue-box-ganha-trailer-com-previas-de-musicas-tema-do-anime-crunchyroll-145e9d45",
+      "source": "Crunchyroll Notícias",
+      "sourceType": "CRUNCHYROLL",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "2ª temporada de Blue Box ganha trailer com prévias de músicas-tema do anime",
+      "originalTitle": null,
+      "summary": "A nova fase estreia no dia 4 de outubro deste ano. Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!",
+      "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/26/blue-box-2-temporada-trailer-abertura-encerramento",
+      "sourceUrl": "https://crunchyroll.com/pt-br/news/latest/2026/8/26/blue-box-2-temporada-trailer-abertura-encerramento",
+      "image": "https://a.storyblok.com/f/178900/1000x563/e1139a744b/blue-box-season-2.jpg",
+      "mediaQuery": "2ª temporada de Blue Box ganha trailer com prévias de músicas-tema do anime",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "publishedAt": "2026-08-26T15:23:00.000Z",
+      "updatedAt": "2026-08-26T16:06:41.241Z",
+      "expiresAt": "2026-09-02T15:23:00.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [
+        "A nova fase estreia no dia 4 de outubro deste ano.",
+        "Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
+        "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
+        "You heard it here first!"
+      ],
+      "contentSections": [
+        {
+          "heading": "O que aconteceu",
+          "paragraphs": [
+            "A nova fase estreia no dia 4 de outubro deste ano. Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!"
+          ],
+          "bullets": [
+            "A nova fase estreia no dia 4 de outubro deste ano.",
+            "Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
+            "From breaking stories to evergreen content, get all your anime and manga news updates in one place."
+          ]
+        },
+        {
+          "heading": "Estreia, lançamento e disponibilidade",
+          "bullets": [
+            "A nova fase estreia no dia 4 de outubro deste ano.",
+            "Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
+          ]
+        },
+        {
+          "heading": "Outros detalhes confirmados",
+          "bullets": [
+            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
+            "You heard it here first!"
+          ]
+        },
+        {
+          "heading": "Acompanhamento AniNexus",
+          "paragraphs": [
+            "Novos trailers, datas, elenco e plataformas confirmadas podem ser incorporados nesta mesma página enquanto a notícia estiver ativa."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Crunchyroll Notícias",
+          "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/26/blue-box-2-temporada-trailer-abertura-encerramento",
+          "publishedAt": "2026-08-26T15:23:00.000Z",
+          "author": "Talles Queiroz"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 205,
+      "qualityScore": 0.93,
+      "contentVersion": 1,
+      "coverage": {
+        "facts": 4,
+        "sections": 4,
+        "sourceCount": 1,
+        "ingestMode": "html",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 1
+      }
+    },
     {
       "id": "crunchyroll-4e16cffb",
       "slug": "3-temporada-de-100-namoradas-que-te-amam-muuuuuito-revela-ilustracao-promocional-de-yaku-yakuzen-e-nova-inte-crunchyroll-4e16cffb",
@@ -80,7 +164,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T01:45:00.000Z",
-      "updatedAt": "2026-08-26T14:51:30.487Z",
+      "updatedAt": "2026-08-26T16:06:43.519Z",
       "expiresAt": "2026-09-02T01:45:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -280,7 +364,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-26T14:51:32.694Z",
+      "updatedAt": "2026-08-26T16:06:45.487Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -594,7 +678,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-26T14:51:35.929Z",
+      "updatedAt": "2026-08-26T16:06:48.795Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -676,7 +760,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-26T14:51:39.403Z",
+      "updatedAt": "2026-08-26T16:06:52.337Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1122,7 +1206,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-26T14:51:51.160Z",
+      "updatedAt": "2026-08-26T16:07:04.276Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2105,7 +2189,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-26T14:51:56.415Z",
+      "updatedAt": "2026-08-26T16:07:09.718Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2199,7 +2283,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-26T14:51:56.416Z",
+      "updatedAt": "2026-08-26T16:07:09.718Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2281,7 +2365,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-26T14:51:58.822Z",
+      "updatedAt": "2026-08-26T16:07:11.878Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
