@@ -45,9 +45,9 @@ jobs:
 
       - name: Montar e validar publicação estática
         env:
-          PUBLIC_SITE_ORIGIN: https://qgbaltigo.github.io/AniNexus
+          PUBLIC_SITE_ORIGIN: https://aninexus.com.br
           PUBLIC_BASE_PATH: /
-          PUBLIC_API_ORIGIN: ${{ vars.PUBLIC_API_ORIGIN }}
+          PUBLIC_API_ORIGIN: https://aninexus.com.br
           PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ vars.PUBLIC_CLERK_PUBLISHABLE_KEY }}
           PUBLIC_AUTH_ENABLED: ${{ vars.PUBLIC_AUTH_ENABLED || 'false' }}
         run: |
@@ -146,7 +146,7 @@ jobs:
       - name: Health check externo
         shell: bash
         env:
-          VPS_HEALTH_ORIGIN: ${{ vars.VPS_HEALTH_ORIGIN || format('https://{0}', secrets.VPS_HOST) }}
+          VPS_HEALTH_ORIGIN: ${{ vars.VPS_HEALTH_ORIGIN || 'https://aninexus.com.br' }}
         run: |
           for attempt in {1..10}; do
             if response="$(curl --fail --silent --show-error --max-time 10 "${VPS_HEALTH_ORIGIN}/release.json")" \
