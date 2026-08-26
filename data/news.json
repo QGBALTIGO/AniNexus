@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T14:01:29.967Z",
+  "generatedAt": "2026-08-26T14:53:23.332Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -49,17 +49,17 @@
   ],
   "stats": {
     "collected": 155,
-    "grouped": 126,
-    "published": 30,
-    "newStories": 24,
-    "deepArticles": 16,
-    "avgWords": 376,
-    "withHeroImage": 26,
+    "grouped": 125,
+    "published": 29,
+    "newStories": 22,
+    "deepArticles": 15,
+    "avgWords": 378,
+    "withHeroImage": 25,
     "withGallery": 4,
     "withEmbeds": 7,
-    "skippedTranslation": 99,
+    "skippedTranslation": 100,
     "skippedQuality": 3,
-    "durationMs": 121255
+    "durationMs": 128262
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T01:45:00.000Z",
-      "updatedAt": "2026-08-26T13:59:42.208Z",
+      "updatedAt": "2026-08-26T14:51:30.487Z",
       "expiresAt": "2026-09-02T01:45:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -280,7 +280,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-26T13:59:44.011Z",
+      "updatedAt": "2026-08-26T14:51:32.694Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -594,7 +594,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-26T13:59:47.436Z",
+      "updatedAt": "2026-08-26T14:51:35.929Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -676,7 +676,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-26T13:59:50.777Z",
+      "updatedAt": "2026-08-26T14:51:39.403Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1122,7 +1122,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-26T14:00:02.142Z",
+      "updatedAt": "2026-08-26T14:51:51.160Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2105,7 +2105,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-26T14:00:07.908Z",
+      "updatedAt": "2026-08-26T14:51:56.415Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2199,7 +2199,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-26T14:00:07.909Z",
+      "updatedAt": "2026-08-26T14:51:56.416Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2281,7 +2281,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-26T14:00:10.132Z",
+      "updatedAt": "2026-08-26T14:51:58.822Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2441,7 +2441,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-20T14:03:00.000Z",
-      "updatedAt": "2026-08-26T14:00:18.466Z",
+      "updatedAt": "2026-08-26T14:52:07.377Z",
       "expiresAt": "2026-08-27T14:03:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -3086,120 +3086,6 @@
         "sections": 3,
         "sourceCount": 1,
         "ingestMode": "recovery-seed"
-      }
-    },
-    {
-      "id": "jbox_anime-0e27cea8",
-      "slug": "oshi-no-ko-divulgado-teaser-visual-da-4-temporada-jbox_anime-0e27cea8",
-      "source": "JBox",
-      "sourceType": "JBOX_ANIME",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Oshi no Ko: Divulgado teaser visual da 4ª temporada",
-      "originalTitle": null,
-      "summary": "Animê está em sua reta final e será exibido pela Crunchyroll.",
-      "url": "https://www.jbox.com.br/2026/08/19/oshi-no-ko-divulgado-teaser-visual-da-4a-temporada",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/19/oshi-no-ko-divulgado-teaser-visual-da-4a-temporada",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/oshi-no-ko-image-teaser-season-4-destacada.jpg",
-      "mediaQuery": "Oshi no Ko: Divulgado teaser visual da 4ª temporada",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-19T14:45:36.000Z",
-      "updatedAt": "2026-08-19T14:46:21.000Z",
-      "expiresAt": "2026-08-26T14:45:36.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [
-        "Animê está em sua reta final e será exibido pela Crunchyroll.",
-        "Foi divulgado um teaser visual, em formato de pôster e vídeo, da 4ª temporada do animê de Oshi no Ko .",
-        "Nele, Ai, Ruby, Aqua e as integrantes do grupo idol B-Komachi aparecem com figurinos de performance, com a chamada..",
-        "Imagem: © Mengo Yokoyari/Comitê de Produção de Oshi no Ko/Divulgação.",
-        "Ainda não há muitas informações acerca da quarta temporada, mas já foi confirmado que ela será transmitida pela Crunchyroll, que exibiu a terceira este ano simultaneamente ao Japão e também adicionou em seu catálogo as duas primeiras..",
-        "Nessa parte mais recente do animê, acompanhamos uma mudança de perspectiva, com a história passando a focar um pouco mais em Ruby, que, aproveitando a disparada no sucesso do grupo B-Komachi, assume o manto de usar o mundo do entretenimento para desvendar os mistérios sobre as mortes de Ai e Goro.",
-        "Enquanto isso, Aqua, acompanhado por Akane, reflete sobre o que fazer neste novo momento de sua vida, agora que não tem mais um objetivo concreto..",
-        "A temporada manteve a equipe principal das fases anteriores, incluindo a direção de Daisuke Hiramaki , roteiro por Jin Tanaka , design de personagens por Kanna Hirayama e trilha sonora por Takurou Iga .",
-        "A produção continua sendo do estúdio Doga Kobo ..",
-        "Fonte : Site oficial de Oshi no Ko.",
-        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Animê está em sua reta final e será exibido pela Crunchyroll."
-          ],
-          "bullets": [
-            "Animê está em sua reta final e será exibido pela Crunchyroll.",
-            "Foi divulgado um teaser visual, em formato de pôster e vídeo, da 4ª temporada do animê de Oshi no Ko .",
-            "Nele, Ai, Ruby, Aqua e as integrantes do grupo idol B-Komachi aparecem com figurinos de performance, com a chamada.."
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "Animê está em sua reta final e será exibido pela Crunchyroll.",
-            "Ainda não há muitas informações acerca da quarta temporada, mas já foi confirmado que ela será transmitida pela Crunchyroll, que exibiu a terceira este ano simultaneamente ao Japão e também adicionou em seu catálogo as duas primeiras.."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "Imagem: © Mengo Yokoyari/Comitê de Produção de Oshi no Ko/Divulgação.",
-            "A temporada manteve a equipe principal das fases anteriores, incluindo a direção de Daisuke Hiramaki , roteiro por Jin Tanaka , design de personagens por Kanna Hirayama e trilha sonora por Takurou Iga .",
-            "A produção continua sendo do estúdio Doga Kobo .."
-          ]
-        },
-        {
-          "heading": "Materiais divulgados",
-          "bullets": [
-            "Foi divulgado um teaser visual, em formato de pôster e vídeo, da 4ª temporada do animê de Oshi no Ko .",
-            "Imagem: © Mengo Yokoyari/Comitê de Produção de Oshi no Ko/Divulgação."
-          ]
-        },
-        {
-          "heading": "História e contexto da obra",
-          "bullets": [
-            "Nessa parte mais recente do animê, acompanhamos uma mudança de perspectiva, com a história passando a focar um pouco mais em Ruby, que, aproveitando a disparada no sucesso do grupo B-Komachi, assume o manto de usar o mundo do entretenimento para desvendar os mistérios sobre as mortes de Ai e Goro.",
-            "Enquanto isso, Aqua, acompanhado por Akane, reflete sobre o que fazer neste novo momento de sua vida, agora que não tem mais um objetivo concreto.."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "Nele, Ai, Ruby, Aqua e as integrantes do grupo idol B-Komachi aparecem com figurinos de performance, com a chamada..",
-            "Fonte : Site oficial de Oshi no Ko.",
-            "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Novos trailers, datas, elenco e plataformas confirmadas podem ser incorporados nesta mesma página enquanto a notícia estiver ativa."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/19/oshi-no-ko-divulgado-teaser-visual-da-4a-temporada",
-          "publishedAt": "2026-08-19T14:45:36.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 344,
-      "qualityScore": 0.84,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 11,
-        "sections": 7,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
       }
     }
   ]
