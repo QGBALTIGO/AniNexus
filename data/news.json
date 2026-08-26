@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T01:52:20.120Z",
+  "generatedAt": "2026-08-26T02:55:40.987Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -50,16 +50,16 @@
   "stats": {
     "collected": 155,
     "grouped": 126,
-    "published": 32,
+    "published": 31,
     "newStories": 24,
     "deepArticles": 16,
-    "avgWords": 368,
-    "withHeroImage": 28,
+    "avgWords": 373,
+    "withHeroImage": 27,
     "withGallery": 4,
     "withEmbeds": 7,
     "skippedTranslation": 99,
     "skippedQuality": 3,
-    "durationMs": 127322
+    "durationMs": 121129
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T01:45:00.000Z",
-      "updatedAt": "2026-08-26T01:50:30.631Z",
+      "updatedAt": "2026-08-26T02:53:53.094Z",
       "expiresAt": "2026-09-02T01:45:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -280,7 +280,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-26T01:50:32.969Z",
+      "updatedAt": "2026-08-26T02:53:55.542Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -594,7 +594,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-26T01:50:36.242Z",
+      "updatedAt": "2026-08-26T02:53:58.546Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -676,7 +676,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-26T01:50:39.583Z",
+      "updatedAt": "2026-08-26T02:54:01.714Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1122,7 +1122,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-26T01:50:51.187Z",
+      "updatedAt": "2026-08-26T02:54:13.199Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2105,7 +2105,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-26T01:50:56.443Z",
+      "updatedAt": "2026-08-26T02:54:18.618Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2199,7 +2199,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-26T01:50:56.444Z",
+      "updatedAt": "2026-08-26T02:54:18.619Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2281,7 +2281,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-26T01:50:58.696Z",
+      "updatedAt": "2026-08-26T02:54:20.807Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2441,7 +2441,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-20T14:03:00.000Z",
-      "updatedAt": "2026-08-26T01:51:07.507Z",
+      "updatedAt": "2026-08-26T02:54:29.444Z",
       "expiresAt": "2026-08-27T14:03:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2725,7 +2725,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T22:25:00.000Z",
-      "updatedAt": "2026-08-26T01:51:08.675Z",
+      "updatedAt": "2026-08-26T02:54:30.789Z",
       "expiresAt": "2026-08-26T22:25:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -3283,88 +3283,6 @@
       "coverage": {
         "facts": 3,
         "sections": 5,
-        "sourceCount": 1,
-        "ingestMode": "html",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "crunchyroll-5b3c1209",
-      "slug": "2-temporada-de-reincarnated-as-a-sword-revela-data-de-estreia-e-musicas-tema-em-novo-trailer-crunchyroll-5b3c1209",
-      "source": "Crunchyroll Notícias",
-      "sourceType": "CRUNCHYROLL",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "2ª temporada de Reincarnated as a Sword revela data de estreia e músicas-tema em novo trailer",
-      "originalTitle": null,
-      "summary": "Uma ilustração promocional épica também foi revelada Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!",
-      "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/19/reincarnated-as-a-sword-2-temporada-data-estreia-musicas-tema-novo-trailer",
-      "sourceUrl": "https://crunchyroll.com/pt-br/news/latest/2026/8/19/reincarnated-as-a-sword-2-temporada-data-estreia-musicas-tema-novo-trailer",
-      "image": "https://a.storyblok.com/f/178900/1460x821/3b4cc6e8ef/reincarnated-as-a-sword-season-2.jpg",
-      "mediaQuery": "2ª temporada de Reincarnated as a Sword revela data de estreia e músicas-tema em novo trailer",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-19T02:15:00.000Z",
-      "updatedAt": "2026-08-25T18:01:44.810Z",
-      "expiresAt": "2026-08-26T02:15:00.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [
-        "Uma ilustração promocional épica também foi revelada Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-        "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-        "You heard it here first!"
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Uma ilustração promocional épica também foi revelada Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!"
-          ],
-          "bullets": [
-            "Uma ilustração promocional épica também foi revelada Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "Uma ilustração promocional épica também foi revelada Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Novos trailers, datas, elenco e plataformas confirmadas podem ser incorporados nesta mesma página enquanto a notícia estiver ativa."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "Crunchyroll Notícias",
-          "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/19/reincarnated-as-a-sword-2-temporada-data-estreia-musicas-tema-novo-trailer",
-          "publishedAt": "2026-08-19T02:15:00.000Z",
-          "author": "Fábio Portugal"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 194,
-      "qualityScore": 0.93,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 3,
-        "sections": 4,
         "sourceCount": 1,
         "ingestMode": "html",
         "mediaCount": 0,
