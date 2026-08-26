@@ -1,0 +1,104 @@
+name: Configurar domínio AniNexus
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: aninexus-domain-setup
+  cancel-in-progress: false
+
+jobs:
+  configure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Conferir configuração SSH
+        shell: bash
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_PORT: ${{ secrets.VPS_PORT }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+        run: |
+          missing=0
+          for name in VPS_HOST VPS_USER VPS_PORT VPS_SSH_KEY VPS_KNOWN_HOSTS; do
+            if [ -z "${!name:-}" ]; then echo "Secret obrigatório ausente: ${name}"; missing=1; fi
+          done
+          [ "$missing" -eq 0 ]
+
+      - name: Preparar conexão SSH
+        shell: bash
+        env:
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+        run: |
+          install -d -m 700 "$HOME/.ssh"
+          install -m 600 /dev/null "$HOME/.ssh/aninexus"
+          printf '%s\n' "$VPS_SSH_KEY" > "$HOME/.ssh/aninexus"
+          printf '%s\n' "$VPS_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/known_hosts"
+
+      - name: Validar DNS antes de emitir certificado
+        shell: bash
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+        run: |
+          python - <<'PY'
+          import socket, os, sys
+          domain='aninexus.com.br'
+          expected=os.environ['VPS_HOST']
+          try:
+              ips={item[4][0] for item in socket.getaddrinfo(domain, 443, type=socket.SOCK_STREAM)}
+          except socket.gaierror as exc:
+              raise SystemExit(f'DNS ainda não resolve {domain}: {exc}')
+          print('IPs encontrados:', ', '.join(sorted(ips)))
+          if expected.replace('https://','').replace('http://','').split(':')[0] not in ips:
+              raise SystemExit(f'{domain} ainda não aponta para a VPS esperada ({expected}).')
+          PY
+
+      - name: Enviar configuração de domínio para a VPS
+        shell: bash
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_PORT: ${{ secrets.VPS_PORT }}
+        run: |
+          ssh -i "$HOME/.ssh/aninexus" -p "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            "${VPS_USER}@${VPS_HOST}" "rm -rf /tmp/aninexus-domain && mkdir -p /tmp/aninexus-domain/nginx /tmp/aninexus-domain/letsencrypt"
+          scp -i "$HOME/.ssh/aninexus" -P "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            ops/install-domain-tls.sh "${VPS_USER}@${VPS_HOST}:/tmp/aninexus-domain/install-domain-tls.sh"
+          scp -i "$HOME/.ssh/aninexus" -P "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            ops/nginx/aninexus-bootstrap.conf ops/nginx/aninexus.conf "${VPS_USER}@${VPS_HOST}:/tmp/aninexus-domain/nginx/"
+          scp -i "$HOME/.ssh/aninexus" -P "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            ops/letsencrypt/reload-aninexus-nginx "${VPS_USER}@${VPS_HOST}:/tmp/aninexus-domain/letsencrypt/"
+
+      - name: Emitir certificado e ativar domínio
+        shell: bash
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_PORT: ${{ secrets.VPS_PORT }}
+          LETSENCRYPT_EMAIL: ${{ vars.LETSENCRYPT_EMAIL }}
+        run: |
+          ssh -i "$HOME/.ssh/aninexus" -p "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            "${VPS_USER}@${VPS_HOST}" \
+            "sudo -n env LETSENCRYPT_EMAIL='${LETSENCRYPT_EMAIL}' bash /tmp/aninexus-domain/install-domain-tls.sh aninexus.com.br"
+
+      - name: Validar produção
+        shell: bash
+        run: |
+          curl --fail --silent --show-error --max-time 15 https://aninexus.com.br/ | grep -Fq '<meta name="aninexus-build"'
+          curl --fail --silent --show-error --max-time 15 https://aninexus.com.br/health/ready >/dev/null
+          location="$(curl --silent --show-error --head --max-time 15 https://www.aninexus.com.br/ | tr -d '\r' | awk 'tolower($1)=="location:"{print $2; exit}')"
+          [ "$location" = 'https://aninexus.com.br/' ]
+
+      - name: Limpar chave temporária
+        if: always()
+        run: rm -f "$HOME/.ssh/aninexus"
