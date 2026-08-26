@@ -85,7 +85,12 @@ if [[ -L "$CURRENT_LINK" ]]; then previous_release="$(readlink -f "$CURRENT_LINK
 ln -s "$release_dir" "$temporary_link"
 mv -Tf "$temporary_link" "$CURRENT_LINK"
 activated=1
-compose "$release_dir" up -d --remove-orphans
+if ! compose "$release_dir" up -d --remove-orphans; then
+  compose "$release_dir" ps -a >&2 || true
+  compose "$release_dir" logs --tail=120 app news-worker >&2 || true
+  echo 'Os serviços da API não conseguiram iniciar.' >&2
+  exit 6
+fi
 
 health_ok=0
 for attempt in {1..20}; do

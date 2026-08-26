@@ -35,9 +35,11 @@
     clerkPromise = (async () => {
       const domain = clerkDomain();
       if (!/^[a-z0-9.-]+$/i.test(domain)) throw new Error('AUTH_CONFIGURATION_INVALID');
+      await loadScript(`https://${domain}/npm/@clerk/ui@1/dist/ui.browser.js`);
       await loadScript(`https://${domain}/npm/@clerk/clerk-js@6/dist/clerk.browser.js`, { 'data-clerk-publishable-key': PUBLISHABLE_KEY });
-      if (!window.Clerk) throw new Error('AUTH_SDK_UNAVAILABLE');
+      if (!window.Clerk || !window.__internal_ClerkUICtor) throw new Error('AUTH_SDK_UNAVAILABLE');
       await window.Clerk.load({
+        ui: { ClerkUI: window.__internal_ClerkUICtor },
         signInFallbackRedirectUrl: routeUrl('/minha-conta'),
         signUpFallbackRedirectUrl: routeUrl('/minha-conta'),
       });

@@ -72,7 +72,7 @@ services:
     build: .
     restart: unless-stopped
     init: true
-    command: ["pnpm","run","worker:news"]
+    command: ["node","lib/news-worker-v37.mjs"]
     environment:
       NODE_ENV: production
       DATABASE_URL: postgres://aninexus:${POSTGRES_PASSWORD:?defina POSTGRES_PASSWORD no .env}@postgres:5432/aninexus
