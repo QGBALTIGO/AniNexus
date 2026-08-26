@@ -50,10 +50,13 @@ O script:
 2. ativa temporariamente a configuração ACME em HTTP;
 3. emite um certificado Let's Encrypt para `aninexus.com.br` e `www.aninexus.com.br`;
 4. instala a configuração HTTPS definitiva;
-5. ativa renovação automática;
-6. testa o site e o redirecionamento de `www`.
+5. salva backup da configuração protegida da API e troca as origens para o domínio;
+6. recria apenas o processo da aplicação, sem reiniciar banco, cache ou outros projetos;
+7. ativa renovação automática;
+8. testa site, API, certificado e redirecionamento de `www`;
+9. restaura Nginx e configuração da API automaticamente se alguma validação falhar.
 
-O mesmo processo pode ser executado pelo workflow manual `.github/workflows/configure-domain.yml`.
+O workflow `.github/workflows/configure-domain.yml` roda automaticamente depois do primeiro deploy saudável com o DNS correto, continua disponível para execução manual e não repete a emissão quando o domínio já está ativo.
 
 ## GitHub Pages
 

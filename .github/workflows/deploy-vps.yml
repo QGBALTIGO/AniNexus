@@ -147,14 +147,20 @@ jobs:
         shell: bash
         env:
           VPS_HEALTH_ORIGIN: ${{ vars.VPS_HEALTH_ORIGIN || 'https://aninexus.com.br' }}
+          VPS_HOST: ${{ secrets.VPS_HOST }}
         run: |
-          for attempt in {1..10}; do
-            if response="$(curl --fail --silent --show-error --max-time 10 "${VPS_HEALTH_ORIGIN}/release.json")" \
-              && node --input-type=module -e 'const body=JSON.parse(process.argv[1]); process.exit(body.commit===process.env.DEPLOY_SHA?0:1)' "$response" \
-              && curl --fail --silent --show-error --max-time 10 "${VPS_HEALTH_ORIGIN}/" | grep -Fq '<meta name="aninexus-build"'; then
-              exit 0
-            fi
-            sleep 2
+          fallback_host="${VPS_HOST#https://}"
+          fallback_host="${fallback_host#http://}"
+          fallback_origin="https://${fallback_host%/}"
+          for origin in "$VPS_HEALTH_ORIGIN" "$fallback_origin"; do
+            for attempt in {1..10}; do
+              if response="$(curl --fail --silent --show-error --max-time 10 "${origin}/release.json")" \
+                && node --input-type=module -e 'const body=JSON.parse(process.argv[1]); process.exit(body.commit===process.env.DEPLOY_SHA?0:1)' "$response" \
+                && curl --fail --silent --show-error --max-time 10 "${origin}/" | grep -Fq '<meta name="aninexus-build"'; then
+                exit 0
+              fi
+              sleep 2
+            done
           done
           echo 'Health check externo falhou.' >&2
           exit 1

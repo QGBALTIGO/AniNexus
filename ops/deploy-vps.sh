@@ -131,10 +131,10 @@ activated=1
 
 health_ok=0
 for attempt in {1..10}; do
-  if response="$(curl --noproxy '*' --fail --silent --show-error --max-time 10 "${HEALTH_ORIGIN}/release.json")" \
+  if response="$(curl --noproxy '*' --header 'Host: aninexus.com.br' --fail --silent --show-error --max-time 10 "${HEALTH_ORIGIN}/release.json")" \
     && python3 -c 'import json,sys; raise SystemExit(0 if json.loads(sys.stdin.read()).get("commit")==sys.argv[1] else 1)' "$expected_commit" <<<"$response" \
-    && curl --noproxy '*' --fail --silent --show-error --max-time 10 "${HEALTH_ORIGIN}/index.html" | grep -Fq '<meta name="aninexus-build"' \
-    && curl --noproxy '*' --fail --silent --show-error --max-time 10 "${HEALTH_ORIGIN}/assets/favicon.png" >/dev/null; then
+    && curl --noproxy '*' --header 'Host: aninexus.com.br' --fail --silent --show-error --max-time 10 "${HEALTH_ORIGIN}/index.html" | grep -Fq '<meta name="aninexus-build"' \
+    && curl --noproxy '*' --header 'Host: aninexus.com.br' --fail --silent --show-error --max-time 10 "${HEALTH_ORIGIN}/assets/favicon.png" >/dev/null; then
     health_ok=1
     break
   fi
