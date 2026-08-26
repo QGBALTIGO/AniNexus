@@ -76,13 +76,17 @@ jobs:
           bash -n ops/install-ip-tls.sh ops/deploy-vps.sh ops/deploy-api-vps.sh
       - name: Build real production image
         run: docker build --pull -t aninexus-ci:${{ github.sha }} .
-      - name: Verify V40 shell, actions and Community inside production image
+      - name: Verify V40.7 shell, administration, media and Community inside production image
         run: |
           CID=$(docker create aninexus-ci:${{ github.sha }})
           trap 'docker rm -f "$CID" >/dev/null 2>&1 || true' EXIT
           docker cp "$CID:/app/public/index.html" /tmp/aninexus-index.html
-          grep -q '2026-08-25-v40.6.0' /tmp/aninexus-index.html
+          grep -q '2026-08-26-v40.7.0' /tmp/aninexus-index.html
           for FILE in \
+            preview-v22/detail-stable-v22.js \
+            preview-v38/admin-v38.js \
+            preview-v38/admin-v38.css \
+            preview-v38/library-v38.js \
             preview-v39/media-actions-v39.js \
             preview-v39/media-actions-v39.css \
             preview-v39/media-sync-v39.js \
