@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@clerk/backend": "3.16.10",
+    "@clerk/localizations": "4.15.7",
     "@fastify/cookie": "^11.0.2",
     "@fastify/cors": "11.3.0",
     "@fastify/helmet": "^13.0.1",

@@ -33,13 +33,20 @@
     "block_email_subaddresses": false
   },
   "connection_oauth_apple": {
-    "enabled": false
+    "enabled": true,
+    "authenticatable": true,
+    "block_email_subaddresses": false
   },
   "connection_oauth_facebook": {
-    "enabled": false
+    "enabled": true,
+    "authenticatable": true,
+    "block_email_subaddresses": false
   },
   "connection_oauth_google": {
-    "enabled": false
+    "enabled": true,
+    "authenticatable": true,
+    "block_email_subaddresses": false,
+    "show_account_selector_prompt": true
   },
   "connection_oauth_x": {
     "enabled": false
@@ -47,8 +54,8 @@
   "compliance": {
     "legal_consent": {
       "enabled": true,
-      "privacy_policy_url": "https://qgbaltigo.github.io/AniNexus/?p=%2Fprivacidade",
-      "terms_of_service_url": "https://qgbaltigo.github.io/AniNexus/?p=%2Ftermos"
+      "privacy_policy_url": "https://qgbaltigo.github.io/AniNexus/?p=%2Fpolitica-de-privacidade",
+      "terms_of_service_url": "https://qgbaltigo.github.io/AniNexus/?p=%2Ftermos-de-uso"
     }
   }
 }

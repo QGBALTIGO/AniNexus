@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import {ptBR} from '@clerk/localizations/pt-BR';
 import {ACTIVE_PREVIEW_DIRS} from './repository-layout.mjs';
 
 const root=process.cwd();
@@ -25,6 +26,7 @@ const authEnabled=requestedAuth&&/^https:\/\//.test(publicApiOrigin)&&/^pk_(?:te
 if(requestedAuth&&!authEnabled)throw new Error('PUBLIC_AUTH_ENABLED requires an HTTPS PUBLIC_API_ORIGIN and a valid public Clerk key');
 const runtimeConfig={environment:process.env.NODE_ENV==='production'?'production':'preview',siteOrigin:publicSiteOrigin,apiOrigin:publicApiOrigin,clerkPublishableKey,authEnabled};
 await fs.writeFile(path.join(pub,'runtime-config.js'),`window.__ANINEXUS_CONFIG__ = Object.freeze(${JSON.stringify(runtimeConfig).replace(/</g,'\\u003c')});\n`,'utf8');
+await fs.writeFile(path.join(pub,'clerk-localization-ptbr.json'),`${JSON.stringify(ptBR).replace(/</g,'\\u003c')}\n`,'utf8');
 const shellPath=path.join(pub,'index.html');
 const sourceShell=await fs.readFile(shellPath,'utf8');
 if(!sourceShell.includes('<base href="/AniNexus/">'))throw new Error('GitHub Pages base marker is missing from index.html');

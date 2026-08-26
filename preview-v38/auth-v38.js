@@ -15,6 +15,14 @@
   const go = (path, replace = false) => location[replace ? 'replace' : 'assign'](routeUrl(path));
   let clerkPromise = null;
   let apiUser = null;
+  const fallbackLocalization = {
+    locale: 'pt-BR',
+    signIn: { start: { title: 'Entre no AniNexus', subtitle: 'Continue sua jornada de onde parou.', actionText: 'Ainda não tem uma conta?', actionLink: 'Criar conta' } },
+    signUp: { start: { title: 'Crie sua conta', subtitle: 'Uma conta para acompanhar todo o seu universo.', actionText: 'Já possui uma conta?', actionLink: 'Entrar' } },
+    socialButtonsBlockButton: 'Continuar com {{provider|titleize}}',
+    dividerText: 'ou continue com e-mail', formFieldLabel__emailAddress: 'E-mail', formFieldLabel__password: 'Senha',
+    formFieldInputPlaceholder__emailAddress: 'Digite seu e-mail', formButtonPrimary: 'Continuar',
+  };
 
   function clerkDomain() {
     try { return atob(PUBLISHABLE_KEY.split('_')[2]).slice(0, -1); } catch { return ''; }
@@ -29,6 +37,31 @@
     script.addEventListener('error', () => reject(new Error('AUTH_SDK_UNAVAILABLE')), { once: true });
     if (!existing) document.head.append(script);
   });
+  async function loadLocalization() {
+    try {
+      const response = await fetch(`${BASE}/clerk-localization-ptbr.json?v=40.6.0`, { cache: 'force-cache', credentials: 'omit' });
+      if (response.ok) return await response.json();
+      console.warn('[AniNexus auth] tradução pt-BR indisponível; usando o pacote mínimo interno.', { status: response.status });
+    } catch (error) {
+      console.warn('[AniNexus auth] não foi possível carregar a tradução pt-BR; usando o pacote mínimo interno.', error);
+    }
+    return fallbackLocalization;
+  }
+  function clerkAppearance() {
+    return {
+      variables: {
+        colorPrimary: '#e9325a', colorPrimaryForeground: '#ffffff', colorDanger: '#ff637d', colorSuccess: '#5fd08a', colorWarning: '#f1bb55',
+        colorNeutral: '#8f8289', colorForeground: '#f8f2f5', colorMutedForeground: '#a99ca2', colorMuted: '#171116', colorBackground: 'transparent',
+        colorInput: '#0d0a0d', colorInputForeground: '#f8f2f5', colorRing: '#f14b70', colorBorder: '#3a2f36', colorShadow: '#000000',
+        fontFamily: 'Nunito Sans, system-ui, sans-serif', fontFamilyButtons: 'Manrope, Nunito Sans, system-ui, sans-serif', fontSize: '0.875rem', borderRadius: '0.75rem', spacing: '0.9rem',
+      },
+      options: {
+        elevation: 'flush', socialButtonsPlacement: 'top', socialButtonsVariant: 'iconButton', autoFocus: false,
+        termsPageUrl: routeUrl('/termos-de-uso'), privacyPageUrl: routeUrl('/politica-de-privacidade'),
+      },
+      captcha: { theme: 'dark', size: 'flexible', language: 'pt-BR' },
+    };
+  }
   async function loadClerk() {
     if (!ENABLED) return null;
     if (clerkPromise) return clerkPromise;
@@ -38,8 +71,11 @@
       await loadScript(`https://${domain}/npm/@clerk/ui@1/dist/ui.browser.js`);
       await loadScript(`https://${domain}/npm/@clerk/clerk-js@6/dist/clerk.browser.js`, { 'data-clerk-publishable-key': PUBLISHABLE_KEY });
       if (!window.Clerk || !window.__internal_ClerkUICtor) throw new Error('AUTH_SDK_UNAVAILABLE');
+      const localization = await loadLocalization();
       await window.Clerk.load({
         ui: { ClerkUI: window.__internal_ClerkUICtor },
+        localization,
+        appearance: clerkAppearance(),
         signInFallbackRedirectUrl: routeUrl('/minha-conta'),
         signUpFallbackRedirectUrl: routeUrl('/minha-conta'),
       });
@@ -109,7 +145,25 @@
     return `<section class="nx38-auth-panel"><div class="nx38-auth-card nx38-auth-unavailable" role="status"><header class="nx38-auth-card-head"><small>CONTA PROTEGIDA</small><h2>Ativação segura em andamento</h2><p>A navegação pública e os dados deste dispositivo continuam funcionando. Login e sincronização serão liberados somente quando a API possuir HTTPS válido e as chaves públicas estiverem configuradas.</p></header><div class="nx38-pages-note">Nenhum dado privado será enviado por uma conexão HTTP insegura.</div><a class="nx38-auth-submit" href="${routeUrl('/')}"><span>Continuar como visitante</span></a></div></section>`;
   }
   function clerkCard(mode) {
-    return `<section class="nx38-auth-panel"><div class="nx38-auth-card nx38-clerk-card"><header class="nx38-auth-card-head"><small>${mode === 'register' ? 'CRIAR CONTA' : 'BEM-VINDO DE VOLTA'}</small><h2>${mode === 'register' ? 'Comece no AniNexus' : 'Entre na sua conta'}</h2><p>Conta verificada, recuperação de acesso e gerenciamento seguro de sessões.</p></header><div class="nx38-clerk-loading" id="nx38ClerkLoading" role="status">Preparando acesso seguro…</div><div id="nx38ClerkMount"></div><div class="nx38-auth-error" id="nx38AuthError" role="alert" aria-live="polite"></div></div></section>`;
+    const target = routeUrl(mode === 'register' ? '/login' : '/criar-conta');
+    return `<section class="nx38-auth-panel"><div class="nx38-auth-card nx38-clerk-card"><header class="nx38-auth-card-head"><small>${mode === 'register' ? 'CRIAR CONTA' : 'BEM-VINDO DE VOLTA'}</small><h2>${mode === 'register' ? 'Comece no AniNexus' : 'Entre na sua conta'}</h2><p>${mode === 'register' ? 'Salve listas, progresso e favoritos em todos os seus dispositivos.' : 'Retome seus animes, listas e conversas em qualquer dispositivo.'}</p></header><div class="nx38-clerk-loading" id="nx38ClerkLoading" role="status">Preparando acesso seguro…</div><div id="nx38ClerkMount"></div><div class="nx38-auth-error" id="nx38AuthError" role="alert" aria-live="polite"></div><p class="nx38-clerk-switch">${mode === 'register' ? 'Já possui uma conta?' : 'Ainda não tem uma conta?'} <a href="${target}">${mode === 'register' ? 'Entrar' : 'Criar conta'}</a></p></div></section>`;
+  }
+  function watchSocialLabels(mount) {
+    const providers = { apple: 'Apple', facebook: 'Facebook', github: 'GitHub', google: 'Google' };
+    const update = () => {
+      mount.querySelectorAll('button[class*="socialButtons"]').forEach(button => {
+        const provider = Object.keys(providers).find(key => [...button.classList].some(name => name.toLowerCase().includes(key)));
+        if (!provider) return;
+        const label = `Continuar com ${providers[provider]}`;
+        button.setAttribute('aria-label', label);
+        button.setAttribute('title', label);
+        button.querySelectorAll('[aria-label]').forEach(child => child.removeAttribute('aria-label'));
+      });
+    };
+    const observer = new MutationObserver(update);
+    observer.observe(mount, { childList: true, subtree: true });
+    update();
+    setTimeout(() => { update(); observer.disconnect(); }, 5000);
   }
   async function renderAuth(mode) {
     activate();
@@ -126,6 +180,7 @@
       const mount = document.querySelector('#nx38ClerkMount');
       const props = { routing: 'virtual', fallbackRedirectUrl: routeUrl('/minha-conta'), signUpUrl: routeUrl('/criar-conta'), signInUrl: routeUrl('/login') };
       if (mode === 'register') clerk.mountSignUp(mount, props); else clerk.mountSignIn(mount, props);
+      watchSocialLabels(mount);
       document.querySelector('#nx38ClerkLoading')?.remove();
     } catch {
       const message = document.querySelector('#nx38AuthError');

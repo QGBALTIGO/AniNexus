@@ -37,7 +37,7 @@ Nunca inclua esses valores no frontend, no repositório ou nos logs. Na VPS, use
 
 ## Configuração atual do Clerk
 
-O projeto Clerk está vinculado à CLI oficial. O login social por GitHub está ativo; Apple, Facebook, Google e X estão desativados para não apresentar opções que o AniNexus não oferece. Telefone, nome de usuário e senha não são obrigatórios. Aplicativo autenticador e códigos de recuperação ficam disponíveis como segundo fator opcional.
+O projeto Clerk está vinculado à CLI oficial. Apple, Facebook, GitHub e Google estão ativos para cadastro e entrada; X permanece desativado. A instância de desenvolvimento usa as credenciais OAuth compartilhadas do Clerk. Quando houver domínio próprio e instância de produção, cada provedor deverá receber credenciais próprias. Telefone, nome de usuário e senha não são obrigatórios. Aplicativo autenticador e códigos de recuperação ficam disponíveis como segundo fator opcional.
 
 A configuração declarativa está em `ops/clerk/instance-config.json` e pode ser conferida antes de aplicar com `clerk config patch --instance dev --file ops/clerk/instance-config.json --dry-run`. O arquivo contém somente política pública da instância; as chaves continuam fora do repositório.
 
@@ -52,7 +52,7 @@ No primeiro login, o frontend detecta lista, favoritos e episódios locais. O us
 ## Ativação e publicação
 
 1. A CLI oficial é autenticada com `clerk auth login` e ligada ao aplicativo com `clerk init`.
-2. `ops/clerk/instance-config.json` mantém o provedor GitHub e as políticas de acesso reproduzíveis.
+2. `ops/clerk/instance-config.json` mantém os quatro provedores sociais e as políticas de acesso reproduzíveis.
 3. As chaves do backend ficam em `/opt/aninexus/shared/.env`, com permissão `600`.
 4. A API é publicada apenas em `127.0.0.1:18080` e exposta pelo Nginx em HTTPS.
 5. O frontend recebe somente `PUBLIC_CLERK_PUBLISHABLE_KEY`, `PUBLIC_API_ORIGIN` e `PUBLIC_AUTH_ENABLED=true`.

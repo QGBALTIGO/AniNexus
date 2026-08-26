@@ -4,7 +4,7 @@ import {spawnSync} from 'node:child_process';
 
 const root=path.resolve(process.argv[2]||'public');
 const errors=[];
-const required=['index.html','.nojekyll','assets/favicon.png','assets/logo.png'];
+const required=['index.html','.nojekyll','clerk-localization-ptbr.json','assets/favicon.png','assets/logo.png'];
 const expectedBase=String(process.env.PUBLIC_BASE_PATH||'/').trim();
 if(!/^\/(?:[A-Za-z0-9._~-]+\/)*$/.test(expectedBase))errors.push('PUBLIC_BASE_PATH inválido para a publicação');
 
