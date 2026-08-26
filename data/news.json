@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T02:55:40.987Z",
+  "generatedAt": "2026-08-26T03:59:56.164Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -50,16 +50,16 @@
   "stats": {
     "collected": 155,
     "grouped": 126,
-    "published": 31,
+    "published": 30,
     "newStories": 24,
     "deepArticles": 16,
-    "avgWords": 373,
-    "withHeroImage": 27,
+    "avgWords": 376,
+    "withHeroImage": 26,
     "withGallery": 4,
     "withEmbeds": 7,
     "skippedTranslation": 99,
     "skippedQuality": 3,
-    "durationMs": 121129
+    "durationMs": 123144
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T01:45:00.000Z",
-      "updatedAt": "2026-08-26T02:53:53.094Z",
+      "updatedAt": "2026-08-26T03:58:06.574Z",
       "expiresAt": "2026-09-02T01:45:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -280,7 +280,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-26T02:53:55.542Z",
+      "updatedAt": "2026-08-26T03:58:09.070Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -594,7 +594,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-26T02:53:58.546Z",
+      "updatedAt": "2026-08-26T03:58:12.306Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -676,7 +676,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-26T02:54:01.714Z",
+      "updatedAt": "2026-08-26T03:58:15.640Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1122,7 +1122,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-26T02:54:13.199Z",
+      "updatedAt": "2026-08-26T03:58:26.844Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2105,7 +2105,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-26T02:54:18.618Z",
+      "updatedAt": "2026-08-26T03:58:31.779Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2199,7 +2199,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-26T02:54:18.619Z",
+      "updatedAt": "2026-08-26T03:58:31.779Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2281,7 +2281,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-26T02:54:20.807Z",
+      "updatedAt": "2026-08-26T03:58:34.068Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2441,7 +2441,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-20T14:03:00.000Z",
-      "updatedAt": "2026-08-26T02:54:29.444Z",
+      "updatedAt": "2026-08-26T03:58:43.270Z",
       "expiresAt": "2026-08-27T14:03:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2725,7 +2725,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T22:25:00.000Z",
-      "updatedAt": "2026-08-26T02:54:30.789Z",
+      "updatedAt": "2026-08-26T03:58:44.595Z",
       "expiresAt": "2026-08-26T22:25:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -3197,94 +3197,6 @@
         "sections": 7,
         "sourceCount": 1,
         "ingestMode": "wp-rest",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "crunchyroll-54fb8e77",
-      "slug": "fazenda-kinameru-faz-parceria-com-diretor-e-artista-de-anime-para-lancar-dois-novos-curries-crunchyroll-54fb8e77",
-      "source": "Crunchyroll Notícias",
-      "sourceType": "CRUNCHYROLL",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Fazenda Kinameru faz parceria com diretor e artista de anime para lançar dois novos curries",
-      "originalTitle": null,
-      "summary": "Ilustrador de The Misfit of Demon King Academy e diretor de Kuma Kuma Kuma Bear participam de testes de sabor Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!",
-      "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/19/kinameru-fazenda-parceria-diretor-artista-anime-duas-novas-misturas-curry",
-      "sourceUrl": "https://crunchyroll.com/pt-br/news/latest/2026/8/19/kinameru-fazenda-parceria-diretor-artista-anime-duas-novas-misturas-curry",
-      "image": "https://a.storyblok.com/f/178900/960x540/f9e1e3b532/kinameru-farms1.jpg",
-      "mediaQuery": "Fazenda Kinameru faz parceria com diretor e artista de anime para lançar dois novos curries",
-      "mediaType": "manga",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-19T02:55:00.000Z",
-      "updatedAt": "2026-08-25T21:08:53.773Z",
-      "expiresAt": "2026-08-26T02:55:00.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [
-        "Ilustrador de The Misfit of Demon King Academy e diretor de Kuma Kuma Kuma Bear participam de testes de sabor Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-        "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-        "You heard it here first!"
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Ilustrador de The Misfit of Demon King Academy e diretor de Kuma Kuma Kuma Bear participam de testes de sabor Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!"
-          ],
-          "bullets": [
-            "Ilustrador de The Misfit of Demon King Academy e diretor de Kuma Kuma Kuma Bear participam de testes de sabor Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "Ilustrador de The Misfit of Demon King Academy e diretor de Kuma Kuma Kuma Bear participam de testes de sabor Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "Ilustrador de The Misfit of Demon King Academy e diretor de Kuma Kuma Kuma Bear participam de testes de sabor Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "A matéria permanece no feed recente para receber atualizações sobre publicação, volumes, licenciamento e disponibilidade no Brasil."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "Crunchyroll Notícias",
-          "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/19/kinameru-fazenda-parceria-diretor-artista-anime-duas-novas-misturas-curry",
-          "publishedAt": "2026-08-19T02:55:00.000Z",
-          "author": "Fábio Portugal"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 280,
-      "qualityScore": 0.97,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 3,
-        "sections": 5,
-        "sourceCount": 1,
-        "ingestMode": "html",
         "mediaCount": 0,
         "embedCount": 0,
         "sourcePagesRead": 1
