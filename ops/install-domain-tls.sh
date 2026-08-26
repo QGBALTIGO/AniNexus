@@ -13,6 +13,7 @@ readonly ENV_FILE='/opt/aninexus/shared/.env'
 readonly ENV_BACKUP="${BACKUP_ROOT}/api-env-domain-$(date -u +%Y%m%dT%H%M%SZ).env"
 readonly API_CURRENT='/opt/aninexus/current'
 env_updated=0
+production_ready=0
 
 [[ "$DOMAIN" =~ ^[a-z0-9.-]+\.[a-z]{2,}$ ]] || { echo 'Domínio inválido.' >&2; exit 2; }
 [[ -f "${SCRIPT_DIR}/nginx/aninexus-bootstrap.conf" && -f "${SCRIPT_DIR}/nginx/aninexus.conf" && -f "${SCRIPT_DIR}/letsencrypt/reload-aninexus-nginx" ]] || { echo 'Arquivos de TLS/Nginx ausentes.' >&2; exit 2; }
@@ -122,11 +123,28 @@ PY
 env_updated=1
 restart_api
 
-curl --fail --silent --show-error --max-time 15 "https://${DOMAIN}/release.json" >/dev/null
-curl --fail --silent --show-error --max-time 15 "https://${DOMAIN}/" | grep -Fq '<meta name="aninexus-build"'
-curl --fail --silent --show-error --max-time 15 "https://${DOMAIN}/health/ready" \
-  | python3 -c 'import json,sys; body=json.load(sys.stdin); raise SystemExit(0 if body.get("ok") and body.get("db") and body.get("cache") else 1)'
-redirect="$(curl --silent --show-error --head --max-time 15 "https://${WWW_DOMAIN}/" | tr -d '\r' | awk 'tolower($1)=="location:"{print $2; exit}')"
+echo 'Aguardando a API reiniciar e validando a produção pelo novo certificado...'
+for attempt in $(seq 1 20); do
+  if curl --fail --silent --show-error --max-time 15 --output /dev/null \
+      --resolve "${DOMAIN}:443:127.0.0.1" "https://${DOMAIN}/release.json" \
+    && homepage_body="$(curl --fail --silent --show-error --max-time 15 \
+      --resolve "${DOMAIN}:443:127.0.0.1" "https://${DOMAIN}/")" \
+    && grep -Fq '<meta name="aninexus-build"' <<<"$homepage_body" \
+    && health_body="$(curl --fail --silent --show-error --max-time 15 \
+      --resolve "${DOMAIN}:443:127.0.0.1" "https://${DOMAIN}/health/ready")" \
+    && python3 -c 'import json,sys; body=json.load(sys.stdin); raise SystemExit(0 if body.get("ok") and body.get("db") and body.get("cache") else 1)' <<<"$health_body"; then
+    production_ready=1
+    break
+  fi
+  echo "Produção ainda não está pronta (tentativa ${attempt}/20)."
+  sleep 3
+done
+[[ "$production_ready" -eq 1 ]] || { echo 'A produção não ficou saudável após a ativação do domínio.' >&2; exit 5; }
+
+redirect_headers="$(curl --fail --silent --show-error --head --max-time 15 \
+  --resolve "${WWW_DOMAIN}:443:127.0.0.1" "https://${WWW_DOMAIN}/")"
+redirect_headers="${redirect_headers//$'\r'/}"
+redirect="$(awk 'tolower($1)=="location:"{print $2; exit}' <<<"$redirect_headers")"
 [[ "$redirect" == "https://${DOMAIN}/" ]] || { echo "Redirect de www inesperado: ${redirect:-ausente}" >&2; exit 5; }
 
 trap - ERR

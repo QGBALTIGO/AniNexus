@@ -24,7 +24,7 @@ jobs:
     env:
       DEPLOY_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: ${{ env.DEPLOY_SHA }}
 
@@ -32,8 +32,11 @@ jobs:
         id: domain_state
         shell: bash
         run: |
+          headers="$(curl --fail --silent --show-error --head --max-time 10 https://www.aninexus.com.br/ 2>/dev/null || true)"
+          headers="${headers//$'\r'/}"
+          location="$(awk 'tolower($1)=="location:"{print $2; exit}' <<<"$headers")"
           if curl --fail --silent --show-error --max-time 10 https://aninexus.com.br/health/ready >/dev/null \
-            && [ "$(curl --silent --show-error --head --max-time 10 https://www.aninexus.com.br/ | tr -d '\r' | awk 'tolower($1)=="location:"{print $2; exit}')" = 'https://aninexus.com.br/' ]; then
+            && [ "$location" = 'https://aninexus.com.br/' ]; then
             echo 'active=true' >> "$GITHUB_OUTPUT"
           else
             echo 'active=false' >> "$GITHUB_OUTPUT"
@@ -122,9 +125,13 @@ jobs:
       - name: Validar produção
         shell: bash
         run: |
-          curl --fail --silent --show-error --max-time 15 https://aninexus.com.br/ | grep -Fq '<meta name="aninexus-build"'
-          curl --fail --silent --show-error --max-time 15 https://aninexus.com.br/health/ready >/dev/null
-          location="$(curl --silent --show-error --head --max-time 15 https://www.aninexus.com.br/ | tr -d '\r' | awk 'tolower($1)=="location:"{print $2; exit}')"
+          homepage="$(curl --fail --silent --show-error --max-time 15 https://aninexus.com.br/)"
+          grep -Fq '<meta name="aninexus-build"' <<<"$homepage"
+          health="$(curl --fail --silent --show-error --max-time 15 https://aninexus.com.br/health/ready)"
+          python -c 'import json,sys; body=json.load(sys.stdin); raise SystemExit(0 if body.get("ok") and body.get("db") and body.get("cache") else 1)' <<<"$health"
+          headers="$(curl --fail --silent --show-error --head --max-time 15 https://www.aninexus.com.br/)"
+          headers="${headers//$'\r'/}"
+          location="$(awk 'tolower($1)=="location:"{print $2; exit}' <<<"$headers")"
           [ "$location" = 'https://aninexus.com.br/' ]
 
       - name: Limpar chave temporária

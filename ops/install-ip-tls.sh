@@ -46,6 +46,7 @@ certbot delete --cert-name aninexus-ip-staging --non-interactive || true
 systemctl enable --now snap.certbot.renew.timer 2>/dev/null || true
 
 curl --fail --silent --show-error --max-time 15 "https://${PUBLIC_IP}/release.json" >/dev/null
-curl --fail --silent --show-error --max-time 15 "https://${PUBLIC_IP}/" | grep -Fq '<meta name="aninexus-build"'
+homepage="$(curl --fail --silent --show-error --max-time 15 "https://${PUBLIC_IP}/")"
+grep -Fq '<meta name="aninexus-build"' <<<"$homepage"
 trap - ERR
 echo "HTTPS ativo e validado em https://${PUBLIC_IP}/"
