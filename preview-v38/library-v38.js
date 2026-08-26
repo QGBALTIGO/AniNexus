@@ -5,7 +5,7 @@
   const IS_PAGES=location.hostname.endsWith('github.io');
   const REMOTE=window.AniNexusAuth?.enabled===true;
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='40.7.0';
+  const BUILD='40.8.0';
   const API='https://graphql.anilist.co';
   const LIB_ROUTE='/meus-animes';
   const STATE_KEY='aninexus:mediaState:v2';

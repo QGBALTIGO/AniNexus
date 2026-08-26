@@ -8,7 +8,7 @@
   const base = isPages ? '/AniNexus' : '';
   const auth = () => window.AniNexusAuth;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-  const routeUrl = path => isPages ? `${base}/?build=40.7.0&p=${encodeURIComponent(path)}` : path;
+  const routeUrl = path => isPages ? `${base}/?build=40.8.0&p=${encodeURIComponent(path)}` : path;
   const route = () => { const url = new URL(location.href); let path = url.searchParams.get('p') || url.pathname; if (isPages && !url.searchParams.get('p')) path = path.replace(/^\/AniNexus/, '') || '/'; return String(path).split('?')[0].replace(/\/+$/, '') || '/'; };
   const formatDate = value => { if (!value) return '—'; const date = new Date(value); return Number.isNaN(date.valueOf()) ? '—' : new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short' }).format(date); };
   const statusLabel = { active: 'Ativa', suspended: 'Suspensa', banned: 'Banida', open: 'Aberta', reviewing: 'Em análise', resolved: 'Resolvida', dismissed: 'Descartada' };

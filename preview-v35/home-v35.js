@@ -7,7 +7,7 @@
   if (!app) return;
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
-  const BUILD = '35.0.0';
+  const BUILD = '40.8.0';
   const API = 'https://graphql.anilist.co';
   const TZ = 'America/Sao_Paulo';
   const CACHE_TTL = 4 * 60 * 1000;

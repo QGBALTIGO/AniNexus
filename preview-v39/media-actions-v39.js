@@ -4,7 +4,7 @@
 
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='40.7.0';
+  const BUILD='40.8.0';
   const FAV='[data-fav],[data-nx-fav],[data-nx-detail-fav],[data-nx18-fav],[data-nx17-fav]';
   const LIST='[data-list],[data-nx-list],[data-nx-detail-list],[data-nx18-status],[data-nx17-list]';
   const ACTION=`${FAV},${LIST}`;
@@ -102,5 +102,5 @@
   const start=()=>{neutralize(document);observer.observe(document.body,{subtree:true,childList:true})};
   if(document.body)start();else document.addEventListener('DOMContentLoaded',start,{once:true});
 
-  window.AniNexusMediaActions={favoriteSelector:FAV,listSelector:LIST,sync:syncBurst,neutralize,communityUrl,owner:'global-v40.7.0'};
+  window.AniNexusMediaActions={favoriteSelector:FAV,listSelector:LIST,sync:syncBurst,neutralize,communityUrl,owner:'global-v40.8.0'};
 })();

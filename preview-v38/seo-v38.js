@@ -41,12 +41,13 @@
     const h1 = document.querySelector('#app h1');
     const known = pages[path];
     const detail = /^\/(?:anime|manga)\//.test(path);
-    const title = esc((detail && h1?.textContent?.trim()) || known?.[0] || h1?.textContent?.trim() || 'AniNexus');
-    const synopsis = document.querySelector('.nx23-synopsis,.nx-synopsis,.nx32-article-head>p,.nx38-account-page p');
-    const description = esc((detail && synopsis?.textContent?.trim()) || known?.[1] || 'Descubra e acompanhe animes, mangás, notícias e comunidade em português.').slice(0, 220);
+    const profile = /^\/u\/[\p{L}\p{N}_.-]{3,30}$/u.test(path);
+    const title = esc(((detail || profile) && h1?.textContent?.trim()) || known?.[0] || h1?.textContent?.trim() || 'AniNexus');
+    const synopsis = document.querySelector('.nx23-synopsis,.nx-synopsis,.nx32-article-head>p,.nx38-account-page p,.nx38p-person>p');
+    const description = esc(((detail || profile) && synopsis?.textContent?.trim()) || known?.[1] || (profile ? `Perfil de ${title} na comunidade AniNexus.` : 'Descubra e acompanhe animes, mangás, notícias e comunidade em português.')).slice(0, 220);
     const canonical = canonicalFor(path);
     const fullTitle = path === '/' ? 'AniNexus — seu universo anime' : `${title} | AniNexus`;
-    const image = document.querySelector('.nx23-cover img,.nx-detail-cover img,.nx32-article-hero img,.nx35-cover img')?.src || `${siteOrigin}/assets/logo.png`;
+    const image = document.querySelector('.nx23-cover img,.nx-detail-cover img,.nx32-article-hero img,.nx35-cover img,.nx38p-avatar img')?.src || `${siteOrigin}/assets/logo.png`;
     document.title = fullTitle;
     document.querySelector('meta[name="description"]')?.setAttribute('content', description);
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonical);
@@ -75,6 +76,7 @@
   addEventListener('aninexus:auth-v38-ready', schedule);
   addEventListener('aninexus:library-v38-ready', schedule);
   addEventListener('aninexus:community-v40-ready', schedule);
+  addEventListener('aninexus:profile-v38-ready', schedule);
   const app = document.querySelector('#app');
   if (app) new MutationObserver(schedule).observe(app, { childList: true, subtree: true });
   schedule();

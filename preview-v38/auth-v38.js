@@ -11,11 +11,12 @@
   const PUBLISHABLE_KEY = String(config.clerkPublishableKey || '');
   const ENABLED = config.authEnabled === true && /^https:\/\//.test(API_ORIGIN) && /^pk_(?:test|live)_/.test(PUBLISHABLE_KEY);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-  const routeUrl = path => IS_PAGES ? `${BASE}/?build=40.7.0&p=${encodeURIComponent(path)}` : path;
+  const routeUrl = path => IS_PAGES ? `${BASE}/?build=40.8.0&p=${encodeURIComponent(path)}` : path;
   const go = (path, replace = false) => location[replace ? 'replace' : 'assign'](routeUrl(path));
   let clerkPromise = null;
   let apiUser = null;
   let clerkListenerInstalled = false;
+  let headerSyncToken = 0;
   const fallbackLocalization = {
     locale: 'pt-BR',
     signIn: { start: { title: 'Entre no AniNexus', subtitle: 'Continue sua jornada de onde parou.', actionText: 'Ainda não tem uma conta?', actionLink: 'Criar conta' } },
@@ -40,7 +41,7 @@
   });
   async function loadLocalization() {
     try {
-      const response = await fetch(`${BASE}/clerk-localization-ptbr.json?v=40.7.0`, { cache: 'force-cache', credentials: 'omit' });
+      const response = await fetch(`${BASE}/clerk-localization-ptbr.json?v=40.8.0`, { cache: 'force-cache', credentials: 'omit' });
       if (response.ok) return await response.json();
       console.warn('[AniNexus auth] tradução pt-BR indisponível; usando o pacote mínimo interno.', { status: response.status });
     } catch (error) {
@@ -240,8 +241,9 @@
       apiUser = me?.user || null; if (!apiUser) throw new Error('AUTH_REQUIRED');
       const items = list?.items || [], notifications = notes?.items || [], payload = localPayload(), showImport = !importStatus?.imported && hasLocalData(payload) && localStorage.getItem('aninexus:local-import:ignored') !== 'true';
       const initial = String(apiUser.displayName || apiUser.username || '?').trim().charAt(0).toUpperCase(), watching = items.filter(item => item.status === 'CURRENT').length, done = items.filter(item => item.status === 'COMPLETED').length, unread = notifications.filter(item => !item.read_at).length;
-      app.innerHTML = `<main class="nx38-account-page"><div class="nx38-account-shell"><header class="nx38-account-head"><div class="nx38-account-person"><div class="nx38-account-avatar">${apiUser.avatarUrl ? `<img src="${esc(apiUser.avatarUrl)}" alt="">` : esc(initial)}</div><div><h1>${esc(apiUser.displayName || apiUser.username)}</h1><p>${esc(apiUser.email)}</p></div></div><div class="nx38-account-head-actions">${['moderator','admin'].includes(apiUser.role)?`<a class="nx38-admin-entry" href="${routeUrl('/admin')}">Administração</a>`:''}<button type="button" data-manage-account>Segurança e sessões</button><button class="nx38-account-logout" type="button" data-logout>Sair</button></div></header><div class="nx38-account-grid"><div class="nx38-account-stat"><small>ASSISTINDO</small><strong>${watching}</strong></div><div class="nx38-account-stat"><small>CONCLUÍDOS</small><strong>${done}</strong></div><div class="nx38-account-stat"><small>SEGUINDO</small><strong>${(follows?.items || []).length}</strong></div><div class="nx38-account-stat"><small>NOTIFICAÇÕES</small><strong>${unread}</strong></div></div>${showImport ? importCard(payload) : ''}<section class="nx38-account-info"><h2>Conta e privacidade</h2><dl><dt>Nome de exibição</dt><dd>${esc(apiUser.displayName || apiUser.username)}</dd><dt>E-mail</dt><dd>${esc(apiUser.email)}</dd><dt>Verificação</dt><dd>${apiUser.emailVerified ? 'E-mail verificado' : 'Verificação pendente'}</dd><dt>Privacidade</dt><dd>${esc(apiUser.privacy || 'public')}</dd><dt>Membro desde</dt><dd>${apiUser.createdAt ? new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' }).format(new Date(apiUser.createdAt)) : '—'}</dd></dl><div class="nx38-account-actions"><button type="button" data-export>Exportar meus dados</button><button type="button" class="danger" data-delete>Excluir conta</button></div><p role="status" aria-live="polite"></p></section></div></main>`;
+      app.innerHTML = `<main class="nx38-account-page"><div class="nx38-account-shell"><header class="nx38-account-head"><div class="nx38-account-person"><div class="nx38-account-avatar">${apiUser.avatarUrl ? `<img src="${esc(apiUser.avatarUrl)}" alt="">` : esc(initial)}</div><div><h1>${esc(apiUser.displayName || apiUser.username)}</h1><p>@${esc(apiUser.username)} · ${esc(apiUser.email)}</p></div></div><div class="nx38-account-head-actions">${['moderator','admin'].includes(apiUser.role)?`<a class="nx38-admin-entry" href="${routeUrl('/admin')}">Administração</a>`:''}<a class="nx38-account-profile-link" href="${routeUrl(`/u/${apiUser.username}`)}">Ver perfil público</a><button type="button" data-edit-profile>Personalizar perfil</button><button type="button" data-manage-account>Segurança e sessões</button><button class="nx38-account-logout" type="button" data-logout>Sair</button></div></header><div class="nx38-account-grid"><div class="nx38-account-stat"><small>ASSISTINDO</small><strong>${watching}</strong></div><div class="nx38-account-stat"><small>CONCLUÍDOS</small><strong>${done}</strong></div><div class="nx38-account-stat"><small>SEGUINDO</small><strong>${(follows?.items || []).length}</strong></div><div class="nx38-account-stat"><small>NOTIFICAÇÕES</small><strong>${unread}</strong></div></div>${showImport ? importCard(payload) : ''}<section class="nx38-account-info"><h2>Conta e perfil</h2><dl><dt>Nome de exibição</dt><dd>${esc(apiUser.displayName || apiUser.username)}</dd><dt>Usuário público</dt><dd>@${esc(apiUser.username)}</dd><dt>E-mail</dt><dd>${esc(apiUser.email)}</dd><dt>Verificação</dt><dd>${apiUser.emailVerified ? 'E-mail verificado' : 'Verificação pendente'}</dd><dt>Privacidade</dt><dd>${({public:'Público',followers:'Somente membros',private:'Privado'})[apiUser.privacy]||'Público'}</dd><dt>Membro desde</dt><dd>${apiUser.createdAt ? new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' }).format(new Date(apiUser.createdAt)) : '—'}</dd></dl><div class="nx38-account-actions"><button type="button" data-edit-profile>Editar nome, @, foto e bio</button><button type="button" data-export>Exportar meus dados</button><button type="button" class="danger" data-delete>Excluir conta</button></div><p role="status" aria-live="polite"></p></section></div></main>`;
       document.querySelector('[data-manage-account]').onclick = () => clerk.openUserProfile();
+      document.querySelectorAll('[data-edit-profile]').forEach(button=>button.onclick=()=>window.AniNexusProfileV38?.openEditor(apiUser,()=>renderAccount()));
       document.querySelector('[data-logout]').onclick = async event => { event.currentTarget.disabled = true; await signOut(); };
       document.querySelector('[data-export]').onclick = event => downloadExport(event.currentTarget);
       document.querySelector('[data-delete]').onclick = deleteDialog;
@@ -256,8 +258,9 @@
     dispatchEvent(new CustomEvent('aninexus:auth-v38-ready'));
   }
   async function syncHeader() {
+    const syncToken = ++headerSyncToken;
     const actions = document.querySelector('.top-actions'); if (!actions) return;
-    actions.querySelector('.nx38-account-chip')?.remove();
+    actions.querySelectorAll('.nx38-account-chip').forEach(chip=>chip.remove());
     const login = actions.querySelector('[data-action="login"]'), register = actions.querySelector('[data-action="register"]');
     const drawer=document.querySelector('.drawer-auth-card'),drawerTitle=drawer?.querySelector('h3'),drawerText=drawer?.querySelector('p'),drawerActions=drawer?.querySelector('.drawer-auth-actions');
     const setAnonymous=()=>{document.documentElement.dataset.nxAuthState='anonymous';if(login)login.hidden=false;if(register)register.hidden=false;if(drawer){drawer.dataset.authState='anonymous';if(drawerTitle)drawerTitle.textContent='Entre na sua conta';if(drawerText)drawerText.textContent='Salve sua lista, acompanhe episódios e participe da comunidade.';if(drawerActions)drawerActions.innerHTML='<button class="login-btn" data-action="login">Entrar</button><button class="signup-btn" data-action="register">Criar conta</button>'}};
@@ -265,14 +268,16 @@
     document.documentElement.dataset.nxAuthState='loading';if(login)login.hidden=true;if(register)register.hidden=true;
     try {
       const user = await getUser();
+      if(syncToken!==headerSyncToken||!actions.isConnected)return;
       if (user) {
         document.documentElement.dataset.nxAuthState='authenticated';
         if (login) login.hidden = true; if (register) register.hidden = true;
+        actions.querySelectorAll('.nx38-account-chip').forEach(chip=>chip.remove());
         const button = document.createElement('button'); button.className = 'nx38-account-chip'; button.type = 'button'; button.setAttribute('aria-label', 'Abrir minha conta'); button.innerHTML = `<i>${user.imageUrl ? `<img src="${esc(user.imageUrl)}" alt="">` : esc(String(user.firstName || user.username || '?').charAt(0).toUpperCase())}</i><span>${esc(user.firstName || user.username || 'Minha conta')}</span>`; button.onclick = () => go('/minha-conta'); actions.insertBefore(button, actions.querySelector('.menu-btn') || null);
         if(drawer){const name=String(user.firstName||user.username||'Minha conta');drawer.dataset.authState='authenticated';if(drawerTitle)drawerTitle.textContent=`Olá, ${name}`;if(drawerText)drawerText.textContent='Continue sua lista, seu progresso e suas conversas.';if(drawerActions){drawerActions.innerHTML='<button class="nx38-drawer-account" type="button">Abrir minha conta</button>';drawerActions.querySelector('button').onclick=()=>go('/minha-conta')}}
         api('/api/me').then(({user:account}={})=>{if(!drawerActions||!['moderator','admin'].includes(account?.role)||drawerActions.querySelector('[data-open-admin]'))return;const admin=document.createElement('button');admin.type='button';admin.dataset.openAdmin='';admin.className='nx38-drawer-admin';admin.textContent='Administração';admin.onclick=()=>go('/admin');drawerActions.append(admin)}).catch(()=>{});
       } else setAnonymous();
-    } catch (error) { console.warn('[AniNexus auth] não foi possível confirmar a sessão no cabeçalho.',error); setAnonymous(); }
+    } catch (error) { if(syncToken!==headerSyncToken)return;console.warn('[AniNexus auth] não foi possível confirmar a sessão no cabeçalho.',error); setAnonymous(); }
   }
   window.AniNexusAuthV38 = { renderAuth, renderAccount, syncHeader, getUser, api };
   function currentRoute() {

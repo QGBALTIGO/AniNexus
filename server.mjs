@@ -38,7 +38,7 @@ app.addHook('onSend',async(req,reply,payload)=>{
   reply.header('X-Permitted-Cross-Domain-Policies','none');
   const url=String(req.url||'').split('?')[0];
   if(url.startsWith('/api/auth/')||url.startsWith('/api/me'))reply.header('Cache-Control','no-store');
-  else if(req.method==='GET'&&/^\/api\/(catalog|reading|schedule|anime\/\d+|manga\/\d+|studios|dublados|lists|list\/|news(?:\/|$)|community\/(?:impressions|activity|threads))/.test(url))reply.header('Cache-Control','public, max-age=20, stale-while-revalidate=180, stale-if-error=600');
+  else if(req.method==='GET'&&/^\/api\/(catalog|reading|schedule|anime\/\d+|manga\/\d+|studios|dublados|lists|list\/|users\/|news(?:\/|$)|community\/(?:impressions|activity|threads))/.test(url))reply.header('Cache-Control','public, max-age=20, stale-while-revalidate=180, stale-if-error=600');
   else if(req.method==='GET'&&(url==='/'||reply.getHeader('content-type')?.toString().includes('text/html')))reply.header('Cache-Control','no-cache, max-age=0, must-revalidate');
   if(process.env.PUBLIC_ORIGIN?.startsWith('https://'))reply.header('Strict-Transport-Security','max-age=31536000; includeSubDomains; preload');
   return payload;
@@ -56,11 +56,14 @@ const privateReadRate=rateForUser(120,'1 minute','private-read');
 const privateHeavyRate=rateForUser(20,'1 minute','private-heavy');
 const writeRate=rateForUser(30,'1 minute','private-write');
 const publicRate={config:{rateLimit:{max:240,timeWindow:'1 minute'}}};
-const safeUser=u=>u&&({id:u.id,email:u.email,username:u.username,displayName:u.display_name||u.username,role:u.role,status:u.status||'active',avatarUrl:u.avatar_url,bio:u.bio,theme:u.theme,privacy:u.privacy||'public',emailVerified:u.email_verified,createdAt:u.created_at});
+const safeUser=u=>u&&({id:u.id,email:u.email,username:u.username,displayName:u.display_name||u.username,role:u.role,status:u.status||'active',avatarUrl:u.avatar_url,bannerUrl:u.profile_banner_url||null,bio:u.bio,location:u.location||null,websiteUrl:u.website_url||null,instagramHandle:u.instagram_handle||null,telegramHandle:u.telegram_handle||null,showLibrary:u.show_library!==false,showActivity:u.show_activity!==false,showStats:u.show_stats!==false,theme:u.theme,privacy:u.privacy||'public',emailVerified:u.email_verified,createdAt:u.created_at});
 const safeInt=(v,min=1,max=Number.MAX_SAFE_INTEGER)=>{const n=Number(v);return Number.isSafeInteger(n)&&n>=min&&n<=max?n:null};
 const safePath=v=>{const s=String(v||'').slice(0,500);return s.startsWith('/')&&!s.startsWith('//')?s:null};
 const strongPassword=z.string().min(10).max(128).refine(v=>/[A-Za-zÀ-ÿ]/.test(v)&&/\d/.test(v),{message:'WEAK_PASSWORD'});
 const usernameSchema=z.string().trim().min(3).max(30).regex(/^[\p{L}\p{N}_.-]+$/u).refine(value=>!/^(?:admin(?:istrator)?|moderador|moderator|suporte|support|aninexus|equipe|staff|sistema|system)$/i.test(value),{message:'RESERVED_USERNAME'});
+const nullableText=(max,min=0)=>z.union([z.string().trim().min(min).max(max),z.literal(''),z.null()]).transform(value=>value||null);
+const nullableHttpsUrl=z.union([z.string().trim().url().max(2000).refine(value=>value.startsWith('https://')),z.literal(''),z.null()]).transform(value=>value||null);
+const nullableHandle=max=>z.preprocess(value=>typeof value==='string'?value.trim().replace(/^@+/,''):value,z.union([z.string().regex(/^[A-Za-z0-9_.]+$/).max(max),z.literal(''),z.null()])).transform(value=>value||null);
 const DUMMY_PASSWORD_HASH=CLERK_ENABLED?'':await hashPassword('aninexus-invalid-password-sentinel-do-not-use-8401');
 const mediaProjection=`CASE WHEN mc.media_id IS NULL THEN NULL ELSE jsonb_build_object(
   'id',mc.media_id,'title',mc.payload->>'title','cover',mc.payload->>'cover','banner',mc.payload->>'banner',
@@ -78,6 +81,25 @@ const transaction=async fn=>{const client=await pool.connect();try{await client.
 app.get('/health',async()=>({ok:true,uptime:Math.round(process.uptime()),time:new Date().toISOString()}));
 app.get('/health/ready',async(req,reply)=>{const [db,cache]=await Promise.all([dbReady(),(async()=>{try{return redis.isReady&&(await redis.ping())==='PONG'}catch{return false}})()]);const ok=db&&cache;return reply.code(ok?200:503).send({ok,db,cache});});
 app.get('/api/me',privateReadRate,async(req,reply)=>{const user=await requireUser(req,reply);if(!user)return;return{user:safeUser(user)}});
+app.get('/api/users/:username',publicRate,async(req,reply)=>{
+  const parsed=usernameSchema.safeParse(String(req.params.username||''));if(!parsed.success)return reply.code(404).send({error:'NOT_FOUND'});
+  const requested=parsed.data;
+  let result=await q('SELECT * FROM users WHERE username=$1 AND deleted_at IS NULL AND status=\'active\'',[requested]);
+  let aliased=false;
+  if(!result.rows[0]){result=await q(`SELECT u.* FROM user_profile_aliases a JOIN users u ON u.id=a.user_id WHERE a.alias=$1 AND u.deleted_at IS NULL AND u.status='active'`,[requested]);aliased=!!result.rows[0]}
+  const user=result.rows[0];if(!user)return reply.code(404).send({error:'NOT_FOUND'});
+  const isPrivate=user.privacy!=='public';
+  const profile={username:user.username,displayName:user.display_name||user.username,avatarUrl:user.avatar_url,bannerUrl:user.profile_banner_url||null,bio:isPrivate?null:user.bio,location:isPrivate?null:user.location,websiteUrl:isPrivate?null:user.website_url,instagramHandle:isPrivate?null:user.instagram_handle,telegramHandle:isPrivate?null:user.telegram_handle,role:user.role,privacy:user.privacy,isPrivate,showLibrary:user.show_library!==false,showActivity:user.show_activity!==false,showStats:user.show_stats!==false,createdAt:user.created_at};
+  if(isPrivate)return{profile,canonicalUsername:user.username,aliased,stats:null,library:[],activity:[],impressions:[]};
+  const [statsResult,libraryResult,activityResult,impressionsResult]=await Promise.all([
+    user.show_stats===false?Promise.resolve({rows:[]}):q(`SELECT count(*)::int list_total,count(*) FILTER(WHERE status='CURRENT')::int watching,count(*) FILTER(WHERE status='COMPLETED')::int completed,count(*) FILTER(WHERE status='PLANNING')::int planning,COALESCE(sum(progress),0)::int episodes_watched,round(avg(score)::numeric,1) average_score,(SELECT count(*)::int FROM user_favorites WHERE user_id=$1) favorites FROM user_anime WHERE user_id=$1`,[user.id]),
+    user.show_library===false?Promise.resolve({rows:[]}):q(`SELECT ua.media_id,ua.status,ua.score,ua.reaction,ua.progress,ua.updated_at,${mediaProjection} AS media FROM user_anime ua LEFT JOIN media_cache mc ON mc.media_id=ua.media_id WHERE ua.user_id=$1 ORDER BY ua.updated_at DESC LIMIT 36`,[user.id]),
+    user.show_activity===false?Promise.resolve({rows:[]}):q(`SELECT ua.media_id,ua.status,ua.score,ua.reaction,ua.progress,ua.updated_at AS created_at,${mediaProjection} AS media FROM user_anime ua LEFT JOIN media_cache mc ON mc.media_id=ua.media_id WHERE ua.user_id=$1 ORDER BY ua.updated_at DESC LIMIT 12`,[user.id]),
+    user.show_activity===false?Promise.resolve({rows:[]}):q(`SELECT i.id,i.media_id,i.body,i.spoiler,i.created_at,${mediaProjection} AS media FROM impressions i LEFT JOIN media_cache mc ON mc.media_id=i.media_id WHERE i.user_id=$1 AND i.hidden=false ORDER BY i.created_at DESC LIMIT 12`,[user.id]),
+  ]);
+  const [library,activity,impressions]=await Promise.all([hydrateCommunityMedia(libraryResult.rows),hydrateCommunityMedia(activityResult.rows),hydrateCommunityMedia(impressionsResult.rows)]);
+  return{profile,canonicalUsername:user.username,aliased,stats:statsResult.rows[0]||null,library,activity,impressions};
+});
 app.post('/api/auth/register',authRate,async(req,reply)=>{
   if(CLERK_ENABLED)return reply.code(410).send({error:'AUTH_MANAGED_BY_CLERK'});
   const parsed=z.object({email:z.string().trim().toLowerCase().email().max(254),username:usernameSchema,password:strongPassword}).safeParse(req.body);
@@ -112,7 +134,7 @@ app.get('/api/manga/:id',{config:{rateLimit:{max:120,timeWindow:'1 minute'}}},as
 app.get('/api/studios',publicRate,async req=>getStudios(Number(req.query?.page||1)));
 app.get('/api/dublados',publicRate,async req=>getDubbed(Number(req.query?.page||1)));
 app.get('/api/lists',publicRate,async()=>lists);
-app.get('/api/list/:slug',publicRate,async(req,reply)=>{const l=lists.find(x=>x.slug===req.params.slug);if(!l)return reply.code(404).send({error:'NOT_FOUND'});const data=await getCatalog({page:req.query?.page||1,sort:l.sort});return {...l,...data};});
+app.get('/api/list/:slug',publicRate,async(req,reply)=>{const l=lists.find(x=>x.slug===req.params.slug);if(!l)return reply.code(404).send({error:'NOT_FOUND'});const data=await getCatalog({page:req.query?.page||1,perPage:24,sort:l.sort,genre:l.genre,format:l.format,status:l.status,season:l.season,year:l.year});return {...l,...data};});
 
 app.get('/api/news',publicRate,async(req)=>{const limit=Math.max(1,Math.min(60,Number(req.query?.limit||20))),offset=Math.max(0,Math.min(5000,Number(req.query?.offset||0)));const type=req.query?.type?String(req.query.type).slice(0,40):null;return{items:await getNativeNews({limit,offset,type})};});
 app.get('/api/news/:slug',publicRate,async(req,reply)=>{const slug=String(req.params.slug||'').slice(0,180);const item=await getNativeArticle(slug);if(!item)return reply.code(404).send({error:'NOT_FOUND'});return item;});
@@ -171,10 +193,23 @@ app.put('/api/me/preferences',writeRate,async(req,reply)=>{
 
 app.patch('/api/me/profile',writeRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
-  const parsed=z.object({displayName:z.string().trim().min(1).max(80),bio:z.string().trim().max(500).nullable(),privacy:z.enum(['public','followers','private'])}).safeParse(req.body);
+  const parsed=z.object({username:usernameSchema,displayName:z.string().trim().min(1).max(80),avatarUrl:nullableHttpsUrl,bannerUrl:nullableHttpsUrl,bio:nullableText(500),location:nullableText(80),websiteUrl:nullableHttpsUrl,instagramHandle:nullableHandle(30),telegramHandle:nullableHandle(32),privacy:z.enum(['public','followers','private']),showLibrary:z.boolean(),showActivity:z.boolean(),showStats:z.boolean()}).safeParse(req.body);
   if(!parsed.success)return reply.code(422).send({error:'INVALID_INPUT'});
-  const {rows}=await q('UPDATE users SET display_name=$2,bio=$3,privacy=$4,updated_at=now() WHERE id=$1 RETURNING *',[user.id,parsed.data.displayName,parsed.data.bio||null,parsed.data.privacy]);
-  return{user:safeUser(rows[0])};
+  const d=parsed.data;
+  try{
+    const updated=await transaction(async client=>{
+      const current=(await client.query('SELECT * FROM users WHERE id=$1 AND deleted_at IS NULL FOR UPDATE',[user.id])).rows[0];if(!current)return null;
+      if(String(current.username).toLocaleLowerCase('pt-BR')!==d.username.toLocaleLowerCase('pt-BR')){
+        const conflict=(await client.query(`SELECT 1 FROM users WHERE username=$1 AND id<>$2 UNION ALL SELECT 1 FROM user_profile_aliases WHERE alias=$1 AND user_id<>$2 LIMIT 1`,[d.username,user.id])).rows[0];
+        if(conflict)return{conflict:true};
+        await client.query('INSERT INTO user_profile_aliases(alias,user_id) VALUES($1,$2) ON CONFLICT(alias) DO NOTHING',[current.username,user.id]);
+      }
+      const {rows}=await client.query(`UPDATE users SET username=$2,display_name=$3,avatar_url=$4,avatar_source='custom',profile_banner_url=$5,bio=$6,location=$7,website_url=$8,instagram_handle=$9,telegram_handle=$10,privacy=$11,show_library=$12,show_activity=$13,show_stats=$14,username_changed_at=CASE WHEN username<>$2 THEN now() ELSE username_changed_at END,updated_at=now() WHERE id=$1 RETURNING *`,[user.id,d.username,d.displayName,d.avatarUrl,d.bannerUrl,d.bio,d.location,d.websiteUrl,d.instagramHandle,d.telegramHandle,d.privacy,d.showLibrary,d.showActivity,d.showStats]);
+      return{user:rows[0]};
+    });
+    if(!updated)return reply.code(404).send({error:'NOT_FOUND'});if(updated.conflict)return reply.code(409).send({error:'USERNAME_UNAVAILABLE'});
+    await invalidateUserIdentityCache(updated.user);return{user:safeUser(updated.user)};
+  }catch(error){if(error?.code==='23505')return reply.code(409).send({error:'USERNAME_UNAVAILABLE'});throw error}
 });
 
 app.get('/api/me/import-status',privateReadRate,async(req,reply)=>{
@@ -234,7 +269,7 @@ app.delete('/api/me/episodes/:mediaId/:episode',writeRate,async(req,reply)=>{
 app.get('/api/me/export',privateHeavyRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
   const [profile,preferences,list,favorites,watched,follows,impressions,threads,posts]=await Promise.all([
-    q('SELECT email,username,display_name,bio,theme,privacy,email_verified,created_at,updated_at FROM users WHERE id=$1',[user.id]),q('SELECT * FROM user_preferences WHERE user_id=$1',[user.id]),q('SELECT media_id,status,score,reaction,progress,updated_at FROM user_anime WHERE user_id=$1 ORDER BY media_id',[user.id]),q('SELECT media_id,media_type,created_at FROM user_favorites WHERE user_id=$1 ORDER BY media_id',[user.id]),q('SELECT media_id,episode,watched_at FROM watched_episodes WHERE user_id=$1 ORDER BY media_id,episode',[user.id]),q('SELECT media_id,media_type,notify_episode,notify_news,created_at FROM user_follows WHERE user_id=$1 ORDER BY media_id',[user.id]),q('SELECT media_id,body,spoiler,created_at,updated_at FROM impressions WHERE user_id=$1 ORDER BY created_at',[user.id]),q('SELECT id,media_id,title,body,spoiler,created_at,updated_at FROM community_threads WHERE user_id=$1 ORDER BY created_at',[user.id]),q('SELECT thread_id,parent_id,body,spoiler,created_at,updated_at FROM community_posts WHERE user_id=$1 ORDER BY created_at',[user.id])
+    q('SELECT email,username,display_name,avatar_url,profile_banner_url,bio,location,website_url,instagram_handle,telegram_handle,avatar_source,theme,privacy,show_library,show_activity,show_stats,username_changed_at,email_verified,created_at,updated_at FROM users WHERE id=$1',[user.id]),q('SELECT * FROM user_preferences WHERE user_id=$1',[user.id]),q('SELECT media_id,status,score,reaction,progress,updated_at FROM user_anime WHERE user_id=$1 ORDER BY media_id',[user.id]),q('SELECT media_id,media_type,created_at FROM user_favorites WHERE user_id=$1 ORDER BY media_id',[user.id]),q('SELECT media_id,episode,watched_at FROM watched_episodes WHERE user_id=$1 ORDER BY media_id,episode',[user.id]),q('SELECT media_id,media_type,notify_episode,notify_news,created_at FROM user_follows WHERE user_id=$1 ORDER BY media_id',[user.id]),q('SELECT media_id,body,spoiler,created_at,updated_at FROM impressions WHERE user_id=$1 ORDER BY created_at',[user.id]),q('SELECT id,media_id,title,body,spoiler,created_at,updated_at FROM community_threads WHERE user_id=$1 ORDER BY created_at',[user.id]),q('SELECT thread_id,parent_id,body,spoiler,created_at,updated_at FROM community_posts WHERE user_id=$1 ORDER BY created_at',[user.id])
   ]);
   reply.header('Cache-Control','no-store').header('Content-Disposition',`attachment; filename="aninexus-${new Date().toISOString().slice(0,10)}.json"`);
   return{exportedAt:new Date().toISOString(),profile:profile.rows[0],preferences:preferences.rows[0]||null,list:list.rows,favorites:favorites.rows,watchedEpisodes:watched.rows,follows:follows.rows,impressions:impressions.rows,threads:threads.rows,posts:posts.rows};

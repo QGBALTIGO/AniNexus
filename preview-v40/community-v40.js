@@ -5,7 +5,7 @@
   const IS_PAGES=location.hostname.endsWith('github.io');
   const REMOTE=window.AniNexusAuth?.enabled===true;
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='40.7.0';
+  const BUILD='40.8.0';
   const API='https://graphql.anilist.co';
   const LOCAL_THREADS='aninexus:community:threads:v40';
   let active='ALL',items=[],mounted=false;
@@ -59,8 +59,8 @@
   }
 
   function reactionText(v){const raw=String(v||'').trim();if(!raw)return'';return({LIKE:'👍 Curtindo',DISLIKE:'🫤 Não curti',LOVE:'😍 Amei',WOW:'😮 Uau'})[raw]||raw}
-  function avatar(x){const name=actorName(x);return `<div class="nx40-avatar">${x.avatar_url?`<img src="${esc(x.avatar_url)}" alt="">`:esc(name.charAt(0).toUpperCase())}</div>`}
-  function actor(x){const name=actorName(x),handle=String(x.username||'').trim();return `<b>${esc(name)}</b>${handle&&handle.toLocaleLowerCase('pt-BR')!==name.toLocaleLowerCase('pt-BR')?` <span class="nx40-handle">@${esc(handle)}</span>`:''}`}
+  function avatar(x){const name=actorName(x),handle=String(x.username||'').trim(),body=x.avatar_url?`<img src="${esc(x.avatar_url)}" alt="">`:esc(name.charAt(0).toUpperCase());return handle?`<a class="nx40-avatar" href="${pageUrl(`/u/${handle}`)}" aria-label="Ver perfil de ${esc(name)}">${body}</a>`:`<div class="nx40-avatar">${body}</div>`}
+  function actor(x){const name=actorName(x),handle=String(x.username||'').trim(),label=`<b>${esc(name)}</b>${handle&&handle.toLocaleLowerCase('pt-BR')!==name.toLocaleLowerCase('pt-BR')?` <span class="nx40-handle">@${esc(handle)}</span>`:''}`;return handle?`<a class="nx40-actor" href="${pageUrl(`/u/${handle}`)}">${label}</a>`:label}
   function mediaBlock(x){if(!x.media_id&&!x.title)return'';const title=resolvedTitle(x),meta=[x.progress?`ep. ${x.progress}`:'',x.score!=null?`★ ${Number(x.score).toFixed(1).replace('.0','')}`:''].filter(Boolean).join(' · ');return `<div class="nx40-media">${x.cover?`<img src="${esc(x.cover)}" alt="${esc(title)}" loading="lazy" decoding="async">`:'<div class="nx40-media-placeholder" aria-hidden="true">◫</div>'}<div><small>ANIME</small><h3>${esc(title)}</h3>${meta?`<span>${esc(meta)}</span>`:''}</div></div>`}
   function stateCard(x){const st=STATUS[x.status]||{label:'Lista',verb:'atualizou',emoji:'•'},r=reactionText(x.reaction),title=resolvedTitle(x);return `<article class="nx40-card state" ${x.media_id?`data-open-anime="${x.media_id}" data-title="${esc(title)}"`:''}>${avatar(x)}<div class="nx40-copy"><p>${actor(x)} ${esc(st.verb)} <strong>${esc(title)}</strong>${x.progress?` <em>no ep. ${x.progress}</em>`:''}</p><div class="nx40-meta"><span>${st.emoji} ${esc(st.label)}</span><i></i><span>${esc(time(x.created_at))}</span>${r?`<span class="nx40-reaction">${esc(r)}</span>`:''}${x.score!=null?`<span>★ ${Number(x.score).toFixed(1).replace('.0','')}</span>`:''}</div>${mediaBlock({...x,title})}</div></article>`}
   function impressionCard(x){const title=resolvedTitle(x);return `<article class="nx40-card impression" ${x.media_id?`data-open-anime="${x.media_id}" data-title="${esc(title)}"`:''}>${avatar(x)}<div class="nx40-copy"><p>${actor(x)} publicou uma impressão${x.media_id?` sobre <strong>${esc(title)}</strong>`:''}</p><div class="nx40-meta"><span>✎ Impressão</span><i></i><span>${esc(time(x.created_at))}</span>${x.status&&STATUS[x.status]?`<span>${esc(STATUS[x.status].label)}</span>`:''}${x.score!=null?`<span>★ ${Number(x.score).toFixed(1).replace('.0','')}</span>`:''}</div>${x.spoiler?'<p class="nx40-thread-body"><span class="nx40-spoiler">Spoiler oculto · abra o anime para ver com contexto</span></p>':`<p class="nx40-thread-body">${esc(x.body||'')}</p>`}${mediaBlock({...x,title,cover:x.cover||mediaCover(x.media)})}</div></article>`}
