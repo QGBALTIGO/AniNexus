@@ -1,7 +1,8 @@
 'use strict';
 (() => {
   if(window.__NX_HOME_V35_LOADER__)return;window.__NX_HOME_V35_LOADER__=true;
-  const base=location.hostname.endsWith('github.io')?'/AniNexus':'';
+  const pages=location.hostname.endsWith('github.io'),base=pages?'/AniNexus':'';
+  try{if(!window.__NX35_HOME_BOOT__){const url=new URL(location.href),restored=url.searchParams.get('p');let path=restored?restored.split('?')[0]:url.pathname;if(pages&&!restored)path=path.replace(/^\/AniNexus/,'')||'/';if((String(path).replace(/\/+$/,'')||'/')!=='/')return}}catch{return}
   const s=document.createElement('script');
   s.src=`${base}/preview-v35/home-v35.js?v=35.0.1`;
   s.defer=true;

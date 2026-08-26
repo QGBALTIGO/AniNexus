@@ -1,9 +1,10 @@
 'use strict';
 (() => {
   try{
+    if(window.__ANINEXUS_CONFIG__?.authEnabled===true)document.documentElement.dataset.nxAuthState='loading';
     const isPages=location.hostname.endsWith('github.io');
     const authPath=()=>{const u=new URL(location.href);let p=u.searchParams.get('p')||u.pathname;if(isPages&&!u.searchParams.get('p'))p=p.replace(/^\/AniNexus/,'')||'/';return String(p||'/').split('?')[0].replace(/\/+$/,'')||'/'};
-    const routes=['/login','/criar-conta','/minha-conta'];
+    const routes=['/login','/criar-conta','/minha-conta','/admin'];
     if(!routes.includes(authPath()))return;
 
     document.documentElement.classList.add('nx38-auth-boot');

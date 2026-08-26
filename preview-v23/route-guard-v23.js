@@ -3,7 +3,7 @@
   try {
     const IS_PAGES=location.hostname.endsWith('github.io');
     const BASE=IS_PAGES?'/AniNexus':'';
-    const BUILD='40.4.1';
+    const BUILD='40.7.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=restored?restored.split('?')[0]:u.pathname;
@@ -19,6 +19,7 @@
       {owner:'news',match:path==='/noticias'||/^\/noticias\/[a-z0-9-]+$/.test(path),selector:'.nx35-news-page',label:'Carregando notícias…'},
       {owner:'community',match:path==='/comunidade',selector:'.nx40-community',label:'Carregando comunidade…'},
       {owner:'auth',match:['/login','/criar-conta','/minha-conta'].includes(path),selector:'.nx38-auth-page,.nx38-account-page',label:'Carregando conta…'},
+      {owner:'admin',match:path==='/admin',selector:'.nx38-admin-page',label:'Carregando administração…'},
       {owner:'library',match:path==='/meus-animes',selector:'.nx38-library',label:'Carregando biblioteca…'},
       {owner:'legal',match:['/termos-de-uso','/politica-de-privacidade','/dmca'].includes(path),selector:'.nx-legal',label:'Carregando documento…'},
       {owner:'institutional',match:['/quem-somos','/colabore','/contato'].includes(path),selector:'.nx-inst',label:'Carregando página…'}

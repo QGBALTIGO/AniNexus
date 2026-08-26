@@ -4,7 +4,7 @@
 
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='40.0.2';
+  const BUILD='40.7.0';
   const FAV='[data-fav],[data-nx-fav],[data-nx-detail-fav],[data-nx18-fav],[data-nx17-fav]';
   const LIST='[data-list],[data-nx-list],[data-nx-detail-list],[data-nx18-status],[data-nx17-list]';
   const ACTION=`${FAV},${LIST}`;
@@ -68,8 +68,9 @@
   document.addEventListener('pointerdown',e=>{const b=e.target.closest?.(ACTION);if(b&&!b.disabled)b.classList.add('nx39-press')},true);
   for(const type of ['pointerup','pointercancel','pointerleave'])document.addEventListener(type,e=>{const b=e.target.closest?.(ACTION);if(b){b.classList.remove('nx39-press');if(type==='pointerup')requestAnimationFrame(()=>pop(b))}},true);
 
-  async function favoriteAction(b){
+  async function favoriteAction(b,clickCount=0){
     const id=idFav(b);if(!Number.isSafeInteger(id)||id<=0)return;
+    if(clickCount>1)return;
     const last=favLock.get(id)||0;if(now()-last<340)return;
     favLock.set(id,now());busy(b,280);pop(b);
     const a=await waitApi();if(!a)return;
@@ -83,7 +84,7 @@
   }
 
   /* Window capture precedes all document/element legacy handlers. */
-  window.addEventListener('click',e=>{const b=e.target.closest?.(ACTION);if(!b||b.disabled)return;stop(e);if(b.matches(FAV)){void favoriteAction(b);return}void listAction(b)},true);
+  window.addEventListener('click',e=>{const b=e.target.closest?.(ACTION);if(!b||b.disabled)return;stop(e);if(b.matches(FAV)){void favoriteAction(b,Number(e.detail||0));return}void listAction(b)},true);
   window.addEventListener('dblclick',e=>{if(e.target.closest?.(ACTION))stop(e)},true);
   document.addEventListener('keydown',e=>{if(e.key==='Escape')releaseList()},true);
   document.addEventListener('aninexus:media-state-changed',()=>syncBurst());
@@ -101,5 +102,5 @@
   const start=()=>{neutralize(document);observer.observe(document.body,{subtree:true,childList:true})};
   if(document.body)start();else document.addEventListener('DOMContentLoaded',start,{once:true});
 
-  window.AniNexusMediaActions={favoriteSelector:FAV,listSelector:LIST,sync:syncBurst,neutralize,communityUrl,owner:'global-v40.0.2'};
+  window.AniNexusMediaActions={favoriteSelector:FAV,listSelector:LIST,sync:syncBurst,neutralize,communityUrl,owner:'global-v40.7.0'};
 })();

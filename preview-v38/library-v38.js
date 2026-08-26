@@ -5,7 +5,7 @@
   const IS_PAGES=location.hostname.endsWith('github.io');
   const REMOTE=window.AniNexusAuth?.enabled===true;
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='38.1.0';
+  const BUILD='40.7.0';
   const API='https://graphql.anilist.co';
   const LIB_ROUTE='/meus-animes';
   const STATE_KEY='aninexus:mediaState:v2';
@@ -25,14 +25,16 @@
   const go=path=>location.assign(pageUrl(path));
   const fmtRel=v=>{const t=Date.parse(v||'');if(!Number.isFinite(t))return'';const d=Math.max(0,Date.now()-t);if(d<60000)return'agora';if(d<3600000)return`há ${Math.max(1,Math.floor(d/60000))}min`;if(d<86400000)return`há ${Math.floor(d/3600000)}h`;if(d<604800000)return`há ${Math.floor(d/86400000)}d`;return new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'}).format(new Date(t)).replace('.','')};
   const format=f=>({TV:'Série',TV_SHORT:'Série curta',MOVIE:'Filme',OVA:'OVA',ONA:'ONA',SPECIAL:'Especial',MUSIC:'Música'})[f]||f||'Anime';
+  const FALLBACK_TITLE='Título temporariamente indisponível';
+  const usableTitle=value=>{const title=String(value||'').trim();return title&&!/^(?:anime|mang[áa])\s*\d+$/i.test(title)&&!['undefined','null','nan'].includes(title.toLowerCase())?title:''};
 
   function mediaOf(raw,id){
     const m=raw&&typeof raw==='object'?raw:{};
-    const title=typeof m.title==='string'?m.title:(m.title?.english||m.title?.userPreferred||m.title?.romaji||m.title?.native||`Anime ${id}`);
+    const title=usableTitle(typeof m.title==='string'?m.title:(m.title?.english||m.title?.userPreferred||m.title?.romaji||m.title?.native))||FALLBACK_TITLE;
     const cover=m.cover||m.coverImage?.extraLarge||m.coverImage?.large||'';
     const banner=m.banner||m.bannerImage||cover;
     const score=m.score!=null?Number(m.score):(m.averageScore?Number(m.averageScore)/10:null);
-    return {id:Number(m.id||id),title:String(title||`Anime ${id}`),cover,banner,score:Number.isFinite(score)?score:null,episodes:m.episodes==null?null:Number(m.episodes),status:String(m.status||''),format:String(m.format||''),seasonYear:m.seasonYear||null,genres:Array.isArray(m.genres)?m.genres:[],slug:m.slug||`${slug(title)}-${Number(m.id||id)}`};
+    return {id:Number(m.id||id),title,cover,banner,score:Number.isFinite(score)?score:null,episodes:m.episodes==null?null:Number(m.episodes),status:String(m.status||''),format:String(m.format||''),seasonYear:m.seasonYear||null,genres:Array.isArray(m.genres)?m.genres:[],slug:m.slug||`${slug(title)}-${Number(m.id||id)}`};
   }
   function normalizeRow(row){const id=Number(row?.media_id||row?.mediaId||row?.media?.id);return{id,status:String(row?.status||''),score:row?.score==null?null:Number(row.score),reaction:row?.reaction||'',progress:Math.max(0,Number(row?.progress)||0),updatedAt:Date.parse(row?.updated_at||row?.updatedAt||0)||0,media:mediaOf(row?.media,id)}}
   function normalizeFav(row){const id=Number(row?.media_id||row?.mediaId||row?.media?.id);return{id,createdAt:Date.parse(row?.created_at||row?.createdAt||0)||0,media:mediaOf(row?.media,id)}}
@@ -56,8 +58,18 @@
   }
   async function fetchMissing(ids){
     ids=[...new Set(ids.map(Number).filter(Boolean))];if(!ids.length)return[];
-    if(IS_PAGES)return gqlIds(ids);
-    const out=[];for(let i=0;i<ids.length;i+=6){const part=ids.slice(i,i+6),r=await Promise.allSettled(part.map(id=>request(`/api/anime/${id}`)));for(let k=0;k<r.length;k++)if(r[k].status==='fulfilled'&&!r[k].value?.__unauth)out.push(mediaOf(r[k].value,part[k]))}return out;
+    const resolved=[];
+    for(let i=0;i<ids.length;i+=60){try{const part=ids.slice(i,i+60),data=await publicRequest(`/api/media/summaries?ids=${encodeURIComponent(part.join(','))}`);resolved.push(...(data?.items||[]).map(item=>mediaOf(item,item.id)))}catch{}}
+    if(resolved.length||!IS_PAGES)return resolved;
+    return gqlIds(ids);
+  }
+
+  async function hydrateLibrary(data){
+    const groups=[data.list||[],data.favorites||[],data.impressions||[]],ids=[...new Set(groups.flat().filter(row=>!usableTitle(row?.media?.title)&&!usableTitle(row?.media?.title?.english)&&!usableTitle(row?.media?.title?.userPreferred)&&!usableTitle(row?.media?.title?.romaji)).map(row=>Number(row?.media_id||row?.mediaId||row?.media?.id)).filter(Boolean))];
+    if(!ids.length)return data;
+    const media=await fetchMissing(ids),map=new Map(media.map(item=>[Number(item.id),item]));
+    const fill=rows=>(rows||[]).map(row=>{const id=Number(row?.media_id||row?.mediaId||row?.media?.id);return map.has(id)?{...row,media:map.get(id)}:row});
+    return{...data,list:fill(data.list),favorites:fill(data.favorites),impressions:fill(data.impressions)};
   }
 
   async function loadLibrary(){
@@ -71,7 +83,7 @@
     try{
       const data=await request('/api/me/library');
       if(data?.__unauth)return{user:null,list:[],favorites:[],impressions:[],impressionCount:0};
-      if(data?.list&&data?.favorites){return{user:data.user||{},list:data.list.map(normalizeRow),favorites:data.favorites.map(normalizeFav),impressions:(data.impressions||[]).map(normalizeImp),impressionCount:Number(data.impressionCount||0)}}
+      if(data?.list&&data?.favorites){const hydrated=await hydrateLibrary(data);return{user:hydrated.user||{},list:hydrated.list.map(normalizeRow),favorites:hydrated.favorites.map(normalizeFav),impressions:(hydrated.impressions||[]).map(normalizeImp),impressionCount:Number(hydrated.impressionCount||0)}}
     }catch{}
     const me=await request('/api/me').catch(()=>({__unauth:true}));if(me?.__unauth||!me?.user)return{user:null,list:[],favorites:[],impressions:[],impressionCount:0};
     const [ls,fs]=await Promise.all([request('/api/me/list').catch(()=>({items:[]})),request('/api/me/favorites').catch(()=>({items:[]}))]);
