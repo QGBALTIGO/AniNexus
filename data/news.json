@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T16:56:53.197Z",
+  "generatedAt": "2026-08-26T19:11:40.453Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -50,16 +50,16 @@
   "stats": {
     "collected": 155,
     "grouped": 126,
-    "published": 30,
+    "published": 29,
     "newStories": 23,
     "deepArticles": 15,
-    "avgWords": 374,
-    "withHeroImage": 27,
+    "avgWords": 378,
+    "withHeroImage": 26,
     "withGallery": 3,
     "withEmbeds": 6,
     "skippedTranslation": 100,
     "skippedQuality": 3,
-    "durationMs": 121361
+    "durationMs": 128023
   },
   "items": [
     {
@@ -207,7 +207,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T16:07:00.000Z",
-      "updatedAt": "2026-08-26T16:55:04.458Z",
+      "updatedAt": "2026-08-26T19:09:47.260Z",
       "expiresAt": "2026-09-02T16:07:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -296,7 +296,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T15:23:00.000Z",
-      "updatedAt": "2026-08-26T16:55:04.458Z",
+      "updatedAt": "2026-08-26T19:09:47.261Z",
       "expiresAt": "2026-09-02T15:23:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -380,7 +380,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T01:45:00.000Z",
-      "updatedAt": "2026-08-26T16:55:06.954Z",
+      "updatedAt": "2026-08-26T19:09:49.500Z",
       "expiresAt": "2026-09-02T01:45:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -580,7 +580,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-26T16:55:08.976Z",
+      "updatedAt": "2026-08-26T19:09:51.784Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -894,7 +894,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-26T16:55:12.352Z",
+      "updatedAt": "2026-08-26T19:09:55.506Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -976,7 +976,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-26T16:55:15.212Z",
+      "updatedAt": "2026-08-26T19:09:58.695Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1422,7 +1422,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-26T16:55:27.133Z",
+      "updatedAt": "2026-08-26T19:10:11.044Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2405,7 +2405,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-26T16:55:32.552Z",
+      "updatedAt": "2026-08-26T19:10:17.091Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2499,7 +2499,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-26T16:55:32.553Z",
+      "updatedAt": "2026-08-26T19:10:17.092Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2581,7 +2581,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-26T16:55:34.682Z",
+      "updatedAt": "2026-08-26T19:10:19.300Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -3083,94 +3083,6 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 251,
-      "qualityScore": 0.97,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 3,
-        "sections": 5,
-        "sourceCount": 1,
-        "ingestMode": "html",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "crunchyroll-e0fa8c0e",
-      "slug": "anime-de-overgeared-ganha-novos-trailer-arte-e-data-de-lancamento-crunchyroll-e0fa8c0e",
-      "source": "Crunchyroll Notícias",
-      "sourceType": "CRUNCHYROLL",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Anime de Overgeared ganha novos trailer, arte e data de lançamento",
-      "originalTitle": null,
-      "summary": "A Crunchyroll transmitirá a adaptação do manhwa assim que ela estrear no dia 2 de outubro de 2026 Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!",
-      "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/19/anime-overgeared-trailer-arte-data-2-de-outubro",
-      "sourceUrl": "https://crunchyroll.com/pt-br/news/latest/2026/8/19/anime-overgeared-trailer-arte-data-2-de-outubro",
-      "image": "https://a.storyblok.com/f/178900/1320x743/09300d9b83/overgeared.jpg",
-      "mediaQuery": "Anime de Overgeared ganha novos trailer, arte e data de lançamento",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-19T18:28:00.000Z",
-      "updatedAt": "2026-08-26T00:03:36.306Z",
-      "expiresAt": "2026-08-26T18:28:00.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [
-        "A Crunchyroll transmitirá a adaptação do manhwa assim que ela estrear no dia 2 de outubro de 2026 Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-        "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-        "You heard it here first!"
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "A Crunchyroll transmitirá a adaptação do manhwa assim que ela estrear no dia 2 de outubro de 2026 Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!"
-          ],
-          "bullets": [
-            "A Crunchyroll transmitirá a adaptação do manhwa assim que ela estrear no dia 2 de outubro de 2026 Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "A Crunchyroll transmitirá a adaptação do manhwa assim que ela estrear no dia 2 de outubro de 2026 Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
-          ]
-        },
-        {
-          "heading": "História e contexto da obra",
-          "bullets": [
-            "A Crunchyroll transmitirá a adaptação do manhwa assim que ela estrear no dia 2 de outubro de 2026 Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Novos trailers, datas, elenco e plataformas confirmadas podem ser incorporados nesta mesma página enquanto a notícia estiver ativa."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "Crunchyroll Notícias",
-          "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/19/anime-overgeared-trailer-arte-data-2-de-outubro",
-          "publishedAt": "2026-08-19T18:28:00.000Z",
-          "author": "Samir Fraiha"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 271,
       "qualityScore": 0.97,
       "contentVersion": 1,
       "coverage": {
