@@ -51,6 +51,7 @@ jobs:
       - name: Validate Docker Compose model
         env:
           POSTGRES_PASSWORD: ci-only-password-not-for-production-1234567890
+          REDIS_PASSWORD: ci-only-redis-password-not-for-production-1234567890
           IP_HASH_SALT: ci-only-ip-salt-not-for-production-1234567890
           PUBLIC_ORIGIN: https://example.invalid
         run: docker compose config --quiet
@@ -61,6 +62,18 @@ jobs:
           docker run --rm \
             -v /tmp/aninexus-nginx.conf:/etc/nginx/conf.d/default.conf:ro \
             nginx:1.27-alpine nginx -t
+          docker run --rm \
+            -v "$PWD/ops/nginx/aninexus-bootstrap.conf:/etc/nginx/conf.d/default.conf:ro" \
+            nginx:1.27-alpine nginx -t
+          mkdir -p /tmp/aninexus-cert/live/187.77.255.164
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 -subj '/CN=187.77.255.164' \
+            -keyout /tmp/aninexus-cert/live/187.77.255.164/privkey.pem \
+            -out /tmp/aninexus-cert/live/187.77.255.164/fullchain.pem >/dev/null 2>&1
+          docker run --rm \
+            -v "$PWD/ops/nginx/aninexus.conf:/etc/nginx/conf.d/default.conf:ro" \
+            -v /tmp/aninexus-cert:/etc/letsencrypt:ro \
+            nginx:1.27-alpine nginx -t
+          bash -n ops/install-ip-tls.sh ops/deploy-vps.sh ops/deploy-api-vps.sh
       - name: Build real production image
         run: docker build --pull -t aninexus-ci:${{ github.sha }} .
       - name: Verify V40 shell, actions and Community inside production image
@@ -68,7 +81,7 @@ jobs:
           CID=$(docker create aninexus-ci:${{ github.sha }})
           trap 'docker rm -f "$CID" >/dev/null 2>&1 || true' EXIT
           docker cp "$CID:/app/public/index.html" /tmp/aninexus-index.html
-          grep -q '2026-08-25-v40.4.1' /tmp/aninexus-index.html
+          grep -q '2026-08-25-v40.5.0' /tmp/aninexus-index.html
           for FILE in \
             preview-v39/media-actions-v39.js \
             preview-v39/media-actions-v39.css \

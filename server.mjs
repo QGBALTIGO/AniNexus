@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
 import { initDb, q, pool, dbReady } from './lib/db.mjs';
 import { initCache, redis } from './lib/cache.mjs';
-import { AUTHORIZED_ORIGINS, CLERK_ENABLED, hashPassword, verifyPassword, createSession, destroySession, currentUser, requireUser, requireRole, validateOrigin, getClerkClient } from './lib/auth.mjs';
+import { AUTHORIZED_ORIGINS, CLERK_ENABLED, hashPassword, verifyPassword, createSession, destroySession, currentUser, requireUser, requireRole, validateOrigin, getClerkClient, beginAccountDeletion, cancelAccountDeletion } from './lib/auth.mjs';
 import { processClerkWebhook } from './lib/clerk-webhook.mjs';
 import { getCatalog, getReading, getSchedule, getAnime, getManga, getStudios, getDubbed, prewarm } from './lib/provider.mjs';
 import { lists } from './lib/content.mjs';
@@ -25,7 +25,8 @@ await app.register(cookie);
 await app.register(cors,{origin:(origin,callback)=>{if(!origin||AUTHORIZED_ORIGINS.includes(origin))return callback(null,true);return callback(null,false)},methods:['GET','HEAD','POST','PUT','PATCH','DELETE','OPTIONS'],allowedHeaders:['accept','authorization','content-type'],exposedHeaders:['retry-after'],credentials:false,maxAge:600,strictPreflight:true});
 await app.register(rawBody,{field:'rawBody',global:false,encoding:false,runFirst:true,routes:['/api/webhooks/clerk']});
 await app.register(helmet,{global:true,crossOriginEmbedderPolicy:false,contentSecurityPolicy:{directives:{defaultSrc:["'self'"],scriptSrc:["'self'",'https://*.clerk.accounts.dev','https://*.clerk.com'],styleSrc:["'self'","'unsafe-inline'",'https://fonts.googleapis.com'],fontSrc:["'self'",'https://fonts.gstatic.com'],imgSrc:["'self'",'data:','https:'],connectSrc:["'self'",'https://graphql.anilist.co','https://api.jikan.moe','https://api.mymemory.translated.net','https://translate.googleapis.com','https://api.animethemes.moe','https://*.clerk.accounts.dev','https://api.clerk.com'],mediaSrc:["'self'",'https://v.animethemes.moe'],frameSrc:["'self'",'https://www.youtube-nocookie.com','https://www.youtube.com','https://www.dailymotion.com','https://*.clerk.accounts.dev'],workerSrc:["'self'",'blob:'],objectSrc:["'none'"],baseUri:["'self'"],frameAncestors:["'none'"],formAction:["'self'",'https://*.clerk.accounts.dev']}}});
-await app.register(rateLimit,{global:false,max:120,timeWindow:'1 minute',ban:2});
+await app.register(rateLimit,{global:false,max:120,timeWindow:'1 minute',ban:2,hook:'preHandler'});
+app.decorateRequest('aninexusUser',null);
 await app.register(fastifyStatic,{root:path.join(__dirname,'public'),prefix:'/',decorateReply:true,maxAge:'1h',immutable:false});
 await app.register(fastifyStatic,{root:path.join(__dirname,'assets'),prefix:'/assets/',decorateReply:false,maxAge:'7d',immutable:true});
 
@@ -44,8 +45,16 @@ app.addHook('onSend',async(req,reply,payload)=>{
 });
 app.setErrorHandler((error,req,reply)=>{req.log.error({err:error},'request failed');if(reply.sent)return;const status=error.statusCode&&error.statusCode>=400&&error.statusCode<600?error.statusCode:500;reply.code(status).send({error:status>=500?'INTERNAL_ERROR':'REQUEST_FAILED'});});
 
-const authRate={config:{rateLimit:{max:8,timeWindow:'1 minute'}}};
-const writeRate={config:{rateLimit:{max:30,timeWindow:'1 minute'}}};
+const authenticateForRate=async(request,reply)=>{
+  const user=await requireUser(request,reply);
+  if(user)request.aninexusUser=user;
+};
+const authenticatedRateKey=request=>request.aninexusUser?.id?`user:${request.aninexusUser.id}`:`ip:${request.ip}`;
+const rateForUser=(max,timeWindow,groupId)=>({preValidation:authenticateForRate,config:{rateLimit:{max,timeWindow,groupId,keyGenerator:authenticatedRateKey}}});
+const authRate={config:{rateLimit:{max:8,timeWindow:'1 minute',groupId:'auth',keyGenerator:request=>request.ip}}};
+const privateReadRate=rateForUser(120,'1 minute','private-read');
+const privateHeavyRate=rateForUser(20,'1 minute','private-heavy');
+const writeRate=rateForUser(30,'1 minute','private-write');
 const publicRate={config:{rateLimit:{max:240,timeWindow:'1 minute'}}};
 const safeUser=u=>u&&({id:u.id,email:u.email,username:u.username,displayName:u.display_name||u.username,role:u.role,avatarUrl:u.avatar_url,bio:u.bio,theme:u.theme,privacy:u.privacy||'public',emailVerified:u.email_verified,createdAt:u.created_at});
 const safeInt=(v,min=1,max=Number.MAX_SAFE_INTEGER)=>{const n=Number(v);return Number.isSafeInteger(n)&&n>=min&&n<=max?n:null};
@@ -61,7 +70,7 @@ const transaction=async fn=>{const client=await pool.connect();try{await client.
 
 app.get('/health',async()=>({ok:true,uptime:Math.round(process.uptime()),time:new Date().toISOString()}));
 app.get('/health/ready',async(req,reply)=>{const [db,cache]=await Promise.all([dbReady(),(async()=>{try{return redis.isReady&&(await redis.ping())==='PONG'}catch{return false}})()]);const ok=db&&cache;return reply.code(ok?200:503).send({ok,db,cache});});
-app.get('/api/me',async(req,reply)=>{const user=await requireUser(req,reply);if(!user)return;return{user:safeUser(user)}});
+app.get('/api/me',privateReadRate,async(req,reply)=>{const user=await requireUser(req,reply);if(!user)return;return{user:safeUser(user)}});
 app.post('/api/auth/register',authRate,async(req,reply)=>{
   if(CLERK_ENABLED)return reply.code(410).send({error:'AUTH_MANAGED_BY_CLERK'});
   const parsed=z.object({email:z.string().trim().toLowerCase().email().max(254),username:z.string().trim().min(3).max(30).regex(/^[\p{L}\p{N}_.-]+$/u),password:strongPassword}).safeParse(req.body);
@@ -75,7 +84,7 @@ app.post('/api/auth/register',authRate,async(req,reply)=>{
 app.post('/api/auth/login',authRate,async(req,reply)=>{
   if(CLERK_ENABLED)return reply.code(410).send({error:'AUTH_MANAGED_BY_CLERK'});
   const parsed=z.object({login:z.string().trim().min(3).max(254),password:z.string().min(1).max(128)}).safeParse(req.body);if(!parsed.success)return reply.code(400).send({error:'INVALID_INPUT'});
-  const {rows}=await q('SELECT * FROM users WHERE email=$1 OR username=$1',[parsed.data.login]);const u=rows[0];
+  const {rows}=await q('SELECT * FROM users WHERE (email=$1 OR username=$1) AND deleted_at IS NULL',[parsed.data.login]);const u=rows[0];
   const valid=await verifyPassword(u?.password_hash||DUMMY_PASSWORD_HASH,parsed.data.password);if(!u||!valid)return reply.code(401).send({error:'INVALID_CREDENTIALS'});
   await createSession(reply,u,req);return {user:safeUser(u)};
 });
@@ -101,21 +110,21 @@ const articleSchema=z.object({title:z.string().trim().min(3).max(220),summary:z.
 app.post('/api/admin/news',writeRate,async(req,reply)=>{const u=await requireRole(req,reply,['moderator','admin']);if(!u)return;const p=articleSchema.safeParse(req.body);if(!p.success)return reply.code(400).send({error:'INVALID_INPUT'});const d=p.data,slug=`${d.title.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,100)}-${Date.now().toString(36)}`;const published=d.status==='published'?new Date():null,expires=d.expiresAt?new Date(d.expiresAt):articleExpiry(published||new Date());const {rows}=await q(`INSERT INTO news_articles(slug,source_kind,event_type,title,summary,body,spoiler,status,media_ids,created_by,scheduled_at,published_at,image_url,image_alt,source_name,language,facts,expires_at) VALUES($1,'EDITORIAL',$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,'AniNexus','pt-BR',$14,$15) RETURNING id,slug,status`,[slug,d.eventType||null,d.title,d.summary,d.body||null,d.spoiler||false,d.status||'draft',JSON.stringify(d.mediaIds||[]),u.id,d.scheduledAt||null,published,d.imageUrl||null,d.imageAlt||null,JSON.stringify(d.facts||[]),expires]);await q('INSERT INTO audit_log(actor_id,action,target_type,target_id) VALUES($1,$2,$3,$4)',[u.id,'NEWS_CREATE','NEWS',rows[0].id]);return reply.code(201).send(rows[0]);});
 app.patch('/api/admin/news/:id',writeRate,async(req,reply)=>{const u=await requireRole(req,reply,['moderator','admin']);if(!u)return;const id=String(req.params.id);if(!/^[0-9a-f-]{36}$/i.test(id))return reply.code(400).send({error:'INVALID_ID'});const p=articleSchema.partial().safeParse(req.body);if(!p.success||!Object.keys(p.data).length)return reply.code(400).send({error:'INVALID_INPUT'});const d=p.data;const {rows}=await q(`UPDATE news_articles SET title=COALESCE($2,title),summary=COALESCE($3,summary),body=COALESCE($4,body),event_type=COALESCE($5,event_type),spoiler=COALESCE($6,spoiler),status=COALESCE($7,status),media_ids=COALESCE($8::jsonb,media_ids),scheduled_at=COALESCE($9::timestamptz,scheduled_at),image_url=COALESCE($10,image_url),image_alt=COALESCE($11,image_alt),facts=COALESCE($12::jsonb,facts),expires_at=COALESCE($13::timestamptz,expires_at),published_at=CASE WHEN $7='published' AND published_at IS NULL THEN now() ELSE published_at END,updated_at=now() WHERE id=$1 RETURNING id,slug,status`,[id,d.title??null,d.summary??null,d.body??null,d.eventType??null,d.spoiler??null,d.status??null,d.mediaIds?JSON.stringify(d.mediaIds):null,d.scheduledAt??null,d.imageUrl??null,d.imageAlt??null,d.facts?JSON.stringify(d.facts):null,d.expiresAt??null]);if(!rows[0])return reply.code(404).send({error:'NOT_FOUND'});await q('INSERT INTO audit_log(actor_id,action,target_type,target_id) VALUES($1,$2,$3,$4)',[u.id,'NEWS_UPDATE','NEWS',id]);return rows[0];});
 
-app.get('/api/me/list',async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const {rows}=await q('SELECT media_id,status,score,reaction,progress,updated_at FROM user_anime WHERE user_id=$1 ORDER BY updated_at DESC LIMIT 2000',[u.id]);return{items:rows};});
+app.get('/api/me/list',privateReadRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const {rows}=await q('SELECT media_id,status,score,reaction,progress,updated_at FROM user_anime WHERE user_id=$1 ORDER BY updated_at DESC LIMIT 2000',[u.id]);return{items:rows};});
 app.put('/api/me/list/:mediaId',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const parsed=z.object({status:z.enum(['PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED']),score:z.number().min(0).max(10).nullable().optional(),reaction:z.enum(['LIKE','DISLIKE','LOVE','WOW']).nullable().optional(),progress:z.number().int().min(0).max(100000).optional()}).safeParse(req.body);if(!parsed.success)return reply.code(400).send({error:'INVALID_INPUT'});const mediaId=safeInt(req.params.mediaId);if(!mediaId)return reply.code(400).send({error:'INVALID_ID'});await q(`INSERT INTO user_anime(user_id,media_id,status,score,reaction,progress,updated_at) VALUES($1,$2,$3,$4,$5,$6,now()) ON CONFLICT(user_id,media_id) DO UPDATE SET status=EXCLUDED.status,score=EXCLUDED.score,reaction=EXCLUDED.reaction,progress=EXCLUDED.progress,updated_at=now()`,[u.id,mediaId,parsed.data.status,parsed.data.score??null,parsed.data.reaction??null,parsed.data.progress??0]);return{ok:true};});
 app.delete('/api/me/list/:mediaId',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const mediaId=safeInt(req.params.mediaId);if(!mediaId)return reply.code(400).send({error:'INVALID_ID'});await q('DELETE FROM user_anime WHERE user_id=$1 AND media_id=$2',[u.id,mediaId]);return{ok:true};});
 
-app.get('/api/me/favorites',async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const {rows}=await q('SELECT media_id,media_type,created_at FROM user_favorites WHERE user_id=$1 ORDER BY created_at DESC LIMIT 5000',[u.id]);return{items:rows};});
+app.get('/api/me/favorites',privateReadRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const {rows}=await q('SELECT media_id,media_type,created_at FROM user_favorites WHERE user_id=$1 ORDER BY created_at DESC LIMIT 5000',[u.id]);return{items:rows};});
 app.put('/api/me/favorites/:mediaId',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const mediaId=safeInt(req.params.mediaId);if(!mediaId)return reply.code(400).send({error:'INVALID_ID'});const p=z.object({mediaType:z.enum(['ANIME','MANGA']).default('ANIME')}).safeParse(req.body||{});if(!p.success)return reply.code(400).send({error:'INVALID_INPUT'});await q('INSERT INTO user_favorites(user_id,media_id,media_type) VALUES($1,$2,$3) ON CONFLICT(user_id,media_id,media_type) DO NOTHING',[u.id,mediaId,p.data.mediaType]);return{ok:true,favorite:true};});
 app.delete('/api/me/favorites/:mediaId',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const mediaId=safeInt(req.params.mediaId);if(!mediaId)return reply.code(400).send({error:'INVALID_ID'});const mediaType=String(req.query?.mediaType||'ANIME').toUpperCase()==='MANGA'?'MANGA':'ANIME';await q('DELETE FROM user_favorites WHERE user_id=$1 AND media_id=$2 AND media_type=$3',[u.id,mediaId,mediaType]);return{ok:true,favorite:false};});
 
-app.get('/api/me/follows',async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const {rows}=await q('SELECT media_id,media_type,notify_episode,notify_news,created_at FROM user_follows WHERE user_id=$1 ORDER BY created_at DESC LIMIT 2000',[u.id]);return{items:rows};});
+app.get('/api/me/follows',privateReadRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const {rows}=await q('SELECT media_id,media_type,notify_episode,notify_news,created_at FROM user_follows WHERE user_id=$1 ORDER BY created_at DESC LIMIT 2000',[u.id]);return{items:rows};});
 app.put('/api/me/follows/:mediaId',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const mediaId=safeInt(req.params.mediaId);if(!mediaId)return reply.code(400).send({error:'INVALID_ID'});const p=z.object({mediaType:z.enum(['ANIME','MANGA']).default('ANIME'),notifyEpisode:z.boolean().default(true),notifyNews:z.boolean().default(true)}).safeParse(req.body||{});if(!p.success)return reply.code(400).send({error:'INVALID_INPUT'});const d=p.data;await q(`INSERT INTO user_follows(user_id,media_id,media_type,notify_episode,notify_news) VALUES($1,$2,$3,$4,$5) ON CONFLICT(user_id,media_id,media_type) DO UPDATE SET notify_episode=EXCLUDED.notify_episode,notify_news=EXCLUDED.notify_news`,[u.id,mediaId,d.mediaType,d.notifyEpisode,d.notifyNews]);return{ok:true};});
 app.delete('/api/me/follows/:mediaId',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const mediaId=safeInt(req.params.mediaId);if(!mediaId)return reply.code(400).send({error:'INVALID_ID'});await q('DELETE FROM user_follows WHERE user_id=$1 AND media_id=$2',[u.id,mediaId]);return{ok:true};});
-app.get('/api/me/notifications',async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const limit=Math.max(1,Math.min(200,Number(req.query?.limit||100)));const {rows}=await q('SELECT id,kind,title,body,media_id,url,read_at,created_at FROM notifications WHERE user_id=$1 ORDER BY created_at DESC LIMIT $2',[u.id,limit]);return{items:rows};});
+app.get('/api/me/notifications',privateReadRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const limit=Math.max(1,Math.min(200,Number(req.query?.limit||100)));const {rows}=await q('SELECT id,kind,title,body,media_id,url,read_at,created_at FROM notifications WHERE user_id=$1 ORDER BY created_at DESC LIMIT $2',[u.id,limit]);return{items:rows};});
 app.post('/api/me/notifications/:id/read',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const id=String(req.params.id||'');if(!/^[0-9a-f-]{36}$/i.test(id))return reply.code(400).send({error:'INVALID_ID'});await q('UPDATE notifications SET read_at=COALESCE(read_at,now()) WHERE id=$1 AND user_id=$2',[id,u.id]);return{ok:true};});
 
-app.get('/api/me/library',async(req,reply)=>{
+app.get('/api/me/library',privateHeavyRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
   const [list,favorites,impressions,count]=await Promise.all([
     q(`SELECT ua.media_id,ua.status,ua.score,ua.reaction,ua.progress,ua.updated_at,${mediaProjection} AS media FROM user_anime ua LEFT JOIN media_cache mc ON mc.media_id=ua.media_id WHERE ua.user_id=$1 ORDER BY ua.updated_at DESC LIMIT 2000`,[user.id]),
@@ -126,7 +135,7 @@ app.get('/api/me/library',async(req,reply)=>{
   return{user:safeUser(user),list:list.rows,favorites:favorites.rows,impressions:impressions.rows,impressionCount:Number(count.rows[0]?.count||0)};
 });
 
-app.get('/api/me/preferences',async(req,reply)=>{
+app.get('/api/me/preferences',privateReadRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
   const {rows}=await q(`SELECT theme,locale,timezone,email_episode_notifications,email_news_notifications,reduce_motion,updated_at
     FROM user_preferences WHERE user_id=$1`,[user.id]);
@@ -150,7 +159,7 @@ app.patch('/api/me/profile',writeRate,async(req,reply)=>{
   return{user:safeUser(rows[0])};
 });
 
-app.get('/api/me/import-status',async(req,reply)=>{
+app.get('/api/me/import-status',privateReadRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
   const {rows}=await q('SELECT imported_at,source_version,item_count FROM local_imports WHERE user_id=$1',[user.id]);
   return{imported:!!rows[0],import:rows[0]||null};
@@ -162,7 +171,7 @@ const localImportSchema=z.object({
   states:z.array(z.object({mediaId:z.number().int().positive(),status:z.enum(['PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED']),score:z.number().min(0).max(10).nullable().optional(),progress:z.number().int().min(0).max(100000).default(0),updatedAt:z.number().int().positive()})).max(2000).default([]),
   watched:z.array(z.object({mediaId:z.number().int().positive(),episode:z.number().int().positive().max(100000),watchedAt:z.number().int().positive().optional()})).max(10000).default([]),
 });
-app.post('/api/me/import-local',{config:{rateLimit:{max:3,timeWindow:'10 minutes'}}},async(req,reply)=>{
+app.post('/api/me/import-local',rateForUser(3,'10 minutes','initial-import'),async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
   const parsed=localImportSchema.safeParse(req.body);if(!parsed.success)return reply.code(422).send({error:'INVALID_IMPORT'});
   const data=parsed.data,stateMap=new Map(),watchedMap=new Map();
@@ -191,7 +200,7 @@ app.post('/api/me/import-local',{config:{rateLimit:{max:3,timeWindow:'10 minutes
   return reply.code(result.alreadyImported?409:200).send(result.alreadyImported?{error:'IMPORT_ALREADY_COMPLETED',import:result}:{ok:true,...result});
 });
 
-app.get('/api/me/episodes/:mediaId',async(req,reply)=>{
+app.get('/api/me/episodes/:mediaId',privateReadRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;const mediaId=safeInt(req.params.mediaId);if(!mediaId)return reply.code(400).send({error:'INVALID_ID'});
   const {rows}=await q('SELECT episode,watched_at FROM watched_episodes WHERE user_id=$1 AND media_id=$2 ORDER BY episode',[user.id,mediaId]);return{items:rows};
 });
@@ -204,7 +213,7 @@ app.delete('/api/me/episodes/:mediaId/:episode',writeRate,async(req,reply)=>{
   await q('DELETE FROM watched_episodes WHERE user_id=$1 AND media_id=$2 AND episode=$3',[user.id,mediaId,episode]);return{ok:true};
 });
 
-app.get('/api/me/export',async(req,reply)=>{
+app.get('/api/me/export',privateHeavyRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
   const [profile,preferences,list,favorites,watched,follows,impressions,threads,posts]=await Promise.all([
     q('SELECT email,username,display_name,bio,theme,privacy,email_verified,created_at,updated_at FROM users WHERE id=$1',[user.id]),q('SELECT * FROM user_preferences WHERE user_id=$1',[user.id]),q('SELECT media_id,status,score,reaction,progress,updated_at FROM user_anime WHERE user_id=$1 ORDER BY media_id',[user.id]),q('SELECT media_id,media_type,created_at FROM user_favorites WHERE user_id=$1 ORDER BY media_id',[user.id]),q('SELECT media_id,episode,watched_at FROM watched_episodes WHERE user_id=$1 ORDER BY media_id,episode',[user.id]),q('SELECT media_id,media_type,notify_episode,notify_news,created_at FROM user_follows WHERE user_id=$1 ORDER BY media_id',[user.id]),q('SELECT media_id,body,spoiler,created_at,updated_at FROM impressions WHERE user_id=$1 ORDER BY created_at',[user.id]),q('SELECT id,media_id,title,body,spoiler,created_at,updated_at FROM community_threads WHERE user_id=$1 ORDER BY created_at',[user.id]),q('SELECT thread_id,parent_id,body,spoiler,created_at,updated_at FROM community_posts WHERE user_id=$1 ORDER BY created_at',[user.id])
@@ -212,23 +221,24 @@ app.get('/api/me/export',async(req,reply)=>{
   reply.header('Cache-Control','no-store').header('Content-Disposition',`attachment; filename="aninexus-${new Date().toISOString().slice(0,10)}.json"`);
   return{exportedAt:new Date().toISOString(),profile:profile.rows[0],preferences:preferences.rows[0]||null,list:list.rows,favorites:favorites.rows,watchedEpisodes:watched.rows,follows:follows.rows,impressions:impressions.rows,threads:threads.rows,posts:posts.rows};
 });
-app.delete('/api/me/account',{config:{rateLimit:{max:2,timeWindow:'1 hour'}}},async(req,reply)=>{
+app.delete('/api/me/account',rateForUser(2,'1 hour','account-delete'),async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
   const parsed=z.object({confirmation:z.literal('EXCLUIR')}).safeParse(req.body);if(!parsed.success)return reply.code(422).send({error:'CONFIRMATION_REQUIRED'});
   if(!CLERK_ENABLED||!user.clerk_user_id)return reply.code(409).send({error:'CLERK_ACCOUNT_REQUIRED'});
-  await getClerkClient().users.deleteUser(user.clerk_user_id);
+  await beginAccountDeletion(user);
+  try{await getClerkClient().users.deleteUser(user.clerk_user_id)}catch(error){await cancelAccountDeletion(user).catch(()=>{});throw error}
   await q('DELETE FROM users WHERE id=$1',[user.id]);
   return reply.code(204).send();
 });
 
-app.get('/api/anime/:id/impressions',publicRate,async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});const limit=Math.max(1,Math.min(100,Number(req.query?.limit||50)));const {rows}=await q(`SELECT i.id,i.body,i.spoiler,i.created_at,u.username,u.avatar_url FROM impressions i JOIN users u ON u.id=i.user_id WHERE i.media_id=$1 AND i.hidden=false AND u.privacy='public' ORDER BY i.created_at DESC LIMIT $2`,[id,limit]);return{items:rows};});
-app.post('/api/anime/:id/impressions',{config:{rateLimit:{max:8,timeWindow:'1 minute'}}},async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});const p=z.object({body:z.string().trim().min(1).max(1200),spoiler:z.boolean().optional()}).safeParse(req.body);if(!p.success)return reply.code(400).send({error:'INVALID_INPUT'});const {rows}=await q('INSERT INTO impressions(user_id,media_id,body,spoiler) VALUES($1,$2,$3,$4) RETURNING id,created_at',[u.id,id,p.data.body,p.data.spoiler||false]);return reply.code(201).send({ok:true,...rows[0]});});
+app.get('/api/anime/:id/impressions',publicRate,async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});const limit=Math.max(1,Math.min(100,Number(req.query?.limit||50)));const {rows}=await q(`SELECT i.id,i.body,i.spoiler,i.created_at,u.username,u.avatar_url FROM impressions i JOIN users u ON u.id=i.user_id WHERE i.media_id=$1 AND i.hidden=false AND u.deleted_at IS NULL AND u.privacy='public' ORDER BY i.created_at DESC LIMIT $2`,[id,limit]);return{items:rows};});
+app.post('/api/anime/:id/impressions',rateForUser(8,'1 minute','impressions-write'),async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});const p=z.object({body:z.string().trim().min(1).max(1200),spoiler:z.boolean().optional()}).safeParse(req.body);if(!p.success)return reply.code(400).send({error:'INVALID_INPUT'});const {rows}=await q('INSERT INTO impressions(user_id,media_id,body,spoiler) VALUES($1,$2,$3,$4) RETURNING id,created_at',[u.id,id,p.data.body,p.data.spoiler||false]);return reply.code(201).send({ok:true,...rows[0]});});
 
-app.get('/api/community/activity',publicRate,async(req)=>{const limit=Math.max(1,Math.min(60,Number(req.query?.limit||30)));const {rows}=await q(`SELECT ua.media_id,ua.status,ua.score,ua.reaction,ua.progress,ua.updated_at AS created_at,u.username,u.avatar_url,${mediaProjection} AS media FROM user_anime ua JOIN users u ON u.id=ua.user_id LEFT JOIN media_cache mc ON mc.media_id=ua.media_id WHERE u.privacy='public' AND ua.status IN ('PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED') ORDER BY ua.updated_at DESC LIMIT $1`,[limit]);return{items:rows};});
-app.get('/api/community/impressions',publicRate,async(req)=>{const limit=Math.max(1,Math.min(30,Number(req.query?.limit||12)));const {rows}=await q(`SELECT i.id,i.media_id,i.body,i.spoiler,i.created_at,u.username,u.avatar_url,ua.status,ua.score,ua.progress,${mediaProjection} AS media FROM impressions i JOIN users u ON u.id=i.user_id LEFT JOIN user_anime ua ON ua.user_id=i.user_id AND ua.media_id=i.media_id LEFT JOIN media_cache mc ON mc.media_id=i.media_id WHERE i.hidden=false AND u.privacy='public' ORDER BY i.created_at DESC LIMIT $1`,[limit]);return{items:rows};});
-app.get('/api/community/threads',publicRate,async(req)=>{const limit=Math.max(1,Math.min(50,Number(req.query?.limit||30))),mediaId=req.query?.mediaId?safeInt(req.query.mediaId):null;const {rows}=await q(`SELECT t.id,t.media_id,t.title,t.body,t.spoiler,t.locked,t.created_at,u.username,u.avatar_url,(SELECT count(*)::int FROM community_posts p WHERE p.thread_id=t.id AND p.hidden=false) replies FROM community_threads t LEFT JOIN users u ON u.id=t.user_id WHERE t.hidden=false AND (u.id IS NULL OR u.privacy='public') AND ($1::bigint IS NULL OR t.media_id=$1) ORDER BY t.created_at DESC LIMIT $2`,[mediaId,limit]);return{items:rows};});
+app.get('/api/community/activity',publicRate,async(req)=>{const limit=Math.max(1,Math.min(60,Number(req.query?.limit||30)));const {rows}=await q(`SELECT ua.media_id,ua.status,ua.score,ua.reaction,ua.progress,ua.updated_at AS created_at,u.username,u.avatar_url,${mediaProjection} AS media FROM user_anime ua JOIN users u ON u.id=ua.user_id LEFT JOIN media_cache mc ON mc.media_id=ua.media_id WHERE u.deleted_at IS NULL AND u.privacy='public' AND ua.status IN ('PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED') ORDER BY ua.updated_at DESC LIMIT $1`,[limit]);return{items:rows};});
+app.get('/api/community/impressions',publicRate,async(req)=>{const limit=Math.max(1,Math.min(30,Number(req.query?.limit||12)));const {rows}=await q(`SELECT i.id,i.media_id,i.body,i.spoiler,i.created_at,u.username,u.avatar_url,ua.status,ua.score,ua.progress,${mediaProjection} AS media FROM impressions i JOIN users u ON u.id=i.user_id LEFT JOIN user_anime ua ON ua.user_id=i.user_id AND ua.media_id=i.media_id LEFT JOIN media_cache mc ON mc.media_id=i.media_id WHERE i.hidden=false AND u.deleted_at IS NULL AND u.privacy='public' ORDER BY i.created_at DESC LIMIT $1`,[limit]);return{items:rows};});
+app.get('/api/community/threads',publicRate,async(req)=>{const limit=Math.max(1,Math.min(50,Number(req.query?.limit||30))),mediaId=req.query?.mediaId?safeInt(req.query.mediaId):null;const {rows}=await q(`SELECT t.id,t.media_id,t.title,t.body,t.spoiler,t.locked,t.created_at,u.username,u.avatar_url,(SELECT count(*)::int FROM community_posts p LEFT JOIN users pu ON pu.id=p.user_id WHERE p.thread_id=t.id AND p.hidden=false AND (p.user_id IS NULL OR (pu.deleted_at IS NULL AND pu.privacy='public'))) replies FROM community_threads t LEFT JOIN users u ON u.id=t.user_id WHERE t.hidden=false AND (u.id IS NULL OR (u.deleted_at IS NULL AND u.privacy='public')) AND ($1::bigint IS NULL OR t.media_id=$1) ORDER BY t.created_at DESC LIMIT $2`,[mediaId,limit]);return{items:rows};});
 app.post('/api/community/threads',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const p=z.object({mediaId:z.number().int().positive().nullable().optional(),title:z.string().trim().min(3).max(180),body:z.string().trim().min(1).max(6000),spoiler:z.boolean().optional()}).safeParse(req.body);if(!p.success)return reply.code(400).send({error:'INVALID_INPUT'});const {rows}=await q('INSERT INTO community_threads(user_id,media_id,title,body,spoiler) VALUES($1,$2,$3,$4,$5) RETURNING id,created_at',[u.id,p.data.mediaId||null,p.data.title,p.data.body,p.data.spoiler||false]);return reply.code(201).send(rows[0]);});
-app.get('/api/community/threads/:id/posts',publicRate,async(req,reply)=>{const id=String(req.params.id);if(!/^[0-9a-f-]{36}$/i.test(id))return reply.code(400).send({error:'INVALID_ID'});const limit=Math.max(1,Math.min(200,Number(req.query?.limit||100))),offset=Math.max(0,Math.min(10000,Number(req.query?.offset||0)));const {rows}=await q(`SELECT p.id,p.parent_id,p.body,p.spoiler,p.created_at,u.username,u.avatar_url FROM community_posts p LEFT JOIN users u ON u.id=p.user_id WHERE p.thread_id=$1 AND p.hidden=false AND (u.id IS NULL OR u.privacy='public') ORDER BY p.created_at ASC LIMIT $2 OFFSET $3`,[id,limit,offset]);return{items:rows,hasMore:rows.length===limit};});
+app.get('/api/community/threads/:id/posts',publicRate,async(req,reply)=>{const id=String(req.params.id);if(!/^[0-9a-f-]{36}$/i.test(id))return reply.code(400).send({error:'INVALID_ID'});const limit=Math.max(1,Math.min(200,Number(req.query?.limit||100))),offset=Math.max(0,Math.min(10000,Number(req.query?.offset||0)));const {rows}=await q(`SELECT p.id,p.parent_id,p.body,p.spoiler,p.created_at,u.username,u.avatar_url FROM community_posts p LEFT JOIN users u ON u.id=p.user_id WHERE p.thread_id=$1 AND p.hidden=false AND (u.id IS NULL OR (u.deleted_at IS NULL AND u.privacy='public')) ORDER BY p.created_at ASC LIMIT $2 OFFSET $3`,[id,limit,offset]);return{items:rows,hasMore:rows.length===limit};});
 app.post('/api/community/threads/:id/posts',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const id=String(req.params.id);if(!/^[0-9a-f-]{36}$/i.test(id))return reply.code(400).send({error:'INVALID_ID'});const p=z.object({body:z.string().trim().min(1).max(3000),spoiler:z.boolean().optional(),parentId:z.string().uuid().nullable().optional()}).safeParse(req.body);if(!p.success)return reply.code(400).send({error:'INVALID_INPUT'});const thread=await q('SELECT locked FROM community_threads WHERE id=$1 AND hidden=false',[id]);if(!thread.rows[0])return reply.code(404).send({error:'NOT_FOUND'});if(thread.rows[0].locked)return reply.code(423).send({error:'THREAD_LOCKED'});const {rows}=await q('INSERT INTO community_posts(thread_id,user_id,parent_id,body,spoiler) VALUES($1,$2,$3,$4,$5) RETURNING id,created_at',[id,u.id,p.data.parentId||null,p.data.body,p.data.spoiler||false]);return reply.code(201).send(rows[0]);});
 app.post('/api/community/report',{config:{rateLimit:{max:10,timeWindow:'10 minutes'}}},async(req,reply)=>{const u=await currentUser(req);const p=z.object({targetType:z.enum(['THREAD','POST','IMPRESSION','USER']),targetId:z.string().min(1).max(100),reason:z.string().trim().min(3).max(1000)}).safeParse(req.body);if(!p.success)return reply.code(400).send({error:'INVALID_INPUT'});await q('INSERT INTO content_reports(reporter_id,target_type,target_id,reason) VALUES($1,$2,$3,$4)',[u?.id||null,p.data.targetType,p.data.targetId,p.data.reason]);return{ok:true};});
 

@@ -33,13 +33,14 @@ services:
       CLERK_AUTHORIZED_PARTIES: ${CLERK_AUTHORIZED_PARTIES:-}
       DATABASE_URL: postgres://aninexus:${POSTGRES_PASSWORD:?defina POSTGRES_PASSWORD no .env}@postgres:5432/aninexus
       REDIS_URL: redis://redis:6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?defina REDIS_PASSWORD no .env}
       SESSION_DAYS: ${SESSION_DAYS:-30}
       MAX_SESSIONS_PER_USER: ${MAX_SESSIONS_PER_USER:-10}
       SESSION_CACHE_SECONDS: ${SESSION_CACHE_SECONDS:-30}
       ARGON2_MEMORY_KIB: ${ARGON2_MEMORY_KIB:-19456}
       ARGON2_TIME_COST: ${ARGON2_TIME_COST:-3}
       IP_HASH_SALT: ${IP_HASH_SALT:?defina IP_HASH_SALT no .env}
-      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      COOKIE_SECURE: ${COOKIE_SECURE:-true}
       PG_POOL_MIN: ${PG_POOL_MIN:-0}
       PG_POOL_MAX: ${PG_POOL_MAX:-30}
       UPSTREAM_TIMEOUT_MS: ${UPSTREAM_TIMEOUT_MS:-9000}
@@ -76,6 +77,7 @@ services:
       NODE_ENV: production
       DATABASE_URL: postgres://aninexus:${POSTGRES_PASSWORD:?defina POSTGRES_PASSWORD no .env}@postgres:5432/aninexus
       REDIS_URL: redis://redis:6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?defina REDIS_PASSWORD no .env}
       IP_HASH_SALT: ${IP_HASH_SALT:?defina IP_HASH_SALT no .env}
       PG_POOL_MIN: ${PG_POOL_MIN:-0}
       PG_POOL_MAX: ${NEWS_PG_POOL_MAX:-5}
@@ -124,11 +126,13 @@ services:
   redis:
     image: redis:7.4-alpine
     restart: unless-stopped
-    command: ["redis-server","--appendonly","yes","--maxmemory","256mb","--maxmemory-policy","allkeys-lru","--save","60","1000","--tcp-keepalive","60"]
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?defina REDIS_PASSWORD no .env}
+    command: ["sh","-ec","exec redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru --save 60 1000 --tcp-keepalive 60 --requirepass \"$$REDIS_PASSWORD\""]
     volumes:
       - redis_data:/data
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ["CMD-SHELL", "redis-cli --no-auth-warning -a \"$$REDIS_PASSWORD\" ping | grep -qx PONG"]
       interval: 5s
       timeout: 3s
       retries: 20
