@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T05:19:21.469Z",
+  "generatedAt": "2026-08-26T05:53:57.359Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -56,10 +56,10 @@
     "avgWords": 376,
     "withHeroImage": 26,
     "withGallery": 4,
-    "withEmbeds": 7,
+    "withEmbeds": 6,
     "skippedTranslation": 99,
     "skippedQuality": 3,
-    "durationMs": 119322
+    "durationMs": 118861
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T01:45:00.000Z",
-      "updatedAt": "2026-08-26T05:17:34.958Z",
+      "updatedAt": "2026-08-26T05:52:09.812Z",
       "expiresAt": "2026-09-02T01:45:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -280,7 +280,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-26T05:17:37.189Z",
+      "updatedAt": "2026-08-26T05:52:12.426Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -594,7 +594,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-26T05:17:40.554Z",
+      "updatedAt": "2026-08-26T05:52:15.270Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -676,7 +676,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-26T05:17:43.878Z",
+      "updatedAt": "2026-08-26T05:52:18.037Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1122,7 +1122,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-26T05:17:55.290Z",
+      "updatedAt": "2026-08-26T05:52:28.900Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1208,23 +1208,7 @@
       "mediaQuery": "Captain Tsubasa: Novo jogo ganha trailer apresentando clubes",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "D3mgQHQ_3W0",
-          "url": "https://www.youtube-nocookie.com/embed/D3mgQHQ_3W0"
-        },
-        {
-          "type": "youtube",
-          "id": "fP2w6NTlGR4",
-          "url": "https://www.youtube-nocookie.com/embed/fP2w6NTlGR4"
-        },
-        {
-          "type": "youtube",
-          "id": "VH6vR4W4NIA",
-          "url": "https://www.youtube-nocookie.com/embed/VH6vR4W4NIA"
-        }
-      ],
+      "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:40:44.000Z",
       "updatedAt": "2026-08-22T20:37:15.000Z",
       "expiresAt": "2026-08-29T19:40:44.000Z",
@@ -1331,7 +1315,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 3,
+        "embedCount": 0,
         "sourcePagesRead": 1
       }
     },
@@ -2105,7 +2089,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-26T05:18:00.741Z",
+      "updatedAt": "2026-08-26T05:52:34.404Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2199,7 +2183,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-26T05:18:00.742Z",
+      "updatedAt": "2026-08-26T05:52:34.404Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2281,7 +2265,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-26T05:18:02.890Z",
+      "updatedAt": "2026-08-26T05:52:36.671Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2441,7 +2425,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-20T14:03:00.000Z",
-      "updatedAt": "2026-08-26T05:18:11.584Z",
+      "updatedAt": "2026-08-26T05:52:45.613Z",
       "expiresAt": "2026-08-27T14:03:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2725,7 +2709,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-19T22:25:00.000Z",
-      "updatedAt": "2026-08-26T05:18:12.521Z",
+      "updatedAt": "2026-08-26T05:52:46.577Z",
       "expiresAt": "2026-08-26T22:25:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
