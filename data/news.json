@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T03:22:40.640Z",
+  "generatedAt": "2026-08-27T14:22:30.913Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -49,17 +49,17 @@
   ],
   "stats": {
     "collected": 155,
-    "grouped": 126,
-    "published": 28,
-    "newStories": 23,
-    "deepArticles": 15,
-    "avgWords": 383,
-    "withHeroImage": 25,
+    "grouped": 124,
+    "published": 25,
+    "newStories": 22,
+    "deepArticles": 13,
+    "avgWords": 382,
+    "withHeroImage": 23,
     "withGallery": 3,
     "withEmbeds": 5,
-    "skippedTranslation": 100,
+    "skippedTranslation": 99,
     "skippedQuality": 3,
-    "durationMs": 127086
+    "durationMs": 172150
   },
   "items": [
     {
@@ -207,7 +207,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T16:07:00.000Z",
-      "updatedAt": "2026-08-27T03:20:54.435Z",
+      "updatedAt": "2026-08-27T14:19:59.499Z",
       "expiresAt": "2026-09-02T16:07:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -296,7 +296,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T15:23:00.000Z",
-      "updatedAt": "2026-08-27T03:20:54.435Z",
+      "updatedAt": "2026-08-27T14:19:59.499Z",
       "expiresAt": "2026-09-02T15:23:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -380,7 +380,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T01:45:00.000Z",
-      "updatedAt": "2026-08-27T03:20:56.650Z",
+      "updatedAt": "2026-08-27T14:20:00.815Z",
       "expiresAt": "2026-09-02T01:45:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -580,7 +580,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-27T03:20:58.915Z",
+      "updatedAt": "2026-08-27T14:20:04.064Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -894,7 +894,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-27T03:21:02.167Z",
+      "updatedAt": "2026-08-27T14:20:06.635Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -976,7 +976,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-27T03:21:05.534Z",
+      "updatedAt": "2026-08-27T14:20:09.436Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1422,7 +1422,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-27T03:21:17.339Z",
+      "updatedAt": "2026-08-27T14:20:24.854Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2399,7 +2399,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-27T03:21:22.745Z",
+      "updatedAt": "2026-08-27T14:20:30.745Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2493,7 +2493,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-27T03:21:22.745Z",
+      "updatedAt": "2026-08-27T14:20:30.745Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2575,7 +2575,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-27T03:21:24.681Z",
+      "updatedAt": "2026-08-27T14:20:33.388Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2713,290 +2713,6 @@
       "coverage": {
         "facts": 4,
         "sections": 3,
-        "sourceCount": 1,
-        "ingestMode": "recovery-seed"
-      }
-    },
-    {
-      "id": "crunchyroll-a7a28508",
-      "slug": "pokemon-tcgp-revela-data-de-lancamento-para-ambicoes-da-equipe-rocket-crunchyroll-a7a28508",
-      "source": "Crunchyroll Notícias",
-      "sourceType": "CRUNCHYROLL",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Pokémon TCGP revela data de lançamento para Ambições da Equipe Rocket",
-      "originalTitle": null,
-      "summary": "A nova expansão chega a partir do dia 27 de agosto Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!",
-      "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/20/pokemon-tcgp-revela-data-de-lancamento-para-ambicoes-da-equipe-rocket",
-      "sourceUrl": "https://crunchyroll.com/pt-br/news/latest/2026/8/20/pokemon-tcgp-revela-data-de-lancamento-para-ambicoes-da-equipe-rocket",
-      "image": "https://a.storyblok.com/f/178900/1192x670/6eca56a7fe/tcgp-ambicoes-da-equipe-rocket.png",
-      "mediaQuery": "Pokémon TCGP revela data de lançamento para Ambições da Equipe Rocket",
-      "mediaType": "manga",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-20T14:03:00.000Z",
-      "updatedAt": "2026-08-26T14:52:07.377Z",
-      "expiresAt": "2026-08-27T14:03:00.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [
-        "A nova expansão chega a partir do dia 27 de agosto Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-        "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-        "You heard it here first!"
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "A nova expansão chega a partir do dia 27 de agosto Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!"
-          ],
-          "bullets": [
-            "A nova expansão chega a partir do dia 27 de agosto Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "A nova expansão chega a partir do dia 27 de agosto Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "A matéria permanece no feed recente para receber atualizações sobre publicação, volumes, licenciamento e disponibilidade no Brasil."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "Crunchyroll Notícias",
-          "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/20/pokemon-tcgp-revela-data-de-lancamento-para-ambicoes-da-equipe-rocket",
-          "publishedAt": "2026-08-20T14:03:00.000Z",
-          "author": "José S."
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 209,
-      "qualityScore": 0.93,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 3,
-        "sections": 4,
-        "sourceCount": 1,
-        "ingestMode": "html",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox_anime-8a15c395",
-      "slug": "tumulo-dos-vagalumes-card-colecionavel-e-brinde-em-exibicao-nos-cinemas-jbox_anime-8a15c395",
-      "source": "JBox",
-      "sourceType": "JBOX_ANIME",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Túmulo dos Vagalumes: Card colecionável é brinde em exibição nos cinemas",
-      "originalTitle": null,
-      "summary": "Filme estreia hoje, dia 20, exclusivamente na rede Cinemark, mas o brinde é válido apenas para sessões a partir do dia 22.",
-      "url": "https://www.jbox.com.br/2026/08/20/tumulo-dos-vagalumes-card-colecionavel-e-brinde-em-exibicao-nos-cinemas",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/20/tumulo-dos-vagalumes-card-colecionavel-e-brinde-em-exibicao-nos-cinemas",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/tumulo-dos-vagalumes-destacada.jpg",
-      "mediaQuery": "Túmulo dos Vagalumes: Card colecionável é brinde em exibição nos cinemas",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-20T12:06:57.000Z",
-      "updatedAt": "2026-08-20T12:08:30.000Z",
-      "expiresAt": "2026-08-27T12:06:57.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [
-        "Filme estreia hoje, dia 20, exclusivamente na rede Cinemark, mas o brinde é válido apenas para sessões a partir do dia 22.",
-        "Foi anunciado pelo Cinemark que a exibição de Túmulo dos Vagalumes ( Hotaru no Haka ) nos cinemas conta com um card colecionável especial como brinde ..",
-        "O brinde vale apenas para ingressos comprados para sessões a partir do dia 22 de agosto , sendo que o filme estreia hoje, dia 20.",
-        "Os estoques do card especial são limitados..",
-        "View this post on Instagram.",
-        "Túmulo dos Vagalumes conta com sessões dubladas e legendadas, com ingressos à venda desde o início do mês .",
-        "A dublagem não é a mesma lançada ano passado na Netflix , mas sim uma nova versão encomendada pela Cinetopia para o lançamento nos cinemas.",
-        "Detalhes sobre a nova versão ainda não foram divulgados..",
-        "Baseado em um conto semi-autobiográfico, o filme se passa no Japão em meio à Segunda Guerra.",
-        "Na história, os irmãos Setsuko e Seita perderam a mãe em um bombardeio americano, e precisam ir morar com parentes após o pai ser convocado para a guerra.",
-        "Porém, os dois acabam saindo da cidade por conta própria, buscando abrigo isolado na floresta, onde passam a lutar por sua sobrevivência, tendo como diversão as luzes dos vagalumes..",
-        "Uma das produções mais emocionantes do Ghibli, foi dirigida pelo já falecido Isao Takahata , um dos fundadores do estúdio.",
-        "Foi lançada em Blu-ray no Brasil pela Versátil, e em 2024 esteve envolvido em uma polêmica no Prime Video , com exibição supostamente irregular..",
-        "Produzido em 1988, Túmulo dos Vagalumes é uma obra à parte na lista de filmes do Ghibli.",
-        "É o único título que divide os direitos de distribuição com a Shinchosha , editora responsável pela licença do conto original que serviu de base para a produção, também “bancada” por ela — por isso, ele sempre é distribuído em separado..",
-        "Para entender melhor a questão, confira nosso artigo explicando a ausência dele nos usuais “pacotões Ghibli” de licenciamento ..",
-        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Filme estreia hoje, dia 20, exclusivamente na rede Cinemark, mas o brinde é válido apenas para sessões a partir do dia 22."
-          ],
-          "bullets": [
-            "Filme estreia hoje, dia 20, exclusivamente na rede Cinemark, mas o brinde é válido apenas para sessões a partir do dia 22.",
-            "Foi anunciado pelo Cinemark que a exibição de Túmulo dos Vagalumes ( Hotaru no Haka ) nos cinemas conta com um card colecionável especial como brinde ..",
-            "O brinde vale apenas para ingressos comprados para sessões a partir do dia 22 de agosto , sendo que o filme estreia hoje, dia 20."
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "Filme estreia hoje, dia 20, exclusivamente na rede Cinemark, mas o brinde é válido apenas para sessões a partir do dia 22.",
-            "Foi anunciado pelo Cinemark que a exibição de Túmulo dos Vagalumes ( Hotaru no Haka ) nos cinemas conta com um card colecionável especial como brinde ..",
-            "O brinde vale apenas para ingressos comprados para sessões a partir do dia 22 de agosto , sendo que o filme estreia hoje, dia 20.",
-            "Túmulo dos Vagalumes conta com sessões dubladas e legendadas, com ingressos à venda desde o início do mês .",
-            "A dublagem não é a mesma lançada ano passado na Netflix , mas sim uma nova versão encomendada pela Cinetopia para o lançamento nos cinemas.",
-            "Baseado em um conto semi-autobiográfico, o filme se passa no Japão em meio à Segunda Guerra.",
-            "Porém, os dois acabam saindo da cidade por conta própria, buscando abrigo isolado na floresta, onde passam a lutar por sua sobrevivência, tendo como diversão as luzes dos vagalumes.."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "Túmulo dos Vagalumes conta com sessões dubladas e legendadas, com ingressos à venda desde o início do mês .",
-            "A dublagem não é a mesma lançada ano passado na Netflix , mas sim uma nova versão encomendada pela Cinetopia para o lançamento nos cinemas.",
-            "Uma das produções mais emocionantes do Ghibli, foi dirigida pelo já falecido Isao Takahata , um dos fundadores do estúdio.",
-            "É o único título que divide os direitos de distribuição com a Shinchosha , editora responsável pela licença do conto original que serviu de base para a produção, também “bancada” por ela — por isso, ele sempre é distribuído em separado.."
-          ]
-        },
-        {
-          "heading": "Materiais divulgados",
-          "bullets": [
-            "Foi lançada em Blu-ray no Brasil pela Versátil, e em 2024 esteve envolvido em uma polêmica no Prime Video , com exibição supostamente irregular.."
-          ]
-        },
-        {
-          "heading": "História e contexto da obra",
-          "bullets": [
-            "Na história, os irmãos Setsuko e Seita perderam a mãe em um bombardeio americano, e precisam ir morar com parentes após o pai ser convocado para a guerra."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "Os estoques do card especial são limitados..",
-            "View this post on Instagram.",
-            "Detalhes sobre a nova versão ainda não foram divulgados..",
-            "Produzido em 1988, Túmulo dos Vagalumes é uma obra à parte na lista de filmes do Ghibli.",
-            "Para entender melhor a questão, confira nosso artigo explicando a ausência dele nos usuais “pacotões Ghibli” de licenciamento ..",
-            "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Quando houver data definitiva ou mudança no calendário, a mesma matéria é atualizada e a informação pode aparecer também nas áreas de temporada e programação."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/20/tumulo-dos-vagalumes-card-colecionavel-e-brinde-em-exibicao-nos-cinemas",
-          "publishedAt": "2026-08-20T12:06:57.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 538,
-      "qualityScore": 1,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 17,
-        "sections": 7,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox-hotaru-cinemark-2026",
-      "slug": "tumulo-dos-vagalumes-card-colecionavel-e-brinde-em-exibicao-nos-cinemas-jbox-hotaru",
-      "source": "JBox",
-      "sourceType": "JBOX_ANIME",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Túmulo dos Vagalumes: card colecionável é brinde em exibição nos cinemas",
-      "summary": "A Cinemark iniciou a exibição de Túmulo dos Vagalumes em 20 de agosto e confirmou um card colecionável para sessões a partir do dia 22. A passagem do clássico pelos cinemas brasileiros também conta com uma dublagem diferente da versão disponível anteriormente em streaming.",
-      "url": "https://www.jbox.com.br/2026/08/20/tumulo-dos-vagalumes-card-colecionavel-e-brinde-em-exibicao-nos-cinemas/",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/20/tumulo-dos-vagalumes-card-colecionavel-e-brinde-em-exibicao-nos-cinemas/",
-      "image": "",
-      "mediaQuery": "Grave of the Fireflies",
-      "mediaType": "anime",
-      "publishedAt": "2026-08-20T12:06:00.000Z",
-      "updatedAt": "2026-08-20T12:06:00.000Z",
-      "expiresAt": "2026-08-27T12:06:00.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [
-        "O filme voltou aos cinemas brasileiros em 20 de agosto.",
-        "A exibição ocorre na rede Cinemark.",
-        "O card colecionável vale para sessões a partir de 22 de agosto.",
-        "O estoque do brinde é limitado.",
-        "Há sessões dubladas e legendadas.",
-        "A faixa dublada dos cinemas é diferente da versão de streaming.",
-        "O longa foi dirigido por Isao Takahata.",
-        "A história acompanha Seita e Setsuko durante a Segunda Guerra Mundial."
-      ],
-      "contentSections": [
-        {
-          "heading": "Exibição e brinde",
-          "bullets": [
-            "Sessões começaram em 20 de agosto.",
-            "O card é distribuído em sessões a partir de 22 de agosto enquanto houver estoque."
-          ]
-        },
-        {
-          "heading": "Dublagem",
-          "paragraphs": [
-            "A versão exibida nos cinemas possui uma faixa brasileira diferente da que já havia sido disponibilizada em streaming."
-          ]
-        },
-        {
-          "heading": "Sobre o filme",
-          "paragraphs": [
-            "Dirigido por Isao Takahata, o longa acompanha os irmãos Seita e Setsuko em meio à guerra no Japão."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Novas cidades, extensão das sessões ou informações de dublagem podem ser adicionadas aqui."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/20/tumulo-dos-vagalumes-card-colecionavel-e-brinde-em-exibicao-nos-cinemas/",
-          "publishedAt": "2026-08-20T12:06:00.000Z"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 410,
-      "qualityScore": 0.91,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 8,
-        "sections": 4,
         "sourceCount": 1,
         "ingestMode": "recovery-seed"
       }
