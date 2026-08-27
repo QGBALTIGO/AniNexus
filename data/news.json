@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T22:15:35.865Z",
+  "generatedAt": "2026-08-27T03:22:40.640Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -50,16 +50,16 @@
   "stats": {
     "collected": 155,
     "grouped": 126,
-    "published": 29,
+    "published": 28,
     "newStories": 23,
     "deepArticles": 15,
-    "avgWords": 378,
-    "withHeroImage": 26,
+    "avgWords": 383,
+    "withHeroImage": 25,
     "withGallery": 3,
     "withEmbeds": 5,
     "skippedTranslation": 100,
     "skippedQuality": 3,
-    "durationMs": 124102
+    "durationMs": 127086
   },
   "items": [
     {
@@ -207,7 +207,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T16:07:00.000Z",
-      "updatedAt": "2026-08-26T22:13:51.142Z",
+      "updatedAt": "2026-08-27T03:20:54.435Z",
       "expiresAt": "2026-09-02T16:07:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -296,7 +296,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T15:23:00.000Z",
-      "updatedAt": "2026-08-26T22:13:51.142Z",
+      "updatedAt": "2026-08-27T03:20:54.435Z",
       "expiresAt": "2026-09-02T15:23:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -380,7 +380,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T01:45:00.000Z",
-      "updatedAt": "2026-08-26T22:13:53.337Z",
+      "updatedAt": "2026-08-27T03:20:56.650Z",
       "expiresAt": "2026-09-02T01:45:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -580,7 +580,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-26T22:13:55.268Z",
+      "updatedAt": "2026-08-27T03:20:58.915Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -894,7 +894,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-26T22:13:58.105Z",
+      "updatedAt": "2026-08-27T03:21:02.167Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -976,7 +976,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-26T22:14:01.177Z",
+      "updatedAt": "2026-08-27T03:21:05.534Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1422,7 +1422,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-26T22:14:12.180Z",
+      "updatedAt": "2026-08-27T03:21:17.339Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2399,7 +2399,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T19:55:00.000Z",
-      "updatedAt": "2026-08-26T22:14:17.788Z",
+      "updatedAt": "2026-08-27T03:21:22.745Z",
       "expiresAt": "2026-08-28T19:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2493,7 +2493,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T18:00:00.000Z",
-      "updatedAt": "2026-08-26T22:14:17.788Z",
+      "updatedAt": "2026-08-27T03:21:22.745Z",
       "expiresAt": "2026-08-28T18:00:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2575,7 +2575,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-21T15:15:00.000Z",
-      "updatedAt": "2026-08-26T22:14:20.094Z",
+      "updatedAt": "2026-08-27T03:21:24.681Z",
       "expiresAt": "2026-08-28T15:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2999,94 +2999,6 @@
         "sections": 4,
         "sourceCount": 1,
         "ingestMode": "recovery-seed"
-      }
-    },
-    {
-      "id": "crunchyroll-9bade249",
-      "slug": "trailer-de-dark-machine-the-animation-revela-seu-tema-de-abertura-e-estreia-em-outubro-de-2026-crunchyroll-9bade249",
-      "source": "Crunchyroll Notícias",
-      "sourceType": "CRUNCHYROLL",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Trailer de DARK MACHINE THE ANIMATION revela seu tema de abertura e estreia em outubro de 2026",
-      "originalTitle": null,
-      "summary": "A série original de eSports também revelou quatro adições ao seu elenco de voz Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!",
-      "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/19/dark-machine-the-animation-trailer-estreia-outubro-2026-elenco",
-      "sourceUrl": "https://crunchyroll.com/pt-br/news/latest/2026/8/19/dark-machine-the-animation-trailer-estreia-outubro-2026-elenco",
-      "image": "https://a.storyblok.com/f/178900/800x450/08ac6cccc4/dark-machine-the-animation.jpg",
-      "mediaQuery": "Trailer de DARK MACHINE THE ANIMATION revela seu tema de abertura e estreia em outubro de 2026",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-19T22:25:00.000Z",
-      "updatedAt": "2026-08-26T14:00:19.469Z",
-      "expiresAt": "2026-08-26T22:25:00.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [
-        "A série original de eSports também revelou quatro adições ao seu elenco de voz Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-        "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-        "You heard it here first!"
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "A série original de eSports também revelou quatro adições ao seu elenco de voz Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!"
-          ],
-          "bullets": [
-            "A série original de eSports também revelou quatro adições ao seu elenco de voz Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "A série original de eSports também revelou quatro adições ao seu elenco de voz Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "A série original de eSports também revelou quatro adições ao seu elenco de voz Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Novos trailers, datas, elenco e plataformas confirmadas podem ser incorporados nesta mesma página enquanto a notícia estiver ativa."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "Crunchyroll Notícias",
-          "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/19/dark-machine-the-animation-trailer-estreia-outubro-2026-elenco",
-          "publishedAt": "2026-08-19T22:25:00.000Z",
-          "author": "Samir Fraiha"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 251,
-      "qualityScore": 0.97,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 3,
-        "sections": 5,
-        "sourceCount": 1,
-        "ingestMode": "html",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
       }
     }
   ]
