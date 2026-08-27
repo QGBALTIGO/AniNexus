@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T14:22:30.913Z",
+  "generatedAt": "2026-08-27T23:51:03.534Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -49,19 +49,353 @@
   ],
   "stats": {
     "collected": 155,
-    "grouped": 124,
-    "published": 25,
+    "grouped": 125,
+    "published": 27,
     "newStories": 22,
-    "deepArticles": 13,
-    "avgWords": 382,
-    "withHeroImage": 23,
+    "deepArticles": 15,
+    "avgWords": 388,
+    "withHeroImage": 26,
     "withGallery": 3,
     "withEmbeds": 5,
-    "skippedTranslation": 99,
-    "skippedQuality": 3,
-    "durationMs": 172150
+    "skippedTranslation": 101,
+    "skippedQuality": 2,
+    "durationMs": 131864
   },
   "items": [
+    {
+      "id": "jbox_anime-b74d24fc",
+      "slug": "my-crush-s-crush-tem-anime-anunciado-jbox_anime-b74d24fc",
+      "source": "JBox",
+      "sourceType": "JBOX_ANIME",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘My Crush’s Crush’ tem animê anunciado",
+      "originalTitle": null,
+      "summary": "Mangá original é escrito por Sekina Aoi, autor também de ‘Seitokai no Ichizon’ e ‘Gamers!’.",
+      "url": "https://www.jbox.com.br/2026/08/27/my-crushs-crush-tem-anime-anunciado",
+      "sourceUrl": "https://www.jbox.com.br/2026/08/27/my-crushs-crush-tem-anime-anunciado",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/My-Crushs-Crush-destacada.jpg",
+      "mediaQuery": "‘My Crush’s Crush’ tem animê anunciado",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "publishedAt": "2026-08-27T22:46:27.000Z",
+      "updatedAt": "2026-08-27T22:47:26.000Z",
+      "expiresAt": "2026-09-03T22:46:27.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [
+        "Mangá original é escrito por Sekina Aoi, autor também de ‘Seitokai no Ichizon’ e ‘Gamers!’.",
+        "Foi anunciado que o mangá My Crush’s Crush ( Boku no Suki na Hito ga Suki na Hito ) vai ganhar uma adaptação para animê.",
+        "Detalhes sobre a produção ainda não foram divulgados..",
+        "Ryou Tsuzura , responsável por ilustrar o mangá, fez uma ilustração em comemoração ao anúncio (essa da capa da notícia).",
+        "A obra é escrita por Sekina Aoi , autor conhecido também pelas light novels Gamers!",
+        "A publicação ocorre desde 2022 na Young Animal Zero , contando até então com 7 volumes encadernados pela Hakusensha ..",
+        "Imagem: Divulgação/Hakusensha.",
+        "A história acompanha Sora Akizuki, que se declara para Miya Fuwa e rapidamente é rejeitado.",
+        "A garota gosta de Asahi Suzukaze, presidente do Clube de Experimentação, que tem como objetivo testar várias coisas (algumas delas bizarras) para os alunos da escola.",
+        "Sora decide entrar para o clube para aprender mais sobre sua rival no amor, mas acaba descobrindo que ela também gosta de outra pessoa..",
+        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
+      ],
+      "contentSections": [
+        {
+          "heading": "O que aconteceu",
+          "paragraphs": [
+            "Mangá original é escrito por Sekina Aoi, autor também de ‘Seitokai no Ichizon’ e ‘Gamers!’."
+          ],
+          "bullets": [
+            "Mangá original é escrito por Sekina Aoi, autor também de ‘Seitokai no Ichizon’ e ‘Gamers!’.",
+            "Foi anunciado que o mangá My Crush’s Crush ( Boku no Suki na Hito ga Suki na Hito ) vai ganhar uma adaptação para animê.",
+            "Detalhes sobre a produção ainda não foram divulgados.."
+          ]
+        },
+        {
+          "heading": "Estreia, lançamento e disponibilidade",
+          "bullets": [
+            "A publicação ocorre desde 2022 na Young Animal Zero , contando até então com 7 volumes encadernados pela Hakusensha .."
+          ]
+        },
+        {
+          "heading": "Produção, equipe e elenco",
+          "bullets": [
+            "Mangá original é escrito por Sekina Aoi, autor também de ‘Seitokai no Ichizon’ e ‘Gamers!’.",
+            "Detalhes sobre a produção ainda não foram divulgados..",
+            "A obra é escrita por Sekina Aoi , autor conhecido também pelas light novels Gamers!"
+          ]
+        },
+        {
+          "heading": "Materiais divulgados",
+          "bullets": [
+            "Imagem: Divulgação/Hakusensha."
+          ]
+        },
+        {
+          "heading": "História e contexto da obra",
+          "bullets": [
+            "Foi anunciado que o mangá My Crush’s Crush ( Boku no Suki na Hito ga Suki na Hito ) vai ganhar uma adaptação para animê.",
+            "A história acompanha Sora Akizuki, que se declara para Miya Fuwa e rapidamente é rejeitado."
+          ]
+        },
+        {
+          "heading": "Outros detalhes confirmados",
+          "bullets": [
+            "Ryou Tsuzura , responsável por ilustrar o mangá, fez uma ilustração em comemoração ao anúncio (essa da capa da notícia).",
+            "A garota gosta de Asahi Suzukaze, presidente do Clube de Experimentação, que tem como objetivo testar várias coisas (algumas delas bizarras) para os alunos da escola.",
+            "Sora decide entrar para o clube para aprender mais sobre sua rival no amor, mas acaba descobrindo que ela também gosta de outra pessoa..",
+            "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
+          ]
+        },
+        {
+          "heading": "Acompanhamento AniNexus",
+          "paragraphs": [
+            "A mesma URL é atualizada quando surgem fatos relevantes adicionais, evitando várias matérias rasas sobre o mesmo assunto."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/08/27/my-crushs-crush-tem-anime-anunciado",
+          "publishedAt": "2026-08-27T22:46:27.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 284,
+      "qualityScore": 0.84,
+      "contentVersion": 1,
+      "coverage": {
+        "facts": 11,
+        "sections": 7,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 1
+      }
+    },
+    {
+      "id": "jbox_anime-86c7f927",
+      "slug": "2-temporada-de-blue-box-ganha-poster-e-trailer-com-novas-musicas-de-abertura-e-encerramento-jbox_anime-86c7f927",
+      "source": "JBox",
+      "sourceType": "JBOX_ANIME",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "2ª temporada de ‘Blue Box’ ganha pôster e trailer com novas músicas de abertura e encerramento",
+      "originalTitle": null,
+      "summary": "Prévia antecipa muito esporte misturado com dramas adolescentes.",
+      "url": "https://www.jbox.com.br/2026/08/27/2a-temporada-de-blue-box-ganha-poster-e-trailer-com-novas-musicas-de-abertura-e-encerramento",
+      "sourceUrl": "https://www.jbox.com.br/2026/08/27/2a-temporada-de-blue-box-ganha-poster-e-trailer-com-novas-musicas-de-abertura-e-encerramento",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/Blue-Box-segunda-temporada-destacada-01.jpg",
+      "mediaQuery": "2ª temporada de ‘Blue Box’ ganha pôster e trailer com novas músicas de abertura e encerramento",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "id": "hJ6Y8PAOUk8",
+          "url": "https://www.youtube-nocookie.com/embed/hJ6Y8PAOUk8"
+        }
+      ],
+      "publishedAt": "2026-08-27T22:31:34.000Z",
+      "updatedAt": "2026-08-27T22:41:45.000Z",
+      "expiresAt": "2026-09-03T22:31:34.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [
+        "Prévia antecipa muito esporte misturado com dramas adolescentes.",
+        "A 2ª temporada de Blue Box ganhou um pôster focado na personagem Chinatsu Kano , e um trailer completo, que antecipa muito esporte, drama adolescente e as novas músicas de abertura e encerramento do animê..",
+        "“Anata no Hana no Iro” é a nova canção de abertura, assinada pela artista aiko .",
+        "Já o encerramento tem o título de “blue in” , e é feito pela dupla elsewhere kikou .",
+        "Pôster da 2ª temporada de Blue Box | Netflix/Divulgação.",
+        "A prévia indica ainda que a rotina dos protagonistas vai mudar com a chegada de Yumeka Kido , nova personagem, que tem a voz original de Yoshino Aoyama (a Naomi Otoya em Grand Blue Dreaming )..",
+        "Na história de Blue Box , Taiki Inomata é um jovem que faz parte do time escolar de badminton.",
+        "Todas as manhãs, ele treina para se aprimorar no mesmo horário de Chinatsu Kano, sua senpai e crush, que faz parte do time de basquete.",
+        "As coisas mudam quando os pais de Chinatsu, que são amigos dos pais de Taiki, vão trabalhar no exterior, e ela passa a morar na mesma casa do rapaz.",
+        "Com o tempo, os dois começam a aprofundar a relação enquanto tentam participar do torneio nacional em seus respectivos times..",
+        "O mangá de Blue Box começou a ser publicado em 2021, e chegou ao Brasil pela JBC , que já lançou oito volumes no país até agora.",
+        "A história foi finalizada no Japão em julho deste ano ..",
+        "Com o sucesso da publicação, uma adaptação em animê foi lançada entre 2024 e 2025, contando ao todo com 25 episódios, que chegaram ao país pela Netflix não só com legendas, mas também com dublagem em português..",
+        "Já segunda temporada estreia no dia 4 de outubro deste ano, dentro da Temporada de Outono dos Animês ..",
+        "Fontes: Anime News Network , X/Twitter da Netflix Anime.",
+        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
+      ],
+      "contentSections": [
+        {
+          "heading": "O que aconteceu",
+          "paragraphs": [
+            "Prévia antecipa muito esporte misturado com dramas adolescentes."
+          ],
+          "bullets": [
+            "Prévia antecipa muito esporte misturado com dramas adolescentes.",
+            "A 2ª temporada de Blue Box ganhou um pôster focado na personagem Chinatsu Kano , e um trailer completo, que antecipa muito esporte, drama adolescente e as novas músicas de abertura e encerramento do animê..",
+            "“Anata no Hana no Iro” é a nova canção de abertura, assinada pela artista aiko ."
+          ]
+        },
+        {
+          "heading": "Estreia, lançamento e disponibilidade",
+          "bullets": [
+            "Pôster da 2ª temporada de Blue Box | Netflix/Divulgação.",
+            "Todas as manhãs, ele treina para se aprimorar no mesmo horário de Chinatsu Kano, sua senpai e crush, que faz parte do time de basquete.",
+            "As coisas mudam quando os pais de Chinatsu, que são amigos dos pais de Taiki, vão trabalhar no exterior, e ela passa a morar na mesma casa do rapaz.",
+            "Com o tempo, os dois começam a aprofundar a relação enquanto tentam participar do torneio nacional em seus respectivos times..",
+            "O mangá de Blue Box começou a ser publicado em 2021, e chegou ao Brasil pela JBC , que já lançou oito volumes no país até agora.",
+            "A história foi finalizada no Japão em julho deste ano ..",
+            "Com o sucesso da publicação, uma adaptação em animê foi lançada entre 2024 e 2025, contando ao todo com 25 episódios, que chegaram ao país pela Netflix não só com legendas, mas também com dublagem em português.."
+          ]
+        },
+        {
+          "heading": "Produção, equipe e elenco",
+          "bullets": [
+            "A 2ª temporada de Blue Box ganhou um pôster focado na personagem Chinatsu Kano , e um trailer completo, que antecipa muito esporte, drama adolescente e as novas músicas de abertura e encerramento do animê..",
+            "A prévia indica ainda que a rotina dos protagonistas vai mudar com a chegada de Yumeka Kido , nova personagem, que tem a voz original de Yoshino Aoyama (a Naomi Otoya em Grand Blue Dreaming )..",
+            "Com o sucesso da publicação, uma adaptação em animê foi lançada entre 2024 e 2025, contando ao todo com 25 episódios, que chegaram ao país pela Netflix não só com legendas, mas também com dublagem em português.."
+          ]
+        },
+        {
+          "heading": "Materiais divulgados",
+          "bullets": [
+            "Prévia antecipa muito esporte misturado com dramas adolescentes.",
+            "A 2ª temporada de Blue Box ganhou um pôster focado na personagem Chinatsu Kano , e um trailer completo, que antecipa muito esporte, drama adolescente e as novas músicas de abertura e encerramento do animê..",
+            "“Anata no Hana no Iro” é a nova canção de abertura, assinada pela artista aiko .",
+            "Já o encerramento tem o título de “blue in” , e é feito pela dupla elsewhere kikou .",
+            "Pôster da 2ª temporada de Blue Box | Netflix/Divulgação.",
+            "A prévia indica ainda que a rotina dos protagonistas vai mudar com a chegada de Yumeka Kido , nova personagem, que tem a voz original de Yoshino Aoyama (a Naomi Otoya em Grand Blue Dreaming ).."
+          ]
+        },
+        {
+          "heading": "História e contexto da obra",
+          "bullets": [
+            "A 2ª temporada de Blue Box ganhou um pôster focado na personagem Chinatsu Kano , e um trailer completo, que antecipa muito esporte, drama adolescente e as novas músicas de abertura e encerramento do animê..",
+            "A prévia indica ainda que a rotina dos protagonistas vai mudar com a chegada de Yumeka Kido , nova personagem, que tem a voz original de Yoshino Aoyama (a Naomi Otoya em Grand Blue Dreaming )..",
+            "Na história de Blue Box , Taiki Inomata é um jovem que faz parte do time escolar de badminton.",
+            "A história foi finalizada no Japão em julho deste ano ..",
+            "Com o sucesso da publicação, uma adaptação em animê foi lançada entre 2024 e 2025, contando ao todo com 25 episódios, que chegaram ao país pela Netflix não só com legendas, mas também com dublagem em português.."
+          ]
+        },
+        {
+          "heading": "Outros detalhes confirmados",
+          "bullets": [
+            "Já segunda temporada estreia no dia 4 de outubro deste ano, dentro da Temporada de Outono dos Animês ..",
+            "Fontes: Anime News Network , X/Twitter da Netflix Anime.",
+            "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
+          ]
+        },
+        {
+          "heading": "Acompanhamento AniNexus",
+          "paragraphs": [
+            "Novos trailers, datas, elenco e plataformas confirmadas podem ser incorporados nesta mesma página enquanto a notícia estiver ativa."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/08/27/2a-temporada-de-blue-box-ganha-poster-e-trailer-com-novas-musicas-de-abertura-e-encerramento",
+          "publishedAt": "2026-08-27T22:31:34.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 4,
+      "wordCount": 665,
+      "qualityScore": 0.91,
+      "contentVersion": 1,
+      "coverage": {
+        "facts": 16,
+        "sections": 7,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 1
+      }
+    },
+    {
+      "id": "crunchyroll-6113674a",
+      "slug": "2-temporada-do-anime-de-parede-gelo-ganha-trailer-e-data-de-estreia-crunchyroll-6113674a",
+      "source": "Crunchyroll Notícias",
+      "sourceType": "CRUNCHYROLL",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "2ª temporada do anime de Parede Gelo ganha trailer e data de estreia",
+      "originalTitle": null,
+      "summary": "O anime retorna no dia 1º de outubro deste ano. Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!",
+      "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/27/parede-de-gelo-2-temporada-trailer-data-1-de-outubro",
+      "sourceUrl": "https://crunchyroll.com/pt-br/news/latest/2026/8/27/parede-de-gelo-2-temporada-trailer-data-1-de-outubro",
+      "image": "https://a.storyblok.com/f/178900/960x540/7db7fed9c0/ramparts-of-ice-season-2-hero.png",
+      "mediaQuery": "2ª temporada do anime de Parede Gelo ganha trailer e data de estreia",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "publishedAt": "2026-08-27T20:17:00.000Z",
+      "updatedAt": "2026-08-27T23:49:15.004Z",
+      "expiresAt": "2026-09-03T20:17:00.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [
+        "O anime retorna no dia 1º de outubro deste ano.",
+        "Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
+        "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
+        "You heard it here first!"
+      ],
+      "contentSections": [
+        {
+          "heading": "O que aconteceu",
+          "paragraphs": [
+            "O anime retorna no dia 1º de outubro deste ano. Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!"
+          ],
+          "bullets": [
+            "O anime retorna no dia 1º de outubro deste ano.",
+            "Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
+            "From breaking stories to evergreen content, get all your anime and manga news updates in one place."
+          ]
+        },
+        {
+          "heading": "Estreia, lançamento e disponibilidade",
+          "bullets": [
+            "O anime retorna no dia 1º de outubro deste ano.",
+            "Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
+          ]
+        },
+        {
+          "heading": "Outros detalhes confirmados",
+          "bullets": [
+            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
+            "You heard it here first!"
+          ]
+        },
+        {
+          "heading": "Acompanhamento AniNexus",
+          "paragraphs": [
+            "Novos trailers, datas, elenco e plataformas confirmadas podem ser incorporados nesta mesma página enquanto a notícia estiver ativa."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Crunchyroll Notícias",
+          "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/27/parede-de-gelo-2-temporada-trailer-data-1-de-outubro",
+          "publishedAt": "2026-08-27T20:17:00.000Z",
+          "author": "Talles Queiroz"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 201,
+      "qualityScore": 0.93,
+      "contentVersion": 1,
+      "coverage": {
+        "facts": 4,
+        "sections": 4,
+        "sourceCount": 1,
+        "ingestMode": "html",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 1
+      }
+    },
     {
       "id": "jbox_anime-3291be18",
       "slug": "naruto-experience-reuniao-entre-multiverso-viz-media-e-tv-tokyo-define-proximos-passos-do-projeto-jbox_anime-3291be18",
@@ -207,7 +541,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T16:07:00.000Z",
-      "updatedAt": "2026-08-27T14:19:59.499Z",
+      "updatedAt": "2026-08-27T23:49:27.188Z",
       "expiresAt": "2026-09-02T16:07:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -296,7 +630,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T15:23:00.000Z",
-      "updatedAt": "2026-08-27T14:19:59.499Z",
+      "updatedAt": "2026-08-27T23:49:27.189Z",
       "expiresAt": "2026-09-02T15:23:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -380,7 +714,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T01:45:00.000Z",
-      "updatedAt": "2026-08-27T14:20:00.815Z",
+      "updatedAt": "2026-08-27T23:49:29.479Z",
       "expiresAt": "2026-09-02T01:45:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -580,7 +914,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-27T14:20:04.064Z",
+      "updatedAt": "2026-08-27T23:49:31.669Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -894,7 +1228,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-27T14:20:06.635Z",
+      "updatedAt": "2026-08-27T23:49:35.164Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -976,7 +1310,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-27T14:20:09.436Z",
+      "updatedAt": "2026-08-27T23:49:38.713Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1422,7 +1756,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-27T14:20:24.854Z",
+      "updatedAt": "2026-08-27T23:49:50.837Z",
       "expiresAt": "2026-08-29T19:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1508,23 +1842,7 @@
       "mediaQuery": "Captain Tsubasa: Novo jogo ganha trailer apresentando clubes",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "D3mgQHQ_3W0",
-          "url": "https://www.youtube-nocookie.com/embed/D3mgQHQ_3W0"
-        },
-        {
-          "type": "youtube",
-          "id": "fP2w6NTlGR4",
-          "url": "https://www.youtube-nocookie.com/embed/fP2w6NTlGR4"
-        },
-        {
-          "type": "youtube",
-          "id": "VH6vR4W4NIA",
-          "url": "https://www.youtube-nocookie.com/embed/VH6vR4W4NIA"
-        }
-      ],
+      "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:40:44.000Z",
       "updatedAt": "2026-08-22T20:37:15.000Z",
       "expiresAt": "2026-08-29T19:40:44.000Z",
@@ -1631,7 +1949,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 3,
+        "embedCount": 0,
         "sourcePagesRead": 1
       }
     },
@@ -2649,72 +2967,6 @@
         "mediaCount": 0,
         "embedCount": 0,
         "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox-naruto-nycc-2026",
-      "slug": "naruto-tera-novo-projeto-anunciado-na-new-york-comic-con-2026-jbox-naruto",
-      "source": "JBox",
-      "sourceType": "JBOX_ANIME",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Naruto terá novo projeto anunciado na New York Comic Con 2026",
-      "summary": "A VIZ Media confirmou um painel de Naruto na New York Comic Con 2026 e prometeu revelar um novo projeto ligado à franquia. O encontro terá participação das vozes japonesas de Naruto e Sasuke e está marcado para 10 de outubro.",
-      "url": "https://www.jbox.com.br/2026/08/20/naruto-tera-novo-projeto-anunciado-na-new-york-comic-con-2026/",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/20/naruto-tera-novo-projeto-anunciado-na-new-york-comic-con-2026/",
-      "image": "",
-      "mediaQuery": "Naruto",
-      "mediaType": "anime",
-      "publishedAt": "2026-08-20T18:32:00.000Z",
-      "updatedAt": "2026-08-20T18:32:00.000Z",
-      "expiresAt": "2026-08-27T18:32:00.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [
-        "A VIZ Media confirmou um painel de Naruto para a New York Comic Con 2026.",
-        "A apresentação está marcada para 10 de outubro.",
-        "Junko Takeuchi e Noriaki Sugiyama estão entre os convidados anunciados.",
-        "Um novo projeto da franquia será revelado durante o evento."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Naruto terá um painel próprio na New York Comic Con com novidades para a franquia e a promessa de um projeto ainda não detalhado."
-          ]
-        },
-        {
-          "heading": "O que já está confirmado",
-          "bullets": [
-            "O painel acontece em 10 de outubro.",
-            "As vozes japonesas de Naruto e Sasuke estão entre os convidados.",
-            "O formato do novo projeto ainda não foi informado."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "A matéria será atualizada quando o formato, equipe, lançamento ou plataforma do projeto forem revelados."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/20/naruto-tera-novo-projeto-anunciado-na-new-york-comic-con-2026/",
-          "publishedAt": "2026-08-20T18:32:00.000Z"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 235,
-      "qualityScore": 0.82,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 4,
-        "sections": 3,
-        "sourceCount": 1,
-        "ingestMode": "recovery-seed"
       }
     }
   ]
