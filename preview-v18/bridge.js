@@ -29,6 +29,20 @@
         externalLinks:Array.isArray(m.externalLinks)?m.externalLinks:(Array.isArray(m.streaming)?m.streaming:[])
       };
     };
+    const adaptSchedule=data=>Array.isArray(data)?data.map(item=>item&&typeof item==='object'?{...item,media:legacyMedia(item.media)}:item):data;
+
+    // Corrige também o cache salvo por versões anteriores. Sem isso, um cache
+    // ainda fresco poderia continuar exibindo "Anime" e capas vazias por alguns minutos.
+    try{
+      for(let i=localStorage.length-1;i>=0;i--){
+        const key=localStorage.key(i);if(!key?.startsWith('nx:v18:schedule:'))continue;
+        const cached=JSON.parse(localStorage.getItem(key)||'null');
+        if(!cached||!Array.isArray(cached.items))continue;
+        const needsCompat=cached.items.some(item=>item?.media&&(!item.media.coverImage||typeof item.media.title==='string'));
+        if(needsCompat)localStorage.setItem(key,JSON.stringify({...cached,items:adaptSchedule(cached.items)}));
+      }
+    }catch{}
+
     window.fetch=async(input,init)=>{
       const response=await nativeFetch(input,init);
       try{
@@ -37,11 +51,10 @@
         if(url.origin!==location.origin||url.pathname!=='/api/schedule'||!response.ok)return response;
         const data=await response.clone().json();
         if(!Array.isArray(data))return response;
-        const adapted=data.map(item=>item&&typeof item==='object'?{...item,media:legacyMedia(item.media)}:item);
         const headers=new Headers(response.headers);
         headers.set('content-type','application/json; charset=utf-8');
         headers.delete('content-length');
-        return new Response(JSON.stringify(adapted),{status:response.status,statusText:response.statusText,headers});
+        return new Response(JSON.stringify(adaptSchedule(data)),{status:response.status,statusText:response.statusText,headers});
       }catch{return response}
     };
   }
