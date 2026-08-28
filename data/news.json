@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T23:51:03.534Z",
+  "generatedAt": "2026-08-28T07:08:10.129Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -51,15 +51,15 @@
     "collected": 155,
     "grouped": 125,
     "published": 27,
-    "newStories": 22,
+    "newStories": 21,
     "deepArticles": 15,
     "avgWords": 388,
     "withHeroImage": 26,
     "withGallery": 3,
-    "withEmbeds": 5,
-    "skippedTranslation": 101,
+    "withEmbeds": 7,
+    "skippedTranslation": 102,
     "skippedQuality": 2,
-    "durationMs": 131864
+    "durationMs": 126759
   },
   "items": [
     {
@@ -330,7 +330,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-27T20:17:00.000Z",
-      "updatedAt": "2026-08-27T23:49:15.004Z",
+      "updatedAt": "2026-08-28T07:06:27.377Z",
       "expiresAt": "2026-09-03T20:17:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -541,7 +541,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T16:07:00.000Z",
-      "updatedAt": "2026-08-27T23:49:27.188Z",
+      "updatedAt": "2026-08-28T07:06:39.359Z",
       "expiresAt": "2026-09-02T16:07:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -630,7 +630,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T15:23:00.000Z",
-      "updatedAt": "2026-08-27T23:49:27.189Z",
+      "updatedAt": "2026-08-28T07:06:39.359Z",
       "expiresAt": "2026-09-02T15:23:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -714,7 +714,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T01:45:00.000Z",
-      "updatedAt": "2026-08-27T23:49:29.479Z",
+      "updatedAt": "2026-08-28T07:06:41.720Z",
       "expiresAt": "2026-09-02T01:45:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -914,7 +914,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-27T23:49:31.669Z",
+      "updatedAt": "2026-08-28T07:06:43.853Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1228,7 +1228,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-27T23:49:35.164Z",
+      "updatedAt": "2026-08-28T07:06:47.344Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1310,7 +1310,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-27T23:49:38.713Z",
+      "updatedAt": "2026-08-28T07:06:50.280Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1842,7 +1842,23 @@
       "mediaQuery": "Captain Tsubasa: Novo jogo ganha trailer apresentando clubes",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "id": "D3mgQHQ_3W0",
+          "url": "https://www.youtube-nocookie.com/embed/D3mgQHQ_3W0"
+        },
+        {
+          "type": "youtube",
+          "id": "fP2w6NTlGR4",
+          "url": "https://www.youtube-nocookie.com/embed/fP2w6NTlGR4"
+        },
+        {
+          "type": "youtube",
+          "id": "VH6vR4W4NIA",
+          "url": "https://www.youtube-nocookie.com/embed/VH6vR4W4NIA"
+        }
+      ],
       "publishedAt": "2026-08-22T19:40:44.000Z",
       "updatedAt": "2026-08-22T20:37:15.000Z",
       "expiresAt": "2026-08-29T19:40:44.000Z",
@@ -1949,7 +1965,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 0,
+        "embedCount": 3,
         "sourcePagesRead": 1
       }
     },
@@ -2090,7 +2106,13 @@
       "mediaQuery": "The One Piece: Divulgado novo pôster do reboot",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "id": "n_GDYehbwK0",
+          "url": "https://www.youtube-nocookie.com/embed/n_GDYehbwK0"
+        }
+      ],
       "publishedAt": "2026-08-22T17:47:47.000Z",
       "updatedAt": "2026-08-22T17:49:32.000Z",
       "expiresAt": "2026-08-29T17:47:47.000Z",
@@ -2204,7 +2226,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 0,
+        "embedCount": 1,
         "sourcePagesRead": 1
       }
     },
