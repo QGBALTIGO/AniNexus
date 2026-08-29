@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T09:20:48.487Z",
+  "generatedAt": "2026-08-29T14:34:17.186Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -56,10 +56,10 @@
     "avgWords": 371,
     "withHeroImage": 25,
     "withGallery": 2,
-    "withEmbeds": 2,
+    "withEmbeds": 4,
     "skippedTranslation": 96,
     "skippedQuality": 1,
-    "durationMs": 122117
+    "durationMs": 134351
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T21:05:00.000Z",
-      "updatedAt": "2026-08-29T09:19:02.082Z",
+      "updatedAt": "2026-08-29T14:32:17.891Z",
       "expiresAt": "2026-09-04T21:05:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -162,7 +162,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T19:15:00.000Z",
-      "updatedAt": "2026-08-29T09:19:03.193Z",
+      "updatedAt": "2026-08-29T14:32:17.975Z",
       "expiresAt": "2026-09-04T19:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -357,7 +357,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T15:10:00.000Z",
-      "updatedAt": "2026-08-29T09:19:04.224Z",
+      "updatedAt": "2026-08-29T14:32:18.645Z",
       "expiresAt": "2026-09-04T15:10:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -695,7 +695,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-27T20:17:00.000Z",
-      "updatedAt": "2026-08-29T09:19:12.777Z",
+      "updatedAt": "2026-08-29T14:32:26.242Z",
       "expiresAt": "2026-09-03T20:17:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -906,7 +906,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T16:07:00.000Z",
-      "updatedAt": "2026-08-29T09:19:24.773Z",
+      "updatedAt": "2026-08-29T14:32:36.147Z",
       "expiresAt": "2026-09-02T16:07:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -995,7 +995,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T15:23:00.000Z",
-      "updatedAt": "2026-08-29T09:19:24.773Z",
+      "updatedAt": "2026-08-29T14:32:36.147Z",
       "expiresAt": "2026-09-02T15:23:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1079,7 +1079,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T01:45:00.000Z",
-      "updatedAt": "2026-08-29T09:19:26.891Z",
+      "updatedAt": "2026-08-29T14:32:37.143Z",
       "expiresAt": "2026-09-02T01:45:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1279,7 +1279,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-29T09:19:28.889Z",
+      "updatedAt": "2026-08-29T14:32:39.553Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1593,7 +1593,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-29T09:19:32.380Z",
+      "updatedAt": "2026-08-29T14:32:42.034Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1675,7 +1675,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-29T09:19:35.475Z",
+      "updatedAt": "2026-08-29T14:32:44.647Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1881,7 +1881,13 @@
       "mediaQuery": "Fate/strange Fake: 2ª temporada é anunciada",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "id": "AOR_K6DWXY0",
+          "url": "https://www.youtube-nocookie.com/embed/AOR_K6DWXY0"
+        }
+      ],
       "publishedAt": "2026-08-24T14:22:01.000Z",
       "updatedAt": "2026-08-24T14:23:31.000Z",
       "expiresAt": "2026-08-31T14:22:01.000Z",
@@ -1999,7 +2005,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 0,
+        "embedCount": 1,
         "sourcePagesRead": 1
       }
     },
@@ -2201,7 +2207,23 @@
       "mediaQuery": "Captain Tsubasa: Novo jogo ganha trailer apresentando clubes",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "id": "D3mgQHQ_3W0",
+          "url": "https://www.youtube-nocookie.com/embed/D3mgQHQ_3W0"
+        },
+        {
+          "type": "youtube",
+          "id": "fP2w6NTlGR4",
+          "url": "https://www.youtube-nocookie.com/embed/fP2w6NTlGR4"
+        },
+        {
+          "type": "youtube",
+          "id": "VH6vR4W4NIA",
+          "url": "https://www.youtube-nocookie.com/embed/VH6vR4W4NIA"
+        }
+      ],
       "publishedAt": "2026-08-22T19:40:44.000Z",
       "updatedAt": "2026-08-22T20:37:15.000Z",
       "expiresAt": "2026-08-29T19:40:44.000Z",
@@ -2308,7 +2330,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 0,
+        "embedCount": 3,
         "sourcePagesRead": 1
       }
     },
