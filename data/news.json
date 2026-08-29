@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T17:53:19.200Z",
+  "generatedAt": "2026-08-29T20:01:22.045Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -49,17 +49,17 @@
   ],
   "stats": {
     "collected": 155,
-    "grouped": 118,
-    "published": 24,
-    "newStories": 22,
-    "deepArticles": 11,
-    "avgWords": 352,
-    "withHeroImage": 24,
+    "grouped": 116,
+    "published": 21,
+    "newStories": 20,
+    "deepArticles": 9,
+    "avgWords": 339,
+    "withHeroImage": 21,
     "withGallery": 1,
     "withEmbeds": 2,
     "skippedTranslation": 95,
     "skippedQuality": 1,
-    "durationMs": 158800
+    "durationMs": 82920
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T15:13:00.000Z",
-      "updatedAt": "2026-08-29T17:51:12.477Z",
+      "updatedAt": "2026-08-29T20:00:17.945Z",
       "expiresAt": "2026-09-05T15:13:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -170,7 +170,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T21:05:00.000Z",
-      "updatedAt": "2026-08-29T17:51:12.477Z",
+      "updatedAt": "2026-08-29T20:00:17.945Z",
       "expiresAt": "2026-09-04T21:05:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -252,7 +252,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T19:15:00.000Z",
-      "updatedAt": "2026-08-29T17:51:13.010Z",
+      "updatedAt": "2026-08-29T20:00:18.441Z",
       "expiresAt": "2026-09-04T19:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -447,7 +447,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T15:10:00.000Z",
-      "updatedAt": "2026-08-29T17:51:13.474Z",
+      "updatedAt": "2026-08-29T20:00:18.949Z",
       "expiresAt": "2026-09-04T15:10:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -785,7 +785,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-27T20:17:00.000Z",
-      "updatedAt": "2026-08-29T17:51:21.810Z",
+      "updatedAt": "2026-08-29T20:00:23.760Z",
       "expiresAt": "2026-09-03T20:17:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -996,7 +996,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T16:07:00.000Z",
-      "updatedAt": "2026-08-29T17:51:32.402Z",
+      "updatedAt": "2026-08-29T20:00:29.918Z",
       "expiresAt": "2026-09-02T16:07:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1085,7 +1085,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T15:23:00.000Z",
-      "updatedAt": "2026-08-29T17:51:32.402Z",
+      "updatedAt": "2026-08-29T20:00:29.919Z",
       "expiresAt": "2026-09-02T15:23:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1169,7 +1169,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T01:45:00.000Z",
-      "updatedAt": "2026-08-29T17:51:33.738Z",
+      "updatedAt": "2026-08-29T20:00:30.896Z",
       "expiresAt": "2026-09-02T01:45:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1369,7 +1369,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-29T17:51:36.890Z",
+      "updatedAt": "2026-08-29T20:00:31.926Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1683,7 +1683,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-29T17:51:39.087Z",
+      "updatedAt": "2026-08-29T20:00:33.634Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1765,7 +1765,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-29T17:51:41.585Z",
+      "updatedAt": "2026-08-29T20:00:35.313Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2188,342 +2188,6 @@
         "sections": 6,
         "sourceCount": 1,
         "ingestMode": "html",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "crunchyroll-f846a7fd",
-      "slug": "video-do-segundo-encerramento-de-star-detective-precure-atinge-a-arca-de-1-milhao-de-visualizacoes-em-apenas-crunchyroll-f846a7fd",
-      "source": "Crunchyroll Notícias",
-      "sourceType": "CRUNCHYROLL",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Vídeo do segundo encerramento de Star Detective Precure! atinge a arca de 1 milhão de visualizações em apenas 6 dias",
-      "originalTitle": null,
-      "summary": "O CD single do tema de encerramento será lançado dia 30 de setembro Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!",
-      "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/22/anime-star-detective-precure-segundo-encerramento-video-um-milhao-visualizacoes",
-      "sourceUrl": "https://crunchyroll.com/pt-br/news/latest/2026/8/22/anime-star-detective-precure-segundo-encerramento-video-um-milhao-visualizacoes",
-      "image": "https://a.storyblok.com/f/178900/960x540/8fbc8c7784/detective-precure-2nd-ed.jpg",
-      "mediaQuery": "Vídeo do segundo encerramento de Star Detective Precure! atinge a arca de 1 milhão de visualizações em apenas 6 dias",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-22T19:45:00.000Z",
-      "updatedAt": "2026-08-27T23:49:50.837Z",
-      "expiresAt": "2026-08-29T19:45:00.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [
-        "O CD single do tema de encerramento será lançado dia 30 de setembro Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-        "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-        "You heard it here first!"
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "O CD single do tema de encerramento será lançado dia 30 de setembro Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!"
-          ],
-          "bullets": [
-            "O CD single do tema de encerramento será lançado dia 30 de setembro Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "O CD single do tema de encerramento será lançado dia 30 de setembro Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
-          ]
-        },
-        {
-          "heading": "Materiais divulgados",
-          "bullets": [
-            "O CD single do tema de encerramento será lançado dia 30 de setembro Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
-            "You heard it here first!"
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Novos trailers, datas, elenco e plataformas confirmadas podem ser incorporados nesta mesma página enquanto a notícia estiver ativa."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "Crunchyroll Notícias",
-          "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/22/anime-star-detective-precure-segundo-encerramento-video-um-milhao-visualizacoes",
-          "publishedAt": "2026-08-22T19:45:00.000Z",
-          "author": "Samir Fraiha"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 246,
-      "qualityScore": 0.97,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 3,
-        "sections": 5,
-        "sourceCount": 1,
-        "ingestMode": "html",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox_manga-0b9bb0fd",
-      "slug": "captain-tsubasa-novo-jogo-ganha-trailer-apresentando-clubes-jbox_manga-0b9bb0fd",
-      "source": "JBox",
-      "sourceType": "JBOX_MANGA",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Captain Tsubasa: Novo jogo ganha trailer apresentando clubes",
-      "originalTitle": null,
-      "summary": "‘World Fighters’ tem lançamento marcado para o próximo dia 28 de agosto.",
-      "url": "https://www.jbox.com.br/2026/08/22/captain-tsubasa-trailers-confirmam-clubes-do-novo-jogo",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/22/captain-tsubasa-trailers-confirmam-clubes-do-novo-jogo",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/captain-tsubasa-2-world-fighters-clubes-destacada.jpg",
-      "mediaQuery": "Captain Tsubasa: Novo jogo ganha trailer apresentando clubes",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-22T19:40:44.000Z",
-      "updatedAt": "2026-08-22T20:37:15.000Z",
-      "expiresAt": "2026-08-29T19:40:44.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [
-        "‘World Fighters’ tem lançamento marcado para o próximo dia 28 de agosto.",
-        "Foram divulgados pela Bandai Namco dois novos trailers para o jogo Captain Tsubasa 2: World Fighters , focando na apresentação tanto dos times juvenis japoneses da série quanto dos clubes internacionais..",
-        "Confira os vídeos e os clubes abaixo:.",
-        "Em julho, um vídeo de panorama geral já tinha confirmado a presença dos clubes internacionais, mas ainda não tinha detalhado as informações de cada time..",
-        "Entre as seleções juvenis, 22 já estão confirmadas no novo jogo, incluindo, claro, a seleção brasileira — que pode ser desbloqueada antecipadamente como bônus de pré-compra do jogo.",
-        "O título tem lançamento marcado para o dia 28 de agosto , saindo para PlayStation 5 , Xbox Series , Switch e PC ..",
-        "O novo título é uma continuação de Captain Tsubasa: Rise of New Champions , lançado em 2020.",
-        "World Fighters traz jogabilidade aprimorada em relação ao seu antecessor, com novas técnicas especiais, incluindo passes e desarmes, além de um sistema de estratégia melhorado, principalmente nas disputas diretas entre goleiros e atacantes.",
-        "O desenvolvimento continua sendo pela Tamsoft ..",
-        "Serão 110 personagens jogáveis .",
-        "A história é inspirada no arco da Copa do Mundo Juvenil , contando com supervisão direta de Yoichi Takahashi , autor do mangá original.",
-        "Ao contrário de seu antecessor, o novo jogo não teve versão com legendas em português confirmada..",
-        "Captain Tsubasa 2: World Fighters conta com uma “edição suprema” que, além de liberar vários itens exclusivos, dá acesso ao passe de temporada do jogo, que garante seis novos personagens, além de mais itens cosméticos.",
-        "Além do acesso antecipado à seleção brasileira, os bônus para quem comprar o jogo na pré-venda incluem uniformes da seleção japonesa baseados nos usados na Copa do Mundo de 2026 e no arco da Copa do Mundo Juvenil do mangá, além de duas versões especiais da música “ Moete Hero “..",
-        "Fonte : Bandai Namco (Youtube).",
-        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "‘World Fighters’ tem lançamento marcado para o próximo dia 28 de agosto."
-          ],
-          "bullets": [
-            "‘World Fighters’ tem lançamento marcado para o próximo dia 28 de agosto.",
-            "Foram divulgados pela Bandai Namco dois novos trailers para o jogo Captain Tsubasa 2: World Fighters , focando na apresentação tanto dos times juvenis japoneses da série quanto dos clubes internacionais..",
-            "Confira os vídeos e os clubes abaixo:."
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "‘World Fighters’ tem lançamento marcado para o próximo dia 28 de agosto.",
-            "Foram divulgados pela Bandai Namco dois novos trailers para o jogo Captain Tsubasa 2: World Fighters , focando na apresentação tanto dos times juvenis japoneses da série quanto dos clubes internacionais..",
-            "Entre as seleções juvenis, 22 já estão confirmadas no novo jogo, incluindo, claro, a seleção brasileira — que pode ser desbloqueada antecipadamente como bônus de pré-compra do jogo.",
-            "O título tem lançamento marcado para o dia 28 de agosto , saindo para PlayStation 5 , Xbox Series , Switch e PC ..",
-            "World Fighters traz jogabilidade aprimorada em relação ao seu antecessor, com novas técnicas especiais, incluindo passes e desarmes, além de um sistema de estratégia melhorado, principalmente nas disputas diretas entre goleiros e atacantes.",
-            "Além do acesso antecipado à seleção brasileira, os bônus para quem comprar o jogo na pré-venda incluem uniformes da seleção japonesa baseados nos usados na Copa do Mundo de 2026 e no arco da Copa do Mundo Juvenil do mangá, além de duas versões especiais da música “ Moete Hero “.."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "A história é inspirada no arco da Copa do Mundo Juvenil , contando com supervisão direta de Yoichi Takahashi , autor do mangá original.",
-            "Além do acesso antecipado à seleção brasileira, os bônus para quem comprar o jogo na pré-venda incluem uniformes da seleção japonesa baseados nos usados na Copa do Mundo de 2026 e no arco da Copa do Mundo Juvenil do mangá, além de duas versões especiais da música “ Moete Hero “.."
-          ]
-        },
-        {
-          "heading": "Materiais divulgados",
-          "bullets": [
-            "Foram divulgados pela Bandai Namco dois novos trailers para o jogo Captain Tsubasa 2: World Fighters , focando na apresentação tanto dos times juvenis japoneses da série quanto dos clubes internacionais..",
-            "Confira os vídeos e os clubes abaixo:.",
-            "Em julho, um vídeo de panorama geral já tinha confirmado a presença dos clubes internacionais, mas ainda não tinha detalhado as informações de cada time.."
-          ]
-        },
-        {
-          "heading": "História e contexto da obra",
-          "bullets": [
-            "A história é inspirada no arco da Copa do Mundo Juvenil , contando com supervisão direta de Yoichi Takahashi , autor do mangá original.",
-            "Além do acesso antecipado à seleção brasileira, os bônus para quem comprar o jogo na pré-venda incluem uniformes da seleção japonesa baseados nos usados na Copa do Mundo de 2026 e no arco da Copa do Mundo Juvenil do mangá, além de duas versões especiais da música “ Moete Hero “.."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "O novo título é uma continuação de Captain Tsubasa: Rise of New Champions , lançado em 2020.",
-            "O desenvolvimento continua sendo pela Tamsoft ..",
-            "Serão 110 personagens jogáveis .",
-            "Ao contrário de seu antecessor, o novo jogo não teve versão com legendas em português confirmada..",
-            "Captain Tsubasa 2: World Fighters conta com uma “edição suprema” que, além de liberar vários itens exclusivos, dá acesso ao passe de temporada do jogo, que garante seis novos personagens, além de mais itens cosméticos.",
-            "Fonte : Bandai Namco (Youtube).",
-            "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Novos trailers, datas, elenco e plataformas confirmadas podem ser incorporados nesta mesma página enquanto a notícia estiver ativa."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/22/captain-tsubasa-trailers-confirmam-clubes-do-novo-jogo",
-          "publishedAt": "2026-08-22T19:40:44.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 587,
-      "qualityScore": 0.91,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 16,
-        "sections": 7,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox_manga-1c894653",
-      "slug": "charles-melton-e-cotado-para-interpretar-kakashi-no-live-action-de-naruto-jbox_manga-1c894653",
-      "source": "JBox",
-      "sourceType": "JBOX_MANGA",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Charles Melton é cotado para interpretar Kakashi no live-action de ‘Naruto’",
-      "originalTitle": null,
-      "summary": "Segundo informações, astro estaria no estágio de negociações finais para o papel.",
-      "url": "https://www.jbox.com.br/2026/08/22/charles-melton-e-cotado-para-interpretar-kakashi-no-live-action-de-naruto",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/22/charles-melton-e-cotado-para-interpretar-kakashi-no-live-action-de-naruto",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/kakashi-live-action-destacada.jpg",
-      "mediaQuery": "Charles Melton é cotado para interpretar Kakashi no live-action de ‘Naruto’",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-22T18:17:57.000Z",
-      "updatedAt": "2026-08-22T18:18:26.000Z",
-      "expiresAt": "2026-08-29T18:17:57.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [
-        "Segundo informações, astro estaria no estágio de negociações finais para o papel.",
-        "De acordo com o Hollywood Reporter , o ator Charles Melton está em negociações finais para interpretar Kakashi no filme live-action de Naruto ..",
-        "Melton é norte-americano e conhecido por interpretar papéis como Austin Davis na série Treta , da Netflix , e Reggie Mantle em Riverdale .",
-        "O site afirma que o astro é fã de animês e mangás e possui alguns conhecimentos em artes marciais, especialmente taekwondo, e já participou de algumas competições na Coreia do Sul.",
-        "Se a escalação se confirmar, ele será o primeiro nome anunciado na produção, feita em Hollywood pela Lionsgate ..",
-        "Destin Daniel Cretton (de Shang-Chi e a Lenda dos Dez Anéis e Homem-Aranha: Um Novo Dia ) vai comandar o live-action de Naruto , que tem produção de Avi Arad , conhecido por diversos projetos nos Estados Unidos, e roteiro de Tasha Huo ( The Legend of Vox Machina )..",
-        "Recentemente foi divulgado que a equipe também já começou uma busca global pelo trio de jovens atores para interpretar Naruto Uzumaki, Sasuke Uchiha e Sakura Haruno .",
-        "O projeto segue sem data de lançamento definida..",
-        "Estão preparados para ver o Time 7 em live-action?",
-        "A história de Naruto foi escrita e ilustrada por Masashi Kishimoto em 72 volumes, lançados entre 1999 e 2014.",
-        "A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila.",
-        "Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura..",
-        "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, Naruto Shippuden mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017.",
-        "Atualmente, Kishimoto assina a publicação de Boruto ao lado de Ukyou Kodachi , contando a história do filho de Naruto..",
-        "Para quem deseja retornar à Vila da Folha antes da chegada do live-action, os episódios de Naruto estão disponíveis em plataformas como Crunchyroll , Netflix , HBO Max, Disney+, Pluto TV e Mercado Play .",
-        "Já o mangá é publicado no Brasil pela Panini ..",
-        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Segundo informações, astro estaria no estágio de negociações finais para o papel."
-          ],
-          "bullets": [
-            "Segundo informações, astro estaria no estágio de negociações finais para o papel.",
-            "De acordo com o Hollywood Reporter , o ator Charles Melton está em negociações finais para interpretar Kakashi no filme live-action de Naruto ..",
-            "Melton é norte-americano e conhecido por interpretar papéis como Austin Davis na série Treta , da Netflix , e Reggie Mantle em Riverdale ."
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "Melton é norte-americano e conhecido por interpretar papéis como Austin Davis na série Treta , da Netflix , e Reggie Mantle em Riverdale .",
-            "O site afirma que o astro é fã de animês e mangás e possui alguns conhecimentos em artes marciais, especialmente taekwondo, e já participou de algumas competições na Coreia do Sul.",
-            "O projeto segue sem data de lançamento definida..",
-            "A história de Naruto foi escrita e ilustrada por Masashi Kishimoto em 72 volumes, lançados entre 1999 e 2014.",
-            "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, Naruto Shippuden mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017.",
-            "Para quem deseja retornar à Vila da Folha antes da chegada do live-action, os episódios de Naruto estão disponíveis em plataformas como Crunchyroll , Netflix , HBO Max, Disney+, Pluto TV e Mercado Play .",
-            "Já o mangá é publicado no Brasil pela Panini .."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "Se a escalação se confirmar, ele será o primeiro nome anunciado na produção, feita em Hollywood pela Lionsgate ..",
-            "Destin Daniel Cretton (de Shang-Chi e a Lenda dos Dez Anéis e Homem-Aranha: Um Novo Dia ) vai comandar o live-action de Naruto , que tem produção de Avi Arad , conhecido por diversos projetos nos Estados Unidos, e roteiro de Tasha Huo ( The Legend of Vox Machina ).."
-          ]
-        },
-        {
-          "heading": "História e contexto da obra",
-          "bullets": [
-            "A história de Naruto foi escrita e ilustrada por Masashi Kishimoto em 72 volumes, lançados entre 1999 e 2014.",
-            "A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila.",
-            "Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura..",
-            "Atualmente, Kishimoto assina a publicação de Boruto ao lado de Ukyou Kodachi , contando a história do filho de Naruto.."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "Segundo informações, astro estaria no estágio de negociações finais para o papel.",
-            "De acordo com o Hollywood Reporter , o ator Charles Melton está em negociações finais para interpretar Kakashi no filme live-action de Naruto ..",
-            "Recentemente foi divulgado que a equipe também já começou uma busca global pelo trio de jovens atores para interpretar Naruto Uzumaki, Sasuke Uchiha e Sakura Haruno .",
-            "Estão preparados para ver o Time 7 em live-action?",
-            "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "A mesma URL é atualizada quando surgem fatos relevantes adicionais, evitando várias matérias rasas sobre o mesmo assunto."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/22/charles-melton-e-cotado-para-interpretar-kakashi-no-live-action-de-naruto",
-          "publishedAt": "2026-08-22T18:17:57.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 513,
-      "qualityScore": 0.91,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 17,
-        "sections": 6,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
         "mediaCount": 0,
         "embedCount": 0,
         "sourcePagesRead": 1
