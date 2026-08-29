@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T14:34:17.186Z",
+  "generatedAt": "2026-08-29T17:53:19.200Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -49,19 +49,109 @@
   ],
   "stats": {
     "collected": 155,
-    "grouped": 120,
-    "published": 25,
-    "newStories": 23,
-    "deepArticles": 13,
-    "avgWords": 371,
-    "withHeroImage": 25,
-    "withGallery": 2,
-    "withEmbeds": 4,
-    "skippedTranslation": 96,
+    "grouped": 118,
+    "published": 24,
+    "newStories": 22,
+    "deepArticles": 11,
+    "avgWords": 352,
+    "withHeroImage": 24,
+    "withGallery": 1,
+    "withEmbeds": 2,
+    "skippedTranslation": 95,
     "skippedQuality": 1,
-    "durationMs": 134351
+    "durationMs": 158800
   },
   "items": [
+    {
+      "id": "crunchyroll-d24ec787",
+      "slug": "webtoon-de-o-unico-destino-dos-viloes-e-a-morte-e-anunciada-pela-comikey-brasil-crunchyroll-d24ec787",
+      "source": "Crunchyroll Notícias",
+      "sourceType": "CRUNCHYROLL",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Webtoon de O Único Destino dos Vilões é a Morte é anunciada pela Comikey Brasil",
+      "originalTitle": null,
+      "summary": "Obra já é publicada no Brasil pela editora NewPOP. Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!",
+      "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/29/o-unico-destino-dos-viloes-e-a-morte-comikey-brasil",
+      "sourceUrl": "https://crunchyroll.com/pt-br/news/latest/2026/8/29/o-unico-destino-dos-viloes-e-a-morte-comikey-brasil",
+      "image": "https://a.storyblok.com/f/178900/1024x576/e780722c6f/o-unico-destino-dos-viloes-e-a-morte.jpg",
+      "mediaQuery": "Webtoon de O Único Destino dos Vilões é a Morte é anunciada pela Comikey Brasil",
+      "mediaType": "manga",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "publishedAt": "2026-08-29T15:13:00.000Z",
+      "updatedAt": "2026-08-29T17:51:12.477Z",
+      "expiresAt": "2026-09-05T15:13:00.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [
+        "Obra já é publicada no Brasil pela editora NewPOP.",
+        "Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
+        "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
+        "You heard it here first!"
+      ],
+      "contentSections": [
+        {
+          "heading": "O que aconteceu",
+          "paragraphs": [
+            "Obra já é publicada no Brasil pela editora NewPOP. Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!"
+          ],
+          "bullets": [
+            "Obra já é publicada no Brasil pela editora NewPOP.",
+            "Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
+            "From breaking stories to evergreen content, get all your anime and manga news updates in one place."
+          ]
+        },
+        {
+          "heading": "Estreia, lançamento e disponibilidade",
+          "bullets": [
+            "Obra já é publicada no Brasil pela editora NewPOP.",
+            "Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
+          ]
+        },
+        {
+          "heading": "Produção, equipe e elenco",
+          "bullets": [
+            "Obra já é publicada no Brasil pela editora NewPOP."
+          ]
+        },
+        {
+          "heading": "Outros detalhes confirmados",
+          "bullets": [
+            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
+            "You heard it here first!"
+          ]
+        },
+        {
+          "heading": "Acompanhamento AniNexus",
+          "paragraphs": [
+            "A matéria permanece no feed recente para receber atualizações sobre publicação, volumes, licenciamento e disponibilidade no Brasil."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Crunchyroll Notícias",
+          "url": "https://crunchyroll.com/pt-br/news/latest/2026/8/29/o-unico-destino-dos-viloes-e-a-morte-comikey-brasil",
+          "publishedAt": "2026-08-29T15:13:00.000Z",
+          "author": "Talles Queiroz"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 205,
+      "qualityScore": 0.97,
+      "contentVersion": 1,
+      "coverage": {
+        "facts": 4,
+        "sections": 5,
+        "sourceCount": 1,
+        "ingestMode": "html",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 1
+      }
+    },
     {
       "id": "crunchyroll-31745723",
       "slug": "exposicao-de-obras-do-manga-original-de-yu-gi-oh-ganha-arte-promocional-e-datas-crunchyroll-31745723",
@@ -80,7 +170,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T21:05:00.000Z",
-      "updatedAt": "2026-08-29T14:32:17.891Z",
+      "updatedAt": "2026-08-29T17:51:12.477Z",
       "expiresAt": "2026-09-04T21:05:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -162,7 +252,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T19:15:00.000Z",
-      "updatedAt": "2026-08-29T14:32:17.975Z",
+      "updatedAt": "2026-08-29T17:51:13.010Z",
       "expiresAt": "2026-09-04T19:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -357,7 +447,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T15:10:00.000Z",
-      "updatedAt": "2026-08-29T14:32:18.645Z",
+      "updatedAt": "2026-08-29T17:51:13.474Z",
       "expiresAt": "2026-09-04T15:10:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -695,7 +785,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-27T20:17:00.000Z",
-      "updatedAt": "2026-08-29T14:32:26.242Z",
+      "updatedAt": "2026-08-29T17:51:21.810Z",
       "expiresAt": "2026-09-03T20:17:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -906,7 +996,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T16:07:00.000Z",
-      "updatedAt": "2026-08-29T14:32:36.147Z",
+      "updatedAt": "2026-08-29T17:51:32.402Z",
       "expiresAt": "2026-09-02T16:07:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -995,7 +1085,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T15:23:00.000Z",
-      "updatedAt": "2026-08-29T14:32:36.147Z",
+      "updatedAt": "2026-08-29T17:51:32.402Z",
       "expiresAt": "2026-09-02T15:23:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1079,7 +1169,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-26T01:45:00.000Z",
-      "updatedAt": "2026-08-29T14:32:37.143Z",
+      "updatedAt": "2026-08-29T17:51:33.738Z",
       "expiresAt": "2026-09-02T01:45:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1279,7 +1369,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-25T21:15:00.000Z",
-      "updatedAt": "2026-08-29T14:32:39.553Z",
+      "updatedAt": "2026-08-29T17:51:36.890Z",
       "expiresAt": "2026-09-01T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1593,7 +1683,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T23:15:00.000Z",
-      "updatedAt": "2026-08-29T14:32:42.034Z",
+      "updatedAt": "2026-08-29T17:51:39.087Z",
       "expiresAt": "2026-08-31T23:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1675,7 +1765,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-24T16:50:00.000Z",
-      "updatedAt": "2026-08-29T14:32:44.647Z",
+      "updatedAt": "2026-08-29T17:51:41.585Z",
       "expiresAt": "2026-08-31T16:50:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2207,23 +2297,7 @@
       "mediaQuery": "Captain Tsubasa: Novo jogo ganha trailer apresentando clubes",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "D3mgQHQ_3W0",
-          "url": "https://www.youtube-nocookie.com/embed/D3mgQHQ_3W0"
-        },
-        {
-          "type": "youtube",
-          "id": "fP2w6NTlGR4",
-          "url": "https://www.youtube-nocookie.com/embed/fP2w6NTlGR4"
-        },
-        {
-          "type": "youtube",
-          "id": "VH6vR4W4NIA",
-          "url": "https://www.youtube-nocookie.com/embed/VH6vR4W4NIA"
-        }
-      ],
+      "mediaEmbeds": [],
       "publishedAt": "2026-08-22T19:40:44.000Z",
       "updatedAt": "2026-08-22T20:37:15.000Z",
       "expiresAt": "2026-08-29T19:40:44.000Z",
@@ -2330,7 +2404,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 3,
+        "embedCount": 0,
         "sourcePagesRead": 1
       }
     },
@@ -2452,266 +2526,6 @@
         "ingestMode": "wp-rest",
         "mediaCount": 0,
         "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox_anime-b99c32c9",
-      "slug": "the-one-piece-divulgado-novo-poster-do-reboot-jbox_anime-b99c32c9",
-      "source": "JBox",
-      "sourceType": "JBOX_ANIME",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "The One Piece: Divulgado novo pôster do reboot",
-      "originalTitle": null,
-      "summary": "Animação do estúdio WIT estreia em fevereiro de 2027 pela Netflix.",
-      "url": "https://www.jbox.com.br/2026/08/22/the-one-piece-divulgado-novo-poster-do-reboot",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/22/the-one-piece-divulgado-novo-poster-do-reboot",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/the-one-piece-destacada.jpg",
-      "mediaQuery": "The One Piece: Divulgado novo pôster do reboot",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-22T17:47:47.000Z",
-      "updatedAt": "2026-08-22T17:49:32.000Z",
-      "expiresAt": "2026-08-29T17:47:47.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [
-        "Animação do estúdio WIT estreia em fevereiro de 2027 pela Netflix.",
-        "Em 2023, a Netflix estreou a primeira temporada de One Piece: A Série , adaptação live-action do mangá escrito por Eiichiro Oda na revista Weekly Shonen Jump desde 1997.",
-        "É possível intuir que, com a chegada da série, todo um novo público que ainda não havia tido contato com as aventuras do pirata Luffy passou a se interessar por esse universo..",
-        "Contudo, também é possível intuir que esses novos navegantes talvez se sintam intimidados com a quantidade de material relacionado à marca para ler e assistir.",
-        "Até então, já são 115 volumes do mangá e 1.170 episódios do animê, que já acumula 22 temporadas.",
-        "Coisa demais para se aventurar?",
-        "Bom, haverá um meio mais fácil para isso..",
-        "Em fevereiro de 2027 , a Netflix, junto com o estúdio WIT, lançará The One Piece , mais um animê oficial com o bando do Chapéu de Palha, que funcionará como um “reboot” ( como afirmou recentemente o CEO do WIT, George Wada ) , contando novamente a história do mangá, mas com um ritmo atual, com menos episódios ..",
-        "E mais um pôster oficial do animê foi divulgado:.",
-        "Imagem: Divulgação/Netflix.",
-        "Segundo informações anteriores, os 7 primeiros episódios serão lançados de uma vez na plataforma, adaptando os 50 primeiros capítulos da história, até o momento em que a tripulação do Chapéu de Palha conhece Sanji.",
-        "Também foi confirmado que os 7 episódios vão totalizar cerca de 300 minutos, o que equivale a aproximadamente 42 minutos por episódio ..",
-        "O remake tem Masashi Koizuka ( Attack on Titan ) como diretor, Taku Kishimoto ( Haikyu!!",
-        ") na composição de roteiro, Hideaki Abe (episódio 7 de 2020 – Japão Submerso ) na assistência de direção e a dupla Kyoji Asano ( Spy x Family ) e Takatoshi Honda ( In/Spectre ) no design de personagens.",
-        "A Toei Animation , responsável pela animação atual da franquia, também faz parte do comitê de produção..",
-        "Enquanto o novo projeto não chega, o primeiro animê de One Piece retornou com episódios inéditos nesta temporada, mostrando o começo do arco de Elbaph .",
-        "No Brasil, os capítulos semanais são exibidos pela Crunchyroll e também é possível assistir episódios da animação na Netflix (com uma semana de atraso)..",
-        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Animação do estúdio WIT estreia em fevereiro de 2027 pela Netflix."
-          ],
-          "bullets": [
-            "Animação do estúdio WIT estreia em fevereiro de 2027 pela Netflix.",
-            "Em 2023, a Netflix estreou a primeira temporada de One Piece: A Série , adaptação live-action do mangá escrito por Eiichiro Oda na revista Weekly Shonen Jump desde 1997.",
-            "É possível intuir que, com a chegada da série, todo um novo público que ainda não havia tido contato com as aventuras do pirata Luffy passou a se interessar por esse universo.."
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "Animação do estúdio WIT estreia em fevereiro de 2027 pela Netflix.",
-            "Em 2023, a Netflix estreou a primeira temporada de One Piece: A Série , adaptação live-action do mangá escrito por Eiichiro Oda na revista Weekly Shonen Jump desde 1997.",
-            "Até então, já são 115 volumes do mangá e 1.170 episódios do animê, que já acumula 22 temporadas.",
-            "Em fevereiro de 2027 , a Netflix, junto com o estúdio WIT, lançará The One Piece , mais um animê oficial com o bando do Chapéu de Palha, que funcionará como um “reboot” ( como afirmou recentemente o CEO do WIT, George Wada ) , contando novamente a história do mangá, mas com um ritmo atual, com menos episódios ..",
-            "Imagem: Divulgação/Netflix.",
-            ") na composição de roteiro, Hideaki Abe (episódio 7 de 2020 – Japão Submerso ) na assistência de direção e a dupla Kyoji Asano ( Spy x Family ) e Takatoshi Honda ( In/Spectre ) no design de personagens.",
-            "No Brasil, os capítulos semanais são exibidos pela Crunchyroll e também é possível assistir episódios da animação na Netflix (com uma semana de atraso).."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "Animação do estúdio WIT estreia em fevereiro de 2027 pela Netflix.",
-            "Em fevereiro de 2027 , a Netflix, junto com o estúdio WIT, lançará The One Piece , mais um animê oficial com o bando do Chapéu de Palha, que funcionará como um “reboot” ( como afirmou recentemente o CEO do WIT, George Wada ) , contando novamente a história do mangá, mas com um ritmo atual, com menos episódios ..",
-            "O remake tem Masashi Koizuka ( Attack on Titan ) como diretor, Taku Kishimoto ( Haikyu!!",
-            ") na composição de roteiro, Hideaki Abe (episódio 7 de 2020 – Japão Submerso ) na assistência de direção e a dupla Kyoji Asano ( Spy x Family ) e Takatoshi Honda ( In/Spectre ) no design de personagens.",
-            "A Toei Animation , responsável pela animação atual da franquia, também faz parte do comitê de produção..",
-            "No Brasil, os capítulos semanais são exibidos pela Crunchyroll e também é possível assistir episódios da animação na Netflix (com uma semana de atraso).."
-          ]
-        },
-        {
-          "heading": "Materiais divulgados",
-          "bullets": [
-            "E mais um pôster oficial do animê foi divulgado:.",
-            "Imagem: Divulgação/Netflix."
-          ]
-        },
-        {
-          "heading": "História e contexto da obra",
-          "bullets": [
-            "Em 2023, a Netflix estreou a primeira temporada de One Piece: A Série , adaptação live-action do mangá escrito por Eiichiro Oda na revista Weekly Shonen Jump desde 1997.",
-            "Em fevereiro de 2027 , a Netflix, junto com o estúdio WIT, lançará The One Piece , mais um animê oficial com o bando do Chapéu de Palha, que funcionará como um “reboot” ( como afirmou recentemente o CEO do WIT, George Wada ) , contando novamente a história do mangá, mas com um ritmo atual, com menos episódios ..",
-            "Segundo informações anteriores, os 7 primeiros episódios serão lançados de uma vez na plataforma, adaptando os 50 primeiros capítulos da história, até o momento em que a tripulação do Chapéu de Palha conhece Sanji.",
-            "Enquanto o novo projeto não chega, o primeiro animê de One Piece retornou com episódios inéditos nesta temporada, mostrando o começo do arco de Elbaph ."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "É possível intuir que, com a chegada da série, todo um novo público que ainda não havia tido contato com as aventuras do pirata Luffy passou a se interessar por esse universo..",
-            "Contudo, também é possível intuir que esses novos navegantes talvez se sintam intimidados com a quantidade de material relacionado à marca para ler e assistir.",
-            "Coisa demais para se aventurar?",
-            "Bom, haverá um meio mais fácil para isso..",
-            "Também foi confirmado que os 7 episódios vão totalizar cerca de 300 minutos, o que equivale a aproximadamente 42 minutos por episódio ..",
-            "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Quando houver data definitiva ou mudança no calendário, a mesma matéria é atualizada e a informação pode aparecer também nas áreas de temporada e programação."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/22/the-one-piece-divulgado-novo-poster-do-reboot",
-          "publishedAt": "2026-08-22T17:47:47.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 4,
-      "wordCount": 740,
-      "qualityScore": 0.91,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 18,
-        "sections": 7,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox_anime-2d72bd5a",
-      "slug": "lego-one-piece-tem-novo-trailer-divulgado-jbox_anime-2d72bd5a",
-      "source": "JBox",
-      "sourceType": "JBOX_ANIME",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘LEGO ONE PIECE’ tem novo trailer divulgado",
-      "originalTitle": null,
-      "summary": "Especial de dois episódios baseado no live-action estreia no final de setembro na Netflix.",
-      "url": "https://www.jbox.com.br/2026/08/22/lego-one-piece-tem-novo-trailer-divulgado",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/22/lego-one-piece-tem-novo-trailer-divulgado",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/lego-one-piece-destacada.jpg",
-      "mediaQuery": "‘LEGO ONE PIECE’ tem novo trailer divulgado",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/2026/08/22/lego-one-piece-tem-novo-trailer-divulgado",
-          "alt": "",
-          "caption": "",
-          "source": "figure",
-          "credit": "JBox"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "2xrKoQEvKvI",
-          "url": "https://www.youtube-nocookie.com/embed/2xrKoQEvKvI"
-        }
-      ],
-      "publishedAt": "2026-08-22T17:24:04.000Z",
-      "updatedAt": "2026-08-22T17:24:34.000Z",
-      "expiresAt": "2026-08-29T17:24:04.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [
-        "Especial de dois episódios baseado no live-action estreia no final de setembro na Netflix.",
-        "Foi divulgado pela Netflix um novo trailer para LEGO ONE PIECE , animação derivada da série live-action da franquia.",
-        "A produção tem lançamento marcado para o dia 29 de setembro deste ano..",
-        "Confira o novo trailer dublado:.",
-        "A obra reconta, em dois episódios, os acontecimentos das duas temporadas do live-action, fazendo uma paródia através das histórias exageradas de Usopp..",
-        "A produção da animação é pelo estúdio canadense Atomic Cartoons ( Spidey e seus Amigos Espetaculares ), com Tom Hyndman , que trabalhou em One Piece: A Série , sendo produtor e roteirista do projeto..",
-        "A LEGO já tem uma linha de peças inspirada diretamente na série live-action, lançada ano passado pela empresa de brinquedos..",
-        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Especial de dois episódios baseado no live-action estreia no final de setembro na Netflix."
-          ],
-          "bullets": [
-            "Especial de dois episódios baseado no live-action estreia no final de setembro na Netflix.",
-            "Foi divulgado pela Netflix um novo trailer para LEGO ONE PIECE , animação derivada da série live-action da franquia.",
-            "A produção tem lançamento marcado para o dia 29 de setembro deste ano.."
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "Especial de dois episódios baseado no live-action estreia no final de setembro na Netflix.",
-            "Foi divulgado pela Netflix um novo trailer para LEGO ONE PIECE , animação derivada da série live-action da franquia.",
-            "A produção tem lançamento marcado para o dia 29 de setembro deste ano.."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "Foi divulgado pela Netflix um novo trailer para LEGO ONE PIECE , animação derivada da série live-action da franquia.",
-            "A produção tem lançamento marcado para o dia 29 de setembro deste ano..",
-            "Confira o novo trailer dublado:.",
-            "A produção da animação é pelo estúdio canadense Atomic Cartoons ( Spidey e seus Amigos Espetaculares ), com Tom Hyndman , que trabalhou em One Piece: A Série , sendo produtor e roteirista do projeto.."
-          ]
-        },
-        {
-          "heading": "Materiais divulgados",
-          "bullets": [
-            "Foi divulgado pela Netflix um novo trailer para LEGO ONE PIECE , animação derivada da série live-action da franquia.",
-            "Confira o novo trailer dublado:."
-          ]
-        },
-        {
-          "heading": "História e contexto da obra",
-          "bullets": [
-            "A obra reconta, em dois episódios, os acontecimentos das duas temporadas do live-action, fazendo uma paródia através das histórias exageradas de Usopp.."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "A LEGO já tem uma linha de peças inspirada diretamente na série live-action, lançada ano passado pela empresa de brinquedos..",
-            "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Novos trailers, datas, elenco e plataformas confirmadas podem ser incorporados nesta mesma página enquanto a notícia estiver ativa."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/22/lego-one-piece-tem-novo-trailer-divulgado",
-          "publishedAt": "2026-08-22T17:24:04.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 294,
-      "qualityScore": 0.84,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 8,
-        "sections": 7,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "mediaCount": 1,
-        "embedCount": 1,
         "sourcePagesRead": 1
       }
     }
