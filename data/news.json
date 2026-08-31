@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T07:43:44.987Z",
+  "generatedAt": "2026-08-31T15:30:06.494Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -49,17 +49,17 @@
   ],
   "stats": {
     "collected": 155,
-    "grouped": 117,
-    "published": 26,
-    "newStories": 22,
-    "deepArticles": 9,
-    "avgWords": 313,
-    "withHeroImage": 26,
+    "grouped": 116,
+    "published": 25,
+    "newStories": 19,
+    "deepArticles": 8,
+    "avgWords": 294,
+    "withHeroImage": 25,
     "withGallery": 1,
     "withEmbeds": 1,
-    "skippedTranslation": 94,
-    "skippedQuality": 1,
-    "durationMs": 123676
+    "skippedTranslation": 97,
+    "skippedQuality": 0,
+    "durationMs": 45023
   },
   "items": [
     {
@@ -80,7 +80,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-31T02:15:00.000Z",
-      "updatedAt": "2026-08-31T07:41:54.057Z",
+      "updatedAt": "2026-08-31T15:29:37.556Z",
       "expiresAt": "2026-09-07T02:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -162,7 +162,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-31T01:55:00.000Z",
-      "updatedAt": "2026-08-31T07:41:54.057Z",
+      "updatedAt": "2026-08-31T15:29:37.556Z",
       "expiresAt": "2026-09-07T01:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -250,7 +250,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T22:15:00.000Z",
-      "updatedAt": "2026-08-31T07:41:57.382Z",
+      "updatedAt": "2026-08-31T15:29:37.827Z",
       "expiresAt": "2026-09-05T22:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -332,7 +332,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T20:45:00.000Z",
-      "updatedAt": "2026-08-31T07:41:57.852Z",
+      "updatedAt": "2026-08-31T15:29:37.891Z",
       "expiresAt": "2026-09-05T20:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -414,7 +414,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T20:45:00.000Z",
-      "updatedAt": "2026-08-31T07:41:57.852Z",
+      "updatedAt": "2026-08-31T15:29:37.892Z",
       "expiresAt": "2026-09-05T20:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -496,7 +496,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T15:13:00.000Z",
-      "updatedAt": "2026-08-31T07:42:00.705Z",
+      "updatedAt": "2026-08-31T15:29:38.139Z",
       "expiresAt": "2026-09-05T15:13:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -586,7 +586,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T21:15:00.000Z",
-      "updatedAt": "2026-08-31T07:42:00.705Z",
+      "updatedAt": "2026-08-31T15:29:38.139Z",
       "expiresAt": "2026-09-04T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -674,7 +674,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T21:05:00.000Z",
-      "updatedAt": "2026-08-31T07:42:00.705Z",
+      "updatedAt": "2026-08-31T15:29:38.140Z",
       "expiresAt": "2026-09-04T21:05:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -756,7 +756,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T19:15:00.000Z",
-      "updatedAt": "2026-08-31T07:42:01.264Z",
+      "updatedAt": "2026-08-31T15:29:38.190Z",
       "expiresAt": "2026-09-04T19:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -951,7 +951,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T15:10:00.000Z",
-      "updatedAt": "2026-08-31T07:42:01.877Z",
+      "updatedAt": "2026-08-31T15:29:38.255Z",
       "expiresAt": "2026-09-04T15:10:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1289,7 +1289,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-27T20:17:00.000Z",
-      "updatedAt": "2026-08-31T07:42:10.944Z",
+      "updatedAt": "2026-08-31T15:29:38.785Z",
       "expiresAt": "2026-09-03T20:17:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -2451,144 +2451,6 @@
       "contentVersion": 1,
       "coverage": {
         "facts": 16,
-        "sections": 7,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox_anime-96c4e4e5",
-      "slug": "fate-strange-fake-2-temporada-e-anunciada-jbox_anime-96c4e4e5",
-      "source": "JBox",
-      "sourceType": "JBOX_ANIME",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Fate/strange Fake: 2ª temporada é anunciada",
-      "originalTitle": null,
-      "summary": "Aniplex confirmou a continuação da série, validando as pistas que já rolavam no encerramento da primeira parte.",
-      "url": "https://www.jbox.com.br/2026/08/24/fate-strange-fake-2a-temporada-e-anunciada",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/24/fate-strange-fake-2a-temporada-e-anunciada",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/fate-strange-fake-destacada-1.jpg",
-      "mediaQuery": "Fate/strange Fake: 2ª temporada é anunciada",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-24T14:22:01.000Z",
-      "updatedAt": "2026-08-24T14:23:31.000Z",
-      "expiresAt": "2026-08-31T14:22:01.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [
-        "Aniplex confirmou a continuação da série, validando as pistas que já rolavam no encerramento da primeira parte.",
-        "Durante um painel na Anime NYC 2026 , a Aniplex confirmou que o animê Fate/strange Fake terá uma nova temporada..",
-        "O episódio 13 da primeira parte da série já apresentava indícios de que a história continuaria, com um teaser visual mostrando Saber e outros personagens enfrentando uma enorme tempestade, seguido de um texto “to be continued” , mas até então não havia uma confirmação oficial da sequência..",
-        "Confira o vídeo de divulgação:.",
-        "Após o anúncio, Ryohgo Narita , autor da obra, afirmou estar ansioso para acompanhar a adaptação dos próximos acontecimentos, enquanto Shizuki Morii , responsável pelo design original dos personagens, agradeceu aos fãs pelo apoio à série.",
-        "Kana Hanazawa , voz original da Ayaka Sajyou, destacou a expectativa para continuar interpretando a personagem, enquanto Yuki Ono e Gakuto Kajiwara , vozes de Saber e Sigma, também comemoraram a confirmação da nova produção e se disseram curiosos sobre os rumos da história..",
-        "A primeira temporada de Fate/strange Fake foi exibida entre janeiro e março deste ano.",
-        "A produção ficou a cargo do estúdio A-1 Pictures , com direção de Shun Enokido e Takahito Sakazume .",
-        "A série dá continuidade ao especial Fate/strange Fake: Whispers of Dawn , lançado em 2023.",
-        "Aqui no Brasil, os episódios da primeira temporada estão disponíveis na Crunchyroll com legendas em português..",
-        "Na trama, anos após a Quinta Guerra do Santo Graal no Japão, rumores sobre o surgimento de um novo Santo Graal nos Estados Unidos começam a circular.",
-        "Mestres e Servos se reúnem na cidade de Snowfield, onde um novo campo de batalha começa a se formar.",
-        "Enquanto humanos e heróis entram em cena, segredos e sombras cercam o início de mais uma Guerra do Santo Graal..",
-        "Fate/strange Fake adapta uma série de light novels escrita pelo já mencionado Ryohgo Narita.",
-        "Uma curiosidade: a história teve início como uma brincadeira de Primeiro de Abril em 2008, mas posteriormente, em 2015, recebeu uma publicação oficial com ilustrações de Shizuki Morii .",
-        "Atualmente, já são nove volumes publicados e o encerramento deve ser no décimo, previsto para chegar ainda em 2026..",
-        "A franquia Fate teve início em 2004, com o lançamento da visual novel Fate/stay night .",
-        "O título alcançou grande sucesso no Japão e se tornou uma das visual novels mais populares já produzidas.",
-        "Desde então, a franquia se expandiu para diferentes formatos, incluindo novos jogos, animês, mangás e livros..",
-        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Aniplex confirmou a continuação da série, validando as pistas que já rolavam no encerramento da primeira parte."
-          ],
-          "bullets": [
-            "Aniplex confirmou a continuação da série, validando as pistas que já rolavam no encerramento da primeira parte.",
-            "Durante um painel na Anime NYC 2026 , a Aniplex confirmou que o animê Fate/strange Fake terá uma nova temporada..",
-            "O episódio 13 da primeira parte da série já apresentava indícios de que a história continuaria, com um teaser visual mostrando Saber e outros personagens enfrentando uma enorme tempestade, seguido de um texto “to be continued” , mas até então não havia uma confirmação oficial da sequência.."
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "Durante um painel na Anime NYC 2026 , a Aniplex confirmou que o animê Fate/strange Fake terá uma nova temporada..",
-            "Aqui no Brasil, os episódios da primeira temporada estão disponíveis na Crunchyroll com legendas em português..",
-            "Na trama, anos após a Quinta Guerra do Santo Graal no Japão, rumores sobre o surgimento de um novo Santo Graal nos Estados Unidos começam a circular.",
-            "Mestres e Servos se reúnem na cidade de Snowfield, onde um novo campo de batalha começa a se formar.",
-            "Atualmente, já são nove volumes publicados e o encerramento deve ser no décimo, previsto para chegar ainda em 2026..",
-            "A franquia Fate teve início em 2004, com o lançamento da visual novel Fate/stay night .",
-            "O título alcançou grande sucesso no Japão e se tornou uma das visual novels mais populares já produzidas."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "Após o anúncio, Ryohgo Narita , autor da obra, afirmou estar ansioso para acompanhar a adaptação dos próximos acontecimentos, enquanto Shizuki Morii , responsável pelo design original dos personagens, agradeceu aos fãs pelo apoio à série.",
-            "Kana Hanazawa , voz original da Ayaka Sajyou, destacou a expectativa para continuar interpretando a personagem, enquanto Yuki Ono e Gakuto Kajiwara , vozes de Saber e Sigma, também comemoraram a confirmação da nova produção e se disseram curiosos sobre os rumos da história..",
-            "A produção ficou a cargo do estúdio A-1 Pictures , com direção de Shun Enokido e Takahito Sakazume ."
-          ]
-        },
-        {
-          "heading": "Materiais divulgados",
-          "bullets": [
-            "Aniplex confirmou a continuação da série, validando as pistas que já rolavam no encerramento da primeira parte.",
-            "O episódio 13 da primeira parte da série já apresentava indícios de que a história continuaria, com um teaser visual mostrando Saber e outros personagens enfrentando uma enorme tempestade, seguido de um texto “to be continued” , mas até então não havia uma confirmação oficial da sequência..",
-            "Confira o vídeo de divulgação:.",
-            "Uma curiosidade: a história teve início como uma brincadeira de Primeiro de Abril em 2008, mas posteriormente, em 2015, recebeu uma publicação oficial com ilustrações de Shizuki Morii .",
-            "Atualmente, já são nove volumes publicados e o encerramento deve ser no décimo, previsto para chegar ainda em 2026..",
-            "A franquia Fate teve início em 2004, com o lançamento da visual novel Fate/stay night ."
-          ]
-        },
-        {
-          "heading": "História e contexto da obra",
-          "bullets": [
-            "O episódio 13 da primeira parte da série já apresentava indícios de que a história continuaria, com um teaser visual mostrando Saber e outros personagens enfrentando uma enorme tempestade, seguido de um texto “to be continued” , mas até então não havia uma confirmação oficial da sequência..",
-            "Após o anúncio, Ryohgo Narita , autor da obra, afirmou estar ansioso para acompanhar a adaptação dos próximos acontecimentos, enquanto Shizuki Morii , responsável pelo design original dos personagens, agradeceu aos fãs pelo apoio à série.",
-            "Kana Hanazawa , voz original da Ayaka Sajyou, destacou a expectativa para continuar interpretando a personagem, enquanto Yuki Ono e Gakuto Kajiwara , vozes de Saber e Sigma, também comemoraram a confirmação da nova produção e se disseram curiosos sobre os rumos da história..",
-            "Na trama, anos após a Quinta Guerra do Santo Graal no Japão, rumores sobre o surgimento de um novo Santo Graal nos Estados Unidos começam a circular.",
-            "Fate/strange Fake adapta uma série de light novels escrita pelo já mencionado Ryohgo Narita.",
-            "Uma curiosidade: a história teve início como uma brincadeira de Primeiro de Abril em 2008, mas posteriormente, em 2015, recebeu uma publicação oficial com ilustrações de Shizuki Morii ."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "A primeira temporada de Fate/strange Fake foi exibida entre janeiro e março deste ano.",
-            "A série dá continuidade ao especial Fate/strange Fake: Whispers of Dawn , lançado em 2023.",
-            "Enquanto humanos e heróis entram em cena, segredos e sombras cercam o início de mais uma Guerra do Santo Graal..",
-            "Desde então, a franquia se expandiu para diferentes formatos, incluindo novos jogos, animês, mangás e livros..",
-            "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "Quando houver data definitiva ou mudança no calendário, a mesma matéria é atualizada e a informação pode aparecer também nas áreas de temporada e programação."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/24/fate-strange-fake-2a-temporada-e-anunciada",
-          "publishedAt": "2026-08-24T14:22:01.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 4,
-      "wordCount": 790,
-      "qualityScore": 0.91,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 20,
         "sections": 7,
         "sourceCount": 1,
         "ingestMode": "wp-rest",
