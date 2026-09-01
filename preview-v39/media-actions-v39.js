@@ -12,6 +12,7 @@
   let listOpening=false;
   let listTimer=0;
   let syncRaf=0;
+  let actionGuardUntil=0;
 
   const routeFrom=value=>{try{const u=new URL(value||location.href,location.href),raw=u.searchParams.get('p');if(raw)return raw.split('?')[0].replace(/\/+$/,'')||'/';let p=u.pathname;if(IS_PAGES)p=p.replace(/^\/AniNexus(?:\/AniNexus)?/,'')||'/';return p.replace(/\/+$/,'')||'/'}catch{return''}};
   const communityUrl=()=>IS_PAGES?`${BASE}/?build=${BUILD}&p=${encodeURIComponent('/comunidade')}`:'/comunidade';
@@ -65,12 +66,12 @@
   }
 
   document.addEventListener('click',e=>{if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const a=e.target.closest?.('a[href]');if(!a||a.target==='_blank'||routeFrom(a.href)!=='/comunidade')return;stop(e);location.assign(communityUrl())},true);
-  document.addEventListener('pointerdown',e=>{const b=e.target.closest?.(ACTION);if(b&&!b.disabled)b.classList.add('nx39-press')},true);
-  for(const type of ['pointerup','pointercancel','pointerleave'])document.addEventListener(type,e=>{const b=e.target.closest?.(ACTION);if(b){b.classList.remove('nx39-press');if(type==='pointerup')requestAnimationFrame(()=>pop(b))}},true);
+  document.addEventListener('pointerdown',e=>{const b=e.target.closest?.(ACTION);if(b&&!b.disabled){actionGuardUntil=now()+460;b.classList.add('nx39-press')}},true);
+  for(const type of ['pointerup','pointercancel','pointerleave'])document.addEventListener(type,e=>e.target.closest?.(ACTION)?.classList.remove('nx39-press'),true);
 
   async function favoriteAction(b){
     const id=idFav(b);if(!Number.isSafeInteger(id)||id<=0)return;
-    const last=favLock.get(id)||0;if(now()-last<340)return;
+    const last=favLock.get(id);if(last!==undefined&&now()-last<340)return;
     favLock.set(id,now());busy(b,280);pop(b);
     const a=await waitApi();if(!a)return;
     a.favorite(id,!a.isFavorite(id));syncBurst();
@@ -83,7 +84,7 @@
   }
 
   /* Window capture precedes all document/element legacy handlers. */
-  window.addEventListener('click',e=>{const b=e.target.closest?.(ACTION);if(!b||b.disabled)return;stop(e);if(b.matches(FAV)){void favoriteAction(b);return}void listAction(b)},true);
+  window.addEventListener('click',e=>{const b=e.target.closest?.(ACTION);if(!b||b.disabled){if(now()<actionGuardUntil&&e.target.closest?.('[data-open-anime],[data-nx18-open],[data-nx21-open],[data-open]'))stop(e);return}actionGuardUntil=now()+460;stop(e);if(b.matches(FAV)){void favoriteAction(b);return}void listAction(b)},true);
   window.addEventListener('dblclick',e=>{if(e.target.closest?.(ACTION))stop(e)},true);
   document.addEventListener('keydown',e=>{if(e.key==='Escape')releaseList()},true);
   document.addEventListener('aninexus:media-state-changed',()=>syncBurst());

@@ -51,7 +51,7 @@
   }
   function scheduleCard(x){
     const m=x?.media||{},t=title(m),c=cover(m),href=route(m),ep=Number(x?.episode)||'—';
-    return `<a class="nx18-card nx35-program-card nx35-hotfix-card" href="${href}"><div class="nx18-cover">${c?`<img src="${esc(c)}" alt="${esc(t)}" loading="lazy" decoding="async">`:''}</div><div class="nx18-info"><div class="nx18-air"><span>EM BREVE</span><b>${esc(fmtTime(x?.airingAt))}</b></div><h3>${esc(t)}</h3><p>${esc(genres(m))}</p><div class="nx18-episode"><small>EP</small><strong>${ep}</strong></div></div></a>`;
+    return `<a class="nx18-card nx35-program-card nx35-hotfix-card" href="${href}"><div class="nx18-cover">${c?`<img src="${esc(c)}" alt="${esc(t)}" loading="lazy" decoding="async">`:''}</div><div class="nx18-info"><div class="nx18-air"><span>EM BREVE</span><b>${esc(fmtTime(x?.airingAt))}</b></div><h3>${esc(t)}</h3><p>${esc(genres(m))}</p><div class="nx18-episode"><small>EPISÓDIO</small><strong>${ep}</strong></div></div></a>`;
   }
 
   function empty(root){return !!root&&root.children.length===0&&root.textContent.trim()===''}

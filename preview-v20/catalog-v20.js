@@ -137,16 +137,13 @@
   function card(m){
     const title=titleOf(m),score=scoreOf(m),year=m.seasonYear||m.startDate?.year||'',status=statusLabel(m.status);
     state.items.set(Number(m.id),m);
-    return `<article class="nx21-card" data-nx21-open="${m.id}" tabindex="0"><div class="nx21-poster"><img src="${esc(imageOf(m))}" loading="lazy" decoding="async" alt="${esc(title)}"><div class="nx21-shade"></div>${score?`<span class="nx21-score">${ICON.star}<b>${score}</b></span>`:''}${status?`<span class="nx21-status${m.status==='NOT_YET_RELEASED'?' soon':''}">${esc(status)}</span>`:''}<div class="nx21-actions"><button type="button" data-list="${m.id}" aria-label="Adicionar à lista">${ICON.plus}</button><button type="button" data-fav="${m.id}" aria-label="Favoritar">${ICON.heart}</button></div></div><h3>${esc(title)}</h3><p>${esc([formatLabel(m.format),year,m.episodes?`${m.episodes} eps`:null].filter(Boolean).join(' · '))}</p><small>${esc((m.genres||[]).slice(0,2).map(genreLabel).join(' · '))}</small></article>`;
+    return `<article class="nx21-card" data-nx21-open="${m.id}" tabindex="0"><div class="nx21-poster"><img src="${esc(imageOf(m))}" loading="lazy" decoding="async" alt="${esc(title)}"><div class="nx21-shade"></div>${score?`<span class="nx21-score">${ICON.star}<b>${score}</b></span>`:''}${status?`<span class="nx21-status${m.status==='NOT_YET_RELEASED'?' soon':''}">${esc(status)}</span>`:''}<div class="nx21-actions"><button type="button" data-list="${m.id}" aria-label="Adicionar à lista">${ICON.plus}</button><button type="button" data-fav="${m.id}" aria-label="Favoritar">${ICON.heart}</button></div></div><h3>${esc(title)}</h3><p>${esc([formatLabel(m.format),year,m.episodes?`${m.episodes} ${Number(m.episodes)===1?'episódio':'episódios'}`:null].filter(Boolean).join(' · '))}</p><small>${esc((m.genres||[]).slice(0,2).map(genreLabel).join(' · '))}</small></article>`;
   }
 
   function pagination(info){
     const cur=Number(info.currentPage||state.page),last=Math.min(Number(info.lastPage||cur),500);
     if(last<=1)return'';
-    const nums=[1,cur-1,cur,cur+1,last].filter(n=>n>=1&&n<=last).filter((n,i,a)=>a.indexOf(n)===i).sort((a,b)=>a-b);
-    let prev=0,html='';
-    for(const n of nums){if(prev&&n-prev>1)html+='<span>…</span>';html+=`<button type="button" data-nx21-page="${n}"${n===cur?' class="active"':''}>${n}</button>`;prev=n}
-    return `<nav class="nx21-pages" aria-label="Paginação"><button type="button" data-nx21-page="${Math.max(1,cur-1)}"${cur<=1?' disabled':''}>‹</button>${html}<button type="button" data-nx21-page="${Math.min(last,cur+1)}"${!info.hasNextPage?' disabled':''}>›</button></nav>`;
+    return `<nav class="nx21-pages nx42-pages" aria-label="Paginação"><button type="button" data-nx21-page="${Math.max(1,cur-1)}"${cur<=1?' disabled':''} aria-label="Página anterior">‹</button><span>Página <strong>${cur.toLocaleString('pt-BR')}</strong> de ${last.toLocaleString('pt-BR')}</span><button type="button" data-nx21-page="${Math.min(last,cur+1)}"${!info.hasNextPage?' disabled':''} aria-label="Próxima página">›</button></nav>`;
   }
 
   function renderShell(){

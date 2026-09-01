@@ -7,7 +7,7 @@
   try{
     const IS_PAGES=location.hostname.endsWith('github.io');
     const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='40.8.0';
+  const BUILD='42.1.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=window.__NX_DETAIL_V23_BOOT__||restored?.split('?')[0]||u.pathname;
@@ -23,7 +23,7 @@
     document.body.classList.remove('nx23-detail-active');
     delete window.__NX_DETAIL_V23_BOOT__;
     if(!document.querySelector('script[data-nx22-detail-runtime]')){
-      const s=document.createElement('script');s.src=`${BASE}/preview-v22/detail-stable-v22.js?v=${BUILD}`;s.async=false;s.dataset.nx22DetailRuntime='1';document.body.append(s);
+      const s=document.createElement('script');s.src=`${BASE}/preview-v22/detail-v22.js?v=${BUILD}`;s.async=false;s.dataset.nx22DetailRuntime='1';document.body.append(s);
     }
   }catch{}
 })();

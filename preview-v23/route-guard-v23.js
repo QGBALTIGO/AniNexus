@@ -3,7 +3,7 @@
   try {
     const IS_PAGES=location.hostname.endsWith('github.io');
     const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='40.8.0';
+  const BUILD='42.1.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=restored?restored.split('?')[0]:u.pathname;
@@ -21,6 +21,7 @@
       {owner:'auth',match:['/login','/criar-conta','/minha-conta'].includes(path),selector:'.nx38-auth-page,.nx38-account-page',label:'Carregando conta…'},
       {owner:'admin',match:path==='/admin',selector:'.nx38-admin-page',label:'Carregando administração…'},
       {owner:'library',match:path==='/meus-animes',selector:'.nx38-library',label:'Carregando biblioteca…'},
+      {owner:'manga',match:path==='/mangas'||path==='/meus-mangas',selector:'.nx42-manga-page',label:'Carregando mangás…'},
       {owner:'legal',match:['/termos-de-uso','/politica-de-privacidade','/dmca'].includes(path),selector:'.nx-legal',label:'Carregando documento…'},
       {owner:'institutional',match:['/quem-somos','/colabore','/contato'].includes(path),selector:'.nx-inst',label:'Carregando página…'}
     ];
@@ -47,7 +48,7 @@
       let timer=0;
       const finish=()=>{if(!app.querySelector(route.selector))return false;html.classList.remove(bootClass);style.remove();if(timer)clearTimeout(timer);dispatchEvent(new CustomEvent('aninexus:route-ready',{detail:{owner:route.owner,path}}));return true};
       const mo=new MutationObserver(()=>{if(finish())mo.disconnect()});mo.observe(app,{childList:true,subtree:true});
-      if(isDetail&&!document.querySelector('script[data-nx22-detail-runtime]')){const s=document.createElement('script');s.src=`${BASE}/preview-v22/detail-stable-v22.js?v=${BUILD}`;s.async=false;s.dataset.nx22DetailRuntime='1';s.addEventListener('load',finish,{once:true});document.body.append(s)}
+      if(isDetail&&!document.querySelector('script[data-nx22-detail-runtime]')){const s=document.createElement('script');s.src=`${BASE}/preview-v22/detail-v22.js?v=${BUILD}`;s.async=false;s.dataset.nx22DetailRuntime='1';s.addEventListener('load',finish,{once:true});document.body.append(s)}
       finish();timer=setTimeout(()=>{mo.disconnect();if(!finish()&&!app.firstElementChild)app.innerHTML='<main class="nx-route-fail" style="min-height:65vh;display:grid;place-items:center;padding:28px;text-align:center"><div><img src="'+BASE+'/assets/logo.png" alt="" style="width:64px;height:64px"><h1 style="font:800 24px Manrope,sans-serif">Esta página demorou para responder</h1><p style="color:#9c9095">Tente atualizar. Seus dados neste aparelho foram preservados.</p></div></main>';html.classList.remove(bootClass);style.remove()},10000);
     };
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();

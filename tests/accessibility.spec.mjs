@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 
 const ORIGIN = process.env.ANINEXUS_E2E_ORIGIN || 'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN = process.env.ANINEXUS_LOCAL_STATIC_ORIGIN || '';
-const pageUrl = route => `${ORIGIN}?build=41.0.0&p=${encodeURIComponent(route)}`;
+const pageUrl = route => `${ORIGIN}?build=42.1.0&p=${encodeURIComponent(route)}`;
 const pixel = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 
 async function fulfillLocalStatic(route) {
@@ -50,7 +50,7 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
-for (const route of ['/', '/animes/catalogo', '/animes/programacao', '/anime/anime-teste-101', '/comunidade', '/login', '/admin', '/quem-somos', '/termos-de-uso']) {
+for (const route of ['/', '/animes/catalogo', '/mangas', '/animes/programacao', '/anime/anime-teste-101', '/comunidade', '/noticias', '/login', '/admin', '/quem-somos', '/termos-de-uso']) {
   test(`WCAG AA sem falhas sérias em ${route}`, async ({ page }) => {
     await page.goto(pageUrl(route), { waitUntil: 'domcontentloaded' });
     await page.locator('#app main').first().waitFor({ state: 'visible', timeout: 30_000 });

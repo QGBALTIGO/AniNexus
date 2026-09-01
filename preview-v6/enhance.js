@@ -46,7 +46,7 @@
       <section class="section soft">
         <div class="shell">
           <div class="community-dashboard">
-            <div class="community-dashboard-copy"><div class="eyebrow">${ICON.chat} Agora na Comunidade</div><h2>Um espaço para acompanhar o que os fãs estão fazendo</h2><p>Quando o backend estiver publicado, esta área recebe atividade real: quem começou, terminou, favoritou, avaliou, comentou e desbloqueou conquistas.</p><a class="btn" href="/comunidade" data-link>Explorar comunidade ${ICON.arrow}</a></div>
+            <div class="community-dashboard-copy"><div class="eyebrow">${ICON.chat} Agora na Comunidade</div><h2>Veja o que a comunidade está acompanhando</h2><p>Descubra quem começou, terminou, favoritou ou avaliou uma obra e encontre novas histórias pelas pessoas que gostam delas.</p><a class="btn" href="/comunidade" data-link>Explorar comunidade ${ICON.arrow}</a></div>
             <div class="community-feed-preview"><div><i class="pulse-dot"></i><span><b>Lista pessoal</b><small>quero ver · assistindo · terminei</small></span></div><div><i class="pulse-dot purple"></i><span><b>Impressões</b><small>por anime e por episódio</small></span></div><div><i class="pulse-dot gold"></i><span><b>Conquistas</b><small>marcos do seu histórico</small></span></div><div><i class="pulse-dot green"></i><span><b>Notificações</b><small>episódios e novidades seguidas</small></span></div></div>
           </div>
         </div>

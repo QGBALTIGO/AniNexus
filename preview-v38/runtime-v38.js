@@ -31,7 +31,7 @@
     const bridgeHome=async(body,signal)=>{
       const vars=body.variables||{},s=seasonNow(),season=vars.season||s.season,year=Number(vars.year||s.year),home=await apiJson(`/api/home?season=${encodeURIComponent(season)}&year=${year}`,signal);
       if(!(home.season||[]).length||!(home.top||[]).length||!(home.popular||[]).length)throw new Error('AniNexus API returned an incomplete Home');
-      return jsonResponse({season:{media:(home.season||[]).map(toGraph)},schedule:{airingSchedules:(home.schedule||[]).slice(0,8).map(x=>({airingAt:x.airingAt,episode:x.episode,media:toGraph(x.media)}))},top:{media:(home.top||[]).map(toGraph)},popular:{media:(home.popular||[]).map(toGraph)},soon:{media:(home.soon||[]).map(toGraph)},reading:{media:(home.reading||[]).map(toGraph)}});
+      return jsonResponse({season:{media:(home.season||[]).map(toGraph)},schedule:{airingSchedules:(home.schedule||[]).slice(0,8).map(x=>({airingAt:x.airingAt,episode:x.episode,media:toGraph(x.media)}))},top:{media:(home.top||[]).map(toGraph)},popular:{media:(home.popular||[]).map(toGraph)},soon:{media:(home.soon||[]).map(toGraph)},reading:{media:(home.reading||[]).map(toGraph)},topReading:{media:(home.topReading||[]).map(toGraph)}});
     };
     const mapSort=q=>q.includes('SCORE_DESC')?'SCORE':q.includes('FAVOURITES_DESC')?'FAVOURITES':q.includes('SEARCH_MATCH')?'MATCH':q.includes('TRENDING_DESC')?'TRENDING':q.includes('START_DATE_DESC')?'NEW':q.includes('TITLE_ROMAJI')?'TITLE':'POPULAR';
     const bridgePage=async(body,signal,type)=>{
