@@ -19,6 +19,22 @@ body.nx43-notifications-open{overflow:hidden}
   box-shadow:0 9px 28px rgba(0,0,0,.2)!important;
   backdrop-filter:blur(18px) saturate(1.08)!important
 }
+html.nx35-home-boot #topbar,
+body.nx35-home-active #topbar{
+  position:fixed!important;
+  inset:0 0 auto!important;
+  width:100%
+}
+html.nx35-home-boot #topbar:not(.is-scrolled),
+body.nx35-home-active #topbar:not(.is-scrolled){
+  border-bottom-color:transparent!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important
+}
+body.nx35-home-active .nx35-hero-grid{padding-top:calc(62px + var(--nx43-header-height))}
+@media(min-width:1001px){body.nx35-home-active .nx35-hero-grid{min-height:calc(520px + var(--nx43-header-height))}}
+.nx35-community-avatar>img{width:100%;height:100%;border-radius:inherit;object-fit:cover}
 #topbar .topbar-inner{height:100%!important;min-height:0!important;padding-block:0!important;grid-template-columns:auto minmax(0,1fr) auto;gap:22px!important}
 #topbar .brand{gap:9px}
 #topbar .brand img{width:38px!important;height:38px!important}
@@ -58,6 +74,7 @@ body.nx43-notifications-open{overflow:hidden}
 
 html[data-theme=light] #topbar{border-bottom-color:transparent!important;background:#fffafb!important;color:#2d2027!important;box-shadow:none!important}
 html[data-theme=light] #topbar.is-scrolled{border-bottom-color:rgba(48,27,38,.12)!important;background:rgba(255,250,251,.97)!important;box-shadow:0 8px 26px rgba(65,28,47,.07)!important}
+html[data-theme=light].nx35-home-boot #topbar:not(.is-scrolled),html[data-theme=light] body.nx35-home-active #topbar:not(.is-scrolled){background:transparent!important}
 html[data-theme=light] #topbar :where(.brand,.main-nav>a,.icon-button,.menu-btn){color:#665a60!important}
 html[data-theme=light] #topbar .main-nav>a:hover,html[data-theme=light] #topbar .main-nav>a.active{color:#2e2027!important}
 html[data-theme=light] #topbar .main-nav>a.active [data-icon]{color:#d92d51!important}
@@ -127,6 +144,10 @@ html[data-theme=light] .nx43-notification-sheet>footer a{color:#4f3f47}
   #topbar .login-btn{height:36px!important;min-height:36px!important;min-width:68px!important;padding-inline:11px!important;font-size:10px!important}
   #topbar .nx38-account-chip{width:38px;max-width:38px;padding:0}
   #topbar .top-actions>.menu-btn{width:36px!important;height:36px!important;min-height:36px!important;flex-basis:36px!important}
+  body.nx35-home-active .nx35-hero-grid{gap:48px;padding-top:calc(37px + var(--nx43-header-height));padding-bottom:38px}
+  body.nx35-home-active .nx35-hero-copy{max-width:100%;margin-inline:auto;text-align:center}
+  body.nx35-home-active .nx35-hero h1,body.nx35-home-active .nx35-hero-copy>p{margin-inline:auto}
+  body.nx35-home-active .nx35-live{width:100%;margin-inline:auto}
   .nx43-notification-sheet{width:100vw;border-left:0}
 }
 @media(max-width:350px){
