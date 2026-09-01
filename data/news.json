@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T00:31:34.335Z",
+  "generatedAt": "2026-09-01T05:32:04.964Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -49,19 +49,101 @@
   ],
   "stats": {
     "collected": 155,
-    "grouped": 117,
-    "published": 26,
-    "newStories": 22,
+    "grouped": 119,
+    "published": 27,
+    "newStories": 23,
     "deepArticles": 10,
-    "avgWords": 302,
-    "withHeroImage": 26,
+    "avgWords": 299,
+    "withHeroImage": 27,
     "withGallery": 2,
     "withEmbeds": 3,
-    "skippedTranslation": 95,
+    "skippedTranslation": 96,
     "skippedQuality": 0,
-    "durationMs": 47359
+    "durationMs": 33449
   },
   "items": [
+    {
+      "id": "crunchyroll-8c228794",
+      "slug": "filme-de-star-detective-precure-revela-novos-trailers-e-ilustracoes-de-personagens-crunchyroll-8c228794",
+      "source": "Crunchyroll Notícias",
+      "sourceType": "CRUNCHYROLL",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Filme de Star Detective Precure! revela novos trailers e ilustrações de personagens",
+      "originalTitle": null,
+      "summary": "O 35º filme da franquia Precure chega aos cinemas japoneses em 18 de setembro Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!",
+      "url": "https://crunchyroll.com/pt-br/news/latest/2026/9/1/star-detective-precure-filme-novos-trailers-ilustracoes-personagens",
+      "sourceUrl": "https://crunchyroll.com/pt-br/news/latest/2026/9/1/star-detective-precure-filme-novos-trailers-ilustracoes-personagens",
+      "image": "https://a.storyblok.com/f/178900/960x540/58f2ab6bc1/detective-precure-film-trailer.png",
+      "mediaQuery": "Filme de Star Detective Precure! revela novos trailers e ilustrações de personagens",
+      "mediaType": "manga",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "publishedAt": "2026-09-01T02:35:00.000Z",
+      "updatedAt": "2026-09-01T05:31:45.199Z",
+      "expiresAt": "2026-09-08T02:35:00.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [
+        "O 35º filme da franquia Precure chega aos cinemas japoneses em 18 de setembro Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
+        "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
+        "You heard it here first!"
+      ],
+      "contentSections": [
+        {
+          "heading": "O que aconteceu",
+          "paragraphs": [
+            "O 35º filme da franquia Precure chega aos cinemas japoneses em 18 de setembro Stay on top of anime news and updates straight out of Japan with Crunchyroll News. From breaking stories to evergreen content, get all your anime and manga news updates in one place. You heard it here first!"
+          ],
+          "bullets": [
+            "O 35º filme da franquia Precure chega aos cinemas japoneses em 18 de setembro Stay on top of anime news and updates straight out of Japan with Crunchyroll News.",
+            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
+            "You heard it here first!"
+          ]
+        },
+        {
+          "heading": "Estreia, lançamento e disponibilidade",
+          "bullets": [
+            "O 35º filme da franquia Precure chega aos cinemas japoneses em 18 de setembro Stay on top of anime news and updates straight out of Japan with Crunchyroll News."
+          ]
+        },
+        {
+          "heading": "Outros detalhes confirmados",
+          "bullets": [
+            "From breaking stories to evergreen content, get all your anime and manga news updates in one place.",
+            "You heard it here first!"
+          ]
+        },
+        {
+          "heading": "Acompanhamento AniNexus",
+          "paragraphs": [
+            "A matéria permanece no feed recente para receber atualizações sobre publicação, volumes, licenciamento e disponibilidade no Brasil."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Crunchyroll Notícias",
+          "url": "https://crunchyroll.com/pt-br/news/latest/2026/9/1/star-detective-precure-filme-novos-trailers-ilustracoes-personagens",
+          "publishedAt": "2026-09-01T02:35:00.000Z",
+          "author": "Fábio Portugal"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 221,
+      "qualityScore": 0.93,
+      "contentVersion": 1,
+      "coverage": {
+        "facts": 3,
+        "sections": 4,
+        "sourceCount": 1,
+        "ingestMode": "html",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 1
+      }
+    },
     {
       "id": "crunchyroll-76f886b8",
       "slug": "anime-de-fx-fighter-kurumi-chan-investe-em-trailer-e-revela-sua-data-de-lancamento-e-tema-de-abertura-crunchyroll-76f886b8",
@@ -80,7 +162,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-31T21:32:00.000Z",
-      "updatedAt": "2026-09-01T00:31:01.013Z",
+      "updatedAt": "2026-09-01T05:31:46.722Z",
       "expiresAt": "2026-09-07T21:32:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -531,7 +613,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-31T02:15:00.000Z",
-      "updatedAt": "2026-09-01T00:31:01.436Z",
+      "updatedAt": "2026-09-01T05:31:47.117Z",
       "expiresAt": "2026-09-07T02:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -613,7 +695,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-31T01:55:00.000Z",
-      "updatedAt": "2026-09-01T00:31:01.437Z",
+      "updatedAt": "2026-09-01T05:31:47.117Z",
       "expiresAt": "2026-09-07T01:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -701,7 +783,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T22:15:00.000Z",
-      "updatedAt": "2026-09-01T00:31:01.628Z",
+      "updatedAt": "2026-09-01T05:31:47.272Z",
       "expiresAt": "2026-09-05T22:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -783,7 +865,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T20:45:00.000Z",
-      "updatedAt": "2026-09-01T00:31:01.667Z",
+      "updatedAt": "2026-09-01T05:31:47.310Z",
       "expiresAt": "2026-09-05T20:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -865,7 +947,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T20:45:00.000Z",
-      "updatedAt": "2026-09-01T00:31:01.667Z",
+      "updatedAt": "2026-09-01T05:31:47.310Z",
       "expiresAt": "2026-09-05T20:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -947,7 +1029,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T15:13:00.000Z",
-      "updatedAt": "2026-09-01T00:31:01.859Z",
+      "updatedAt": "2026-09-01T05:31:47.454Z",
       "expiresAt": "2026-09-05T15:13:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1037,7 +1119,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T21:15:00.000Z",
-      "updatedAt": "2026-09-01T00:31:01.859Z",
+      "updatedAt": "2026-09-01T05:31:47.454Z",
       "expiresAt": "2026-09-04T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1125,7 +1207,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T21:05:00.000Z",
-      "updatedAt": "2026-09-01T00:31:01.859Z",
+      "updatedAt": "2026-09-01T05:31:47.455Z",
       "expiresAt": "2026-09-04T21:05:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1207,7 +1289,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T19:15:00.000Z",
-      "updatedAt": "2026-09-01T00:31:01.892Z",
+      "updatedAt": "2026-09-01T05:31:47.489Z",
       "expiresAt": "2026-09-04T19:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1402,7 +1484,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T15:10:00.000Z",
-      "updatedAt": "2026-09-01T00:31:01.924Z",
+      "updatedAt": "2026-09-01T05:31:47.521Z",
       "expiresAt": "2026-09-04T15:10:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1740,7 +1822,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-27T20:17:00.000Z",
-      "updatedAt": "2026-09-01T00:31:02.301Z",
+      "updatedAt": "2026-09-01T05:31:47.828Z",
       "expiresAt": "2026-09-03T20:17:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
