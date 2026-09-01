@@ -88,7 +88,7 @@ html[data-theme=light] .nx42-impression-form{border-color:rgba(48,27,38,.12)!imp
 @media(max-width:430px){.nx42-manga-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nx42-manga-tools{grid-template-columns:1fr}.nx42-manga-tools input{grid-column:auto}.nx38-account-head-actions{grid-template-columns:1fr 1fr;gap:7px!important}.nx38-account-head-actions>*{padding-inline:8px!important;font-size:9px!important}.nx42-achievements{grid-template-columns:1fr}.nx42-rank-panel{padding:20px}.nx42-pages>span{min-width:110px}.nx42-consent{left:8px;bottom:8px;width:calc(100% - 16px)}.nx42-consent div{display:grid;grid-template-columns:1fr 1fr}.nx42-theme-options button{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.nx42-account-menu{animation:none}.nx42-trailer,.nx42-manga-card{transition:none!important}}
 
-/* V42.1.5 production hardening for mobile SVGs and editorial media. */
+/* V42.1.6 production hardening for mobile SVGs and editorial media. */
 .nx38p-page :where(.nx38p-meta,.nx38p-socials,.nx38p-share,.nx38p-content-nav) svg{
   width:18px!important;height:18px!important;min-width:18px!important;max-width:18px!important;
   min-height:18px!important;max-height:18px!important;display:block!important;object-fit:contain!important;
