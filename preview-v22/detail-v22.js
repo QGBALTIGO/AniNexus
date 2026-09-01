@@ -85,19 +85,53 @@
     const d=await gql(q,{id:Number(id)},signal);if(!d?.Media)throw new Error('Anime não encontrado');return d.Media;
   }
 
+  function normalizedMedia(m){
+    if(!m||!Number(m.id))return null;
+    const tagDetails=Array.isArray(m.tagDetails)&&m.tagDetails.length?m.tagDetails:(m.tags||[]).map(name=>({name,rank:60,isMediaSpoiler:false}));
+    return{
+      id:Number(m.id),idMal:m.idMal||null,mediaType:String(m.mediaType||'ANIME').toUpperCase(),siteUrl:`https://anilist.co/anime/${Number(m.id)}`,
+      title:{english:m.title||m.titleRomaji||'',romaji:m.titleRomaji||m.title||'',native:m.titleNative||'',userPreferred:m.title||m.titleRomaji||''},
+      synonyms:m.synonyms||[],coverImage:{extraLarge:m.cover||'',large:m.cover||'',color:m.coverColor||''},bannerImage:m.banner||'',description:m.description||'',
+      genres:m.genres||[],tags:tagDetails,averageScore:Number(m.score||0)*10||null,meanScore:Number(m.meanScore||0)*10||null,popularity:m.popularity||0,favourites:m.favourites||0,
+      episodes:m.episodes||null,duration:m.duration||null,format:m.format||null,status:m.status||null,season:m.season||null,seasonYear:m.seasonYear||null,
+      countryOfOrigin:m.country||null,source:m.source||null,startDate:m.startDate||null,endDate:m.endDate||null,
+      studios:{nodes:m.studios||[]},nextAiringEpisode:m.nextAiringEpisode||null,trailer:m.trailer||null,
+      externalLinks:(m.streaming||[]).map(x=>({site:x.site,url:x.url,type:x.type||'STREAMING',icon:x.icon||'',color:x.color||''}))
+    };
+  }
+  function normalizeServerAnime(payload){
+    if(!payload||String(payload.mediaType||'ANIME').toUpperCase()!=='ANIME')throw new Error('Mídia inválida');
+    const base=normalizedMedia(payload);if(!base)throw new Error('Anime não encontrado');
+    base.characters={edges:(payload.characters||[]).map(item=>({role:item.role||'SUPPORTING',voiceActors:[],node:{id:item.id,name:{full:item.name||'',native:item.native||''},image:{large:item.image||'',medium:item.image||''}}}))};
+    base.staff={edges:(payload.staff||[]).map(item=>({role:item.role||'Equipe',node:{id:item.id,name:{full:item.name||'',native:item.native||''},image:{large:item.image||'',medium:item.image||''}}}))};
+    base.relations={edges:(payload.relations||[]).filter(item=>String(item.media?.mediaType||'ANIME').toUpperCase()==='ANIME').map(item=>({relationType:item.relationType||'OTHER',node:normalizedMedia(item.media)})).filter(item=>item.node)};
+    base.recommendations={nodes:(payload.recommendations||[]).map(item=>({rating:item.rating||0,mediaRecommendation:normalizedMedia(item.media)})).filter(item=>item.mediaRecommendation)};
+    return base;
+  }
+  async function loadServerAnime(id,signal){
+    const response=await fetch(`/api/anime/${Number(id)}`,{signal,headers:{accept:'application/json'}});
+    if(!response.ok)throw new Error(`Catálogo ${response.status}`);
+    return normalizeServerAnime(await response.json());
+  }
+  async function timedLoad(loader,timeout){
+    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),timeout);
+    try{return await loader(controller.signal)}finally{clearTimeout(timer)}
+  }
+
   function cacheRead(id){try{const x=JSON.parse(sessionStorage.getItem(`nx22:detail:${id}`)||'null');if(x&&Date.now()-x.t<CACHE_TTL&&x.data?.id)return x.data}catch{}return null}
   function cacheWrite(id,data){try{sessionStorage.setItem(`nx22:detail:${id}`,JSON.stringify({t:Date.now(),data}))}catch{}}
   async function loadDetail(id){
     const cached=cacheRead(id);if(cached)return cached;
     if(detailPromises.has(id))return detailPromises.get(id);
     const p=(async()=>{
-      const aniController=new AbortController(),aniTimer=setTimeout(()=>aniController.abort(),12000);
-      let a;
-      try{a=await loadAni(id,aniController.signal)}finally{clearTimeout(aniTimer)}
-      const jikanController=new AbortController(),jikanTimer=setTimeout(()=>jikanController.abort(),3500);
-      let j=null;
-      try{j=await jikan(a.idMal,jikanController.signal)}catch(error){if(error?.name!=='AbortError')throw error}finally{clearTimeout(jikanTimer)}
-      const out={...a,jikan:j};cacheWrite(id,out);return out;
+      let a=null;
+      if(!IS_PAGES){try{a=await timedLoad(signal=>loadServerAnime(id,signal),4500)}catch{}}
+      if(!a)a=await timedLoad(signal=>loadAni(id,signal),12000);
+      const out={...a,jikan:null};cacheWrite(id,out);
+      if(a.idMal){
+        timedLoad(signal=>jikan(a.idMal,signal),3500).then(extra=>{if(extra)cacheWrite(id,{...out,jikan:extra})}).catch(()=>{});
+      }
+      return out;
     })().finally(()=>detailPromises.delete(id));
     detailPromises.set(id,p);return p;
   }
