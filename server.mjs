@@ -10,7 +10,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
 import { initDb, q, pool, dbReady } from './lib/db.mjs';
-import { initCache, redis } from './lib/cache.mjs';
+import { initCache, redis, cacheRemember } from './lib/cache.mjs';
 import { AUTHORIZED_ORIGINS, CLERK_ENABLED, hashPassword, verifyPassword, createSession, destroySession, currentUser, requireUser, requireRole, validateOrigin, getClerkClient, beginAccountDeletion, cancelAccountDeletion, bootstrapConfiguredAdmins, invalidateUserIdentityCache } from './lib/auth.mjs';
 import { processClerkWebhook } from './lib/clerk-webhook.mjs';
 import { getCatalog, getReading, getSchedule, getAnime, getAnimeThemes, getMediaSummaries, getManga, getStudios, getDubbed, prewarm } from './lib/provider.mjs';
@@ -38,7 +38,7 @@ app.addHook('onSend',async(req,reply,payload)=>{
   reply.header('X-Permitted-Cross-Domain-Policies','none');
   const url=String(req.url||'').split('?')[0];
   if(url.startsWith('/api/auth/')||url.startsWith('/api/me'))reply.header('Cache-Control','no-store');
-  else if(req.method==='GET'&&/^\/api\/(catalog|reading|schedule|anime\/\d+|manga\/\d+|studios|dublados|lists|list\/|users\/|news(?:\/|$)|community\/(?:impressions|activity|threads))/.test(url))reply.header('Cache-Control','public, max-age=20, stale-while-revalidate=180, stale-if-error=600');
+  else if(req.method==='GET'&&/^\/api\/(home|catalog|reading|schedule|anime\/\d+|manga\/\d+|media\/summaries|studios|dublados|lists|list\/|users\/|news(?:\/|$)|community\/(?:impressions|activity|threads))/.test(url))reply.header('Cache-Control','public, max-age=20, stale-while-revalidate=180, stale-if-error=600');
   else if(req.method==='GET'&&(url==='/'||reply.getHeader('content-type')?.toString().includes('text/html')))reply.header('Cache-Control','no-cache, max-age=0, must-revalidate');
   if(process.env.PUBLIC_ORIGIN?.startsWith('https://'))reply.header('Strict-Transport-Security','max-age=31536000; includeSubDomains; preload');
   return payload;
@@ -56,6 +56,7 @@ const privateReadRate=rateForUser(120,'1 minute','private-read');
 const privateHeavyRate=rateForUser(20,'1 minute','private-heavy');
 const writeRate=rateForUser(30,'1 minute','private-write');
 const publicRate={config:{rateLimit:{max:240,timeWindow:'1 minute'}}};
+const currentSeason=()=>{const now=new Date(),month=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',month:'numeric'}).format(now)),year=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',year:'numeric'}).format(now));return{season:month<=3?'WINTER':month<=6?'SPRING':month<=9?'SUMMER':'FALL',year}};
 const safeUser=u=>u&&({id:u.id,email:u.email,username:u.username,displayName:u.display_name||u.username,role:u.role,status:u.status||'active',avatarUrl:u.avatar_url,bannerUrl:u.profile_banner_url||null,bio:u.bio,location:u.location||null,websiteUrl:u.website_url||null,instagramHandle:u.instagram_handle||null,telegramHandle:u.telegram_handle||null,showLibrary:u.show_library!==false,showActivity:u.show_activity!==false,showStats:u.show_stats!==false,theme:u.theme,privacy:u.privacy||'public',emailVerified:u.email_verified,createdAt:u.created_at});
 const safeInt=(v,min=1,max=Number.MAX_SAFE_INTEGER)=>{const n=Number(v);return Number.isSafeInteger(n)&&n>=min&&n<=max?n:null};
 const safePath=v=>{const s=String(v||'').slice(0,500);return s.startsWith('/')&&!s.startsWith('//')?s:null};
@@ -125,6 +126,16 @@ app.post('/api/webhooks/clerk',{config:{rawBody:true,rateLimit:{max:120,timeWind
 });
 
 app.get('/api/catalog',{...publicRate,config:{rateLimit:{max:100,timeWindow:'1 minute'}}},async req=>getCatalog(req.query||{}));
+app.get('/api/home',publicRate,async req=>{
+  const fallback=currentSeason(),season=['WINTER','SPRING','SUMMER','FALL'].includes(String(req.query?.season||''))?String(req.query.season):fallback.season,year=safeInt(req.query?.year,1960,2100)||fallback.year;
+  const now=Math.floor(Date.now()/1000),bucket=Math.floor(now/300),end=now+7*86400;
+  return cacheRemember(`home:v1:${season}:${year}:${bucket}`,60,async()=>{
+    const [seasonData,schedule,top,popular,reading,soon]=await Promise.all([
+      getCatalog({page:1,perPage:22,season,year,sort:'POPULAR'}).catch(()=>({items:[]})),getSchedule(now,end).catch(()=>[]),getCatalog({page:1,perPage:10,sort:'SCORE'}).catch(()=>({items:[]})),getCatalog({page:1,perPage:22,sort:'POPULAR'}).catch(()=>({items:[]})),getReading({page:1,perPage:18,sort:'POPULAR'}).catch(()=>({items:[]})),getCatalog({page:1,perPage:22,status:'NOT_YET_RELEASED',sort:'POPULAR'}).catch(()=>({items:[]}))
+    ]);
+    return{season:seasonData.items||[],schedule:(schedule||[]).slice(0,8),top:top.items||[],popular:popular.items||[],reading:reading.items||[],soon:soon.items||[]};
+  },{staleTtl:1800});
+});
 app.get('/api/reading',{...publicRate,config:{rateLimit:{max:100,timeWindow:'1 minute'}}},async req=>getReading(req.query||{}));
 app.get('/api/schedule',{config:{rateLimit:{max:100,timeWindow:'1 minute'}}},async(req,reply)=>{const now=Math.floor(Date.now()/1000),start=Number(req.query?.start||now-86400),end=Number(req.query?.end||now+7*86400);if(!Number.isFinite(start)||!Number.isFinite(end)||end<=start||end-start>10*86400)return reply.code(400).send({error:'INVALID_RANGE'});return getSchedule(start,end);});
 app.get('/api/anime/:id',{config:{rateLimit:{max:120,timeWindow:'1 minute'}}},async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});return getAnime(id);});

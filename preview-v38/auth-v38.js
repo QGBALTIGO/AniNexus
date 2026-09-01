@@ -11,7 +11,7 @@
   const PUBLISHABLE_KEY = String(config.clerkPublishableKey || '');
   const ENABLED = config.authEnabled === true && /^https:\/\//.test(API_ORIGIN) && /^pk_(?:test|live)_/.test(PUBLISHABLE_KEY);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-  const routeUrl = path => IS_PAGES ? `${BASE}/?build=40.8.0&p=${encodeURIComponent(path)}` : path;
+  const routeUrl = path => IS_PAGES ? `${BASE}/?build=40.9.0&p=${encodeURIComponent(path)}` : path;
   const go = (path, replace = false) => location[replace ? 'replace' : 'assign'](routeUrl(path));
   let clerkPromise = null;
   let apiUser = null;
@@ -35,13 +35,16 @@
     const script = existing || document.createElement('script');
     script.src = src; script.async = true; script.crossOrigin = 'anonymous';
     for (const [name, value] of Object.entries(attributes)) script.setAttribute(name, value);
-    script.addEventListener('load', () => { script.dataset.loaded = 'true'; resolve(script); }, { once: true });
-    script.addEventListener('error', () => reject(new Error('AUTH_SDK_UNAVAILABLE')), { once: true });
+    let settled = false;
+    const finish = (error) => { if (settled) return; settled = true; clearTimeout(timeout); if (error) reject(error); else { script.dataset.loaded = 'true'; resolve(script); } };
+    const timeout = setTimeout(() => finish(new Error('AUTH_SDK_TIMEOUT')), 8_000);
+    script.addEventListener('load', () => finish(), { once: true });
+    script.addEventListener('error', () => finish(new Error('AUTH_SDK_UNAVAILABLE')), { once: true });
     if (!existing) document.head.append(script);
   });
   async function loadLocalization() {
     try {
-      const response = await fetch(`${BASE}/clerk-localization-ptbr.json?v=40.8.0`, { cache: 'force-cache', credentials: 'omit' });
+      const response = await fetch(`${BASE}/clerk-localization-ptbr.json?v=40.9.0`, { cache: 'force-cache', credentials: 'omit' });
       if (response.ok) return await response.json();
       console.warn('[AniNexus auth] tradução pt-BR indisponível; usando o pacote mínimo interno.', { status: response.status });
     } catch (error) {
@@ -265,7 +268,7 @@
     const drawer=document.querySelector('.drawer-auth-card'),drawerTitle=drawer?.querySelector('h3'),drawerText=drawer?.querySelector('p'),drawerActions=drawer?.querySelector('.drawer-auth-actions');
     const setAnonymous=()=>{document.documentElement.dataset.nxAuthState='anonymous';if(login)login.hidden=false;if(register)register.hidden=false;if(drawer){drawer.dataset.authState='anonymous';if(drawerTitle)drawerTitle.textContent='Entre na sua conta';if(drawerText)drawerText.textContent='Salve sua lista, acompanhe episódios e participe da comunidade.';if(drawerActions)drawerActions.innerHTML='<button class="login-btn" data-action="login">Entrar</button><button class="signup-btn" data-action="register">Criar conta</button>'}};
     if (!ENABLED) { setAnonymous(); return; }
-    document.documentElement.dataset.nxAuthState='loading';if(login)login.hidden=true;if(register)register.hidden=true;
+    document.documentElement.dataset.nxAuthState='loading';if(login)login.hidden=false;if(register)register.hidden=false;
     try {
       const user = await getUser();
       if(syncToken!==headerSyncToken||!actions.isConnected)return;

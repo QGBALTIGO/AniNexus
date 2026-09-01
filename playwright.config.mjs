@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const chromiumExecutablePath=process.env.ANINEXUS_CHROMIUM_EXECUTABLE_PATH||undefined;
+const chromiumArgs=process.env.ANINEXUS_MAP_PAGES_HOST==='1'?['--host-resolver-rules=MAP qgbaltigo.github.io 127.0.0.1']:[];
+
 export default defineConfig({
   testDir: './tests',
   fullyParallel: false,
@@ -14,7 +17,7 @@ export default defineConfig({
     locale: 'pt-BR',
   },
   projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 }, launchOptions: process.env.ANINEXUS_MAP_PAGES_HOST === '1' ? { args: ['--host-resolver-rules=MAP qgbaltigo.github.io 127.0.0.1'] } : {} } },
+    { name: 'chromium', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 }, launchOptions: { args:chromiumArgs, ...(chromiumExecutablePath?{executablePath:chromiumExecutablePath}:{}) } } },
     { name: 'firefox', use: { ...devices['Desktop Firefox'], viewport: { width: 1440, height: 900 } } },
     { name: 'webkit', use: { ...devices['Desktop Safari'], viewport: { width: 1440, height: 900 } } },
   ],

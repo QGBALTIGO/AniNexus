@@ -29,16 +29,9 @@
     const apiJson=async(path,signal)=>{const r=await nativeFetch(path,{signal,credentials:'same-origin',headers:{accept:'application/json'}});if(!r.ok)throw new Error(`AniNexus API ${r.status}`);return r.json()};
     const seasonNow=()=>{const d=new Date(),m=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',month:'numeric'}).format(d)),year=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',year:'numeric'}).format(d));return{year,season:m<=3?'WINTER':m<=6?'SPRING':m<=9?'SUMMER':'FALL'}};
     const bridgeHome=async(body,signal)=>{
-      const vars=body.variables||{},s=seasonNow(),season=vars.season||s.season,year=Number(vars.year||s.year),now=Math.floor(Date.now()/1000),end=now+7*86400;
-      const [seasonData,schedule,top,popular,reading,soon]=await Promise.all([
-        apiJson(`/api/catalog?page=1&perPage=22&season=${encodeURIComponent(season)}&year=${year}&sort=POPULAR`,signal),
-        apiJson(`/api/schedule?start=${now}&end=${end}`,signal),
-        apiJson('/api/catalog?page=1&perPage=10&sort=SCORE',signal),
-        apiJson('/api/catalog?page=1&perPage=22&sort=POPULAR',signal),
-        apiJson('/api/reading?page=1&perPage=18&sort=POPULAR',signal),
-        apiJson('/api/catalog?page=1&perPage=22&status=NOT_YET_RELEASED&sort=POPULAR',signal)
-      ]);
-      return jsonResponse({season:{media:(seasonData.items||[]).map(toGraph)},schedule:{airingSchedules:(schedule||[]).slice(0,8).map(x=>({airingAt:x.airingAt,episode:x.episode,media:toGraph(x.media)}))},top:{media:(top.items||[]).map(toGraph)},popular:{media:(popular.items||[]).map(toGraph)},soon:{media:(soon.items||[]).map(toGraph)},reading:{media:(reading.items||[]).map(toGraph)}});
+      const vars=body.variables||{},s=seasonNow(),season=vars.season||s.season,year=Number(vars.year||s.year),home=await apiJson(`/api/home?season=${encodeURIComponent(season)}&year=${year}`,signal);
+      if(!(home.season||[]).length||!(home.top||[]).length||!(home.popular||[]).length)throw new Error('AniNexus API returned an incomplete Home');
+      return jsonResponse({season:{media:(home.season||[]).map(toGraph)},schedule:{airingSchedules:(home.schedule||[]).slice(0,8).map(x=>({airingAt:x.airingAt,episode:x.episode,media:toGraph(x.media)}))},top:{media:(home.top||[]).map(toGraph)},popular:{media:(home.popular||[]).map(toGraph)},soon:{media:(home.soon||[]).map(toGraph)},reading:{media:(home.reading||[]).map(toGraph)}});
     };
     const mapSort=q=>q.includes('SCORE_DESC')?'SCORE':q.includes('FAVOURITES_DESC')?'FAVOURITES':q.includes('SEARCH_MATCH')?'MATCH':q.includes('TRENDING_DESC')?'TRENDING':q.includes('START_DATE_DESC')?'NEW':q.includes('TITLE_ROMAJI')?'TITLE':'POPULAR';
     const bridgePage=async(body,signal,type)=>{
@@ -46,6 +39,7 @@
       for(const k of ['search','genre','format','season','year'])if(v[k]!=null&&v[k]!=='')params.set(k,String(v[k]));
       if(q.includes('status:NOT_YET_RELEASED'))params.set('status','NOT_YET_RELEASED');
       const endpoint=type==='MANGA'?'/api/reading':'/api/catalog',data=await apiJson(`${endpoint}?${params}`,signal);
+      if(Number(v.page||1)===1&&!(data.items||[]).length)throw new Error('AniNexus API returned an empty catalog');
       return jsonResponse({Page:{pageInfo:data.pageInfo||{},media:(data.items||[]).map(toGraph)}});
     };
     const bridgeDetail=async(body,signal,type)=>{

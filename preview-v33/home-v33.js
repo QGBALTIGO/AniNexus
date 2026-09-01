@@ -6,18 +6,11 @@
 
   const loadHome=()=>{
     const s=document.createElement('script');
-    s.src=`${base}/preview-v35/home-v35.js?v=35.0.2`;
+    s.src=`${base}/preview-v35/home-v35.js?v=40.9.0`;
     s.defer=true;
     s.onerror=()=>{document.documentElement.classList.remove('nx35-home-boot');console.error('[AniNexus Home V35] falha ao carregar')};
     document.head.append(s);
   };
 
-  // O hotfix entra primeiro para observar a montagem da Home, limpar textos de
-  // desenvolvimento e recuperar seções vazias via API da própria VPS.
-  const h=document.createElement('script');
-  h.src=`${base}/preview-v35/home-hotfix-v35.js?v=35.0.2`;
-  h.defer=true;
-  h.onload=loadHome;
-  h.onerror=loadHome;
-  document.head.append(h);
+  loadHome();
 })();

@@ -57,10 +57,10 @@
   ];
 
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const title=m=>m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||'Anime';
-  const altTitle=m=>m?.title?.romaji&&m.title.romaji!==title(m)?m.title.romaji:'';
-  const cover=m=>m?.coverImage?.extraLarge||m?.coverImage?.large||'';
-  const score=m=>m?.averageScore?String((Number(m.averageScore)/10).toFixed(1)).replace('.0',''):'';
+  const title=m=>typeof m?.title==='string'&&m.title.trim()?m.title.trim():(m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||m?.titleRomaji||'Anime');
+  const altTitle=m=>{const value=typeof m?.title==='string'?m?.titleRomaji:m?.title?.romaji;return value&&value!==title(m)?value:''};
+  const cover=m=>m?.coverImage?.extraLarge||m?.coverImage?.large||m?.cover||'';
+  const score=m=>{const value=m?.averageScore!=null?Number(m.averageScore)/10:Number(m?.score);return Number.isFinite(value)&&value>0?String(value.toFixed(1)).replace('.0',''):''};
   const slug=s=>String(s||'anime').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,90);
   const genreMap={Action:'Ação',Adventure:'Aventura',Comedy:'Comédia',Drama:'Drama',Fantasy:'Fantasia',Horror:'Terror',Mystery:'Mistério',Romance:'Romance','Sci-Fi':'Ficção Científica','Slice of Life':'Slice of Life',Sports:'Esportes',Supernatural:'Sobrenatural',Thriller:'Suspense',Music:'Música',Psychological:'Psicológico',Mecha:'Mecha'};
   const formatMap={TV:'Série',TV_SHORT:'Série curta',MOVIE:'Filme',SPECIAL:'Especial',OVA:'OVA',ONA:'ONA'};
@@ -153,7 +153,7 @@
     return slug(link?.site||'stream');
   }
   function providerLabel(k,site=''){return({crunchyroll:'Crunchyroll',netflix:'Netflix',prime:'Prime Video',disney:'Disney+',apple:'Apple TV',hidive:'HIDIVE',hulu:'Hulu'})[k]||site||k}
-  function streamLinks(m){return(m?.externalLinks||[]).filter(x=>String(x?.type||'').toUpperCase()==='STREAMING'&&/^https:\/\//i.test(x?.url||''))}
+  function streamLinks(m){return(m?.externalLinks||m?.streaming||[]).filter(x=>String(x?.type||'STREAMING').toUpperCase()==='STREAMING'&&/^https:\/\//i.test(x?.url||''))}
   function fallbackLogo(k){
     if(k==='crunchyroll')return'<span class="nx18-crunchy" aria-hidden="true"><i></i></span>';
     if(k==='netflix')return'<span class="nx18-netflix" aria-hidden="true">N</span>';
@@ -195,8 +195,8 @@
 
   function countdownMarkup(ts){return `<div class="nx18-countdown" data-airing="${Number(ts)}" aria-label="Tempo até o episódio"></div>`}
   function card(x){
-    const m=x.media||{},sc=score(m),stream=primaryStream(m),final=m.episodes&&Number(x.episode)===Number(m.episodes),favs=readSet('aninexus:favorites'),s=stateFor(m.id);
-    return `<article class="nx18-card" data-nx18-open="${m.id}" data-title="${esc(title(m))}"><div class="nx18-cover"><img src="${esc(cover(m))}" alt="${esc(title(m))}" loading="lazy" decoding="async">${sc?`<span class="nx18-score">${SVG.star}<b>${sc}</b></span>`:''}<div class="nx18-cover-actions"><button type="button" class="nx18-circle status ${s.status?'active':''}" data-nx18-status="${m.id}" aria-label="Minha lista: ${esc(STATUS[s.status]?.label||'Adicionar')}">${statusIcon(m.id)}</button><button type="button" class="nx18-circle heart ${favs.has(Number(m.id))?'active':''}" data-nx18-fav="${m.id}" aria-label="Favoritar ${esc(title(m))}">${SVG.heart}</button></div></div><div class="nx18-info"><div class="nx18-air"><span>${airLabel(x.airingAt)}</span><b>${fmtTime(x.airingAt)}</b></div>${countdownMarkup(x.airingAt)}<h3>${esc(title(m))}</h3><p>${esc((m.genres||[]).slice(0,3).map(genre).join(', '))}</p>${x.episode===1||final?`<span class="nx18-state">${x.episode===1?'Estreia':'Episódio final'}</span>`:''}${stream?`<a class="nx18-stream" href="${esc(stream.url)}" target="_blank" rel="noopener noreferrer" title="${esc(providerLabel(providerKey(stream),stream.site))}">${providerIcon(stream,'card')}</a>`:''}<div class="nx18-episode"><small>EP</small><strong>${Number(x.episode)||'—'}</strong></div></div></article>`;
+    const m=x.media||{},name=title(m),poster=cover(m),sc=score(m),stream=primaryStream(m),final=m.episodes&&Number(x.episode)===Number(m.episodes),favs=readSet('aninexus:favorites'),s=stateFor(m.id);
+    return `<article class="nx18-card" data-nx18-open="${m.id}" data-title="${esc(name)}"><div class="nx18-cover${poster?'':' nx18-cover-missing'}">${poster?`<img src="${esc(poster)}" alt="${esc(name)}" loading="lazy" decoding="async">`:''}${sc?`<span class="nx18-score">${SVG.star}<b>${sc}</b></span>`:''}<div class="nx18-cover-actions"><button type="button" class="nx18-circle status ${s.status?'active':''}" data-nx18-status="${m.id}" aria-label="Minha lista: ${esc(STATUS[s.status]?.label||'Adicionar')}">${statusIcon(m.id)}</button><button type="button" class="nx18-circle heart ${favs.has(Number(m.id))?'active':''}" data-nx18-fav="${m.id}" aria-label="Favoritar ${esc(name)}">${SVG.heart}</button></div></div><div class="nx18-info"><div class="nx18-air"><span>${airLabel(x.airingAt)}</span><b>${fmtTime(x.airingAt)}</b></div>${countdownMarkup(x.airingAt)}<h3>${esc(name)}</h3><p>${esc((m.genres||[]).slice(0,3).map(genre).join(', '))}</p>${x.episode===1||final?`<span class="nx18-state">${x.episode===1?'Estreia':'Episódio final'}</span>`:''}${stream?`<a class="nx18-stream" href="${esc(stream.url)}" target="_blank" rel="noopener noreferrer" title="${esc(providerLabel(providerKey(stream),stream.site))}">${providerIcon(stream,'card')}</a>`:''}<div class="nx18-episode"><small>EP</small><strong>${Number(x.episode)||'—'}</strong></div></div></article>`;
   }
   function grouped(){
     const map=new Map(days.map(d=>[d.key,{...d,items:[]}]))

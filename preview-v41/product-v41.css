@@ -1,0 +1,40 @@
+/* AniNexus V41: product-wide theme fidelity and restrained motion. */
+.nx35-achievement-section[hidden]{display:none!important}
+html[data-theme="light"] body.nx35-home-active{background:#f6f3f4!important;color:#251a20}
+html[data-theme="light"] body.nx35-home-active .site-footer{background:#eee9eb;border-top-color:rgba(50,28,39,.1)}
+html[data-theme="light"] .nx35-home{--bg:#f6f3f4;--panel:#fff;--panel2:#f1ebee;--line:rgba(50,28,39,.12);--muted:#756970;background:var(--bg);color:#251a20}
+html[data-theme="light"] .nx35-hero{border-bottom-color:rgba(50,28,39,.09);background:radial-gradient(ellipse 65% 125% at 84% -20%,rgba(227,38,79,.11),transparent 62%),radial-gradient(ellipse 42% 90% at -4% 18%,rgba(111,23,47,.07),transparent 68%),linear-gradient(180deg,#fffafb,#f7f2f4 86%)}
+html[data-theme="light"] .nx35-hero:before{opacity:.24;background-image:linear-gradient(rgba(65,35,48,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(65,35,48,.03) 1px,transparent 1px)}
+html[data-theme="light"] .nx35-hero h1{color:#24181e}
+html[data-theme="light"] .nx35-hero-copy>p,html[data-theme="light"] .nx35-head p{color:#74676e}
+html[data-theme="light"] .nx35-kicker{border-color:rgba(181,28,65,.18);background:linear-gradient(90deg,rgba(227,38,79,.08),rgba(255,255,255,.75))}
+html[data-theme="light"] .nx35-kicker strong{color:#34232b}
+html[data-theme="light"] .nx35-signals{color:#766970}
+html[data-theme="light"] .nx35-hero-actions a:not(.primary){border-color:rgba(50,28,39,.13);background:#fff;color:#33232b;box-shadow:0 10px 28px rgba(72,31,48,.07)}
+html[data-theme="light"] .nx35-live,html[data-theme="light"] .nx35-news,html[data-theme="light"] .nx35-community-card{border-color:rgba(50,28,39,.11);background:linear-gradient(150deg,#fff,#f7f1f4);box-shadow:0 18px 48px rgba(72,31,48,.08)}
+html[data-theme="light"] .nx35-live>header{border-bottom-color:rgba(50,28,39,.08);background:linear-gradient(90deg,rgba(227,38,79,.06),transparent)}
+html[data-theme="light"] .nx35-section.tonal{border-block-color:rgba(50,28,39,.07);background:#eee9eb}
+html[data-theme="light"] .nx35-head h2,html[data-theme="light"] .nx35-anime h3,html[data-theme="light"] .nx35-reading h3,html[data-theme="light"] .nx35-rank-copy h3,html[data-theme="light"] .nx35-award h3,html[data-theme="light"] .nx35-news h3{color:#2a1c23}
+html[data-theme="light"] .nx35-cover,html[data-theme="light"] .nx35-rank-cover,html[data-theme="light"] .nx35-book,html[data-theme="light"] .nx35-award>div{border-color:rgba(50,28,39,.1);background:#e6dfe2;box-shadow:0 10px 24px rgba(72,31,48,.1)}
+html[data-theme="light"] .nx35-rank-num{-webkit-text-stroke-color:#b8aeb3;opacity:.72}
+html[data-theme="light"] .nx35-achievement{border-color:rgba(50,28,39,.1);background:#fff}
+html[data-theme="light"] .nx35-achievement strong,html[data-theme="light"] .nx35-community-empty strong{color:#34252c}
+html[data-theme="light"] .nx35-achievement p,html[data-theme="light"] .nx35-community-empty{color:#776a71}
+html[data-theme="light"] .nx35-news-copy>small,html[data-theme="light"] .nx35-reading p,html[data-theme="light"] .nx35-community-card small{color:#766970}
+html[data-theme="light"] .nx35-news.feature p,html[data-theme="light"] .nx35-community-card p{color:#65585f}
+html[data-theme="light"] .nx35-community-card p b,html[data-theme="light"] .nx35-community-card p strong{color:#2b1d24}
+html[data-theme="light"] .nx35-community-card:before{background-image:linear-gradient(90deg,rgba(255,250,252,.98) 30%,rgba(255,250,252,.91) 62%,rgba(255,250,252,.82)),var(--community-bg);opacity:.48}
+html[data-theme="light"] .nx35-community-card.compact+.nx35-community-card.compact{border-top-color:rgba(50,28,39,.08)}
+html[data-theme="light"] .nx35-community-empty,html[data-theme="light"] .nx35-news-empty,html[data-theme="light"] .nx35-data-empty{border-color:rgba(50,28,39,.12);background:rgba(255,255,255,.56)}
+html[data-theme="light"] .nx35-placeholder:empty:before,html[data-theme="light"] .nx35-news-skeleton,html[data-theme="light"] .nx35-skeleton-row{background:#e9e2e5}
+html[data-theme="light"] .nx35-edge:before{background:linear-gradient(90deg,rgba(246,243,244,.9),transparent)}
+html[data-theme="light"] .nx35-edge:after{background:linear-gradient(270deg,rgba(246,243,244,.9),transparent)}
+html[data-theme="light"] .tonal .nx35-edge:before{background:linear-gradient(90deg,rgba(238,233,235,.9),transparent)}
+html[data-theme="light"] .tonal .nx35-edge:after{background:linear-gradient(270deg,rgba(238,233,235,.9),transparent)}
+
+.nx35-motion-ready .nx35-reveal{opacity:0;transform:translateY(18px);content-visibility:auto;contain-intrinsic-size:auto 640px}
+.nx35-motion-ready .nx35-reveal.is-visible{opacity:1;transform:none;transition:opacity .48s ease,transform .48s cubic-bezier(.2,.75,.25,1)}
+.nx35-home-ready .nx35-hero-copy{animation:nx35HeroIn .52s cubic-bezier(.2,.75,.25,1) both}
+.nx35-home-ready .nx35-live{animation:nx35HeroIn .52s .08s cubic-bezier(.2,.75,.25,1) both}
+@keyframes nx35HeroIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.nx35-motion-ready .nx35-reveal,.nx35-motion-ready .nx35-reveal.is-visible{opacity:1;transform:none}.nx35-home-ready .nx35-hero-copy,.nx35-home-ready .nx35-live{animation:none}}
