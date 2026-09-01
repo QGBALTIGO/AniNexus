@@ -8,7 +8,7 @@
   const statusLabels={PLANNING:'Quero ler',CURRENT:'Lendo',COMPLETED:'Terminei',PAUSED:'Pausado',DROPPED:'Desisti'};
   const state={page:1,search:'',format:'MANGA',sort:'POPULAR',token:0,items:new Map(),library:null};
   function route(){const url=new URL(location.href),restored=url.searchParams.get('p');if(restored)return restored.split('?')[0].replace(/\/+$/,'')||'/';let path=url.pathname;if(IS_PAGES)path=path.replace(/^\/AniNexus/,'')||'/';return path.replace(/\/+$/,'')||'/'}
-  function go(path){if(IS_PAGES)location.assign(`${BASE}/?build=42.1.3&p=${encodeURIComponent(path)}`);else{history.pushState({},'',path);dispatchEvent(new PopStateEvent('popstate'))}}
+  function go(path){if(IS_PAGES)location.assign(`${BASE}/?build=42.1.4&p=${encodeURIComponent(path)}`);else{history.pushState({},'',path);dispatchEvent(new PopStateEvent('popstate'))}}
   function slug(value){return String(value||'manga').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,90)}
   function title(item){return item?.title?.english||item?.title?.userPreferred||item?.title?.romaji||item?.title||'Mangá'}
   function cover(item){return item?.coverImage?.extraLarge||item?.coverImage?.large||item?.cover||''}
