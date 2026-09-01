@@ -5,6 +5,12 @@ on:
     workflows: [AniNexus quality]
     types: [completed]
   workflow_dispatch:
+    inputs:
+      frontend_only:
+        description: Publicar apenas o frontend estatico, preservando a API atual
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: read
@@ -41,7 +47,16 @@ jobs:
         run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Validar código e contratos
+        if: github.event_name != 'workflow_dispatch' || inputs.frontend_only != true
         run: pnpm run check
+
+      - name: Validar frontend isoladamente
+        if: github.event_name == 'workflow_dispatch' && inputs.frontend_only == true
+        run: |
+          pnpm run check:layout
+          node scripts/validate-source.mjs
+          node --check preview-v42/header-v43.js
+          node tests/news-system.mjs
 
       - name: Montar e validar publicação estática
         env:
@@ -107,15 +122,21 @@ jobs:
           RELEASE_ID: ${{ steps.release.outputs.id }}
           ARCHIVE: ${{ steps.release.outputs.archive }}
           API_ARCHIVE: ${{ steps.release.outputs.api_archive }}
+          FRONTEND_ONLY: ${{ inputs.frontend_only || false }}
         run: |
           ssh -i "$HOME/.ssh/aninexus" -p "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
-            "${VPS_USER}@${VPS_HOST}" "install -d -m 0755 /opt/aninexus/incoming /opt/aninexus/releases /opt/aninexus/shared"
+            "${VPS_USER}@${VPS_HOST}" "install -d -m 0755 /var/www/aninexus/incoming"
           scp -i "$HOME/.ssh/aninexus" -P "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
             "$ARCHIVE" "${VPS_USER}@${VPS_HOST}:/var/www/aninexus/incoming/${RELEASE_ID}.tar.gz"
-          scp -i "$HOME/.ssh/aninexus" -P "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
-            "$API_ARCHIVE" "${VPS_USER}@${VPS_HOST}:/opt/aninexus/incoming/${RELEASE_ID}.tar.gz"
+          if [[ "$FRONTEND_ONLY" != "true" ]]; then
+            ssh -i "$HOME/.ssh/aninexus" -p "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+              "${VPS_USER}@${VPS_HOST}" "install -d -m 0755 /opt/aninexus/incoming /opt/aninexus/releases /opt/aninexus/shared"
+            scp -i "$HOME/.ssh/aninexus" -P "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+              "$API_ARCHIVE" "${VPS_USER}@${VPS_HOST}:/opt/aninexus/incoming/${RELEASE_ID}.tar.gz"
+          fi
 
       - name: Ativar API com rollback automático
+        if: github.event_name != 'workflow_dispatch' || inputs.frontend_only != true
         shell: bash
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
