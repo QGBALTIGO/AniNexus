@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T21:19:33.795Z",
+  "generatedAt": "2026-09-01T23:15:43.607Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -49,17 +49,17 @@
   ],
   "stats": {
     "collected": 155,
-    "grouped": 119,
-    "published": 27,
-    "newStories": 23,
-    "deepArticles": 10,
-    "avgWords": 310,
-    "withHeroImage": 27,
+    "grouped": 118,
+    "published": 26,
+    "newStories": 22,
+    "deepArticles": 9,
+    "avgWords": 306,
+    "withHeroImage": 26,
     "withGallery": 2,
     "withEmbeds": 3,
     "skippedTranslation": 96,
     "skippedQuality": 0,
-    "durationMs": 18502
+    "durationMs": 34918
   },
   "items": [
     {
@@ -342,7 +342,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-09-01T15:10:00.000Z",
-      "updatedAt": "2026-09-01T21:19:25.829Z",
+      "updatedAt": "2026-09-01T23:15:23.780Z",
       "expiresAt": "2026-09-08T15:10:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -424,7 +424,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-09-01T02:35:00.000Z",
-      "updatedAt": "2026-09-01T21:19:25.915Z",
+      "updatedAt": "2026-09-01T23:15:23.871Z",
       "expiresAt": "2026-09-08T02:35:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -506,7 +506,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-31T21:32:00.000Z",
-      "updatedAt": "2026-09-01T21:19:26.008Z",
+      "updatedAt": "2026-09-01T23:15:23.966Z",
       "expiresAt": "2026-09-07T21:32:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -957,7 +957,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-31T02:15:00.000Z",
-      "updatedAt": "2026-09-01T21:19:26.534Z",
+      "updatedAt": "2026-09-01T23:15:24.376Z",
       "expiresAt": "2026-09-07T02:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1039,7 +1039,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-31T01:55:00.000Z",
-      "updatedAt": "2026-09-01T21:19:26.534Z",
+      "updatedAt": "2026-09-01T23:15:24.376Z",
       "expiresAt": "2026-09-07T01:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1127,7 +1127,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T22:15:00.000Z",
-      "updatedAt": "2026-09-01T21:19:26.702Z",
+      "updatedAt": "2026-09-01T23:15:24.571Z",
       "expiresAt": "2026-09-05T22:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1209,7 +1209,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T20:45:00.000Z",
-      "updatedAt": "2026-09-01T21:19:26.742Z",
+      "updatedAt": "2026-09-01T23:15:24.608Z",
       "expiresAt": "2026-09-05T20:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1291,7 +1291,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T20:45:00.000Z",
-      "updatedAt": "2026-09-01T21:19:26.742Z",
+      "updatedAt": "2026-09-01T23:15:24.609Z",
       "expiresAt": "2026-09-05T20:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1373,7 +1373,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T15:13:00.000Z",
-      "updatedAt": "2026-09-01T21:19:26.929Z",
+      "updatedAt": "2026-09-01T23:15:24.794Z",
       "expiresAt": "2026-09-05T15:13:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1463,7 +1463,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T21:15:00.000Z",
-      "updatedAt": "2026-09-01T21:19:26.929Z",
+      "updatedAt": "2026-09-01T23:15:24.794Z",
       "expiresAt": "2026-09-04T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1551,7 +1551,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T21:05:00.000Z",
-      "updatedAt": "2026-09-01T21:19:26.929Z",
+      "updatedAt": "2026-09-01T23:15:24.794Z",
       "expiresAt": "2026-09-04T21:05:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1633,7 +1633,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T19:15:00.000Z",
-      "updatedAt": "2026-09-01T21:19:26.965Z",
+      "updatedAt": "2026-09-01T23:15:24.828Z",
       "expiresAt": "2026-09-04T19:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1828,7 +1828,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T15:10:00.000Z",
-      "updatedAt": "2026-09-01T21:19:27.000Z",
+      "updatedAt": "2026-09-01T23:15:24.863Z",
       "expiresAt": "2026-09-04T15:10:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2603,124 +2603,6 @@
         "sections": 4,
         "sourceCount": 1,
         "ingestMode": "html",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox_anime-5b32cd10",
-      "slug": "one-piece-e-detective-conan-ganham-colaboracao-com-jurassic-park-e-de-volta-para-o-futuro-jbox_anime-5b32cd10",
-      "source": "JBox",
-      "sourceType": "JBOX_ANIME",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘One Piece’ e ‘Detective Conan’ ganham colaboração com ‘Jurassic Park’ e ‘De Volta para o Futuro’",
-      "originalTitle": null,
-      "summary": "Parceria é parte das ações comemorativas do parque temático da Universal no Japão, contando com lançamento de produtos derivados.",
-      "url": "https://www.jbox.com.br/2026/08/25/one-piece-e-detective-conan-ganham-colaboracao-com-jurassic-park-e-de-volta-para-o-futuro",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/25/one-piece-e-detective-conan-ganham-colaboracao-com-jurassic-park-e-de-volta-para-o-futuro",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/one-piece-jurassic-park-destacada.jpg",
-      "mediaQuery": "‘One Piece’ e ‘Detective Conan’ ganham colaboração com ‘Jurassic Park’ e ‘De Volta para o Futuro’",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-25T21:43:36.000Z",
-      "updatedAt": "2026-08-25T21:45:05.000Z",
-      "expiresAt": "2026-09-01T21:43:36.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [
-        "Parceria é parte das ações comemorativas do parque temático da Universal no Japão, contando com lançamento de produtos derivados.",
-        "Foi anunciado pela Universal Studios que o parque temático da empresa no Japão vai fazer uma parceria com One Piece e Detective Conan para lançamento de produtos temáticos em comemoração pelos 25 anos do parque..",
-        "Os produtos incluem camisetas, canecas, bolsas e outros itens, sendo baseados em duas ilustrações: uma de Luffy, protagonista de One Piece , e um tiranossauro de Jurassic Park , e outra com Conan e o Dr.",
-        "Agase, de Detective Conan , usando as roupas de Marty McFly e Dr.",
-        "Brown, de De Volta para o Futuro , em referência aos pôsteres clássicos dos filmes..",
-        "Imagem: Divulgação/Universal Studios.",
-        "Eiichiro Oda , autor de One Piece , expressou sua felicidade pelo show especial de seu mangá que acontece todos os anos no parque.",
-        "Ele afirmou ser sempre um prazer interagir com a equipe e saber mais sobre os projetos futuros do parque.",
-        "Já Gosho Aoyama , autor de Detective Conan , também agradeceu pela atração anual de seu mangá e expressou sua felicidade em colaborar com uma franquia que tanto ama como De Volta para o Futuro ..",
-        "Outra parceria que acontece em comemoração aos 25 anos do parque temático é com Tomie , mangá de Junji Ito .",
-        "A colaboração é em parceria com os zumbis, que são parte dos eventos de Halloween do parque.",
-        "Tomie também ganhará produtos temáticos especiais..",
-        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Parceria é parte das ações comemorativas do parque temático da Universal no Japão, contando com lançamento de produtos derivados."
-          ],
-          "bullets": [
-            "Parceria é parte das ações comemorativas do parque temático da Universal no Japão, contando com lançamento de produtos derivados.",
-            "Foi anunciado pela Universal Studios que o parque temático da empresa no Japão vai fazer uma parceria com One Piece e Detective Conan para lançamento de produtos temáticos em comemoração pelos 25 anos do parque..",
-            "Os produtos incluem camisetas, canecas, bolsas e outros itens, sendo baseados em duas ilustrações: uma de Luffy, protagonista de One Piece , e um tiranossauro de Jurassic Park , e outra com Conan e o Dr."
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "Parceria é parte das ações comemorativas do parque temático da Universal no Japão, contando com lançamento de produtos derivados.",
-            "Foi anunciado pela Universal Studios que o parque temático da empresa no Japão vai fazer uma parceria com One Piece e Detective Conan para lançamento de produtos temáticos em comemoração pelos 25 anos do parque..",
-            "Brown, de De Volta para o Futuro , em referência aos pôsteres clássicos dos filmes.."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "Eiichiro Oda , autor de One Piece , expressou sua felicidade pelo show especial de seu mangá que acontece todos os anos no parque.",
-            "Já Gosho Aoyama , autor de Detective Conan , também agradeceu pela atração anual de seu mangá e expressou sua felicidade em colaborar com uma franquia que tanto ama como De Volta para o Futuro .."
-          ]
-        },
-        {
-          "heading": "Materiais divulgados",
-          "bullets": [
-            "Brown, de De Volta para o Futuro , em referência aos pôsteres clássicos dos filmes..",
-            "Imagem: Divulgação/Universal Studios."
-          ]
-        },
-        {
-          "heading": "História e contexto da obra",
-          "bullets": [
-            "Os produtos incluem camisetas, canecas, bolsas e outros itens, sendo baseados em duas ilustrações: uma de Luffy, protagonista de One Piece , e um tiranossauro de Jurassic Park , e outra com Conan e o Dr."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "Agase, de Detective Conan , usando as roupas de Marty McFly e Dr.",
-            "Ele afirmou ser sempre um prazer interagir com a equipe e saber mais sobre os projetos futuros do parque.",
-            "Outra parceria que acontece em comemoração aos 25 anos do parque temático é com Tomie , mangá de Junji Ito .",
-            "A colaboração é em parceria com os zumbis, que são parte dos eventos de Halloween do parque.",
-            "Tomie também ganhará produtos temáticos especiais..",
-            "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "A mesma URL é atualizada quando surgem fatos relevantes adicionais, evitando várias matérias rasas sobre o mesmo assunto."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/25/one-piece-e-detective-conan-ganham-colaboracao-com-jurassic-park-e-de-volta-para-o-futuro",
-          "publishedAt": "2026-08-25T21:43:36.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 423,
-      "qualityScore": 1,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 13,
-        "sections": 7,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
         "mediaCount": 0,
         "embedCount": 0,
         "sourcePagesRead": 1
