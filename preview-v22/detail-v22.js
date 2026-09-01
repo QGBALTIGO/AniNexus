@@ -90,7 +90,15 @@
   async function loadDetail(id){
     const cached=cacheRead(id);if(cached)return cached;
     if(detailPromises.has(id))return detailPromises.get(id);
-    const p=(async()=>{const c=new AbortController();const a=await loadAni(id,c.signal);const j=await jikan(a.idMal,c.signal);const out={...a,jikan:j};cacheWrite(id,out);return out})().finally(()=>detailPromises.delete(id));
+    const p=(async()=>{
+      const aniController=new AbortController(),aniTimer=setTimeout(()=>aniController.abort(),12000);
+      let a;
+      try{a=await loadAni(id,aniController.signal)}finally{clearTimeout(aniTimer)}
+      const jikanController=new AbortController(),jikanTimer=setTimeout(()=>jikanController.abort(),3500);
+      let j=null;
+      try{j=await jikan(a.idMal,jikanController.signal)}catch(error){if(error?.name!=='AbortError')throw error}finally{clearTimeout(jikanTimer)}
+      const out={...a,jikan:j};cacheWrite(id,out);return out;
+    })().finally(()=>detailPromises.delete(id));
     detailPromises.set(id,p);return p;
   }
 

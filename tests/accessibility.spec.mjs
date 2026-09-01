@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 
 const ORIGIN = process.env.ANINEXUS_E2E_ORIGIN || 'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN = process.env.ANINEXUS_LOCAL_STATIC_ORIGIN || '';
-const pageUrl = route => `${ORIGIN}?build=42.1.0&p=${encodeURIComponent(route)}`;
+const pageUrl = route => `${ORIGIN}?build=42.1.1&p=${encodeURIComponent(route)}`;
 const pixel = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 
 async function fulfillLocalStatic(route) {

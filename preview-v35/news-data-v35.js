@@ -1,15 +1,15 @@
 'use strict';
 (() => {
   if(window.NX35NewsData)return;
-  const IS_PAGES=location.hostname.endsWith('github.io'),BASE=IS_PAGES?'/AniNexus':'',BUILD='37.0.1';
-  const CACHE_KEY='aninexus:news:v37.0.1',READ_KEY='aninexus:news:read:v35',TTL=90*1000;
+  const IS_PAGES=location.hostname.endsWith('github.io'),BASE=IS_PAGES?'/AniNexus':'',BUILD='42.1.1';
+  const CACHE_KEY='aninexus:news:v42.1.1',READ_KEY='aninexus:news:read:v35',TTL=90*1000;
   const strip=s=>String(s??'').replace(/<script[\s\S]*?<\/script>/gi,' ').replace(/<style[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&').replace(/&quot;/gi,'"').replace(/\s+/g,' ').trim();
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const hash=s=>{let h=2166136261;for(const c of String(s||'')){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return(h>>>0).toString(36)};
   const slugify=s=>String(s||'noticia').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,105)||'noticia';
   const categoryLabel=v=>({SEASON:'Animes',TRAILER:'Trailers',EPISODE:'Episódios',MANGA:'Mangás & novels',TRENDING:'Em alta',OTHER:'Notícias'})[String(v||'OTHER').toUpperCase()]||String(v||'Notícias');
   function route(){try{const u=new URL(location.href),p=u.searchParams.get('p');if(p)return p.split('?')[0].replace(/\/+$/,'')||'/';let x=u.pathname;if(IS_PAGES)x=x.replace(/^\/AniNexus/,'')||'/';return x.replace(/\/+$/,'')||'/'}catch{return'/'}}
-  function owns(){const p=route();return p==='/noticias'||/^\/noticias\/[a-z0-9-]+$/.test(p)}
+  function owns(){const p=route();return p==='/noticias'||/^\/noticias\/[a-z0-9_-]+$/i.test(p)}
   function go(path){history.pushState({},'',IS_PAGES?`${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`:path);dispatchEvent(new CustomEvent('aninexus:news-v35-navigate'))}
   function parseBody(body){if(!body)return{};if(typeof body==='object')return body;try{return JSON.parse(body)||{}}catch{return{lead:strip(body)}}}
   function languageScore(v){const text=strip(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),words=text.match(/[a-z]+/g)||[];const ptSet=new Set(['de','da','do','das','dos','e','que','para','com','uma','um','foi','sera','novo','nova','temporada','estreia','elenco','episodio','manga','filme','noticia','noticias','confirmou','anunciou','revela','ganha','divulga','chega','brasil','brasileiro','pela','pelo','mais','tambem','ainda']),enSet=new Set(['the','and','of','to','for','with','from','new','will','season','reveals','announces','announced','release','cast','episode','movie','news','reviews','review','worldwide','debut','interest','licenses','launches','adds','gets','confirms','more']);let pt=0,en=0;for(const w of words){if(ptSet.has(w))pt++;if(enSet.has(w))en++}return{pt,en}}

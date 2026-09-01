@@ -148,7 +148,7 @@ app.get('/api/catalog',{...publicRate,config:{rateLimit:{max:100,timeWindow:'1 m
 app.get('/api/home',publicRate,async req=>{
   const fallback=currentSeason(),season=['WINTER','SPRING','SUMMER','FALL'].includes(String(req.query?.season||''))?String(req.query.season):fallback.season,year=safeInt(req.query?.year,1960,2100)||fallback.year;
   const now=Math.floor(Date.now()/1000),bucket=Math.floor(now/300),end=now+7*86400;
-  return cacheRemember(`home:v2:${season}:${year}:${bucket}`,60,async()=>{
+  return cacheRemember(`home:v3:${season}:${year}:${bucket}`,60,async()=>{
     const [seasonData,schedule,top,popular,reading,topReading,soon]=await Promise.all([
       getCatalog({page:1,perPage:22,season,year,sort:'POPULAR'}).catch(()=>({items:[]})),getSchedule(now,end).catch(()=>[]),getCatalog({page:1,perPage:10,sort:'SCORE'}).catch(()=>({items:[]})),getCatalog({page:1,perPage:22,sort:'POPULAR'}).catch(()=>({items:[]})),getReading({page:1,perPage:18,sort:'POPULAR'}).catch(()=>({items:[]})),getReading({page:1,perPage:10,format:'MANGA',sort:'SCORE'}).catch(()=>({items:[]})),getCatalog({page:1,perPage:22,status:'NOT_YET_RELEASED',sort:'POPULAR'}).catch(()=>({items:[]}))
     ]);

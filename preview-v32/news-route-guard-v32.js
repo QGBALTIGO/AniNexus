@@ -5,7 +5,7 @@
     let path=u.searchParams.get('p')||u.pathname;
     if(IS_PAGES&&!u.searchParams.get('p'))path=path.replace(/^\/AniNexus/,'')||'/';
     path=String(path||'/').split('?')[0].replace(/\/+$/,'')||'/';
-    if(path!=='/noticias'&&!/^\/noticias\/[a-z0-9-]+$/.test(path))return;
+    if(path!=='/noticias'&&!/^\/noticias\/[a-z0-9_-]+$/i.test(path))return;
     window.__NX_NEWS_V32_ROUTE__=path;
     document.documentElement.classList.add('nx32-news-boot');
     const style=document.createElement('style');
