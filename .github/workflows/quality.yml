@@ -82,12 +82,12 @@ jobs:
           done
       - name: Build real production image
         run: docker build --pull -t aninexus-ci:${{ github.sha }} .
-      - name: Verify V42 shell, profiles, administration, media and Community inside production image
+      - name: Verify V43 shell, navigation, profiles, administration, media and Community inside production image
         run: |
           CID=$(docker create aninexus-ci:${{ github.sha }})
           trap 'docker rm -f "$CID" >/dev/null 2>&1 || true' EXIT
           docker cp "$CID:/app/public/index.html" /tmp/aninexus-index.html
-          grep -q '2026-09-01-v42.1.6' /tmp/aninexus-index.html
+          grep -q '2026-09-01-v43.0.0' /tmp/aninexus-index.html
           for FILE in \
             preview-v22/detail-stable-v22.js \
             preview-v38/admin-v38.js \
@@ -105,7 +105,9 @@ jobs:
             preview-v41/product-v41.css \
             preview-v42/product-v42.css \
             preview-v42/product-v42.js \
-            preview-v42/manga-v42.js; do
+            preview-v42/manga-v42.js \
+            preview-v42/header-v43.css \
+            preview-v42/header-v43.js; do
             OUT="/tmp/$(basename "$FILE")"
             docker cp "$CID:/app/public/$FILE" "$OUT"
             test -s "$OUT"

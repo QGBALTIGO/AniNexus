@@ -1,0 +1,138 @@
+/* AniNexus V43: global navigation, scroll state and notification drawer. */
+:root{--nx43-header-height:66px}
+html{scroll-padding-top:calc(var(--nx43-header-height) + 12px)}
+body.nx43-notifications-open{overflow:hidden}
+
+#topbar{
+  height:var(--nx43-header-height)!important;
+  transform:none!important;
+  border-bottom:1px solid transparent!important;
+  background:#12090e!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  will-change:auto!important;
+  transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease,backdrop-filter .2s ease!important
+}
+#topbar.is-scrolled{
+  border-bottom-color:rgba(255,255,255,.075)!important;
+  background:rgba(9,6,8,.94)!important;
+  box-shadow:0 9px 28px rgba(0,0,0,.2)!important;
+  backdrop-filter:blur(18px) saturate(1.08)!important
+}
+#topbar .topbar-inner{height:100%!important;min-height:0!important;padding-block:0!important;grid-template-columns:auto minmax(0,1fr) auto;gap:22px!important}
+#topbar .brand{gap:9px}
+#topbar .brand img{width:38px!important;height:38px!important}
+#topbar .brand span{font-size:20px!important;letter-spacing:0!important}
+#topbar .main-nav{height:100%;justify-content:center;gap:17px}
+#topbar .main-nav>a{height:100%;padding:0 1px;gap:6px;color:#94898e;font-size:11.5px;font-weight:800;letter-spacing:0;white-space:nowrap}
+#topbar .main-nav>a [data-icon]{display:inline-grid;place-items:center;color:#786d72;font-size:15px}
+#topbar .main-nav>a:hover,#topbar .main-nav>a.active{color:#f7f0f3}
+#topbar .main-nav>a.active [data-icon]{color:#f15a78}
+#topbar .main-nav>a.active:after{bottom:0;width:22px;height:2px;background:#ef4567;box-shadow:none}
+#topbar .top-actions{gap:4px}
+#topbar .top-actions>.icon-button,#topbar .top-actions>.menu-btn{
+  flex:0 0 36px;
+  width:36px;
+  height:36px;
+  min-height:36px;
+  padding:0;
+  border:1px solid transparent;
+  border-radius:8px;
+  background:transparent;
+  color:#a69ba0;
+  box-shadow:none
+}
+#topbar .top-actions>.icon-button:hover,#topbar .top-actions>.menu-btn:hover{border-color:rgba(255,255,255,.08);background:rgba(255,255,255,.045);color:#fff}
+#topbar .top-actions>.icon-button .ico,#topbar .top-actions>.menu-btn .ico{width:17px;height:17px;font-size:17px}
+#topbar .login-btn,#topbar .signup-btn{height:36px;min-height:36px;border-radius:8px;padding-inline:13px;font-size:11px;letter-spacing:0;box-shadow:none}
+#topbar .login-btn{border-color:rgba(255,255,255,.13);background:rgba(255,255,255,.025)}
+#topbar .signup-btn{border-color:rgba(255,255,255,.08);background:#e8325a}
+#topbar .signup-btn:hover{filter:brightness(1.06)}
+#topbar .nx38-account-chip{width:38px;height:38px;min-height:38px;justify-content:center;padding:0;border:1px solid rgba(255,255,255,.1);border-radius:50%;background:rgba(255,255,255,.025);box-shadow:none}
+#topbar .nx38-account-chip>i{width:32px;height:32px;border-radius:50%!important;overflow:hidden;background:#26121a;box-shadow:none}
+#topbar .nx38-account-chip>i img{width:100%;height:100%;padding:0!important;border-radius:50%;object-fit:cover!important;background:transparent!important}
+#topbar .nx38-account-chip>span{display:none}
+.nx43-notification-trigger{position:relative}
+.nx43-notification-badge{position:absolute;right:5px;top:5px;width:7px;height:7px;border:2px solid #0d080b;border-radius:50%;background:#f13d62;box-shadow:0 0 0 2px rgba(241,61,98,.16)}
+#topbar.is-scrolled .nx43-notification-badge{border-color:#090608}
+
+html[data-theme=light] #topbar{border-bottom-color:transparent!important;background:#fffafb!important;color:#2d2027!important;box-shadow:none!important}
+html[data-theme=light] #topbar.is-scrolled{border-bottom-color:rgba(48,27,38,.12)!important;background:rgba(255,250,251,.97)!important;box-shadow:0 8px 26px rgba(65,28,47,.07)!important}
+html[data-theme=light] #topbar :where(.brand,.main-nav>a,.icon-button,.menu-btn){color:#665a60!important}
+html[data-theme=light] #topbar .main-nav>a:hover,html[data-theme=light] #topbar .main-nav>a.active{color:#2e2027!important}
+html[data-theme=light] #topbar .main-nav>a.active [data-icon]{color:#d92d51!important}
+html[data-theme=light] #topbar .top-actions>:where(.icon-button,.menu-btn):hover{border-color:rgba(48,27,38,.1);background:rgba(48,27,38,.04)!important;color:#2e2027!important}
+html[data-theme=light] #topbar .login-btn{border-color:rgba(48,27,38,.16);background:#fff;color:#4b3b43}
+html[data-theme=light] #topbar .nx38-account-chip{border-color:rgba(48,27,38,.13);background:#fff}
+html[data-theme=light] .nx43-notification-badge{border-color:#fffafb}
+
+.nx43-notification-layer{position:fixed;z-index:980;inset:0;display:grid;justify-items:end}
+.nx43-notification-backdrop{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;border-radius:0;background:rgba(4,2,4,.58);backdrop-filter:blur(5px);cursor:default}
+.nx43-notification-sheet{position:relative;z-index:1;width:min(410px,100vw);height:100dvh;display:grid;grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden;border-left:1px solid rgba(255,255,255,.1);background:#100c10;color:#f5edf1;box-shadow:-24px 0 72px rgba(0,0,0,.46);animation:nx43PanelIn .2s ease both}
+@keyframes nx43PanelIn{from{transform:translateX(24px);opacity:0}to{transform:none;opacity:1}}
+.nx43-notification-sheet>header{min-height:72px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,.09)}
+.nx43-notification-sheet>header span{display:block;color:#b54b62;font-size:7px;font-weight:900;letter-spacing:0}
+.nx43-notification-sheet h2{margin:3px 0 0;font:800 20px/1.1 Manrope,sans-serif;letter-spacing:0}
+.nx43-notification-close{width:36px;height:36px;min-height:36px;padding:0;display:grid;place-items:center;border:1px solid rgba(255,255,255,.09);border-radius:8px;background:transparent;color:#a99da2;cursor:pointer}
+.nx43-notification-close:hover{background:rgba(255,255,255,.05);color:#fff}
+.nx43-notification-close .ico{width:17px;height:17px}
+.nx43-notification-list{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:6px 0}
+.nx43-notification-list>p,.nx43-notification-state{min-height:180px;margin:0;padding:34px 26px;display:grid;place-items:center;align-content:center;gap:8px;color:#8d8187;font-size:10.5px;line-height:1.55;text-align:center}
+.nx43-notification-state strong{color:#d7ccd1;font-size:11px}
+.nx43-notification-state button{height:34px;margin-top:4px;padding:0 12px;border:1px solid rgba(239,69,103,.28);border-radius:8px;background:rgba(227,38,79,.08);color:#ee7890;font-size:9px;font-weight:900;cursor:pointer}
+.nx43-notification-row{position:relative;width:100%;min-height:82px;padding:13px 18px;display:grid;grid-template-columns:10px minmax(0,1fr) auto;align-items:start;gap:10px;border:0;border-bottom:1px solid rgba(255,255,255,.065);border-radius:0;background:transparent;color:inherit;text-align:left;cursor:pointer}
+.nx43-notification-row:hover{background:rgba(255,255,255,.035)}
+.nx43-notification-row.is-unread{background:rgba(227,38,79,.045)}
+.nx43-notification-mark{width:7px;height:7px;margin-top:5px;border-radius:50%;background:#5c5257}
+.nx43-notification-row.is-unread .nx43-notification-mark{background:#ef4568;box-shadow:0 0 0 3px rgba(239,69,104,.1)}
+.nx43-notification-copy{min-width:0}
+.nx43-notification-copy strong{display:block;color:#f0e8eb;font-size:11px;line-height:1.35;letter-spacing:0}
+.nx43-notification-copy p{display:-webkit-box;margin:5px 0 0;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:3;color:#94878d;font-size:9.5px;line-height:1.45}
+.nx43-notification-row time{margin-top:1px;color:#75696f;font-size:8px;white-space:nowrap}
+.nx43-notification-sheet>footer{min-height:58px;padding:10px 18px;display:flex;align-items:center;border-top:1px solid rgba(255,255,255,.09);background:#0d090c}
+.nx43-notification-sheet>footer a{min-height:36px;display:inline-flex;align-items:center;gap:7px;color:#d8cdd1;font-size:9.5px;font-weight:900;letter-spacing:0}
+.nx43-notification-sheet>footer a:hover{color:#fff}
+.nx43-notification-sheet>footer .ico{width:14px;height:14px}
+
+html[data-theme=light] .nx43-notification-backdrop{background:rgba(40,24,32,.32)}
+html[data-theme=light] .nx43-notification-sheet{border-left-color:rgba(48,27,38,.13);background:#fffafb;color:#2d2027;box-shadow:-24px 0 65px rgba(65,28,47,.13)}
+html[data-theme=light] .nx43-notification-sheet>header,html[data-theme=light] .nx43-notification-row{border-color:rgba(48,27,38,.1)}
+html[data-theme=light] .nx43-notification-close{border-color:rgba(48,27,38,.12);color:#685a61}
+html[data-theme=light] .nx43-notification-close:hover{background:rgba(48,27,38,.045);color:#2d2027}
+html[data-theme=light] .nx43-notification-row:hover{background:rgba(48,27,38,.035)}
+html[data-theme=light] .nx43-notification-row.is-unread{background:rgba(217,45,81,.045)}
+html[data-theme=light] .nx43-notification-copy strong,html[data-theme=light] .nx43-notification-state strong{color:#33242b}
+html[data-theme=light] .nx43-notification-copy p{color:#786a71}
+html[data-theme=light] .nx43-notification-sheet>footer{border-color:rgba(48,27,38,.1);background:#fff7f9}
+html[data-theme=light] .nx43-notification-sheet>footer a{color:#4f3f47}
+
+@media(min-width:1181px){
+  #topbar .main-nav{display:flex!important}
+  #topbar .main-nav>a [data-icon]{display:inline-grid!important}
+  #topbar .top-actions>.menu-btn{display:none!important}
+  html[data-nx-auth-state=authenticated] #topbar .nx43-notification-trigger:not([hidden]){display:grid!important}
+}
+@media(max-width:1180px){
+  #topbar .topbar-inner{grid-template-columns:minmax(0,1fr) auto}
+  #topbar .main-nav{display:none!important}
+  #topbar .top-actions>.menu-btn{display:grid!important}
+  #topbar .nx43-notification-trigger{display:none!important}
+}
+@media(max-width:720px){
+  :root{--nx43-header-height:58px}
+  #topbar .topbar-inner{width:calc(100% - 24px)!important;padding-inline:0!important;gap:8px!important}
+  #topbar .brand img{width:36px!important;height:36px!important}
+  #topbar .brand span{font-size:18px!important}
+  #topbar .top-actions{gap:5px}
+  #topbar .login-btn{height:36px!important;min-height:36px!important;min-width:68px!important;padding-inline:11px!important;font-size:10px!important}
+  #topbar .nx38-account-chip{width:38px;max-width:38px;padding:0}
+  #topbar .top-actions>.menu-btn{width:36px!important;height:36px!important;min-height:36px!important;flex-basis:36px!important}
+  .nx43-notification-sheet{width:100vw;border-left:0}
+}
+@media(max-width:350px){
+  #topbar .topbar-inner{width:calc(100% - 18px)!important}
+  #topbar .brand{gap:6px}
+  #topbar .brand img{width:34px!important;height:34px!important}
+  #topbar .brand span{font-size:17px!important}
+}
+@media(prefers-reduced-motion:reduce){#topbar,.nx43-notification-sheet{transition:none!important;animation:none!important}}

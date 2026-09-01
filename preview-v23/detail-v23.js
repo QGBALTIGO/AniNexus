@@ -7,7 +7,7 @@
   try{
     const IS_PAGES=location.hostname.endsWith('github.io');
     const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='42.1.6';
+  const BUILD='43.0.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=window.__NX_DETAIL_V23_BOOT__||restored?.split('?')[0]||u.pathname;
