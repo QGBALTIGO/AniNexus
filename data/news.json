@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T20:18:13.506Z",
+  "generatedAt": "2026-09-01T21:06:25.383Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -49,17 +49,17 @@
   ],
   "stats": {
     "collected": 155,
-    "grouped": 120,
-    "published": 29,
-    "newStories": 24,
-    "deepArticles": 11,
-    "avgWords": 314,
-    "withHeroImage": 29,
+    "grouped": 119,
+    "published": 28,
+    "newStories": 23,
+    "deepArticles": 10,
+    "avgWords": 307,
+    "withHeroImage": 28,
     "withGallery": 2,
-    "withEmbeds": 4,
+    "withEmbeds": 3,
     "skippedTranslation": 96,
     "skippedQuality": 0,
-    "durationMs": 85110
+    "durationMs": 23321
   },
   "items": [
     {
@@ -91,7 +91,7 @@
         }
       ],
       "publishedAt": "2026-09-01T20:16:13.000Z",
-      "updatedAt": "2026-09-01T20:16:13.000Z",
+      "updatedAt": "2026-09-01T20:18:04.000Z",
       "expiresAt": "2026-09-08T20:16:13.000Z",
       "category": "Animes",
       "eventType": "SEASON",
@@ -342,7 +342,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-09-01T15:10:00.000Z",
-      "updatedAt": "2026-09-01T20:17:06.651Z",
+      "updatedAt": "2026-09-01T21:06:14.046Z",
       "expiresAt": "2026-09-08T15:10:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -424,7 +424,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-09-01T02:35:00.000Z",
-      "updatedAt": "2026-09-01T20:17:07.636Z",
+      "updatedAt": "2026-09-01T21:06:14.155Z",
       "expiresAt": "2026-09-08T02:35:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -506,7 +506,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-31T21:32:00.000Z",
-      "updatedAt": "2026-09-01T20:17:08.915Z",
+      "updatedAt": "2026-09-01T21:06:14.251Z",
       "expiresAt": "2026-09-07T21:32:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -957,7 +957,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-31T02:15:00.000Z",
-      "updatedAt": "2026-09-01T20:17:15.100Z",
+      "updatedAt": "2026-09-01T21:06:14.797Z",
       "expiresAt": "2026-09-07T02:15:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1039,7 +1039,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-31T01:55:00.000Z",
-      "updatedAt": "2026-09-01T20:17:15.100Z",
+      "updatedAt": "2026-09-01T21:06:14.797Z",
       "expiresAt": "2026-09-07T01:55:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1127,7 +1127,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T22:15:00.000Z",
-      "updatedAt": "2026-09-01T20:17:17.367Z",
+      "updatedAt": "2026-09-01T21:06:14.962Z",
       "expiresAt": "2026-09-05T22:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1209,7 +1209,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T20:45:00.000Z",
-      "updatedAt": "2026-09-01T20:17:18.059Z",
+      "updatedAt": "2026-09-01T21:06:15.009Z",
       "expiresAt": "2026-09-05T20:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1291,7 +1291,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T20:45:00.000Z",
-      "updatedAt": "2026-09-01T20:17:18.059Z",
+      "updatedAt": "2026-09-01T21:06:15.009Z",
       "expiresAt": "2026-09-05T20:45:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1373,7 +1373,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-29T15:13:00.000Z",
-      "updatedAt": "2026-09-01T20:17:20.369Z",
+      "updatedAt": "2026-09-01T21:06:15.212Z",
       "expiresAt": "2026-09-05T15:13:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1463,7 +1463,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T21:15:00.000Z",
-      "updatedAt": "2026-09-01T20:17:20.370Z",
+      "updatedAt": "2026-09-01T21:06:15.212Z",
       "expiresAt": "2026-09-04T21:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1551,7 +1551,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T21:05:00.000Z",
-      "updatedAt": "2026-09-01T20:17:20.370Z",
+      "updatedAt": "2026-09-01T21:06:15.212Z",
       "expiresAt": "2026-09-04T21:05:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -1633,7 +1633,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T19:15:00.000Z",
-      "updatedAt": "2026-09-01T20:17:21.003Z",
+      "updatedAt": "2026-09-01T21:06:15.248Z",
       "expiresAt": "2026-09-04T19:15:00.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -1828,7 +1828,7 @@
       "mediaGallery": [],
       "mediaEmbeds": [],
       "publishedAt": "2026-08-28T15:10:00.000Z",
-      "updatedAt": "2026-09-01T20:17:21.659Z",
+      "updatedAt": "2026-09-01T21:06:15.284Z",
       "expiresAt": "2026-09-04T15:10:00.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -2027,13 +2027,7 @@
       "mediaQuery": "2ª temporada de ‘Blue Box’ ganha pôster e trailer com novas músicas de abertura e encerramento",
       "mediaType": "anime",
       "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "id": "hJ6Y8PAOUk8",
-          "url": "https://www.youtube-nocookie.com/embed/hJ6Y8PAOUk8"
-        }
-      ],
+      "mediaEmbeds": [],
       "publishedAt": "2026-08-27T22:31:34.000Z",
       "updatedAt": "2026-08-27T22:41:45.000Z",
       "expiresAt": "2026-09-03T22:31:34.000Z",
@@ -2144,7 +2138,7 @@
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "mediaCount": 0,
-        "embedCount": 1,
+        "embedCount": 0,
         "sourcePagesRead": 1
       }
     },
@@ -2809,127 +2803,6 @@
         "sections": 4,
         "sourceCount": 1,
         "ingestMode": "html",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 1
-      }
-    },
-    {
-      "id": "jbox_anime-d0d48023",
-      "slug": "corrida-tematica-de-naruto-e-confirmada-em-sao-paulo-no-mes-de-dezembro-jbox_anime-d0d48023",
-      "source": "JBox",
-      "sourceType": "JBOX_ANIME",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Corrida temática de ‘Naruto’ é confirmada em São Paulo no mês de dezembro",
-      "originalTitle": null,
-      "summary": "Evento faz parte de uma série de iniciativas da franquia no Brasil e no mundo.",
-      "url": "https://www.jbox.com.br/2026/08/25/corrida-tematica-de-naruto-e-confirmada-em-sao-paulo-no-mes-de-dezembro",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/25/corrida-tematica-de-naruto-e-confirmada-em-sao-paulo-no-mes-de-dezembro",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/naruto-destacada.jpg",
-      "mediaQuery": "Corrida temática de ‘Naruto’ é confirmada em São Paulo no mês de dezembro",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "publishedAt": "2026-08-25T20:45:14.000Z",
-      "updatedAt": "2026-08-25T20:46:08.000Z",
-      "expiresAt": "2026-09-01T20:45:14.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [
-        "Evento faz parte de uma série de iniciativas da franquia no Brasil e no mundo.",
-        "A Ponto Org Eventos anunciou a realização de uma “Corrida do Naruto” em São Paulo, no mês de dezembro deste ano..",
-        "Especializada em eventos licenciados, a empresa anunciou a novidade com um post no Instagram , que confirma data e local: 20/12/2026 no Parque Villa Lobos :.",
-        "View this post on Instagram.",
-        "As inscrições para os corredores ainda não foram abertas, mas a Ponto Org Eventos afirmou que os fãs podem ficar de olho nas redes sociais da empresa para saberem dos próximos passos..",
-        "A confirmação da “Corrida Naruto” em São Paulo faz parte de uma série de iniciativas da franquia no Brasil e no mundo, que foram antecipadas ao JBox pela VIZ Media , durante entrevista realizada na LicensingCon Latam 2026 ..",
-        "Além da corrida, já foi confirmada também uma exposição imersiva no país , organizada pela empresa Multiverse Experience , e um café temático no bairro da Liberdade (cujo lançamento estava previsto para julho, mas precisou ser adiado).",
-        "Há ainda um filme live-action hollywoodiano em fase de pré-produção, com o início da busca pelo elenco principal ..",
-        "Está pronto para correr por aí com os braços para trás?",
-        "A história de Naruto foi escrita e ilustrada por Masashi Kishimoto em 72 volumes, lançados entre 1999 e 2014.",
-        "A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila.",
-        "Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura..",
-        "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, Naruto Shippuden mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017.",
-        "Atualmente, Kishimoto assina a publicação de Boruto ao lado de Ukyou Kodachi , contando a história do filho de Naruto..",
-        "Para quem deseja retornar à Vila da Folha antes da chegada do live-action, os episódios de Naruto estão disponíveis em plataformas como Crunchyroll , Netflix , HBO Max, Disney+, Pluto TV e Mercado Play .",
-        "Já o mangá é publicado no Brasil pela Panini ..",
-        "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-      ],
-      "contentSections": [
-        {
-          "heading": "O que aconteceu",
-          "paragraphs": [
-            "Evento faz parte de uma série de iniciativas da franquia no Brasil e no mundo."
-          ],
-          "bullets": [
-            "Evento faz parte de uma série de iniciativas da franquia no Brasil e no mundo.",
-            "A Ponto Org Eventos anunciou a realização de uma “Corrida do Naruto” em São Paulo, no mês de dezembro deste ano..",
-            "Especializada em eventos licenciados, a empresa anunciou a novidade com um post no Instagram , que confirma data e local: 20/12/2026 no Parque Villa Lobos :."
-          ]
-        },
-        {
-          "heading": "Estreia, lançamento e disponibilidade",
-          "bullets": [
-            "Evento faz parte de uma série de iniciativas da franquia no Brasil e no mundo.",
-            "A Ponto Org Eventos anunciou a realização de uma “Corrida do Naruto” em São Paulo, no mês de dezembro deste ano..",
-            "Especializada em eventos licenciados, a empresa anunciou a novidade com um post no Instagram , que confirma data e local: 20/12/2026 no Parque Villa Lobos :.",
-            "A confirmação da “Corrida Naruto” em São Paulo faz parte de uma série de iniciativas da franquia no Brasil e no mundo, que foram antecipadas ao JBox pela VIZ Media , durante entrevista realizada na LicensingCon Latam 2026 ..",
-            "Além da corrida, já foi confirmada também uma exposição imersiva no país , organizada pela empresa Multiverse Experience , e um café temático no bairro da Liberdade (cujo lançamento estava previsto para julho, mas precisou ser adiado).",
-            "A história de Naruto foi escrita e ilustrada por Masashi Kishimoto em 72 volumes, lançados entre 1999 e 2014.",
-            "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, Naruto Shippuden mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017."
-          ]
-        },
-        {
-          "heading": "Produção, equipe e elenco",
-          "bullets": [
-            "Há ainda um filme live-action hollywoodiano em fase de pré-produção, com o início da busca pelo elenco principal .."
-          ]
-        },
-        {
-          "heading": "História e contexto da obra",
-          "bullets": [
-            "A história de Naruto foi escrita e ilustrada por Masashi Kishimoto em 72 volumes, lançados entre 1999 e 2014.",
-            "A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila.",
-            "Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura..",
-            "Atualmente, Kishimoto assina a publicação de Boruto ao lado de Ukyou Kodachi , contando a história do filho de Naruto.."
-          ]
-        },
-        {
-          "heading": "Outros detalhes confirmados",
-          "bullets": [
-            "View this post on Instagram.",
-            "As inscrições para os corredores ainda não foram abertas, mas a Ponto Org Eventos afirmou que os fãs podem ficar de olho nas redes sociais da empresa para saberem dos próximos passos..",
-            "Está pronto para correr por aí com os braços para trás?",
-            "Para quem deseja retornar à Vila da Folha antes da chegada do live-action, os episódios de Naruto estão disponíveis em plataformas como Crunchyroll , Netflix , HBO Max, Disney+, Pluto TV e Mercado Play .",
-            "Já o mangá é publicado no Brasil pela Panini ..",
-            "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram ."
-          ]
-        },
-        {
-          "heading": "Acompanhamento AniNexus",
-          "paragraphs": [
-            "A mesma URL é atualizada quando surgem fatos relevantes adicionais, evitando várias matérias rasas sobre o mesmo assunto."
-          ]
-        }
-      ],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/25/corrida-tematica-de-naruto-e-confirmada-em-sao-paulo-no-mes-de-dezembro",
-          "publishedAt": "2026-08-25T20:45:14.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 522,
-      "qualityScore": 0.91,
-      "contentVersion": 1,
-      "coverage": {
-        "facts": 17,
-        "sections": 6,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
         "mediaCount": 0,
         "embedCount": 0,
         "sourcePagesRead": 1
