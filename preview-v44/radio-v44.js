@@ -6,6 +6,7 @@
   const STREAM_URL = 'https://listen.moe/fallback';
   const GATEWAY_URL = 'wss://listen.moe/gateway_v2';
   const RADIO_STORAGE = 'aninexus:radio:v44';
+  const RADIO_RESUME_STORAGE = 'aninexus:radio:resume:v44';
   const RADIO_TAB_STORAGE = 'aninexus:radio:active-tab:v44';
   const tabId = globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
   const app = document.querySelector('#app');
@@ -75,6 +76,13 @@
   const saved = (() => {
     try { return JSON.parse(localStorage.getItem(RADIO_STORAGE) || '{}'); } catch { return {}; }
   })();
+  const resumeRequested = (() => {
+    try {
+      const value = JSON.parse(sessionStorage.getItem(RADIO_RESUME_STORAGE) || 'null');
+      sessionStorage.removeItem(RADIO_RESUME_STORAGE);
+      return value?.playing === true && Date.now() - Number(value.at || 0) < 20000;
+    } catch { return false; }
+  })();
   const audio = document.createElement('audio');
   audio.id = 'nx44RadioAudio';
   audio.hidden = true;
@@ -99,6 +107,16 @@
 
   function persistAudioSettings() {
     try { localStorage.setItem(RADIO_STORAGE, JSON.stringify({ volume: audio.volume, muted: audio.muted })); } catch {}
+  }
+
+  function preservePlaybackForNavigation() {
+    try {
+      if (playIntent && (state === 'playing' || state === 'loading')) {
+        sessionStorage.setItem(RADIO_RESUME_STORAGE, JSON.stringify({ playing: true, at: Date.now() }));
+      } else {
+        sessionStorage.removeItem(RADIO_RESUME_STORAGE);
+      }
+    } catch {}
   }
 
   function announcePlayback() {
@@ -323,6 +341,10 @@
     clearSocketTimers();
     if (playIntent) { state = 'error'; render(); }
   });
+  addEventListener('pagehide', preservePlaybackForNavigation);
+  addEventListener('pageshow', event => {
+    if (event.persisted && playIntent && audio.paused) startPlayback({ reset: true });
+  });
   addEventListener('popstate', scheduleMount);
   addEventListener('aninexus:navigate', scheduleMount);
   addEventListener('aninexus:route-ready', scheduleMount);
@@ -339,4 +361,5 @@
   window.AniNexusRadio = Object.freeze({ play: startPlayback, pause: stopPlayback, audio });
   scheduleMount();
   connectMetadata();
+  if (resumeRequested) setTimeout(() => startPlayback({ reset: true }), 0);
 })();
