@@ -649,21 +649,21 @@ html[data-theme=light] .nx38-impressions-home .nx38-impressions-head>div:first-c
   background:linear-gradient(90deg,var(--nx44-rail-surface) 0,color-mix(in srgb,var(--nx44-rail-surface) 76%,transparent) 40%,transparent 100%)
 }
 
-/* V44.4.4: calmer header typography and subtle artwork in the live community panel. */
+/* V44.4.5: balanced ANIQuim-like typography and visible community artwork. */
 #topbar .main-nav>a,
 #topbar .login-btn,
 #topbar .signup-btn{
-  font-weight:500!important;
+  font-weight:600!important;
   text-shadow:none!important
 }
 .nx35-live>header span{
-  font-size:8px;
+  font-size:8.5px;
   font-weight:600;
   letter-spacing:.1em
 }
 .nx35-live>header a{
-  font-size:9px;
-  font-weight:500;
+  font-size:9.5px;
+  font-weight:600;
   letter-spacing:0
 }
 .nx35-live-list .nx35-community-card.compact{
@@ -672,22 +672,37 @@ html[data-theme=light] .nx38-impressions-home .nx38-impressions-head>div:first-c
 }
 .nx35-live-list .nx35-community-card.compact:before{
   display:block;
+  background-image:linear-gradient(90deg,rgba(15,10,13,.98) 0%,rgba(15,10,13,.84) 48%,rgba(15,10,13,.7) 100%),var(--community-bg);
+  background-size:cover;
   background-position:center 28%;
-  opacity:.22
+  opacity:.74
 }
 .nx35-live-list .nx35-community-card.compact p{
-  font-size:10.5px;
-  font-weight:400;
-  line-height:1.48
+  font-size:11px;
+  font-weight:600;
+  line-height:1.46
 }
 .nx35-live-list .nx35-community-card.compact p b,
 .nx35-live-list .nx35-community-card.compact p strong{
-  font-weight:500
+  font-weight:600
 }
 .nx35-live-list .nx35-community-card.compact small{
-  font-size:8.5px;
-  font-weight:400
+  font-size:9px;
+  font-weight:500
 }
+html[data-theme=light] .nx35-live-list .nx35-community-card.compact:before{
+  background-image:linear-gradient(90deg,rgba(255,250,252,.98) 0%,rgba(255,250,252,.86) 48%,rgba(255,250,252,.72) 100%),var(--community-bg)
+}
+.nx18-air,
+.nx18-air b,
+.nx18-card h3,
+.nx18-countdown>span,
+.nx18-score b,
+.nx18-episode small{
+  font-weight:600!important
+}
+.nx18-card h3{letter-spacing:0!important}
+.nx18-countdown small{font-weight:500!important}
 .nx35-home .tonal .nx35-edge.nx44-rail-frame:after{
   background:linear-gradient(270deg,var(--nx44-rail-surface) 0,color-mix(in srgb,var(--nx44-rail-surface) 76%,transparent) 40%,transparent 100%)
 }

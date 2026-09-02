@@ -5,7 +5,7 @@ const origin = process.env.ANINEXUS_E2E_ORIGIN || 'http://qgbaltigo.github.io:41
 const output = process.env.ANINEXUS_VISUAL_OUTPUT || 'test-results/visual-v42';
 const executablePath = process.env.ANINEXUS_CHROMIUM_EXECUTABLE_PATH || undefined;
 const mappedHost = new URL(origin).hostname === 'qgbaltigo.github.io';
-const buildUrl = route => `${origin}?build=44.4.4&p=${encodeURIComponent(route)}`;
+const buildUrl = route => `${origin}?build=44.4.5&p=${encodeURIComponent(route)}`;
 const artwork = new URL('assets/logo.png', origin).href;
 const communityArtwork = new URL('assets/radio-background-v44.png', origin).href;
 const media = (id, type = 'ANIME') => ({
@@ -79,20 +79,20 @@ try {
     });
     await page.addInitScript(theme => localStorage.setItem('aninexus:theme', theme), item.theme);
     if (item.route === '/') {
-      await page.addInitScript(({ cover, avatar }) => localStorage.setItem('aninexus:community:activity:v40', JSON.stringify([{
-        id: 'visual-community',
+      await page.addInitScript(({ cover, avatar }) => localStorage.setItem('aninexus:community:activity:v40', JSON.stringify(Array.from({ length: 3 }, (_, index) => ({
+        id: `visual-community-${index}`,
         kind: 'state',
-        media_id: 101,
-        username: 'ani_member',
-        display_name: 'Membro AniNexus',
+        media_id: 101 + index,
+        username: index === 1 ? 'kayky' : 'ani_member',
+        display_name: index === 1 ? 'Kayky Sousa' : 'Membro AniNexus',
         avatar_url: avatar,
-        status: 'CURRENT',
-        created_at: new Date().toISOString(),
-        title: 'Obra de teste 101',
+        status: ['CURRENT', 'PLANNING', 'COMPLETED'][index],
+        created_at: new Date(Date.now() - index * 3_600_000).toISOString(),
+        title: `Obra de teste ${101 + index}`,
         cover,
         banner: cover,
-        media: { id: 101, title: 'Obra de teste 101', cover },
-      }])), { cover: communityArtwork, avatar: artwork });
+        media: { id: 101 + index, title: `Obra de teste ${101 + index}`, cover },
+      })))), { cover: communityArtwork, avatar: artwork });
     }
     await page.goto(buildUrl(item.route), { waitUntil: 'domcontentloaded', timeout: 45_000 });
     await page.locator(item.selector).first().waitFor({ state: 'visible', timeout: 30_000 });
@@ -112,6 +112,10 @@ try {
     }));
     await page.screenshot({ path: `${output}/${item.name}-viewport.png` });
     await page.screenshot({ path: `${output}/${item.name}.png`, fullPage: true });
+    if (item.name === 'desktop-home-dark') {
+      await page.locator('.nx35-live').screenshot({ path: `${output}/desktop-home-community-panel.png` });
+      await page.locator('#nx35Schedule').locator('xpath=ancestor::section[1]').screenshot({ path: `${output}/desktop-home-schedule.png` });
+    }
     results.push({ name: item.name, ...geometry, errors });
     await context.close();
   }
