@@ -5,8 +5,9 @@ const origin = process.env.ANINEXUS_E2E_ORIGIN || 'http://qgbaltigo.github.io:41
 const output = process.env.ANINEXUS_VISUAL_OUTPUT || 'test-results/visual-v42';
 const executablePath = process.env.ANINEXUS_CHROMIUM_EXECUTABLE_PATH || undefined;
 const mappedHost = new URL(origin).hostname === 'qgbaltigo.github.io';
-const buildUrl = route => `${origin}?build=44.4.3&p=${encodeURIComponent(route)}`;
+const buildUrl = route => `${origin}?build=44.4.4&p=${encodeURIComponent(route)}`;
 const artwork = new URL('assets/logo.png', origin).href;
+const communityArtwork = new URL('assets/radio-background-v44.png', origin).href;
 const media = (id, type = 'ANIME') => ({
   id,
   type,
@@ -77,6 +78,22 @@ try {
       await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ data: graphData(body.query, body.variables) }) });
     });
     await page.addInitScript(theme => localStorage.setItem('aninexus:theme', theme), item.theme);
+    if (item.route === '/') {
+      await page.addInitScript(({ cover, avatar }) => localStorage.setItem('aninexus:community:activity:v40', JSON.stringify([{
+        id: 'visual-community',
+        kind: 'state',
+        media_id: 101,
+        username: 'ani_member',
+        display_name: 'Membro AniNexus',
+        avatar_url: avatar,
+        status: 'CURRENT',
+        created_at: new Date().toISOString(),
+        title: 'Obra de teste 101',
+        cover,
+        banner: cover,
+        media: { id: 101, title: 'Obra de teste 101', cover },
+      }])), { cover: communityArtwork, avatar: artwork });
+    }
     await page.goto(buildUrl(item.route), { waitUntil: 'domcontentloaded', timeout: 45_000 });
     await page.locator(item.selector).first().waitFor({ state: 'visible', timeout: 30_000 });
     await page.locator(item.ready).first().waitFor({ state: 'visible', timeout: 30_000 });

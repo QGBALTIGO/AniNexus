@@ -612,7 +612,7 @@ html[data-theme=light] .nx38-impressions-home .nx38-impressions-head>div:first-c
   color:#f0446d;
   font-family:'Nunito Sans',system-ui,sans-serif!important;
   font-size:32px!important;
-  font-style:normal!important;
+  font-style:italic!important;
   font-weight:400!important;
   font-variant-numeric:tabular-nums;
   line-height:.9!important;
@@ -647,6 +647,46 @@ html[data-theme=light] .nx38-impressions-home .nx38-impressions-head>div:first-c
 }
 .nx35-home .tonal .nx35-edge.nx44-rail-frame:before{
   background:linear-gradient(90deg,var(--nx44-rail-surface) 0,color-mix(in srgb,var(--nx44-rail-surface) 76%,transparent) 40%,transparent 100%)
+}
+
+/* V44.4.4: calmer header typography and subtle artwork in the live community panel. */
+#topbar .main-nav>a,
+#topbar .login-btn,
+#topbar .signup-btn{
+  font-weight:500!important;
+  text-shadow:none!important
+}
+.nx35-live>header span{
+  font-size:8px;
+  font-weight:600;
+  letter-spacing:.1em
+}
+.nx35-live>header a{
+  font-size:9px;
+  font-weight:500;
+  letter-spacing:0
+}
+.nx35-live-list .nx35-community-card.compact{
+  isolation:isolate;
+  padding-inline:8px
+}
+.nx35-live-list .nx35-community-card.compact:before{
+  display:block;
+  background-position:center 28%;
+  opacity:.22
+}
+.nx35-live-list .nx35-community-card.compact p{
+  font-size:10.5px;
+  font-weight:400;
+  line-height:1.48
+}
+.nx35-live-list .nx35-community-card.compact p b,
+.nx35-live-list .nx35-community-card.compact p strong{
+  font-weight:500
+}
+.nx35-live-list .nx35-community-card.compact small{
+  font-size:8.5px;
+  font-weight:400
 }
 .nx35-home .tonal .nx35-edge.nx44-rail-frame:after{
   background:linear-gradient(270deg,var(--nx44-rail-surface) 0,color-mix(in srgb,var(--nx44-rail-surface) 76%,transparent) 40%,transparent 100%)

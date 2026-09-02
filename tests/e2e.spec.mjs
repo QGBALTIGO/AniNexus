@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.4.3&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.4.4&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),local=new URL(requested.pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,50*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -24,7 +24,7 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-02-v44.4.3')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-02-v44.4.4')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -111,7 +111,7 @@ test('Home schedule uses bare official brands aligned episodes and one content s
   expect(episodeGeometry.insideLeft).toBe(true);
   expect(episodeGeometry.insideTop).toBe(true);
   expect(episodeGeometry.orderGap).toBeGreaterThanOrEqual(2);
-  expect(episodeGeometry.fontStyle).toBe('normal');
+  expect(episodeGeometry.fontStyle).toBe('italic');
   expect(episodeGeometry.fontSize).toBe(32);
   expect(episodeGeometry.letterSpacing).toBe('normal');
 
@@ -135,7 +135,7 @@ test('mobile header always exposes account access while anonymous',async({page})
 
 test('mobile Home starts with transparent header centered copy spacing and clipped member avatar',async({page})=>{
   await page.setViewportSize({width:390,height:844});
-  await page.addInitScript(({pixel,portrait})=>localStorage.setItem('aninexus:community:activity:v40',JSON.stringify([{id:'avatar-test',kind:'state',media_id:101,username:'kayky',display_name:'Kayky Sousa',avatar_url:portrait,status:'CURRENT',created_at:new Date().toISOString(),title:'Anime Teste 101',cover:pixel,media:{id:101,title:'Anime Teste 101',cover:pixel}}])),{pixel,portrait});
+  await page.addInitScript(({pixel,portrait})=>localStorage.setItem('aninexus:community:activity:v40',JSON.stringify([{id:'avatar-test',kind:'state',media_id:101,username:'kayky',display_name:'Kayky Sousa',avatar_url:portrait,status:'CURRENT',created_at:new Date().toISOString(),title:'Anime Teste 101',cover:pixel,banner:portrait,media:{id:101,title:'Anime Teste 101',cover:pixel}}])),{pixel,portrait});
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
   await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});
   const avatar=page.locator('#nx35CommunityHero .nx35-community-avatar>img').first();
@@ -152,6 +152,17 @@ test('mobile Home starts with transparent header centered copy spacing and clipp
   expect(avatarGeometry.fit).toBe('cover');
   expect(avatarGeometry.position).toMatch(/^50% 0(?:px|%)$/);
   expect(avatarGeometry.overflow).toBe('hidden');
+  const communityPresentation=await page.locator('#nx35CommunityHero .nx35-community-card.compact').first().evaluate(card=>{const before=getComputedStyle(card,'::before'),copy=card.querySelector('p'),name=copy.querySelector('b'),title=copy.querySelector('strong'),time=card.querySelector('small');return{display:before.display,backgroundImage:before.backgroundImage,opacity:parseFloat(before.opacity),copySize:parseFloat(getComputedStyle(copy).fontSize),copyWeight:parseInt(getComputedStyle(copy).fontWeight,10),nameWeight:parseInt(getComputedStyle(name).fontWeight,10),titleWeight:parseInt(getComputedStyle(title).fontWeight,10),timeSize:parseFloat(getComputedStyle(time).fontSize),timeWeight:parseInt(getComputedStyle(time).fontWeight,10)}});
+  expect(communityPresentation.display).toBe('block');
+  expect(communityPresentation.backgroundImage).toContain('image/svg+xml');
+  expect(communityPresentation.opacity).toBeGreaterThanOrEqual(.18);
+  expect(communityPresentation.opacity).toBeLessThanOrEqual(.24);
+  expect(communityPresentation.copySize).toBeGreaterThanOrEqual(10.5);
+  expect(communityPresentation.copyWeight).toBeLessThanOrEqual(400);
+  expect(communityPresentation.nameWeight).toBeLessThanOrEqual(500);
+  expect(communityPresentation.titleWeight).toBeLessThanOrEqual(500);
+  expect(communityPresentation.timeSize).toBeGreaterThanOrEqual(8.5);
+  expect(communityPresentation.timeWeight).toBeLessThanOrEqual(400);
   const initial=await page.evaluate(()=>{const header=document.querySelector('#topbar'),copy=document.querySelector('.nx35-hero-copy'),live=document.querySelector('.nx35-live'),grid=document.querySelector('.nx35-hero-grid'),copyBox=copy.getBoundingClientRect(),liveBox=live.getBoundingClientRect(),style=getComputedStyle(header);return{background:style.backgroundColor,position:style.position,textAlign:getComputedStyle(copy).textAlign,gap:parseFloat(getComputedStyle(grid).rowGap),separation:liveBox.top-copyBox.bottom}});
   expect(initial.background).toBe('rgba(0, 0, 0, 0)');
   expect(initial.position).toBe('fixed');
@@ -336,6 +347,8 @@ test('News and authentication remain healthy after V40',async({page})=>{await pa
 test('mobile authentication is compact readable and never overflows',async({page})=>{for(const width of [320,360,390,430]){await page.setViewportSize({width,height:844});await page.goto(pageUrl('/login'),{waitUntil:'domcontentloaded'});const auth=page.locator('.nx38-auth-page');await expect(auth).toBeVisible({timeout:15000});await expect(page.locator('.nx38-auth-benefits')).toBeHidden();await expect(page.locator('.nx38-auth-copy>p')).toBeHidden();const storyHeight=await page.locator('.nx38-auth-story').evaluate(element=>element.getBoundingClientRect().height);expect(storyHeight).toBeLessThan(140);await noOverflow(page,2)}});
 
 test('desktop header keeps only the six approved destinations and gains chrome after scroll',async({page})=>{await page.setViewportSize({width:1440,height:900});await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});const labels=await page.locator('.main-nav>a').allTextContents();expect(labels.map(x=>x.trim())).toEqual(['Início','Animes','Mangás','Calendário','Temporadas','Comunidade']);await expect(page.locator('.main-nav')).toBeVisible();await expect(page.locator('.menu-btn')).toBeHidden();await expect(page.locator('.top-actions>[data-action="search"]')).toBeVisible();await expect(page.locator('.top-actions>[data-action="theme"]')).toBeVisible();await expect(page.locator('.top-actions>[data-action="notifications"]')).toBeHidden();await expect(page.locator('.top-actions>[data-action="login"]')).toBeVisible();await expect(page.locator('.top-actions>[data-action="register"]')).toBeVisible();await expect(page.locator('#topbar')).not.toHaveClass(/is-scrolled/);await page.evaluate(()=>scrollTo(0,180));await expect(page.locator('#topbar')).toHaveClass(/is-scrolled/);await expect(page.locator('#app main')).toHaveCount(1);await expect(page.locator('main main')).toHaveCount(0);await noOverflow(page,2)});
+
+test('desktop header uses restrained navigation and account typography',async({page})=>{await page.setViewportSize({width:1440,height:900});await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.main-nav')).toBeVisible({timeout:30000});const typography=await page.evaluate(()=>{const read=element=>{const style=getComputedStyle(element);return{weight:parseInt(style.fontWeight,10),shadow:style.textShadow,spacing:style.letterSpacing}};return{nav:[...document.querySelectorAll('.main-nav>a')].map(read),login:read(document.querySelector('.top-actions>[data-action="login"]')),signup:read(document.querySelector('.top-actions>[data-action="register"]'))}});expect(typography.nav.every(item=>item.weight<=500&&item.shadow==='none')).toBe(true);expect(typography.login.weight).toBeLessThanOrEqual(500);expect(typography.signup.weight).toBeLessThanOrEqual(500);expect(typography.login.shadow).toBe('none');expect(typography.signup.shadow).toBe('none');expect(typography.signup.spacing).toBe('normal');await noOverflow(page,2)});
 
 test('authenticated notification drawer loads once and marks an item as read',async({page})=>{await page.setViewportSize({width:1440,height:900});await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await page.evaluate(()=>{window.__nx43NotificationCalls=[];window.AniNexusAuth={api:async(path,options={})=>{window.__nx43NotificationCalls.push({path,method:options.method||'GET'});if(options.method==='PATCH')return{};return{items:[{id:'11111111-1111-4111-8111-111111111111',kind:'SYSTEM',title:'Primeira conquista',body:'Você desbloqueou um novo marco.',href:null,read_at:null,created_at:new Date().toISOString()}]}}};document.documentElement.dataset.nxAuthState='authenticated'});const trigger=page.locator('[data-action="notifications"]');await expect(trigger).toBeVisible();await trigger.click();await expect(page.locator('#notificationPanel')).toBeVisible();await expect(page.locator('.nx43-notification-row')).toContainText('Primeira conquista');await expect(page.locator('.nx43-notification-badge')).toBeVisible();await page.locator('.nx43-notification-row').click();await expect(page.locator('.nx43-notification-row')).not.toHaveClass(/is-unread/);await expect(page.locator('.nx43-notification-badge')).toBeHidden();const calls=await page.evaluate(()=>window.__nx43NotificationCalls);expect(calls.filter(call=>call.path.includes('/api/me/notifications?limit=20'))).toHaveLength(1);expect(calls.some(call=>call.method==='PATCH')).toBe(true);await page.getByRole('button',{name:'Fechar notificações'}).first().click();await expect(page.locator('#notificationPanel')).toBeHidden()});
 
