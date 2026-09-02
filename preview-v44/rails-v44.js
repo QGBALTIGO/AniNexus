@@ -9,14 +9,23 @@
   let railSequence = 0;
   let scanFrame = 0;
 
-  function icon(target, name, fallback) {
+  function svgIcon(pathData, className) {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    svg.classList.add(className);
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('aria-hidden', 'true');
+    path.setAttribute('d', pathData);
+    svg.append(path);
+    return svg;
+  }
+
+  function icon(target, direction) {
     const holder = document.createElement('span');
-    holder.className = `nx44-rail-icon nx44-rail-icon--${name}`;
-    holder.dataset.icon = name;
+    holder.className = `nx44-rail-icon nx44-rail-icon--${direction}`;
     holder.setAttribute('aria-hidden', 'true');
-    holder.textContent = fallback;
+    holder.append(svgIcon(direction === 'prev' ? 'm15 18-6-6 6-6' : 'm9 18 6-6-6-6', 'nx44-rail-chevron'));
     target.replaceChildren(holder);
-    try { window.injectIcons?.(target); } catch {}
   }
 
   function railTitle(rail) {
@@ -37,7 +46,7 @@
       const label = direction === 'prev' ? 'Itens anteriores' : 'Próximos itens';
       button.setAttribute('aria-label', `${label} de ${railTitle(rail)}`);
     }
-    icon(button, 'back', '‹');
+    icon(button, direction);
     actions.insertBefore(button, actions.querySelector(':scope > a'));
     return button;
   }
@@ -49,11 +58,9 @@
     link.querySelector('svg,[data-icon]')?.remove();
     const holder = document.createElement('span');
     holder.className = 'nx44-rail-link-icon';
-    holder.dataset.icon = 'arrow';
     holder.setAttribute('aria-hidden', 'true');
-    holder.textContent = '→';
+    holder.append(svgIcon('M5 12h14m-5-5 5 5-5 5', 'nx44-rail-link-arrow'));
     link.append(holder);
-    try { window.injectIcons?.(link); } catch {}
   }
 
   function ensureFrame(rail) {
@@ -124,7 +131,7 @@
     const unit = Math.max(1, itemWidth + gap);
     const visibleItems = Math.max(1, Math.floor((rail.clientWidth + gap) / unit));
     return {
-      distance: Math.min(rail.clientWidth * .9, unit * Math.max(1, visibleItems - 1)),
+      distance: Math.min(rail.clientWidth, unit * visibleItems),
       unit
     };
   }

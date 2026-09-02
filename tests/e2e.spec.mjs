@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.4.0&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.4.1&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),local=new URL(requested.pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,50*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -24,7 +24,7 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-02-v44.4.0')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-02-v44.4.1')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -49,8 +49,30 @@ test('Home rails share aligned controls smooth movement and directional fades',a
   const geometry=await actions.evaluate(element=>{const box=element.getBoundingClientRect(),head=element.closest('.nx35-head').getBoundingClientRect();return{left:box.left,right:box.right,headLeft:head.left,headRight:head.right}});
   expect(geometry.left).toBeGreaterThanOrEqual(geometry.headLeft-.5);
   expect(geometry.right).toBeLessThanOrEqual(geometry.headRight+.5);
+  const presentation=await section.evaluate(element=>{
+    const head=element.querySelector('.nx35-head'),copy=head.firstElementChild,actions=head.querySelector('.nx44-rail-actions'),button=actions.querySelector('.nx44-rail-button'),icon=button.querySelector('.nx44-rail-chevron'),link=actions.querySelector('a'),title=head.querySelector('h2'),subtitle=head.querySelector('p'),cardTitle=element.querySelector('.nx44-rail h3');
+    const copyBox=copy.getBoundingClientRect(),actionsBox=actions.getBoundingClientRect(),buttonBox=button.getBoundingClientRect(),iconBox=icon.getBoundingClientRect(),buttonStyle=getComputedStyle(button);
+    return{copyBottom:copyBox.bottom,actionsTop:actionsBox.top,buttonWidth:buttonBox.width,buttonHeight:buttonBox.height,iconCenterX:Math.abs((iconBox.left+iconBox.right)/2-(buttonBox.left+buttonBox.right)/2),iconCenterY:Math.abs((iconBox.top+iconBox.bottom)/2-(buttonBox.top+buttonBox.bottom)/2),borderWidth:parseFloat(buttonStyle.borderTopWidth),background:buttonStyle.backgroundColor,titleSize:parseFloat(getComputedStyle(title).fontSize),subtitleSize:parseFloat(getComputedStyle(subtitle).fontSize),linkSize:parseFloat(getComputedStyle(link).fontSize),cardTitleSize:parseFloat(getComputedStyle(cardTitle).fontSize)};
+  });
+  expect(presentation.copyBottom).toBeLessThanOrEqual(presentation.actionsTop+.5);
+  expect(presentation.buttonWidth).toBeLessThanOrEqual(32.5);
+  expect(presentation.buttonHeight).toBeLessThanOrEqual(32.5);
+  expect(presentation.iconCenterX).toBeLessThanOrEqual(.5);
+  expect(presentation.iconCenterY).toBeLessThanOrEqual(.5);
+  expect(presentation.borderWidth).toBe(0);
+  expect(presentation.background).toBe('rgba(0, 0, 0, 0)');
+  expect(presentation.titleSize).toBeGreaterThanOrEqual(24);
+  expect(presentation.subtitleSize).toBeGreaterThanOrEqual(13);
+  expect(presentation.linkSize).toBeGreaterThanOrEqual(12);
+  expect(presentation.cardTitleSize).toBeGreaterThanOrEqual(14);
+  const movement=await rail.evaluate(element=>{
+    const first=element.firstElementChild,second=first?.nextElementSibling,style=getComputedStyle(element),gap=parseFloat(style.columnGap||style.gap)||0,unit=second?second.getBoundingClientRect().left-first.getBoundingClientRect().left:first.getBoundingClientRect().width+gap,visibleItems=Math.max(1,Math.floor((element.clientWidth+gap)/unit)),max=Math.max(0,element.scrollWidth-element.clientWidth);
+    return{unit,visibleItems,target:Math.min(max,element.clientWidth,unit*visibleItems)};
+  });
+  expect(movement.visibleItems).toBeGreaterThanOrEqual(2);
+  expect(movement.target).toBeGreaterThan(movement.unit*1.5);
   await next.click();
-  await expect.poll(()=>rail.evaluate(element=>element.scrollLeft)).toBeGreaterThan(40);
+  await expect.poll(()=>rail.evaluate(element=>element.scrollLeft)).toBeGreaterThanOrEqual(movement.target-5);
   await expect(frame).toHaveAttribute('data-nx44-left','1');
   await expect(previous).toBeEnabled();
   await noOverflow(page,2);
