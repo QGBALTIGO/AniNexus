@@ -11,6 +11,24 @@
   const validId=v=>{const n=Number(v);return Number.isSafeInteger(n)&&n>0?n:0};
   const titleFrom=m=>m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||'';
   const coverFrom=m=>m?.coverImage?.extraLarge||m?.coverImage?.large||'';
+  const placeholder=value=>/^(?:voc[eê]|you)$/i.test(String(value||'').trim());
+
+  async function identity(){
+    try{
+      const user=window.AniNexusAccountData?await window.AniNexusAccountData():null;
+      if(!user)return null;
+      return{username:String(user.username||'').trim(),display_name:String(user.displayName||user.display_name||user.username||'').trim(),avatar_url:String(user.avatarUrl||user.avatar_url||'').trim()}
+    }catch{return null}
+  }
+  async function enrich(list){
+    const user=await identity();
+    return(Array.isArray(list)?list:[]).map(item=>{
+      const sameUser=user?.username&&String(item?.username||'').toLocaleLowerCase('pt-BR')===user.username.toLocaleLowerCase('pt-BR');
+      if(user&&(item?.local||placeholder(item?.username)||sameUser))return{...item,username:user.username,display_name:user.display_name,avatar_url:item.avatar_url||item.avatarUrl||user.avatar_url};
+      if(item?.local||placeholder(item?.username))return{...item,username:'',display_name:'Sua lista',avatar_url:''};
+      return item
+    })
+  }
 
   function rows(){const v=read(KEY,[]);return Array.isArray(v)?v:[]}
   function save(list){write(KEY,list.slice(0,MAX));dispatchEvent(new CustomEvent('aninexus:community-activity-changed',{detail:{items:list.slice(0,MAX)}}))}
@@ -28,7 +46,7 @@
   function record(id,state,createdAt=Date.now(),seed=false){
     id=validId(id);if(!id||!state?.status)return null;
     const meta=domMeta(id),stamp=Number(createdAt)||Date.now(),list=rows();
-    const snapshot={kind:'state',media_id:id,username:'você',status:String(state.status),progress:Math.max(0,Number(state.progress)||0),score:state.score==null?null:Number(state.score),reaction:String(state.reaction||''),created_at:new Date(stamp).toISOString(),title:meta.title||'',cover:meta.cover||'',banner:'',local:true};
+    const snapshot={kind:'state',media_id:id,username:'',display_name:'',avatar_url:'',status:String(state.status),progress:Math.max(0,Number(state.progress)||0),score:state.score==null?null:Number(state.score),reaction:String(state.reaction||''),created_at:new Date(stamp).toISOString(),title:meta.title||'',cover:meta.cover||'',banner:'',local:true};
     const duplicate=list.find(x=>x.media_id===id&&x.status===snapshot.status&&x.progress===snapshot.progress&&x.score===snapshot.score&&x.reaction===snapshot.reaction&&Math.abs(Date.parse(x.created_at)-stamp)<1800);
     if(duplicate)return duplicate;
     if(seed&&list.some(x=>x.media_id===id&&Date.parse(x.created_at)>=stamp-1000))return null;
@@ -45,5 +63,5 @@
   addEventListener('storage',e=>{if(e.key===KEY)dispatchEvent(new CustomEvent('aninexus:community-activity-changed',{detail:{items:local()}}))});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',seed,{once:true});else seed();
 
-  window.AniNexusCommunityActivity={local,record,seed,key:KEY};
+  window.AniNexusCommunityActivity={local,record,seed,identity,enrich,key:KEY};
 })();

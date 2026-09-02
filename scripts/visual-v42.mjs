@@ -5,7 +5,7 @@ const origin = process.env.ANINEXUS_E2E_ORIGIN || 'http://qgbaltigo.github.io:41
 const output = process.env.ANINEXUS_VISUAL_OUTPUT || 'test-results/visual-v42';
 const executablePath = process.env.ANINEXUS_CHROMIUM_EXECUTABLE_PATH || undefined;
 const mappedHost = new URL(origin).hostname === 'qgbaltigo.github.io';
-const buildUrl = route => `${origin}?build=43.0.0&p=${encodeURIComponent(route)}`;
+const buildUrl = route => `${origin}?build=44.0.0&p=${encodeURIComponent(route)}`;
 const artwork = new URL('assets/logo.png', origin).href;
 const media = (id, type = 'ANIME') => ({
   id,
@@ -47,6 +47,8 @@ const graphData = (query = '', variables = {}) => {
 };
 const cases = [
   { name: 'mobile-home-dark', route: '/', selector: '.nx35-home', ready: '.nx35-anime', width: 390, height: 844, theme: 'dark' },
+  { name: 'desktop-home-dark', route: '/', selector: '.nx35-home', ready: '.nx35-anime', width: 1440, height: 900, theme: 'dark' },
+  { name: 'mobile-community-dark', route: '/comunidade', selector: '.nx40-community', ready: '.nx40-tabs', width: 390, height: 844, theme: 'dark' },
   { name: 'mobile-mangas-light', route: '/mangas', selector: '.nx42-manga-page', ready: '.nx42-manga-card', width: 390, height: 844, theme: 'light' },
   { name: 'tablet-catalog-dark', route: '/animes/catalogo', selector: '.nx21-catalog-page', ready: '.nx21-card', width: 768, height: 1024, theme: 'dark' },
   { name: 'desktop-detail-light', route: '/anime/obra-de-teste-101', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-hero', width: 1440, height: 900, theme: 'light' },
@@ -91,6 +93,7 @@ try {
       title: document.title,
       theme: document.documentElement.dataset.theme,
     }));
+    await page.screenshot({ path: `${output}/${item.name}-viewport.png` });
     await page.screenshot({ path: `${output}/${item.name}.png`, fullPage: true });
     results.push({ name: item.name, ...geometry, errors });
     await context.close();
