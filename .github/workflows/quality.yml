@@ -87,7 +87,7 @@ jobs:
           CID=$(docker create aninexus-ci:${{ github.sha }})
           trap 'docker rm -f "$CID" >/dev/null 2>&1 || true' EXIT
           docker cp "$CID:/app/public/index.html" /tmp/aninexus-index.html
-          grep -q '2026-09-02-v44.5.0' /tmp/aninexus-index.html
+          grep -q '2026-09-02-v44.6.0' /tmp/aninexus-index.html
           for FILE in \
             preview-v22/detail-stable-v22.js \
             preview-v38/admin-v38.js \
@@ -108,6 +108,7 @@ jobs:
             preview-v42/manga-v42.js \
             preview-v42/header-v43.css \
             preview-v42/header-v43.js \
+            preview-v44/avatar-v44.js \
             preview-v44/experience-v44.css \
             preview-v44/radio-v44.js \
             preview-v44/rails-v44.js; do

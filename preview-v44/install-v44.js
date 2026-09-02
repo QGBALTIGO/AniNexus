@@ -2,7 +2,7 @@
 (() => {
   if (window.__ANINEXUS_INSTALL_V44__) return;
   window.__ANINEXUS_INSTALL_V44__ = true;
-  const BUILD = '44.5.0';
+  const BUILD = '44.6.0';
   let installPrompt = null;
   let returnFocus = null;
 

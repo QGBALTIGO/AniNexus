@@ -9,7 +9,7 @@
 <meta name="description" content="AniNexus — acompanhe animes e mangás, organize suas listas, avalie obras e participe da comunidade.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="aninexus-build" content="2026-09-02-v44.5.0">
+<meta name="aninexus-build" content="2026-09-02-v44.6.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.clerk.accounts.dev https://*.clerk.com https://challenges.cloudflare.com https://*.protect.clerk.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data: https://img.clerk.com; connect-src 'self' https://graphql.anilist.co https://api.jikan.moe https://api.mymemory.translated.net https://translate.googleapis.com https://api.animethemes.moe https://listen.moe wss://listen.moe https://*.clerk.accounts.dev https://api.clerk.com https://*.protect.clerk.com:*; media-src 'self' https://v.animethemes.moe https://listen.moe; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://www.dailymotion.com https://*.clerk.accounts.dev https://challenges.cloudflare.com https://*.protect.clerk.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://*.clerk.accounts.dev">
 <meta property="og:site_name" content="AniNexus">
 <meta property="og:type" content="website">
@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="Temporadas, programação, notícias e comunidade em português.">
 <meta name="twitter:image" content="https://aninexus.com.br/assets/logo.png">
 <link rel="canonical" href="https://aninexus.com.br/">
-<link rel="manifest" href="./manifest.webmanifest?v=44.5.0">
+<link rel="manifest" href="./manifest.webmanifest?v=44.6.0">
 <link rel="apple-touch-icon" href="./assets/logo-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -59,14 +59,14 @@
 <link rel="stylesheet" href="./preview-v33/news-v33.css?v=37.0.2">
 <link rel="stylesheet" href="./preview-v38/core-v38.css?v=40.9.0">
 <link rel="stylesheet" href="./preview-v38/auth-v38.css?v=40.9.0">
-<link rel="stylesheet" href="./preview-v38/profile-v38.css?v=40.8.0">
+<link rel="stylesheet" href="./preview-v38/profile-v38.css?v=44.6.0">
 <link rel="stylesheet" href="./preview-v38/admin-v38.css?v=40.8.0">
 <link rel="stylesheet" href="./preview-v38/library-v38.css?v=40.9.0">
 <link rel="stylesheet" href="./preview-v39/media-actions-v39.css?v=40.8.0">
 <link rel="stylesheet" href="./preview-v41/product-v41.css?v=41.0.0">
 <link rel="stylesheet" href="./preview-v42/product-v42.css?v=43.0.0">
 <link rel="stylesheet" href="./preview-v42/header-v43.css?v=43.1.0">
-<link rel="stylesheet" href="./preview-v44/experience-v44.css?v=44.5.0">
+<link rel="stylesheet" href="./preview-v44/experience-v44.css?v=44.6.0">
 <script src="./runtime-config.js?v=40.8.0"></script>
 <script src="./preview-v23/route-guard-v23.js?v=43.0.0"></script>
 <script src="./preview-v38/runtime-v38.js?v=43.0.0"></script>
@@ -124,6 +124,7 @@
           <a href="/noticias" data-link data-drawer-nav="news"><i class="drawer-card-icon tone-rose" data-icon="news"></i><span><strong>Notícias</strong><small>Estreias e novidades</small></span></a>
         </div>
       </nav>
+      <div class="drawer-mascot-perch" aria-hidden="true"><img src="./assets/mascot-menu-perch-v44-2.png" alt=""></div>
       <footer class="drawer-utilities">
         <button class="drawer-theme-toggle" type="button" data-nx-drawer-theme aria-label="Alternar tema" title="Alternar tema"><span data-icon="moon"></span></button>
         <button class="drawer-install" type="button" data-nx-install><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 10.5 12 15l4.5-4.5M5 20h14"/></svg><span>Instalar aplicativo</span></button>
@@ -159,8 +160,9 @@
 <script src="./preview-v27/navigation-v27.js?v=40.8.0" defer></script>
 <script src="./preview-v18/bridge.js?v=26.0.0" defer></script>
 <script src="./preview-v19/state-normalizer.js?v=26.0.0" defer></script>
-<script src="./preview-v38/auth-v38.js?v=44.5.0" defer></script>
-<script src="./preview-v38/profile-v38.js?v=44.0.0" defer></script>
+<script src="./preview-v44/avatar-v44.js?v=44.6.0" defer></script>
+<script src="./preview-v38/auth-v38.js?v=44.6.0" defer></script>
+<script src="./preview-v38/profile-v38.js?v=44.6.0" defer></script>
 <script src="./preview-v38/admin-v38.js?v=40.8.0" defer></script>
 <script src="./preview-v39/media-actions-v39.js?v=44.5.0" defer></script>
 <script src="./preview-v19/media-state-v2.js?v=40.0.4" defer></script>
@@ -185,9 +187,9 @@
 <script src="./preview-v38/library-v38.js?v=44.3.0" defer></script>
 <script src="./preview-v38/seo-v38.js?v=38.2.0" defer></script>
 <script src="./preview-v42/manga-v42.js?v=43.0.0" defer></script>
-<script src="./preview-v42/product-v42.js?v=44.5.0" defer></script>
+<script src="./preview-v42/product-v42.js?v=44.6.0" defer></script>
 <script src="./preview-v42/header-v43.js?v=43.0.0" defer></script>
-<script src="./preview-v44/install-v44.js?v=44.5.0" defer></script>
+<script src="./preview-v44/install-v44.js?v=44.6.0" defer></script>
 <script src="./preview-v44/radio-v44.js?v=44.3.0" defer></script>
 <script src="./preview-v44/rails-v44.js?v=44.5.0" defer></script>
 </body>

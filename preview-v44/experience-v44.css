@@ -709,7 +709,7 @@ html[data-theme=light] .nx35-live-list .nx35-community-card.compact:before{
 html[data-theme=light] .nx35-home .nx35-head>a:not(.nx44-rail-link){color:#675a61!important}
 html[data-theme=light] .nx35-home .nx35-head>a:not(.nx44-rail-link):hover{color:#941d3d!important}
 
-/* V44.5.0: colorful, account-aware AniNexus navigation. */
+/* V44.6.0: colorful, account-aware AniNexus navigation. */
 .drawer-backdrop{
   background:rgba(4,2,4,.66);
   backdrop-filter:blur(12px) saturate(.8)
@@ -1101,15 +1101,43 @@ html[data-theme=light] .nx42-theme-options button{background:#f8f6f7}
 }
 
 .drawer-auth-card[data-auth-state=authenticated]:after{content:none}
+.drawer-mascot-perch{
+  position:relative;
+  flex:none;
+  height:78px;
+  margin-top:auto;
+  pointer-events:none
+}
+.drawer-mascot-perch:after{
+  content:'';
+  position:absolute;
+  right:0;
+  bottom:0;
+  left:0;
+  height:1px;
+  background:rgba(255,255,255,.09)
+}
+.drawer-mascot-perch img{
+  position:absolute;
+  z-index:1;
+  left:50%;
+  bottom:-1px;
+  width:164px;
+  height:auto;
+  display:block;
+  transform:translateX(-50%);
+  opacity:.64;
+  filter:saturate(.82) drop-shadow(0 5px 11px rgba(0,0,0,.28))
+}
 .drawer-utilities{
   flex:none;
-  margin-top:auto;
+  margin-top:0;
   padding:16px 3px 1px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:12px;
-  border-top:1px solid rgba(255,255,255,.09)
+  border-top:0
 }
 .drawer-theme-toggle,
 .drawer-install{
@@ -1156,11 +1184,25 @@ html[data-theme=light] .drawer-panel{
 }
 html[data-theme=light] .drawer-head{background:rgba(255,255,255,.9)}
 html[data-theme=light] .drawer-kicker{color:#bc3152}
-html[data-theme=light] .drawer-utilities{border-top-color:#e5dde1}
+html[data-theme=light] .drawer-mascot-perch:after{background:#e5dde1}
+html[data-theme=light] .drawer-mascot-perch img{opacity:.58;filter:saturate(.75) drop-shadow(0 5px 10px rgba(91,41,58,.13))}
 html[data-theme=light] .drawer-theme-toggle,
 html[data-theme=light] .drawer-install{color:#6e5f67}
 html[data-theme=light] .drawer-theme-toggle:hover,
 html[data-theme=light] .drawer-install:hover{background:#fff0f4;color:#a91d40}
+@media(max-height:760px){.drawer-mascot-perch{height:56px}.drawer-mascot-perch img{bottom:-1px;width:126px;opacity:.52}}
+.nx35-community-avatar:not(:has(img)),
+.nx40-avatar:not(:has(img)),
+.nx42-impression header>i:not(:has(img)),
+.nx42-news-comment header>i:not(:has(img)),
+.nx38-impression-avatar:not(:has(img)),
+.nx38-admin-user-main>i:not(:has(img)){
+  overflow:hidden;
+  color:transparent!important;
+  background-image:url('../assets/avatars/mascot-pink.png')!important;
+  background-position:center!important;
+  background-size:cover!important
+}
 
 .nx44-install-layer{
   position:fixed;
