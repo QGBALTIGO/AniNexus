@@ -148,7 +148,7 @@ test('scheduled workflow validates the parser and accepts an optional GNews secr
 });
 
 test('browser model normalizes source blocks and does not invent fallback artwork', () => {
-  assert.ok(newsData.includes("BUILD='44.7.1'"));
+  assert.ok(newsData.includes("BUILD='44.7.3'"));
   assert.ok(newsData.includes('normalizeSourceContent'));
   assert.ok(newsData.includes('sourceContent'));
   assert.ok(newsData.includes('sourceAuthor'));

@@ -16,15 +16,3 @@ WHERE media_type='ANIME'
 UPDATE media_cache
 SET payload=jsonb_set(payload,'{mediaType}',to_jsonb(media_type),true)
 WHERE payload->>'mediaType' IS DISTINCT FROM media_type;
-
-CREATE INDEX IF NOT EXISTS media_cache_type_popularity_idx
-  ON media_cache(
-    media_type,
-    (CASE WHEN payload->>'popularity' ~ '^[0-9]+([.][0-9]+)?$' THEN (payload->>'popularity')::numeric ELSE 0 END) DESC
-  );
-
-CREATE INDEX IF NOT EXISTS media_cache_type_score_idx
-  ON media_cache(
-    media_type,
-    (CASE WHEN payload->>'score' ~ '^[0-9]+([.][0-9]+)?$' THEN (payload->>'score')::numeric ELSE 0 END) DESC
-  );

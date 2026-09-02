@@ -51,7 +51,7 @@
   const strip = html => { const d=document.createElement('div'); d.innerHTML=String(html||''); return (d.textContent||'').trim(); };
   const titleOf = m => m?.title?.english || m?.title?.userPreferred || m?.title?.romaji || m?.title?.native || 'Anime';
   const slug = s => String(s||'anime').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,90);
-  const scoreOf = m => m?.averageScore ? (m.averageScore/10).toFixed(1).replace('.0','') : '';
+  const scoreOf = m => m?.metricsSource==='aninexus'&&m?.averageScore ? (m.averageScore/10).toFixed(1).replace('.0','') : '';
   const imageOf = m => m?.coverImage?.extraLarge || m?.coverImage?.large || '';
   const bannerOf = m => m?.bannerImage || imageOf(m);
   const fmtNum = n => new Intl.NumberFormat('pt-BR',{notation:'compact',maximumFractionDigits:1}).format(Number(n)||0);
@@ -123,8 +123,8 @@
     throw lastErr || new Error('Falha de rede');
   }
 
-  const SEASON_FIELDS = `id title{romaji english native userPreferred} coverImage{extraLarge large color} averageScore format status genres tags{name rank} startDate{year month day} relations{edges{relationType}}`;
-  const DETAIL_FIELDS = `id title{romaji english native userPreferred} coverImage{extraLarge large color} bannerImage description genres tags{name rank} averageScore popularity favourites episodes duration format status season seasonYear countryOfOrigin source startDate{year month day} endDate{year month day} studios(isMain:true){nodes{id name}} nextAiringEpisode{airingAt episode timeUntilAiring} trailer{id site thumbnail} externalLinks{site url type icon color}`;
+  const SEASON_FIELDS = `id title{romaji english native userPreferred} coverImage{extraLarge large color} format status genres tags{name rank} startDate{year month day} relations{edges{relationType}}`;
+  const DETAIL_FIELDS = `id title{romaji english native userPreferred} coverImage{extraLarge large color} bannerImage description genres tags{name rank} episodes duration format status season seasonYear countryOfOrigin source startDate{year month day} endDate{year month day} studios(isMain:true){nodes{id name}} nextAiringEpisode{airingAt episode timeUntilAiring} trailer{id site thumbnail} externalLinks{site url type icon color}`;
 
   function seasonCacheKey(sel){ return `nx:v8:season:${sel.year}:${sel.season}`; }
   function readCache(key){
@@ -135,10 +135,10 @@
   }
 
   async function fetchSeason(sel,signal){
-    const query = `query($page:Int,$year:Int,$season:MediaSeason){Page(page:$page,perPage:50){pageInfo{hasNextPage total}media(type:ANIME,isAdult:false,seasonYear:$year,season:$season,sort:[POPULARITY_DESC]){${SEASON_FIELDS}}}}`;
+    const query = `query($page:Int,$perPage:Int,$year:Int,$season:MediaSeason){Page(page:$page,perPage:$perPage){pageInfo{hasNextPage total}media(type:ANIME,isAdult:false,seasonYear:$year,season:$season,sort:[START_DATE_DESC]){${SEASON_FIELDS}}}}`;
     let page=1, all=[], apiTotal=0;
     while(page<=5){
-      const d = await gql(query,{page,year:sel.year,season:sel.season},signal,3);
+      const d = await gql(query,{page,perPage:30,year:sel.year,season:sel.season,nxSort:'POPULAR'},signal,3);
       const items = d?.Page?.media || [];
       apiTotal = Number(d?.Page?.pageInfo?.total || apiTotal || 0);
       all.push(...items);
@@ -147,12 +147,12 @@
     }
     const unique = [...new Map(all.filter(x=>x?.id).map(x=>[x.id,x])).values()];
     if(unique.length > 400) throw new Error('Resposta de temporada inválida');
-    return {items:unique,apiTotal,hash:unique.map(x=>`${x.id}:${x.averageScore||0}:${x.status||''}`).join('|')};
+    return {items:unique,apiTotal,hash:unique.map(x=>`${x.id}:${x.status||''}`).join('|')};
   }
 
   async function fetchStillAiring(signal){
-    const q=`query{Page(page:1,perPage:24){media(type:ANIME,isAdult:false,status:RELEASING,sort:[POPULARITY_DESC]){${SEASON_FIELDS}}}}`;
-    const d=await gql(q,{},signal,2);
+    const q=`query($page:Int,$perPage:Int){Page(page:$page,perPage:$perPage){media(type:ANIME,isAdult:false,status:RELEASING,sort:[START_DATE_DESC]){${SEASON_FIELDS}}}}`;
+    const d=await gql(q,{page:1,perPage:24,nxSort:'POPULAR'},signal,2);
     return d?.Page?.media || [];
   }
 
@@ -336,7 +336,7 @@
   }
 
   async function fetchAnime(id,signal){
-    const query=`query($id:Int){Media(id:$id,type:ANIME){${DETAIL_FIELDS} characters(perPage:16,sort:[ROLE,RELEVANCE]){edges{role node{id name{full native} image{large medium}}}} staff(perPage:12,sort:[RELEVANCE]){edges{role node{id name{full native} image{large medium}}}} relations{edges{relationType node{${DETAIL_FIELDS}}} } recommendations(perPage:8,sort:RATING_DESC){nodes{rating mediaRecommendation{${DETAIL_FIELDS}}}}}}`;
+    const query=`query($id:Int){Media(id:$id,type:ANIME){${DETAIL_FIELDS} characters(perPage:16,sort:[ROLE,RELEVANCE]){edges{role node{id name{full native} image{large medium}}}} staff(perPage:12,sort:[RELEVANCE]){edges{role node{id name{full native} image{large medium}}}} relations{edges{relationType node{${DETAIL_FIELDS}}}}}}`;
     const d=await gql(query,{id:Number(id)},signal,3);
     if(!d?.Media)throw new Error('Título não encontrado');
     return d.Media;
@@ -380,7 +380,7 @@
         <div class="nx-detail-cover">${imageOf(m)?`<img src="${esc(imageOf(m))}" alt="${esc(titleOf(m))}">`:''}</div>
         <div class="nx-detail-copy"><span class="nx-detail-kicker">${esc(m.title?.romaji||'')}</span><h1>${esc(titleOf(m))}</h1><div class="nx-detail-badges"><span>${m.seasonYear||m.startDate?.year||'—'}</span><span>${esc(fmtFormat(m.format))}</span>${(m.genres||[]).slice(0,4).map(g=>`<span class="genre">${esc(GENRE_PT[g]||g)}</span>`).join('')}</div>
           <div class="nx-detail-actions"><button class="primary ${listed?'active':''}" data-nx-detail-list="${m.id}">${ICON.plus}<span>${listed?'Na minha lista':'Adicionar à lista'}</span></button><button class="round ${fav?'active':''}" data-nx-detail-fav="${m.id}">${ICON.heart}</button>${m.trailer?.id&&String(m.trailer.site).toLowerCase()==='youtube'?`<a class="trailer" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=${encodeURIComponent(m.trailer.id)}">${ICON.play}<span>Trailer</span></a>`:''}</div>
-          <div class="nx-detail-numbers">${scoreOf(m)?`<div><strong>${scoreOf(m)}</strong><span>nota</span></div>`:''}<div><strong>${fmtNum(m.popularity)}</strong><span>popularidade</span></div><div><strong>${fmtNum(m.favourites)}</strong><span>favoritos</span></div></div>
+          <div class="nx-detail-numbers">${scoreOf(m)?`<div><strong>${scoreOf(m)}</strong><span>nota</span></div>`:''}${m.metricsSource==='aninexus'&&Number(m.popularity)>0?`<div><strong>${fmtNum(m.popularity)}</strong><span>popularidade</span></div>`:''}${m.metricsSource==='aninexus'&&Number(m.favourites)>0?`<div><strong>${fmtNum(m.favourites)}</strong><span>favoritos</span></div>`:''}</div>
         </div>
       </div></section>
       <nav class="nx-detail-tabs"><div class="nx-detail-shell"><button class="active" data-nx-tab="geral">Geral</button><button data-nx-tab="impressoes">Impressões</button><button data-nx-tab="franquia">Franquia</button><button data-nx-tab="recomendacoes">Recomendações</button><button data-nx-tab="compartilhar">Compartilhar</button></div></nav>

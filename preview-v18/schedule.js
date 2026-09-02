@@ -60,7 +60,7 @@
   const title=m=>typeof m?.title==='string'&&m.title.trim()?m.title.trim():(m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||m?.titleRomaji||'Anime');
   const altTitle=m=>{const value=typeof m?.title==='string'?m?.titleRomaji:m?.title?.romaji;return value&&value!==title(m)?value:''};
   const cover=m=>m?.coverImage?.extraLarge||m?.coverImage?.large||m?.cover||'';
-  const score=m=>{const value=m?.averageScore!=null?Number(m.averageScore)/10:Number(m?.score);return Number.isFinite(value)&&value>0?String(value.toFixed(1)).replace('.0',''):''};
+  const score=m=>{if(m?.metricsSource!=='aninexus')return'';const value=m?.averageScore!=null?Number(m.averageScore)/10:Number(m?.score);return Number.isFinite(value)&&value>0?String(value.toFixed(1)).replace('.0',''):''};
   const slug=s=>String(s||'anime').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,90);
   const genreMap={Action:'Ação',Adventure:'Aventura',Comedy:'Comédia',Drama:'Drama',Fantasy:'Fantasia',Horror:'Terror',Mystery:'Mistério',Romance:'Romance','Sci-Fi':'Ficção Científica','Slice of Life':'Slice of Life',Sports:'Esportes',Supernatural:'Sobrenatural',Thriller:'Suspense',Music:'Música',Psychological:'Psicológico',Mecha:'Mecha'};
   const formatMap={TV:'Série',TV_SHORT:'Série curta',MOVIE:'Filme',SPECIAL:'Especial',OVA:'OVA',ONA:'ONA'};
@@ -129,7 +129,7 @@
   function writeCache(data){writeJSON(cacheKey(),{savedAt:Date.now(),items:data})}
   function merge(a,b){return[...new Map([...a,...b].filter(x=>x?.media?.id&&x?.airingAt).map(x=>[`${x.media.id}:${x.episode}:${x.airingAt}`,x])).values()].sort((x,y)=>x.airingAt-y.airingAt)}
 
-  const FIELDS=`id title{romaji english native userPreferred} coverImage{extraLarge large} averageScore genres episodes format seasonYear externalLinks{site url type icon color}`;
+  const FIELDS=`id title{romaji english native userPreferred} coverImage{extraLarge large} genres episodes format seasonYear externalLinks{site url type icon color}`;
   async function fetchPage(page,start,end,signal){
     const query=`query($page:Int,$start:Int,$end:Int){Page(page:$page,perPage:50){pageInfo{hasNextPage}airingSchedules(airingAt_greater:$start,airingAt_lesser:$end,sort:TIME){airingAt episode media{${FIELDS}}}}}`;
     const r=await fetch(API,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables:{page,start,end}}),signal});
@@ -214,7 +214,9 @@
   function renderData(){
     const root=document.querySelector('#nx18Root');if(!root)return;
     const gs=grouped();
-    root.innerHTML=gs.map(g=>g.items.length?`<section class="nx18-day-section" id="nx18-day-${g.key}" data-nx18-section="${g.key}"><div class="nx18-day-title"><h2>${g.full}</h2></div><div class="nx18-grid">${g.items.map(card).join('')}</div></section>`:'').join('')||`<div class="nx18-empty">Nenhum episódio corresponde aos filtros selecionados.</div>`;
+    const content=gs.map(g=>g.items.length?`<section class="nx18-day-section" id="nx18-day-${g.key}" data-nx18-section="${g.key}"><div class="nx18-day-title"><h2>${g.full}</h2></div><div class="nx18-grid">${g.items.map(card).join('')}</div></section>`:'').join('')||`<div class="nx18-empty">Nenhum episódio corresponde aos filtros selecionados.</div>`;
+    const credit=items.some(item=>item.contentProvider==='animeschedule'||item.media?.contentProvider==='animeschedule')?'<a class="nx18-provider-credit" href="https://animeschedule.net/" target="_blank" rel="noopener noreferrer">Horários complementares por AnimeSchedule.net</a>':'';
+    root.innerHTML=content+credit;
     bindCards();observeSections();updateCountdowns();syncControls();
   }
 

@@ -1,0 +1,22 @@
+.nx35-provider-credit,
+.nx18-provider-credit {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: 12px 0 0 auto;
+  color: #91848a !important;
+  font: 700 9px/1.4 'Nunito Sans', system-ui, sans-serif;
+  text-decoration: none;
+  opacity: .72;
+}
+
+.nx35-provider-credit:hover,
+.nx18-provider-credit:hover {
+  color: #ef627e !important;
+  opacity: 1;
+}
+
+html[data-theme='light'] .nx35-provider-credit,
+html[data-theme='light'] .nx18-provider-credit {
+  color: #756a70 !important;
+}

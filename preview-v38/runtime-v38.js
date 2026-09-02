@@ -12,13 +12,14 @@
     const toGraph=m=>{
       if(!m)return m;
       if(m.coverImage&&typeof m.title==='object')return m;
-      const n=Number(m.score),mean=Number(m.meanScore),averageScore=Number.isFinite(n)?Math.round(n*10):(m.averageScore||null),meanScore=Number.isFinite(mean)?Math.round(mean*10):(m.meanScore||averageScore);
+      const internal=m.metricsSource==='aninexus',n=internal?Number(m.score):NaN,mean=internal?Number(m.meanScore):NaN,averageScore=Number.isFinite(n)?Math.round(n*10):null,meanScore=Number.isFinite(mean)?Math.round(mean*10):averageScore;
       return{
         id:m.id,idMal:m.idMal||null,
         title:{english:m.title||'',romaji:m.titleRomaji||m.title||'',native:m.titleNative||'',userPreferred:m.title||m.titleRomaji||''},synonyms:m.synonyms||[],
         coverImage:{extraLarge:m.cover||'',large:m.cover||'',color:m.coverColor||null},bannerImage:m.banner||'',description:m.description||'',genres:m.genres||[],
-        tags:(m.tagDetails||m.tags||[]).map(x=>typeof x==='string'?{name:x,rank:0,isMediaSpoiler:false}:x),averageScore,meanScore,popularity:m.popularity||0,favourites:m.favourites||0,
+        tags:(m.tagDetails||m.tags||[]).map(x=>typeof x==='string'?{name:x,rank:0,isMediaSpoiler:false}:x),averageScore,meanScore,popularity:internal?Number(m.popularity||0):0,favourites:internal?Number(m.favourites||0):0,
         episodes:m.episodes||null,chapters:m.chapters||null,volumes:m.volumes||null,duration:m.duration||null,format:m.format||'',status:m.status||'',season:m.season||'',seasonYear:m.seasonYear||null,countryOfOrigin:m.country||'',source:m.source||'',startDate:m.startDate||null,endDate:m.endDate||null,
+        ratingCount:Number(m.ratingCount||0),listCount:Number(m.listCount||0),metricsSource:m.metricsSource==='aninexus'?'aninexus':'',contentProvider:m.contentProvider||'',contentProviderUrl:m.contentProviderUrl||'',
         studios:{nodes:m.studios||[]},nextAiringEpisode:m.nextAiringEpisode||null,trailer:m.trailer||null,
         externalLinks:(m.streaming||m.externalLinks||[]).map(x=>({site:x.site||'',url:x.url||'',type:x.type||'STREAMING',icon:x.icon||'',color:x.color||''}))
       };
@@ -30,12 +31,12 @@
     const seasonNow=()=>{const d=new Date(),m=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',month:'numeric'}).format(d)),year=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',year:'numeric'}).format(d));return{year,season:m<=3?'WINTER':m<=6?'SPRING':m<=9?'SUMMER':'FALL'}};
     const bridgeHome=async(body,signal)=>{
       const vars=body.variables||{},s=seasonNow(),season=vars.season||s.season,year=Number(vars.year||s.year),home=await apiJson(`/api/home?season=${encodeURIComponent(season)}&year=${year}`,signal);
-      if(!(home.season||[]).length||!(home.top||[]).length||!(home.popular||[]).length)throw new Error('AniNexus API returned an incomplete Home');
+      if(!(home.season||[]).length)throw new Error('AniNexus API returned an incomplete Home');
       return jsonResponse({season:{media:(home.season||[]).map(toGraph)},schedule:{airingSchedules:(home.schedule||[]).slice(0,8).map(x=>({airingAt:x.airingAt,episode:x.episode,media:toGraph(x.media)}))},top:{media:(home.top||[]).map(toGraph)},popular:{media:(home.popular||[]).map(toGraph)},soon:{media:(home.soon||[]).map(toGraph)},reading:{media:(home.reading||[]).map(toGraph)},topReading:{media:(home.topReading||[]).map(toGraph)}});
     };
-    const mapSort=q=>q.includes('SCORE_DESC')?'SCORE':q.includes('FAVOURITES_DESC')?'FAVOURITES':q.includes('SEARCH_MATCH')?'MATCH':q.includes('TRENDING_DESC')?'TRENDING':q.includes('START_DATE_DESC')?'NEW':q.includes('TITLE_ROMAJI')?'TITLE':'POPULAR';
+    const mapSort=(q,v={})=>['POPULAR','SCORE','TRENDING','NEW','TITLE','FAVOURITES','MATCH'].includes(String(v.nxSort||'').toUpperCase())?String(v.nxSort).toUpperCase():q.includes('SEARCH_MATCH')?'MATCH':q.includes('TITLE_ROMAJI')?'TITLE':q.includes('START_DATE_DESC')?'NEW':'POPULAR';
     const bridgePage=async(body,signal,type)=>{
-      const q=String(body.query||''),v=body.variables||{},params=new URLSearchParams({page:String(v.page||1),perPage:String(v.perPage||24),sort:mapSort(q)});
+      const q=String(body.query||''),v=body.variables||{},params=new URLSearchParams({page:String(v.page||1),perPage:String(v.perPage||24),sort:mapSort(q,v)});
       for(const k of ['search','genre','format','season','year'])if(v[k]!=null&&v[k]!=='')params.set(k,String(v[k]));
       if(q.includes('status:NOT_YET_RELEASED'))params.set('status','NOT_YET_RELEASED');
       const endpoint=type==='MANGA'?'/api/reading':'/api/catalog',data=await apiJson(`${endpoint}?${params}`,signal);

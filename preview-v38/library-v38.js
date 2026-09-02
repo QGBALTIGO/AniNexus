@@ -33,8 +33,8 @@
     const title=usableTitle(typeof m.title==='string'?m.title:(m.title?.english||m.title?.userPreferred||m.title?.romaji||m.title?.native))||FALLBACK_TITLE;
     const cover=m.cover||m.coverImage?.extraLarge||m.coverImage?.large||'';
     const banner=m.banner||m.bannerImage||cover;
-    const score=m.score!=null?Number(m.score):(m.averageScore?Number(m.averageScore)/10:null);
-    return {id:Number(m.id||id),title,cover,banner,score:Number.isFinite(score)?score:null,episodes:m.episodes==null?null:Number(m.episodes),status:String(m.status||''),format:String(m.format||''),seasonYear:m.seasonYear||null,genres:Array.isArray(m.genres)?m.genres:[],slug:m.slug||`${slug(title)}-${Number(m.id||id)}`};
+    const internal=m.metricsSource==='aninexus',score=internal&&m.score!=null?Number(m.score):null;
+    return {id:Number(m.id||id),title,cover,banner,score:Number.isFinite(score)?score:null,metricsSource:internal?'aninexus':'',episodes:m.episodes==null?null:Number(m.episodes),status:String(m.status||''),format:String(m.format||''),seasonYear:m.seasonYear||null,genres:Array.isArray(m.genres)?m.genres:[],slug:m.slug||`${slug(title)}-${Number(m.id||id)}`};
   }
   function normalizeRow(row){const id=Number(row?.media_id||row?.mediaId||row?.media?.id);return{id,status:String(row?.status||''),score:row?.score==null?null:Number(row.score),reaction:row?.reaction||'',progress:Math.max(0,Number(row?.progress)||0),updatedAt:Date.parse(row?.updated_at||row?.updatedAt||0)||0,media:mediaOf(row?.media,id)}}
   function normalizeFav(row){const id=Number(row?.media_id||row?.mediaId||row?.media?.id);return{id,createdAt:Date.parse(row?.created_at||row?.createdAt||0)||0,media:mediaOf(row?.media,id)}}
@@ -53,7 +53,7 @@
 
   async function gqlIds(ids){
     const chunks=[];for(let i=0;i<ids.length;i+=50)chunks.push(ids.slice(i,i+50));const out=[];
-    for(const list of chunks){try{const q='query($ids:[Int]){Page(page:1,perPage:50){media(id_in:$ids,type:ANIME){id title{romaji english native userPreferred}coverImage{extraLarge large}bannerImage averageScore episodes status format seasonYear genres}}}',r=await fetch(API,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query:q,variables:{ids:list}})});if(!r.ok)continue;const j=await r.json();out.push(...(j?.data?.Page?.media||[]))}catch{}}
+    for(const list of chunks){try{const q='query($ids:[Int]){Page(page:1,perPage:50){media(id_in:$ids,type:ANIME){id title{romaji english native userPreferred}coverImage{extraLarge large}bannerImage episodes status format seasonYear genres}}}',r=await fetch(API,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query:q,variables:{ids:list}})});if(!r.ok)continue;const j=await r.json();out.push(...(j?.data?.Page?.media||[]))}catch{}}
     return out.map(x=>mediaOf(x,x.id));
   }
   async function fetchMissing(ids){

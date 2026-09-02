@@ -41,7 +41,7 @@
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const titleOf=m=>m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||'Anime';
   const imageOf=m=>m?.coverImage?.extraLarge||m?.coverImage?.large||`${BASE}/assets/logo.png`;
-  const scoreOf=m=>m?.averageScore?(m.averageScore/10).toFixed(1).replace('.0',''):'';
+  const scoreOf=m=>m?.metricsSource==='aninexus'&&m?.averageScore?(m.averageScore/10).toFixed(1).replace('.0',''):'';
   const slug=s=>String(s||'anime').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,90);
   const formatLabel=f=>({TV:'Série',TV_SHORT:'Série curta',MOVIE:'Filme',OVA:'OVA',ONA:'ONA',SPECIAL:'Especial',MUSIC:'Música'})[f]||f||'Anime';
   const statusLabel=s=>({RELEASING:'Em exibição',FINISHED:'Finalizado',NOT_YET_RELEASED:'Em breve',HIATUS:'Em hiato',CANCELLED:'Cancelado'})[s]||'';
@@ -71,7 +71,7 @@
   function cacheRead(key){try{const x=JSON.parse(sessionStorage.getItem(CACHE_PREFIX+key)||'null');if(x&&Date.now()-x.t<CACHE_TTL&&Array.isArray(x.data?.items))return x.data}catch{}return null}
   function cacheWrite(key,data){try{sessionStorage.setItem(CACHE_PREFIX+key,JSON.stringify({t:Date.now(),data}))}catch{}}
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-  const FIELDS=`id title{romaji english native userPreferred} coverImage{extraLarge large} averageScore popularity favourites episodes format status seasonYear genres startDate{year month day}`;
+  const FIELDS=`id title{romaji english native userPreferred} coverImage{extraLarge large} episodes format status seasonYear genres startDate{year month day}`;
 
   async function gql(query,variables,signal){
     let last;
@@ -95,24 +95,25 @@
 
   function buildRequest(){
     const defs=['$page:Int!','$perPage:Int!'];
-    const vars={page:state.page,perPage:PER_PAGE};
+    const vars={page:state.page,perPage:PER_PAGE,nxSort:'NEW'};
     const args=['type:ANIME','isAdult:false'];
-    let sort='POPULARITY_DESC';
+    let sort='START_DATE_DESC';
 
     if(state.search.trim()){
-      defs.push('$search:String!');vars.search=state.search.trim();args.push('search:$search');sort='SEARCH_MATCH';
+      defs.push('$search:String!');vars.search=state.search.trim();vars.nxSort='MATCH';args.push('search:$search');sort='SEARCH_MATCH';
     }
     if(state.genre){defs.push('$genre:String!');vars.genre=state.genre;args.push('genre:$genre')}
     if(state.format){defs.push('$format:MediaFormat!');vars.format=state.format;args.push('format:$format')}
     if(state.year&&state.mode!=='SEASON'){defs.push('$year:Int!');vars.year=Number(state.year);args.push('seasonYear:$year')}
 
-    if(state.mode==='SOON'){args.push('status:NOT_YET_RELEASED');sort='POPULARITY_DESC'}
+    if(state.mode==='SOON'){args.push('status:NOT_YET_RELEASED');vars.nxSort='NEW'}
     else if(state.mode==='SEASON'){
       const cur=currentSeason();
-      defs.push('$season:MediaSeason!','$year:Int!');vars.season=cur.season;vars.year=state.year?Number(state.year):cur.year;args.push('season:$season','seasonYear:$year');sort='POPULARITY_DESC';
-    }else if(state.mode==='TOP')sort='SCORE_DESC';
-    else if(state.mode==='POPULAR')sort='POPULARITY_DESC';
-    else if(state.mode==='MEMBERS')sort='FAVOURITES_DESC';
+      defs.push('$season:MediaSeason!','$year:Int!');vars.season=cur.season;vars.year=state.year?Number(state.year):cur.year;vars.nxSort='POPULAR';args.push('season:$season','seasonYear:$year');
+    }else if(state.mode==='TOP')vars.nxSort='SCORE';
+    else if(state.mode==='POPULAR')vars.nxSort='POPULAR';
+    else if(state.mode==='MEMBERS')vars.nxSort='FAVOURITES';
+    if(state.search.trim())vars.nxSort='MATCH';
 
     args.push(`sort:[${sort}]`);
     const query=`query(${defs.join(',')}){Page(page:$page,perPage:$perPage){pageInfo{total currentPage lastPage hasNextPage}media(${args.join(',')}){${FIELDS}}}}`;

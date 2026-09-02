@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import vm from 'node:vm';
 import { HtmlValidate } from 'html-validate';
 import * as csstree from 'css-tree';
 import { ACTIVE_PREVIEW_DIRS } from './repository-layout.mjs';
@@ -28,10 +29,12 @@ if (/\son(?:click|change|submit|load|error)\s*=/i.test(html)) {
 }
 
 const cssFiles = [];
+const scriptFiles = [];
 for (const directory of ACTIVE_PREVIEW_DIRS) {
   const absolute = path.join(root, directory);
   for (const file of await fs.readdir(absolute)) {
     if (file.endsWith('.css')) cssFiles.push(path.join(absolute, file));
+    if (file.endsWith('.js')) scriptFiles.push(path.join(absolute, file));
   }
 }
 for (const file of cssFiles) {
@@ -40,4 +43,10 @@ for (const file of cssFiles) {
   catch (error) { throw new Error(`CSS inválido em ${path.relative(root, file)}: ${error.message}`); }
 }
 
-console.log(`[validate-source] HTML semântico e ${cssFiles.length} arquivos CSS válidos`);
+for (const file of scriptFiles) {
+  const source = await fs.readFile(file, 'utf8');
+  try { new vm.Script(source, { filename: path.relative(root, file) }); }
+  catch (error) { throw new Error(`JavaScript inválido em ${path.relative(root, file)}: ${error.message}`); }
+}
+
+console.log(`[validate-source] HTML semântico, ${cssFiles.length} CSS e ${scriptFiles.length} scripts válidos`);

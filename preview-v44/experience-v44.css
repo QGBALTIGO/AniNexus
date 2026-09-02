@@ -1339,7 +1339,7 @@ html[data-theme=light] .nx44-install-sheet li strong{color:#1f171b}
   .nx44-install-sheet{border-bottom:1px solid rgba(255,255,255,.11);border-radius:14px}
 }
 
-/* V44.7.1: balanced desktop news grid. Tablet and mobile keep the feature-plus-rail layout. */
+/* V44.7.3: balanced desktop news grid. Tablet and mobile keep the feature-plus-rail layout. */
 @media(min-width:1001px){
   .nx35-home .nx35-news-layout{
     grid-template-columns:repeat(3,minmax(0,1fr));
