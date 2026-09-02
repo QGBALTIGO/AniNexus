@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.4.2&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.4.3&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),local=new URL(requested.pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,50*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -9,7 +9,7 @@ async function noOverflow(page,t=7){const x=await page.evaluate(()=>({s:document
 async function clear(page){await page.evaluate(()=>{for(const k of ['aninexus:favorites','aninexus:mediaState:v2','aninexus:mediaState:v1','aninexus:list','aninexus:listStatus','aninexus:community:activity:v40','aninexus:community:threads:v40'])localStorage.removeItem(k);window.AniNexusMediaState?.sync?.()})}
 const pixel='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 const portrait='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22150%22 viewBox=%220 0 100 150%22%3E%3Crect width=%22100%22 height=%22150%22 fill=%22%23ef2a5c%22/%3E%3Ccircle cx=%2250%22 cy=%2235%22 r=%2220%22 fill=%22white%22/%3E%3C/svg%3E';
-function anime(id=101){return{id,title:{romaji:`Anime Teste ${id}`,english:`Anime Teste ${id}`,native:`Teste ${id}`,userPreferred:`Anime Teste ${id}`},coverImage:{extraLarge:pixel,large:pixel},bannerImage:pixel,averageScore:82,popularity:1000,genres:['Action','Adventure'],episodes:12,format:'TV',status:'RELEASING',seasonYear:2026,description:'Uma história de teste.',externalLinks:[],startDate:{year:2026,month:1,day:1},endDate:null,studios:{nodes:[]},relations:{edges:[]},recommendations:{nodes:[]},characters:{edges:[]},staff:{edges:[]}}}
+function anime(id=101){const provider=id%2?{site:'Crunchyroll',url:`https://www.crunchyroll.com/watch/${id}`,type:'STREAMING',icon:pixel,color:'#fff'}:{site:'YouTube',url:`https://www.youtube.com/watch?v=${id}`,type:'STREAMING',icon:pixel,color:'#fff'};return{id,title:{romaji:`Anime Teste ${id}`,english:`Anime Teste ${id}`,native:`Teste ${id}`,userPreferred:`Anime Teste ${id}`},coverImage:{extraLarge:pixel,large:pixel},bannerImage:pixel,averageScore:82,popularity:1000,genres:['Action','Adventure'],episodes:12,format:'TV',status:'RELEASING',seasonYear:2026,description:'Uma história de teste.',externalLinks:[provider],startDate:{year:2026,month:1,day:1},endDate:null,studios:{nodes:[]},relations:{edges:[]},recommendations:{nodes:[]},characters:{edges:[]},staff:{edges:[]}}}
 function graphData(query='',variables={}){
   const ids=Array.isArray(variables.ids)&&variables.ids.length?variables.ids:[101,102,103,104],media=ids.map(Number).filter(Boolean).map(anime),airingAt=Number(variables.start)||Math.floor(Date.now()/1000)+3600;
   const Page={pageInfo:{total:media.length,currentPage:1,lastPage:1,hasNextPage:false},media,airingSchedules:media.map((item,i)=>({airingAt:airingAt+3600*(i+1),episode:i+1,media:item}))};
@@ -24,7 +24,7 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-02-v44.4.2')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-02-v44.4.3')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -84,6 +84,46 @@ test('Home rails share aligned controls smooth movement and directional fades',a
   await expect.poll(()=>rail.evaluate(element=>element.scrollLeft)).toBeGreaterThanOrEqual(movement.target-5);
   await expect(frame).toHaveAttribute('data-nx44-left','1');
   await expect(previous).toBeEnabled();
+  await noOverflow(page,2);
+});
+
+test('Home schedule uses bare official brands aligned episodes and one content surface',async({page})=>{
+  await page.setViewportSize({width:1440,height:900});
+  await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  const schedule=page.locator('#nx35Schedule');
+  await expect(schedule.locator('.nx18-card').first()).toBeVisible({timeout:30000});
+  const crunchy=schedule.locator('.nx18-provider-logo[data-provider="crunchyroll"] img').first();
+  const youtube=schedule.locator('.nx18-provider-logo[data-provider="youtube"] img').first();
+  await expect(crunchy).toBeVisible();
+  await expect(youtube).toBeVisible();
+  expect(new URL(await crunchy.getAttribute('src'),page.url()).pathname).toMatch(/\/assets\/streaming\/crunchyroll\.svg$/);
+  expect(new URL(await youtube.getAttribute('src'),page.url()).pathname).toMatch(/\/assets\/streaming\/youtube\.svg$/);
+
+  const providerPresentation=await schedule.locator('.nx18-stream').first().evaluate(link=>{const logo=link.querySelector('img'),linkStyle=getComputedStyle(link),logoStyle=getComputedStyle(logo);return{border:parseFloat(linkStyle.borderTopWidth),radius:parseFloat(linkStyle.borderTopLeftRadius),background:linkStyle.backgroundColor,shadow:linkStyle.boxShadow,logoBackground:logoStyle.backgroundColor,logoPadding:parseFloat(logoStyle.paddingTop)}});
+  expect(providerPresentation).toEqual({border:0,radius:0,background:'rgba(0, 0, 0, 0)',shadow:'none',logoBackground:'rgba(0, 0, 0, 0)',logoPadding:0});
+
+  const episodeGeometry=await schedule.locator('.nx18-card').first().evaluate(card=>{const info=card.querySelector('.nx18-info'),episode=card.querySelector('.nx18-episode'),label=episode.querySelector('small'),number=episode.querySelector('strong'),infoBox=info.getBoundingClientRect(),episodeBox=episode.getBoundingClientRect(),labelBox=label.getBoundingClientRect(),numberBox=number.getBoundingClientRect(),numberStyle=getComputedStyle(number);return{right:infoBox.right-episodeBox.right,bottom:infoBox.bottom-episodeBox.bottom,insideLeft:episodeBox.left>=infoBox.left,insideTop:episodeBox.top>=infoBox.top,orderGap:numberBox.top-labelBox.bottom,fontStyle:numberStyle.fontStyle,fontSize:parseFloat(numberStyle.fontSize),letterSpacing:numberStyle.letterSpacing}});
+  expect(episodeGeometry.right).toBeGreaterThanOrEqual(13);
+  expect(episodeGeometry.right).toBeLessThanOrEqual(15);
+  expect(episodeGeometry.bottom).toBeGreaterThanOrEqual(12);
+  expect(episodeGeometry.bottom).toBeLessThanOrEqual(14);
+  expect(episodeGeometry.insideLeft).toBe(true);
+  expect(episodeGeometry.insideTop).toBe(true);
+  expect(episodeGeometry.orderGap).toBeGreaterThanOrEqual(2);
+  expect(episodeGeometry.fontStyle).toBe('normal');
+  expect(episodeGeometry.fontSize).toBe(32);
+  expect(episodeGeometry.letterSpacing).toBe('normal');
+
+  const surfaces=await page.locator('.nx35-home .nx35-section, .nx35-home .nx38-impressions-home').evaluateAll(elements=>[...new Set(elements.map(element=>getComputedStyle(element).backgroundColor))]);
+  expect(surfaces).toEqual(['rgb(8, 6, 8)']);
+
+  const programLink=page.getByRole('link',{name:'Programação completa',exact:true});
+  const newsLink=page.getByRole('link',{name:'Todas as notícias',exact:true});
+  await expect(programLink).toBeVisible();
+  await expect(newsLink).toBeVisible({timeout:15000});
+  const linkStyles=await Promise.all([programLink,newsLink].map(link=>link.evaluate(element=>{const style=getComputedStyle(element),icon=element.querySelector('svg')?.getBoundingClientRect();return{fontSize:style.fontSize,fontWeight:style.fontWeight,fontFamily:style.fontFamily,minHeight:style.minHeight,iconWidth:icon?.width,iconHeight:icon?.height}})));
+  expect(linkStyles[0]).toEqual(linkStyles[1]);
   await noOverflow(page,2);
 });
 

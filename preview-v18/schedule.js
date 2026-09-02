@@ -144,6 +144,7 @@
   function providerKey(link){
     const s=`${link?.site||''} ${link?.url||''}`.toLowerCase();
     if(s.includes('crunchyroll'))return'crunchyroll';
+    if(s.includes('youtube')||s.includes('youtu.be'))return'youtube';
     if(s.includes('netflix'))return'netflix';
     if(s.includes('primevideo')||s.includes('prime video')||s.includes('amazon'))return'prime';
     if(s.includes('disney'))return'disney';
@@ -152,10 +153,12 @@
     if(s.includes('hulu'))return'hulu';
     return slug(link?.site||'stream');
   }
-  function providerLabel(k,site=''){return({crunchyroll:'Crunchyroll',netflix:'Netflix',prime:'Prime Video',disney:'Disney+',apple:'Apple TV',hidive:'HIDIVE',hulu:'Hulu'})[k]||site||k}
+  function providerLabel(k,site=''){return({crunchyroll:'Crunchyroll',youtube:'YouTube',netflix:'Netflix',prime:'Prime Video',disney:'Disney+',apple:'Apple TV',hidive:'HIDIVE',hulu:'Hulu'})[k]||site||k}
   function streamLinks(m){return(m?.externalLinks||m?.streaming||[]).filter(x=>String(x?.type||'STREAMING').toUpperCase()==='STREAMING'&&/^https:\/\//i.test(x?.url||''))}
+  const PROVIDER_LOGOS={crunchyroll:'crunchyroll.svg',youtube:'youtube.svg',netflix:'netflix.svg',prime:'amazon.svg',apple:'apple.svg'};
   function fallbackLogo(k){
     if(k==='crunchyroll')return'<span class="nx18-crunchy" aria-hidden="true"><i></i></span>';
+    if(k==='youtube')return'<span class="nx18-youtube" aria-hidden="true"><i></i></span>';
     if(k==='netflix')return'<span class="nx18-netflix" aria-hidden="true">N</span>';
     if(k==='prime')return'<span class="nx18-prime" aria-hidden="true">prime</span>';
     if(k==='disney')return'<span class="nx18-disney" aria-hidden="true">Disney+</span>';
@@ -164,18 +167,18 @@
     return'<span class="nx18-generic-stream" aria-hidden="true">▶</span>';
   }
   function providerIcon(link,mode='card'){
-    const k=providerKey(link),src=/^https:\/\//i.test(link?.icon||'')?link.icon:'';
+    const k=providerKey(link),local=PROVIDER_LOGOS[k],src=local?`${BASE}/assets/streaming/${local}`:/^https:\/\//i.test(link?.icon||'')?link.icon:'';
     return `<span class="nx18-provider-logo ${mode}" data-provider="${esc(k)}">${src?`<img src="${esc(src)}" alt="" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="nx18-provider-fallback" hidden>${fallbackLogo(k)}</span>`:`<span class="nx18-provider-fallback">${fallbackLogo(k)}</span>`}</span>`;
   }
   function primaryStream(m){
     const links=streamLinks(m);if(!links.length)return null;
-    const pref=['crunchyroll','netflix','prime','disney','apple','hidive','hulu'];
+    const pref=['crunchyroll','youtube','netflix','prime','disney','apple','hidive','hulu'];
     return links.sort((a,b)=>{const ai=pref.indexOf(providerKey(a)),bi=pref.indexOf(providerKey(b));return(ai<0?99:ai)-(bi<0?99:bi)})[0];
   }
   function providers(){
     const map=new Map();
     for(const x of items)for(const l of streamLinks(x.media)){const k=providerKey(l);if(!map.has(k))map.set(k,{key:k,label:providerLabel(k,l.site),link:l,count:0});map.get(k).count++}
-    const pref=['apple','crunchyroll','disney','netflix','prime','hidive','hulu'];
+    const pref=['apple','crunchyroll','youtube','disney','netflix','prime','hidive','hulu'];
     return[...map.values()].sort((a,b)=>{const ai=pref.indexOf(a.key),bi=pref.indexOf(b.key);return(ai<0?99:ai)-(bi<0?99:bi)||a.label.localeCompare(b.label)})
   }
 

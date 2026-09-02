@@ -531,3 +531,125 @@ html[data-theme=light] .nx38-impressions-home .nx38-impressions-head>div:first-c
   .nx44-has-rail .nx44-rail-actions,.nx38-impressions-home .nx38-impressions-actions{min-height:40px;padding-top:6px!important}
   .nx44-rail-link{margin-left:6px!important}
 }
+
+/* V44.4.3: clean provider branding, anchored episode labels, and one Home surface. */
+.nx18-stream{
+  left:13px!important;
+  bottom:13px!important;
+  width:34px!important;
+  height:34px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+  transition:transform .16s ease,opacity .16s ease
+}
+.nx18-stream:hover{transform:scale(1.06)}
+.nx18-provider-logo.card{
+  width:26px;
+  height:26px;
+  overflow:visible;
+  background:transparent!important
+}
+.nx18-provider-logo.card[data-provider="youtube"]{width:28px;height:21px}
+.nx18-provider-logo.card[data-provider="crunchyroll"]{width:25px;height:25px}
+.nx18-provider-logo.card img,
+.nx18-provider-logo.filter img{
+  width:100%;
+  height:100%;
+  padding:0!important;
+  object-fit:contain;
+  background:transparent!important
+}
+.nx18-provider-logo.filter{
+  border-radius:0;
+  background:transparent!important;
+  overflow:visible
+}
+.nx18-provider-fallback{background:transparent!important}
+.nx18-youtube{
+  position:relative;
+  display:block;
+  width:24px;
+  height:17px;
+  border-radius:5px;
+  background:#ff0000
+}
+.nx18-youtube i{
+  position:absolute;
+  left:9px;
+  top:5px;
+  width:0;
+  height:0;
+  border-top:3.5px solid transparent;
+  border-bottom:3.5px solid transparent;
+  border-left:6px solid #fff
+}
+.nx18-episode{
+  right:14px!important;
+  bottom:13px!important;
+  min-width:44px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:3px;
+  text-align:right;
+  pointer-events:none
+}
+.nx18-episode small{
+  display:block;
+  margin:0!important;
+  color:#98858f;
+  font-size:7px;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:0!important
+}
+.nx18-episode strong{
+  display:block;
+  margin:0;
+  color:#f0446d;
+  font-family:'Nunito Sans',system-ui,sans-serif!important;
+  font-size:32px!important;
+  font-style:normal!important;
+  font-weight:400!important;
+  font-variant-numeric:tabular-nums;
+  line-height:.9!important;
+  letter-spacing:0!important
+}
+.nx35-home .nx35-section,
+.nx35-home .nx38-impressions-home{
+  background:var(--bg,#080608)!important
+}
+.nx35-home .nx35-head>a:not(.nx44-rail-link){
+  min-height:32px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#eee7ea!important;
+  font-family:'Nunito Sans',system-ui,sans-serif!important;
+  font-size:13px!important;
+  font-weight:700!important;
+  line-height:1.35;
+  letter-spacing:0!important;
+  white-space:nowrap
+}
+.nx35-home .nx35-head>a:not(.nx44-rail-link):hover{color:#fff!important}
+.nx35-home .nx35-head>a:not(.nx44-rail-link) svg{
+  width:16px!important;
+  height:16px!important;
+  min-width:16px;
+  min-height:16px
+}
+.nx35-home .nx44-rail-frame{
+  --nx44-rail-surface:var(--bg,#080608)!important
+}
+.nx35-home .tonal .nx35-edge.nx44-rail-frame:before{
+  background:linear-gradient(90deg,var(--nx44-rail-surface) 0,color-mix(in srgb,var(--nx44-rail-surface) 76%,transparent) 40%,transparent 100%)
+}
+.nx35-home .tonal .nx35-edge.nx44-rail-frame:after{
+  background:linear-gradient(270deg,var(--nx44-rail-surface) 0,color-mix(in srgb,var(--nx44-rail-surface) 76%,transparent) 40%,transparent 100%)
+}
+html[data-theme=light] .nx35-home .nx35-head>a:not(.nx44-rail-link){color:#675a61!important}
+html[data-theme=light] .nx35-home .nx35-head>a:not(.nx44-rail-link):hover{color:#941d3d!important}
