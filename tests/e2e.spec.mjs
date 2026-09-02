@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.3.0&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.4.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),local=new URL(requested.pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,50*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -24,9 +24,37 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-01-v44.3.0')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-02-v44.4.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
+
+test('Home rails share aligned controls smooth movement and directional fades',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  const section=page.locator('#nx35Season').locator('xpath=ancestor::section[1]');
+  const rail=section.locator('.nx44-rail');
+  const frame=section.locator('.nx44-rail-frame');
+  const actions=section.locator('.nx44-rail-actions');
+  const previous=actions.locator('[data-nx44-rail-dir="prev"]');
+  const next=actions.locator('[data-nx44-rail-dir="next"]');
+  await expect(rail).toBeVisible({timeout:30000});
+  await expect(actions).toBeVisible();
+  await expect(previous).toBeDisabled();
+  await expect(next).toBeEnabled();
+  await expect(frame).toHaveAttribute('data-nx44-left','0');
+  await expect(frame).toHaveAttribute('data-nx44-right','1');
+  expect(await frame.evaluate(element=>parseFloat(getComputedStyle(element,'::after').opacity))).toBeGreaterThan(.5);
+  expect(await actions.evaluate(element=>[...element.children].map(child=>child.tagName))).toEqual(['BUTTON','BUTTON','A']);
+  const geometry=await actions.evaluate(element=>{const box=element.getBoundingClientRect(),head=element.closest('.nx35-head').getBoundingClientRect();return{left:box.left,right:box.right,headLeft:head.left,headRight:head.right}});
+  expect(geometry.left).toBeGreaterThanOrEqual(geometry.headLeft-.5);
+  expect(geometry.right).toBeLessThanOrEqual(geometry.headRight+.5);
+  await next.click();
+  await expect.poll(()=>rail.evaluate(element=>element.scrollLeft)).toBeGreaterThan(40);
+  await expect(frame).toHaveAttribute('data-nx44-left','1');
+  await expect(previous).toBeEnabled();
+  await noOverflow(page,2);
+});
 
 test('production Home falls back when its API returns empty successful payloads',async({page})=>{test.skip(new URL(ORIGIN).hostname.endsWith('github.io'),'This regression requires the production fetch bridge.');const origin=new URL(ORIGIN).origin;await page.route(`${origin}/api/home**`,route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({season:[],schedule:[],top:[],popular:[],reading:[],soon:[]})}));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('#nx35Season .nx35-anime').first()).toBeVisible({timeout:30000});await expect(page.locator('#nx35Top .nx35-rank').first()).toBeVisible();await expect(page.locator('#nx35Popular .nx35-anime').first()).toBeVisible();await expect(page.locator('.nx35-data-empty')).toHaveCount(0)});
 
@@ -177,7 +205,25 @@ test('native news slugs with underscores open the reader',async({page})=>{const 
 
 test('manga catalog is a dedicated responsive product surface',async({page})=>{for(const width of [390,768,1440]){await page.setViewportSize({width,height:width===390?844:900});await page.goto(pageUrl('/mangas'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx42-manga-page')).toBeVisible({timeout:30000});await expect(page.getByRole('heading',{name:'Catálogo de Mangás'})).toBeVisible();await expect(page.locator('.nx42-manga-card').first()).toBeVisible();await expect(page.locator('#nx42MangaSearch')).toBeVisible();await noOverflow(page,3)}});
 
-test('single Home impression is complete and does not look like a broken rail',async({page})=>{const impression={id:'imp-one',media_id:101,body:'Uma estreia excelente e cheia de personalidade.',created_at:new Date().toISOString(),username:'kayky',status:'CURRENT',progress:5,score:9,media:{id:101,title:'Anime Teste 101',cover:pixel}};await page.route(`${new URL(ORIGIN).origin}/api/community/impressions**`,route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:[impression]})}));await page.addInitScript(({pixel,impression})=>localStorage.setItem('aninexus:impressions:v1',JSON.stringify([{...impression,mediaId:101,createdAt:impression.created_at,media:{...impression.media,cover:pixel}}])),{pixel,impression});await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});const card=page.locator('.nx38-impression-home-card').first();await expect(card).toBeVisible({timeout:30000});await expect(card).toContainText('Uma estreia excelente');await expect(card.locator('.nx38-impression-meta-row')).toContainText('Assistindo');await expect(card.locator('.nx38-impression-meta-row')).toContainText('episódio 5');await expect(page.locator('.nx38-impressions-rail')).toHaveAttribute('data-count','1');await expect(page.getByRole('button',{name:'Impressão anterior'})).toBeDisabled();await noOverflow(page,2)});
+test('single Home impression is complete and does not look like a broken rail',async({page})=>{
+  const impression={id:'imp-one',media_id:101,body:'Uma estreia excelente e cheia de personalidade.',created_at:new Date().toISOString(),username:'kayky',status:'CURRENT',progress:5,score:9,media:{id:101,title:'Anime Teste 101',cover:pixel}};
+  await page.route(`${new URL(ORIGIN).origin}/api/community/impressions**`,route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:[impression]})}));
+  await page.addInitScript(({pixel,impression})=>localStorage.setItem('aninexus:impressions:v1',JSON.stringify([{...impression,mediaId:101,createdAt:impression.created_at,media:{...impression.media,cover:pixel}}])),{pixel,impression});
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  const card=page.locator('.nx38-impression-home-card').first();
+  await expect(card).toBeVisible({timeout:30000});
+  await expect(card).toContainText('Uma estreia excelente');
+  await expect(card.locator('.nx38-impression-meta-row')).toContainText('Assistindo');
+  await expect(card.locator('.nx38-impression-meta-row')).toContainText('episódio 5');
+  await expect(page.locator('.nx38-impressions-rail')).toHaveAttribute('data-count','1');
+  const previous=page.getByRole('button',{name:'Impressão anterior'});
+  const next=page.getByRole('button',{name:'Próxima impressão'});
+  await expect(previous).toBeDisabled();
+  await expect(next).toBeDisabled();
+  await expect(previous).toHaveClass(/nx44-rail-button/);
+  await expect(next.locator('.nx44-rail-icon')).toBeVisible();
+  await noOverflow(page,2);
+});
 
 test('dedicated pages have one renderer and never flash a legacy layout',async({page,browserName})=>{test.skip(browserName!=='chromium','A troca temporal de layout é auditada uma vez no Chromium.');await page.addInitScript(()=>{window.__nxLayouts=[];const record=()=>{const el=document.querySelector('#app')?.firstElementChild;if(!el)return;const value=`${el.tagName}.${String(el.className||'').trim()}`;if(window.__nxLayouts.at(-1)!==value)window.__nxLayouts.push(value)};new MutationObserver(record).observe(document,{childList:true,subtree:true});addEventListener('DOMContentLoaded',record,{once:true})});const cases=[['/','nx35-home'],['/animes/catalogo','nx21-catalog-page'],['/animes/programacao','nx18-schedule'],['/animes/temporadas','nx-season'],['/anime/anime-teste-101','nx22-detail'],['/noticias','nx35-news-page'],['/comunidade','nx40-community'],['/login','nx38-auth-page'],['/admin','nx38-admin-page'],['/meus-animes','nx38-library'],['/termos-de-uso','nx-legal'],['/quem-somos','nx-inst']];for(const[route,prefix]of cases){await page.goto(pageUrl(route),{waitUntil:'domcontentloaded'});await expect(page.locator(`.${prefix}`).first()).toBeVisible({timeout:30000});await page.waitForTimeout(300);const history=await page.evaluate(()=>window.__nxLayouts||[]);expect(history,`${route}: ${history.join(' -> ')}`).not.toContain(expect.stringMatching(/detail-hero|nx-detail(?:-loading)?|catalog-hero|community-page|news-hero|prose/));expect(history.every(value=>value.includes(prefix)),`${route}: ${history.join(' -> ')}`).toBe(true)}});
 

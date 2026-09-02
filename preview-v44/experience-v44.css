@@ -149,3 +149,155 @@ body:not(.nx35-home-active) #app>main:first-child{padding-top:var(--nx43-header-
   .nx44-radio-copy strong{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.nx44-radio-control{transition:none}.nx44-radio[data-state=loading] .nx44-radio-play:after,.nx44-radio--float[data-state=playing]:before,.nx44-radio-volume-panel{animation:none}}
+
+/* V44.4: one light, predictable rail system across Home content. */
+.nx44-rail-frame{
+  --nx44-rail-surface:#080608;
+  position:relative;
+  isolation:isolate
+}
+.nx35-section.tonal .nx44-rail-frame{--nx44-rail-surface:#0b080a}
+.nx38-impressions-home .nx44-rail-frame{--nx44-rail-surface:var(--nxlib-bg,#0b090d)}
+.nx44-rail-frame:before,.nx44-rail-frame:after{
+  content:"";
+  position:absolute;
+  z-index:8;
+  top:0;
+  bottom:9px;
+  width:clamp(28px,4.8vw,58px);
+  pointer-events:none;
+  visibility:hidden;
+  opacity:0;
+  transition:opacity .22s ease,visibility .22s ease
+}
+.nx44-rail-frame:before{
+  left:0;
+  background:linear-gradient(90deg,var(--nx44-rail-surface) 0,color-mix(in srgb,var(--nx44-rail-surface) 76%,transparent) 40%,transparent 100%)
+}
+.nx44-rail-frame:after{
+  right:0;
+  background:linear-gradient(270deg,var(--nx44-rail-surface) 0,color-mix(in srgb,var(--nx44-rail-surface) 76%,transparent) 40%,transparent 100%)
+}
+.nx44-rail-frame[data-nx44-left="1"]:before,.nx44-rail-frame[data-nx44-right="1"]:after{
+  visibility:visible;
+  opacity:.78
+}
+.nx44-rail{
+  scroll-behavior:smooth;
+  scroll-snap-type:x proximity!important;
+  scroll-padding-inline:2px;
+  overscroll-behavior-inline:contain;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch
+}
+.nx44-rail::-webkit-scrollbar{display:none}
+.nx44-rail>*{scroll-snap-align:start;scroll-snap-stop:normal}
+@media(hover:hover) and (pointer:fine){.nx35-rail.nx44-rail{cursor:grab}.nx35-rail.nx44-rail.dragging{cursor:grabbing}}
+
+.nx44-rail-actions{
+  min-width:max-content;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:6px
+}
+.nx44-rail-actions .nx44-rail-button{
+  width:34px!important;
+  height:34px!important;
+  min-width:34px!important;
+  min-height:34px!important;
+  margin:0;
+  padding:0!important;
+  display:grid!important;
+  place-items:center!important;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:50%;
+  background:rgba(255,255,255,.025);
+  color:#a99da3;
+  font-size:0!important;
+  line-height:1!important;
+  cursor:pointer;
+  box-shadow:none;
+  transition:color .16s ease,border-color .16s ease,background-color .16s ease,transform .16s ease,opacity .16s ease
+}
+.nx44-rail-actions .nx44-rail-button:hover:not(:disabled){
+  color:#fff;
+  border-color:rgba(242,79,111,.42);
+  background:rgba(227,38,79,.12);
+  transform:translateY(-1px)
+}
+.nx44-rail-actions .nx44-rail-button:active:not(:disabled){transform:scale(.96)}
+.nx44-rail-actions .nx44-rail-button:focus-visible{outline:2px solid #ff7893!important;outline-offset:3px!important}
+.nx44-rail-actions .nx44-rail-button:disabled{opacity:.24;cursor:default}
+.nx44-rail-actions .nx44-rail-button[hidden]{display:none!important}
+.nx44-rail-icon{
+  width:16px;
+  height:16px;
+  display:grid;
+  place-items:center;
+  color:inherit;
+  font:500 19px/1 system-ui,sans-serif;
+  transform:none
+}
+.nx44-rail-icon svg{
+  display:block!important;
+  width:16px!important;
+  height:16px!important;
+  min-width:16px!important;
+  min-height:16px!important;
+  margin:0!important;
+  fill:none!important;
+  stroke:currentColor!important;
+  stroke-width:1.8!important
+}
+.nx44-rail-button[data-nx44-rail-dir="next"] .nx44-rail-icon{transform:rotate(180deg)}
+.nx35-head .nx44-rail-link{
+  min-height:32px;
+  margin-left:5px;
+  padding-left:11px;
+  border-left:1px solid rgba(255,255,255,.075);
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:#a99da3;
+  font-size:9px;
+  font-weight:900;
+  line-height:1.2;
+  white-space:nowrap
+}
+.nx35-head .nx44-rail-link:hover{color:#f25d78}
+.nx44-rail-link-icon,.nx44-rail-link-icon svg{display:block;width:14px!important;height:14px!important;min-width:14px!important;min-height:14px!important}
+.nx44-rail-actions--overlay{
+  position:absolute;
+  z-index:10;
+  top:12px;
+  right:12px
+}
+.nx44-rail-actions--overlay[hidden]{display:none!important}
+
+html[data-theme=light] .nx44-rail-frame{--nx44-rail-surface:#f6f3f4}
+html[data-theme=light] .nx35-section.tonal .nx44-rail-frame{--nx44-rail-surface:#eee9eb}
+html[data-theme=light] .nx38-impressions-home .nx44-rail-frame{--nx44-rail-surface:var(--nxlib-bg,#f6f3f5)}
+html[data-theme=light] .nx44-rail-actions .nx44-rail-button{border-color:rgba(50,28,39,.13);background:rgba(255,255,255,.54);color:#695c63}
+html[data-theme=light] .nx44-rail-actions .nx44-rail-button:hover:not(:disabled){color:#8f1f3c;border-color:rgba(181,31,67,.28);background:#fff}
+html[data-theme=light] .nx35-head .nx44-rail-link{border-left-color:rgba(50,28,39,.1);color:#675a61}
+html[data-theme=light] .nx35-head .nx44-rail-link:hover{color:#941d3d}
+
+@media(max-width:720px){
+  .nx44-has-rail .nx35-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:14px}
+  .nx44-has-rail .nx35-head>div{min-width:0}
+  .nx44-rail-frame:before,.nx44-rail-frame:after{width:34px}
+  .nx44-rail-frame[data-nx44-left="1"]:before,.nx44-rail-frame[data-nx44-right="1"]:after{opacity:.64}
+  .nx44-rail-actions .nx44-rail-button{width:40px!important;height:40px!important;min-width:40px!important;min-height:40px!important}
+  .nx35-head .nx44-rail-link{min-height:40px;margin-left:3px;padding-left:9px;font-size:8px}
+}
+@media(max-width:480px){
+  .nx44-has-rail .nx35-head{grid-template-columns:1fr;gap:12px}
+  .nx44-has-rail .nx44-rail-actions{width:100%;padding-top:11px;border-top:1px solid rgba(255,255,255,.065)}
+  html[data-theme=light] .nx44-has-rail .nx44-rail-actions{border-top-color:rgba(50,28,39,.09)}
+  .nx38-impressions-head .nx44-rail-actions{width:auto;padding-top:0;border-top:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .nx44-rail{scroll-behavior:auto!important}
+  .nx44-rail-frame:before,.nx44-rail-frame:after,.nx44-rail-actions .nx44-rail-button{transition:none!important}
+}
