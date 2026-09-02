@@ -81,8 +81,9 @@
   const resumeRequested = (() => {
     try {
       const value = JSON.parse(sessionStorage.getItem(RADIO_RESUME_STORAGE) || 'null');
-      sessionStorage.removeItem(RADIO_RESUME_STORAGE);
-      return value?.playing === true && Date.now() - Number(value.at || 0) < 20000;
+      const valid = value?.playing === true;
+      if (!valid) sessionStorage.removeItem(RADIO_RESUME_STORAGE);
+      return valid;
     } catch { return false; }
   })();
   let activated = (() => {
@@ -109,20 +110,25 @@
   let audioAttempt = 0;
   let mountTimer = 0;
   let layoutFrame = 0;
+  let volumePanelOpen = false;
   const channel = 'BroadcastChannel' in window ? new BroadcastChannel('aninexus-radio-v44') : null;
 
   function persistAudioSettings() {
     try { localStorage.setItem(RADIO_STORAGE, JSON.stringify({ volume: audio.volume, muted: audio.muted })); } catch {}
   }
 
-  function preservePlaybackForNavigation() {
+  function setPlaybackResume(enabled) {
     try {
-      if (playIntent && (state === 'playing' || state === 'loading')) {
+      if (enabled) {
         sessionStorage.setItem(RADIO_RESUME_STORAGE, JSON.stringify({ playing: true, at: Date.now() }));
       } else {
         sessionStorage.removeItem(RADIO_RESUME_STORAGE);
       }
     } catch {}
+  }
+
+  function preservePlaybackForNavigation() {
+    setPlaybackResume(playIntent && (state === 'playing' || state === 'loading'));
   }
 
   function announcePlayback() {
@@ -133,6 +139,7 @@
 
   function pauseForAnotherTab() {
     playIntent = false;
+    setPlaybackResume(false);
     clearTimeout(audioRetry);
     audio.pause();
     state = 'paused';
@@ -190,6 +197,11 @@
       slider.setAttribute('aria-valuetext', audio.muted ? 'Mudo' : `${value}%`);
       ui.querySelector('[data-nx44-volume-value]')?.replaceChildren(`${value}%`);
     }
+    if (volume) {
+      const panel = ui.querySelector('[data-nx44-volume-panel]');
+      volume.setAttribute('aria-expanded', String(volumePanelOpen));
+      if (panel) panel.hidden = !volumePanelOpen;
+    }
     if (title) title.textContent = track.title;
     if (artist) artist.textContent = state === 'error' ? 'Rádio indisponível agora. Toque para tentar novamente.' : track.artist;
     ui.setAttribute('aria-busy', state === 'loading' ? 'true' : 'false');
@@ -214,6 +226,16 @@
     layoutFrame = requestAnimationFrame(layoutFloatingPlayer);
   }
 
+  function bindImmediateControl(button, action) {
+    if (!button) return;
+    button.addEventListener('pointerdown', event => {
+      if (event.button === 0) action(event);
+    });
+    button.addEventListener('click', event => {
+      if (event.detail === 0) action(event);
+    });
+  }
+
   function playerMarkup(mode) {
     const section = document.createElement('section');
     section.className = `nx44-radio nx44-radio--${mode}`;
@@ -223,8 +245,9 @@
     section.innerHTML = mode === 'float'
       ? `<button class="nx44-radio-control nx44-radio-play nx44-radio-float-button" type="button" data-nx44-play></button>`
       : `<button class="nx44-radio-control nx44-radio-play" type="button" data-nx44-play></button><div class="nx44-radio-copy"><span><i aria-hidden="true"></i>RÁDIO AO VIVO</span><strong data-nx44-title></strong><small data-nx44-artist></small></div><div class="nx44-radio-volume-wrap"><button class="nx44-radio-control nx44-radio-volume" type="button" data-nx44-volume aria-expanded="false" aria-controls="nx44RadioVolumePanel"></button><div class="nx44-radio-volume-panel" id="nx44RadioVolumePanel" data-nx44-volume-panel hidden><span data-nx44-volume-value>72%</span><input type="range" min="0" max="100" step="1" value="72" data-nx44-volume-range aria-label="Volume da rádio"></div></div>`;
-    section.querySelector('[data-nx44-play]').addEventListener('click', togglePlayback);
-    section.querySelector('[data-nx44-volume]')?.addEventListener('click', toggleVolumePanel);
+    bindImmediateControl(section.querySelector('[data-nx44-play]'), togglePlayback);
+    const volumeButton = section.querySelector('[data-nx44-volume]');
+    bindImmediateControl(volumeButton, toggleVolumePanel);
     section.querySelector('[data-nx44-volume-range]')?.addEventListener('input', setVolume);
     return section;
   }
@@ -239,6 +262,7 @@
       return;
     }
     if (ui?.isConnected && ui.classList.contains(`nx44-radio--${mode}`)) return render();
+    if (mode === 'float') volumePanelOpen = false;
     ui?.remove();
     ui = playerMarkup(mode);
     if (copy) {
@@ -263,6 +287,7 @@
       scheduleMount();
     }
     playIntent = true;
+    setPlaybackResume(true);
     clearTimeout(audioRetry);
     state = 'loading';
     render();
@@ -279,6 +304,7 @@
     } catch (error) {
       if (error?.name === 'NotAllowedError' || error?.name === 'AbortError') {
         playIntent = false;
+        setPlaybackResume(false);
         state = 'paused';
       } else {
         state = 'error';
@@ -289,6 +315,7 @@
 
   function stopPlayback() {
     playIntent = false;
+    setPlaybackResume(false);
     clearTimeout(audioRetry);
     audio.pause();
     state = 'paused';
@@ -304,6 +331,7 @@
     const panel = ui?.querySelector('[data-nx44-volume-panel]');
     const button = ui?.querySelector('[data-nx44-volume]');
     if (!panel || panel.hidden) return;
+    volumePanelOpen = false;
     panel.hidden = true;
     button?.setAttribute('aria-expanded', 'false');
   }
@@ -312,6 +340,7 @@
     const panel = ui?.querySelector('[data-nx44-volume-panel]');
     if (!panel) return;
     const open = panel.hidden;
+    volumePanelOpen = open;
     panel.hidden = !open;
     event.currentTarget.setAttribute('aria-expanded', String(open));
     if (open) requestAnimationFrame(() => panel.querySelector('input')?.focus());
@@ -348,6 +377,7 @@
 
   audio.addEventListener('playing', () => {
     if (!playIntent) return audio.pause();
+    setPlaybackResume(true);
     state = 'playing';
     audioAttempt = 0;
     render();
