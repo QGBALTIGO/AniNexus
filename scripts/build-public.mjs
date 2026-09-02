@@ -12,7 +12,7 @@ await fs.rm(path.join(pub,'release.json'),{force:true});
 
 // Production uses the same shell as GitHub Pages. Only classified runtime layers are copied.
 await fs.copyFile(path.join(root,'index.html'),path.join(pub,'index.html'));
-for(const file of ['404.html','robots.txt','sitemap.xml']){
+for(const file of ['404.html','robots.txt','sitemap.xml','manifest.webmanifest','sw.js']){
   if(await exists(path.join(root,file)))await fs.copyFile(path.join(root,file),path.join(pub,file));
 }
 

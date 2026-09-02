@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.4.6&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.5.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),local=new URL(requested.pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,50*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -24,7 +24,7 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-02-v44.4.6')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-02-v44.5.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -259,7 +259,7 @@ test('header navigation preserves the same playing audio node',async({page})=>{
   await page.getByRole('button',{name:'Ouvir rádio'}).click();
   await expect(page.locator('.nx44-radio--inline')).toHaveAttribute('data-state','playing');
   await page.evaluate(()=>window.__nxOriginalAudio=document.querySelector('#nx44RadioAudio'));
-  const destinations=[['anime','.nx21-catalog-page'],['manga','.nx42-manga-page'],['schedule','.nx18-schedule'],['season','.nx-season'],['community','.nx40-community'],['home','.nx35-home']];
+  const destinations=[['anime','.nx21-catalog-page'],['manga','.nx42-manga-page'],['season','.nx-season'],['schedule','.nx18-schedule'],['news','.nx35-news-page'],['home','.nx35-home']];
   for(const[key,selector]of destinations){
     await page.locator(`.main-nav [data-nav="${key}"]`).click();
     await expect(page.locator(selector)).toBeVisible({timeout:30000});
@@ -292,7 +292,59 @@ test('legacy local activity never renders a broken voce profile link',async({pag
 
 test('local activity adopts the signed-in member name avatar and public profile',async({page})=>{await page.addInitScript(pixel=>localStorage.setItem('aninexus:community:activity:v40',JSON.stringify([{id:'signed-member',kind:'state',media_id:101,username:'',display_name:'',avatar_url:'',status:'CURRENT',created_at:new Date().toISOString(),title:'Anime Teste 101',cover:pixel,local:true}])),pixel);await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await page.evaluate(pixel=>{window.AniNexusAccountData=async()=>({displayName:'Kayky Sousa',username:'kayky',avatarUrl:pixel});dispatchEvent(new CustomEvent('aninexus:account-identity-changed'))},pixel);const hero=page.locator('#nx35CommunityHero');await expect(hero).toContainText('Kayky Sousa',{timeout:30000});await expect(hero.locator('.nx35-community-avatar>img')).toHaveAttribute('src',pixel);await expect(hero.locator('a').first()).toHaveAttribute('href',/kayky/);await expect(hero).not.toContainText('Sua lista')});
 
-test('mobile drawer exposes light dark and automatic appearance modes above first-visit consent',async({page})=>{await page.setViewportSize({width:390,height:844});await page.goto(firstVisitUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx42-consent')).toBeVisible();await page.locator('[data-action="drawer-open"]').click();const theme=page.locator('.nx42-theme-card');await expect(theme).toBeVisible();for(const label of ['Claro','Escuro','Automático'])await expect(theme.getByRole('button',{name:label})).toBeVisible();await theme.getByRole('button',{name:'Claro'}).click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await theme.getByRole('button',{name:'Escuro'}).click();await expect(page.locator('html')).toHaveAttribute('data-theme','dark');await noOverflow(page,2)});
+test('mobile drawer is colorful account-aware and limited to six destinations',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(firstVisitUrl('/'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx42-consent')).toBeVisible();
+  await page.locator('[data-action="drawer-open"]').click();
+  const drawer=page.locator('#drawer'),panel=drawer.locator('.drawer-panel'),auth=drawer.locator('.drawer-auth-card'),links=drawer.locator('.drawer-nav-grid>a'),theme=drawer.locator('[data-nx-drawer-theme]'),install=drawer.locator('[data-nx-install]');
+  await expect(panel).toBeVisible();
+  await expect(links).toHaveCount(6);
+  expect(await links.locator('strong').allTextContents()).toEqual(['Início','Animes','Mangás','Temporadas','Programação','Notícias']);
+  await expect(drawer.locator('.drawer-nav-grid small')).toHaveCount(6);
+  await expect(auth.getByRole('button',{name:'Entrar',exact:true})).toBeVisible();
+  await expect(auth.getByRole('button',{name:'Criar conta',exact:true})).toBeVisible();
+  await expect.poll(()=>panel.evaluate(element=>Math.abs(innerWidth-element.getBoundingClientRect().right))).toBeLessThanOrEqual(1);
+  const geometry=await panel.evaluate(element=>{const box=element.getBoundingClientRect();return{top:box.top,bottom:Math.abs(innerHeight-box.bottom),height:box.height,radius:parseFloat(getComputedStyle(element).borderTopLeftRadius)}});
+  expect(Math.abs(geometry.top)).toBeLessThanOrEqual(1);
+  expect(geometry.bottom).toBeLessThanOrEqual(1);
+  expect(geometry.height).toBeGreaterThanOrEqual(843);
+  expect(geometry.radius).toBe(0);
+  await expect(theme).toBeVisible();
+  await expect(drawer.locator('.nx42-theme-card')).toHaveCount(0);
+  const initialTheme=await page.locator('html').getAttribute('data-theme'),nextTheme=initialTheme==='dark'?'light':'dark';
+  await theme.click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme',nextTheme);
+  await theme.click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme',initialTheme);
+  await expect(install).toBeVisible();
+  await page.evaluate(()=>Object.defineProperty(navigator,'userAgent',{configurable:true,get:()=> 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Version/18.0 Mobile/15E148 Safari/604.1'}));
+  await install.click();
+  const guide=page.locator('.nx44-install-sheet');
+  await expect(guide).toBeVisible();
+  await expect(guide.getByRole('heading',{name:'Instalar o AniNexus'})).toBeVisible();
+  await expect(guide.locator('li')).toHaveCount(3);
+  await expect(guide).toContainText('Adicionar à Tela de Início');
+  await guide.getByRole('button',{name:'Entendi'}).click();
+  await expect(guide).toHaveCount(0);
+  await page.evaluate(()=>{window.__nxNativeInstallPrompted=false;const event=new Event('beforeinstallprompt',{cancelable:true});Object.defineProperty(event,'prompt',{value:async()=>{window.__nxNativeInstallPrompted=true}});Object.defineProperty(event,'userChoice',{value:Promise.resolve({outcome:'dismissed'})});dispatchEvent(event)});
+  await expect(install).toHaveAttribute('data-install-ready','native');
+  await install.click();
+  expect(await page.evaluate(()=>window.__nxNativeInstallPrompted)).toBe(true);
+  await page.evaluate(pixel=>window.AniNexusAuthV38.syncDrawerIdentity({firstName:'Kayky',username:'kayky',imageUrl:pixel}),pixel);
+  await expect(auth).toHaveAttribute('data-auth-state','authenticated');
+  await expect(auth.locator('.drawer-account-avatar img')).toHaveAttribute('src',pixel);
+  await expect(auth.locator('h3')).toHaveText('Kayky');
+  await expect(auth.locator('p')).toHaveText('@kayky');
+  await expect(auth.getByRole('button',{name:'Minha conta',exact:true})).toBeVisible();
+  await expect(auth.getByRole('button',{name:'Entrar',exact:true})).toHaveCount(0);
+  await page.evaluate(()=>window.AniNexusAuthV38.syncDrawerIdentity());
+  await page.setViewportSize({width:320,height:700});
+  await expect(auth.getByRole('button',{name:'Entrar',exact:true})).toBeVisible();
+  await expect(auth.getByRole('button',{name:'Criar conta',exact:true})).toBeVisible();
+  await expect(links).toHaveCount(6);
+  await noOverflow(page,2);
+});
 
 test('Home keeps anime and manga rankings separate and navigable',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});const animeRank=page.locator('#nx35Top .nx35-rank'),mangaRank=page.locator('#nx42TopManga [data-nx42-type="manga"]');await expect(animeRank.first()).toBeVisible({timeout:30000});await expect(mangaRank.first()).toBeVisible({timeout:30000});expect(await animeRank.count()).toBeGreaterThan(0);expect(await mangaRank.count()).toBeGreaterThan(0);await expect(page.locator('#nx35Top [data-nx42-type="manga"]')).toHaveCount(0);await expect(page.locator('#nx42TopManga [data-open-anime]')).toHaveCount(0)});
 
@@ -365,7 +417,7 @@ test('News and authentication remain healthy after V40',async({page})=>{await pa
 
 test('mobile authentication is compact readable and never overflows',async({page})=>{for(const width of [320,360,390,430]){await page.setViewportSize({width,height:844});await page.goto(pageUrl('/login'),{waitUntil:'domcontentloaded'});const auth=page.locator('.nx38-auth-page');await expect(auth).toBeVisible({timeout:15000});await expect(page.locator('.nx38-auth-benefits')).toBeHidden();await expect(page.locator('.nx38-auth-copy>p')).toBeHidden();const storyHeight=await page.locator('.nx38-auth-story').evaluate(element=>element.getBoundingClientRect().height);expect(storyHeight).toBeLessThan(140);await noOverflow(page,2)}});
 
-test('desktop header keeps only the six approved destinations and gains chrome after scroll',async({page})=>{await page.setViewportSize({width:1440,height:900});await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});const labels=await page.locator('.main-nav>a').allTextContents();expect(labels.map(x=>x.trim())).toEqual(['Início','Animes','Mangás','Calendário','Temporadas','Comunidade']);await expect(page.locator('.main-nav')).toBeVisible();await expect(page.locator('.menu-btn')).toBeHidden();await expect(page.locator('.top-actions>[data-action="search"]')).toBeVisible();await expect(page.locator('.top-actions>[data-action="theme"]')).toBeVisible();await expect(page.locator('.top-actions>[data-action="notifications"]')).toBeHidden();await expect(page.locator('.top-actions>[data-action="login"]')).toBeVisible();await expect(page.locator('.top-actions>[data-action="register"]')).toBeVisible();await expect(page.locator('#topbar')).not.toHaveClass(/is-scrolled/);await page.evaluate(()=>scrollTo(0,180));await expect(page.locator('#topbar')).toHaveClass(/is-scrolled/);await expect(page.locator('#app main')).toHaveCount(1);await expect(page.locator('main main')).toHaveCount(0);await noOverflow(page,2)});
+test('desktop header keeps only the six approved destinations and gains chrome after scroll',async({page})=>{await page.setViewportSize({width:1440,height:900});await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});const labels=await page.locator('.main-nav>a').allTextContents();expect(labels.map(x=>x.trim())).toEqual(['Início','Animes','Mangás','Temporadas','Programação','Notícias']);await expect(page.locator('.main-nav')).toBeVisible();await expect(page.locator('.menu-btn')).toBeHidden();await expect(page.locator('.top-actions>[data-action="search"]')).toBeVisible();await expect(page.locator('.top-actions>[data-action="theme"]')).toBeVisible();await expect(page.locator('.top-actions>[data-action="notifications"]')).toBeHidden();await expect(page.locator('.top-actions>[data-action="login"]')).toBeVisible();await expect(page.locator('.top-actions>[data-action="register"]')).toBeVisible();await expect(page.locator('#topbar')).not.toHaveClass(/is-scrolled/);await page.evaluate(()=>scrollTo(0,180));await expect(page.locator('#topbar')).toHaveClass(/is-scrolled/);await expect(page.locator('#app main')).toHaveCount(1);await expect(page.locator('main main')).toHaveCount(0);await noOverflow(page,2)});
 
 test('desktop header uses restrained navigation and account typography',async({page})=>{await page.setViewportSize({width:1440,height:900});await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.main-nav')).toBeVisible({timeout:30000});const typography=await page.evaluate(()=>{const read=element=>{const style=getComputedStyle(element);return{weight:parseInt(style.fontWeight,10),shadow:style.textShadow,spacing:style.letterSpacing}};return{nav:[...document.querySelectorAll('.main-nav>a')].map(read),login:read(document.querySelector('.top-actions>[data-action="login"]')),signup:read(document.querySelector('.top-actions>[data-action="register"]'))}});expect(typography.nav.every(item=>item.weight===600&&item.shadow==='none')).toBe(true);expect(typography.login.weight).toBe(600);expect(typography.signup.weight).toBe(600);expect(typography.login.shadow).toBe('none');expect(typography.signup.shadow).toBe('none');expect(typography.signup.spacing).toBe('normal');await noOverflow(page,2)});
 

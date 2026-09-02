@@ -9,7 +9,7 @@
 <meta name="description" content="AniNexus — acompanhe animes e mangás, organize suas listas, avalie obras e participe da comunidade.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="aninexus-build" content="2026-09-02-v44.4.6">
+<meta name="aninexus-build" content="2026-09-02-v44.5.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.clerk.accounts.dev https://*.clerk.com https://challenges.cloudflare.com https://*.protect.clerk.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data: https://img.clerk.com; connect-src 'self' https://graphql.anilist.co https://api.jikan.moe https://api.mymemory.translated.net https://translate.googleapis.com https://api.animethemes.moe https://listen.moe wss://listen.moe https://*.clerk.accounts.dev https://api.clerk.com https://*.protect.clerk.com:*; media-src 'self' https://v.animethemes.moe https://listen.moe; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://www.dailymotion.com https://*.clerk.accounts.dev https://challenges.cloudflare.com https://*.protect.clerk.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://*.clerk.accounts.dev">
 <meta property="og:site_name" content="AniNexus">
 <meta property="og:type" content="website">
@@ -23,6 +23,11 @@
 <meta name="twitter:description" content="Temporadas, programação, notícias e comunidade em português.">
 <meta name="twitter:image" content="https://aninexus.com.br/assets/logo.png">
 <link rel="canonical" href="https://aninexus.com.br/">
+<link rel="manifest" href="./manifest.webmanifest?v=44.5.0">
+<link rel="apple-touch-icon" href="./assets/logo-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AniNexus">
 <title>AniNexus — seu universo anime</title>
 <link rel="icon" href="./assets/favicon.png">
 <link rel="preload" href="./assets/logo.png" as="image" fetchpriority="high">
@@ -61,7 +66,7 @@
 <link rel="stylesheet" href="./preview-v41/product-v41.css?v=41.0.0">
 <link rel="stylesheet" href="./preview-v42/product-v42.css?v=43.0.0">
 <link rel="stylesheet" href="./preview-v42/header-v43.css?v=43.1.0">
-<link rel="stylesheet" href="./preview-v44/experience-v44.css?v=44.4.6">
+<link rel="stylesheet" href="./preview-v44/experience-v44.css?v=44.5.0">
 <script src="./runtime-config.js?v=40.8.0"></script>
 <script src="./preview-v23/route-guard-v23.js?v=43.0.0"></script>
 <script src="./preview-v38/runtime-v38.js?v=43.0.0"></script>
@@ -81,9 +86,9 @@
       <a href="/" data-link data-nav="home"><span data-icon="home"></span>Início</a>
       <a href="/animes/catalogo" data-link data-nav="anime"><span data-icon="grid"></span>Animes</a>
       <a href="/mangas" data-link data-nav="manga"><span data-icon="book"></span>Mangás</a>
-      <a href="/animes/programacao" data-link data-nav="schedule"><span data-icon="calendar"></span>Calendário</a>
       <a href="/animes/temporadas" data-link data-nav="season"><span data-icon="season"></span>Temporadas</a>
-      <a href="/comunidade" data-link data-nav="community"><span data-icon="chat"></span>Comunidade</a>
+      <a href="/animes/programacao" data-link data-nav="schedule"><span data-icon="calendar"></span>Programação</a>
+      <a href="/noticias" data-link data-nav="news"><span data-icon="news"></span>Notícias</a>
     </nav>
     <div class="top-actions">
       <button class="icon-button" data-action="search" aria-label="Pesquisar"><span data-icon="search"></span></button>
@@ -104,24 +109,25 @@
     </header>
     <div class="drawer-content">
       <section class="drawer-auth-card" aria-label="Acesso à conta">
-        <div class="drawer-auth-copy"><span>CONTA ANINEXUS</span><h3>Entre na sua conta</h3><p>Salve sua lista, acompanhe episódios e participe da comunidade.</p></div>
+        <div class="drawer-account-avatar" aria-hidden="true" hidden></div>
+        <div class="drawer-auth-copy"><span>CONTA ANINEXUS</span><h3>Entre na sua conta</h3><p>Salve sua lista, acompanhe episódios e organize tudo em um só lugar.</p></div>
         <div class="drawer-auth-actions"><button class="login-btn" data-action="login">Entrar</button><button class="signup-btn" data-action="register">Criar conta</button></div>
       </section>
       <nav class="drawer-nav" aria-label="Menu AniNexus">
-        <div class="drawer-nav-intro"><div><span>NAVEGAÇÃO</span><strong>Explore o AniNexus</strong></div><small>10 destinos</small></div>
+        <div class="drawer-nav-intro"><div><span>NAVEGAÇÃO</span><strong>Explore o AniNexus</strong></div><small>6 destinos</small></div>
         <div class="drawer-nav-grid">
           <a href="/" data-link data-drawer-nav="home"><i class="drawer-card-icon tone-red" data-icon="home"></i><span><strong>Início</strong><small>Destaques e novidades</small></span></a>
-          <a href="/animes/catalogo" data-link data-drawer-nav="anime"><i class="drawer-card-icon tone-rose" data-icon="grid"></i><span><strong>Catálogo</strong><small>Encontre seu próximo anime</small></span></a>
-          <a href="/animes/temporadas" data-link data-drawer-nav="season"><i class="drawer-card-icon tone-gold" data-icon="season"></i><span><strong>Temporadas</strong><small>Estreias de cada estação</small></span></a>
+          <a href="/animes/catalogo" data-link data-drawer-nav="anime"><i class="drawer-card-icon tone-blue" data-icon="grid"></i><span><strong>Animes</strong><small>Catálogo e descoberta</small></span></a>
+          <a href="/mangas" data-link data-drawer-nav="manga"><i class="drawer-card-icon tone-violet" data-icon="book"></i><span><strong>Mangás</strong><small>Histórias para ler</small></span></a>
+          <a href="/animes/temporadas" data-link data-drawer-nav="season"><i class="drawer-card-icon tone-gold" data-icon="season"></i><span><strong>Temporadas</strong><small>Estreias da estação</small></span></a>
           <a href="/animes/programacao" data-link data-drawer-nav="schedule"><i class="drawer-card-icon tone-blue" data-icon="calendar"></i><span><strong>Programação</strong><small>Próximos episódios</small></span></a>
-          <a href="/anime-awards" data-link data-drawer-nav="awards"><i class="drawer-card-icon tone-gold" data-icon="trophy"></i><span><strong>Anime Awards</strong><small>Categorias e edições</small></span></a>
-          <a href="/meus-animes" data-drawer-nav="library"><i class="drawer-card-icon tone-red" data-icon="heart"></i><span><strong>Meus Animes</strong><small>Lista, notas e progresso</small></span></a>
-          <a href="/mangas" data-link data-drawer-nav="manga"><i class="drawer-card-icon tone-violet" data-icon="book"></i><span><strong>Mangás</strong><small>Catálogo e descoberta</small></span></a>
-          <a href="/meus-mangas" data-drawer-nav="manga-library"><i class="drawer-card-icon tone-gold" data-icon="novel"></i><span><strong>Meus Mangás</strong><small>Leitura, notas e progresso</small></span></a>
-          <a href="/noticias" data-link data-drawer-nav="news"><i class="drawer-card-icon tone-rose" data-icon="news"></i><span><strong>Notícias</strong><small>Estreias, trailers e novidades</small></span></a>
-          <a href="/comunidade" data-link data-drawer-nav="community"><i class="drawer-card-icon tone-violet" data-icon="chat"></i><span><strong>Comunidade</strong><small>Impressões e discussões</small></span></a>
+          <a href="/noticias" data-link data-drawer-nav="news"><i class="drawer-card-icon tone-rose" data-icon="news"></i><span><strong>Notícias</strong><small>Estreias e novidades</small></span></a>
         </div>
       </nav>
+      <footer class="drawer-utilities">
+        <button class="drawer-theme-toggle" type="button" data-nx-drawer-theme aria-label="Alternar tema" title="Alternar tema"><span data-icon="moon"></span></button>
+        <button class="drawer-install" type="button" data-nx-install><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.5 10.5 12 15l4.5-4.5M5 20h14"/></svg><span>Instalar aplicativo</span></button>
+      </footer>
     </div>
   </div>
 </aside>
@@ -153,10 +159,10 @@
 <script src="./preview-v27/navigation-v27.js?v=40.8.0" defer></script>
 <script src="./preview-v18/bridge.js?v=26.0.0" defer></script>
 <script src="./preview-v19/state-normalizer.js?v=26.0.0" defer></script>
-<script src="./preview-v38/auth-v38.js?v=40.9.0" defer></script>
+<script src="./preview-v38/auth-v38.js?v=44.5.0" defer></script>
 <script src="./preview-v38/profile-v38.js?v=44.0.0" defer></script>
 <script src="./preview-v38/admin-v38.js?v=40.8.0" defer></script>
-<script src="./preview-v39/media-actions-v39.js?v=44.4.6" defer></script>
+<script src="./preview-v39/media-actions-v39.js?v=44.5.0" defer></script>
 <script src="./preview-v19/media-state-v2.js?v=40.0.4" defer></script>
 <script src="./preview-v39/media-sync-v39.js?v=40.3.0" defer></script>
 <script src="./preview-v6/app.js?v=43.0.0" defer></script>
@@ -165,7 +171,7 @@
 <script src="./preview-v12/runtime.js?v=26.0.0" defer></script>
 <script src="./preview-v14/legal.js?v=26.0.0" defer></script>
 <script src="./preview-v15/institutional.js?v=26.0.0" defer></script>
-<script src="./preview-v18/schedule.js?v=44.4.6" defer></script>
+<script src="./preview-v18/schedule.js?v=44.5.0" defer></script>
 <script src="./preview-v19/schedule-coherence-v2.js?v=26.0.0" defer></script>
 <script src="./preview-v23/schedule-hotfix-v23.js?v=26.0.0" defer></script>
 <script src="./preview-v20/catalog-v20.js?v=43.0.0" defer></script>
@@ -175,13 +181,14 @@
 <script src="./preview-v35/news-data-v35.js?v=43.0.0" defer></script>
 <script src="./preview-v37/news-hot-v37.js?v=37.0.2" defer></script>
 <script src="./preview-v35/news-ui-v35.js?v=43.0.0" defer></script>
-<script src="./preview-v33/home-v33.js?v=44.4.6" defer></script>
+<script src="./preview-v33/home-v33.js?v=44.5.0" defer></script>
 <script src="./preview-v38/library-v38.js?v=44.3.0" defer></script>
 <script src="./preview-v38/seo-v38.js?v=38.2.0" defer></script>
 <script src="./preview-v42/manga-v42.js?v=43.0.0" defer></script>
-<script src="./preview-v42/product-v42.js?v=44.0.0" defer></script>
+<script src="./preview-v42/product-v42.js?v=44.5.0" defer></script>
 <script src="./preview-v42/header-v43.js?v=43.0.0" defer></script>
+<script src="./preview-v44/install-v44.js?v=44.5.0" defer></script>
 <script src="./preview-v44/radio-v44.js?v=44.3.0" defer></script>
-<script src="./preview-v44/rails-v44.js?v=44.4.6" defer></script>
+<script src="./preview-v44/rails-v44.js?v=44.5.0" defer></script>
 </body>
 </html>

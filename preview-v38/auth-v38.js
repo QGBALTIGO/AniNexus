@@ -11,7 +11,7 @@
   const PUBLISHABLE_KEY = String(config.clerkPublishableKey || '');
   const ENABLED = config.authEnabled === true && /^https:\/\//.test(API_ORIGIN) && /^pk_(?:test|live)_/.test(PUBLISHABLE_KEY);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-  const routeUrl = path => IS_PAGES ? `${BASE}/?build=40.9.0&p=${encodeURIComponent(path)}` : path;
+  const routeUrl = path => IS_PAGES ? `${BASE}/?build=44.5.0&p=${encodeURIComponent(path)}` : path;
   const go = (path, replace = false) => location[replace ? 'replace' : 'assign'](routeUrl(path));
   let clerkPromise = null;
   let apiUser = null;
@@ -260,13 +260,34 @@
     }
     dispatchEvent(new CustomEvent('aninexus:auth-v38-ready'));
   }
+  function syncDrawerIdentity(user = null) {
+    const drawer = document.querySelector('.drawer-auth-card');
+    if (!drawer) return;
+    const avatar = drawer.querySelector('.drawer-account-avatar'), title = drawer.querySelector('h3'), text = drawer.querySelector('p'), actions = drawer.querySelector('.drawer-auth-actions');
+    if (!user) {
+      drawer.dataset.authState = 'anonymous';
+      if (avatar) { avatar.hidden = true; avatar.innerHTML = ''; }
+      if (title) title.textContent = 'Entre na sua conta';
+      if (text) text.textContent = 'Salve sua lista, acompanhe episódios e organize tudo em um só lugar.';
+      if (actions) actions.innerHTML = '<button class="login-btn" data-action="login">Entrar</button><button class="signup-btn" data-action="register">Criar conta</button>';
+      return;
+    }
+    const name = String(user.firstName || user.username || 'Minha conta'), initial = name.charAt(0).toUpperCase();
+    drawer.dataset.authState = 'authenticated';
+    if (avatar) { avatar.hidden = false; avatar.innerHTML = user.imageUrl ? `<img src="${esc(user.imageUrl)}" alt="">` : esc(initial); }
+    if (title) title.textContent = name;
+    if (text) text.textContent = user.username ? `@${user.username}` : 'Sua conta AniNexus';
+    if (actions) {
+      actions.innerHTML = '<button class="nx38-drawer-account" type="button">Minha conta</button>';
+      actions.querySelector('button').onclick = () => go('/minha-conta');
+    }
+  }
   async function syncHeader() {
     const syncToken = ++headerSyncToken;
     const actions = document.querySelector('.top-actions'); if (!actions) return;
     actions.querySelectorAll('.nx38-account-chip').forEach(chip=>chip.remove());
     const login = actions.querySelector('[data-action="login"]'), register = actions.querySelector('[data-action="register"]');
-    const drawer=document.querySelector('.drawer-auth-card'),drawerTitle=drawer?.querySelector('h3'),drawerText=drawer?.querySelector('p'),drawerActions=drawer?.querySelector('.drawer-auth-actions');
-    const setAnonymous=()=>{document.documentElement.dataset.nxAuthState='anonymous';if(login)login.hidden=false;if(register)register.hidden=false;if(drawer){drawer.dataset.authState='anonymous';if(drawerTitle)drawerTitle.textContent='Entre na sua conta';if(drawerText)drawerText.textContent='Salve sua lista, acompanhe episódios e participe da comunidade.';if(drawerActions)drawerActions.innerHTML='<button class="login-btn" data-action="login">Entrar</button><button class="signup-btn" data-action="register">Criar conta</button>'}};
+    const setAnonymous=()=>{document.documentElement.dataset.nxAuthState='anonymous';if(login)login.hidden=false;if(register)register.hidden=false;syncDrawerIdentity()};
     if (!ENABLED) { setAnonymous(); return; }
     document.documentElement.dataset.nxAuthState='loading';if(login)login.hidden=false;if(register)register.hidden=false;
     try {
@@ -277,12 +298,11 @@
         if (login) login.hidden = true; if (register) register.hidden = true;
         actions.querySelectorAll('.nx38-account-chip').forEach(chip=>chip.remove());
         const button = document.createElement('button'); button.className = 'nx38-account-chip'; button.type = 'button'; button.setAttribute('aria-label', 'Abrir minha conta'); button.innerHTML = `<i>${user.imageUrl ? `<img src="${esc(user.imageUrl)}" alt="">` : esc(String(user.firstName || user.username || '?').charAt(0).toUpperCase())}</i><span>${esc(user.firstName || user.username || 'Minha conta')}</span>`; button.onclick = () => go('/minha-conta'); actions.insertBefore(button, actions.querySelector('.menu-btn') || null);
-        if(drawer){const name=String(user.firstName||user.username||'Minha conta');drawer.dataset.authState='authenticated';if(drawerTitle)drawerTitle.textContent=`Olá, ${name}`;if(drawerText)drawerText.textContent='Continue sua lista, seu progresso e suas conversas.';if(drawerActions){drawerActions.innerHTML='<button class="nx38-drawer-account" type="button">Abrir minha conta</button>';drawerActions.querySelector('button').onclick=()=>go('/minha-conta')}}
-        api('/api/me').then(({user:account}={})=>{if(!drawerActions||!['moderator','admin'].includes(account?.role)||drawerActions.querySelector('[data-open-admin]'))return;const admin=document.createElement('button');admin.type='button';admin.dataset.openAdmin='';admin.className='nx38-drawer-admin';admin.textContent='Administração';admin.onclick=()=>go('/admin');drawerActions.append(admin)}).catch(()=>{});
+        syncDrawerIdentity(user);
       } else setAnonymous();
     } catch (error) { if(syncToken!==headerSyncToken)return;console.warn('[AniNexus auth] não foi possível confirmar a sessão no cabeçalho.',error); setAnonymous(); }
   }
-  window.AniNexusAuthV38 = { renderAuth, renderAccount, syncHeader, getUser, api };
+  window.AniNexusAuthV38 = { renderAuth, renderAccount, syncHeader, syncDrawerIdentity, getUser, api };
   function currentRoute() {
     const url = new URL(location.href), requested = url.searchParams.get('p');
     if (requested) return requested.split('?')[0].replace(/\/+$/, '') || '/';
