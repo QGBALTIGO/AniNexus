@@ -1,215 +1,87 @@
-# AniNexus Notícias — arquitetura V32
+# AniNexus Notícias - arquitetura de fidelidade à fonte
 
-## Objetivo
+## Princípio editorial
 
-O sistema de notícias do AniNexus é um produto editorial interno. O usuário descobre e lê a matéria dentro do AniNexus; links externos não são usados como CTA de leitura.
+O AniNexus não traduz, resume, combina nem reescreve automaticamente o título ou o corpo de uma notícia. O fluxo ativo é:
 
-O pipeline **não republica artigos integrais de terceiros**. Ele coleta fatos, metadados, imagens de apresentação quando utilizáveis, datas e informações estruturadas, consolida fontes e cria uma síntese própria em português.
+`fonte -> extrair -> remover ruído técnico -> salvar -> exibir`
 
-## Fluxo de produção
+A classificação de categoria e as tags são metadados. Elas não alteram o material publicado pela fonte.
 
-1. `news-worker` consulta os adaptadores de fonte.
-2. URLs são canonicalizadas e parâmetros de rastreamento removidos.
-3. Itens duplicados da mesma URL são eliminados.
-4. As páginas mais relevantes são enriquecidas por HTML/JSON-LD/Open Graph.
-5. Título, resumo e fatos são traduzidos para PT-BR quando necessário.
-6. `storyFingerprint` agrupa coberturas do mesmo acontecimento.
-7. Fontes de uma mesma história são consolidadas em `sources`.
-8. `buildEditorialArticle` cria a estrutura de leitura AniNexus.
-9. A matéria recebe `quality_score`, tempo de leitura e contagem de palavras.
-10. PostgreSQL recebe a matéria; a Home e `/noticias` leem somente a API nativa em produção.
-11. Notícias automáticas expiram. Conteúdo editorial manual pode permanecer.
+## Fontes
 
-## Fontes atuais
+- JBox: WordPress REST, com título, autor, imagem e corpo fornecidos pelo portal.
+- ANMTV: WordPress REST, com os mesmos campos estruturados.
+- AnimeNew: RSS oficial com `content:encoded`.
+- GNews API: opcional por `GNEWS_API_KEY`, usada como descoberta e prévia PT-BR.
 
-- Crunchyroll Notícias
-- Anime News Network
-- MyAnimeList via Jikan
-- eventos internos do AniNexus (estreias, finais e trailers detectados pelo catálogo/programação)
+O GNews é sempre tratado como `excerpt`, pois a disponibilidade do corpo depende do plano e a resposta não preserva a ordem editorial de mídia. A documentação da API confirma os filtros `lang=pt` e `country=br`.
 
-Novas fontes devem entrar como adaptadores no worker e produzir o mesmo formato normalizado: `sourceName`, `sourceLanguage`, `title`, `summary`, `url`, `imageUrl`, `publishedAt`, `author`.
+O corpo completo só entra pelo feed ou API estruturada que a própria fonte disponibiliza. O coletor não visita páginas para reconstruir ou ampliar matérias incompletas.
 
-## Retenção
+## Modelo de conteúdo
 
-Padrão: **5 dias** (`NEWS_RETENTION_DAYS=5`).
+`source_content` é um array JSONB ordenado. Blocos aceitos:
 
-Limites aceitos pelo worker: 2 a 14 dias. A expiração se aplica somente a `source_kind='AUTOMATED'`.
+- `paragraph`, com texto e trechos marcados como negrito, itálico, código ou link;
+- `heading`, com nível de 2 a 4;
+- `image`, com URL, texto alternativo e legenda;
+- `video`, para YouTube, Vimeo ou arquivo de vídeo direto;
+- `list`, ordenada ou não ordenada;
+- `blockquote`;
+- `table`;
+- `divider`.
 
-Após expirar:
+O parser usa uma árvore HTML real. Scripts, formulários, publicidade, newsletter, compartilhamento, conteúdo relacionado e imagens de rastreamento são descartados. O navegador recebe apenas tipos e atributos permitidos, sem HTML arbitrário da fonte.
 
-- a matéria passa para `archived`;
-- deixa imediatamente o feed e a API pública;
-- registros automáticos arquivados são apagados após 14 dias adicionais.
+## Modos
 
-Isso mantém o feed atual sem apagar matérias editoriais próprias.
+- `full`: a fonte forneceu um corpo com conteúdo suficiente e sua ordem foi preservada.
+- `excerpt`: o feed forneceu somente uma prévia; o leitor mostra apenas o trecho disponível e nunca inventa uma continuação.
+- `editorial`: reservado para conteúdo escrito no painel do AniNexus.
+- `legacy`: registros anteriores à migração de fidelidade.
+
+Após um ciclo saudável com pelo menos seis matérias no modelo novo, o worker arquiva registros automáticos `legacy`. Assim, textos montados pelo pipeline antigo deixam de reaparecer.
 
 ## Deduplicação
 
-Há dois níveis:
-
-### `source_hash`
-
-SHA-256 parcial da URL canonicalizada. Impede a mesma matéria-fonte de entrar repetidamente.
-
-### `story_hash`
-
-Fingerprint semântico leve criado com termos relevantes do título e resumo. Serve para unir matérias diferentes que cobrem a mesma notícia.
-
-Quando uma história já existe recentemente, o worker:
-
-- atualiza `last_seen_at`;
-- incorpora novas fontes;
-- acrescenta fatos sem duplicá-los;
-- melhora imagem/metadados quando possível;
-- preserva o slug interno.
-
-## Tradução
-
-A tradução acontece no worker, nunca no navegador em produção.
-
-- destino: PT-BR;
-- cache Redis por 14 dias;
-- título + resumo são traduzidos juntos para diminuir chamadas;
-- fatos são traduzidos em lote;
-- se o tradutor falhar, o ciclo não derruba o worker: a origem é preservada e pode ser atualizada no ciclo seguinte.
-
-`NEWS_TRANSLATE_ENDPOINT` pode substituir o endpoint padrão por um serviço próprio compatível com query `q=`.
-
-## Enriquecimento
-
-Para os itens de maior prioridade de cada fonte, o worker visita a página original e procura:
-
-- `NewsArticle` / `Article` em JSON-LD;
-- `headline`;
-- `description`;
-- `image`;
-- `author`;
-- `datePublished`;
-- `articleBody`/texto estruturado para extração limitada de fatos;
-- fallback Open Graph/Twitter/meta tags;
-- fallback limitado aos parágrafos de `<article>` quando disponível.
-
-O conteúdo de terceiros é usado como matéria-prima factual; ele **não é persistido nem exibido integralmente**.
+`source_hash` remove URLs repetidas. Depois, `sameAnnouncement` compara os termos relevantes dos títulos publicados nas últimas 72 horas. Quando duas fontes cobrem o mesmo anúncio, fica a versão com corpo completo, fonte prioritária e maior conteúdo, sem misturar os textos.
 
 ## Banco de dados
 
-Campos editoriais importantes em `news_articles`:
+A migração `sql/018_news_source_fidelity.sql` adiciona:
 
-- `slug`
-- `source_kind`
-- `event_type`
-- `title`
-- `summary`
-- `body`
-- `image_url`
-- `source_name`
-- `source_url` (proveniência interna)
-- `source_hash`
-- `story_hash`
-- `sources`
-- `facts`
-- `content_sections`
-- `original_title`
-- `source_author`
-- `source_language`
-- `reading_minutes`
-- `word_count`
-- `quality_score`
-- `first_seen_at`
-- `last_seen_at`
-- `view_count`
-- `published_at`
-- `expires_at`
+- `source_content jsonb`;
+- `content_mode text`;
+- os mesmos campos na tabela de revisões;
+- suporte a títulos originais de até 500 caracteres.
 
-A migração é `sql/004_news_editorial_pipeline.sql`.
+Os campos existentes `original_title`, `source_author`, `source_name`, `source_url`, `source_published_at`, `image_url` e `sources` continuam registrando procedência.
 
-## Ranking do feed
+## Interface
 
-A API prioriza `quality_score` e depois recência.
+O leitor renderiza `source_content` na ordem recebida, incluindo imagens e vídeos. Autor e data entram como metadados discretos; `source_name` e `source_url` permanecem internos, sem chamada ou link externo na interface. Para registros antigos, `content_sections` permanece como fallback temporário.
 
-O score melhora com:
-
-- título suficientemente informativo;
-- resumo mais completo;
-- imagem válida;
-- múltiplas fontes;
-- mais de um fato confirmado;
-- publicação recente.
-
-Isso evita que um item vazio apenas por ser novo tome o principal destaque da Home.
-
-## UI / leitura
-
-### Home
-
-`preview-v32/home-news-v32.js` consome `/api/news` em produção e transforma todas as chamadas em `/noticias/<slug>`.
-
-### Hub
-
-`/noticias` oferece:
-
-- matéria principal;
-- cards secundários;
-- categorias;
-- busca;
-- tempo de leitura;
-- estado de matéria já lida;
-- design responsivo AniNexus.
-
-### Artigo
-
-`/noticias/<slug>` oferece:
-
-- hero editorial;
-- imagem;
-- data e categoria;
-- tempo de leitura;
-- barra de progresso;
-- bloco “Em resumo”;
-- seções estruturadas;
-- fontes monitoradas como crédito, sem CTA externo;
-- explicação de metodologia editorial;
-- notícias relacionadas;
-- copiar link.
-
-A leitura incrementa `view_count` no fetch do artigo.
+Na Home, telas acima de 1000 px usam uma grade equilibrada de três colunas e duas linhas. Em telas menores, continua o desenho aprovado: uma notícia principal e as demais em trilho horizontal.
 
 ## Resiliência
 
-- cada fonte roda dentro de `Promise.allSettled`;
-- falha de uma fonte não derruba as demais;
-- fetches têm timeout;
-- tradução possui fallback;
-- Redis é cache, não requisito para persistência;
-- PostgreSQL é a fonte de verdade;
-- GitHub Pages usa `data/news.json` somente como demonstração/fallback estático.
+- fontes são consultadas com `Promise.allSettled`;
+- falha de uma fonte não interrompe as demais;
+- uma GNews sem chave aparece como desativada, não como falha;
+- um ciclo vazio não sobrescreve o último feed legível;
+- o modo de graça usa o feed anterior apenas quando há menos de dez matérias novas;
+- PostgreSQL guarda o conteúdo de produção e `data/news.json` atende o fallback estático.
 
 ## Configuração
 
 ```env
 NEWS_WORKER_INTERVAL_MS=300000
-NEWS_RETENTION_DAYS=5
-NEWS_MAX_PER_SOURCE=12
-NEWS_ENRICH_PER_SOURCE=6
-NEWS_MAX_SOURCE_AGE_HOURS=120
-NEWS_TRANSLATE_ENDPOINT=
+NEWS_RETENTION_DAYS=7
+NEWS_STALE_GRACE_DAYS=14
+NEWS_MAX_PER_SOURCE=45
+NEWS_MAX_STORIES=60
+NEWS_MAX_SOURCE_AGE_HOURS=168
+NEWS_MIN_QUALITY=0.50
+GNEWS_API_KEY=
 ```
-
-## Testes
-
-`npm run check` inclui:
-
-- sintaxe dos runtimes críticos;
-- `tests/news-system.mjs` para o pipeline puro;
-- `tests/smoke.mjs` para contratos de integração.
-
-O workflow também roda Playwright em desktop/mobile para:
-
-- Home;
-- notícia interna a partir da Home;
-- hub;
-- filtros/busca;
-- leitor;
-- ausência de CTA externo;
-- overflow mobile;
-- regressões em catálogo, detalhes, temporadas e programação.

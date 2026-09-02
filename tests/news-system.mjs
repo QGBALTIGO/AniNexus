@@ -1,37 +1,200 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import {cleanText,canonicalUrl,sourceFingerprint,storyFingerprint,classifyNews,extractHtmlMetadata,qualityScore} from '../lib/news-core.mjs';
-import {languageScore,likelyPortuguese} from '../lib/news-sources-v36.mjs';
-import {extractSourceMedia} from '../lib/news-rich-v37.mjs';
+import { cleanText, canonicalUrl, sourceFingerprint, storyFingerprint, classifyNews } from '../lib/news-core.mjs';
+import { parseSourceContent, sourceExcerpt } from '../lib/news-source-content.mjs';
+import { languageScore, likelyPortuguese } from '../lib/news-sources-v36.mjs';
+import { extractSourceMedia } from '../lib/news-rich-v37.mjs';
 
-const root=process.cwd(),read=p=>fs.readFileSync(path.join(root,p),'utf8');let passed=0;
-function test(name,fn){try{fn();passed++;console.log(`✓ ${name}`)}catch(err){console.error(`✗ ${name}\n  ${err.message}`);process.exitCode=1}}
+const root = process.cwd();
+const read = file => fs.readFileSync(path.join(root, file), 'utf8');
+let passed = 0;
 
-test('core normalization remains stable',()=>{assert.equal(cleanText('<b>Anime</b>&nbsp; &amp; mangá'),'Anime & mangá');assert.equal(canonicalUrl('https://example.com/a/?utm_source=x#x'),'https://example.com/a');assert.equal(sourceFingerprint('https://example.com/a?utm_source=x'),sourceFingerprint('https://example.com/a'))});
-test('story fingerprint and classifier remain deterministic',()=>{assert.equal(storyFingerprint('Anime ganha temporada','Nova temporada confirmada'),storyFingerprint('Anime ganha temporada','Nova temporada confirmada'));assert.equal(classifyNews({title:'Novo trailer de Chainsaw Man'}),'TRAILER');assert.equal(classifyNews({title:'Editora lança novo manga'}),'MANGA')});
-test('metadata extractor reads article image and body',()=>{const h=`<script type="application/ld+json">${JSON.stringify({'@type':'NewsArticle',headline:'Nova temporada',description:'A produção confirmou novidades importantes.',image:'https://cdn.example.com/a.jpg',datePublished:'2026-08-22T10:00:00Z',articleBody:'A estreia foi confirmada para outubro e o elenco principal retorna. O estúdio também divulgou um novo visual.'})}</script>`;const m=extractHtmlMetadata(h,'https://example.com/a');assert.equal(m.imageUrl,'https://cdn.example.com/a.jpg');assert.match(m.articleText,/estúdio/) });
-test('Portuguese gate rejects the English examples that broke the site',()=>{assert.equal(likelyPortuguese('O anime ganhou uma nova temporada e a estreia foi confirmada para outubro.'),true);assert.equal(likelyPortuguese('The publisher licenses a new manga volume for worldwide release and adds more staff details.'),false);assert.equal(likelyPortuguese('The anime reveals more cast and a worldwide release date for the new season.'),false);const pt=languageScore('Nova temporada foi anunciada com estreia no Brasil'),en=languageScore('The new season was announced with worldwide release');assert.ok(pt.pt>pt.en);assert.ok(en.en>en.pt)});
-test('quality score still rewards complete reporting',()=>{const low=qualityScore({title:'Curta',summary:'Breve.'}),high=qualityScore({title:'Anime confirma nova temporada e estreia',summary:'A produção confirmou oficialmente a continuação, data e elenco principal.',imageUrl:'https://example.com/a.jpg',publishedAt:new Date().toISOString(),sources:[{name:'JBox'}],facts:['A estreia foi confirmada.','O elenco principal retorna.']});assert.ok(high>low)});
-test('source-media extractor captures hero, gallery and official YouTube embeds',()=>{const h=`<meta property="og:image" content="https://cdn.example.com/hero.jpg"><article><figure><img src="https://cdn.example.com/visual.jpg" alt="Visual principal"><figcaption>Novo visual divulgado pela produção</figcaption></figure><img data-src="https://cdn.example.com/cast.jpg" alt="Elenco"><iframe src="https://www.youtube.com/embed/abc123"></iframe></article>`;const m=extractSourceMedia(h,'https://example.com/post');assert.ok(m.media.some(x=>x.url.includes('hero.jpg')));assert.ok(m.media.some(x=>x.url.includes('visual.jpg')));assert.ok(m.media.some(x=>x.url.includes('cast.jpg')));assert.equal(m.embeds[0].id,'abc123')});
+function test(name, run) {
+  try {
+    run();
+    passed++;
+    console.log(`✓ ${name}`);
+  } catch (error) {
+    console.error(`✗ ${name}\n  ${error.message}`);
+    process.exitCode = 1;
+  }
+}
 
-const source=read('lib/news-sources-v36.mjs'),rich=read('lib/news-rich-v37.mjs'),normalized=read('lib/news-sources-v36-normalized.mjs'),sourceShim=read('lib/news-sources-v34.mjs'),worker=read('lib/news-worker-v37.mjs'),updater=read('scripts/update-news-v36.mjs'),workflow=read('.github/workflows/update-news.yml'),newsData=read('preview-v35/news-data-v35.js'),newsUi=read('preview-v35/news-ui-v35.js'),newsBaseCss=read('preview-v35/news-v35.css'),newsMediaCss=read('preview-v36/news-v36.css'),feed=JSON.parse(read('data/news.json')),seed=JSON.parse(read('data/news-v36-seed.json'));
+test('core normalization and classification remain stable', () => {
+  assert.equal(cleanText('<b>Anime</b>&nbsp; &amp; mangá'), 'Anime & mangá');
+  assert.equal(canonicalUrl('https://example.com/a/?utm_source=x#x'), 'https://example.com/a');
+  assert.equal(sourceFingerprint('https://example.com/a?utm_source=x'), sourceFingerprint('https://example.com/a'));
+  assert.equal(storyFingerprint('Anime ganha temporada', 'Nova temporada confirmada'), storyFingerprint('Anime ganha temporada', 'Nova temporada confirmada'));
+  assert.equal(classifyNews({ title: 'Novo trailer de Chainsaw Man' }), 'TRAILER');
+});
 
-test('deep collector still uses JBox WordPress REST and category fallbacks',()=>{assert.ok(source.includes('/wp-json/wp/v2/posts?per_page=50'));assert.ok(source.includes('page<=2'));assert.ok(source.includes("ingestMode:'wp-rest'"));assert.ok(source.includes("jboxCategory('/categoria/anime/'"));assert.ok(source.includes("jboxCategory('/categoria/manga/'"));assert.ok(source.includes('Crunchyroll Notícias'))});
-test('deep collector reads substantially more than summaries',()=>{assert.ok(source.includes('blocks.length>=46'));assert.ok(source.includes('22000'));assert.ok(source.includes('splitFacts(paragraphs,28)'));assert.ok(source.includes('uniqueFacts'));assert.ok(source.includes('max=22'))});
-test('media layer reads source pages and extracts up to twelve editorial images',()=>{assert.ok(rich.includes('MAX_MEDIA=12'));assert.ok(rich.includes('jsonLdImages'));assert.ok(rich.includes('og:image'));assert.ok(rich.includes('<figure'));assert.ok(rich.includes('youtube-nocookie.com/embed'));assert.ok(rich.includes('mediaGallery:all'));assert.ok(rich.includes('mediaEmbeds:embeds'))});
-test('media layer rejects logos, avatars, trackers and advertising art',()=>{['avatar','gravatar','logo','tracking','placeholder','banner-ad'].forEach(x=>assert.ok(rich.includes(x),x))});
-test('date-normalization still derives publication time from source timestamps',()=>{assert.ok(normalized.includes('sourcePublishedAt'));assert.ok(normalized.includes("Date.parse(source?.publishedAt||'')"));assert.ok(normalized.includes('Math.max(...times)'))});
-test('server compatibility shim points to media-rich collector',()=>{assert.ok(sourceShim.includes("from './news-rich-v37.mjs'"))});
-test('V39 worker persists hero, gallery, embeds, coverage and deep facts',()=>{assert.ok(worker.includes("from './news-rich-v37.mjs'"));assert.ok(worker.includes('mediaGallery:a.mediaGallery'));assert.ok(worker.includes('mediaEmbeds:a.mediaEmbeds'));assert.ok(worker.includes('coverage:a.coverage'));assert.ok(worker.includes('splitFacts(a.facts||[],32)'));assert.ok(worker.includes('MAX_STORIES'));assert.ok(worker.includes("language='pt-BR'"));assert.ok(worker.includes("translation_status='ready'"));assert.ok(worker.includes('cleanup({archive:hasHealthyContent})'))});
-test('static updater preserves a readable feed through source outages',()=>{assert.ok(updater.includes("from '../lib/news-rich-v37.mjs'"));assert.ok(updater.includes('NEWS_STALE_GRACE_DAYS'));assert.ok(updater.includes("feedStatus:mode==='fresh'"));assert.ok(updater.includes('preservando data/news.json existente'));assert.ok(updater.includes('data/news-v37-hot.json'));assert.ok(updater.includes('data/news-v36-seed.json'));assert.ok(updater.includes('mediaGallery:gallery'));assert.ok(updater.includes('mediaEmbeds:embeds'))});
-test('workflow refreshes four times an hour and separates push concurrency from schedules',()=>{assert.ok(workflow.includes("cron: '7,22,37,52 * * * *'"));assert.ok(workflow.includes('group: aninexus-news-v39-${{ github.event_name }}'));assert.ok(workflow.includes("cancel-in-progress: ${{ github.event_name == 'push' }}"));assert.ok(workflow.includes("NEWS_STALE_GRACE_DAYS: '14'"));assert.ok(workflow.includes('lib/news-rich-v37.mjs'));assert.ok(workflow.includes('lib/news-worker-v37.mjs'));assert.ok(workflow.includes('node --check lib/news-rich-v37.mjs'));assert.ok(workflow.includes('node --check lib/news-worker-v37.mjs'));assert.ok(workflow.includes("NEWS_MAX_PER_SOURCE: '45'"));assert.ok(workflow.includes("NEWS_MAX_STORIES: '60'"))});
-test('news data model preserves source galleries and uses source media before AniList fallback',()=>{assert.ok(newsData.includes("BUILD='43.0.0'"));assert.ok(newsData.includes('normalizeMedia'));assert.ok(newsData.includes('mediaGallery:gallery'));assert.ok(newsData.includes('mediaEmbeds:embeds'));assert.ok(newsData.includes("meta.imageUrl||gallery[0]?.url"));assert.ok(newsData.includes('/api/news?limit=60'));assert.ok(newsData.includes('storyKey'));assert.ok(newsData.includes('richer('))});
-test('news UI only renders category tabs that actually have live articles',()=>{assert.ok(newsUi.includes('liveCategories'));assert.ok(newsUi.includes('counts.get(k)>0'));assert.ok(newsUi.includes('renderCategories'));assert.ok(newsUi.includes('nx35NewsCats'))});
-test('reader renders gallery, source credits and official video without leaving AniNexus',()=>{assert.ok(newsUi.includes('Galeria da matéria'));assert.ok(newsUi.includes('IMAGENS DA COBERTURA'));assert.ok(newsUi.includes('Assista sem sair do AniNexus'));assert.ok(newsUi.includes('mediaGallery'));assert.ok(newsUi.includes('mediaEmbeds'));assert.ok(newsUi.includes('Imagem:'));assert.equal(newsUi.includes('Ler na fonte'),false);assert.equal(newsUi.includes('window.open('),false);assert.ok(newsMediaCss.includes('.nx37-gallery'));assert.ok(newsMediaCss.includes('.nx37-embeds'));assert.ok(newsBaseCss.includes('clamp(34px,4vw,52px)'))});
-test('reader exposes deeper factual coverage rather than one shallow paragraph',()=>{assert.ok(newsUi.includes('slice(0,14)'));assert.ok(newsUi.includes('fatos reunidos'));assert.ok(newsUi.includes('COBERTURA'));assert.ok(newsUi.includes('conteúdo completo disponível nas fontes'))});
-test('current recovery seed remains substantive while automated media-rich feed takes over',()=>{assert.equal(seed.language,'pt-BR');assert.ok(seed.items.length>=5);assert.ok(seed.items.every(x=>x.slug&&x.title&&x.summary&&x.language==='pt-BR'));assert.ok(seed.items.every(x=>Number(x.wordCount||0)>=350));assert.ok(seed.items.every(x=>(x.facts||[]).length>=8));assert.ok(seed.items.every(x=>(x.contentSections||[]).length>=4))});
-test('generated feed remains internal Portuguese during transition',()=>{assert.equal(feed.language,'pt-BR');assert.ok(Number(feed.collectorVersion)>=36);assert.ok(feed.items.length>=6);assert.ok(feed.items.every(x=>x.slug&&x.title&&x.summary&&x.language==='pt-BR'));assert.ok(feed.items.some(x=>(x.contentSections||[]).length>=3))});
+test('source parser preserves text and media in document order', () => {
+  const html = '<p>Primeiro <strong>parágrafo</strong>.</p><figure><img src="/visual.jpg" alt="Visual"><figcaption>Visual oficial</figcaption></figure><h2>Novo trailer</h2><ul><li>Item um</li><li>Item dois</li></ul><blockquote>Citação original da produção.</blockquote><iframe src="https://www.youtube.com/embed/abc123XYZ"></iframe>';
+  const parsed = parseSourceContent(html, 'https://fonte.example/noticia');
+  assert.deepEqual(parsed.blocks.map(block => block.type), ['paragraph', 'image', 'heading', 'list', 'blockquote', 'video']);
+  assert.equal(parsed.blocks[0].text, 'Primeiro parágrafo.');
+  assert.ok(parsed.blocks[0].runs.some(run => run.marks?.includes('strong')));
+  assert.equal(parsed.blocks[1].url, 'https://fonte.example/visual.jpg');
+  assert.equal(parsed.blocks[1].caption, 'Visual oficial');
+  assert.equal(parsed.blocks.at(-1).embedUrl, 'https://www.youtube-nocookie.com/embed/abc123XYZ');
+});
 
-if(process.exitCode)throw new Error('AniNexus news tests failed');
+test('source parser selects the highest quality image supplied by WordPress', () => {
+  const html = '<figure><img src="https://cdn.example.com/image-290.jpg" data-orig-file="https://cdn.example.com/image-original.jpg" srcset="https://cdn.example.com/image-800.jpg 800w, https://cdn.example.com/image-290.jpg 290w"></figure><img src="https://cdn.example.com/fallback.jpg" srcset="https://cdn.example.com/fallback-900.jpg 900w, https://cdn.example.com/fallback-320.jpg 320w">';
+  const parsed = parseSourceContent(html, 'https://fonte.example/post');
+  assert.equal(parsed.blocks[0].url, 'https://cdn.example.com/image-original.jpg');
+  assert.equal(parsed.blocks[1].url, 'https://cdn.example.com/fallback-900.jpg');
+});
+
+test('source parser keeps safe emphasis and links while removing page noise', () => {
+  const html = '<script>alert(1)</script><div class="newsletter"><p>Assine agora</p></div><p>Leia <em>com calma</em> no <a href="https://fonte.example/contexto">contexto original</a>.</p><p><a href="javascript:alert(1)">link inseguro</a> e <a>link vazio</a></p><img src="https://fonte.example/tracking/pixel.gif"><img alt="sem endereço">';
+  const parsed = parseSourceContent(html, 'https://fonte.example/post');
+  assert.equal(parsed.blocks.length, 2);
+  assert.ok(parsed.blocks[0].runs.some(run => run.marks?.includes('em')));
+  assert.ok(parsed.blocks[0].runs.some(run => run.href === 'https://fonte.example/contexto'));
+  assert.equal(parsed.blocks[1].runs.some(run => run.href), false);
+  assert.equal(parsed.blocks.some(block => block.type === 'image'), false);
+  assert.doesNotMatch(JSON.stringify(parsed), /newsletter|alert\(1\)|pixel\.gif/);
+});
+
+test('source excerpts are copied from the first paragraph without rewriting', () => {
+  const parsed = parseSourceContent('<p>Este é o primeiro parágrafo original, com informação suficiente para o cartão da notícia.</p><p>Este é o segundo.</p>', 'https://fonte.example/post');
+  assert.equal(sourceExcerpt(parsed, ''), parsed.firstParagraph);
+});
+
+test('Portuguese gate rejects English material', () => {
+  assert.equal(likelyPortuguese('O anime ganhou uma nova temporada e a estreia foi confirmada para outubro.'), true);
+  assert.equal(likelyPortuguese('The publisher licenses a new manga volume for worldwide release and adds more staff details.'), false);
+  const portuguese = languageScore('Nova temporada foi anunciada com estreia no Brasil');
+  const english = languageScore('The new season was announced with worldwide release');
+  assert.ok(portuguese.pt > portuguese.en);
+  assert.ok(english.en > english.pt);
+});
+
+test('media compatibility layer derives gallery data from the ordered parser', () => {
+  const media = extractSourceMedia('<p>Texto original suficiente.</p><img src="https://cdn.example.com/a.jpg" alt="Arte"><iframe src="https://youtu.be/abc123XYZ"></iframe>', 'https://fonte.example/post');
+  assert.equal(media.media[0].url, 'https://cdn.example.com/a.jpg');
+  assert.equal(media.embeds[0].url, 'https://www.youtube-nocookie.com/embed/abc123XYZ');
+});
+
+const source = read('lib/news-sources-v36.mjs');
+const rich = read('lib/news-rich-v37.mjs');
+const worker = read('lib/news-worker-v37.mjs');
+const updater = read('scripts/update-news-v36.mjs');
+const workflow = read('.github/workflows/update-news.yml');
+const home = read('preview-v35/home-v35.js');
+const newsData = read('preview-v35/news-data-v35.js');
+const newsUi = read('preview-v35/news-ui-v35.js');
+const newsCss = read('preview-v36/news-v36.css');
+const experienceCss = read('preview-v44/experience-v44.css');
+const product = read('preview-v42/product-v42.js');
+const migration = read('sql/018_news_source_fidelity.sql');
+const feed = JSON.parse(read('data/news.json'));
+
+test('collector uses direct Brazilian source feeds and optional GNews previews', () => {
+  assert.ok(source.includes('https://www.jbox.com.br/wp-json/wp/v2/posts'));
+  assert.ok(source.includes('https://anmtv.com.br/wp-json/wp/v2/posts'));
+  assert.ok(source.includes('https://animenew.com.br/feed/'));
+  assert.ok(source.includes('GNEWS_API_KEY'));
+  assert.ok(source.includes("contentMode: hasFullContent ? 'full' : 'excerpt'"));
+  assert.ok(source.includes('sameAnnouncement'));
+  assert.equal(source.includes('translate('), false);
+  assert.equal(source.includes('NEWS_TRANSLATE_ENDPOINT'), false);
+  assert.equal(source.includes('MyAnimeList'), false);
+  assert.equal(source.includes('Anime News Network'), false);
+});
+
+test('collector no longer scrapes pages into a detached gallery', () => {
+  assert.ok(rich.includes('parseSourceContent'));
+  assert.equal(rich.includes('fetch('), false);
+  assert.equal(rich.includes('jsonLdImages'), false);
+});
+
+test('worker persists ordered source content, original author and content mode', () => {
+  assert.ok(worker.includes('source_content=$18::jsonb'));
+  assert.ok(worker.includes('content_mode=$19'));
+  assert.ok(worker.includes('(source_hash=$1 OR story_hash=$2)'));
+  assert.ok(worker.includes('source_hash=$27,story_hash=$28'));
+  assert.ok(worker.includes("version: 6"));
+  assert.ok(worker.includes('article.title'));
+  assert.ok(worker.includes('article.author'));
+  assert.ok(worker.includes("content_mode='legacy'"));
+  assert.ok(worker.includes('retireLegacy: hasFidelityFeed'));
+  assert.equal(worker.includes('splitFacts'), false);
+});
+
+test('database migration adds the source-fidelity contract', () => {
+  assert.ok(migration.includes('source_content jsonb'));
+  assert.ok(migration.includes('content_mode text'));
+  assert.ok(migration.includes("content_mode IN ('full','excerpt','editorial','legacy')"));
+  assert.ok(migration.includes('char_length(title) BETWEEN 3 AND 500'));
+});
+
+test('static updater publishes only fresh fidelity items during healthy runs', () => {
+  assert.ok(updater.includes("editorialMode: 'source-fidelity'"));
+  assert.ok(updater.includes('sourceContent'));
+  assert.ok(updater.includes('contentMode'));
+  assert.ok(updater.includes('fidelityOk'));
+  assert.ok(updater.includes('preservando data/news.json existente'));
+  assert.ok(updater.includes('GNews API (opcional, prévias)'));
+});
+
+test('scheduled workflow validates the parser and accepts an optional GNews secret', () => {
+  assert.ok(workflow.includes("cron: '7,22,37,52 * * * *'"));
+  assert.ok(workflow.includes('node --check lib/news-source-content.mjs'));
+  assert.ok(workflow.includes('GNEWS_API_KEY: ${{ secrets.GNEWS_API_KEY }}'));
+  assert.ok(workflow.includes('aninexus-news-v40'));
+});
+
+test('browser model normalizes source blocks and does not invent fallback artwork', () => {
+  assert.ok(newsData.includes("BUILD='44.7.1'"));
+  assert.ok(newsData.includes('normalizeSourceContent'));
+  assert.ok(newsData.includes('sourceContent'));
+  assert.ok(newsData.includes('sourceAuthor'));
+  assert.ok(newsData.includes("if(!raw)return''"));
+  assert.ok(newsData.includes('async function hydrateImages(items){return items}'));
+  assert.equal(newsData.includes('graphql.anilist.co'), false);
+});
+
+test('reader renders the preserved block sequence without source callouts', () => {
+  assert.ok(newsUi.includes('nx40-source-flow'));
+  assert.ok(newsUi.includes('sourceBlock'));
+  assert.ok(newsUi.includes('nx40-reader-actions'));
+  assert.ok(newsUi.includes('data-copy'));
+  assert.equal(newsUi.includes('PUBLICADO ORIGINALMENTE POR'), false);
+  assert.equal(newsUi.includes('Ver matéria original'), false);
+  assert.equal(newsUi.includes('sourceLink('), false);
+  assert.equal(newsUi.includes('<small>${esc(item.source)}'), false);
+  assert.equal(home.includes('x.source||x.sourceName'), false);
+  assert.equal(newsUi.includes('blocks.shift()'), false);
+  assert.equal(newsUi.includes('O que aconteceu'), false);
+  assert.equal(newsUi.includes('Acompanhamento AniNexus'), false);
+  assert.ok(newsCss.includes('.nx40-source-flow'));
+  assert.ok(newsCss.includes('.nx40-source-image'));
+  assert.ok(newsCss.includes('.nx40-source-video'));
+  assert.ok(product.includes('script,style,textarea,input,.nx40-source-flow'));
+  assert.ok(product.includes("function enhanceNews(){const match=route().match(/^\\/noticias\\/(.+)$/);if(!match||!document.querySelector('.nx35-reader'))return;mountNewsComments"));
+  assert.equal(product.includes("document.querySelectorAll('.nx35-article-stats span')"), false);
+});
+
+test('desktop home uses six balanced cards without changing mobile breakpoints', () => {
+  assert.ok(experienceCss.includes('@media(min-width:1001px)'));
+  assert.ok(experienceCss.includes('grid-template-columns:repeat(3,minmax(0,1fr))'));
+  assert.ok(experienceCss.includes('.nx35-news-layout .nx35-news-rail{display:contents}'));
+  assert.ok(experienceCss.includes('.nx35-news-layout .nx35-news.feature p{display:none}'));
+});
+
+test('generated feed contains source-fidelity records', () => {
+  assert.equal(feed.language, 'pt-BR');
+  assert.equal(feed.editorialMode, 'source-fidelity');
+  assert.ok(Number(feed.collectorVersion) >= 40);
+  assert.ok(feed.items.length >= 6);
+  assert.ok(feed.items.every(item => item.slug && item.title && item.summary && item.language === 'pt-BR'));
+  assert.ok(feed.items.every(item => ['full', 'excerpt'].includes(item.contentMode)));
+  assert.ok(feed.items.every(item => Array.isArray(item.sourceContent) && item.sourceContent.length > 0));
+  assert.ok(feed.items.some(item => item.sourceContent.some(block => block.type === 'image' || block.type === 'video')));
+});
+
+if (process.exitCode) throw new Error('AniNexus news tests failed');
 console.log(`\nAniNexus Notícias: ${passed} tests passed`);

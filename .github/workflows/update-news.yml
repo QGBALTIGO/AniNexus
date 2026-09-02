@@ -8,6 +8,7 @@ on:
     paths:
       - 'scripts/update-news-v36.mjs'
       - 'lib/news-rich-v37.mjs'
+      - 'lib/news-source-content.mjs'
       - 'lib/news-sources-v36.mjs'
       - 'lib/news-sources-v36-normalized.mjs'
       - 'lib/news-sources-v34.mjs'
@@ -27,7 +28,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: aninexus-news-v39-${{ github.event_name }}
+  group: aninexus-news-v40-${{ github.event_name }}
   # Scheduled executions intentionally behave as cancel-in-progress: false; only a newer push supersedes an older push.
   cancel-in-progress: ${{ github.event_name == 'push' }}
 
@@ -43,8 +44,9 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Validar coletor, mídia e worker
+      - name: Validar coletor, fidelidade e worker
         run: |
+          node --check lib/news-source-content.mjs
           node --check lib/news-sources-v36.mjs
           node --check lib/news-sources-v36-normalized.mjs
           node --check lib/news-rich-v37.mjs
@@ -54,8 +56,9 @@ jobs:
           node --check preview-v37/news-hot-v37.js
           node --check preview-v35/news-ui-v35.js
 
-      - name: Buscar, aprofundar e capturar mídia
+      - name: Buscar e preservar conteúdo das fontes
         env:
+          GNEWS_API_KEY: ${{ secrets.GNEWS_API_KEY }}
           NEWS_RETENTION_DAYS: '7'
           NEWS_STALE_GRACE_DAYS: '14'
           NEWS_MAX_SOURCE_AGE_HOURS: '168'

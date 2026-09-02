@@ -1338,3 +1338,45 @@ html[data-theme=light] .nx44-install-sheet li strong{color:#1f171b}
   .nx44-install-layer{place-items:center}
   .nx44-install-sheet{border-bottom:1px solid rgba(255,255,255,.11);border-radius:14px}
 }
+
+/* V44.7.1: balanced desktop news grid. Tablet and mobile keep the feature-plus-rail layout. */
+@media(min-width:1001px){
+  .nx35-home .nx35-news-layout{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px
+  }
+  .nx35-home .nx35-news-layout>.nx35-edge,
+  .nx35-home .nx35-news-layout .nx35-news-rail{display:contents}
+  .nx35-home .nx35-news-layout>.nx35-edge:before,
+  .nx35-home .nx35-news-layout>.nx35-edge:after{display:none}
+  .nx35-home .nx35-news-layout .nx35-news,
+  .nx35-home .nx35-news-layout .nx35-news.feature{
+    height:100%;
+    display:flex;
+    flex-direction:column
+  }
+  .nx35-home .nx35-news-layout .nx35-news-media,
+  .nx35-home .nx35-news-layout .nx35-news.feature .nx35-news-media{
+    height:180px;
+    flex:0 0 180px
+  }
+  .nx35-home .nx35-news-layout .nx35-news-copy,
+  .nx35-home .nx35-news-layout .nx35-news.feature .nx35-news-copy{
+    min-height:136px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    padding:14px 15px
+  }
+  .nx35-home .nx35-news-layout .nx35-news h3,
+  .nx35-home .nx35-news-layout .nx35-news.feature h3{
+    font-size:14px;
+    line-height:1.3;
+    letter-spacing:0
+  }
+  .nx35-home .nx35-news-layout .nx35-news.feature p{display:none}
+  .nx35-home .nx35-news-layout .nx35-news-copy>strong{
+    margin-top:auto;
+    padding-top:14px
+  }
+}

@@ -90,7 +90,7 @@ services:
       NEWS_MAX_STORIES: ${NEWS_MAX_STORIES:-60}
       NEWS_MAX_SOURCE_AGE_HOURS: ${NEWS_MAX_SOURCE_AGE_HOURS:-168}
       NEWS_MIN_QUALITY: ${NEWS_MIN_QUALITY:-0.50}
-      NEWS_TRANSLATE_ENDPOINT: ${NEWS_TRANSLATE_ENDPOINT:-}
+      GNEWS_API_KEY: ${GNEWS_API_KEY:-}
     depends_on:
       postgres:
         condition: service_healthy
