@@ -7,7 +7,7 @@
   if (!app) return;
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
-  const BUILD = '44.4.5';
+  const BUILD = '44.4.6';
   const API = 'https://graphql.anilist.co';
   const TZ = 'America/Sao_Paulo';
   const CACHE_TTL = 4 * 60 * 1000;
@@ -104,7 +104,7 @@
   async function paintAwards(){const root=app.querySelector('#nx35Awards');if(!root)return;const items=await loadAwards();root.innerHTML=items.length?rail(items.map(awardCard).join(''),'nx35-awards-rail'):'<div class="nx35-empty">Premiação indisponível agora.</div>';bindCards();bindRails()}
   function bindCards(){app.querySelectorAll('[data-open-anime]').forEach(card=>{if(card.dataset.bound)return;card.dataset.bound='1';card.addEventListener('click',e=>{if(e.target.closest('button,a'))return;go(`/anime/${slug(card.dataset.title||'anime')}-${card.dataset.openAnime}`)})})}
   function cleanup(){for(const t of timers)clearInterval(t);timers.clear();cleanupFns.splice(0).forEach(fn=>{try{fn()}catch{}});document.body.classList.remove('nx35-home-active')}
-  async function mount(){if(!wantsHome())return;cleanup();shell();paintAchievements();setupMotion();Promise.allSettled([paintPublic(),paintAwards(),paintCommunity(),paintNews()]).then(()=>{if(wantsHome())app.querySelector('[data-nx35-home]')?.classList.add('data-ready')})}
+  async function mount(){if(!wantsHome())return;cleanup();shell();paintAchievements();setupMotion();Promise.allSettled([paintPublic(),paintAwards(),paintNews()]).then(()=>{if(wantsHome())app.querySelector('[data-nx35-home]')?.classList.add('data-ready')})}
   addEventListener('popstate',()=>{if(wantsHome())mount();else cleanup()});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
 })();
