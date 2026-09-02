@@ -103,6 +103,7 @@
   let audioRetry = 0;
   let audioAttempt = 0;
   let mountTimer = 0;
+  let layoutFrame = 0;
   const channel = 'BroadcastChannel' in window ? new BroadcastChannel('aninexus-radio-v44') : null;
 
   function persistAudioSettings() {
@@ -186,6 +187,24 @@
     if (artist) artist.textContent = state === 'error' ? 'Rádio indisponível agora. Toque para tentar novamente.' : track.artist;
     ui.setAttribute('aria-busy', state === 'loading' ? 'true' : 'false');
     setMediaSession();
+    scheduleFloatingLayout();
+  }
+
+  function layoutFloatingPlayer() {
+    layoutFrame = 0;
+    if (!ui?.classList.contains('nx44-radio--float')) return;
+    const consent = document.querySelector('body > .nx42-consent');
+    if (!consent || !matchMedia('(max-width:720px)').matches) {
+      ui.style.removeProperty('--nx44-float-bottom');
+      return;
+    }
+    const box = consent.getBoundingClientRect();
+    ui.style.setProperty('--nx44-float-bottom', `${Math.ceil(Math.max(18, innerHeight - box.top + 12))}px`);
+  }
+
+  function scheduleFloatingLayout() {
+    cancelAnimationFrame(layoutFrame);
+    layoutFrame = requestAnimationFrame(layoutFloatingPlayer);
   }
 
   function playerMarkup(mode) {
@@ -373,7 +392,9 @@
   addEventListener('aninexus:navigate', scheduleMount);
   addEventListener('aninexus:route-ready', scheduleMount);
   addEventListener('aninexus:home-v34-ready', scheduleMount);
+  addEventListener('resize', scheduleFloatingLayout, { passive: true });
   app && new MutationObserver(scheduleMount).observe(app, { childList: true, subtree: true });
+  new MutationObserver(scheduleFloatingLayout).observe(document.body, { childList: true });
 
   if ('mediaSession' in navigator) {
     try {

@@ -108,7 +108,7 @@ body:not(.nx35-home-active) #app>main:first-child{padding-top:var(--nx43-header-
   position:fixed;
   z-index:165;
   right:22px;
-  bottom:max(22px,calc(env(safe-area-inset-bottom) + 14px));
+  bottom:var(--nx44-float-bottom,max(22px,calc(env(safe-area-inset-bottom) + 14px)));
   width:58px;
   height:58px;
   min-height:58px;
@@ -132,7 +132,7 @@ body:not(.nx35-home-active) #app>main:first-child{padding-top:var(--nx43-header-
   .nx44-radio-copy small{font-size:8px}
   .nx44-radio-volume-group{width:100px;grid-template-columns:34px minmax(0,1fr);gap:7px;padding:4px 7px 4px 3px}
   .nx44-radio-volume{width:34px;height:34px;min-height:34px}
-  .nx44-radio--float{right:16px;bottom:max(18px,calc(env(safe-area-inset-bottom) + 12px));width:54px;height:54px;min-height:54px}
+  .nx44-radio--float{right:16px;bottom:var(--nx44-float-bottom,max(18px,calc(env(safe-area-inset-bottom) + 12px)));width:54px;height:54px;min-height:54px}
   .nx44-radio--float .nx44-radio-float-button{width:54px;height:54px;min-height:54px}
 }
 @media(max-width:360px){
