@@ -88,7 +88,7 @@
   audio.hidden = true;
   audio.preload = 'none';
   audio.playsInline = true;
-  audio.volume = Number.isFinite(Number(saved.volume)) ? Math.min(1, Math.max(0.05, Number(saved.volume))) : 0.72;
+  audio.volume = Number.isFinite(Number(saved.volume)) ? Math.min(1, Math.max(0, Number(saved.volume))) : 0.72;
   audio.muted = saved.muted === true;
   document.body.append(audio);
 
@@ -161,17 +161,29 @@
     ui.dataset.state = state;
     const play = ui.querySelector('[data-nx44-play]');
     const volume = ui.querySelector('[data-nx44-volume]');
+    const slider = ui.querySelector('[data-nx44-volume-range]');
     const title = ui.querySelector('[data-nx44-title]');
     const artist = ui.querySelector('[data-nx44-artist]');
     const playing = state === 'playing' || state === 'loading';
-    play.innerHTML = playing ? svg.pause : svg.play;
-    play.setAttribute('aria-label', playing ? 'Pausar rádio' : 'Ouvir rádio');
-    play.title = playing ? 'Pausar rádio' : 'Ouvir rádio';
-    volume.innerHTML = audio.muted ? svg.muted : svg.volume;
-    volume.setAttribute('aria-label', audio.muted ? 'Ativar som' : 'Silenciar rádio');
-    volume.title = audio.muted ? 'Ativar som' : 'Silenciar rádio';
-    title.textContent = track.title;
-    artist.textContent = state === 'error' ? 'Rádio indisponível agora. Toque para tentar novamente.' : track.artist;
+    if (play) {
+      play.innerHTML = playing ? svg.pause : svg.play;
+      const action = playing ? 'Pausar rádio' : 'Ouvir rádio';
+      play.setAttribute('aria-label', ui.classList.contains('nx44-radio--float') ? `${action}: ${track.title}` : action);
+      play.title = ui.classList.contains('nx44-radio--float') ? `${action} · ${track.title}` : action;
+    }
+    if (volume) {
+      volume.innerHTML = audio.muted ? svg.muted : svg.volume;
+      volume.setAttribute('aria-label', audio.muted ? 'Ativar som' : 'Silenciar rádio');
+      volume.title = audio.muted ? 'Ativar som' : 'Silenciar rádio';
+    }
+    if (slider) {
+      const value = audio.muted ? 0 : Math.round(audio.volume * 100);
+      slider.value = String(value);
+      slider.style.setProperty('--nx44-volume', `${value}%`);
+      slider.setAttribute('aria-valuetext', audio.muted ? 'Mudo' : `${value}%`);
+    }
+    if (title) title.textContent = track.title;
+    if (artist) artist.textContent = state === 'error' ? 'Rádio indisponível agora. Toque para tentar novamente.' : track.artist;
     ui.setAttribute('aria-busy', state === 'loading' ? 'true' : 'false');
     setMediaSession();
   }
@@ -182,16 +194,19 @@
     section.dataset.nx44Radio = '';
     section.setAttribute('role', 'region');
     section.setAttribute('aria-label', 'Rádio de música japonesa ao vivo');
-    section.innerHTML = `<button class="nx44-radio-control nx44-radio-play" type="button" data-nx44-play></button><div class="nx44-radio-copy"><span><i aria-hidden="true"></i>RÁDIO AO VIVO</span><strong data-nx44-title></strong><small data-nx44-artist></small></div><button class="nx44-radio-control nx44-radio-volume" type="button" data-nx44-volume></button>`;
+    section.innerHTML = mode === 'float'
+      ? `<button class="nx44-radio-control nx44-radio-play nx44-radio-float-button" type="button" data-nx44-play></button>`
+      : `<button class="nx44-radio-control nx44-radio-play" type="button" data-nx44-play></button><div class="nx44-radio-copy"><span><i aria-hidden="true"></i>RÁDIO AO VIVO</span><strong data-nx44-title></strong><small data-nx44-artist></small></div><div class="nx44-radio-volume-group"><button class="nx44-radio-control nx44-radio-volume" type="button" data-nx44-volume></button><input type="range" min="0" max="100" step="1" value="72" data-nx44-volume-range aria-label="Volume da rádio"></div>`;
     section.querySelector('[data-nx44-play]').addEventListener('click', togglePlayback);
-    section.querySelector('[data-nx44-volume]').addEventListener('click', toggleMute);
+    section.querySelector('[data-nx44-volume]')?.addEventListener('click', toggleMute);
+    section.querySelector('[data-nx44-volume-range]')?.addEventListener('input', setVolume);
     return section;
   }
 
   function mount() {
     if (!app?.firstElementChild) return;
     const copy = document.querySelector('.nx35-home .nx35-hero-copy');
-    const mode = copy ? 'inline' : 'dock';
+    const mode = copy ? 'inline' : 'float';
     if (ui?.isConnected && ui.classList.contains(`nx44-radio--${mode}`)) return render();
     ui?.remove();
     ui = playerMarkup(mode);
@@ -250,7 +265,16 @@
   }
 
   function toggleMute() {
+    if (audio.muted && audio.volume <= 0.01) audio.volume = 0.72;
     audio.muted = !audio.muted;
+    persistAudioSettings();
+    render();
+  }
+
+  function setVolume(event) {
+    const value = Math.min(100, Math.max(0, Number(event.currentTarget.value) || 0));
+    audio.volume = value / 100;
+    audio.muted = value === 0;
     persistAudioSettings();
     render();
   }

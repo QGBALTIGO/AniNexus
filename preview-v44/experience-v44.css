@@ -1,5 +1,5 @@
 /* AniNexus V44: persistent radio, global transparent header and account polish. */
-:root{--nx44-radio-accent:#ec3f63;--nx44-radio-gold:#e5bd5f}
+:root{--nx44-radio-accent:#ec3f63;--nx44-radio-accent-2:#a31335;--nx44-radio-gold:#e5bd5f}
 
 #topbar{
   position:fixed!important;
@@ -17,77 +17,130 @@ body:not(.nx35-home-active) #app>main:first-child{padding-top:var(--nx43-header-
 .nx42-account-menu header>div{min-width:0;display:grid;align-content:center;gap:5px}
 .nx42-account-menu header strong,.nx42-account-menu header span{display:block;line-height:1.2;letter-spacing:0}
 
+.nx35-community-cover>.nx35-community-avatar{overflow:hidden!important;padding:0!important;line-height:1!important;isolation:isolate}
+.nx35-community-cover>.nx35-community-avatar img{display:block!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover!important;object-position:center!important;border-radius:50%!important}
+
 .nx44-radio,.nx44-radio *{box-sizing:border-box}
 .nx44-radio{
-  width:min(620px,100%);
-  min-height:72px;
-  display:grid;
-  grid-template-columns:48px minmax(0,1fr) 42px;
-  align-items:center;
-  gap:13px;
-  padding:11px 12px;
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:8px;
-  background:rgba(13,9,12,.78);
-  color:#f7f1f4;
-  box-shadow:0 18px 42px rgba(0,0,0,.22);
-  backdrop-filter:blur(16px) saturate(1.05);
+  color:#f8f2f5;
   font-family:'Nunito Sans',system-ui,sans-serif;
   text-align:left
 }
-.nx44-radio--inline{margin-top:25px}
-.nx44-radio--dock{position:fixed;z-index:165;right:18px;bottom:max(18px,env(safe-area-inset-bottom));width:min(380px,calc(100vw - 36px));background:rgba(12,8,11,.94);box-shadow:0 22px 58px rgba(0,0,0,.46)}
+.nx44-radio--inline{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  width:min(620px,100%);
+  min-height:82px;
+  margin-top:28px;
+  display:grid;
+  grid-template-columns:52px minmax(0,1fr) 118px;
+  align-items:center;
+  gap:14px;
+  padding:13px 15px;
+  border:1px solid rgba(243,57,93,.34);
+  border-radius:14px;
+  background:#10080d;
+  box-shadow:0 18px 45px rgba(0,0,0,.28),inset 0 0 0 1px rgba(255,255,255,.025)
+}
+.nx44-radio--inline:before{
+  content:"";
+  position:absolute;
+  z-index:-2;
+  inset:0;
+  background-image:linear-gradient(90deg,rgba(8,4,8,.9) 0%,rgba(10,5,10,.75) 43%,rgba(10,4,8,.28) 100%),url('../assets/radio-background-v44.png');
+  background-position:center;
+  background-size:cover;
+  transform:scale(1.01)
+}
+.nx44-radio--inline:after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:auto 13px 0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,52,94,.8),transparent);
+  box-shadow:0 -7px 22px rgba(223,30,71,.18)
+}
 .nx44-radio-control{
-  width:42px;
-  height:42px;
-  min-height:42px;
+  width:38px;
+  height:38px;
+  min-height:38px;
   padding:0;
   display:grid;
   place-items:center;
-  border:1px solid rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.15);
   border-radius:50%;
-  background:rgba(255,255,255,.035);
-  color:#f6eef1;
+  background:rgba(10,7,10,.64);
+  color:#f8f0f3;
   cursor:pointer;
-  transition:background-color .16s ease,border-color .16s ease,color .16s ease
+  box-shadow:none;
+  transition:transform .16s ease,background-color .16s ease,border-color .16s ease,color .16s ease
 }
-.nx44-radio-control:hover{border-color:rgba(236,63,99,.42);background:rgba(236,63,99,.1);color:#fff}
-.nx44-radio-control:focus-visible{outline:2px solid #ff6f8b;outline-offset:3px}
-.nx44-radio-control svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.nx44-radio-play{position:relative;width:48px;height:48px;min-height:48px;border-color:rgba(236,63,99,.36);background:rgba(236,63,99,.11);color:#ff7892}
-.nx44-radio[data-state=loading] .nx44-radio-play:after{content:"";position:absolute;inset:-3px;border:2px solid transparent;border-top-color:#f15a77;border-radius:50%;animation:nx44RadioSpin .8s linear infinite}
+.nx44-radio-control:hover{transform:translateY(-1px);border-color:rgba(255,93,124,.65);background:rgba(194,29,64,.3);color:#fff}
+.nx44-radio-control:focus-visible{outline:2px solid #ff7893;outline-offset:3px}
+.nx44-radio-control svg{display:block;width:18px;height:18px;margin:auto;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.nx44-radio-play{position:relative;width:52px;height:52px;min-height:52px;border-color:rgba(255,85,119,.6);background:linear-gradient(145deg,rgba(225,42,81,.34),rgba(83,13,31,.55));color:#fff;box-shadow:0 0 0 4px rgba(233,42,82,.06),0 8px 22px rgba(0,0,0,.26)}
+.nx44-radio[data-state=loading] .nx44-radio-play:after{content:"";position:absolute;inset:-4px;border:2px solid transparent;border-top-color:#ff6d8a;border-right-color:rgba(255,109,138,.45);border-radius:50%;animation:nx44RadioSpin .8s linear infinite}
 @keyframes nx44RadioSpin{to{transform:rotate(1turn)}}
-.nx44-radio-copy{min-width:0;display:grid;align-content:center}
-.nx44-radio-copy>span{display:flex;align-items:center;gap:6px;color:#a96877;font-size:7px;font-weight:900;line-height:1.1;letter-spacing:0}
-.nx44-radio-copy>span i{width:5px;height:5px;border-radius:50%;background:var(--nx44-radio-accent);box-shadow:0 0 9px rgba(236,63,99,.6)}
-.nx44-radio-copy strong,.nx44-radio-copy small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:0}
-.nx44-radio-copy strong{display:block;margin-top:5px;color:#f7f0f3;font:800 12px/1.25 'Manrope',sans-serif}
-.nx44-radio-copy small{display:block;margin-top:3px;color:#887b81;font-size:9px;line-height:1.25;font-weight:700}
-.nx44-radio-volume{justify-self:end;color:#a99da2}
-.nx44-radio[data-state=playing] .nx44-radio-copy>span{color:#cf7386}
-.nx44-radio[data-state=error]{border-color:rgba(229,189,95,.22)}
+.nx44-radio-copy{position:relative;z-index:1;min-width:0;display:grid;align-content:center}
+.nx44-radio-copy>span{display:flex;align-items:center;gap:7px;color:#ef6680;font-size:7px;font-weight:900;line-height:1.1;letter-spacing:.08em}
+.nx44-radio-copy>span i{width:6px;height:6px;flex:0 0 auto;border-radius:50%;background:var(--nx44-radio-accent);box-shadow:0 0 10px rgba(236,63,99,.72)}
+.nx44-radio-copy strong,.nx44-radio-copy small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:0;text-shadow:0 2px 8px rgba(0,0,0,.72)}
+.nx44-radio-copy strong{display:block;margin-top:6px;color:#fff;font:850 13px/1.2 'Manrope',sans-serif}
+.nx44-radio-copy small{display:block;margin-top:3px;color:#c1b5bb;font-size:8.5px;line-height:1.25;font-weight:700}
+.nx44-radio-volume-group{position:relative;z-index:1;justify-self:end;width:118px;display:grid;grid-template-columns:38px minmax(0,1fr);align-items:center;gap:9px;padding:5px 8px 5px 5px;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(7,5,8,.66);backdrop-filter:blur(8px)}
+.nx44-radio-volume{width:38px;height:38px;min-height:38px;border-color:transparent;background:transparent;color:#e9dfe3}
+.nx44-radio-volume:hover{transform:none;background:rgba(236,63,99,.16)}
+.nx44-radio-volume svg{width:18px;height:18px;transform:translateX(0)}
+.nx44-radio-volume-group input[type=range]{--nx44-volume:72%;width:100%;height:22px;margin:0;padding:0;appearance:none;-webkit-appearance:none;background:transparent;cursor:pointer}
+.nx44-radio-volume-group input[type=range]::-webkit-slider-runnable-track{height:3px;border-radius:999px;background:linear-gradient(90deg,#f04c6d 0 var(--nx44-volume),rgba(255,255,255,.24) var(--nx44-volume) 100%)}
+.nx44-radio-volume-group input[type=range]::-webkit-slider-thumb{width:13px;height:13px;margin-top:-5px;border:2px solid #fff;border-radius:50%;appearance:none;-webkit-appearance:none;background:#ef3d62;box-shadow:0 2px 8px rgba(0,0,0,.42)}
+.nx44-radio-volume-group input[type=range]::-moz-range-track{height:3px;border:0;border-radius:999px;background:rgba(255,255,255,.24)}
+.nx44-radio-volume-group input[type=range]::-moz-range-progress{height:3px;border-radius:999px;background:#f04c6d}
+.nx44-radio-volume-group input[type=range]::-moz-range-thumb{width:11px;height:11px;border:2px solid #fff;border-radius:50%;background:#ef3d62;box-shadow:0 2px 8px rgba(0,0,0,.42)}
+.nx44-radio-volume-group input[type=range]:focus-visible{outline:2px solid #ff7893;outline-offset:4px;border-radius:999px}
+.nx44-radio[data-state=playing] .nx44-radio-copy>span{color:#ff718d}
+.nx44-radio[data-state=error]{border-color:rgba(229,189,95,.36)}
 .nx44-radio[data-state=error] .nx44-radio-copy>span i{background:var(--nx44-radio-gold);box-shadow:none}
 
-html[data-theme=light] .nx44-radio{border-color:rgba(53,30,41,.14);background:rgba(255,251,252,.9);color:#33242b;box-shadow:0 18px 38px rgba(70,32,50,.12)}
-html[data-theme=light] .nx44-radio--dock{background:rgba(255,251,252,.97)}
-html[data-theme=light] .nx44-radio-copy strong{color:#312129}
-html[data-theme=light] .nx44-radio-copy small{color:#776970}
-html[data-theme=light] .nx44-radio-control{border-color:rgba(53,30,41,.16);background:rgba(53,30,41,.025);color:#5e4d55}
-html[data-theme=light] .nx44-radio-play{border-color:rgba(217,45,81,.3);background:rgba(217,45,81,.08);color:#d92d51}
+.nx44-radio--float{
+  position:fixed;
+  z-index:165;
+  right:22px;
+  bottom:max(22px,calc(env(safe-area-inset-bottom) + 14px));
+  width:58px;
+  height:58px;
+  min-height:58px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  filter:drop-shadow(0 16px 24px rgba(0,0,0,.44))
+}
+.nx44-radio--float:before{content:"";position:absolute;inset:-3px;border:1px solid rgba(255,92,123,.46);border-radius:50%;background:rgba(227,38,79,.08);pointer-events:none}
+.nx44-radio--float .nx44-radio-float-button{width:58px;height:58px;min-height:58px;border:1px solid rgba(255,115,143,.52);background:radial-gradient(circle at 34% 27%,#f55878 0,#d8254d 38%,#7b142c 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 0 22px rgba(222,38,78,.28);color:#fff}
+.nx44-radio--float .nx44-radio-float-button:hover{transform:translateY(-2px) scale(1.02);background:radial-gradient(circle at 34% 27%,#ff6987 0,#e42e56 42%,#871832 100%)}
+.nx44-radio--float[data-state=playing]:before{animation:nx44RadioPulse 2s ease-out infinite}
+@keyframes nx44RadioPulse{0%{transform:scale(1);opacity:.85}70%,100%{transform:scale(1.22);opacity:0}}
 
 @media(max-width:720px){
   body:not(.nx35-home-active) #app>main:first-child{padding-top:var(--nx43-header-height)!important}
-  .nx44-radio{grid-template-columns:44px minmax(0,1fr) 40px;gap:10px;min-height:68px;padding:10px}
-  .nx44-radio--inline{width:100%;margin:24px auto 0}
-  .nx44-radio--dock{left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));width:auto}
-  .nx44-radio-play{width:44px;height:44px;min-height:44px}
-  .nx44-radio-control{width:40px;height:40px;min-height:40px}
+  .nx44-radio--inline{width:100%;min-height:78px;margin:27px auto 0;grid-template-columns:46px minmax(0,1fr) 100px;gap:10px;padding:11px 10px;border-radius:13px}
+  .nx44-radio--inline:before{background-image:linear-gradient(90deg,rgba(8,4,8,.94) 0%,rgba(10,5,10,.76) 56%,rgba(10,4,8,.35) 100%),url('../assets/radio-background-v44.png');background-position:center}
+  .nx44-radio-play{width:46px;height:46px;min-height:46px}
   .nx44-radio-copy strong{font-size:11px}
-  .nx44-radio-copy small{font-size:8.5px}
+  .nx44-radio-copy small{font-size:8px}
+  .nx44-radio-volume-group{width:100px;grid-template-columns:34px minmax(0,1fr);gap:7px;padding:4px 7px 4px 3px}
+  .nx44-radio-volume{width:34px;height:34px;min-height:34px}
+  .nx44-radio--float{right:16px;bottom:max(18px,calc(env(safe-area-inset-bottom) + 12px));width:54px;height:54px;min-height:54px}
+  .nx44-radio--float .nx44-radio-float-button{width:54px;height:54px;min-height:54px}
 }
 @media(max-width:360px){
-  .nx44-radio{grid-template-columns:42px minmax(0,1fr) 38px;gap:8px;padding:9px}
+  .nx44-radio--inline{grid-template-columns:42px minmax(0,1fr) 86px;gap:8px;padding:10px 8px}
   .nx44-radio-play{width:42px;height:42px;min-height:42px}
-  .nx44-radio-control{width:38px;height:38px;min-height:38px}
+  .nx44-radio-volume-group{width:86px;grid-template-columns:32px minmax(0,1fr);gap:5px;padding-right:6px}
+  .nx44-radio-volume{width:32px;height:32px;min-height:32px}
+  .nx44-radio-copy>span{font-size:6.5px}
+  .nx44-radio-copy strong{font-size:10px}
 }
-@media(prefers-reduced-motion:reduce){.nx44-radio-control{transition:none}.nx44-radio[data-state=loading] .nx44-radio-play:after{animation:none}}
+@media(prefers-reduced-motion:reduce){.nx44-radio-control{transition:none}.nx44-radio[data-state=loading] .nx44-radio-play:after,.nx44-radio--float[data-state=playing]:before{animation:none}}
