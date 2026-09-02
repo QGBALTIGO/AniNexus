@@ -1,12 +1,14 @@
 import {test,expect} from '@playwright/test';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.2.1&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.3.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),local=new URL(requested.pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,50*(attempt+1)))}}throw lastError}
+async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
 async function noOverflow(page,t=7){const x=await page.evaluate(()=>({s:document.documentElement.scrollWidth,w:innerWidth}));expect(x.s).toBeLessThanOrEqual(x.w+t)}
 async function clear(page){await page.evaluate(()=>{for(const k of ['aninexus:favorites','aninexus:mediaState:v2','aninexus:mediaState:v1','aninexus:list','aninexus:listStatus','aninexus:community:activity:v40','aninexus:community:threads:v40'])localStorage.removeItem(k);window.AniNexusMediaState?.sync?.()})}
 const pixel='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+const portrait='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22150%22 viewBox=%220 0 100 150%22%3E%3Crect width=%22100%22 height=%22150%22 fill=%22%23ef2a5c%22/%3E%3Ccircle cx=%2250%22 cy=%2235%22 r=%2220%22 fill=%22white%22/%3E%3C/svg%3E';
 function anime(id=101){return{id,title:{romaji:`Anime Teste ${id}`,english:`Anime Teste ${id}`,native:`Teste ${id}`,userPreferred:`Anime Teste ${id}`},coverImage:{extraLarge:pixel,large:pixel},bannerImage:pixel,averageScore:82,popularity:1000,genres:['Action','Adventure'],episodes:12,format:'TV',status:'RELEASING',seasonYear:2026,description:'Uma história de teste.',externalLinks:[],startDate:{year:2026,month:1,day:1},endDate:null,studios:{nodes:[]},relations:{edges:[]},recommendations:{nodes:[]},characters:{edges:[]},staff:{edges:[]}}}
 function graphData(query='',variables={}){
   const ids=Array.isArray(variables.ids)&&variables.ids.length?variables.ids:[101,102,103,104],media=ids.map(Number).filter(Boolean).map(anime),airingAt=Number(variables.start)||Math.floor(Date.now()/1000)+3600;
@@ -22,7 +24,7 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-01-v44.2.1')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-01-v44.3.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -34,13 +36,14 @@ test('mobile header always exposes account access while anonymous',async({page})
 
 test('mobile Home starts with transparent header centered copy spacing and clipped member avatar',async({page})=>{
   await page.setViewportSize({width:390,height:844});
-  await page.addInitScript(pixel=>localStorage.setItem('aninexus:community:activity:v40',JSON.stringify([{id:'avatar-test',kind:'state',media_id:101,username:'kayky',display_name:'Kayky Sousa',avatar_url:pixel,status:'CURRENT',created_at:new Date().toISOString(),title:'Anime Teste 101',cover:pixel,media:{id:101,title:'Anime Teste 101',cover:pixel}}])),pixel);
+  await page.addInitScript(({pixel,portrait})=>localStorage.setItem('aninexus:community:activity:v40',JSON.stringify([{id:'avatar-test',kind:'state',media_id:101,username:'kayky',display_name:'Kayky Sousa',avatar_url:portrait,status:'CURRENT',created_at:new Date().toISOString(),title:'Anime Teste 101',cover:pixel,media:{id:101,title:'Anime Teste 101',cover:pixel}}])),{pixel,portrait});
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
   await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});
   const avatar=page.locator('#nx35CommunityHero .nx35-community-avatar>img').first();
   await expect(avatar).toBeVisible({timeout:15000});
-  await expect(avatar).toHaveAttribute('src',pixel);
-  const avatarGeometry=await avatar.evaluate(img=>{const holder=img.parentElement,box=img.getBoundingClientRect(),holderBox=holder.getBoundingClientRect();return{left:box.left,top:box.top,right:box.right,bottom:box.bottom,width:box.width,height:box.height,holderLeft:holderBox.left,holderTop:holderBox.top,holderRight:holderBox.right,holderBottom:holderBox.bottom,holderWidth:holderBox.width,holderHeight:holderBox.height,fit:getComputedStyle(img).objectFit,overflow:getComputedStyle(holder).overflow}});
+  await expect(avatar).toHaveAttribute('src',portrait);
+  await expect.poll(()=>avatar.evaluate(img=>img.naturalHeight/img.naturalWidth)).toBe(1.5);
+  const avatarGeometry=await avatar.evaluate(img=>{const holder=img.parentElement,box=img.getBoundingClientRect(),holderBox=holder.getBoundingClientRect(),style=getComputedStyle(img);return{left:box.left,top:box.top,right:box.right,bottom:box.bottom,width:box.width,height:box.height,holderLeft:holderBox.left,holderTop:holderBox.top,holderRight:holderBox.right,holderBottom:holderBox.bottom,holderWidth:holderBox.width,holderHeight:holderBox.height,fit:style.objectFit,position:style.objectPosition,overflow:getComputedStyle(holder).overflow}});
   expect(avatarGeometry.left).toBeGreaterThanOrEqual(avatarGeometry.holderLeft-.5);
   expect(avatarGeometry.top).toBeGreaterThanOrEqual(avatarGeometry.holderTop-.5);
   expect(avatarGeometry.right).toBeLessThanOrEqual(avatarGeometry.holderRight+.5);
@@ -48,6 +51,7 @@ test('mobile Home starts with transparent header centered copy spacing and clipp
   expect(avatarGeometry.holderWidth-avatarGeometry.width).toBeLessThanOrEqual(4.5);
   expect(avatarGeometry.holderHeight-avatarGeometry.height).toBeLessThanOrEqual(4.5);
   expect(avatarGeometry.fit).toBe('cover');
+  expect(avatarGeometry.position).toMatch(/^50% 0(?:px|%)$/);
   expect(avatarGeometry.overflow).toBe('hidden');
   const initial=await page.evaluate(()=>{const header=document.querySelector('#topbar'),copy=document.querySelector('.nx35-hero-copy'),live=document.querySelector('.nx35-live'),grid=document.querySelector('.nx35-hero-grid'),copyBox=copy.getBoundingClientRect(),liveBox=live.getBoundingClientRect(),style=getComputedStyle(header);return{background:style.backgroundColor,position:style.position,textAlign:getComputedStyle(copy).textAlign,gap:parseFloat(getComputedStyle(grid).rowGap),separation:liveBox.top-copyBox.bottom}});
   expect(initial.background).toBe('rgba(0, 0, 0, 0)');
@@ -62,8 +66,9 @@ test('mobile Home starts with transparent header centered copy spacing and clipp
   await noOverflow(page,2);
 });
 
-test('radio is visual on Home, has real volume and becomes one floating button elsewhere',async({page})=>{
+test('radio has a stable volume popover and becomes one floating button after play',async({page})=>{
   await page.setViewportSize({width:390,height:844});
+  await bridgeProductionAssets(page);
   await page.addInitScript(()=>{
     class FakeSocket extends EventTarget{
       static CONNECTING=0;static OPEN=1;
@@ -74,20 +79,25 @@ test('radio is visual on Home, has real volume and becomes one floating button e
     HTMLMediaElement.prototype.play=function(){queueMicrotask(()=>this.dispatchEvent(new Event('playing')));return Promise.resolve()};
     HTMLMediaElement.prototype.pause=function(){queueMicrotask(()=>this.dispatchEvent(new Event('pause')))};
   });
-  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  await page.goto(firstVisitUrl('/'),{waitUntil:'domcontentloaded'});
   const inline=page.locator('.nx44-radio--inline');
   await expect(inline).toBeVisible({timeout:30000});
   await expect(inline).toContainText('Akatsuki');
   await expect(inline).toContainText('Arashi');
   await expect(inline.locator('button')).toHaveCount(2);
+  const volumeButton=inline.getByRole('button',{name:/Ajustar volume/});
+  await volumeButton.click();
+  await expect(volumeButton).toHaveAttribute('aria-expanded','true');
+  await expect(inline.locator('[data-nx44-volume-panel]')).toBeVisible();
   const range=inline.locator('[data-nx44-volume-range]');
   await expect(range).toHaveCount(1);
   await range.evaluate(input=>{input.value='36';input.dispatchEvent(new Event('input',{bubbles:true}))});
   expect(await page.locator('#nx44RadioAudio').evaluate(audio=>Math.round(audio.volume*100))).toBe(36);
+  await expect(inline.locator('[data-nx44-volume-value]')).toHaveText('36%');
   expect(await inline.evaluate(element=>getComputedStyle(element,'::before').backgroundImage)).toContain('radio-background-v44.png');
   await inline.getByRole('button',{name:'Ouvir rádio'}).click();
   await expect(inline).toHaveAttribute('data-state','playing');
-  await page.evaluate(()=>{const u=new URL(location.href);u.searchParams.set('p','/animes/catalogo');history.pushState({},'',u);dispatchEvent(new PopStateEvent('popstate'))});
+  await page.evaluate(()=>window.AniNexusRadio.navigate('/animes/catalogo'));
   await expect(page.locator('.nx21-catalog-page')).toBeVisible({timeout:30000});
   const floating=page.locator('.nx44-radio--float');
   await expect(floating).toBeVisible();
@@ -98,9 +108,46 @@ test('radio is visual on Home, has real volume and becomes one floating button e
   await noOverflow(page,2);
 });
 
+test('internal pages do not show the radio before an explicit Home play',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await bridgeProductionAssets(page);
+  await page.goto(firstVisitUrl('/animes/temporadas'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx-season')).toBeVisible({timeout:30000});
+  await expect(page.locator('.nx44-radio')).toHaveCount(0);
+  await expect(page.locator('#nx44RadioAudio')).toHaveCount(1);
+});
+
+test('header navigation preserves the same playing audio node',async({page})=>{
+  await page.setViewportSize({width:1440,height:900});
+  await bridgeProductionAssets(page);
+  await page.addInitScript(()=>{
+    class FakeSocket extends EventTarget{static CONNECTING=0;static OPEN=1;constructor(){super();this.readyState=1}send(){}close(){this.readyState=3}}
+    Object.defineProperty(window,'WebSocket',{value:FakeSocket,configurable:true,writable:true});
+    HTMLMediaElement.prototype.play=function(){window.__nxPlayCalls=(window.__nxPlayCalls||0)+1;queueMicrotask(()=>this.dispatchEvent(new Event('playing')));return Promise.resolve()};
+    HTMLMediaElement.prototype.pause=function(){queueMicrotask(()=>this.dispatchEvent(new Event('pause')))};
+  });
+  await page.goto(firstVisitUrl('/'),{waitUntil:'domcontentloaded'});
+  await page.getByRole('button',{name:'Ouvir rádio'}).click();
+  await expect(page.locator('.nx44-radio--inline')).toHaveAttribute('data-state','playing');
+  await page.evaluate(()=>window.__nxOriginalAudio=document.querySelector('#nx44RadioAudio'));
+  const destinations=[['anime','.nx21-catalog-page'],['manga','.nx42-manga-page'],['schedule','.nx18-schedule'],['season','.nx-season'],['community','.nx40-community'],['home','.nx35-home']];
+  for(const[key,selector]of destinations){
+    await page.locator(`.main-nav [data-nav="${key}"]`).click();
+    await expect(page.locator(selector)).toBeVisible({timeout:30000});
+    await expect(page.locator(key==='home'?'.nx44-radio--inline':'.nx44-radio--float')).toHaveAttribute('data-state','playing');
+    expect(await page.evaluate(()=>document.querySelector('#nx44RadioAudio')===window.__nxOriginalAudio),key).toBe(true);
+  }
+  expect(await page.evaluate(()=>window.__nxPlayCalls)).toBe(1);
+});
+
 test('floating radio stays above first-visit privacy controls',async({page})=>{
   await page.setViewportSize({width:390,height:844});
-  await page.goto(firstVisitUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});
+  await bridgeProductionAssets(page);
+  await page.addInitScript(()=>{class FakeSocket extends EventTarget{static CONNECTING=0;static OPEN=1;constructor(){super();this.readyState=1}send(){}close(){this.readyState=3}}Object.defineProperty(window,'WebSocket',{value:FakeSocket,configurable:true,writable:true});HTMLMediaElement.prototype.play=function(){queueMicrotask(()=>this.dispatchEvent(new Event('playing')));return Promise.resolve()};HTMLMediaElement.prototype.pause=function(){queueMicrotask(()=>this.dispatchEvent(new Event('pause')))}});
+  await page.goto(firstVisitUrl('/'),{waitUntil:'domcontentloaded'});
+  await page.getByRole('button',{name:'Ouvir rádio'}).click();
+  await page.evaluate(()=>window.AniNexusRadio.navigate('/animes/catalogo'));
+  await expect(page.locator('.nx21-catalog-page')).toBeVisible({timeout:30000});
   const floating=page.locator('.nx44-radio--float'),consent=page.locator('.nx42-consent');
   await expect(floating).toBeVisible({timeout:30000});
   await expect(consent).toBeVisible({timeout:15000});

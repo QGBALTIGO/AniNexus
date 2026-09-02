@@ -4,7 +4,7 @@
 
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='44.0.0';
+  const BUILD='44.3.0';
   const FAV='[data-fav],[data-nx-fav],[data-nx-detail-fav],[data-nx18-fav],[data-nx17-fav]';
   const LIST='[data-list],[data-nx-list],[data-nx-detail-list],[data-nx18-status],[data-nx17-list]';
   const ACTION=`${FAV},${LIST}`;
@@ -19,7 +19,7 @@
   const loadScript=src=>new Promise(resolve=>{const found=document.querySelector(`script[data-nx40-src="${src}"]`);if(found){if(found.dataset.loaded==='1')resolve();else found.addEventListener('load',resolve,{once:true});return}const s=document.createElement('script');s.src=`${BASE}/${src}?v=${BUILD}`;s.dataset.nx40Src=src;s.onload=()=>{s.dataset.loaded='1';resolve()};s.onerror=()=>resolve();document.head.append(s)});
   const loadStyle=src=>{if(document.querySelector(`link[data-nx40-src="${src}"]`))return;const l=document.createElement('link');l.rel='stylesheet';l.href=`${BASE}/${src}?v=${BUILD}`;l.dataset.nx40Src=src;document.head.append(l)};
   if(routeFrom()==='/comunidade'){document.documentElement.classList.add('nx40-community-boot');loadStyle('preview-v40/community-v40.css')}
-  (async()=>{await loadScript('preview-v40/activity-v40.js');loadScript('preview-v40/home-community-v40.js');if(routeFrom()==='/comunidade')loadScript('preview-v40/community-v40.js')})();
+  (async()=>{await loadScript('preview-v40/activity-v40.js');loadScript('preview-v40/home-community-v40.js');loadScript('preview-v40/community-v40.js')})();
 
   const now=()=>performance.now();
   const api=()=>window.AniNexusMediaState||null;

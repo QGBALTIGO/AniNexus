@@ -24,7 +24,7 @@
   const route=()=>{try{const u=new URL(location.href),raw=u.searchParams.get('p');if(raw)return raw.split('?')[0].replace(/\/+$/,'')||'/';let p=u.pathname;if(IS_PAGES)p=p.replace(/^\/AniNexus(?:\/AniNexus)?/,'')||'/';return p.replace(/\/+$/,'')||'/'}catch{return'/'}};
   const owns=()=>route()==='/comunidade';
   const pageUrl=p=>IS_PAGES?`${BASE}/?build=${BUILD}&p=${encodeURIComponent(p)}`:p;
-  const go=p=>location.assign(pageUrl(p));
+  const go=p=>{if(!IS_PAGES&&window.AniNexusRadio?.navigate?.(p))return;location.assign(pageUrl(p))};
   const time=v=>{const t=Date.parse(v||'');if(!Number.isFinite(t))return'';const d=Math.max(0,Date.now()-t);if(d<60000)return'agora';if(d<3600000)return`há ${Math.max(1,Math.floor(d/60000))}min`;if(d<86400000)return`há ${Math.floor(d/3600000)}h`;if(d<604800000)return`há ${Math.floor(d/86400000)}d`;return new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short'}).format(new Date(t)).replace('.','')};
   const mediaTitle=m=>typeof m?.title==='string'?m.title:(m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||'');
   const mediaCover=m=>m?.cover||m?.coverImage?.extraLarge||m?.coverImage?.large||'';

@@ -5,8 +5,10 @@
 
   const STREAM_URL = 'https://listen.moe/fallback';
   const GATEWAY_URL = 'wss://listen.moe/gateway_v2';
+  const IS_PAGES = location.hostname.endsWith('github.io');
   const RADIO_STORAGE = 'aninexus:radio:v44';
   const RADIO_RESUME_STORAGE = 'aninexus:radio:resume:v44';
+  const RADIO_ACTIVATED_STORAGE = 'aninexus:radio:activated:v44';
   const RADIO_TAB_STORAGE = 'aninexus:radio:active-tab:v44';
   const tabId = globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
   const app = document.querySelector('#app');
@@ -82,6 +84,9 @@
       sessionStorage.removeItem(RADIO_RESUME_STORAGE);
       return value?.playing === true && Date.now() - Number(value.at || 0) < 20000;
     } catch { return false; }
+  })();
+  let activated = (() => {
+    try { return sessionStorage.getItem(RADIO_ACTIVATED_STORAGE) === '1'; } catch { return false; }
   })();
   const audio = document.createElement('audio');
   audio.id = 'nx44RadioAudio';
@@ -174,14 +179,16 @@
     }
     if (volume) {
       volume.innerHTML = audio.muted ? svg.muted : svg.volume;
-      volume.setAttribute('aria-label', audio.muted ? 'Ativar som' : 'Silenciar rádio');
-      volume.title = audio.muted ? 'Ativar som' : 'Silenciar rádio';
+      const value = audio.muted ? 0 : Math.round(audio.volume * 100);
+      volume.setAttribute('aria-label', `Ajustar volume, ${value}%`);
+      volume.title = `Volume · ${value}%`;
     }
     if (slider) {
       const value = audio.muted ? 0 : Math.round(audio.volume * 100);
       slider.value = String(value);
       slider.style.setProperty('--nx44-volume', `${value}%`);
       slider.setAttribute('aria-valuetext', audio.muted ? 'Mudo' : `${value}%`);
+      ui.querySelector('[data-nx44-volume-value]')?.replaceChildren(`${value}%`);
     }
     if (title) title.textContent = track.title;
     if (artist) artist.textContent = state === 'error' ? 'Rádio indisponível agora. Toque para tentar novamente.' : track.artist;
@@ -215,9 +222,9 @@
     section.setAttribute('aria-label', 'Rádio de música japonesa ao vivo');
     section.innerHTML = mode === 'float'
       ? `<button class="nx44-radio-control nx44-radio-play nx44-radio-float-button" type="button" data-nx44-play></button>`
-      : `<button class="nx44-radio-control nx44-radio-play" type="button" data-nx44-play></button><div class="nx44-radio-copy"><span><i aria-hidden="true"></i>RÁDIO AO VIVO</span><strong data-nx44-title></strong><small data-nx44-artist></small></div><div class="nx44-radio-volume-group"><button class="nx44-radio-control nx44-radio-volume" type="button" data-nx44-volume></button><input type="range" min="0" max="100" step="1" value="72" data-nx44-volume-range aria-label="Volume da rádio"></div>`;
+      : `<button class="nx44-radio-control nx44-radio-play" type="button" data-nx44-play></button><div class="nx44-radio-copy"><span><i aria-hidden="true"></i>RÁDIO AO VIVO</span><strong data-nx44-title></strong><small data-nx44-artist></small></div><div class="nx44-radio-volume-wrap"><button class="nx44-radio-control nx44-radio-volume" type="button" data-nx44-volume aria-expanded="false" aria-controls="nx44RadioVolumePanel"></button><div class="nx44-radio-volume-panel" id="nx44RadioVolumePanel" data-nx44-volume-panel hidden><span data-nx44-volume-value>72%</span><input type="range" min="0" max="100" step="1" value="72" data-nx44-volume-range aria-label="Volume da rádio"></div></div>`;
     section.querySelector('[data-nx44-play]').addEventListener('click', togglePlayback);
-    section.querySelector('[data-nx44-volume]')?.addEventListener('click', toggleMute);
+    section.querySelector('[data-nx44-volume]')?.addEventListener('click', toggleVolumePanel);
     section.querySelector('[data-nx44-volume-range]')?.addEventListener('input', setVolume);
     return section;
   }
@@ -225,7 +232,12 @@
   function mount() {
     if (!app?.firstElementChild) return;
     const copy = document.querySelector('.nx35-home .nx35-hero-copy');
-    const mode = copy ? 'inline' : 'float';
+    const mode = copy ? 'inline' : activated ? 'float' : '';
+    if (!mode) {
+      ui?.remove();
+      ui = null;
+      return;
+    }
     if (ui?.isConnected && ui.classList.contains(`nx44-radio--${mode}`)) return render();
     ui?.remove();
     ui = playerMarkup(mode);
@@ -245,6 +257,11 @@
   }
 
   async function startPlayback({ reset = false } = {}) {
+    if (!activated) {
+      activated = true;
+      try { sessionStorage.setItem(RADIO_ACTIVATED_STORAGE, '1'); } catch {}
+      scheduleMount();
+    }
     playIntent = true;
     clearTimeout(audioRetry);
     state = 'loading';
@@ -283,11 +300,21 @@
     else startPlayback({ reset: state === 'error' });
   }
 
-  function toggleMute() {
-    if (audio.muted && audio.volume <= 0.01) audio.volume = 0.72;
-    audio.muted = !audio.muted;
-    persistAudioSettings();
-    render();
+  function closeVolumePanel() {
+    const panel = ui?.querySelector('[data-nx44-volume-panel]');
+    const button = ui?.querySelector('[data-nx44-volume]');
+    if (!panel || panel.hidden) return;
+    panel.hidden = true;
+    button?.setAttribute('aria-expanded', 'false');
+  }
+
+  function toggleVolumePanel(event) {
+    const panel = ui?.querySelector('[data-nx44-volume-panel]');
+    if (!panel) return;
+    const open = panel.hidden;
+    panel.hidden = !open;
+    event.currentTarget.setAttribute('aria-expanded', String(open));
+    if (open) requestAnimationFrame(() => panel.querySelector('input')?.focus());
   }
 
   function setVolume(event) {
@@ -296,6 +323,20 @@
     audio.muted = value === 0;
     persistAudioSettings();
     render();
+  }
+
+  function navigateWithoutReload(value) {
+    if (!activated || IS_PAGES) return false;
+    let target;
+    try { target = new URL(value, location.href); } catch { return false; }
+    if (target.origin !== location.origin) return false;
+    const route = `${target.pathname}${target.search}${target.hash}`;
+    if (!route.startsWith('/')) return false;
+    history.pushState({}, '', route);
+    dispatchEvent(new PopStateEvent('popstate'));
+    dispatchEvent(new CustomEvent('aninexus:navigate', { detail: { route } }));
+    scrollTo({ top: 0, behavior: 'auto' });
+    return true;
   }
 
   function retryAudio() {
@@ -393,6 +434,12 @@
   addEventListener('aninexus:route-ready', scheduleMount);
   addEventListener('aninexus:home-v34-ready', scheduleMount);
   addEventListener('resize', scheduleFloatingLayout, { passive: true });
+  document.addEventListener('pointerdown', event => {
+    if (!event.target.closest?.('.nx44-radio-volume-wrap')) closeVolumePanel();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeVolumePanel();
+  });
   app && new MutationObserver(scheduleMount).observe(app, { childList: true, subtree: true });
   new MutationObserver(scheduleFloatingLayout).observe(document.body, { childList: true });
 
@@ -403,7 +450,7 @@
     } catch {}
   }
 
-  window.AniNexusRadio = Object.freeze({ play: startPlayback, pause: stopPlayback, audio });
+  window.AniNexusRadio = Object.freeze({ play: startPlayback, pause: stopPlayback, navigate: navigateWithoutReload, audio, get activated() { return activated; } });
   scheduleMount();
   connectMetadata();
   if (resumeRequested) setTimeout(() => startPlayback({ reset: true }), 0);

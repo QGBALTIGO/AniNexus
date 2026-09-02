@@ -42,7 +42,7 @@
   const favs=()=>new Set((localJSON('aninexus:favorites',[])||[]).map(Number));
   function wantsHome(){if(window.__NX35_HOME_BOOT__)return true;try{const u=new URL(location.href),p=u.searchParams.get('p');if(p)return p.split('?')[0].replace(/\/+$/,'')==='/';let path=u.pathname;if(IS_PAGES)path=path.replace(/^\/AniNexus/,'')||'/';return(path.replace(/\/+$/,'')||'/')==='/'}catch{return false}}
   function homeUrl(){return IS_PAGES?`${BASE}/?build=${BUILD}&p=%2F`:'/'}
-  function go(path){location.assign(IS_PAGES?`${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`:path)}
+  function go(path){if(!IS_PAGES&&window.AniNexusRadio?.navigate?.(path))return;location.assign(IS_PAGES?`${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`:path)}
   function restoreHomeUrl(){if(window.__NX35_HOME_BOOT__||location.pathname.includes('__nx35_home_boot__'))history.replaceState({},'',homeUrl());delete window.__NX35_HOME_BOOT__}
   function cacheGet(k){try{const x=JSON.parse(sessionStorage.getItem(k)||'null');return x?.at&&Date.now()-x.at<CACHE_TTL?x.data:null}catch{return null}}
   function cacheSet(k,data){try{sessionStorage.setItem(k,JSON.stringify({at:Date.now(),data}))}catch{}}
