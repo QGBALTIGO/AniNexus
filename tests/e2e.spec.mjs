@@ -224,9 +224,9 @@ test('mobile Home starts with transparent header centered copy spacing and clipp
 });
 
 test('Home community banner survives initialization with one shared renderer',async({page})=>{
-  let mediaQueries=0;
+  let communityMediaQueries=0;
   await page.unroute('https://graphql.anilist.co/');
-  await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}if(/^query\(\$ids:/i.test(String(body.query||''))){mediaQueries++;const data=mediaQueries===1?graphData(body.query,body.variables):{Page:{media:[]}};return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data})})}return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});
+  await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}const query=String(body.query||''),isCommunityMedia=/media\(id_in:\$ids,type:ANIME\)/.test(query);if(isCommunityMedia){communityMediaQueries++;const data=communityMediaQueries===1?graphData(query,body.variables):{Page:{media:[]}};return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data})})}return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(query,body.variables)})})});
   await page.addInitScript(pixel=>localStorage.setItem('aninexus:community:activity:v40',JSON.stringify([{id:'single-owner',kind:'state',media_id:101,username:'kayky',display_name:'Kayky Sousa',status:'CURRENT',created_at:new Date().toISOString(),title:'Anime Teste 101',cover:pixel,media:{id:101,title:'Anime Teste 101',cover:pixel}}])),pixel);
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
   const hero=page.locator('#nx35CommunityHero');
@@ -235,7 +235,7 @@ test('Home community banner survives initialization with one shared renderer',as
   await expect(hero).toHaveAttribute('data-nx-community-owner','shared');
   await expect.poll(()=>card.evaluate(element=>getComputedStyle(element,'::before').backgroundImage)).toContain('image/svg+xml');
   await page.waitForTimeout(1100);
-  expect(mediaQueries).toBe(1);
+  expect(communityMediaQueries).toBe(1);
   expect(await card.evaluate(element=>getComputedStyle(element,'::before').backgroundImage)).toContain('image/svg+xml');
 });
 
