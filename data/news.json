@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T23:50:37.762Z",
+  "generatedAt": "2026-09-03T01:08:16.954Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,554 @@
   ],
   "stats": {
     "collected": 46,
-    "grouped": 20,
-    "published": 20,
-    "newStories": 20,
-    "fullArticles": 20,
+    "grouped": 21,
+    "published": 21,
+    "newStories": 21,
+    "fullArticles": 21,
     "previewArticles": 0,
-    "avgWords": 270,
-    "withHeroImage": 20,
+    "avgWords": 280,
+    "withHeroImage": 21,
     "withOrderedMedia": 17,
     "skippedTranslation": 0,
-    "skippedQuality": 25,
-    "durationMs": 2643
+    "skippedQuality": 24,
+    "durationMs": 2772
   },
   "items": [
+    {
+      "id": "jbox-d1d21ee3",
+      "slug": "corrida-do-naruto-abre-venda-de-ingressos-com-valores-entre-r-54-95-e-r-526-66-jbox-d1d21ee3",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Corrida do Naruto abre venda de ingressos com valores entre R$ 54,95 e R$ 526,66",
+      "originalTitle": "Corrida do Naruto abre venda de ingressos com valores entre R$ 54,95 e R$ 526,66",
+      "summary": "A Ponto Org Eventos iniciou hoje (2) as vendas para a “Corrida do Naruto”, evento temático da franquia que será realizado em 20 de dezembro, no Parque Villa-Lobos, em São Paulo.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Eventos",
+        "Corrida Naruto",
+        "Corrida Naruto em São Paulo",
+        "evento de naruto",
+        "Naruto"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/02/corrida-do-naruto-abre-venda-de-ingressos-com-valores-entre-r-5495-e-r-52666",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/02/corrida-do-naruto-abre-venda-de-ingressos-com-valores-entre-r-5495-e-r-52666",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/corrida-naruto-destacada.jpg",
+      "mediaQuery": "Corrida do Naruto abre venda de ingressos com valores entre R$ 54,95 e R$ 526,66",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Ponto Org Eventos iniciou hoje (2) as vendas para a “Corrida do Naruto”, evento temático da franquia que será realizado em 20 de dezembro, no Parque Villa-Lobos, em São Paulo.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Ponto Org Eventos",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " iniciou hoje (2) as vendas para a "
+            },
+            {
+              "text": "“Corrida do Naruto”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", evento temático da franquia que será realizado em 20 de dezembro, no Parque Villa-Lobos, em São Paulo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O evento contará com os percursos de corrida de 5 km e caminhada de 2 km, com horários previstos de largada a partir de 07h (Elite Masculino), 07h10 (Elite Feminino), 07h30 (Corrida, 1ª bateria), e 09h (Caminhada).",
+          "runs": [
+            {
+              "text": "O evento contará com os percursos de corrida de 5 km e caminhada de 2 km, com horários previstos de largada a partir de 07h (Elite Masculino), 07h10 (Elite Feminino), 07h30 (Corrida, 1ª bateria), e 09h (Caminhada)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já os kits foram criados focados no Time 7, incluindo as versões premium de Naruto, Sasuke, Kakashi e Sakura. Os kits custam R$ 154,90 (inteira) e R$ 77,45 (PCD), e contam com camiseta, sacochila, número de peito e medalha, entregue após a corrida.",
+          "runs": [
+            {
+              "text": "Já os kits foram criados focados no Time 7, incluindo as versões premium de"
+            },
+            {
+              "text": " Naruto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Sasuke",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Kakashi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Sakura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Os kits custam "
+            },
+            {
+              "text": "R$ 154,90 (inteira)",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "R$ 77,45 (PCD)",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e contam com camiseta, sacochila, número de peito e medalha, entregue após a corrida."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Há também a possibilidade de comprar um kit único dos quatro personagens, no valor de R$ 526,66, e o kit básico, que conta somente com o número de peito e a medalha, no valor de R$ 109,90 (inteira) e R$ 54,95 (PCD).",
+          "runs": [
+            {
+              "text": "Há também a possibilidade de comprar um kit único dos quatro personagens, no valor de"
+            },
+            {
+              "text": " R$ 526,66,",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e o kit básico, que conta somente com o número de peito e a medalha, no valor de "
+            },
+            {
+              "text": "R$ 109,90 (inteira)",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "R$ 54,95 (PCD)",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para quem tiver interesse, a Ponto Org Eventos também criou opções de compra adicionais para o evento, como uma meia temática e oportunidades de fotos e autógrafos nas camisetas com Úrsula Bezerra (voz brasileira de Naruto), Robson Kumode (voz nacional de Sasuke).",
+          "runs": [
+            {
+              "text": "Para quem tiver interesse, a Ponto Org Eventos também criou opções de compra adicionais para o evento, como uma meia temática e oportunidades de fotos e autógrafos nas camisetas com "
+            },
+            {
+              "text": "Úrsula Bezerra",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (voz brasileira de Naruto), "
+            },
+            {
+              "text": "Robson Kumode",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (voz nacional de Sasuke)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "As vendas estão acontecendo pelo site da Ticket Sports, e ficarão abertas até o dia 18 de dezembro.",
+          "runs": [
+            {
+              "text": "As vendas estão acontecendo pelo site da "
+            },
+            {
+              "text": "Ticket Sports",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.ticketsports.com.br/e/corrida-do-naruto-sao-paulo-88258"
+            },
+            {
+              "text": ", e ficarão abertas até o dia 18 de dezembro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A confirmação da “Corrida Naruto” em São Paulo faz parte de uma série de iniciativas da franquia no Brasil e no mundo, que foram antecipadas ao JBox pela VIZ Media, durante entrevista realizada na LicensingCon Latam 2026.",
+          "runs": [
+            {
+              "text": "A confirmação da "
+            },
+            {
+              "text": "“Corrida Naruto”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " em São Paulo faz parte de uma série de iniciativas da franquia no Brasil e no mundo, que foram antecipadas ao "
+            },
+            {
+              "text": "JBox",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " pela "
+            },
+            {
+              "text": "VIZ Media",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "durante entrevista realizada na LicensingCon Latam 2026",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/14/viz-media-fala-sobre-o-mercado-brasileiro-de-consumo-de-animes-e-promete-novidades-para-naruto-entrevista/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além da corrida, já foi confirmada também uma exposição imersiva no país, organizada pela empresa Multiverse Experience, e um café temático no bairro da Liberdade (cujo lançamento estava previsto para julho, mas precisou ser adiado). Há ainda um filme live-action hollywoodiano em fase de pré-produção, com o início da busca pelo elenco principal.",
+          "runs": [
+            {
+              "text": "Além da corrida, já foi confirmada também "
+            },
+            {
+              "text": "uma exposição imersiva no país",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/04/18/naruto-ganhara-exposicao-imersiva-em-sao-paulo/"
+            },
+            {
+              "text": ", organizada pela empresa "
+            },
+            {
+              "text": "Multiverse Experience",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e um café temático no bairro da Liberdade (cujo lançamento estava previsto para julho, mas precisou ser adiado). Há ainda um filme live-action hollywoodiano em fase de pré-produção, com "
+            },
+            {
+              "text": "o início da busca pelo elenco principal",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/07/14/filme-live-action-de-naruto-inicia-busca-global-por-trio-de-protagonistas/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "View this post on Instagram",
+          "runs": [
+            {
+              "text": " View this post on Instagram ",
+              "href": "https://www.instagram.com/p/DcwyvVBkcOE/?utm_source=ig_embed&utm_campaign=loading"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história de Naruto foi escrita e ilustrada por Masashi Kishimoto em 72 volumes, lançados entre 1999 e 2014. A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila. Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura.",
+          "runs": [
+            {
+              "text": "A história de"
+            },
+            {
+              "text": " Naruto",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi escrita e ilustrada por "
+            },
+            {
+              "text": "Masashi Kishimoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " em 72 volumes, lançados entre 1999 e 2014. A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila. Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, Naruto Shippuden mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017. Atualmente, Kishimoto assina a publicação de Boruto ao lado de Ukyou Kodachi, contando a história do filho de Naruto.",
+          "runs": [
+            {
+              "text": "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, "
+            },
+            {
+              "text": "Naruto Shippuden",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017. Atualmente, Kishimoto assina a publicação de "
+            },
+            {
+              "text": "Boruto",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ao lado de "
+            },
+            {
+              "text": "Ukyou Kodachi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", contando a história do filho de Naruto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para quem deseja retornar à Vila da Folha, os episódios de Naruto estão disponíveis em plataformas como Crunchyroll, Netflix, HBO Max, Disney+, Pluto TV e Mercado Play. Já o mangá é publicado no Brasil pela Panini.",
+          "runs": [
+            {
+              "text": "Para quem deseja retornar à Vila da Folha, os episódios de "
+            },
+            {
+              "text": "Naruto",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estão disponíveis em plataformas como "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "HBO Max, Disney+, Pluto TV",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Mercado Play",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Já o mangá é publicado no Brasil pela"
+            },
+            {
+              "text": " Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Comunicado de imprensa",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Comunicado de imprensa",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-03T00:55:47.000Z",
+      "updatedAt": "2026-09-03T00:56:21.000Z",
+      "expiresAt": "2026-09-10T00:55:47.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/02/corrida-do-naruto-abre-venda-de-ingressos-com-valores-entre-r-5495-e-r-52666",
+          "publishedAt": "2026-09-03T00:55:47.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 489,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 15,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-7cd2bdc3",
       "slug": "filme-compilado-de-o-pecado-original-de-takopi-chega-aos-cinemas-do-japao-em-novembro-jbox-7cd2bdc3",
