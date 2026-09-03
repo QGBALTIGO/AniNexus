@@ -370,22 +370,37 @@ test('native news slugs with underscores open the reader',async({page})=>{const 
 test('manga catalog is a dedicated responsive product surface',async({page})=>{for(const width of [390,768,1440]){await page.setViewportSize({width,height:width===390?844:900});await page.goto(pageUrl('/mangas'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx42-manga-page')).toBeVisible({timeout:30000});await expect(page.getByRole('heading',{name:'Catálogo de Mangás'})).toBeVisible();await expect(page.locator('.nx42-manga-card').first()).toBeVisible();await expect(page.locator('#nx42MangaSearch')).toBeVisible();await noOverflow(page,3)}});
 
 test('single Home impression is complete and does not look like a broken rail',async({page})=>{
-  const impression={id:'imp-one',media_id:101,body:'Uma estreia excelente e cheia de personalidade.',created_at:new Date().toISOString(),username:'kayky',status:'CURRENT',progress:5,score:9,media:{id:101,title:'Anime Teste 101',cover:pixel}};
+  const impression={id:'imp-one',media_id:101,media_type:'ANIME',body:'Uma estreia excelente e cheia de personalidade.',created_at:new Date().toISOString(),username:'kayky',display_name:'Kayky Sousa',avatar_url:pixel,status:'CURRENT',progress:5,score:9,reaction:'LOVE',media:{id:101,title:'Anime Teste 101',cover:pixel,banner:pixel,format:'TV',episodes:12,seasonYear:2026}};
   await page.route(`${new URL(ORIGIN).origin}/api/community/impressions**`,route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:[impression]})}));
   await page.addInitScript(({pixel,impression})=>localStorage.setItem('aninexus:impressions:v1',JSON.stringify([{...impression,mediaId:101,createdAt:impression.created_at,media:{...impression.media,cover:pixel}}])),{pixel,impression});
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
   const card=page.locator('.nx38-impression-home-card').first();
   await expect(card).toBeVisible({timeout:30000});
   await expect(card).toContainText('Uma estreia excelente');
+  await expect(card.locator('.nx38-impression-identity')).toContainText('Kayky Sousa');
+  await expect(card.locator('.nx38-impression-identity')).toContainText('@kayky');
   await expect(card.locator('.nx38-impression-meta-row')).toContainText('Assistindo');
-  await expect(card.locator('.nx38-impression-meta-row')).toContainText('episódio 5');
+  await expect(card.locator('.nx38-impression-meta-row')).toContainText('episódio 5 de 12');
+  await expect(card.locator('.nx38-impression-meta-row')).toContainText('Amei');
+  await expect(card.locator('.nx38-impression-meta-row')).toContainText('sem spoilers');
+  await expect(card.locator('.nx38-impression-media-copy')).toContainText('Série · 2026 · 12 ep.');
   await expect(page.locator('.nx38-impressions-rail')).toHaveAttribute('data-count','1');
-  const previous=page.getByRole('button',{name:'Impressão anterior'});
-  const next=page.getByRole('button',{name:'Próxima impressão'});
+  expect(await card.locator('.nx38-impression-author').evaluate(link=>{const url=new URL(link.href);return url.searchParams.get('p')||url.pathname})).toBe('/u/kayky');
+  expect(await card.locator('.nx38-impression-context').evaluate(link=>{const url=new URL(link.href);return url.searchParams.get('p')||url.pathname})).toBe('/anime/anime-teste-101');
+  const layout=await page.locator('.nx38-impressions-rail').evaluate(rail=>{const card=rail.firstElementChild?.getBoundingClientRect(),box=rail.getBoundingClientRect();return{cardWidth:card?.width||0,cardHeight:card?.height||0,railWidth:box.width}});
+  expect(layout.cardWidth).toBeGreaterThan(layout.railWidth*.96);
+  expect(layout.cardHeight).toBeLessThan(270);
+  const previous=page.locator('[data-imp-prev]');
+  const next=page.locator('[data-imp-next]');
   await expect(previous).toBeDisabled();
   await expect(next).toBeDisabled();
   await expect(previous).toHaveClass(/nx44-rail-button/);
-  await expect(next.locator('.nx44-rail-icon')).toBeVisible();
+  await expect(next.locator('.nx44-rail-icon')).toHaveCount(1);
+  await expect(previous).toBeHidden();
+  await expect(next).toBeHidden();
+  await page.setViewportSize({width:390,height:844});
+  const mobile=await card.evaluate(node=>node.getBoundingClientRect());
+  expect(mobile.width).toBeGreaterThan(340);
   await noOverflow(page,2);
 });
 
