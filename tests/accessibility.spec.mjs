@@ -1,10 +1,26 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { achievementCatalog, levelFromXp } from '../lib/achievements.mjs';
 
 const ORIGIN = process.env.ANINEXUS_E2E_ORIGIN || 'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN = process.env.ANINEXUS_LOCAL_STATIC_ORIGIN || '';
-const pageUrl = route => `${ORIGIN}?build=44.7.4&p=${encodeURIComponent(route)}`;
+const pageUrl = route => `${ORIGIN}?build=44.15.0&p=${encodeURIComponent(route)}`;
 const pixel = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+const achievementDefinitions = achievementCatalog();
+const achievementItems = achievementDefinitions.map((item, index) => ({
+  ...item,
+  progress: index < 18 ? item.target : Math.max(0, Math.min(item.target - 1, Math.ceil(item.target * .62))),
+  unlocked: index < 18,
+  unlockedAt: index < 18 ? '2026-09-03T15:00:00.000Z' : null,
+  pinnedSlot: index === 0 ? 1 : index === 7 ? 2 : null,
+}));
+const achievementXp = achievementItems.filter(item => item.unlocked).reduce((total, item) => total + item.xp, 0);
+const achievementPayload = {
+  total: 40, unlockedCount: 18, percentage: 45, xp: achievementXp, level: levelFromXp(achievementXp),
+  items: achievementItems, pins: [achievementDefinitions[0].id, achievementDefinitions[7].id],
+  availableTitles: ['Enciclopédia Viva'], equippedTitle: 'Enciclopédia Viva',
+  preferences: { shareFeed: true, timezone: 'America/Cuiaba' },
+};
 
 async function fulfillLocalStatic(route) {
   const requested = new URL(route.request().url());
@@ -48,9 +64,11 @@ test.beforeEach(async ({ page }) => {
     let body = {}; try { body = route.request().postDataJSON() || {}; } catch {}
     await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ data: graphData(body.query, body.variables) }) });
   });
+  await page.route('**/api/achievements/catalog', route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ total: 40, items: achievementDefinitions }) }));
+  await page.route(/\/api\/me\/achievements(?:\/.*)?(?:\?.*)?$/, route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(achievementPayload) }));
 });
 
-for (const route of ['/', '/animes/catalogo', '/mangas', '/animes/programacao', '/anime/anime-teste-101', '/comunidade', '/noticias', '/login', '/admin', '/quem-somos', '/termos-de-uso']) {
+for (const route of ['/', '/animes/catalogo', '/mangas', '/animes/programacao', '/anime/anime-teste-101', '/comunidade', '/noticias', '/conquistas', '/login', '/admin', '/quem-somos', '/termos-de-uso']) {
   test(`WCAG AA sem falhas sérias em ${route}`, async ({ page }) => {
     await page.goto(pageUrl(route), { waitUntil: 'domcontentloaded' });
     await page.locator('#app main').first().waitFor({ state: 'visible', timeout: 30_000 });

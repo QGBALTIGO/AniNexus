@@ -129,7 +129,7 @@
     const gap = parseFloat(styles.columnGap || styles.gap) || 0;
     const itemWidth = first.getBoundingClientRect().width;
     const unit = Math.max(1, itemWidth + gap);
-    const pageByVisibleItems = rail.classList.contains('nx35-rank-rail');
+    const pageByVisibleItems = rail.classList.contains('nx35-rank-rail') || rail.classList.contains('nx48-achievement-feed-rail');
     const visibleItems = Math.max(1, (pageByVisibleItems ? Math.ceil : Math.floor)((rail.clientWidth + gap) / unit));
     return {
       distance: pageByVisibleItems ? unit * visibleItems : Math.min(rail.clientWidth, unit * visibleItems),

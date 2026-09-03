@@ -5,7 +5,7 @@
   const IS_PAGES=location.hostname.endsWith('github.io');
   const REMOTE=window.AniNexusAuth?.enabled===true;
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='44.10.0';
+  const BUILD='44.15.0';
   const API='https://graphql.anilist.co';
   const LIB_ROUTE='/meus-animes';
   const STATE_KEY='aninexus:mediaState:v2';
@@ -109,7 +109,7 @@
     if(state.sort==='title')out.sort((a,b)=>a.media.title.localeCompare(b.media.title,'pt-BR'));else if(state.sort==='score')out.sort((a,b)=>(b.score??b.media.score??-1)-(a.score??a.media.score??-1));else if(state.sort==='progress')out.sort((a,b)=>(b.progress||0)-(a.progress||0));else out.sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0));return out;
   }
   function impressionsView(data){const items=(data.impressions||[]);if(!items.length)return empty('Nenhuma impressão ainda','Quando você escrever uma impressão sobre um anime, ela aparece aqui e pode alimentar a área de comunidade da Home.');return `<div class="nx38-library-impressions-list">${items.map(x=>`<article class="nx38-own-impression">${x.media.cover?`<img src="${esc(x.media.cover)}" alt="">`:'<div></div>'}<div><header><h3>${esc(x.media.title)}</h3><time>${esc(fmtRel(x.createdAt))}</time></header><p>${x.spoiler?'<span class="spoiler">Impressão marcada como spoiler.</span>':esc(x.body)}</p><footer>${x.status?esc(statusLabel(x.status)):''}${x.progress?` · episódio ${x.progress}`:''}${x.score!=null?` · ★ ${Number(x.score).toFixed(1).replace('.0','')}`:''}</footer></div></article>`).join('')}</div>`}
-  function achievementsView(data){const list=data.list||[],done=list.filter(x=>x.status==='COMPLETED').length,current=list.filter(x=>x.status==='CURRENT').length,favs=data.favorites?.length||0,imps=Number(data.impressionCount||0),ach=[['🎬','Primeiro passo','Adicione 1 anime à sua lista',list.length>=1],['▶','Em andamento','Acompanhe 3 animes ao mesmo tempo',current>=3],['✓','Maratonista','Conclua 10 animes',done>=10],['♡','Colecionador','Favorite 10 títulos',favs>=10],['✎','Crítico de sofá','Publique 5 impressões',imps>=5],['🏆','Veterano AniNexus','Conclua 50 animes',done>=50]];return `<div class="nx38-achievements-grid">${ach.map(([i,t,d,ok])=>`<article class="nx38-achievement${ok?'':' locked'}"><i>${i}</i><strong>${t}</strong><span>${d}${ok?' · desbloqueada':''}</span></article>`).join('')}</div>`}
+  function achievementsView(){return `<div class="nx38-library-empty"><strong>Suas conquistas ganharam um espaço próprio</strong><p>Veja os 40 marcos, seu progresso, medalhas fixadas e títulos disponíveis.</p><a class="nx38-library-primary" href="${pageUrl('/conquistas')}">Abrir conquistas</a></div>`}
   function rankView(items){const ranked=items.filter(x=>x.score!=null).sort((a,b)=>b.score-a.score);if(!ranked.length)return empty('Seu rank ainda está vazio','Dê notas aos animes concluídos ou em andamento para criar seu ranking pessoal.');return `<div class="nx38-rank-list">${ranked.map((x,i)=>`<article class="nx38-rank-row" data-lib-open="${x.id}" data-title="${esc(x.media.title)}"><b>${i+1}</b>${x.media.cover?`<img src="${esc(x.media.cover)}" alt="">`:'<div></div>'}<strong>${esc(x.media.title)}</strong><span>★ ${Number(x.score).toFixed(1).replace('.0','')}</span></article>`).join('')}</div>`}
   function empty(title,copy){return `<div class="nx38-library-empty"><strong>${esc(title)}</strong><p>${esc(copy)}</p><a class="nx38-library-primary" href="${pageUrl('/animes/catalogo')}">Explorar catálogo</a></div>`}
 
@@ -122,7 +122,7 @@
   function paintContent(){if(!state.data)return;const root=document.querySelector('#nx38LibraryContent');if(!root)return;const items=mergedItems(state.data);if(state.filter==='IMPRESSIONS'){root.innerHTML=impressionsView(state.data);return}if(state.filter==='ACHIEVEMENTS'){root.innerHTML=achievementsView(state.data);return}if(state.filter==='RANK'){root.innerHTML=rankView(items);wireOpen();return}const out=filtered(state.data,items);root.innerHTML=out.length?`<div class="nx38-library-grid">${out.map(card).join('')}</div>`:empty(state.search?'Nenhum resultado':'Nada nesta categoria',state.search?'Tente outro termo ou limpe os filtros.':'Quando você adicionar um anime aqui, ele aparece automaticamente nesta seção.');window.AniNexusMediaState?.sync?.();wireOpen();wireImpressions()}
   function wireOpen(){document.querySelectorAll('[data-lib-open]').forEach(el=>{el.onclick=e=>{if(e.target.closest('button,a,input,select,textarea'))return;go(`/anime/${slug(el.dataset.title||'anime')}-${el.dataset.libOpen}`)}})}
   function wireImpressions(){document.querySelectorAll('[data-lib-impression]').forEach(b=>b.onclick=e=>{e.stopPropagation();openImpression(Number(b.dataset.libImpression))})}
-  function setFilter(k){state.filter=k;state.review=false;document.querySelector('#nx38LibraryDrawer')?.setAttribute('hidden','');shell(state.data)}
+  function setFilter(k){if(k==='ACHIEVEMENTS'){go('/conquistas');return}state.filter=k;state.review=false;document.querySelector('#nx38LibraryDrawer')?.setAttribute('hidden','');shell(state.data)}
   function wire(){
     document.querySelectorAll('[data-lib-filter]').forEach(b=>b.onclick=()=>setFilter(b.dataset.libFilter));
     document.querySelector('[data-lib-search]')?.addEventListener('input',e=>{state.search=e.target.value;paintContent()});

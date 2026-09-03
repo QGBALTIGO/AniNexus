@@ -18,6 +18,7 @@
       {owner:'detail',match:/^\/anime\/.+-\d+$/.test(path),selector:'.nx22-detail',label:'Carregando anime…'},
       {owner:'news',match:path==='/noticias'||/^\/noticias\/[a-z0-9-]+$/.test(path),selector:'.nx35-news-page',label:'Carregando notícias…'},
       {owner:'community',match:path==='/comunidade',selector:'.nx40-community',label:'Carregando comunidade…'},
+      {owner:'achievements',match:path==='/conquistas',selector:'.nx48-achievements-page',label:'Carregando conquistas…'},
       {owner:'auth',match:['/login','/criar-conta','/minha-conta'].includes(path),selector:'.nx38-auth-page,.nx38-account-page',label:'Carregando conta…'},
       {owner:'admin',match:path==='/admin',selector:'.nx38-admin-page',label:'Carregando administração…'},
       {owner:'library',match:path==='/meus-animes',selector:'.nx38-library',label:'Carregando biblioteca…'},
