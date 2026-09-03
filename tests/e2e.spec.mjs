@@ -510,6 +510,11 @@ test('Home character ranking favorites and reorders with internal counts',async(
   await expect(cards.first().getByRole('button')).toHaveAttribute('aria-pressed','true');
   await page.setViewportSize({width:390,height:844});
   await expect(cards.first().locator('img')).toHaveCSS('object-fit','cover');
+  const visual=await section.evaluate(element=>{
+    const portrait=element.querySelector('.nx47-character-portrait'),button=element.querySelector('.nx47-character-favorite'),portraitBox=portrait.getBoundingClientRect(),buttonBox=button.getBoundingClientRect();
+    return{kicker:element.querySelector('.nx35-head small')?.textContent?.trim(),bar:getComputedStyle(element,'::before').content,actionKind:button.dataset.nxActionKind,width:Math.round(buttonBox.width),height:Math.round(buttonBox.height),right:Math.round(portraitBox.right-buttonBox.right),bottom:Math.round(portraitBox.bottom-buttonBox.bottom)};
+  });
+  expect(visual).toEqual({kicker:'RANKING',bar:'none',actionKind:'compact',width:34,height:34,right:9,bottom:9});
   await noOverflow(page,3);
 });
 
