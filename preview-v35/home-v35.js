@@ -7,7 +7,7 @@
   if (!app) return;
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
-  const BUILD = '44.13.2';
+  const BUILD = '44.14.0';
   const API = 'https://graphql.anilist.co';
   const TZ = 'America/Sao_Paulo';
   const CACHE_TTL = 4 * 60 * 1000;
@@ -71,6 +71,68 @@
     const data={season:d?.season?.media||[],schedule:d?.schedule?.airingSchedules||[],top,popular,soon:d?.soon?.media||[],reading:d?.reading?.media||[],topReading};
     cacheSet('nx35:public:v8',data);return data;
   }
+  const characterState={items:[],favorites:new Set(),pending:new Set()};
+  async function publicJson(path){
+    if(window.AniNexusAuth?.enabled)return window.AniNexusAuth.publicApi(path);
+    const response=await fetch(path,{headers:{accept:'application/json'},cache:'no-store',credentials:'same-origin'});
+    if(!response.ok)throw Object.assign(new Error(`HTTP ${response.status}`),{status:response.status});
+    return response.json();
+  }
+  async function privateJson(path,options={}){
+    if(window.AniNexusAuth?.enabled)return window.AniNexusAuth.api(path,options);
+    const response=await fetch(path,{...options,headers:{accept:'application/json',...(options.headers||{})},cache:'no-store',credentials:'same-origin'});
+    let body={};try{body=await response.json()}catch{}
+    if(!response.ok)throw Object.assign(new Error(body?.error||`HTTP ${response.status}`),{status:response.status});
+    return body;
+  }
+  async function loadCharacterRanking(){
+    try{
+      const data=await publicJson('/api/characters/ranking');
+      if(data?.metricsSource!=='aninexus'||data?.metric!=='favorites'||!Array.isArray(data.items))throw new Error('INVALID_CHARACTER_RANKING');
+      return data.items.slice(0,10);
+    }catch{
+      const response=await fetch(`${BASE}/data/characters.json?v=${BUILD}`,{headers:{accept:'application/json'},cache:'no-store'});
+      if(!response.ok)throw new Error(`HTTP ${response.status}`);
+      const data=await response.json();
+      return(Array.isArray(data?.items)?data.items:[]).slice(0,10).map((item,index)=>({...item,rank:index+1,favoriteCount:0}));
+    }
+  }
+  async function loadCharacterFavorites(){
+    try{const data=await privateJson('/api/me/character-favorites');return new Set((data?.items||[]).map(item=>Number(item.characterId)).filter(Boolean))}catch{return new Set()}
+  }
+  function orderCharacters(items){return[...items].sort((a,b)=>Number(b.favoriteCount||0)-Number(a.favoriteCount||0)||Number(a.tieOrder||0)-Number(b.tieOrder||0)||Number(a.id)-Number(b.id)).map((item,index)=>{item.rank=index+1;return item})}
+  function favoriteLabel(count){const value=Math.max(0,Number(count)||0);return`${value.toLocaleString('pt-BR')} ${value===1?'favorito':'favoritos'}`}
+  function characterCard(item){
+    const id=Number(item.id),rank=String(item.rank||1).padStart(2,'0'),favorite=characterState.favorites.has(id),count=Math.max(0,Number(item.favoriteCount)||0),busy=characterState.pending.has(id),initials=String(item.name||'?').split(/\s+/).slice(0,2).map(part=>part.charAt(0)).join('').toUpperCase();
+    return `<article class="nx47-character-card rank-${item.rank}" data-character-card="${id}"><div class="nx47-character-portrait"><span class="nx47-character-fallback" aria-hidden="true">${esc(initials)}</span><img loading="lazy" decoding="async" src="${esc(item.image)}" alt="${esc(item.name)}"><span class="nx47-character-rank" aria-hidden="true">${rank}</span><button type="button" class="nx47-character-favorite${favorite?' is-favorite':''}" data-character-favorite="${id}" aria-pressed="${favorite}" aria-label="${favorite?'Remover':'Adicionar'} ${esc(item.name)} ${favorite?'dos':'aos'} personagens favoritos" title="${favorite?'Remover dos favoritos':'Favoritar personagem'}"${busy?' disabled aria-busy="true"':''}>${SVG.heart}</button></div><div class="nx47-character-copy"><small>${item.rank}º NO ANINEXUS</small><h3>${esc(item.name)}</h3>${item.nativeName?`<span class="nx47-character-native" lang="ja">${esc(item.nativeName)}</span>`:''}<p>${esc(item.work)}</p><div class="nx47-character-count">${SVG.heart}<strong>${esc(favoriteLabel(count))}</strong></div></div></article>`;
+  }
+  async function paintCharacters(){
+    const root=app.querySelector('#nx47Characters');if(!root)return;
+    let items=[];try{[items,characterState.favorites]=await Promise.all([loadCharacterRanking(),loadCharacterFavorites()])}catch{}
+    if(!items.length){root.innerHTML=metricEmpty('O ranking de personagens não carregou agora.');return}
+    characterState.items=items.map((item,index)=>({...item,id:Number(item.id),favoriteCount:Math.max(0,Number(item.favoriteCount)||0),tieOrder:Number(item.seedOrder)||index+1}));
+    root.className='nx47-character-root';
+    const draw=(focusId=null,announcement='')=>{
+      characterState.items=orderCharacters(characterState.items);
+      root.innerHTML=`${rail(characterState.items.map(characterCard).join(''),'nx35-rank-rail nx47-character-rail')}<p class="nx47-character-status" aria-live="polite">${esc(announcement)}</p>`;
+      root.querySelectorAll('.nx47-character-portrait img').forEach(image=>image.addEventListener('error',()=>image.closest('.nx47-character-portrait')?.classList.add('is-image-missing'),{once:true}));
+      bindRails();window.AniNexusRails?.refresh?.();
+      if(focusId)requestAnimationFrame(()=>{const button=root.querySelector(`[data-character-favorite="${focusId}"]`);button?.focus({preventScroll:true});button?.closest('.nx47-character-card')?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'center'})});
+    };
+    root.addEventListener('click',async event=>{
+      const button=event.target.closest('[data-character-favorite]');if(!button)return;
+      const id=Number(button.dataset.characterFavorite),item=characterState.items.find(candidate=>candidate.id===id);if(!item||characterState.pending.has(id))return;
+      const wasFavorite=characterState.favorites.has(id),previousCount=Number(item.favoriteCount)||0,nextFavorite=!wasFavorite;
+      nextFavorite?characterState.favorites.add(id):characterState.favorites.delete(id);item.favoriteCount=Math.max(0,previousCount+(nextFavorite?1:-1));characterState.pending.add(id);draw(id);
+      try{
+        const result=await privateJson(`/api/me/character-favorites/${id}`,{method:nextFavorite?'PUT':'DELETE'});
+        item.favoriteCount=Math.max(0,Number(result?.favoriteCount)||0);characterState.pending.delete(id);draw(id,`${item.name} ${nextFavorite?'foi adicionado aos':'foi removido dos'} favoritos.`);
+      }catch(error){
+        nextFavorite?characterState.favorites.delete(id):characterState.favorites.add(id);item.favoriteCount=previousCount;characterState.pending.delete(id);draw(id,error?.status===401?'Entre para favoritar personagens.':'Não foi possível atualizar o favorito agora.');if(error?.status===401)setTimeout(()=>go('/login'),350);
+      }
+    });
+    draw();
+  }
   async function loadAwards(){
     const cached=cacheGet('nx35:awards:v3');if(cached)return cached;
     let source={edition:2026,ceremony_city:'Tóquio, Japão',groups:AWARD_GROUPS,winners:AWARDS_FALLBACK};
@@ -96,7 +158,7 @@
   function skeletonRows(n){return Array.from({length:n},()=>'<div class="nx35-skeleton-row"></div>').join('')}
   function head(kicker,base,accent,sub,href,label){return `<div class="nx35-head"><div><small>${esc(kicker)}</small><h2>${esc(base)}${accent?` <em>${esc(accent)}</em>`:''}</h2>${sub?`<p>${esc(sub)}</p>`:''}</div>${href?`<a href="${href}">${esc(label)} ${SVG.arrow}</a>`:''}</div>`}
   function section(kicker,base,accent,sub,href,label,id,tone=''){return `<section class="nx35-section ${tone}"><div class="nx35-shell">${head(kicker,base,accent,sub,href,label)}<div id="${id}" class="nx35-placeholder"></div></div></section>`}
-  function shell(){const s=seasonNow();app.innerHTML=`<main class="nx35-home" data-nx35-home><section class="nx35-hero"><div class="nx35-shell nx35-hero-grid"><div class="nx35-hero-copy"><h1>Descubra o próximo.<br><em>Acompanhe o seu.</em></h1><p>Temporadas, episódios, mangás, notícias e comunidade conectados em uma home feita para acompanhar anime de verdade.</p></div><aside class="nx35-live"><header><div><i></i><span>AGORA NA COMUNIDADE</span></div><a href="/comunidade">Ver tudo ${SVG.arrow}</a></header><div id="nx35CommunityHero" class="nx35-live-list">${skeletonRows(3)}</div></aside></div></section>${section('TEMPORADA ATUAL','Animes da Temporada',`${s.label} ${s.year}`,'Os títulos que estão movimentando a temporada agora.','/animes/temporadas','Ver temporada','nx35Season')}${section('NO AR AGORA','Próximos Episódios','e Lançamentos','Confira os próximos episódios, horários e lançamentos da semana.','/animes/programacao','Programação completa','nx35Schedule','tonal')}<section class="nx35-section"><div class="nx35-shell">${head('ANINEXUS NOTÍCIAS','Notícias','em destaque','Notícias, trailers e novidades do universo anime em português.','/noticias','Todas as notícias')}<div id="nx35News" class="nx35-news-home"><div class="nx35-news-skeleton"></div></div></div></section>${section('RANKING','Top 10','Animes','As maiores notas da comunidade AniNexus, com cada avaliação contando de verdade.','/melhores-animes-para-assistir','Ver ranking','nx35Top','nx45-anime-ranking')}${section('CRUNCHYROLL ANIME AWARDS','Vencedores','de 2026','','/anime-awards','Ver premiação completa','nx35Awards','tonal')}<section class="nx35-section nx35-achievement-section"><div class="nx35-shell">${head('SUA JORNADA','Conquistas','desbloqueadas','Marcos aparecem conforme você usa sua lista.','','')}<div id="nx35Achievements" class="nx35-achievements"></div></div></section>${section('EM ALTA','Mais','acompanhados','Os títulos com maior comunidade ativa no momento.','/animes-mais-assistidos','Ver todos','nx35Popular')}<section class="nx35-section tonal"><div class="nx35-shell">${head('LEITURA','Mangás &','Light Novels','Continue a história além do anime.','/mangas','Explorar leitura')}<div class="nx35-edge"><div id="nx35Reading" class="nx35-rail nx35-reading-rail"></div></div></div></section>${section('PRÓXIMAS ESTREIAS','Animes Chegando','em Breve','O que já está no radar para os próximos meses.','/animes-mais-aguardados','Ver todos','nx35Soon','tonal')}<section class="nx35-section"><div class="nx35-shell">${head('COMUNIDADE','Agora na','Comunidade','Veja o que a comunidade está assistindo, comentando e descobrindo.','/comunidade','Ver tudo')}<div id="nx35Community" class="nx35-community-grid">${skeletonRows(4)}</div></div></section></main>`;document.title='Início | AniNexus';document.body.classList.remove('aqx-home-active','nx34-home','nx33-home');document.body.classList.add('nx35-home-active');document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav==='home'));bindNavigation();bindRails();restoreHomeUrl();requestAnimationFrame(()=>{document.documentElement.classList.add('nx35-home-ready');document.documentElement.classList.remove('nx35-home-boot');dispatchEvent(new CustomEvent('aninexus:home-v34-ready'))})}
+  function shell(){const s=seasonNow();app.innerHTML=`<main class="nx35-home" data-nx35-home><section class="nx35-hero"><div class="nx35-shell nx35-hero-grid"><div class="nx35-hero-copy"><h1>Descubra o próximo.<br><em>Acompanhe o seu.</em></h1><p>Temporadas, episódios, mangás, notícias e comunidade conectados em uma home feita para acompanhar anime de verdade.</p></div><aside class="nx35-live"><header><div><i></i><span>AGORA NA COMUNIDADE</span></div><a href="/comunidade">Ver tudo ${SVG.arrow}</a></header><div id="nx35CommunityHero" class="nx35-live-list">${skeletonRows(3)}</div></aside></div></section>${section('TEMPORADA ATUAL','Animes da Temporada',`${s.label} ${s.year}`,'Os títulos que estão movimentando a temporada agora.','/animes/temporadas','Ver temporada','nx35Season')}${section('NO AR AGORA','Próximos Episódios','e Lançamentos','Confira os próximos episódios, horários e lançamentos da semana.','/animes/programacao','Programação completa','nx35Schedule','tonal')}<section class="nx35-section"><div class="nx35-shell">${head('ANINEXUS NOTÍCIAS','Notícias','em destaque','Notícias, trailers e novidades do universo anime em português.','/noticias','Todas as notícias')}<div id="nx35News" class="nx35-news-home"><div class="nx35-news-skeleton"></div></div></div></section>${section('RANKING','Top 10','Animes','As maiores notas da comunidade AniNexus, com cada avaliação contando de verdade.','/melhores-animes-para-assistir','Ver ranking','nx35Top','nx45-anime-ranking')}${section('RANKING DA COMUNIDADE','Top 10','Personagens','Os personagens mais favoritados pelos membros do AniNexus.','','','nx47Characters','tonal nx47-character-ranking')}${section('CRUNCHYROLL ANIME AWARDS','Vencedores','de 2026','','/anime-awards','Ver premiação completa','nx35Awards','tonal')}<section class="nx35-section nx35-achievement-section"><div class="nx35-shell">${head('SUA JORNADA','Conquistas','desbloqueadas','Marcos aparecem conforme você usa sua lista.','','')}<div id="nx35Achievements" class="nx35-achievements"></div></div></section>${section('EM ALTA','Mais','acompanhados','Os títulos com maior comunidade ativa no momento.','/animes-mais-assistidos','Ver todos','nx35Popular')}<section class="nx35-section tonal"><div class="nx35-shell">${head('LEITURA','Mangás &','Light Novels','Continue a história além do anime.','/mangas','Explorar leitura')}<div class="nx35-edge"><div id="nx35Reading" class="nx35-rail nx35-reading-rail"></div></div></div></section>${section('PRÓXIMAS ESTREIAS','Animes Chegando','em Breve','O que já está no radar para os próximos meses.','/animes-mais-aguardados','Ver todos','nx35Soon','tonal')}<section class="nx35-section"><div class="nx35-shell">${head('COMUNIDADE','Agora na','Comunidade','Veja o que a comunidade está assistindo, comentando e descobrindo.','/comunidade','Ver tudo')}<div id="nx35Community" class="nx35-community-grid">${skeletonRows(4)}</div></div></section></main>`;document.title='Início | AniNexus';document.body.classList.remove('aqx-home-active','nx34-home','nx33-home');document.body.classList.add('nx35-home-active');document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav==='home'));bindNavigation();bindRails();restoreHomeUrl();requestAnimationFrame(()=>{document.documentElement.classList.add('nx35-home-ready');document.documentElement.classList.remove('nx35-home-boot');dispatchEvent(new CustomEvent('aninexus:home-v34-ready'))})}
   function bindNavigation(){app.querySelectorAll('a[href^="/"]').forEach(a=>{if(a.dataset.nx35Nav)return;a.dataset.nx35Nav='1';a.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();go(a.getAttribute('href'))})})}
   function bindRail(el){if(!el||el.dataset.nx35Bound)return;el.dataset.nx35Bound='1';const host=el.closest('.nx35-edge');if(!host)return;const update=()=>{const max=Math.max(0,el.scrollWidth-el.clientWidth);host.dataset.left=el.scrollLeft>8?'1':'0';host.dataset.right=el.scrollLeft<max-8?'1':'0'};el.addEventListener('scroll',update,{passive:true});requestAnimationFrame(update);const ro=new ResizeObserver(update);ro.observe(el);cleanupFns.push(()=>ro.disconnect());let down=false,startX=0,startScroll=0,moved=false,captured=false;el.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0||e.target.closest('button,a,input'))return;down=true;moved=false;captured=false;startX=e.clientX;startScroll=el.scrollLeft});el.addEventListener('pointermove',e=>{if(!down)return;const dx=e.clientX-startX;if(Math.abs(dx)>4)moved=true;if(moved){if(!captured){el.setPointerCapture?.(e.pointerId);captured=true;el.classList.add('dragging')}el.scrollLeft=startScroll-dx;e.preventDefault()}});const end=e=>{if(!down)return;down=false;el.classList.remove('dragging');if(captured)try{el.releasePointerCapture?.(e.pointerId)}catch{}};el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);el.addEventListener('click',e=>{if(!moved)return;e.preventDefault();e.stopImmediatePropagation();moved=false},true)}
   function bindRails(){app.querySelectorAll('.nx35-rail').forEach(bindRail)}
@@ -174,7 +236,7 @@
   }
   function bindCards(){app.querySelectorAll('[data-open-anime]').forEach(card=>{if(card.dataset.bound)return;card.dataset.bound='1';const open=()=>go(`/anime/${slug(card.dataset.title||'anime')}-${card.dataset.openAnime}`);card.addEventListener('click',e=>{if(e.target.closest('button,a'))return;open()});if(card.tabIndex>=0)card.addEventListener('keydown',e=>{if(e.target!==card||!['Enter',' '].includes(e.key))return;e.preventDefault();open()})})}
   function cleanup(){for(const t of timers)clearInterval(t);timers.clear();countdownTimer=null;cleanupFns.splice(0).forEach(fn=>{try{fn()}catch{}});document.body.classList.remove('nx35-home-active')}
-  async function mount(){if(!wantsHome())return;cleanup();shell();paintAchievements();setupMotion();Promise.allSettled([paintPublic(),paintAwards(),paintNews()]).then(()=>{if(wantsHome())app.querySelector('[data-nx35-home]')?.classList.add('data-ready')})}
+  async function mount(){if(!wantsHome())return;cleanup();shell();paintAchievements();setupMotion();Promise.allSettled([paintPublic(),paintCharacters(),paintAwards(),paintNews()]).then(()=>{if(wantsHome())app.querySelector('[data-nx35-home]')?.classList.add('data-ready')})}
   addEventListener('popstate',()=>{if(wantsHome())mount();else cleanup()});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
 })();

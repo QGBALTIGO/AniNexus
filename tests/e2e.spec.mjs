@@ -25,14 +25,19 @@ function rankedMedia(id,type='ANIME'){
   const manga=type==='MANGA',title=manga?`Mangá AniNexus ${id}`:`Anime AniNexus ${id}`,score=Math.max(7.8,9.9-(id%10)*.2);
   return{id,title,titleRomaji:title,titleNative:'',cover:portrait,banner:portrait,score,meanScore:score-.1,metricsSource:'aninexus',ratingCount:80-(id%10)*5,listCount:140-(id%10)*8,popularity:220-(id%10)*10,favourites:60-(id%10)*3,genres:manga?['Drama','Fantasy']:['Action','Adventure'],format:manga?'MANGA':'TV',status:manga?'RELEASING':'FINISHED',seasonYear:2026,startDate:{year:2026,month:1,day:1},episodes:manga?null:12,chapters:manga?48:null,volumes:manga?8:null,streaming:[]};
 }
+function rankedCharacters(){
+  const names=[['Monkey D. Luffy','ONE PIECE'],['Naruto Uzumaki','Naruto'],['Satoru Gojo','JUJUTSU KAISEN'],['Son Goku','Dragon Ball Z'],['Levi Ackerman','Attack on Titan'],['Frieren','Frieren e a Jornada para o Além'],['Killua Zoldyck','Hunter x Hunter (2011)'],['Maomao','Diários de uma Apotecária'],['Anya Forger','SPY x FAMILY'],['Edward Elric','Fullmetal Alchemist: Brotherhood']];
+  return names.map(([name,work],index)=>({id:500+index,name,nativeName:`Nome ${index+1}`,image:portrait,work,mediaId:100+index,favoriteCount:20-index,rank:index+1}));
+}
 async function mockInternalRankings(page){
   const animeRank=Array.from({length:10},(_,index)=>rankedMedia(101+index)),mangaRank=Array.from({length:10},(_,index)=>rankedMedia(201+index,'MANGA'));
   await page.route('**/api/home?**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({season:animeRank.slice(0,6),schedule:[],top:animeRank,popular:animeRank.slice(0,6),reading:mangaRank.slice(0,6),topReading:mangaRank,soon:animeRank.slice(0,6)})}));
   await page.route('**/api/reading?**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:mangaRank,pageInfo:{total:mangaRank.length,currentPage:1,lastPage:1,hasNextPage:false}})}));
+  await page.route('**/api/characters/ranking',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({metricsSource:'aninexus',metric:'favorites',items:rankedCharacters()})}));
 }
 function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animethemes:Array.from({length:count},(_,index)=>({type:index%3===2?'ED':'OP',sequence:index+1,song:{title:`Tema ${index+1}`,artists:[{name:`Artista ${index+1}`}]},animethemeentries:[{episodes:String(index+1),nsfw:false,spoiler:false,videos:[{link:`https://v.animethemes.moe/test-${index+1}.webm`,mimetype:'video/webm',resolution:1080,nc:true,subbed:false,lyrics:false}]}]}))}]}}
 test.describe.configure({mode:'serial'});
-test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
+test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 
 test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-02-v44.7.4')});
 
@@ -458,7 +463,7 @@ test('Top 10 arrows replace all cards visible on the current page',async({page})
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
   for(const width of [1440,390]){
     await page.setViewportSize({width,height:width===390?844:900});
-    for(const rootSelector of ['#nx35Top','#nx42TopManga']){
+    for(const rootSelector of ['#nx35Top','#nx42TopManga','#nx47Characters']){
       const section=page.locator(rootSelector).locator('xpath=ancestor::section[1]'),rail=section.locator('.nx35-rank-rail'),next=section.locator('[data-nx44-rail-dir="next"]');
       await expect(rail).toBeVisible({timeout:30000});
       await rail.evaluate(element=>element.scrollTo({left:0,behavior:'auto'}));
@@ -471,6 +476,41 @@ test('Top 10 arrows replace all cards visible on the current page',async({page})
       await expect.poll(()=>rail.evaluate(element=>element.scrollLeft)).toBeGreaterThanOrEqual(expected-5);
     }
   }
+});
+
+test('Home character ranking favorites and reorders with internal counts',async({page})=>{
+  test.skip(new URL(ORIGIN).hostname.endsWith('github.io')&&!!LOCAL_STATIC_ORIGIN,'Authenticated write behavior is covered against the source shell.');
+  await mockInternalRankings(page);
+  let writeMethod='';
+  const favoriteRoute=route=>{
+    const request=route.request(),url=new URL(request.url());
+    if(request.method()==='GET')return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:[{characterId:501}]})});
+    writeMethod=request.method();
+    const id=Number(url.pathname.split('/').pop());
+    return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({ok:true,characterId:id,favorite:true,favoriteCount:99})});
+  };
+  await page.route('**/api/me/character-favorites',favoriteRoute);
+  await page.route('**/api/me/character-favorites/*',favoriteRoute);
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  const section=page.locator('.nx47-character-ranking'),cards=section.locator('.nx47-character-card');
+  await expect(section).toBeVisible({timeout:30000});
+  await expect(cards).toHaveCount(10);
+  await expect(cards.first().locator('h3')).toHaveText('Monkey D. Luffy');
+  await expect(section.getByRole('button',{name:/Remover Naruto Uzumaki/})).toHaveAttribute('aria-pressed','true');
+  await expect(section.locator('.nx45-rank-score,.nx35-score')).toHaveCount(0);
+  const order=await page.locator('#nx42TopManga,.nx47-character-ranking,#nx35Awards').evaluateAll(nodes=>nodes.map(node=>node.id||node.className));
+  expect(order[0]).toBe('nx42TopManga');
+  const anya=section.getByRole('button',{name:/Adicionar Anya Forger/});
+  await anya.click();
+  await expect.poll(()=>writeMethod).toBe('PUT');
+  await expect(cards.first().locator('h3')).toHaveText('Anya Forger');
+  await expect(cards.first().locator('.nx47-character-count')).toContainText('99 favoritos');
+  await expect(cards.first().getByRole('button')).toHaveAttribute('aria-pressed','true');
+  await page.setViewportSize({width:390,height:844});
+  await expect(cards.first().locator('img')).toHaveCSS('object-fit','cover');
+  await noOverflow(page,3);
 });
 
 test('static fallback never turns provider metrics into AniNexus rankings',async({page})=>{test.skip(!new URL(ORIGIN).hostname.endsWith('github.io'),'This policy is exercised by the static provider fallback.');await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('#nx35Top .nx35-metric-empty')).toContainText('avaliações da comunidade',{timeout:30000});await expect(page.locator('#nx35Popular .nx35-metric-empty')).toContainText('listas, favoritos e impressões');await expect(page.locator('#nx42TopManga .nx45-ranking-empty')).toContainText('comunidade avalia');await expect(page.locator('#nx35Top .nx35-rank')).toHaveCount(0);await expect(page.locator('#nx35Popular .nx35-anime')).toHaveCount(0);await expect(page.locator('#nx42TopManga .nx35-rank')).toHaveCount(0)});
