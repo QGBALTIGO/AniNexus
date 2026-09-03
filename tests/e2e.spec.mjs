@@ -37,6 +37,42 @@ test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl(
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
+test('Home awards presents all 32 winners with filters and no imported community metrics',async({page})=>{
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  const awards=page.locator('#nx35Awards.nx46-home-awards');
+  await expect(awards).toBeVisible({timeout:30000});
+  await expect(awards.locator('.nx46-home-award-card')).toHaveCount(32);
+  await expect(awards.locator('.nx46-home-award-feature h3')).toHaveText('My Hero Academia FINAL SEASON');
+  await expect(awards.getByRole('tab')).toHaveCount(7);
+  await expect(awards.getByRole('tab',{name:/Vozes 10/})).toBeVisible();
+  const section=awards.locator('xpath=ancestor::section[1]'),railActions=section.locator('.nx44-rail-actions');
+  await expect(railActions.locator('[data-nx44-rail-dir="prev"]')).toBeDisabled();
+  await expect(railActions.locator('[data-nx44-rail-dir="next"]')).toBeEnabled();
+  await expect(railActions.getByRole('link',{name:'Ver premiação completa'})).toBeVisible();
+  const desktopCard=await awards.locator('.nx46-home-award-card').first().evaluate(element=>{const box=element.getBoundingClientRect();return{width:box.width,height:box.height}});
+  expect(desktopCard.width).toBeGreaterThan(250);
+  expect(desktopCard.height).toBeLessThan(150);
+  await awards.getByRole('tab',{name:/Vozes 10/}).click();
+  await expect(awards.locator('.nx46-home-award-card')).toHaveCount(10);
+  await awards.locator('.nx46-home-award-card',{hasText:'Charles Emmanuel'}).click();
+  await expect(awards.locator('.nx46-home-award-feature h3')).toHaveText('Charles Emmanuel');
+  await expect(awards.locator('.nx46-home-award-feature')).toContainText('Português Brasileiro');
+  await expect(awards).not.toContainText(/nota|popularidade|favoritos/i);
+  await noOverflow(page,2);
+  await page.setViewportSize({width:390,height:844});
+  await page.reload({waitUntil:'domcontentloaded'});
+  const mobile=page.locator('#nx35Awards.nx46-home-awards');
+  await expect(mobile).toBeVisible({timeout:30000});
+  await expect(mobile.locator('.nx46-home-award-card')).toHaveCount(32);
+  const mobileGeometry=await mobile.locator('.nx46-home-award-feature').evaluate(element=>{const box=element.getBoundingClientRect(),copy=element.querySelector('.nx46-home-award-feature-copy').getBoundingClientRect();return{left:box.left,right:box.right,copyLeft:copy.left,copyRight:copy.right,width:box.width,height:box.height}});
+  expect(mobileGeometry.copyLeft).toBeGreaterThanOrEqual(mobileGeometry.left-.5);
+  expect(mobileGeometry.copyRight).toBeLessThanOrEqual(mobileGeometry.right+.5);
+  expect(mobileGeometry.width).toBeLessThanOrEqual(362);
+  expect(mobileGeometry.height).toBeGreaterThanOrEqual(400);
+  await noOverflow(page,2);
+});
+
 test('Home rails share aligned controls smooth movement and directional fades',async({page})=>{
   await page.setViewportSize({width:390,height:844});
   await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));

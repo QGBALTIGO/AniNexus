@@ -1,0 +1,305 @@
+{
+  "edition": 2026,
+  "ceremony_date": "2026-05-23",
+  "ceremony_city": "Tóquio, Japão",
+  "source": "Crunchyroll Anime Awards",
+  "source_url": "https://www.crunchyroll.com/news/latest/2026/5/22/anime-awards-2026-winners-list",
+  "groups": [
+    { "id": "highlights", "label": "Destaques" },
+    { "id": "production", "label": "Produção" },
+    { "id": "genres", "label": "Gêneros" },
+    { "id": "characters", "label": "Personagens" },
+    { "id": "music", "label": "Música" },
+    { "id": "voices", "label": "Vozes" }
+  ],
+  "winners": [
+    {
+      "id": "anime-of-the-year",
+      "group": "highlights",
+      "category": "Anime do Ano",
+      "winner": "My Hero Academia FINAL SEASON",
+      "work": "My Hero Academia FINAL SEASON",
+      "credit": "bones film",
+      "media_id": 182896
+    },
+    {
+      "id": "film-of-the-year",
+      "group": "highlights",
+      "category": "Melhor Filme",
+      "winner": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+      "work": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+      "credit": "ufotable",
+      "media_id": 178788
+    },
+    {
+      "id": "best-continuing-series",
+      "group": "highlights",
+      "category": "Melhor Continuação",
+      "winner": "ONE PIECE",
+      "work": "ONE PIECE",
+      "credit": "Toei Animation",
+      "media_id": 21
+    },
+    {
+      "id": "best-new-series",
+      "group": "highlights",
+      "category": "Melhor Série Estreante",
+      "winner": "Gachiakuta",
+      "work": "Gachiakuta",
+      "credit": "bones film",
+      "media_id": 178025
+    },
+    {
+      "id": "best-original-anime",
+      "group": "highlights",
+      "category": "Melhor Anime Original",
+      "winner": "LAZARUS",
+      "work": "LAZARUS",
+      "credit": "MAPPA",
+      "media_id": 167336
+    },
+    {
+      "id": "best-animation",
+      "group": "production",
+      "category": "Melhor Animação",
+      "winner": "Solo Leveling Season 2 -Arise from the Shadow-",
+      "work": "Solo Leveling Season 2 -Arise from the Shadow-",
+      "credit": "A-1 Pictures",
+      "media_id": 176496
+    },
+    {
+      "id": "best-character-design",
+      "group": "production",
+      "category": "Melhor Design de Personagem",
+      "winner": "Gachiakuta",
+      "work": "Gachiakuta",
+      "credit": "bones film",
+      "media_id": 178025
+    },
+    {
+      "id": "best-director",
+      "group": "production",
+      "category": "Melhor Direção",
+      "winner": "Akinori Fudesaka e Norihiro Naganuma",
+      "work": "The Apothecary Diaries Season 2",
+      "credit": "TOHO animation STUDIO · OLM",
+      "media_id": 176301
+    },
+    {
+      "id": "best-background-art",
+      "group": "production",
+      "category": "Melhor Cenário Artístico",
+      "winner": "Gachiakuta",
+      "work": "Gachiakuta",
+      "credit": "bones film",
+      "media_id": 178025
+    },
+    {
+      "id": "best-romance-anime",
+      "group": "genres",
+      "category": "Melhor Anime de Romance",
+      "winner": "The Fragrant Flower Blooms With Dignity",
+      "work": "The Fragrant Flower Blooms With Dignity",
+      "credit": "CloverWorks",
+      "media_id": 181444
+    },
+    {
+      "id": "best-comedy-anime",
+      "group": "genres",
+      "category": "Melhor Anime de Comédia",
+      "winner": "DAN DA DAN Season 2",
+      "work": "DAN DA DAN Season 2",
+      "credit": "Science SARU",
+      "media_id": 185660
+    },
+    {
+      "id": "best-action-anime",
+      "group": "genres",
+      "category": "Melhor Anime de Ação",
+      "winner": "Solo Leveling Season 2 -Arise from the Shadow-",
+      "work": "Solo Leveling Season 2 -Arise from the Shadow-",
+      "credit": "A-1 Pictures",
+      "media_id": 176496
+    },
+    {
+      "id": "best-isekai-anime",
+      "group": "genres",
+      "category": "Melhor Anime Isekai",
+      "winner": "Re:ZERO -Starting Life in Another World- Season 3",
+      "work": "Re:ZERO -Starting Life in Another World- Season 3",
+      "credit": "WHITE FOX",
+      "media_id": 163134
+    },
+    {
+      "id": "best-drama-anime",
+      "group": "genres",
+      "category": "Melhor Anime de Drama",
+      "winner": "The Apothecary Diaries Season 2",
+      "work": "The Apothecary Diaries Season 2",
+      "credit": "TOHO animation STUDIO · OLM",
+      "media_id": 176301
+    },
+    {
+      "id": "best-slice-of-life-anime",
+      "group": "genres",
+      "category": "Melhor Slice of Life",
+      "winner": "SPY x FAMILY Season 3",
+      "work": "SPY x FAMILY Season 3",
+      "credit": "WIT STUDIO · CloverWorks",
+      "media_id": 177937
+    },
+    {
+      "id": "best-main-character",
+      "group": "characters",
+      "category": "Melhor Personagem Principal",
+      "winner": "Maomao",
+      "work": "The Apothecary Diaries Season 2",
+      "credit": "Personagem principal",
+      "media_id": 176301
+    },
+    {
+      "id": "best-supporting-character",
+      "group": "characters",
+      "category": "Melhor Personagem Secundário",
+      "winner": "Katsuki Bakugo",
+      "work": "My Hero Academia FINAL SEASON",
+      "credit": "Personagem secundário",
+      "media_id": 182896
+    },
+    {
+      "id": "must-protect-character",
+      "group": "characters",
+      "category": "Personagem Mais Precioso",
+      "winner": "Anya Forger",
+      "work": "SPY x FAMILY Season 3",
+      "credit": "Must Protect At All Costs",
+      "media_id": 177937
+    },
+    {
+      "id": "best-anime-song",
+      "group": "music",
+      "category": "Melhor Música de Anime",
+      "winner": "IRIS OUT",
+      "work": "Chainsaw Man – The Movie: Reze Arc",
+      "credit": "Kenshi Yonezu",
+      "media_id": 171627
+    },
+    {
+      "id": "best-score",
+      "group": "music",
+      "category": "Melhor Trilha Sonora",
+      "winner": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+      "work": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+      "credit": "Yuki Kajiura · Go Shiina",
+      "media_id": 178788
+    },
+    {
+      "id": "best-opening",
+      "group": "music",
+      "category": "Melhor Abertura",
+      "winner": "On The Way",
+      "work": "DAN DA DAN Season 2",
+      "credit": "AiNA THE END",
+      "media_id": 185660
+    },
+    {
+      "id": "best-ending",
+      "group": "music",
+      "category": "Melhor Encerramento",
+      "winner": "I",
+      "work": "My Hero Academia FINAL SEASON",
+      "credit": "BUMP OF CHICKEN",
+      "media_id": 182896
+    },
+    {
+      "id": "best-voice-japanese",
+      "group": "voices",
+      "category": "Melhor Performance de Voz · Japonês",
+      "winner": "Aoi Yuki",
+      "work": "The Apothecary Diaries Season 2",
+      "credit": "Maomao · Japonês",
+      "media_id": 176301
+    },
+    {
+      "id": "best-voice-arabic",
+      "group": "voices",
+      "category": "Melhor Performance de Voz · Árabe",
+      "winner": "Tariq Obaid",
+      "work": "SAKAMOTO DAYS",
+      "credit": "Taro Sakamoto · Árabe",
+      "media_id": 177709
+    },
+    {
+      "id": "best-voice-brazilian-portuguese",
+      "group": "voices",
+      "category": "Melhor Performance de Voz · Português Brasileiro",
+      "winner": "Charles Emmanuel",
+      "work": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+      "credit": "Akaza · Português brasileiro",
+      "media_id": 178788
+    },
+    {
+      "id": "best-voice-castilian-spanish",
+      "group": "voices",
+      "category": "Melhor Performance de Voz · Espanhol Europeu",
+      "winner": "Carles Teruel",
+      "work": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+      "credit": "Akaza · Espanhol europeu",
+      "media_id": 178788
+    },
+    {
+      "id": "best-voice-english",
+      "group": "voices",
+      "category": "Melhor Performance de Voz · Inglês",
+      "winner": "Lucien Dodge",
+      "work": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+      "credit": "Akaza · Inglês",
+      "media_id": 178788
+    },
+    {
+      "id": "best-voice-french",
+      "group": "voices",
+      "category": "Melhor Performance de Voz · Francês",
+      "winner": "Bastien Bourlé",
+      "work": "My Hero Academia FINAL SEASON",
+      "credit": "Izuku Midoriya · Francês",
+      "media_id": 182896
+    },
+    {
+      "id": "best-voice-german",
+      "group": "voices",
+      "category": "Melhor Performance de Voz · Alemão",
+      "winner": "Gerrit Schmidt-Foß",
+      "work": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+      "credit": "Akaza · Alemão",
+      "media_id": 178788
+    },
+    {
+      "id": "best-voice-italian",
+      "group": "voices",
+      "category": "Melhor Performance de Voz · Italiano",
+      "winner": "Mosè Singh",
+      "work": "Chainsaw Man – The Movie: Reze Arc",
+      "credit": "Denji · Italiano",
+      "media_id": 171627
+    },
+    {
+      "id": "best-voice-latin-spanish",
+      "group": "voices",
+      "category": "Melhor Performance de Voz · Espanhol Latino",
+      "winner": "Jose Antonio Toledano",
+      "work": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+      "credit": "Akaza · Espanhol latino",
+      "media_id": 178788
+    },
+    {
+      "id": "best-voice-hindi",
+      "group": "voices",
+      "category": "Melhor Performance de Voz · Hindi",
+      "winner": "Abhishek Sharma",
+      "work": "The Apothecary Diaries Season 2",
+      "credit": "Jinshi · Hindi",
+      "media_id": 176301
+    }
+  ]
+}
