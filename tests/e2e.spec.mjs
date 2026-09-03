@@ -76,7 +76,9 @@ test('Home awards rotates all 32 winners with responsive art and no imported com
   const mobile=page.locator('#nx35Awards.nx46-home-awards');
   await expect(mobile).toBeVisible({timeout:30000});
   await expect(mobile.locator('.nx46-home-award-card')).toHaveCount(32);
-  await expect(mobile.locator('.nx46-home-award-feature.is-current img')).toHaveAttribute('src',/a\.storyblok\.com/);
+  const mobileImage=mobile.locator('.nx46-home-award-feature.is-current img');
+  await expect(mobileImage).toHaveAttribute('src',/a\.storyblok\.com/);
+  await expect.poll(()=>mobileImage.evaluate(image=>image.complete&&image.naturalWidth>0)).toBe(true);
   const reloadedWinner=await mobile.locator('.nx46-home-award-feature.is-current h3').textContent();
   await expect.poll(()=>mobile.locator('.nx46-home-award-feature.is-current h3').textContent(),{timeout:10000}).not.toBe(reloadedWinner);
   const mobileGeometry=await mobile.locator('.nx46-home-award-feature.is-current').evaluate(element=>{const box=element.getBoundingClientRect(),copy=element.querySelector('.nx46-home-award-feature-copy').getBoundingClientRect(),art=element.querySelector('.nx46-home-award-feature-art').getBoundingClientRect();return{left:box.left,right:box.right,copyLeft:copy.left,copyRight:copy.right,width:box.width,height:box.height,artRatio:art.width/art.height}});
@@ -88,6 +90,12 @@ test('Home awards rotates all 32 winners with responsive art and no imported com
   expect(mobileGeometry.artRatio).toBeGreaterThan(1.7);
   expect(mobileGeometry.artRatio).toBeLessThan(1.85);
   await noOverflow(page,2);
+  await expect(mobile.locator('.nx46-home-award-card[data-open-anime]')).toHaveCount(0);
+  const featured=mobile.locator('.nx46-home-award-feature.is-current');
+  const mediaId=await featured.getAttribute('data-open-anime');
+  expect(Number(mediaId)).toBeGreaterThan(0);
+  await featured.click();
+  await page.waitForURL(url=>(url.searchParams.get('p')||url.pathname).includes(`/anime/`)&&(url.searchParams.get('p')||url.pathname).endsWith(`-${mediaId}`),{timeout:10000});
 });
 
 test('Home rails share aligned controls smooth movement and directional fades',async({page})=>{
@@ -482,16 +490,17 @@ test('Home character ranking favorites and reorders with internal counts',async(
   test.skip(new URL(ORIGIN).hostname.endsWith('github.io')&&!!LOCAL_STATIC_ORIGIN,'Authenticated write behavior is covered against the source shell.');
   await mockInternalRankings(page);
   let writeMethod='';
-  const favoriteRoute=route=>{
+  const favoriteRoute=async route=>{
     const request=route.request(),url=new URL(request.url());
     if(request.method()==='GET')return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:[{characterId:501}]})});
     writeMethod=request.method();
     const id=Number(url.pathname.split('/').pop());
+    await new Promise(resolve=>setTimeout(resolve,180));
     return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({ok:true,characterId:id,favorite:true,favoriteCount:99})});
   };
   await page.route('**/api/me/character-favorites',favoriteRoute);
   await page.route('**/api/me/character-favorites/*',favoriteRoute);
-  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.emulateMedia({reducedMotion:'no-preference'});
   await page.setViewportSize({width:1440,height:900});
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
   const section=page.locator('.nx47-character-ranking'),cards=section.locator('.nx47-character-card');
@@ -504,10 +513,17 @@ test('Home character ranking favorites and reorders with internal counts',async(
   expect(order[0]).toBe('nx42TopManga');
   const anya=section.getByRole('button',{name:/Adicionar Anya Forger/});
   await anya.click();
+  const anyaFavorite=section.locator('[data-character-favorite="508"]');
+  await expect(anyaFavorite).toHaveClass(/nx39-pop/);
+  await expect(anyaFavorite).toHaveAttribute('aria-pressed','true');
   await expect.poll(()=>writeMethod).toBe('PUT');
   await expect(cards.first().locator('h3')).toHaveText('Anya Forger');
   await expect(cards.first().locator('.nx47-character-count')).toContainText('99 favoritos');
   await expect(cards.first().getByRole('button')).toHaveAttribute('aria-pressed','true');
+  const activeVisual=await cards.first().getByRole('button').evaluate(button=>({background:getComputedStyle(button).backgroundColor,fill:getComputedStyle(button.querySelector('svg')).fill}));
+  expect(activeVisual).toEqual({background:'rgba(189, 24, 59, 0.93)',fill:'rgb(255, 255, 255)'});
+  await expect(section.locator('.nx47-character-status')).toHaveCount(0);
+  await expect(section).not.toContainText(/foi adicionado aos|foi removido dos/i);
   await page.setViewportSize({width:390,height:844});
   await expect(cards.first().locator('img')).toHaveCSS('object-fit','cover');
   const visual=await section.evaluate(element=>{
@@ -527,6 +543,22 @@ test('Awards uses a compact editorial grid without dead desktop regions',async({
 test('production detail paints from the internal API without waiting for external providers',async({page})=>{const origin=new URL(firstVisitUrl('/')).origin,base=anime(101),normalized={id:base.id,idMal:null,mediaType:'ANIME',title:base.title.english,titleRomaji:base.title.romaji,titleNative:base.title.native,synonyms:[],cover:pixel,coverColor:'#ef2a5c',banner:pixel,description:base.description,genres:base.genres,tags:['Action'],tagDetails:[{name:'Action',rank:90,isMediaSpoiler:false}],score:8.2,meanScore:8.1,popularity:1000,favourites:100,episodes:12,duration:24,format:'TV',status:'RELEASING',season:'SUMMER',seasonYear:2026,country:'JP',source:'ORIGINAL',startDate:base.startDate,endDate:null,studios:[],streaming:[],nextAiringEpisode:null,trailer:null,characters:[],staff:[],relations:[],recommendations:[]};let apiHits=0;await page.route(`${origin}/preview-v22/**`,async route=>{const requested=new URL(route.request().url()),response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});await route.fulfill({response})});await page.route(`${origin}/api/anime/101`,async route=>{apiHits++;await new Promise(resolve=>setTimeout(resolve,80));await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(normalized)})});await page.unroute('https://graphql.anilist.co/');await page.route('https://graphql.anilist.co/',route=>route.abort('failed'));const started=Date.now();await page.goto(firstVisitUrl('/anime/anime-teste-101'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx22-detail:not(.nx22-loading):not(.nx22-fail)')).toBeVisible({timeout:5000});await expect(page.getByRole('heading',{name:'Anime Teste 101'})).toBeVisible();expect(Date.now()-started).toBeLessThan(5000);expect(apiHits).toBe(1);await noOverflow(page,2)});
 
 test('native news slugs with underscores open the reader',async({page})=>{const slug='life-a-felicidade-depende-de-nos-sera-publicado-pela-newpop-jbox_manga-211a006a',origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/api/news/${slug}`,route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({id:'211a006a',slug,title:'Life, A Felicidade Depende de Nós será publicado pela NewPOP',summary:'A editora confirmou a publicação brasileira do mangá.',event_type:'MANGA',source_name:'AniNexus Notícias',language:'pt-BR',published_at:new Date().toISOString(),facts:['A publicação foi confirmada.'],body:{sections:[{heading:'Publicação no Brasil',paragraphs:['A edição brasileira foi anunciada oficialmente.']}]}})}));await page.goto(firstVisitUrl(`/noticias/${slug}`),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-reader')).toBeVisible({timeout:15000});await expect(page.getByRole('heading',{name:/Felicidade Depende de Nós/})).toBeVisible();await expect(page.locator('#app')).not.toContainText('Página não encontrada');await noOverflow(page,2)});
+
+test('news repairs AnimeNew image hosts and renders the cover',async({page})=>{
+  const now=new Date(),expires=new Date(now.getTime()+86400000),item={id:'image-host-test',slug:'imagem-anime-new-teste',title:'Anime ganha novo trailer e data de estreia',summary:'O novo trailer do anime foi divulgado com informações sobre a estreia da temporada.',eventType:'TRAILER',category:'Trailers',image:'https://animenew.com.br/wp-content/uploads/2026/09/capa-teste.webp',language:'pt-BR',sourceContent:[{type:'paragraph',text:'O trailer foi divulgado.',runs:[{text:'O trailer foi divulgado.'}]}],contentMode:'full',publishedAt:now.toISOString(),expiresAt:expires.toISOString()};
+  const body=JSON.stringify({items:[item]});
+  await page.route('**/api/news?limit=60',route=>route.fulfill({status:200,contentType:'application/json',body}));
+  await page.route('**/data/news.json*',route=>route.fulfill({status:200,contentType:'application/json',body}));
+  await page.route('**/data/news-v36-seed.json*',route=>route.fulfill({status:200,contentType:'application/json',body:'{"items":[]}'}));
+  await page.route('https://animenew.com.br/wp-content/**',route=>route.abort('failed'));
+  await page.route('https://wp.animenew.com.br/wp-content/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));
+  await page.goto(pageUrl('/noticias'),{waitUntil:'domcontentloaded'});
+  const card=page.locator('.nx35-ncard',{hasText:item.title}).first(),image=card.locator('img[data-news-image]');
+  await expect(card).toBeVisible({timeout:30000});
+  await expect(image).toHaveAttribute('src','https://wp.animenew.com.br/wp-content/uploads/2026/09/capa-teste.webp');
+  await expect.poll(()=>image.evaluate(node=>node.complete&&node.naturalWidth>0)).toBe(true);
+  await expect(card.locator('.nx35-news-art')).toHaveCount(0);
+});
 
 test('manga catalog is a dedicated responsive product surface',async({page})=>{for(const width of [390,768,1440]){await page.setViewportSize({width,height:width===390?844:900});await page.goto(pageUrl('/mangas'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx42-manga-page')).toBeVisible({timeout:30000});await expect(page.getByRole('heading',{name:'Catálogo de Mangás'})).toBeVisible();await expect(page.locator('.nx42-manga-card').first()).toBeVisible();await expect(page.locator('#nx42MangaSearch')).toBeVisible();await noOverflow(page,3)}});
 

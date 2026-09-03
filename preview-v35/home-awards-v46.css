@@ -55,6 +55,15 @@
   z-index:2;
 }
 
+.nx46-home-award-feature[data-open-anime]{
+  cursor:pointer;
+}
+
+.nx46-home-award-feature[data-open-anime]:focus-visible{
+  outline:2px solid #e7bd5e;
+  outline-offset:-4px;
+}
+
 .nx46-home-award-feature.is-leaving{
   z-index:1;
   opacity:0;

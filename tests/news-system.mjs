@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { cleanText, canonicalUrl, sourceFingerprint, storyFingerprint, classifyNews } from '../lib/news-core.mjs';
+import { cleanText, canonicalUrl, sourceFingerprint, storyFingerprint, classifyNews, normalizeNewsImageUrl } from '../lib/news-core.mjs';
 import { parseSourceContent, sourceExcerpt } from '../lib/news-source-content.mjs';
 import { languageScore, likelyPortuguese } from '../lib/news-sources-v36.mjs';
 import { extractSourceMedia } from '../lib/news-rich-v37.mjs';
@@ -27,6 +27,14 @@ test('core normalization and classification remain stable', () => {
   assert.equal(sourceFingerprint('https://example.com/a?utm_source=x'), sourceFingerprint('https://example.com/a'));
   assert.equal(storyFingerprint('Anime ganha temporada', 'Nova temporada confirmada'), storyFingerprint('Anime ganha temporada', 'Nova temporada confirmada'));
   assert.equal(classifyNews({ title: 'Novo trailer de Chainsaw Man' }), 'TRAILER');
+  assert.equal(normalizeNewsImageUrl('https://animenew.com.br/wp-content/uploads/capa.webp'), 'https://wp.animenew.com.br/wp-content/uploads/capa.webp');
+  assert.equal(normalizeNewsImageUrl('', 'https://animenew.com.br/noticia'), '');
+});
+
+test('AnimeNew media host is repaired without changing the source page URL', () => {
+  const parsed = parseSourceContent('<p>Texto original da notícia.</p><img src="https://animenew.com.br/wp-content/uploads/2026/09/capa.webp" alt="Capa">', 'https://animenew.com.br/noticia');
+  assert.equal(parsed.mediaGallery[0]?.url, 'https://wp.animenew.com.br/wp-content/uploads/2026/09/capa.webp');
+  assert.equal(canonicalUrl('https://animenew.com.br/noticia'), 'https://animenew.com.br/noticia');
 });
 
 test('source parser preserves text and media in document order', () => {
@@ -148,12 +156,14 @@ test('scheduled workflow validates the parser and accepts an optional GNews secr
 });
 
 test('browser model normalizes source blocks and does not invent fallback artwork', () => {
-  assert.ok(newsData.includes("BUILD='44.7.4'"));
+  assert.ok(newsData.includes("BUILD='44.14.2'"));
   assert.ok(newsData.includes('normalizeSourceContent'));
   assert.ok(newsData.includes('sourceContent'));
   assert.ok(newsData.includes('sourceAuthor'));
   assert.ok(newsData.includes("if(!raw)return''"));
-  assert.ok(newsData.includes('async function hydrateImages(items){return items}'));
+  assert.ok(newsData.includes('newsImageUrl'));
+  assert.ok(newsData.includes('bindImageFallbacks'));
+  assert.ok(newsData.includes("url.hostname.toLowerCase()==='animenew.com.br'"));
   assert.equal(newsData.includes('graphql.anilist.co'), false);
 });
 

@@ -89,12 +89,12 @@
   height:34px
 }
 .nx47-character-actions .nx47-character-favorite.active{
-  border-color:rgba(255,94,126,.55);
-  background:rgba(189,24,59,.93);
-  color:#fff;
-  box-shadow:0 6px 17px rgba(194,24,60,.26),inset 0 1px rgba(255,255,255,.12)
+  border-color:rgba(255,94,126,.55)!important;
+  background:rgba(189,24,59,.93)!important;
+  color:#fff!important;
+  box-shadow:0 6px 17px rgba(194,24,60,.26),inset 0 1px rgba(255,255,255,.12)!important
 }
-.nx47-character-actions .nx47-character-favorite.active svg{fill:currentColor}
+.nx47-character-actions .nx47-character-favorite.active svg{fill:currentColor!important}
 .nx47-character-actions .nx47-character-favorite:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .nx47-character-actions .nx47-character-favorite:disabled{cursor:wait;opacity:.72}
 .nx47-character-copy{
@@ -161,9 +161,6 @@
   font:600 7.5px/1.2 'Manrope',sans-serif;
   text-overflow:ellipsis
 }
-.nx47-character-status:empty{height:0;margin:0;overflow:hidden}
-.nx47-character-status:not(:empty){min-height:14px;margin:0;color:#84777e;font:600 8px/1.4 'Manrope',sans-serif}
-
 html[data-theme=light] .nx47-character-rank{
   color:rgba(250,247,248,.9);
   filter:drop-shadow(0 4px 9px rgba(67,35,47,.14))

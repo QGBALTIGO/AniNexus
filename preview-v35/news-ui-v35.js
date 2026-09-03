@@ -5,7 +5,7 @@
   if (!D || !app || window.__NX35_NEWS_UI__) return;
   window.__NX35_NEWS_UI__ = true;
 
-  const { BASE, esc, strip, route, owns, go, readSet, markRead, loadFeed, loadArticle, relative, date } = D;
+  const { BASE, esc, strip, route, owns, go, imageCandidates, bindImageFallbacks, readSet, markRead, loadFeed, loadArticle, relative, date } = D;
   let active = 'ALL';
   let query = '';
   let rendering = false;
@@ -47,7 +47,8 @@
   }
 
   function media(item, hero = false) {
-    if (item.image) return `<img loading="${hero ? 'eager' : 'lazy'}" decoding="async" src="${esc(item.image)}" alt="${esc(item.imageAlt || item.title)}" onerror="this.remove();this.parentElement.classList.add('no-image')">`;
+    const images = imageCandidates(item);
+    if (images.length) return `<img loading="${hero ? 'eager' : 'lazy'}" decoding="async" src="${esc(images[0])}" data-news-image data-news-image-candidates="${esc(encodeURIComponent(JSON.stringify(images.slice(1))))}" alt="${esc(item.imageAlt || item.title)}">`;
     return '<div class="nx35-news-art"><span>ANINEXUS</span><b>NOTÍCIAS</b></div>';
   }
 
@@ -76,6 +77,7 @@
     const side = list.slice(1, 4);
     const rest = list.slice(4);
     root.innerHTML = `<div class="nx35-news-lead">${card(lead, 'feature')}<div class="nx35-news-side">${side.map(item => card(item, 'compact')).join('')}</div></div>${rest.length ? `<div class="nx35-news-sub"><small>MAIS RECENTES</small><h2>Últimas atualizações</h2></div><div class="nx35-news-grid">${rest.map(item => card(item)).join('')}</div>` : ''}`;
+    bindImageFallbacks(root);
   }
 
   function listShell() {
@@ -165,6 +167,7 @@
       ? '<aside class="nx40-preview-note"><strong>Conteúdo disponível como prévia.</strong><p>A publicação disponibilizou somente este trecho no feed.</p></aside>'
       : '';
     app.innerHTML = `<main class="nx35-news-page nx35-reader"><div class="nx35-progress"><i id="nx35Progress"></i></div><article><header class="nx35-article-hero ${item.image ? 'has-image' : 'no-image'}">${item.image ? media(item, true) : '<div class="nx35-reader-art"><span>ANINEXUS</span><b>NOTÍCIAS</b></div>'}<div class="nx35-article-shade"></div><div class="nx35-shell nx35-article-head"><div class="nx40-reader-actions"><button data-back>${I.back}<span>Notícias</span></button><button data-copy title="Copiar link" aria-label="Copiar link">${I.copy}<span>Copiar link</span></button></div><div class="nx35-article-meta"><span>${esc(item.category)}</span><time>${esc(date(item.publishedAt, true))}</time></div><h1>${esc(item.title)}</h1>${!fidelity ? `<p>${esc(item.summary)}</p>` : ''}<div class="nx35-article-stats"><span>${I.clock}${item.readingMinutes} min</span><span>${esc(modeLabel)}</span>${item.sourceAuthor ? `<span>Por ${esc(item.sourceAuthor)}</span>` : ''}</div></div></header><div class="nx35-shell nx35-article-layout"><div class="nx35-article-main">${previewNote}${sourceFlow(item)}${legacySections.map(legacySection).join('')}${legacyMedia(item)}</div><aside class="nx35-sidebar"><div><small>PUBLICAÇÃO</small><strong>${esc(date(item.publishedAt, true))}</strong>${item.sourceAuthor ? `<p>Por ${esc(item.sourceAuthor)}</p>` : ''}${updated ? `<p>Atualizada em ${esc(updated)}</p>` : ''}</div><div><small>LEITURA</small><strong>${esc(modeLabel)}</strong><p>${item.readingMinutes} min${item.wordCount ? ` · ${item.wordCount} palavras` : ''}</p></div></aside></div>${related.length ? `<section class="nx35-related"><div class="nx35-shell"><div class="nx35-news-sub"><small>CONTINUE LENDO</small><h2>Mais notícias relacionadas</h2></div><div class="nx35-news-grid">${related.map(entry => card(entry)).join('')}</div></div></section>` : ''}</article></main>`;
+    bindImageFallbacks(app);
     app.querySelector('[data-back]')?.addEventListener('click', () => go('/noticias'));
     app.querySelector('[data-copy]')?.addEventListener('click', async event => {
       try {
