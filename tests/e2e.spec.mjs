@@ -367,6 +367,7 @@ test('mobile drawer is colorful account-aware and limited to six destinations',a
 test('Home keeps anime and manga rankings separate and visually distinct',async({page})=>{
   test.skip(new URL(ORIGIN).hostname.endsWith('github.io'),'Rankings require internal AniNexus metrics.');
   await mockInternalRankings(page);
+  await page.emulateMedia({reducedMotion:'reduce'});
   await page.setViewportSize({width:1440,height:900});
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
   const animeRank=page.locator('#nx35Top .nx45-rank-anime'),mangaRank=page.locator('#nx42TopManga .nx45-rank-manga');
@@ -377,6 +378,17 @@ test('Home keeps anime and manga rankings separate and visually distinct',async(
   await expect(animeRank.first().locator('.nx45-rank-actions button')).toHaveCount(2);
   await expect(animeRank.first().locator('.nx45-rank-facts')).not.toBeEmpty();
   await expect(mangaRank.first().locator('.nx45-rank-facts')).not.toBeEmpty();
+  const rankingPresentation=await animeRank.first().evaluate(card=>{
+    const cover=card.querySelector('.nx35-rank-cover'),number=card.querySelector('.nx35-rank-num'),score=card.querySelector('.nx45-rank-score'),votes=card.querySelector('.nx45-rank-votes'),section=card.closest('section'),head=section.querySelector('.nx35-head'),copy=head.firstElementChild;
+    return{duplicatePosition:card.querySelectorAll('.nx45-rank-position').length,coverScore:Boolean(cover.querySelector(':scope > b')),scoreInMetadata:Boolean(score&&score.parentElement?.classList.contains('nx45-rank-community')),scoreSharesReviews:Boolean(score&&votes&&score.parentElement===votes.parentElement),numberZ:Number(getComputedStyle(number).zIndex),coverZ:Number(getComputedStyle(cover).zIndex),headBottom:parseFloat(getComputedStyle(head).borderBottomWidth),copyBottom:parseFloat(getComputedStyle(copy).borderBottomWidth)};
+  });
+  expect(rankingPresentation.duplicatePosition).toBe(0);
+  expect(rankingPresentation.coverScore).toBe(false);
+  expect(rankingPresentation.scoreInMetadata).toBe(true);
+  expect(rankingPresentation.scoreSharesReviews).toBe(true);
+  expect(rankingPresentation.numberZ).toBeGreaterThan(rankingPresentation.coverZ);
+  expect(rankingPresentation.headBottom).toBe(0);
+  expect(rankingPresentation.copyBottom).toBe(1);
   const animeCopyGap=await animeRank.first().evaluate(card=>{const title=card.querySelector('h3'),facts=card.querySelector('.nx45-rank-facts'),range=document.createRange();range.selectNodeContents(title);return facts.getBoundingClientRect().top-range.getBoundingClientRect().bottom});
   expect(animeCopyGap).toBeLessThanOrEqual(7);
   await expect(page.locator('#nx35Top [data-nx42-type="manga"]')).toHaveCount(0);
@@ -388,6 +400,29 @@ test('Home keeps anime and manga rankings separate and visually distinct',async(
   await expect(animeRank.first()).toBeVisible();
   await expect(mangaRank.first()).toBeVisible();
   await noOverflow(page,3);
+});
+
+test('Top 10 arrows replace all cards visible on the current page',async({page})=>{
+  test.skip(new URL(ORIGIN).hostname.endsWith('github.io'),'Rankings require internal AniNexus metrics.');
+  await mockInternalRankings(page);
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  for(const width of [1440,390]){
+    await page.setViewportSize({width,height:width===390?844:900});
+    for(const rootSelector of ['#nx35Top','#nx42TopManga']){
+      const section=page.locator(rootSelector).locator('xpath=ancestor::section[1]'),rail=section.locator('.nx35-rank-rail'),next=section.locator('[data-nx44-rail-dir="next"]');
+      await expect(rail).toBeVisible({timeout:30000});
+      await rail.evaluate(element=>element.scrollTo({left:0,behavior:'auto'}));
+      await page.waitForTimeout(50);
+      const metrics=await rail.evaluate(element=>{const first=element.firstElementChild,second=first?.nextElementSibling,style=getComputedStyle(element),gap=parseFloat(style.columnGap||style.gap)||0,unit=second?second.getBoundingClientRect().left-first.getBoundingClientRect().left:first.getBoundingClientRect().width+gap,visible=Math.max(1,Math.ceil((element.clientWidth+gap)/unit)),max=Math.max(0,element.scrollWidth-element.clientWidth);return{start:element.scrollLeft,unit,visible,max}});
+      expect(metrics.visible).toBeGreaterThanOrEqual(width===390?2:4);
+      await expect(next).toBeEnabled();
+      await next.click();
+      const expected=Math.min(metrics.max,Math.round((metrics.start+metrics.unit*metrics.visible)/metrics.unit)*metrics.unit);
+      await expect.poll(()=>rail.evaluate(element=>element.scrollLeft)).toBeGreaterThanOrEqual(expected-5);
+    }
+  }
 });
 
 test('static fallback never turns provider metrics into AniNexus rankings',async({page})=>{test.skip(!new URL(ORIGIN).hostname.endsWith('github.io'),'This policy is exercised by the static provider fallback.');await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('#nx35Top .nx35-metric-empty')).toContainText('avaliações da comunidade',{timeout:30000});await expect(page.locator('#nx35Popular .nx35-metric-empty')).toContainText('listas, favoritos e impressões');await expect(page.locator('#nx42TopManga .nx45-ranking-empty')).toContainText('comunidade avalia');await expect(page.locator('#nx35Top .nx35-rank')).toHaveCount(0);await expect(page.locator('#nx35Popular .nx35-anime')).toHaveCount(0);await expect(page.locator('#nx42TopManga .nx35-rank')).toHaveCount(0)});
@@ -429,9 +464,15 @@ test('single Home impression is complete and does not look like a broken rail',a
   await expect(next).toBeDisabled();
   await expect(previous).toHaveClass(/nx44-rail-button/);
   await expect(next.locator('.nx44-rail-icon')).toHaveCount(1);
-  await expect(previous).toBeHidden();
-  await expect(next).toBeHidden();
+  await expect(previous).toBeVisible();
+  await expect(next).toBeVisible();
+  const community=page.locator('.nx38-impressions-actions a',{hasText:'Abrir comunidade'});
+  await expect(community).toBeVisible();
+  expect(await community.evaluate(link=>{const url=new URL(link.href);return url.searchParams.get('p')||url.pathname})).toBe('/comunidade');
   await page.setViewportSize({width:390,height:844});
+  await expect(previous).toBeVisible();
+  await expect(next).toBeVisible();
+  await expect(community).toBeVisible();
   const mobile=await card.evaluate(node=>node.getBoundingClientRect());
   expect(mobile.width).toBeGreaterThan(340);
   await noOverflow(page,2);

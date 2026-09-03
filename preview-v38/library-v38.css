@@ -376,3 +376,8 @@ html[data-theme='light'] .nx38-impression-meta-row span{background:rgba(84,48,63
   .nx38-impression-user time{padding-inline:6px}
   .nx38-impression-meta-row .spoiler-free{display:none}
 }
+
+/* Keep the shared rail controls available even in sparse impression feeds. */
+.nx38-impressions-home[data-count="1"] .nx38-impressions-actions button,
+.nx38-impressions-home[data-count="2"] .nx38-impressions-actions button{display:grid!important}
+.nx38-impressions-home .nx38-impressions-actions>a{display:inline-flex!important}

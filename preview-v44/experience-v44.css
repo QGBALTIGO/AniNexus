@@ -1384,8 +1384,6 @@ html[data-theme=light] .nx44-install-sheet li strong{color:#1f171b}
 /* V44.9: two distinct community ranking treatments for anime and manga. */
 .nx45-anime-ranking,
 .nx45-manga-ranking{position:relative;overflow:hidden}
-.nx45-anime-ranking .nx35-head,
-.nx45-manga-ranking .nx35-head{padding-bottom:17px;border-bottom:1px solid rgba(255,255,255,.08)}
 .nx45-rank-card{--rank-accent:#ed6582;min-width:0;color:inherit;text-decoration:none}
 .nx45-rank-cover-empty{width:100%;height:100%;display:grid;place-items:center;background:#171116;color:var(--rank-accent);font:800 18px 'Manrope',sans-serif}
 
@@ -1446,40 +1444,6 @@ html[data-theme=light] .nx44-install-sheet li strong{color:#1f171b}
   background:linear-gradient(180deg,transparent,rgba(7,5,7,.9))
 }
 .nx45-rank-anime .nx35-rank-cover img{width:100%;height:100%;display:block;object-fit:cover}
-.nx45-rank-position{
-  position:absolute;
-  z-index:3;
-  left:8px;
-  top:8px;
-  min-width:28px;
-  height:24px;
-  padding:0 7px;
-  display:grid;
-  place-items:center;
-  border:1px solid color-mix(in srgb,var(--rank-accent) 48%,transparent);
-  border-radius:6px;
-  background:rgba(8,6,8,.82);
-  color:var(--rank-accent);
-  font:800 9px 'Manrope',sans-serif
-}
-.nx45-rank-anime .nx35-rank-cover>b{
-  position:absolute;
-  z-index:3;
-  left:8px;
-  bottom:8px;
-  min-height:28px;
-  padding:0 8px;
-  display:flex;
-  align-items:center;
-  gap:5px;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:6px;
-  background:rgba(8,6,8,.84);
-  color:#f1ca63;
-  font:800 9px 'Manrope',sans-serif;
-  backdrop-filter:blur(8px)
-}
-.nx45-rank-anime .nx35-rank-cover>b svg{width:12px;height:12px;fill:currentColor;stroke:currentColor}
 .nx45-rank-actions{
   position:absolute;
   z-index:4;
@@ -1526,6 +1490,11 @@ html[data-theme=light] .nx44-install-sheet li strong{color:#1f171b}
 .nx45-rank-facts{min-width:0;margin:0;display:flex;align-items:center;gap:0;overflow:hidden;color:#8f8288;font:600 8px/1.25 'Manrope',sans-serif;white-space:nowrap}
 .nx45-rank-facts span{min-width:0;overflow:hidden;text-overflow:ellipsis}
 .nx45-rank-facts span+span:before{content:'·';margin:0 5px;color:#5f5359}
+.nx45-rank-community{min-width:0;display:flex;align-items:center;gap:6px;overflow:hidden;white-space:nowrap}
+.nx45-rank-score{flex:none;display:inline-flex;align-items:center;gap:3px;color:var(--rank-accent);font:800 8px/1.2 'Manrope',sans-serif}
+.nx45-rank-score svg{width:10px;height:10px;fill:currentColor;stroke:currentColor}
+.nx45-rank-score b{font:inherit}
+.nx45-rank-community .nx45-rank-votes:before{content:'·';margin-right:6px;color:#5f5359}
 .nx45-rank-votes{color:#6f6469;font:600 7.5px/1.2 'Manrope',sans-serif}
 
 /* Manga: compact shelf cards with their own reading identity. */
@@ -1672,8 +1641,6 @@ html[data-theme=light] .nx44-install-sheet li strong{color:#1f171b}
 .nx45-ranking-empty>a:hover{border-color:rgba(112,200,178,.4);background:rgba(112,200,178,.07)}
 .nx45-ranking-empty>a svg{width:14px;height:14px}
 
-html[data-theme=light] .nx45-anime-ranking .nx35-head,
-html[data-theme=light] .nx45-manga-ranking .nx35-head{border-color:rgba(50,28,39,.1)}
 html[data-theme=light] .nx45-rank-anime .nx35-rank-num{color:rgba(250,247,248,.9);filter:drop-shadow(0 4px 9px rgba(67,35,47,.14))}
 html[data-theme=light] .nx45-rank-anime .nx35-rank-copy h3{color:#2a1c23}
 html[data-theme=light] .nx45-manga-ranking{background:#edf3f0!important}
