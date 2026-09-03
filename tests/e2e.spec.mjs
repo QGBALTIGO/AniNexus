@@ -174,8 +174,7 @@ test('mobile Home starts with transparent header centered copy spacing and clipp
   expect(initial.separation).toBeGreaterThanOrEqual(40);
   await page.evaluate(()=>scrollTo(0,160));
   await expect(page.locator('#topbar')).toHaveClass(/is-scrolled/);
-  const scrolledBackground=await page.locator('#topbar').evaluate(element=>getComputedStyle(element).backgroundColor);
-  expect(scrolledBackground).not.toBe('rgba(0, 0, 0, 0)');
+  await expect.poll(()=>page.locator('#topbar').evaluate(element=>getComputedStyle(element).backgroundColor)).not.toBe('rgba(0, 0, 0, 0)');
   await noOverflow(page,2);
 });
 
