@@ -190,40 +190,6 @@
   font-weight:700;
 }
 
-.nx46-home-award-feature-foot{
-  width:100%;
-  max-width:520px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  margin-top:20px;
-  padding-top:15px;
-  border-top:1px solid rgba(255,255,255,.14);
-  color:#8f8589;
-  font-size:10px;
-  font-weight:700;
-}
-
-.nx46-home-award-feature-foot a{
-  display:inline-flex;
-  align-items:center;
-  flex:0 0 auto;
-  gap:6px;
-  color:#fff8dc;
-  font-size:11px;
-  font-weight:800;
-}
-
-.nx46-home-award-feature-foot a:hover{
-  color:#e7bd5e;
-}
-
-.nx46-home-award-feature-foot svg{
-  width:14px;
-  height:14px;
-}
-
 .nx46-home-award-placeholder{
   position:absolute;
   inset:0;
@@ -473,13 +439,6 @@ html[data-theme="light"] .nx46-home-award-card-copy>span{
     font-size:13px;
   }
 
-  .nx46-home-award-feature-foot{
-    align-items:center;
-    gap:12px;
-    margin-top:18px;
-    padding-top:15px;
-  }
-
   .nx35-home .nx35-awards-rail.nx46-home-awards-rail{
     grid-auto-columns:260px;
   }
@@ -525,14 +484,6 @@ html[data-theme="light"] .nx46-home-award-card-copy>span{
     font-size:12px;
   }
 
-  .nx46-home-award-feature-foot{
-    gap:8px;
-    font-size:9px;
-  }
-
-  .nx46-home-award-feature-foot a{
-    font-size:10px;
-  }
 }
 
 @media(prefers-reduced-motion:reduce){

@@ -49,6 +49,8 @@ test('Home awards rotates all 32 winners with responsive art and no imported com
   await expect(awards.locator('.nx46-home-awards-topline,.nx46-home-awards-tabs')).toHaveCount(0);
   await expect(section).not.toContainText('32 categorias oficiais');
   await expect(awards.locator('[data-home-award-autoplay]')).toHaveCount(0);
+  await expect(awards.locator('.nx46-home-award-feature-foot')).toHaveCount(0);
+  await expect(awards).not.toContainText(/de 32 categorias|Abrir no AniNexus/i);
   await expect(awards.locator('.nx46-home-award-feature.is-current img')).toHaveAttribute('src',/a\.storyblok\.com.*(?:3840x2160|1920x1080)/);
   await expect(railActions.locator('[data-nx44-rail-dir="prev"]')).toBeDisabled();
   await expect(railActions.locator('[data-nx44-rail-dir="next"]')).toBeEnabled();
@@ -60,6 +62,8 @@ test('Home awards rotates all 32 winners with responsive art and no imported com
   await awards.locator('.nx46-home-award-card',{hasText:'Charles Emmanuel'}).click();
   await expect(awards.locator('.nx46-home-award-feature.is-current h3')).toHaveText('Charles Emmanuel');
   await expect(awards.locator('.nx46-home-award-feature.is-current')).toContainText('Português Brasileiro');
+  await page.waitForTimeout(7600);
+  await expect(awards.locator('.nx46-home-award-feature.is-current h3')).toHaveText('Charles Emmanuel');
   await expect(awards).not.toContainText(/nota|popularidade|favoritos/i);
   await noOverflow(page,2);
   await page.setViewportSize({width:390,height:844});
@@ -68,6 +72,8 @@ test('Home awards rotates all 32 winners with responsive art and no imported com
   await expect(mobile).toBeVisible({timeout:30000});
   await expect(mobile.locator('.nx46-home-award-card')).toHaveCount(32);
   await expect(mobile.locator('.nx46-home-award-feature.is-current img')).toHaveAttribute('src',/a\.storyblok\.com/);
+  const reloadedWinner=await mobile.locator('.nx46-home-award-feature.is-current h3').textContent();
+  await expect.poll(()=>mobile.locator('.nx46-home-award-feature.is-current h3').textContent(),{timeout:10000}).not.toBe(reloadedWinner);
   const mobileGeometry=await mobile.locator('.nx46-home-award-feature.is-current').evaluate(element=>{const box=element.getBoundingClientRect(),copy=element.querySelector('.nx46-home-award-feature-copy').getBoundingClientRect(),art=element.querySelector('.nx46-home-award-feature-art').getBoundingClientRect();return{left:box.left,right:box.right,copyLeft:copy.left,copyRight:copy.right,width:box.width,height:box.height,artRatio:art.width/art.height}});
   expect(mobileGeometry.copyLeft).toBeGreaterThanOrEqual(mobileGeometry.left-.5);
   expect(mobileGeometry.copyRight).toBeLessThanOrEqual(mobileGeometry.right+.5);
