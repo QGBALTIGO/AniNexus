@@ -7,7 +7,7 @@
   if (!app) return;
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
-  const BUILD = '44.12.0';
+  const BUILD = '44.13.0';
   const API = 'https://graphql.anilist.co';
   const TZ = 'America/Sao_Paulo';
   const CACHE_TTL = 4 * 60 * 1000;
@@ -72,7 +72,7 @@
     cacheSet('nx35:public:v8',data);return data;
   }
   async function loadAwards(){
-    const cached=cacheGet('nx35:awards:v2');if(cached)return cached;
+    const cached=cacheGet('nx35:awards:v3');if(cached)return cached;
     let source={edition:2026,ceremony_city:'Tóquio, Japão',groups:AWARD_GROUPS,winners:AWARDS_FALLBACK};
     try{
       const response=await fetch(`${BASE}/data/awards-2026.json?v=${BUILD}`,{headers:{accept:'application/json'}});
@@ -81,7 +81,8 @@
       if(!Array.isArray(data?.winners)||!data.winners.length)throw new Error('Premiação vazia');
       source=data;
     }catch{}
-    const winners=source.winners.map(item=>({...item,media_id:Number(item.media_id)||null}));
+    const featureImages=source.feature_images&&typeof source.feature_images==='object'?source.feature_images:{};
+    const winners=source.winners.map(item=>({...item,media_id:Number(item.media_id)||null,feature_image:String(item.feature_image||featureImages[item.id]||'')}));
     const ids=[...new Set(winners.map(item=>item.media_id).filter(Boolean))];
     let media=[];
     if(ids.length)try{
@@ -90,7 +91,7 @@
     }catch{}
     const mediaById=new Map(media.map(item=>[Number(item.id),item]));
     const result={edition:Number(source.edition)||2026,ceremony_city:source.ceremony_city||'Tóquio, Japão',groups:Array.isArray(source.groups)&&source.groups.length?source.groups:AWARD_GROUPS,items:winners.map(item=>({...item,media:mediaById.get(item.media_id)||null}))};
-    cacheSet('nx35:awards:v2',result);return result;
+    cacheSet('nx35:awards:v3',result);return result;
   }
   function skeletonRows(n){return Array.from({length:n},()=>'<div class="nx35-skeleton-row"></div>').join('')}
   function head(kicker,base,accent,sub,href,label){return `<div class="nx35-head"><div><small>${esc(kicker)}</small><h2>${esc(base)}${accent?` <em>${esc(accent)}</em>`:''}</h2>${sub?`<p>${esc(sub)}</p>`:''}</div>${href?`<a href="${href}">${esc(label)} ${SVG.arrow}</a>`:''}</div>`}
@@ -104,8 +105,9 @@
   function rankCard(m,i){const t=title(m),c=cover(m),sc=score(m),id=Number(m.id),state=states()[id],favorite=favs().has(id),format={TV:'Série',TV_SHORT:'Série curta',MOVIE:'Filme',OVA:'OVA',ONA:'ONA',SPECIAL:'Especial'}[m.format]||'Anime',facts=[format,m.episodes?`${m.episodes} episódios`:null,m.seasonYear].filter(Boolean),ratings=Math.max(0,Number(m.ratingCount)||0),ratingLabel=ratings===1?'1 avaliação':`${ratings.toLocaleString('pt-BR')} avaliações`;return `<article class="nx35-rank nx45-rank-card nx45-rank-anime rank-${i+1}" data-open-anime="${id}" data-title="${esc(t)}" tabindex="0" role="link" aria-label="Abrir ${esc(t)}"><span class="nx35-rank-num" aria-hidden="true">${i+1}</span><div class="nx35-rank-cover">${c?`<img loading="lazy" decoding="async" src="${esc(c)}" alt="${esc(t)}">`:'<span class="nx45-rank-cover-empty">AN</span>'}<div class="nx45-rank-actions"><button type="button" data-list="${id}" class="${state?.status?'active':''}" aria-label="${state?.status?'Alterar status de':'Adicionar à lista:'} ${esc(t)}">${SVG.plus}</button><button type="button" data-fav="${id}" class="${favorite?'active':''}" aria-label="${favorite?'Remover dos favoritos:':'Favoritar:'} ${esc(t)}">${SVG.heart}</button></div></div><div class="nx35-rank-copy"><small>${i+1}º NO ANINEXUS</small><h3>${esc(t)}</h3><p class="nx45-rank-facts">${facts.map(fact=>`<span>${esc(fact)}</span>`).join('')}</p><div class="nx45-rank-community">${sc?`<span class="nx45-rank-score" aria-label="Nota ${esc(sc)}">${SVG.star}<b>${esc(sc)}</b></span>`:''}<span class="nx45-rank-votes">${esc(ratingLabel)}</span></div></div></article>`}
   function awardRoute(item){return item.media_id?`/anime/${slug(item.work||item.winner)}-${item.media_id}`:''}
   function awardMark(label='Vencedor 2026'){return `<span class="nx46-home-award-mark">${SVG.trophy}<b>${esc(label)}</b></span>`}
-  function awardArt(item,wide=false){const src=wide?banner(item.media):cover(item.media);return src?`<img loading="${wide?'eager':'lazy'}" decoding="async" src="${esc(src)}" alt="${esc(item.work||item.winner)}">`:`<span class="nx46-home-award-placeholder">${SVG.trophy}<b>ANIME<br>AWARDS</b></span>`}
-  function awardFeature(item,index,total,autoplay){const route=awardRoute(item),showWork=item.work&&String(item.work).toLowerCase()!==String(item.winner).toLowerCase(),toggleLabel=autoplay?'Pausar carrossel':'Continuar carrossel';return `<article class="nx46-home-award-feature" data-home-award-feature-id="${esc(item.id)}" data-autoplay="${autoplay}"><div class="nx46-home-award-feature-art">${awardArt(item,true)}<span class="nx46-home-award-feature-shade"></span></div><div class="nx46-home-award-feature-copy">${awardMark()}<p class="nx46-home-award-category">${esc(item.category)}</p><h3>${esc(item.winner)}</h3>${showWork?`<p class="nx46-home-award-work">${esc(item.work)}</p>`:''}${item.credit?`<p class="nx46-home-award-credit">${esc(item.credit)}</p>`:''}<div class="nx46-home-award-feature-foot"><span>${index+1} de ${total} categorias</span><div class="nx46-home-award-feature-actions"><button type="button" data-home-award-autoplay aria-label="${toggleLabel}" title="${toggleLabel}">${autoplay?SVG.pause:SVG.play}</button>${route?`<a href="${route}">Abrir no AniNexus ${SVG.arrow}</a>`:''}</div></div></div></article>`}
+  function awardFeatureSrc(item){return item.feature_image||banner(item.media)}
+  function awardArt(item,wide=false){const fallback=wide?banner(item.media):cover(item.media),src=wide?awardFeatureSrc(item):fallback,fallbackAttr=wide&&item.feature_image&&fallback&&fallback!==src?` data-award-fallback="${esc(fallback)}"`:'';return src?`<img loading="${wide?'eager':'lazy'}" decoding="async" src="${esc(src)}"${fallbackAttr} alt="${esc(item.work||item.winner)}">`:`<span class="nx46-home-award-placeholder">${SVG.trophy}<b>ANIME<br>AWARDS</b></span>`}
+  function awardFeature(item,index,total){const route=awardRoute(item),showWork=item.work&&String(item.work).toLowerCase()!==String(item.winner).toLowerCase();return `<article class="nx46-home-award-feature" data-home-award-feature-id="${esc(item.id)}"><div class="nx46-home-award-feature-art">${awardArt(item,true)}<span class="nx46-home-award-feature-shade"></span></div><div class="nx46-home-award-feature-copy">${awardMark()}<p class="nx46-home-award-category">${esc(item.category)}</p><h3>${esc(item.winner)}</h3>${showWork?`<p class="nx46-home-award-work">${esc(item.work)}</p>`:''}${item.credit?`<p class="nx46-home-award-credit">${esc(item.credit)}</p>`:''}<div class="nx46-home-award-feature-foot"><span>${index+1} de ${total} categorias</span>${route?`<a href="${route}">Abrir no AniNexus ${SVG.arrow}</a>`:''}</div></div></article>`}
   function awardCard(item){const showWork=item.work&&String(item.work).toLowerCase()!==String(item.winner).toLowerCase();return `<button type="button" class="nx46-home-award-card" data-home-award-select="${esc(item.id)}" aria-label="Destacar ${esc(item.category)}: ${esc(item.winner)}"><span class="nx46-home-award-card-art">${awardArt(item)}</span><span class="nx46-home-award-card-copy"><small>${esc(item.category)}</small><strong>${esc(item.winner)}</strong>${showWork?`<span>${esc(item.work)}</span>`:item.credit?`<span>${esc(item.credit)}</span>`:''}</span></button>`}
   function readingCard(m){const t=title(m),c=cover(m),sc=score(m);return `<a class="nx35-reading" href="/manga/${slug(t)}-${m.id}"><div class="nx35-book">${c?`<img loading="lazy" src="${esc(c)}" alt="${esc(t)}">`:''}<i></i><span>${esc(TYPE[m.format]||'Mangá')}</span>${sc?`<b>★ ${sc}</b>`:''}</div><h3>${esc(t)}</h3><p>${esc((m.genres||[]).slice(0,2).map(g=>GENRE[g]||g).join(' · '))}</p></a>`}
   function statusIcon(id){const s=states()[id]?.status;return s==='CURRENT'?SVG.play:s==='COMPLETED'?SVG.check:s==='PAUSED'||s==='DROPPED'?SVG.pause:SVG.plus}
@@ -149,20 +151,26 @@
     const data=await loadAwards(),items=data.items||[];
     if(!items.length){root.innerHTML='<div class="nx35-empty">Premiação indisponível agora.</div>';return}
     const byId=new Map(items.map(item=>[String(item.id),item])),reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let selected=items[0],autoplay=!reducedMotion,autoTimer=null;
+    let selected=items[0],autoTimer=null,transitionTimer=null,activeFeature=null,selectionToken=0;
+    const preloaded=new Set();
     root.className='nx46-home-awards';
-    root.innerHTML=`<div data-home-award-feature></div><div class="nx46-home-awards-list-head"><div><small>GALERIA DE VENCEDORES</small><strong>Todos os vencedores</strong></div><span>${items.length} resultados</span></div><div data-home-award-cards></div>`;
+    root.innerHTML=`<div class="nx46-home-award-stage" data-home-award-feature></div><div class="nx46-home-awards-list-head"><div><small>GALERIA DE VENCEDORES</small><strong>Todos os vencedores</strong></div><span>${items.length} resultados</span></div><div data-home-award-cards></div>`;
     const feature=root.querySelector('[data-home-award-feature]'),cards=root.querySelector('[data-home-award-cards]');
     const clearAuto=()=>{if(autoTimer===null)return;clearTimeout(autoTimer);timers.delete(autoTimer);autoTimer=null};
-    const drawFeature=()=>{const index=items.indexOf(selected);feature.innerHTML=awardFeature(selected,index,items.length,autoplay);bindNavigation()};
+    const clearTransition=()=>{if(transitionTimer===null)return;clearTimeout(transitionTimer);timers.delete(transitionTimer);transitionTimer=null};
+    const bindFallback=scope=>scope.querySelectorAll('img[data-award-fallback]').forEach(image=>{const fallback=()=>{const src=image.dataset.awardFallback;if(!src)return;image.removeAttribute('data-award-fallback');image.src=src};image.addEventListener('error',fallback,{once:true})});
+    const preload=item=>{const src=awardFeatureSrc(item);if(!src||preloaded.has(src))return Promise.resolve();return new Promise(resolve=>{const image=new Image();let settled=false;const finish=()=>{if(settled)return;settled=true;preloaded.add(src);resolve()};image.onload=finish;image.onerror=finish;image.src=src;if(image.complete)finish();setTimeout(finish,2200)})};
+    const preloadNext=()=>{const index=items.indexOf(selected);preload(items[(index+1)%items.length])};
+    const drawFeature=(animate=true)=>{const index=items.indexOf(selected),template=document.createElement('template');template.innerHTML=awardFeature(selected,index,items.length);const next=template.content.firstElementChild;if(!next)return;bindFallback(next);if(!activeFeature||!activeFeature.isConnected||!animate||reducedMotion){clearTransition();feature.replaceChildren(next);next.classList.add('is-current');activeFeature=next;bindNavigation();preloadNext();return}clearTransition();feature.querySelectorAll('.nx46-home-award-feature').forEach(node=>{if(node!==activeFeature)node.remove()});const previous=activeFeature;next.classList.add('is-entering');feature.append(next);activeFeature=next;bindNavigation();requestAnimationFrame(()=>requestAnimationFrame(()=>{if(!previous.isConnected||!next.isConnected)return;previous.classList.remove('is-current');previous.classList.add('is-leaving');next.classList.remove('is-entering');next.classList.add('is-current')}));transitionTimer=setTimeout(()=>{previous.remove();timers.delete(transitionTimer);transitionTimer=null},680);timers.add(transitionTimer);preloadNext()};
     const syncSelection=()=>root.querySelectorAll('[data-home-award-select]').forEach(button=>{const on=button.dataset.homeAwardSelect===String(selected.id);button.classList.toggle('is-active',on);button.setAttribute('aria-pressed',String(on))});
     const drawCards=()=>{cards.innerHTML=rail(items.map(awardCard).join(''),'nx35-awards-rail nx46-home-awards-rail');bindRails();syncSelection();window.AniNexusRails?.refresh?.()};
-    const select=(item,restart=false)=>{if(!item)return;selected=item;drawFeature();syncSelection();if(restart)scheduleAuto()};
-    const scheduleAuto=()=>{clearAuto();if(!autoplay||!wantsHome())return;autoTimer=setTimeout(()=>{timers.delete(autoTimer);autoTimer=null;const index=items.indexOf(selected),next=items[(index+1)%items.length];select(next);scheduleAuto()},7000);timers.add(autoTimer)};
-    root.addEventListener('click',event=>{const toggle=event.target.closest('[data-home-award-autoplay]');if(toggle){autoplay=!autoplay;drawFeature();scheduleAuto();return}const card=event.target.closest('[data-home-award-select]');if(!card)return;select(byId.get(card.dataset.homeAwardSelect),true)});
+    const select=async(item,restart=false)=>{if(!item)return;if(item===selected){if(restart)scheduleAuto();return}const token=++selectionToken;await preload(item);if(token!==selectionToken||!wantsHome())return;selected=item;drawFeature();syncSelection();if(restart)scheduleAuto()};
+    const scheduleAuto=()=>{clearAuto();if(reducedMotion||!wantsHome())return;autoTimer=setTimeout(async()=>{timers.delete(autoTimer);autoTimer=null;const index=items.indexOf(selected),next=items[(index+1)%items.length];await select(next);scheduleAuto()},7000);timers.add(autoTimer)};
+    root.addEventListener('click',event=>{const card=event.target.closest('[data-home-award-select]');if(!card)return;clearAuto();select(byId.get(card.dataset.homeAwardSelect),true)});
     if(matchMedia('(hover:hover)').matches){feature.addEventListener('mouseenter',clearAuto);feature.addEventListener('mouseleave',scheduleAuto)}
-    cleanupFns.push(clearAuto);
-    drawFeature();drawCards();
+    feature.addEventListener('focusin',clearAuto);feature.addEventListener('focusout',event=>{if(!feature.contains(event.relatedTarget))scheduleAuto()});
+    cleanupFns.push(()=>{clearAuto();clearTransition();selectionToken++});
+    drawFeature(false);drawCards();
     scheduleAuto();
   }
   function bindCards(){app.querySelectorAll('[data-open-anime]').forEach(card=>{if(card.dataset.bound)return;card.dataset.bound='1';const open=()=>go(`/anime/${slug(card.dataset.title||'anime')}-${card.dataset.openAnime}`);card.addEventListener('click',e=>{if(e.target.closest('button,a'))return;open()});if(card.tabIndex>=0)card.addEventListener('keydown',e=>{if(e.target!==card||!['Enter',' '].includes(e.key))return;e.preventDefault();open()})})}

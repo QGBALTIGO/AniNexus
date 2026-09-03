@@ -9,6 +9,7 @@ async function noOverflow(page,t=7){const x=await page.evaluate(()=>({s:document
 async function clear(page){await page.evaluate(()=>{for(const k of ['aninexus:favorites','aninexus:mediaState:v2','aninexus:mediaState:v1','aninexus:list','aninexus:listStatus','aninexus:community:activity:v40','aninexus:community:threads:v40'])localStorage.removeItem(k);window.AniNexusMediaState?.sync?.()})}
 const pixel='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 const portrait='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22150%22 viewBox=%220 0 100 150%22%3E%3Crect width=%22100%22 height=%22150%22 fill=%22%23ef2a5c%22/%3E%3Ccircle cx=%2250%22 cy=%2235%22 r=%2220%22 fill=%22white%22/%3E%3C/svg%3E';
+const imageBytes=Buffer.from('R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=','base64');
 function anime(id=101){const provider=id%2?{site:'Crunchyroll',url:`https://www.crunchyroll.com/watch/${id}`,type:'STREAMING',icon:pixel,color:'#fff'}:{site:'YouTube',url:`https://www.youtube.com/watch?v=${id}`,type:'STREAMING',icon:pixel,color:'#fff'};return{id,title:{romaji:`Anime Teste ${id}`,english:`Anime Teste ${id}`,native:`Teste ${id}`,userPreferred:`Anime Teste ${id}`},coverImage:{extraLarge:pixel,large:pixel},bannerImage:portrait,averageScore:82,popularity:1000,genres:['Action','Adventure'],episodes:12,format:'TV',status:'RELEASING',seasonYear:2026,description:'Uma história de teste.',externalLinks:[provider],startDate:{year:2026,month:1,day:1},endDate:null,studios:{nodes:[]},relations:{edges:[]},recommendations:{nodes:[]},characters:{edges:[]},staff:{edges:[]}}}
 function graphData(query='',variables={}){
   const ids=Array.isArray(variables.ids)&&variables.ids.length?variables.ids:[101,102,103,104],media=ids.map(Number).filter(Boolean).map(anime),airingAt=Number(variables.start)||Math.floor(Date.now()/1000)+3600;
@@ -31,7 +32,7 @@ async function mockInternalRankings(page){
 }
 function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animethemes:Array.from({length:count},(_,index)=>({type:index%3===2?'ED':'OP',sequence:index+1,song:{title:`Tema ${index+1}`,artists:[{name:`Artista ${index+1}`}]},animethemeentries:[{episodes:String(index+1),nsfw:false,spoiler:false,videos:[{link:`https://v.animethemes.moe/test-${index+1}.webm`,mimetype:'video/webm',resolution:1080,nc:true,subbed:false,lyrics:false}]}]}))}]}}
 test.describe.configure({mode:'serial'});
-test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
+test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 
 test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-02-v44.7.4')});
 
@@ -43,21 +44,22 @@ test('Home awards rotates all 32 winners with responsive art and no imported com
   const awards=page.locator('#nx35Awards.nx46-home-awards');
   await expect(awards).toBeVisible({timeout:30000});
   await expect(awards.locator('.nx46-home-award-card')).toHaveCount(32);
-  await expect(awards.locator('.nx46-home-award-feature h3')).toHaveText('My Hero Academia FINAL SEASON');
+  await expect(awards.locator('.nx46-home-award-feature.is-current h3')).toHaveText('My Hero Academia FINAL SEASON');
   const section=awards.locator('xpath=ancestor::section[1]'),railActions=section.locator('.nx44-rail-actions');
   await expect(awards.locator('.nx46-home-awards-topline,.nx46-home-awards-tabs')).toHaveCount(0);
   await expect(section).not.toContainText('32 categorias oficiais');
-  await expect(awards.getByRole('button',{name:'Pausar carrossel'})).toBeVisible();
+  await expect(awards.locator('[data-home-award-autoplay]')).toHaveCount(0);
+  await expect(awards.locator('.nx46-home-award-feature.is-current img')).toHaveAttribute('src',/a\.storyblok\.com.*(?:3840x2160|1920x1080)/);
   await expect(railActions.locator('[data-nx44-rail-dir="prev"]')).toBeDisabled();
   await expect(railActions.locator('[data-nx44-rail-dir="next"]')).toBeEnabled();
   await expect(railActions.getByRole('link',{name:'Ver premiação completa'})).toBeVisible();
   const desktopCard=await awards.locator('.nx46-home-award-card').first().evaluate(element=>{const box=element.getBoundingClientRect();return{width:box.width,height:box.height}});
   expect(desktopCard.width).toBeGreaterThan(250);
   expect(desktopCard.height).toBeLessThan(150);
-  await expect.poll(()=>awards.locator('.nx46-home-award-feature h3').textContent(),{timeout:9000}).not.toBe('My Hero Academia FINAL SEASON');
+  await expect.poll(()=>awards.locator('.nx46-home-award-feature.is-current h3').textContent(),{timeout:10000}).not.toBe('My Hero Academia FINAL SEASON');
   await awards.locator('.nx46-home-award-card',{hasText:'Charles Emmanuel'}).click();
-  await expect(awards.locator('.nx46-home-award-feature h3')).toHaveText('Charles Emmanuel');
-  await expect(awards.locator('.nx46-home-award-feature')).toContainText('Português Brasileiro');
+  await expect(awards.locator('.nx46-home-award-feature.is-current h3')).toHaveText('Charles Emmanuel');
+  await expect(awards.locator('.nx46-home-award-feature.is-current')).toContainText('Português Brasileiro');
   await expect(awards).not.toContainText(/nota|popularidade|favoritos/i);
   await noOverflow(page,2);
   await page.setViewportSize({width:390,height:844});
@@ -65,12 +67,12 @@ test('Home awards rotates all 32 winners with responsive art and no imported com
   const mobile=page.locator('#nx35Awards.nx46-home-awards');
   await expect(mobile).toBeVisible({timeout:30000});
   await expect(mobile.locator('.nx46-home-award-card')).toHaveCount(32);
-  await expect(mobile.locator('.nx46-home-award-feature-art picture')).toHaveCount(0);
-  const mobileGeometry=await mobile.locator('.nx46-home-award-feature').evaluate(element=>{const box=element.getBoundingClientRect(),copy=element.querySelector('.nx46-home-award-feature-copy').getBoundingClientRect(),art=element.querySelector('.nx46-home-award-feature-art').getBoundingClientRect();return{left:box.left,right:box.right,copyLeft:copy.left,copyRight:copy.right,width:box.width,height:box.height,artRatio:art.width/art.height}});
+  await expect(mobile.locator('.nx46-home-award-feature.is-current img')).toHaveAttribute('src',/a\.storyblok\.com/);
+  const mobileGeometry=await mobile.locator('.nx46-home-award-feature.is-current').evaluate(element=>{const box=element.getBoundingClientRect(),copy=element.querySelector('.nx46-home-award-feature-copy').getBoundingClientRect(),art=element.querySelector('.nx46-home-award-feature-art').getBoundingClientRect();return{left:box.left,right:box.right,copyLeft:copy.left,copyRight:copy.right,width:box.width,height:box.height,artRatio:art.width/art.height}});
   expect(mobileGeometry.copyLeft).toBeGreaterThanOrEqual(mobileGeometry.left-.5);
   expect(mobileGeometry.copyRight).toBeLessThanOrEqual(mobileGeometry.right+.5);
   expect(mobileGeometry.width).toBeLessThanOrEqual(362);
-  expect(mobileGeometry.height).toBeGreaterThanOrEqual(360);
+  expect(mobileGeometry.height).toBeGreaterThanOrEqual(320);
   expect(mobileGeometry.height).toBeLessThan(470);
   expect(mobileGeometry.artRatio).toBeGreaterThan(1.7);
   expect(mobileGeometry.artRatio).toBeLessThan(1.85);

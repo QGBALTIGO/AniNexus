@@ -6,7 +6,7 @@
 
   const loadHome=()=>{
     const s=document.createElement('script');
-    s.src=`${base}/preview-v35/home-v35.js?v=44.12.0`;
+    s.src=`${base}/preview-v35/home-v35.js?v=44.13.0`;
     s.defer=true;
     s.onerror=()=>{document.documentElement.classList.remove('nx35-home-boot');console.error('[AniNexus Home V35] falha ao carregar')};
     document.head.append(s);
