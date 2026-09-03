@@ -3,7 +3,7 @@ const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/A
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
 const pageUrl=route=>`${ORIGIN}?build=44.7.4&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
-async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),local=new URL(requested.pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,50*(attempt+1)))}}throw lastError}
+async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
 async function noOverflow(page,t=7){const x=await page.evaluate(()=>({s:document.documentElement.scrollWidth,w:innerWidth}));expect(x.s).toBeLessThanOrEqual(x.w+t)}
 async function clear(page){await page.evaluate(()=>{for(const k of ['aninexus:favorites','aninexus:mediaState:v2','aninexus:mediaState:v1','aninexus:list','aninexus:listStatus','aninexus:community:activity:v40','aninexus:community:threads:v40'])localStorage.removeItem(k);window.AniNexusMediaState?.sync?.()})}
@@ -19,6 +19,15 @@ function graphData(query='',variables={}){
   if(/\bMedia\s*\(\s*id\s*:\s*\$id/.test(query))return{Media:anime(Number(variables.id)||101)};
   if(/\bMedia\s*\(/.test(query)&&!/\bmedia\s*\(/.test(query))return{Media:anime(Number(variables.id)||101)};
   return{Page};
+}
+function rankedMedia(id,type='ANIME'){
+  const manga=type==='MANGA',title=manga?`Mangá AniNexus ${id}`:`Anime AniNexus ${id}`,score=Math.max(7.8,9.9-(id%10)*.2);
+  return{id,title,titleRomaji:title,titleNative:'',cover:portrait,banner:portrait,score,meanScore:score-.1,metricsSource:'aninexus',ratingCount:80-(id%10)*5,listCount:140-(id%10)*8,popularity:220-(id%10)*10,favourites:60-(id%10)*3,genres:manga?['Drama','Fantasy']:['Action','Adventure'],format:manga?'MANGA':'TV',status:manga?'RELEASING':'FINISHED',seasonYear:2026,startDate:{year:2026,month:1,day:1},episodes:manga?null:12,chapters:manga?48:null,volumes:manga?8:null,streaming:[]};
+}
+async function mockInternalRankings(page){
+  const animeRank=Array.from({length:10},(_,index)=>rankedMedia(101+index)),mangaRank=Array.from({length:10},(_,index)=>rankedMedia(201+index,'MANGA'));
+  await page.route('**/api/home?**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({season:animeRank.slice(0,6),schedule:[],top:animeRank,popular:animeRank.slice(0,6),reading:mangaRank.slice(0,6),topReading:mangaRank,soon:animeRank.slice(0,6)})}));
+  await page.route('**/api/reading?**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:mangaRank,pageInfo:{total:mangaRank.length,currentPage:1,lastPage:1,hasNextPage:false}})}));
 }
 function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animethemes:Array.from({length:count},(_,index)=>({type:index%3===2?'ED':'OP',sequence:index+1,song:{title:`Tema ${index+1}`,artists:[{name:`Artista ${index+1}`}]},animethemeentries:[{episodes:String(index+1),nsfw:false,spoiler:false,videos:[{link:`https://v.animethemes.moe/test-${index+1}.webm`,mimetype:'video/webm',resolution:1080,nc:true,subbed:false,lyrics:false}]}]}))}]}}
 test.describe.configure({mode:'serial'});
@@ -355,11 +364,35 @@ test('mobile drawer is colorful account-aware and limited to six destinations',a
   await noOverflow(page,2);
 });
 
-test('Home keeps anime and manga rankings separate and navigable',async({page})=>{test.skip(new URL(ORIGIN).hostname.endsWith('github.io'),'Rankings require internal AniNexus metrics.');await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});const animeRank=page.locator('#nx35Top .nx35-rank'),mangaRank=page.locator('#nx42TopManga [data-nx42-type="manga"]');await expect(animeRank.first()).toBeVisible({timeout:30000});await expect(mangaRank.first()).toBeVisible({timeout:30000});expect(await animeRank.count()).toBeGreaterThan(0);expect(await mangaRank.count()).toBeGreaterThan(0);await expect(page.locator('#nx35Top [data-nx42-type="manga"]')).toHaveCount(0);await expect(page.locator('#nx42TopManga [data-open-anime]')).toHaveCount(0)});
+test('Home keeps anime and manga rankings separate and visually distinct',async({page})=>{
+  test.skip(new URL(ORIGIN).hostname.endsWith('github.io'),'Rankings require internal AniNexus metrics.');
+  await mockInternalRankings(page);
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  const animeRank=page.locator('#nx35Top .nx45-rank-anime'),mangaRank=page.locator('#nx42TopManga .nx45-rank-manga');
+  await expect(animeRank.first()).toBeVisible({timeout:30000});
+  await expect(mangaRank.first()).toBeVisible({timeout:30000});
+  expect(await animeRank.count()).toBeGreaterThan(0);
+  expect(await mangaRank.count()).toBeGreaterThan(0);
+  await expect(animeRank.first().locator('.nx45-rank-actions button')).toHaveCount(2);
+  await expect(animeRank.first().locator('.nx45-rank-facts')).not.toBeEmpty();
+  await expect(mangaRank.first().locator('.nx45-rank-facts')).not.toBeEmpty();
+  const animeCopyGap=await animeRank.first().evaluate(card=>{const title=card.querySelector('h3'),facts=card.querySelector('.nx45-rank-facts'),range=document.createRange();range.selectNodeContents(title);return facts.getBoundingClientRect().top-range.getBoundingClientRect().bottom});
+  expect(animeCopyGap).toBeLessThanOrEqual(7);
+  await expect(page.locator('#nx35Top [data-nx42-type="manga"]')).toHaveCount(0);
+  await expect(page.locator('#nx42TopManga [data-open-anime]')).toHaveCount(0);
+  const animeBox=await animeRank.first().boundingBox(),mangaBox=await mangaRank.first().boundingBox();
+  expect(animeBox.height).toBeGreaterThan(mangaBox.height+100);
+  expect(mangaBox.width).toBeGreaterThan(animeBox.width+50);
+  await page.setViewportSize({width:390,height:844});
+  await expect(animeRank.first()).toBeVisible();
+  await expect(mangaRank.first()).toBeVisible();
+  await noOverflow(page,3);
+});
 
 test('static fallback never turns provider metrics into AniNexus rankings',async({page})=>{test.skip(!new URL(ORIGIN).hostname.endsWith('github.io'),'This policy is exercised by the static provider fallback.');await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('#nx35Top .nx35-metric-empty')).toContainText('avaliações da comunidade',{timeout:30000});await expect(page.locator('#nx35Popular .nx35-metric-empty')).toContainText('listas, favoritos e impressões');await expect(page.locator('#nx42TopManga .nx35-data-empty')).toContainText('avaliações da comunidade');await expect(page.locator('#nx35Top .nx35-rank')).toHaveCount(0);await expect(page.locator('#nx35Popular .nx35-anime')).toHaveCount(0);await expect(page.locator('#nx42TopManga .nx35-rank')).toHaveCount(0)});
 
-test('Home ranking clicks are not swallowed by horizontal drag support',async({page})=>{test.skip(new URL(ORIGIN).hostname.endsWith('github.io'),'Rankings require internal AniNexus metrics.');await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('#nx35Top .nx35-rank h3').first()).toBeVisible({timeout:30000});await page.locator('#nx35Top .nx35-rank h3').first().click();await page.waitForURL(url=>url.searchParams.get('p')?.startsWith('/anime/')||url.pathname.startsWith('/anime/'),{timeout:10000});await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});const manga=page.locator('#nx42TopManga a[data-nx42-type="manga"]').first();await expect(manga).toBeVisible({timeout:30000});await expect(manga).toHaveAttribute('data-nx23-dedicated',/\/manga\/.+-\d+/);await manga.locator('h3').click();await page.waitForURL(url=>url.searchParams.get('p')?.startsWith('/manga/')||url.pathname.startsWith('/manga/'),{timeout:10000})});
+test('Home ranking clicks are not swallowed by horizontal drag support',async({page})=>{test.skip(new URL(ORIGIN).hostname.endsWith('github.io'),'Rankings require internal AniNexus metrics.');await mockInternalRankings(page);await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('#nx35Top .nx35-rank h3').first()).toBeVisible({timeout:30000});await page.locator('#nx35Top .nx35-rank h3').first().click();await page.waitForURL(url=>url.searchParams.get('p')?.startsWith('/anime/')||url.pathname.startsWith('/anime/'),{timeout:10000});await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});const manga=page.locator('#nx42TopManga a[data-nx42-type="manga"]').first();await expect(manga).toBeVisible({timeout:30000});await expect(manga).toHaveAttribute('data-nx23-dedicated',/\/manga\/.+-\d+/);await manga.locator('h3').click();await page.waitForURL(url=>url.searchParams.get('p')?.startsWith('/manga/')||url.pathname.startsWith('/manga/'),{timeout:10000})});
 
 test('Awards uses a compact editorial grid without dead desktop regions',async({page})=>{await page.setViewportSize({width:1440,height:900});await page.goto(pageUrl('/anime-awards'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx42-awards-page')).toBeVisible({timeout:30000});await expect(page.getByRole('heading',{name:'Os destaques de cada ano'})).toBeVisible();const cards=page.locator('.nx42-award-winner');await expect(cards.first()).toBeVisible();expect(await cards.count()).toBeGreaterThanOrEqual(4);const boxes=await cards.evaluateAll(nodes=>nodes.slice(0,6).map(node=>node.getBoundingClientRect()));expect(Math.max(...boxes.map(box=>box.height))).toBeLessThan(430);expect(new Set(boxes.slice(0,3).map(box=>Math.round(box.y))).size).toBe(1);await noOverflow(page,2)});
 

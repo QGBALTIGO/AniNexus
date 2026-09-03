@@ -1380,3 +1380,330 @@ html[data-theme=light] .nx44-install-sheet li strong{color:#1f171b}
     padding-top:14px
   }
 }
+
+/* V44.9: two distinct community ranking treatments for anime and manga. */
+.nx45-anime-ranking,
+.nx45-manga-ranking{position:relative;overflow:hidden}
+.nx45-anime-ranking .nx35-head,
+.nx45-manga-ranking .nx35-head{padding-bottom:17px;border-bottom:1px solid rgba(255,255,255,.08)}
+.nx45-rank-card{--rank-accent:#ed6582;min-width:0;color:inherit;text-decoration:none}
+.nx45-rank-cover-empty{width:100%;height:100%;display:grid;place-items:center;background:#171116;color:var(--rank-accent);font:800 18px 'Manrope',sans-serif}
+
+/* Anime: poster-led podium with quick list actions. */
+.nx45-anime-ranking .nx35-rank-rail{
+  grid-auto-columns:224px!important;
+  gap:22px;
+  padding:9px 6px 17px 14px
+}
+.nx45-rank-anime{
+  position:relative;
+  height:360px;
+  padding-left:32px;
+  cursor:pointer;
+  outline:none
+}
+.nx45-rank-anime.rank-1{--rank-accent:#edc25d}
+.nx45-rank-anime.rank-2{--rank-accent:#a9c6d7}
+.nx45-rank-anime.rank-3{--rank-accent:#dc9468}
+.nx45-rank-anime:focus-visible .nx35-rank-cover{outline:2px solid var(--rank-accent);outline-offset:4px}
+.nx45-rank-anime .nx35-rank-num{
+  position:absolute;
+  z-index:3;
+  left:0;
+  top:192px;
+  bottom:auto;
+  color:rgba(9,6,8,.76);
+  -webkit-text-stroke:2px color-mix(in srgb,var(--rank-accent) 78%,#fff);
+  font:800 100px/.78 'Manrope',sans-serif;
+  letter-spacing:0;
+  opacity:1;
+  filter:drop-shadow(0 5px 10px rgba(0,0,0,.34));
+  pointer-events:none
+}
+.nx45-rank-anime .nx35-rank-cover{
+  position:absolute;
+  z-index:1;
+  inset:0 auto auto 32px;
+  width:188px;
+  height:278px;
+  overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--rank-accent) 26%,rgba(255,255,255,.08));
+  border-radius:8px;
+  background:#151014;
+  box-shadow:0 18px 38px rgba(0,0,0,.28);
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease
+}
+.nx45-rank-anime:hover .nx35-rank-cover{
+  transform:translateY(-4px);
+  border-color:color-mix(in srgb,var(--rank-accent) 58%,transparent);
+  box-shadow:0 24px 48px rgba(0,0,0,.38)
+}
+.nx45-rank-anime .nx35-rank-cover:after{
+  content:'';
+  position:absolute;
+  z-index:1;
+  inset:45% 0 0;
+  background:linear-gradient(180deg,transparent,rgba(7,5,7,.9))
+}
+.nx45-rank-anime .nx35-rank-cover img{width:100%;height:100%;display:block;object-fit:cover}
+.nx45-rank-position{
+  position:absolute;
+  z-index:3;
+  left:8px;
+  top:8px;
+  min-width:28px;
+  height:24px;
+  padding:0 7px;
+  display:grid;
+  place-items:center;
+  border:1px solid color-mix(in srgb,var(--rank-accent) 48%,transparent);
+  border-radius:6px;
+  background:rgba(8,6,8,.82);
+  color:var(--rank-accent);
+  font:800 9px 'Manrope',sans-serif
+}
+.nx45-rank-anime .nx35-rank-cover>b{
+  position:absolute;
+  z-index:3;
+  left:8px;
+  bottom:8px;
+  min-height:28px;
+  padding:0 8px;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:6px;
+  background:rgba(8,6,8,.84);
+  color:#f1ca63;
+  font:800 9px 'Manrope',sans-serif;
+  backdrop-filter:blur(8px)
+}
+.nx45-rank-anime .nx35-rank-cover>b svg{width:12px;height:12px;fill:currentColor;stroke:currentColor}
+.nx45-rank-actions{
+  position:absolute;
+  z-index:4;
+  right:8px;
+  bottom:8px;
+  display:grid;
+  gap:6px
+}
+.nx45-rank-actions button{
+  width:34px;
+  height:34px;
+  padding:0;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:50%;
+  background:rgba(8,6,8,.82);
+  color:#f4edf0;
+  cursor:pointer;
+  backdrop-filter:blur(8px)
+}
+.nx45-rank-actions button:hover,
+.nx45-rank-actions button.active{border-color:color-mix(in srgb,var(--rank-accent) 55%,transparent);background:color-mix(in srgb,var(--rank-accent) 23%,rgba(8,6,8,.9));color:#fff}
+.nx45-rank-actions button svg{width:15px;height:15px}
+.nx45-rank-anime .nx35-rank-copy{
+  position:absolute;
+  z-index:4;
+  inset:290px 2px auto 36px;
+  min-width:0;
+  display:grid;
+  gap:3px
+}
+.nx45-rank-anime .nx35-rank-copy small{color:var(--rank-accent);font:800 7px/1.2 'Manrope',sans-serif;letter-spacing:0}
+.nx45-rank-anime .nx35-rank-copy h3{
+  margin:0;
+  overflow:hidden;
+  color:#f4edf0;
+  font:750 13px/1.24 'Nunito Sans',sans-serif;
+  letter-spacing:0;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2
+}
+.nx45-rank-facts{min-width:0;margin:0;display:flex;align-items:center;gap:0;overflow:hidden;color:#8f8288;font:600 8px/1.25 'Manrope',sans-serif;white-space:nowrap}
+.nx45-rank-facts span{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.nx45-rank-facts span+span:before{content:'·';margin:0 5px;color:#5f5359}
+.nx45-rank-votes{color:#6f6469;font:600 7.5px/1.2 'Manrope',sans-serif}
+
+/* Manga: compact shelf cards with their own reading identity. */
+.nx45-manga-ranking{background:#0c090a!important}
+.nx45-manga-ranking .nx35-head>div>small,
+.nx45-manga-ranking .nx35-head h2 em{color:#70c8b2}
+.nx45-manga-ranking .nx35-head>a:hover{color:#82d8c3}
+.nx45-manga-ranking .nx35-rank-rail{
+  grid-auto-columns:310px!important;
+  gap:14px;
+  padding:3px 3px 13px
+}
+.nx45-rank-manga{
+  --rank-accent:#70c8b2;
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  height:190px;
+  padding:13px;
+  display:grid;
+  grid-template-columns:104px minmax(0,1fr);
+  gap:14px;
+  border:1px solid rgba(255,255,255,.085);
+  border-radius:8px;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--rank-accent) 8%,#121013),#0e0b0d 70%);
+  box-shadow:inset 0 1px rgba(255,255,255,.025);
+  transition:transform .2s ease,border-color .2s ease,background .2s ease
+}
+.nx45-rank-manga.rank-1{--rank-accent:#e2bd61}
+.nx45-rank-manga.rank-2{--rank-accent:#73c7b3}
+.nx45-rank-manga.rank-3{--rank-accent:#7fb8df}
+.nx45-rank-manga:hover,
+.nx45-rank-manga:focus-visible{
+  transform:translateY(-3px);
+  border-color:color-mix(in srgb,var(--rank-accent) 45%,transparent);
+  background:linear-gradient(135deg,color-mix(in srgb,var(--rank-accent) 12%,#151115),#0e0b0d 72%);
+  outline:0
+}
+.nx45-rank-manga .nx35-rank-num{
+  position:absolute;
+  z-index:-1;
+  inset:auto 7px -9px auto;
+  color:color-mix(in srgb,var(--rank-accent) 12%,transparent);
+  -webkit-text-stroke:0;
+  font:800 72px/.8 'Manrope',sans-serif;
+  letter-spacing:0;
+  opacity:1;
+  pointer-events:none
+}
+.nx45-rank-manga .nx35-rank-cover{
+  position:relative;
+  z-index:1;
+  inset:auto;
+  width:104px;
+  height:162px;
+  overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--rank-accent) 24%,rgba(255,255,255,.08));
+  border-radius:5px 8px 8px 5px;
+  background:#171315;
+  box-shadow:8px 10px 24px rgba(0,0,0,.27)
+}
+.nx45-rank-manga .nx35-rank-cover:after{
+  content:'';
+  position:absolute;
+  z-index:2;
+  inset:0 auto 0 7px;
+  width:1px;
+  background:rgba(255,255,255,.18);
+  box-shadow:2px 0 rgba(0,0,0,.28)
+}
+.nx45-rank-manga .nx35-rank-cover img{width:100%;height:100%;display:block;object-fit:cover}
+.nx45-manga-mark{
+  position:absolute;
+  z-index:3;
+  left:12px;
+  top:8px;
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  border:1px solid color-mix(in srgb,var(--rank-accent) 48%,transparent);
+  border-radius:6px;
+  background:rgba(8,7,8,.82);
+  color:var(--rank-accent);
+  backdrop-filter:blur(7px)
+}
+.nx45-manga-mark svg{width:14px;height:14px}
+.nx45-rank-manga .nx35-rank-copy{
+  position:relative;
+  z-index:2;
+  inset:auto;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  padding:5px 0 3px
+}
+.nx45-rank-manga .nx35-rank-copy small{color:var(--rank-accent);font:800 7px/1.2 'Manrope',sans-serif;letter-spacing:.04em}
+.nx45-rank-manga .nx35-rank-copy h3{
+  width:100%;
+  margin:9px 0 7px;
+  overflow:hidden;
+  color:#f1eaed;
+  font:750 14px/1.25 'Nunito Sans',sans-serif;
+  letter-spacing:0;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3
+}
+.nx45-rank-manga .nx45-rank-facts{flex-wrap:wrap;white-space:normal;row-gap:3px}
+.nx45-rank-manga .nx35-rank-copy footer{
+  width:100%;
+  min-height:29px;
+  margin-top:auto;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  border-top:1px solid rgba(255,255,255,.07);
+  color:#776b71;
+  font:600 7.5px 'Manrope',sans-serif
+}
+.nx45-rank-manga .nx35-rank-copy footer>b{display:flex;align-items:center;gap:4px;color:#e8c766;font-size:9px}
+.nx45-rank-manga .nx35-rank-copy footer>b svg{width:11px;height:11px;fill:currentColor;stroke:currentColor}
+.nx45-rank-manga .nx35-rank-copy footer>i{width:20px;height:20px;margin-left:auto;display:grid;place-items:center;color:var(--rank-accent);font-style:normal}
+.nx45-rank-manga .nx35-rank-copy footer>i svg{width:15px;height:15px;transition:transform .18s ease}
+.nx45-rank-manga:hover .nx35-rank-copy footer>i svg{transform:translateX(3px)}
+.nx45-ranking-empty{
+  min-height:118px;
+  padding:18px 20px;
+  display:grid;
+  grid-template-columns:44px minmax(0,1fr) auto;
+  align-items:center;
+  gap:14px;
+  border:1px solid rgba(112,200,178,.16);
+  border-radius:8px;
+  background:linear-gradient(100deg,rgba(112,200,178,.07),rgba(255,255,255,.018));
+  color:#f0e9ec
+}
+.nx45-ranking-empty>span{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(112,200,178,.24);border-radius:8px;background:rgba(112,200,178,.08);color:#70c8b2}
+.nx45-ranking-empty>span svg{width:21px;height:21px}
+.nx45-ranking-empty strong{font:700 12px/1.3 'Nunito Sans',sans-serif}
+.nx45-ranking-empty p{margin:4px 0 0;color:#877b81;font:500 9px/1.45 'Manrope',sans-serif}
+.nx45-ranking-empty>a{min-height:36px;padding:0 11px;display:flex;align-items:center;gap:7px;border:1px solid rgba(112,200,178,.2);border-radius:7px;color:#8ad9c6;font:700 9px 'Nunito Sans',sans-serif;text-decoration:none}
+.nx45-ranking-empty>a:hover{border-color:rgba(112,200,178,.4);background:rgba(112,200,178,.07)}
+.nx45-ranking-empty>a svg{width:14px;height:14px}
+
+html[data-theme=light] .nx45-anime-ranking .nx35-head,
+html[data-theme=light] .nx45-manga-ranking .nx35-head{border-color:rgba(50,28,39,.1)}
+html[data-theme=light] .nx45-rank-anime .nx35-rank-num{color:rgba(250,247,248,.9);filter:drop-shadow(0 4px 9px rgba(67,35,47,.14))}
+html[data-theme=light] .nx45-rank-anime .nx35-rank-copy h3{color:#2a1c23}
+html[data-theme=light] .nx45-manga-ranking{background:#edf3f0!important}
+html[data-theme=light] .nx45-rank-manga{border-color:rgba(39,72,63,.13);background:linear-gradient(135deg,color-mix(in srgb,var(--rank-accent) 10%,#fff),#fff 72%);box-shadow:0 10px 25px rgba(44,76,67,.06)}
+html[data-theme=light] .nx45-rank-manga:hover,
+html[data-theme=light] .nx45-rank-manga:focus-visible{background:linear-gradient(135deg,color-mix(in srgb,var(--rank-accent) 15%,#fff),#fff 74%)}
+html[data-theme=light] .nx45-rank-manga .nx35-rank-copy h3{color:#26342f}
+html[data-theme=light] .nx45-rank-manga .nx35-rank-copy footer{border-color:rgba(39,72,63,.1)}
+html[data-theme=light] .nx45-ranking-empty{border-color:rgba(55,137,116,.2);background:linear-gradient(100deg,rgba(112,200,178,.12),rgba(255,255,255,.64));color:#26342f}
+
+@media(max-width:720px){
+  .nx45-anime-ranking .nx35-rank-rail{grid-auto-columns:205px!important;gap:15px;padding-left:10px}
+  .nx45-rank-anime{height:337px;padding-left:28px}
+  .nx45-rank-anime .nx35-rank-num{top:178px;font-size:84px!important}
+  .nx45-rank-anime .nx35-rank-cover{left:28px;width:173px;height:256px}
+  .nx45-rank-anime .nx35-rank-copy{inset:267px 2px auto 31px}
+  .nx45-manga-ranking .nx35-rank-rail{grid-auto-columns:292px!important}
+  .nx45-rank-manga{height:180px;grid-template-columns:96px minmax(0,1fr);gap:12px;padding:12px}
+  .nx45-rank-manga .nx35-rank-num{font-size:64px!important}
+  .nx45-rank-manga .nx35-rank-cover{width:96px;height:154px}
+  .nx45-ranking-empty{grid-template-columns:40px minmax(0,1fr);padding:15px}
+  .nx45-ranking-empty>span{width:40px;height:40px}
+  .nx45-ranking-empty>a{grid-column:1/-1;justify-content:center}
+}
+@media(max-width:430px){
+  .nx45-anime-ranking .nx35-rank-rail{grid-auto-columns:198px!important}
+  .nx45-rank-anime{height:328px}
+  .nx45-rank-anime .nx35-rank-num{top:170px;font-size:80px!important}
+  .nx45-rank-anime .nx35-rank-cover{width:166px;height:246px}
+  .nx45-rank-anime .nx35-rank-copy{top:257px}
+  .nx45-manga-ranking .nx35-rank-rail{grid-auto-columns:min(302px,calc(100vw - 48px))!important}
+  .nx45-rank-manga .nx35-rank-copy h3{font-size:13px}
+}
