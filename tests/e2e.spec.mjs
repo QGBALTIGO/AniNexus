@@ -440,11 +440,13 @@ test('mobile drawer is colorful account-aware and limited to six destinations',a
   expect(geometry.height).toBeGreaterThanOrEqual(843);
   expect(geometry.radius).toBe(0);
   await expect(theme).toBeVisible();
+  await expect(theme).toHaveAttribute('data-nx-theme-bound','1');
   await expect(drawer.locator('.nx42-theme-card')).toHaveCount(0);
   const initialTheme=await page.locator('html').getAttribute('data-theme'),nextTheme=initialTheme==='dark'?'light':'dark';
-  await theme.click();
+  await theme.press('Enter');
   await expect(page.locator('html')).toHaveAttribute('data-theme',nextTheme);
-  await theme.click();
+  await expect(theme).toHaveAttribute('data-nx-theme-bound','1');
+  await theme.press('Enter');
   await expect(page.locator('html')).toHaveAttribute('data-theme',initialTheme);
   await expect(install).toBeVisible();
   await page.evaluate(()=>Object.defineProperty(navigator,'userAgent',{configurable:true,get:()=> 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Version/18.0 Mobile/15E148 Safari/604.1'}));
@@ -846,8 +848,12 @@ test('Catalog mobile menu exposes a complete Top 100 and a full search bar',asyn
   await expect.poll(()=>requests.at(-1)?.sort).toBe('MEMBERS');
   expect(requests.at(-1)?.communityOnly).toBe('1');
   await page.getByRole('button',{name:'Abrir menu do catálogo'}).click();
+  const requestsBeforeSearch=requests.length;
   await page.getByRole('dialog',{name:'Menu'}).getByRole('button',{name:'Busca',exact:true}).click();
   await expect(page.locator('#nx21Search')).toBeVisible();
+  await expect.poll(()=>requests.length).toBeGreaterThan(requestsBeforeSearch);
+  await expect.poll(()=>requests.at(-1)?.sort).toBe('NEW');
+  await expect(page.locator('.nx21-card')).toHaveCount(25,{timeout:30000});
   await page.locator('#nx21Search').focus();
   await expect(page.locator('#nx21Search')).toHaveCSS('outline-style','none');
   const filters=page.getByRole('button',{name:'Filtros',exact:true});await expect(filters).toBeVisible();
@@ -855,7 +861,8 @@ test('Catalog mobile menu exposes a complete Top 100 and a full search bar',asyn
   const mask=await page.locator('.nx21-tabs').evaluate(element=>getComputedStyle(element).webkitMaskImage||getComputedStyle(element).maskImage);
   expect(mask).toContain('linear-gradient');
   const expandedHeight=(await page.locator('.nx21-intro').boundingBox())?.height||0;
-  await page.evaluate(()=>scrollTo(0,500));
+  await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';scrollTo({top:500,behavior:'instant'});dispatchEvent(new Event('scroll'))});
+  await expect.poll(()=>page.evaluate(()=>scrollY)).toBeGreaterThan(54);
   await expect(page.locator('body')).toHaveClass(/nx21-catalog-scrolled/);
   await expect.poll(async()=>(await page.locator('.nx21-intro').boundingBox())?.height||0).toBeLessThanOrEqual(95);
   const compactHeight=(await page.locator('.nx21-intro').boundingBox())?.height||0;
