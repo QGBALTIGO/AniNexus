@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T19:38:11.647Z",
+  "generatedAt": "2026-09-04T21:51:24.233Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -65,7 +65,7 @@
     "withOrderedMedia": 18,
     "skippedTranslation": 0,
     "skippedQuality": 24,
-    "durationMs": 3165
+    "durationMs": 4367
   },
   "items": [
     {
@@ -4406,7 +4406,7 @@
       "sourceCount": 1,
       "readingMinutes": 3,
       "wordCount": 508,
-      "qualityScore": 1,
+      "qualityScore": 0.945,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
