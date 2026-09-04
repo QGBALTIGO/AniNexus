@@ -155,7 +155,46 @@ jobs:
           done
           HEAVY_TEST='Catalog mobile menu exposes a complete Top 100 and a full search bar'
           pnpm exec playwright test tests/e2e.spec.mjs tests/accessibility.spec.mjs --grep-invert "$HEAVY_TEST" --reporter=line --timeout=60000 --retries=1
-          pnpm exec playwright test tests/e2e.spec.mjs --grep "$HEAVY_TEST" --reporter=line --timeout=60000 --retries=1
+          pnpm exec playwright test tests/e2e.spec.mjs --grep "$HEAVY_TEST" --project=chromium --project=firefox --reporter=line --timeout=60000 --retries=1
       - name: Show static server log on failure
         if: failure()
         run: cat /tmp/aninexus-http.log || true
+
+  catalog-webkit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install project dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Install WebKit test runner
+        run: pnpm exec playwright install --with-deps webkit
+      - name: Map GitHub Pages hostname locally
+        run: echo "127.0.0.1 qgbaltigo.github.io" | sudo tee -a /etc/hosts
+      - name: Top 100 mobile on WebKit
+        env:
+          ANINEXUS_E2E_ORIGIN: http://qgbaltigo.github.io:4173/AniNexus/
+        run: |
+          rm -rf /tmp/aninexus-e2e-root
+          mkdir -p /tmp/aninexus-e2e-root/AniNexus
+          rsync -a --exclude '.git' --exclude 'node_modules' ./ /tmp/aninexus-e2e-root/AniNexus/
+          sed -i 's/; upgrade-insecure-requests//' /tmp/aninexus-e2e-root/AniNexus/index.html
+          (cd /tmp/aninexus-e2e-root && python3 -m http.server 4173 > /tmp/aninexus-webkit-http.log 2>&1) &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          for i in {1..20}; do
+            if curl --noproxy '*' -fsS http://qgbaltigo.github.io:4173/AniNexus/ >/dev/null; then break; fi
+            if [ "$i" = "20" ]; then cat /tmp/aninexus-webkit-http.log; exit 1; fi
+            sleep 1
+          done
+          pnpm exec playwright test tests/e2e.spec.mjs --grep 'Catalog mobile menu exposes a complete Top 100 and a full search bar' --project=webkit --reporter=line --timeout=60000 --retries=1
+      - name: Show static server log on failure
+        if: failure()
+        run: cat /tmp/aninexus-webkit-http.log || true

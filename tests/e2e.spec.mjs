@@ -823,6 +823,7 @@ test('Catalog search and filters work together in a complete modal',async({page}
 
 test('Catalog mobile menu exposes a complete Top 100 and a full search bar',async({page})=>{
   const requests=[];
+  await page.emulateMedia({reducedMotion:'reduce'});
   await page.route('**/runtime-config.js*',route=>route.fulfill({status:200,contentType:'application/javascript',body:`window.__ANINEXUS_CONFIG__=Object.freeze({environment:'test',siteOrigin:'https://qgbaltigo.github.io/AniNexus',apiOrigin:'https://graphql.anilist.co',clerkPublishableKey:'pk_test_catalog',authEnabled:true});`}));
   await page.route('https://graphql.anilist.co/api/catalog?**',route=>{const url=new URL(route.request().url()),current=Number(url.searchParams.get('page')||1);requests.push(Object.fromEntries(url.searchParams));const items=Array.from({length:25},(_,index)=>rankedMedia(300+(current-1)*25+index+1));return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items,pageInfo:{total:804,currentPage:current,lastPage:33,hasNextPage:true}})})});
   await page.setViewportSize({width:390,height:844});
@@ -831,7 +832,8 @@ test('Catalog mobile menu exposes a complete Top 100 and a full search bar',asyn
   await expect(page.locator('.nx21-results-head')).toHaveCount(0);
   const gradient=await page.locator('.nx21-chrome').evaluate(element=>getComputedStyle(element).backgroundImage);
   expect(gradient).toContain('linear-gradient');
-  await page.getByRole('button',{name:'Abrir menu do catálogo'}).click();
+  const menuTrigger=page.getByRole('button',{name:'Abrir menu do catálogo'});
+  await menuTrigger.press('Enter');
   const menu=page.getByRole('dialog',{name:'Menu'});await expect(menu).toBeVisible();
   await expect(menu.locator('.nx21-mobile-option')).toHaveCount(7);
   await menu.getByRole('button',{name:'Ranking',exact:true}).click();
@@ -841,13 +843,13 @@ test('Catalog mobile menu exposes a complete Top 100 and a full search bar',asyn
   expect(scoreRequests.map(request=>request.page).sort()).toEqual(['1','2','3','4']);
   expect(scoreRequests.every(request=>!('communityOnly' in request))).toBe(true);
   await expect(page.locator('.nx21-rank')).toHaveCount(100);
-  await expect(page.locator('.nx21-rank').last()).toHaveText('100');
+  await expect.poll(()=>page.locator('.nx21-rank').last().evaluate(element=>element.textContent)).toBe('100');
   await expect(page.locator('.nx21-score').first()).toBeVisible();
-  await page.getByRole('button',{name:'Abrir menu do catálogo'}).click();
+  await menuTrigger.press('Enter');
   await page.getByRole('dialog',{name:'Menu'}).getByRole('button',{name:'Mais membros',exact:true}).click();
   await expect.poll(()=>requests.at(-1)?.sort).toBe('MEMBERS');
   expect(requests.at(-1)?.communityOnly).toBe('1');
-  await page.getByRole('button',{name:'Abrir menu do catálogo'}).click();
+  await menuTrigger.press('Enter');
   const requestsBeforeSearch=requests.length;
   await page.getByRole('dialog',{name:'Menu'}).getByRole('button',{name:'Busca',exact:true}).click();
   await expect(page.locator('#nx21Search')).toBeVisible();
