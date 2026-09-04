@@ -24,6 +24,9 @@ const items = buildLatestTrailers([
   article({ title: 'Anime Antigo ganha trailer', publishedAt: '2026-07-01T10:00:00.000Z' }),
   article({ title: 'Jogo Teste ganha trailer de DLC', mediaEmbeds: [{ url: 'https://youtu.be/abc123XYZ04' }] }),
   article({ title: 'Anime Teste terá série live-action', mediaEmbeds: [{ url: 'https://youtu.be/abc123XYZ05' }] }),
+  article({ title: 'Anime Teste ganha vídeo celebrando seu aniversário', summary: 'O anime recebeu um vídeo celebrando seus 10 anos.', mediaEmbeds: [{ url: 'https://youtu.be/abc123XYZ06' }] }),
+  article({ title: 'Anime Teste e restaurante divulgam trailer da colaboração', summary: 'A campanha terá brinquedos inspirados no anime.', mediaEmbeds: [{ url: 'https://youtu.be/abc123XYZ07' }] }),
+  article({ title: 'Anime Teste terá continuação', summary: 'A série foi confirmada; confira o vídeo do anúncio.', mediaEmbeds: [{ url: 'https://youtu.be/abc123XYZ08' }] }),
   article({ title: 'Anime sem vídeo ganha trailer', mediaEmbeds: [] }),
   article({ title: 'Anime Segundo revela teaser', publishedAt: '2026-09-03T17:00:00.000Z', mediaEmbeds: [{ url: 'https://youtu.be/abc123XYZ02' }] }),
   article(),
@@ -41,7 +44,7 @@ assert.ok(document.items.length > 0, 'the static trailer feed must not be empty'
 for (const item of document.items) {
   assert.match(item.videoId, /^[A-Za-z0-9_-]{11}$/);
   assert.ok(Date.parse(document.generatedAt) - Date.parse(item.publishedAt) <= 21 * 86_400_000);
-  assert.doesNotMatch(`${item.title} ${item.articleTitle}`.toLowerCase(), /\b(?:game|jogo|dlc)\b|live[ -]?action/);
+  assert.doesNotMatch(`${item.title} ${item.articleTitle}`.toLowerCase(), /\b(?:game|jogo|dlc|colaboração|aniversário)\b|live[ -]?action|vídeo (?:do |de )?anúncio|vídeo celebrando/);
 }
 
 console.log(`✓ latest trailer pipeline (${document.items.length} current static items)`);
