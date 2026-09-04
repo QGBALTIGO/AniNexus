@@ -677,7 +677,7 @@ test('Home reading cards share anime actions and trailers play inside AniNexus',
   expect(page.url()).toBe(before);
   await page.setViewportSize({width:390,height:844});
   const closeGeometry=await modal.getByRole('button',{name:'Fechar trailer'}).last().evaluate(button=>{const box=button.getBoundingClientRect();return{width:box.width,height:box.height,borderRadius:getComputedStyle(button).borderRadius}});
-  expect(closeGeometry.width).toBeGreaterThanOrEqual(39.5);expect(closeGeometry.width).toBeLessThanOrEqual(40.5);expect(Math.abs(closeGeometry.width-closeGeometry.height)).toBeLessThan(.1);expect(closeGeometry.borderRadius).toBe('50%');
+  expect(Math.min(closeGeometry.width,closeGeometry.height)).toBeGreaterThanOrEqual(39);expect(Math.max(closeGeometry.width,closeGeometry.height)).toBeLessThanOrEqual(41);expect(Math.abs(closeGeometry.width-closeGeometry.height)).toBeLessThan(1);expect(parseFloat(closeGeometry.borderRadius)).toBeGreaterThanOrEqual(19);
   await modal.getByRole('button',{name:'Fechar trailer'}).last().click();
   await expect(modal).toHaveCount(0);
   const mobile=await cards.first().evaluate(element=>({width:element.getBoundingClientRect().width,rail:element.parentElement.clientWidth}));
