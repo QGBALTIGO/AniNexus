@@ -21,7 +21,7 @@ function slug(s='titulo'){return String(s).normalize('NFD').replace(/[\u0300-\u0
 function mediaPath(m,type='anime'){return `/${type}/${slug(title(m))}-${m.id}`}
 function pathNow(){const restored=new URLSearchParams(location.search).get('p')?.split('?')[0];let p=restored||location.pathname;if(IS_PAGES&&!restored)p=p.replace(/^\/AniNexus/,'')||'/';return p.replace(/\/+$/,'')||'/'}
 function go(path,replace=false){history[replace?'replaceState':'pushState']({},'',BASE+(path==='/'?'/':path));closeDrawer();closeSearch();render()}
-function restorePages(){if(!IS_PAGES)return;const u=new URL(location.href),p=u.searchParams.get('p');if(p){u.searchParams.delete('p');history.replaceState({},'',BASE+(p.startsWith('/')?p:'/'+p)+(u.search?'?'+u.searchParams.toString():''))}}
+function restorePages(){if(!IS_PAGES)return;const u=new URL(location.href),p=u.searchParams.get('p');if(!p)return;u.pathname=`${BASE}/`;history.replaceState({},'',u.pathname+u.search+u.hash)}
 function toast(msg){const n=document.createElement('div');n.className='toast';n.textContent=msg;$('#toastRoot').append(n);setTimeout(()=>n.remove(),2500)}
 function meta(t){document.title=`${t} | AniNexus`}
 const ico=(body,fill='none')=>`<svg class="ico" viewBox="0 0 24 24" fill="${fill}" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
