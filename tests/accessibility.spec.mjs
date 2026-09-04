@@ -4,7 +4,7 @@ import { achievementCatalog, levelFromXp } from '../lib/achievements.mjs';
 
 const ORIGIN = process.env.ANINEXUS_E2E_ORIGIN || 'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN = process.env.ANINEXUS_LOCAL_STATIC_ORIGIN || '';
-const pageUrl = route => `${ORIGIN}?build=44.16.1&p=${encodeURIComponent(route)}`;
+const pageUrl = route => `${ORIGIN}?build=44.16.2&p=${encodeURIComponent(route)}`;
 const pixel = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 const achievementDefinitions = achievementCatalog();
 const achievementItems = achievementDefinitions.map((item, index) => ({

@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.16.1&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.16.2&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -57,7 +57,7 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-03-v44.16.1')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-04-v44.16.2')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -665,6 +665,7 @@ test('Home reading cards share anime actions and trailers play inside AniNexus',
   const trailerSection=page.locator('.nx42-trailers-section'),cards=trailerSection.locator('.nx42-trailer');
   await expect(trailerSection).toBeVisible({timeout:30000});
   await expect(cards).toHaveCount(3);
+  await expect(trailerSection).not.toContainText('Fonte Teste');
   const ratio=await cards.first().locator('.nx42-trailer-media').evaluate(element=>{const box=element.getBoundingClientRect();return box.width/box.height});
   expect(ratio).toBeGreaterThan(1.74);expect(ratio).toBeLessThan(1.82);
   const before=page.url();
@@ -674,9 +675,11 @@ test('Home reading cards share anime actions and trailers play inside AniNexus',
   await expect(modal.locator('[role="dialog"]')).toHaveAttribute('aria-modal','true');
   await expect(modal.locator('iframe')).toHaveAttribute('src',/youtube-nocookie\.com\/embed\/abc123XYZ01\?.*autoplay=1/);
   expect(page.url()).toBe(before);
+  await page.setViewportSize({width:390,height:844});
+  const closeGeometry=await modal.getByRole('button',{name:'Fechar trailer'}).last().evaluate(button=>{const box=button.getBoundingClientRect();return{width:box.width,height:box.height,borderRadius:getComputedStyle(button).borderRadius}});
+  expect(closeGeometry.width).toBeGreaterThanOrEqual(39.5);expect(closeGeometry.width).toBeLessThanOrEqual(40.5);expect(Math.abs(closeGeometry.width-closeGeometry.height)).toBeLessThan(.1);expect(closeGeometry.borderRadius).toBe('50%');
   await modal.getByRole('button',{name:'Fechar trailer'}).last().click();
   await expect(modal).toHaveCount(0);
-  await page.setViewportSize({width:390,height:844});
   const mobile=await cards.first().evaluate(element=>({width:element.getBoundingClientRect().width,rail:element.parentElement.clientWidth}));
   expect(mobile.width/mobile.rail).toBeGreaterThan(.8);expect(mobile.width/mobile.rail).toBeLessThan(.9);
   await noOverflow(page,3);
