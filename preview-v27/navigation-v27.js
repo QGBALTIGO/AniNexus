@@ -8,7 +8,7 @@
 
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='40.8.0';
+  const BUILD='44.15.1';
 
   const aliases=new Map([
     ['/animes','/animes/catalogo'],
@@ -24,7 +24,7 @@
   ]);
   const excludedPrefixes=['/assets/','/data/','/lib/','/preview-','/.github/'];
   const excludedFiles=/\.(?:css|js|json|png|jpe?g|webp|gif|svg|ico|xml|txt|map|woff2?|ttf|otf|mp4|webm|pdf|zip)$/i;
-  function routeFromUrl(value){try{const u=new URL(value,location.href);if(u.origin!==location.origin)return null;const restored=u.searchParams.get('p');let path=restored||u.pathname;if(IS_PAGES)path=path.replace(/^\/AniNexus(?:\/AniNexus)?(?=\/|$)/,'')||'/';path=path.split('#')[0].split('?')[0].replace(/\/{2,}/g,'/');if(path.length>1)path=path.replace(/\/+$/,'');path=aliases.get(path)||path||'/';if(excludedFiles.test(path)||excludedPrefixes.some(prefix=>path.startsWith(prefix)))return null;return path}catch{return null}}
+  function routeFromUrl(value){try{const u=new URL(value,location.href);if(u.origin!==location.origin)return null;const restored=u.searchParams.get('p');let route=restored||`${u.pathname}${u.search}`;if(IS_PAGES&&!restored)route=route.replace(/^\/AniNexus(?:\/AniNexus)?(?=\/|$)/,'')||'/';route=route.split('#')[0];const queryIndex=route.indexOf('?'),search=queryIndex>=0?route.slice(queryIndex):'';let path=(queryIndex>=0?route.slice(0,queryIndex):route).replace(/\/{2,}/g,'/');if(path.length>1)path=path.replace(/\/+$/,'');path=aliases.get(path)||path||'/';if(excludedFiles.test(path)||excludedPrefixes.some(prefix=>path.startsWith(prefix)))return null;return `${path}${search}`}catch{return null}}
   function pagesUrl(path){return `${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`}
   function normalizeLink(a){if(!a||a.target==='_blank'||a.hasAttribute('download'))return;const raw=a.getAttribute('href');if(!raw||raw.startsWith('#')||raw.startsWith('mailto:')||raw.startsWith('tel:')||raw.startsWith('javascript:'))return;const path=routeFromUrl(a.href);if(!path)return;a.dataset.nx27Path=path;if(IS_PAGES)a.href=pagesUrl(path)}
   function rewrite(root=document){if(root.matches?.('a[href]'))normalizeLink(root);root.querySelectorAll?.('a[href]').forEach(normalizeLink)}
