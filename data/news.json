@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T21:51:24.233Z",
+  "generatedAt": "2026-09-04T22:23:00.785Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,528 @@
   ],
   "stats": {
     "collected": 47,
-    "grouped": 21,
-    "published": 21,
-    "newStories": 21,
-    "fullArticles": 21,
+    "grouped": 22,
+    "published": 22,
+    "newStories": 22,
+    "fullArticles": 22,
     "previewArticles": 0,
-    "avgWords": 332,
-    "withHeroImage": 21,
+    "avgWords": 338,
+    "withHeroImage": 22,
     "withOrderedMedia": 18,
     "skippedTranslation": 0,
-    "skippedQuality": 24,
-    "durationMs": 4367
+    "skippedQuality": 23,
+    "durationMs": 3206
   },
   "items": [
+    {
+      "id": "jbox-5fcdf3ff",
+      "slug": "morre-ettore-zuim-dublador-de-one-piece-frieren-e-samurai-champloo-jbox-5fcdf3ff",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Morre Ettore Zuim, dublador de ‘One Piece’, ‘Frieren’ e ‘Samurai Champloo’",
+      "originalTitle": "Morre Ettore Zuim, dublador de ‘One Piece’, ‘Frieren’ e ‘Samurai Champloo’",
+      "summary": "Morreu hoje (4), aos 66 anos, o ator e dublador Ettore Zuim. O falecimento foi confirmado pela Associação Brasileira de Dubladores, mas a causa da morte não foi divulgada. Em 2023, Ettore foi diagnosticado com DAOP (Doença Arterial Obstrutiva Periférica). Desde então, ele vinha convivendo com algumas fragilidades de saúde.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "Cotidiano",
+        "Dublagem",
+        "Ettore Zuim"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/04/morre-ettore-zuim-dublador-de-one-piece-frieren-e-samurai-champloo",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/04/morre-ettore-zuim-dublador-de-one-piece-frieren-e-samurai-champloo",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/ettorezuim-destacada.jpg",
+      "mediaQuery": "Morre Ettore Zuim, dublador de ‘One Piece’, ‘Frieren’ e ‘Samurai Champloo’",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Morreu hoje (4), aos 66 anos, o ator e dublador Ettore Zuim. O falecimento foi confirmado pela Associação Brasileira de Dubladores, mas a causa da morte não foi divulgada. Em 2023, Ettore foi diagnosticado com DAOP (Doença Arterial Obstrutiva Periférica). Desde então, ele vinha convivendo com algumas fragilidades de saúde.",
+          "runs": [
+            {
+              "text": "Morreu hoje (4), aos 66 anos, o ator e dublador "
+            },
+            {
+              "text": "Ettore Zuim",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O falecimento foi confirmado pela Associação Brasileira de Dubladores, mas a causa da morte não foi divulgada. Em 2023, Ettore foi diagnosticado com DAOP (Doença Arterial Obstrutiva Periférica). Desde então, ele vinha convivendo com algumas fragilidades de saúde."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em animês, Zuim deu voz a personagens como o Mihawk, de One Piece (incluindo sua adaptação live-action), o Heiter, de Frieren e a Jornada para o Além, Mugen, de Samurai Champloo, além de ter passado por séries como Astro Boy (versão de 2003), Dragon Ball Super, Vinland Saga, My Hero Academia, One-Punch Man, dentre outras. Também passou pelo tokusatsu, sendo o Tetsuo de Ultraman Tiga e, mais recentemente, o monstro Mephilas no filme Shin Ultraman.",
+          "runs": [
+            {
+              "text": "Em animês, Zuim deu voz a personagens como o Mihawk, de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " (incluindo sua adaptação live-action), o Heiter, de "
+            },
+            {
+              "text": "Frieren e a Jornada para o Além",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", Mugen, de "
+            },
+            {
+              "text": "Samurai Champloo",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", além de ter passado por séries como "
+            },
+            {
+              "text": "Astro Boy ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "(versão de 2003), "
+            },
+            {
+              "text": "Dragon Ball Super",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Vinland Saga",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "My Hero Academia",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "One-Punch Man",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", dentre outras. Também passou pelo tokusatsu, sendo o Tetsuo de "
+            },
+            {
+              "text": "Ultraman Tiga",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "e, mais recentemente, o monstro Mephilas no filme "
+            },
+            {
+              "text": "Shin Ultraman",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nascido no Rio de Janeiro no dia 11 de janeiro de 1960, Ettore Zuim descobriu a paixão pelos palcos aos 13 anos, quando assistiu a uma apresentação de teatro durante suas férias em Sepetiba. O palco foi sua primeira grande paixão e o ponto de partida de uma carreira marcada por atuações no Teatro Musical carioca do início dos anos 1980, quando fez parte do grupo Nós Que Bebemos.",
+          "runs": [
+            {
+              "text": "Nascido no Rio de Janeiro no dia 11 de janeiro de 1960, Ettore Zuim descobriu a paixão pelos palcos aos 13 anos, quando assistiu a uma apresentação de teatro durante suas férias em Sepetiba. O palco foi sua primeira grande paixão e o ponto de partida de uma carreira marcada por atuações no Teatro Musical carioca do início dos anos 1980, quando fez parte do grupo "
+            },
+            {
+              "text": "Nós Que Bebemos",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Sua entrada para a dublagem veio incentivada por dois colegas de elenco que já dublavam: Nizo Neto e Nádia Carvalho. Eles o levaram ao estúdio da Herbert Richers, onde começou como estagiário por cerca de 45 dias antes de se consolidar na profissão. Desde então, foram mais de 40 anos no ofício.",
+          "runs": [
+            {
+              "text": "Sua entrada para a dublagem veio incentivada por dois colegas de elenco que já dublavam: "
+            },
+            {
+              "text": "Nizo Neto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Nádia Carvalho",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Eles o levaram ao estúdio da "
+            },
+            {
+              "text": "Herbert Richers",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", onde começou como estagiário por cerca de 45 dias antes de se consolidar na profissão. Desde então, foram mais de 40 anos no ofício."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ele definia dublagem como um exercício complexo de coordenação motora e interpretação, onde o ator precisa ouvir, ler, interpretar e sincronizar sem fazer ruídos indesejados ao microfone.",
+          "runs": [
+            {
+              "text": "Ele definia dublagem como um exercício complexo de coordenação motora e interpretação, onde o ator precisa ouvir, ler, interpretar e sincronizar sem fazer ruídos indesejados ao microfone."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para além do universo dos animês, Ettore deu voz a papéis de atores como Antonio Banderas, Owen Wilson e Christian Bale. Esse último traz uma história curiosa: enquanto era diretor de dublagem no estúdio Delart, ele se auto-escalou para dublar o personagem do ator no filme Extra! Extra!, originalmente lançado em 1992. Por se tornar a voz oficial do ator aqui no Brasil, ele o dublou na trilogia de filmes do Batman dirigida pelo Christopher Nolan. Posteriormente, isso fez com que ele dublasse o Morcegão em diferentes animações e jogos.",
+          "runs": [
+            {
+              "text": "Para além do universo dos animês, Ettore deu voz a papéis de atores como "
+            },
+            {
+              "text": "Antonio Banderas,",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Owen Wilson",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Christian Bale",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Esse último traz uma história curiosa: enquanto era diretor de dublagem no estúdio "
+            },
+            {
+              "text": "Delart",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", ele se auto-escalou para dublar o personagem do ator no filme "
+            },
+            {
+              "text": "Extra! Extra!",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", originalmente lançado em 1992. Por se tornar a voz oficial do ator aqui no Brasil, ele o dublou na trilogia de filmes do "
+            },
+            {
+              "text": "Batman",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dirigida pelo Christopher Nolan. Posteriormente, isso fez com que ele dublasse o Morcegão em diferentes animações e jogos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Outros personagens de desenhos animados com sua voz foram o Príncipe Encantado, dos filmes Shrek, o Hércules, da Disney, o vilão Raio de Fogo, em Super Choque, dentre outros.",
+          "runs": [
+            {
+              "text": "Outros personagens de desenhos animados com sua voz foram o "
+            },
+            {
+              "text": "Príncipe Encantado",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", dos filmes "
+            },
+            {
+              "text": "Shrek",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", o "
+            },
+            {
+              "text": "Hércules",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", da Disney, o vilão "
+            },
+            {
+              "text": "Raio de Fogo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", em "
+            },
+            {
+              "text": "Super Choque",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", dentre outros."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Dublador, ator, diretor, locutor e professor, Ettore Zuim construiu uma trajetória guiada pela dedicação absoluta à arte de atuar, deixando sua marca na cultura pop e no coração de diferentes gerações.",
+          "runs": [
+            {
+              "text": "Dublador, ator, diretor, locutor e professor, Ettore Zuim construiu uma trajetória guiada pela dedicação absoluta à arte de atuar, deixando sua marca na cultura pop e no coração de diferentes gerações."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fontes: Associação Brasileira de Dubladores e os canais Comentário Nerd, Plugado Cast e Canal Making Of no YouTube.",
+          "runs": [
+            {
+              "text": "Fontes:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Associação Brasileira de Dubladores",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.instagram.com/p/Dc3yMvex9sk/"
+            },
+            {
+              "text": " e os canais ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Comentário Nerd",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.youtube.com/watch?v=mEx9rMCEO9E&pp=ygULZXR0b3JlIHp1aW0%3D"
+            },
+            {
+              "text": ", ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Plugado Cast",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.youtube.com/watch?v=Jb3mibwE4pM&pp=ygULZXR0b3JlIHp1aW0%3D"
+            },
+            {
+              "text": " e ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Canal Making Of",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.youtube.com/watch?v=l9kQVEDhd_4&pp=ygULZXR0b3JlIHp1aW0%3D"
+            },
+            {
+              "text": " no YouTube.",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-04T22:08:35.000Z",
+      "updatedAt": "2026-09-04T22:10:04.000Z",
+      "expiresAt": "2026-09-11T22:08:35.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/04/morre-ettore-zuim-dublador-de-one-piece-frieren-e-samurai-champloo",
+          "publishedAt": "2026-09-04T22:08:35.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 458,
+      "qualityScore": 0.995,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-5b11fb1c",
       "slug": "kamen-ride-my-th-estreia-so-no-sabado-que-vem-pelo-youtube-com-dublagem-em-portugues-jbox-5b11fb1c",
