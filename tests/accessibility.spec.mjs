@@ -73,6 +73,10 @@ for (const route of ['/', '/animes/catalogo', '/mangas', '/animes/programacao', 
   test(`WCAG AA sem falhas sérias em ${route}`, async ({ page }) => {
     await page.goto(pageUrl(route), { waitUntil: 'domcontentloaded' });
     await page.locator('#app main').first().waitFor({ state: 'visible', timeout: 30_000 });
+    if (route === '/comunidade') {
+      await expect(page.locator('html')).toHaveClass(/nx40-community-ready/);
+      await expect(page.locator('#app')).toHaveCSS('opacity', '1');
+    }
     const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
     const blocking = results.violations.filter(item => ['serious', 'critical'].includes(item.impact));
     const summary = blocking.map(item => ({ id: item.id, nodes: item.nodes.map(node => node.target.join(' ')).slice(0, 30) }));

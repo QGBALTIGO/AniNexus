@@ -153,7 +153,9 @@ jobs:
             if [ "$i" = "20" ]; then cat /tmp/aninexus-http.log; exit 1; fi
             sleep 1
           done
-          pnpm exec playwright test tests/e2e.spec.mjs tests/accessibility.spec.mjs --reporter=line --timeout=60000 --retries=1
+          HEAVY_TEST='Catalog mobile menu exposes a complete Top 100 and a full search bar'
+          pnpm exec playwright test tests/e2e.spec.mjs tests/accessibility.spec.mjs --grep-invert "$HEAVY_TEST" --reporter=line --timeout=60000 --retries=1
+          pnpm exec playwright test tests/e2e.spec.mjs --grep "$HEAVY_TEST" --reporter=line --timeout=60000 --retries=1
       - name: Show static server log on failure
         if: failure()
         run: cat /tmp/aninexus-http.log || true
