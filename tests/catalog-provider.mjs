@@ -22,7 +22,8 @@ globalThis.fetch = async (_url, options = {}) => {
       : { extraLarge: 'https://example.com/poster.jpg', large: 'https://example.com/poster.jpg', color: '#a61b38' },
     genres: ['Action'], tags: [], episodes: reading ? null : 12, chapters: reading ? 20 : null, volumes: reading ? 3 : null,
     format: reading ? (body.variables?.format || 'MANGA') : 'TV', status: 'FINISHED', seasonYear: reading ? null : 2026,
-    startDate: { year: 2026, month: 1, day: 1 }, endDate: null, studios: { nodes: [] }, externalLinks: []
+    startDate: { year: 2026, month: 1, day: 1 }, endDate: null, studios: { nodes: [] }, externalLinks: [],
+    ...(body.variables?.season ? { relations: { edges: [{ relationType: 'PREQUEL' }] } } : {})
   }));
   return new Response(JSON.stringify({ data: { Page: { pageInfo: { total: 5000, currentPage: page, lastPage: 200, hasNextPage: page < 200 }, media } } }), { status: 200, headers: { 'content-type': 'application/json' } });
 };
@@ -69,6 +70,17 @@ test('reading catalog mirrors discovery, format and search filters', async () =>
   });
   assert.match(requests.at(-1).query, /type:MANGA/);
   assert.match(requests.at(-1).query, /startDate_greater:\$startDateGreater/);
+});
+
+test('season discovery preserves pagination and sequel metadata without community sorting', async () => {
+  const result = await getCatalog({ page: 6, perPage: 30, sort: 'DISCOVER', season: 'SUMMER', year: 2026 });
+  const request = requests.at(-1);
+  assert.deepEqual(request.variables.sort, ['POPULARITY_DESC', 'ID']);
+  assert.equal(request.variables.page, 6);
+  assert.equal(request.variables.season, 'SUMMER');
+  assert.equal(result.pageInfo.hasNextPage, true);
+  assert.match(request.query, /relations\{edges\{relationType\}\}/);
+  assert.deepEqual(result.items[0].relationTypes, ['PREQUEL']);
 });
 
 test('community-only reading orders never fall back to external popularity', async () => {

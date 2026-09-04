@@ -20,7 +20,8 @@
     {key:'SERIES',label:'Série',formats:['TV','TV_SHORT']},
     {key:'MOVIE',label:'Filme',formats:['MOVIE']},
     {key:'SPECIAL',label:'Especial',formats:['SPECIAL','OVA']},
-    {key:'ONA',label:'ONA',formats:['ONA']}
+    {key:'ONA',label:'ONA',formats:['ONA']},
+    {key:'MUSIC',label:'Música',formats:['MUSIC']}
   ];
   const ICON = {
     snow:`<svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3.1" stroke-linecap="round"><path d="M32 6v52M9 19l46 26M55 19 9 45M22 10l10 7 10-7M22 54l10-7 10 7M10 29l11 3-11 3M54 29l-11 3 11 3"/></g></svg>`,
@@ -41,6 +42,7 @@
   let activeController = null;
   let loadToken = 0;
   let currentSeasonData = null;
+  let renderedSeason = '';
   let activeFilters = {tag:null,type:null};
   let refreshTimer = null;
   let popover = null;
@@ -80,7 +82,10 @@
   function seasonMeta(key){ return SEASONS.find(s=>s.key===key) || SEASONS[2]; }
   function seasonRoute(year,key){ return `/animes/temporadas/${year}/${seasonMeta(key).slug}`; }
   function setRoute(path,replace=false){
-    history[replace?'replaceState':'pushState']({},'',`${BASE}${path}`);
+    const url=new URL(location.href);
+    if(IS_PAGES){url.pathname=`${BASE}/`;url.searchParams.set('p',path);}
+    else{url.pathname=path;url.searchParams.delete('p');}
+    history[replace?'replaceState':'pushState']({},'',url);
   }
   function clearOldClasses(){
     document.body.classList.remove('season-v7-active','season-v8-active');
@@ -98,17 +103,19 @@
   }
   function deactivateV8(){
     document.body.classList.remove('nx-season-active','nx-detail-active');
+    activeController?.abort();
+    clearInterval(refreshTimer);
     closePopover();
   }
 
-  async function gql(query,variables,signal,retries=3){
+  async function gql(query,variables,signal,retries=3,force=false){
     let lastErr;
     for(let attempt=0;attempt<retries;attempt++){
       try{
         const wait = Math.max(0, 230 - (Date.now()-lastRequestAt));
         if(wait) await sleep(wait);
         lastRequestAt = Date.now();
-        const res = await fetch(ENDPOINT,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables}),signal});
+        const res = await fetch(ENDPOINT,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables}),signal,...(force?{cache:'reload'}:{})});
         if(res.status===429 || res.status>=500){ throw Object.assign(new Error(`HTTP ${res.status}`),{retryable:true}); }
         if(!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
@@ -126,7 +133,7 @@
   const SEASON_FIELDS = `id title{romaji english native userPreferred} coverImage{extraLarge large color} format status genres tags{name rank} startDate{year month day} relations{edges{relationType}}`;
   const DETAIL_FIELDS = `id title{romaji english native userPreferred} coverImage{extraLarge large color} bannerImage description genres tags{name rank} episodes duration format status season seasonYear countryOfOrigin source startDate{year month day} endDate{year month day} studios(isMain:true){nodes{id name}} nextAiringEpisode{airingAt episode timeUntilAiring} trailer{id site thumbnail} externalLinks{site url type icon color}`;
 
-  function seasonCacheKey(sel){ return `nx:v8:season:${sel.year}:${sel.season}`; }
+  function seasonCacheKey(sel){ return `nx:season:v2:${sel.year}:${sel.season}`; }
   function readCache(key){
     try{ const v=JSON.parse(localStorage.getItem(key)||'null'); return v&&v.data ? v : null; }catch{return null;}
   }
@@ -134,26 +141,53 @@
     try{ localStorage.setItem(key,JSON.stringify({savedAt:Date.now(),data})); }catch{}
   }
 
-  async function fetchSeason(sel,signal){
-    const query = `query($page:Int,$perPage:Int,$year:Int,$season:MediaSeason){Page(page:$page,perPage:$perPage){pageInfo{hasNextPage total}media(type:ANIME,isAdult:false,seasonYear:$year,season:$season,sort:[START_DATE_DESC]){${SEASON_FIELDS}}}}`;
-    let page=1, all=[], apiTotal=0;
-    while(page<=5){
-      const d = await gql(query,{page,perPage:30,year:sel.year,season:sel.season,nxSort:'POPULAR'},signal,3);
-      const items = d?.Page?.media || [];
-      apiTotal = Number(d?.Page?.pageInfo?.total || apiTotal || 0);
-      all.push(...items);
-      if(!d?.Page?.pageInfo?.hasNextPage || !items.length) break;
-      page++;
+  const visibleSeasonMedia=m=>m?.id&&!m.isAdult&&!(m.genres||[]).includes('Hentai');
+
+  async function fetchSeason(sel,signal,onProgress,force=false){
+    const query = `query($page:Int,$perPage:Int,$year:Int,$season:MediaSeason){Page(page:$page,perPage:$perPage){pageInfo{hasNextPage total}media(type:ANIME,isAdult:false,seasonYear:$year,season:$season,sort:[POPULARITY_DESC,ID]){${SEASON_FIELDS}}}}`;
+    const all=new Map();
+    let apiTotal=0;
+    const result=partial=>({items:[...all.values()].filter(visibleSeasonMedia),apiTotal,partial});
+    try{
+      // Follow the provider's pagination; a repeated page must not loop forever.
+      for(let page=1;page<=500;page++){
+        const d=await gql(query,{page,perPage:30,year:sel.year,season:sel.season,nxSort:'DISCOVER'},signal,3,force);
+        const items=d?.Page?.media, info=d?.Page?.pageInfo;
+        if(!Array.isArray(items)||typeof info?.hasNextPage!=='boolean')throw new Error('Resposta de temporada incompleta');
+        apiTotal=Number(info.total||apiTotal||0);
+        const before=all.size;
+        items.forEach(m=>{if(m?.id)all.set(m.id,m);});
+        if(info.isFallback)return result(true);
+        if(!info.hasNextPage)return result(false);
+        if(all.size===before)throw new Error('A paginação não avançou');
+        onProgress?.({...result(true),refreshing:true});
+      }
+      throw new Error('Limite de paginação atingido');
+    }catch(error){
+      if(error?.name==='AbortError'||!all.size)throw error;
+      return result(true);
     }
-    const unique = [...new Map(all.filter(x=>x?.id).map(x=>[x.id,x])).values()];
-    if(unique.length > 400) throw new Error('Resposta de temporada inválida');
-    return {items:unique,apiTotal,hash:unique.map(x=>`${x.id}:${x.status||''}`).join('|')};
   }
 
-  async function fetchStillAiring(signal){
-    const q=`query($page:Int,$perPage:Int){Page(page:$page,perPage:$perPage){media(type:ANIME,isAdult:false,status:RELEASING,sort:[START_DATE_DESC]){${SEASON_FIELDS}}}}`;
-    const d=await gql(q,{page:1,perPage:24,nxSort:'POPULAR'},signal,2);
-    return d?.Page?.media || [];
+  function startedBeforeSeason(m,sel){
+    const month={WINTER:1,SPRING:4,SUMMER:7,FALL:10}[sel.season];
+    const y=m.startDate?.year||9999,mo=m.startDate?.month||12;
+    return y<sel.year||(y===sel.year&&mo<month);
+  }
+
+  async function fetchStillAiring(sel,signal){
+    const q=`query($page:Int,$perPage:Int){Page(page:$page,perPage:$perPage){pageInfo{hasNextPage}media(type:ANIME,isAdult:false,status:RELEASING,sort:[POPULARITY_DESC,ID]){${SEASON_FIELDS}}}}`;
+    const all=new Map(),seen=new Set();
+    for(let page=1;page<=500;page++){
+      const d=await gql(q,{page,perPage:30,nxSort:'DISCOVER'},signal,2);
+      const before=seen.size;
+      for(const m of d?.Page?.media||[]){
+        seen.add(m.id);
+        if(visibleSeasonMedia(m)&&m.status==='RELEASING'&&startedBeforeSeason(m,sel))all.set(m.id,m);
+      }
+      if(all.size>=16||!d?.Page?.pageInfo?.hasNextPage||seen.size===before)break;
+    }
+    return [...all.values()].slice(0,16);
   }
 
   function isContinuation(m){ return (m?.relations?.edges||[]).some(e=>e?.relationType==='PREQUEL'); }
@@ -210,6 +244,7 @@
     const meta=seasonMeta(sel.season);
     const all=data?.items||[];
     currentSeasonData=data||{items:[]};
+    renderedSeason=seasonRoute(sel.year,sel.season);
     const sequels=all.filter(isContinuation).length;
     const premieres=Math.max(0,all.length-sequels);
     const tags=tagRows(all), types=typeRows(all), shown=filteredItems(all);
@@ -220,12 +255,13 @@
         ${controls(sel,tags,types)}
       </div></div>
       <div class="nx-season-shell nx-season-content">
-        ${loading?`<div class="nx-season-grid nx-skeleton">${Array.from({length:8},()=>'<article><span></span><i></i></article>').join('')}</div>`:error?`<div class="nx-season-error"><strong>Não foi possível atualizar esta temporada.</strong><span>${esc(error)}</span><button type="button" data-nx-retry>Tentar novamente</button></div>`:`<div class="nx-season-grid">${shown.map(card).join('')||'<div class="nx-season-empty">Nenhum título encontrado neste filtro.</div>'}</div><div id="nxStillAiring"></div>`}
+        ${loading?`<div class="nx-season-grid nx-skeleton">${Array.from({length:10},()=>'<article><span></span><i></i></article>').join('')}</div>`:error?`<div class="nx-season-error"><strong>Não foi possível atualizar esta temporada.</strong><span>${esc(error)}</span><button type="button" data-nx-retry>Tentar novamente</button></div>`:`<div class="nx-season-grid">${shown.map(card).join('')||'<div class="nx-season-empty">Nenhum título encontrado neste filtro.</div>'}</div>${data?.partial?`<div class="nx-season-load-status" role="status"><span>${data.refreshing?'Carregando os próximos animes...':'Alguns títulos ainda não puderam ser carregados.'}</span>${data.refreshing?'':'<button type="button" data-nx-retry>Carregar restantes</button>'}</div>`:''}<div id="nxStillAiring"></div>`}
       </div>
     </section>`;
     document.title=`${meta.name} ${sel.year} | AniNexus`;
     bindSeason(sel,tags,types);
     bindBrokenImages();
+    renderStillAiring(data?.stillItems,sel);
   }
 
   function readIdSet(key){
@@ -276,7 +312,7 @@
     root.querySelectorAll('[data-nx-media]').forEach(el=>{
       const open=()=>{ const m=(currentSeasonData?.items||[]).find(x=>x.id===Number(el.dataset.nxMedia)); if(m) openAnime(m); };
       el.addEventListener('click',e=>{ if(e.target.closest('button')) return; open(); });
-      el.addEventListener('keydown',e=>{ if(e.key==='Enter') open(); });
+      el.addEventListener('keydown',e=>{ if(e.key==='Enter'&&e.target===el) open(); });
     });
     root.querySelectorAll('[data-nx-fav]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();toggleStored('aninexus:favorites',Number(b.dataset.nxFav),b);}));
     root.querySelectorAll('[data-nx-list]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();toggleStored('aninexus:list',Number(b.dataset.nxList),b);}));
@@ -288,8 +324,7 @@
 
   function renderStillAiring(items,sel){
     const host=document.querySelector('#nxStillAiring'); if(!host || !items?.length) return;
-    const startMonth={WINTER:1,SPRING:4,SUMMER:7,FALL:10}[sel.season];
-    const filtered=items.filter(m=>{const y=m.startDate?.year||9999,mo=m.startDate?.month||12;return y<sel.year||(y===sel.year&&mo<startMonth);}).slice(0,16);
+    const filtered=filteredItems(items).filter(m=>startedBeforeSeason(m,sel)).slice(0,16);
     if(!filtered.length)return;
     host.innerHTML=`<section class="nx-still"><div class="nx-section-title"><h2>Ainda no ar</h2><p>Começaram antes e seguem em exibição.</p></div><div class="nx-still-rail">${filtered.map(m=>`<article data-nx-still="${m.id}" tabindex="0"><div class="nx-related-poster">${imageOf(m)?`<img loading="lazy" src="${esc(imageOf(m))}" alt="${esc(titleOf(m))}">`:''}${scoreOf(m)?`<span>${ICON.star}${scoreOf(m)}</span>`:''}</div><strong>${esc(titleOf(m))}</strong></article>`).join('')}</div></section>`;
     host.querySelectorAll('[data-nx-still]').forEach(el=>el.onclick=()=>{const m=filtered.find(x=>x.id===Number(el.dataset.nxStill));if(m)openAnime(m);});
@@ -303,20 +338,35 @@
     const token=++loadToken;
     activeController?.abort(); activeController=new AbortController();
     const cache=readCache(seasonCacheKey(sel));
-    const cachedData=cache?.data;
-    if(cachedData&&!force) renderSeasonShell(sel,cachedData); else renderSeasonShell(sel,null,{loading:true});
+    const previous=renderedSeason===canonical&&root.querySelector('.nx-season')?currentSeasonData:null;
+    const cachedData=cache&&Date.now()-cache.savedAt<CACHE_TTL?cache.data:previous;
+    let displayed=cachedData;
+    const signal=activeController.signal;
+    const current=()=>token===loadToken&&!signal.aborted&&routePath()===canonical;
+    if(cachedData) renderSeasonShell(sel,cachedData); else renderSeasonShell(sel,null,{loading:true});
     try{
-      const fresh=await fetchSeason(sel,activeController.signal);
-      if(token!==loadToken||!isSeasonRoute())return;
-      writeCache(seasonCacheKey(sel),fresh);
-      renderSeasonShell(sel,fresh);
+      const fresh=await fetchSeason(sel,signal,progress=>{
+        if(!current()||progress.items.length<(displayed?.items.length||0))return;
+        displayed={...progress,stillItems:cachedData?.stillItems};
+        renderSeasonShell(sel,displayed);
+      },force);
+      if(!current())return;
+      displayed=fresh.partial&&cachedData?.items.length>fresh.items.length?{...cachedData,partial:true}:fresh;
+      displayed.stillItems=cachedData?.stillItems;
+      if(!displayed.partial)writeCache(seasonCacheKey(sel),displayed);
+      renderSeasonShell(sel,displayed);
       const now=currentSeason();
       if(sel.year===now.year&&sel.season===now.season){
-        fetchStillAiring(activeController.signal).then(items=>{if(token===loadToken&&isSeasonRoute())renderStillAiring(items,sel);}).catch(()=>{});
+        fetchStillAiring(sel,signal).then(items=>{
+          if(!current())return;
+          currentSeasonData.stillItems=items;
+          if(!currentSeasonData.partial)writeCache(seasonCacheKey(sel),currentSeasonData);
+          renderStillAiring(items,sel);
+        }).catch(()=>{});
       }
     }catch(err){
-      if(err?.name==='AbortError')return;
-      if(cachedData){ renderSeasonShell(sel,cachedData); }
+      if(err?.name==='AbortError'||!current())return;
+      if(displayed){ renderSeasonShell(sel,{...displayed,partial:true,refreshing:false}); }
       else renderSeasonShell(sel,null,{error:'Verifique sua conexão e tente de novo. O AniNexus fará uma nova tentativa sem apagar a página.'});
     }
     clearInterval(refreshTimer);

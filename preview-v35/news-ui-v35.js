@@ -6,7 +6,6 @@
   window.__NX35_NEWS_UI__ = true;
 
   const { BASE, esc, strip, route, owns, go, imageCandidates, bindImageFallbacks, readSet, markRead, loadFeed, loadArticle, relative, date } = D;
-  let active = 'ALL';
   let query = '';
   let rendering = false;
   let scrollHandler = null;
@@ -24,35 +23,6 @@
     news: '<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>',
     down: '<svg viewBox="0 0 24 24"><path d="m7 9 5 5 5-5"/></svg>',
   };
-  const CATEGORY_DEFS = [['SEASON', 'Animes'], ['MANGA', 'Mangás & novels'], ['TRAILER', 'Trailers'], ['EPISODE', 'Episódios'], ['TRENDING', 'Em alta'], ['OTHER', 'Notícias']];
-
-  function liveCategories() {
-    const counts = new Map();
-    for (const item of D.feed) counts.set(item.eventType, (counts.get(item.eventType) || 0) + 1);
-    return [['ALL', 'Tudo', D.feed.length], ...CATEGORY_DEFS.filter(([key]) => counts.get(key) > 0).map(([key, label]) => [key, label, counts.get(key)])];
-  }
-
-  function renderCategories() {
-    const roots = [...app.querySelectorAll('[data-nx35-cats]')];
-    if (!roots.length) return;
-    const categories = liveCategories();
-    if (active !== 'ALL' && !categories.some(([key]) => key === active)) active = 'ALL';
-    const markup = categories.map(([key, label, count]) => `<button class="${key === active ? 'active' : ''}" data-cat="${key}">${esc(label)}<sup>${count}</sup></button>`).join('');
-    roots.forEach(root => {
-      root.innerHTML = markup;
-      root.querySelectorAll('[data-cat]').forEach(button => {
-        button.onclick = () => {
-          active = button.dataset.cat;
-          renderCategories();
-          renderResults();
-        };
-      });
-    });
-    const selected = categories.find(([key]) => key === active) || categories[0];
-    const context = app.querySelector('[data-nx35-island-context]');
-    if (context && selected) context.textContent = `${selected[1]} · ${selected[2]} ${selected[2] === 1 ? 'matéria' : 'matérias'}`;
-  }
-
   function clearScrollBinding() {
     if (scrollHandler) removeEventListener('scroll', scrollHandler);
     if (scrollFrame) cancelAnimationFrame(scrollFrame);
@@ -91,7 +61,7 @@
 
   function filtered() {
     const needle = query.trim().toLowerCase();
-    return D.feed.filter(item => (active === 'ALL' || item.eventType === active) && (!needle || `${item.title} ${item.summary} ${item.source} ${item.category} ${(item.tags || []).join(' ')}`.toLowerCase().includes(needle)));
+    return D.feed.filter(item => !needle || `${item.title} ${item.summary} ${item.source} ${item.category} ${(item.tags || []).join(' ')}`.toLowerCase().includes(needle));
   }
 
   function renderResults() {
@@ -101,7 +71,7 @@
     const count = app.querySelector('#nx35NewsCount');
     if (count) count.textContent = `${list.length} ${list.length === 1 ? 'matéria' : 'matérias'} recentes`;
     if (!list.length) {
-      root.innerHTML = '<div class="nx35-news-empty"><h3>Nenhuma matéria nesta categoria.</h3><p>Quando não houver conteúdo ativo, a categoria some automaticamente do menu.</p></div>';
+      root.innerHTML = `<div class="nx35-news-empty"><h3>${query.trim() ? 'Nenhuma notícia encontrada.' : 'Nenhuma notícia disponível no momento.'}</h3></div>`;
       return;
     }
     const lead = list[0];
@@ -112,7 +82,7 @@
   }
 
   function controlsMarkup(id) {
-    return `<div class="nx35-news-controls"><div class="nx35-news-cats" data-nx35-cats><button class="active" data-cat="ALL">Tudo</button></div><label>${I.search}<span class="sr-only">Buscar notícias</span><input id="${id}" data-nx35-news-search type="search" placeholder="Buscar assunto, anime ou mangá..." value="${esc(query)}"></label></div>`;
+    return `<div class="nx35-news-controls"><label>${I.search}<span class="sr-only">Buscar notícias</span><input id="${id}" data-nx35-news-search type="search" placeholder="Buscar assunto, anime ou mangá..." value="${esc(query)}"></label></div>`;
   }
 
   function bindSearches() {
@@ -314,7 +284,6 @@
         listShell();
         await loadFeed();
         if (route() === '/noticias') {
-          renderCategories();
           renderResults();
         }
         dispatchEvent(new CustomEvent('aninexus:news-v32-ready'));

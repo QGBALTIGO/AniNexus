@@ -40,7 +40,7 @@
   window.fetch=async function(input,init={}){
     const url=typeof input==='string'?input:input?.url;
     const method=String(init?.method||'GET').toUpperCase();
-    if(url!==TARGET||method!=='POST'||typeof init?.body!=='string')return nativeFetch(input,init);
+    if(url!==TARGET||method!=='POST'||typeof init?.body!=='string'||init.cache==='reload'||init.cache==='no-store')return nativeFetch(input,init);
     const key=hash(init.body);
     const cached=read(key);
     if(cached!==null)return new Response(cached,{status:200,headers:{'content-type':'application/json','x-aninexus-cache':'hit'}});

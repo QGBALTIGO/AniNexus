@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.21.0&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.22.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -59,7 +59,7 @@ test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-04-v44.21.0')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-04-v44.22.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -924,6 +924,104 @@ test('Programação shares the catalog chrome and reveals a compact guide on scr
   }
 });
 
+test('season pagination keeps loaded titles after failure and continues beyond five pages',async({page})=>{
+  test.setTimeout(60000);
+  if(!new URL(ORIGIN).hostname.endsWith('github.io')){
+    await page.route('**/animes/temporadas/**',async route=>{
+      if(route.request().resourceType()!=='document')return route.continue();
+      return route.fulfill({response:await route.fetch({url:ORIGIN})});
+    });
+  }
+  let failSecond=true;
+  const pages=[];
+  const respond=async(route,variables,normalized=false)=>{
+    const current=Number(variables.page||1);
+    pages.push(current);
+    if(current===2&&failSecond)return route.fulfill({status:503,body:'Unavailable'});
+    const items=Array.from({length:30},(_,i)=>normalized?rankedMedia(current*1000+i):anime(current*1000+i));
+    const pageInfo={currentPage:current,total:180,lastPage:6,hasNextPage:current<6};
+    return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(normalized?{items,pageInfo}:{data:{Page:{media:items,pageInfo}}})});
+  };
+  await page.route('https://graphql.anilist.co/',route=>respond(route,route.request().postDataJSON().variables||{}));
+  await page.route('**/api/catalog?**',route=>respond(route,Object.fromEntries(new URL(route.request().url()).searchParams),true));
+  await page.goto(pageUrl('/animes/temporadas/2025/inverno'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx-season-card')).toHaveCount(30,{timeout:20000});
+  await expect(page.locator('[data-nx-retry]')).toBeVisible({timeout:20000});
+  await expect(page.locator('.nx-season-card')).toHaveCount(30);
+  failSecond=false;
+  await page.locator('[data-nx-retry]').click();
+  await expect(page.locator('.nx-season-card')).toHaveCount(180,{timeout:20000});
+  await expect(page.locator('.nx-season-load-status')).toHaveCount(0);
+  expect(pages).toContain(6);
+  for(const [width,columns] of [[1440,5],[900,4],[620,3],[390,2],[320,2]]){
+    await page.setViewportSize({width,height:900});
+    const layout=await page.locator('.nx-season-grid').evaluate(element=>({columns:getComputedStyle(element).gridTemplateColumns.split(' ').length,width:element.firstElementChild.getBoundingClientRect().width}));
+    expect(layout.columns).toBe(columns);
+    expect(layout.width).toBeLessThan(260);
+    const controls=await page.evaluate(()=>{
+      const shell=document.querySelector('.nx-season-hero .nx-season-shell').getBoundingClientRect();
+      return [...document.querySelectorAll('.nx-season-control-line button')].every(button=>{const box=button.getBoundingClientRect();return box.left>=shell.left-1&&box.right<=shell.right+1});
+    });
+    expect(controls).toBe(true);
+    await noOverflow(page,2);
+  }
+  await page.locator('.nx-season-tabs [data-nx-season="SPRING"]').click();
+  await expect(page.locator('.nx-season')).toHaveAttribute('data-season','SPRING');
+  await page.reload({waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx-season')).toHaveAttribute('data-season','SPRING');
+  await expect(page.locator('.main-nav [data-nav="season"]')).toHaveAttribute('aria-current','page');
+});
+
+test('season stops repeated pages and cannot restore itself after leaving the route',async({page})=>{
+  let requests=0,release;
+  const pending=new Promise(resolve=>{release=resolve});
+  const respond=async(route,normalized=false)=>{
+    requests++;
+    if(requests>2)await pending;
+    const items=Array.from({length:4},(_,i)=>normalized?rankedMedia(100+i):anime(100+i));
+    const pageInfo={hasNextPage:true,total:60};
+    await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(normalized?{items,pageInfo}:{data:{Page:{media:items,pageInfo}}})}).catch(()=>{});
+  };
+  await page.route('**/api/catalog?**',route=>respond(route,true));
+  await page.route('https://graphql.anilist.co/',route=>respond(route));
+  await page.goto(pageUrl('/animes/temporadas/2025/inverno'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('[data-nx-retry]')).toBeVisible({timeout:15000});
+  await expect(page.locator('.nx-season-card')).toHaveCount(4);
+  expect(requests).toBe(2);
+  await page.locator('[data-nx-retry]').click();
+  await expect.poll(()=>requests).toBe(3);
+  await page.evaluate(()=>{
+    const url=new URL(location.href);
+    url.searchParams.set('p','/noticias');
+    history.pushState({},'',url);
+    dispatchEvent(new PopStateEvent('popstate'));
+  });
+  release();
+  await expect(page.locator('.nx35-news-page')).toBeVisible({timeout:15000});
+  await expect(page.locator('.nx-season')).toHaveCount(0);
+});
+
+test('production season bridge preserves discovery, sequels and ongoing filters',async({page})=>{
+  await bridgeProductionAssets(page);
+  const requests=[];
+  await page.route('**/api/catalog?**',route=>{
+    const params=Object.fromEntries(new URL(route.request().url()).searchParams);
+    requests.push(params);
+    const ongoing=params.status==='RELEASING';
+    const items=Array.from({length:4},(_,i)=>({...rankedMedia((ongoing?500:100)+i),status:ongoing?'RELEASING':'FINISHED',startDate:{year:2000,month:1,day:1},relationTypes:i%2?['PREQUEL']:[]}));
+    return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items,pageInfo:{total:4,currentPage:1,hasNextPage:false}})});
+  });
+  await page.goto(firstVisitUrl('/animes/temporadas'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx-season-card')).toHaveCount(4,{timeout:20000});
+  await expect(page.locator('.nx-season-stats strong').nth(2)).toHaveText('2');
+  await expect(page.locator('[data-nx-still]')).toHaveCount(4,{timeout:20000});
+  expect(requests.every(request=>request.sort==='DISCOVER')).toBe(true);
+  expect(requests.some(request=>request.status==='RELEASING')).toBe(true);
+  await page.locator('.nx-season [data-nx-menu="type"]').click();
+  await page.locator('.nx-popover [data-nx-type="SERIES"]').click();
+  await expect(page.locator('[data-nx-still]')).toHaveCount(4);
+});
+
 test('Temporadas and Notícias share the same five-hub chrome and scroll guide',async({page})=>{
   test.setTimeout(120000);
   await page.emulateMedia({reducedMotion:'reduce'});
@@ -937,6 +1035,16 @@ test('Temporadas and Notícias share the same five-hub chrome and scroll guide',
       await page.goto(pageUrl(item.route),{waitUntil:'domcontentloaded'});
       await expect(page.locator(item.root)).toBeVisible({timeout:30000});
       await expect(page.locator(item.ready).first()).toBeVisible({timeout:30000});
+      if(item.route==='/noticias'){
+        await expect(page.locator('[data-nx35-cats],[data-cat]')).toHaveCount(0);
+        await expect(page.locator('.main-nav [data-nav="news"]')).toHaveAttribute('aria-current','page');
+        const search=page.locator('#nx35NewsHero [data-nx35-news-search]');
+        await expect(search).toBeVisible();
+        await search.fill('zzzz-no-news-match');
+        await expect(page.locator('.nx35-news-empty')).toContainText('Nenhuma notícia encontrada');
+        await search.fill('');
+        await expect(page.locator(item.ready).first()).toBeVisible();
+      }
       await expect(page.locator(item.guide)).toHaveAttribute('aria-hidden','true');
       const top=await page.evaluate(({hero,title,titleGroup})=>{const heroNode=document.querySelector(hero),titleNode=document.querySelector(title),titleBox=document.querySelector(titleGroup).getBoundingClientRect(),heroBox=heroNode.getBoundingClientRect(),style=getComputedStyle(heroNode);return{background:style.backgroundImage,line:parseFloat(style.borderBottomWidth),heroTop:Math.round(heroBox.top),titleSize:parseFloat(getComputedStyle(titleNode).fontSize),titleCenter:titleBox.left+titleBox.width/2,heroCenter:heroBox.left+heroBox.width/2,target:Math.ceil(heroNode.offsetHeight+240)}},{hero:item.hero,title:item.title,titleGroup:item.titleGroup});
       expect(top.background).toContain('linear-gradient');

@@ -21,6 +21,7 @@
         episodes:m.episodes||null,chapters:m.chapters||null,volumes:m.volumes||null,duration:m.duration||null,format:m.format||'',status:m.status||'',season:m.season||'',seasonYear:m.seasonYear||null,countryOfOrigin:m.country||'',source:m.source||'',startDate:m.startDate||null,endDate:m.endDate||null,
         ratingCount:Number(m.ratingCount||0),listCount:Number(m.listCount||0),metricsSource:m.metricsSource==='aninexus'?'aninexus':'',contentProvider:m.contentProvider||'',contentProviderUrl:m.contentProviderUrl||'',
         studios:{nodes:m.studios||[]},nextAiringEpisode:m.nextAiringEpisode||null,trailer:m.trailer||null,
+        relations:{edges:(m.relationTypes||[]).map(relationType=>({relationType}))},
         externalLinks:(m.streaming||m.externalLinks||[]).map(x=>({site:x.site||'',url:x.url||'',type:x.type||'STREAMING',icon:x.icon||'',color:x.color||''}))
       };
     };
@@ -34,11 +35,12 @@
       if(!(home.season||[]).length)throw new Error('AniNexus API returned an incomplete Home');
       return jsonResponse({season:{media:(home.season||[]).map(toGraph)},schedule:{airingSchedules:(home.schedule||[]).slice(0,8).map(x=>({airingAt:x.airingAt,episode:x.episode,media:toGraph(x.media)}))},top:{media:(home.top||[]).map(toGraph)},popular:{media:(home.popular||[]).map(toGraph)},soon:{media:(home.soon||[]).map(toGraph)},reading:{media:(home.reading||[]).map(toGraph)},topReading:{media:(home.topReading||[]).map(toGraph)}});
     };
-    const mapSort=(q,v={})=>['POPULAR','SCORE','TRENDING','NEW','TITLE','FAVOURITES','MATCH'].includes(String(v.nxSort||'').toUpperCase())?String(v.nxSort).toUpperCase():q.includes('SEARCH_MATCH')?'MATCH':q.includes('TITLE_ROMAJI')?'TITLE':q.includes('START_DATE_DESC')?'NEW':'POPULAR';
+    const mapSort=(q,v={})=>['DISCOVER','POPULAR','SCORE','TRENDING','NEW','TITLE','FAVOURITES','MATCH'].includes(String(v.nxSort||'').toUpperCase())?String(v.nxSort).toUpperCase():q.includes('SEARCH_MATCH')?'MATCH':q.includes('TITLE_ROMAJI')?'TITLE':q.includes('START_DATE_DESC')?'NEW':'POPULAR';
     const bridgePage=async(body,signal,type)=>{
       const q=String(body.query||''),v=body.variables||{},params=new URLSearchParams({page:String(v.page||1),perPage:String(v.perPage||24),sort:mapSort(q,v)});
-      for(const k of ['search','genre','format','season','year'])if(v[k]!=null&&v[k]!=='')params.set(k,String(v[k]));
+      for(const k of ['search','genre','format','season','year','status'])if(v[k]!=null&&v[k]!=='')params.set(k,String(v[k]));
       if(q.includes('status:NOT_YET_RELEASED'))params.set('status','NOT_YET_RELEASED');
+      if(q.includes('status:RELEASING'))params.set('status','RELEASING');
       const endpoint=type==='MANGA'?'/api/reading':'/api/catalog',data=await apiJson(`${endpoint}?${params}`,signal);
       if(Number(v.page||1)===1&&!(data.items||[]).length)throw new Error('AniNexus API returned an empty catalog');
       return jsonResponse({Page:{pageInfo:data.pageInfo||{},media:(data.items||[]).map(toGraph)}});

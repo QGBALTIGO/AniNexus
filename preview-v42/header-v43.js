@@ -36,7 +36,8 @@
   function activeKey(path = currentRoute()) {
     if (path === '/' || path.includes('__nx35_home_boot__')) return 'home';
     if (path === '/animes/programacao') return 'schedule';
-    if (path === '/animes/temporadas') return 'season';
+    if (path === '/animes/temporadas' || path.startsWith('/animes/temporadas/')) return 'season';
+    if (path === '/noticias' || path.startsWith('/noticias/')) return 'news';
     if (path === '/mangas' || path === '/meus-mangas' || path.startsWith('/manga/')) return 'manga';
     if (path === '/comunidade' || path.startsWith('/comunidade/')) return 'community';
     if (path === '/animes/catalogo' || path.startsWith('/anime/') || path.startsWith('/animes/')) return 'anime';

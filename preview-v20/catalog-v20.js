@@ -5,7 +5,7 @@
 
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
-  const BUILD = '44.21.0';
+  const BUILD = '44.22.0';
   const ENDPOINT = 'https://graphql.anilist.co';
   const PER_PAGE = 25;
   const MAX_PUBLIC_PAGE = 200;
