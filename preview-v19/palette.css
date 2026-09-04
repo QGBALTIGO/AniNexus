@@ -6,15 +6,6 @@ body:not(.nx-season-active) .btn.primary,body:not(.nx-season-active) .signup-btn
 body:not(.nx-season-active) .btn.primary:hover,body:not(.nx-season-active) .signup-btn:hover{background:linear-gradient(135deg,#c71e43,#fa3b60)!important;box-shadow:0 10px 28px rgba(204,31,70,.27)!important}
 body:not(.nx-season-active) .pill.active,body:not(.nx-season-active) .catalog-tab.active,body:not(.nx-season-active) .news-cats .active{border-color:rgba(232,52,87,.48)!important;background:rgba(227,38,79,.12)!important;color:#fff!important}
 body:not(.nx-season-active) a.section-link,body:not(.nx-season-active) .eyebrow{color:#e94a69!important}
-/* Schedule: red/carmine identity */
-.nx18-schedule{--nx18-accent:#e3264f!important;--nx18-accent2:#ff657e!important;--nx18-panel:#100c11!important}
-.nx18-hero{background:radial-gradient(ellipse 62% 125% at 50% -28%,rgba(227,38,79,.13),transparent 68%),linear-gradient(180deg,#0c080c,#08070a)!important}
-.nx18-hero h1 em{background:linear-gradient(100deg,#ff7890 0%,#ed3156 58%,#c4163d 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
-.nx18-day.active{border-color:rgba(243,67,100,.72)!important;background:linear-gradient(145deg,#e12a50,#a91435)!important;box-shadow:0 7px 20px rgba(198,28,65,.28),0 0 0 1px rgba(255,255,255,.04) inset!important}
-.nx18-pill:hover,.nx18-pill.active{border-color:rgba(232,62,96,.5)!important;background:rgba(227,38,79,.1)!important}.nx18-pill[data-nx18-my].active svg{fill:#ee4566!important;stroke:#ee4566!important}
-.nx18-card:hover{border-color:#55303a!important}.nx18-state{border-color:rgba(227,38,79,.19)!important;background:rgba(227,38,79,.07)!important;color:#df8092!important}.nx18-episode strong{color:rgba(227,38,79,.9)!important}.nx18-episode{color:#e3264f!important}
-.nx18-island{background:radial-gradient(circle at 77% -20%,rgba(227,38,79,.15),transparent 45%),linear-gradient(180deg,rgba(17,9,14,.985),rgba(8,6,9,.97))!important;border-bottom-color:rgba(227,38,79,.18)!important}.nx18-island:after{background:linear-gradient(90deg,transparent,#e3264f,transparent)!important;box-shadow:0 0 14px rgba(227,38,79,.35)!important}.nx18-island-icon{color:#ef526e!important}.nx18-island-copy small{color:#e6657f!important}
-.nx18-provider-modal button.active{border-color:rgba(232,55,91,.48)!important;background:rgba(227,38,79,.13)!important}.nx18-modal-card .apply,.nx18-provider-modal [data-apply]{background:linear-gradient(135deg,#b8183c,#e3264f)!important}
 /* Unified tracker statuses: intentionally different colors */
 [data-nx-unified-status='PLANNING'].active{background:linear-gradient(145deg,#2f7bdc,#1d59a8)!important;border-color:rgba(91,163,255,.55)!important;box-shadow:0 7px 18px rgba(37,111,202,.2)!important}
 [data-nx-unified-status='CURRENT'].active{background:linear-gradient(145deg,#e63052,#b7183b)!important;border-color:rgba(255,93,120,.55)!important;box-shadow:0 7px 18px rgba(204,30,66,.2)!important}

@@ -84,7 +84,7 @@
   }
 
   /* Window capture precedes all document/element legacy handlers. */
-  window.addEventListener('click',e=>{const b=e.target.closest?.(ACTION);if(!b||b.disabled){if(now()<actionGuardUntil&&e.target.closest?.('[data-open-anime],[data-nx18-open],[data-nx21-open],[data-open]'))stop(e);return}actionGuardUntil=now()+460;stop(e);if(b.matches(FAV)){void favoriteAction(b);return}void listAction(b)},true);
+  window.addEventListener('click',e=>{const b=e.target.closest?.(ACTION);if(!b||b.disabled){if(now()<actionGuardUntil&&e.target.closest?.('[data-open-anime],[data-nx18-open],[data-nx21-open],[data-open]'))stop(e);return}actionGuardUntil=now()+460;stop(e);if(b.matches(FAV)){if(e.detail>1)return;void favoriteAction(b);return}void listAction(b)},true);
   window.addEventListener('dblclick',e=>{if(e.target.closest?.(ACTION))stop(e)},true);
   document.addEventListener('keydown',e=>{if(e.key==='Escape')releaseList()},true);
   document.addEventListener('aninexus:media-state-changed',()=>syncBurst());

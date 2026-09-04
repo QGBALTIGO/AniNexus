@@ -5,7 +5,7 @@
 
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
-  const BUILD = '44.19.0';
+  const BUILD = '44.21.0';
   const ENDPOINT = 'https://graphql.anilist.co';
   const PER_PAGE = 25;
   const MAX_PUBLIC_PAGE = 200;
@@ -72,6 +72,7 @@
     right: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>',
     asc: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 17V5m0 0-4 4m4-4 4 4M15 7h5M15 12h4M15 17h3"/></svg>',
     desc: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7v12m0 0-4-4m4 4 4-4M15 7h3M15 12h4M15 17h5"/></svg>',
+    down: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5"/></svg>',
     retry: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5"/><path d="M19 12a7 7 0 1 0-2 5"/></svg>'
   };
 
@@ -79,7 +80,8 @@
   const state = {
     mode: 'ALL', page: 1, search: '', filters: emptyFilters(), draft: emptyFilters(),
     controller: null, token: 0, mounted: false, filtersOpen: false, menuOpen: false, items: new Map(),
-    searchTimer: 0, previousFocus: null, menuFocus: null, revealObserver: null, catalog: null
+    searchTimer: 0, previousFocus: null, menuFocus: null, revealObserver: null, catalog: null,
+    scrollFrame: 0, lastScrollY: 0, scrollDirection: 0, scrollTravel: 0, scrollLockUntil: 0
   };
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   const slug = value => String(value || 'anime').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 90);
@@ -316,6 +318,14 @@
     if (state.mode === 'SEASON') return { title: 'Animes da <em>Temporada</em>', subtitle: 'A temporada atual reunida em um catálogo fácil de acompanhar.' };
     return { title: 'Catálogo de <em>Animes</em>', subtitle: 'Uma seleção relevante do catálogo, dos clássicos aos lançamentos da temporada.' };
   }
+  function sectionCopy() {
+    const reading = currentCatalog().mediaType === 'MANGA';
+    return {
+      title: reading ? 'Catálogo de <em>Mangás</em>' : 'Catálogo de <em>Animes</em>',
+      kicker: reading ? 'CATÁLOGO DE MANGÁS' : 'CATÁLOGO DE ANIMES',
+      icon: reading ? ICON.book : ICON.grid
+    };
+  }
   function tabsMarkup() {
     return currentModes().map(([key, label, icon]) => `<button type="button" class="nx21-tab${state.mode === key ? ' active' : ''}" data-nx21-mode="${key}" aria-pressed="${state.mode === key}"><i>${ICON[icon]}</i><span>${label}</span></button>`).join('');
   }
@@ -323,12 +333,12 @@
     const options = currentModes().map(([key, label, icon]) => `<button type="button" class="nx21-mobile-option${state.mode === key ? ' active' : ''}" data-nx21-mode="${key}" aria-pressed="${state.mode === key}"><i>${ICON[icon]}</i><span>${label}</span></button>`).join('');
     return `<div class="nx21-mobile-menu-layer" role="presentation"><button type="button" class="nx21-mobile-menu-backdrop" data-nx21-menu-close aria-label="Fechar menu do catálogo"></button><section class="nx21-mobile-menu" role="dialog" aria-modal="true" aria-labelledby="nx21MobileMenuTitle" tabindex="-1"><header><h2 id="nx21MobileMenuTitle">Menu</h2><button type="button" data-nx21-menu-close aria-label="Fechar menu do catálogo">${ICON.close}</button></header><div class="nx21-mobile-options">${options}</div></section></div>`;
   }
-  function searchMarkup() {
+  function searchMarkup(id = 'nx21Search') {
     if (state.mode !== 'SEARCH') return '';
     const count = activeFilterCount();
     const reading = currentCatalog().mediaType === 'MANGA';
     const label = reading ? 'Buscar mangás, one-shots ou light novels' : 'Buscar animes';
-    return `<div class="nx21-search-tools"><label class="nx21-search-field">${ICON.search}<span class="sr-only">${label}</span><input id="nx21Search" type="search" autocomplete="off" maxlength="120" placeholder="${label}..." value="${esc(state.search)}"><button type="button" data-nx21-search-clear aria-label="Limpar busca"${state.search ? '' : ' hidden'}>${ICON.close}</button></label><button type="button" class="nx21-open-filters${count ? ' has-filters' : ''}" data-nx21-filters aria-haspopup="dialog">${ICON.filters}<span>Filtros</span>${count ? `<b>${count}</b>` : ''}</button></div>`;
+    return `<div class="nx21-search-tools"><label class="nx21-search-field">${ICON.search}<span class="sr-only">${label}</span><input id="${id}" data-nx21-search type="search" autocomplete="off" maxlength="120" placeholder="${label}..." value="${esc(state.search)}"><button type="button" data-nx21-search-clear aria-label="Limpar busca"${state.search ? '' : ' hidden'}>${ICON.close}</button></label><button type="button" class="nx21-open-filters${count ? ' has-filters' : ''}" data-nx21-filters aria-haspopup="dialog">${ICON.filters}<span>Filtros</span>${count ? `<b>${count}</b>` : ''}</button></div>`;
   }
   function skeletons() {
     return `<div class="nx21-grid nx21-grid-loading">${Array.from({ length: 15 }, () => '<div class="nx21-skeleton"><i></i><span></span><small></small></div>').join('')}</div>`;
@@ -359,7 +369,7 @@
     const favoriteAction = reading ? `data-manga-fav="${media.id}" data-nx-action-kind="compact"` : `data-fav="${media.id}"`;
     const listLabel = reading ? `Adicionar ${esc(title)} à lista de leitura` : `Adicionar ${esc(title)} à lista`;
     state.items.set(Number(media.id), media);
-    return `<article class="nx21-card nx21-reveal${rankMode ? ' nx21-ranked' : ''}" data-nx21-open="${media.id}" data-nx-media="${media.id}" ${openAttributes} tabindex="0" aria-label="Abrir ${esc(title)}"><div class="nx21-poster"><img src="${esc(imageOf(media))}" loading="lazy" decoding="async" alt="${esc(title)}"><div class="nx21-shade"></div>${score ? `<span class="nx21-score">${ICON.star}<b>${score}</b></span>` : ''}<div class="nx21-actions"><button type="button" ${listAction} aria-label="${listLabel}">${ICON.plus}</button><button type="button" ${favoriteAction} aria-label="Favoritar ${esc(title)}">${ICON.heart}</button></div></div>${rankMode ? `<span class="nx21-rank" aria-hidden="true">${rank}</span><small class="nx21-rank-label">${rank}º NO ANINEXUS</small>` : ''}<h3>${esc(title)}</h3></article>`;
+    return `<article class="nx21-card nx21-reveal${rankMode ? ' nx21-ranked' : ''}" data-nx21-open="${media.id}" data-nx-media="${media.id}" ${openAttributes} tabindex="0" aria-label="Abrir ${esc(title)}"><div class="nx21-poster"><img src="${esc(imageOf(media))}" loading="lazy" decoding="async" alt="${esc(title)}"><div class="nx21-shade"></div>${score && !rankMode ? `<span class="nx21-score">${ICON.star}<b>${score}</b></span>` : ''}${rankMode ? `<span class="nx21-rank" aria-hidden="true">${rank}</span>` : ''}<div class="nx21-actions"><button type="button" ${listAction} aria-label="${listLabel}">${ICON.plus}</button><button type="button" ${favoriteAction} aria-label="Favoritar ${esc(title)}">${ICON.heart}</button></div></div><h3>${esc(title)}</h3></article>`;
   }
 
   function paginationMarkup(info) {
@@ -379,26 +389,44 @@
   function renderShell() {
     const catalog = currentCatalog();
     const copy = introCopy();
+    const section = sectionCopy();
     document.documentElement.classList.remove('nx21-catalog-boot');
     document.body.classList.add('nx21-catalog');
-    document.body.classList.toggle('nx42-manga-active', catalog.mediaType === 'MANGA');
+    document.body.classList.toggle('nx21-reading-catalog', catalog.mediaType === 'MANGA');
     document.querySelectorAll('[data-nav]').forEach(link => link.classList.toggle('active', link.dataset.nav === catalog.nav));
-    app.innerHTML = `<main class="nx21-catalog-page${catalog.mediaType === 'MANGA' ? ' nx42-manga-page' : ''}" data-nx21-catalog-kind="${catalog.key}"><header class="nx21-chrome"><div class="shell nx21-intro"><h1 id="nx21IntroTitle">${copy.title}</h1><p id="nx21IntroSubtitle">${esc(copy.subtitle)}</p><div id="nx21SearchTools">${searchMarkup()}</div></div><nav class="nx21-tabbar" aria-label="Seções do catálogo"><div class="shell nx21-tab-row"><button type="button" class="nx21-mobile-menu-trigger" data-nx21-menu aria-label="Abrir menu do catálogo" aria-haspopup="dialog" aria-expanded="false">${ICON.menu}</button><div class="nx21-tabs">${tabsMarkup()}</div></div></nav></header><section class="nx21-body"><div class="shell"><p class="sr-only" id="nx21Count" aria-live="polite"></p><div class="nx21-load-line" aria-hidden="true"><i></i></div><div id="nx21Results" aria-live="polite">${skeletons()}</div><div id="nx21Pagination"></div></div></section></main>`;
+    app.innerHTML = `<main class="nx21-catalog-page${catalog.mediaType === 'MANGA' ? ' nx21-reading-page' : ''}" data-nx21-catalog-kind="${catalog.key}">
+      <header class="nx21-chrome" id="nx21Hero">
+        <div class="shell nx21-intro">
+          <div class="nx21-title"><span class="nx21-title-icon">${section.icon}</span><div class="nx21-title-copy"><h1 id="nx21IntroTitle" data-nx21-title>${copy.title}</h1><small class="nx21-kicker">${section.kicker}</small></div></div>
+          <p data-nx21-subtitle>${esc(copy.subtitle)}</p>
+          <div data-nx21-search-host>${searchMarkup('nx21Search')}</div>
+        </div>
+        <nav class="nx21-tabbar" aria-label="Seções do catálogo"><div class="shell nx21-tab-row"><button type="button" class="nx21-mobile-menu-trigger" data-nx21-menu aria-label="Abrir menu do catálogo" aria-haspopup="dialog" aria-expanded="false">${ICON.menu}</button><div class="nx21-tabs">${tabsMarkup()}</div></div></nav>
+      </header>
+      <section class="nx21-body"><div class="shell"><p class="sr-only" id="nx21Count" aria-live="polite"></p><div class="nx21-load-line" aria-hidden="true"><i></i></div><div id="nx21Results" aria-live="polite">${skeletons()}</div><div id="nx21Pagination"></div></div></section>
+    </main>
+    <section class="nx21-island" id="nx21Island" aria-label="Guia do catálogo" aria-hidden="true" inert>
+      <button type="button" class="nx21-island-head" data-nx21-island-toggle aria-expanded="false"><span class="nx21-island-icon">${section.icon}</span><span class="nx21-island-copy"><strong>${section.title}</strong><small data-nx21-island-sub>${esc(modeLabel())}</small></span><span class="nx21-island-chevron">${ICON.down}</span></button>
+      <div class="nx21-island-panel" aria-hidden="true" inert><div><div class="nx21-island-inner"><nav class="nx21-tabbar" aria-label="Seções do catálogo"><div class="nx21-tab-row"><button type="button" class="nx21-mobile-menu-trigger" data-nx21-menu aria-label="Abrir menu do catálogo" aria-haspopup="dialog" aria-expanded="false">${ICON.menu}</button><div class="nx21-tabs">${tabsMarkup()}</div></div></nav><div data-nx21-search-host>${searchMarkup('nx21IslandSearch')}</div></div></div></div>
+    </section>`;
   }
 
   function updateChrome() {
     const copy = introCopy();
-    const title = document.querySelector('#nx21IntroTitle');
-    const subtitle = document.querySelector('#nx21IntroSubtitle');
-    const tools = document.querySelector('#nx21SearchTools');
-    if (title) title.innerHTML = copy.title;
-    if (subtitle) subtitle.textContent = copy.subtitle;
-    if (tools) tools.innerHTML = searchMarkup();
+    document.querySelectorAll('[data-nx21-title]').forEach(title => { title.innerHTML = copy.title; });
+    document.querySelectorAll('[data-nx21-subtitle]').forEach(subtitle => { subtitle.textContent = copy.subtitle; });
+    document.querySelectorAll('[data-nx21-search-host]').forEach((tools, index) => { tools.innerHTML = searchMarkup(index ? 'nx21IslandSearch' : 'nx21Search'); });
+    const islandSub = document.querySelector('[data-nx21-island-sub]');
+    if (islandSub) islandSub.textContent = modeLabel();
     document.querySelectorAll('[data-nx21-mode]').forEach(button => {
       const active = button.dataset.nx21Mode === state.mode;
       button.classList.toggle('active', active);
       button.setAttribute('aria-pressed', String(active));
-      if (active && button.classList.contains('nx21-tab')) button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      if (active && button.classList.contains('nx21-tab')) requestAnimationFrame(() => {
+        const rail = button.closest('.nx21-tabs');
+        if (!rail) return;
+        rail.scrollTo({ left: Math.max(0, button.offsetLeft - (rail.clientWidth - button.offsetWidth) / 2), behavior: 'smooth' });
+      });
     });
     const modeTitle = document.querySelector('#nx21ModeTitle');
     if (modeTitle) modeTitle.textContent = modeLabel();
@@ -423,7 +451,9 @@
     }, { rootMargin: '80px 0px', threshold: 0.06 });
     cards.forEach((card, index) => {
       card.style.setProperty('--nx21-delay', `${Math.min(index % 5, 4) * 45}ms`);
-      state.revealObserver.observe(card);
+      const box = card.getBoundingClientRect();
+      if (box.bottom >= -80 && box.top <= innerHeight + 80) card.classList.add('visible');
+      else state.revealObserver.observe(card);
     });
   }
 
@@ -518,7 +548,7 @@
     state.menuFocus = document.activeElement;
     document.body.insertAdjacentHTML('beforeend', mobileMenuMarkup());
     document.body.classList.add('nx21-menu-open', 'modal-open');
-    document.querySelector('[data-nx21-menu]')?.setAttribute('aria-expanded', 'true');
+    document.querySelectorAll('[data-nx21-menu]').forEach(button => button.setAttribute('aria-expanded', 'true'));
     requestAnimationFrame(() => document.querySelector('.nx21-mobile-menu')?.focus());
   }
 
@@ -526,7 +556,7 @@
     document.querySelector('.nx21-mobile-menu-layer')?.remove();
     state.menuOpen = false;
     document.body.classList.remove('nx21-menu-open');
-    document.querySelector('[data-nx21-menu]')?.setAttribute('aria-expanded', 'false');
+    document.querySelectorAll('[data-nx21-menu]').forEach(button => button.setAttribute('aria-expanded', 'false'));
     if (!document.querySelector('.nx21-filter-layer,.nx20-media-layer,.search-overlay:not([hidden]),.auth-overlay:not([hidden])')) document.body.classList.remove('modal-open');
     if (restoreFocus && state.menuFocus instanceof HTMLElement && state.menuFocus.isConnected) state.menuFocus.focus();
     state.menuFocus = null;
@@ -554,8 +584,9 @@
     normalizeUrl();
     closeFilters(false);
     updateChrome();
+    scrollCatalogTop();
     load();
-    if (mode === 'SEARCH') requestAnimationFrame(() => document.querySelector('#nx21Search')?.focus());
+    if (mode === 'SEARCH') requestAnimationFrame(() => (document.querySelector('.nx21-island.show [data-nx21-search]') || document.querySelector('[data-nx21-search]'))?.focus());
   }
 
   function openMedia(id) {
@@ -593,13 +624,95 @@
     body.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
   }
 
+  function setIslandState(island, shown, expanded) {
+    if (!island) return;
+    const open = Boolean(shown && expanded);
+    const panel = island.querySelector('.nx21-island-panel');
+    island.classList.toggle('show', Boolean(shown));
+    island.classList.toggle('expanded', open);
+    island.inert = !shown;
+    island.setAttribute('aria-hidden', String(!shown));
+    if (panel) {
+      panel.inert = !open;
+      panel.setAttribute('aria-hidden', String(!open));
+    }
+    island.querySelector('[data-nx21-island-toggle]')?.setAttribute('aria-expanded', String(open));
+  }
+
+  function resetScrollState() {
+    const y = Math.max(0, window.scrollY);
+    const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nx43-header-height')) || 66;
+    const scrolled = (document.querySelector('#nx21Hero')?.getBoundingClientRect().bottom || Infinity) < headerHeight;
+    const island = document.querySelector('#nx21Island');
+    state.lastScrollY = y;
+    state.scrollDirection = 0;
+    state.scrollTravel = 0;
+    state.scrollLockUntil = 0;
+    document.body.classList.toggle('nx21-catalog-scrolled', scrolled);
+    document.body.classList.toggle('nx21-catalog-scroll-up', scrolled);
+    document.body.classList.remove('nx21-catalog-scroll-down');
+    setIslandState(island, scrolled, scrolled);
+  }
+
   function handleScroll() {
-    if (!state.mounted) return;
-    document.body.classList.toggle('nx21-catalog-scrolled', scrollY > 54);
+    if (!state.mounted || state.scrollFrame) return;
+    state.scrollFrame = requestAnimationFrame(() => {
+      state.scrollFrame = 0;
+      const y = Math.max(0, window.scrollY);
+      const delta = y - state.lastScrollY;
+      const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nx43-header-height')) || 66;
+      const scrolled = (document.querySelector('#nx21Hero')?.getBoundingClientRect().bottom || Infinity) < headerHeight;
+      const island = document.querySelector('#nx21Island');
+      document.body.classList.toggle('nx21-catalog-scrolled', scrolled);
+      if (island) {
+        island.classList.toggle('show', scrolled);
+        island.inert = !scrolled;
+        island.setAttribute('aria-hidden', String(!scrolled));
+      }
+      if (!scrolled) {
+        state.lastScrollY = y;
+        state.scrollDirection = 0;
+        state.scrollTravel = 0;
+        document.body.classList.remove('nx21-catalog-scroll-up', 'nx21-catalog-scroll-down');
+        setIslandState(island, false, false);
+        return;
+      }
+      if (Math.abs(delta) < 2) {
+        state.lastScrollY = y;
+        return;
+      }
+      const direction = delta > 0 ? 1 : -1;
+      const visibleDirection = document.body.classList.contains('nx21-catalog-scroll-down') ? 1 : document.body.classList.contains('nx21-catalog-scroll-up') ? -1 : 0;
+      if (visibleDirection && direction !== visibleDirection && performance.now() < state.scrollLockUntil) {
+        state.lastScrollY = y;
+        state.scrollDirection = visibleDirection;
+        state.scrollTravel = 0;
+        return;
+      }
+      if (direction !== state.scrollDirection) {
+        state.scrollDirection = direction;
+        state.scrollTravel = 0;
+      }
+      state.scrollTravel += Math.abs(delta);
+      state.lastScrollY = y;
+      if (state.filtersOpen || state.menuOpen || document.body.classList.contains('modal-open')) return;
+      if (direction > 0 && y > 118 && state.scrollTravel >= 20) {
+        document.body.classList.add('nx21-catalog-scroll-down');
+        document.body.classList.remove('nx21-catalog-scroll-up');
+        setIslandState(island, true, false);
+        state.scrollLockUntil = performance.now() + (matchMedia('(prefers-reduced-motion: reduce)').matches ? 40 : 380);
+      } else if (direction < 0 && state.scrollTravel >= 12) {
+        document.body.classList.add('nx21-catalog-scroll-up');
+        document.body.classList.remove('nx21-catalog-scroll-down');
+        setIslandState(island, true, true);
+        state.scrollLockUntil = performance.now() + (matchMedia('(prefers-reduced-motion: reduce)').matches ? 40 : 380);
+      }
+    });
   }
 
   function handleResize() {
     if (state.menuOpen && !matchMedia('(max-width: 640px)').matches) closeMobileMenu(false);
+    if (state.mounted) resetScrollState();
   }
 
   function applyIncoming(filters = {}) {
@@ -625,11 +738,16 @@
     state.controller = null;
     state.revealObserver?.disconnect();
     state.revealObserver = null;
+    if (state.scrollFrame) cancelAnimationFrame(state.scrollFrame);
+    state.scrollFrame = 0;
+    state.scrollDirection = 0;
+    state.scrollTravel = 0;
+    state.scrollLockUntil = 0;
     state.mounted = false;
     closeFilters(false);
     closeMobileMenu(false);
     document.documentElement.classList.remove('nx21-catalog-boot');
-    document.body.classList.remove('nx21-catalog', 'nx21-catalog-scrolled', 'nx21-search-mode', 'nx42-manga-active');
+    document.body.classList.remove('nx21-catalog', 'nx21-catalog-scrolled', 'nx21-catalog-scroll-up', 'nx21-catalog-scroll-down', 'nx21-search-mode', 'nx21-reading-catalog', 'nx42-manga-active');
   }
 
   function mount() {
@@ -646,9 +764,11 @@
     normalizeUrl();
     state.page = 1;
     state.mounted = true;
+    window.__NX_ROUTE_OWNER__ = 'catalog';
+    window.__NX_DEDICATED_BOOT_PATH__ = catalog.target;
     renderShell();
     updateChrome();
-    handleScroll();
+    resetScrollState();
     load();
   }
 
@@ -677,6 +797,12 @@
     }
     if (event.target.closest('[data-nx21-filter-apply]')) { applyFilters(); return; }
     if (!document.body.classList.contains('nx21-catalog')) return;
+    const islandToggle = event.target.closest('[data-nx21-island-toggle]');
+    if (islandToggle) {
+      const island = islandToggle.closest('.nx21-island');
+      setIslandState(island, true, !island?.classList.contains('expanded'));
+      return;
+    }
     if (event.target.closest('[data-nx21-menu]')) { event.preventDefault(); openMobileMenu(); return; }
     const mode = event.target.closest('[data-nx21-mode]');
     if (mode) { event.preventDefault(); setMode(mode.dataset.nx21Mode); return; }
@@ -687,7 +813,7 @@
       persist();
       updateChrome();
       load();
-      requestAnimationFrame(() => document.querySelector('#nx21Search')?.focus());
+      requestAnimationFrame(() => (document.querySelector('.nx21-island.show [data-nx21-search]') || document.querySelector('[data-nx21-search]'))?.focus());
       return;
     }
     const pageButton = event.target.closest('[data-nx21-page]');
@@ -704,12 +830,12 @@
   }, true);
 
   document.addEventListener('input', event => {
-    if (event.target.id !== 'nx21Search') return;
+    if (!event.target.matches('[data-nx21-search]')) return;
     state.search = event.target.value;
     state.page = 1;
     persist();
-    const clear = event.target.closest('.nx21-search-field')?.querySelector('[data-nx21-search-clear]');
-    if (clear) clear.hidden = !state.search;
+    document.querySelectorAll('[data-nx21-search]').forEach(input => { if (input !== event.target) input.value = state.search; });
+    document.querySelectorAll('[data-nx21-search-clear]').forEach(clear => { clear.hidden = !state.search; });
     clearTimeout(state.searchTimer);
     state.searchTimer = setTimeout(load, 320);
   });

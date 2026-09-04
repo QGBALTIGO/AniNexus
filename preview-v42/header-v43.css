@@ -1,17 +1,25 @@
 /* AniNexus V43: global navigation, scroll state and notification drawer. */
-:root{--nx43-header-height:66px}
+:root{
+  --nx43-header-height:66px;
+  --nx-page-chrome-bg:linear-gradient(180deg,rgba(255,255,255,.018),transparent 43%,rgba(145,125,135,.095)),linear-gradient(112deg,rgba(227,38,79,.075),transparent 36%,rgba(95,45,118,.075) 68%,transparent),linear-gradient(180deg,#0c0810 0%,#08060b 100%);
+  --nx-page-chrome-scrolled:linear-gradient(180deg,rgba(15,10,14,.995),rgba(8,6,9,.99));
+  --nx-page-chrome-overlay:linear-gradient(104deg,transparent 0 16%,rgba(227,38,79,.065) 43%,transparent 69%),linear-gradient(180deg,rgba(255,255,255,.022),transparent 44%,rgba(148,128,137,.085));
+  --nx-page-line:rgba(255,255,255,.075);
+  --nx-page-title-size:31px;
+  --nx-page-subtitle-size:12px
+}
 html{scroll-padding-top:calc(var(--nx43-header-height) + 12px)}
 body.nx43-notifications-open{overflow:hidden}
 
 #topbar{
   height:var(--nx43-header-height)!important;
-  transform:none!important;
+  transform:translateY(0)!important;
   border-bottom:1px solid transparent!important;
   background:#12090e!important;
   box-shadow:none!important;
   backdrop-filter:none!important;
-  will-change:auto!important;
-  transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease,backdrop-filter .2s ease!important
+  will-change:transform!important;
+  transition:transform .3s cubic-bezier(.2,.78,.2,1),background-color .2s ease,border-color .2s ease,box-shadow .2s ease,backdrop-filter .2s ease!important
 }
 #topbar.is-scrolled{
   border-bottom-color:rgba(255,255,255,.075)!important;
@@ -22,21 +30,35 @@ body.nx43-notifications-open{overflow:hidden}
 html.nx35-home-boot #topbar,
 body.nx35-home-active #topbar,
 html.nx21-catalog-boot #topbar,
-body.nx21-catalog #topbar{
+body.nx21-catalog #topbar,
+html.nx18-schedule-boot #topbar,
+body.nx18-schedule-active #topbar,
+body.nx-section-page #topbar,
+html.nx32-news-boot #topbar,
+body.nx35-news-active #topbar{
   position:fixed!important;
   inset:0 0 auto!important;
   width:100%
 }
+body.nx21-catalog.nx21-catalog-scroll-down #topbar{transform:translateY(calc(-1 * var(--nx43-header-height)))!important}
+body.nx-section-page.nx-scroll-down #topbar,
+body.nx35-news-list-active.nx35-news-scroll-down #topbar{transform:translateY(calc(-1 * var(--nx43-header-height)))!important}
 html.nx35-home-boot #topbar:not(.is-scrolled),
 body.nx35-home-active #topbar:not(.is-scrolled),
 html.nx21-catalog-boot #topbar:not(.is-scrolled),
-body.nx21-catalog #topbar:not(.is-scrolled){
+body.nx21-catalog #topbar:not(.is-scrolled),
+html.nx18-schedule-boot #topbar:not(.is-scrolled),
+body.nx18-schedule-active #topbar:not(.is-scrolled),
+body.nx-section-page #topbar:not(.is-scrolled),
+html.nx32-news-boot #topbar:not(.is-scrolled),
+body.nx35-news-active #topbar:not(.is-scrolled){
   border-bottom-color:transparent!important;
   background:transparent!important;
   box-shadow:none!important;
   backdrop-filter:none!important
 }
 body.nx35-home-active .nx35-hero-grid{padding-top:calc(62px + var(--nx43-header-height))}
+body.nx18-schedule-active.nx18-header-hidden #topbar{transform:translateY(calc(-1 * var(--nx43-header-height)))!important}
 @media(min-width:1001px){body.nx35-home-active .nx35-hero-grid{min-height:calc(520px + var(--nx43-header-height))}}
 .nx35-community-avatar>img{width:100%;height:100%;border-radius:inherit;object-fit:cover}
 #topbar .topbar-inner{height:100%!important;min-height:0!important;padding-block:0!important;grid-template-columns:auto minmax(0,1fr) auto;gap:22px!important}
@@ -78,7 +100,7 @@ body.nx35-home-active .nx35-hero-grid{padding-top:calc(62px + var(--nx43-header-
 
 html[data-theme=light] #topbar{border-bottom-color:transparent!important;background:#fffafb!important;color:#2d2027!important;box-shadow:none!important}
 html[data-theme=light] #topbar.is-scrolled{border-bottom-color:rgba(48,27,38,.12)!important;background:rgba(255,250,251,.97)!important;box-shadow:0 8px 26px rgba(65,28,47,.07)!important}
-html[data-theme=light].nx35-home-boot #topbar:not(.is-scrolled),html[data-theme=light] body.nx35-home-active #topbar:not(.is-scrolled),html[data-theme=light].nx21-catalog-boot #topbar:not(.is-scrolled),html[data-theme=light] body.nx21-catalog #topbar:not(.is-scrolled){background:transparent!important}
+html[data-theme=light].nx35-home-boot #topbar:not(.is-scrolled),html[data-theme=light] body.nx35-home-active #topbar:not(.is-scrolled),html[data-theme=light].nx21-catalog-boot #topbar:not(.is-scrolled),html[data-theme=light] body.nx21-catalog #topbar:not(.is-scrolled),html[data-theme=light].nx18-schedule-boot #topbar:not(.is-scrolled),html[data-theme=light] body.nx18-schedule-active #topbar:not(.is-scrolled),html[data-theme=light] body.nx-section-page #topbar:not(.is-scrolled),html[data-theme=light].nx32-news-boot #topbar:not(.is-scrolled),html[data-theme=light] body.nx35-news-active #topbar:not(.is-scrolled){background:transparent!important}
 html[data-theme=light] #topbar :where(.brand,.main-nav>a,.icon-button,.menu-btn){color:#665a60!important}
 html[data-theme=light] #topbar .main-nav>a:hover,html[data-theme=light] #topbar .main-nav>a.active{color:#2e2027!important}
 html[data-theme=light] #topbar .main-nav>a.active [data-icon]{color:#d92d51!important}
@@ -140,7 +162,7 @@ html[data-theme=light] .nx43-notification-sheet>footer a{color:#4f3f47}
   #topbar .nx43-notification-trigger{display:none!important}
 }
 @media(max-width:720px){
-  :root{--nx43-header-height:58px}
+  :root{--nx43-header-height:58px;--nx-page-title-size:26px;--nx-page-subtitle-size:10.5px}
   #topbar .topbar-inner{width:calc(100% - 24px)!important;padding-inline:0!important;gap:8px!important}
   #topbar .brand img{width:36px!important;height:36px!important}
   #topbar .brand span{font-size:18px!important}

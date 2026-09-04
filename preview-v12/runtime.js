@@ -14,7 +14,7 @@
     right:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>'
   };
 
-  const onSeason=()=>MOBILE.matches&&body.classList.contains('nx-season-active')&&!!document.querySelector('.nx-season-title');
+  const onSeason=()=>body.classList.contains('nx-season-active')&&!!document.querySelector('.nx-season-title');
   const key=()=>document.querySelector('.nx-season')?.dataset.season||'SUMMER';
   function titleData(){const h=document.querySelector('.nx-season-title h1');if(!h)return{label:'Temporada',year:''};const year=h.querySelector('em')?.textContent?.trim()||'';const c=h.cloneNode(true);c.querySelector('em')?.remove();return{label:c.textContent.trim(),year}}
   const icon=()=>document.querySelector('.nx-season-icon')?.innerHTML||'';
@@ -25,15 +25,22 @@
 
   function makeBar(){
     if(bar||!onSeason())return;
-    bar=document.createElement('section');bar.className='nx-v10-seasonbar';bar.setAttribute('aria-label','Controles da temporada');bar.innerHTML=markup();body.append(bar);
+    bar=document.createElement('section');bar.className='nx-v10-seasonbar';bar.setAttribute('aria-label','Controles da temporada');bar.setAttribute('aria-hidden','true');bar.inert=true;bar.innerHTML=markup();body.append(bar);
     bar.addEventListener('click',e=>{
       const toggle=e.target.closest('[data-v12-toggle]');
-      if(toggle){const expanded=bar.classList.toggle('expanded');toggle.setAttribute('aria-expanded',String(expanded));return}
+      if(toggle){setBarState(true,!bar.classList.contains('expanded'));return}
       const season=e.target.closest('[data-v12-season]');
       if(season){document.querySelector(`[data-nx-season="${season.dataset.v12Season}"]`)?.click();return}
       const m=e.target.closest('[data-v12-menu]');
       if(m){e.preventDefault();e.stopPropagation();bar.classList.add('expanded');bar.querySelector('[data-v12-toggle]')?.setAttribute('aria-expanded','true');activeAnchor={kind:m.dataset.v12Menu,el:m};const original=document.querySelector(`.nx-season-controls [data-nx-menu="${m.dataset.v12Menu}"]`);original?.click();setTimeout(positionCurrentPopover,0);setTimeout(positionCurrentPopover,32)}
     });
+  }
+
+  function setBarState(show,expanded){
+    if(!bar)return;const open=Boolean(show&&expanded),controls=bar.querySelector('.nx-v10-seasonbar__controls');
+    bar.classList.toggle('show',Boolean(show));bar.classList.toggle('expanded',open);bar.inert=!show;bar.setAttribute('aria-hidden',String(!show));
+    if(controls){controls.inert=!open;controls.setAttribute('aria-hidden',String(!open))}
+    bar.querySelector('[data-v12-toggle]')?.setAttribute('aria-expanded',String(open));
   }
 
   function syncBar(){
@@ -49,10 +56,12 @@
   function updateScroll(){
     scrollRaf=0;const y=Math.max(0,scrollY);if(!bar||!onSeason()){lastY=y;return}
     const controls=document.querySelector('.nx-season-controls');if(!controls){lastY=y;return}
-    const show=controls.getBoundingClientRect().bottom<54;bar.classList.toggle('show',show);
-    if(!show){bar.classList.remove('expanded');bar.querySelector('[data-v12-toggle]')?.setAttribute('aria-expanded','false');lastY=y;return}
+    const headerHeight=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nx43-header-height'))||66;
+    const show=controls.getBoundingClientRect().bottom<headerHeight;
+    if(!show){setBarState(false,false);lastY=y;return}
+    if(!bar.classList.contains('show'))setBarState(true,false);
     if(document.querySelector('.nx-popover-layer')){positionCurrentPopover();lastY=y;return}
-    const d=y-lastY;if(d>12){bar.classList.remove('expanded');bar.querySelector('[data-v12-toggle]')?.setAttribute('aria-expanded','false')}else if(d<-12){bar.classList.add('expanded');bar.querySelector('[data-v12-toggle]')?.setAttribute('aria-expanded','true')}lastY=y;
+    const d=y-lastY;if(d>12)setBarState(true,false);else if(d<-12)setBarState(true,true);lastY=y;
   }
   const scheduleScroll=()=>{if(!scrollRaf)scrollRaf=requestAnimationFrame(updateScroll)};
 

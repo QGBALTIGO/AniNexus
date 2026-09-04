@@ -10,12 +10,19 @@
   let query = '';
   let rendering = false;
   let scrollHandler = null;
+  let scrollFrame = 0;
+  let lastScrollY = 0;
+  let scrollDirection = 0;
+  let scrollTravel = 0;
+  let scrollLockUntil = 0;
   const I = {
     arrow: '<svg viewBox="0 0 24 24"><path d="M5 12h13M14 7.5 18.5 12 14 16.5"/></svg>',
     back: '<svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>',
     clock: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
     search: '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.7"/><path d="m16 16 4 4"/></svg>',
     copy: '<svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>',
+    news: '<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>',
+    down: '<svg viewBox="0 0 24 24"><path d="m7 9 5 5 5-5"/></svg>',
   };
   const CATEGORY_DEFS = [['SEASON', 'Animes'], ['MANGA', 'Mangás & novels'], ['TRAILER', 'Trailers'], ['EPISODE', 'Episódios'], ['TRENDING', 'Em alta'], ['OTHER', 'Notícias']];
 
@@ -26,24 +33,48 @@
   }
 
   function renderCategories() {
-    const root = app.querySelector('#nx35NewsCats');
-    if (!root) return;
+    const roots = [...app.querySelectorAll('[data-nx35-cats]')];
+    if (!roots.length) return;
     const categories = liveCategories();
     if (active !== 'ALL' && !categories.some(([key]) => key === active)) active = 'ALL';
-    root.innerHTML = categories.map(([key, label, count]) => `<button class="${key === active ? 'active' : ''}" data-cat="${key}">${esc(label)}<sup>${count}</sup></button>`).join('');
-    root.querySelectorAll('[data-cat]').forEach(button => {
-      button.onclick = () => {
-        active = button.dataset.cat;
-        root.querySelectorAll('[data-cat]').forEach(item => item.classList.toggle('active', item === button));
-        renderResults();
-      };
+    const markup = categories.map(([key, label, count]) => `<button class="${key === active ? 'active' : ''}" data-cat="${key}">${esc(label)}<sup>${count}</sup></button>`).join('');
+    roots.forEach(root => {
+      root.innerHTML = markup;
+      root.querySelectorAll('[data-cat]').forEach(button => {
+        button.onclick = () => {
+          active = button.dataset.cat;
+          renderCategories();
+          renderResults();
+        };
+      });
     });
+    const selected = categories.find(([key]) => key === active) || categories[0];
+    const context = app.querySelector('[data-nx35-island-context]');
+    if (context && selected) context.textContent = `${selected[1]} · ${selected[2]} ${selected[2] === 1 ? 'matéria' : 'matérias'}`;
   }
 
-  function activate() {
+  function clearScrollBinding() {
+    if (scrollHandler) removeEventListener('scroll', scrollHandler);
+    if (scrollFrame) cancelAnimationFrame(scrollFrame);
+    scrollHandler = null;
+    scrollFrame = 0;
+    scrollDirection = 0;
+    scrollTravel = 0;
+    scrollLockUntil = 0;
+    document.body.classList.remove('nx35-news-list-active', 'nx35-news-scrolled', 'nx35-news-scroll-down', 'nx35-news-scroll-up');
+  }
+
+  function activate(list = false) {
+    clearScrollBinding();
     document.body.classList.remove('aqx-home-active', 'nx35-home-active', 'nx34-home', 'nx33-home', 'nx34-news-active', 'nx32-news-active', 'nx22-news-active', 'nx22-detail-active', 'nx-season-active');
     document.body.classList.add('nx35-news-active');
+    document.body.classList.toggle('nx35-news-list-active', list);
     document.querySelectorAll('[data-nav]').forEach(link => link.classList.toggle('active', link.dataset.nav === 'news'));
+  }
+
+  function deactivate() {
+    clearScrollBinding();
+    document.body.classList.remove('nx35-news-active');
   }
 
   function media(item, hero = false) {
@@ -80,15 +111,110 @@
     bindImageFallbacks(root);
   }
 
-  function listShell() {
-    activate();
-    document.title = 'Notícias | AniNexus';
-    app.innerHTML = `<main class="nx35-news-page"><section class="nx35-news-hero"><div class="nx35-shell"><div class="nx35-news-brand"><img src="${BASE}/assets/logo.png" alt=""><div><small>ANINEXUS NOTÍCIAS</small><strong>Anime e mangá em português</strong></div></div><div class="nx35-news-hero-copy"><h1>Notícias para quem<br><em>vive esse universo.</em></h1><p>Estreias, trailers, temporadas e bastidores em português, com texto, imagens e elementos mantidos na ordem em que foram publicados.</p></div></div></section><section class="nx35-news-toolbar"><div class="nx35-shell"><div class="nx35-news-cats" id="nx35NewsCats"><button class="active" data-cat="ALL">Tudo</button></div><label>${I.search}<input id="nx35NewsSearch" type="search" placeholder="Buscar assunto, anime ou mangá…" value="${esc(query)}"></label></div></section><section class="nx35-news-body"><div class="nx35-shell"><header class="nx35-news-title"><div><small>ÚLTIMAS NOTÍCIAS</small><h2>O que está acontecendo agora</h2></div><span id="nx35NewsCount">Carregando…</span></header><div id="nx35NewsResults"><div class="nx35-news-loading"></div></div></div></section></main>`;
-    const search = app.querySelector('#nx35NewsSearch');
-    if (search) search.oninput = () => {
-      query = search.value;
-      renderResults();
+  function controlsMarkup(id) {
+    return `<div class="nx35-news-controls"><div class="nx35-news-cats" data-nx35-cats><button class="active" data-cat="ALL">Tudo</button></div><label>${I.search}<span class="sr-only">Buscar notícias</span><input id="${id}" data-nx35-news-search type="search" placeholder="Buscar assunto, anime ou mangá..." value="${esc(query)}"></label></div>`;
+  }
+
+  function bindSearches() {
+    app.querySelectorAll('[data-nx35-news-search]').forEach(search => {
+      search.oninput = () => {
+        query = search.value;
+        app.querySelectorAll('[data-nx35-news-search]').forEach(peer => { if (peer !== search) peer.value = query; });
+        renderResults();
+      };
+    });
+  }
+
+  function bindListChrome() {
+    const hero = app.querySelector('#nx35NewsHero');
+    const island = app.querySelector('#nx35NewsIsland');
+    if (!hero || !island) return;
+    const toggle = island.querySelector('[data-nx35-island-toggle]');
+    const setIslandState = (shown, expanded) => {
+      const open = Boolean(shown && expanded);
+      const panel = island.querySelector('.nx35-news-island-panel');
+      island.classList.toggle('show', Boolean(shown));
+      island.classList.toggle('expanded', open);
+      island.inert = !shown;
+      island.setAttribute('aria-hidden', String(!shown));
+      if (panel) {
+        panel.inert = !open;
+        panel.setAttribute('aria-hidden', String(!open));
+      }
+      toggle.setAttribute('aria-expanded', String(open));
     };
+    toggle.onclick = () => {
+      setIslandState(true, !island.classList.contains('expanded'));
+    };
+    lastScrollY = Math.max(0, scrollY);
+    const update = () => {
+      scrollFrame = 0;
+      const y = Math.max(0, scrollY);
+      const delta = y - lastScrollY;
+      const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nx43-header-height')) || 66;
+      const shown = hero.getBoundingClientRect().bottom < headerHeight;
+      document.body.classList.toggle('nx35-news-scrolled', shown);
+      island.classList.toggle('show', shown);
+      island.inert = !shown;
+      island.setAttribute('aria-hidden', String(!shown));
+      if (!shown) {
+        document.body.classList.remove('nx35-news-scroll-down', 'nx35-news-scroll-up');
+        setIslandState(false, false);
+        lastScrollY = y;
+        scrollDirection = 0;
+        scrollTravel = 0;
+        return;
+      }
+      if (Math.abs(delta) < 2) { lastScrollY = y; return; }
+      const direction = delta > 0 ? 1 : -1;
+      const visibleDirection = document.body.classList.contains('nx35-news-scroll-down') ? 1 : document.body.classList.contains('nx35-news-scroll-up') ? -1 : 0;
+      if (visibleDirection && direction !== visibleDirection && performance.now() < scrollLockUntil) {
+        lastScrollY = y;
+        scrollDirection = visibleDirection;
+        scrollTravel = 0;
+        return;
+      }
+      if (direction !== scrollDirection) {
+        scrollDirection = direction;
+        scrollTravel = 0;
+      }
+      scrollTravel += Math.abs(delta);
+      lastScrollY = y;
+      if (direction > 0 && y > 118 && scrollTravel >= 20) {
+        document.body.classList.add('nx35-news-scroll-down');
+        document.body.classList.remove('nx35-news-scroll-up');
+        setIslandState(true, false);
+        scrollLockUntil = performance.now() + (matchMedia('(prefers-reduced-motion: reduce)').matches ? 40 : 380);
+      } else if (direction < 0 && scrollTravel >= 12) {
+        document.body.classList.add('nx35-news-scroll-up');
+        document.body.classList.remove('nx35-news-scroll-down');
+        setIslandState(true, true);
+        scrollLockUntil = performance.now() + (matchMedia('(prefers-reduced-motion: reduce)').matches ? 40 : 380);
+      }
+    };
+    scrollHandler = () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(update); };
+    addEventListener('scroll', scrollHandler, { passive: true });
+    setIslandState(false, false);
+    update();
+  }
+
+  function listShell() {
+    activate(true);
+    document.title = 'Notícias | AniNexus';
+    app.innerHTML = `<main class="nx35-news-page">
+      <section class="nx35-news-hero" id="nx35NewsHero"><div class="nx35-shell">
+        <div class="nx35-news-heading"><span class="nx35-news-heading-icon">${I.news}</span><div><h1><em>Notícias</em> AniNexus</h1><small>ANIME E MANGÁ EM PORTUGUÊS</small></div></div>
+        <p>Estreias, trailers, temporadas e bastidores reunidos para quem vive esse universo.</p>
+        ${controlsMarkup('nx35NewsSearch')}
+      </div></section>
+      <section class="nx35-news-body"><div class="nx35-shell"><header class="nx35-news-title"><div><small>ÚLTIMAS NOTÍCIAS</small><h2>O que está acontecendo agora</h2></div><span id="nx35NewsCount">Carregando...</span></header><div id="nx35NewsResults"><div class="nx35-news-loading"></div></div></div></section>
+    </main>
+    <section class="nx35-news-island" id="nx35NewsIsland" aria-label="Guia de notícias" aria-hidden="true" inert>
+      <button type="button" class="nx35-news-island-head" data-nx35-island-toggle aria-expanded="false"><span class="nx35-news-island-icon">${I.news}</span><span class="nx35-news-island-copy"><strong><em>Notícias</em> AniNexus</strong><small data-nx35-island-context>Notícias recentes</small></span><span class="nx35-news-island-chevron">${I.down}</span></button>
+      <div class="nx35-news-island-panel" aria-hidden="true" inert><div><div class="nx35-news-island-inner">${controlsMarkup('nx35NewsIslandSearch')}</div></div></div>
+    </section>`;
+    bindSearches();
+    bindListChrome();
   }
 
   function inline(runs, fallback = '') {
@@ -143,7 +269,7 @@
   }
 
   function bindProgress() {
-    if (scrollHandler) removeEventListener('scroll', scrollHandler);
+    clearScrollBinding();
     scrollHandler = () => {
       const bar = document.querySelector('#nx35Progress');
       if (!bar) return;
@@ -155,7 +281,7 @@
   }
 
   function article(item) {
-    activate();
+    activate(false);
     markRead(item.slug);
     document.title = `${item.title} | AniNexus`;
     const fidelity = ['full', 'excerpt'].includes(item.contentMode) && item.sourceContent?.length;
@@ -179,7 +305,8 @@
   }
 
   async function render() {
-    if (!owns() || rendering) return false;
+    if (!owns()) { deactivate(); return false; }
+    if (rendering) return false;
     rendering = true;
     try {
       const path = route();
@@ -197,7 +324,7 @@
       if (!D.feed.length) await loadFeed();
       const item = await loadArticle(slug);
       if (!item) {
-        activate();
+        activate(false);
         app.innerHTML = `<main class="nx35-news-page"><div class="nx35-shell nx35-news-empty full"><h1>Matéria indisponível.</h1><p>Ela pode ter expirado do feed recente ou ainda estar sendo processada.</p><button data-back>Voltar às notícias</button></div></main>`;
         app.querySelector('[data-back]')?.addEventListener('click', () => go('/noticias'));
         dispatchEvent(new CustomEvent('aninexus:news-v32-ready'));

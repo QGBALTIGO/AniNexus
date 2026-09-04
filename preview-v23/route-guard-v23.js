@@ -3,7 +3,7 @@
   try {
     const IS_PAGES=location.hostname.endsWith('github.io');
     const BASE=IS_PAGES?'/AniNexus':'';
-    const BUILD='44.19.0';
+    const BUILD='44.21.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=restored?restored.split('?')[0]:u.pathname;
@@ -12,7 +12,8 @@
 
     const routes=[
       {owner:'home',match:path==='/',selector:'.nx35-home',label:'Carregando início…'},
-      {owner:'catalog',match:path==='/animes/catalogo',selector:'.nx21-catalog-page',label:'Carregando catálogo…'},
+      {owner:'catalog',match:path==='/animes/catalogo',selector:'.nx21-catalog-page[data-nx21-catalog-kind="anime"]',label:'Carregando catálogo…'},
+      {owner:'catalog',match:path==='/mangas',selector:'.nx21-catalog-page[data-nx21-catalog-kind="manga"]',label:'Carregando mangás…'},
       {owner:'schedule',match:path==='/animes/programacao',selector:'.nx18-schedule',label:'Carregando programação…'},
       {owner:'season',match:/^\/animes\/temporadas(?:\/\d{4}\/(?:inverno|primavera|verao|outono))?$/.test(path),selector:'.nx-season',label:'Carregando temporada…'},
       {owner:'detail',match:/^\/anime\/.+-\d+$/.test(path),selector:'.nx22-detail',label:'Carregando anime…'},
@@ -22,7 +23,7 @@
       {owner:'auth',match:['/login','/criar-conta','/minha-conta'].includes(path),selector:'.nx38-auth-page,.nx38-account-page',label:'Carregando conta…'},
       {owner:'admin',match:path==='/admin',selector:'.nx38-admin-page',label:'Carregando administração…'},
       {owner:'library',match:path==='/meus-animes',selector:'.nx38-library',label:'Carregando biblioteca…'},
-      {owner:'manga',match:path==='/mangas'||path==='/meus-mangas',selector:'.nx42-manga-page',label:'Carregando mangás…'},
+      {owner:'manga',match:path==='/meus-mangas',selector:'.nx42-manga-page',label:'Carregando mangás…'},
       {owner:'legal',match:['/termos-de-uso','/politica-de-privacidade','/dmca'].includes(path),selector:'.nx-legal',label:'Carregando documento…'},
       {owner:'institutional',match:['/quem-somos','/colabore','/contato'].includes(path),selector:'.nx-inst',label:'Carregando página…'}
     ];
@@ -33,7 +34,8 @@
     const html=document.documentElement;
     const bootClass='nx-dedicated-route-boot';
     html.classList.add(bootClass);
-    if(route.owner==='catalog'||(route.owner==='manga'&&path==='/mangas'))html.classList.add('nx21-catalog-boot');
+    if(route.owner==='catalog')html.classList.add('nx21-catalog-boot');
+    if(route.owner==='schedule')html.classList.add('nx18-schedule-boot');
     window.__NX_ROUTE_OWNER__=route.owner;
     window.__NX_DEDICATED_BOOT_PATH__=path;
     if(isDetail){window.__NX_USE_V22_DETAIL__=true;window.__NX_DETAIL_ROLLBACK_PATH__=path}
@@ -46,13 +48,13 @@
     if(isDetail&&!document.querySelector('link[data-nx22-detail-css]')){const l=document.createElement('link');l.rel='stylesheet';l.href=`${BASE}/preview-v22/detail-v22.css?v=${BUILD}`;l.dataset.nx22DetailCss='1';document.head.append(l)}
 
     const boot=()=>{
-      const app=document.querySelector('#app');if(!app){html.classList.remove(bootClass,'nx21-catalog-boot');style.remove();return}
+      const app=document.querySelector('#app');if(!app){html.classList.remove(bootClass,'nx21-catalog-boot','nx18-schedule-boot');style.remove();return}
       let timer=0;
-      const finish=()=>{if(!app.querySelector(route.selector))return false;html.classList.remove(bootClass);style.remove();if(timer)clearTimeout(timer);dispatchEvent(new CustomEvent('aninexus:route-ready',{detail:{owner:route.owner,path}}));return true};
+      const finish=()=>{if(!app.querySelector(route.selector))return false;html.classList.remove(bootClass,'nx21-catalog-boot','nx18-schedule-boot');style.remove();if(timer)clearTimeout(timer);dispatchEvent(new CustomEvent('aninexus:route-ready',{detail:{owner:route.owner,path}}));return true};
       const mo=new MutationObserver(()=>{if(finish())mo.disconnect()});mo.observe(app,{childList:true,subtree:true});
       if(isDetail&&!document.querySelector('script[data-nx22-detail-runtime]')){const s=document.createElement('script');s.src=`${BASE}/preview-v22/detail-v22.js?v=${BUILD}`;s.async=false;s.dataset.nx22DetailRuntime='1';s.addEventListener('load',finish,{once:true});document.body.append(s)}
-      finish();timer=setTimeout(()=>{mo.disconnect();if(!finish()&&!app.firstElementChild)app.innerHTML='<main class="nx-route-fail" style="min-height:65vh;display:grid;place-items:center;padding:28px;text-align:center"><div><img src="'+BASE+'/assets/logo.png" alt="" style="width:64px;height:64px"><h1 style="font:800 24px Manrope,sans-serif">Esta página demorou para responder</h1><p style="color:#9c9095">Tente atualizar. Seus dados neste aparelho foram preservados.</p></div></main>';html.classList.remove(bootClass,'nx21-catalog-boot');style.remove()},10000);
+      finish();timer=setTimeout(()=>{mo.disconnect();if(!finish()&&!app.firstElementChild)app.innerHTML='<main class="nx-route-fail" style="min-height:65vh;display:grid;place-items:center;padding:28px;text-align:center"><div><img src="'+BASE+'/assets/logo.png" alt="" style="width:64px;height:64px"><h1 style="font:800 24px Manrope,sans-serif">Esta página demorou para responder</h1><p style="color:#9c9095">Tente atualizar. Seus dados neste aparelho foram preservados.</p></div></main>';html.classList.remove(bootClass,'nx21-catalog-boot','nx18-schedule-boot');style.remove()},10000);
     };
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
-  } catch {document.documentElement.classList.remove('nx-dedicated-route-boot','nx21-catalog-boot','nx22-detail-boot','nx22-news-boot')}
+  } catch {document.documentElement.classList.remove('nx-dedicated-route-boot','nx21-catalog-boot','nx18-schedule-boot','nx22-detail-boot','nx22-news-boot')}
 })();

@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.19.0&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.21.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -59,7 +59,7 @@ test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-04-v44.19.0')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-04-v44.21.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -104,6 +104,7 @@ test('achievement page renders all 40 milestones and persists pins titles and pr
 });
 
 test('Home awards rotates all 32 winners with responsive art and no imported community metrics',async({page})=>{
+  test.setTimeout(90000);
   await page.setViewportSize({width:1440,height:900});
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
   const awards=page.locator('#nx35Awards.nx46-home-awards');
@@ -388,7 +389,7 @@ test('header navigation preserves the same playing audio node',async({page})=>{
   await page.getByRole('button',{name:'Ouvir rádio'}).click();
   await expect(page.locator('.nx44-radio--inline')).toHaveAttribute('data-state','playing');
   await page.evaluate(()=>window.__nxOriginalAudio=document.querySelector('#nx44RadioAudio'));
-  const destinations=[['anime','.nx21-catalog-page'],['manga','.nx42-manga-page'],['season','.nx-season'],['schedule','.nx18-schedule'],['news','.nx35-news-page'],['home','.nx35-home']];
+  const destinations=[['anime','.nx21-catalog-page'],['manga','.nx21-reading-page'],['season','.nx-season'],['schedule','.nx18-schedule'],['news','.nx35-news-page'],['home','.nx35-home']];
   for(const[key,selector]of destinations){
     await page.locator(`.main-nav [data-nav="${key}"]`).click();
     await expect(page.locator(selector)).toBeVisible({timeout:30000});
@@ -655,7 +656,7 @@ test('manga catalog mirrors the complete anime experience with reading-specific 
   await page.route('**/api/me/manga-library',route=>route.fulfill({status:200,contentType:'application/json',body:'{"mangaList":[],"favorites":[]}'}));
   await page.setViewportSize({width:390,height:844});
   await page.goto(pageUrl('/mangas'),{waitUntil:'domcontentloaded'});
-  const catalog=page.locator('.nx21-catalog-page.nx42-manga-page');
+  const catalog=page.locator('.nx21-catalog-page.nx21-reading-page');
   await expect(catalog).toBeVisible({timeout:30000});
   await expect(page.getByRole('heading',{name:'Catálogo de Mangás'})).toBeVisible();
   await expect(page.locator('.nx21-card')).toHaveCount(25);
@@ -663,6 +664,27 @@ test('manga catalog mirrors the complete anime experience with reading-specific 
   await expect(page.locator('.nx21-card').first().locator('[data-manga-list],[data-manga-fav]')).toHaveCount(2);
   await expect.poll(()=>requests.at(-1)?.sort).toBe('DISCOVER');
   expect(requests.at(-1)?.discover).toBe('300');
+
+  await page.evaluate(()=>{
+    window.__mangaActionRequests=[];
+    window.AniNexusAuth={enabled:true,api:async(path,options={})=>{
+      const method=String(options.method||'GET').toUpperCase();
+      window.__mangaActionRequests.push({path,method,body:options.body||null});
+      return method==='GET'?{items:[]}:{ok:true};
+    }};
+    dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:{id:'manga-reader'}}}));
+  });
+  await expect.poll(()=>page.evaluate(()=>window.__mangaActionRequests.filter(request=>request.method==='GET').length)).toBeGreaterThanOrEqual(2);
+  const favorite=page.locator('.nx21-card').first().locator('[data-manga-fav]');
+  const catalogUrl=page.url();
+  await expect(favorite).toBeEnabled();
+  await favorite.click();
+  await expect(favorite).toHaveAttribute('aria-pressed','true');
+  expect(page.url()).toBe(catalogUrl);
+  await expect.poll(()=>page.evaluate(()=>window.__mangaActionRequests.find(request=>request.method==='PUT'))).toMatchObject({method:'PUT'});
+  const favoriteWrite=await page.evaluate(()=>window.__mangaActionRequests.find(request=>request.method==='PUT'));
+  expect(favoriteWrite.path).toMatch(/^\/api\/me\/favorites\/\d+$/);
+  expect(JSON.parse(favoriteWrite.body)).toEqual({mediaType:'MANGA'});
 
   const menuTrigger=page.getByRole('button',{name:'Abrir menu do catálogo'});
   await menuTrigger.click();
@@ -679,6 +701,9 @@ test('manga catalog mirrors the complete anime experience with reading-specific 
   await expect(page.getByRole('heading',{name:'Top 100 Mangás'})).toBeVisible();
   await expect(page.locator('.nx21-card')).toHaveCount(100,{timeout:30000});
   await expect(page.locator('.nx21-rank')).toHaveCount(100);
+  await expect(page.locator('.nx21-score,.nx21-rank-label')).toHaveCount(0);
+  const mangaRanks=await page.locator('.nx21-card').evaluateAll(cards=>[cards[0],cards.at(-1)].map(card=>{const poster=card.querySelector('.nx21-poster').getBoundingClientRect(),rank=card.querySelector('.nx21-rank').getBoundingClientRect(),actions=card.querySelector('.nx21-actions').getBoundingClientRect();return{inside:rank.left>=poster.left&&rank.top>=poster.top&&rank.right<=poster.right&&rank.bottom<=poster.bottom,clearOfActions:rank.right<actions.left}}));
+  expect(mangaRanks.every(rank=>rank.inside&&rank.clearOfActions)).toBe(true);
   expect(requests.filter(request=>request.sort==='SCORE').map(request=>request.page).sort()).toEqual(['1','2','3','4']);
 
   await menuTrigger.click();
@@ -699,10 +724,30 @@ test('manga catalog mirrors the complete anime experience with reading-specific 
   await expect(filters.getByRole('button',{name:'Light novel',exact:true})).toBeVisible();
   await expect(filters.getByText('Temporada',{exact:true})).toHaveCount(0);
   await filters.getByRole('button',{name:'Fechar filtros'}).click();
-  const expandedHeight=(await page.locator('.nx21-intro').boundingBox())?.height||0;
   await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';scrollTo({top:500,behavior:'instant'});dispatchEvent(new Event('scroll'))});
   await expect(page.locator('body')).toHaveClass(/nx21-catalog-scrolled/);
-  await expect.poll(async()=>(await page.locator('.nx21-intro').boundingBox())?.height||0).toBeLessThan(expandedHeight);
+  await expect(page.locator('body')).toHaveClass(/nx21-catalog-scroll-down/);
+  await expect(page.locator('#nx21Island')).toHaveClass(/show/);
+  await expect(page.locator('#nx21Island')).not.toHaveClass(/expanded/);
+  const compactIsland=await page.locator('#nx21Island').evaluate(element=>({top:Math.round(element.getBoundingClientRect().top),head:Math.round(element.querySelector('.nx21-island-head').getBoundingClientRect().height),panelHidden:element.querySelector('.nx21-island-panel').getAttribute('aria-hidden')}));
+  expect(compactIsland).toEqual({top:0,head:44,panelHidden:'true'});
+  await expect.poll(()=>page.locator('#topbar').evaluate(element=>new DOMMatrixReadOnly(getComputedStyle(element).transform).m42)).toBeLessThan(-40);
+  await page.waitForTimeout(420);
+  await page.evaluate(()=>{scrollTo({top:Math.max(90,scrollY-120),behavior:'instant'});dispatchEvent(new Event('scroll'))});
+  await expect(page.locator('body')).toHaveClass(/nx21-catalog-scroll-up/);
+  await expect(page.locator('#nx21Island')).toHaveClass(/expanded/);
+  await expect(page.locator('#nx21IslandSearch')).toBeVisible();
+  const expandedIsland=await page.locator('#nx21Island').evaluate(element=>({top:Math.round(element.getBoundingClientRect().top),head:Math.round(element.querySelector('.nx21-island-head').getBoundingClientRect().height),panelHidden:element.querySelector('.nx21-island-panel').getAttribute('aria-hidden')}));
+  expect(expandedIsland).toEqual({top:58,head:54,panelHidden:'false'});
+
+  await page.evaluate(()=>{history.pushState({},'', '/animes/catalogo');dispatchEvent(new PopStateEvent('popstate'))});
+  await expect(page.locator('.nx21-catalog-page[data-nx21-catalog-kind="anime"]')).toBeVisible();
+  await page.goBack();
+  await expect(catalog).toBeVisible();
+  await expect(page.locator('.nx42-manga-page,.catalog-head')).toHaveCount(0);
+  await expect(page.getByRole('heading',{name:'Buscar Mangás'})).toBeVisible();
+  const centering=await page.locator('.nx21-title').evaluate(element=>{const box=element.getBoundingClientRect(),chrome=element.closest('.nx21-chrome').getBoundingClientRect();return{titleCenter:box.left+box.width/2,chromeCenter:chrome.left+chrome.width/2}});
+  expect(Math.abs(centering.titleCenter-centering.chromeCenter)).toBeLessThan(2);
   await noOverflow(page,2);
 
   for(const [width,columns] of [[768,3],[1440,5]]){
@@ -821,7 +866,7 @@ test('single Home impression is complete and does not look like a broken rail',a
   await noOverflow(page,2);
 });
 
-test('dedicated pages have one renderer and never flash a legacy layout',async({page,browserName})=>{test.skip(browserName!=='chromium','A troca temporal de layout é auditada uma vez no Chromium.');await page.addInitScript(()=>{window.__nxLayouts=[];const record=()=>{const el=document.querySelector('#app')?.firstElementChild;if(!el)return;const value=`${el.tagName}.${String(el.className||'').trim()}`;if(window.__nxLayouts.at(-1)!==value)window.__nxLayouts.push(value)};new MutationObserver(record).observe(document,{childList:true,subtree:true});addEventListener('DOMContentLoaded',record,{once:true})});const cases=[['/','nx35-home'],['/animes/catalogo','nx21-catalog-page'],['/animes/programacao','nx18-schedule'],['/animes/temporadas','nx-season'],['/anime/anime-teste-101','nx22-detail'],['/noticias','nx35-news-page'],['/comunidade','nx40-community'],['/conquistas','nx48-achievements-page'],['/login','nx38-auth-page'],['/admin','nx38-admin-page'],['/meus-animes','nx38-library'],['/termos-de-uso','nx-legal'],['/quem-somos','nx-inst']];for(const[route,prefix]of cases){if(route==='/conquistas'){await page.route('**/api/achievements/catalog',request=>request.fulfill({status:200,contentType:'application/json',body:JSON.stringify({total:achievementDefinitions.length,items:achievementDefinitions})}),{times:1})}await page.goto(pageUrl(route),{waitUntil:'domcontentloaded'});await expect(page.locator(`.${prefix}`).first()).toBeVisible({timeout:30000});await page.waitForTimeout(300);const history=await page.evaluate(()=>window.__nxLayouts||[]);expect(history,`${route}: ${history.join(' -> ')}`).not.toContain(expect.stringMatching(/detail-hero|nx-detail(?:-loading)?|catalog-hero|community-page|news-hero|prose/));expect(history.every(value=>value.includes(prefix)),`${route}: ${history.join(' -> ')}`).toBe(true)}});
+test('dedicated pages have one renderer and never flash a legacy layout',async({page,browserName})=>{test.skip(browserName!=='chromium','A troca temporal de layout é auditada uma vez no Chromium.');await page.addInitScript(()=>{window.__nxLayouts=[];const record=()=>{const el=document.querySelector('#app')?.firstElementChild;if(!el)return;const value=`${el.tagName}.${String(el.className||'').trim()}`;if(window.__nxLayouts.at(-1)!==value)window.__nxLayouts.push(value)};new MutationObserver(record).observe(document,{childList:true,subtree:true});addEventListener('DOMContentLoaded',record,{once:true})});const cases=[['/','nx35-home'],['/animes/catalogo','nx21-catalog-page'],['/mangas','nx21-catalog-page'],['/animes/programacao','nx18-schedule'],['/animes/temporadas','nx-season'],['/anime/anime-teste-101','nx22-detail'],['/noticias','nx35-news-page'],['/comunidade','nx40-community'],['/conquistas','nx48-achievements-page'],['/login','nx38-auth-page'],['/admin','nx38-admin-page'],['/meus-animes','nx38-library'],['/termos-de-uso','nx-legal'],['/quem-somos','nx-inst']];for(const[route,prefix]of cases){if(route==='/conquistas'){await page.route('**/api/achievements/catalog',request=>request.fulfill({status:200,contentType:'application/json',body:JSON.stringify({total:achievementDefinitions.length,items:achievementDefinitions})}),{times:1})}await page.goto(pageUrl(route),{waitUntil:'domcontentloaded'});await expect(page.locator(`.${prefix}`).first()).toBeVisible({timeout:30000});await page.waitForTimeout(300);const history=await page.evaluate(()=>window.__nxLayouts||[]);expect(history,`${route}: ${history.join(' -> ')}`).not.toContain(expect.stringMatching(/detail-hero|nx-detail(?:-loading)?|catalog-hero|community-page|news-hero|prose|nx42-manga-page/));expect(history.every(value=>value.includes(prefix)),`${route}: ${history.join(' -> ')}`).toBe(true)}});
 
 test('Home Catalog Programação Temporadas and Meus Animes share compact circular actions',async({page})=>{
   test.setTimeout(90000);
@@ -838,6 +883,107 @@ test('Programação opens one modal and saved status reaches Home and Community'
   const activity=await page.evaluate(id=>(JSON.parse(localStorage.getItem('aninexus:community:activity:v40')||'[]')).find(x=>Number(x.media_id)===id&&x.status==='CURRENT'),id);expect(activity).toBeTruthy();
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('#nx35CommunityHero')).toContainText('está assistindo',{timeout:15000});if(animeTitle)await expect(page.locator('#nx35CommunityHero')).toContainText(animeTitle,{timeout:15000});
   const malformed=`${ORIGIN}?build=38.0.0&p=${encodeURIComponent('/comunidade?build=35.0.0')}`;await page.goto(malformed,{waitUntil:'domcontentloaded'});await expect(page.locator('.nx40-community')).toBeVisible({timeout:30000});await expect(page.locator('.nx40-community')).not.toContainText('O que você está assistindo hoje?');await expect(page.locator('.nx40-feed')).toContainText('está assistindo');if(animeTitle)await expect(page.locator('.nx40-feed')).toContainText(animeTitle);await noOverflow(page)
+});
+
+test('Programação shares the catalog chrome and reveals a compact guide on scroll',async({page})=>{
+  test.setTimeout(90000);
+  await page.emulateMedia({reducedMotion:'reduce'});
+  for(const viewport of [{width:390,height:844,titleSize:26,headerHeight:58},{width:1440,height:900,titleSize:31,headerHeight:66}]){
+    await page.setViewportSize({width:viewport.width,height:viewport.height});
+    await page.goto(pageUrl('/animes/programacao'),{waitUntil:'domcontentloaded'});
+    await expect(page.locator('.nx18-card').first()).toBeVisible({timeout:30000});
+    const top=await page.evaluate(()=>{const hero=document.querySelector('#nx18Hero'),title=document.querySelector('.nx18-title'),heading=title.querySelector('h1'),heroStyle=getComputedStyle(hero),titleBox=title.getBoundingClientRect(),heroBox=hero.getBoundingClientRect();return{background:heroStyle.backgroundImage,line:parseFloat(heroStyle.borderBottomWidth),heroTop:Math.round(heroBox.top),titleSize:parseFloat(getComputedStyle(heading).fontSize),titleCenter:titleBox.left+titleBox.width/2,heroCenter:heroBox.left+heroBox.width/2,target:Math.ceil(hero.offsetHeight+220)}});
+    expect(top.background).toContain('linear-gradient');
+    expect(top.line).toBe(1);
+    expect(top.heroTop).toBe(0);
+    expect(top.titleSize).toBe(viewport.titleSize);
+    expect(Math.abs(top.titleCenter-top.heroCenter)).toBeLessThan(2);
+    await expect(page.locator('#topbar')).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
+
+    await page.evaluate(target=>{document.documentElement.style.scrollBehavior='auto';scrollTo({top:target,behavior:'instant'});dispatchEvent(new Event('scroll'))},top.target);
+    await expect(page.locator('body')).toHaveClass(/nx18-island-visible/);
+    await expect(page.locator('body')).toHaveClass(/nx18-header-hidden/);
+    await expect(page.locator('#nx18Island')).toHaveClass(/show/);
+    await expect.poll(()=>page.locator('#topbar').evaluate(element=>new DOMMatrixReadOnly(getComputedStyle(element).transform).m42)).toBeLessThan(-40);
+    const compact=await page.locator('#nx18Island').evaluate(element=>{const island=element.getBoundingClientRect(),head=element.querySelector('.nx18-island-head').getBoundingClientRect();return{top:Math.round(island.top),headHeight:Math.round(head.height)}});
+    expect(compact.top).toBe(0);
+    expect(compact.headHeight).toBe(44);
+
+    await page.evaluate(()=>{scrollTo({top:Math.max(90,scrollY-120),behavior:'instant'});dispatchEvent(new Event('scroll'))});
+    await expect(page.locator('body')).not.toHaveClass(/nx18-header-hidden/);
+    await expect(page.locator('#nx18Island')).toHaveClass(/expanded/);
+    await expect(page.locator('#topbar')).toHaveClass(/is-scrolled/);
+    await expect(page.locator('#topbar')).not.toHaveCSS('background-color','rgba(0, 0, 0, 0)');
+    await expect.poll(()=>page.locator('#topbar').evaluate(element=>new DOMMatrixReadOnly(getComputedStyle(element).transform).m42)).toBeGreaterThan(-1);
+    const expanded=await page.locator('#nx18Island').evaluate(element=>{const island=element.getBoundingClientRect(),head=element.querySelector('.nx18-island-head').getBoundingClientRect(),days=element.querySelector('.nx18-days').getBoundingClientRect();return{top:Math.round(island.top),headHeight:Math.round(head.height),daysVisible:days.height>30,right:island.right}});
+    expect(expanded.top).toBe(viewport.headerHeight);
+    expect(expanded.headHeight).toBe(54);
+    expect(expanded.daysVisible).toBe(true);
+    expect(expanded.right).toBeLessThanOrEqual(viewport.width);
+    await noOverflow(page,2);
+  }
+});
+
+test('Temporadas and Notícias share the same five-hub chrome and scroll guide',async({page})=>{
+  test.setTimeout(120000);
+  await page.emulateMedia({reducedMotion:'reduce'});
+  const routes=[
+    {route:'/animes/temporadas',root:'.nx-season',ready:'.nx-season-card',hero:'.nx-season-hero',title:'.nx-season-title h1',titleGroup:'.nx-season-title',guide:'.nx-v10-seasonbar',head:'.nx-v10-seasonbar__head',panel:'.nx-v10-seasonbar__controls',down:'nx-scroll-down',up:'nx-scroll-up'},
+    {route:'/noticias',root:'.nx35-news-page',ready:'.nx35-ncard',hero:'#nx35NewsHero',title:'.nx35-news-heading h1',titleGroup:'.nx35-news-heading',guide:'#nx35NewsIsland',head:'.nx35-news-island-head',panel:'.nx35-news-island-panel',down:'nx35-news-scroll-down',up:'nx35-news-scroll-up'},
+  ];
+  for(const viewport of [{width:390,height:844,titleSize:26,headerHeight:58},{width:1440,height:900,titleSize:31,headerHeight:66}]){
+    await page.setViewportSize({width:viewport.width,height:viewport.height});
+    for(const item of routes){
+      await page.goto(pageUrl(item.route),{waitUntil:'domcontentloaded'});
+      await expect(page.locator(item.root)).toBeVisible({timeout:30000});
+      await expect(page.locator(item.ready).first()).toBeVisible({timeout:30000});
+      await expect(page.locator(item.guide)).toHaveAttribute('aria-hidden','true');
+      const top=await page.evaluate(({hero,title,titleGroup})=>{const heroNode=document.querySelector(hero),titleNode=document.querySelector(title),titleBox=document.querySelector(titleGroup).getBoundingClientRect(),heroBox=heroNode.getBoundingClientRect(),style=getComputedStyle(heroNode);return{background:style.backgroundImage,line:parseFloat(style.borderBottomWidth),heroTop:Math.round(heroBox.top),titleSize:parseFloat(getComputedStyle(titleNode).fontSize),titleCenter:titleBox.left+titleBox.width/2,heroCenter:heroBox.left+heroBox.width/2,target:Math.ceil(heroNode.offsetHeight+240)}},{hero:item.hero,title:item.title,titleGroup:item.titleGroup});
+      expect(top.background).toContain('linear-gradient');
+      expect(top.line).toBe(1);
+      expect(top.heroTop).toBe(0);
+      expect(top.titleSize).toBe(viewport.titleSize);
+      expect(Math.abs(top.titleCenter-top.heroCenter)).toBeLessThan(2);
+      await expect(page.locator('#topbar')).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
+      if(item.route==='/animes/temporadas'){
+        const controls=await page.evaluate(()=>{const box=element=>{const rect=element.getBoundingClientRect();return{top:rect.top,bottom:rect.bottom,height:rect.height}};const rail=document.querySelector('.nx-season-tabs');return{rail:box(rail),year:box(document.querySelector('.nx-year-pill')),buttons:[...rail.querySelectorAll('button')].map(box)}});
+        expect(Math.abs(controls.year.top-controls.rail.top)).toBeLessThan(.6);
+        expect(Math.abs(controls.year.bottom-controls.rail.bottom)).toBeLessThan(.6);
+        for(const button of controls.buttons){expect(button.top).toBeGreaterThanOrEqual(controls.rail.top);expect(button.bottom).toBeLessThanOrEqual(controls.rail.bottom)}
+      }
+
+      await page.evaluate(target=>{document.documentElement.style.scrollBehavior='auto';scrollTo({top:target,behavior:'instant'});dispatchEvent(new Event('scroll'))},top.target);
+      await expect(page.locator('body')).toHaveClass(new RegExp(item.down));
+      await expect(page.locator(item.guide)).toHaveClass(/show/);
+      await expect(page.locator(item.guide)).not.toHaveClass(/expanded/);
+      await expect(page.locator(item.guide)).toHaveAttribute('aria-hidden','false');
+      await expect(page.locator(item.panel)).toHaveAttribute('aria-hidden','true');
+      await expect.poll(()=>page.locator('#topbar').evaluate(element=>new DOMMatrixReadOnly(getComputedStyle(element).transform).m42)).toBeLessThan(-40);
+      const compact=await page.locator(item.guide).evaluate((element,head)=>({top:Math.round(element.getBoundingClientRect().top),head:Math.round(element.querySelector(head).getBoundingClientRect().height)}),item.head);
+      expect(compact).toEqual({top:0,head:44});
+
+      await page.evaluate(()=>{scrollTo({top:Math.max(90,scrollY-140),behavior:'instant'});dispatchEvent(new Event('scroll'))});
+      await expect(page.locator('body')).toHaveClass(new RegExp(item.up));
+      await expect(page.locator(item.guide)).toHaveClass(/expanded/);
+      await expect(page.locator(item.panel)).toHaveAttribute('aria-hidden','false');
+      await expect.poll(()=>page.locator('#topbar').evaluate(element=>new DOMMatrixReadOnly(getComputedStyle(element).transform).m42)).toBeGreaterThan(-1);
+      const expanded=await page.locator(item.guide).evaluate((element,args)=>({top:Math.round(element.getBoundingClientRect().top),head:Math.round(element.querySelector(args.head).getBoundingClientRect().height),panel:Math.round(element.querySelector(args.panel).getBoundingClientRect().height)}),{head:item.head,panel:item.panel});
+      expect(expanded.top).toBe(viewport.headerHeight);
+      expect(expanded.head).toBe(54);
+      expect(expanded.panel).toBeGreaterThan(30);
+      if(item.route==='/animes/temporadas'){
+        const controls=await page.evaluate(()=>{const box=element=>{const rect=element.getBoundingClientRect();return{top:rect.top,bottom:rect.bottom,height:rect.height}};const rail=document.querySelector('.nx-v10-seasonbar__seasons');return{rail:box(rail),year:box(document.querySelector('.nx-v10-seasonbar__row>.nx-v10-seasonbar__btn')),buttons:[...rail.querySelectorAll('button')].map(box)}});
+        expect(Math.abs(controls.year.top-controls.rail.top)).toBeLessThan(.6);
+        expect(Math.abs(controls.year.bottom-controls.rail.bottom)).toBeLessThan(.6);
+        for(const button of controls.buttons){expect(button.top).toBeGreaterThanOrEqual(controls.rail.top);expect(button.bottom).toBeLessThanOrEqual(controls.rail.bottom)}
+      }
+      await page.locator(item.head).click();
+      await expect(page.locator(item.guide)).not.toHaveClass(/expanded/);
+      await page.locator(item.head).click();
+      await expect(page.locator(item.guide)).toHaveClass(/expanded/);
+      await noOverflow(page,2);
+    }
+  }
 });
 
 test('Community V40 exposes activity impressions discussions trends and local composer',async({page})=>{
@@ -859,24 +1005,38 @@ test('Catalog exposes all pages, keeps its chrome together and darkens the heade
   await expect(page.locator('.nx21-pages').getByRole('button',{name:'200',exact:true})).toBeVisible();
   const columns=await page.locator('.nx21-card').evaluateAll(cards=>new Set(cards.slice(0,5).map(card=>Math.round(card.getBoundingClientRect().left))).size);
   expect(columns).toBe(5);
-  const topGeometry=await page.evaluate(()=>{const chrome=document.querySelector('.nx21-chrome').getBoundingClientRect(),title=document.querySelector('.nx21-intro h1').getBoundingClientRect(),tabs=document.querySelector('.nx21-tabbar').getBoundingClientRect();return{chromeTop:Math.round(chrome.top),titleTop:Math.round(title.top),tabsTop:Math.round(tabs.top)}});
+  const topGeometry=await page.evaluate(()=>{const chrome=document.querySelector('.nx21-chrome').getBoundingClientRect(),heading=document.querySelector('.nx21-intro h1').getBoundingClientRect(),title=document.querySelector('.nx21-title').getBoundingClientRect(),tabs=document.querySelector('#nx21Hero .nx21-tabbar').getBoundingClientRect();return{chromeTop:Math.round(chrome.top),titleTop:Math.round(heading.top),tabsTop:Math.round(tabs.top),titleCenter:title.left+title.width/2,chromeCenter:chrome.left+chrome.width/2}});
   expect(topGeometry.chromeTop).toBe(0);
   expect(topGeometry.titleTop).toBeGreaterThanOrEqual(90);
   expect(topGeometry.titleTop).toBeLessThanOrEqual(125);
   expect(topGeometry.tabsTop).toBeLessThanOrEqual(205);
+  expect(Math.abs(topGeometry.titleCenter-topGeometry.chromeCenter)).toBeLessThan(2);
   await expect(page.locator('#topbar')).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
-  await page.locator('.nx21-pages').scrollIntoViewIfNeeded();
+  await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';scrollTo({top:500,behavior:'instant'});dispatchEvent(new Event('scroll'))});
   await expect(page.locator('body')).toHaveClass(/nx21-catalog-scrolled/);
+  await expect(page.locator('body')).toHaveClass(/nx21-catalog-scroll-down/);
   await expect(page.locator('#topbar')).toHaveClass(/is-scrolled/);
   await expect(page.locator('#topbar')).not.toHaveCSS('background-color','rgba(0, 0, 0, 0)');
-  await expect(page.locator('.nx21-intro')).toHaveCSS('opacity','1');
-  await expect(page.locator('.nx21-intro')).toHaveCSS('height','102px');
-  await expect(page.locator('.nx21-intro h1')).toBeVisible();
-  await expect(page.locator('.nx21-intro>p')).toHaveCSS('opacity','0');
-  const scrolledGeometry=await page.evaluate(()=>{const header=document.querySelector('#topbar').getBoundingClientRect(),title=document.querySelector('.nx21-intro h1').getBoundingClientRect(),tabs=document.querySelector('.nx21-tabbar').getBoundingClientRect();return{headerBottom:Math.round(header.bottom),titleTop:Math.round(title.top),tabsTop:Math.round(tabs.top)}});
-  expect(scrolledGeometry.titleTop).toBe(topGeometry.titleTop);
-  expect(scrolledGeometry.tabsTop).toBeGreaterThan(scrolledGeometry.headerBottom);
-  expect(scrolledGeometry.tabsTop).toBeLessThan(topGeometry.tabsTop);
+  await expect(page.locator('#nx21Island')).toHaveClass(/show/);
+  await expect(page.locator('#nx21Island')).not.toHaveClass(/expanded/);
+  await expect.poll(()=>page.locator('#nx21Island').evaluate(element=>Math.round(element.getBoundingClientRect().top))).toBe(0);
+  const compact=await page.locator('#nx21Island').evaluate(element=>{const box=element.getBoundingClientRect(),head=element.querySelector('.nx21-island-head').getBoundingClientRect();return{top:Math.round(box.top),head:Math.round(head.height),hidden:element.querySelector('.nx21-island-panel').getAttribute('aria-hidden')}});
+  expect(compact).toEqual({top:0,head:44,hidden:'true'});
+  await expect.poll(()=>page.locator('#topbar').evaluate(element=>new DOMMatrixReadOnly(getComputedStyle(element).transform).m42)).toBeLessThan(-40);
+  await page.waitForTimeout(420);
+  await page.evaluate(()=>{scrollTo({top:Math.max(90,scrollY-140),behavior:'instant'});dispatchEvent(new Event('scroll'))});
+  await expect(page.locator('body')).toHaveClass(/nx21-catalog-scroll-up/);
+  await expect(page.locator('#nx21Island')).toHaveClass(/expanded/);
+  await expect.poll(()=>page.locator('#topbar').evaluate(element=>new DOMMatrixReadOnly(getComputedStyle(element).transform).m42)).toBeGreaterThan(-1);
+  const scrolledGeometry=await page.evaluate(()=>{const header=document.querySelector('#topbar').getBoundingClientRect(),island=document.querySelector('#nx21Island').getBoundingClientRect(),head=document.querySelector('.nx21-island-head').getBoundingClientRect(),tabs=document.querySelector('#nx21Island .nx21-tabbar').getBoundingClientRect();return{headerBottom:Math.round(header.bottom),islandTop:Math.round(island.top),headHeight:Math.round(head.height),tabsHeight:Math.round(tabs.height),panelHidden:document.querySelector('#nx21Island .nx21-island-panel').getAttribute('aria-hidden')}});
+  expect(scrolledGeometry.islandTop).toBe(scrolledGeometry.headerBottom);
+  expect(scrolledGeometry.headHeight).toBe(54);
+  expect(scrolledGeometry.tabsHeight).toBe(42);
+  expect(scrolledGeometry.panelHidden).toBe('false');
+  await page.locator('[data-nx21-island-toggle]').click();
+  await expect(page.locator('#nx21Island')).not.toHaveClass(/expanded/);
+  await page.locator('[data-nx21-island-toggle]').click();
+  await expect(page.locator('#nx21Island')).toHaveClass(/expanded/);
   await page.locator('.nx21-pages').getByRole('button',{name:'2',exact:true}).click();
   await expect(page.locator('.nx21-card').first().locator('h3')).toHaveText('Anime Teste 2001',{timeout:10000});
   expect(requested.some(body=>Number(body.variables?.page)===2)).toBe(true);
@@ -906,9 +1066,17 @@ test('Catalog search and filters work together in a complete modal',async({page}
   expect(requested.at(-1)?.variables).toMatchObject({status:'FINISHED',year:2026,genre:'Action'});
   await page.locator('#nx21Search').fill('Naruto');
   await expect.poll(()=>requested.at(-1)?.variables?.search,{timeout:3000}).toBe('Naruto');
-  await page.evaluate(()=>scrollTo({top:420,behavior:'instant'}));
-  await expect(page.locator('.nx21-intro h1')).toBeVisible();
-  await expect(page.locator('#nx21Search')).toBeVisible();
+  await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';scrollTo({top:420,behavior:'instant'});dispatchEvent(new Event('scroll'))});
+  await expect(page.locator('body')).toHaveClass(/nx21-catalog-scroll-down/);
+  await expect(page.locator('#nx21Island')).toHaveClass(/show/);
+  await expect(page.locator('#nx21Island')).not.toHaveClass(/expanded/);
+  await expect.poll(()=>page.locator('#topbar').evaluate(element=>new DOMMatrixReadOnly(getComputedStyle(element).transform).m42)).toBeLessThan(-40);
+  await page.waitForTimeout(420);
+  await page.evaluate(()=>{scrollTo({top:Math.max(90,scrollY-120),behavior:'instant'});dispatchEvent(new Event('scroll'))});
+  await expect(page.locator('body')).toHaveClass(/nx21-catalog-scroll-up/);
+  await expect(page.locator('#nx21Island')).toHaveClass(/expanded/);
+  await expect(page.locator('#nx21IslandSearch')).toBeVisible();
+  await expect(page.locator('#nx21IslandSearch')).toHaveValue('Naruto');
   await noOverflow(page,2);
 });
 
@@ -939,17 +1107,21 @@ test('Catalog mobile menu exposes a complete Top 100 and a full search bar',asyn
   expect(scoreRequests.every(request=>!('communityOnly' in request))).toBe(true);
   await expect(page.locator('.nx21-rank')).toHaveCount(100);
   await expect.poll(()=>page.locator('.nx21-rank').last().evaluate(element=>element.textContent)).toBe('100');
-  await expect(page.locator('.nx21-score').first()).toBeVisible();
+  await expect(page.locator('.nx21-score,.nx21-rank-label')).toHaveCount(0);
+  const animeRanks=await page.locator('.nx21-card').evaluateAll(cards=>[cards[0],cards.at(-1)].map(card=>{const poster=card.querySelector('.nx21-poster').getBoundingClientRect(),rank=card.querySelector('.nx21-rank').getBoundingClientRect(),actions=card.querySelector('.nx21-actions').getBoundingClientRect();return{inside:rank.left>=poster.left&&rank.top>=poster.top&&rank.right<=poster.right&&rank.bottom<=poster.bottom,clearOfActions:rank.right<actions.left}}));
+  expect(animeRanks.every(rank=>rank.inside&&rank.clearOfActions)).toBe(true);
   await menuTrigger.press('Enter');
   await page.getByRole('dialog',{name:'Menu'}).getByRole('button',{name:'Mais membros',exact:true}).click();
   await expect.poll(()=>requests.at(-1)?.sort).toBe('MEMBERS');
   expect(requests.at(-1)?.communityOnly).toBe('1');
   await expect(page.locator('.nx21-rank,.nx21-rank-label')).toHaveCount(0);
+  await expect(page.locator('.nx21-card').first()).toBeVisible();
   await menuTrigger.press('Enter');
   await page.getByRole('dialog',{name:'Menu'}).getByRole('button',{name:'Mais populares',exact:true}).click();
   await expect.poll(()=>requests.at(-1)?.sort).toBe('POPULAR');
   expect(requests.at(-1)?.communityOnly).toBe('1');
   await expect(page.locator('.nx21-rank,.nx21-rank-label')).toHaveCount(0);
+  await expect(page.locator('.nx21-card').first()).toBeVisible();
   await menuTrigger.press('Enter');
   const requestsBeforeSearch=requests.length;
   await page.getByRole('dialog',{name:'Menu'}).getByRole('button',{name:'Busca',exact:true}).click();
@@ -961,16 +1133,25 @@ test('Catalog mobile menu exposes a complete Top 100 and a full search bar',asyn
   await expect(page.locator('#nx21Search')).toHaveCSS('outline-style','none');
   const filters=page.getByRole('button',{name:'Filtros',exact:true});await expect(filters).toBeVisible();
   expect((await filters.boundingBox())?.width||0).toBeGreaterThan(80);
-  const mask=await page.locator('.nx21-tabs').evaluate(element=>getComputedStyle(element).webkitMaskImage||getComputedStyle(element).maskImage);
+  const mask=await page.locator('#nx21Hero .nx21-tabs').evaluate(element=>getComputedStyle(element).webkitMaskImage||getComputedStyle(element).maskImage);
   expect(mask).toContain('linear-gradient');
-  const expandedHeight=(await page.locator('.nx21-intro').boundingBox())?.height||0;
   await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';scrollTo({top:500,behavior:'instant'});dispatchEvent(new Event('scroll'))});
   await expect.poll(()=>page.evaluate(()=>scrollY)).toBeGreaterThan(54);
   await expect(page.locator('body')).toHaveClass(/nx21-catalog-scrolled/);
-  await expect.poll(async()=>(await page.locator('.nx21-intro').boundingBox())?.height||0).toBeLessThanOrEqual(95);
-  const compactHeight=(await page.locator('.nx21-intro').boundingBox())?.height||0;
-  expect(compactHeight).toBeLessThan(expandedHeight);
-  expect(compactHeight).toBeLessThanOrEqual(95);
+  await expect(page.locator('body')).toHaveClass(/nx21-catalog-scroll-down/);
+  await expect(page.locator('#nx21Island')).toHaveClass(/show/);
+  await expect(page.locator('#nx21Island')).not.toHaveClass(/expanded/);
+  await expect.poll(()=>page.locator('#topbar').evaluate(element=>new DOMMatrixReadOnly(getComputedStyle(element).transform).m42)).toBeLessThan(-40);
+  await page.waitForTimeout(420);
+  await page.evaluate(()=>{scrollTo({top:Math.max(90,scrollY-120),behavior:'instant'});dispatchEvent(new Event('scroll'))});
+  await expect(page.locator('body')).toHaveClass(/nx21-catalog-scroll-up/);
+  await expect(page.locator('#nx21Island')).toHaveClass(/expanded/);
+  await expect(page.locator('#nx21IslandSearch')).toBeVisible();
+  const islandGeometry=await page.locator('#nx21Island').evaluate(element=>({top:Math.round(element.getBoundingClientRect().top),head:Math.round(element.querySelector('.nx21-island-head').getBoundingClientRect().height),panel:Math.round(element.querySelector('.nx21-island-panel').getBoundingClientRect().height)}));
+  expect(islandGeometry.top).toBe(58);
+  expect(islandGeometry.head).toBe(54);
+  expect(islandGeometry.panel).toBeGreaterThan(70);
+  await expect.poll(()=>page.locator('#topbar').evaluate(element=>new DOMMatrixReadOnly(getComputedStyle(element).transform).m42)).toBeGreaterThan(-1);
   await noOverflow(page,2);
 });
 

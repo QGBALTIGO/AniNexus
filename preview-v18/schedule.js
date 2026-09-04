@@ -190,10 +190,10 @@
     return `<button class="nx18-pill ${myOnly?'active':''}" type="button" data-nx18-my>${SVG.heart}<span>Meus animes</span></button><button class="nx18-pill ${selectedProviders.size?'active':''}" type="button" data-nx18-stream>${SVG.tv}<span>Onde assistir</span></button>`;
   }
   function shell(){
-    return `<main class="nx18-schedule"><section class="nx18-hero" id="nx18Hero"><div class="nx18-shell"><h1><em>Calendário</em> de Animes da Semana</h1><p>Acompanhe os dias e horários de lançamento dos episódios, no horário de Brasília.</p><div class="nx18-days">${dayButtons()}</div><div class="nx18-actions">${actionButtons()}</div></div></section><section class="nx18-body"><div class="nx18-shell" id="nx18Root"><div class="nx18-loading">${Array.from({length:6},()=>'<div class="nx18-skeleton"></div>').join('')}</div></div></section></main>`;
+    return `<main class="nx18-schedule"><section class="nx18-hero" id="nx18Hero"><div class="nx18-shell"><div class="nx18-title"><span class="nx18-title-icon">${SVG.calendar}</span><div class="nx18-title-copy"><h1><em>Calendário</em> de Animes <span class="nx18-title-period">da Semana</span></h1><small class="nx18-kicker">PROGRAMAÇÃO DE ANIMES</small></div></div><p>Acompanhe os dias e horários de lançamento dos episódios, no horário de Brasília.</p><div class="nx18-days">${dayButtons()}</div><div class="nx18-actions">${actionButtons()}</div></div></section><section class="nx18-body"><div class="nx18-shell" id="nx18Root"><div class="nx18-loading">${Array.from({length:6},()=>'<div class="nx18-skeleton"></div>').join('')}</div></div></section></main>`;
   }
   function islandMarkup(){
-    return `<section class="nx18-island" id="nx18Island" aria-label="Atalhos da programação"><button type="button" class="nx18-island-head" data-nx18-island-toggle aria-expanded="false"><span class="nx18-island-icon">${SVG.calendar}</span><span class="nx18-island-copy"><strong>Calendário de Animes</strong><small>${days.find(d=>d.key===activeDay)?.full||'Programação da semana'}</small></span><span class="nx18-island-chevron">${SVG.down}</span></button><div class="nx18-island-panel"><div><div class="nx18-island-inner"><div class="nx18-days">${dayButtons('data-nx18-idday')}</div><div class="nx18-actions">${actionButtons()}</div></div></div></div></section>`;
+    return `<section class="nx18-island" id="nx18Island" aria-label="Atalhos da programação" aria-hidden="true" inert><button type="button" class="nx18-island-head" data-nx18-island-toggle aria-expanded="false"><span class="nx18-island-icon">${SVG.calendar}</span><span class="nx18-island-copy"><strong>Calendário de Animes</strong><small>${days.find(d=>d.key===activeDay)?.full||'Programação da semana'}</small></span><span class="nx18-island-chevron">${SVG.down}</span></button><div class="nx18-island-panel" aria-hidden="true" inert><div><div class="nx18-island-inner"><div class="nx18-days">${dayButtons('data-nx18-idday')}</div><div class="nx18-actions">${actionButtons()}</div></div></div></div></section>`;
   }
 
   function countdownMarkup(ts){return `<div class="nx18-countdown" data-airing="${Number(ts)}" aria-label="Tempo até o episódio"></div>`}
@@ -300,19 +300,27 @@
     sectionObserver=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);if(visible[0])setActiveDay(visible[0].target.dataset.nx18Section)},{rootMargin:'-25% 0px -60% 0px',threshold:[0,.03]});
     els.forEach(e=>sectionObserver.observe(e));
   }
-  function ensureIsland(){
-    if(island||!matchMedia('(max-width:720px)').matches)return;
-    const wrap=document.createElement('div');wrap.innerHTML=islandMarkup();island=wrap.firstElementChild;document.body.append(island);bindControls(island);
-    island.querySelector('[data-nx18-island-toggle]').onclick=()=>{const expanded=island.classList.toggle('expanded');island.querySelector('[data-nx18-island-toggle]').setAttribute('aria-expanded',String(expanded))};
+  function setIslandState(show,expanded){
+    if(!island)return;const open=Boolean(show&&expanded),panel=island.querySelector('.nx18-island-panel');
+    island.classList.toggle('show',Boolean(show));island.classList.toggle('expanded',open);island.inert=!show;island.setAttribute('aria-hidden',String(!show));
+    if(panel){panel.inert=!open;panel.setAttribute('aria-hidden',String(!open))}
+    island.querySelector('[data-nx18-island-toggle]')?.setAttribute('aria-expanded',String(open));
   }
-  function rebuildIsland(){if(!island)return;const wasShow=island.classList.contains('show'),wasExpanded=island.classList.contains('expanded');island.remove();island=null;ensureIsland();if(island){island.classList.toggle('show',wasShow);island.classList.toggle('expanded',wasExpanded);syncControls()}}
+  function ensureIsland(){
+    if(island)return;
+    const wrap=document.createElement('div');wrap.innerHTML=islandMarkup();island=wrap.firstElementChild;document.body.append(island);bindControls(island);
+    island.querySelector('[data-nx18-island-toggle]').onclick=()=>setIslandState(true,!island.classList.contains('expanded'));
+  }
+  function rebuildIsland(){if(!island)return;const wasShow=island.classList.contains('show'),wasExpanded=island.classList.contains('expanded');island.remove();island=null;ensureIsland();if(island){setIslandState(wasShow,wasExpanded);syncControls()}}
   function scrollUpdate(){
     scrollRaf=0;if(!mounted)return;ensureIsland();const y=Math.max(0,scrollY),hero=document.querySelector('#nx18Hero');if(!hero||!island){lastScrollY=y;return}
-    const show=hero.getBoundingClientRect().bottom<58;island.classList.toggle('show',show);document.body.classList.toggle('nx18-island-visible',show);
+    const headerHeight=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nx43-header-height'))||66;
+    const show=hero.getBoundingClientRect().bottom<headerHeight;document.body.classList.toggle('nx18-island-visible',show);
     const delta=y-lastScrollY;
-    if(!show||y<80){island.classList.remove('expanded');document.body.classList.remove('nx18-header-hidden')}
-    else if(delta>9){island.classList.remove('expanded');document.body.classList.add('nx18-header-hidden')}
-    else if(delta<-9){island.classList.add('expanded');document.body.classList.remove('nx18-header-hidden')}
+    if(!show||y<80){setIslandState(false,false);document.body.classList.remove('nx18-header-hidden')}
+    else if(delta>9){setIslandState(true,false);document.body.classList.add('nx18-header-hidden')}
+    else if(delta<-9){setIslandState(true,true);document.body.classList.remove('nx18-header-hidden')}
+    else if(!island.classList.contains('show'))setIslandState(true,false);
     lastScrollY=y;
   }
   function onScroll(){if(!scrollRaf)scrollRaf=requestAnimationFrame(scrollUpdate)}
@@ -330,18 +338,19 @@
   }
 
   function cleanup(){
-    mounted=false;clearInterval(timer);controller?.abort();sectionObserver?.disconnect();closeAnyModal();island?.remove();island=null;document.body.classList.remove('nx18-schedule-active','nx18-header-hidden','nx18-island-visible','modal-open');removeEventListener('scroll',onScroll);
+    mounted=false;clearInterval(timer);controller?.abort();sectionObserver?.disconnect();closeAnyModal();if(scrollRaf)cancelAnimationFrame(scrollRaf);scrollRaf=0;island?.remove();island=null;document.body.classList.remove('nx18-schedule-active','nx18-header-hidden','nx18-island-visible','modal-open');removeEventListener('scroll',onScroll);
   }
   function mount(){
     if(requestedRoute()!==ROUTE)return;restoreRoute();mounted=true;days=buildDays();activeDay=days[0]?.key||'';
     document.body.classList.remove('nx-season-active','nx-detail-active','nx-legal-active','nx-inst-active','nx17-schedule-active','nx17-header-hidden','nx17-island-visible');
-    document.body.classList.add('nx18-schedule-active');document.title='Calendário de Animes | AniNexus';
+    document.body.classList.remove('nx18-header-hidden','nx18-island-visible');document.body.classList.add('nx18-schedule-active');document.title='Calendário de Animes | AniNexus';
+    window.__NX_ROUTE_OWNER__='schedule';window.__NX_DEDICATED_BOOT_PATH__=ROUTE;lastScrollY=Math.max(0,scrollY);
     document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav==='schedule'));
     app.innerHTML=shell();bindControls(app);ensureIsland();addEventListener('scroll',onScroll,{passive:true});scrollUpdate();load();
   }
 
   document.addEventListener('click',e=>{const a=e.target.closest('a[data-link],a[data-nx-inst],a[data-nx-legal]');if(a&&mounted&&!String(a.getAttribute('href')||'').includes('/animes/programacao'))cleanup()},true);
-  addEventListener('popstate',()=>setTimeout(()=>{if(requestedRoute()===ROUTE){cleanup();mount()}else cleanup()},0));
-  addEventListener('resize',()=>{if(mounted&&matchMedia('(max-width:720px)').matches)ensureIsland();else if(island&&innerWidth>720){island.remove();island=null}}, {passive:true});
+  addEventListener('popstate',()=>{if(requestedRoute()===ROUTE){cleanup();mount()}else cleanup()});
+  addEventListener('resize',()=>{if(!mounted)return;ensureIsland();onScroll()}, {passive:true});
   mount();
 })();
