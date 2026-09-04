@@ -571,6 +571,7 @@ test('Home character ranking favorites and reorders with internal counts',async(
   await expect(cards.first().getByRole('button')).toHaveAttribute('aria-pressed','true');
   const activeVisual=await cards.first().getByRole('button').evaluate(button=>({background:getComputedStyle(button).backgroundColor,fill:getComputedStyle(button.querySelector('svg')).fill}));
   expect(activeVisual).toEqual({background:'rgba(189, 24, 59, 0.93)',fill:'rgb(255, 255, 255)'});
+  await expect(cards.first().getByRole('button')).not.toHaveClass(/nx39-pop/,{timeout:1000});
   await expect(section.locator('.nx47-character-status')).toHaveCount(0);
   await expect(section).not.toContainText(/foi adicionado aos|foi removido dos/i);
   await page.setViewportSize({width:390,height:844});
