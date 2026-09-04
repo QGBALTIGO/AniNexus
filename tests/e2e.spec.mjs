@@ -667,7 +667,7 @@ test('manga catalog mirrors the complete anime experience with reading-specific 
 
   await page.evaluate(()=>{
     window.__mangaActionRequests=[];
-    window.AniNexusAuth={enabled:true,api:async(path,options={})=>{
+    window.AniNexusAuth={...window.AniNexusAuth,enabled:true,api:async(path,options={})=>{
       const method=String(options.method||'GET').toUpperCase();
       window.__mangaActionRequests.push({path,method,body:options.body||null});
       return method==='GET'?{items:[]}:{ok:true};
