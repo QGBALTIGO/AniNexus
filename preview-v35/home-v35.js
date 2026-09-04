@@ -7,7 +7,7 @@
   if (!app) return;
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
-  const BUILD = '44.16.0';
+  const BUILD = '44.16.1';
   const API = 'https://graphql.anilist.co';
   const TZ = 'America/Sao_Paulo';
   const CACHE_TTL = 4 * 60 * 1000;
@@ -45,7 +45,7 @@
   const title=m=>m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||m?.title||'Anime';
   const cover=m=>m?.coverImage?.extraLarge||m?.coverImage?.large||m?.cover||'';
   const banner=m=>m?.bannerImage||m?.banner||cover(m);
-  const score=m=>m?.metricsSource==='aninexus'&&m?.averageScore?String((Number(m.averageScore)/10).toFixed(1)).replace('.0',''):m?.metricsSource==='aninexus'&&m?.score?String(m.score):'';
+  const score=m=>{if(m?.metricsSource!=='aninexus')return'';const value=Number(m?.averageScore)>0?Number(m.averageScore)/10:Number(m?.score);return Number.isFinite(value)&&value>0?value.toFixed(1).replace('.0',''):''};
   const localJSON=(k,f)=>{try{return JSON.parse(localStorage.getItem(k)||'null')??f}catch{return f}};
   const states=()=>({...localJSON('aninexus:mediaState:v1',{}),...localJSON('aninexus:mediaState:v2',{})});
   const favs=()=>new Set((localJSON('aninexus:favorites',[])||[]).map(Number));
