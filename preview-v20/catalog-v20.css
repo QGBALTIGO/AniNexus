@@ -255,6 +255,7 @@ html[data-theme="light"] .nx21-mobile-option:hover,html[data-theme="light"] .nx2
   .nx21-search-mode .nx21-intro{height:148px}
 }
 @media(max-width:640px){
+  .nx21-mobile-menu-backdrop,.nx21-score,.nx21-actions button{-webkit-backdrop-filter:none;backdrop-filter:none}
   .nx21-intro{width:calc(100% - 26px);height:122px;padding-inline:0}
   .nx21-intro h1{font-size:26px;text-align:center}
   .nx21-intro>p{max-width:350px;max-height:36px;margin-top:7px;font-size:10.5px}
