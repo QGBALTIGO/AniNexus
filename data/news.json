@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T13:42:44.335Z",
+  "generatedAt": "2026-09-04T17:07:44.349Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,915 @@
   ],
   "stats": {
     "collected": 47,
-    "grouped": 20,
-    "published": 20,
-    "newStories": 20,
-    "fullArticles": 20,
+    "grouped": 21,
+    "published": 21,
+    "newStories": 21,
+    "fullArticles": 21,
     "previewArticles": 0,
-    "avgWords": 316,
-    "withHeroImage": 20,
-    "withOrderedMedia": 16,
+    "avgWords": 326,
+    "withHeroImage": 21,
+    "withOrderedMedia": 17,
     "skippedTranslation": 0,
-    "skippedQuality": 26,
-    "durationMs": 2848
+    "skippedQuality": 24,
+    "durationMs": 3627
   },
   "items": [
+    {
+      "id": "jbox-9c6a48f8",
+      "slug": "cinemark-cadastra-distribuicao-do-filme-de-umamusume-pretty-derby-jbox-9c6a48f8",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Cinemark cadastra distribuição do filme de ‘Umamusume – Pretty Derby’",
+      "originalTitle": "Cinemark cadastra distribuição do filme de ‘Umamusume – Pretty Derby’",
+      "summary": "A rede de cinemas Cinemark registrou no portal de classificação indicativa do Ministério da Justiça e Segurança Pública aqui do Brasil o título nacional do filme Umamusume — Pretty Derby – O Início de uma Nova Era (originalmente, Umamusume Puritidibi: Shinjidai no Tobira).",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "filme de umamusume",
+        "filme de umamusume no brasil",
+        "umamusume",
+        "Umamusume - Pretty Derby - O Início de uma Nova Era",
+        "Umamusume Puritidibi: Shinjidai no Tobira"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/04/cinemark-cadastra-distribuicao-do-filme-de-umamusume-pretty-derby",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/04/cinemark-cadastra-distribuicao-do-filme-de-umamusume-pretty-derby",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2024/03/umamusume-filme-nova-destacada.jpg",
+      "mediaQuery": "Cinemark cadastra distribuição do filme de ‘Umamusume – Pretty Derby’",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/zgupmgLe5No"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A rede de cinemas Cinemark registrou no portal de classificação indicativa do Ministério da Justiça e Segurança Pública aqui do Brasil o título nacional do filme Umamusume — Pretty Derby – O Início de uma Nova Era (originalmente, Umamusume Puritidibi: Shinjidai no Tobira).",
+          "runs": [
+            {
+              "text": "A rede de cinemas "
+            },
+            {
+              "text": "Cinemark",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " registrou no portal de classificação indicativa do Ministério da Justiça e Segurança Pública aqui do Brasil o título nacional do filme"
+            },
+            {
+              "text": " Umamusume — Pretty Derby – O Início de uma Nova Era",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " (originalmente,"
+            },
+            {
+              "text": " Umamusume Puritidibi: Shinjidai no Tobira",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ")."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O longa-metragem foi lançado em 2024 lá no Japão. Por ter tido seu título em português, é bastante provável que ele será lançado por aqui em breve pela rede de cinemas. A classificação indicativa está como recomendado a maiores de 10 anos.",
+          "runs": [
+            {
+              "text": "O longa-metragem foi lançado em 2024 lá no Japão. Por ter tido seu título em português, é bastante provável que ele será lançado por aqui em breve pela rede de cinemas. A classificação indicativa está como recomendado a maiores de 10 anos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Umamusume – Pretty Derby – O Início de uma Nova Era é produzido pelo estúdio CygamesPictures, com direção de Ken Yamamoto e roteiro de Kiyoko Yoshimura. Na trama, o sonho de consumo de qualquer garota-cavalo é chegar ao topo da Twinkle Series. Para Jungle Pocket, que só corria de brincadeira, essa ficha só cai de verdade após presenciar um show inesquecível de Fuji Kiseki nas pistas. Esbanjando moral e determinação, ela logo emplaca vitórias que a levam aos torneios de elite.",
+          "runs": [
+            {
+              "text": "Umamusume – Pretty Derby – O Início de uma Nova Era",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é produzido pelo estúdio "
+            },
+            {
+              "text": "CygamesPictures",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com direção de "
+            },
+            {
+              "text": "Ken Yamamoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e roteiro de "
+            },
+            {
+              "text": "Kiyoko Yoshimura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Na trama, o sonho de consumo de qualquer garota-cavalo é chegar ao topo da Twinkle Series. Para Jungle Pocket, que só corria de brincadeira, essa ficha só cai de verdade após presenciar um show inesquecível de Fuji Kiseki nas pistas. Esbanjando moral e determinação, ela logo emplaca vitórias que a levam aos torneios de elite."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Só que a coisa fica séria quando ela divide a pista na sua primeira prova de nível G1 com Agnes Tachyon, uma prodígio genial e excêntrica. Ao sentir o peso do talento da rival, Jungle Pocket não se abala: transforma o choque em obsessão e jura dar o troco vencendo a lendária Tríplice Coroa. Nem mesmo a imprevisibilidade do esporte vai impedir seu objetivo de desbancar Tachyon e fazer história.",
+          "runs": [
+            {
+              "text": "Só que a coisa fica séria quando ela divide a pista na sua primeira prova de nível G1 com Agnes Tachyon, uma prodígio genial e excêntrica. Ao sentir o peso do talento da rival, Jungle Pocket não se abala: transforma o choque em obsessão e jura dar o troco vencendo a lendária Tríplice Coroa. Nem mesmo a imprevisibilidade do esporte vai impedir seu objetivo de desbancar Tachyon e fazer história."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=zgupmgLe5No",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/zgupmgLe5No"
+        },
+        {
+          "type": "paragraph",
+          "text": "Umamusume é uma franquia multimídia da Cygames, já possuindo vários mangás e temporadas de animê — a série ‘Pretty Derby’ está completa na Crunchyroll, enquanto o spin-off ‘Cinderella Gray’ está pelo Prime Video e gratuitamente pelo Bandplay e YouTube. O nome, “Garotas-Cavalo”, já dá uma dica do conteúdo da série: são garotas com rabo e orelhas de cavalo tentando se tornar grandes corredoras.",
+          "runs": [
+            {
+              "text": "Umamusume",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é uma franquia multimídia da Cygames, já possuindo vários mangás e temporadas de animê — a série"
+            },
+            {
+              "text": " ‘Pretty Derby’",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " está completa na Crunchyroll, enquanto o spin-off "
+            },
+            {
+              "text": "‘Cinderella Gray’",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " está pelo Prime Video e gratuitamente pelo Bandplay e "
+            },
+            {
+              "text": "YouTube",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.youtube.com/watch?v=LKjvc3p2lgg&list=PLhGamQZtJ7K9aElhFk89DyndS6JDvLh7z"
+            },
+            {
+              "text": ". O nome,"
+            },
+            {
+              "text": " “Garotas-Cavalo”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", já dá uma dica do conteúdo da série: são garotas com rabo e orelhas de cavalo tentando se tornar grandes corredoras."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Veja mais:",
+          "runs": [
+            {
+              "text": "Veja mais:",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            }
+          ],
+          "level": 4
+        },
+        {
+          "type": "paragraph",
+          "text": "⇒ Umamusume, a série que não recebeu nenhum material pornográfico na Comiket | Artigo",
+          "runs": [
+            {
+              "text": "⇒ ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
+            },
+            {
+              "text": "Umamusume",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
+            },
+            {
+              "text": ", a série que não recebeu nenhum material pornográfico na Comiket | Artigo",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Portal de consultas públicas",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Portal de consultas públicas",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://classindportal.mj.gov.br/consulta-filmes"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-04T16:15:25.000Z",
+      "updatedAt": "2026-09-04T16:24:40.000Z",
+      "expiresAt": "2026-09-11T16:15:25.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/04/cinemark-cadastra-distribuicao-do-filme-de-umamusume-pretty-derby",
+          "publishedAt": "2026-09-04T16:15:25.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 337,
+      "qualityScore": 0.981,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-dc31b4b4",
+      "slug": "dragon-ball-super-beerus-ganha-data-de-lancamento-novo-trailer-e-musicas-de-abertura-e-encerramento-jbox-dc31b4b4",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Dragon Ball Super: Beerus’ ganha data de lançamento, novo trailer e músicas de abertura e encerramento",
+      "originalTitle": "‘Dragon Ball Super: Beerus’ ganha data de lançamento, novo trailer e músicas de abertura e encerramento",
+      "summary": "A Toei Animation divulgou essa semana vários novos detalhes de Dragon Ball Super: Beerus, versão aprimorada do primeiro arco de Dragon Ball Super.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Música",
+        "dragon ball super",
+        "Dragon Ball Super: Beerus",
+        "remake de Dragon Ball Super",
+        "remake do Freeza dourado"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/04/dragon-ball-super-beerus-ganha-data-de-lancamento-novo-trailer-e-musicas-de-abertura-e-encerramento",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/04/dragon-ball-super-beerus-ganha-data-de-lancamento-novo-trailer-e-musicas-de-abertura-e-encerramento",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Dragon-Ball-Super-Beerus-destacada.jpg",
+      "mediaQuery": "‘Dragon Ball Super: Beerus’ ganha data de lançamento, novo trailer e músicas de abertura e encerramento",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Dragon-Ball-Super-Beerus.webp",
+          "alt": "Pôster de Dragon Ball Super: Beerus",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/CFgEL7ei8VE"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Toei Animation divulgou essa semana vários novos detalhes de Dragon Ball Super: Beerus, versão aprimorada do primeiro arco de Dragon Ball Super.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Toei Animation",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " divulgou essa semana vários novos detalhes de "
+            },
+            {
+              "text": "Dragon Ball Super: Beerus",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", versão aprimorada do primeiro arco de"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "Dragon Ball Super",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A estreia dos novos episódios foi confirmada para 11 de outubro, no Japão, e um trailer inédito foi revelado, mostrando mais cenas que foram refeitas:",
+          "runs": [
+            {
+              "text": "A estreia dos novos episódios foi confirmada para "
+            },
+            {
+              "text": "11 de outubro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", no Japão, e um trailer inédito foi revelado, mostrando mais cenas que foram refeitas:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=CFgEL7ei8VE",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/CFgEL7ei8VE"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dentro do teaser, também foi divulgado que o tema de abertura do animê será a música “ONOGAMI”, assinada por Mega Terra Zero, e o encerramento é do cantor e compositor japonês VK Blanka, com “Kan Peki No Peki” — é possível ouvir trechos das duas no vídeo acima.",
+          "runs": [
+            {
+              "text": "Dentro do teaser, também foi divulgado que o tema de abertura do animê será a música"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "“ONOGAMI”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", assinada por "
+            },
+            {
+              "text": "Mega Terra Zero",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e o encerramento é do cantor e compositor japonês "
+            },
+            {
+              "text": "VK Blanka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "“Kan Peki No Peki” ",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "— é possível ouvir trechos das duas no vídeo acima."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira também o novo pôster da produção:",
+          "runs": [
+            {
+              "text": "Confira também o novo pôster da produção:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Dragon-Ball-Super-Beerus.webp",
+          "alt": "Pôster de Dragon Ball Super: Beerus"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pôster de Dragon Ball Super: Beerus adianta muito quebra-pau em alta resolução | Toei Animation/Divulgação",
+          "runs": [
+            {
+              "text": "Pôster de Dragon Ball Super: Beerus adianta muito quebra-pau em alta resolução | Toei Animation/Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Dragon Ball Super: Beerus é o título da nova versão de TV do primeiro arco de Dragon Ball Super, que por si só já é uma versão adaptada do filme Dragon Ball Z: A Batalha dos Deuses. A produção conta não apenas com cenas refeitas, mas também com trechos inéditos e uma história reconstruída de forma que se aproxime mais da ideia original de Akira Toriyama para o arco. O elenco original de Dragon Ball também regravou suas vozes para o novo animê, que conta ainda com aprimoramentos gerais de áudio, incluindo novas trilhas e melhoria dos efeitos sonoros.",
+          "runs": [
+            {
+              "text": "Dragon Ball Super: Beerus",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é o título da nova versão de TV do primeiro arco de "
+            },
+            {
+              "text": "Dragon Ball Super",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que por si só já é uma versão adaptada do filme "
+            },
+            {
+              "text": "Dragon Ball Z: A Batalha dos Deuses",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". A produção conta não apenas com cenas refeitas, mas também com trechos inéditos e uma "
+            },
+            {
+              "text": "história reconstruída de forma que se aproxime mais da ideia original de Akira Toriyama para o arco",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O elenco original de "
+            },
+            {
+              "text": "Dragon Ball",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " também regravou suas vozes para o novo animê, que conta ainda com aprimoramentos gerais de áudio, incluindo novas trilhas e melhoria dos efeitos sonoros."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Até então, apenas o primeiro arco de Super tem remake confirmado de forma oficial, mas, com a inclusão de Freeza nas prévias, é provável que a nova versão se estenda por mais episódios. Além do lançamento aprimorado, uma continuação também já está confirmada, adaptando a saga Prisioneiro da Patrulha Galáctica, o arco do Moro.",
+          "runs": [
+            {
+              "text": "Até então, apenas o primeiro arco de "
+            },
+            {
+              "text": "Super",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " tem remake confirmado de forma oficial, mas, com a inclusão de Freeza nas prévias, é provável que a nova versão se estenda por mais episódios. Além do lançamento aprimorado, "
+            },
+            {
+              "text": "uma continuação também já está confirmada",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/01/24/toei-confirma-sequencia-de-dragon-ball-super/"
+            },
+            {
+              "text": ", adaptando a saga "
+            },
+            {
+              "text": "Prisioneiro da Patrulha Galáctica",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o arco do Moro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Brasil, os animês Dragon Ball, Dragon Ball Z, Dragon Ball GT, Dragon Ball Super, Dragon Ball Z Kai e Dragon Ball Daima estão no catálogo da Crunchyroll, que também conta com vários filmes da franquia. Já a HBO Max tem em seu catálogo a temporada única de Daima, além de Dragon Ball Z Kai e Dragon Ball Z Kai: The Final Chapters. A Netflix, por sua vez, conta com os episódios de Daima e o filme A Batalha dos Deuses, de 2013. Também há itens da franquia nos catálogos de Disney+ e Claro TV+.",
+          "runs": [
+            {
+              "text": "No Brasil, os animês "
+            },
+            {
+              "text": "Dragon Ball",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Dragon Ball Z",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Dragon Ball GT",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Dragon Ball Super",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Dragon Ball Z Kai",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Dragon Ball Daima",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estão no catálogo da "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que também conta com vários filmes da franquia. Já a "
+            },
+            {
+              "text": "HBO Max",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " tem em seu catálogo a temporada única de "
+            },
+            {
+              "text": "Daima",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", além de "
+            },
+            {
+              "text": "Dragon Ball Z Kai",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Dragon Ball Z Kai: The Final Chapters",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". A "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", por sua vez, conta com os episódios de "
+            },
+            {
+              "text": "Daima",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e o filme "
+            },
+            {
+              "text": "A Batalha dos Deuses",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", de 2013. Também há itens da franquia nos catálogos de "
+            },
+            {
+              "text": "Disney+",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Claro TV+",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já o mangá da franquia está atualmente na fase Dragon Ball Super, que segue em hiato desde a morte do autor Akira Toriyama. O último capítulo da obra foi publicado na V-Jump em março de 2024, mês de falecimento do mangaká. Em fevereiro de 2025, a obra ganhou um one-shot. Desde então, ela segue parada.",
+          "runs": [
+            {
+              "text": "Já o mangá da franquia está atualmente na fase "
+            },
+            {
+              "text": "Dragon Ball Super",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que segue em hiato desde a morte do autor Akira Toriyama. O último capítulo da obra foi publicado na "
+            },
+            {
+              "text": "V-Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " em março de 2024, mês de falecimento do mangaká. Em fevereiro de 2025, a obra ganhou um "
+            },
+            {
+              "text": "one-shot",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Desde então, ela segue parada."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site oficial de Dragon Ball Super",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Site oficial de Dragon Ball Super",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://dragonball-super.com/en/updates/index.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-04T15:37:36.000Z",
+      "updatedAt": "2026-09-04T15:41:07.000Z",
+      "expiresAt": "2026-09-11T15:37:36.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/04/dragon-ball-super-beerus-ganha-data-de-lancamento-novo-trailer-e-musicas-de-abertura-e-encerramento",
+          "publishedAt": "2026-09-04T15:37:36.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 445,
+      "qualityScore": 0.997,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 14,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-dedf6511",
       "slug": "giant-ojosama-revela-elenco-e-equipe-do-anime-animenew-dedf6511",
@@ -797,284 +1693,6 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 2,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-633f5fd0",
-      "slug": "dragon-ball-super-beerus-ganha-trailer-e-data-de-estreia-animenew-633f5fd0",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Dragon Ball Super: Beerus ganha trailer e data de estreia",
-      "originalTitle": "Dragon Ball Super: Beerus ganha trailer e data de estreia",
-      "summary": "O novo anime Dragon Ball Super: Beerus estreia em 11 de outubro no Japão, trazendo cenas refeitas, nova dublagem e músicas inéditas. A Toei Animation divulgou nesta quarta-feira um novo trailer, chamado “Super Surge”, além de uma arte promocional e os artistas responsáveis pelas músicas de abertura e encerramento.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Dragon Ball Super: Beerus",
-        "Toei Animation"
-      ],
-      "url": "https://animenew.com.br/dragon-ball-super-beerus-estreia-trailer",
-      "sourceUrl": "https://animenew.com.br/dragon-ball-super-beerus-estreia-trailer",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Dragon-Ball-Super-Beerus-ganha-trailer-e-data-de-estreia.webp",
-      "mediaQuery": "Dragon Ball Super: Beerus ganha trailer e data de estreia",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Dragon-Ball-Super-Beerus-scaled.webp",
-          "alt": "Dragon Ball Super: Beerus",
-          "caption": "© BIRD STUDIO/SHUEISHA, TOEI ANIMATION"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/CFgEL7ei8VE"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O novo anime Dragon Ball Super: Beerus estreia em 11 de outubro no Japão, trazendo cenas refeitas, nova dublagem e músicas inéditas. A Toei Animation divulgou nesta quarta-feira um novo trailer, chamado “Super Surge”, além de uma arte promocional e os artistas responsáveis pelas músicas de abertura e encerramento.",
-          "runs": [
-            {
-              "text": "O novo "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Dragon Ball Super: Beerus",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " estreia em 11 de outubro no Japão, trazendo cenas refeitas, nova dublagem e músicas inéditas. A "
-            },
-            {
-              "text": "Toei Animation",
-              "href": "https://animenew.com.br/tag/toei-animation/"
-            },
-            {
-              "text": " divulgou nesta quarta-feira um novo trailer, chamado “Super Surge”, além de uma arte promocional e os artistas responsáveis pelas músicas de abertura e encerramento."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "My Happy Marriage ganha especial de 3 episódios",
-              "runs": [
-                {
-                  "text": "My Happy Marriage ganha especial de 3 episódios",
-                  "href": "https://animenew.com.br/my-happy-marriage-especial-3-episodios-outubro"
-                }
-              ]
-            },
-            {
-              "text": "FX Fighter Kurumi-chan estreia em 1º de outubro",
-              "runs": [
-                {
-                  "text": "FX Fighter Kurumi-chan estreia em 1º de outubro",
-                  "href": "https://animenew.com.br/fx-fighter-kurumi-chan-estreia-outubro"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A abertura será “ONOGAMI”, interpretada por MEGATERA･ZERO, enquanto VK Blanka ficará responsável pelo encerramento “Kan Peki No Peki”.",
-          "runs": [
-            {
-              "text": "A abertura será “ONOGAMI”, interpretada por "
-            },
-            {
-              "text": "MEGATERA･ZERO",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", enquanto "
-            },
-            {
-              "text": "VK Blanka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ficará responsável pelo encerramento “Kan Peki No Peki”."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=CFgEL7ei8VE",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/CFgEL7ei8VE"
-        },
-        {
-          "type": "paragraph",
-          "text": "O primeiro episódio terá uma exibição antecipada durante o painel especial de Dragon Ball Super: Beerus na New York Comic Con, em 8 de outubro. Contudo a transmissão regular começa dois dias depois, em 11 de outubro, pelo canal Fuji TV e suas afiliadas.",
-          "runs": [
-            {
-              "text": "O primeiro episódio terá uma exibição antecipada durante o painel especial de "
-            },
-            {
-              "text": "Dragon Ball Super: Beerus",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " na "
-            },
-            {
-              "text": "New York Comic Con",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", em 8 de outubro. Contudo a transmissão regular começa dois dias depois, em 11 de outubro, pelo canal "
-            },
-            {
-              "text": "Fuji TV",
-              "href": "https://animenew.com.br/tag/fuji-tv/"
-            },
-            {
-              "text": " e suas afiliadas."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Nova versão de Dragon Ball Super",
-          "runs": [
-            {
-              "text": "Nova versão de Dragon Ball Super"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Dragon-Ball-Super-Beerus-scaled.webp",
-          "alt": "Dragon Ball Super: Beerus",
-          "caption": "© BIRD STUDIO/SHUEISHA, TOEI ANIMATION"
-        },
-        {
-          "type": "paragraph",
-          "text": "O projeto começou a ser desenvolvido há alguns anos e funciona como uma versão aprimorada do anime original. A produção terá cenas novas e redesenhadas, além de uma reconstrução completa da história.",
-          "runs": [
-            {
-              "text": "O projeto começou a ser desenvolvido há alguns anos e funciona como uma versão aprimorada do anime original. A produção terá cenas novas e redesenhadas, além de uma reconstrução completa da história."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Todo o material também recebeu uma nova renderização, enquanto a dublagem foi refeita com trilha sonora e efeitos adicionais. Tadayoshi Yamamuro assume o design dos personagens e a direção geral de animação, com Norihito Sumitomo na composição musical.",
-          "runs": [
-            {
-              "text": "Todo o material também recebeu uma nova renderização, enquanto a dublagem foi refeita com trilha sonora e efeitos adicionais. "
-            },
-            {
-              "text": "Tadayoshi Yamamuro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " assume o design dos personagens e a direção geral de animação, com "
-            },
-            {
-              "text": "Norihito Sumitomo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " na composição musical."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Kōichi Yamadera retorna como a voz de Beerus. Por fim a trama acompanha o despertar do Deus da Destruição, que parte em busca do Saiyajin responsável por derrotar Freeza e acaba confrontando Goku.",
-          "runs": [
-            {
-              "text": "Kōichi Yamadera retorna como a voz de Beerus. Por fim a trama acompanha o despertar do Deus da Destruição, que parte em busca do Saiyajin responsável por derrotar Freeza e acaba confrontando Goku."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Dragon Ball Super: Beerus ganha trailer e data de estreia.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Dragon Ball Super: Beerus ganha trailer e data de estreia",
-              "href": "https://animenew.com.br/dragon-ball-super-beerus-estreia-trailer/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-03T16:37:28.000Z",
-      "updatedAt": "2026-09-03T16:37:28.000Z",
-      "expiresAt": "2026-09-10T16:37:28.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/dragon-ball-super-beerus-estreia-trailer",
-          "publishedAt": "2026-09-03T16:37:28.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 263,
-      "qualityScore": 0.973,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     },
@@ -2637,10 +3255,10 @@
         },
         {
           "type": "paragraph",
-          "text": "Kurumada e “M” mantinham uma relação de em torno de 25 anos, desde a época em que “M” trabalhava na Shueisha, onde foi editor do mangaká. Depois ele passou a trabalhar para o autor, e juntos eles criaram três empresas: NEXT WING, Kurumada Production, e K-PROJECT, todas responsáveis por cuidar de direitos autorais. Kurumada confiou em “M” para a contabilidade e negociações externas. Contudo, alega agora que havia um plano muito bem orquestrado por trás disso. Os desvios, no entanto, teriam começado em 2018, de acordo com reportagens.",
+          "text": "Kurumada e “M” mantinham uma relação há em torno de 25 anos, desde a época em que “M” trabalhava na Shueisha, onde foi editor do mangaká. Depois ele passou a trabalhar para o autor, e juntos eles criaram três empresas: NEXT WING, Kurumada Production, e K-PROJECT, todas responsáveis por cuidar de direitos autorais. Kurumada confiou em “M” para a contabilidade e negociações externas. Contudo, alega agora que havia um plano muito bem orquestrado por trás disso. Os desvios, no entanto, teriam começado em 2018, de acordo com reportagens.",
           "runs": [
             {
-              "text": "Kurumada e “M” mantinham uma relação de em torno de 25 anos, desde a época em que “M” trabalhava na Shueisha, onde foi editor do mangaká. Depois ele passou a trabalhar para o autor, e juntos eles criaram três empresas: NEXT WING, Kurumada Production, e K-PROJECT, todas responsáveis por cuidar de direitos autorais. Kurumada confiou em “M” para a contabilidade e negociações externas. Contudo, alega agora que havia um plano muito bem orquestrado por trás disso. Os desvios, no entanto, teriam começado em 2018, de acordo com reportagens."
+              "text": "Kurumada e “M” mantinham uma relação há em torno de 25 anos, desde a época em que “M” trabalhava na Shueisha, onde foi editor do mangaká. Depois ele passou a trabalhar para o autor, e juntos eles criaram três empresas: NEXT WING, Kurumada Production, e K-PROJECT, todas responsáveis por cuidar de direitos autorais. Kurumada confiou em “M” para a contabilidade e negociações externas. Contudo, alega agora que havia um plano muito bem orquestrado por trás disso. Os desvios, no entanto, teriam começado em 2018, de acordo com reportagens."
             }
           ]
         },
@@ -2670,10 +3288,10 @@
         },
         {
           "type": "paragraph",
-          "text": "Tudo isso foi descoberto em fevereiro de 2024, por órgão japonês equivalente à Receita Federal. Quando o órgão enviou um questionamento ao próprio autor, “M” enviou uma resposta com uma assinatura forjada e um carimbo usado sem autorização (no Japão, as pessoas têm um “carimbo pessoal” que usam como assinatura), tentando inclusive enganar o governo. Após investigação da “Receita Federal”, a operação foi descoberta. Felizmente, foi possível recuperar uma parte dos ativos.",
+          "text": "Tudo isso teria sido descoberto em fevereiro de 2024, por órgão japonês equivalente à Receita Federal. Quando o órgão enviou um questionamento ao próprio autor, “M” teria enviado uma resposta com uma assinatura forjada e um carimbo usado sem autorização (no Japão, as pessoas têm um “carimbo pessoal” que usam como assinatura), tentando inclusive enganar o governo. Conforme a defesa de Kurumada, a “Receita Federal” então fez uma investigação mais profunda, e a operação foi descoberta. Felizmente, foi possível recuperar uma parte dos ativos, segundo alegado.",
           "runs": [
             {
-              "text": "Tudo isso foi descoberto em fevereiro de 2024, por órgão japonês equivalente à Receita Federal. Quando o órgão enviou um questionamento ao próprio autor, “M” enviou "
+              "text": "Tudo isso teria sido descoberto em fevereiro de 2024, por órgão japonês equivalente à Receita Federal. Quando o órgão enviou um questionamento ao próprio autor, “M” teria enviado "
             },
             {
               "text": "uma resposta com uma assinatura forjada e um carimbo usado sem autorização",
@@ -2682,7 +3300,7 @@
               ]
             },
             {
-              "text": " (no Japão, as pessoas têm um “carimbo pessoal” que usam como assinatura), tentando inclusive enganar o governo. Após investigação da “Receita Federal”, a operação foi descoberta. Felizmente, foi possível recuperar uma parte dos ativos."
+              "text": " (no Japão, as pessoas têm um “carimbo pessoal” que usam como assinatura), tentando inclusive enganar o governo. Conforme a defesa de Kurumada, a “Receita Federal” então fez uma investigação mais profunda, e a operação foi descoberta. Felizmente, foi possível recuperar uma parte dos ativos, segundo alegado."
             }
           ]
         },
@@ -2832,7 +3450,7 @@
       ],
       "contentMode": "full",
       "publishedAt": "2026-09-02T15:56:45.000Z",
-      "updatedAt": "2026-09-02T21:46:05.000Z",
+      "updatedAt": "2026-09-04T15:25:07.000Z",
       "expiresAt": "2026-09-09T15:56:45.000Z",
       "category": "Em alta",
       "eventType": "TRENDING",
@@ -2848,7 +3466,7 @@
       ],
       "sourceCount": 1,
       "readingMinutes": 4,
-      "wordCount": 681,
+      "wordCount": 695,
       "qualityScore": 1,
       "contentVersion": 2,
       "coverage": {
@@ -3666,7 +4284,7 @@
       "sourceCount": 1,
       "readingMinutes": 1,
       "wordCount": 194,
-      "qualityScore": 0.964,
+      "qualityScore": 0.904,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
