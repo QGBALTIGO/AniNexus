@@ -143,6 +143,8 @@
     rail.id ||= `nx44Rail${++railSequence}`;
     rail.classList.add('nx44-rail');
     rail.tabIndex = 0;
+    if (!rail.getAttribute('role')) rail.setAttribute('role', 'group');
+    rail.setAttribute('aria-roledescription', 'carrossel');
     if (!rail.getAttribute('aria-label')) rail.setAttribute('aria-label', `Carrossel de ${railTitle(rail)}`);
 
     const frame = ensureFrame(rail);
