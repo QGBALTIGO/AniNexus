@@ -15,6 +15,7 @@
   ]);
 
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const ICON={star:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.5 6.1.9-4.4 4.3 1 6.1-5.5-2.9-5.5 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></svg>',plus:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',heart:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.7 8.7c0 5-8.7 10.1-8.7 10.1S3.3 13.7 3.3 8.7A4.6 4.6 0 0 1 12 6.2a4.6 4.6 0 0 1 8.7 2.5Z"/></svg>'};
   const slug=s=>String(s||'anime').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,90)||'anime';
   const title=m=>typeof m?.title==='string'?m.title:(m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||m?.titleRomaji||'Anime');
   const cover=m=>m?.cover||m?.coverImage?.extraLarge||m?.coverImage?.large||'';
@@ -46,8 +47,8 @@
     return `<a class="nx35-rank nx35-hotfix-card" href="${href}"><span class="nx35-rank-num">${i+1}</span><div class="nx35-rank-cover">${c?`<img loading="lazy" decoding="async" src="${esc(c)}" alt="${esc(t)}">`:''}${sc?`<b>★ ${esc(sc)}</b>`:''}</div><div class="nx35-rank-copy"><small>${i+1}º LUGAR</small><h3>${esc(t)}</h3></div></a>`;
   }
   function readingCard(m){
-    const t=title(m),c=cover(m),sc=score(m),href=route(m,'manga');
-    return `<a class="nx35-reading nx35-hotfix-card" href="${href}"><div class="nx35-book">${c?`<img loading="lazy" decoding="async" src="${esc(c)}" alt="${esc(t)}">`:''}<i></i><span>${m?.format==='NOVEL'?'Light novel':'Mangá'}</span>${sc?`<b>★ ${esc(sc)}</b>`:''}</div><h3>${esc(t)}</h3><p>${esc((m?.genres||[]).slice(0,2).join(' · '))}</p></a>`;
+    const t=title(m),c=cover(m),sc=score(m),id=Number(m?.id)||0;
+    return `<article class="nx35-reading nx35-hotfix-card" data-open-manga="${id}" data-title="${esc(t)}" tabindex="0" role="link" aria-label="Abrir ${esc(t)}"><div class="nx35-book">${c?`<img loading="lazy" decoding="async" src="${esc(c)}" alt="${esc(t)}">`:''}<i></i>${sc?`<span class="nx35-score">${ICON.star}<b>${esc(sc)}</b></span>`:''}<aside><button type="button" data-nx-action-kind="compact" data-manga-list="${id}" aria-pressed="false" aria-label="Adicionar ${esc(t)} à lista">${ICON.plus}</button><button type="button" data-nx-action-kind="compact" data-manga-fav="${id}" aria-pressed="false" aria-label="Favoritar ${esc(t)}">${ICON.heart}</button></aside></div><h3>${esc(t)}</h3><p>${esc((m?.genres||[]).slice(0,2).join(' · '))}</p></article>`;
   }
   function scheduleCard(x){
     const m=x?.media||{},t=title(m),c=cover(m),href=route(m),ep=Number(x?.episode)||'—';
@@ -56,6 +57,7 @@
 
   function empty(root){return !!root&&root.children.length===0&&root.textContent.trim()===''}
   function fill(id,html,className){const root=document.querySelector(id);if(!empty(root)||!html)return false;if(className)root.className=className;root.innerHTML=html;return true}
+  function bindReadingCards(){document.querySelectorAll('[data-open-manga].nx35-hotfix-card').forEach(card=>{if(card.dataset.hotfixBound)return;card.dataset.hotfixBound='1';const open=()=>location.assign(route({id:Number(card.dataset.openManga),title:card.dataset.title},'manga'));card.addEventListener('click',event=>{if(!event.target.closest('button'))open()});card.addEventListener('keydown',event=>{if(event.target===card&&['Enter',' '].includes(event.key)){event.preventDefault();open()}})})}
 
   function seasonNow(){
     const d=new Date(),m=Number(new Intl.DateTimeFormat('en',{timeZone:TZ,month:'numeric'}).format(d)),year=Number(new Intl.DateTimeFormat('en',{timeZone:TZ,year:'numeric'}).format(d));
@@ -83,6 +85,7 @@
     fill('#nx35Popular',popularItems.length?rail(popularItems.map(animeCard).join('')):'');
     fill('#nx35Soon',soonItems.length?rail(soonItems.map(animeCard).join('')):'');
     fill('#nx35Reading',readingItems.length?readingItems.map(readingCard).join(''):'','nx35-rail nx35-reading-rail');
+    bindReadingCards();
   }
 
   function scheduleRepair(){

@@ -1,8 +1,10 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { collectEditorialStories, likelyPortuguese } from '../lib/news-rich-v37.mjs';
+import { buildTrailerDocument } from '../lib/trailers.mjs';
 
 const OUT = path.resolve('data/news.json');
+const TRAILERS_OUT = path.resolve('data/trailers.json');
 const RETENTION_DAYS = Math.max(3, Math.min(10, Number(process.env.NEWS_RETENTION_DAYS || 7)));
 const STALE_GRACE_DAYS = Math.max(RETENTION_DAYS, Math.min(21, Number(process.env.NEWS_STALE_GRACE_DAYS || 14)));
 const MAX_ITEMS = Math.max(20, Math.min(80, Number(process.env.NEWS_STATIC_MAX_ITEMS || 60)));
@@ -16,6 +18,13 @@ async function readDoc(file) {
   } catch {
     return {};
   }
+}
+
+async function writeTrailers(articles, generatedAt = new Date().toISOString()) {
+  const document = buildTrailerDocument(articles, { now: generatedAt, limit: 12, maxAgeDays: 21 });
+  await fs.mkdir(path.dirname(TRAILERS_OUT), { recursive: true });
+  await fs.writeFile(TRAILERS_OUT, `${JSON.stringify(document, null, 2)}\n`);
+  return document;
 }
 
 function ageOk(item, days = RETENTION_DAYS) {
@@ -115,6 +124,11 @@ function merge(items) {
 
 const started = Date.now();
 const [previousDoc, hotDoc, seedDoc] = await Promise.all([readDoc(OUT), readDoc('data/news-v37-hot.json'), readDoc('data/news-v36-seed.json')]);
+if (process.argv.includes('--trailers-only')) {
+  const trailers = await writeTrailers(previousDoc.items || [], previousDoc.generatedAt || new Date().toISOString());
+  console.log(`[trailers-static-v1] ${trailers.total} trailers recentes derivados do feed atual`);
+  process.exit(0);
+}
 const previousAll = (previousDoc.items || []).filter(contentOk);
 const previousGrace = previousAll.filter(item => valid(item, STALE_GRACE_DAYS));
 const emergency = [...(hotDoc.items || []), ...(seedDoc.items || [])].filter(contentOk).filter(item => ageOk(item, STALE_GRACE_DAYS));
@@ -183,4 +197,5 @@ const doc = {
 
 await fs.mkdir(path.dirname(OUT), { recursive: true });
 await fs.writeFile(OUT, `${JSON.stringify(doc, null, 2)}\n`);
-console.log(`[news-static-v40] ${items.length} matérias (${fresh.length} novas); modo=${doc.feedStatus}; ${stats.fullArticles} completas; ${stats.previewArticles} prévias; média ${stats.avgWords} palavras`);
+const trailers = await writeTrailers(items, doc.generatedAt);
+console.log(`[news-static-v40] ${items.length} matérias (${fresh.length} novas); modo=${doc.feedStatus}; ${stats.fullArticles} completas; ${stats.previewArticles} prévias; média ${stats.avgWords} palavras; ${trailers.total} trailers recentes`);

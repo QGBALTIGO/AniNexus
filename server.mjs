@@ -16,7 +16,8 @@ import { AVATAR_PRESETS, avatarForClerkUser, avatarPresetUrl, resolvedAvatar } f
 import { processClerkWebhook } from './lib/clerk-webhook.mjs';
 import { getCatalog, getReading, getSchedule, getAnime, getAnimeThemes, getMediaSummaries, getManga, getStudios, getDubbed, prewarm } from './lib/provider.mjs';
 import { lists } from './lib/content.mjs';
-import { getNativeNews, getNativeArticle, articleExpiry } from './lib/native-news.mjs';
+import { getNativeNews, getNativeTrailerArticles, getNativeArticle, articleExpiry } from './lib/native-news.mjs';
+import { buildLatestTrailers } from './lib/trailers.mjs';
 import { enqueueAnalytics, flushAnalytics, analyticsStats } from './lib/analytics.mjs';
 import { getCharacterRanking, getUserCharacterFavorites, setCharacterFavorite } from './lib/character-ranking.mjs';
 import { achievementCatalog, getAchievementFeed, publicAchievementProfile, recordAnimeHistory, recordContributionHistory, setAchievementPins, setContributionHistoryValidity, syncAllUsersAchievements, syncUserAchievements, updateAchievementPreferences } from './lib/achievements.mjs';
@@ -41,7 +42,7 @@ app.addHook('onSend',async(req,reply,payload)=>{
   reply.header('X-Permitted-Cross-Domain-Policies','none');
   const url=String(req.url||'').split('?')[0];
   if(url.startsWith('/api/auth/')||url.startsWith('/api/me')||url==='/api/achievements/feed')reply.header('Cache-Control','no-store');
-  else if(req.method==='GET'&&/^\/api\/(home|catalog|reading|characters\/ranking|achievements\/catalog|schedule|anime\/\d+|manga\/\d+|media\/summaries|studios|dublados|lists|list\/|users\/|news(?:\/|$)|community\/(?:impressions|activity|threads))/.test(url))reply.header('Cache-Control','public, max-age=20, stale-while-revalidate=180, stale-if-error=600');
+  else if(req.method==='GET'&&/^\/api\/(home|catalog|reading|trailers|characters\/ranking|achievements\/catalog|schedule|anime\/\d+|manga\/\d+|media\/summaries|studios|dublados|lists|list\/|users\/|news(?:\/|$)|community\/(?:impressions|activity|threads))/.test(url))reply.header('Cache-Control','public, max-age=20, stale-while-revalidate=180, stale-if-error=600');
   else if(req.method==='GET'&&(url==='/'||reply.getHeader('content-type')?.toString().includes('text/html')))reply.header('Cache-Control','no-cache, max-age=0, must-revalidate');
   if(process.env.PUBLIC_ORIGIN?.startsWith('https://'))reply.header('Strict-Transport-Security','max-age=31536000; includeSubDomains; preload');
   return payload;
@@ -231,6 +232,7 @@ app.get('/api/dublados',publicRate,async req=>getDubbed(Number(req.query?.page||
 app.get('/api/lists',publicRate,async()=>lists);
 app.get('/api/list/:slug',publicRate,async(req,reply)=>{const l=lists.find(x=>x.slug===req.params.slug);if(!l)return reply.code(404).send({error:'NOT_FOUND'});const data=await getCatalog({page:req.query?.page||1,perPage:24,sort:l.sort,genre:l.genre,format:l.format,status:l.status,season:l.season,year:l.year});return {...l,...data};});
 
+app.get('/api/trailers',publicRate,async req=>{const limit=safeInt(req.query?.limit,1,12)||9;return cacheRemember(`trailers:v1:${limit}`,120,async()=>{const articles=await getNativeTrailerArticles({limit:48});const items=buildLatestTrailers(articles,{limit,maxAgeDays:21});return{generatedAt:new Date().toISOString(),freshnessWindowDays:21,total:items.length,items}})});
 app.get('/api/news',publicRate,async(req)=>{const limit=Math.max(1,Math.min(60,Number(req.query?.limit||20))),offset=Math.max(0,Math.min(5000,Number(req.query?.offset||0)));const type=req.query?.type?String(req.query.type).slice(0,40):null;return{items:await getNativeNews({limit,offset,type})};});
 app.get('/api/news/:slug',publicRate,async(req,reply)=>{const slug=String(req.params.slug||'').slice(0,180);const item=await getNativeArticle(slug);if(!item)return reply.code(404).send({error:'NOT_FOUND'});return item;});
 app.get('/api/news/:slug/comments',publicRate,async(req,reply)=>{const slug=String(req.params.slug||'').slice(0,180),limit=Math.max(1,Math.min(100,Number(req.query?.limit||40)));const {rows}=await q(`SELECT c.id,c.parent_id,c.body,c.spoiler,c.created_at,u.username,u.display_name,u.avatar_url FROM news_comments c JOIN users u ON u.id=c.user_id WHERE c.article_slug=$1 AND c.hidden=false AND u.deleted_at IS NULL AND u.status='active' AND u.privacy='public' ORDER BY c.created_at ASC LIMIT $2`,[slug,limit]);return{items:withActorAvatars(rows)};});

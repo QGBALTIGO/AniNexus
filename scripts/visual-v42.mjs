@@ -5,7 +5,7 @@ const origin = process.env.ANINEXUS_E2E_ORIGIN || 'http://qgbaltigo.github.io:41
 const output = process.env.ANINEXUS_VISUAL_OUTPUT || 'test-results/visual-v42';
 const executablePath = process.env.ANINEXUS_CHROMIUM_EXECUTABLE_PATH || undefined;
 const mappedHost = new URL(origin).hostname === 'qgbaltigo.github.io';
-const buildUrl = route => `${origin}?build=44.15.0&p=${encodeURIComponent(route)}`;
+const buildUrl = route => `${origin}?build=44.16.0&p=${encodeURIComponent(route)}`;
 const artwork = new URL('assets/logo.png', origin).href;
 const communityArtwork = new URL('assets/radio-background-v44.png', origin).href;
 const media = (id, type = 'ANIME') => ({
@@ -112,6 +112,21 @@ try {
     }));
     await page.screenshot({ path: `${output}/${item.name}-viewport.png` });
     await page.screenshot({ path: `${output}/${item.name}.png`, fullPage: true });
+    if (item.route === '/') {
+      const reading = page.locator('#nx35Reading').locator('xpath=ancestor::section[1]');
+      const trailers = page.locator('.nx42-trailers-section');
+      await reading.scrollIntoViewIfNeeded();
+      await reading.screenshot({ path: `${output}/${item.name}-reading.png` });
+      await trailers.waitFor({ state: 'visible', timeout: 15_000 });
+      await trailers.scrollIntoViewIfNeeded();
+      await trailers.screenshot({ path: `${output}/${item.name}-trailers.png` });
+      await trailers.locator('.nx42-trailer').first().click();
+      const trailerModal = page.locator('.nx42-trailer-modal');
+      await trailerModal.waitFor({ state: 'visible', timeout: 10_000 });
+      await page.screenshot({ path: `${output}/${item.name}-trailer-modal.png` });
+      await page.keyboard.press('Escape');
+      await trailerModal.waitFor({ state: 'detached', timeout: 3_000 });
+    }
     if (item.name === 'desktop-home-dark') {
       await page.locator('.nx35-live').screenshot({ path: `${output}/desktop-home-community-panel.png` });
       await page.locator('#nx35Schedule').locator('xpath=ancestor::section[1]').screenshot({ path: `${output}/desktop-home-schedule.png` });

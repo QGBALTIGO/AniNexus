@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.15.0&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.16.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -48,7 +48,7 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-03-v44.15.0')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-03-v44.16.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -611,6 +611,67 @@ test('news repairs AnimeNew image hosts and renders the cover',async({page})=>{
 });
 
 test('manga catalog is a dedicated responsive product surface',async({page})=>{for(const width of [390,768,1440]){await page.setViewportSize({width,height:width===390?844:900});await page.goto(pageUrl('/mangas'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx42-manga-page')).toBeVisible({timeout:30000});await expect(page.getByRole('heading',{name:'Catálogo de Mangás'})).toBeVisible();await expect(page.locator('.nx42-manga-card').first()).toBeVisible();await expect(page.locator('#nx42MangaSearch')).toBeVisible();await noOverflow(page,3)}});
+
+test('Home reading cards share anime actions and trailers play inside AniNexus',async({page})=>{
+  const publishedAt=new Date().toISOString(),trailers={generatedAt:publishedAt,freshnessWindowDays:21,total:3,items:[
+    {videoId:'abc123XYZ01',title:'Anime Teste: trailer final',kind:'TRAILER',publishedAt,source:'Fonte Teste',thumbnail:portrait},
+    {videoId:'abc123XYZ02',title:'Segunda Temporada: novo teaser',kind:'TEASER',publishedAt,source:'Fonte Teste',thumbnail:portrait},
+    {videoId:'abc123XYZ03',title:'Filme Teste: vídeo promocional',kind:'PV',publishedAt,source:'Fonte Teste',thumbnail:portrait},
+  ]};
+  await mockInternalRankings(page);
+  await page.route('**/data/trailers.json*',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(trailers)}));
+  await page.route('**/api/trailers?**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(trailers)}));
+  await page.route('https://www.youtube-nocookie.com/**',route=>route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Player de teste</title>'}));
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  const reading=page.locator('#nx35Reading .nx35-reading').first();
+  await expect(reading).toBeVisible({timeout:30000});
+  await expect(reading.locator('.nx35-format')).toHaveCount(0);
+  await expect(reading.locator('[data-manga-list],[data-manga-fav]')).toHaveCount(2);
+  await expect(reading.locator('.nx35-score')).toBeVisible();
+  const readingLayout=await reading.locator('.nx35-book').evaluate(element=>{const score=element.querySelector('.nx35-score').getBoundingClientRect(),actions=element.querySelector('aside').getBoundingClientRect();return{scoreLeft:score.left,scoreRight:score.right,actionsLeft:actions.left}});
+  expect(readingLayout.scoreLeft).toBeLessThan(readingLayout.actionsLeft);expect(readingLayout.scoreRight).toBeLessThan(readingLayout.actionsLeft);
+  await expect(reading.locator('[data-manga-list]')).toHaveCSS('width','34px');
+  await expect(reading.locator('[data-manga-fav]')).toHaveCSS('height','34px');
+  await page.evaluate(()=>{window.__mangaWrites=[];window.AniNexusAuth={enabled:true,api:async(path,options={})=>{window.__mangaWrites.push({path,method:options.method||'GET',body:options.body||null});if((options.method||'GET')==='GET')return{items:[]};return{ok:true}}};dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:{id:'manga-test'}}}))});
+  const heart=reading.locator('[data-manga-fav]');
+  await expect(heart).toBeEnabled();
+  await heart.click();
+  await expect(heart).toHaveAttribute('aria-pressed','true');
+  await expect(heart).toHaveClass(/active/);
+  await expect.poll(()=>page.evaluate(()=>window.__mangaWrites.some(write=>write.method==='PUT'&&write.body?.includes('MANGA')))).toBe(true);
+  const favoriteVisual=await heart.evaluate(button=>({background:getComputedStyle(button).backgroundColor,fill:getComputedStyle(button.querySelector('svg')).fill}));
+  expect(favoriteVisual.background).not.toBe('rgba(0, 0, 0, 0)');
+  expect(favoriteVisual.fill).not.toBe('none');
+  await reading.locator('[data-manga-list]').click();
+  await expect(page.locator('#nx42MangaState')).toBeVisible();
+  await page.locator('#nx42MangaState button[type="submit"]').click();
+  await expect(page.locator('#nx42MangaState')).toHaveCount(0);
+  const listAction=reading.locator('[data-manga-list]');
+  await expect(listAction).toHaveAttribute('aria-pressed','true');
+  await expect(listAction).toHaveClass(/active/);
+  await expect(listAction.locator('path')).toHaveAttribute('d','m5 12 4 4L19 7');
+  await expect.poll(()=>page.evaluate(()=>window.__mangaWrites.some(write=>write.method==='PUT'&&write.path.includes('/api/me/manga-list/')))).toBe(true);
+
+  const trailerSection=page.locator('.nx42-trailers-section'),cards=trailerSection.locator('.nx42-trailer');
+  await expect(trailerSection).toBeVisible({timeout:30000});
+  await expect(cards).toHaveCount(3);
+  const ratio=await cards.first().locator('.nx42-trailer-media').evaluate(element=>{const box=element.getBoundingClientRect();return box.width/box.height});
+  expect(ratio).toBeGreaterThan(1.74);expect(ratio).toBeLessThan(1.82);
+  const before=page.url();
+  await cards.first().click();
+  const modal=page.locator('.nx42-trailer-modal');
+  await expect(modal).toBeVisible();
+  await expect(modal.locator('[role="dialog"]')).toHaveAttribute('aria-modal','true');
+  await expect(modal.locator('iframe')).toHaveAttribute('src',/youtube-nocookie\.com\/embed\/abc123XYZ01\?.*autoplay=1/);
+  expect(page.url()).toBe(before);
+  await modal.getByRole('button',{name:'Fechar trailer'}).last().click();
+  await expect(modal).toHaveCount(0);
+  await page.setViewportSize({width:390,height:844});
+  const mobile=await cards.first().evaluate(element=>({width:element.getBoundingClientRect().width,rail:element.parentElement.clientWidth}));
+  expect(mobile.width/mobile.rail).toBeGreaterThan(.8);expect(mobile.width/mobile.rail).toBeLessThan(.9);
+  await noOverflow(page,3);
+});
 
 test('single Home impression is complete and does not look like a broken rail',async({page})=>{
   const impression={id:'imp-one',media_id:101,media_type:'ANIME',body:'Uma estreia excelente e cheia de personalidade.',created_at:new Date().toISOString(),username:'kayky',display_name:'Kayky Sousa',avatar_url:pixel,status:'CURRENT',progress:5,score:9,reaction:'LOVE',media:{id:101,title:'Anime Teste 101',cover:pixel,banner:pixel,format:'TV',episodes:12,seasonYear:2026}};
