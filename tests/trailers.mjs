@@ -27,6 +27,7 @@ const items = buildLatestTrailers([
   article({ title: 'Anime Teste ganha vídeo celebrando seu aniversário', summary: 'O anime recebeu um vídeo celebrando seus 10 anos.', mediaEmbeds: [{ url: 'https://youtu.be/abc123XYZ06' }] }),
   article({ title: 'Anime Teste e restaurante divulgam trailer da colaboração', summary: 'A campanha terá brinquedos inspirados no anime.', mediaEmbeds: [{ url: 'https://youtu.be/abc123XYZ07' }] }),
   article({ title: 'Anime Teste terá continuação', summary: 'A série foi confirmada; confira o vídeo do anúncio.', mediaEmbeds: [{ url: 'https://youtu.be/abc123XYZ08' }] }),
+  article({ title: 'Série Teste ganha trailer', summary: 'A produção estreia em outubro.', mediaEmbeds: [{ url: 'https://youtu.be/abc123XYZ09' }] }),
   article({ title: 'Anime sem vídeo ganha trailer', mediaEmbeds: [] }),
   article({ title: 'Anime Segundo revela teaser', publishedAt: '2026-09-03T17:00:00.000Z', mediaEmbeds: [{ url: 'https://youtu.be/abc123XYZ02' }] }),
   article(),
