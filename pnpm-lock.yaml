@@ -39,8 +39,8 @@ importers:
         specifier: ^5.6.1
         version: 5.12.1
       fastify-raw-body:
-        specifier: 5.0.0
-        version: 5.0.0
+        specifier: 6.0.1
+        version: 6.0.1
       pg:
         specifier: ^8.16.3
         version: 8.23.0
@@ -370,8 +370,8 @@ packages:
   fastify-plugin@6.0.0:
     resolution: {integrity: sha512-fZOty7z3O7vOliF6d8bHE3wiEh1KcNnKEQensSgTk9C1DvN6nRLS++XVd86v33Hw/8u9Un8A1zDrQ8ujcQDHEg==}
 
-  fastify-raw-body@5.0.0:
-    resolution: {integrity: sha512-2qfoaQ3BQDhZ1gtbkKZd6n0kKxJISJGM6u/skD9ljdWItAscjXrtZ1lnjr7PavmXX9j4EyCPmBDiIsLn07d5vA==}
+  fastify-raw-body@6.0.1:
+    resolution: {integrity: sha512-H0eo4VaknYFsgyG7t+uppjBqeliAvu6NVKpFf3rzYCKdCPGrrfLc0qc8y1YlC2nNlIp07qQIk65RUViIixLw+A==}
     engines: {node: '>= 10'}
 
   fastify@5.12.1:
@@ -664,9 +664,6 @@ packages:
 
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
-
-  secure-json-parse@2.7.0:
-    resolution: {integrity: sha512-6aU+Rwsezw7VR8/nyvKTx8QpWH9FrcYiXXlqC4z5d5XQBDRqtbfsRjnwGyqbi3gddNtWHuEk9OANUotL26qKUw==}
 
   secure-json-parse@4.1.0:
     resolution: {integrity: sha512-l4KnYfEyqYJxDwlNVyRfO2E4NTHfMKAWdUuA8J0yve2Dz/E/PdBepY03RvyJpssIpRFwJoCD55wA+mEDs6ByWA==}
@@ -1069,11 +1066,11 @@ snapshots:
 
   fastify-plugin@6.0.0: {}
 
-  fastify-raw-body@5.0.0:
+  fastify-raw-body@6.0.1:
     dependencies:
-      fastify-plugin: 5.1.0
+      fastify-plugin: 6.0.0
       raw-body: 3.0.2
-      secure-json-parse: 2.7.0
+      secure-json-parse: 4.1.0
 
   fastify@5.12.1:
     dependencies:
@@ -1362,8 +1359,6 @@ snapshots:
   safe-stable-stringify@2.5.0: {}
 
   safer-buffer@2.1.2: {}
-
-  secure-json-parse@2.7.0: {}
 
   secure-json-parse@4.1.0: {}
 
