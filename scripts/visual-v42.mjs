@@ -5,7 +5,7 @@ const origin = process.env.ANINEXUS_E2E_ORIGIN || 'http://qgbaltigo.github.io:41
 const output = process.env.ANINEXUS_VISUAL_OUTPUT || 'test-results/visual-v42';
 const executablePath = process.env.ANINEXUS_CHROMIUM_EXECUTABLE_PATH || undefined;
 const mappedHost = new URL(origin).hostname === 'qgbaltigo.github.io';
-const buildUrl = route => `${origin}?build=44.16.2&p=${encodeURIComponent(route)}`;
+const buildUrl = route => `${origin}?build=44.17.0&p=${encodeURIComponent(route)}`;
 const artwork = new URL('assets/logo.png', origin).href;
 const communityArtwork = new URL('assets/radio-background-v44.png', origin).href;
 const media = (id, type = 'ANIME') => ({
@@ -36,10 +36,11 @@ const media = (id, type = 'ANIME') => ({
 });
 const graphData = (query = '', variables = {}) => {
   const type = /type\s*:\s*MANGA/.test(query) ? 'MANGA' : 'ANIME';
-  const ids = Array.isArray(variables.ids) && variables.ids.length ? variables.ids : Array.from({ length: 12 }, (_, index) => 101 + index);
+  const currentPage = Number(variables.page || 1), requestedCount = Math.min(25, Number(variables.perPage || 12));
+  const ids = Array.isArray(variables.ids) && variables.ids.length ? variables.ids : Array.from({ length: requestedCount }, (_, index) => currentPage * 1000 + 101 + index);
   const items = ids.map(Number).filter(Boolean).map(id => media(id, type));
   const airingAt = Number(variables.start) || Math.floor(Date.now() / 1000) + 3600;
-  const Page = { pageInfo: { total: 120, currentPage: 1, lastPage: 10, hasNextPage: true }, media: items, airingSchedules: items.slice(0, 6).map((item, index) => ({ airingAt: airingAt + 3600 * index, episode: index + 1, media: item })) };
+  const Page = { pageInfo: { total: 5000, currentPage, lastPage: 200, hasNextPage: currentPage < 200 }, media: items, airingSchedules: items.slice(0, 6).map((item, index) => ({ airingAt: airingAt + 3600 * index, episode: index + 1, media: item })) };
   if (/\bseason:Page/.test(query)) return { season: Page, schedule: Page, top: Page, popular: Page, soon: Page, reading: { ...Page, media: items.map(item => media(item.id, 'MANGA')) } };
   const aliases = [...query.matchAll(/\b(a\d+):Media/g)].map(match => match[1]);
   if (aliases.length) return Object.fromEntries(aliases.map((key, index) => [key, media(201 + index, type)]));
@@ -51,7 +52,9 @@ const cases = [
   { name: 'desktop-home-dark', route: '/', selector: '.nx35-home', ready: '.nx35-anime', width: 1440, height: 900, theme: 'dark' },
   { name: 'mobile-community-dark', route: '/comunidade', selector: '.nx40-community', ready: '.nx40-tabs', width: 390, height: 844, theme: 'dark' },
   { name: 'mobile-mangas-light', route: '/mangas', selector: '.nx42-manga-page', ready: '.nx42-manga-card', width: 390, height: 844, theme: 'light' },
+  { name: 'mobile-catalog-dark', route: '/animes/catalogo', selector: '.nx21-catalog-page', ready: '.nx21-card', width: 390, height: 844, theme: 'dark' },
   { name: 'tablet-catalog-dark', route: '/animes/catalogo', selector: '.nx21-catalog-page', ready: '.nx21-card', width: 768, height: 1024, theme: 'dark' },
+  { name: 'desktop-catalog-dark', route: '/animes/catalogo', selector: '.nx21-catalog-page', ready: '.nx21-card', width: 1440, height: 900, theme: 'dark' },
   { name: 'desktop-detail-light', route: '/anime/obra-de-teste-101', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-hero', width: 1440, height: 900, theme: 'light' },
 ];
 
@@ -130,6 +133,16 @@ try {
     if (item.name === 'desktop-home-dark') {
       await page.locator('.nx35-live').screenshot({ path: `${output}/desktop-home-community-panel.png` });
       await page.locator('#nx35Schedule').locator('xpath=ancestor::section[1]').screenshot({ path: `${output}/desktop-home-schedule.png` });
+    }
+    if (item.name === 'desktop-catalog-dark') {
+      await page.evaluate(() => scrollTo({ top: 520, behavior: 'instant' }));
+      await page.waitForTimeout(250);
+      await page.screenshot({ path: `${output}/desktop-catalog-dark-scrolled.png` });
+      await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
+      await page.getByRole('button', { name: 'Busca', exact: true }).click();
+      await page.getByRole('button', { name: 'Filtros', exact: true }).click();
+      await page.getByRole('dialog', { name: 'Filtros' }).waitFor({ state: 'visible' });
+      await page.screenshot({ path: `${output}/desktop-catalog-dark-filters.png` });
     }
     results.push({ name: item.name, ...geometry, errors });
     await context.close();

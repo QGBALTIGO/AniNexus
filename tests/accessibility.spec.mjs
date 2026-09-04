@@ -4,7 +4,7 @@ import { achievementCatalog, levelFromXp } from '../lib/achievements.mjs';
 
 const ORIGIN = process.env.ANINEXUS_E2E_ORIGIN || 'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN = process.env.ANINEXUS_LOCAL_STATIC_ORIGIN || '';
-const pageUrl = route => `${ORIGIN}?build=44.16.2&p=${encodeURIComponent(route)}`;
+const pageUrl = route => `${ORIGIN}?build=44.17.0&p=${encodeURIComponent(route)}`;
 const pixel = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 const achievementDefinitions = achievementCatalog();
 const achievementItems = achievementDefinitions.map((item, index) => ({
@@ -32,7 +32,7 @@ async function fulfillLocalStatic(route) {
       return await route.fulfill({ response });
     } catch (error) {
       lastError = error;
-      if (!/ECONNRESET|socket hang up/i.test(String(error?.message)) || attempt === 2) throw error;
+      if (!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message)) || attempt === 2) throw error;
       await new Promise(resolve => setTimeout(resolve, 50 * (attempt + 1)));
     }
   }
@@ -67,6 +67,7 @@ test.beforeEach(async ({ page }) => {
   await page.route('**/api/achievements/catalog', route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ total: 40, items: achievementDefinitions }) }));
   await page.route(/\/api\/me\/achievements(?:\/.*)?(?:\?.*)?$/, route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(achievementPayload) }));
 });
+test.afterEach(async ({ page }) => { await page.unrouteAll({ behavior: 'ignoreErrors' }); });
 
 for (const route of ['/', '/animes/catalogo', '/mangas', '/animes/programacao', '/anime/anime-teste-101', '/comunidade', '/noticias', '/conquistas', '/login', '/admin', '/quem-somos', '/termos-de-uso']) {
   test(`WCAG AA sem falhas sérias em ${route}`, async ({ page }) => {

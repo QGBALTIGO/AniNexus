@@ -20,13 +20,17 @@ body.nx43-notifications-open{overflow:hidden}
   backdrop-filter:blur(18px) saturate(1.08)!important
 }
 html.nx35-home-boot #topbar,
-body.nx35-home-active #topbar{
+body.nx35-home-active #topbar,
+html.nx21-catalog-boot #topbar,
+body.nx21-catalog #topbar{
   position:fixed!important;
   inset:0 0 auto!important;
   width:100%
 }
 html.nx35-home-boot #topbar:not(.is-scrolled),
-body.nx35-home-active #topbar:not(.is-scrolled){
+body.nx35-home-active #topbar:not(.is-scrolled),
+html.nx21-catalog-boot #topbar:not(.is-scrolled),
+body.nx21-catalog #topbar:not(.is-scrolled){
   border-bottom-color:transparent!important;
   background:transparent!important;
   box-shadow:none!important;
@@ -74,7 +78,7 @@ body.nx35-home-active .nx35-hero-grid{padding-top:calc(62px + var(--nx43-header-
 
 html[data-theme=light] #topbar{border-bottom-color:transparent!important;background:#fffafb!important;color:#2d2027!important;box-shadow:none!important}
 html[data-theme=light] #topbar.is-scrolled{border-bottom-color:rgba(48,27,38,.12)!important;background:rgba(255,250,251,.97)!important;box-shadow:0 8px 26px rgba(65,28,47,.07)!important}
-html[data-theme=light].nx35-home-boot #topbar:not(.is-scrolled),html[data-theme=light] body.nx35-home-active #topbar:not(.is-scrolled){background:transparent!important}
+html[data-theme=light].nx35-home-boot #topbar:not(.is-scrolled),html[data-theme=light] body.nx35-home-active #topbar:not(.is-scrolled),html[data-theme=light].nx21-catalog-boot #topbar:not(.is-scrolled),html[data-theme=light] body.nx21-catalog #topbar:not(.is-scrolled){background:transparent!important}
 html[data-theme=light] #topbar :where(.brand,.main-nav>a,.icon-button,.menu-btn){color:#665a60!important}
 html[data-theme=light] #topbar .main-nav>a:hover,html[data-theme=light] #topbar .main-nav>a.active{color:#2e2027!important}
 html[data-theme=light] #topbar .main-nav>a.active [data-icon]{color:#d92d51!important}

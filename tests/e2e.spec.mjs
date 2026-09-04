@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.16.2&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.17.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -20,6 +20,7 @@ function achievementPayload({unlockedCount=18,pins=[achievementDefinitions[0].id
 }
 function achievementFeed(){return achievementDefinitions.slice(0,7).map((item,index)=>({...item,username:['kayky','sobroza','andreluiz','nathancezar'][index%4],displayName:`Membro ${index+1}`,avatarUrl:index%2?pixel:null,unlockedAt:new Date(Date.now()-(index+1)*180000).toISOString(),batchCount:index===0?4:1,url:`/u/kayky?tab=achievements&achievement=${item.id}`}))}
 function anime(id=101){const provider=id%2?{site:'Crunchyroll',url:`https://www.crunchyroll.com/watch/${id}`,type:'STREAMING',icon:pixel,color:'#fff'}:{site:'YouTube',url:`https://www.youtube.com/watch?v=${id}`,type:'STREAMING',icon:pixel,color:'#fff'};return{id,title:{romaji:`Anime Teste ${id}`,english:`Anime Teste ${id}`,native:`Teste ${id}`,userPreferred:`Anime Teste ${id}`},coverImage:{extraLarge:pixel,large:pixel},bannerImage:portrait,averageScore:82,popularity:1000,genres:['Action','Adventure'],episodes:12,format:'TV',status:'RELEASING',seasonYear:2026,description:'Uma história de teste.',externalLinks:[provider],startDate:{year:2026,month:1,day:1},endDate:null,studios:{nodes:[]},relations:{edges:[]},recommendations:{nodes:[]},characters:{edges:[]},staff:{edges:[]}}}
+function catalogPage(page=1,count=25){return Array.from({length:count},(_,index)=>anime(page*1000+index+1))}
 function graphData(query='',variables={}){
   const ids=Array.isArray(variables.ids)&&variables.ids.length?variables.ids:[101,102,103,104],media=ids.map(Number).filter(Boolean).map(anime),airingAt=Number(variables.start)||Math.floor(Date.now()/1000)+3600;
   const Page={pageInfo:{total:media.length,currentPage:1,lastPage:1,hasNextPage:false},media,airingSchedules:media.map((item,i)=>({airingAt:airingAt+3600*(i+1),episode:i+1,media:item}))};
@@ -56,8 +57,9 @@ async function mockInternalRankings(page){
 function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animethemes:Array.from({length:count},(_,index)=>({type:index%3===2?'ED':'OP',sequence:index+1,song:{title:`Tema ${index+1}`,artists:[{name:`Artista ${index+1}`}]},animethemeentries:[{episodes:String(index+1),nsfw:false,spoiler:false,videos:[{link:`https://v.animethemes.moe/test-${index+1}.webm`,mimetype:'video/webm',resolution:1080,nc:true,subbed:false,lyrics:false}]}]}))}]}}
 test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
+test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-04-v44.16.2')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-04-v44.17.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -749,6 +751,106 @@ test('Community V40 exposes activity impressions discussions trends and local co
   let postedThread=null;
   await page.route('**/api/community/threads**',async route=>{if(route.request().method()==='POST'){postedThread={id:'thread-test',username:'teste',...route.request().postDataJSON(),replies:0,created_at:new Date().toISOString()};return route.fulfill({status:201,contentType:'application/json',body:JSON.stringify(postedThread)})}return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:postedThread?[postedThread]:[]})})});
   await page.goto(pageUrl('/comunidade'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx40-community')).toBeVisible({timeout:30000});for(const label of ['Tudo','Atividade','Impressões','Discussões'])await expect(page.getByRole('button',{name:label,exact:true})).toBeVisible();await expect(page.locator('#nx40Stats')).toBeVisible();await expect(page.locator('#nx40Trending')).toBeVisible();await page.locator('[data-nx40-new]').click();await expect(page.locator('#nx40ThreadModal')).toBeVisible();await page.locator('#nx40ThreadForm input[name="title"]').fill('Discussão de teste');await page.locator('#nx40ThreadForm textarea').fill('Uma conversa de teste para validar a Comunidade V40.');await page.locator('#nx40ThreadForm button[type="submit"]').click();await expect(page.locator('#nx40ThreadModal')).toBeHidden();await expect(page.locator('.nx40-feed')).toContainText('Discussão de teste');await noOverflow(page)
+});
+
+test('Catalog exposes all pages, keeps its chrome together and darkens the header only after scroll',async({page})=>{
+  const requested=[];
+  await page.unroute('https://graphql.anilist.co/');
+  await page.route('https://graphql.anilist.co/',async route=>{const body=route.request().postDataJSON(),current=Number(body.variables?.page||1);requested.push(body);await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:{Page:{pageInfo:{total:5000,currentPage:current,lastPage:200,hasNextPage:current<200},media:catalogPage(current)}}})})});
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx21-card')).toHaveCount(25,{timeout:30000});
+  await expect(page.locator('#nx21Count')).toHaveText('5.000+ títulos');
+  await expect(page.locator('.nx21-pages').getByRole('button',{name:'1',exact:true})).toBeVisible();
+  await expect(page.locator('.nx21-pages').getByRole('button',{name:'2',exact:true})).toBeVisible();
+  await expect(page.locator('.nx21-pages').getByRole('button',{name:'200',exact:true})).toBeVisible();
+  const columns=await page.locator('.nx21-card').evaluateAll(cards=>new Set(cards.slice(0,5).map(card=>Math.round(card.getBoundingClientRect().left))).size);
+  expect(columns).toBe(5);
+  const topGeometry=await page.evaluate(()=>{const chrome=document.querySelector('.nx21-chrome').getBoundingClientRect(),title=document.querySelector('.nx21-intro h1').getBoundingClientRect(),tabs=document.querySelector('.nx21-tabbar').getBoundingClientRect();return{chromeTop:Math.round(chrome.top),titleTop:Math.round(title.top),tabsTop:Math.round(tabs.top)}});
+  expect(topGeometry.chromeTop).toBe(0);
+  expect(topGeometry.titleTop).toBeGreaterThanOrEqual(90);
+  expect(topGeometry.titleTop).toBeLessThanOrEqual(125);
+  expect(topGeometry.tabsTop).toBeLessThanOrEqual(205);
+  await expect(page.locator('#topbar')).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
+  await page.locator('.nx21-pages').scrollIntoViewIfNeeded();
+  await expect(page.locator('body')).toHaveClass(/nx21-catalog-scrolled/);
+  await expect(page.locator('#topbar')).toHaveClass(/is-scrolled/);
+  await expect(page.locator('#topbar')).not.toHaveCSS('background-color','rgba(0, 0, 0, 0)');
+  await expect(page.locator('.nx21-intro')).toHaveCSS('opacity','1');
+  await expect(page.locator('.nx21-intro')).toHaveCSS('height','102px');
+  await expect(page.locator('.nx21-intro h1')).toBeVisible();
+  await expect(page.locator('.nx21-intro>p')).toHaveCSS('opacity','0');
+  const scrolledGeometry=await page.evaluate(()=>{const header=document.querySelector('#topbar').getBoundingClientRect(),title=document.querySelector('.nx21-intro h1').getBoundingClientRect(),tabs=document.querySelector('.nx21-tabbar').getBoundingClientRect();return{headerBottom:Math.round(header.bottom),titleTop:Math.round(title.top),tabsTop:Math.round(tabs.top)}});
+  expect(scrolledGeometry.titleTop).toBe(topGeometry.titleTop);
+  expect(scrolledGeometry.tabsTop).toBeGreaterThan(scrolledGeometry.headerBottom);
+  expect(scrolledGeometry.tabsTop).toBeLessThan(topGeometry.tabsTop);
+  await page.locator('.nx21-pages').getByRole('button',{name:'2',exact:true}).click();
+  await expect(page.locator('.nx21-card').first().locator('h3')).toHaveText('Anime Teste 2001',{timeout:10000});
+  expect(requested.some(body=>Number(body.variables?.page)===2)).toBe(true);
+  await noOverflow(page,2);
+});
+
+test('Catalog search and filters work together in a complete modal',async({page})=>{
+  const requested=[];
+  await page.unroute('https://graphql.anilist.co/');
+  await page.route('https://graphql.anilist.co/',async route=>{const body=route.request().postDataJSON(),current=Number(body.variables?.page||1);requested.push(body);await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:{Page:{pageInfo:{total:75,currentPage:current,lastPage:3,hasNextPage:current<3},media:catalogPage(current)}}})})});
+  await page.setViewportSize({width:1280,height:900});
+  await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx21-card')).toHaveCount(25,{timeout:30000});
+  await page.getByRole('button',{name:'Busca',exact:true}).click();
+  await expect(page.locator('#nx21Search')).toBeVisible();
+  await page.getByRole('button',{name:'Filtros',exact:true}).click();
+  const dialog=page.getByRole('dialog',{name:'Filtros'});await expect(dialog).toBeVisible();
+  const closeSize=await dialog.getByRole('button',{name:'Fechar filtros'}).evaluate(button=>{const box=button.getBoundingClientRect();return{width:box.width,height:box.height}});
+  expect(Math.abs(closeSize.width-closeSize.height)).toBeLessThanOrEqual(1);
+  await dialog.getByRole('button',{name:'Filme',exact:true}).click();
+  await dialog.getByRole('button',{name:'Finalizado',exact:true}).click();
+  await dialog.locator('#nx21Year').selectOption('2026');
+  await dialog.locator('#nx21Genre').selectOption('Action');
+  await dialog.getByRole('button',{name:/Aplicar/}).click();
+  await expect(dialog).toBeHidden();
+  await expect.poll(()=>requested.at(-1)?.variables?.format).toBe('MOVIE');
+  expect(requested.at(-1)?.variables).toMatchObject({status:'FINISHED',year:2026,genre:'Action'});
+  await page.locator('#nx21Search').fill('Naruto');
+  await expect.poll(()=>requested.at(-1)?.variables?.search,{timeout:3000}).toBe('Naruto');
+  await page.evaluate(()=>scrollTo({top:420,behavior:'instant'}));
+  await expect(page.locator('.nx21-intro h1')).toBeVisible();
+  await expect(page.locator('#nx21Search')).toBeVisible();
+  await noOverflow(page,2);
+});
+
+test('Catalog community tabs request genuine AniNexus ranking metrics',async({page})=>{
+  const requests=[];
+  await page.route('**/runtime-config.js*',route=>route.fulfill({status:200,contentType:'application/javascript',body:`window.__ANINEXUS_CONFIG__=Object.freeze({environment:'test',siteOrigin:'https://qgbaltigo.github.io/AniNexus',apiOrigin:'https://graphql.anilist.co',clerkPublishableKey:'pk_test_catalog',authEnabled:true});`}));
+  await page.route('https://graphql.anilist.co/api/catalog?**',route=>{const url=new URL(route.request().url());requests.push(Object.fromEntries(url.searchParams));const items=Array.from({length:25},(_,index)=>rankedMedia(301+index));return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items,pageInfo:{total:100,currentPage:1,lastPage:4,hasNextPage:true}})})});
+  await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx21-card')).toHaveCount(25,{timeout:30000});
+  await page.getByRole('button',{name:'Ranking',exact:true}).click();
+  await expect.poll(()=>requests.at(-1)?.sort).toBe('SCORE');
+  expect(requests.at(-1)).toMatchObject({communityOnly:'1',perPage:'25'});
+  await expect(page.locator('.nx21-rank')).toHaveCount(25);
+  await expect(page.locator('.nx21-score').first()).toBeVisible();
+  await page.getByRole('button',{name:'Mais membros',exact:true}).click();
+  await expect.poll(()=>requests.at(-1)?.sort).toBe('MEMBERS');
+  expect(requests.at(-1)?.communityOnly).toBe('1');
+  await noOverflow(page,2);
+});
+
+test('Catalog uses two comfortable columns on phones and scales through tablet',async({page})=>{
+  await page.unroute('https://graphql.anilist.co/');
+  await page.route('https://graphql.anilist.co/',async route=>{const body=route.request().postDataJSON(),current=Number(body.variables?.page||1);await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:{Page:{pageInfo:{total:5000,currentPage:current,lastPage:200,hasNextPage:true},media:catalogPage(current)}}})})});
+  for(const [width,expectedColumns] of [[320,2],[360,2],[390,2],[430,2],[768,3],[820,3],[1024,4],[1280,5],[1440,5],[1920,5]]){
+    await page.setViewportSize({width,height:844});
+    await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});
+    await expect(page.locator('.nx21-card')).toHaveCount(25,{timeout:30000});
+    const columns=await page.locator('.nx21-card').evaluateAll((cards,count)=>new Set(cards.slice(0,count).map(card=>Math.round(card.getBoundingClientRect().left))).size,expectedColumns);
+    expect(columns).toBe(expectedColumns);
+    const first=await page.locator('.nx21-card').first().evaluate(card=>{const box=card.getBoundingClientRect();return{width:box.width,left:box.left,right:box.right}});
+    expect(first.width).toBeGreaterThan(width<=320?135:width<=430?150:200);
+    expect(first.left).toBeGreaterThanOrEqual(7);
+    expect(first.right).toBeLessThanOrEqual(width-7);
+    await noOverflow(page,2);
+  }
 });
 
 test('Catalog opens dedicated anime detail without action click leaking to card',async({page})=>{const hosted=new URL(ORIGIN).hostname.endsWith('github.io');await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});const card=page.locator('.nx21-card').first();await expect(card).toBeVisible({timeout:30000});const before=page.url(),fav=card.locator('button[data-fav]').first();await fav.click();expect(page.url()).toBe(before);await page.waitForTimeout(380);await card.locator('h3').click();await page.waitForURL(u=>{const url=new URL(u);return url.searchParams.get('p')?.startsWith('/anime/')===true||url.pathname.startsWith('/anime/')},{timeout:15000});if(!hosted){const selectedPath=new URL(page.url()).pathname;await page.goto(pageUrl(selectedPath),{waitUntil:'domcontentloaded'})}await expect(page.locator('.nx22-detail')).toBeVisible({timeout:30000})});
