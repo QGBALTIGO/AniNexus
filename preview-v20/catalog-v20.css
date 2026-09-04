@@ -115,6 +115,9 @@ body.nx21-catalog-scrolled .nx21-intro>p{max-height:0;margin-top:0;opacity:0;tra
 :is(.nx21-tab,.nx21-mobile-option)[data-nx21-mode="POPULAR"] i{color:#dc7198}
 :is(.nx21-tab,.nx21-mobile-option)[data-nx21-mode="MEMBERS"] i{color:#54bec1}
 :is(.nx21-tab,.nx21-mobile-option)[data-nx21-mode="SEARCH"] i{color:#c27adc}
+:is(.nx21-tab,.nx21-mobile-option)[data-nx21-mode="MANGA"] i{color:#5abbdc}
+:is(.nx21-tab,.nx21-mobile-option)[data-nx21-mode="ONE_SHOT"] i{color:#ef9e5f}
+:is(.nx21-tab,.nx21-mobile-option)[data-nx21-mode="NOVEL"] i{color:#65c987}
 .nx21-tab:hover i{filter:brightness(1.18);transform:translateY(-1px)}
 .nx21-tab.active i{filter:brightness(1.2) drop-shadow(0 0 5px currentColor)}
 .nx21-tab svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
@@ -157,8 +160,9 @@ body.nx21-catalog-scrolled .nx21-intro>p{max-height:0;margin-top:0;opacity:0;tra
 .nx21-actions button{width:32px;height:32px;flex:none;display:grid;place-items:center;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:rgba(10,7,9,.88);backdrop-filter:blur(8px);color:#eee5e8;box-shadow:0 5px 14px rgba(0,0,0,.3);cursor:pointer;transition:transform .16s ease,background-color .16s ease,border-color .16s ease,color .16s ease}
 .nx21-actions button:hover{transform:scale(1.07);border-color:rgba(255,255,255,.35);background:#21171b;color:#fff}
 .nx21-actions button svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.nx21-actions button[data-fav].active{border-color:#ff6f8c;background:#e83259;color:#fff}
-.nx21-actions button[data-fav].active svg{fill:currentColor}
+.nx21-actions button:is([data-fav],[data-manga-fav]).active{border-color:#ff6f8c;background:#e83259;color:#fff}
+.nx21-actions button:is([data-fav],[data-manga-fav]).active svg{fill:currentColor}
+.nx21-actions button[data-manga-list].active{border-color:#e46782;background:#d82e52;color:#fff}
 .nx21-actions button[data-nx-unified-status="PLANNING"]{border-color:#e46782;background:#d82e52;color:#fff}
 .nx21-actions button[data-nx-unified-status="CURRENT"]{border-color:#60a9e8;background:#277ebd;color:#fff}
 .nx21-actions button[data-nx-unified-status="COMPLETED"]{border-color:#58c88d;background:#27875a;color:#fff}
@@ -235,6 +239,8 @@ html[data-theme="light"] .nx21-tab{color:#75676d}html[data-theme="light"] .nx21-
 html[data-theme="light"] .nx21-search-field,html[data-theme="light"] .nx21-open-filters{border-color:rgba(58,31,43,.16);background:#fff;color:#75676d}
 html[data-theme="light"] .nx21-search-field input{color:#2e2127}
 html[data-theme="light"] .nx21-poster{border-color:rgba(58,31,43,.14);background:#eee7ea;box-shadow:0 10px 25px rgba(67,34,48,.09)}
+html[data-theme="light"] .nx21-rank{-webkit-text-stroke-color:#9b7314;text-shadow:0 2px 9px rgba(67,34,48,.18)}
+html[data-theme="light"] .nx21-rank-label{color:#806010}
 html[data-theme="light"] .nx21-skeleton i,html[data-theme="light"] .nx21-skeleton span,html[data-theme="light"] .nx21-skeleton small{background:#eee8ea}
 html[data-theme="light"] .nx21-pages button{color:#6d6065}html[data-theme="light"] .nx21-pages button:hover:not(:disabled){background:#f2ebed;color:#2d2026}
 html[data-theme="light"] .nx21-filter-dialog{border-color:rgba(58,31,43,.16);background:#fffafb;color:#2d2026;box-shadow:0 30px 80px rgba(53,27,38,.25)}
@@ -265,10 +271,10 @@ html[data-theme="light"] .nx21-mobile-option:hover,html[data-theme="light"] .nx2
   .nx21-open-filters{width:auto;min-width:92px;height:42px;padding:0 12px;justify-content:center}.nx21-open-filters>span{display:inline}.nx21-open-filters b{position:static;margin:0}
   .nx21-tabbar,.nx21-tab-row,.nx21-tabs,.nx21-tab{height:50px}
   .nx21-tab-row{width:100%;display:grid;grid-template-columns:50px minmax(0,1fr);padding:0}
-  .nx21-mobile-menu-trigger{position:relative;z-index:2;width:50px;height:50px;display:grid;place-items:center;padding:0;border:0;background:rgba(8,6,8,.2);color:#b3a7ac;box-shadow:9px 0 16px rgba(7,5,7,.28);cursor:pointer}
-  .nx21-mobile-menu-trigger:hover{color:#fff;background:rgba(255,255,255,.035)}
+  .nx21-mobile-menu-trigger{position:relative;z-index:2;width:50px;height:50px;display:grid;place-items:center;padding:0;border:0;background:transparent;color:#b3a7ac;box-shadow:10px 0 14px -12px rgba(0,0,0,.78);cursor:pointer}
+  .nx21-mobile-menu-trigger:hover{color:#fff;background:rgba(255,255,255,.025)}
   .nx21-mobile-menu-trigger svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}
-  .nx21-tabs{min-width:0;padding-right:24px;scroll-padding-inline:12px 30px;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 30px),transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 30px),transparent 100%)}
+  .nx21-tabs{min-width:0;padding-right:24px;scroll-padding-inline:12px 30px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 10px,#000 calc(100% - 30px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 10px,#000 calc(100% - 30px),transparent 100%)}
   .nx21-tab{gap:7px;padding:0 13px;font-size:10.2px}
   body.nx21-catalog-scrolled .nx21-intro{height:60px}
   body.nx21-catalog-scrolled .nx21-intro h1{font-size:19px}
@@ -297,6 +303,10 @@ html[data-theme="light"] .nx21-mobile-option:hover,html[data-theme="light"] .nx2
   @keyframes nx21-sheet-in{from{opacity:.8;transform:translateY(100%)}to{opacity:1;transform:none}}
   .nx21-filter-dialog>header{height:56px;padding-left:16px}.nx21-filter-scroll{padding:17px 16px 20px}.nx21-filter-dialog>footer{height:63px;padding:0 13px}
   .nx21-filter-selects{grid-template-columns:1fr 1fr}.nx21-filter-selects label:last-child{grid-column:1/-1}
+}
+@media(max-width:640px){
+  html[data-theme="light"] .nx21-mobile-menu-trigger{background:transparent;color:#81747a;box-shadow:10px 0 14px -12px rgba(67,34,48,.42)}
+  html[data-theme="light"] .nx21-mobile-menu-trigger:hover{background:rgba(58,31,43,.025);color:#2d2026}
 }
 @media(max-width:360px){
   .nx21-body{padding-inline:8px}.nx21-grid{gap:20px 8px}.nx21-card h3{font-size:10.8px}.nx21-ranked{padding-left:3px}.nx21-rank{font-size:49px}

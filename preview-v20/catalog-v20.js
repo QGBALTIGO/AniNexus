@@ -5,14 +5,11 @@
 
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
-  const TARGET = '/animes/catalogo';
-  const BUILD = '44.18.1';
+  const BUILD = '44.19.0';
   const ENDPOINT = 'https://graphql.anilist.co';
   const PER_PAGE = 25;
   const MAX_PUBLIC_PAGE = 200;
   const CACHE_TTL = 8 * 60 * 1000;
-  const CACHE_PREFIX = 'nx:v45:catalog:';
-  const STORE_KEY = 'nx:v45:catalog-state';
 
   const GENRES = [
     ['Action', 'Ação'], ['Adventure', 'Aventura'], ['Comedy', 'Comédia'], ['Drama', 'Drama'],
@@ -26,15 +23,34 @@
     ['Isekai', 'Isekai'], ['Magic', 'Magia'], ['Martial Arts', 'Artes marciais'], ['Historical', 'Histórico'],
     ['Military', 'Militar'], ['Super Power', 'Superpoderes'], ['Vampire', 'Vampiros'], ['Time Manipulation', 'Viagem no tempo']
   ];
-  const FORMATS = [['TV', 'Série'], ['MOVIE', 'Filme'], ['OVA', 'OVA'], ['SPECIAL', 'Especial'], ['ONA', 'ONA']];
-  const STATUSES = [['RELEASING', 'Em andamento'], ['FINISHED', 'Finalizado'], ['NOT_YET_RELEASED', 'Em breve']];
+  const ANIME_FORMATS = [['TV', 'Série'], ['MOVIE', 'Filme'], ['OVA', 'OVA'], ['SPECIAL', 'Especial'], ['ONA', 'ONA']];
+  const READING_FORMATS = [['MANGA', 'Mangá'], ['ONE_SHOT', 'One-shot'], ['NOVEL', 'Light novel']];
+  const ANIME_STATUSES = [['RELEASING', 'Em andamento'], ['FINISHED', 'Finalizado'], ['NOT_YET_RELEASED', 'Em breve']];
+  const READING_STATUSES = [['RELEASING', 'Em publicação'], ['FINISHED', 'Finalizado'], ['NOT_YET_RELEASED', 'Em breve'], ['HIATUS', 'Em hiato'], ['CANCELLED', 'Cancelado']];
   const SEASONS = [['WINTER', 'Inverno'], ['SPRING', 'Primavera'], ['SUMMER', 'Verão'], ['FALL', 'Outono']];
-  const SORTS = [['TITLE', 'Título'], ['POPULAR', 'Popularidade'], ['SCORE', 'Avaliação'], ['NEW', 'Estreia']];
-  const MODES = [
+  const SORTS = [['DISCOVER', 'Relevância'], ['TITLE', 'Título'], ['POPULAR', 'Popularidade'], ['SCORE', 'Avaliação'], ['NEW', 'Estreia']];
+  const ANIME_MODES = [
     ['ALL', 'Todos', 'grid'], ['SOON', 'Em breve', 'clock'], ['SEASON', 'Temporada', 'leaf'],
     ['TOP', 'Ranking', 'trophy'], ['POPULAR', 'Mais populares', 'fire'],
     ['MEMBERS', 'Mais membros', 'members'], ['SEARCH', 'Busca', 'search']
   ];
+  const READING_MODES = [
+    ['ALL', 'Todos', 'grid'], ['MANGA', 'Mangás', 'book'], ['ONE_SHOT', 'One-Shots', 'oneShot'],
+    ['NOVEL', 'Light Novels', 'novel'], ['TOP', 'Ranking', 'trophy'],
+    ['POPULAR', 'Mais populares', 'fire'], ['SEARCH', 'Busca', 'search']
+  ];
+  const CATALOGS = Object.freeze({
+    anime: {
+      key: 'anime', target: '/animes/catalogo', mediaType: 'ANIME', endpoint: '/api/catalog', nav: 'anime',
+      modes: ANIME_MODES, storeKey: 'nx:v46:anime-catalog-state', cachePrefix: 'nx:v46:anime-catalog:',
+      discoveryMinimum: 500, noun: 'anime', plural: 'animes'
+    },
+    manga: {
+      key: 'manga', target: '/mangas', mediaType: 'MANGA', endpoint: '/api/reading', nav: 'manga',
+      modes: READING_MODES, storeKey: 'nx:v46:reading-catalog-state', cachePrefix: 'nx:v46:reading-catalog:',
+      discoveryMinimum: 300, noun: 'leitura', plural: 'leituras'
+    }
+  });
   const ICON = {
     grid: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>',
     clock: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5l3.2 2"/></svg>',
@@ -42,6 +58,9 @@
     trophy: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v4c0 4-2 7-4 7s-4-3-4-7V4Z"/><path d="M8 6H4v2c0 2 2 4 4 4M16 6h4v2c0 2-2 4-4 4M12 15v4M8 21h8"/></svg>',
     fire: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2c1 4-2 5-1 8 1-2 3-3 4-5 3 3 5 6 5 10a9 9 0 1 1-18 0c0-4 2-7 5-10 0 3 1 4 2 5 0-3 1-5 3-8Z"/></svg>',
     members: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3.5 19c.4-4 2.2-6 5.5-6s5.1 2 5.5 6M14 14c3.8-.8 6 1 6.5 4.5"/></svg>',
+    book: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22V5.5ZM20 5.5A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22V5.5Z"/></svg>',
+    oneShot: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6V3Z"/><path d="M15 3v5h4M9 12h6M9 16h6"/></svg>',
+    novel: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H19v18H7.5A2.5 2.5 0 0 0 5 22V4.5Z"/><path d="M5 18.5A2.5 2.5 0 0 1 7.5 16H19M9 7h6M9 11h5"/></svg>',
     search: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.6"/><path d="m15.7 15.7 4.5 4.5"/></svg>',
     menu: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/></svg>',
     star: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.5 6.1.9-4.4 4.3 1 6.1-5.5-2.9-5.5 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></svg>',
@@ -56,20 +75,22 @@
     retry: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5"/><path d="M19 12a7 7 0 1 0-2 5"/></svg>'
   };
 
-  const emptyFilters = () => ({ format: '', status: '', season: '', year: '', genre: '', tag: '', sort: 'NEW', direction: 'DESC' });
+  const emptyFilters = () => ({ format: '', status: '', season: '', year: '', genre: '', tag: '', sort: 'DISCOVER', direction: 'DESC' });
   const state = {
     mode: 'ALL', page: 1, search: '', filters: emptyFilters(), draft: emptyFilters(),
     controller: null, token: 0, mounted: false, filtersOpen: false, menuOpen: false, items: new Map(),
-    searchTimer: 0, previousFocus: null, menuFocus: null, revealObserver: null
+    searchTimer: 0, previousFocus: null, menuFocus: null, revealObserver: null, catalog: null
   };
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   const slug = value => String(value || 'anime').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 90);
-  const titleOf = media => media?.title?.english || media?.title?.userPreferred || media?.title?.romaji || media?.title?.native || 'Anime';
+  const currentCatalog = () => state.catalog || CATALOGS.anime;
+  const currentModes = () => currentCatalog().modes;
+  const titleOf = media => media?.title?.english || media?.title?.userPreferred || media?.title?.romaji || media?.title?.native || (currentCatalog().mediaType === 'MANGA' ? 'Mangá' : 'Anime');
   const imageOf = media => media?.coverImage?.extraLarge || media?.coverImage?.large || `${BASE}/assets/logo.png`;
   const scoreOf = media => media?.metricsSource === 'aninexus' && Number(media?.ratingCount || 0) > 0 && Number.isFinite(Number(media?.averageScore)) ? (Number(media.averageScore) / 10).toFixed(1).replace('.0', '') : '';
-  const formatLabel = value => ({ TV: 'Série', TV_SHORT: 'Série curta', MOVIE: 'Filme', OVA: 'OVA', ONA: 'ONA', SPECIAL: 'Especial', MUSIC: 'Música' })[value] || value || 'Anime';
-  const genreLabel = value => GENRES.find(item => item[0] === value)?.[1] || value;
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+  const SECTION_MODES = Object.freeze({ todos: 'ALL', breve: 'SOON', temporada: 'SEASON', ranking: 'TOP', populares: 'POPULAR', membros: 'MEMBERS', busca: 'SEARCH', mangas: 'MANGA', 'one-shots': 'ONE_SHOT', 'light-novels': 'NOVEL' });
+  const MODE_SECTIONS = Object.freeze(Object.fromEntries(Object.entries(SECTION_MODES).map(([section, mode]) => [mode, section])));
 
   function route() {
     const url = new URL(location.href);
@@ -79,7 +100,24 @@
     if (IS_PAGES) path = path.replace(/^\/AniNexus/, '') || '/';
     return path.replace(/\/+$/, '') || '/';
   }
-  function onCatalog() { return route() === TARGET || Boolean(window.__NX_CATALOG_BOOT__); }
+  function catalogForRoute() {
+    const path = route();
+    if (path === CATALOGS.manga.target) return CATALOGS.manga;
+    if (path === CATALOGS.anime.target || window.__NX_CATALOG_BOOT__) return CATALOGS.anime;
+    return null;
+  }
+  function onCatalog() { return Boolean(catalogForRoute()); }
+  function requestedMode() {
+    let section = String(window.__NX_CATALOG_BOOT_SECTION__ || '').toLowerCase();
+    if (!section) {
+      const url = new URL(location.href);
+      const restored = url.searchParams.get('p');
+      const source = restored ? new URL(restored, location.origin) : url;
+      section = String(source.searchParams.get('secao') || '').toLowerCase();
+    }
+    const mode = SECTION_MODES[section];
+    return currentModes().some(item => item[0] === mode) ? mode : '';
+  }
   function currentSeason() {
     const now = new Date();
     const month = Number(new Intl.DateTimeFormat('en', { timeZone: 'America/Sao_Paulo', month: 'numeric' }).format(now));
@@ -92,25 +130,25 @@
   }
   function restore() {
     try {
-      const saved = JSON.parse(sessionStorage.getItem(STORE_KEY) || 'null');
-      if (!saved || !MODES.some(item => item[0] === saved.mode)) return;
+      const saved = JSON.parse(sessionStorage.getItem(currentCatalog().storeKey) || 'null');
+      if (!saved || !currentModes().some(item => item[0] === saved.mode)) return;
       state.mode = saved.mode;
       state.search = String(saved.search || '').slice(0, 120);
       state.filters = { ...emptyFilters(), ...(saved.filters || {}) };
     } catch {}
   }
   function persist() {
-    try { sessionStorage.setItem(STORE_KEY, JSON.stringify({ mode: state.mode, search: state.search, filters: state.filters })); } catch {}
+    try { sessionStorage.setItem(currentCatalog().storeKey, JSON.stringify({ mode: state.mode, search: state.search, filters: state.filters })); } catch {}
   }
   function cacheRead(key) {
     try {
-      const cached = JSON.parse(sessionStorage.getItem(CACHE_PREFIX + key) || 'null');
+      const cached = JSON.parse(sessionStorage.getItem(currentCatalog().cachePrefix + key) || 'null');
       if (cached && Date.now() - cached.time < CACHE_TTL && Array.isArray(cached.value?.items)) return cached.value;
     } catch {}
     return null;
   }
   function cacheWrite(key, value) {
-    try { sessionStorage.setItem(CACHE_PREFIX + key, JSON.stringify({ time: Date.now(), value })); } catch {}
+    try { sessionStorage.setItem(currentCatalog().cachePrefix + key, JSON.stringify({ time: Date.now(), value })); } catch {}
   }
   function normalizeMedia(media) {
     if (!media || typeof media !== 'object') return null;
@@ -127,10 +165,22 @@
     };
   }
 
+  function presentable(media) {
+    const image = media?.coverImage?.extraLarge || media?.coverImage?.large || '';
+    const title = titleOf(media);
+    return Boolean(image)
+      && !/\/(?:medium|large)\/default\.(?:jpe?g|png|webp)(?:$|\?)/i.test(image)
+      && !/^\s*(?:\(?title to be announced\)?|untitled|tba)\s*$/i.test(title)
+      && !/\b(?:provisional title|untitled project)\b/i.test(title);
+  }
+
   function requestOptions() {
-    const options = { page: state.page, perPage: PER_PAGE, sort: 'NEW', direction: 'DESC' };
-    if (state.mode === 'SOON') Object.assign(options, { status: 'NOT_YET_RELEASED', sort: 'POPULAR' });
-    if (state.mode === 'SEASON') Object.assign(options, currentSeason(), { sort: 'POPULAR' });
+    const catalog = currentCatalog();
+    const options = { page: state.page, perPage: PER_PAGE, sort: 'DISCOVER', direction: 'DESC' };
+    if (state.mode === 'ALL') options.discover = catalog.discoveryMinimum;
+    if (state.mode === 'SOON') Object.assign(options, { status: 'NOT_YET_RELEASED', sort: 'DISCOVER', discover: catalog.discoveryMinimum });
+    if (state.mode === 'SEASON') Object.assign(options, currentSeason(), { sort: 'DISCOVER', discover: catalog.discoveryMinimum });
+    if (['MANGA', 'ONE_SHOT', 'NOVEL'].includes(state.mode)) Object.assign(options, { format: state.mode, discover: catalog.discoveryMinimum });
     if (state.mode === 'TOP') Object.assign(options, { sort: 'SCORE' });
     if (state.mode === 'POPULAR') Object.assign(options, { sort: 'POPULAR', communityOnly: 1 });
     if (state.mode === 'MEMBERS') Object.assign(options, { sort: 'MEMBERS', communityOnly: 1 });
@@ -152,14 +202,17 @@
   async function serverCatalog(options, signal) {
     const params = new URLSearchParams();
     for (const [key, value] of Object.entries(options)) if (value !== '' && value != null) params.set(key, String(value));
-    const data = await apiJson(`/api/catalog?${params}`, signal);
+    const data = await apiJson(`${currentCatalog().endpoint}?${params}`, signal);
     if (!Array.isArray(data?.items)) throw new Error('INVALID_CATALOG');
-    return { pageInfo: data.pageInfo || {}, items: data.items.map(normalizeMedia).filter(Boolean), source: 'aninexus' };
+    const items = data.items.map(normalizeMedia).filter(Boolean);
+    return { pageInfo: data.pageInfo || {}, items: options.discover ? items.filter(presentable) : items, source: 'aninexus' };
   }
 
   function directQuery(options) {
+    const catalog = currentCatalog();
+    const reading = catalog.mediaType === 'MANGA';
     const defs = ['$page:Int!', '$perPage:Int!'];
-    const args = ['type:ANIME', 'isAdult:false'];
+    const args = [`type:${catalog.mediaType}`, 'isAdult:false'];
     const variables = { page: options.page, perPage: options.perPage };
     const add = (name, type, value, argument = name) => {
       if (value === '' || value == null) return;
@@ -169,12 +222,18 @@
     add('genre', 'String!', options.genre);
     add('tag', 'String!', options.tag);
     add('format', 'MediaFormat!', options.format);
-    add('season', 'MediaSeason!', options.season);
-    add('year', 'Int!', options.year ? Number(options.year) : null, 'seasonYear');
+    if (reading && options.year) {
+      add('startDateGreater', 'FuzzyDateInt!', Number(options.year) * 10000, 'startDate_greater');
+      add('startDateLesser', 'FuzzyDateInt!', Number(options.year) * 10000 + 1231, 'startDate_lesser');
+    } else {
+      add('season', 'MediaSeason!', options.season);
+      add('year', 'Int!', options.year ? Number(options.year) : null, 'seasonYear');
+    }
     add('status', 'MediaStatus!', options.status);
-    let sort = options.sort === 'MATCH' || options.search ? 'SEARCH_MATCH' : options.sort === 'TITLE' ? (options.direction === 'DESC' ? 'TITLE_ROMAJI_DESC' : 'TITLE_ROMAJI') : options.sort === 'SCORE' ? 'SCORE_DESC' : options.sort === 'FAVOURITES' ? 'FAVOURITES_DESC' : options.sort === 'POPULAR' || options.sort === 'MEMBERS' ? 'POPULARITY_DESC' : options.direction === 'ASC' ? 'START_DATE' : 'START_DATE_DESC';
+    add('minimumPopularity', 'Int!', Number(options.discover) || null, 'popularity_greater');
+    let sort = options.sort === 'MATCH' || options.search ? 'SEARCH_MATCH' : options.sort === 'TITLE' ? (options.direction === 'DESC' ? 'TITLE_ROMAJI_DESC' : 'TITLE_ROMAJI') : options.sort === 'SCORE' ? 'SCORE_DESC' : options.sort === 'DISCOVER' ? 'POPULARITY_DESC' : options.sort === 'FAVOURITES' ? 'FAVOURITES_DESC' : options.sort === 'POPULAR' || options.sort === 'MEMBERS' ? 'POPULARITY_DESC' : options.direction === 'ASC' ? 'START_DATE' : 'START_DATE_DESC';
     args.push(`sort:[${sort}]`);
-    const fields = 'id title{romaji english native userPreferred} coverImage{extraLarge large} episodes format status seasonYear genres startDate{year month day}';
+    const fields = `id title{romaji english native userPreferred} coverImage{extraLarge large} ${reading ? 'chapters volumes' : 'episodes seasonYear'} format status genres startDate{year month day}`;
     return { query: `query(${defs.join(',')}){Page(page:$page,perPage:$perPage){pageInfo{total currentPage lastPage hasNextPage}media(${args.join(',')}){${fields}}}}`, variables };
   }
 
@@ -188,7 +247,8 @@
         const json = await response.json();
         if (json.errors?.length) throw new Error(json.errors[0]?.message || 'Falha no catálogo');
         if (!Array.isArray(json.data?.Page?.media)) throw new Error('INVALID_CATALOG');
-        return { pageInfo: json.data.Page.pageInfo || {}, items: json.data.Page.media.map(normalizeMedia).filter(Boolean), source: 'anilist' };
+        const items = json.data.Page.media.map(normalizeMedia).filter(Boolean);
+        return { pageInfo: json.data.Page.pageInfo || {}, items: options.discover ? items.filter(presentable) : items, source: 'anilist' };
       } catch (error) {
         lastError = error;
         if (error?.name === 'AbortError') throw error;
@@ -209,7 +269,7 @@
       const last = Number(result.pageInfo?.lastPage || current);
       if (!result.items.length && current <= last && !options.communityOnly) result = await directCatalog(options, signal);
     } catch (error) {
-      if (error?.name === 'AbortError') throw error;
+      if (error?.name === 'AbortError' || options.communityOnly) throw error;
       result = await directCatalog(options, signal);
     }
     if (result.items.length) cacheWrite(key, result);
@@ -234,28 +294,41 @@
     return ['format', 'status', 'season', 'year', 'genre', 'tag'].filter(key => Boolean(filters[key])).length;
   }
   function modeLabel() {
-    return ({ ALL: 'Todos os animes', SOON: 'Animes em breve', SEASON: 'Animes da temporada', TOP: 'Top 100 animes', POPULAR: 'Mais populares', MEMBERS: 'Mais membros', SEARCH: 'Resultados da busca' })[state.mode] || 'Todos os animes';
+    if (currentCatalog().mediaType === 'MANGA') return ({ ALL: 'Todas as leituras', MANGA: 'Mangás', ONE_SHOT: 'One-shots', NOVEL: 'Light novels', TOP: 'Top 100 mangás', POPULAR: 'Leituras populares', SEARCH: 'Resultados da busca' })[state.mode] || 'Todas as leituras';
+    return ({ ALL: 'Todos os animes', SOON: 'Animes em breve', SEASON: 'Animes da temporada', TOP: 'Top 100 animes', POPULAR: 'Animes populares', MEMBERS: 'Mais membros', SEARCH: 'Resultados da busca' })[state.mode] || 'Todos os animes';
   }
   function introCopy() {
+    const reading = currentCatalog().mediaType === 'MANGA';
+    if (reading) {
+      if (state.mode === 'SEARCH') return { title: 'Buscar <em>Mangás</em>', subtitle: '' };
+      if (state.mode === 'TOP') return { title: 'Top 100 <em>Mangás</em>', subtitle: 'Mangás, one-shots e light novels ordenados pelas avaliações da comunidade AniNexus.' };
+      if (state.mode === 'POPULAR') return { title: 'Leituras <em>Populares</em>', subtitle: 'As histórias que mais movimentam listas, favoritos e impressões da comunidade.' };
+      if (state.mode === 'MANGA') return { title: 'Todos os <em>Mangás</em>', subtitle: 'Séries de mangá relevantes, dos clássicos às publicações recentes.' };
+      if (state.mode === 'ONE_SHOT') return { title: '<em>One-Shots</em>', subtitle: 'Histórias completas para descobrir em uma única obra.' };
+      if (state.mode === 'NOVEL') return { title: '<em>Light Novels</em>', subtitle: 'Novels japonesas para acompanhar e organizar sua leitura.' };
+      return { title: 'Catálogo de <em>Mangás</em>', subtitle: 'Mangás, one-shots e light novels reunidos em uma experiência feita para leitura.' };
+    }
     if (state.mode === 'SEARCH') return { title: 'Buscar <em>Animes</em>', subtitle: '' };
     if (state.mode === 'TOP') return { title: 'Top 100 <em>Animes</em>', subtitle: 'Do 1º ao 100º, ordenados pelas avaliações da comunidade AniNexus.' };
-    if (state.mode === 'POPULAR') return { title: 'Animes <em>Populares</em>', subtitle: 'As obras que mais movimentam as listas da comunidade.' };
-    if (state.mode === 'MEMBERS') return { title: 'Mais <em>Membros</em>', subtitle: 'Os animes presentes em mais listas dos membros do AniNexus.' };
+    if (state.mode === 'POPULAR') return { title: 'Animes <em>Populares</em>', subtitle: 'As obras que mais movimentam listas, favoritos e impressões da comunidade.' };
+    if (state.mode === 'MEMBERS') return { title: 'Mais <em>Membros</em>', subtitle: 'Os animes presentes em mais listas, com impressões e avaliações como desempate.' };
     if (state.mode === 'SOON') return { title: 'Animes em <em>Breve</em>', subtitle: 'Próximas estreias anunciadas e títulos a caminho.' };
     if (state.mode === 'SEASON') return { title: 'Animes da <em>Temporada</em>', subtitle: 'A temporada atual reunida em um catálogo fácil de acompanhar.' };
-    return { title: 'Catálogo de <em>Animes</em>', subtitle: 'Todos os animes do catálogo, dos clássicos aos lançamentos da temporada.' };
+    return { title: 'Catálogo de <em>Animes</em>', subtitle: 'Uma seleção relevante do catálogo, dos clássicos aos lançamentos da temporada.' };
   }
   function tabsMarkup() {
-    return MODES.map(([key, label, icon]) => `<button type="button" class="nx21-tab${state.mode === key ? ' active' : ''}" data-nx21-mode="${key}" aria-pressed="${state.mode === key}"><i>${ICON[icon]}</i><span>${label}</span></button>`).join('');
+    return currentModes().map(([key, label, icon]) => `<button type="button" class="nx21-tab${state.mode === key ? ' active' : ''}" data-nx21-mode="${key}" aria-pressed="${state.mode === key}"><i>${ICON[icon]}</i><span>${label}</span></button>`).join('');
   }
   function mobileMenuMarkup() {
-    const options = MODES.map(([key, label, icon]) => `<button type="button" class="nx21-mobile-option${state.mode === key ? ' active' : ''}" data-nx21-mode="${key}" aria-pressed="${state.mode === key}"><i>${ICON[icon]}</i><span>${label}</span></button>`).join('');
+    const options = currentModes().map(([key, label, icon]) => `<button type="button" class="nx21-mobile-option${state.mode === key ? ' active' : ''}" data-nx21-mode="${key}" aria-pressed="${state.mode === key}"><i>${ICON[icon]}</i><span>${label}</span></button>`).join('');
     return `<div class="nx21-mobile-menu-layer" role="presentation"><button type="button" class="nx21-mobile-menu-backdrop" data-nx21-menu-close aria-label="Fechar menu do catálogo"></button><section class="nx21-mobile-menu" role="dialog" aria-modal="true" aria-labelledby="nx21MobileMenuTitle" tabindex="-1"><header><h2 id="nx21MobileMenuTitle">Menu</h2><button type="button" data-nx21-menu-close aria-label="Fechar menu do catálogo">${ICON.close}</button></header><div class="nx21-mobile-options">${options}</div></section></div>`;
   }
   function searchMarkup() {
     if (state.mode !== 'SEARCH') return '';
     const count = activeFilterCount();
-    return `<div class="nx21-search-tools"><label class="nx21-search-field">${ICON.search}<span class="sr-only">Buscar animes</span><input id="nx21Search" type="search" autocomplete="off" maxlength="120" placeholder="Buscar animes..." value="${esc(state.search)}"><button type="button" data-nx21-search-clear aria-label="Limpar busca"${state.search ? '' : ' hidden'}>${ICON.close}</button></label><button type="button" class="nx21-open-filters${count ? ' has-filters' : ''}" data-nx21-filters aria-haspopup="dialog">${ICON.filters}<span>Filtros</span>${count ? `<b>${count}</b>` : ''}</button></div>`;
+    const reading = currentCatalog().mediaType === 'MANGA';
+    const label = reading ? 'Buscar mangás, one-shots ou light novels' : 'Buscar animes';
+    return `<div class="nx21-search-tools"><label class="nx21-search-field">${ICON.search}<span class="sr-only">${label}</span><input id="nx21Search" type="search" autocomplete="off" maxlength="120" placeholder="${label}..." value="${esc(state.search)}"><button type="button" data-nx21-search-clear aria-label="Limpar busca"${state.search ? '' : ' hidden'}>${ICON.close}</button></label><button type="button" class="nx21-open-filters${count ? ' has-filters' : ''}" data-nx21-filters aria-haspopup="dialog">${ICON.filters}<span>Filtros</span>${count ? `<b>${count}</b>` : ''}</button></div>`;
   }
   function skeletons() {
     return `<div class="nx21-grid nx21-grid-loading">${Array.from({ length: 15 }, () => '<div class="nx21-skeleton"><i></i><span></span><small></small></div>').join('')}</div>`;
@@ -267,22 +340,26 @@
     return `<option value="">${esc(placeholder)}</option>${items.map(([itemValue, label]) => `<option value="${esc(itemValue)}"${String(value) === String(itemValue) ? ' selected' : ''}>${esc(label)}</option>`).join('')}`;
   }
   function filterMarkup() {
-    const changed = activeFilterCount(state.draft) || state.draft.sort !== 'NEW' || state.draft.direction !== 'DESC';
-    return `<div class="nx21-filter-layer" role="presentation"><button type="button" class="nx21-filter-backdrop" data-nx21-filter-close aria-label="Fechar filtros"></button><section class="nx21-filter-dialog" role="dialog" aria-modal="true" aria-labelledby="nx21FilterTitle" tabindex="-1"><header><h2 id="nx21FilterTitle">Filtros</h2><button type="button" class="nx21-filter-close" data-nx21-filter-close aria-label="Fechar filtros">${ICON.close}</button></header><div class="nx21-filter-scroll"><fieldset><legend>Tipo</legend><div class="nx21-filter-choices">${choiceButtons('format', FORMATS)}</div></fieldset><fieldset><legend>Status</legend><div class="nx21-filter-choices">${choiceButtons('status', STATUSES)}</div></fieldset><fieldset><legend>Temporada</legend><div class="nx21-filter-choices">${choiceButtons('season', SEASONS)}</div></fieldset><div class="nx21-filter-selects"><label><span>Ano</span><select id="nx21Year">${selectOptions(years().map(year => [year, year]), state.draft.year, 'Todos os anos')}</select></label><label><span>Gênero</span><select id="nx21Genre">${selectOptions(GENRES, state.draft.genre, 'Todos os gêneros')}</select></label><label><span>Tag</span><select id="nx21Tag">${selectOptions(TAGS, state.draft.tag, 'Todas as tags')}</select></label></div><fieldset><legend>Ordenar por</legend><div class="nx21-filter-choices nx21-sort-choices">${choiceButtons('sort', SORTS)}</div></fieldset><fieldset><legend>Direção</legend><div class="nx21-direction"><button type="button" data-nx21-direction="ASC" aria-pressed="${state.draft.direction === 'ASC'}" title="Ordem crescente">${ICON.asc}<span>Crescente</span></button><button type="button" data-nx21-direction="DESC" aria-pressed="${state.draft.direction === 'DESC'}" title="Ordem decrescente">${ICON.desc}<span>Decrescente</span></button></div></fieldset></div><footer><button type="button" class="nx21-clear-filters" data-nx21-filter-clear${changed ? '' : ' disabled'}>Limpar</button><button type="button" class="nx21-apply-filters" data-nx21-filter-apply>Aplicar${activeFilterCount(state.draft) ? ` <b>${activeFilterCount(state.draft)}</b>` : ''}</button></footer></section></div>`;
+    const reading = currentCatalog().mediaType === 'MANGA';
+    const changed = activeFilterCount(state.draft) || state.draft.sort !== 'DISCOVER' || state.draft.direction !== 'DESC';
+    const formats = reading ? READING_FORMATS : ANIME_FORMATS;
+    const statuses = reading ? READING_STATUSES : ANIME_STATUSES;
+    const season = reading ? '' : `<fieldset><legend>Temporada</legend><div class="nx21-filter-choices">${choiceButtons('season', SEASONS)}</div></fieldset>`;
+    return `<div class="nx21-filter-layer" role="presentation"><button type="button" class="nx21-filter-backdrop" data-nx21-filter-close aria-label="Fechar filtros"></button><section class="nx21-filter-dialog" role="dialog" aria-modal="true" aria-labelledby="nx21FilterTitle" tabindex="-1"><header><h2 id="nx21FilterTitle">Filtros</h2><button type="button" class="nx21-filter-close" data-nx21-filter-close aria-label="Fechar filtros">${ICON.close}</button></header><div class="nx21-filter-scroll"><fieldset><legend>Formato</legend><div class="nx21-filter-choices">${choiceButtons('format', formats)}</div></fieldset><fieldset><legend>Status</legend><div class="nx21-filter-choices">${choiceButtons('status', statuses)}</div></fieldset>${season}<div class="nx21-filter-selects"><label><span>Ano</span><select id="nx21Year">${selectOptions(years().map(year => [year, year]), state.draft.year, 'Todos os anos')}</select></label><label><span>Gênero</span><select id="nx21Genre">${selectOptions(GENRES, state.draft.genre, 'Todos os gêneros')}</select></label><label><span>Tag</span><select id="nx21Tag">${selectOptions(TAGS, state.draft.tag, 'Todas as tags')}</select></label></div><fieldset><legend>Ordenar por</legend><div class="nx21-filter-choices nx21-sort-choices">${choiceButtons('sort', SORTS)}</div></fieldset><fieldset><legend>Direção</legend><div class="nx21-direction"><button type="button" data-nx21-direction="ASC" aria-pressed="${state.draft.direction === 'ASC'}" title="Ordem crescente">${ICON.asc}<span>Crescente</span></button><button type="button" data-nx21-direction="DESC" aria-pressed="${state.draft.direction === 'DESC'}" title="Ordem decrescente">${ICON.desc}<span>Decrescente</span></button></div></fieldset></div><footer><button type="button" class="nx21-clear-filters" data-nx21-filter-clear${changed ? '' : ' disabled'}>Limpar</button><button type="button" class="nx21-apply-filters" data-nx21-filter-apply>Aplicar${activeFilterCount(state.draft) ? ` <b>${activeFilterCount(state.draft)}</b>` : ''}</button></footer></section></div>`;
   }
 
   function cardMarkup(media, index) {
     const title = titleOf(media);
     const score = scoreOf(media);
-    const year = media.seasonYear || media.startDate?.year || '';
-    const rankMode = ['TOP', 'POPULAR', 'MEMBERS'].includes(state.mode);
+    const reading = currentCatalog().mediaType === 'MANGA';
+    const rankMode = state.mode === 'TOP';
     const rank = (state.page - 1) * PER_PAGE + index + 1;
-    const favourites = Number(media.favourites || 0);
-    const meta = state.mode === 'MEMBERS' && favourites > 0
-      ? `${favourites.toLocaleString('pt-BR')} favorito${favourites === 1 ? '' : 's'}`
-      : [formatLabel(media.format), year, media.episodes ? `${media.episodes} ep.` : ''].filter(Boolean).join(' · ');
+    const openAttributes = reading ? `data-kind="manga" data-manga-open="${media.id}" data-title="${esc(title)}"` : 'data-kind="anime"';
+    const listAction = reading ? `data-manga-list="${media.id}" data-nx-action-kind="compact"` : `data-list="${media.id}"`;
+    const favoriteAction = reading ? `data-manga-fav="${media.id}" data-nx-action-kind="compact"` : `data-fav="${media.id}"`;
+    const listLabel = reading ? `Adicionar ${esc(title)} à lista de leitura` : `Adicionar ${esc(title)} à lista`;
     state.items.set(Number(media.id), media);
-    return `<article class="nx21-card nx21-reveal${rankMode ? ' nx21-ranked' : ''}" data-nx21-open="${media.id}" data-nx-media="${media.id}" tabindex="0" aria-label="Abrir ${esc(title)}"><div class="nx21-poster"><img src="${esc(imageOf(media))}" loading="lazy" decoding="async" alt="${esc(title)}"><div class="nx21-shade"></div>${score ? `<span class="nx21-score">${ICON.star}<b>${score}</b></span>` : ''}<div class="nx21-actions"><button type="button" data-list="${media.id}" aria-label="Adicionar à lista">${ICON.plus}</button><button type="button" data-fav="${media.id}" aria-label="Adicionar aos favoritos">${ICON.heart}</button></div></div>${rankMode ? `<span class="nx21-rank" aria-hidden="true">${rank}</span><small class="nx21-rank-label">${rank}º NO ANINEXUS</small>` : ''}<h3>${esc(title)}</h3>${meta ? `<p>${esc(meta)}</p>` : ''}${!rankMode && media.genres?.length ? `<small class="nx21-genres">${esc(media.genres.slice(0, 2).map(genreLabel).join(' · '))}</small>` : ''}</article>`;
+    return `<article class="nx21-card nx21-reveal${rankMode ? ' nx21-ranked' : ''}" data-nx21-open="${media.id}" data-nx-media="${media.id}" ${openAttributes} tabindex="0" aria-label="Abrir ${esc(title)}"><div class="nx21-poster"><img src="${esc(imageOf(media))}" loading="lazy" decoding="async" alt="${esc(title)}"><div class="nx21-shade"></div>${score ? `<span class="nx21-score">${ICON.star}<b>${score}</b></span>` : ''}<div class="nx21-actions"><button type="button" ${listAction} aria-label="${listLabel}">${ICON.plus}</button><button type="button" ${favoriteAction} aria-label="Favoritar ${esc(title)}">${ICON.heart}</button></div></div>${rankMode ? `<span class="nx21-rank" aria-hidden="true">${rank}</span><small class="nx21-rank-label">${rank}º NO ANINEXUS</small>` : ''}<h3>${esc(title)}</h3></article>`;
   }
 
   function paginationMarkup(info) {
@@ -300,11 +377,13 @@
   }
 
   function renderShell() {
+    const catalog = currentCatalog();
     const copy = introCopy();
     document.documentElement.classList.remove('nx21-catalog-boot');
     document.body.classList.add('nx21-catalog');
-    document.querySelectorAll('[data-nav]').forEach(link => link.classList.toggle('active', link.dataset.nav === 'anime'));
-    app.innerHTML = `<main class="nx21-catalog-page"><header class="nx21-chrome"><div class="shell nx21-intro"><h1 id="nx21IntroTitle">${copy.title}</h1><p id="nx21IntroSubtitle">${esc(copy.subtitle)}</p><div id="nx21SearchTools">${searchMarkup()}</div></div><nav class="nx21-tabbar" aria-label="Seções do catálogo"><div class="shell nx21-tab-row"><button type="button" class="nx21-mobile-menu-trigger" data-nx21-menu aria-label="Abrir menu do catálogo" aria-haspopup="dialog" aria-expanded="false">${ICON.menu}</button><div class="nx21-tabs">${tabsMarkup()}</div></div></nav></header><section class="nx21-body"><div class="shell"><p class="sr-only" id="nx21Count" aria-live="polite"></p><div class="nx21-load-line" aria-hidden="true"><i></i></div><div id="nx21Results" aria-live="polite">${skeletons()}</div><div id="nx21Pagination"></div></div></section></main>`;
+    document.body.classList.toggle('nx42-manga-active', catalog.mediaType === 'MANGA');
+    document.querySelectorAll('[data-nav]').forEach(link => link.classList.toggle('active', link.dataset.nav === catalog.nav));
+    app.innerHTML = `<main class="nx21-catalog-page${catalog.mediaType === 'MANGA' ? ' nx42-manga-page' : ''}" data-nx21-catalog-kind="${catalog.key}"><header class="nx21-chrome"><div class="shell nx21-intro"><h1 id="nx21IntroTitle">${copy.title}</h1><p id="nx21IntroSubtitle">${esc(copy.subtitle)}</p><div id="nx21SearchTools">${searchMarkup()}</div></div><nav class="nx21-tabbar" aria-label="Seções do catálogo"><div class="shell nx21-tab-row"><button type="button" class="nx21-mobile-menu-trigger" data-nx21-menu aria-label="Abrir menu do catálogo" aria-haspopup="dialog" aria-expanded="false">${ICON.menu}</button><div class="nx21-tabs">${tabsMarkup()}</div></div></nav></header><section class="nx21-body"><div class="shell"><p class="sr-only" id="nx21Count" aria-live="polite"></p><div class="nx21-load-line" aria-hidden="true"><i></i></div><div id="nx21Results" aria-live="polite">${skeletons()}</div><div id="nx21Pagination"></div></div></section></main>`;
   }
 
   function updateChrome() {
@@ -369,7 +448,7 @@
       if (count) count.textContent = total ? state.mode === 'TOP' ? `${Math.min(total, 100).toLocaleString('pt-BR')} posições` : `${total >= 5000 ? '5.000+' : total.toLocaleString('pt-BR')} títulos` : '';
       results.innerHTML = data.items.length
         ? `<div class="nx21-grid">${data.items.map(cardMarkup).join('')}</div>`
-        : '<div class="nx21-empty"><strong>Nenhum anime encontrado</strong><span>Altere os filtros para ampliar os resultados.</span></div>';
+        : `<div class="nx21-empty"><strong>Nenhuma ${currentCatalog().noun} encontrada</strong><span>Altere os filtros para ampliar os resultados.</span></div>`;
       pagination.innerHTML = paginationMarkup(data.pageInfo || {});
       revealCards();
       window.dispatchEvent(new CustomEvent('aninexus:media-state-refresh'));
@@ -404,7 +483,7 @@
     if (genre) genre.value = state.draft.genre || '';
     if (tag) tag.value = state.draft.tag || '';
     const count = activeFilterCount(state.draft);
-    const changed = count || state.draft.sort !== 'NEW' || state.draft.direction !== 'DESC';
+    const changed = count || state.draft.sort !== 'DISCOVER' || state.draft.direction !== 'DESC';
     const clear = layer.querySelector('[data-nx21-filter-clear]');
     if (clear) clear.disabled = !changed;
     const apply = layer.querySelector('[data-nx21-filter-apply]');
@@ -458,29 +537,31 @@
     state.mode = 'SEARCH';
     state.page = 1;
     persist();
+    normalizeUrl();
     closeFilters();
     updateChrome();
     load();
   }
 
   function setMode(mode) {
-    if (!MODES.some(item => item[0] === mode)) return;
+    if (!currentModes().some(item => item[0] === mode)) return;
     const changed = state.mode !== mode;
     closeMobileMenu(false);
     if (!changed) return;
     state.mode = mode;
     state.page = 1;
     persist();
+    normalizeUrl();
     closeFilters(false);
     updateChrome();
     load();
     if (mode === 'SEARCH') requestAnimationFrame(() => document.querySelector('#nx21Search')?.focus());
   }
 
-  function openAnime(id) {
+  function openMedia(id) {
     const media = state.items.get(Number(id));
     if (!media) return;
-    const path = `/anime/${slug(titleOf(media))}-${media.id}`;
+    const path = `/${currentCatalog().mediaType === 'MANGA' ? 'manga' : 'anime'}/${slug(titleOf(media))}-${media.id}`;
     cleanup();
     if (IS_PAGES) location.href = `${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`;
     else {
@@ -490,16 +571,19 @@
   }
 
   function normalizeUrl() {
-    if (!onCatalog()) return;
+    if (!state.catalog) return;
+    const section = MODE_SECTIONS[state.mode];
+    const route = `${currentCatalog().target}${state.mode !== 'ALL' && section ? `?secao=${section}` : ''}`;
     if (IS_PAGES) {
       const url = new URL(location.href);
       url.pathname = `${BASE}/`;
       url.search = '';
       url.searchParams.set('build', BUILD);
-      url.searchParams.set('p', TARGET);
+      url.searchParams.set('p', route);
       history.replaceState({}, '', url.pathname + url.search);
-    } else history.replaceState({}, '', TARGET);
+    } else history.replaceState({}, '', route);
     window.__NX_CATALOG_BOOT__ = false;
+    window.__NX_CATALOG_BOOT_SECTION__ = '';
   }
 
   function scrollCatalogTop() {
@@ -529,6 +613,7 @@
     state.mode = 'SEARCH';
     state.page = 1;
     persist();
+    normalizeUrl();
     if (state.mounted) {
       updateChrome();
       load();
@@ -544,14 +629,21 @@
     closeFilters(false);
     closeMobileMenu(false);
     document.documentElement.classList.remove('nx21-catalog-boot');
-    document.body.classList.remove('nx21-catalog', 'nx21-catalog-scrolled', 'nx21-search-mode');
+    document.body.classList.remove('nx21-catalog', 'nx21-catalog-scrolled', 'nx21-search-mode', 'nx42-manga-active');
   }
 
   function mount() {
-    if (!onCatalog()) return;
-    normalizeUrl();
+    const catalog = catalogForRoute();
+    if (!catalog) return;
     cleanup();
+    state.catalog = catalog;
+    state.mode = 'ALL';
+    state.search = '';
+    state.filters = emptyFilters();
+    state.draft = emptyFilters();
     restore();
+    state.mode = requestedMode() || state.mode;
+    normalizeUrl();
     state.page = 1;
     state.mounted = true;
     renderShell();
@@ -606,9 +698,9 @@
       return;
     }
     if (event.target.closest('[data-nx21-retry]')) { load(); return; }
-    if (event.target.closest('[data-list],[data-fav]')) return;
+    if (event.target.closest('[data-list],[data-fav],[data-manga-list],[data-manga-fav]')) return;
     const card = event.target.closest('[data-nx21-open]');
-    if (card) openAnime(card.dataset.nx21Open);
+    if (card) openMedia(card.dataset.nx21Open);
   }, true);
 
   document.addEventListener('input', event => {
@@ -655,7 +747,7 @@
     const card = event.target.closest('[data-nx21-open]');
     if (!card || event.target.closest('button')) return;
     event.preventDefault();
-    openAnime(card.dataset.nx21Open);
+    openMedia(card.dataset.nx21Open);
   });
 
   addEventListener('scroll', handleScroll, { passive: true });

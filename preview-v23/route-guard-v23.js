@@ -3,7 +3,7 @@
   try {
     const IS_PAGES=location.hostname.endsWith('github.io');
     const BASE=IS_PAGES?'/AniNexus':'';
-    const BUILD='44.18.1';
+    const BUILD='44.19.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=restored?restored.split('?')[0]:u.pathname;
@@ -33,7 +33,7 @@
     const html=document.documentElement;
     const bootClass='nx-dedicated-route-boot';
     html.classList.add(bootClass);
-    if(route.owner==='catalog')html.classList.add('nx21-catalog-boot');
+    if(route.owner==='catalog'||(route.owner==='manga'&&path==='/mangas'))html.classList.add('nx21-catalog-boot');
     window.__NX_ROUTE_OWNER__=route.owner;
     window.__NX_DEDICATED_BOOT_PATH__=path;
     if(isDetail){window.__NX_USE_V22_DETAIL__=true;window.__NX_DETAIL_ROLLBACK_PATH__=path}

@@ -70,7 +70,9 @@
       window.__NX_SCHEDULE_BOOT__=true;
       history.replaceState({},'',`${base}/__nx_schedule_boot`);
     }else if(path==='/animes/catalogo'){
+      const incoming=restored?new URL(restored,location.origin):u;
       window.__NX_CATALOG_BOOT__=true;
+      window.__NX_CATALOG_BOOT_SECTION__=incoming.searchParams.get('secao')||'';
       history.replaceState({},'',`${base}/__nx_catalog_boot`);
     }
   }catch{}

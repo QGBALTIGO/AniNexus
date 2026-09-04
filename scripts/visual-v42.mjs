@@ -5,7 +5,7 @@ const origin = process.env.ANINEXUS_E2E_ORIGIN || 'http://qgbaltigo.github.io:41
 const output = process.env.ANINEXUS_VISUAL_OUTPUT || 'test-results/visual-v42';
 const executablePath = process.env.ANINEXUS_CHROMIUM_EXECUTABLE_PATH || undefined;
 const mappedHost = new URL(origin).hostname === 'qgbaltigo.github.io';
-const buildUrl = route => `${origin}?build=44.18.1&p=${encodeURIComponent(route)}`;
+const buildUrl = route => `${origin}?build=44.19.0&p=${encodeURIComponent(route)}`;
 const artwork = new URL('assets/logo.png', origin).href;
 const communityArtwork = new URL('assets/radio-background-v44.png', origin).href;
 const media = (id, type = 'ANIME') => ({
@@ -51,7 +51,9 @@ const cases = [
   { name: 'mobile-home-dark', route: '/', selector: '.nx35-home', ready: '.nx35-anime', width: 390, height: 844, theme: 'dark' },
   { name: 'desktop-home-dark', route: '/', selector: '.nx35-home', ready: '.nx35-anime', width: 1440, height: 900, theme: 'dark' },
   { name: 'mobile-community-dark', route: '/comunidade', selector: '.nx40-community', ready: '.nx40-tabs', width: 390, height: 844, theme: 'dark' },
-  { name: 'mobile-mangas-light', route: '/mangas', selector: '.nx42-manga-page', ready: '.nx42-manga-card', width: 390, height: 844, theme: 'light' },
+  { name: 'mobile-mangas-light', route: '/mangas', selector: '.nx21-catalog-page.nx42-manga-page', ready: '.nx21-card', width: 390, height: 844, theme: 'light' },
+  { name: 'tablet-mangas-dark', route: '/mangas', selector: '.nx21-catalog-page.nx42-manga-page', ready: '.nx21-card', width: 768, height: 1024, theme: 'dark' },
+  { name: 'desktop-mangas-dark', route: '/mangas', selector: '.nx21-catalog-page.nx42-manga-page', ready: '.nx21-card', width: 1440, height: 900, theme: 'dark' },
   { name: 'mobile-catalog-dark', route: '/animes/catalogo', selector: '.nx21-catalog-page', ready: '.nx21-card', width: 390, height: 844, theme: 'dark' },
   { name: 'tablet-catalog-dark', route: '/animes/catalogo', selector: '.nx21-catalog-page', ready: '.nx21-card', width: 768, height: 1024, theme: 'dark' },
   { name: 'desktop-catalog-dark', route: '/animes/catalogo', selector: '.nx21-catalog-page', ready: '.nx21-card', width: 1440, height: 900, theme: 'dark' },
@@ -75,7 +77,18 @@ try {
     const page = await context.newPage();
     const errors = [];
     page.on('pageerror', error => errors.push(String(error?.message || error)));
+    await page.route('**/runtime-config.js*', route => route.fulfill({
+      status: 200,
+      contentType: 'application/javascript',
+      body: `window.__ANINEXUS_CONFIG__=Object.freeze({environment:'visual',siteOrigin:'https://qgbaltigo.github.io/AniNexus',apiOrigin:'https://graphql.anilist.co',clerkPublishableKey:'pk_test_visual',authEnabled:true});`,
+    }));
     await page.route('https://graphql.anilist.co/**', async route => {
+      const url = new URL(route.request().url());
+      if (url.pathname === '/api/catalog' || url.pathname === '/api/reading') {
+        const currentPage = Number(url.searchParams.get('page') || 1), type = url.pathname.endsWith('/reading') ? 'MANGA' : 'ANIME';
+        const items = Array.from({ length: 25 }, (_, index) => ({ ...media(currentPage * 1000 + 101 + index, type), metricsSource: 'aninexus', ratingCount: 30, listCount: 80 }));
+        return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ items, pageInfo: { total: 5000, currentPage, lastPage: 200, hasNextPage: currentPage < 200 } }) });
+      }
       let body = {};
       try { body = route.request().postDataJSON() || {}; } catch {}
       await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ data: graphData(body.query, body.variables) }) });
@@ -148,13 +161,36 @@ try {
       await page.getByRole('button', { name: 'Abrir menu do catálogo' }).click();
       const menu = page.getByRole('dialog', { name: 'Menu' });
       await menu.waitFor({ state: 'visible' });
+      await page.waitForTimeout(280);
       await page.screenshot({ path: `${output}/mobile-catalog-dark-menu.png` });
-      await menu.getByRole('button', { name: 'Busca', exact: true }).click();
+      await menu.getByRole('button', { name: 'Ranking', exact: true }).click();
+      await page.waitForFunction(() => document.querySelectorAll('.nx21-rank').length === 100);
+      await page.screenshot({ path: `${output}/mobile-catalog-dark-ranking.png` });
+      await page.getByRole('button', { name: 'Abrir menu do catálogo' }).click();
+      await page.getByRole('dialog', { name: 'Menu' }).getByRole('button', { name: 'Mais populares', exact: true }).click();
+      await page.locator('.nx21-card').first().waitFor({ state: 'visible' });
+      await page.screenshot({ path: `${output}/mobile-catalog-dark-popular.png` });
+      await page.getByRole('button', { name: 'Abrir menu do catálogo' }).click();
+      await page.getByRole('dialog', { name: 'Menu' }).getByRole('button', { name: 'Busca', exact: true }).click();
       await page.locator('#nx21Search').waitFor({ state: 'visible' });
       await page.screenshot({ path: `${output}/mobile-catalog-dark-search.png` });
       await page.evaluate(() => scrollTo(0, 520));
       await page.waitForTimeout(450);
       await page.screenshot({ path: `${output}/mobile-catalog-dark-scrolled.png` });
+    }
+    if (item.name === 'mobile-mangas-light') {
+      await page.getByRole('button', { name: 'Abrir menu do catálogo' }).click();
+      const menu = page.getByRole('dialog', { name: 'Menu' });
+      await menu.waitFor({ state: 'visible' });
+      await page.waitForTimeout(280);
+      await page.screenshot({ path: `${output}/mobile-mangas-light-menu.png` });
+      await menu.getByRole('button', { name: 'Ranking', exact: true }).click();
+      await page.waitForFunction(() => document.querySelectorAll('.nx21-rank').length === 100);
+      await page.screenshot({ path: `${output}/mobile-mangas-light-ranking.png` });
+      await page.getByRole('button', { name: 'Abrir menu do catálogo' }).click();
+      await page.getByRole('dialog', { name: 'Menu' }).getByRole('button', { name: 'Busca', exact: true }).click();
+      await page.locator('#nx21Search').waitFor({ state: 'visible' });
+      await page.screenshot({ path: `${output}/mobile-mangas-light-search.png` });
     }
     results.push({ name: item.name, ...geometry, errors });
     await context.close();
