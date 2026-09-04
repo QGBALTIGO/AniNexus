@@ -1,5 +1,5 @@
 'use strict';
-const CACHE = 'aninexus-shell-v44-17-0';
+const CACHE = 'aninexus-shell-v44-18-0';
 const HOME = new URL('./', self.registration.scope).href;
 
 self.addEventListener('install', event => {

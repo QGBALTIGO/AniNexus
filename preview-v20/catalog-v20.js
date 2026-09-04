@@ -6,7 +6,7 @@
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
   const TARGET = '/animes/catalogo';
-  const BUILD = '44.17.0';
+  const BUILD = '44.18.0';
   const ENDPOINT = 'https://graphql.anilist.co';
   const PER_PAGE = 25;
   const MAX_PUBLIC_PAGE = 200;
@@ -43,6 +43,7 @@
     fire: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2c1 4-2 5-1 8 1-2 3-3 4-5 3 3 5 6 5 10a9 9 0 1 1-18 0c0-4 2-7 5-10 0 3 1 4 2 5 0-3 1-5 3-8Z"/></svg>',
     members: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3.5 19c.4-4 2.2-6 5.5-6s5.1 2 5.5 6M14 14c3.8-.8 6 1 6.5 4.5"/></svg>',
     search: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.6"/><path d="m15.7 15.7 4.5 4.5"/></svg>',
+    menu: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/></svg>',
     star: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.5 6.1.9-4.4 4.3 1 6.1-5.5-2.9-5.5 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></svg>',
     plus: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
     heart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 8.8c0 5-8.5 10-8.5 10s-8.5-5-8.5-10A4.6 4.6 0 0 1 12 6.4a4.6 4.6 0 0 1 8.5 2.4Z"/></svg>',
@@ -58,8 +59,8 @@
   const emptyFilters = () => ({ format: '', status: '', season: '', year: '', genre: '', tag: '', sort: 'NEW', direction: 'DESC' });
   const state = {
     mode: 'ALL', page: 1, search: '', filters: emptyFilters(), draft: emptyFilters(),
-    controller: null, token: 0, mounted: false, filtersOpen: false, items: new Map(),
-    searchTimer: 0, previousFocus: null, revealObserver: null
+    controller: null, token: 0, mounted: false, filtersOpen: false, menuOpen: false, items: new Map(),
+    searchTimer: 0, previousFocus: null, menuFocus: null, revealObserver: null
   };
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   const slug = value => String(value || 'anime').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 90);
@@ -130,7 +131,7 @@
     const options = { page: state.page, perPage: PER_PAGE, sort: 'NEW', direction: 'DESC' };
     if (state.mode === 'SOON') Object.assign(options, { status: 'NOT_YET_RELEASED', sort: 'POPULAR' });
     if (state.mode === 'SEASON') Object.assign(options, currentSeason(), { sort: 'POPULAR' });
-    if (state.mode === 'TOP') Object.assign(options, { sort: 'SCORE', communityOnly: 1 });
+    if (state.mode === 'TOP') Object.assign(options, { sort: 'SCORE' });
     if (state.mode === 'POPULAR') Object.assign(options, { sort: 'POPULAR', communityOnly: 1 });
     if (state.mode === 'MEMBERS') Object.assign(options, { sort: 'MEMBERS', communityOnly: 1 });
     if (state.mode === 'SEARCH') {
@@ -197,8 +198,7 @@
     throw lastError || new Error('Falha de conexão');
   }
 
-  async function fetchCatalog(signal) {
-    const options = requestOptions();
+  async function fetchCatalogPage(options, signal) {
     const key = JSON.stringify(options);
     const cached = cacheRead(key);
     if (cached) return cached;
@@ -216,6 +216,20 @@
     return result;
   }
 
+  async function fetchCatalog(signal) {
+    const options = requestOptions();
+    if (state.mode !== 'TOP') return fetchCatalogPage(options, signal);
+    const batches = await Promise.all(Array.from({ length: 4 }, (_, index) => fetchCatalogPage({ ...options, page: index + 1 }, signal)));
+    const seen = new Set();
+    const items = batches.flatMap(batch => batch.items).filter(media => {
+      const id = Number(media?.id);
+      if (!id || seen.has(id)) return false;
+      seen.add(id);
+      return true;
+    }).slice(0, 100);
+    return { items, pageInfo: { total: items.length, currentPage: 1, lastPage: 1, hasNextPage: false }, source: batches[0]?.source || 'aninexus' };
+  }
+
   function activeFilterCount(filters = state.filters) {
     return ['format', 'status', 'season', 'year', 'genre', 'tag'].filter(key => Boolean(filters[key])).length;
   }
@@ -224,7 +238,7 @@
   }
   function introCopy() {
     if (state.mode === 'SEARCH') return { title: 'Buscar <em>Animes</em>', subtitle: '' };
-    if (state.mode === 'TOP') return { title: 'Top 100 <em>Animes</em>', subtitle: 'O ranking dos animes mais bem avaliados pela comunidade AniNexus.' };
+    if (state.mode === 'TOP') return { title: 'Top 100 <em>Animes</em>', subtitle: 'Do 1º ao 100º, ordenados pelas avaliações da comunidade AniNexus.' };
     if (state.mode === 'POPULAR') return { title: 'Animes <em>Populares</em>', subtitle: 'As obras que mais movimentam as listas da comunidade.' };
     if (state.mode === 'MEMBERS') return { title: 'Mais <em>Membros</em>', subtitle: 'Os animes presentes em mais listas dos membros do AniNexus.' };
     if (state.mode === 'SOON') return { title: 'Animes em <em>Breve</em>', subtitle: 'Próximas estreias anunciadas e títulos a caminho.' };
@@ -233,6 +247,10 @@
   }
   function tabsMarkup() {
     return MODES.map(([key, label, icon]) => `<button type="button" class="nx21-tab${state.mode === key ? ' active' : ''}" data-nx21-mode="${key}" aria-pressed="${state.mode === key}"><i>${ICON[icon]}</i><span>${label}</span></button>`).join('');
+  }
+  function mobileMenuMarkup() {
+    const options = MODES.map(([key, label, icon]) => `<button type="button" class="nx21-mobile-option${state.mode === key ? ' active' : ''}" data-nx21-mode="${key}" aria-pressed="${state.mode === key}"><i>${ICON[icon]}</i><span>${label}</span></button>`).join('');
+    return `<div class="nx21-mobile-menu-layer" role="presentation"><button type="button" class="nx21-mobile-menu-backdrop" data-nx21-menu-close aria-label="Fechar menu do catálogo"></button><section class="nx21-mobile-menu" role="dialog" aria-modal="true" aria-labelledby="nx21MobileMenuTitle" tabindex="-1"><header><h2 id="nx21MobileMenuTitle">Menu</h2><button type="button" data-nx21-menu-close aria-label="Fechar menu do catálogo">${ICON.close}</button></header><div class="nx21-mobile-options">${options}</div></section></div>`;
   }
   function searchMarkup() {
     if (state.mode !== 'SEARCH') return '';
@@ -286,7 +304,7 @@
     document.documentElement.classList.remove('nx21-catalog-boot');
     document.body.classList.add('nx21-catalog');
     document.querySelectorAll('[data-nav]').forEach(link => link.classList.toggle('active', link.dataset.nav === 'anime'));
-    app.innerHTML = `<main class="nx21-catalog-page"><header class="nx21-chrome"><div class="shell nx21-intro"><h1 id="nx21IntroTitle">${copy.title}</h1><p id="nx21IntroSubtitle">${esc(copy.subtitle)}</p><div id="nx21SearchTools">${searchMarkup()}</div></div><nav class="nx21-tabbar" aria-label="Seções do catálogo"><div class="shell nx21-tabs">${tabsMarkup()}</div></nav></header><section class="nx21-body"><div class="shell"><header class="nx21-results-head"><div><small>CATÁLOGO</small><h2 id="nx21ModeTitle">${esc(modeLabel())}</h2></div><span id="nx21Count" aria-live="polite"></span></header><div class="nx21-load-line" aria-hidden="true"><i></i></div><div id="nx21Results" aria-live="polite">${skeletons()}</div><div id="nx21Pagination"></div></div></section></main>`;
+    app.innerHTML = `<main class="nx21-catalog-page"><header class="nx21-chrome"><div class="shell nx21-intro"><h1 id="nx21IntroTitle">${copy.title}</h1><p id="nx21IntroSubtitle">${esc(copy.subtitle)}</p><div id="nx21SearchTools">${searchMarkup()}</div></div><nav class="nx21-tabbar" aria-label="Seções do catálogo"><div class="shell nx21-tab-row"><button type="button" class="nx21-mobile-menu-trigger" data-nx21-menu aria-label="Abrir menu do catálogo" aria-haspopup="dialog" aria-expanded="false">${ICON.menu}</button><div class="nx21-tabs">${tabsMarkup()}</div></div></nav></header><section class="nx21-body"><div class="shell"><p class="sr-only" id="nx21Count" aria-live="polite"></p><div class="nx21-load-line" aria-hidden="true"><i></i></div><div id="nx21Results" aria-live="polite">${skeletons()}</div><div id="nx21Pagination"></div></div></section></main>`;
   }
 
   function updateChrome() {
@@ -301,7 +319,7 @@
       const active = button.dataset.nx21Mode === state.mode;
       button.classList.toggle('active', active);
       button.setAttribute('aria-pressed', String(active));
-      if (active) button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      if (active && button.classList.contains('nx21-tab')) button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     });
     const modeTitle = document.querySelector('#nx21ModeTitle');
     if (modeTitle) modeTitle.textContent = modeLabel();
@@ -394,6 +412,7 @@
   }
 
   function openFilters() {
+    closeMobileMenu(false);
     closeFilters(false);
     state.filtersOpen = true;
     state.draft = { ...state.filters };
@@ -407,9 +426,31 @@
     document.querySelector('.nx21-filter-layer')?.remove();
     state.filtersOpen = false;
     document.body.classList.remove('nx21-filters-open');
-    if (!document.querySelector('.nx20-media-layer,.search-overlay:not([hidden]),.auth-overlay:not([hidden])')) document.body.classList.remove('modal-open');
+    if (!document.querySelector('.nx21-mobile-menu-layer,.nx20-media-layer,.search-overlay:not([hidden]),.auth-overlay:not([hidden])')) document.body.classList.remove('modal-open');
     if (restoreFocus && state.previousFocus instanceof HTMLElement && state.previousFocus.isConnected) state.previousFocus.focus();
     state.previousFocus = null;
+  }
+
+  function openMobileMenu() {
+    if (!matchMedia('(max-width: 640px)').matches) return;
+    closeFilters(false);
+    closeMobileMenu(false);
+    state.menuOpen = true;
+    state.menuFocus = document.activeElement;
+    document.body.insertAdjacentHTML('beforeend', mobileMenuMarkup());
+    document.body.classList.add('nx21-menu-open', 'modal-open');
+    document.querySelector('[data-nx21-menu]')?.setAttribute('aria-expanded', 'true');
+    requestAnimationFrame(() => document.querySelector('.nx21-mobile-menu')?.focus());
+  }
+
+  function closeMobileMenu(restoreFocus = true) {
+    document.querySelector('.nx21-mobile-menu-layer')?.remove();
+    state.menuOpen = false;
+    document.body.classList.remove('nx21-menu-open');
+    document.querySelector('[data-nx21-menu]')?.setAttribute('aria-expanded', 'false');
+    if (!document.querySelector('.nx21-filter-layer,.nx20-media-layer,.search-overlay:not([hidden]),.auth-overlay:not([hidden])')) document.body.classList.remove('modal-open');
+    if (restoreFocus && state.menuFocus instanceof HTMLElement && state.menuFocus.isConnected) state.menuFocus.focus();
+    state.menuFocus = null;
   }
 
   function applyFilters() {
@@ -423,7 +464,10 @@
   }
 
   function setMode(mode) {
-    if (!MODES.some(item => item[0] === mode) || state.mode === mode) return;
+    if (!MODES.some(item => item[0] === mode)) return;
+    const changed = state.mode !== mode;
+    closeMobileMenu(false);
+    if (!changed) return;
     state.mode = mode;
     state.page = 1;
     persist();
@@ -470,6 +514,10 @@
     document.body.classList.toggle('nx21-catalog-scrolled', scrollY > 54);
   }
 
+  function handleResize() {
+    if (state.menuOpen && !matchMedia('(max-width: 640px)').matches) closeMobileMenu(false);
+  }
+
   function applyIncoming(filters = {}) {
     const allowed = ['format', 'status', 'season', 'year', 'genre', 'tag', 'sort', 'direction'];
     const next = { ...state.filters };
@@ -494,6 +542,7 @@
     state.revealObserver = null;
     state.mounted = false;
     closeFilters(false);
+    closeMobileMenu(false);
     document.documentElement.classList.remove('nx21-catalog-boot');
     document.body.classList.remove('nx21-catalog', 'nx21-catalog-scrolled', 'nx21-search-mode');
   }
@@ -512,6 +561,7 @@
   }
 
   document.addEventListener('click', event => {
+    if (event.target.closest('[data-nx21-menu-close]')) { closeMobileMenu(); return; }
     const filterButton = event.target.closest('[data-nx21-filter-key]');
     if (filterButton) {
       const key = filterButton.dataset.nx21FilterKey;
@@ -535,6 +585,7 @@
     }
     if (event.target.closest('[data-nx21-filter-apply]')) { applyFilters(); return; }
     if (!document.body.classList.contains('nx21-catalog')) return;
+    if (event.target.closest('[data-nx21-menu]')) { event.preventDefault(); openMobileMenu(); return; }
     const mode = event.target.closest('[data-nx21-mode]');
     if (mode) { event.preventDefault(); setMode(mode.dataset.nx21Mode); return; }
     if (event.target.closest('[data-nx21-filters]')) { event.preventDefault(); openFilters(); return; }
@@ -581,13 +632,18 @@
   });
 
   document.addEventListener('keydown', event => {
+    if (state.menuOpen && event.key === 'Escape') {
+      event.preventDefault();
+      closeMobileMenu();
+      return;
+    }
     if (state.filtersOpen && event.key === 'Escape') {
       event.preventDefault();
       closeFilters();
       return;
     }
-    if (state.filtersOpen && event.key === 'Tab') {
-      const layer = document.querySelector('.nx21-filter-layer');
+    if ((state.filtersOpen || state.menuOpen) && event.key === 'Tab') {
+      const layer = document.querySelector(state.filtersOpen ? '.nx21-filter-layer' : '.nx21-mobile-menu-layer');
       const focusable = [...(layer?.querySelectorAll('button:not(:disabled),select,input,[tabindex]:not([tabindex="-1"])') || [])].filter(node => !node.hidden);
       if (!focusable.length) return;
       const first = focusable[0], last = focusable[focusable.length - 1];
@@ -603,6 +659,7 @@
   });
 
   addEventListener('scroll', handleScroll, { passive: true });
+  addEventListener('resize', handleResize, { passive: true });
   addEventListener('popstate', () => { if (onCatalog()) mount(); else cleanup(); });
   addEventListener('aninexus:catalog-filter', event => applyIncoming(event.detail || {}));
   window.AniNexusCatalog = Object.freeze({ applyFilters: applyIncoming, reload: load });

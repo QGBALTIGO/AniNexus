@@ -5,7 +5,7 @@ const origin = process.env.ANINEXUS_E2E_ORIGIN || 'http://qgbaltigo.github.io:41
 const output = process.env.ANINEXUS_VISUAL_OUTPUT || 'test-results/visual-v42';
 const executablePath = process.env.ANINEXUS_CHROMIUM_EXECUTABLE_PATH || undefined;
 const mappedHost = new URL(origin).hostname === 'qgbaltigo.github.io';
-const buildUrl = route => `${origin}?build=44.17.0&p=${encodeURIComponent(route)}`;
+const buildUrl = route => `${origin}?build=44.18.0&p=${encodeURIComponent(route)}`;
 const artwork = new URL('assets/logo.png', origin).href;
 const communityArtwork = new URL('assets/radio-background-v44.png', origin).href;
 const media = (id, type = 'ANIME') => ({
@@ -143,6 +143,18 @@ try {
       await page.getByRole('button', { name: 'Filtros', exact: true }).click();
       await page.getByRole('dialog', { name: 'Filtros' }).waitFor({ state: 'visible' });
       await page.screenshot({ path: `${output}/desktop-catalog-dark-filters.png` });
+    }
+    if (item.name === 'mobile-catalog-dark') {
+      await page.getByRole('button', { name: 'Abrir menu do catálogo' }).click();
+      const menu = page.getByRole('dialog', { name: 'Menu' });
+      await menu.waitFor({ state: 'visible' });
+      await page.screenshot({ path: `${output}/mobile-catalog-dark-menu.png` });
+      await menu.getByRole('button', { name: 'Busca', exact: true }).click();
+      await page.locator('#nx21Search').waitFor({ state: 'visible' });
+      await page.screenshot({ path: `${output}/mobile-catalog-dark-search.png` });
+      await page.evaluate(() => scrollTo(0, 520));
+      await page.waitForTimeout(450);
+      await page.screenshot({ path: `${output}/mobile-catalog-dark-scrolled.png` });
     }
     results.push({ name: item.name, ...geometry, errors });
     await context.close();
