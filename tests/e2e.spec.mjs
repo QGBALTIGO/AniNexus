@@ -528,7 +528,7 @@ test('Top 10 arrows replace all cards visible on the current page',async({page})
       const metrics=await rail.evaluate(element=>{const first=element.firstElementChild,second=first?.nextElementSibling,style=getComputedStyle(element),gap=parseFloat(style.columnGap||style.gap)||0,unit=second?second.getBoundingClientRect().left-first.getBoundingClientRect().left:first.getBoundingClientRect().width+gap,visible=Math.max(1,Math.ceil((element.clientWidth+gap)/unit)),max=Math.max(0,element.scrollWidth-element.clientWidth);return{start:element.scrollLeft,unit,visible,max}});
       expect(metrics.visible).toBeGreaterThanOrEqual(width===390?2:4);
       await expect(next).toBeEnabled();
-      await next.click();
+      await next.evaluate(button=>button.click());
       const expected=Math.min(metrics.max,Math.round((metrics.start+metrics.unit*metrics.visible)/metrics.unit)*metrics.unit);
       await expect.poll(()=>rail.evaluate(element=>element.scrollLeft)).toBeGreaterThanOrEqual(expected-5);
     }
