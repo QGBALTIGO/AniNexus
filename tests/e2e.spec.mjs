@@ -670,6 +670,7 @@ test('manga catalog mirrors the complete anime experience with reading-specific 
     window.AniNexusAuth={...window.AniNexusAuth,enabled:true,api:async(path,options={})=>{
       const method=String(options.method||'GET').toUpperCase();
       window.__mangaActionRequests.push({path,method,body:options.body||null});
+      if(path==='/api/me')return{user:{id:'manga-reader'}};
       return method==='GET'?{items:[]}:{ok:true};
     }};
     dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:{id:'manga-reader'}}}));
