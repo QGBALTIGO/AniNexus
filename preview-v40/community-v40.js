@@ -5,7 +5,7 @@
   const IS_PAGES=location.hostname.endsWith('github.io');
   const REMOTE=window.AniNexusAuth?.enabled===true;
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='44.24.1';
+  const BUILD='44.24.2';
   const API='https://graphql.anilist.co';
   const LOCAL_THREADS='aninexus:community:threads:v40';
   let active='ALL',items=[],mounted=false,overview=null,overviewState='loading',selectedReaction='Chorei',reactionChosen=false,memberDays=7,loadEpoch=0,overviewEpoch=0,returnFocus=null;
@@ -54,11 +54,11 @@
     const enriched=window.AniNexusCommunityActivity?.enrich?await window.AniNexusCommunityActivity.enrich(normalized):normalized;
     const missing=enriched.filter(x=>x.media_type!=='MANGA'&&x.media_id&&!x.media&&!x.title).map(x=>x.media_id),map=await mediaByIds(missing);
     if(epoch!==loadEpoch||!owns()||!app.querySelector('.nx40-community'))return;
-    const seen=new Set();items=enriched.map(x=>{
+    const merged=window.AniNexusCommunityActivity?.merge?.(enriched)||enriched;items=merged.map(x=>{
       const m=x.media||(x.media_type!=='MANGA'?map.get(Number(x.media_id)):null)||null;
       const id=x.id||`${x.kind}:${x.media_type||'ANIME'}:${x.media_id||'none'}:${x.created_at||''}:${x.username||''}:${x.status||''}`;
       return{...x,id,media:m,title:x.title||mediaTitle(m),cover:x.cover||mediaCover(m),banner:x.banner||mediaBanner(m),created_at:x.created_at||x.updated_at||new Date().toISOString()}
-    }).filter(x=>{const k=String(x.id);if(seen.has(k))return false;seen.add(k);return true}).sort((a,b)=>Date.parse(b.created_at||0)-Date.parse(a.created_at||0));
+    }).sort((a,b)=>Date.parse(b.created_at||0)-Date.parse(a.created_at||0));
     render();
   }
 

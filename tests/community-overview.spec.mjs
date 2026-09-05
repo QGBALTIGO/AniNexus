@@ -10,8 +10,9 @@ const image=readFileSync(new URL('../assets/avatars/mascot-pink.png',import.meta
 const works=Array.from({length:6},(_,i)=>({id:101+i,mediaType:i===0?'MANGA':'ANIME',title:`Obra ${i+1}`,cover,count:12-i}));
 const fixture={totals:{works:1200,reactions:75,completed:42,impressions:18,ratings:36},distribution:[{label:'Amei',count:40},{label:'Chorei',count:35}],rankings:['Chorei','Amei','Esperava mais','Final incrível','Pesado demais','Que arte!'].flatMap(label=>works.map((m,i)=>({...m,label,rank:i+1}))),favorites:works,dropped:[{...works[0],dropped:2,completed:8}],studios:[{name:'Studio A',count:12}],activeMembers:[{username:'alice',display_name:'Alice',count:12,days:7},{username:'bob',display_name:'Bob',count:30,days:30}],newMembers:[{username:'alice',display_name:'Alice'}],joinedToday:1};
 test.use({contextOptions:{reducedMotion:'reduce'}});
+test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 async function setup(page){
-  const state={fail:false,pending:false,overview:fixture};
+  const state={fail:false,pending:false,overview:fixture,activity:[{media_id:101,media_type:'MANGA',username:'alice',display_name:'Alice',status:'CURRENT',progress:3,reactions:['Amei','Que arte!'],media:{id:101,title:'Leitura em andamento',cover},created_at:new Date().toISOString()}]};
   if(localStaticOrigin)await page.route(`${new URL(origin).origin}/**`,async route=>{
     const requested=new URL(route.request().url()),path=requested.pathname.replace(/^\/AniNexus(?=\/)/,'');
     for(let attempt=0;attempt<3;attempt++){
@@ -24,7 +25,7 @@ async function setup(page){
   await page.route('**/api/**',route=>{
     const path=new URL(route.request().url()).pathname;
     if(path==='/api/community/overview')return route.fulfill(state.fail?{status:503,json:{error:'TEMPORARY'}}:{json:state.overview});
-    if(path==='/api/community/activity')return route.fulfill({json:{items:[{media_id:101,media_type:'MANGA',username:'alice',display_name:'Alice',status:'CURRENT',progress:3,reactions:['Amei','Que arte!'],media:{id:101,title:'Leitura em andamento',cover},created_at:new Date().toISOString()}]}});
+    if(path==='/api/community/activity')return route.fulfill({json:{items:state.activity}});
     if(path==='/api/community/threads'&&route.request().method()==='POST')return route.fulfill({status:201,json:{ok:true}});
     return route.fulfill({json:{items:[],user:null}});
   });
@@ -33,6 +34,64 @@ async function setup(page){
   return state;
 }
 const noOverflow=async page=>expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
+
+test('Home previews merge duplicate snapshots without mixing members or anime and manga',async({page})=>{
+  const state=await setup(page),now=Date.now();
+  const entry={media_id:101,media_type:'ANIME',username:'alice',display_name:'Alice',status:'PAUSED',title:'Anime em pausa',cover,created_at:new Date(now).toISOString()};
+  state.activity=[entry,{...entry,username:'bob',display_name:'Bob'},state.activity[0],{...entry,media_id:999,title:'Título temporariamente indisponível',cover:''}];
+  await page.addInitScript(entry=>localStorage.setItem('aninexus:community:activity:v40',JSON.stringify([{...entry,id:'local-copy'},{...entry,id:'old-copy',status:'CURRENT',created_at:new Date(Date.parse(entry.created_at)-60000).toISOString()}])),entry);
+  await page.goto(url('/'));
+  for(const id of ['#nx35CommunityHero','#nx35Community']){
+    const root=page.locator(id);await expect(root.locator('.nx35-community-card')).toHaveCount(3);
+    await expect(root).not.toContainText('indisponível');await expect(root).toContainText('Bob');
+    await expect(root.locator('[data-media-type=ANIME][data-status=PAUSED]')).toHaveCount(2);
+    const reading=root.locator('[data-media-type=MANGA]');await expect(reading).toContainText('está lendo');
+    await expect(reading).toContainText('Cap. 3');await expect(reading).not.toContainText('Episódio');
+    await expect(reading.locator('strong a')).toHaveAttribute('href',/manga/);
+    await expect(reading.getByLabel('Que arte!',{exact:true})).toBeVisible();
+    await expect(root.locator('.nx35-community-status svg')).toHaveCount(3);
+  }
+  await noOverflow(page);
+});
+
+test('Local reading activity preserves volumes and multiple reactions independently of anime',async({page})=>{
+  await setup(page);await page.goto(url('/'));
+  await expect(page.locator('#nx35CommunityHero .nx35-community-card')).toHaveCount(1);
+  const result=await page.evaluate(()=>{
+    const state={status:'CURRENT',progress:5,volumeProgress:2,reactions:['Amei','Que arte!'],updatedAt:Date.now()};
+    document.dispatchEvent(new CustomEvent('aninexus:manga-media-state-changed',{detail:{id:101,state}}));
+    document.dispatchEvent(new CustomEvent('aninexus:media-state-changed',{detail:{id:101,state:{...state,volumeProgress:0}}}));
+    return window.AniNexusCommunityActivity.local().filter(x=>x.local);
+  });
+  expect(result).toHaveLength(2);
+  expect(result.find(x=>x.media_type==='MANGA')).toMatchObject({progress:5,volume_progress:2,reactions:['Amei','Que arte!']});
+  expect(result.find(x=>x.media_type==='ANIME')).toMatchObject({progress:5,volume_progress:0});
+  await expect(page.locator('#nx35CommunityHero')).toContainText('Vol. 2');
+});
+
+test('Both Home community previews keep readable covers, type and status colors in both themes',async({page},info)=>{
+  await setup(page);await page.addInitScript(()=>localStorage.setItem('aninexus:privacy:v1',JSON.stringify({analytics:false,at:Date.now()})));
+  await page.goto(url('/'));
+  for(const theme of ['dark','light']){
+    await page.evaluate(value=>localStorage.setItem('aninexus:theme',value),theme);
+    for(const width of [1440,390,320]){
+      await page.setViewportSize({width,height:900});await page.goto(url('/'));
+      await expect(page.locator('#nx35CommunityHero .nx35-community-card')).toHaveCount(1);
+      for(const id of ['#nx35CommunityHero','#nx35Community']){
+        const root=page.locator(id),card=root.locator('.nx35-community-card').first();
+        await root.scrollIntoViewIfNeeded();
+        await expect(card.locator('.nx35-community-cover>a>img')).toBeVisible();
+        await expect.poll(()=>card.locator('.nx35-community-cover>a>img').evaluate(img=>img.naturalWidth)).toBeGreaterThan(0);
+        expect(await card.evaluate(el=>getComputedStyle(el,'::before').display)).toBe('none');
+        expect(await card.locator('p').evaluate(el=>parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(12);
+        await root.screenshot({path:info.outputPath(`home-${id.slice(1)}-${theme}-${width}.png`)});
+      }
+      const results=await new AxeBuilder({page}).include('.nx35-live').include('#nx35Community').withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
+      expect(results.violations.filter(v=>['serious','critical'].includes(v.impact)).map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)}))).toEqual([]);
+      await noOverflow(page);
+    }
+  }
+});
 
 test('Community overview adapts the podium, counts and scroll guide across desktop and mobile',async({page},info)=>{
   await setup(page);

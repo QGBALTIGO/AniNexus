@@ -59,7 +59,7 @@ test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-05-v44.24.1')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-05-v44.24.2')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -287,12 +287,10 @@ test('mobile Home starts with transparent header centered copy spacing and clipp
   expect(avatarGeometry.position).toMatch(/^50% 0(?:px|%)$/);
   expect(avatarGeometry.overflow).toBe('hidden');
   const communityPresentation=await page.locator('#nx35CommunityHero .nx35-community-card.compact').first().evaluate(card=>{const before=getComputedStyle(card,'::before'),copy=card.querySelector('p'),name=copy.querySelector('b'),title=copy.querySelector('strong'),time=card.querySelector('small');return{display:before.display,backgroundImage:before.backgroundImage,opacity:parseFloat(before.opacity),copySize:parseFloat(getComputedStyle(copy).fontSize),copyWeight:parseInt(getComputedStyle(copy).fontWeight,10),nameWeight:parseInt(getComputedStyle(name).fontWeight,10),titleWeight:parseInt(getComputedStyle(title).fontWeight,10),timeSize:parseFloat(getComputedStyle(time).fontSize),timeWeight:parseInt(getComputedStyle(time).fontWeight,10)}});
-  expect(communityPresentation.display).toBe('block');
-  expect(communityPresentation.backgroundImage).toContain('image/svg+xml');
-  expect(communityPresentation.opacity).toBeGreaterThanOrEqual(.72);
-  expect(communityPresentation.opacity).toBeLessThanOrEqual(.76);
-  expect(communityPresentation.copySize).toBeGreaterThanOrEqual(11);
-  expect(communityPresentation.copyWeight).toBe(600);
+  expect(communityPresentation.display).toBe('none');
+  expect(communityPresentation.backgroundImage).toBe('none');
+  expect(communityPresentation.copySize).toBeGreaterThanOrEqual(12);
+  expect(communityPresentation.copyWeight).toBe(400);
   expect(communityPresentation.nameWeight).toBe(600);
   expect(communityPresentation.titleWeight).toBe(600);
   expect(communityPresentation.timeSize).toBeGreaterThanOrEqual(9);
@@ -309,7 +307,7 @@ test('mobile Home starts with transparent header centered copy spacing and clipp
   await noOverflow(page,2);
 });
 
-test('Home community banner survives initialization with one shared renderer',async({page})=>{
+test('Home community cover survives initialization without redundant metadata fetches',async({page})=>{
   let communityMediaQueries=0;
   await page.unroute('https://graphql.anilist.co/');
   await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}const query=String(body.query||''),isCommunityMedia=/media\(id_in:\$ids,type:ANIME\)/.test(query);if(isCommunityMedia){communityMediaQueries++;const data=communityMediaQueries===1?graphData(query,body.variables):{Page:{media:[]}};return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data})})}return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(query,body.variables)})})});
@@ -319,10 +317,10 @@ test('Home community banner survives initialization with one shared renderer',as
   const card=hero.locator('.nx35-community-card.compact').first();
   await expect(card).toBeVisible({timeout:30000});
   await expect(hero).toHaveAttribute('data-nx-community-owner','shared');
-  await expect.poll(()=>card.evaluate(element=>getComputedStyle(element,'::before').backgroundImage)).toContain('image/svg+xml');
+  await expect(card.locator('.nx35-community-cover>a>img')).toHaveAttribute('src',pixel);
   await page.waitForTimeout(1100);
-  expect(communityMediaQueries).toBe(1);
-  expect(await card.evaluate(element=>getComputedStyle(element,'::before').backgroundImage)).toContain('image/svg+xml');
+  expect(communityMediaQueries).toBe(0);
+  await expect(card.locator('.nx35-community-cover>a>img')).toHaveAttribute('src',pixel);
 });
 
 test('radio has a stable volume popover and becomes one floating button after play',async({page})=>{
