@@ -14,16 +14,16 @@ body.nx-section-page .nx-season-hero{position:relative;isolation:isolate;overflo
 body.nx-section-page .nx-season-hero:before{content:"";position:absolute;z-index:-2;inset:0;pointer-events:none;background:var(--nx-page-chrome-overlay)}
 body.nx-section-page .nx-season-hero:after{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 3px,rgba(255,255,255,.012) 3px 4px);opacity:.28}
 body.nx-section-page .nx-season-hero>.nx-season-shell{position:relative;z-index:1;padding:calc(var(--nx43-header-height,66px) + 31px) 0 27px!important}
-body.nx-section-page .nx-season-title{gap:9px!important;margin:0 auto!important}
+body.nx-section-page .nx-season-title{display:flex!important;align-items:center!important;justify-content:center!important;gap:11px!important;margin:0 auto!important}
 body.nx-section-page .nx-season-title>div{display:grid;justify-items:center;text-align:center}
 body.nx-section-page .nx-season-icon{width:28px!important;height:28px!important;flex:0 0 28px!important;filter:drop-shadow(0 0 12px rgba(var(--glow),.2))}
-body.nx-section-page .nx-season-title h1{margin:0!important;color:#faf5fb;font:800 var(--nx-page-title-size,31px)/1.08 var(--display,'Manrope',sans-serif)!important;white-space:nowrap}
+body.nx-section-page .nx-season-title h1{margin:0!important;color:#faf5fb;font:800 var(--nx-page-title-size,31px)/1.2 var(--display,'Manrope',sans-serif)!important;white-space:normal;text-wrap:balance}
 body.nx-section-page .nx-season-title h1 em{font-style:normal}
-body.nx-section-page .nx-season-title p{margin:4px 0 0!important;color:var(--accent);font:800 7px/1 'Nunito Sans',sans-serif!important;white-space:nowrap}
-body.nx-section-page .nx-season-stats{grid-template-columns:repeat(3,92px)!important;gap:18px!important;margin:21px 0 18px!important}
-body.nx-section-page .nx-season-stats strong{font:800 25px/1 var(--display,'Manrope',sans-serif)!important}
-body.nx-section-page .nx-season-stats span{margin-top:5px!important;color:#948997!important;font:800 8px/1 'Nunito Sans',sans-serif!important}
-body.nx-section-page .nx-season-controls{width:min(700px,100%)!important;margin:0 auto!important}
+body.nx-section-page .nx-season-title p{margin:7px 0 0!important;color:var(--accent);font:800 10px/1.4 'Nunito Sans',sans-serif!important;white-space:nowrap}
+body.nx-section-page .nx-season-stats{display:grid!important;justify-content:center!important;grid-template-columns:repeat(3,96px)!important;gap:18px!important;margin:24px auto!important;text-align:center}
+body.nx-section-page .nx-season-stats strong{display:block;min-height:34px;color:#faf5fb;font:800 30px/1.1 var(--display,'Manrope',sans-serif)!important;font-variant-numeric:tabular-nums}
+body.nx-section-page .nx-season-stats span{display:block;margin-top:6px!important;color:#b6a8b8!important;font:800 9px/1.3 'Nunito Sans',sans-serif!important}
+body.nx-section-page .nx-season-controls{width:min(520px,100%)!important;margin:0 auto!important}
 body.nx-section-page .nx-season-control-line{grid-template-columns:minmax(0,1fr) 105px!important;align-items:stretch!important;gap:8px!important}
 body.nx-section-page .nx-season-tabs{height:42px!important;min-height:0!important;padding:3px!important;gap:2px!important;border:1px solid #3b303f!important;border-radius:8px!important;background:linear-gradient(180deg,#18121b,#130f16)!important}
 body.nx-section-page .nx-season-tabs button{height:100%!important;min-height:0!important;margin:0!important;padding:0 5px!important;align-self:stretch!important;border-radius:6px!important;font:800 11px/1 'Nunito Sans',sans-serif!important}
@@ -88,9 +88,10 @@ body.nx-section-page .nx-v10-seasonbar__filters .nx-v10-seasonbar__btn{min-width
   body.nx-section-page .nx-season-title{gap:7px!important}
   body.nx-section-page .nx-season-icon{width:25px!important;height:25px!important;flex-basis:25px!important}
   body.nx-section-page .nx-season-title h1{font-size:var(--nx-page-title-size,26px)!important}
-  body.nx-section-page .nx-season-title p{font-size:7px!important}
-  body.nx-section-page .nx-season-stats{display:none!important}
-  body.nx-section-page .nx-season-controls{width:min(365px,100%)!important;margin-top:18px!important}
+  body.nx-section-page .nx-season-title p{font-size:9px!important}
+  body.nx-section-page .nx-season-stats{grid-template-columns:repeat(3,minmax(0,88px))!important;gap:14px!important;margin:23px auto!important}
+  body.nx-section-page .nx-season-stats strong{font-size:28px!important}
+  body.nx-section-page .nx-season-controls{width:min(365px,100%)!important;margin-top:0!important}
   body.nx-section-page .nx-season-control-line{grid-template-columns:minmax(0,1fr) 78px!important;gap:7px!important}
   body.nx-section-page .nx-season-tabs,body.nx-section-page .nx-filter-pill{height:38px!important}
   body.nx-section-page .nx-season-filter-line .nx-filter-pill{width:102px!important}

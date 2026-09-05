@@ -40,9 +40,9 @@
   const FEEDBACK={
     PLANNING:{label:'SUA EXPECTATIVA',items:[['👀','Estou curioso'],['🔥','Hype alto'],['🤝','Me indicaram'],['📚','Li o mangá'],['🎬','O trailer me pegou'],['⏳','Contando os dias'],['💖','Já virou prioridade'],['🧠','A premissa me chamou']]},
     CURRENT:{label:'SUA REAÇÃO',items:[['🎣','Viciante'],['👍','Curtindo'],['😍','Amei'],['🤣','Rachei'],['☕','Relaxante'],['🐢','Lento'],['✨','Que animação!'],['🔥','Bombando'],['🎵','Que trilha!'],['😵‍💫','Perdido'],['⚔️','Continuando a saga'],['🤓','Li o mangá']]},
-    COMPLETED:{label:'COMO FOI',items:[['🏆','Melhor do ano'],['😍','Amei'],['💎','Joia escondida'],['😭','Chorei'],['🤣','Rachei'],['👻','De arrepiar'],['✨','Que animação!'],['🎵','Que trilha!'],['🔥','Final incrível'],['🫤','Esperava mais'],['🤓','Li o mangá'],['👏','Valeu a jornada']]},
+    COMPLETED:{label:'COMO FOI',items:[['🏆','Melhor do ano'],['😍','Amei'],['💎','Joia escondida'],['😭','Chorei'],['🤣','Rachei'],['👻','De arrepiar'],['✨','Que animação!'],['🎵','Que trilha!'],['🔥','Final incrível'],['😕','Esperava mais'],['🤓','Li o mangá'],['👏','Valeu a jornada']]},
     PAUSED:{label:'POR QUE PAUSOU?',items:[['⏸️','Preciso de uma pausa'],['📅','Sem tempo'],['📦','Juntando episódios'],['🐢','Está lento'],['😵‍💫','Me perdi'],['😮‍💨','Pesado demais'],['🔁','Vou voltar depois'],['📚','Fui pro mangá']]},
-    DROPPED:{label:'POR QUE DESISTIU?',items:[['🚪','Não me pegou'],['🫤','Fraco'],['🐢','Lento demais'],['😵‍💫','Confuso'],['📉','Perdeu a graça'],['🙅','Não era pra mim'],['😴','Deu sono'],['😮‍💨','Pesado demais']]}
+    DROPPED:{label:'POR QUE DESISTIU?',items:[['🚪','Não me pegou'],['😕','Fraco'],['🐢','Lento demais'],['😵‍💫','Confuso'],['📉','Perdeu a graça'],['🙅','Não era pra mim'],['😴','Deu sono'],['😮‍💨','Pesado demais']]}
   };
 
   const FORMAT={TV:'Série',TV_SHORT:'Série curta',MOVIE:'Filme',OVA:'OVA',ONA:'ONA',SPECIAL:'Especial',MUSIC:'Música'};
@@ -298,7 +298,7 @@
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&layer){event.preventDefault();activeEditor?.()}},true);
   addEventListener('storage',event=>{if([KEY,LEGACY_KEY,FAV_KEY,LIST_KEY,LEGACY_STATUS].includes(event.key))scheduleSync()});
 
-  const instance={get,put:persistState,favorite,isFavorite,open,close,sync:syncUI,statuses:STATUS,entries:all,favorites:()=>setOf(FAV_KEY)};
+  const instance={get,put:persistState,favorite,isFavorite,open,close,sync:syncUI,statuses:STATUS,entries:all,favorites:()=>setOf(FAV_KEY),reactions:()=>[...new Map(Object.values(FEEDBACK).flatMap(group=>group.items).map(([emoji,label])=>[label,{emoji,label}])).values()]};
   if(reading)window.AniNexusMangaState=instance;else window.AniNexusMediaState=instance;
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>syncUI(),{once:true});else syncUI();
   }

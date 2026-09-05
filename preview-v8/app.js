@@ -251,7 +251,7 @@
     root.innerHTML=`<section class="nx-season" data-season="${sel.season}">
       <div class="nx-season-hero"><div class="nx-season-shell">
         <div class="nx-season-title"><span class="nx-season-icon">${ICON[meta.icon]}</span><div><h1>${meta.name} <em>${sel.year}</em></h1><p>TEMPORADA DE ANIMES</p></div></div>
-        <div class="nx-season-stats"><div><strong>${loading?'—':all.length}</strong><span>ANIMES</span></div><div><strong>${loading?'—':premieres}</strong><span>ESTREIAS</span></div><div><strong>${loading?'—':sequels}</strong><span>SEQUÊNCIAS</span></div></div>
+        <div class="nx-season-stats" role="group" aria-label="Números da temporada" aria-busy="${loading||!!data?.refreshing}"><div><strong>${loading?'—':all.length}</strong><span>ANIMES</span></div><div><strong>${loading?'—':premieres}</strong><span>ESTREIAS</span></div><div><strong>${loading?'—':sequels}</strong><span>SEQUÊNCIAS</span></div></div>
         ${controls(sel,tags,types)}
       </div></div>
       <div class="nx-season-shell nx-season-content">

@@ -59,7 +59,7 @@ test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-04-v44.23.1')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-05-v44.24.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -1056,6 +1056,12 @@ test('Temporadas and Notícias share the same five-hub chrome and scroll guide',
       expect(Math.abs(top.titleCenter-top.heroCenter)).toBeLessThan(2);
       await expect(page.locator('#topbar')).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
       if(item.route==='/animes/temporadas'){
+        const stats=page.locator('.nx-season-stats');
+        await expect(stats).toBeVisible();
+        for(const label of ['ANIMES','ESTREIAS','SEQUÊNCIAS'])await expect(stats).toContainText(label);
+        const counts=await stats.locator('strong').allTextContents();
+        expect(Number(counts[0])).toBeGreaterThan(0);
+        expect(Number(counts[1])+Number(counts[2])).toBe(Number(counts[0]));
         const controls=await page.evaluate(()=>{const box=element=>{const rect=element.getBoundingClientRect();return{top:rect.top,bottom:rect.bottom,height:rect.height}};const rail=document.querySelector('.nx-season-tabs');return{rail:box(rail),year:box(document.querySelector('.nx-year-pill')),buttons:[...rail.querySelectorAll('button')].map(box)}});
         expect(Math.abs(controls.year.top-controls.rail.top)).toBeLessThan(.6);
         expect(Math.abs(controls.year.bottom-controls.rail.bottom)).toBeLessThan(.6);

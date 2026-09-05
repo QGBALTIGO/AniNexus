@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import crypto from 'node:crypto';
 import pg from 'pg';
+import { getCommunityOverview } from '../lib/community-overview.mjs';
 
 const connectionString=process.env.MEDIA_TEST_DATABASE_URL;
 if(!connectionString)throw new Error('MEDIA_TEST_DATABASE_URL is required');
@@ -30,5 +31,34 @@ try{
     await client.query(`DELETE FROM ${table} WHERE user_id=$1 AND media_id=$2`,[user,301]);
     assert.equal((await client.query(`SELECT count(*) FROM ${table}`)).rows[0].count,'0');
   }
-  console.log('Media lists: migration is repeatable; both route upserts preserve reactions and volumes.');
+  await client.query(`CREATE TABLE users(id uuid PRIMARY KEY,username text,display_name text,avatar_url text,created_at timestamptz DEFAULT now(),deleted_at timestamptz,status text DEFAULT 'active',privacy text DEFAULT 'public',show_library boolean DEFAULT true,show_activity boolean DEFAULT true,show_stats boolean DEFAULT true);
+    CREATE TABLE media_cache(media_id bigint,media_type text,payload jsonb,PRIMARY KEY(media_id,media_type));
+    CREATE TABLE user_favorites(user_id uuid,media_id bigint,media_type text,created_at timestamptz DEFAULT now());
+    CREATE TABLE impressions(user_id uuid,hidden boolean DEFAULT false,created_at timestamptz DEFAULT now());
+    CREATE TABLE community_threads(id uuid PRIMARY KEY,user_id uuid,hidden boolean DEFAULT false,created_at timestamptz DEFAULT now());
+    CREATE TABLE community_posts(user_id uuid,thread_id uuid,hidden boolean DEFAULT false,created_at timestamptz DEFAULT now());`);
+  const query=(sql,args)=>client.query(sql,args);
+  let overview=await getCommunityOverview(query);
+  assert.deepEqual(overview.totals,{works:0,reactions:0,completed:0,impressions:0,ratings:0});
+  const alice=crypto.randomUUID(),bob=crypto.randomUUID(),privateUser=crypto.randomUUID(),hidden=crypto.randomUUID();
+  await client.query(`INSERT INTO users(id,username) VALUES($1,'alice'),($2,'bob'),($3,'private'),($4,'hidden')`,[alice,bob,privateUser,hidden]);
+  await client.query(`UPDATE users SET privacy='private' WHERE id=$1`,[privateUser]);
+  await client.query(`UPDATE users SET show_stats=false,show_activity=false WHERE id=$1`,[hidden]);
+  await client.query(`INSERT INTO media_cache VALUES(101,'ANIME','{"title":"Anime","cover":"https://example.test/anime.jpg","studios":[{"name":"Studio A"}]}'),(101,'MANGA','{"title":"Manga","cover":"https://example.test/manga.jpg"}')`);
+  await client.query(`INSERT INTO user_anime(user_id,media_id,status,score,reactions,updated_at) VALUES($1,101,'COMPLETED',0,'["Amei","Chorei","Chorei"]',now()),($2,101,'DROPPED',4,'[]',now()),($3,101,'COMPLETED',10,'["Privado"]',now()),($4,101,'COMPLETED',10,'["Oculto"]',now())`,[alice,bob,privateUser,hidden]);
+  await client.query(`INSERT INTO user_manga(user_id,media_id,status,score,reaction,updated_at) VALUES($1,101,'COMPLETED',9,'LOVE',now()-interval '15 days')`,[bob]);
+  await client.query(`INSERT INTO user_favorites(user_id,media_id,media_type) VALUES($1,101,'ANIME'),($2,101,'MANGA'),($3,101,'ANIME')`,[alice,bob,privateUser]);
+  await client.query(`INSERT INTO impressions(user_id,hidden) VALUES($1,false),($1,true),($2,false)`,[alice,privateUser]);
+  overview=await getCommunityOverview(query);
+  assert.deepEqual(overview.totals,{works:2,reactions:3,completed:2,impressions:1,ratings:3});
+  assert.equal(overview.rankings.filter(r=>r.label==='Amei').length,2,'anime and manga IDs must remain distinct');
+  assert.deepEqual(overview.distribution,[{label:'Amei',count:2},{label:'Chorei',count:1}]);
+  assert.equal(overview.favorites.length,2);assert.ok(overview.favorites.every(r=>r.count===1));
+  assert.equal(overview.dropped[0].dropped,1);assert.equal(overview.dropped[0].completed,1);
+  assert.equal(overview.activeMembers.find(m=>m.username==='bob'&&m.days===7).count,1);
+  assert.equal(overview.activeMembers.find(m=>m.username==='bob'&&m.days===30).count,2);
+  assert.ok(overview.activeMembers.every(m=>!['private','hidden'].includes(m.username)));
+  assert.equal(overview.studios[0].count,2);
+  assert.ok(overview.newMembers.every(m=>m.username!=='private'));
+  console.log('Media lists and community: typed rankings, multiple reactions, zero scores, privacy and member periods verified.');
 }finally{await client.query('ROLLBACK');await client.end()}

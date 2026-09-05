@@ -10,6 +10,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
 import { mediaListEntry } from './lib/media-list.mjs';
+import { getCommunityOverview } from './lib/community-overview.mjs';
 import { initDb, q, pool, dbReady } from './lib/db.mjs';
 import { initCache, redis, cacheRemember } from './lib/cache.mjs';
 import { AUTHORIZED_ORIGINS, CLERK_ENABLED, hashPassword, verifyPassword, createSession, destroySession, currentUser, requireUser, requireRole, validateOrigin, getClerkClient, syncClerkUser, beginAccountDeletion, cancelAccountDeletion, bootstrapConfiguredAdmins, invalidateUserIdentityCache } from './lib/auth.mjs';
@@ -61,6 +62,15 @@ const privateReadRate=rateForUser(120,'1 minute','private-read');
 const privateHeavyRate=rateForUser(20,'1 minute','private-heavy');
 const writeRate=rateForUser(30,'1 minute','private-write');
 const publicRate={config:{rateLimit:{max:240,timeWindow:'1 minute'}}};
+app.get('/api/community/overview',publicRate,async()=>{
+  const overview=await getCommunityOverview(q),groups=['rankings','favorites','dropped'];
+  const works=groups.flatMap(key=>overview[key]).map(m=>({media_id:m.id,media_type:m.mediaType,media:m.title&&m.cover?m:null}));
+  const hydrated=await hydrateCommunityMedia(works),metadata=new Map(hydrated.filter(m=>m.media).map(m=>[`${m.media_type}:${m.media_id}`,m.media]));
+  for(const key of groups)overview[key]=overview[key].map(m=>{const found=metadata.get(`${m.mediaType}:${m.id}`);return found?{...m,title:found.title,cover:found.cover}:m}).filter(m=>m.title&&m.cover);
+  overview.activeMembers=withActorAvatars(overview.activeMembers);
+  overview.newMembers=withActorAvatars(overview.newMembers);
+  return overview;
+});
 const currentSeason=()=>{const now=new Date(),month=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',month:'numeric'}).format(now)),year=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',year:'numeric'}).format(now));return{season:month<=3?'WINTER':month<=6?'SPRING':month<=9?'SUMMER':'FALL',year}};
 const safeUser=u=>{if(!u)return null;const avatar=resolvedAvatar(u);return{id:u.id,email:u.email,username:u.username,displayName:u.display_name||u.username,role:u.role,status:u.status||'active',avatarUrl:avatar.url,avatarPreset:avatar.preset,avatarSource:u.avatar_source||'clerk',bannerUrl:u.profile_banner_url||null,bio:u.bio,location:u.location||null,websiteUrl:u.website_url||null,instagramHandle:u.instagram_handle||null,telegramHandle:u.telegram_handle||null,showLibrary:u.show_library!==false,showActivity:u.show_activity!==false,showStats:u.show_stats!==false,theme:u.theme,privacy:u.privacy||'public',emailVerified:u.email_verified,createdAt:u.created_at}};
 const safeInt=(v,min=1,max=Number.MAX_SAFE_INTEGER)=>{const n=Number(v);return Number.isSafeInteger(n)&&n>=min&&n<=max?n:null};
@@ -350,7 +360,22 @@ app.post('/api/anime/:id/impressions',rateForUser(8,'1 minute','impressions-writ
 app.get('/api/manga/:id/impressions',publicRate,async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});const limit=Math.max(1,Math.min(100,Number(req.query?.limit||50)));const {rows}=await q(`SELECT i.id,i.body,i.spoiler,i.created_at,u.username,u.display_name,u.avatar_url FROM impressions i JOIN users u ON u.id=i.user_id WHERE i.media_id=$1 AND i.media_type='MANGA' AND i.hidden=false AND u.deleted_at IS NULL AND u.status='active' AND u.privacy='public' ORDER BY i.created_at DESC LIMIT $2`,[id,limit]);return{items:withActorAvatars(rows)}});
 app.post('/api/manga/:id/impressions',rateForUser(8,'1 minute','manga-impressions-write'),async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});const p=z.object({body:z.string().trim().min(1).max(1200),spoiler:z.boolean().optional()}).safeParse(req.body);if(!p.success)return reply.code(400).send({error:'INVALID_INPUT'});const {rows}=await q("INSERT INTO impressions(user_id,media_id,media_type,body,spoiler) VALUES($1,$2,'MANGA',$3,$4) RETURNING id,created_at",[u.id,id,p.data.body,p.data.spoiler||false]);await recordContributionAchievement(u.id,'IMPRESSION',rows[0],p.data.body);return reply.code(201).send({ok:true,...rows[0]});});
 
-app.get('/api/community/activity',publicRate,async(req)=>{const limit=Math.max(1,Math.min(60,Number(req.query?.limit||30)));const {rows}=await q(`SELECT ua.media_id,ua.status,ua.score,COALESCE(ua.reactions->>0,ua.reaction) AS reaction,ua.reactions,ua.volume_progress,ua.progress,ua.updated_at AS created_at,u.username,u.display_name,u.avatar_url,${mediaProjection} AS media FROM user_anime ua JOIN users u ON u.id=ua.user_id LEFT JOIN media_cache mc ON mc.media_id=ua.media_id AND mc.media_type='ANIME' WHERE u.deleted_at IS NULL AND u.status='active' AND u.privacy='public' AND ua.status IN ('PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED') ORDER BY ua.updated_at DESC LIMIT $1`,[limit]);return{items:await hydrateCommunityMedia(rows)}});
+app.get('/api/community/activity',publicRate,async(req)=>{
+  const limit=Math.max(1,Math.min(60,Number(req.query?.limit||30))),includeManga=req.query?.includeManga==='1';
+  const {rows}=await q(`WITH activity AS (
+    SELECT user_id,media_id,'ANIME'::text media_type,status,score,reaction,reactions,volume_progress,progress,updated_at FROM user_anime
+    UNION ALL
+    SELECT user_id,media_id,'MANGA',status,score,reaction,reactions,volume_progress,progress,updated_at FROM user_manga WHERE $2::boolean
+  ) SELECT ua.media_id,ua.media_type,ua.status,ua.score,COALESCE(ua.reactions->>0,ua.reaction) AS reaction,ua.reactions,
+    ua.volume_progress,ua.progress,ua.updated_at AS created_at,u.username,u.display_name,u.avatar_url,${mediaProjection} AS media
+    FROM activity ua JOIN users u ON u.id=ua.user_id
+    LEFT JOIN media_cache mc ON mc.media_id=ua.media_id AND mc.media_type=ua.media_type
+    WHERE u.deleted_at IS NULL AND u.status='active' AND u.privacy='public'
+      AND u.show_activity IS DISTINCT FROM false AND u.show_library IS DISTINCT FROM false
+      AND ua.status IN ('PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED')
+    ORDER BY ua.updated_at DESC,ua.media_type,ua.media_id LIMIT $1`,[limit,includeManga]);
+  return{items:await hydrateCommunityMedia(rows)}
+});
 app.get('/api/community/impressions',publicRate,async(req)=>{const limit=Math.max(1,Math.min(30,Number(req.query?.limit||12)));const {rows}=await q(`SELECT i.id,i.media_id,i.media_type,i.body,i.spoiler,i.created_at,u.username,u.display_name,u.avatar_url,COALESCE(ua.status,um.status) status,COALESCE(ua.score,um.score) score,COALESCE(ua.reactions->>0,um.reactions->>0,ua.reaction,um.reaction) reaction,COALESCE(ua.reactions,um.reactions) reactions,COALESCE(ua.progress,um.progress) progress,${mediaProjection} AS media FROM impressions i JOIN users u ON u.id=i.user_id LEFT JOIN user_anime ua ON i.media_type='ANIME' AND ua.user_id=i.user_id AND ua.media_id=i.media_id LEFT JOIN user_manga um ON i.media_type='MANGA' AND um.user_id=i.user_id AND um.media_id=i.media_id LEFT JOIN media_cache mc ON mc.media_id=i.media_id AND mc.media_type=i.media_type WHERE i.hidden=false AND u.deleted_at IS NULL AND u.status='active' AND u.privacy='public' ORDER BY i.created_at DESC LIMIT $1`,[limit]);return{items:await hydrateCommunityMedia(rows)}});
 app.get('/api/community/threads',publicRate,async(req)=>{const limit=Math.max(1,Math.min(50,Number(req.query?.limit||30))),mediaId=req.query?.mediaId?safeInt(req.query.mediaId):null;const {rows}=await q(`SELECT t.id,t.media_id,t.title,t.body,t.spoiler,t.locked,t.created_at,u.username,u.display_name,u.avatar_url,(SELECT count(*)::int FROM community_posts p LEFT JOIN users pu ON pu.id=p.user_id WHERE p.thread_id=t.id AND p.hidden=false AND (p.user_id IS NULL OR (pu.deleted_at IS NULL AND pu.status='active' AND pu.privacy='public'))) replies FROM community_threads t LEFT JOIN users u ON u.id=t.user_id WHERE t.hidden=false AND (u.id IS NULL OR (u.deleted_at IS NULL AND u.status='active' AND u.privacy='public')) AND ($1::bigint IS NULL OR t.media_id=$1) ORDER BY t.created_at DESC LIMIT $2`,[mediaId,limit]);return{items:await hydrateCommunityMedia(rows)}});
 app.get('/api/community/threads/:id',publicRate,async(req,reply)=>{const id=z.string().uuid().safeParse(req.params.id);if(!id.success)return reply.code(400).send({error:'INVALID_ID'});const [threadResult,postResult]=await Promise.all([q(`SELECT t.id,t.media_id,t.title,t.body,t.spoiler,t.locked,t.created_at,u.username,u.display_name,u.avatar_url FROM community_threads t LEFT JOIN users u ON u.id=t.user_id WHERE t.id=$1 AND t.hidden=false AND (u.id IS NULL OR (u.deleted_at IS NULL AND u.status='active' AND u.privacy='public'))`,[id.data]),q(`SELECT p.id,p.parent_id,p.body,p.spoiler,p.created_at,u.username,u.display_name,u.avatar_url FROM community_posts p LEFT JOIN users u ON u.id=p.user_id WHERE p.thread_id=$1 AND p.hidden=false AND (u.id IS NULL OR (u.deleted_at IS NULL AND u.status='active' AND u.privacy='public')) ORDER BY p.created_at ASC LIMIT 500`,[id.data])]);if(!threadResult.rows[0])return reply.code(404).send({error:'NOT_FOUND'});const [thread]=await hydrateCommunityMedia([threadResult.rows[0]]);return{thread,posts:withActorAvatars(postResult.rows)}});
