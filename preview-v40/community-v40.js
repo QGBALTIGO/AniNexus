@@ -5,7 +5,7 @@
   const IS_PAGES=location.hostname.endsWith('github.io');
   const REMOTE=window.AniNexusAuth?.enabled===true;
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='44.24.0';
+  const BUILD='44.24.1';
   const API='https://graphql.anilist.co';
   const LOCAL_THREADS='aninexus:community:threads:v40';
   let active='ALL',items=[],mounted=false,overview=null,overviewState='loading',selectedReaction='Chorei',reactionChosen=false,memberDays=7,loadEpoch=0,overviewEpoch=0,returnFocus=null;
@@ -176,7 +176,7 @@
         </section>
         <section class="nx40-section"><h2>Obras mais movimentadas</h2><div class="nx40-trending" id="nx40Trending"></div></section>
       </aside></div></main><div class="nx40-modal" id="nx40ThreadModal" hidden><button class="nx40-modal-backdrop" data-nx40-close aria-label="Fechar"></button><form class="nx40-modal-card" id="nx40ThreadForm" role="dialog" aria-modal="true" aria-label="Nova discussão"><header><div><span class="nx40-kicker">NOVA DISCUSSÃO</span><h2>Converse com a comunidade</h2></div><button type="button" data-nx40-close aria-label="Fechar">×</button></header><label>TÍTULO<input name="title" maxlength="180" minlength="3" required placeholder="Sobre o que você quer conversar?"></label><label>MENSAGEM<textarea name="body" maxlength="5000" minlength="3" required placeholder="Escreva sua discussão…"></textarea></label><label style="display:flex;align-items:center;gap:8px;letter-spacing:0"><input name="spoiler" type="checkbox" style="width:auto;margin:0"> contém spoiler</label><div class="nx40-form-error" id="nx40FormError"></div><div class="nx40-modal-actions"><button type="button" data-nx40-close>Cancelar</button><button class="primary" type="submit">Publicar</button></div></form></div>`;
-    document.title='Comunidade | AniNexus';document.body.classList.add('nx40-community-active');document.querySelectorAll('[data-nav]').forEach(a=>a.classList.remove('active'));bind();mounted=true;requestAnimationFrame(()=>{document.documentElement.classList.add('nx40-community-ready');document.documentElement.classList.remove('nx40-community-boot')});
+    document.title='Comunidade | AniNexus';document.body.classList.add('nx40-community-active');document.querySelectorAll('[data-nav]').forEach(a=>a.classList.remove('active'));bind();mounted=true;requestAnimationFrame(()=>{if(!owns())return;document.documentElement.classList.add('nx40-community-ready');document.documentElement.classList.remove('nx40-community-boot')});
   }
   function render(){
     if(!mounted||!owns()||!app.querySelector('#nx40Feed'))return;
@@ -200,7 +200,7 @@
     app.querySelector('[data-nx40-guide]').onclick=e=>{const button=e.currentTarget,expanded=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(expanded));app.querySelector('#nx40GuideLinks').hidden=!expanded};
   }
   async function mount(){
-    if(!owns()){++loadEpoch;++overviewEpoch;mounted=false;closeModal();document.body.classList.remove('modal-open','nx40-community-active','nx40-scrolled','nx40-scroll-down');return}
+    if(!owns()){++loadEpoch;++overviewEpoch;mounted=false;closeModal();document.body.classList.remove('modal-open','nx40-community-active','nx40-scrolled','nx40-scroll-down');document.documentElement.classList.remove('nx40-community-boot','nx40-community-ready');return}
     if(!app.querySelector('.nx40-community')){mounted=false;shell();renderOverview();loadOverview()}
     await load();
   }

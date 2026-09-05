@@ -113,3 +113,18 @@ test('Community with few contributions does not stack empty statistics sections'
   await expect(page.locator('#nx40Feed')).toContainText('Alice');
   await expect(page.locator('#nx40ReactionRanking')).toBeVisible();
 });
+
+test('Community leaves no conflicting page state after navigating away and returning',async({page})=>{
+  await setup(page);await page.goto(url('/comunidade'));
+  await expect(page.locator('#nx40Stats')).toContainText('1.200');
+  await page.evaluate(()=>{history.pushState({},'','?p=/mangas');dispatchEvent(new PopStateEvent('popstate'))});
+  await expect(page.locator('body')).not.toHaveClass(/nx40-community-active/);
+  await expect(page.locator('html')).not.toHaveClass(/nx40-community-ready|nx40-community-boot/);
+  await expect(page.locator('.nx21-catalog-page')).toBeVisible();
+  await page.evaluate(()=>{history.pushState({},'','?p=/comunidade');dispatchEvent(new PopStateEvent('popstate'))});
+  await expect(page.locator('.nx40-community')).toHaveCount(1);
+  await expect(page.locator('#nx40Stats')).toContainText('1.200');
+  await expect(page.locator('#nx40Feed')).toContainText('Alice');
+  await expect(page.locator('#topbar')).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
+  await noOverflow(page);
+});

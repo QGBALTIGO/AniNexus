@@ -1,6 +1,6 @@
 /* Community: one public overview, with the same chrome as the catalog hubs. */
 html.nx40-community-boot #app{visibility:hidden!important;opacity:0!important}
-html.nx40-community-ready #app{visibility:visible!important;opacity:1!important}
+html.nx40-community-ready body.nx40-community-active #app{visibility:visible!important;opacity:1!important}
 body.nx40-community-active{background:#08060b!important;color:#f7f1f4}
 body.nx40-community-active #app{padding-top:0!important}
 body.nx40-community-active #app>main.nx40-community:first-child{padding-top:0!important}
