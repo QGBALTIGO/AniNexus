@@ -5,7 +5,7 @@
   const IS_PAGES=location.hostname.endsWith('github.io');
   const REMOTE=window.AniNexusAuth?.enabled===true;
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='44.24.3';
+  const BUILD='44.24.4';
   const API='https://graphql.anilist.co';
   let items=[],mounted=false,overview=null,overviewState='loading',selectedReaction='Chorei',reactionChosen=false,memberDays=7,loadEpoch=0,overviewEpoch=0,visibleActivity=6,visibleImpressions=3;
 
@@ -160,14 +160,14 @@
       <div class="nx40-guide" id="nx40Guide"><div class="nx40-shell"><a href="#nx40Overview">Comunidade</a><button type="button" data-nx40-guide aria-expanded="false" aria-controls="nx40GuideLinks" aria-label="Abrir atalhos da comunidade"><span data-icon="arrow"></span></button></div><nav id="nx40GuideLinks" aria-label="Atalhos da comunidade" hidden><a href="#nx40Overview">Visão geral</a><a href="#nx40Ranking">Reações</a><a href="#nx40FeedSection">Atividade</a></nav></div>
       <div class="nx40-shell nx40-overview" id="nx40Overview"><h2 class="nx40-sr">AniNexus em números</h2><div class="nx40-stats" id="nx40Stats" aria-live="polite"></div><div id="nx40OverviewNotice" role="status"></div></div>
       <div class="nx40-shell nx40-body"><div class="nx40-main">
-        <section class="nx40-section" id="nx40Ranking"><span class="nx40-kicker">RANKING POR REAÇÃO</span><h2 id="nx40ReactionTitle">O que fez a comunidade chorar?</h2><div class="nx40-reaction-options" id="nx40Reactions"></div><div id="nx40ReactionRanking" aria-live="polite"></div></section>
+        <section class="nx40-section nx40-tool" id="nx40Ranking"><span class="nx40-kicker">RANKING POR REAÇÃO</span><h2 id="nx40ReactionTitle">O que fez a comunidade chorar?</h2><div class="nx40-reaction-options" id="nx40Reactions"></div><div id="nx40ReactionRanking" aria-live="polite"></div></section>
         <section class="nx40-section"><h2>Que comunidade somos nós?</h2><div id="nx40Distribution"></div></section>
         <div class="nx40-comparisons" id="nx40Comparisons"></div>
         <section class="nx40-section"><h2>Os mais dropados</h2><p class="nx40-section-note">Entre quem terminou e quem desistiu.</p><div id="nx40Dropped"></div></section>
         <section class="nx40-section"><h2>Estúdios na comunidade</h2><div class="nx40-studios" id="nx40Studios"></div></section>
         <section class="nx40-section"><h2>Mais favoritados</h2><div class="nx40-favorite-grid" id="nx40Favorites"></div></section>
       </div><aside class="nx40-side">
-        <section class="nx40-section"><header class="nx40-toolbar"><h2>Mais <em>ativos</em></h2><div class="nx40-segment" aria-label="Período"><button type="button" data-nx40-days="7" aria-pressed="true">7 dias</button><button type="button" data-nx40-days="30" aria-pressed="false">30 dias</button></div></header><div id="nx40Members"></div></section>
+        <section class="nx40-section nx40-tool"><header class="nx40-toolbar"><h2>Mais <em>ativos</em></h2><div class="nx40-segment" aria-label="Período"><button type="button" data-nx40-days="7" aria-pressed="true">7 dias</button><button type="button" data-nx40-days="30" aria-pressed="false">30 dias</button></div></header><div id="nx40Members"></div></section>
         <section class="nx40-section"><h2>Novos <em>membros</em></h2><div id="nx40NewMembers"></div></section>
         <section class="nx40-section" id="nx40FeedSection"><header class="nx40-toolbar"><h2 id="nx40FeedTitle">Agora na <em>comunidade</em></h2><span class="nx40-live-dot" aria-hidden="true"></span></header>
           <div class="nx40-feed" id="nx40Feed"><p class="nx40-empty">Carregando atividade...</p></div>

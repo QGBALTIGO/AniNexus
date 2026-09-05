@@ -86,6 +86,10 @@ test('Both Home community previews keep readable covers, type and status colors 
         await expect.poll(()=>card.locator('.nx35-community-cover>a>img').evaluate(img=>img.naturalWidth)).toBeGreaterThan(0);
         expect(await card.evaluate(el=>getComputedStyle(el,'::before').display)).toBe('none');
         expect(await card.locator('p').evaluate(el=>parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(12);
+        const framed=id==='#nx35Community'?card:page.locator('.nx35-live');
+        await expect(framed).toHaveCSS('border-radius','8px');
+        for(const side of ['top','right','bottom','left'])await expect(framed).toHaveCSS(`border-${side}-width`,'1px');
+        await expect(card.locator('.nx35-community-status')).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
         await root.screenshot({path:info.outputPath(`home-${id.slice(1)}-${theme}-${width}.png`)});
       }
       const results=await new AxeBuilder({page}).include('.nx35-live').include('#nx35Community').withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
@@ -156,7 +160,12 @@ test('Community keeps text, reaction controls and surfaces readable in both them
       await page.setViewportSize({width,height:900});await page.goto(url('/comunidade'));
       await expect(page.locator('#nx40Stats')).toContainText('1.200');
       await expect(page.locator('html')).toHaveAttribute('data-theme',theme);
-      await expect(page.locator('.nx40-main')).toHaveCSS('background-color',theme==='dark'?'rgb(16, 12, 20)':'rgb(255, 255, 255)');
+      await expect(page.locator('#nx40Ranking')).toHaveCSS('background-color',theme==='dark'?'rgb(24, 18, 22)':'rgb(255, 255, 255)');
+      for(const selector of ['#nx40Ranking','.nx40-tool:has(#nx40Members)','.nx40-stat','#nx40Feed .nx40-card']){
+        const card=page.locator(selector).first();
+        await expect(card).toHaveCSS('border-radius','8px');
+        for(const side of ['top','right','bottom','left'])await expect(card).toHaveCSS(`border-${side}-width`,'1px');
+      }
       const results=await new AxeBuilder({page}).include('.nx40-community').withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
       expect(results.violations.filter(v=>['serious','critical'].includes(v.impact)).map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)}))).toEqual([]);
       await noOverflow(page);
