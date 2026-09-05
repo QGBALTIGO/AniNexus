@@ -5,7 +5,7 @@ const origin=process.env.ANINEXUS_E2E_ORIGIN||'http://127.0.0.1:4173/';
 const url=path=>`${origin}?p=${encodeURIComponent(path)}`;
 const snapshots=new WeakMap();
 // Persistence checks use reduced motion; animated cross-page controls are covered in e2e.spec.mjs.
-test.use({reducedMotion:'reduce'});
+test.use({contextOptions:{reducedMotion:'reduce'}});
 test.afterEach(async({page},info)=>{if(info.status!==info.expectedStatus)await info.attach('sync-state',{body:JSON.stringify({remote:snapshots.get(page),local:await page.evaluate(()=>({...localStorage})).catch(()=>null),input:await page.evaluate(()=>window.__mediaInput).catch(()=>null)}),contentType:'application/json'})});
 const cover='https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx105778-euxXZEIfDY2u.png';
 const coverBytes=readFileSync(new URL('../assets/avatars/mascot-pink.png',import.meta.url));
@@ -49,6 +49,7 @@ async function setup(page){
   return remote;
 }
 async function login(page){
+  expect(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);
   await page.evaluate(()=>{
     window.AniNexusAuth={...window.AniNexusAuth,enabled:true,api:async(path,options={})=>{
       const response=await fetch(path,{...options,headers:{'content-type':'application/json'}});

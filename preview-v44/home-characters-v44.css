@@ -87,6 +87,10 @@
 .nx47-character-actions .nx47-character-favorite{
   width:var(--nx39-action-size);
   height:var(--nx39-action-size);
+  min-width:var(--nx39-action-size)!important;
+  min-height:var(--nx39-action-size)!important;
+  max-width:var(--nx39-action-size)!important;
+  max-height:var(--nx39-action-size)!important;
   background:var(--nx39-action-bg)!important;
   border-color:var(--nx39-action-line)!important
 }
