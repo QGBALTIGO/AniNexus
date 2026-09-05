@@ -3,6 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 import {readFileSync} from 'node:fs';
 
 const origin=process.env.ANINEXUS_E2E_ORIGIN||'http://127.0.0.1:4173/';
+const localStaticOrigin=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
 const url=path=>`${origin}?p=${encodeURIComponent(path)}`;
 const cover='https://s4.anilist.co/community-test.png';
 const image=readFileSync(new URL('../assets/avatars/mascot-pink.png',import.meta.url));
@@ -11,6 +12,14 @@ const fixture={totals:{works:1200,reactions:75,completed:42,impressions:18,ratin
 test.use({contextOptions:{reducedMotion:'reduce'}});
 async function setup(page){
   const state={fail:false,pending:false,overview:fixture};
+  if(localStaticOrigin)await page.route(`${new URL(origin).origin}/**`,async route=>{
+    const requested=new URL(route.request().url()),path=requested.pathname.replace(/^\/AniNexus(?=\/)/,'');
+    for(let attempt=0;attempt<3;attempt++){
+      try{const response=await route.fetch({url:new URL(path+requested.search,localStaticOrigin).href});return await route.fulfill({response})}
+      catch(error){if(attempt===2||!/ECONNRESET|ECONNREFUSED|socket hang up/.test(String(error)))throw error;await new Promise(resolve=>setTimeout(resolve,100*(attempt+1)))}
+    }
+  });
+  await page.route('**/runtime-config.js*',route=>route.fulfill({contentType:'application/javascript',body:`window.__ANINEXUS_CONFIG__=Object.freeze({environment:'test',siteOrigin:'https://qgbaltigo.github.io/AniNexus',apiOrigin:'https://graphql.anilist.co',clerkPublishableKey:'pk_test_community',authEnabled:true});`}));
   await page.route(cover,route=>route.fulfill({body:image,contentType:'image/png'}));
   await page.route('**/api/**',route=>{
     const path=new URL(route.request().url()).pathname;
