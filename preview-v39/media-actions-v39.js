@@ -5,8 +5,8 @@
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
   const BUILD='44.5.0';
-  const FAV='[data-fav],[data-nx-fav],[data-nx-detail-fav],[data-nx18-fav],[data-nx17-fav]';
-  const LIST='[data-list],[data-nx-list],[data-nx-detail-list],[data-nx18-status],[data-nx17-list]';
+  const FAV='[data-fav],[data-nx-fav],[data-nx-detail-fav],[data-nx18-fav],[data-nx17-fav],[data-manga-fav]';
+  const LIST='[data-list],[data-nx-list],[data-nx-detail-list],[data-nx18-status],[data-nx17-list],[data-manga-list]';
   const ACTION=`${FAV},${LIST}`;
   const favLock=new Map();
   let listOpening=false;
@@ -22,16 +22,16 @@
   (async()=>{await loadScript('preview-v40/activity-v40.js');loadScript('preview-v40/home-community-v40.js');loadScript('preview-v40/community-v40.js')})();
 
   const now=()=>performance.now();
-  const api=()=>window.AniNexusMediaState||null;
-  const idFav=b=>Number(b?.dataset?.fav||b?.dataset?.nxFav||b?.dataset?.nxDetailFav||b?.dataset?.nx18Fav||b?.dataset?.nx17Fav||0);
-  const idList=b=>Number(b?.dataset?.list||b?.dataset?.nxList||b?.dataset?.nxDetailList||b?.dataset?.nx18Status||b?.dataset?.nx17List||0);
+  const api=b=>b?.matches('[data-manga-list],[data-manga-fav]')?window.AniNexusMangaState:window.AniNexusMediaState;
+  const idFav=b=>Number(b?.dataset?.mangaFav||b?.dataset?.fav||b?.dataset?.nxFav||b?.dataset?.nxDetailFav||b?.dataset?.nx18Fav||b?.dataset?.nx17Fav||0);
+  const idList=b=>Number(b?.dataset?.mangaList||b?.dataset?.list||b?.dataset?.nxList||b?.dataset?.nxDetailList||b?.dataset?.nx18Status||b?.dataset?.nx17List||0);
   const stop=e=>{e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()};
   const pop=b=>{if(!b)return;b.classList.remove('nx39-pop');void b.offsetWidth;b.classList.add('nx39-pop');setTimeout(()=>b.classList.remove('nx39-pop'),260)};
   const busy=(b,ms)=>{if(!b)return;b.dataset.nx39Busy='1';setTimeout(()=>{if(b.isConnected)delete b.dataset.nx39Busy},ms)};
 
   function releaseList(){listOpening=false;clearTimeout(listTimer)}
-  function waitApi(timeout=1800){const ready=api();if(ready)return Promise.resolve(ready);return new Promise(resolve=>{const started=performance.now(),timer=setInterval(()=>{const a=api();if(a||performance.now()-started>=timeout){clearInterval(timer);resolve(a||null)}},20)})}
-  function forceSync(){if(syncRaf)return;syncRaf=requestAnimationFrame(()=>{syncRaf=0;api()?.sync?.()})}
+  function waitApi(button,timeout=1800){const ready=api(button);if(ready)return Promise.resolve(ready);return new Promise(resolve=>{const started=performance.now(),timer=setInterval(()=>{const a=api(button);if(a||performance.now()-started>=timeout){clearInterval(timer);resolve(a||null)}},20)})}
+  function forceSync(){if(syncRaf)return;syncRaf=requestAnimationFrame(()=>{syncRaf=0;window.AniNexusMediaState?.sync();window.AniNexusMangaState?.sync()})}
   function syncBurst(){forceSync();setTimeout(forceSync,40);setTimeout(forceSync,180);setTimeout(forceSync,520)}
 
   function preserveLabel(button){
@@ -57,6 +57,13 @@
     if(root?.nodeType===1&&root.matches?.(ACTION))buttons.push(root);
     root?.querySelectorAll?.(ACTION).forEach(b=>buttons.push(b));
     for(const b of buttons){
+      const reading=b.matches('[data-manga-list],[data-manga-fav]')||b.closest('[data-type="manga"],[data-kind="manga"],[data-open-manga],[data-manga-open]')||(b.closest('.detail-hero,.nx22-hero')&&routeFrom().startsWith('/manga/'));
+      const favorite=b.matches(FAV),id=favorite?idFav(b):idList(b);
+      if(reading){
+        b.dataset[favorite?'mangaFav':'mangaList']=String(id);
+        for(const key of ['fav','nxFav','nxDetailFav','nx18Fav','nx17Fav','list','nxList','nxDetailList','nx18Status','nx17List'])delete b.dataset[key];
+      }
+      b.dataset.nxMediaType=reading?'MANGA':'ANIME';b.dataset.nxActionRole=favorite?'favorite':'list';
       classify(b);
       b.onclick=null;
       b.dataset.nxActionOwner='global';
@@ -66,21 +73,21 @@
   }
 
   document.addEventListener('click',e=>{if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const a=e.target.closest?.('a[href]');if(!a||a.target==='_blank'||routeFrom(a.href)!=='/comunidade')return;stop(e);location.assign(communityUrl())},true);
-  document.addEventListener('pointerdown',e=>{const b=e.target.closest?.(ACTION);if(b&&!b.disabled){actionGuardUntil=now()+460;b.classList.add('nx39-press')}},true);
+  document.addEventListener('pointerdown',e=>{const b=e.target.closest?.(ACTION);if(b&&!b.disabled&&e.button===0){actionGuardUntil=now()+460;if(e.pointerType==='mouse'){e.preventDefault();b.focus({preventScroll:true})}b.classList.add('nx39-press')}},true);
   for(const type of ['pointerup','pointercancel','pointerleave'])document.addEventListener(type,e=>e.target.closest?.(ACTION)?.classList.remove('nx39-press'),true);
 
   async function favoriteAction(b){
     const id=idFav(b);if(!Number.isSafeInteger(id)||id<=0)return;
-    const last=favLock.get(id);if(last!==undefined&&now()-last<340)return;
-    favLock.set(id,now());busy(b,280);pop(b);
-    const a=await waitApi();if(!a)return;
+    const key=`${b.dataset.nxMediaType}:${id}`,last=favLock.get(key);if(last!==undefined&&now()-last<340)return;
+    favLock.set(key,now());busy(b,280);pop(b);
+    const a=await waitApi(b);if(!a)return;
     a.favorite(id,!a.isFavorite(id));syncBurst();
   }
   async function listAction(b){
     const id=idList(b);if(!Number.isSafeInteger(id)||id<=0)return;
     if(listOpening||document.querySelector('.nx20-media-layer'))return;
     listOpening=true;busy(b,650);pop(b);clearTimeout(listTimer);listTimer=setTimeout(releaseList,5000);
-    try{const a=await waitApi();if(!a)return;await a.open(id)}catch{}finally{releaseList();syncBurst()}
+    try{const a=await waitApi(b);if(!a)return;b.focus({preventScroll:true});await a.open(id)}catch{}finally{releaseList();syncBurst()}
   }
 
   /* Window capture precedes all document/element legacy handlers. */
@@ -89,6 +96,14 @@
   document.addEventListener('keydown',e=>{if(e.key==='Escape')releaseList()},true);
   document.addEventListener('aninexus:media-state-changed',()=>syncBurst());
   document.addEventListener('aninexus:favorite-changed',()=>syncBurst());
+  document.addEventListener('aninexus:manga-media-state-changed',()=>syncBurst());
+  document.addEventListener('aninexus:manga-favorite-changed',()=>syncBurst());
+  let noticeTimer;
+  document.addEventListener('aninexus:media-sync-pending',()=>{
+    let notice=document.querySelector('.nx-media-sync-notice');
+    if(!notice){notice=document.createElement('div');notice.className='nx-media-sync-notice';notice.setAttribute('role','status');notice.innerHTML='<span>Salvo neste navegador. Sincronização com a conta pendente.</span><button type="button">Tentar novamente</button>';document.body.append(notice);notice.querySelector('button').onclick=()=>{dispatchEvent(new CustomEvent('aninexus:media-sync-retry'));notice.remove()}}
+    clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>notice.remove(),9000);
+  });
 
   const observer=new MutationObserver(records=>{
     let touched=false;

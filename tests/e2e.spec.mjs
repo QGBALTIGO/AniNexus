@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.22.0&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.23.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -59,7 +59,7 @@ test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-04-v44.22.0')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-04-v44.23.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -782,7 +782,7 @@ test('Home reading cards share anime actions and trailers play inside AniNexus',
   expect(readingLayout.scoreLeft).toBeLessThan(readingLayout.actionsLeft);expect(readingLayout.scoreRight).toBeLessThan(readingLayout.actionsLeft);
   await expect(reading.locator('[data-manga-list]')).toHaveCSS('width','34px');
   await expect(reading.locator('[data-manga-fav]')).toHaveCSS('height','34px');
-  await page.evaluate(()=>{window.__mangaWrites=[];window.AniNexusAuth={enabled:true,api:async(path,options={})=>{window.__mangaWrites.push({path,method:options.method||'GET',body:options.body||null});if((options.method||'GET')==='GET')return{items:[]};return{ok:true}}};dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:{id:'manga-test'}}}))});
+  await page.evaluate(()=>{window.__mangaWrites=[];window.AniNexusAuth={...window.AniNexusAuth,enabled:true,api:async(path,options={})=>{window.__mangaWrites.push({path,method:options.method||'GET',body:options.body||null});if(path==='/api/me')return{user:{id:'manga-test'}};if((options.method||'GET')==='GET')return{items:[]};return{ok:true}}};dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:{id:'manga-test'}}}))});
   const heart=reading.locator('[data-manga-fav]');
   await expect(heart).toBeEnabled();
   await heart.click();
@@ -793,13 +793,14 @@ test('Home reading cards share anime actions and trailers play inside AniNexus',
   expect(favoriteVisual.background).not.toBe('rgba(0, 0, 0, 0)');
   expect(favoriteVisual.fill).not.toBe('none');
   await reading.locator('[data-manga-list]').click();
-  await expect(page.locator('#nx42MangaState')).toBeVisible();
-  await page.locator('#nx42MangaState button[type="submit"]').click();
-  await expect(page.locator('#nx42MangaState')).toHaveCount(0);
+  await expect(page.locator('.nx20-media-layer[data-media-type="MANGA"]')).toBeVisible();
+  await page.locator('[data-nx20-status="COMPLETED"]').click();
+  await page.locator('[data-nx20-save]').click();
+  await expect(page.locator('.nx20-media-layer')).toHaveCount(0);
   const listAction=reading.locator('[data-manga-list]');
   await expect(listAction).toHaveAttribute('aria-pressed','true');
   await expect(listAction).toHaveClass(/active/);
-  await expect(listAction.locator('path')).toHaveAttribute('d','m5 12 4 4L19 7');
+  await expect(listAction.locator('path')).toHaveAttribute('d','m5 12.5 4.2 4.2L19 7');
   await expect.poll(()=>page.evaluate(()=>window.__mangaWrites.some(write=>write.method==='PUT'&&write.path.includes('/api/me/manga-list/')))).toBe(true);
 
   const trailerSection=page.locator('.nx42-trailers-section'),cards=trailerSection.locator('.nx42-trailer');

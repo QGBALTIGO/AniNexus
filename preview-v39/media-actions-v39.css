@@ -1,117 +1,60 @@
-/* AniNexus V39 — one media-action component across the entire site.
-   Interaction proportions follow the compact ANIQuim pattern while colors stay AniNexus. */
+/* One action contract for poster, detail, calendar and library controls. */
 :root{
-  --nx39-action-size:34px;
-  --nx39-action-gap:7px;
-  --nx39-action-bg:rgba(8,6,9,.82);
-  --nx39-action-bg-hover:rgba(20,13,17,.94);
-  --nx39-action-line:rgba(255,255,255,.20);
-  --nx39-action-line-hover:rgba(255,255,255,.34);
-  --nx39-action-fg:#f6eef2;
-  --nx39-accent:#ef3159;
-  --nx39-accent-dark:#a91336;
+  --nx39-action-size:34px;--nx39-action-gap:7px;
+  --nx39-action-bg:rgba(12,9,13,.88);--nx39-action-line:rgba(255,255,255,.25);
+  --nx39-action-fg:#f7f2f4;--nx39-accent:#ef3159;
+  --nx39-favorite-bg:color-mix(in srgb,var(--nx39-accent) 85%,#130b10);
+  --nx39-favorite-line:color-mix(in srgb,var(--nx39-accent) 60%,white);
 }
-
-:where(
-  button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],
-  button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]
-):not(:has(>span)){
+button[data-nx-action-owner="global"]{
+  --action-tone:var(--nx39-accent);
+  box-sizing:border-box!important;position:relative;display:inline-flex!important;
+  align-items:center!important;justify-content:center!important;flex-shrink:0!important;
+  background:var(--nx39-action-bg)!important;border:1px solid var(--nx39-action-line)!important;
+  color:var(--nx39-action-fg)!important;box-shadow:0 2px 7px #0003!important;
+  padding:0!important;cursor:pointer;opacity:1;
+  transition:background-color .16s,border-color .16s,transform .16s;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+}
+button[data-nx-action-owner="global"][data-nx-action-kind="compact"]{
+  display:grid!important;
   width:var(--nx39-action-size)!important;height:var(--nx39-action-size)!important;
   min-width:var(--nx39-action-size)!important;min-height:var(--nx39-action-size)!important;
   max-width:var(--nx39-action-size)!important;max-height:var(--nx39-action-size)!important;
-  padding:0!important;margin:0!important;display:grid!important;place-items:center!important;
-  border-radius:50%!important;border:1px solid var(--nx39-action-line)!important;
-  background:var(--nx39-action-bg)!important;color:var(--nx39-action-fg)!important;
-  box-shadow:0 5px 14px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.035)!important;
-  -webkit-backdrop-filter:blur(9px) saturate(1.08)!important;backdrop-filter:blur(9px) saturate(1.08)!important;
-  cursor:pointer!important;touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;
-  transform:translateZ(0);transform-origin:center;
-  transition:transform .14s cubic-bezier(.2,.85,.2,1),background-color .16s ease,border-color .16s ease,color .16s ease,box-shadow .18s ease!important;
+  border-radius:50%!important;font-size:0!important;gap:0!important;
 }
-
-:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]):not(:has(>span))>.nx-media-icon,
-:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]):not(:has(>span))>svg{
-  width:17px!important;height:17px!important;min-width:17px!important;min-height:17px!important;display:block!important;
-  fill:none!important;stroke:currentColor!important;stroke-width:1.85!important;stroke-linecap:round!important;stroke-linejoin:round!important;pointer-events:none!important;
+button[data-nx-action-owner="global"][data-nx-action-kind="labeled"]{
+  width:auto!important;height:40px!important;min-height:40px!important;max-height:none!important;
+  min-width:0!important;max-width:100%!important;border-radius:8px!important;padding:0 14px!important;
+  gap:8px!important;font:700 13px/1.2 'Nunito Sans',sans-serif!important;letter-spacing:0!important;
 }
-
-@media(hover:hover) and (pointer:fine){
-  :where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]):not(:has(>span)):hover{
-    background:var(--nx39-action-bg-hover)!important;border-color:var(--nx39-action-line-hover)!important;color:#fff!important;
-    transform:translateY(-1px) scale(1.045)!important;box-shadow:0 7px 18px rgba(0,0,0,.38),0 0 0 1px rgba(255,255,255,.025) inset!important;
-  }
+button[data-nx-action-owner="global"] svg{
+  pointer-events:none!important;
+  width:17px!important;height:17px!important;min-width:17px!important;flex:0 0 17px!important;
+  fill:none!important;stroke:currentColor!important;stroke-width:1.85!important;
+  stroke-linecap:round;stroke-linejoin:round;display:block!important;margin:0!important;filter:none!important;
 }
-
-:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]):not(:has(>span)):active,
-:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).nx39-press:not(:has(>span)){
-  transform:scale(.89)!important;transition-duration:.07s!important;
+button[data-nx-action-owner="global"][data-nx-unified-status="PLANNING"]{--action-tone:#4b8cff}
+button[data-nx-action-owner="global"][data-nx-unified-status="CURRENT"]{--action-tone:#ef3159}
+button[data-nx-action-owner="global"][data-nx-unified-status="COMPLETED"]{--action-tone:#279e67}
+button[data-nx-action-owner="global"][data-nx-unified-status="PAUSED"]{--action-tone:#bb8127}
+button[data-nx-action-owner="global"][data-nx-unified-status="DROPPED"]{--action-tone:#936575}
+button[data-nx-action-owner="global"][aria-pressed="true"]{
+  background:color-mix(in srgb,var(--action-tone) 85%,#130b10)!important;
+  border-color:color-mix(in srgb,var(--action-tone) 60%,white)!important;
+  color:white!important;box-shadow:0 2px 9px #0004!important;
 }
-
-:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).nx39-pop:not(:has(>span)){
-  animation:nx39ActionPop .24s cubic-bezier(.18,.9,.3,1.35);
+button[data-nx-action-owner="global"][data-nx-action-role="favorite"][aria-pressed="true"] svg{fill:currentColor!important}
+@media(hover:hover){
+  button[data-nx-action-owner="global"]:hover{border-color:#ffffff8c!important;transform:translateY(-1px)}
+  button[data-nx-action-owner="global"][aria-pressed="false"]:hover{background:#282029!important}
 }
-@keyframes nx39ActionPop{0%{transform:scale(.88)}55%{transform:scale(1.10)}100%{transform:scale(1)}}
-
-:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list]).active:not(:has(>span)){
-  color:#fff!important;border-color:rgba(255,102,133,.62)!important;
-  background:linear-gradient(145deg,#f43a61 0%,#d51f49 54%,#a91336 100%)!important;
-  box-shadow:0 7px 19px rgba(221,31,72,.31),inset 0 1px 0 rgba(255,255,255,.15)!important;
-}
-
-:where(button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).active:not(:has(>span)){
-  color:#fff!important;border-color:rgba(255,94,126,.55)!important;background:rgba(189,24,59,.93)!important;
-  box-shadow:0 6px 17px rgba(194,24,60,.26),inset 0 1px 0 rgba(255,255,255,.12)!important;
-}
-:where(button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).active:not(:has(>span))>.nx-media-heart,
-:where(button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).active:not(:has(>span))>svg{fill:currentColor!important}
-
-:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav])[data-nx39-busy="1"]{filter:saturate(1.04)}
-
-:where(.nx21-actions,.nx18-cover-actions,.nx35-cover>aside,.nx17-actions,.nx-season-actions,.aqx-actions,.nx38-library-card-actions){gap:var(--nx39-action-gap)!important}
-:where(.nx21-actions,.nx18-cover-actions,.nx38-library-card-actions){right:7px!important;bottom:7px!important}
-.nx35-cover>aside{right:7px!important;bottom:7px!important}
-
-:where(button[data-nx-detail-list],button[data-nx-detail-fav]){
-  min-height:40px!important;border-radius:10px!important;
-  transition:transform .14s ease,border-color .16s ease,background-color .16s ease,box-shadow .18s ease!important;touch-action:manipulation;
-}
-:where(button[data-nx-detail-list],button[data-nx-detail-fav]):active{transform:scale(.975)!important}
-:where(button[data-nx-detail-list]).active{border-color:rgba(239,49,89,.52)!important;background:rgba(239,49,89,.13)!important;color:#fff!important}
-:where(button[data-nx-detail-fav]).active{border-color:rgba(239,49,89,.45)!important;background:rgba(184,24,58,.18)!important;color:#ff8aa2!important}
-:where(button[data-nx-detail-fav]).active>.nx-media-heart{fill:currentColor!important}
-
-/* V40.0.2: explicit component classification replaces fragile DOM-shape detection.
-   A compact action stays compact even when an old renderer wraps its icon in a span. */
-button[data-nx-action-kind="compact"]{
-  width:var(--nx39-action-size)!important;height:var(--nx39-action-size)!important;
-  min-width:var(--nx39-action-size)!important;min-height:var(--nx39-action-size)!important;
-  max-width:var(--nx39-action-size)!important;max-height:var(--nx39-action-size)!important;
-  padding:0!important;margin:0!important;display:grid!important;place-items:center!important;
-  border-radius:50%!important;border:1px solid var(--nx39-action-line)!important;
-  background:var(--nx39-action-bg)!important;color:var(--nx39-action-fg)!important;
-  box-shadow:0 5px 14px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.035)!important;
-  -webkit-backdrop-filter:blur(9px) saturate(1.08)!important;backdrop-filter:blur(9px) saturate(1.08)!important;
-  cursor:pointer!important;touch-action:manipulation!important;user-select:none!important;-webkit-user-select:none!important;-webkit-tap-highlight-color:transparent!important;
-  transform:translateZ(0);transform-origin:center;
-  transition:transform .14s cubic-bezier(.2,.85,.2,1),background-color .16s ease,border-color .16s ease,color .16s ease,box-shadow .18s ease!important;
-}
-button[data-nx-action-kind="compact"] :where(svg,.nx-media-icon){
-  width:17px!important;height:17px!important;min-width:17px!important;min-height:17px!important;
-  display:block!important;fill:none!important;stroke:currentColor!important;stroke-width:1.85!important;stroke-linecap:round!important;stroke-linejoin:round!important;pointer-events:none!important;
-}
-button[data-nx-action-kind="compact"].active[data-fav],button[data-nx-action-kind="compact"].active[data-nx-fav],button[data-nx-action-kind="compact"].active[data-nx18-fav],button[data-nx-action-kind="compact"].active[data-nx17-fav]{
-  color:#fff!important;border-color:rgba(255,94,126,.55)!important;background:rgba(189,24,59,.93)!important;
-  box-shadow:0 6px 17px rgba(194,24,60,.26),inset 0 1px 0 rgba(255,255,255,.12)!important;
-}
-button[data-nx-action-kind="compact"].active[data-list],button[data-nx-action-kind="compact"].active[data-nx-list],button[data-nx-action-kind="compact"].active[data-nx18-status],button[data-nx-action-kind="compact"].active[data-nx17-list]{
-  color:#fff!important;border-color:rgba(255,102,133,.62)!important;background:linear-gradient(145deg,#f43a61 0%,#d51f49 54%,#a91336 100%)!important;
-  box-shadow:0 7px 19px rgba(221,31,72,.31),inset 0 1px 0 rgba(255,255,255,.15)!important;
-}
-button[data-nx-action-kind="compact"].active :where(.nx-media-heart){fill:currentColor!important}
-button[data-nx-action-kind="compact"].nx39-press,button[data-nx-action-kind="compact"]:active{transform:scale(.89)!important;transition-duration:.07s!important}
-button[data-nx-action-kind="compact"].nx39-pop{animation:nx39ActionPop .24s cubic-bezier(.18,.9,.3,1.35)}
-@media(hover:hover) and (pointer:fine){button[data-nx-action-kind="compact"]:hover{background:var(--nx39-action-bg-hover)!important;border-color:var(--nx39-action-line-hover)!important;color:#fff!important;transform:translateY(-1px) scale(1.045)!important;box-shadow:0 7px 18px rgba(0,0,0,.38),0 0 0 1px rgba(255,255,255,.025) inset!important}}
-button[data-nx-action-kind="labeled"]{max-width:none!important;max-height:none!important}
-
-@media(max-width:760px){:root{--nx39-action-size:34px;--nx39-action-gap:6px}}
-@media(prefers-reduced-motion:reduce){:where(button[data-list],button[data-nx-list],button[data-nx18-status],button[data-nx17-list],button[data-fav],button[data-nx-fav],button[data-nx18-fav],button[data-nx17-fav]).nx39-pop,button[data-nx-action-kind="compact"].nx39-pop{animation:none!important}}
+button[data-nx-action-owner="global"]:focus-visible{outline:2px solid #fff!important;outline-offset:3px!important}
+button[data-nx-action-owner="global"].nx39-press{transform:scale(.9)!important}
+button[data-nx-action-owner="global"].nx39-pop{animation:nx39-action-pop .25s ease}
+button[data-nx-action-owner="global"]:disabled{opacity:.5;cursor:wait}
+.nx21-actions,.nx18-cover-actions,.nx35-cover>aside,.nx35-book>aside,.nx17-actions,.nx-season-actions,.aqx-actions,.nx38-library-card-actions,.nx42-manga-actions{gap:var(--nx39-action-gap)!important}
+.nx-media-sync-notice{position:fixed;z-index:500;bottom:20px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 32px);padding:12px 16px;display:flex;align-items:center;gap:12px;border:1px solid #76535d;border-radius:8px;background:#21171c;color:#fff;font:600 13px/1.4 'Nunito Sans',sans-serif;box-shadow:0 8px 28px #0006}
+.nx-media-sync-notice button{flex:none;background:transparent;border:0;color:#ff8fa8;text-decoration:underline;cursor:pointer}
+@keyframes nx39-action-pop{50%{transform:scale(1.13)}}
+@media(prefers-reduced-motion:reduce){button[data-nx-action-owner="global"]{animation:none!important;transition:none!important;transform:none!important}}

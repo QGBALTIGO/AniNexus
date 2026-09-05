@@ -3,15 +3,19 @@
   if(window.__NX_MEDIA_STATE_V38__)return;
   window.__NX_MEDIA_STATE_V38__=true;
 
-  const KEY='aninexus:mediaState:v2';
-  const LEGACY_KEY='aninexus:mediaState:v1';
-  const FAV_KEY='aninexus:favorites';
-  const LIST_KEY='aninexus:list';
-  const LEGACY_STATUS='aninexus:listStatus';
+  let activeEditor=null;
+  function createMediaState(reading=false){
+  const KEY=reading?'aninexus:mangaState:v2':'aninexus:mediaState:v2';
+  const LEGACY_KEY=reading?'aninexus:mangaState:v1':'aninexus:mediaState:v1';
+  const FAV_KEY=reading?'aninexus:mangaFavorites':'aninexus:favorites';
+  const LIST_KEY=reading?'aninexus:mangaList':'aninexus:list';
+  const LEGACY_STATUS=reading?'aninexus:mangaListStatus':'aninexus:listStatus';
+  const eventName=kind=>`aninexus:${reading?'manga-':''}${kind}`;
   const API='https://graphql.anilist.co';
   const cache=new Map();
   let layer=null;
   let syncRaf=0;
+  const buttonIcons=new WeakMap();
 
   const SVG={
     plus:'<svg class="nx-media-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
@@ -42,20 +46,30 @@
   };
 
   const FORMAT={TV:'Série',TV_SHORT:'Série curta',MOVIE:'Filme',OVA:'OVA',ONA:'ONA',SPECIAL:'Especial',MUSIC:'Música'};
+  Object.assign(FORMAT,{MANGA:'Mangá',ONE_SHOT:'One-shot',NOVEL:'Light novel'});
+  if(reading){
+    const book='<svg class="nx-media-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4.5c3.5-.8 6.2-.2 8 1.7v14c-1.8-1.9-4.5-2.5-8-1.7v-14ZM20 4.5c-3.5-.8-6.2-.2-8 1.7v14c1.8-1.9 4.5-2.5 8-1.7v-14Z"/></svg>';
+    STATUS.PLANNING={...STATUS.PLANNING,label:'Quero ler',title:'Quero ler',help:'Sua próxima leitura.'};
+    STATUS.CURRENT={...STATUS.CURRENT,icon:book,label:'Lendo',title:'Lendo',help:'Seu progresso de leitura.'};
+    STATUS.COMPLETED.help='Leitura concluída. Sua nota passa a ser final.';
+    STATUS.DROPPED.help='O progresso lido continua registrado.';
+    for(const group of Object.values(FEEDBACK))group.items=group.items.map(([emoji,label])=>[emoji,({'Li o mangá':'Vi o anime','O trailer me pegou':'A sinopse me pegou','Que animação!':'Que arte!','Que trilha!':'Que escrita!','Juntando episódios':'Juntando capítulos','Fui pro mangá':'Fui para outra leitura'})[label]||label]);
+  }
   const GENRE={Action:'Ação',Adventure:'Aventura',Comedy:'Comédia',Drama:'Drama',Fantasy:'Fantasia',Horror:'Terror',Mystery:'Mistério',Romance:'Romance','Sci-Fi':'Ficção Científica','Slice of Life':'Slice of Life',Sports:'Esportes',Supernatural:'Sobrenatural',Thriller:'Suspense',Music:'Música',Psychological:'Psicológico',Mecha:'Mecha'};
 
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const read=(k,f)=>{try{const v=JSON.parse(localStorage.getItem(k)||'null');return v??f}catch{return f}};
   const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
   const setOf=k=>new Set((read(k,[])||[]).map(Number).filter(Number.isFinite));
-  const title=m=>m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||'Anime';
+  const title=m=>m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||(reading?'Mangá':'Anime');
   const cover=m=>m?.coverImage?.extraLarge||m?.coverImage?.large||'';
   const validId=id=>{const n=Number(id);return Number.isSafeInteger(n)&&n>0?n:0};
 
   function normalize(s={}){
     const raw=s?.score;
     const score=raw===null||raw===undefined||raw===''?null:(Number.isFinite(Number(raw))?Number(raw):null);
-    return {status:STATUS[s?.status]?s.status:'',progress:Math.max(0,Number(s?.progress)||0),reaction:String(s?.reaction||''),score,updatedAt:Number(s?.updatedAt)||0};
+    const reactions=[...new Set((Array.isArray(s.reactions)?s.reactions:s.reaction?[s.reaction]:[]).filter(x=>typeof x==='string'))].slice(0,32);
+    return {status:STATUS[s?.status]?s.status:'',progress:Math.min(100000,Math.max(0,Math.floor(Number(s?.progress)||0))),volumeProgress:Math.min(100000,Math.max(0,Math.floor(Number(s?.volumeProgress)||0))),reaction:reactions[0]||'',reactions,score:score===null?null:Math.min(10,Math.max(0,score)),updatedAt:Number(s?.updatedAt)||0};
   }
 
   function migrate(){
@@ -78,10 +92,10 @@
 
   function sanitizeForSave(d,total){
     const s=normalize(d);if(!s.status)return normalize({});
-    if(s.status==='PLANNING'){s.progress=0;s.score=null}
+    if(s.status==='PLANNING'){s.progress=0;s.volumeProgress=0;s.score=null}
     if(s.status==='COMPLETED'&&total>0)s.progress=total;
-    if((s.status==='CURRENT'||s.status==='PAUSED'||s.status==='DROPPED')&&s.progress<1)s.score=null;
-    if(!(FEEDBACK[s.status]?.items||[]).some(([,label])=>label===s.reaction))s.reaction='';
+    if((s.status==='CURRENT'||s.status==='PAUSED'||s.status==='DROPPED')&&s.progress<1&&s.volumeProgress<1)s.score=null;
+    s.reactions=s.reactions.filter(value=>(FEEDBACK[s.status]?.items||[]).some(([,label])=>label===value));s.reaction=s.reactions[0]||'';
     return s;
   }
 
@@ -94,7 +108,7 @@
     if(next.status){statuses[n]=next.status;listed.add(n)}else{delete statuses[n];listed.delete(n)}
     write(LEGACY_STATUS,statuses);write(LIST_KEY,[...listed]);
     syncUI(n);
-    document.dispatchEvent(new CustomEvent('aninexus:media-state-changed',{detail:{id:n,state:next}}));
+    document.dispatchEvent(new CustomEvent(eventName('media-state-changed'),{detail:{id:n,mediaType:reading?'MANGA':'ANIME',state:{...next,updatedAt:Date.now()}}}));
     return next;
   }
 
@@ -104,18 +118,20 @@
     if(on)set.add(n);else set.delete(n);
     write(FAV_KEY,[...set].sort((a,b)=>a-b));
     syncFav(n);
-    document.dispatchEvent(new CustomEvent('aninexus:favorite-changed',{detail:{id:n,favorite:on}}));
+    document.dispatchEvent(new CustomEvent(eventName('favorite-changed'),{detail:{id:n,mediaType:reading?'MANGA':'ANIME',favorite:on}}));
     return on;
   }
 
-  function statusSelector(id){return `[data-list="${id}"],[data-nx-list="${id}"],[data-nx-detail-list="${id}"],[data-nx18-status="${id}"],[data-nx17-list="${id}"]`}
-  function favSelector(id){return `[data-fav="${id}"],[data-nx-fav="${id}"],[data-nx-detail-fav="${id}"],[data-nx18-fav="${id}"],[data-nx17-fav="${id}"]`}
-  function idStatus(b){return validId(b?.dataset?.list||b?.dataset?.nxList||b?.dataset?.nxDetailList||b?.dataset?.nx18Status||b?.dataset?.nx17List)}
-  function idFav(b){return validId(b?.dataset?.fav||b?.dataset?.nxFav||b?.dataset?.nxDetailFav||b?.dataset?.nx18Fav||b?.dataset?.nx17Fav)}
+  function statusSelector(id){return reading?`[data-manga-list="${id}"]`:`[data-list="${id}"],[data-nx-list="${id}"],[data-nx-detail-list="${id}"],[data-nx18-status="${id}"],[data-nx17-list="${id}"]`}
+  function favSelector(id){return reading?`[data-manga-fav="${id}"]`:`[data-fav="${id}"],[data-nx-fav="${id}"],[data-nx-detail-fav="${id}"],[data-nx18-fav="${id}"],[data-nx17-fav="${id}"]`}
+  function idStatus(b){return validId(reading?b?.dataset?.mangaList:b?.dataset?.list||b?.dataset?.nxList||b?.dataset?.nxDetailList||b?.dataset?.nx18Status||b?.dataset?.nx17List)}
+  function idFav(b){return validId(reading?b?.dataset?.mangaFav:b?.dataset?.fav||b?.dataset?.nxFav||b?.dataset?.nxDetailFav||b?.dataset?.nx18Fav||b?.dataset?.nx17Fav)}
   function iconFor(st){return STATUS[st]?.icon||SVG.plus}
 
   function setButtonIcon(button,markup,label){
     if(!button)return;
+    const key=markup+'|'+label;if(buttonIcons.get(button)===key&&button.querySelector('svg'))return;
+    buttonIcons.set(button,key);
     const labeled=button.dataset.nxActionKind==='labeled'||button.matches('[data-nx-detail-list],[data-nx-detail-fav]')||button.querySelector(':scope > span');
     if(labeled){
       button.querySelectorAll(':scope > svg').forEach(x=>x.remove());
@@ -155,33 +171,33 @@
     const n=validId(id);
     if(n){syncStatus(n);syncFav(n);return}
     const ids=new Set();
-    document.querySelectorAll('[data-list],[data-nx-list],[data-nx-detail-list],[data-nx18-status],[data-nx17-list],[data-fav],[data-nx-fav],[data-nx-detail-fav],[data-nx18-fav],[data-nx17-fav]').forEach(el=>{
+    document.querySelectorAll(selector).forEach(el=>{
       const a=idStatus(el),b=idFav(el);if(a)ids.add(a);if(b)ids.add(b);
     });
     ids.forEach(x=>{syncStatus(x);syncFav(x)});
   }
 
   function seedFromDom(id){
-    const root=document.querySelector(`[data-nx18-open="${id}"],[data-nx-media="${id}"],[data-open="${id}"],[data-open-anime="${id}"],.nx-detail`);
+    const root=reading?document.querySelector(`[data-manga-open="${id}"],[data-open-manga="${id}"],[data-open="${id}"][data-type="manga"],.detail-hero`):document.querySelector(`[data-nx18-open="${id}"],[data-nx-media="${id}"]:not([data-kind="manga"]),[data-open="${id}"]:not([data-type="manga"]),[data-open-anime="${id}"],.nx22-detail`);
     if(!root)return null;
-    return {id:Number(id),title:{userPreferred:root.querySelector('h3,h2,h1,strong')?.textContent?.trim()||'Anime'},coverImage:{large:root.querySelector('img')?.src||''},genres:[],episodes:null,format:'TV',seasonYear:null};
+    return {id:Number(id),title:{userPreferred:root.querySelector('h3,h2,h1,strong')?.textContent?.trim()||(reading?'Mangá':'Anime')},coverImage:{large:root.querySelector('img')?.src||''},genres:[],episodes:null,format:reading?'MANGA':'TV',seasonYear:null};
   }
 
   async function media(id){
     const n=validId(id);if(!n)return null;
     if(cache.has(n)&&cache.get(n)?.__full)return cache.get(n);
     const seed=cache.get(n)||seedFromDom(n);if(seed&&!cache.has(n))cache.set(n,seed);
-    const q=`query($id:Int){Media(id:$id,type:ANIME){id title{romaji english native userPreferred} coverImage{extraLarge large} genres episodes format seasonYear}}`;
+    const q=`query($id:Int){Media(id:$id,type:${reading?'MANGA':'ANIME'}){id title{romaji english native userPreferred} coverImage{extraLarge large} genres episodes chapters volumes format seasonYear}}`;
     try{
       const r=await fetch(API,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query:q,variables:{id:n}})});
       if(r.ok){const j=await r.json(),m=j?.data?.Media;if(m){const full={...m,__full:true};cache.set(n,full);return full}}
     }catch{}
-    return cache.get(n)||{id:n,title:{userPreferred:'Anime'},coverImage:{},genres:[],episodes:null,format:'TV',seasonYear:null};
+    return cache.get(n)||{id:n,title:{userPreferred:reading?'Mangá':'Anime'},coverImage:{},genres:[],episodes:null,format:reading?'MANGA':'TV',seasonYear:null};
   }
 
   function rules(d,total){
     if(!d.status)return{progress:false,feedback:false,score:false};
-    const p=Math.max(0,Number(d.progress)||0);
+    const p=Math.max(0,Number(d.progress)||0,Number(d.volumeProgress)||0);
     if(d.status==='PLANNING')return{progress:false,feedback:true,score:false};
     if(d.status==='COMPLETED')return{progress:total>0,feedback:true,score:true};
     if(d.status==='CURRENT'||d.status==='PAUSED')return{progress:true,feedback:p>0,score:p>0};
@@ -191,9 +207,9 @@
 
   function adapt(d,status,total){
     d.status=status;
-    if(status==='PLANNING'){d.progress=0;d.score=null}
+    if(status==='PLANNING'){d.progress=0;d.volumeProgress=0;d.score=null}
     if(status==='COMPLETED'&&total>0)d.progress=total;
-    if(!(FEEDBACK[status]?.items||[]).some(([,label])=>label===d.reaction))d.reaction='';
+    d.reactions=(d.reactions||[]).filter(value=>(FEEDBACK[status]?.items||[]).some(([,label])=>label===value));d.reaction=d.reactions[0]||'';
     const r=rules(d,total);if(!r.score)d.score=null;
     return d;
   }
@@ -206,58 +222,85 @@
 
   async function open(id){
     const n=validId(id);if(!n)return;
-    close();document.querySelector('.nx18-tracker-layer')?.remove();
-    const seed=cache.get(n)||seedFromDom(n)||{id:n,title:{userPreferred:'Anime'},coverImage:{},genres:[],episodes:null,format:'TV',seasonYear:null};
-    if(!cache.has(n))cache.set(n,seed);
-    let m=seed,total=Math.max(0,Number(seed?.episodes)||0);
-    const existing=get(n),hadSavedState=!!existing.status,d={...existing};
-    if(d.status==='COMPLETED'&&total)d.progress=total;
-    let showAll=false,editing=false;
-    layer=document.createElement('div');layer.className='nx20-media-layer';document.body.append(layer);document.body.classList.add('modal-open','nx20-media-open');
+    activeEditor?.();activeEditor=close;
+    const trigger=document.activeElement;
+    const seed=cache.get(n)||seedFromDom(n)||{id:n,title:{userPreferred:reading?'Mangá':'Anime'},coverImage:{}};
+    let m=seed,total=0,volumeTotal=0,showAll=false,editing=false,pointerButton=null;
+    const d=normalize(get(n)),hadSavedState=!!d.status;
+    const updateTotals=()=>{total=Math.max(0,Number(reading?(m.format==='NOVEL'?0:m.chapters||(m.format==='ONE_SHOT'?1:0)):m.episodes)||0);volumeTotal=Math.max(0,Number(m.volumes)||0)};
+    updateTotals();
+    layer=document.createElement('div');layer.className='nx20-media-layer';layer.dataset.mediaType=reading?'MANGA':'ANIME';
+    document.body.append(layer);document.body.classList.add('modal-open','nx20-media-open');
     const ownedLayer=layer;
-    /* Do not replace controls while a pointer or keyboard action is in flight. */
-    ownedLayer.addEventListener('pointerdown',()=>{editing=true},true);
-    ownedLayer.addEventListener('keydown',()=>{editing=true},true);
-
-    function feedbackHTML(){const x=FEEDBACK[d.status];if(!x)return'';return x.items.map(([emoji,label],i)=>`<button type="button" class="nx20-reaction ${d.reaction===label?'active':''} ${i>=8&&!showAll?'extra':''}" data-nx20-reaction="${esc(label)}"><span>${emoji}</span>${esc(label)}</button>`).join('')}
-    function html(){
-      const r=rules(d,total),p=Math.min(total||9999,Math.max(0,Number(d.progress)||0)),meta=[m?.seasonYear,FORMAT[m?.format]||m?.format,(m?.genres||[]).slice(0,3).map(g=>GENRE[g]||g).join(', ')].filter(Boolean).join(' · '),score=d.score==null?'':Number(d.score),noStatus=!d.status;
-      return `<button class="nx20-backdrop" data-nx20-close aria-label="Fechar"></button><section class="nx20-modal" role="dialog" aria-modal="true" aria-labelledby="nx20Title"><button class="nx20-close" data-nx20-close aria-label="Fechar">${SVG.close}</button><header class="nx20-head"><img src="${esc(cover(m)||'')}" alt=""><div><small>${hadSavedState?'MEU ACOMPANHAMENTO':'ADICIONAR À MINHA LISTA'}</small><h2 id="nx20Title">${esc(title(m))}</h2><p>${esc(meta)}</p></div></header><div class="nx20-label"><span>SEU STATUS</span><small>${noStatus?'escolha uma opção':'você pode alterar quando quiser'}</small></div><nav class="nx20-statuses">${Object.entries(STATUS).map(([k,v])=>`<button type="button" class="${d.status===k?'active':''}" data-nx20-status="${k}" data-tone="${v.color}"><i>${v.icon}</i><span>${v.label}</span></button>`).join('')}</nav>${noStatus?`<section class="nx20-empty-state"><strong>Como você está com este anime?</strong><p>Escolha um status. Apenas um deles pode ficar ativo por vez.</p></section>`:`<section class="nx20-context" data-tone="${STATUS[d.status].color}"><strong>${STATUS[d.status].title}</strong><p>${STATUS[d.status].help}</p></section>`}${r.progress?`<section class="nx20-progress"><div><span>EPISÓDIOS</span><strong>${total?`ep. ${p} de ${total}`:`${p} assistido${p===1?'':'s'}`}</strong></div><div class="nx20-stepper"><button type="button" data-nx20-step="-1">${SVG.minus}</button><input type="number" min="0" ${total?`max="${total}"`:''} value="${p}" inputmode="numeric" data-nx20-progress><button type="button" data-nx20-step="1">${SVG.plus}</button></div></section>`:''}${d.status?`<section class="nx20-feedback ${r.feedback?'':'locked'}"><div class="nx20-label"><span>${FEEDBACK[d.status]?.label||'SUA REAÇÃO'}</span><small>opcional</small></div>${r.feedback?`<div class="nx20-reactions">${feedbackHTML()}</div>${(FEEDBACK[d.status]?.items||[]).length>8?`<button type="button" class="nx20-more" data-nx20-more>${showAll?'ver menos':'ver mais'}</button>`:''}`:`<div class="nx20-locked">Marque pelo menos 1 episódio assistido para liberar esta parte.</div>`}</section>`:''}${d.status&&d.status!=='PLANNING'?`<section class="nx20-rating ${r.score?'':'locked'}"><div class="nx20-label"><span>${d.status==='COMPLETED'?'SUA NOTA FINAL':d.status==='DROPPED'?'SUA NOTA ATÉ AQUI':'SUA NOTA PARCIAL'}</span><small>opcional</small></div>${r.score?`<div class="nx20-rating-row"><output>${score===''?'–':String(score).replace('.0','')}</output><div><input type="range" min="0" max="10" step="0.5" value="${score===''?0:score}" data-nx20-score><div><span>0</span><span>10</span></div></div></div>${score!==''?'<button type="button" class="nx20-clear-score" data-nx20-clear-score>remover nota</button>':''}`:`<div class="nx20-locked">A nota só é liberada depois que houver algo assistido.</div>`}</section>`:''}<footer class="nx20-footer"><button type="button" class="ghost" data-nx20-remove ${hadSavedState?'':'disabled'}>Remover da lista</button><button type="button" class="save" data-nx20-save ${noStatus?'disabled':''}>${noStatus?'Escolha um status':`Salvar · ${STATUS[d.status].label}`}</button></footer></section>`;
-    }
-    function render(){if(layer!==ownedLayer)return;layer.innerHTML=html();bind()}
-    function bind(){
-      layer.querySelectorAll('[data-nx20-close]').forEach(b=>b.onclick=close);
-      layer.querySelectorAll('[data-nx20-status]').forEach(b=>b.onclick=()=>{editing=true;adapt(d,b.dataset.nx20Status,total);render()});
-      layer.querySelectorAll('[data-nx20-reaction]').forEach(b=>b.onclick=()=>{editing=true;d.reaction=d.reaction===b.dataset.nx20Reaction?'':b.dataset.nx20Reaction;render()});
-      layer.querySelector('[data-nx20-more]')?.addEventListener('click',()=>{editing=true;showAll=!showAll;render()});
-      const input=layer.querySelector('[data-nx20-progress]');if(input){const updateProgress=()=>{editing=true;d.progress=Math.max(0,Math.min(total||9999,Number(input.value)||0));const r=rules(d,total);if(!r.score)d.score=null;if(!r.feedback&&d.status!=='DROPPED')d.reaction='';const label=input.closest('.nx20-progress')?.querySelector('strong');if(label){const p=Math.min(total||9999,d.progress);label.textContent=total?`ep. ${p} de ${total}`:`${p} assistido${p===1?'':'s'}`}};input.oninput=updateProgress;input.onchange=updateProgress}
-      layer.querySelectorAll('[data-nx20-step]').forEach(b=>b.onclick=()=>{editing=true;d.progress=Math.max(0,Math.min(total||9999,(Number(d.progress)||0)+Number(b.dataset.nx20Step)));const r=rules(d,total);if(!r.score)d.score=null;if(!r.feedback&&d.status!=='DROPPED')d.reaction='';render()});
-      const slider=layer.querySelector('[data-nx20-score]');if(slider)slider.oninput=()=>{editing=true;d.score=Number(slider.value);const o=layer.querySelector('.nx20-rating output');if(o)o.textContent=String(d.score).replace('.0','')};
-      layer.querySelector('[data-nx20-clear-score]')?.addEventListener('click',()=>{editing=true;d.score=null;render()});
-      layer.querySelector('[data-nx20-remove]')?.addEventListener('click',()=>{persistState(n,{},total);close()});
-      layer.querySelector('[data-nx20-save]')?.addEventListener('click',()=>{if(!d.status)return;persistState(n,d,total);close()});
-    }
-    render();
-
-    void media(n).then(fresh=>{
-      if(!fresh||layer!==ownedLayer)return;
-      m=fresh;
-      if(editing)return;
-      total=Math.max(0,Number(fresh?.episodes)||0);
-      if(d.status==='COMPLETED'&&total)d.progress=total;
-      render();
+    const finish=()=>{close();if(trigger?.isConnected)trigger.focus({preventScroll:true})};
+    activeEditor=finish;
+    ownedLayer.addEventListener('pointerdown',event=>{editing=true;pointerButton=event.target.closest('button')},true);
+    ownedLayer.addEventListener('pointerup',()=>setTimeout(()=>{pointerButton=null},0),true);
+    ownedLayer.addEventListener('pointercancel',()=>{pointerButton=null},true);
+    ownedLayer.addEventListener('keydown',event=>{
+      editing=true;
+      if(event.key==='Escape'){event.preventDefault();event.stopImmediatePropagation();finish();return}
+      if(event.key!=='Tab')return;
+      const controls=[...ownedLayer.querySelectorAll('.nx20-modal button:not(:disabled),.nx20-modal input')].filter(x=>x.getClientRects().length);
+      const first=controls[0],last=controls.at(-1);
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus()}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus()}
     });
+    function clampProgress(){
+      d.progress=Math.min(total||100000,Math.max(0,Math.floor(Number(d.progress)||0)));
+      d.volumeProgress=Math.min(volumeTotal||100000,Math.max(0,Math.floor(Number(d.volumeProgress)||0)));
+      if(d.status==='COMPLETED'){if(total)d.progress=total;if(reading&&volumeTotal)d.volumeProgress=volumeTotal}
+      if(!rules(d,total).score)d.score=null;
+    }
+    function progressHTML(field,label,maximum){
+      const value=d[field]||0;
+      return `<section class="nx20-progress"><div><span>${label}</span><strong>${value}${maximum?' de '+maximum:''}</strong></div><div class="nx20-stepper"><button type="button" data-nx20-step="-1" data-progress-field="${field}" aria-label="Diminuir ${label.toLowerCase()}" ${value===0?'disabled':''}>${SVG.minus}</button><input type="number" min="0" max="${maximum||100000}" value="${value}" aria-label="${label}" inputmode="numeric" data-nx20-progress data-progress-field="${field}"><button type="button" data-nx20-step="1" data-progress-field="${field}" aria-label="Aumentar ${label.toLowerCase()}" ${maximum&&value>=maximum?'disabled':''}>${SVG.plus}</button></div></section>`;
+    }
+    function render(focusSelector){
+      if(layer!==ownedLayer)return;
+      const scroll=ownedLayer.querySelector('.nx20-modal')?.scrollTop||0;
+      clampProgress();
+      const r=rules(d,total),feedback=FEEDBACK[d.status],score=d.score;
+      const novel=reading&&m.format==='NOVEL';
+      const meta=[m.seasonYear,FORMAT[m.format]||m.format,(m.genres||[]).slice(0,3).map(g=>GENRE[g]||g).join(', ')].filter(Boolean).join(' · ');
+      const reactions=feedback?.items.map(([emoji,label],i)=>`<button type="button" class="nx20-reaction ${d.reactions.includes(label)?'active':''} ${i>=8&&!showAll?'extra':''}" data-nx20-reaction="${esc(label)}" aria-pressed="${d.reactions.includes(label)}"><span aria-hidden="true">${emoji}</span>${esc(label)}</button>`).join('')||'';
+      ownedLayer.innerHTML=`<button type="button" class="nx20-backdrop" data-nx20-close aria-label="Fechar"></button><section class="nx20-modal" role="dialog" aria-modal="true" aria-labelledby="nx20Title"><button type="button" class="nx20-close" data-nx20-close aria-label="Fechar">${SVG.close}</button><header class="nx20-head">${cover(m)?`<img src="${esc(cover(m))}" alt="">`:''}<div><small>${reading?'MINHA LEITURA':'MEU ACOMPANHAMENTO'}</small><h2 id="nx20Title">${esc(title(m))}</h2><p>${esc(meta)}</p></div></header><div class="nx20-label"><span>SEU STATUS</span></div><nav class="nx20-statuses" aria-label="Status"><!-- statuses -->${Object.entries(STATUS).map(([key,value])=>`<button type="button" class="${d.status===key?'active':''}" data-nx20-status="${key}" data-tone="${value.color}" aria-pressed="${d.status===key}"><i>${value.icon}</i><span>${value.label}</span></button>`).join('')}</nav>
+      ${d.status&&d.status!=='PLANNING'?`${!novel?progressHTML('progress',reading?'Capítulos lidos':'Episódios assistidos',total):''}${reading?progressHTML('volumeProgress','Volumes lidos',volumeTotal):''}`:''}
+      ${d.status?`<section class="nx20-feedback"><div class="nx20-label"><span>${feedback.label}</span><small>opcional</small></div>${r.feedback?`<div class="nx20-reactions">${reactions}</div>${feedback.items.length>8?`<button type="button" class="nx20-more" data-nx20-more aria-expanded="${showAll}">${showAll?'Ver menos':'Ver mais'}</button>`:''}`:`<p class="nx20-locked">Disponível após o primeiro ${reading?novel?'volume':'capítulo':'episódio'}.</p>`}</section>`:''}
+      ${d.status&&d.status!=='PLANNING'?`<section class="nx20-rating"><div class="nx20-label"><span>${d.status==='COMPLETED'?'SUA NOTA FINAL':'SUA NOTA PARCIAL'}</span><small>opcional</small></div>${r.score?`<div class="nx20-rating-row"><output>${score==null?'—':score.toFixed(1)}</output><div><input type="range" aria-label="Sua nota" min="0" max="10" step="0.5" value="${score??0}" data-nx20-score><div><span>0</span><span>10</span></div></div></div>${score!=null?'<button type="button" class="nx20-clear-score" data-nx20-clear-score>Remover nota</button>':''}`:`<p class="nx20-locked">Ainda sem progresso ${reading?'de leitura':'assistido'}.</p>`}</section>`:''}
+      <footer class="nx20-footer"><button type="button" class="ghost" data-nx20-remove ${hadSavedState?'':'disabled'}>Remover da lista</button><button type="button" class="save" data-nx20-save ${d.status?'':'disabled'}>Salvar</button></footer></section>`;
+      ownedLayer.querySelectorAll('[data-nx20-close]').forEach(b=>b.onclick=finish);
+      ownedLayer.querySelectorAll('[data-nx20-status]').forEach(b=>b.onclick=()=>{adapt(d,b.dataset.nx20Status,total);render(`[data-nx20-status="${d.status}"]`)});
+      ownedLayer.querySelectorAll('[data-nx20-reaction]').forEach(b=>b.onclick=()=>{const value=b.dataset.nx20Reaction;d.reactions=d.reactions.includes(value)?d.reactions.filter(x=>x!==value):[...d.reactions,value];d.reaction=d.reactions[0]||'';render(`[data-nx20-reaction="${CSS.escape(value)}"]`)});
+      ownedLayer.querySelector('[data-nx20-more]')?.addEventListener('click',()=>{showAll=!showAll;render('[data-nx20-more]')});
+      ownedLayer.querySelectorAll('[data-nx20-progress]').forEach(input=>{
+        input.oninput=()=>{d[input.dataset.progressField]=Math.floor(Number(input.value)||0)};
+        input.onchange=()=>{if(!pointerButton)render(`input[data-progress-field="${input.dataset.progressField}"]`)};
+      });
+      ownedLayer.querySelectorAll('[data-nx20-step]').forEach(b=>b.onclick=()=>{const field=b.dataset.progressField;d[field]=(Number(d[field])||0)+Number(b.dataset.nx20Step);render(`[data-nx20-step="${b.dataset.nx20Step}"][data-progress-field="${field}"]`)});
+      const slider=ownedLayer.querySelector('[data-nx20-score]');
+      if(slider){slider.oninput=()=>{d.score=Number(slider.value);ownedLayer.querySelector('output').textContent=d.score.toFixed(1)};slider.onchange=()=>{if(!pointerButton)render('[data-nx20-score]')}}
+      ownedLayer.querySelector('[data-nx20-clear-score]')?.addEventListener('click',()=>{d.score=null;render('[data-nx20-score]')});
+      ownedLayer.querySelector('[data-nx20-remove]').onclick=()=>{persistState(n,{},total);finish()};
+      ownedLayer.querySelector('[data-nx20-save]').onclick=()=>{if(!d.status)return;clampProgress();persistState(n,d,total);finish()};
+      ownedLayer.querySelector('.nx20-modal').scrollTop=scroll;
+      if(focusSelector)ownedLayer.querySelector(focusSelector)?.focus({preventScroll:true});
+    }
+    render();ownedLayer.querySelector('.nx20-close').focus({preventScroll:true});
+    void media(n).then(fresh=>{if(!fresh||layer!==ownedLayer)return;m=fresh;updateTotals();if(!editing)render()});
   }
-
   function scheduleSync(){if(syncRaf)return;syncRaf=requestAnimationFrame(()=>{syncRaf=0;syncUI()})}
-  const selector='[data-list],[data-nx-list],[data-nx-detail-list],[data-nx18-status],[data-nx17-list],[data-fav],[data-nx-fav],[data-nx-detail-fav],[data-nx18-fav],[data-nx17-fav]';
+  const selector=reading?'[data-manga-list],[data-manga-fav]':'[data-list],[data-nx-list],[data-nx-detail-list],[data-nx18-status],[data-nx17-list],[data-fav],[data-nx-fav],[data-nx-detail-fav],[data-nx18-fav],[data-nx17-fav]';
   const observer=new MutationObserver(records=>{for(const r of records)for(const node of r.addedNodes)if(node.nodeType===1&&(node.matches?.(selector)||node.querySelector?.(selector))){scheduleSync();return}});
   if(document.body)observer.observe(document.body,{childList:true,subtree:true});else document.addEventListener('DOMContentLoaded',()=>observer.observe(document.body,{childList:true,subtree:true}),{once:true});
 
   /* Interaction is intentionally NOT bound here. preview-v39/media-actions-v39.js is the only click owner. */
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&layer){event.preventDefault();close()}},true);
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&layer){event.preventDefault();activeEditor?.()}},true);
   addEventListener('storage',event=>{if([KEY,LEGACY_KEY,FAV_KEY,LIST_KEY,LEGACY_STATUS].includes(event.key))scheduleSync()});
 
-  window.AniNexusMediaState={get,put:persistState,favorite,isFavorite,open,sync:syncUI,statuses:STATUS};
+  const instance={get,put:persistState,favorite,isFavorite,open,close,sync:syncUI,statuses:STATUS,entries:all,favorites:()=>setOf(FAV_KEY)};
+  if(reading)window.AniNexusMangaState=instance;else window.AniNexusMediaState=instance;
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>syncUI(),{once:true});else syncUI();
+  }
+  createMediaState();createMediaState(true);
 })();

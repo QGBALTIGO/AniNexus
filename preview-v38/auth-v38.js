@@ -303,7 +303,10 @@
         const button = document.createElement('button'); button.className = 'nx38-account-chip'; button.type = 'button'; button.setAttribute('aria-label', 'Abrir minha conta'); button.innerHTML = `<i>${avatarMarkup(user,{name,clerkUser})}</i><span>${esc(name)}</span>`; button.onclick = () => go('/minha-conta'); actions.insertBefore(button, actions.querySelector('.menu-btn') || null);
         syncDrawerIdentity(user);
         dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user}}));
-      } else setAnonymous();
+      } else {
+        setAnonymous();
+        dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:null}}));
+      }
     } catch (error) { if(syncToken!==headerSyncToken)return;console.warn('[AniNexus auth] não foi possível confirmar a sessão no cabeçalho.',error); setAnonymous(); }
   }
   window.AniNexusAuthV38 = { renderAuth, renderAccount, syncHeader, syncDrawerIdentity, getUser, api };

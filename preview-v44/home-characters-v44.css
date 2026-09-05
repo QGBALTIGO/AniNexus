@@ -85,14 +85,16 @@
   bottom:8px
 }
 .nx47-character-actions .nx47-character-favorite{
-  width:34px;
-  height:34px
+  width:var(--nx39-action-size);
+  height:var(--nx39-action-size);
+  background:var(--nx39-action-bg)!important;
+  border-color:var(--nx39-action-line)!important
 }
 .nx47-character-actions .nx47-character-favorite.active{
-  border-color:rgba(255,94,126,.55)!important;
-  background:rgba(189,24,59,.93)!important;
+  border-color:var(--nx39-favorite-line)!important;
+  background:var(--nx39-favorite-bg)!important;
   color:#fff!important;
-  box-shadow:0 6px 17px rgba(194,24,60,.26),inset 0 1px rgba(255,255,255,.12)!important
+  box-shadow:0 2px 9px #0004!important
 }
 .nx47-character-actions .nx47-character-favorite.active svg{fill:currentColor!important}
 .nx47-character-actions .nx47-character-favorite:focus-visible{outline:2px solid #fff;outline-offset:3px}
