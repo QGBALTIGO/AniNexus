@@ -1,4 +1,4 @@
-import {test,expect} from '@playwright/test';
+import {test,expect,devices} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import {readFileSync} from 'node:fs';
 
@@ -12,7 +12,7 @@ const fixture={totals:{works:1200,reactions:75,completed:42,impressions:18,ratin
 test.use({contextOptions:{reducedMotion:'reduce'}});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 async function setup(page){
-  const state={fail:false,pending:false,overview:fixture,activity:[{media_id:101,media_type:'MANGA',username:'alice',display_name:'Alice',status:'CURRENT',progress:3,reactions:['Amei','Que arte!'],media:{id:101,title:'Leitura em andamento',cover},created_at:new Date().toISOString()}]};
+  const state={fail:false,pending:false,overview:fixture,impressions:[],threadRequests:0,activity:[{media_id:101,media_type:'MANGA',username:'alice',display_name:'Alice',status:'CURRENT',progress:3,reactions:['Amei','Que arte!'],media:{id:101,title:'Leitura em andamento',cover},created_at:new Date().toISOString()}]};
   if(localStaticOrigin)await page.route(`${new URL(origin).origin}/**`,async route=>{
     const requested=new URL(route.request().url()),path=requested.pathname.replace(/^\/AniNexus(?=\/)/,'');
     for(let attempt=0;attempt<3;attempt++){
@@ -26,7 +26,8 @@ async function setup(page){
     const path=new URL(route.request().url()).pathname;
     if(path==='/api/community/overview')return route.fulfill(state.fail?{status:503,json:{error:'TEMPORARY'}}:{json:state.overview});
     if(path==='/api/community/activity')return route.fulfill({json:{items:state.activity}});
-    if(path==='/api/community/threads'&&route.request().method()==='POST')return route.fulfill({status:201,json:{ok:true}});
+    if(path==='/api/community/impressions')return route.fulfill({json:{items:state.impressions}});
+    if(path==='/api/community/threads')state.threadRequests++;
     return route.fulfill({json:{items:[],user:null}});
   });
   await page.route('https://graphql.anilist.co/',route=>route.fulfill({json:{data:{Media:{id:101,title:{english:'Obra 1'},type:'MANGA',format:'MANGA',coverImage:{large:cover},chapters:30,volumes:3},Page:{media:[],pageInfo:{hasNextPage:false}}}}}));
@@ -70,6 +71,7 @@ test('Local reading activity preserves volumes and multiple reactions independen
 });
 
 test('Both Home community previews keep readable covers, type and status colors in both themes',async({page},info)=>{
+  test.setTimeout(120000);
   await setup(page);await page.addInitScript(()=>localStorage.setItem('aninexus:privacy:v1',JSON.stringify({analytics:false,at:Date.now()})));
   await page.goto(url('/'));
   for(const theme of ['dark','light']){
@@ -114,9 +116,9 @@ test('Community overview adapts the podium, counts and scroll guide across deskt
 
 test('Community uses shared reactions, typed reading actions and real member periods',async({page})=>{
   await setup(page);await page.goto(url('/comunidade'));
-  await expect(page.locator('#nx40Members')).toContainText('Alice');
-  await page.locator('[data-nx40-days="30"]').click();await expect(page.locator('#nx40Members')).toContainText('Bob');
-  await expect(page.locator('#nx40Members')).not.toContainText('Alice');
+  await expect(page.locator('#nx40Members')).toContainText('@alice');
+  await page.locator('[data-nx40-days="30"]').click();await expect(page.locator('#nx40Members')).toContainText('@bob');
+  await expect(page.locator('#nx40Members')).not.toContainText('@alice');
   await page.locator('.nx40-more-reactions summary').click();
   await page.locator('[data-nx40-reaction="Que arte!"]').click();
   await expect(page.locator('#nx40ReactionTitle')).toContainText('Que arte!');
@@ -136,11 +138,11 @@ test('Community unavailable overview can retry without fabricating totals or los
   const state=await setup(page);state.fail=true;await page.goto(url('/comunidade'));
   await expect(page.locator('#nx40OverviewNotice')).toContainText('indisponíveis');
   await expect(page.locator('#nx40Stats .nx40-stat b').first()).toHaveText('—');
-  await expect(page.locator('#nx40Feed')).toContainText('Alice');
+  await expect(page.locator('#nx40Feed')).toContainText('@alice');
   state.fail=false;await page.locator('[data-nx40-retry]').click();await expect(page.locator('#nx40Stats')).toContainText('1.200');
-  await page.locator('[data-nx40-new]').click();const form=page.locator('#nx40ThreadForm');
-  await expect(form).toHaveAttribute('aria-modal','true');await expect(form.locator('input[name="title"]')).toBeFocused();
-  await page.keyboard.press('Escape');await expect(page.locator('[data-nx40-new]')).toBeFocused();
+  await expect(page.getByRole('button',{name:'Nova discussão'})).toHaveCount(0);
+  await expect(page.locator('#nx40ThreadModal,.nx40-tabs')).toHaveCount(0);
+  expect(state.threadRequests).toBe(0);
   await noOverflow(page);
 });
 
@@ -169,7 +171,7 @@ test('Community with few contributions does not stack empty statistics sections'
   await expect(page.locator('#nx40Stats')).toContainText('1.200');
   await expect(page.locator('#nx40Comparisons')).toBeHidden();
   for(const id of ['nx40Dropped','nx40Studios','nx40Favorites'])await expect(page.locator('#'+id).locator('..')).toBeHidden();
-  await expect(page.locator('#nx40Feed')).toContainText('Alice');
+  await expect(page.locator('#nx40Feed')).toContainText('@alice');
   await expect(page.locator('#nx40ReactionRanking')).toBeVisible();
 });
 
@@ -183,7 +185,62 @@ test('Community leaves no conflicting page state after navigating away and retur
   await page.evaluate(()=>{history.pushState({},'','?p=/comunidade');dispatchEvent(new PopStateEvent('popstate'))});
   await expect(page.locator('.nx40-community')).toHaveCount(1);
   await expect(page.locator('#nx40Stats')).toContainText('1.200');
-  await expect(page.locator('#nx40Feed')).toContainText('Alice');
+  await expect(page.locator('#nx40Feed')).toContainText('@alice');
   await expect(page.locator('#topbar')).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
+  await noOverflow(page);
+});
+
+test('Touch layouts keep portrait avatars, reactions and the guide circular',async({browser,browserName},info)=>{
+  const {defaultBrowserType,...device}=devices['iPhone 13'];
+  const context=await browser.newContext({...device,isMobile:browserName==='firefox'?false:device.isMobile,reducedMotion:'reduce'});
+  const page=await context.newPage();
+  try{
+    const state=await setup(page),portrait='https://s4.anilist.co/portrait-avatar.png';
+    // A tall raster catches intrinsic image sizing as well as coarse-pointer minima.
+    const bytes=await page.evaluate(()=>{const c=document.createElement('canvas');c.width=40;c.height=120;const ctx=c.getContext('2d');ctx.fillStyle='#1a9b9f';ctx.fillRect(0,0,40,120);ctx.fillStyle='#f8d080';ctx.fillRect(8,24,24,36);return c.toDataURL().split(',')[1]});
+    await page.route(portrait,route=>route.fulfill({body:Buffer.from(bytes,'base64'),contentType:'image/png'}));
+    state.overview={...fixture,activeMembers:fixture.activeMembers.map(m=>({...m,avatar_url:portrait,count:1})),newMembers:[{username:'alice',display_name:'Alice',avatar_url:portrait}]};
+    state.activity=state.activity.map(x=>({...x,avatar_url:portrait,reactions:['LOVE','Que arte!','Uma reação antiga sem equivalente']}));
+    await page.goto(url('/comunidade'));
+    await expect(page.locator('#nx40Feed .nx40-card')).toHaveCount(1);
+    await expect(page.locator('#nx40Members')).toContainText('1 atividade');
+    await expect(page.locator('#nx40Members')).not.toContainText('1 atividades');
+    await expect(page.locator('#nx40NewMembers')).toContainText('+1 entrou hoje');
+    for(const selector of ['#nx40Members .nx40-avatar','#nx40NewMembers .nx40-avatar','#nx40Feed .nx40-avatar','#nx40Feed .nx40-reaction-marks>span']){
+      for(const element of await page.locator(selector).all()){
+        await element.scrollIntoViewIfNeeded();
+        const box=await element.boundingBox();expect(Math.abs(box.width-box.height)).toBeLessThan(0.5);
+        const img=element.locator('img');
+        if(await img.count()){await expect.poll(()=>img.evaluate(el=>el.naturalHeight)).toBe(120);const bounds=await img.boundingBox();expect(Math.abs(bounds.width-bounds.height)).toBeLessThan(0.5)}
+        expect(await element.evaluate(el=>el.scrollWidth-el.clientWidth)).toBeLessThanOrEqual(1);
+      }
+    }
+    await page.locator('#nx40Members').scrollIntoViewIfNeeded();await page.screenshot({path:info.outputPath('touch-members.png')});
+    const button=page.locator('[data-nx40-guide]');await expect(button).toBeVisible();
+    await expect(button).toHaveCSS('width','40px');await expect(button).toHaveCSS('height','40px');
+    await button.click();await expect(page.locator('#nx40GuideLinks')).toBeVisible();
+    await page.locator('#nx40Feed').scrollIntoViewIfNeeded();await page.screenshot({path:info.outputPath('touch-activity.png')});
+    await noOverflow(page);
+  }finally{await page.unrouteAll({behavior:'ignoreErrors'});await context.close()}
+});
+
+test('Community separates impressions, expands activity and never exposes discussions or unresolved cards',async({page})=>{
+  const state=await setup(page),now=Date.now(),entry=state.activity[0];
+  state.activity=Array.from({length:9},(_,i)=>({...entry,media_id:101+i,created_at:new Date(now-i*60000).toISOString()}));
+  state.activity.push({...entry,created_at:new Date(now-999999).toISOString()},{...entry,media_id:999,media:null,title:'Título temporariamente indisponível',cover:''});
+  state.impressions=[{...entry,id:'impression-a',body:'Uma leitura que vale cada capítulo.'},{...entry,id:'impression-b',body:'Não mostre este spoiler',spoiler:true}];
+  await page.goto(url('/comunidade'));
+  await expect(page.locator('#nx40Feed .nx40-card')).toHaveCount(6);
+  await expect(page.locator('#nx40Feed')).not.toContainText('indisponível');
+  await expect(page.locator('#nx40Feed')).not.toContainText('Uma leitura');
+  await expect(page.locator('#nx40Impressions .nx40-impression')).toHaveCount(2);
+  await expect(page.locator('#nx40Impressions')).toContainText('Uma leitura que vale cada capítulo.');
+  await expect(page.locator('#nx40Impressions')).not.toContainText('Não mostre este spoiler');
+  await page.getByRole('button',{name:'Carregar mais atividade',exact:true}).click();
+  await expect(page.locator('#nx40Feed .nx40-card')).toHaveCount(9);
+  await expect(page.locator('[data-nx40-more-activity]')).toBeHidden();
+  await expect(page.locator('#nx40Feed .nx40-card').nth(6).locator('a').first()).toBeFocused();
+  await expect(page.locator('#nx40ThreadModal,[data-nx40-new],.nx40-tabs')).toHaveCount(0);
+  expect(state.threadRequests).toBe(0);
   await noOverflow(page);
 });

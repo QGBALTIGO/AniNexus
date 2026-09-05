@@ -50,9 +50,6 @@
     }else if(kind==='impression'){
       st={label:'Impressão',icon:'chat'};phrase=`${person} publicou uma impressão sobre ${work}`;
       detail=x.spoiler?'Spoiler oculto':String(x.body||'').slice(0,100);
-    }else{
-      st={label:'Discussão',icon:'chat'};phrase=`${person} abriu uma discussão ${work}`;
-      detail=x.replies!=null?`${Number(x.replies)||0} respostas`:'';
     }
     const statusIcon=kind==='state'?(reading?window.AniNexusMangaState:window.AniNexusMediaState)?.statuses?.[x.status]?.icon:'';
     return `<article class="nx35-community-card${compact?' compact':''}" data-community-kind="${esc(kind)}" data-media-type="${type(x)}" data-status="${esc(x.status||kind)}"><div class="nx35-community-cover"><a href="${href}" aria-label="${esc(x.title)}">${x.cover?`<img src="${esc(x.cover)}" alt="" loading="lazy" decoding="async">`:'<span data-icon="chat" aria-hidden="true"></span>'}</a><i class="nx35-community-avatar" aria-hidden="true">${avatar}</i></div><div class="nx35-community-copy"><p>${phrase}</p><div class="nx35-community-meta"><span class="nx35-community-status">${statusIcon||`<span data-icon="chat" aria-hidden="true"></span>`}${esc(st.label)}</span>${detail?`<span class="nx35-community-detail">${esc(detail)}</span>`:''}</div><small>${reactionMarks(x)}<time datetime="${esc(x.created_at)}">${esc(relative(x.created_at))}</time></small></div></article>`;
@@ -60,12 +57,12 @@
   async function load(){
     const shared=window.AniNexusCommunityActivity;
     const local=shared?.local?.(40)||[];
-    let activity=[],impressions=[],threads=[];
-    if(!IS_PAGES||REMOTE)[activity,impressions,threads]=await Promise.all([json('/api/community/activity?limit=30&includeManga=1'),json('/api/community/impressions?limit=8'),json('/api/community/threads?limit=8')]);
-    const raw=[...activity.map(x=>({...x,kind:'state',created_at:x.created_at||x.updated_at})),...local,...impressions.map(x=>({...x,kind:'impression'})),...threads.map(x=>({...x,kind:'thread'}))];
+    let activity=[],impressions=[];
+    if(!IS_PAGES||REMOTE)[activity,impressions]=await Promise.all([json('/api/community/activity?limit=30&includeManga=1'),json('/api/community/impressions?limit=8')]);
+    const raw=[...activity.map(x=>({...x,kind:'state',created_at:x.created_at||x.updated_at})),...local.filter(x=>x.kind!=='thread'),...impressions.map(x=>({...x,kind:'impression'}))];
     const enriched=shared?.enrich?await shared.enrich(raw):raw,rows=shared?.merge?shared.merge(enriched):enriched;
     await resolveMedia(rows.filter(x=>x.media_id&&(!usableTitle(x.title)&&!usableTitle(title(x.media))||!x.cover&&!cover(x.media))));
-    return rows.map(x=>{const fetched=mediaCache.get(mediaKey(x));return {...x,title:usableTitle(x.title)||usableTitle(title(x.media))||usableTitle(title(fetched)),cover:x.cover||cover(x.media)||cover(fetched),created_at:x.created_at||x.updated_at||''}}).filter(x=>x.kind==='thread'?!!x.title:!!x.media_id&&!!x.title&&!!x.cover).slice(0,12);
+    return rows.map(x=>{const fetched=mediaCache.get(mediaKey(x));return {...x,title:usableTitle(x.title)||usableTitle(title(x.media))||usableTitle(title(fetched)),cover:x.cover||cover(x.media)||cover(fetched),created_at:x.created_at||x.updated_at||''}}).filter(x=>!!x.media_id&&!!x.title&&!!x.cover).slice(0,12);
   }
   async function paint(){
     const home=document.querySelector('.nx35-home'),hero=document.querySelector('#nx35CommunityHero'),grid=document.querySelector('#nx35Community');

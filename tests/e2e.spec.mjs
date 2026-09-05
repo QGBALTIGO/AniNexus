@@ -59,7 +59,7 @@ test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-05-v44.24.2')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-05-v44.24.3')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -1100,10 +1100,14 @@ test('Temporadas and Notícias share the same five-hub chrome and scroll guide',
   }
 });
 
-test('Community V40 exposes activity impressions discussions trends and local composer',async({page})=>{
-  let postedThread=null;
-  await page.route('**/api/community/threads**',async route=>{if(route.request().method()==='POST'){postedThread={id:'thread-test',username:'teste',...route.request().postDataJSON(),replies:0,created_at:new Date().toISOString()};return route.fulfill({status:201,contentType:'application/json',body:JSON.stringify(postedThread)})}return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:postedThread?[postedThread]:[]})})});
-  await page.goto(pageUrl('/comunidade'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx40-community')).toBeVisible({timeout:30000});for(const label of ['Tudo','Atividade','Impressões','Discussões'])await expect(page.getByRole('button',{name:label,exact:true})).toBeVisible();await expect(page.locator('#nx40Stats')).toBeVisible();await expect(page.locator('#nx40Trending')).toBeVisible();await page.locator('[data-nx40-new]').click();await expect(page.locator('#nx40ThreadModal')).toBeVisible();await page.locator('#nx40ThreadForm input[name="title"]').fill('Discussão de teste');await page.locator('#nx40ThreadForm textarea').fill('Uma conversa de teste para validar a Comunidade V40.');await page.locator('#nx40ThreadForm button[type="submit"]').click();await expect(page.locator('#nx40ThreadModal')).toBeHidden();await expect(page.locator('.nx40-feed')).toContainText('Discussão de teste');await noOverflow(page)
+test('Community V40 exposes public activity without a discussion composer',async({page})=>{
+  let threadRequests=0;await page.route('**/api/community/threads**',route=>{threadRequests++;return route.fulfill({json:{items:[]}})});
+  await page.goto(pageUrl('/comunidade'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx40-community')).toBeVisible({timeout:30000});
+  await expect(page.locator('#nx40Stats')).toBeVisible();await expect(page.locator('#nx40Feed')).toBeVisible();
+  await expect(page.locator('#nx40Trending')).toBeVisible();
+  await expect(page.locator('#nx40ThreadModal,[data-nx40-new],.nx40-tabs')).toHaveCount(0);
+  expect(threadRequests).toBe(0);await noOverflow(page);
 });
 
 test('Catalog exposes all pages, keeps its chrome together and darkens the header only after scroll',async({page})=>{
