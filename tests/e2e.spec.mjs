@@ -27,6 +27,7 @@ function graphData(query='',variables={}){
   if(/studios\s*\(\s*sort\s*:/.test(query))return{Page:{...Page,studios:[{id:1,name:'Estúdio Teste',isAnimationStudio:true,favourites:1000,media:{nodes:media}}]}};
   if(/\bseason:Page/.test(query))return{season:Page,schedule:Page,top:Page,popular:Page,soon:Page,reading:Page};
   const aliases=[...query.matchAll(/\b(a\d+):Media/g)].map(x=>x[1]);if(aliases.length)return Object.fromEntries(aliases.map((key,i)=>[key,anime(201+i)]));
+  const pageAliases=[...query.matchAll(/\b(a\d+):Page/g)].map(x=>x[1]);if(pageAliases.length)return Object.fromEntries(pageAliases.map((key,i)=>[key,{media:[anime(201+i)]}]));
   if(/\bMedia\s*\(\s*id\s*:\s*\$id/.test(query))return{Media:anime(Number(variables.id)||101)};
   if(/\bMedia\s*\(/.test(query)&&!/\bmedia\s*\(/.test(query))return{Media:anime(Number(variables.id)||101)};
   return{Page};
@@ -59,7 +60,7 @@ test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-06-v44.24.6')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-06-v44.25.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -633,14 +634,33 @@ test('Awards presents every edition and winner in a rich isolated archive',async
   await expect(page.locator('.nx45-award-card')).toHaveCount(32);
   await expect(page.locator('[data-nx45-count]')).toHaveText('32 resultados');
   await expect(page.locator('.nx45-award-feature-art img')).toBeVisible();
+  await expect(page.locator('.nx45-award-related-item')).toHaveCount(6);
+  await expect(page.locator('#topbar')).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
+  const fourthWinner=await page.locator('.nx45-award-card').nth(3).locator('.nx45-award-card-copy strong').textContent();
+  await page.locator('.nx45-award-card').nth(3).click();
+  await expect(page.locator('.nx45-award-feature h2')).toHaveText(fourthWinner);
+  await expect.poll(()=>page.evaluate(()=>scrollY)).toBeGreaterThan(100);
+  await expect(page.locator('.nx45-award-feature')).toBeFocused();
+  await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';scrollTo(0,0)});
+  await expect(page.locator('body')).not.toHaveClass(/nx45-awards-scrolled/);
+  await page.evaluate(()=>scrollTo(0,1000));
+  await expect(page.locator('body')).toHaveClass(/nx45-awards-scroll-down/);
+  await expect(page.locator('#nx45AwardsIsland')).toHaveClass(/show/);
+  await page.waitForTimeout(650);
+  await page.evaluate(()=>scrollTo(0,700));
+  await expect(page.locator('body')).toHaveClass(/nx45-awards-scroll-up/);
+  await expect(page.locator('#nx45AwardsIsland')).toHaveClass(/expanded/);
+  await page.evaluate(()=>scrollTo(0,0));
   await page.locator('[data-nx45-next]').click();
-  await expect(page.locator('[data-nx45-stage-index]')).toHaveText('02 / 32');
+  await expect(page.locator('[data-nx45-stage-index]')).toHaveText('05 / 32');
   await page.getByRole('button',{name:/Vozes/}).click();
   await expect(page.locator('.nx45-award-card')).toHaveCount(10);
   await expect(page.locator('[data-nx45-count]')).toHaveText('10 resultados');
   await page.locator('[data-nx45-year="2017"]').click();
   await expect(page.getByRole('heading',{name:'Vencedores de 2017'})).toBeVisible();
   await expect(page.locator('.nx45-award-card')).toHaveCount(14);
+  await expect(page.locator('.nx45-award-card img')).toHaveCount(14);
+  await expect(page.locator('.nx45-award-card-art.is-archive')).toHaveCount(0);
   await expect(page.locator('[data-nx45-year-select]')).toHaveValue('2017');
   await noOverflow(page,2);
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});

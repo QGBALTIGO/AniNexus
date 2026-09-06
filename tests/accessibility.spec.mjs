@@ -51,6 +51,8 @@ function graphData(query = '', variables = {}) {
   if (/\bseason:Page/.test(query)) return { season: Page, schedule: Page, top: Page, popular: Page, soon: Page, reading: Page };
   const aliases = [...query.matchAll(/\b(a\d+):Media/g)].map(match => match[1]);
   if (aliases.length) return Object.fromEntries(aliases.map((key, index) => [key, media(201 + index)]));
+  const pageAliases = [...query.matchAll(/\b(a\d+):Page/g)].map(match => match[1]);
+  if (pageAliases.length) return Object.fromEntries(pageAliases.map((key, index) => [key, { media: [media(201 + index)] }]));
   if (/\bMedia\s*\(/.test(query) && !/\bmedia\s*\(/.test(query)) return { Media: media(Number(variables.id) || 101) };
   return { Page };
 }
