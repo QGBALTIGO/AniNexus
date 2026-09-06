@@ -1379,3 +1379,20 @@ test('public profile deep-links to an unlocked achievement and shows three pinne
 });
 
 test('discovery hubs replace placeholder pages and remain responsive',async({page})=>{await page.setViewportSize({width:390,height:844});await page.goto(pageUrl('/listas-de-animes'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx-list-group').first()).toBeVisible({timeout:15000});await expect(page.locator('#listsHub')).toContainText('Melhores animes para assistir');await noOverflow(page,2);await page.goto(pageUrl('/animes/estudios'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx-studio-card').first()).toBeVisible({timeout:15000});await noOverflow(page,2)});
+
+test('Home discovery links open the matching anime catalog tabs',async({page})=>{
+  const routeState=()=>page.evaluate(()=>{const current=new URL(location.href),restored=current.searchParams.get('p'),route=restored?new URL(restored,location.origin):current;return{path:route.pathname,section:route.searchParams.get('secao')}});
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  const popular=page.locator('.nx35-section').filter({has:page.locator('#nx35Popular')});
+  await popular.getByRole('link',{name:'Ver todos'}).click();
+  await expect(page.locator('.nx21-catalog-page')).toBeVisible({timeout:30000});
+  await expect.poll(routeState).toEqual({path:'/animes/catalogo',section:'populares'});
+  await expect(page.locator('.nx21-tab[data-nx21-mode="POPULAR"]').first()).toHaveAttribute('aria-pressed','true');
+
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  const soon=page.locator('.nx35-section').filter({has:page.locator('#nx35Soon')});
+  await soon.getByRole('link',{name:'Ver todos'}).click();
+  await expect(page.locator('.nx21-catalog-page')).toBeVisible({timeout:30000});
+  await expect.poll(routeState).toEqual({path:'/animes/catalogo',section:'breve'});
+  await expect(page.locator('.nx21-tab[data-nx21-mode="SOON"]').first()).toHaveAttribute('aria-pressed','true');
+});
