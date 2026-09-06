@@ -59,7 +59,7 @@ test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-05-v44.24.4')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-06-v44.24.5')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -292,7 +292,7 @@ test('mobile Home starts with transparent header centered copy spacing and clipp
   expect(communityPresentation.copySize).toBeGreaterThanOrEqual(12);
   expect(communityPresentation.copyWeight).toBe(400);
   expect(communityPresentation.nameWeight).toBe(600);
-  expect(communityPresentation.titleWeight).toBe(600);
+  expect(communityPresentation.titleWeight).toBe(700);
   expect(communityPresentation.timeSize).toBeGreaterThanOrEqual(9);
   expect(communityPresentation.timeWeight).toBe(500);
   const initial=await page.evaluate(()=>{const header=document.querySelector('#topbar'),copy=document.querySelector('.nx35-hero-copy'),live=document.querySelector('.nx35-live'),grid=document.querySelector('.nx35-hero-grid'),copyBox=copy.getBoundingClientRect(),liveBox=live.getBoundingClientRect(),style=getComputedStyle(header);return{background:style.backgroundColor,position:style.position,textAlign:getComputedStyle(copy).textAlign,gap:parseFloat(getComputedStyle(grid).rowGap),separation:liveBox.top-copyBox.bottom}});

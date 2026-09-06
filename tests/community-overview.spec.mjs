@@ -70,6 +70,38 @@ test('Local reading activity preserves volumes and multiple reactions independen
   await expect(page.locator('#nx35CommunityHero')).toContainText('Vol. 2');
 });
 
+test('Home keeps subtle artwork and inline activity copy without depending on banners',async({page})=>{
+  const state=await setup(page),art='https://s4.anilist.co/community-banner.png';
+  await page.route(art,route=>route.fulfill({body:image,contentType:'image/png'}));
+  state.activity[0].media={...state.activity[0].media,banner:art};
+  for(const width of [1440,390]){
+    await page.setViewportSize({width,height:900});await page.goto(url('/'));
+    for(const selector of ['#nx35CommunityHero','#nx35Community']){
+      const card=page.locator(selector).locator('.nx35-community-card').first();await card.scrollIntoViewIfNeeded();
+      await expect(card.locator('.nx35-community-art')).toHaveAttribute('src',art);
+      await expect.poll(()=>card.locator('.nx35-community-art').evaluate(img=>img.naturalWidth)).toBeGreaterThan(0);
+      await expect(card.locator('.nx35-community-art')).toHaveCSS('pointer-events','none');
+      expect(await card.locator('.nx35-community-art').evaluate(img=>Number(getComputedStyle(img).opacity))).toBeLessThanOrEqual(.04);
+      await card.hover();
+      expect(await card.locator('.nx35-community-art').evaluate(img=>Number(getComputedStyle(img).opacity))).toBeLessThanOrEqual(.04);
+      await expect(card.locator('p strong')).toHaveCSS('font-weight','700');
+      const typography=await card.evaluate(el=>{const byline=el.querySelector('.nx35-community-byline'),title=el.querySelector('p strong');return{bylineDisplay:getComputedStyle(byline).display,titleDisplay:getComputedStyle(title).display,titleFont:getComputedStyle(title).fontFamily,bodyFont:getComputedStyle(byline).fontFamily}});
+      expect(typography.bylineDisplay).toBe('inline');expect(typography.titleDisplay).toBe('inline');expect(typography.titleFont).toBe(typography.bodyFont);
+    }
+    await noOverflow(page);
+  }
+  state.activity[0].media.banner='javascript:alert(1)';await page.goto(url('/'));
+  await expect(page.locator('#nx35CommunityHero .nx35-community-card')).toHaveCount(1);
+  await expect(page.locator('.nx35-community-art')).toHaveCount(0);
+  const missingArt='https://s4.anilist.co/missing-community-banner.png';
+  state.activity[0].media.banner=missingArt;
+  await page.route(missingArt,route=>route.fulfill({status:404,body:''}));await page.goto(url('/'));
+  await expect(page.locator('#nx35CommunityHero .nx35-community-card')).toHaveCount(1);
+  await page.locator('#nx35CommunityHero').scrollIntoViewIfNeeded();
+  await expect(page.locator('#nx35CommunityHero .nx35-community-art')).toHaveCount(0);
+  await expect(page.locator('#nx35CommunityHero strong a')).toHaveAttribute('href',/manga/);
+});
+
 test('Both Home community previews keep readable covers, type and status colors in both themes',async({page},info)=>{
   test.setTimeout(120000);
   await setup(page);await page.addInitScript(()=>localStorage.setItem('aninexus:privacy:v1',JSON.stringify({analytics:false,at:Date.now()})));

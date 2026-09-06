@@ -10,6 +10,8 @@
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const title=m=>typeof m?.title==='string'?m.title:(m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||'');
   const cover=m=>m?.cover||m?.coverImage?.extraLarge||m?.coverImage?.large||'';
+  const banner=m=>m?.banner||m?.bannerImage||'';
+  const artworkUrl=value=>{try{const url=new URL(value);return url.protocol==='https:'?url.href:''}catch{return''}};
   const type=x=>String(x.media_type||x.mediaType||'').toUpperCase()==='MANGA'?'MANGA':'ANIME';
   const mediaKey=x=>`${type(x)}:${Number(x.media_id||x.id)}`;
   const usableTitle=value=>{const result=String(value||'').trim();return result&&!/^(?:(?:anime|mang[áa])\s*\d+|título (?:temporariamente )?indisponível|undefined|null|nan)$/i.test(result)?result:''};
@@ -45,14 +47,15 @@
     if(kind==='state'){
       if(reading&&x.status==='CURRENT')st={...st,verb:'está lendo',label:'Lendo'};
       if(reading&&x.status==='PLANNING')st={...st,verb:'quer ler',label:'Quero ler'};
-      phrase=`${person} ${esc(st.verb)} ${work}`;
+      phrase=`<span class="nx35-community-byline">${person} ${esc(st.verb)}</span> ${work}`;
       detail=[x.progress?`${reading?'Cap.':'Episódio'} ${Number(x.progress)}`:'',reading&&x.volume_progress?`Vol. ${Number(x.volume_progress)}`:''].filter(Boolean).join(' · ');
     }else if(kind==='impression'){
-      st={label:'Impressão',icon:'chat'};phrase=`${person} publicou uma impressão sobre ${work}`;
+      st={label:'Impressão',icon:'chat'};phrase=`<span class="nx35-community-byline">${person} publicou uma impressão sobre</span> ${work}`;
       detail=x.spoiler?'Spoiler oculto':String(x.body||'').slice(0,100);
     }
     const statusIcon=kind==='state'?(reading?window.AniNexusMangaState:window.AniNexusMediaState)?.statuses?.[x.status]?.icon:'';
-    return `<article class="nx35-community-card${compact?' compact':''}" data-community-kind="${esc(kind)}" data-media-type="${type(x)}" data-status="${esc(x.status||kind)}"><div class="nx35-community-cover"><a href="${href}" aria-label="${esc(x.title)}">${x.cover?`<img src="${esc(x.cover)}" alt="" loading="lazy" decoding="async">`:'<span data-icon="chat" aria-hidden="true"></span>'}</a><i class="nx35-community-avatar" aria-hidden="true">${avatar}</i></div><div class="nx35-community-copy"><p>${phrase}</p><div class="nx35-community-meta"><span class="nx35-community-status">${statusIcon||`<span data-icon="chat" aria-hidden="true"></span>`}${esc(st.label)}</span>${detail?`<span class="nx35-community-detail">${esc(detail)}</span>`:''}</div><small>${reactionMarks(x)}<time datetime="${esc(x.created_at)}">${esc(relative(x.created_at))}</time></small></div></article>`;
+    const art=artworkUrl(x.banner);
+    return `<article class="nx35-community-card${compact?' compact':''}" data-community-kind="${esc(kind)}" data-media-type="${type(x)}" data-status="${esc(x.status||kind)}">${art?`<img class="nx35-community-art" data-src="${esc(art)}" alt="" aria-hidden="true" loading="lazy" decoding="async">`:''}<div class="nx35-community-cover"><a href="${href}" aria-label="${esc(x.title)}">${x.cover?`<img src="${esc(x.cover)}" alt="" loading="lazy" decoding="async">`:'<span data-icon="chat" aria-hidden="true"></span>'}</a><i class="nx35-community-avatar" aria-hidden="true">${avatar}</i></div><div class="nx35-community-copy"><p>${phrase}</p><div class="nx35-community-meta"><span class="nx35-community-status">${statusIcon||`<span data-icon="chat" aria-hidden="true"></span>`}${esc(st.label)}</span>${detail?`<span class="nx35-community-detail">${esc(detail)}</span>`:''}</div><small>${reactionMarks(x)}<time datetime="${esc(x.created_at)}">${esc(relative(x.created_at))}</time></small></div></article>`;
   }
   async function load(){
     const shared=window.AniNexusCommunityActivity;
@@ -62,14 +65,14 @@
     const raw=[...activity.map(x=>({...x,kind:'state',created_at:x.created_at||x.updated_at})),...local.filter(x=>x.kind!=='thread'),...impressions.map(x=>({...x,kind:'impression'}))];
     const enriched=shared?.enrich?await shared.enrich(raw):raw,rows=shared?.merge?shared.merge(enriched):enriched;
     await resolveMedia(rows.filter(x=>x.media_id&&(!usableTitle(x.title)&&!usableTitle(title(x.media))||!x.cover&&!cover(x.media))));
-    return rows.map(x=>{const fetched=mediaCache.get(mediaKey(x));return {...x,title:usableTitle(x.title)||usableTitle(title(x.media))||usableTitle(title(fetched)),cover:x.cover||cover(x.media)||cover(fetched),created_at:x.created_at||x.updated_at||''}}).filter(x=>!!x.media_id&&!!x.title&&!!x.cover).slice(0,12);
+    return rows.map(x=>{const fetched=mediaCache.get(mediaKey(x));return {...x,title:usableTitle(x.title)||usableTitle(title(x.media))||usableTitle(title(fetched)),cover:x.cover||cover(x.media)||cover(fetched),banner:x.banner||banner(x.media)||banner(fetched),created_at:x.created_at||x.updated_at||''}}).filter(x=>!!x.media_id&&!!x.title&&!!x.cover).slice(0,12);
   }
   async function paint(){
     const home=document.querySelector('.nx35-home'),hero=document.querySelector('#nx35CommunityHero'),grid=document.querySelector('#nx35Community');
     if(!home||(!hero&&!grid))return;
     const my=++token,list=await load();if(my!==token||!home.isConnected)return;
     const empty='<p class="nx35-community-empty">Nenhuma atividade recente.</p>';
-    for(const [root,count,compact] of [[hero,3,true],[grid,6,false]])if(root?.isConnected){root.dataset.nxCommunityOwner='shared';root.innerHTML=list.length?list.slice(0,count).map(x=>card(x,compact)).join(''):empty;window.injectIcons?.(root)}
+    for(const [root,count,compact] of [[hero,3,true],[grid,6,false]])if(root?.isConnected){root.dataset.nxCommunityOwner='shared';root.innerHTML=list.length?list.slice(0,count).map(x=>card(x,compact)).join(''):empty;root.querySelectorAll('.nx35-community-art').forEach(img=>{const src=img.dataset.src,discard=()=>img.remove(),reveal=()=>img.classList.add('is-loaded');img.addEventListener('load',reveal,{once:true});img.addEventListener('error',discard,{once:true});delete img.dataset.src;img.src=src;setTimeout(()=>{if(img.complete)(img.naturalWidth?reveal():discard())},1000)});window.injectIcons?.(root)}
   }
   function schedule(){clearTimeout(timer);timer=setTimeout(paint,60)}
   for(const event of ['aninexus:home-v34-ready','aninexus:community-activity-changed','aninexus:account-identity-changed'])addEventListener(event,schedule);
