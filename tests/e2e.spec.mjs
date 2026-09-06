@@ -59,7 +59,7 @@ test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-06-v44.24.5')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-06-v44.24.6')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -623,7 +623,51 @@ test('Home Top 10 opens the complete catalog ranking and survives a reload',asyn
 
 test('Home ranking clicks are not swallowed by horizontal drag support',async({page})=>{test.skip(new URL(ORIGIN).hostname.endsWith('github.io'),'Rankings require internal AniNexus metrics.');await mockInternalRankings(page);await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('#nx35Top .nx35-rank h3').first()).toBeVisible({timeout:30000});await page.locator('#nx35Top .nx35-rank h3').first().click();await page.waitForURL(url=>url.searchParams.get('p')?.startsWith('/anime/')||url.pathname.startsWith('/anime/'),{timeout:10000});await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});const manga=page.locator('#nx42TopManga a[data-nx42-type="manga"]').first();await expect(manga).toBeVisible({timeout:30000});await expect(manga).toHaveAttribute('data-nx23-dedicated',/\/manga\/.+-\d+/);await manga.locator('h3').click();await page.waitForURL(url=>url.searchParams.get('p')?.startsWith('/manga/')||url.pathname.startsWith('/manga/'),{timeout:10000})});
 
-test('Awards uses a compact editorial grid without dead desktop regions',async({page})=>{await page.setViewportSize({width:1440,height:900});await page.goto(pageUrl('/anime-awards'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx42-awards-page')).toBeVisible({timeout:30000});await expect(page.getByRole('heading',{name:'Os destaques de cada ano'})).toBeVisible();const cards=page.locator('.nx42-award-winner');await expect(cards.first()).toBeVisible();expect(await cards.count()).toBeGreaterThanOrEqual(4);const boxes=await cards.evaluateAll(nodes=>nodes.slice(0,6).map(node=>node.getBoundingClientRect()));expect(Math.max(...boxes.map(box=>box.height))).toBeLessThan(430);expect(new Set(boxes.slice(0,3).map(box=>Math.round(box.y))).size).toBe(1);await noOverflow(page,2)});
+test('Awards presents every edition and winner in a rich isolated archive',async({page})=>{
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto(pageUrl('/anime-awards'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx45-awards-page')).toBeVisible({timeout:30000});
+  await expect(page.getByRole('heading',{name:'Vencedores de 2026'})).toBeVisible();
+  await expect(page.locator('[data-nx45-year]')).toHaveCount(10);
+  await expect(page.locator('[data-nx45-year-select] option')).toHaveCount(10);
+  await expect(page.locator('.nx45-award-card')).toHaveCount(32);
+  await expect(page.locator('[data-nx45-count]')).toHaveText('32 resultados');
+  await expect(page.locator('.nx45-award-feature-art img')).toBeVisible();
+  await page.locator('[data-nx45-next]').click();
+  await expect(page.locator('[data-nx45-stage-index]')).toHaveText('02 / 32');
+  await page.getByRole('button',{name:/Vozes/}).click();
+  await expect(page.locator('.nx45-award-card')).toHaveCount(10);
+  await expect(page.locator('[data-nx45-count]')).toHaveText('10 resultados');
+  await page.locator('[data-nx45-year="2017"]').click();
+  await expect(page.getByRole('heading',{name:'Vencedores de 2017'})).toBeVisible();
+  await expect(page.locator('.nx45-award-card')).toHaveCount(14);
+  await expect(page.locator('[data-nx45-year-select]')).toHaveValue('2017');
+  await noOverflow(page,2);
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});
+  await expect(page.locator('#nx35Awards.nx46-home-awards')).toBeVisible({timeout:30000});
+  await expect(page.locator('.nx45-awards-page')).toHaveCount(0);
+});
+
+test('Awards mobile keeps the full year legible and the archive in one column',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(pageUrl('/anime-awards'),{waitUntil:'domcontentloaded'});
+  const select=page.locator('[data-nx45-year-select]');
+  await expect(select).toBeVisible({timeout:30000});
+  await expect(select).toHaveValue('2026');
+  expect((await select.boundingBox()).width).toBeGreaterThanOrEqual(100);
+  await expect(page.locator('.nx45-award-card')).toHaveCount(32);
+  const firstTwo=await page.locator('.nx45-award-card').evaluateAll(nodes=>nodes.slice(0,2).map(node=>node.getBoundingClientRect()));
+  expect(Math.round(firstTwo[0].x)).toBe(Math.round(firstTwo[1].x));
+  expect(firstTwo[1].y).toBeGreaterThan(firstTwo[0].y+firstTwo[0].height-2);
+  await select.selectOption('2018');
+  await expect(page.getByRole('heading',{name:'Vencedores de 2018'})).toBeVisible();
+  await expect(page.locator('.nx45-award-card')).toHaveCount(17);
+  const activeYear=page.locator('[data-nx45-year="2018"]');
+  await expect(activeYear).toHaveAttribute('aria-pressed','true');
+  await expect.poll(async()=>{const box=await activeYear.boundingBox();return box.x>=0&&box.x+box.width<=390}).toBe(true);
+  await noOverflow(page,2);
+});
 
 test('production detail paints from the internal API without waiting for external providers',async({page})=>{const origin=new URL(firstVisitUrl('/')).origin,assetPrefix=new URL(ORIGIN).hostname.endsWith('github.io')?'/AniNexus':'',base=anime(101),normalized={id:base.id,idMal:null,mediaType:'ANIME',title:base.title.english,titleRomaji:base.title.romaji,titleNative:base.title.native,synonyms:[],cover:pixel,coverColor:'#ef2a5c',banner:pixel,description:base.description,genres:base.genres,tags:['Action'],tagDetails:[{name:'Action',rank:90,isMediaSpoiler:false}],score:8.2,meanScore:8.1,popularity:1000,favourites:100,episodes:12,duration:24,format:'TV',status:'RELEASING',season:'SUMMER',seasonYear:2026,country:'JP',source:'ORIGINAL',startDate:base.startDate,endDate:null,studios:[],streaming:[],nextAiringEpisode:null,trailer:null,characters:[],staff:[],relations:[],recommendations:[]};let apiHits=0;await page.route(`${origin}/preview-v22/**`,async route=>{const requested=new URL(route.request().url()),response=await route.fetch({url:`${origin}${assetPrefix}${requested.pathname}${requested.search}`});await route.fulfill({response})});await page.route(`${origin}/api/anime/101`,async route=>{apiHits++;await new Promise(resolve=>setTimeout(resolve,80));await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(normalized)})});await page.unroute('https://graphql.anilist.co/');await page.route('https://graphql.anilist.co/',route=>route.abort('failed'));const started=Date.now();await page.goto(firstVisitUrl('/anime/anime-teste-101'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx22-detail:not(.nx22-loading):not(.nx22-fail)')).toBeVisible({timeout:5000});await expect(page.getByRole('heading',{name:'Anime Teste 101'})).toBeVisible();expect(Date.now()-started).toBeLessThan(5000);expect(apiHits).toBe(1);await noOverflow(page,2)});
 

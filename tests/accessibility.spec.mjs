@@ -69,7 +69,7 @@ test.beforeEach(async ({ page }) => {
 });
 test.afterEach(async ({ page }) => { await page.unrouteAll({ behavior: 'ignoreErrors' }); });
 
-for (const route of ['/', '/animes/catalogo', '/mangas', '/animes/programacao', '/anime/anime-teste-101', '/comunidade', '/noticias', '/conquistas', '/login', '/admin', '/quem-somos', '/termos-de-uso']) {
+for (const route of ['/', '/animes/catalogo', '/mangas', '/animes/programacao', '/anime-awards', '/anime/anime-teste-101', '/comunidade', '/noticias', '/conquistas', '/login', '/admin', '/quem-somos', '/termos-de-uso']) {
   test(`WCAG AA sem falhas sérias em ${route}`, async ({ page }) => {
     await page.goto(pageUrl(route), { waitUntil: 'domcontentloaded' });
     await page.locator('#app main').first().waitFor({ state: 'visible', timeout: 30_000 });
