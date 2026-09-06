@@ -60,7 +60,7 @@ test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-06-v44.25.0')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-06-v44.25.1')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -646,10 +646,12 @@ test('Awards presents every edition and winner in a rich isolated archive',async
   await page.evaluate(()=>scrollTo(0,1000));
   await expect(page.locator('body')).toHaveClass(/nx45-awards-scroll-down/);
   await expect(page.locator('#nx45AwardsIsland')).toHaveClass(/show/);
+  await expect.poll(async()=>{const box=await page.locator('#topbar').boundingBox();return box?.y+box?.height||0}).toBeLessThanOrEqual(1);
   await page.waitForTimeout(650);
   await page.evaluate(()=>scrollTo(0,700));
   await expect(page.locator('body')).toHaveClass(/nx45-awards-scroll-up/);
-  await expect(page.locator('#nx45AwardsIsland')).toHaveClass(/expanded/);
+  await expect(page.locator('#nx45AwardsIsland')).not.toHaveClass(/expanded/);
+  await expect.poll(async()=>{const box=await page.locator('#topbar').boundingBox();return box?.y+box?.height||0}).toBeLessThanOrEqual(1);
   await page.evaluate(()=>scrollTo(0,0));
   await page.locator('[data-nx45-next]').click();
   await expect(page.locator('[data-nx45-stage-index]')).toHaveText('05 / 32');
@@ -676,16 +678,30 @@ test('Awards mobile keeps the full year legible and the archive in one column',a
   await expect(select).toBeVisible({timeout:30000});
   await expect(select).toHaveValue('2026');
   expect((await select.boundingBox()).width).toBeGreaterThanOrEqual(100);
+  await expect(page.locator('.nx45-awards-intro>[data-nx45-years]')).toBeHidden();
   await expect(page.locator('.nx45-award-card')).toHaveCount(32);
+  await expect(page.locator('.nx45-award-related')).toBeHidden();
+  const topSpacing=await page.evaluate(()=>document.querySelector('.nx45-awards-title').getBoundingClientRect().top-document.querySelector('#topbar').getBoundingClientRect().bottom);
+  expect(topSpacing).toBeLessThanOrEqual(18);
+  const stageButtons=await page.locator('.nx45-awards-stage-nav button').evaluateAll(nodes=>nodes.map(node=>({width:node.getBoundingClientRect().width,radius:getComputedStyle(node).borderRadius})));
+  expect(stageButtons.every(button=>button.width<=34&&button.radius==='0px')).toBe(true);
+  const filterLayout=await page.locator('[data-nx45-filters] button').evaluateAll(nodes=>nodes.map(node=>{const box=node.getBoundingClientRect();return{x:box.x,right:box.right,y:box.y,clips:node.scrollWidth>node.clientWidth}}));
+  expect(filterLayout.every(item=>item.x>=0&&item.right<=390&&!item.clips)).toBe(true);
+  expect(new Set(filterLayout.map(item=>Math.round(item.y))).size).toBeGreaterThan(1);
   const firstTwo=await page.locator('.nx45-award-card').evaluateAll(nodes=>nodes.slice(0,2).map(node=>node.getBoundingClientRect()));
   expect(Math.round(firstTwo[0].x)).toBe(Math.round(firstTwo[1].x));
   expect(firstTwo[1].y).toBeGreaterThan(firstTwo[0].y+firstTwo[0].height-2);
+  expect(await page.locator('.nx45-award-card-copy strong').evaluateAll(nodes=>nodes.every(node=>node.scrollHeight<=node.clientHeight+1))).toBe(true);
   await select.selectOption('2018');
   await expect(page.getByRole('heading',{name:'Vencedores de 2018'})).toBeVisible();
   await expect(page.locator('.nx45-award-card')).toHaveCount(17);
   const activeYear=page.locator('[data-nx45-year="2018"]');
   await expect(activeYear).toHaveAttribute('aria-pressed','true');
-  await expect.poll(async()=>{const box=await activeYear.boundingBox();return box.x>=0&&box.x+box.width<=390}).toBe(true);
+  await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';scrollTo(0,1000)});
+  await expect(page.locator('#nx45AwardsIsland')).toBeVisible();
+  await expect.poll(async()=>{const box=await page.locator('#topbar').boundingBox();return box?.y+box?.height||0}).toBeLessThanOrEqual(1);
+  expect((await page.locator('.nx45-awards-island-head').boundingBox()).height).toBeLessThanOrEqual(49);
+  await expect(page.locator('.nx45-awards-island-panel')).toBeHidden();
   await noOverflow(page,2);
 });
 

@@ -25,7 +25,7 @@ body.nx45-awards-active #topbar:not(.is-scrolled){
   backdrop-filter:none!important;
 }
 
-body.nx45-awards-active.nx45-awards-scroll-down #topbar{
+body.nx45-awards-active.nx45-awards-scrolled #topbar{
   transform:translateY(calc(-1 * var(--nx43-header-height,66px)))!important;
 }
 
@@ -51,7 +51,7 @@ body.nx45-awards-active .site-footer{background:var(--nx45-bg)}
 .nx45-awards-intro{
   position:relative;
   z-index:5;
-  padding-top:var(--nx43-header-height,66px);
+  padding-top:0;
   overflow:hidden;
   border-bottom:1px solid var(--nx-page-line,rgba(255,255,255,.075));
   background:var(--nx-page-chrome-bg,linear-gradient(180deg,#0c0810,#08060b));
@@ -232,23 +232,31 @@ body.nx45-awards-active .site-footer{background:var(--nx45-bg)}
 .nx45-awards-stage-head>div:first-child{display:flex;align-items:center;gap:10px}
 .nx45-awards-stage-head small,.nx45-awards-gallery-head small,.nx45-award-related>header small{color:#e84d70;font:900 8px/1 'Nunito Sans',sans-serif}
 .nx45-awards-stage-head strong{color:#81747a;font:800 9px/1 var(--display,'Manrope',sans-serif)}
-.nx45-awards-stage-nav{display:flex;gap:7px}
+.nx45-awards-stage-nav{
+  display:flex;
+  gap:0;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:6px;
+  background:#171116;
+}
 
 .nx45-awards-stage-nav button{
-  width:36px;
-  height:36px;
+  width:34px;
+  height:34px;
   display:grid;
   place-items:center;
   padding:0;
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:50%;
-  background:#171116;
+  border:0;
+  border-radius:0;
+  background:transparent;
   color:#d5cbd0;
   cursor:pointer;
-  transition:border-color .2s ease,background .2s ease,transform .2s ease;
+  transition:background .2s ease,color .2s ease;
 }
 
-.nx45-awards-stage-nav button:hover{border-color:#ec365b;background:#2b141d;transform:translateY(-1px)}
+.nx45-awards-stage-nav button+button{border-left:1px solid rgba(255,255,255,.11)}
+.nx45-awards-stage-nav button:hover{background:#2b141d;color:#fff}
 .nx45-awards-stage-nav svg{width:16px;height:16px}
 .nx45-awards-stage-nav [data-nx45-prev] svg{transform:rotate(180deg)}
 
@@ -544,7 +552,7 @@ body.nx45-awards-active .site-footer{background:var(--nx45-bg)}
   transition:top .3s cubic-bezier(.2,.78,.2,1),opacity .2s ease,transform .3s cubic-bezier(.2,.78,.2,1);
 }
 
-body.nx45-awards-scroll-down .nx45-awards-island{top:0}
+body.nx45-awards-scrolled .nx45-awards-island{top:0}
 .nx45-awards-island.show{pointer-events:auto;opacity:1;transform:none}
 
 .nx45-awards-island::after{
@@ -594,7 +602,7 @@ body.nx45-awards-scroll-down .nx45-awards-island-head{height:44px}
   display:grid;
   place-items:center;
   border:1px solid rgba(255,255,255,.09);
-  border-radius:50%;
+  border-radius:6px;
   background:rgba(255,255,255,.035);
   color:#bdb1c1;
 }
@@ -647,52 +655,56 @@ html[data-theme="light"] .nx45-awards-island-head,html[data-theme="light"] .nx45
 }
 
 @media(max-width:620px){
-  .nx45-awards-intro-inner{min-height:142px;padding:25px 0 20px}
-  .nx45-awards-title>span{font-size:8px}
-  .nx45-awards-title h1{font-size:26px}
-  .nx45-awards-title p{max-width:290px;font-size:10.5px}
-  .nx45-awards-year-control{position:static;margin-top:14px;transform:none}
+  .nx45-awards-intro-inner{min-height:0;padding:12px 0 14px}
+  .nx45-awards-title>span{margin-bottom:4px;font-size:8px}
+  .nx45-awards-title h1{font-size:25px}
+  .nx45-awards-title p{display:none}
+  .nx45-awards-year-control{position:static;margin-top:10px;transform:none}
   .nx45-awards-year-control label{display:none}
   .nx45-awards-intro-inner{flex-direction:column;gap:0}
-  .nx45-awards-year-control select{width:104px;height:36px;text-align:center}
-  .nx45-awards-years{justify-content:flex-start;margin-inline:-18px;padding-inline:18px}
-  .nx45-awards-years button{flex-basis:79px;min-height:48px}
-  .nx45-awards-years small{display:none}
-  .nx45-awards-content{padding:22px 0 48px}
-  .nx45-awards-stage{min-height:0;scroll-margin-top:calc(var(--nx43-header-height,66px) + 50px)}
-  .nx45-award-feature{min-height:498px;grid-template-columns:1fr;grid-template-rows:238px minmax(0,1fr)}
+  .nx45-awards-year-control select{width:112px;height:38px;text-align:center}
+  .nx45-awards-intro>.nx45-awards-years{display:none}
+  .nx45-awards-content{padding:16px 0 44px}
+  .nx45-awards-stage-head{min-height:34px;margin-bottom:8px}
+  .nx45-awards-stage{min-height:0;scroll-margin-top:58px}
+  .nx45-award-feature{min-height:0;grid-template-columns:1fr;grid-template-rows:205px auto}
   .nx45-award-feature-art{grid-column:1;grid-row:1}
   .nx45-award-feature-art>span:last-child{background:linear-gradient(0deg,#0e0a0d 0%,rgba(14,10,13,.3) 42%,transparent 74%)}
-  .nx45-award-feature-copy{grid-column:1;grid-row:2;justify-content:flex-start;padding:21px 19px 23px;background:#0e0a0d}
-  .nx45-award-mark{min-height:27px;margin-bottom:13px}
-  .nx45-award-feature-copy h2{font-size:24px}
-  .nx45-award-open{margin-top:18px}
-  .nx45-award-related>header{display:grid;gap:4px}
-  .nx45-award-related-rail{display:flex;gap:8px;margin-inline:-18px;padding:0 18px 3px;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory}
-  .nx45-award-related-rail::-webkit-scrollbar{display:none}
-  .nx45-award-related-item{flex:0 0 260px;scroll-snap-align:start}
-  .nx45-awards-filter-wrap{margin:19px -18px 20px;padding-left:18px}
-  .nx45-awards-filters{padding-right:18px}
+  .nx45-award-feature-copy{grid-column:1;grid-row:2;justify-content:flex-start;padding:17px 16px 19px;background:#0e0a0d}
+  .nx45-award-mark{min-height:25px;margin-bottom:11px;padding-inline:9px}
+  .nx45-award-feature-copy>p{margin-bottom:5px}
+  .nx45-award-feature-copy h2{max-width:100%;font-size:22px;line-height:1.12}
+  .nx45-award-feature-copy>strong{margin-top:7px;font-size:11px}
+  .nx45-award-feature-copy>small{display:none}
+  .nx45-award-open{min-height:36px;margin-top:15px}
+  .nx45-award-related{display:none}
+  .nx45-awards-filter-wrap{margin:17px 0 19px;overflow:visible}
+  .nx45-awards-filters{display:flex;flex-wrap:wrap;gap:7px;padding:0;overflow:visible}
+  .nx45-awards-filters button{min-width:0;flex:1 1 calc(50% - 4px);justify-content:space-between;padding-inline:11px}
+  .nx45-awards-gallery-head{align-items:flex-start;flex-wrap:wrap;gap:7px}
   .nx45-awards-gallery-head h2{font-size:20px}
+  .nx45-awards-gallery-head>span{width:100%;font-size:9px}
   .nx45-awards-grid{grid-template-columns:1fr;gap:8px}
-  .nx45-award-card{min-height:112px;grid-template-columns:78px minmax(0,1fr) 24px}
-  .nx45-award-card-art{min-height:110px}
-  .nx45-award-card-copy strong{font-size:12px}
+  .nx45-award-card{min-height:106px;grid-template-columns:82px minmax(0,1fr) 28px}
+  .nx45-award-card-art{min-height:104px}
+  .nx45-award-card-copy{padding:12px 7px 12px 12px}
+  .nx45-award-card-copy strong{display:block;overflow:visible;font-size:13px;line-height:1.3;-webkit-line-clamp:unset}
+  .nx45-award-card-copy>span{display:none}
   .nx45-awards-source{text-align:left}
-  .nx45-awards-island-inner{width:100%;padding-bottom:9px}
-  .nx45-awards-island-tools{right:11px}
-  .nx45-awards-island-years{margin-inline:0;padding:0 116px 0 12px}
-  .nx45-awards-island-years button{flex-basis:70px}
-  .nx45-awards-island-filters{justify-content:flex-start;margin-top:7px;padding-inline:12px}
-  .nx45-awards-island-copy strong{font-size:16px}
+  .nx45-awards-island-panel{display:none!important}
+  .nx45-awards-island-head,
+  body.nx45-awards-scroll-down .nx45-awards-island-head{height:48px;padding-inline:12px}
+  .nx45-awards-island-icon{width:20px;height:20px;flex-basis:20px}
+  .nx45-awards-island-copy strong{font-size:15px}
+  .nx45-awards-island-copy small{max-width:210px;font-size:7.5px}
+  .nx45-awards-island-chevron{right:10px;width:30px;height:30px;margin-top:-15px;border-radius:6px}
+  .nx45-awards-island-chevron svg,
+  .nx45-awards-island.expanded .nx45-awards-island-chevron svg{transform:rotate(-90deg)}
 }
 
 @media(max-width:390px){
   .nx45-awards-title h1{font-size:24px}
-  .nx45-awards-title p{max-width:265px}
-  .nx45-awards-gallery-head{align-items:center}
-  .nx45-awards-gallery-head>span{white-space:nowrap}
-  .nx45-award-related-item{flex-basis:245px}
+  .nx45-awards-island-copy small{max-width:180px}
 }
 
 @media(prefers-reduced-motion:reduce){
