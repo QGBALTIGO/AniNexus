@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T13:48:51.304Z",
+  "generatedAt": "2026-09-06T16:27:45.695Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 37,
+      "count": 36,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,7 +54,7 @@
     }
   ],
   "stats": {
-    "collected": 47,
+    "collected": 46,
     "grouped": 21,
     "published": 21,
     "newStories": 21,
@@ -64,8 +64,8 @@
     "withHeroImage": 21,
     "withOrderedMedia": 17,
     "skippedTranslation": 0,
-    "skippedQuality": 24,
-    "durationMs": 2490
+    "skippedQuality": 23,
+    "durationMs": 3601
   },
   "items": [
     {
@@ -3230,7 +3230,7 @@
       "sourceCount": 1,
       "readingMinutes": 5,
       "wordCount": 873,
-      "qualityScore": 1,
+      "qualityScore": 0.97,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
