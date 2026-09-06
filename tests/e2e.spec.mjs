@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.23.0&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.26.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -21,6 +21,15 @@ function achievementPayload({unlockedCount=18,pins=[achievementDefinitions[0].id
 function achievementFeed(){return achievementDefinitions.slice(0,7).map((item,index)=>({...item,username:['kayky','sobroza','andreluiz','nathancezar'][index%4],displayName:`Membro ${index+1}`,avatarUrl:index%2?pixel:null,unlockedAt:new Date(Date.now()-(index+1)*180000).toISOString(),batchCount:index===0?4:1,url:`/u/kayky?tab=achievements&achievement=${item.id}`}))}
 function anime(id=101){const provider=id%2?{site:'Crunchyroll',url:`https://www.crunchyroll.com/watch/${id}`,type:'STREAMING',icon:pixel,color:'#fff'}:{site:'YouTube',url:`https://www.youtube.com/watch?v=${id}`,type:'STREAMING',icon:pixel,color:'#fff'};return{id,title:{romaji:`Anime Teste ${id}`,english:`Anime Teste ${id}`,native:`Teste ${id}`,userPreferred:`Anime Teste ${id}`},coverImage:{extraLarge:pixel,large:pixel},bannerImage:portrait,averageScore:82,popularity:1000,genres:['Action','Adventure'],episodes:12,format:'TV',status:'RELEASING',seasonYear:2026,description:'Uma história de teste.',externalLinks:[provider],startDate:{year:2026,month:1,day:1},endDate:null,studios:{nodes:[]},relations:{edges:[]},recommendations:{nodes:[]},characters:{edges:[]},staff:{edges:[]}}}
 function catalogPage(page=1,count=25){return Array.from({length:count},(_,index)=>anime(page*1000+index+1))}
+function discoveryCatalog(){
+  return Array.from({length:12},(_,index)=>{
+    const item=anime(700+index),services=index%3===0?['Crunchyroll','Netflix']:index%3===1?['Netflix','Prime Video']:['Crunchyroll','Disney+'];
+    item.title={...item.title,english:`Dublado Teste ${index+1}`,userPreferred:`Dublado Teste ${index+1}`};
+    item.format=index%3===1?'MOVIE':'TV';
+    item.externalLinks=services.map(site=>({site,url:`https://${site.toLowerCase().replace(/[^a-z]+/g,'')}.example/${item.id}`,type:'STREAMING'}));
+    return item;
+  });
+}
 function graphData(query='',variables={}){
   const ids=Array.isArray(variables.ids)&&variables.ids.length?variables.ids:[101,102,103,104],media=ids.map(Number).filter(Boolean).map(anime),airingAt=Number(variables.start)||Math.floor(Date.now()/1000)+3600;
   const Page={pageInfo:{total:media.length,currentPage:1,lastPage:1,hasNextPage:false},media,airingSchedules:media.map((item,i)=>({airingAt:airingAt+3600*(i+1),episode:i+1,media:item}))};
@@ -60,7 +69,7 @@ test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-06-v44.25.1')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-06-v44.26.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -1431,4 +1440,67 @@ test('Home discovery links open the matching anime catalog tabs',async({page})=>
   await expect(page.locator('.nx21-catalog-page')).toBeVisible({timeout:30000});
   await expect.poll(routeState).toEqual({path:'/animes/catalogo',section:'breve'});
   await expect(page.locator('.nx21-tab[data-nx21-mode="SOON"]').first()).toHaveAttribute('aria-pressed','true');
+});
+
+test('Onde assistir is a platform-first responsive catalog with standard scroll chrome',async({page})=>{
+  const items=discoveryCatalog();
+  await page.route('**/api/catalog?**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items,pageInfo:{total:items.length,currentPage:1,lastPage:1,hasNextPage:false}})}));
+  for(const viewport of [{width:1440,height:900},{width:390,height:844}]){
+    await page.setViewportSize(viewport);
+    await page.goto(pageUrl('/animes/onde-assistir'),{waitUntil:'domcontentloaded'});
+    const pageRoot=page.locator('.nx47-watch-page');
+    await expect(pageRoot).toBeVisible({timeout:30000});
+    await expect(page.locator('.nx47-provider-card')).toHaveCount(9);
+    await expect(page.locator('#nx47WatchResults')).not.toHaveAttribute('aria-busy','true');
+    await expect(page.locator('.nx42-official-watch,[data-member-telegram]')).toHaveCount(0);
+    const initial=await page.evaluate(()=>{const bar=document.querySelector('#topbar').getBoundingClientRect(),title=document.querySelector('.nx47-title-row').getBoundingClientRect();return{barBottom:bar.bottom,titleTop:title.top}});
+    expect(initial.titleTop).toBeGreaterThanOrEqual(initial.barBottom-1);
+    await page.locator('[data-nx47-provider="netflix"]').click();
+    await expect(page.locator('[data-nx47-provider="netflix"]')).toHaveAttribute('aria-pressed','true');
+    await expect(page.locator('#nx47WatchTitle')).toHaveText('Animes na Netflix');
+    await expect(page.locator('#nx47WatchResults .nx47-media-card')).toHaveCount(8);
+    if(viewport.width<600){
+      const columns=await page.locator('.nx47-provider-card').evaluateAll(cards=>new Set(cards.slice(0,3).map(card=>Math.round(card.getBoundingClientRect().left))).size);
+      expect(columns).toBe(1);
+      await page.evaluate(()=>scrollTo(0,180));
+      await expect.poll(()=>page.evaluate(()=>Math.round(scrollY))).toBeGreaterThan(100);
+      await page.waitForTimeout(320);
+      const chrome=await page.evaluate(()=>{const bar=document.querySelector('#topbar').getBoundingClientRect(),island=document.querySelector('.nx47-island').getBoundingClientRect();return{barBottom:bar.bottom,islandTop:island.top,islandHeight:island.height}});
+      expect(chrome.barBottom).toBeLessThanOrEqual(2);expect(chrome.islandTop).toBeLessThanOrEqual(1);expect(chrome.islandHeight).toBeLessThanOrEqual(49);
+    }
+    await noOverflow(page,2);
+  }
+});
+
+test('Animes dublados has usable search filters pagination data and standard actions',async({page})=>{
+  const items=discoveryCatalog();
+  await page.route('**/api/dublados?**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items,pageInfo:{total:25,currentPage:1,lastPage:3,hasNextPage:true}})}));
+  for(const viewport of [{width:1440,height:900},{width:390,height:844}]){
+    await page.setViewportSize(viewport);
+    await page.goto(pageUrl('/animes/dublados'),{waitUntil:'domcontentloaded'});
+    const pageRoot=page.locator('.nx47-dubbed-page');
+    await expect(pageRoot).toBeVisible({timeout:30000});
+    await expect(page.locator('#nx47DubbedResults .nx47-media-card')).toHaveCount(12);
+    await expect(page.locator('#nx47DubbedCount')).toContainText('25 títulos confirmados');
+    await expect(page.getByRole('navigation',{name:'Paginação dos animes dublados'})).toContainText('Página 1 de 3');
+    await page.getByRole('button',{name:'Filmes',exact:true}).click();
+    await expect(page.locator('#nx47DubbedResults .nx47-media-card')).toHaveCount(4);
+    const search=page.getByPlaceholder('Buscar nesta página...');
+    await search.fill('Dublado Teste 2');
+    await expect(page.locator('#nx47DubbedResults .nx47-media-card')).toHaveCount(1);
+    await expect(page.locator('#nx47DubbedResults')).toContainText('Dublado Teste 2');
+    await page.getByRole('button',{name:'Todos',exact:true}).click();
+    await page.getByRole('button',{name:'Limpar busca'}).click();
+    await expect(page.locator('#nx47DubbedResults .nx47-media-card')).toHaveCount(12);
+    const actionBox=await page.locator('#nx47DubbedResults [data-list]').first().evaluate(button=>button.getBoundingClientRect());
+    expect(actionBox.width).toBeGreaterThanOrEqual(31);expect(actionBox.width).toBeLessThanOrEqual(35);expect(Math.abs(actionBox.width-actionBox.height)).toBeLessThanOrEqual(1);
+    if(viewport.width<600){
+      const columns=await page.locator('#nx47DubbedResults .nx47-media-card').evaluateAll(cards=>new Set(cards.slice(0,4).map(card=>Math.round(card.getBoundingClientRect().left))).size);
+      expect(columns).toBe(2);
+      await page.evaluate(()=>scrollTo(0,180));await page.waitForTimeout(320);
+      await expect(page.locator('.nx47-island')).toHaveClass(/show/);
+      const barBottom=await page.locator('#topbar').evaluate(element=>element.getBoundingClientRect().bottom);expect(barBottom).toBeLessThanOrEqual(2);
+    }
+    await noOverflow(page,2);
+  }
 });
