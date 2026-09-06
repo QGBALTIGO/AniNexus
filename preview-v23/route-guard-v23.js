@@ -3,7 +3,7 @@
   try {
     const IS_PAGES=location.hostname.endsWith('github.io');
     const BASE=IS_PAGES?'/AniNexus':'';
-    const BUILD='44.26.0';
+    const BUILD='44.27.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=restored?restored.split('?')[0]:u.pathname;
@@ -13,7 +13,7 @@
     const routes=[
       {owner:'home',match:path==='/',selector:'.nx35-home',label:'Carregando início…'},
       {owner:'catalog',match:path==='/animes/catalogo',selector:'.nx21-catalog-page[data-nx21-catalog-kind="anime"]',label:'Carregando catálogo…'},
-      {owner:'discovery',match:path==='/animes/onde-assistir'||path==='/animes/dublados',selector:'.nx47-discovery-page',label:'Carregando catálogo…'},
+      {owner:'discovery',match:path==='/animes/onde-assistir'||path==='/animes/dublados'||path==='/animes/estudios',selector:'.nx47-discovery-page',label:'Carregando catálogo…'},
       {owner:'catalog',match:path==='/mangas',selector:'.nx21-catalog-page[data-nx21-catalog-kind="manga"]',label:'Carregando mangás…'},
       {owner:'schedule',match:path==='/animes/programacao',selector:'.nx18-schedule',label:'Carregando programação…'},
       {owner:'awards',match:path==='/anime-awards',selector:'.nx45-awards-page',label:'Carregando premiação…'},

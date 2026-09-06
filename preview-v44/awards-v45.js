@@ -1,7 +1,8 @@
 'use strict';
 
 (() => {
-  const BUILD = '44.25.1';
+  const BUILD = '44.27.0';
+  const islandChevron = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg>';
   const GROUPS = [
     { id: 'all', label: 'Todos' },
     { id: 'highlights', label: 'Destaques' },
@@ -214,7 +215,7 @@
       <button type="button" class="nx45-awards-island-head" data-nx45-island-toggle aria-label="Controles do AniNexus Awards" aria-expanded="false">
         <span class="nx45-awards-island-icon">${icons.trophy}</span>
         <span class="nx45-awards-island-copy"><strong>AniNexus <em>Awards</em></strong><small data-nx45-island-context>Edição 2026 · Todos</small></span>
-        <span class="nx45-awards-island-chevron">${icons.arrow}</span>
+        <span class="nx45-awards-island-chevron">${islandChevron}</span>
       </button>
       <div class="nx45-awards-island-panel" aria-hidden="true" inert><div><div class="nx45-awards-island-inner">
         <div class="nx45-awards-island-tools"><label for="nx45IslandYear">Edição</label><select id="nx45IslandYear" data-nx45-island-year-select aria-label="Selecionar edição no guia"></select></div>
@@ -246,6 +247,7 @@
     let scrollDirection = 0;
     let scrollTravel = 0;
     let scrollLockUntil = 0;
+    let manualIslandUntil = 0;
     let disposed = false;
     const mediaCache = new Map();
 
@@ -504,6 +506,11 @@
       roots.island.classList.add('show');
       roots.island.inert = false;
       roots.island.setAttribute('aria-hidden', 'false');
+      if (performance.now() < manualIslandUntil) {
+        lastScrollY = y;
+        scrollTravel = 0;
+        return;
+      }
       if (Math.abs(delta) < 2) { lastScrollY = y; return; }
       const direction = delta > 0 ? 1 : -1;
       const visibleDirection = document.body.classList.contains('nx45-awards-scroll-down') ? 1 : document.body.classList.contains('nx45-awards-scroll-up') ? -1 : 0;
@@ -551,12 +558,10 @@
     app.querySelector('[data-nx45-prev]').addEventListener('click', () => moveSelected(-1));
     app.querySelector('[data-nx45-next]').addEventListener('click', () => moveSelected(1));
     roots.island.querySelector('[data-nx45-island-toggle]').addEventListener('click', () => {
-      if (matchMedia('(max-width:620px)').matches) {
-        roots.hero?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
-        setIslandState(false, false);
-        return;
-      }
+      const y = scrollY;
+      manualIslandUntil = performance.now() + 520;
       setIslandState(true, !roots.island.classList.contains('expanded'));
+      requestAnimationFrame(() => { if (Math.abs(scrollY - y) > 1) scrollTo(0, y); });
     });
     addEventListener('scroll', onScroll, { passive: true });
 
