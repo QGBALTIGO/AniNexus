@@ -20,7 +20,7 @@ html[data-nx-auth-state="authenticated"] body .top-actions>.login-btn,html[data-
 
 /* Keep Clerk's alternate provider and verification states inside the same visual system. */
 .nx38-auth-copy h1{letter-spacing:0}
-.nx38-clerk-card .cl-socialButtonsBlockButton{position:relative;width:100%;min-height:58px;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 14px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:#151116;color:#f8f2f5;text-align:center;font:800 13px/1.2 'Manrope',sans-serif;overflow:visible;transition:transform .16s ease,border-color .16s ease,background .16s ease}
+.nx38-clerk-card .cl-socialButtonsBlockButton{position:relative;grid-column:1/-1;width:100%;min-height:58px;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 14px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:#151116;color:#f8f2f5;text-align:center;font:800 13px/1.2 'Manrope',sans-serif;overflow:visible;transition:transform .16s ease,border-color .16s ease,background .16s ease}
 .nx38-clerk-card .cl-socialButtonsBlockButton:hover{transform:translateY(-1px);border-color:rgba(235,57,93,.55);background:#1b1318}
 .nx38-clerk-card .cl-socialButtonsBlockButton>span:not(.cl-lastAuthenticationStrategyBadge){display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:0}
 .nx38-clerk-card .cl-socialButtonsBlockButton .cl-socialButtonsProviderIcon,.nx38-clerk-card .cl-socialButtonsBlockButton .cl-providerIcon,.nx38-clerk-card .cl-socialButtonsBlockButton .cl-socialButtonsBlockButtonIcon{width:20px;height:20px;flex:0 0 20px}
