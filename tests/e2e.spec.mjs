@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.28.2&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.28.3&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -69,7 +69,7 @@ test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-07-v44.28.2')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-07-v44.28.3')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -1577,10 +1577,11 @@ test('Animes dublados has usable search filters pagination data and standard act
     await expect(page.locator('#nx47DubbedCount')).toContainText(hosted?'12 títulos confirmados':'25 títulos confirmados');
     if(hosted)await expect(page.getByRole('navigation',{name:'Paginação dos animes dublados'})).toHaveCount(0);
     else await expect(page.getByRole('navigation',{name:'Paginação dos animes dublados'})).toContainText('Página 1 de 3');
-    const headerFilters=page.locator('.nx47-chrome #nx47DubbedHeaderFilters');
+    const headerFilters=page.locator('.nx47-intro #nx47DubbedHeaderFilters');
     const controls=headerFilters.locator('#nx47DubbedControls');
     await expect(headerFilters.locator('.nx47-segmented')).toBeVisible();
     await expect(headerFilters.locator('.nx47-search')).toBeVisible();
+    await expect(page.locator('.nx47-dubbed-nav-band')).toHaveCount(0);
     await expect(page.locator('.nx47-dubbed-section .nx47-segmented,.nx47-dubbed-section .nx47-search')).toHaveCount(0);
     await headerFilters.getByRole('button',{name:'Filmes',exact:true}).click();
     await expect(page.locator('#nx47DubbedResults .nx47-media-card')).toHaveCount(4);
@@ -1600,6 +1601,8 @@ test('Animes dublados has usable search filters pagination data and standard act
       expect(new Set(buttons.map(button=>button.width)).size).toBe(1);
       expect(new Set(buttons.map(button=>button.height)).size).toBe(1);
       expect(new Set(buttons.map(button=>button.top)).size).toBe(1);
+      const segmentFit=await headerFilters.locator('.nx47-segmented').evaluate(group=>{const outer=group.getBoundingClientRect();return[...group.querySelectorAll('button')].every(button=>{const box=button.getBoundingClientRect();return box.top>=outer.top&&box.bottom<=outer.bottom})});
+      expect(segmentFit).toBe(true);
       const columns=await page.locator('#nx47DubbedResults .nx47-media-card').evaluateAll(cards=>new Set(cards.slice(0,4).map(card=>Math.round(card.getBoundingClientRect().left))).size);
       expect(columns).toBe(2);
       await page.evaluate(()=>scrollTo(0,360));await page.waitForTimeout(320);

@@ -6,7 +6,7 @@
   const app = document.querySelector('#app');
   if (!app) return;
 
-  const BUILD = '44.28.2';
+  const BUILD = '44.28.3';
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
   const ROUTES = new Set(['/animes/onde-assistir', '/animes/dublados', '/animes/estudios']);
@@ -159,15 +159,15 @@
 
   function heroMarkup(kind) {
     const copy = kindCopy(kind);
-    const dubbedNav = kind === 'dubbed'
-      ? `<div class="nx47-dubbed-nav-band"><div class="nx47-dubbed-nav" id="nx47DubbedHeaderFilters"><div id="nx47DubbedControls" data-nx47-dub-controls-host>${dubbedControlsMarkup()}</div></div></div>`
+    const dubbedControls = kind === 'dubbed'
+      ? `<div class="nx47-dubbed-nav" id="nx47DubbedHeaderFilters"><div id="nx47DubbedControls" data-nx47-dub-controls-host>${dubbedControlsMarkup()}</div></div>`
       : '';
     return `<header class="nx47-chrome" id="nx47Hero">
-      <div class="nx47-intro">
+      <div class="nx47-intro${kind === 'dubbed' ? ' is-dubbed' : ''}">
         <div class="nx47-title-row"><span class="nx47-title-icon">${copy.icon}</span><div><h1>${copy.title}</h1><small>${copy.kicker}</small></div></div>
         <p>${copy.description}</p>
+        ${dubbedControls}
       </div>
-      ${dubbedNav}
     </header>`;
   }
 
