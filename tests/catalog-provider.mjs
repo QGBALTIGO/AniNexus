@@ -28,7 +28,7 @@ globalThis.fetch = async (_url, options = {}) => {
   return new Response(JSON.stringify({ data: { Page: { pageInfo: { total: 5000, currentPage: page, lastPage: 200, hasNextPage: page < 200 }, media } } }), { status: 200, headers: { 'content-type': 'application/json' } });
 };
 
-const { getCatalog, getReading } = await import('../lib/provider.mjs');
+const { getCatalog, getReading, studiosFromCachedMedia } = await import('../lib/provider.mjs');
 const { pool } = await import('../lib/db.mjs');
 
 test('catalog omits inactive optional variables and keeps deep pagination', async () => {
@@ -88,6 +88,22 @@ test('community-only reading orders never fall back to external popularity', asy
   const result = await getReading({ page: 1, perPage: 25, sort: 'POPULAR', communityOnly: 1 });
   assert.equal(result.items.length, 0);
   assert.equal(requests.length, before);
+});
+
+test('cached studio fallback groups, sorts and paginates local anime', () => {
+  const rows = [
+    { payload: { id: 10, title: 'Anime antigo', seasonYear: 2024, startDate: { year: 2024, month: 4, day: 1 }, studios: [{ id: 2, name: 'Bones' }] } },
+    { payload: { id: 11, title: 'Anime novo', seasonYear: 2026, startDate: { year: 2026, month: 1, day: 1 }, studios: [{ id: 2, name: 'Bones' }, { id: 2, name: 'Bones' }] } },
+    { payload: { id: 12, title: 'Outro anime', seasonYear: 2025, studios: [{ id: 1, name: 'MAPPA' }] } }
+  ];
+  const first = studiosFromCachedMedia(rows, 1, 1);
+  assert.deepEqual(first.pageInfo, { total: 2, currentPage: 1, lastPage: 2, hasNextPage: true });
+  assert.equal(first.items[0].name, 'Bones');
+  assert.equal(first.items[0].mediaTotal, 2);
+  assert.deepEqual(first.items[0].media.map(media => media.id), [11, 10]);
+  const second = studiosFromCachedMedia(rows, 2, 1);
+  assert.equal(second.items[0].name, 'MAPPA');
+  assert.equal(second.pageInfo.hasNextPage, false);
 });
 
 test.after(async () => { await pool.end(); });
