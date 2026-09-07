@@ -6,7 +6,7 @@
   const app = document.querySelector('#app');
   if (!app) return;
 
-  const BUILD = '44.27.0';
+  const BUILD = '44.28.0';
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
   const ROUTES = new Set(['/animes/onde-assistir', '/animes/dublados', '/animes/estudios']);
@@ -606,11 +606,9 @@
 
   function renderStudioRows() {
     const root = document.querySelector('#nx47StudioResults');
-    const count = document.querySelector('#nx47StudioCount');
     const more = document.querySelector('#nx47StudioMore');
-    if (!root || !count || !more) return;
+    if (!root || !more) return;
     const items = visibleStudios();
-    count.textContent = `${state.studioItems.length.toLocaleString('pt-BR')} ${state.studioItems.length === 1 ? 'estúdio carregado' : 'estúdios carregados'}`;
     root.removeAttribute('aria-busy');
     root.innerHTML = items.length
       ? items.map(studioBlockMarkup).join('')
@@ -681,8 +679,7 @@
 
   function studiosMarkup() {
     return `${heroMarkup('studios')}${islandMarkup('studios')}<div class="nx47-content nx47-studios-content"><div class="shell">
-      <section class="nx47-studios-section" aria-labelledby="nx47StudiosTitle">
-        <header class="nx47-section-head nx47-studios-directory-head"><div><small>CASAS DE ANIMAÇÃO</small><h2 id="nx47StudiosTitle">Explore por estúdio</h2><p>Deslize cada fileira para descobrir mais produções da mesma casa.</p></div><span id="nx47StudioCount">Consultando estúdios</span></header>
+      <section class="nx47-studios-section" aria-label="Estúdios e suas produções">
         <div id="nx47StudioControls" data-nx47-studio-controls-host>${studioControlsMarkup()}</div>
         <div id="nx47StudioResults" aria-live="polite" aria-busy="true">${studioSkeletons()}</div>
         <div class="nx47-studio-more" id="nx47StudioMore"></div>

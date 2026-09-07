@@ -4,7 +4,7 @@ import { achievementCatalog, levelFromXp } from '../lib/achievements.mjs';
 
 const ORIGIN = process.env.ANINEXUS_E2E_ORIGIN || 'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN = process.env.ANINEXUS_LOCAL_STATIC_ORIGIN || '';
-const pageUrl = route => `${ORIGIN}?build=44.27.0&p=${encodeURIComponent(route)}`;
+const pageUrl = route => `${ORIGIN}?build=44.28.0&p=${encodeURIComponent(route)}`;
 const pixel = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 const achievementDefinitions = achievementCatalog();
 const achievementItems = achievementDefinitions.map((item, index) => ({
@@ -70,12 +70,14 @@ test.beforeEach(async ({ page }) => {
   await page.route('**/api/catalog?**', route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ items: catalogItems, pageInfo: { total: 4, currentPage: 1, lastPage: 1, hasNextPage: false } }) }));
   await page.route('**/api/dublados?**', route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ items: catalogItems, pageInfo: { total: 4, currentPage: 1, lastPage: 1, hasNextPage: false } }) }));
   await page.route('**/api/studios?**', route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ items: [{ id: 1, name: 'Estúdio Teste', mediaTotal: 12, media: catalogItems }], pageInfo: { total: 1, currentPage: 1, lastPage: 1, hasNextPage: false } }) }));
+  await page.route('**/api/list/**', route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ items: catalogItems, pageInfo: { total: 4, currentPage: 1, lastPage: 1, hasNextPage: false } }) }));
+  await page.route('**/api/lists', route => route.fulfill({ status: 200, contentType: 'application/json', body: '[]' }));
   await page.route('**/api/achievements/catalog', route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ total: 40, items: achievementDefinitions }) }));
   await page.route(/\/api\/me\/achievements(?:\/.*)?(?:\?.*)?$/, route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(achievementPayload) }));
 });
 test.afterEach(async ({ page }) => { await page.unrouteAll({ behavior: 'ignoreErrors' }); });
 
-for (const route of ['/', '/animes/catalogo', '/animes/onde-assistir', '/animes/dublados', '/animes/estudios', '/mangas', '/animes/programacao', '/anime-awards', '/anime/anime-teste-101', '/comunidade', '/noticias', '/conquistas', '/login', '/admin', '/quem-somos', '/termos-de-uso']) {
+for (const route of ['/', '/animes/catalogo', '/animes/onde-assistir', '/animes/dublados', '/animes/estudios', '/melhores-animes-para-assistir', '/animes-mais-assistidos', '/animes-mais-aguardados', '/listas-de-animes', '/mangas', '/animes/programacao', '/anime-awards', '/anime/anime-teste-101', '/comunidade', '/noticias', '/conquistas', '/login', '/admin', '/quem-somos', '/termos-de-uso']) {
   test(`WCAG AA sem falhas sérias em ${route}`, async ({ page }) => {
     await page.goto(pageUrl(route), { waitUntil: 'domcontentloaded' });
     await page.locator('#app main').first().waitFor({ state: 'visible', timeout: 30_000 });
