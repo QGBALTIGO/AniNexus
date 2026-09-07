@@ -1472,6 +1472,8 @@ test('Home discovery links open the matching anime catalog tabs',async({page})=>
 
 test('Onde assistir is a platform-first responsive catalog with standard scroll chrome',async({page})=>{
   const items=discoveryCatalog();
+  await page.unroute('https://graphql.anilist.co/');
+  await page.route('https://graphql.anilist.co/',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:{Page:{media:items,pageInfo:{total:items.length,currentPage:1,lastPage:1,hasNextPage:false}}}})}));
   await page.route('**/api/catalog?**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items,pageInfo:{total:items.length,currentPage:1,lastPage:1,hasNextPage:false}})}));
   for(const viewport of [{width:1440,height:900},{width:390,height:844}]){
     await page.setViewportSize(viewport);
@@ -1509,6 +1511,9 @@ test('Onde assistir is a platform-first responsive catalog with standard scroll 
 
 test('Animes dublados has usable search filters pagination data and standard actions',async({page})=>{
   const items=discoveryCatalog();
+  const hosted=new URL(ORIGIN).hostname.endsWith('github.io');
+  await page.unroute('https://graphql.anilist.co/');
+  await page.route('https://graphql.anilist.co/',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:{Page:{media:items,pageInfo:{total:items.length,currentPage:1,lastPage:1,hasNextPage:false}}}})}));
   await page.route('**/api/dublados?**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items,pageInfo:{total:25,currentPage:1,lastPage:3,hasNextPage:true}})}));
   for(const viewport of [{width:1440,height:900},{width:390,height:844}]){
     await page.setViewportSize(viewport);
@@ -1519,8 +1524,9 @@ test('Animes dublados has usable search filters pagination data and standard act
     await expect(pageRoot.getByText('Vozes em português',{exact:true})).toHaveCount(0);
     await expect(pageRoot.getByText('CATÁLOGO DUBLADO',{exact:true})).toHaveCount(0);
     await expect(page.locator('#nx47DubbedResults .nx47-media-card')).toHaveCount(12);
-    await expect(page.locator('#nx47DubbedCount')).toContainText('25 títulos confirmados');
-    await expect(page.getByRole('navigation',{name:'Paginação dos animes dublados'})).toContainText('Página 1 de 3');
+    await expect(page.locator('#nx47DubbedCount')).toContainText(hosted?'12 títulos confirmados':'25 títulos confirmados');
+    if(hosted)await expect(page.getByRole('navigation',{name:'Paginação dos animes dublados'})).toHaveCount(0);
+    else await expect(page.getByRole('navigation',{name:'Paginação dos animes dublados'})).toContainText('Página 1 de 3');
     const controls=page.locator('#nx47DubbedControls');
     await controls.getByRole('button',{name:'Filmes',exact:true}).click();
     await expect(page.locator('#nx47DubbedResults .nx47-media-card')).toHaveCount(4);

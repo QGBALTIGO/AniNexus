@@ -105,6 +105,23 @@
     return response.json();
   }
 
+  async function directCatalog(page, signal, ids = []) {
+    const withIds = Array.isArray(ids) && ids.length > 0;
+    const query = withIds
+      ? `query($page:Int,$ids:[Int]){Page(page:$page,perPage:30){pageInfo{total currentPage lastPage hasNextPage} media(type:ANIME,id_in:$ids,sort:POPULARITY_DESC){id title{romaji english native userPreferred} coverImage{extraLarge large} episodes format status seasonYear startDate{year month day} externalLinks{site url type}}}}`
+      : `query($page:Int){Page(page:$page,perPage:30){pageInfo{total currentPage lastPage hasNextPage} media(type:ANIME,sort:POPULARITY_DESC){id title{romaji english native userPreferred} coverImage{extraLarge large} episodes format status seasonYear startDate{year month day} externalLinks{site url type}}}}`;
+    const response = await fetch('https://graphql.anilist.co/', {
+      method: 'POST',
+      signal,
+      headers: { 'content-type': 'application/json', accept: 'application/json' },
+      body: JSON.stringify({ query, variables: withIds ? { page, ids } : { page } })
+    });
+    if (!response.ok) throw new Error(`AniList HTTP ${response.status}`);
+    const json = await response.json();
+    if (json.errors?.length) throw new Error(json.errors[0].message || 'AniList error');
+    return { items: json.data?.Page?.media || [], pageInfo: json.data?.Page?.pageInfo || {} };
+  }
+
   async function directStudios(page, signal) {
     const query = `query($page:Int){Page(page:$page,perPage:12){pageInfo{total currentPage lastPage hasNextPage} studios(sort:FAVOURITES_DESC){id name isAnimationStudio media(perPage:12,sort:START_DATE_DESC){pageInfo{total} nodes{id title{romaji english native userPreferred} coverImage{extraLarge large} episodes format status seasonYear startDate{year month day}}}}}}`;
     const response = await fetch('https://graphql.anilist.co/', {
@@ -363,7 +380,8 @@
     state.controller?.abort();
     state.controller = new AbortController();
     try {
-      const calls = Array.from({ length: 4 }, (_, index) => apiJson(`/api/catalog?page=${index + 1}&perPage=30&sort=DISCOVER&discover=500`, state.controller.signal));
+      const calls = Array.from({ length: 4 }, (_, index) => apiJson(`/api/catalog?page=${index + 1}&perPage=30&sort=DISCOVER&discover=500`, state.controller.signal)
+        .catch(error => IS_PAGES ? directCatalog(index + 1, state.controller.signal) : Promise.reject(error)));
       const settled = await Promise.allSettled(calls);
       if (token !== state.token) return;
       if (!settled.some(result => result.status === 'fulfilled')) throw settled[0]?.reason || new Error('Catalog unavailable');
@@ -457,6 +475,10 @@
   }
 
   async function fallbackDubbed(signal) {
+    if (IS_PAGES) {
+      const result = await directCatalog(1, signal, [...DUBBED_FALLBACK_IDS]);
+      return (result.items || []).map(normalizeMedia).filter(Boolean).map(media => ({ ...media, dubbed: true }));
+    }
     const settled = await Promise.allSettled(Array.from({ length: 3 }, (_, index) => apiJson(`/api/catalog?page=${index + 1}&perPage=30&sort=DISCOVER`, signal)));
     const map = new Map();
     for (const result of settled) {
@@ -479,11 +501,18 @@
     if (root) root.innerHTML = skeletons(12);
     if (pagination) pagination.innerHTML = '';
     try {
-      const data = await apiJson(`/api/dublados?page=${state.dubbedPage}`, state.controller.signal);
+      let data;
+      try {
+        data = await apiJson(`/api/dublados?page=${state.dubbedPage}`, state.controller.signal);
+      } catch (error) {
+        if (!IS_PAGES) throw error;
+        const fallbackItems = await fallbackDubbed(state.controller.signal);
+        data = { items: fallbackItems, pageInfo: { currentPage: 1, lastPage: 1, hasNextPage: false, total: fallbackItems.length } };
+      }
       if (token !== state.token) return;
       let items = (data?.items || []).map(normalizeMedia).filter(Boolean);
       let info = data?.pageInfo || {};
-      if (!items.length && state.dubbedPage === 1) {
+      if (!items.length && state.dubbedPage === 1 && !IS_PAGES) {
         items = await fallbackDubbed(state.controller.signal);
         info = { currentPage: 1, lastPage: 1, hasNextPage: false, total: items.length };
       }
