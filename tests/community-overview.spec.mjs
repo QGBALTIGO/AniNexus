@@ -85,8 +85,9 @@ test('Home keeps subtle artwork and inline activity copy without depending on ba
   for(const width of [1440,390]){
     await page.setViewportSize({width,height:900});await page.goto(url('/'));
     for(const selector of ['#nx35CommunityHero','#nx35Community']){
-      const card=page.locator(selector).locator('.nx35-community-card').first();await card.scrollIntoViewIfNeeded();
+      const card=page.locator(selector).locator('.nx35-community-card').first();
       await expect(card.locator('.nx35-community-art')).toHaveAttribute('src',art);
+      await page.evaluate(target=>document.querySelector(target)?.scrollIntoView({block:'center'}),selector);
       await expect.poll(()=>card.locator('.nx35-community-art').evaluate(img=>img.naturalWidth)).toBeGreaterThan(0);
       await expect(card.locator('.nx35-community-art')).toHaveCSS('pointer-events','none');
       expect(await card.locator('.nx35-community-art').evaluate(img=>Number(getComputedStyle(img).opacity))).toBeLessThanOrEqual(.04);
