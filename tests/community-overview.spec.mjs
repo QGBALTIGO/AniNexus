@@ -35,6 +35,14 @@ async function setup(page){
   return state;
 }
 const noOverflow=async page=>expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
+async function login(page){
+  await page.waitForFunction(()=>['anonymous','authenticated'].includes(document.documentElement.dataset.nxAuthState));
+  await page.evaluate(()=>{
+    const user={id:'reader-a'};
+    window.AniNexusAuth={...window.AniNexusAuth,enabled:true,getUser:async()=>user,requireAccount:async()=>user};
+    dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user}}));
+  });
+}
 
 test('Home previews merge duplicate snapshots without mixing members or anime and manga',async({page})=>{
   const state=await setup(page),now=Date.now();
@@ -158,6 +166,7 @@ test('Community uses shared reactions, typed reading actions and real member per
   await page.locator('.nx40-more-reactions summary').click();
   await page.locator('[data-nx40-reaction="Que arte!"]').click();
   await expect(page.locator('#nx40ReactionTitle')).toContainText('Que arte!');
+  await login(page);
   const first=page.locator('.nx40-podium .nx40-poster-card').first(),heart=first.locator('[data-manga-fav]');
   await expect(heart).toHaveAttribute('data-nx-action-owner','global');
   await expect(heart).toHaveCSS('width','34px');await heart.click();await expect(heart).toHaveAttribute('aria-pressed','true');

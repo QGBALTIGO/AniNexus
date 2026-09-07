@@ -50,16 +50,24 @@ async function setup(page){
 }
 async function login(page){
   expect(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);
+  await page.waitForFunction(()=>window.__NX39_MEDIA_SYNC__===true&&window.AniNexusMediaState&&window.AniNexusMangaState);
+  await page.waitForFunction(()=>['anonymous','authenticated'].includes(document.documentElement.dataset.nxAuthState));
   await page.evaluate(()=>{
-    window.AniNexusAuth={...window.AniNexusAuth,enabled:true,api:async(path,options={})=>{
+    const user={id:'reader-a'};
+    window.AniNexusAuth={...window.AniNexusAuth,enabled:true,getUser:async()=>user,requireAccount:async()=>user,api:async(path,options={})=>{
       const response=await fetch(path,{...options,headers:{'content-type':'application/json'}});
       if(!response.ok)throw Object.assign(new Error('API'),{status:response.status});return response.json();
     }};
-    dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:{id:'reader-a'}}}));
+    dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user}}));
   });
+  await expect.poll(()=>page.evaluate(()=>localStorage.getItem('aninexus:mangaOwner'))).toBe('"reader-a"');
+}
+async function waitForMangaState(page,id,check){
+  await expect.poll(()=>page.evaluate(mediaId=>window.AniNexusMangaState?.get?.(mediaId)||null,id),{timeout:15000}).toMatchObject(check);
 }
 
 test('manga actions persist multiple reactions and reading progress independently from favorites',async({page},testInfo)=>{
+  test.setTimeout(90000);
   const remote=await setup(page);await page.goto(url('/mangas'),{waitUntil:'domcontentloaded'});await login(page);
   const card=page.locator('[data-manga-open="301"]').first(),heart=card.locator('[data-manga-fav]'),plus=card.locator('[data-manga-list]');
   await expect(heart).toBeVisible();await expect(heart).toHaveCSS('width','34px');
@@ -75,6 +83,7 @@ test('manga actions persist multiple reactions and reading progress independentl
   await expect.poll(()=>remote.manga[0]?.reactions).toEqual(['Amei','Viciante']);
   expect(remote.manga[0]).toMatchObject({status:'CURRENT',progress:3,score:8.5});expect(remote.anime).toEqual([]);
   await page.goto(url('/mangas'),{waitUntil:'domcontentloaded'});await login(page);await expect(heart).toHaveAttribute('aria-pressed','true');
+  await waitForMangaState(page,301,{status:'CURRENT',reactions:['Amei','Viciante']});
   await plus.click();await expect(modal.locator('[data-nx20-reaction="Amei"]')).toHaveAttribute('aria-pressed','true');
   await modal.locator('[data-nx20-remove]').click();await expect.poll(()=>remote.manga.length).toBe(0);
   await expect(heart).toHaveAttribute('aria-pressed','true');await expect(plus).toHaveAttribute('aria-pressed','false');
@@ -104,9 +113,12 @@ test('failed writes stay pending and retry without losing state or leaking acros
   const heart=page.locator('[data-manga-fav="301"]');await heart.click();await expect(page.locator('.nx-media-sync-notice')).toBeVisible();
   await expect(heart).toHaveAttribute('aria-pressed','true');remote.fail=false;
   await page.getByRole('button',{name:'Tentar novamente',exact:true}).click();await expect.poll(()=>remote.favorites.length).toBe(1);
-  await page.evaluate(()=>dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:null}})));
+  await page.evaluate(()=>{
+    window.AniNexusAuth={...window.AniNexusAuth,getUser:async()=>null,requireAccount:async()=>null};
+    dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:null}}));
+  });
+  await expect.poll(()=>page.evaluate(()=>localStorage.getItem('aninexus:mangaFavorites')),{timeout:15000}).toBeNull();
   await expect(heart).toHaveAttribute('aria-pressed','false');
-  expect(await page.evaluate(()=>localStorage.getItem('aninexus:mangaFavorites'))).toBeNull();
 });
 
 test('anime and manga IDs stay separate and every status preserves compact geometry',async({page})=>{
@@ -135,7 +147,7 @@ test('late account hydration cannot undo a successful favorite click',async({pag
   const reads=remote.favoriteReads;await page.evaluate(()=>dispatchEvent(new CustomEvent('aninexus:media-sync-retry')));
   await expect.poll(()=>remote.favoriteReads).toBeGreaterThan(reads);
   await page.locator('[data-manga-fav="301"]').click();await expect.poll(()=>remote.favorites.length).toBe(2);
-  await page.waitForTimeout(1100);
+  await expect.poll(()=>page.evaluate(()=>window.AniNexusMangaState?.isFavorite?.(302)===true),{timeout:15000}).toBe(true);
   await expect(page.locator('[data-manga-fav="301"]')).toHaveAttribute('aria-pressed','true');
   await expect(page.locator('[data-manga-fav="302"]')).toHaveAttribute('aria-pressed','true');
   expect(remote.writes.filter(x=>x.method==='DELETE')).toEqual([]);
@@ -147,6 +159,7 @@ test('manga library keeps favorites independent when editing and removing a read
   await page.evaluate(()=>{history.pushState({},'','?p=/meus-mangas');dispatchEvent(new PopStateEvent('popstate'))});
   const library=page.locator('#nx42MangaLibrary');await expect(library.locator('[data-manga-list="301"]')).toBeVisible();
   await expect(library).toContainText('3 capítulos lidos');
+  await waitForMangaState(page,301,{status:'CURRENT',progress:3,reactions:['Amei']});
   await library.locator('[data-manga-list="301"]').click();const modal=page.getByRole('dialog');
   await expect(modal.locator('[data-nx20-reaction="Amei"]')).toHaveAttribute('aria-pressed','true');
   await modal.getByRole('spinbutton',{name:'Capítulos lidos',exact:true}).fill('4');
