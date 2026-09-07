@@ -161,7 +161,7 @@
   }
   function story(mode) {
     const create = mode === 'register';
-    return `<section class="nx38-auth-story"><a class="nx38-auth-brand" href="${routeUrl('/')}" data-auth-home><img src="${BASE}/assets/logo.png" alt=""><strong>AniNexus</strong></a><div class="nx38-auth-copy"><span class="nx38-auth-kicker">SUA CONTA ANINEXUS</span><h1>${create ? 'Monte sua jornada.<br><em>Do seu jeito.</em>' : 'Seu universo<br><em>continua aqui.</em>'}</h1><p>${create ? 'Uma conta conecta lista, favoritos, progresso, comunidade, notícias e preferências em todos os seus dispositivos.' : 'Entre para continuar acompanhando episódios, listas, favoritos, notícias e conversas sem perder o que você construiu.'}</p><div class="nx38-auth-benefits"><div class="nx38-auth-benefit"><i>✓</i><div><strong>Uma lista só</strong><span>Assistindo, concluídos, pausados e quero ver.</span></div></div><div class="nx38-auth-benefit"><i>✦</i><div><strong>Proteção real</strong><span>E-mail verificado, recuperação e sessões gerenciadas pelo Clerk.</span></div></div><div class="nx38-auth-benefit"><i>●</i><div><strong>Comunidade</strong><span>Impressões, discussões e atividades ligadas aos títulos.</span></div></div></div></div><span class="nx38-auth-footnote">AniNexus · feito para acompanhar anime e mangá em português.</span></section>`;
+    return `<section class="nx38-auth-story"><a class="nx38-auth-brand" href="${routeUrl('/')}" data-auth-home><img src="${BASE}/assets/logo.png" alt=""><strong>AniNexus</strong></a><div class="nx38-auth-copy"><span class="nx38-auth-kicker">SUA CONTA ANINEXUS</span><h1>${create ? 'Monte sua jornada. <br><em>Do seu jeito.</em>' : 'Seu universo <br><em>continua aqui.</em>'}</h1><p>${create ? 'Uma conta conecta lista, favoritos, progresso, comunidade, notícias e preferências em todos os seus dispositivos.' : 'Entre para continuar acompanhando episódios, listas, favoritos, notícias e conversas sem perder o que você construiu.'}</p><div class="nx38-auth-benefits"><div class="nx38-auth-benefit"><i>✓</i><div><strong>Uma lista só</strong><span>Assistindo, concluídos, pausados e quero ver.</span></div></div><div class="nx38-auth-benefit"><i>✦</i><div><strong>Proteção real</strong><span>E-mail verificado, recuperação e sessões gerenciadas pelo Clerk.</span></div></div><div class="nx38-auth-benefit"><i>●</i><div><strong>Comunidade</strong><span>Impressões, discussões e atividades ligadas aos títulos.</span></div></div></div></div><span class="nx38-auth-footnote">AniNexus · feito para acompanhar anime e mangá em português.</span></section>`;
   }
   function unavailableCard() {
     return `<section class="nx38-auth-panel"><div class="nx38-auth-card nx38-auth-unavailable" role="status"><header class="nx38-auth-card-head"><small>CONTA PROTEGIDA</small><h2>Ativação segura em andamento</h2><p>A navegação pública e os dados deste dispositivo continuam funcionando. Login e sincronização serão liberados somente quando a API possuir HTTPS válido e as chaves públicas estiverem configuradas.</p></header><div class="nx38-pages-note">Nenhum dado privado será enviado por uma conexão HTTP insegura.</div><a class="nx38-auth-submit" href="${routeUrl('/')}"><span>Continuar como visitante</span></a></div></section>`;
@@ -174,7 +174,14 @@
     const providers = { apple: 'Apple', facebook: 'Facebook', github: 'GitHub', google: 'Google' };
     const update = () => {
       mount.querySelectorAll('button[class*="socialButtons"]').forEach(button => {
-        const provider = Object.keys(providers).find(key => [...button.classList].some(name => name.toLowerCase().includes(key)));
+        const descriptor = [
+          button.id,
+          button.dataset.provider,
+          button.getAttribute('data-provider'),
+          ...button.classList,
+          ...[...button.querySelectorAll('[class]')].flatMap(child => [...child.classList]),
+        ].filter(Boolean).join(' ').toLowerCase();
+        const provider = Object.keys(providers).find(key => descriptor.includes(key));
         if (!provider) return;
         const label = `Continuar com ${providers[provider]}`;
         button.setAttribute('aria-label', label);
