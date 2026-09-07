@@ -30,7 +30,7 @@ async function setup(page){
     if(path.includes('/api/me/')){
       const manga=path.includes('manga'),key=manga?'manga':'anime',id=Number(path.split('/').at(-1));
       if(method==='GET'&&path.endsWith('favorites')){const body=JSON.stringify({items:remote.favorites});remote.favoriteReads++;if(remote.delayFavorites)await new Promise(resolve=>setTimeout(resolve,900));return route.fulfill({body,contentType:'application/json'})}
-      if(method==='GET')return route.fulfill({json:path.endsWith('favorites')?{items:remote.favorites}:path.endsWith('manga-library')?{list:remote.manga.map(x=>({...x,media:media(x.media_id)})),favorites:remote.favorites.filter(x=>x.media_type==='MANGA').map(x=>({...x,media:media(x.media_id)}))}:{items:remote[key]}});
+      if(method==='GET')return route.fulfill({json:path.endsWith('favorites')?{items:remote.favorites}:path.endsWith('manga-library')?{user:{id:'reader-a',username:'reader'},list:remote.manga.map(x=>({...x,media:media(x.media_id)})),favorites:remote.favorites.filter(x=>x.media_type==='MANGA').map(x=>({...x,media:media(x.media_id)})),impressions:[]}:path==='/api/me/library'?{user:{id:'reader-a',username:'reader'},list:remote.anime.map(x=>({...x,media:media(x.media_id,'TV')})),favorites:remote.favorites.filter(x=>x.media_type==='ANIME').map(x=>({...x,media:media(x.media_id,'TV')})),impressions:[],impressionCount:0}:{items:remote[key]}});
       const body=request.postDataJSON()||{};remote.writes.push({path,method,body});
       if(remote.fail)return route.fulfill({status:503,json:{error:'TEMPORARY'}});
       if(path.includes('favorites')){
@@ -157,22 +157,57 @@ test('manga library keeps favorites independent when editing and removing a read
   const remote=await setup(page);remote.manga=[{media_id:301,status:'CURRENT',progress:3,reactions:['Amei']}];remote.favorites=[{media_id:301,media_type:'MANGA'}];
   await page.goto(url('/mangas'),{waitUntil:'domcontentloaded'});await login(page);
   await page.evaluate(()=>{history.pushState({},'','?p=/meus-mangas');dispatchEvent(new PopStateEvent('popstate'))});
-  const library=page.locator('#nx42MangaLibrary');await expect(library.locator('[data-manga-list="301"]')).toBeVisible();
-  await expect(library).toContainText('3 capítulos lidos');
+  const library=page.locator('.nx49-library');await expect(library.locator('[data-manga-list="301"]')).toBeVisible();
+  await expect(library).toContainText('3/48');
+  for(const status of ['PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED'])await expect(library.locator(`[data-nx49-status="${status}"]`).first()).toBeVisible();
   await waitForMangaState(page,301,{status:'CURRENT',progress:3,reactions:['Amei']});
   await library.locator('[data-manga-list="301"]').click();const modal=page.getByRole('dialog');
   await expect(modal.locator('[data-nx20-reaction="Amei"]')).toHaveAttribute('aria-pressed','true');
   await modal.getByRole('spinbutton',{name:'Capítulos lidos',exact:true}).fill('4');
-  await modal.locator('[data-nx20-save]').click();await expect(library).toContainText('4 capítulos lidos');
+  await modal.locator('[data-nx20-save]').click();await expect(library).toContainText('4/48');
   await expect.poll(()=>remote.manga[0]?.progress).toBe(4);
   await library.locator('[data-manga-list="301"]').click();await modal.locator('[data-nx20-remove]').click();
   await expect.poll(()=>remote.manga.length).toBe(0);await expect(library.locator('[data-manga-list="301"]')).toHaveAttribute('aria-pressed','false');
   await expect(library.locator('[data-manga-fav="301"]')).toHaveAttribute('aria-pressed','true');
   await library.locator('[data-manga-fav="301"]').click();await expect.poll(()=>remote.favorites.length).toBe(0);
-  await expect(library).toContainText('Nada nesta categoria');
+  await expect(library).toContainText('Nada por aqui ainda');
   await page.evaluate(()=>{history.pushState({},'','?p=/mangas');dispatchEvent(new PopStateEvent('popstate'))});
   await expect(page.locator('[data-manga-list="301"]')).toHaveAttribute('aria-pressed','false');
   await expect(page.locator('[data-manga-fav="301"]')).toHaveAttribute('aria-pressed','false');
+});
+
+test('unified library switches media and keeps its mobile scroll header usable',async({page},testInfo)=>{
+  const remote=await setup(page);
+  remote.anime=Array.from({length:8},(_,index)=>({media_id:401+index,status:['PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED'][index%5],progress:index+1,updated_at:new Date(Date.now()-index*1000).toISOString()}));
+  remote.manga=Array.from({length:8},(_,index)=>({media_id:301+index,status:['PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED'][index%5],progress:index+1,updated_at:new Date(Date.now()-index*1000).toISOString()}));
+  remote.favorites=[{media_id:401,media_type:'ANIME'},{media_id:301,media_type:'MANGA'}];
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(url('/minha-biblioteca'),{waitUntil:'domcontentloaded'});await login(page);
+  const library=page.locator('.nx49-library');await expect(library).toBeVisible();
+  await page.setViewportSize({width:1280,height:900});
+  await page.screenshot({path:testInfo.outputPath('unified-library-desktop.png')});
+  await page.setViewportSize({width:390,height:844});
+  await expect(library.locator('[data-nx49-media="ANIME"]').first()).toHaveClass(/active/);
+  for(const status of ['PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED'])await expect(library.locator(`[data-nx49-status="${status}"]`).first()).toBeVisible();
+  await expect(library.getByRole('button',{name:/Revisar meus mangás/i})).toBeVisible();
+  await expect(library.locator('.nx38-library-impression-btn')).toHaveCount(0);
+  await library.locator('[data-nx49-media="MANGA"]').first().click();
+  await expect(page).toHaveURL(/minha-biblioteca.*midia=mangas/);
+  await expect(library).toContainText('Quero ler');await expect(library).toContainText('Lendo');
+  await expect(library.getByRole('button',{name:/Revisar meus animes/i})).toBeVisible();
+  await page.screenshot({path:testInfo.outputPath('unified-library-mobile-top.png')});
+  await library.locator('[data-nx49-filter-open]').click();await expect(page.getByRole('dialog',{name:'Filtrar e ordenar'})).toBeVisible();
+  await page.getByRole('button',{name:'Fechar',exact:true}).click();
+  await page.evaluate(()=>scrollTo(0,document.documentElement.scrollHeight));
+  await expect(page.locator('[data-nx49-island]')).toHaveClass(/show/);
+  const chevron=page.locator('.nx49-island-chevron');await expect(chevron).toHaveCSS('border-radius',/50%|14px/);
+  await page.locator('[data-nx49-island-toggle]').click();await expect(page.locator('[data-nx49-island]')).toHaveClass(/expanded/);
+  await expect(page.locator('.nx49-island .nx49-primary-tabs')).toBeVisible();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2)).toBe(true);
+  await page.screenshot({path:testInfo.outputPath('unified-library-mobile-island.png')});
+  await page.setViewportSize({width:320,height:700});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2)).toBe(true);
+  for(const status of ['PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED'])await expect(page.locator(`.nx49-island [data-nx49-status="${status}"]`)).toBeVisible();
 });
 
 test('background synchronization preserves the control being pressed',async({page})=>{

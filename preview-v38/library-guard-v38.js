@@ -5,7 +5,7 @@
     let p=u.searchParams.get('p')||u.pathname;
     if(isPages&&!u.searchParams.get('p'))p=p.replace(/^\/AniNexus/,'')||'/';
     p=String(p||'/').split('?')[0].replace(/\/+$/,'')||'/';
-    if(p!=='/meus-animes')return;
+    if(!['/minha-biblioteca','/meus-animes','/meus-mangas'].includes(p))return;
     document.documentElement.classList.add('nx38-library-boot');
     setTimeout(()=>document.documentElement.classList.remove('nx38-library-boot'),5000);
   }catch{}

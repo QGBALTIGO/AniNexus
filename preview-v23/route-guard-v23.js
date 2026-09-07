@@ -3,7 +3,7 @@
   try {
     const IS_PAGES=location.hostname.endsWith('github.io');
     const BASE=IS_PAGES?'/AniNexus':'';
-    const BUILD='44.28.4';
+    const BUILD='44.29.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=restored?restored.split('?')[0]:u.pathname;
@@ -26,8 +26,7 @@
       {owner:'achievements',match:path==='/conquistas',selector:'.nx48-achievements-page',label:'Carregando conquistas…'},
       {owner:'auth',match:['/login','/criar-conta','/minha-conta'].includes(path),selector:'.nx38-auth-page,.nx38-account-page',label:'Carregando conta…'},
       {owner:'admin',match:path==='/admin',selector:'.nx38-admin-page',label:'Carregando administração…'},
-      {owner:'library',match:path==='/meus-animes',selector:'.nx38-library',label:'Carregando biblioteca…'},
-      {owner:'manga',match:path==='/meus-mangas',selector:'.nx42-manga-page',label:'Carregando mangás…'},
+      {owner:'library',match:['/minha-biblioteca','/meus-animes','/meus-mangas'].includes(path),selector:'.nx49-library',label:'Carregando biblioteca…'},
       {owner:'legal',match:['/termos-de-uso','/politica-de-privacidade','/dmca'].includes(path),selector:'.nx-legal',label:'Carregando documento…'},
       {owner:'institutional',match:['/quem-somos','/colabore','/contato'].includes(path),selector:'.nx-inst',label:'Carregando página…'}
     ];

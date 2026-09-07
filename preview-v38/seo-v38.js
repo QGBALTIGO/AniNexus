@@ -5,14 +5,16 @@
   const config = window.__ANINEXUS_CONFIG__ || {};
   const isPages = location.hostname.endsWith('github.io');
   const siteOrigin = String(config.siteOrigin || (isPages ? `${location.origin}/AniNexus` : location.origin)).replace(/\/+$/, '');
-  const privateRoutes = new Set(['/login', '/criar-conta', '/minha-conta', '/meus-animes']);
+  const privateRoutes = new Set(['/login', '/criar-conta', '/minha-conta', '/minha-biblioteca', '/meus-animes', '/meus-mangas']);
   const pages = {
     '/': ['Início', 'Descubra temporadas, acompanhe episódios, organize sua lista e participe da comunidade anime brasileira.'],
     '/animes/catalogo': ['Catálogo de animes', 'Pesquise e filtre animes por gênero, formato, status, temporada e avaliação.'],
     '/animes/temporadas': ['Animes da temporada', 'Estreias e continuações organizadas por estação e ano.'],
     '/animes/programacao': ['Programação de animes', 'Calendário semanal de episódios no horário de Brasília.'],
     '/anime-awards': ['Anime Awards', 'Categorias, vencedores e destaques das principais premiações de anime.'],
-    '/meus-animes': ['Meus Animes', 'Sua lista, favoritos, notas e progresso no AniNexus.'],
+    '/minha-biblioteca': ['Minha Biblioteca', 'Seus animes, mangás, favoritos, notas e progresso no AniNexus.'],
+    '/meus-animes': ['Minha Biblioteca', 'Seus animes, mangás, favoritos, notas e progresso no AniNexus.'],
+    '/meus-mangas': ['Minha Biblioteca', 'Seus animes, mangás, favoritos, notas e progresso no AniNexus.'],
     '/noticias': ['Notícias', 'Notícias de anime e mangá aprofundadas, recentes e em português.'],
     '/comunidade': ['Comunidade', 'Atividades, impressões e discussões da comunidade AniNexus.'],
   };

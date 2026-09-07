@@ -143,7 +143,7 @@
   }
 
   function loginRequired(){document.body.classList.add('nx38-library-active');app.innerHTML=`<main class="nx38-library"><div class="nx38-library-shell"><section class="nx38-library-login"><img src="${BASE}/assets/logo.png" alt=""><h1>Seus animes ficam aqui.</h1><p>Entre para sincronizar favoritos, progresso, notas e impressões em todos os seus dispositivos.</p><div class="nx38-library-login-actions"><a class="nx38-library-primary" href="${pageUrl('/login')}">Entrar</a><a class="nx38-library-ghost" href="${pageUrl('/criar-conta')}">Criar conta</a></div></section></div></main>`;document.documentElement.classList.remove('nx38-library-boot')}
-  async function mountLibrary(){if(route()!==LIB_ROUTE)return;const token=++state.renderToken;document.documentElement.classList.add('nx38-library-boot');const data=await loadLibrary();if(token!==state.renderToken||route()!==LIB_ROUTE)return;state.data=data;if((REMOTE||!IS_PAGES)&&!data.user){loginRequired();return}shell(data)}
+  async function mountLibrary(){if(window.__ANINEXUS_UNIFIED_LIBRARY__||route()!==LIB_ROUTE)return;const token=++state.renderToken;document.documentElement.classList.add('nx38-library-boot');const data=await loadLibrary();if(token!==state.renderToken||route()!==LIB_ROUTE)return;state.data=data;if((REMOTE||!IS_PAGES)&&!data.user){loginRequired();return}shell(data)}
 
   async function loadPublicImpressions(){
     if(IS_PAGES&&!REMOTE)return(read(DEMO_IMP,[])||[]).slice(0,10).map(normalizeImp);
