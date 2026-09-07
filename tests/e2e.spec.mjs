@@ -2,12 +2,14 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.28.3&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.28.4&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
 async function noOverflow(page,t=7){const x=await page.evaluate(()=>({s:document.documentElement.scrollWidth,w:innerWidth}));expect(x.s).toBeLessThanOrEqual(x.w+t)}
 async function clear(page){await page.evaluate(()=>{for(const k of ['aninexus:favorites','aninexus:mediaState:v2','aninexus:mediaState:v1','aninexus:list','aninexus:listStatus','aninexus:community:activity:v40','aninexus:community:threads:v40'])localStorage.removeItem(k);window.AniNexusMediaState?.sync?.()})}
+async function allowAccountActions(page,user={id:'e2e-member'}){await page.evaluate(user=>{window.AniNexusAuth={...(window.AniNexusAuth||{}),requireAccount:async()=>user};document.documentElement.dataset.nxAuthState='authenticated'},user)}
+async function waitForLogin(page){await page.waitForURL(url=>{const current=new URL(url);return current.searchParams.get('p')==='/login'||current.pathname.replace(/\/+$/,'').endsWith('/login')},{timeout:15000});await expect(page.locator('.nx38-auth-page')).toBeVisible({timeout:15000})}
 const pixel='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 const portrait='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22150%22 viewBox=%220 0 100 150%22%3E%3Crect width=%22100%22 height=%22150%22 fill=%22%23ef2a5c%22/%3E%3Ccircle cx=%2250%22 cy=%2235%22 r=%2220%22 fill=%22white%22/%3E%3C/svg%3E';
 const imageBytes=Buffer.from('R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=','base64');
@@ -69,7 +71,7 @@ test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-07-v44.28.3')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-07-v44.28.4')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -574,6 +576,7 @@ test('Home character ranking favorites and reorders with internal counts',async(
   await page.emulateMedia({reducedMotion:'no-preference'});
   await page.setViewportSize({width:1440,height:900});
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  await allowAccountActions(page,{id:'character-member'});
   const section=page.locator('.nx47-character-ranking'),cards=section.locator('.nx47-character-card');
   await expect(section).toBeVisible({timeout:30000});
   await expect(cards).toHaveCount(10);
@@ -762,7 +765,7 @@ test('manga catalog mirrors the complete anime experience with reading-specific 
 
   await page.evaluate(()=>{
     window.__mangaActionRequests=[];
-    window.AniNexusAuth={...window.AniNexusAuth,enabled:true,api:async(path,options={})=>{
+    window.AniNexusAuth={...window.AniNexusAuth,enabled:true,requireAccount:async()=>({id:'manga-reader'}),api:async(path,options={})=>{
       const method=String(options.method||'GET').toUpperCase();
       window.__mangaActionRequests.push({path,method,body:options.body||null});
       if(path==='/api/me')return{user:{id:'manga-reader'}};
@@ -878,7 +881,7 @@ test('Home reading cards share anime actions and trailers play inside AniNexus',
   expect(readingLayout.scoreLeft).toBeLessThan(readingLayout.actionsLeft);expect(readingLayout.scoreRight).toBeLessThan(readingLayout.actionsLeft);
   await expect(reading.locator('[data-manga-list]')).toHaveCSS('width','34px');
   await expect(reading.locator('[data-manga-fav]')).toHaveCSS('height','34px');
-  await page.evaluate(()=>{window.__mangaWrites=[];window.AniNexusAuth={...window.AniNexusAuth,enabled:true,api:async(path,options={})=>{window.__mangaWrites.push({path,method:options.method||'GET',body:options.body||null});if(path==='/api/me')return{user:{id:'manga-test'}};if((options.method||'GET')==='GET')return{items:[]};return{ok:true}}};dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:{id:'manga-test'}}}))});
+  await page.evaluate(()=>{window.__mangaWrites=[];window.AniNexusAuth={...window.AniNexusAuth,enabled:true,requireAccount:async()=>({id:'manga-test'}),api:async(path,options={})=>{window.__mangaWrites.push({path,method:options.method||'GET',body:options.body||null});if(path==='/api/me')return{user:{id:'manga-test'}};if((options.method||'GET')==='GET')return{items:[]};return{ok:true}}};dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:{id:'manga-test'}}}))});
   const heart=reading.locator('[data-manga-fav]');
   await expect(heart).toBeEnabled();
   await heart.click();
@@ -972,10 +975,34 @@ test('Home Catalog Programação Temporadas and Meus Animes share compact circul
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('button[data-fav]').first()).toBeVisible({timeout:30000});const ids=await page.evaluate(()=>[...document.querySelectorAll('button[data-fav]')].map(x=>Number(x.dataset.fav)).filter(Boolean).slice(0,1));await page.evaluate(ids=>{const id=ids[0],now=Date.now();localStorage.setItem('aninexus:favorites',JSON.stringify([id]));localStorage.setItem('aninexus:mediaState:v2',JSON.stringify({[id]:{status:'CURRENT',progress:1,score:null,reaction:'',updatedAt:now}}));localStorage.setItem('aninexus:mediaState:v1',localStorage.getItem('aninexus:mediaState:v2'))},ids);const id=ids[0];await page.route('**/api/me/library',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({user:{username:'teste'},list:[{media_id:id,status:'CURRENT',progress:1,media:anime(id)}],favorites:[{media_id:id,media:anime(id)}],impressions:[],impressionCount:0})}));await page.goto(pageUrl('/meus-animes'),{waitUntil:'domcontentloaded'});const lb=page.locator('.nx38-library-card-actions button[data-fav]').first();await expect(lb).toBeVisible({timeout:30000});await expect(lb).toHaveCSS('width','34px');await expect(lb).toHaveCSS('height','34px');await expect(lb).toHaveCSS('border-radius',/50%|1[67]px/)
 });
 
-test('favorite double click and burst represent one intention',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('[data-nx35-home].data-ready')).toBeVisible({timeout:30000});await expect.poll(()=>page.evaluate(()=>Boolean(window.AniNexusMediaActions&&window.AniNexusMediaState))).toBe(true);await clear(page);const b=page.locator('button[data-fav]').first();await expect(b).toBeVisible({timeout:30000});await b.dblclick({delay:40});await expect(b).toHaveClass(/active/);await page.waitForTimeout(380);await b.click();await expect(b).not.toHaveClass(/active/);await page.waitForTimeout(380);await b.evaluate(el=>{for(let i=0;i<7;i++)el.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}))});await expect(b).toHaveClass(/active/)});
+test('favorite double click and burst represent one intention',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('[data-nx35-home].data-ready')).toBeVisible({timeout:30000});await expect.poll(()=>page.evaluate(()=>Boolean(window.AniNexusMediaActions&&window.AniNexusMediaState))).toBe(true);await allowAccountActions(page);await clear(page);const b=page.locator('button[data-fav]').first();await expect(b).toBeVisible({timeout:30000});await b.dblclick({delay:40});await expect(b).toHaveClass(/active/);await page.waitForTimeout(380);await b.click();await expect(b).not.toHaveClass(/active/);await page.waitForTimeout(380);await b.evaluate(el=>{for(let i=0;i<7;i++)el.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}))});await expect(b).toHaveClass(/active/)});
+
+test('visitors reach login before favorite list or character state can change',async({page})=>{
+  await mockInternalRankings(page);
+  const privateWrites=[];
+  page.on('request',request=>{if(request.method()!=='GET'&&/\/api\/me\//.test(new URL(request.url()).pathname))privateWrites.push(request.url())});
+
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('button[data-fav]').first()).toBeVisible({timeout:30000});await clear(page);const favoritesBefore=await page.evaluate(()=>localStorage.getItem('aninexus:favorites'));
+  await page.locator('button[data-fav]').first().click();await waitForLogin(page);
+  expect(await page.evaluate(()=>localStorage.getItem('aninexus:favorites'))).toBe(favoritesBefore);expect(privateWrites).toHaveLength(0);
+
+  await page.goto(pageUrl('/animes/programacao'),{waitUntil:'domcontentloaded'});await expect(page.locator('[data-nx18-status]').first()).toBeVisible({timeout:30000});await clear(page);
+  await page.locator('[data-nx18-status]').first().click();await waitForLogin(page);
+  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('aninexus:mediaState:v2')||'{}'))).toEqual({});expect(privateWrites).toHaveLength(0);
+
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});const character=page.locator('[data-character-favorite]').first();await expect(character).toBeVisible({timeout:30000});
+  await character.click();await waitForLogin(page);expect(privateWrites).toHaveLength(0);
+});
+
+test('visitors reach login before publishing impressions or news comments',async({page})=>{
+  const writes=[];page.on('request',request=>{if(request.method()==='POST'&&/\/(?:impressions|comments)(?:\/|$)/.test(new URL(request.url()).pathname))writes.push(request.url())});
+  await page.goto(pageUrl('/anime/anime-teste-101'),{waitUntil:'domcontentloaded'});const impression=page.locator('.nx42-impression-form');await expect(impression).toBeVisible({timeout:30000});await impression.locator('textarea').fill('Uma impressão de visitante');await impression.getByRole('button',{name:'Publicar impressão'}).click();await waitForLogin(page);expect(writes).toHaveLength(0);
+
+  await page.goto(pageUrl('/noticias'),{waitUntil:'domcontentloaded'});const article=page.locator('.nx35-ncard[href]').first();await expect(article).toBeVisible({timeout:30000});await article.click();const comment=page.locator('.nx42-news-comment-form');await expect(comment).toBeVisible({timeout:30000});await comment.locator('textarea').fill('Um comentário de visitante');await comment.getByRole('button',{name:'Publicar comentário'}).click();await waitForLogin(page);expect(writes).toHaveLength(0);
+});
 
 test('Programação opens one modal and saved status reaches Home and Community',async({page})=>{
-  await page.goto(pageUrl('/animes/programacao'),{waitUntil:'domcontentloaded'});await clear(page);const card=page.locator('.nx18-card').first();await expect(card).toBeVisible({timeout:30000});const list=card.locator('button[data-nx18-status]').first();await expect(list).toBeVisible();const id=Number(await list.getAttribute('data-nx18-status'));const animeTitle=(await card.locator('h3').first().textContent())?.trim()||'';expect(id).toBeGreaterThan(0);
+  await page.goto(pageUrl('/animes/programacao'),{waitUntil:'domcontentloaded'});await allowAccountActions(page);await clear(page);const card=page.locator('.nx18-card').first();await expect(card).toBeVisible({timeout:30000});const list=card.locator('button[data-nx18-status]').first();await expect(list).toBeVisible();const id=Number(await list.getAttribute('data-nx18-status'));const animeTitle=(await card.locator('h3').first().textContent())?.trim()||'';expect(id).toBeGreaterThan(0);
   await list.click();await expect(page.locator('.nx20-media-layer')).toHaveCount(1,{timeout:20000});await expect(page.locator('.nx20-modal')).toHaveCount(1);await page.locator('[data-nx20-status="CURRENT"]').click();const progress=page.locator('[data-nx20-progress]');if(await progress.count())await progress.fill('1');await page.locator('[data-nx20-save]').click();const savedStatus=await page.evaluate(id=>JSON.parse(localStorage.getItem('aninexus:mediaState:v2')||'{}')[id]?.status,id);expect(savedStatus).toBe('CURRENT');
   const activity=await page.evaluate(id=>(JSON.parse(localStorage.getItem('aninexus:community:activity:v40')||'[]')).find(x=>Number(x.media_id)===id&&x.status==='CURRENT'),id);expect(activity).toBeTruthy();
   await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('#nx35CommunityHero')).toContainText('está assistindo',{timeout:15000});if(animeTitle)await expect(page.locator('#nx35CommunityHero')).toContainText(animeTitle,{timeout:15000});
@@ -1387,7 +1414,7 @@ test('Catalog uses two comfortable columns on phones and scales through tablet',
   }
 });
 
-test('Catalog opens dedicated anime detail without action click leaking to card',async({page})=>{const hosted=new URL(ORIGIN).hostname.endsWith('github.io');await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});const card=page.locator('.nx21-card').first();await expect(card).toBeVisible({timeout:30000});const before=page.url(),fav=card.locator('button[data-fav]').first();await fav.click();expect(page.url()).toBe(before);await page.waitForTimeout(380);await card.locator('h3').click();await page.waitForURL(u=>{const url=new URL(u);return url.searchParams.get('p')?.startsWith('/anime/')===true||url.pathname.startsWith('/anime/')},{timeout:15000});if(!hosted){const selectedPath=new URL(page.url()).pathname;await page.goto(pageUrl(selectedPath),{waitUntil:'domcontentloaded'})}await expect(page.locator('.nx22-detail')).toBeVisible({timeout:30000})});
+test('Catalog opens dedicated anime detail without action click leaking to card',async({page})=>{const hosted=new URL(ORIGIN).hostname.endsWith('github.io');await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});await allowAccountActions(page);const card=page.locator('.nx21-card').first();await expect(card).toBeVisible({timeout:30000});const before=page.url(),fav=card.locator('button[data-fav]').first();await fav.click();expect(page.url()).toBe(before);await page.waitForTimeout(380);await card.locator('h3').click();await page.waitForURL(u=>{const url=new URL(u);return url.searchParams.get('p')?.startsWith('/anime/')===true||url.pathname.startsWith('/anime/')},{timeout:15000});if(!hosted){const selectedPath=new URL(page.url()).pathname;await page.goto(pageUrl(selectedPath),{waitUntil:'domcontentloaded'})}await expect(page.locator('.nx22-detail')).toBeVisible({timeout:30000})});
 
 test('mobile openings load only the selected video and stay inside the viewport',async({page})=>{await page.setViewportSize({width:390,height:844});let mediaRequests=0;await page.route('https://api.animethemes.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(themeApiData())}));await page.route('https://v.animethemes.moe/**',route=>{mediaRequests++;return route.fulfill({status:200,contentType:'video/webm',body:''})});await page.goto(pageUrl('/anime/anime-teste-101'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx22-detail')).toBeVisible({timeout:30000});await page.getByRole('tab',{name:'Aberturas & encerramentos'}).click();await expect(page.locator('#nx22Themes')).toHaveAttribute('data-state','ready',{timeout:15000});await expect(page.locator('.nx22-theme-card')).toHaveCount(24);expect(mediaRequests).toBe(0);await expect(page.locator('.nx22-theme-card video[src]')).toHaveCount(0);await noOverflow(page);await page.locator('[data-nx22-theme-play]').first().click();await expect(page.locator('.nx22-theme-card video[src]')).toHaveCount(1);await expect(page.locator('.nx22-theme-card video[preload="metadata"]')).toHaveCount(1);await expect(page.locator('.nx22-theme-card:not(.is-loaded) video[src]')).toHaveCount(0);await noOverflow(page)});
 

@@ -4,7 +4,7 @@
 
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const BUILD='44.24.5';
+  const BUILD='44.28.4';
   const FAV='[data-fav],[data-nx-fav],[data-nx-detail-fav],[data-nx18-fav],[data-nx17-fav],[data-manga-fav]';
   const LIST='[data-list],[data-nx-list],[data-nx-detail-list],[data-nx18-status],[data-nx17-list],[data-manga-list]';
   const ACTION=`${FAV},${LIST}`;
@@ -28,6 +28,7 @@
   const stop=e=>{e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()};
   const pop=b=>{if(!b)return;b.classList.remove('nx39-pop');void b.offsetWidth;b.classList.add('nx39-pop');setTimeout(()=>b.classList.remove('nx39-pop'),260)};
   const busy=(b,ms)=>{if(!b)return;b.dataset.nx39Busy='1';setTimeout(()=>{if(b.isConnected)delete b.dataset.nx39Busy},ms)};
+  const requireAccount=async()=>{const auth=window.AniNexusAuth;if(typeof auth?.requireAccount==='function')return auth.requireAccount();location.assign(IS_PAGES?`${BASE}/?build=${BUILD}&p=${encodeURIComponent('/login')}`:'/login');return null};
 
   function releaseList(){listOpening=false;clearTimeout(listTimer)}
   function waitApi(button,timeout=1800){const ready=api(button);if(ready)return Promise.resolve(ready);return new Promise(resolve=>{const started=performance.now(),timer=setInterval(()=>{const a=api(button);if(a||performance.now()-started>=timeout){clearInterval(timer);resolve(a||null)}},20)})}
@@ -78,6 +79,7 @@
 
   async function favoriteAction(b){
     const id=idFav(b);if(!Number.isSafeInteger(id)||id<=0)return;
+    if(!await requireAccount())return;
     const key=`${b.dataset.nxMediaType}:${id}`,last=favLock.get(key);if(last!==undefined&&now()-last<340)return;
     favLock.set(key,now());busy(b,280);pop(b);
     const a=await waitApi(b);if(!a)return;
@@ -86,6 +88,7 @@
   async function listAction(b){
     const id=idList(b);if(!Number.isSafeInteger(id)||id<=0)return;
     if(listOpening||document.querySelector('.nx20-media-layer'))return;
+    if(!await requireAccount())return;
     listOpening=true;busy(b,650);pop(b);clearTimeout(listTimer);listTimer=setTimeout(releaseList,5000);
     try{const a=await waitApi(b);if(!a)return;b.focus({preventScroll:true});await a.open(id)}catch{}finally{releaseList();syncBurst()}
   }

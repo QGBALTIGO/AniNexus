@@ -467,7 +467,7 @@
       const storage=`nx:v8:impressions:${m.id}`;
       let items=[];try{items=JSON.parse(localStorage.getItem(storage)||'[]');if(!Array.isArray(items))items=[];}catch{}
       const draw=()=>{const h=root.querySelector('#nxImpressions');if(h)h.innerHTML=items.map(x=>`<article class="nx-impression"><strong>Você</strong><p>${esc(x)}</p></article>`).join('');};draw();
-      root.querySelector('.nx-post-impression')?.addEventListener('click',()=>{const t=root.querySelector('#nxImpression'),v=t?.value.trim();if(!v)return;items.unshift(v.slice(0,1000));items=items.slice(0,30);try{localStorage.setItem(storage,JSON.stringify(items));}catch{}t.value='';draw();});
+      root.querySelector('.nx-post-impression')?.addEventListener('click',async()=>{const t=root.querySelector('#nxImpression'),v=t?.value.trim();if(!v)return;const auth=window.AniNexusAuth;if(typeof auth?.requireAccount!=='function'){setRoute('/login');dispatchEvent(new PopStateEvent('popstate'));return}if(!await auth.requireAccount())return;items.unshift(v.slice(0,1000));items=items.slice(0,30);try{localStorage.setItem(storage,JSON.stringify(items));}catch{}t.value='';draw();});
     }
     root.querySelectorAll('[data-nx-related]').forEach(el=>el.onclick=()=>{const id=Number(el.dataset.nxRelated);const rel=(m.relations?.edges||[]).map(x=>x.node).find(x=>x?.id===id)||(m.recommendations?.nodes||[]).map(x=>x.mediaRecommendation).find(x=>x?.id===id);if(rel)openAnime(rel);});
     root.querySelector('[data-nx-share]')?.addEventListener('click',async()=>{try{if(navigator.share)await navigator.share({title:titleOf(m),url:location.href});else await navigator.clipboard.writeText(location.href);}catch{}});

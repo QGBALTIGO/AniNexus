@@ -6,7 +6,7 @@
   const app = document.querySelector('#app');
   if (!app) return;
 
-  const BUILD = '44.28.3';
+  const BUILD = '44.28.4';
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
   const ROUTES = new Set(['/animes/onde-assistir', '/animes/dublados', '/animes/estudios']);

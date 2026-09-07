@@ -11,7 +11,7 @@
   const PUBLISHABLE_KEY = String(config.clerkPublishableKey || '');
   const ENABLED = config.authEnabled === true && /^https:\/\//.test(API_ORIGIN) && /^pk_(?:test|live)_/.test(PUBLISHABLE_KEY);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-  const routeUrl = path => IS_PAGES ? `${BASE}/?build=44.6.0&p=${encodeURIComponent(path)}` : path;
+  const routeUrl = path => IS_PAGES ? `${BASE}/?build=44.28.4&p=${encodeURIComponent(path)}` : path;
   const go = (path, replace = false) => location[replace ? 'replace' : 'assign'](routeUrl(path));
   const avatarMarkup = (user, options = {}) => window.AniNexusAvatar?.markup(user, options) || `<img src="${BASE}/assets/avatars/mascot-pink.png" alt="">`;
   let clerkPromise = null;
@@ -136,11 +136,23 @@
     const clerk = await loadClerk();
     return clerk?.user || null;
   }
+  function requestLogin() {
+    go('/login');
+    return null;
+  }
+  async function requireAccount() {
+    if (!ENABLED) return requestLogin();
+    try {
+      const user = await getUser();
+      if (user) return user;
+    } catch {}
+    return requestLogin();
+  }
   async function signOut() {
     const clerk = await loadClerk();
     await clerk?.signOut({ redirectUrl: routeUrl('/') });
   }
-  window.AniNexusAuth = Object.freeze({ enabled: ENABLED, ready: loadClerk, api, publicApi, getUser, signOut, apiOrigin: API_ORIGIN });
+  window.AniNexusAuth = Object.freeze({ enabled: ENABLED, ready: loadClerk, api, publicApi, getUser, requireAccount, requestLogin, signOut, apiOrigin: API_ORIGIN });
 
   function activate() {
     document.body.classList.remove('nx35-news-active', 'nx35-home-active', 'aqx-home-active');

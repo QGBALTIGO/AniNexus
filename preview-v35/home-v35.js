@@ -85,6 +85,7 @@
     if(!response.ok)throw Object.assign(new Error(body?.error||`HTTP ${response.status}`),{status:response.status});
     return body;
   }
+  async function requireAccount(){const auth=window.AniNexusAuth;if(typeof auth?.requireAccount==='function')return auth.requireAccount();go('/login');return null}
   async function loadCharacterRanking(){
     try{
       const data=await publicJson('/api/characters/ranking');
@@ -123,6 +124,7 @@
     root.addEventListener('click',async event=>{
       const button=event.target.closest('[data-character-favorite]');if(!button)return;
       const id=Number(button.dataset.characterFavorite),item=characterState.items.find(candidate=>candidate.id===id);if(!item||characterState.pending.has(id))return;
+      if(!await requireAccount())return;
       const wasFavorite=characterState.favorites.has(id),previousCount=Number(item.favoriteCount)||0,nextFavorite=!wasFavorite;
       nextFavorite?characterState.favorites.add(id):characterState.favorites.delete(id);item.favoriteCount=Math.max(0,previousCount+(nextFavorite?1:-1));characterState.pending.add(id);draw(id,true);
       try{
