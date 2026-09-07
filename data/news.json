@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T15:17:38.812Z",
+  "generatedAt": "2026-09-07T19:12:21.398Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,17 +55,17 @@
   ],
   "stats": {
     "collected": 46,
-    "grouped": 21,
-    "published": 21,
-    "newStories": 21,
-    "fullArticles": 21,
+    "grouped": 18,
+    "published": 18,
+    "newStories": 18,
+    "fullArticles": 18,
     "previewArticles": 0,
-    "avgWords": 338,
-    "withHeroImage": 21,
-    "withOrderedMedia": 17,
+    "avgWords": 359,
+    "withHeroImage": 18,
+    "withOrderedMedia": 14,
     "skippedTranslation": 0,
-    "skippedQuality": 23,
-    "durationMs": 4072
+    "skippedQuality": 27,
+    "durationMs": 2857
   },
   "items": [
     {
@@ -1319,7 +1319,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 337,
-      "qualityScore": 0.981,
+      "qualityScore": 0.921,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -1885,7 +1885,7 @@
       "sourceCount": 1,
       "readingMinutes": 3,
       "wordCount": 445,
-      "qualityScore": 0.997,
+      "qualityScore": 0.937,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -5480,6 +5480,290 @@
       }
     },
     {
+      "id": "animenew-01c0f3ef",
+      "slug": "pokemon-wild-card-novo-filme-anunciado-para-2027-animenew-01c0f3ef",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Pokémon: Wild Card – Novo filme anunciado para 2027",
+      "originalTitle": "Pokémon: Wild Card – Novo filme anunciado para 2027",
+      "summary": "A franquia Pokémon ganhará um novo filme de anime em 2027. Intitulado Pokémon: Wild Card, o longa será produzido pela CloverWorks. A The Pokémon Company anunciou o filme durante a cerimônia de encerramento do Pokémon World Championships 2026, realizado em San Francisco.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Cinema",
+        "Notícias",
+        "CloverWorks",
+        "Pokémon",
+        "Pokémon: Wild Card"
+      ],
+      "url": "https://animenew.com.br/pokemon-wild-card-filme-anime-2027",
+      "sourceUrl": "https://animenew.com.br/pokemon-wild-card-filme-anime-2027",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/08/Pokemon-Wild-Card-Novo-filme-anunciado-para-2027.webp",
+      "mediaQuery": "Pokémon: Wild Card – Novo filme anunciado para 2027",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/08/Pokemon-Wild-Card-scaled.webp",
+          "alt": "Pokémon Wild Card",
+          "caption": "© Nintendo/Creatures Inc./GAME FREAK inc. © Pokémon: Wild Card Project"
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A franquia Pokémon ganhará um novo filme de anime em 2027. Intitulado Pokémon: Wild Card, o longa será produzido pela CloverWorks. A The Pokémon Company anunciou o filme durante a cerimônia de encerramento do Pokémon World Championships 2026, realizado em San Francisco.",
+          "runs": [
+            {
+              "text": "A franquia "
+            },
+            {
+              "text": "Pokémon",
+              "href": "https://animenew.com.br/tag/pokemon/"
+            },
+            {
+              "text": " ganhará um novo filme de anime em 2027. Intitulado "
+            },
+            {
+              "text": "Pokémon: Wild Card",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o longa será produzido pela "
+            },
+            {
+              "text": "CloverWorks",
+              "href": "https://animenew.com.br/studio/6222/cloverworks"
+            },
+            {
+              "text": ". A "
+            },
+            {
+              "text": "The Pokémon Compan",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "y anunciou o filme durante a cerimônia de encerramento do "
+            },
+            {
+              "text": "Pokémon World Championships 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", realizado em San Francisco."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "FX Fighter Kurumi-chan estreia em 1º de outubro",
+              "runs": [
+                {
+                  "text": "FX Fighter Kurumi-chan estreia em 1º de outubro",
+                  "href": "https://animenew.com.br/fx-fighter-kurumi-chan-estreia-outubro"
+                }
+              ]
+            },
+            {
+              "text": "My Happy Marriage ganha especial de 3 episódios",
+              "runs": [
+                {
+                  "text": "My Happy Marriage ganha especial de 3 episódios",
+                  "href": "https://animenew.com.br/my-happy-marriage-especial-3-episodios-outubro"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A direção ficará com Katsuhiko Kitada, que trabalhou como diretor de unidade em The First Slam Dunk e diretor de animação em Attack on Titan. Akemi Hayashi, conhecida por Lazarus e Banana Fish, será responsável pelo design dos personagens. A Story Inc. cuidará da produção.",
+          "runs": [
+            {
+              "text": "A direção ficará com "
+            },
+            {
+              "text": "Katsuhiko Kitada",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que trabalhou como diretor de unidade em "
+            },
+            {
+              "text": "The First Slam Dunk",
+              "href": "https://animenew.com.br/anime/128207/the-first-slam-dunk"
+            },
+            {
+              "text": " e diretor de animação em "
+            },
+            {
+              "text": "Attack on Titan",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Akemi Hayashi, conhecida por Lazarus e "
+            },
+            {
+              "text": "Banana Fish",
+              "href": "https://animenew.com.br/anime/100388/banana-fish"
+            },
+            {
+              "text": ", será responsável pelo design dos personagens. A Story Inc. cuidará da produção."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Pokémon Wild Card acompanha jogador de TCG",
+          "runs": [
+            {
+              "text": "Pokémon Wild Card acompanha jogador de TCG"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Segundo a descrição oficial, Pokémon: Wild Card contará a história de um jogador de Pokémon TCG e seu parceiro Mimikyu. A trama acompanhará a dupla enquanto eles colocam suas cartas na mesa para tentar alcançar seus objetivos.",
+          "runs": [
+            {
+              "text": "Segundo a descrição oficial, "
+            },
+            {
+              "text": "Pokémon: Wild Card",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " contará a história de um jogador de Pokémon TCG e seu parceiro Mimikyu. "
+            },
+            {
+              "text": "A trama acompanhará a dupla enquanto eles colocam suas cartas na mesa para tentar alcançar seus objetivos.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/08/Pokemon-Wild-Card-scaled.webp",
+          "alt": "Pokémon Wild Card",
+          "caption": "© Nintendo/Creatures Inc./GAME FREAK inc. © Pokémon: Wild Card Project"
+        },
+        {
+          "type": "paragraph",
+          "text": "O longa será o 24º filme de anime da franquia e marcará o retorno de uma produção cinematográfica inédita desde Pokémon the Movie: Secrets of the Jungle, lançado no Japão em dezembro de 2020.",
+          "runs": [
+            {
+              "text": "O longa será o 24º filme de anime da franquia e marcará o retorno de uma produção cinematográfica inédita desde "
+            },
+            {
+              "text": "Pokémon the Movie: Secrets of the Jungle",
+              "href": "https://animenew.com.br/anime/114564/pocket-monsters-coco"
+            },
+            {
+              "text": ", lançado no Japão em dezembro de 2020."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ademais até o momento, a produção não possui uma data específica de estreia em 2027.",
+          "runs": [
+            {
+              "text": "Ademais até o momento, a produção não possui uma data específica de estreia em 2027."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://www.pokemon.com/us/news/new-feature-length-animated-film-pokemon-wild-card-coming-soon"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Pokémon: Wild Card – Novo filme anunciado para 2027.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Pokémon: Wild Card – Novo filme anunciado para 2027",
+              "href": "https://animenew.com.br/pokemon-wild-card-filme-anime-2027/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-01T01:29:03.000Z",
+      "updatedAt": "2026-09-01T01:29:03.000Z",
+      "expiresAt": "2026-09-08T01:29:03.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/pokemon-wild-card-filme-anime-2027",
+          "publishedAt": "2026-09-01T01:29:03.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 230,
+      "qualityScore": 0.908,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
       "id": "animenew-a134af5c",
       "slug": "fx-fighter-kurumi-chan-estreia-em-1-de-outubro-animenew-a134af5c",
       "source": "AnimeNew",
@@ -6188,1317 +6472,6 @@
         "ingestMode": "rss-full",
         "contentMode": "full",
         "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-b3fa7d79",
-      "slug": "baki-spin-off-isekai-tem-adaptacao-para-anime-anunciada-jbox-b3fa7d79",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Baki: Spin-off isekai tem adaptação para animê anunciada",
-      "originalTitle": "Baki: Spin-off isekai tem adaptação para animê anunciada",
-      "summary": "Foi anunciado pelo TMS Entertainment que o mangá Baki Gaiden: Retsu Kaioh wa Isekai Tensei Shitemo Ikkou ni Kamawan (algo como Retsu Kaioh Não se Incomoda de Ter Reencarnado em Outro Mundo) vai ganhar uma adaptação para animê. A obra é um spin-off isekai protagonizado por Retsu Kaioh.",
-      "author": "Teke",
-      "tags": [
-        "Anime",
-        "Baki",
-        "Baki Gaiden: Retsu Kaioh wa Isekai Tensei Shitemo Ikkou ni Kamawan",
-        "Baki spin-off isekai",
-        "Baki-Dou"
-      ],
-      "url": "https://www.jbox.com.br/2026/08/31/baki-spin-off-isekai-tem-adaptacao-para-anime-anunciada",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/31/baki-spin-off-isekai-tem-adaptacao-para-anime-anunciada",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/bakigaidenretsu-destacada.jpg",
-      "mediaQuery": "Baki: Spin-off isekai tem adaptação para animê anunciada",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/hHijPwtSvow"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Foi anunciado pelo TMS Entertainment que o mangá Baki Gaiden: Retsu Kaioh wa Isekai Tensei Shitemo Ikkou ni Kamawan (algo como Retsu Kaioh Não se Incomoda de Ter Reencarnado em Outro Mundo) vai ganhar uma adaptação para animê. A obra é um spin-off isekai protagonizado por Retsu Kaioh.",
-          "runs": [
-            {
-              "text": "Foi anunciado pelo "
-            },
-            {
-              "text": "TMS Entertainment",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " que o mangá "
-            },
-            {
-              "text": "Baki Gaiden: Retsu Kaioh wa Isekai Tensei Shitemo Ikkou ni Kamawan",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " (algo como "
-            },
-            {
-              "text": "Retsu Kaioh Não se Incomoda de Ter Reencarnado em Outro Mundo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") vai ganhar uma adaptação para animê. A obra é um spin-off isekai protagonizado por Retsu Kaioh."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A adaptação ainda não ganhou previsão de estreia ou mais detalhes. Confira o vídeo de anúncio:",
-          "runs": [
-            {
-              "text": "A adaptação ainda não ganhou previsão de estreia ou mais detalhes. Confira o vídeo de anúncio:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=hHijPwtSvow",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/hHijPwtSvow"
-        },
-        {
-          "type": "paragraph",
-          "text": "O spin-off é uma obra roteirizada por Sai Ihara e ilustrada por Eiji Murai e que está em publicação desde 2020 na edição mensal da Shonen Champion. Já são 16 volumes encadernados pela Akita Shoten.",
-          "runs": [
-            {
-              "text": "O spin-off é uma obra roteirizada por "
-            },
-            {
-              "text": "Sai Ihara",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e ilustrada por "
-            },
-            {
-              "text": "Eiji Murai",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e que está em publicação desde 2020 na edição mensal da "
-            },
-            {
-              "text": "Shonen Champion",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Já são "
-            },
-            {
-              "text": "16 volumes encadernados ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "pela "
-            },
-            {
-              "text": "Akita Shoten",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na história, Retsu Kaioh vai parar em mundo de fantasia medieval depois dos acontecimentos envolvendo seu duelo contra Miyamoto Musashi em BAKI-DOU. Retsu é um dos personagens clássicos de Baki, estando presente na história desde a primeira parte do mangá.",
-          "runs": [
-            {
-              "text": "Na história, Retsu Kaioh vai parar em mundo de fantasia medieval depois dos acontecimentos envolvendo seu duelo contra Miyamoto Musashi em "
-            },
-            {
-              "text": "BAKI-DOU",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Retsu é um dos personagens clássicos de "
-            },
-            {
-              "text": "Baki",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", estando presente na história desde a primeira parte do mangá."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: TMS Entertainment (YouTube)",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "TMS Entertainment (YouTube)",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://youtu.be/hHijPwtSvow"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-08-31T18:20:53.000Z",
-      "updatedAt": "2026-08-31T18:22:07.000Z",
-      "expiresAt": "2026-09-07T18:20:53.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/31/baki-spin-off-isekai-tem-adaptacao-para-anime-anunciada",
-          "publishedAt": "2026-08-31T18:20:53.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 1,
-      "wordCount": 160,
-      "qualityScore": 0.898,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 8,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-e4e5aead",
-      "slug": "pokemon-wild-card-e-anunciado-como-novo-filme-da-franquia-jbox-e4e5aead",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Pokémon: Wild Card’ é anunciado como novo filme da franquia",
-      "originalTitle": "‘Pokémon: Wild Card’ é anunciado como novo filme da franquia",
-      "summary": "Foi anunciado pela The Pokémon Company um novo filme para a franquia. Pokémon: Wild Card tem história focada nas Estampas Ilustradas, as cartas colecionáveis que contam com seu próprio formato de jogo.",
-      "author": "Teke",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "TCG",
-        "Pokémon Estampas Ilustradas",
-        "pokemon tcg",
-        "Pokémon: Wild Card"
-      ],
-      "url": "https://www.jbox.com.br/2026/08/31/pokemon-wild-card-e-anunciado-como-novo-filme-da-franquia",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/31/pokemon-wild-card-e-anunciado-como-novo-filme-da-franquia",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/pokemon-wild-card-destacada.jpg",
-      "mediaQuery": "‘Pokémon: Wild Card’ é anunciado como novo filme da franquia",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/DfMmvbw4wsw"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Foi anunciado pela The Pokémon Company um novo filme para a franquia. Pokémon: Wild Card tem história focada nas Estampas Ilustradas, as cartas colecionáveis que contam com seu próprio formato de jogo.",
-          "runs": [
-            {
-              "text": "Foi anunciado pela "
-            },
-            {
-              "text": "The Pokémon Company",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " um novo filme para a franquia. "
-            },
-            {
-              "text": "Pokémon: Wild Card",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " tem história focada nas "
-            },
-            {
-              "text": "Estampas Ilustradas",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", as cartas colecionáveis que contam com seu próprio formato de jogo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O filme tem estreia prevista para 2027. Confira o vídeo de anúncio:",
-          "runs": [
-            {
-              "text": "O filme tem estreia prevista para "
-            },
-            {
-              "text": "2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Confira o vídeo de anúncio:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=DfMmvbw4wsw",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/DfMmvbw4wsw"
-        },
-        {
-          "type": "paragraph",
-          "text": "Katsuhiko Kitada (diretor de animação em The Rolling Girls) assina a direção, enquanto o design de personagens é de Akemi Hayashi (Banana Fish). A produção da animação é pelo estúdio CloverWorks (Spy x Family, Bocchi the Rock!). O único detalhe até agora é que a história tem foco em um jogador do TCG de Pokémon e seu parceiro, um Mimikyu.",
-          "runs": [
-            {
-              "text": "Katsuhiko Kitada",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (diretor de animação em "
-            },
-            {
-              "text": "The Rolling Girls",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") assina a direção, enquanto o design de personagens é de "
-            },
-            {
-              "text": "Akemi Hayashi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Banana Fish",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "). A produção da animação é pelo estúdio "
-            },
-            {
-              "text": "CloverWorks ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "("
-            },
-            {
-              "text": "Spy x Family",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2023/01/02/spy-x-family-review-anime/"
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Bocchi the Rock!",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2023/01/11/bocchi-anime-resenha/"
-            },
-            {
-              "text": "). O único detalhe até agora é que a história tem foco em um jogador do TCG de "
-            },
-            {
-              "text": "Pokémon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e seu parceiro, um Mimikyu."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A última vez que a franquia de monstrinhos ganhou um filme foi em 2020, quando foi lançado Pokémon: Segredos da Selva no Japão, história que ainda era protagonizada pelo saudoso Ash Ketchum. Antes desse longo hiato, a franquia tradicionalmente ganhava filmes animados todos os anos desde 1998, sendo que eles eram extensões das aventuras de Ash. Até então, os personagens de Horizontes não tiveram a chance de brilhar nas telonas.",
-          "runs": [
-            {
-              "text": "A última vez que a franquia de monstrinhos ganhou um filme foi em 2020, quando foi lançado "
-            },
-            {
-              "text": "Pokémon: Segredos da Selva",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " no Japão, história que ainda era protagonizada pelo saudoso Ash Ketchum. Antes desse longo hiato, a franquia tradicionalmente ganhava filmes animados todos os anos desde 1998, sendo que eles eram extensões das aventuras de Ash. Até então, os personagens de "
-            },
-            {
-              "text": "Horizontes",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " não tiveram a chance de brilhar nas telonas."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Wild Card não vai ser a primeira produção animada baseada no universo das Estampas Ilustradas. Em 2023, a franquia ganhou uma animação chamada Pokémon: Trilha para o Cume, série de quatro episódios que trouxe foco para o universo das cartas.",
-          "runs": [
-            {
-              "text": "Wild Card",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " não vai ser a primeira produção animada baseada no universo das "
-            },
-            {
-              "text": "Estampas Ilustradas",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Em 2023, a franquia ganhou uma animação chamada "
-            },
-            {
-              "text": "Pokémon: Trilha para o Cume",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2023/08/11/pokemon-trilha-para-o-cume-estreia-dublado-no-canal-oficial/"
-            },
-            {
-              "text": ", série de quatro episódios que trouxe foco para o universo das cartas."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site oficial de Pokémon",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Site oficial de Pokémon",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.pokemon.com/us/news/new-feature-length-animated-film-pokemon-wild-card-coming-soon"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-08-31T18:01:06.000Z",
-      "updatedAt": "2026-08-31T18:02:23.000Z",
-      "expiresAt": "2026-09-07T18:01:06.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/31/pokemon-wild-card-e-anunciado-como-novo-filme-da-franquia",
-          "publishedAt": "2026-08-31T18:01:06.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 236,
-      "qualityScore": 0.907,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 9,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-e56c1d31",
-      "slug": "sukuna-e-destaque-em-poster-da-4-temporada-de-jujutsu-kaisen-jbox-e56c1d31",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Sukuna é destaque em pôster da 4ª temporada de ‘Jujutsu Kaisen’",
-      "originalTitle": "Sukuna é destaque em pôster da 4ª temporada de ‘Jujutsu Kaisen’",
-      "summary": "A TOHO Animation divulgou um novo pôster da 4ª temporada de Jujutsu Kaisen, com destaque para o vilão Sukuna.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "4ª temporada jujutsu kaisen",
-        "Gege Akutami",
-        "Jujutsu Kaisen",
-        "Jujutsu Kaisen: Migração à Extinção",
-        "Jujutsu Kaisen: The Culling Game",
-        "ryomen sukuna"
-      ],
-      "url": "https://www.jbox.com.br/2026/08/31/sukuna-e-destaque-em-poster-da-4a-temporada-de-jujutsu-kaisen",
-      "sourceUrl": "https://www.jbox.com.br/2026/08/31/sukuna-e-destaque-em-poster-da-4a-temporada-de-jujutsu-kaisen",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/Jujutsu-Kaisen-4-temporada-destacada.jpg",
-      "mediaQuery": "Sukuna é destaque em pôster da 4ª temporada de ‘Jujutsu Kaisen’",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/Jujutsu-Kaisen-4-temporada.webp",
-          "alt": "Pôster da 4ª temporada de Jujutsu Kaisen",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A TOHO Animation divulgou um novo pôster da 4ª temporada de Jujutsu Kaisen, com destaque para o vilão Sukuna.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "TOHO Animation",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " divulgou um novo pôster da 4ª temporada de "
-            },
-            {
-              "text": "Jujutsu Kaisen",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", com destaque para o vilão "
-            },
-            {
-              "text": "Sukuna",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além da arte principal, acompanhada da frase “Lembra quando eu disse que veríamos algo interessante” (em tradução livre), o pôster também ganhou uma versão animada, publicada nas redes sociais (confira no link abaixo, passando para o lado).",
-          "runs": [
-            {
-              "text": "Além da arte principal, acompanhada da frase "
-            },
-            {
-              "text": "“Lembra quando eu disse que veríamos algo interessante” ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "(em tradução livre), o pôster também ganhou uma versão animada, publicada nas redes sociais (confira no link abaixo, passando para o lado)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já no texto do post, a TOHO cita que o arco Migração à Extinção entrará em uma nova fase na 4ª temporada, mergulhando ainda mais no caos.",
-          "runs": [
-            {
-              "text": "Já no texto do post, a "
-            },
-            {
-              "text": "TOHO",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " cita que o arco "
-            },
-            {
-              "text": "Migração à Extinção",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " entrará em uma nova fase na 4ª temporada, mergulhando ainda mais no caos."
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "View this post on Instagram",
-          "runs": [
-            {
-              "text": " View this post on Instagram ",
-              "href": "https://www.instagram.com/p/DcnsxB6k57H/?utm_source=ig_embed&utm_campaign=loading"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/Jujutsu-Kaisen-4-temporada.webp",
-          "alt": "Pôster da 4ª temporada de Jujutsu Kaisen"
-        },
-        {
-          "type": "paragraph",
-          "text": "Sukuna está pronto para brincar um pouco mais | TOHO Animation/Divulgação",
-          "runs": [
-            {
-              "text": "Sukuna está pronto para brincar um pouco mais | TOHO Animation/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama do arco Migração à Extinção (também conhecido não oficialmente como “Jogo do Abate”) mostra personagens como Yuji Itadori, Megumi Fushiguro, Yuta Okkotsu e Panda em um jogo de vida ou morte orquestrado por Kenjaku.",
-          "runs": [
-            {
-              "text": "A trama do arco "
-            },
-            {
-              "text": "Migração à Extinção",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " (também conhecido não oficialmente como "
-            },
-            {
-              "text": "“Jogo do Abate”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") mostra personagens como "
-            },
-            {
-              "text": "Yuji Itadori",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Megumi Fushiguro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Yuta Okkotsu",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Panda",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " em um jogo de vida ou morte orquestrado por "
-            },
-            {
-              "text": "Kenjaku",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Jujutsu Kaisen chega ao Brasil prioritariamente pela Crunchyroll, que tem todas as temporadas disponíveis, incluindo o filme Jujutsu Kaisen 0 e o longa compilatório Hidden Inventory/Premature Death. As três temporadas do animê também podem ser conferidas via Netflix, HBO Max e Disney+, enquanto o Globoplay conta com o primeiro ano da produção.",
-          "runs": [
-            {
-              "text": "Jujutsu Kaisen",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " chega ao Brasil prioritariamente pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que tem todas as temporadas disponíveis, incluindo o filme "
-            },
-            {
-              "text": "Jujutsu Kaisen 0",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " e o longa compilatório "
-            },
-            {
-              "text": "Hidden Inventory/Premature Death",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ". As três temporadas do animê também podem ser conferidas via "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "HBO Max",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Disney+",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", enquanto o"
-            },
-            {
-              "text": " Globoplay",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " conta com o primeiro ano da produção."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já o mangá, assinado por Gege Akutami, foi publicado entre 2018 e 2024, e chegou ao Brasil pela Panini.",
-          "runs": [
-            {
-              "text": "Já o mangá, assinado por "
-            },
-            {
-              "text": "Gege Akutami",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", foi publicado entre 2018 e 2024, e chegou ao Brasil pela "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Instagram TOHO Animation",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Instagram TOHO Animation",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.instagram.com/tohoanimationen/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-08-31T17:45:15.000Z",
-      "updatedAt": "2026-08-31T17:47:02.000Z",
-      "expiresAt": "2026-09-07T17:45:15.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/08/31/sukuna-e-destaque-em-poster-da-4a-temporada-de-jujutsu-kaisen",
-          "publishedAt": "2026-08-31T17:45:15.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 227,
-      "qualityScore": 0.73,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-76737573",
-      "slug": "rascal-does-not-dream-ganha-novo-trailer-do-filme-final-animenew-76737573",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Rascal Does Not Dream ganha novo trailer do filme final",
-      "originalTitle": "Rascal Does Not Dream ganha novo trailer do filme final",
-      "summary": "O filme Rascal Does Not Dream of a Dear Friend (Seishun Buta Yarō wa Dear Friend no Yume o Minai) revelou seu segundo trailer, além da música-tema e um novo visual da personagem Miori Mitō. Assim a prévia apresenta a canção-tema “Suihei-sen wa Boku no Furukizu finale”, interpretada por Tōko Kirishima. A personagem também canta “Turn the World Upside Down” no longa.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Cinema",
-        "Notícias",
-        "Rascal Does Not Dream",
-        "Rascal Does Not Dream of a Dear Friend",
-        "Seishun Buta Yarō wa Dear Friend no Yume o Minai"
-      ],
-      "url": "https://animenew.com.br/rascal-does-not-dream-dear-friend-trailer",
-      "sourceUrl": "https://animenew.com.br/rascal-does-not-dream-dear-friend-trailer",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/08/Rascal-Does-Not-Dream-ganha-novo-trailer-do-filme-final.webp",
-      "mediaQuery": "Rascal Does Not Dream ganha novo trailer do filme final",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/08/Rascal-Does-Not-Dream-of-a-Dear-Friend.webp",
-          "alt": "Rascal Does Not Dream of a Dear Friend",
-          "caption": "©2024 鴨志田 一/KADOKAWA/青ブタ Project"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/ydmOU6gOi3k"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O filme Rascal Does Not Dream of a Dear Friend (Seishun Buta Yarō wa Dear Friend no Yume o Minai) revelou seu segundo trailer, além da música-tema e um novo visual da personagem Miori Mitō. Assim a prévia apresenta a canção-tema “Suihei-sen wa Boku no Furukizu finale”, interpretada por Tōko Kirishima. A personagem também canta “Turn the World Upside Down” no longa.",
-          "runs": [
-            {
-              "text": "O filme "
-            },
-            {
-              "text": "Rascal Does Not Dream of a Dear Friend",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Seishun Buta Yarō wa Dear Friend no Yume o Minai",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") revelou seu segundo trailer, além da música-tema e um novo visual da personagem "
-            },
-            {
-              "text": "Miori Mitō",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Assim a prévia apresenta a canção-tema “Suihei-sen wa Boku no Furukizu finale”, interpretada por "
-            },
-            {
-              "text": "Tōko Kirishima",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A personagem também canta “Turn the World Upside Down” no longa."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Arcanadea revela elenco e estreia para janeiro de 2027",
-              "runs": [
-                {
-                  "text": "Arcanadea revela elenco e estreia para janeiro de 2027",
-                  "href": "https://animenew.com.br/arcanadea-anime-estreia-janeiro-2027"
-                }
-              ]
-            },
-            {
-              "text": "My Crush’s Crush ganha adaptação para anime",
-              "runs": [
-                {
-                  "text": "My Crush’s Crush ganha adaptação para anime",
-                  "href": "https://animenew.com.br/my-crushs-crush-ganha-anime"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A produção realizará uma sessão antecipada em 4 de outubro, no cinema Shinjuku Wald 9, em Tóquio, com a presença do elenco.",
-          "runs": [
-            {
-              "text": "A produção realizará uma sessão antecipada em 4 de outubro, no cinema Shinjuku Wald 9, em Tóquio, com a presença do elenco."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=ydmOU6gOi3k",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/ydmOU6gOi3k"
-        },
-        {
-          "type": "paragraph",
-          "text": "O longa estreia nos cinemas japoneses em 16 de outubro de 2026. Contudo a produção é apresentada como o próximo passo rumo ao encerramento da história e compartilha o título com o 15º e último volume da série de novels.",
-          "runs": [
-            {
-              "text": "O longa estreia nos cinemas japoneses em "
-            },
-            {
-              "text": "16 de outubro de 2026",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Contudo a produção é apresentada como o próximo passo rumo ao encerramento da história e compartilha o título com o 15º e último volume da série de novels."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/08/Rascal-Does-Not-Dream-of-a-Dear-Friend.webp",
-          "alt": "Rascal Does Not Dream of a Dear Friend",
-          "caption": "©2024 鴨志田 一/KADOKAWA/青ブタ Project"
-        },
-        {
-          "type": "heading",
-          "text": "Elenco e produção",
-          "runs": [
-            {
-              "text": "Elenco e produção"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Kaito Ishikawa, Asami Seto, Sora Amamiya, Aya Yamane, Konomi Kohara, Manaka Iwami, Reina Ueda, Nao Tōyama, Atsumi Tanezaki, Maaya Uchida, Yurika Kubo e Inori Minase retornam ao elenco. Sōichi Masui dirige o filme no estúdio CloverWorks, enquanto Masahiro Yokotani cuida do roteiro e Satomi Tamura retorna como designer de personagens.",
-          "runs": [
-            {
-              "text": "Kaito Ishikawa, Asami Seto, Sora Amamiya, Aya Yamane, Konomi Kohara, Manaka Iwami, Reina Ueda, Nao Tōyama, Atsumi Tanezaki, Maaya Uchida, Yurika Kubo e Inori Minase retornam ao elenco. Sōichi Masui dirige o filme no estúdio "
-            },
-            {
-              "text": "CloverWorks",
-              "href": "https://animenew.com.br/studio/6222/cloverworks"
-            },
-            {
-              "text": ", enquanto Masahiro Yokotani cuida do roteiro e Satomi Tamura retorna como designer de personagens."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim a banda fox capture plan compõe a trilha sonora, com distribuição da Aniplex.",
-          "runs": [
-            {
-              "text": "Por fim a banda "
-            },
-            {
-              "text": "fox capture plan",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " compõe a trilha sonora, com distribuição da "
-            },
-            {
-              "text": "Aniplex",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://ao-buta.com/news/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Rascal Does Not Dream ganha novo trailer do filme final.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Rascal Does Not Dream ganha novo trailer do filme final",
-              "href": "https://animenew.com.br/rascal-does-not-dream-dear-friend-trailer/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-08-31T17:24:09.000Z",
-      "updatedAt": "2026-08-31T17:24:09.000Z",
-      "expiresAt": "2026-09-07T17:24:09.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/rascal-does-not-dream-dear-friend-trailer",
-          "publishedAt": "2026-08-31T17:24:09.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 237,
-      "qualityScore": 0.91,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
