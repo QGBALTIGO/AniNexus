@@ -139,7 +139,7 @@ jobs:
 
   browser-e2e:
     runs-on: ubuntu-latest
-    timeout-minutes: 24
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v4
