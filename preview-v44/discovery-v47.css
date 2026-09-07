@@ -43,7 +43,7 @@ body.nx47-discovery-scroll-down .nx47-island-head{height:44px}
 .nx47-island-copy strong{font:800 16px/1 var(--display,'Manrope',sans-serif);white-space:nowrap;letter-spacing:0}
 .nx47-island-copy strong em{font-style:normal;color:#ed4568}
 .nx47-island-copy small{max-width:min(62vw,460px);margin-top:4px;overflow:hidden;color:#df5f7b;font:900 7px/1 'Nunito Sans',sans-serif;letter-spacing:.04em;text-overflow:ellipsis;white-space:nowrap}
-.nx47-island-arrow{position:absolute;right:17px;top:50%;width:30px;height:30px;margin-top:-15px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.11);border-radius:6px;background:rgba(255,255,255,.035);color:#c1b5ba}
+.nx47-island-arrow{position:absolute;right:17px;top:50%;width:28px;height:28px;margin-top:-14px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.09);border-radius:50%;background:rgba(255,255,255,.035);color:#bdb1c1}
 .nx47-island-arrow svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .24s ease}
 .nx47-island.expanded .nx47-island-arrow svg{transform:rotate(180deg)}
 .nx47-island-panel{position:absolute;top:100%;left:0;right:0;display:grid;grid-template-rows:0fr;opacity:0;transform:translateY(-7px);border-bottom:1px solid rgba(231,42,82,.14);background:var(--nx-page-chrome-scrolled);box-shadow:0 14px 28px rgba(0,0,0,.2);transition:grid-template-rows .28s cubic-bezier(.2,.85,.2,1),opacity .18s ease,transform .26s ease}
@@ -104,6 +104,9 @@ body.nx47-discovery-scroll-down .nx47-island-head{height:44px}
 .nx47-empty :is(a,button) svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 .nx47-dubbed-section{margin-top:0;padding-top:0;border-top:0}
+.nx47-dubbed-nav-band{border-top:1px solid rgba(255,255,255,.055);background:rgba(8,6,8,.22)}
+.nx47-dubbed-nav{width:min(var(--shell,1254px),calc(100% - 44px));height:54px;margin:auto;display:grid;place-items:center}
+.nx47-dubbed-nav .nx47-dubbed-controls{margin:0}
 .nx47-dubbed-controls{min-height:44px;display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:10px}
 .nx47-dubbed-meta{min-height:22px;display:flex;align-items:center;justify-content:flex-end;margin-bottom:12px;color:#83767c;font:800 9px/1 'Nunito Sans',sans-serif}
 .nx47-segmented{width:252px;height:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:3px;padding:3px;border:1px solid var(--nx47-line);border-radius:7px;background:var(--nx47-panel)}
@@ -144,6 +147,7 @@ html[data-theme=light] .nx47-provider-logo{background:#f8f3f5;border-color:rgba(
 html[data-theme=light] .nx47-island{background:rgba(255,250,251,.98);box-shadow:0 13px 34px rgba(67,34,48,.09)}
 html[data-theme=light] .nx47-island-head,html[data-theme=light] .nx47-island-copy strong{color:#302229}
 html[data-theme=light] .nx47-island-arrow{border-color:rgba(58,31,43,.13);background:rgba(58,31,43,.035);color:#6e6066}
+html[data-theme=light] .nx47-dubbed-nav-band{border-color:rgba(58,31,43,.08);background:rgba(255,255,255,.25)}
 html[data-theme=light] .nx47-provider-tab{border-color:rgba(58,31,43,.12);background:rgba(58,31,43,.025);color:#716269}html[data-theme=light] .nx47-provider-tab>span{background:#f3edef}
 html[data-theme=light] .nx47-studio-block+.nx47-studio-block,html[data-theme=light] .nx47-studio-loading>section+section{border-color:rgba(58,31,43,.1)}
 html[data-theme=light] .nx47-studio-head h2{color:#302229}html[data-theme=light] .nx47-rail-actions button{border-color:rgba(58,31,43,.13);background:#fff;color:#6e6066}html[data-theme=light] .nx47-studio-rail-wrap:after{background:linear-gradient(90deg,transparent,var(--nx47-bg))}
@@ -156,7 +160,7 @@ html[data-theme=light] .nx47-studio-head h2{color:#302229}html[data-theme=light]
   .nx47-title-row{gap:8px}.nx47-title-row:after{width:26px;flex-basis:26px}.nx47-title-icon{width:26px;height:26px;flex-basis:26px}
   .nx47-title-row h1{font-size:25px}.nx47-title-row small{margin-top:4px;font-size:7px}
   .nx47-intro>p{max-width:345px;margin-top:8px;font-size:10.5px;line-height:1.42}
-  .nx47-island-head{height:48px;padding-inline:46px}.nx47-island-icon{width:20px;height:20px;flex-basis:20px}.nx47-island-copy strong{font-size:15px}.nx47-island-copy small{max-width:58vw;font-size:6.5px}.nx47-island-arrow{right:9px;width:30px;height:30px;border-radius:6px}.nx47-island-inner{width:100%;padding:1px 9px 9px}.nx47-island-provider-rail{padding-bottom:3px}
+  .nx47-island-head{height:48px;padding-inline:46px}.nx47-island-icon{width:20px;height:20px;flex-basis:20px}.nx47-island-copy strong{font-size:15px}.nx47-island-copy small{max-width:58vw;font-size:6.5px}.nx47-island-arrow{right:10px}.nx47-island-inner{width:100%;padding:1px 9px 9px}.nx47-island-provider-rail{padding-bottom:3px}
   .nx47-content{padding:24px 0 58px}.nx47-content>.shell{width:calc(100% - 20px)}
   .nx47-section-head,.nx47-results-head{align-items:flex-start;margin-bottom:15px}.nx47-section-head h2,.nx47-results-head h2{font-size:20px}.nx47-section-head p,.nx47-results-head p{font-size:9.5px}.nx47-section-head>span{padding-top:3px;font-size:8px}
   .nx47-provider-grid{grid-template-columns:1fr;gap:9px}
@@ -165,6 +169,7 @@ html[data-theme=light] .nx47-studio-head h2{color:#302229}html[data-theme=light]
   .nx47-media-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 10px}
   .nx47-media-card h3{min-height:32px;font-size:11.5px}.nx47-media-card>p{font-size:8px}.nx47-media-card .nx21-actions{right:6px;bottom:6px;gap:5px}.nx47-media-card .nx21-actions button{width:31px;height:31px}
   .nx47-empty{min-height:220px;padding:24px 18px}.nx47-empty strong{font-size:16px}.nx47-empty p{font-size:9.5px}
+  .nx47-dubbed-nav{width:100%;height:96px;padding:7px 10px}.nx47-dubbed-nav .nx47-dubbed-controls{gap:6px;margin:0}.nx47-dubbed-nav .nx47-segmented{width:min(100%,330px)}
   #nx47DubbedControls{width:100%}.nx47-dubbed-controls{width:100%;display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:8px;margin:0 auto 8px}.nx47-segmented{width:min(100%,330px)}.nx47-search{width:min(100%,330px);height:42px}
   .nx47-dubbed-meta{width:min(100%,330px);min-height:18px;justify-content:center;margin:0 auto 12px;font-size:8px}
   .nx47-island .nx47-dubbed-controls{gap:6px;margin-bottom:0}.nx47-island .nx47-segmented{height:36px}.nx47-island .nx47-segmented button{height:28px}.nx47-island .nx47-search{height:36px}

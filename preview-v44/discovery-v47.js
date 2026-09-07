@@ -6,7 +6,7 @@
   const app = document.querySelector('#app');
   if (!app) return;
 
-  const BUILD = '44.28.0';
+  const BUILD = '44.28.1';
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
   const ROUTES = new Set(['/animes/onde-assistir', '/animes/dublados', '/animes/estudios']);
@@ -62,7 +62,8 @@
     scrollDirection: 0,
     scrollTravel: 0,
     scrollLockUntil: 0,
-    manualIslandUntil: 0
+    manualIslandUntil: 0,
+    toggleY: null
   };
 
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
@@ -158,11 +159,15 @@
 
   function heroMarkup(kind) {
     const copy = kindCopy(kind);
+    const dubbedNav = kind === 'dubbed'
+      ? `<div class="nx47-dubbed-nav-band"><div class="nx47-dubbed-nav" id="nx47DubbedHeaderFilters"><div id="nx47DubbedControls" data-nx47-dub-controls-host>${dubbedControlsMarkup()}</div></div></div>`
+      : '';
     return `<header class="nx47-chrome" id="nx47Hero">
       <div class="nx47-intro">
         <div class="nx47-title-row"><span class="nx47-title-icon">${copy.icon}</span><div><h1>${copy.title}</h1><small>${copy.kicker}</small></div></div>
         <p>${copy.description}</p>
       </div>
+      ${dubbedNav}
     </header>`;
   }
 
@@ -419,13 +424,18 @@
     </div></div>`;
   }
 
-  function dubbedControlsMarkup(compact = false) {
-    return `<div class="nx47-dubbed-controls${compact ? ' is-compact' : ''}">
-      <div class="nx47-segmented" role="group" aria-label="Filtrar animes dublados por formato">
-        ${[['ALL', 'Todos'], ['TV', 'Séries'], ['MOVIE', 'Filmes']].map(([key, label]) => `<button type="button" data-nx47-dub-mode="${key}" class="${state.dubbedMode === key ? 'active' : ''}" aria-pressed="${state.dubbedMode === key}">${label}</button>`).join('')}
-      </div>
-      <label class="nx47-search">${ICON.search}<span class="sr-only">Buscar nos animes dublados desta página</span><input type="search" maxlength="90" data-nx47-dub-search placeholder="Buscar nesta página..." value="${esc(state.dubbedSearch)}"><button type="button" data-nx47-search-clear aria-label="Limpar busca"${state.dubbedSearch ? '' : ' hidden'}>${ICON.close}</button></label>
+  function dubbedModesMarkup() {
+    return `<div class="nx47-segmented" role="group" aria-label="Filtrar animes dublados por formato">
+      ${[['ALL', 'Todos'], ['TV', 'Séries'], ['MOVIE', 'Filmes']].map(([key, label]) => `<button type="button" data-nx47-dub-mode="${key}" class="${state.dubbedMode === key ? 'active' : ''}" aria-pressed="${state.dubbedMode === key}">${label}</button>`).join('')}
     </div>`;
+  }
+
+  function dubbedSearchMarkup() {
+    return `<label class="nx47-search">${ICON.search}<span class="sr-only">Buscar nos animes dublados desta página</span><input type="search" maxlength="90" data-nx47-dub-search placeholder="Buscar nesta página..." value="${esc(state.dubbedSearch)}"><button type="button" data-nx47-search-clear aria-label="Limpar busca"${state.dubbedSearch ? '' : ' hidden'}>${ICON.close}</button></label>`;
+  }
+
+  function dubbedControlsMarkup(compact = false) {
+    return `<div class="nx47-dubbed-controls${compact ? ' is-compact' : ''}">${dubbedModesMarkup()}${dubbedSearchMarkup()}</div>`;
   }
 
   function renderDubbedControls() {
@@ -532,7 +542,6 @@
   function dubbedMarkup() {
     return `${heroMarkup('dubbed')}${islandMarkup('dubbed')}<div class="nx47-content"><div class="shell">
       <section class="nx47-catalog-section nx47-dubbed-section" aria-label="Catálogo de animes dublados">
-        <div id="nx47DubbedControls" data-nx47-dub-controls-host>${dubbedControlsMarkup()}</div>
         <div class="nx47-dubbed-meta"><span id="nx47DubbedCount">Consultando catálogo</span></div>
         <div id="nx47DubbedResults" aria-live="polite" aria-busy="true">${skeletons(12)}</div>
         <div id="nx47DubbedPagination"></div>
@@ -760,12 +769,17 @@
   }
 
   function bindCommon() {
-    document.querySelector('[data-nx47-island-toggle]')?.addEventListener('click', () => {
+    const toggle = document.querySelector('[data-nx47-island-toggle]');
+    toggle?.addEventListener('pointerdown', () => { state.toggleY = scrollY; }, { passive: true });
+    toggle?.addEventListener('click', () => {
       const island = document.querySelector('.nx47-island');
-      const y = scrollY;
+      const y = Number.isFinite(state.toggleY) ? state.toggleY : scrollY;
+      state.toggleY = null;
       state.manualIslandUntil = performance.now() + 520;
       setIslandState(true, !island?.classList.contains('expanded'));
-      requestAnimationFrame(() => { if (Math.abs(scrollY - y) > 1) scrollTo(0, y); });
+      const restoreScroll = () => { if (Math.abs(scrollY - y) > 1) scrollTo(0, y); };
+      restoreScroll();
+      requestAnimationFrame(() => { restoreScroll(); requestAnimationFrame(restoreScroll); });
     });
   }
 
@@ -791,6 +805,7 @@
     state.scrollTravel = 0;
     state.scrollLockUntil = 0;
     state.manualIslandUntil = 0;
+    state.toggleY = null;
     document.body.classList.remove('nx21-catalog', 'nx21-reading-catalog', 'nx-section-page', 'nx-scroll-down', 'nx-scroll-up');
     document.body.classList.add('nx47-discovery-active');
     document.body.classList.toggle('nx47-watch-active', path.endsWith('onde-assistir'));

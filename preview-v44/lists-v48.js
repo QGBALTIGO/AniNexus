@@ -6,7 +6,7 @@
   const app = document.querySelector('#app');
   if (!app) return;
 
-  const BUILD = '44.28.0';
+  const BUILD = '44.28.1';
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
   const HUB_PATH = '/listas-de-animes';
@@ -49,7 +49,7 @@
   ];
   const ROUTES = new Set([HUB_PATH, ...Object.keys(LISTS)]);
   const HUB_COPY = { title: '<em>Listas</em> de animes', plainTitle: 'Listas de animes', kicker: 'DESCUBRA SUA PRÓXIMA OBRA', description: 'Rankings e seleções organizados para encontrar o próximo anime.', context: 'TODAS AS LISTAS', icon: 'collection' };
-  const state = { path: '', page: 1, pageInfo: {}, token: 0, controller: null, frame: 0, lastY: 0, direction: 0, travel: 0, lockUntil: 0, manualUntil: 0 };
+  const state = { path: '', page: 1, pageInfo: {}, token: 0, controller: null, frame: 0, lastY: 0, direction: 0, travel: 0, lockUntil: 0, manualUntil: 0, toggleY: null };
 
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
   const slug = value => String(value || 'anime').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 90) || 'anime';
@@ -298,11 +298,16 @@
 
   function bindCommon() {
     bindNavigation();
-    document.querySelector('[data-nx48-island-toggle]')?.addEventListener('click', () => {
-      const island = document.querySelector('.nx48-list-island'), y = scrollY;
+    const toggle = document.querySelector('[data-nx48-island-toggle]');
+    toggle?.addEventListener('pointerdown', () => { state.toggleY = scrollY; }, { passive: true });
+    toggle?.addEventListener('click', () => {
+      const island = document.querySelector('.nx48-list-island'), y = Number.isFinite(state.toggleY) ? state.toggleY : scrollY;
+      state.toggleY = null;
       state.manualUntil = performance.now() + 520;
       setIsland(true, !island?.classList.contains('expanded'));
-      requestAnimationFrame(() => { if (Math.abs(scrollY - y) > 1) scrollTo(0, y); });
+      const restoreScroll = () => { if (Math.abs(scrollY - y) > 1) scrollTo(0, y); };
+      restoreScroll();
+      requestAnimationFrame(() => { restoreScroll(); requestAnimationFrame(restoreScroll); });
     });
     requestAnimationFrame(() => document.querySelector('.nx48-list-tabs:not(.is-compact) .active')?.scrollIntoView({ block: 'nearest', inline: 'center' }));
   }
@@ -311,7 +316,7 @@
     if (!ROUTES.has(path)) return cleanup();
     state.token += 1;
     state.controller?.abort();
-    state.path = path; state.page = 1; state.pageInfo = {}; state.lastY = 0; state.direction = 0; state.travel = 0; state.lockUntil = 0; state.manualUntil = 0;
+    state.path = path; state.page = 1; state.pageInfo = {}; state.lastY = 0; state.direction = 0; state.travel = 0; state.lockUntil = 0; state.manualUntil = 0; state.toggleY = null;
     document.body.classList.remove('nx21-catalog', 'nx21-reading-catalog', 'nx-section-page', 'nx-scroll-down', 'nx-scroll-up');
     document.body.classList.add('nx48-lists-active');
     document.body.classList.remove('nx48-list-scrolled', 'nx48-list-scroll-down', 'nx48-list-scroll-up');

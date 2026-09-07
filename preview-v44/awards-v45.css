@@ -604,7 +604,7 @@ body.nx45-awards-scroll-down .nx45-awards-island-head{height:44px}
   display:grid;
   place-items:center;
   border:1px solid rgba(255,255,255,.09);
-  border-radius:6px;
+  border-radius:50%;
   background:rgba(255,255,255,.035);
   color:#bdb1c1;
 }
@@ -698,7 +698,7 @@ html[data-theme="light"] .nx45-awards-island-head,html[data-theme="light"] .nx45
   .nx45-awards-island-icon{width:20px;height:20px;flex-basis:20px}
   .nx45-awards-island-copy strong{font-size:15px}
   .nx45-awards-island-copy small{max-width:210px;font-size:7.5px}
-  .nx45-awards-island-chevron{right:10px;width:30px;height:30px;margin-top:-15px;border-radius:6px}
+  .nx45-awards-island-chevron{right:10px}
   .nx45-awards-island-inner{width:calc(100vw - 18px);padding-bottom:9px}
   .nx45-awards-island-tools{display:none}
   .nx45-awards-island-years{min-height:38px;justify-content:flex-start;gap:5px;padding:0 0 4px;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x proximity}

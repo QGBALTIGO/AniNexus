@@ -1,7 +1,7 @@
 'use strict';
 
 (() => {
-  const BUILD = '44.27.0';
+  const BUILD = '44.27.1';
   const islandChevron = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg>';
   const GROUPS = [
     { id: 'all', label: 'Todos' },
@@ -248,6 +248,7 @@
     let scrollTravel = 0;
     let scrollLockUntil = 0;
     let manualIslandUntil = 0;
+    let toggleY = null;
     let disposed = false;
     const mediaCache = new Map();
 
@@ -557,11 +558,16 @@
     activeCleanup = cleanup;
     app.querySelector('[data-nx45-prev]').addEventListener('click', () => moveSelected(-1));
     app.querySelector('[data-nx45-next]').addEventListener('click', () => moveSelected(1));
-    roots.island.querySelector('[data-nx45-island-toggle]').addEventListener('click', () => {
-      const y = scrollY;
+    const islandToggle = roots.island.querySelector('[data-nx45-island-toggle]');
+    islandToggle.addEventListener('pointerdown', () => { toggleY = scrollY; }, { passive: true });
+    islandToggle.addEventListener('click', () => {
+      const y = Number.isFinite(toggleY) ? toggleY : scrollY;
+      toggleY = null;
       manualIslandUntil = performance.now() + 520;
       setIslandState(true, !roots.island.classList.contains('expanded'));
-      requestAnimationFrame(() => { if (Math.abs(scrollY - y) > 1) scrollTo(0, y); });
+      const restoreScroll = () => { if (Math.abs(scrollY - y) > 1) scrollTo(0, y); };
+      restoreScroll();
+      requestAnimationFrame(() => { restoreScroll(); requestAnimationFrame(restoreScroll); });
     });
     addEventListener('scroll', onScroll, { passive: true });
 
