@@ -1235,7 +1235,7 @@ test('Catalog exposes all pages, keeps its chrome together and darkens the heade
   await expect(page.locator('#nx21Island')).toHaveClass(/show/);
   await expect(page.locator('#nx21Island')).not.toHaveClass(/expanded/);
   await expect.poll(()=>page.locator('#nx21Island').evaluate(element=>Math.round(element.getBoundingClientRect().top))).toBe(0);
-  const compact=await page.locator('#nx21Island').evaluate(element=>{const box=element.getBoundingClientRect(),head=element.querySelector('.nx21-island-head').getBoundingClientRect();return{top:Math.round(box.top),head:Math.round(head.height),hidden:element.querySelector('.nx21-island-panel').getAttribute('aria-hidden')}});
+  const compact=await page.locator('#nx21Island').evaluate(element=>{const box=element.getBoundingClientRect(),head=element.querySelector('.nx21-island-head').getBoundingClientRect(),roundedTop=Math.round(box.top);return{top:Object.is(roundedTop,-0)?0:roundedTop,head:Math.round(head.height),hidden:element.querySelector('.nx21-island-panel').getAttribute('aria-hidden')}});
   expect(compact).toEqual({top:0,head:44,hidden:'true'});
   await expect.poll(()=>page.locator('#topbar').evaluate(element=>new DOMMatrixReadOnly(getComputedStyle(element).transform).m42)).toBeLessThan(-40);
   await page.waitForTimeout(420);
