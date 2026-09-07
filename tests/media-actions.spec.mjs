@@ -192,7 +192,10 @@ test('unified library switches media and keeps its mobile scroll header usable',
   await expect(library.getByRole('button',{name:/Revisar meus mangás/i})).toBeVisible();
   await expect(library.locator('.nx38-library-impression-btn')).toHaveCount(0);
   await library.locator('[data-nx49-media="MANGA"]').first().click();
-  await expect(page).toHaveURL(/minha-biblioteca.*midia=mangas/);
+  await expect.poll(()=>page.evaluate(()=>{
+    const current=new URL(location.href),restored=current.searchParams.get('p');
+    return restored||`${current.pathname}${current.search}`;
+  })).toContain('/minha-biblioteca?midia=mangas');
   await expect(library).toContainText('Quero ler');await expect(library).toContainText('Lendo');
   await expect(library.getByRole('button',{name:/Revisar meus animes/i})).toBeVisible();
   await page.screenshot({path:testInfo.outputPath('unified-library-mobile-top.png')});
