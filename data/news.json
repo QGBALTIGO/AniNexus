@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T09:07:35.144Z",
+  "generatedAt": "2026-09-08T13:40:07.590Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,17 +55,17 @@
   ],
   "stats": {
     "collected": 46,
-    "grouped": 15,
-    "published": 15,
-    "newStories": 15,
-    "fullArticles": 15,
+    "grouped": 14,
+    "published": 14,
+    "newStories": 14,
+    "fullArticles": 14,
     "previewArticles": 0,
-    "avgWords": 385,
-    "withHeroImage": 15,
-    "withOrderedMedia": 12,
+    "avgWords": 397,
+    "withHeroImage": 14,
+    "withOrderedMedia": 11,
     "skippedTranslation": 0,
-    "skippedQuality": 30,
-    "durationMs": 2386
+    "skippedQuality": 31,
+    "durationMs": 3187
   },
   "items": [
     {
@@ -5503,252 +5503,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-cff18963",
-      "slug": "the-long-summer-of-august-31-ganha-anime-pela-shaft-animenew-cff18963",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "The Long Summer of August 31 ganha anime pela SHAFT",
-      "originalTitle": "The Long Summer of August 31 ganha anime pela SHAFT",
-      "summary": "O mangá The Long Summer of August 31 (August 31 no Long Summer), de Ikkado Ito, será adaptado para anime pelo estúdio SHAFT e também ganhará uma série live-action. O anúncio aconteceu nesta segunda-feira (31) pelas redes sociais oficiais da obra. Junto da confirmação, foi divulgado um visual teaser da adaptação em anime.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Shaft",
-        "The Long Summer of August 31"
-      ],
-      "url": "https://animenew.com.br/the-long-summer-of-august-31-anime-shaft",
-      "sourceUrl": "https://animenew.com.br/the-long-summer-of-august-31-anime-shaft",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/The-Long-Summer-of-August-31-ganha-anime-pela-SHAFT.webp",
-      "mediaQuery": "The Long Summer of August 31 ganha anime pela SHAFT",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/The-Long-Summer-of-August-31-scaled.webp",
-          "alt": "The Long Summer of August 31",
-          "caption": "©Ikkado Ito"
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/August-31-no-Long-Summer-Manga.webp",
-          "alt": "August 31 no Long Summer",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O mangá The Long Summer of August 31 (August 31 no Long Summer), de Ikkado Ito, será adaptado para anime pelo estúdio SHAFT e também ganhará uma série live-action. O anúncio aconteceu nesta segunda-feira (31) pelas redes sociais oficiais da obra. Junto da confirmação, foi divulgado um visual teaser da adaptação em anime.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "The Long Summer of August 31",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (August 31 no Long Summer), de "
-            },
-            {
-              "text": "Ikkado Ito",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", será adaptado para anime pelo estúdio "
-            },
-            {
-              "text": "SHAFT",
-              "href": "https://animenew.com.br/studio/44/shaft"
-            },
-            {
-              "text": " e também ganhará uma série "
-            },
-            {
-              "text": "live-action",
-              "href": "https://animenew.com.br/live-action"
-            },
-            {
-              "text": ". O anúncio aconteceu nesta segunda-feira (31) pelas redes sociais oficiais da obra. Junto da confirmação, foi divulgado um visual teaser da adaptação em anime."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Maria Holic retorna após 12 anos com novo mangá",
-              "runs": [
-                {
-                  "text": "Maria Holic retorna após 12 anos com novo mangá",
-                  "href": "https://animenew.com.br/maria-holic-novo-manga-sequencia"
-                }
-              ]
-            },
-            {
-              "text": "One Piece pode ter mais quatro anos de mangá",
-              "runs": [
-                {
-                  "text": "One Piece pode ter mais quatro anos de mangá",
-                  "href": "https://animenew.com.br/one-piece-fim-do-manga-quatro-anos"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/The-Long-Summer-of-August-31-scaled.webp",
-          "alt": "The Long Summer of August 31",
-          "caption": "©Ikkado Ito"
-        },
-        {
-          "type": "paragraph",
-          "text": "Ito também publicou uma ilustração especial para celebrar os novos projetos:",
-          "runs": [
-            {
-              "text": "Ito também publicou uma ilustração especial para celebrar os novos projetos:"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/August-31-no-Long-Summer-Manga.webp",
-          "alt": "August 31 no Long Summer"
-        },
-        {
-          "type": "heading",
-          "text": "Um verão que nunca termina",
-          "runs": [
-            {
-              "text": "Um verão que nunca termina"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A história acompanha os estudantes Suzuki Takaya e Takagi Kana, que ficam presos em um ciclo temporal que reinicia constantemente no dia 31 de agosto. Enquanto os dois são os únicos que mantêm as memórias de cada repetição.",
-          "runs": [
-            {
-              "text": "A história acompanha os estudantes Suzuki Takaya e Takagi Kana, que ficam presos em um ciclo temporal que reinicia constantemente no dia 31 de agosto. Enquanto os dois são os únicos que mantêm as memórias de cada repetição.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O motivo para o fenômeno pode estar relacionado à missão de verão inacabada de Suzuki: conseguir uma namorada e perder a virgindade. Contudo a situação dá origem a uma comédia de viagem no tempo que mistura humor e momentos emocionais.",
-          "runs": [
-            {
-              "text": "O motivo para o fenômeno pode estar relacionado à missão de verão inacabada de Suzuki: conseguir uma namorada e perder a virgindade. Contudo a situação dá origem a uma comédia de viagem no tempo que mistura humor e momentos emocionais.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ikkado Ito iniciou o mangá na revista Morning, da Kodansha, em 2023. A editora lançou o 13º volume em 21 de agosto, sendo assim a Seven Seas Entertainment publicou o sexto volume em inglês.",
-          "runs": [
-            {
-              "text": "Ikkado Ito iniciou o mangá na revista "
-            },
-            {
-              "text": "Morning",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", da "
-            },
-            {
-              "text": "Kodansha",
-              "href": "https://animenew.com.br/tag/kodansha/"
-            },
-            {
-              "text": ", em 2023. A editora lançou o 13º volume em 21 de agosto, sendo assim a Seven Seas Entertainment publicou o sexto volume em inglês."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em The Long Summer of August 31 ganha anime pela SHAFT.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "The Long Summer of August 31 ganha anime pela SHAFT",
-              "href": "https://animenew.com.br/the-long-summer-of-august-31-anime-shaft/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-01T11:39:30.000Z",
-      "updatedAt": "2026-09-01T11:39:30.000Z",
-      "expiresAt": "2026-09-08T11:39:30.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/the-long-summer-of-august-31-anime-shaft",
-          "publishedAt": "2026-09-01T11:39:30.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 223,
-      "qualityScore": 0.907,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 2,
         "embedCount": 0,
         "sourcePagesRead": 0
       }
