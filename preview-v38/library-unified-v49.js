@@ -26,7 +26,9 @@
     filter: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>',
     heart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 8.8c0 5-8.5 10-8.5 10s-8.5-5-8.5-10A4.6 4.6 0 0 1 12 6.4a4.6 4.6 0 0 1 8.5 2.4Z"/></svg>',
     plus: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
+    play: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg>',
     check: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 7"/></svg>',
+    pause: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>',
     arrow: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
     down: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>',
     close: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>'
@@ -256,6 +258,27 @@
       <button type="button" class="nx49-favorite-filter${state.filter === 'FAVORITES' ? ' active' : ''}" aria-pressed="${state.filter === 'FAVORITES'}" data-nx49-status="FAVORITES">${ICON.heart}<span>Favoritos</span><b>${statusCount('FAVORITES')}</b></button>
     </div>`;
   }
+  function activityMarkup() {
+    const manga = state.media === 'MANGA';
+    const items = activeItems();
+    const statuses = [
+      ['PLANNING', manga ? 'Quero ler' : 'Quero ver', 'planning', ICON.plus],
+      ['CURRENT', manga ? 'Lendo' : 'Assistindo', 'current', ICON.play],
+      ['COMPLETED', 'Terminei', 'completed', ICON.check],
+      ['PAUSED', 'Pausei', 'paused', ICON.pause],
+      ['DROPPED', 'Desisti', 'dropped', ICON.close]
+    ];
+    const reactionInfo = new Map([...(window.AniNexusMediaState?.reactions?.() || []), ...(window.AniNexusMangaState?.reactions?.() || [])].map(item => [item.label, item]));
+    const reactionCounts = new Map();
+    for (const item of items) for (const reaction of [...new Set(item.reactions?.length ? item.reactions : [item.reaction].filter(Boolean))]) reactionCounts.set(reaction, (reactionCounts.get(reaction) || 0) + 1);
+    const reactions = [...reactionCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
+    const reactionTotal = reactions.reduce((total, [, count]) => total + count, 0);
+    return `<section class="nx49-activity" aria-labelledby="nx49ActivityTitle">
+      <header><h3 id="nx49ActivityTitle">Atividade</h3></header>
+      <div class="nx49-activity-statuses">${statuses.map(([key, label, tone, icon]) => `<div class="nx49-activity-status"><span class="nx49-activity-status-icon tone-${tone}">${icon}</span><span>${label}</span><i></i><b>${items.filter(item => item.status === key).length}</b></div>`).join('')}</div>
+      ${reactions.length ? `<div class="nx49-activity-reactions">${reactions.map(([label, count]) => { const meta = reactionInfo.get(label) || {}; const percentage = Math.round((count / reactionTotal) * 100); return `<span title="${esc(label)}"><b>${esc(meta.emoji || '•')}</b>${esc(label)} <small>${percentage}%</small></span>`; }).join('')}</div>` : ''}
+    </section>`;
+  }
   function profileMarkup() {
     const info = counts(state.media), manga = state.media === 'MANGA';
     const user = state.anime?.user || state.manga?.user || {};
@@ -292,10 +315,13 @@
     </div>`;
   }
   function islandMarkup() {
+    const manga = state.media === 'MANGA';
+    const title = state.view === 'IMPRESSIONS' ? 'Suas <em>impressões</em>' : `Meus <em>${manga ? 'mangás' : 'animes'}</em>`;
+    const icon = state.view === 'IMPRESSIONS' ? ICON.message : manga ? ICON.manga : ICON.anime;
     return `<section class="nx49-island" data-nx49-island aria-hidden="true" inert>
       <button type="button" class="nx49-island-head" data-nx49-island-toggle aria-expanded="false">
-        <span class="nx49-island-icon">${ICON.library}</span>
-        <span class="nx49-island-copy"><strong>Minha <em>Biblioteca</em></strong><small>${esc(activeLabel())}</small></span>
+        <span class="nx49-island-icon">${icon}</span>
+        <span class="nx49-island-copy"><strong>${title}</strong><small>${esc(activeLabel())}</small></span>
         <span class="nx49-island-chevron">${ICON.down}</span>
       </button>
       <div class="nx49-island-panel" aria-hidden="true" inert><div><div class="nx49-island-inner">${primaryTabs(true)}${statusTabs(true)}</div></div></div>
@@ -382,16 +408,13 @@
   function bodyMarkup() {
     const mediaView = state.view === 'MEDIA';
     const label = state.view === 'IMPRESSIONS' ? 'Suas impressões' : state.media === 'MANGA' ? 'Seus mangás' : 'Seus animes';
-    return `<section class="nx49-library-body"><div class="nx49-shell nx49-layout">${profileMarkup()}<div class="nx49-workspace"><div class="nx49-content-head"><div><small>${state.view === 'IMPRESSIONS' ? 'ANIMES E MANGÁS' : 'SUA COLEÇÃO'}</small><h2>${label}</h2></div><span data-nx49-result-count></span></div>${mediaView ? `${statusTabs()}${toolbarMarkup()}` : ''}<div data-nx49-content></div></div></div></section>`;
-  }
-  function heroMarkup() {
-    return `<section class="nx49-library-hero" data-nx49-hero><div class="nx49-shell"><div class="nx49-library-title"><span>${ICON.library}</span><div><h1>Minha <em>Biblioteca</em></h1><small>ANIMES E MANGÁS</small></div></div>${primaryTabs()}</div></section>`;
+    return `<section class="nx49-library-body"><div class="nx49-shell nx49-layout">${profileMarkup()}<div class="nx49-workspace"><div class="nx49-library-nav" data-nx49-hero>${primaryTabs()}</div><div class="nx49-content-head"><div><small>${state.view === 'IMPRESSIONS' ? 'IMPRESSÕES' : 'SUA COLEÇÃO'}</small><h2>${label}</h2></div><span data-nx49-result-count></span></div>${mediaView ? `${statusTabs()}${toolbarMarkup()}` : ''}<div data-nx49-content></div>${mediaView ? activityMarkup() : ''}</div></div></section>`;
   }
   function shell() {
     document.title = 'Minha Biblioteca | AniNexus';
     document.body.classList.add('nx38-library-active', 'nx49-library-active');
     document.body.classList.remove('nx42-manga-active', 'nx35-home-active');
-    app.innerHTML = `<main class="nx38-library nx49-library">${heroMarkup()}${bodyMarkup()}</main>${islandMarkup()}${filterModalMarkup()}`;
+    app.innerHTML = `<main class="nx38-library nx49-library">${bodyMarkup()}</main>${islandMarkup()}${filterModalMarkup()}`;
     state.mounted = true;
     wire();
     paintContent();
@@ -400,18 +423,18 @@
   }
   function loadingShell() {
     document.body.classList.add('nx38-library-active', 'nx49-library-active');
-    app.innerHTML = `<main class="nx38-library nx49-library"><section class="nx49-library-hero"><div class="nx49-shell"><div class="nx49-library-title"><span>${ICON.library}</span><div><h1>Minha <em>Biblioteca</em></h1><small>CARREGANDO SUA JORNADA</small></div></div></div></section><section class="nx49-library-body"><div class="nx49-shell"><div class="nx49-loading">${Array.from({length: 8}, () => '<span></span>').join('')}</div></div></section></main>`;
+    app.innerHTML = `<main class="nx38-library nx49-library"><section class="nx49-library-body"><div class="nx49-shell"><div class="nx49-loading">${Array.from({length: 8}, () => '<span></span>').join('')}</div></div></section></main>`;
     document.documentElement.classList.remove('nx38-library-boot');
   }
   function loginRequired() {
     document.body.classList.add('nx38-library-active', 'nx49-library-active');
-    app.innerHTML = `<main class="nx38-library nx49-library"><section class="nx49-library-hero"><div class="nx49-shell"><div class="nx49-library-title"><span>${ICON.library}</span><div><h1>Minha <em>Biblioteca</em></h1><small>SUA JORNADA ANINEXUS</small></div></div></div></section><section class="nx49-library-body"><div class="nx49-shell"><div class="nx49-login"><img src="${BASE}/assets/logo.png" alt=""><h2>Sua biblioteca começa aqui</h2><p>Entre para sincronizar animes, mangás, favoritos, progresso e impressões.</p><div><a class="primary" href="${pageUrl('/login')}">Entrar</a><a href="${pageUrl('/criar-conta')}">Criar conta</a></div></div></div></section></main>`;
+    app.innerHTML = `<main class="nx38-library nx49-library"><section class="nx49-library-body"><div class="nx49-shell"><div class="nx49-login"><img src="${BASE}/assets/logo.png" alt=""><h2>Sua biblioteca começa aqui</h2><p>Entre para sincronizar animes, mangás, favoritos, progresso e impressões.</p><div><a class="primary" href="${pageUrl('/login')}">Entrar</a><a href="${pageUrl('/criar-conta')}">Criar conta</a></div></div></div></section></main>`;
     state.mounted = true;
     document.documentElement.classList.remove('nx38-library-boot');
   }
   function errorShell() {
     document.body.classList.add('nx38-library-active', 'nx49-library-active');
-    app.innerHTML = `<main class="nx38-library nx49-library"><section class="nx49-library-hero"><div class="nx49-shell"><div class="nx49-library-title"><span>${ICON.library}</span><div><h1>Minha <em>Biblioteca</em></h1><small>SUA JORNADA ANINEXUS</small></div></div></div></section><section class="nx49-library-body"><div class="nx49-shell"><div class="nx49-empty"><strong>A biblioteca não carregou agora</strong><p>Seus dados foram preservados. Tente novamente em alguns instantes.</p><button type="button" data-nx49-retry>Tentar novamente</button></div></div></section></main>`;
+    app.innerHTML = `<main class="nx38-library nx49-library"><section class="nx49-library-body"><div class="nx49-shell"><div class="nx49-empty"><strong>A biblioteca não carregou agora</strong><p>Seus dados foram preservados. Tente novamente em alguns instantes.</p><button type="button" data-nx49-retry>Tentar novamente</button></div></div></section></main>`;
     document.querySelector('[data-nx49-retry]')?.addEventListener('click', mountLibrary);
     state.mounted = true;
     document.documentElement.classList.remove('nx38-library-boot');

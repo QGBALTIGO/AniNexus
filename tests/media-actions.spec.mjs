@@ -184,6 +184,10 @@ test('unified library switches media and keeps its mobile scroll header usable',
   await page.setViewportSize({width:390,height:844});
   await page.goto(url('/minha-biblioteca'),{waitUntil:'domcontentloaded'});await login(page);
   const library=page.locator('.nx49-library');await expect(library).toBeVisible();
+  await expect(library.locator('.nx49-library-title')).toHaveCount(0);
+  await expect(library.locator('.nx49-profile')).toBeVisible();
+  await expect(library.locator('.nx49-library-nav')).toBeVisible();
+  await expect(library.locator('.nx49-activity')).toContainText('Atividade');
   await page.setViewportSize({width:1280,height:900});
   await page.screenshot({path:testInfo.outputPath('unified-library-desktop.png')});
   await page.setViewportSize({width:390,height:844});
@@ -197,6 +201,7 @@ test('unified library switches media and keeps its mobile scroll header usable',
     return restored||`${current.pathname}${current.search}`;
   })).toContain('/minha-biblioteca?midia=mangas');
   await expect(library).toContainText('Quero ler');await expect(library).toContainText('Lendo');
+  await expect(library.locator('.nx49-activity')).toContainText('Lendo');
   await expect(library.getByRole('button',{name:/Revisar meus animes/i})).toBeVisible();
   await page.screenshot({path:testInfo.outputPath('unified-library-mobile-top.png')});
   await library.locator('[data-nx49-filter-open]').click();await expect(page.getByRole('dialog',{name:'Filtrar e ordenar'})).toBeVisible();
