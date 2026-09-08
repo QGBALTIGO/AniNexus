@@ -124,14 +124,25 @@ jobs:
           API_ARCHIVE: ${{ steps.release.outputs.api_archive }}
           FRONTEND_ONLY: ${{ inputs.frontend_only || false }}
         run: |
-          ssh -i "$HOME/.ssh/aninexus" -p "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+          retry() {
+            local attempt
+            for attempt in 1 2 3; do
+              if "$@"; then return 0; fi
+              if [ "$attempt" -eq 3 ]; then return 1; fi
+              echo "Conexão SSH falhou; nova tentativa $((attempt + 1))/3 em $((attempt * 10))s."
+              sleep $((attempt * 10))
+            done
+          }
+          SSH=(ssh -i "$HOME/.ssh/aninexus" -p "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=30 -o ServerAliveInterval=15 -o ServerAliveCountMax=3)
+          SCP=(scp -i "$HOME/.ssh/aninexus" -P "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=30 -o ServerAliveInterval=15 -o ServerAliveCountMax=3)
+          retry "${SSH[@]}" \
             "${VPS_USER}@${VPS_HOST}" "install -d -m 0755 /var/www/aninexus/incoming"
-          scp -i "$HOME/.ssh/aninexus" -P "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+          retry "${SCP[@]}" \
             "$ARCHIVE" "${VPS_USER}@${VPS_HOST}:/var/www/aninexus/incoming/${RELEASE_ID}.tar.gz"
           if [[ "$FRONTEND_ONLY" != "true" ]]; then
-            ssh -i "$HOME/.ssh/aninexus" -p "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            retry "${SSH[@]}" \
               "${VPS_USER}@${VPS_HOST}" "install -d -m 0755 /opt/aninexus/incoming /opt/aninexus/releases /opt/aninexus/shared"
-            scp -i "$HOME/.ssh/aninexus" -P "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            retry "${SCP[@]}" \
               "$API_ARCHIVE" "${VPS_USER}@${VPS_HOST}:/opt/aninexus/incoming/${RELEASE_ID}.tar.gz"
           fi
 
