@@ -152,6 +152,29 @@
     const clerk = await loadClerk();
     await clerk?.signOut({ redirectUrl: routeUrl('/') });
   }
+  function closeSignOutDialog({restoreFocus=true}={}) {
+    const layer=document.querySelector('#drawerSignoutConfirm');
+    if(!layer||layer.hidden)return;
+    layer.hidden=true;layer.setAttribute('aria-hidden','true');
+    if(restoreFocus)layer._returnFocus?.focus?.();
+  }
+  function openSignOutDialog(trigger) {
+    const layer=document.querySelector('#drawerSignoutConfirm');
+    if(!layer)return;
+    layer._returnFocus=trigger||document.activeElement;
+    layer.hidden=false;layer.setAttribute('aria-hidden','false');
+    requestAnimationFrame(()=>layer.querySelector('[data-nx-signout-cancel]:not(.drawer-signout-backdrop)')?.focus());
+  }
+  function bindSignOutDialog(trigger) {
+    const layer=document.querySelector('#drawerSignoutConfirm');
+    if(!layer)return;
+    trigger.onclick=()=>openSignOutDialog(trigger);
+    if(layer.dataset.bound)return;
+    layer.dataset.bound='1';
+    layer.querySelectorAll('[data-nx-signout-cancel]').forEach(button=>button.addEventListener('click',()=>closeSignOutDialog()));
+    layer.querySelector('[data-nx-signout-confirm]')?.addEventListener('click',async event=>{const button=event.currentTarget;button.disabled=true;try{await signOut()}catch{button.disabled=false}});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!layer.hidden){event.preventDefault();event.stopImmediatePropagation();closeSignOutDialog() }},true);
+  }
   window.AniNexusAuth = Object.freeze({ enabled: ENABLED, ready: loadClerk, api, publicApi, getUser, requireAccount, requestLogin, signOut, apiOrigin: API_ORIGIN });
 
   function activate() {
@@ -302,8 +325,9 @@
     if (title) title.textContent = name;
     if (description) { description.hidden = false; description.textContent = user.username ? `@${user.username}` : 'Sua conta AniNexus'; }
     if (profile) {
-      profile.hidden = false;
-      profile.href = routeUrl(user.username ? `/u/${encodeURIComponent(user.username)}` : '/minha-conta');
+      const username=String(user.username||'').trim().replace(/^@+/,'');
+      profile.hidden=!username;
+      if(username){const publicPath=`/u/${encodeURIComponent(username)}`;profile.href=routeUrl(publicPath);profile.dataset.nx23Dedicated=publicPath;profile.dataset.nx27Path=publicPath;profile.onclick=event=>{event.preventDefault();event.stopImmediatePropagation();go(publicPath)}}
     }
     if (guest) guest.hidden = true;
     if (tools) {
@@ -316,7 +340,7 @@
       const settings = tools.querySelector('[data-nx-drawer-settings]');
       if (settings) settings.onclick = () => go('/minha-conta');
       const logout = tools.querySelector('[data-nx-drawer-logout]');
-      if (logout) logout.onclick = async () => { logout.disabled = true; try { await signOut(); } finally { logout.disabled = false; } };
+      if (logout) bindSignOutDialog(logout);
     }
   }
   async function syncHeader() {

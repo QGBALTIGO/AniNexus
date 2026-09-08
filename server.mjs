@@ -157,6 +157,18 @@ app.patch('/api/me/profile',writeRate,async(req,reply)=>{
   await refreshAchievements(user.id);
   return{user:safeUser(updated)};
 });
+app.get('/api/users/search',publicRate,async(req,reply)=>{
+  const parsed=z.string().trim().min(1).max(40).safeParse(String(req.query?.q||'').replace(/^@+/,''));
+  if(!parsed.success)return reply.code(400).send({error:'INVALID_QUERY'});
+  const term=parsed.data,escaped=term.replace(/[!%_]/g,'!$&'),contains=`%${escaped}%`,prefix=`${escaped}%`;
+  const {rows}=await q(`SELECT username,display_name,avatar_url,avatar_source
+    FROM users
+    WHERE deleted_at IS NULL AND status='active' AND privacy='public'
+      AND (username ILIKE $1 ESCAPE '!' OR display_name ILIKE $1 ESCAPE '!')
+    ORDER BY CASE WHEN lower(username)=lower($2) THEN 0 WHEN username ILIKE $3 ESCAPE '!' THEN 1 ELSE 2 END,lower(username)
+    LIMIT 12`,[contains,term,prefix]);
+  return{items:rows.map(user=>{const avatar=resolvedAvatar(user);return{username:user.username,displayName:user.display_name||user.username,avatarUrl:avatar.url,avatarPreset:avatar.preset}})};
+});
 app.get('/api/users/:username',publicRate,async(req,reply)=>{
   const parsed=usernameSchema.safeParse(String(req.params.username||''));if(!parsed.success)return reply.code(404).send({error:'NOT_FOUND'});
   const requested=parsed.data;

@@ -66,7 +66,7 @@
 <link rel="stylesheet" href="./preview-v41/product-v41.css?v=41.0.0">
 <link rel="stylesheet" href="./preview-v42/product-v42.css?v=44.16.2">
 <link rel="stylesheet" href="./preview-v42/header-v43.css?v=44.22.0">
-<link rel="stylesheet" href="./preview-v44/experience-v44.css?v=44.30.0">
+<link rel="stylesheet" href="./preview-v44/experience-v44.css?v=44.31.0">
 <link rel="stylesheet" href="./preview-v44/home-characters-v44.css?v=44.23.1">
 <link rel="stylesheet" href="./preview-v44/achievements-v44.css?v=44.15.0">
 <link rel="stylesheet" href="./preview-v44/provider-credit-v44.css?v=44.7.4">
@@ -116,13 +116,14 @@
     <div class="drawer-content">
       <section class="drawer-auth-card" aria-label="Acesso à conta">
         <div class="drawer-account-avatar" aria-hidden="true" hidden></div>
-        <div class="drawer-auth-copy"><span>CONTA ANINEXUS</span><h3>Entre na sua conta</h3><p class="drawer-auth-description">Salve suas listas e acompanhe sua jornada.</p><a class="drawer-profile-link" href="/minha-conta" data-link hidden>Ver meu perfil público <span data-icon="arrow"></span></a></div>
+        <div class="drawer-auth-copy"><span>CONTA ANINEXUS</span><h3>Entre na sua conta</h3><p class="drawer-auth-description">Salve suas listas e acompanhe sua jornada.</p><a class="drawer-profile-link" href="/minha-conta" hidden>Ver meu perfil público <span data-icon="arrow"></span></a></div>
         <div class="drawer-auth-actions">
           <div class="drawer-guest-actions"><button class="login-btn" data-action="login">Entrar</button><button class="signup-btn" data-action="register">Criar conta</button></div>
           <div class="drawer-account-tools" hidden>
             <button type="button" data-nx-drawer-search aria-label="Pesquisar" title="Pesquisar"><span data-icon="search"></span></button>
             <button type="button" data-nx-drawer-settings aria-label="Configurações da conta" title="Configurações"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3V2.8h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"/></svg></button>
             <button type="button" data-nx-drawer-logout aria-label="Sair da conta" title="Sair"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4H5v16h5M14 8l4 4-4 4M8 12h10"/></svg></button>
+            <button type="button" data-action="drawer-close" aria-label="Fechar menu" title="Fechar menu"><span data-icon="close"></span></button>
           </div>
         </div>
       </section>
@@ -159,7 +160,23 @@
   </div>
   <div class="shell footer-note"><span>© <span id="year"></span> AniNexus</span><span>Obras, marcas e personagens pertencem aos respectivos titulares.</span></div>
 </footer>
-<div class="search-overlay" id="searchOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="searchTitle"><button class="overlay-backdrop" data-action="search-close" aria-label="Fechar busca"></button><div class="search-modal"><h2 class="sr-only" id="searchTitle">Pesquisar no AniNexus</h2><div class="search-input-row"><span data-icon="search"></span><label class="sr-only" for="searchInput">Anime, mangá ou light novel</label><input id="searchInput" type="search" autocomplete="off" placeholder="Pesquisar anime, mangá ou novel..."><kbd>ESC</kbd></div><div class="search-kinds" aria-label="Tipo de obra"><button class="active" data-search-kind="ANIME">Animes</button><button data-search-kind="MANGA">Mangás & novels</button></div><div class="search-results" id="searchResults" aria-live="polite"><p>Digite para pesquisar.</p></div></div></div>
+<div class="search-overlay" id="searchOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="searchTitle">
+  <button class="overlay-backdrop" data-action="search-close" aria-label="Fechar busca"></button>
+  <section class="search-modal">
+    <header class="search-modal-head"><div><span>BUSCA ANINEXUS</span><h2 id="searchTitle">Encontre no AniNexus</h2></div><button type="button" class="search-close" data-action="search-close" aria-label="Fechar busca"><span data-icon="close"></span></button></header>
+    <div class="search-input-row"><span data-icon="search"></span><label class="sr-only" for="searchInput">Anime, mangá, light novel ou usuário</label><input id="searchInput" type="search" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Busque por título ou @ de usuário"><kbd>ESC</kbd></div>
+    <div class="search-kinds" aria-label="Tipo de resultado"><button class="active" data-search-kind="ANIME">Animes</button><button data-search-kind="MANGA">Mangás</button><button data-search-kind="USER">Usuários</button></div>
+    <div class="search-results" id="searchResults" aria-live="polite"><div class="search-empty"><span data-icon="search"></span><strong>Comece a buscar</strong><p>Digite um título ou use @ para encontrar pessoas.</p></div></div>
+  </section>
+</div>
+<div class="drawer-signout-layer" id="drawerSignoutConfirm" hidden aria-hidden="true">
+  <button type="button" class="drawer-signout-backdrop" data-nx-signout-cancel aria-label="Cancelar saída"></button>
+  <section class="drawer-signout-dialog" role="alertdialog" aria-modal="true" aria-labelledby="drawerSignoutTitle" aria-describedby="drawerSignoutDescription" tabindex="-1">
+    <header><div><span>CONTA ANINEXUS</span><h2 id="drawerSignoutTitle">Sair da sua conta?</h2></div><button type="button" data-nx-signout-cancel aria-label="Fechar confirmação"><span data-icon="close"></span></button></header>
+    <p id="drawerSignoutDescription">Você precisará entrar novamente para acessar sua biblioteca e suas interações.</p>
+    <footer><button type="button" data-nx-signout-cancel>Cancelar</button><button type="button" data-nx-signout-confirm>Sair</button></footer>
+  </section>
+</div>
 <div class="nx43-notification-layer" id="notificationPanel" hidden aria-hidden="true">
   <button class="nx43-notification-backdrop" type="button" data-nx43-notifications-close aria-label="Fechar notificações"></button>
   <section class="nx43-notification-sheet" role="dialog" aria-modal="true" aria-labelledby="notificationTitle" tabindex="-1">
@@ -178,7 +195,7 @@
 <script src="./preview-v18/bridge.js?v=26.0.0" defer></script>
 <script src="./preview-v19/state-normalizer.js?v=26.0.0" defer></script>
 <script src="./preview-v44/avatar-v44.js?v=44.6.0" defer></script>
-<script src="./preview-v38/auth-v38.js?v=44.30.0" defer></script>
+<script src="./preview-v38/auth-v38.js?v=44.31.0" defer></script>
 <script src="./preview-v44/achievements-v44.js?v=44.15.0" defer></script>
 <script src="./preview-v38/profile-v38.js?v=44.23.0" defer></script>
 <script src="./preview-v38/admin-v38.js?v=40.8.0" defer></script>
@@ -186,7 +203,7 @@
 <script src="./preview-v19/media-state-v2.js?v=44.24.1" defer></script>
 <script src="./preview-v39/media-sync-v39.js?v=44.23.0" defer></script>
 <script src="./preview-v44/awards-v45.js?v=44.25.2" defer></script>
-<script src="./preview-v6/app.js?v=44.25.0" defer></script>
+<script src="./preview-v6/app.js?v=44.31.0" defer></script>
 <script src="./preview-v44/discovery-v47.js?v=44.28.4" defer></script>
 <script src="./preview-v44/lists-v48.js?v=44.28.4" defer></script>
 <script src="./preview-v8/app.js?v=44.28.4" defer></script>
