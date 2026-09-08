@@ -532,9 +532,7 @@ test('mobile search closes explicitly and finds public users by handle',async({p
   await page.locator('#drawer .drawer-profile-link').click();
   await expect.poll(()=>page.evaluate(()=>new URLSearchParams(location.search).get('p')||location.pathname)).toBe('/u/kayky');
   await page.goto(firstVisitUrl('/'),{waitUntil:'domcontentloaded'});
-  await page.evaluate(pixel=>window.AniNexusAuthV38.syncDrawerIdentity({displayName:'Kayky Sousa',username:'kayky',avatarUrl:pixel}),pixel);
-  await page.locator('[data-action="drawer-open"]').click();
-  await page.locator('#drawer [data-nx-drawer-search]').click();
+  await page.keyboard.press('Control+K');
   const overlay=page.locator('#searchOverlay'),input=page.locator('#searchInput');
   await expect(overlay).toBeVisible();
   await expect(overlay.locator('.search-close')).toBeVisible();
@@ -547,8 +545,7 @@ test('mobile search closes explicitly and finds public users by handle',async({p
   await page.screenshot({path:testInfo.outputPath('search-users-mobile.png')});
   await overlay.locator('.search-close').click();
   await expect(overlay).toBeHidden();
-  await page.locator('[data-action="drawer-open"]').click();
-  await page.locator('#drawer [data-nx-drawer-search]').click();
+  await page.keyboard.press('Control+K');
   await input.fill('@kay');
   await expect(result).toBeVisible();
   await result.click();
