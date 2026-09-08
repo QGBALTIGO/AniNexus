@@ -1244,7 +1244,7 @@ html[data-theme=light] .drawer-install:hover{background:#fff0f4;color:#a91d40}
 .drawer-content{padding:18px 18px calc(16px + env(safe-area-inset-bottom))}
 .drawer-auth-card{position:relative;isolation:isolate;overflow:hidden;min-height:118px;padding:16px;border-radius:10px;gap:12px}
 .drawer-guest-actions{display:flex;align-items:center;gap:8px}
-.drawer-guest-actions[hidden],.drawer-account-tools[hidden],.drawer-profile-link[hidden]{display:none!important}
+.drawer-guest-actions[hidden],.drawer-account-tools[hidden]{display:none!important}
 .drawer-auth-card[data-auth-state=authenticated]{
   min-height:78px;
   padding:4px 50px 16px 2px;
@@ -1260,21 +1260,6 @@ html[data-theme=light] .drawer-install:hover{background:#fff0f4;color:#a91d40}
 .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy>span{display:none}
 .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy h3{font-size:17px;line-height:1.15}
 .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-description{margin-top:2px;font-size:10px;line-height:1.2}
-.drawer-profile-link{
-  width:max-content;
-  max-width:100%;
-  margin-top:3px;
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-  color:#f06a89;
-  font-size:9px;
-  font-weight:800;
-  line-height:1.2;
-  text-decoration:none
-}
-.drawer-profile-link svg{width:12px;height:12px}
-.drawer-profile-link:hover{color:#fff}
 .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-actions{justify-self:end}
 .drawer-account-tools{display:flex;align-items:center;gap:4px}
 .drawer-account-tools button{
@@ -1387,7 +1372,6 @@ html[data-theme=light] .drawer-install:hover{background:#fff0f4;color:#a91d40}
 .drawer-mascot-perch img{width:140px;opacity:.48}
 .drawer-utilities{padding-top:11px}
 html[data-theme=light] .drawer-auth-card[data-auth-state=authenticated]{border-bottom-color:#e3dce0;background:transparent}
-html[data-theme=light] .drawer-profile-link{color:#ad2346}
 html[data-theme=light] .drawer-account-tools button{color:#665a60}
 html[data-theme=light] .drawer-account-tools button:hover{background:#f5e9ee;color:#971d3b}
 html[data-theme=light] .drawer-panel .drawer-nav-grid>a{border-color:#e7e0e4;background:rgba(255,255,255,.64)}
@@ -1913,7 +1897,6 @@ html[data-theme=light] .nx45-ranking-empty{border-color:rgba(55,137,116,.2);back
 .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy h3,
 .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-description{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-actions{min-width:0;justify-self:end;align-self:start;padding-top:1px}
-.drawer-auth-card[data-auth-state=authenticated]>.drawer-profile-link{grid-column:1/-1;width:100%;max-width:none;min-height:31px;justify-content:space-between;margin:0;padding:9px 2px 0;border-top:1px solid rgba(255,255,255,.07);line-height:1.2}
 .drawer-account-tools{flex-wrap:nowrap;margin:0}
 .drawer-account-tools button{flex:0 0 32px;width:32px;height:32px;min-width:32px;min-height:32px!important}
 .drawer-account-tools button[data-nx-drawer-logout]{color:#ef7891}
@@ -1983,10 +1966,9 @@ html[data-theme=light] .search-result:hover{background:#faf1f4}
 
 @media(max-width:620px){
   .drawer-panel[data-auth-state=authenticated] .drawer-content{padding-top:14px}
-  .drawer-auth-card[data-auth-state=authenticated]{min-height:103px;padding:0 0 13px;grid-template-columns:42px minmax(0,1fr) auto;gap:8px;align-items:start}
+  .drawer-auth-card[data-auth-state=authenticated]{min-height:55px;padding:0 0 13px;grid-template-columns:42px minmax(0,1fr) auto;gap:8px;align-items:start}
   .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy{padding-top:0}
   .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-description{margin-top:2px}
-  .drawer-auth-card[data-auth-state=authenticated]>.drawer-profile-link{margin-top:1px;padding-top:9px;line-height:1.25}
   .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-actions{padding-top:1px}
   .drawer-account-tools{gap:1px}
   .drawer-account-tools button{flex-basis:30px;width:30px;height:30px;min-width:30px;min-height:30px!important}
@@ -2011,7 +1993,6 @@ html[data-theme=light] .search-result:hover{background:#faf1f4}
   .drawer-account-tools{margin:0}
   .drawer-account-tools button{flex-basis:28px;width:28px;height:28px;min-width:28px;min-height:28px!important}
   .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy h3{font-size:15px}
-  .drawer-profile-link{font-size:8px;gap:3px}
   .search-user-result>b{font-size:0;gap:0}
   .search-user-result>b svg{width:16px;height:16px}
 }

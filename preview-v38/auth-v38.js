@@ -306,14 +306,13 @@
   function syncDrawerIdentity(user = null) {
     const drawer = document.querySelector('.drawer-auth-card');
     if (!drawer) return;
-    const panel = drawer.closest('.drawer-panel'), avatar = drawer.querySelector('.drawer-account-avatar'), title = drawer.querySelector('h3'), description = drawer.querySelector('.drawer-auth-description'), profile = drawer.querySelector('.drawer-profile-link'), guest = drawer.querySelector('.drawer-guest-actions'), tools = drawer.querySelector('.drawer-account-tools');
+    const panel = drawer.closest('.drawer-panel'), avatar = drawer.querySelector('.drawer-account-avatar'), title = drawer.querySelector('h3'), description = drawer.querySelector('.drawer-auth-description'), guest = drawer.querySelector('.drawer-guest-actions'), tools = drawer.querySelector('.drawer-account-tools');
     if (!user) {
       if (panel) panel.dataset.authState = 'anonymous';
       drawer.dataset.authState = 'anonymous';
       if (avatar) { avatar.hidden = true; avatar.innerHTML = ''; }
       if (title) title.textContent = 'Entre na sua conta';
       if (description) { description.hidden = false; description.textContent = 'Salve suas listas e acompanhe sua jornada.'; }
-      if (profile) profile.hidden = true;
       if (guest) guest.hidden = false;
       if (tools) tools.hidden = true;
       return;
@@ -324,11 +323,6 @@
     if (avatar) { avatar.hidden = false; avatar.innerHTML = avatarMarkup(user,{name}); }
     if (title) title.textContent = name;
     if (description) { description.hidden = false; description.textContent = user.username ? `@${user.username}` : 'Sua conta AniNexus'; }
-    if (profile) {
-      const username=String(user.username||'').trim().replace(/^@+/,'');
-      profile.hidden=!username;
-      if(username){const publicPath=`/u/${encodeURIComponent(username)}`;profile.href=routeUrl(publicPath);profile.dataset.nx23Dedicated=publicPath;profile.dataset.nx27Path=publicPath;profile.onclick=event=>{event.preventDefault();event.stopImmediatePropagation();go(publicPath)}}
-    }
     if (guest) guest.hidden = true;
     if (tools) {
       tools.hidden = false;
