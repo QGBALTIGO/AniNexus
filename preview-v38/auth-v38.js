@@ -283,23 +283,40 @@
   function syncDrawerIdentity(user = null) {
     const drawer = document.querySelector('.drawer-auth-card');
     if (!drawer) return;
-    const avatar = drawer.querySelector('.drawer-account-avatar'), title = drawer.querySelector('h3'), text = drawer.querySelector('p'), actions = drawer.querySelector('.drawer-auth-actions');
+    const panel = drawer.closest('.drawer-panel'), avatar = drawer.querySelector('.drawer-account-avatar'), title = drawer.querySelector('h3'), description = drawer.querySelector('.drawer-auth-description'), profile = drawer.querySelector('.drawer-profile-link'), guest = drawer.querySelector('.drawer-guest-actions'), tools = drawer.querySelector('.drawer-account-tools');
     if (!user) {
+      if (panel) panel.dataset.authState = 'anonymous';
       drawer.dataset.authState = 'anonymous';
       if (avatar) { avatar.hidden = true; avatar.innerHTML = ''; }
       if (title) title.textContent = 'Entre na sua conta';
-      if (text) text.textContent = 'Salve sua lista, acompanhe episódios e organize tudo em um só lugar.';
-      if (actions) actions.innerHTML = '<button class="login-btn" data-action="login">Entrar</button><button class="signup-btn" data-action="register">Criar conta</button>';
+      if (description) { description.hidden = false; description.textContent = 'Salve suas listas e acompanhe sua jornada.'; }
+      if (profile) profile.hidden = true;
+      if (guest) guest.hidden = false;
+      if (tools) tools.hidden = true;
       return;
     }
     const name = String(user.displayName || user.display_name || user.firstName || user.username || 'Minha conta');
+    if (panel) panel.dataset.authState = 'authenticated';
     drawer.dataset.authState = 'authenticated';
     if (avatar) { avatar.hidden = false; avatar.innerHTML = avatarMarkup(user,{name}); }
     if (title) title.textContent = name;
-    if (text) text.textContent = user.username ? `@${user.username}` : 'Sua conta AniNexus';
-    if (actions) {
-      actions.innerHTML = '<button class="nx38-drawer-account" type="button">Minha conta</button>';
-      actions.querySelector('button').onclick = () => go('/minha-conta');
+    if (description) { description.hidden = false; description.textContent = user.username ? `@${user.username}` : 'Sua conta AniNexus'; }
+    if (profile) {
+      profile.hidden = false;
+      profile.href = routeUrl(user.username ? `/u/${encodeURIComponent(user.username)}` : '/minha-conta');
+    }
+    if (guest) guest.hidden = true;
+    if (tools) {
+      tools.hidden = false;
+      const search = tools.querySelector('[data-nx-drawer-search]');
+      if (search) search.onclick = () => {
+        document.querySelector('#drawer [data-action="drawer-close"]')?.click();
+        requestAnimationFrame(() => document.querySelector('.top-actions [data-action="search"]')?.click());
+      };
+      const settings = tools.querySelector('[data-nx-drawer-settings]');
+      if (settings) settings.onclick = () => go('/minha-conta');
+      const logout = tools.querySelector('[data-nx-drawer-logout]');
+      if (logout) logout.onclick = async () => { logout.disabled = true; try { await signOut(); } finally { logout.disabled = false; } };
     }
   }
   async function syncHeader() {

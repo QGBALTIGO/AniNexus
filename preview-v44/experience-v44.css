@@ -1235,6 +1235,185 @@ html[data-theme=light] .drawer-install{color:#6e5f67}
 html[data-theme=light] .drawer-theme-toggle:hover,
 html[data-theme=light] .drawer-install:hover{background:#fff0f4;color:#a91d40}
 @media(max-height:760px){.drawer-mascot-perch{height:56px}.drawer-mascot-perch img{bottom:-1px;width:126px;opacity:.52}}
++
+/* V44.30.0: compact account-first drawer. */
+.drawer-panel{
+  width:min(460px,100vw);
+  background:linear-gradient(180deg,#171219 0%,#0b090d 100%);
+  border-left-color:rgba(255,255,255,.08)
+}
+.drawer-content{padding:18px 18px calc(16px + env(safe-area-inset-bottom))}
+.drawer-auth-card{position:relative;isolation:isolate;overflow:hidden;min-height:118px;padding:16px;border-radius:10px;gap:12px}
+.drawer-guest-actions{display:flex;align-items:center;gap:8px}
+.drawer-guest-actions[hidden],.drawer-account-tools[hidden],.drawer-profile-link[hidden]{display:none!important}
+.drawer-auth-card[data-auth-state=authenticated]{
+  min-height:78px;
+  padding:4px 50px 16px 2px;
+  grid-template-columns:48px minmax(90px,1fr) auto;
+  gap:12px;
+  border:0;
+  border-bottom:1px solid rgba(255,255,255,.09);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none
+}
+.drawer-auth-card[data-auth-state=authenticated] .drawer-account-avatar{width:48px;height:48px;border-color:rgba(255,255,255,.18);background:#22151c}
+.drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy>span{display:none}
+.drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy h3{font-size:17px;line-height:1.15}
+.drawer-auth-card[data-auth-state=authenticated] .drawer-auth-description{margin-top:2px;font-size:10px;line-height:1.2}
+.drawer-profile-link{
+  width:max-content;
+  max-width:100%;
+  margin-top:3px;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  color:#f06a89;
+  font-size:9px;
+  font-weight:800;
+  line-height:1.2;
+  text-decoration:none
+}
+.drawer-profile-link svg{width:12px;height:12px}
+.drawer-profile-link:hover{color:#fff}
+.drawer-auth-card[data-auth-state=authenticated] .drawer-auth-actions{justify-self:end}
+.drawer-account-tools{display:flex;align-items:center;gap:4px}
+.drawer-account-tools button{
+  width:34px;
+  height:34px;
+  min-width:34px;
+  min-height:34px!important;
+  padding:0;
+  display:grid;
+  place-items:center;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  color:#cfc4ca;
+  cursor:pointer
+}
+.drawer-account-tools button:hover{background:rgba(255,255,255,.07);color:#fff}
+.drawer-account-tools button:focus-visible{outline:2px solid #ff7893;outline-offset:2px}
+.drawer-account-tools button:disabled{opacity:.45}
+.drawer-account-tools svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.drawer-panel[data-auth-state=authenticated] .drawer-head{
+  position:absolute;
+  z-index:4;
+  top:16px;
+  right:12px;
+  width:40px;
+  min-height:40px;
+  padding:0;
+  border:0;
+  background:transparent
+}
+.drawer-panel[data-auth-state=authenticated] .drawer-head>div{display:none}
+.drawer-panel[data-auth-state=authenticated] .drawer-content{padding-top:16px}
+.drawer-section-label,.drawer-nav-intro>span{
+  display:block;
+  color:#9c8f96;
+  font-size:9px;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:.1em
+}
+.drawer-library{margin-top:18px}
+.drawer-library-link{
+  min-height:64px;
+  margin-top:9px;
+  padding:10px 12px;
+  display:grid;
+  grid-template-columns:40px minmax(0,1fr) 20px;
+  align-items:center;
+  gap:11px;
+  border:1px solid rgba(255,108,139,.42);
+  border-radius:8px;
+  background:#df2c57;
+  color:#fff;
+  text-decoration:none;
+  box-shadow:0 10px 24px rgba(116,13,39,.2);
+  transition:background-color .16s ease,transform .16s ease
+}
+.drawer-library-link:hover{background:#eb3963;transform:translateY(-1px)}
+.drawer-library-link>i{
+  width:40px;
+  height:40px;
+  display:grid;
+  place-items:center;
+  border-radius:8px;
+  background:rgba(255,255,255,.16);
+  color:#fff
+}
+.drawer-library-link>i svg{width:20px;height:20px}
+.drawer-library-link>span{min-width:0}
+.drawer-library-link strong,.drawer-library-link small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:0}
+.drawer-library-link strong{font-size:13px;font-weight:800}
+.drawer-library-link small{margin-top:2px;color:rgba(255,255,255,.74);font-size:9px;font-weight:600}
+.drawer-library-link>b{display:grid;place-items:center}
+.drawer-library-link>b svg{width:16px;height:16px}
+.drawer-nav{margin-top:20px}
+.drawer-nav-intro{margin:0 0 9px;display:block}
+.drawer-nav-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.drawer-panel .drawer-nav-grid>a{
+  min-height:58px;
+  padding:9px 10px;
+  display:grid;
+  grid-template-columns:36px minmax(0,1fr) 15px;
+  align-items:center;
+  gap:9px;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:8px;
+  background:rgba(255,255,255,.025);
+  box-shadow:none;
+  transform:none
+}
+.drawer-panel .drawer-nav-grid>a:after{content:none}
+.drawer-panel .drawer-nav-grid>a:hover{transform:none;border-color:rgba(239,68,105,.36);background:rgba(239,68,105,.07);box-shadow:none}
+.drawer-panel .drawer-nav-grid>a.active{border-color:rgba(239,68,105,.44);background:rgba(239,68,105,.1);box-shadow:inset 2px 0 #e23b62}
+.drawer-card-icon{width:36px;height:36px;border-radius:8px;box-shadow:none}
+.drawer-card-icon .ico{width:17px;height:17px;font-size:17px}
+.drawer-panel .drawer-nav-grid>a>strong{
+  min-width:0;
+  overflow:hidden;
+  color:#e3dce0;
+  font-size:11px;
+  font-weight:750;
+  line-height:1.2;
+  text-overflow:ellipsis;
+  white-space:nowrap
+}
+.drawer-panel .drawer-nav-grid>a>span{display:grid;place-items:center;color:#786d73}
+.drawer-panel .drawer-nav-grid>a>span svg{width:14px;height:14px}
+.drawer-mascot-perch{height:62px}
+.drawer-mascot-perch img{width:140px;opacity:.48}
+.drawer-utilities{padding-top:11px}
+html[data-theme=light] .drawer-auth-card[data-auth-state=authenticated]{border-bottom-color:#e3dce0;background:transparent}
+html[data-theme=light] .drawer-profile-link{color:#ad2346}
+html[data-theme=light] .drawer-account-tools button{color:#665a60}
+html[data-theme=light] .drawer-account-tools button:hover{background:#f5e9ee;color:#971d3b}
+html[data-theme=light] .drawer-panel .drawer-nav-grid>a{border-color:#e7e0e4;background:rgba(255,255,255,.64)}
+html[data-theme=light] .drawer-panel .drawer-nav-grid>a>strong{color:#4f444a}
+html[data-theme=light] .drawer-panel .drawer-nav-grid>a>span{color:#9b8e95}
+@media(max-width:620px){
+  .drawer-content{padding:14px 14px calc(14px + env(safe-area-inset-bottom))}
+  .drawer-panel[data-auth-state=authenticated] .drawer-content{padding-top:14px}
+  .drawer-auth-card[data-auth-state=authenticated]{min-height:74px;padding-bottom:14px;grid-template-columns:42px minmax(82px,1fr) auto;gap:9px}
+  .drawer-auth-card[data-auth-state=authenticated] .drawer-account-avatar{width:42px;height:42px}
+  .drawer-account-tools{gap:2px}
+  .drawer-account-tools button{width:32px;height:32px;min-width:32px;min-height:32px!important}
+  .drawer-library{margin-top:16px}
+  .drawer-nav{margin-top:18px}
+}
+@media(max-width:360px){
+  .drawer-auth-card[data-auth-state=authenticated]{grid-template-columns:40px minmax(0,1fr);padding-right:48px}
+  .drawer-auth-card[data-auth-state=authenticated] .drawer-account-avatar{width:40px;height:40px}
+  .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-actions{grid-column:2;justify-self:start}
+  .drawer-account-tools{margin-top:3px}
+  .drawer-nav-grid{grid-template-columns:1fr}
+  .drawer-panel .drawer-nav-grid>a{min-height:54px}
+  .drawer-mascot-perch{height:50px}
+}
+
 .nx35-community-avatar:not(:has(img)),
 .nx40-avatar:not(:has(img)),
 .nx42-impression header>i:not(:has(img)),

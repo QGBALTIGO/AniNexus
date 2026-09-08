@@ -57,7 +57,7 @@
 <link rel="stylesheet" href="./preview-v33/home-v33.css?v=44.13.2">
 <link rel="stylesheet" href="./preview-v33/news-v33.css?v=44.22.0">
 <link rel="stylesheet" href="./preview-v38/core-v38.css?v=40.9.0">
-<link rel="stylesheet" href="./preview-v38/auth-v38.css?v=44.28.5">
+<link rel="stylesheet" href="./preview-v38/auth-v38.css?v=44.30.0">
 <link rel="stylesheet" href="./preview-v38/profile-v38.css?v=44.6.0">
 <link rel="stylesheet" href="./preview-v38/admin-v38.css?v=40.8.0">
 <link rel="stylesheet" href="./preview-v38/library-v38.css?v=44.10.0">
@@ -66,7 +66,7 @@
 <link rel="stylesheet" href="./preview-v41/product-v41.css?v=41.0.0">
 <link rel="stylesheet" href="./preview-v42/product-v42.css?v=44.16.2">
 <link rel="stylesheet" href="./preview-v42/header-v43.css?v=44.22.0">
-<link rel="stylesheet" href="./preview-v44/experience-v44.css?v=44.24.5">
+<link rel="stylesheet" href="./preview-v44/experience-v44.css?v=44.30.0">
 <link rel="stylesheet" href="./preview-v44/home-characters-v44.css?v=44.23.1">
 <link rel="stylesheet" href="./preview-v44/achievements-v44.css?v=44.15.0">
 <link rel="stylesheet" href="./preview-v44/provider-credit-v44.css?v=44.7.4">
@@ -116,18 +116,29 @@
     <div class="drawer-content">
       <section class="drawer-auth-card" aria-label="Acesso à conta">
         <div class="drawer-account-avatar" aria-hidden="true" hidden></div>
-        <div class="drawer-auth-copy"><span>CONTA ANINEXUS</span><h3>Entre na sua conta</h3><p>Salve sua lista, acompanhe episódios e organize tudo em um só lugar.</p></div>
-        <div class="drawer-auth-actions"><button class="login-btn" data-action="login">Entrar</button><button class="signup-btn" data-action="register">Criar conta</button></div>
+        <div class="drawer-auth-copy"><span>CONTA ANINEXUS</span><h3>Entre na sua conta</h3><p class="drawer-auth-description">Salve suas listas e acompanhe sua jornada.</p><a class="drawer-profile-link" href="/minha-conta" data-link hidden>Ver meu perfil público <span data-icon="arrow"></span></a></div>
+        <div class="drawer-auth-actions">
+          <div class="drawer-guest-actions"><button class="login-btn" data-action="login">Entrar</button><button class="signup-btn" data-action="register">Criar conta</button></div>
+          <div class="drawer-account-tools" hidden>
+            <button type="button" data-nx-drawer-search aria-label="Pesquisar" title="Pesquisar"><span data-icon="search"></span></button>
+            <button type="button" data-nx-drawer-settings aria-label="Configurações da conta" title="Configurações"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3V2.8h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"/></svg></button>
+            <button type="button" data-nx-drawer-logout aria-label="Sair da conta" title="Sair"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4H5v16h5M14 8l4 4-4 4M8 12h10"/></svg></button>
+          </div>
+        </div>
+      </section>
+      <section class="drawer-library" aria-labelledby="drawerLibraryTitle">
+        <span class="drawer-section-label" id="drawerLibraryTitle">SUA LISTA</span>
+        <a class="drawer-library-link" href="/minha-biblioteca" data-link><i data-icon="book"></i><span><strong>Minha Biblioteca</strong><small>Animes, mangás e favoritos</small></span><b data-icon="arrow"></b></a>
       </section>
       <nav class="drawer-nav" aria-label="Menu AniNexus">
-        <div class="drawer-nav-intro"><div><span>NAVEGAÇÃO</span><strong>Explore o AniNexus</strong></div><small>6 destinos</small></div>
+        <div class="drawer-nav-intro"><span>EXPLORAR</span></div>
         <div class="drawer-nav-grid">
-          <a href="/" data-link data-drawer-nav="home"><i class="drawer-card-icon tone-red" data-icon="home"></i><span><strong>Início</strong><small>Destaques e novidades</small></span></a>
-          <a href="/animes/catalogo" data-link data-drawer-nav="anime"><i class="drawer-card-icon tone-blue" data-icon="grid"></i><span><strong>Animes</strong><small>Catálogo e descoberta</small></span></a>
-          <a href="/mangas" data-link data-drawer-nav="manga"><i class="drawer-card-icon tone-violet" data-icon="book"></i><span><strong>Mangás</strong><small>Histórias para ler</small></span></a>
-          <a href="/animes/temporadas" data-link data-drawer-nav="season"><i class="drawer-card-icon tone-gold" data-icon="season"></i><span><strong>Temporadas</strong><small>Estreias da estação</small></span></a>
-          <a href="/animes/programacao" data-link data-drawer-nav="schedule"><i class="drawer-card-icon tone-blue" data-icon="calendar"></i><span><strong>Programação</strong><small>Próximos episódios</small></span></a>
-          <a href="/noticias" data-link data-drawer-nav="news"><i class="drawer-card-icon tone-rose" data-icon="news"></i><span><strong>Notícias</strong><small>Estreias e novidades</small></span></a>
+          <a href="/" data-link data-drawer-nav="home"><i class="drawer-card-icon tone-red" data-icon="home"></i><strong>Início</strong><span data-icon="arrow"></span></a>
+          <a href="/animes/catalogo" data-link data-drawer-nav="anime"><i class="drawer-card-icon tone-blue" data-icon="grid"></i><strong>Animes</strong><span data-icon="arrow"></span></a>
+          <a href="/mangas" data-link data-drawer-nav="manga"><i class="drawer-card-icon tone-violet" data-icon="book"></i><strong>Mangás</strong><span data-icon="arrow"></span></a>
+          <a href="/animes/temporadas" data-link data-drawer-nav="season"><i class="drawer-card-icon tone-gold" data-icon="season"></i><strong>Temporadas</strong><span data-icon="arrow"></span></a>
+          <a href="/animes/programacao" data-link data-drawer-nav="schedule"><i class="drawer-card-icon tone-blue" data-icon="calendar"></i><strong>Programação</strong><span data-icon="arrow"></span></a>
+          <a href="/noticias" data-link data-drawer-nav="news"><i class="drawer-card-icon tone-rose" data-icon="news"></i><strong>Notícias</strong><span data-icon="arrow"></span></a>
         </div>
       </nav>
       <div class="drawer-mascot-perch" aria-hidden="true"><img src="./assets/mascot-menu-perch-v44-2.png" alt=""></div>
@@ -167,7 +178,7 @@
 <script src="./preview-v18/bridge.js?v=26.0.0" defer></script>
 <script src="./preview-v19/state-normalizer.js?v=26.0.0" defer></script>
 <script src="./preview-v44/avatar-v44.js?v=44.6.0" defer></script>
-<script src="./preview-v38/auth-v38.js?v=44.28.5" defer></script>
+<script src="./preview-v38/auth-v38.js?v=44.30.0" defer></script>
 <script src="./preview-v44/achievements-v44.js?v=44.15.0" defer></script>
 <script src="./preview-v38/profile-v38.js?v=44.23.0" defer></script>
 <script src="./preview-v38/admin-v38.js?v=40.8.0" defer></script>

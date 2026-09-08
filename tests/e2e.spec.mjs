@@ -432,16 +432,18 @@ test('legacy local activity never renders a broken voce profile link',async({pag
 
 test('local activity adopts the signed-in member name avatar and public profile',async({page})=>{await page.addInitScript(pixel=>localStorage.setItem('aninexus:community:activity:v40',JSON.stringify([{id:'signed-member',kind:'state',media_id:101,username:'',display_name:'',avatar_url:'',status:'CURRENT',created_at:new Date().toISOString(),title:'Anime Teste 101',cover:pixel,local:true}])),pixel);await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await page.evaluate(pixel=>{window.AniNexusAccountData=async()=>({displayName:'Kayky Sousa',username:'kayky',avatarUrl:pixel});dispatchEvent(new CustomEvent('aninexus:account-identity-changed'))},pixel);const hero=page.locator('#nx35CommunityHero');await expect(hero).toContainText('Kayky Sousa',{timeout:30000});await expect(hero.locator('.nx35-community-avatar>img')).toHaveAttribute('src',pixel);await expect(hero.getByRole('link',{name:'Kayky Sousa',exact:true})).toHaveAttribute('href',/kayky/);await expect(hero.locator('.nx35-community-cover>a')).toHaveAttribute('href',/anime/);await expect(hero).not.toContainText('Sua lista')});
 
-test('mobile drawer is colorful account-aware and limited to six destinations',async({page})=>{
+test('mobile drawer prioritizes the account, library and compact destinations',async({page},testInfo)=>{
   await page.setViewportSize({width:390,height:844});
   await page.goto(firstVisitUrl('/'),{waitUntil:'domcontentloaded'});
   await expect(page.locator('.nx42-consent')).toBeVisible();
   await page.locator('[data-action="drawer-open"]').click();
-  const drawer=page.locator('#drawer'),panel=drawer.locator('.drawer-panel'),auth=drawer.locator('.drawer-auth-card'),links=drawer.locator('.drawer-nav-grid>a'),theme=drawer.locator('[data-nx-drawer-theme]'),install=drawer.locator('[data-nx-install]');
+  const drawer=page.locator('#drawer'),panel=drawer.locator('.drawer-panel'),auth=drawer.locator('.drawer-auth-card'),links=drawer.locator('.drawer-nav-grid>a'),library=drawer.locator('.drawer-library-link'),theme=drawer.locator('[data-nx-drawer-theme]'),install=drawer.locator('[data-nx-install]');
   await expect(panel).toBeVisible();
   await expect(links).toHaveCount(6);
   expect(await links.locator('strong').allTextContents()).toEqual(['Início','Animes','Mangás','Temporadas','Programação','Notícias']);
-  await expect(drawer.locator('.drawer-nav-grid small')).toHaveCount(6);
+  await expect(drawer.locator('.drawer-nav-grid small')).toHaveCount(0);
+  await expect(library).toBeVisible();
+  await expect(library).toHaveAttribute('href','/minha-biblioteca');
   await expect(auth.getByRole('button',{name:'Entrar',exact:true})).toBeVisible();
   await expect(auth.getByRole('button',{name:'Criar conta',exact:true})).toBeVisible();
   await expect.poll(()=>panel.evaluate(element=>Math.abs(innerWidth-element.getBoundingClientRect().right))).toBeLessThanOrEqual(1);
@@ -488,8 +490,18 @@ test('mobile drawer is colorful account-aware and limited to six destinations',a
   await expect(auth.locator('.drawer-account-avatar img')).toHaveAttribute('src',pixel);
   await expect(auth.locator('h3')).toHaveText('Kayky');
   await expect(auth.locator('p')).toHaveText('@kayky');
-  await expect(auth.getByRole('button',{name:'Minha conta',exact:true})).toBeVisible();
+  await expect(auth.getByRole('link',{name:/Ver meu perfil público/})).toHaveAttribute('href',/\/u\/kayky/);
+  await expect(auth.getByRole('button',{name:'Pesquisar',exact:true})).toBeVisible();
+  await expect(auth.getByRole('button',{name:'Configurações da conta',exact:true})).toBeVisible();
+  await expect(auth.getByRole('button',{name:'Sair da conta',exact:true})).toBeVisible();
   await expect(auth.getByRole('button',{name:'Entrar',exact:true})).toHaveCount(0);
+  await page.screenshot({path:testInfo.outputPath('drawer-authenticated-mobile.png')});
+  await auth.getByRole('button',{name:'Pesquisar',exact:true}).click();
+  await expect(drawer).toBeHidden();
+  await expect(page.locator('#searchOverlay')).toBeVisible();
+  await page.locator('[data-action="search-close"]').first().click();
+  await page.locator('[data-action="drawer-open"]').click();
+  await expect(panel).toBeVisible();
   await page.evaluate(()=>window.AniNexusAuthV38.syncDrawerIdentity());
   await page.setViewportSize({width:320,height:700});
   await expect(auth.getByRole('button',{name:'Entrar',exact:true})).toBeVisible();
