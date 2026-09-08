@@ -6,7 +6,7 @@
   const app = document.querySelector('#app');
   if (!app) return;
 
-  const BUILD = '44.28.4';
+  const BUILD = '44.34.1';
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
   const ROUTES = new Set(['/animes/onde-assistir', '/animes/dublados', '/animes/estudios']);
@@ -242,7 +242,8 @@
       const y = Math.max(0, scrollY);
       const delta = y - state.lastScrollY;
       const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nx43-header-height')) || 66;
-      const shown = (document.querySelector('#nx47Hero')?.getBoundingClientRect().bottom || Infinity) < headerHeight;
+      const heroBottom = document.querySelector('#nx47Hero')?.getBoundingClientRect().bottom || Infinity;
+      const shown = y > 118 || heroBottom < headerHeight;
       const wasShown = document.body.classList.contains('nx47-discovery-scrolled');
       document.body.classList.toggle('nx47-discovery-scrolled', shown);
       const island = document.querySelector('.nx47-island');
