@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import fs from 'node:fs';
-import { rankCharacterCatalog } from '../lib/character-ranking.mjs';
+import { hydrateCharacterFavorites, rankCharacterCatalog } from '../lib/character-ranking.mjs';
 
 const catalog=JSON.parse(fs.readFileSync(new URL('../data/characters.json',import.meta.url),'utf8'));
 
@@ -26,4 +26,12 @@ test('ranking uses only AniNexus favorite counts and stable editorial ties',()=>
   assert.deepEqual(ranked.slice(0,3).map(item=>item.favoriteCount),[7,3,3]);
   assert.deepEqual(ranked.map(item=>item.rank),[1,2,3,4,5,6,7,8,9,10]);
   assert.deepEqual(ranked.map(item=>item.seedOrder),[9,1,2,3,4,5,6,7,8,10]);
+});
+
+test('public character favorites preserve user order and expose catalog details',()=>{
+  const hydrated=hydrateCharacterFavorites([{characterId:17,createdAt:'2026-09-08T00:00:00.000Z'},{characterId:999999}]);
+  assert.equal(hydrated.length,1);
+  assert.equal(hydrated[0].name,'Naruto Uzumaki');
+  assert.equal(hydrated[0].work,'Naruto');
+  assert.equal(hydrated[0].createdAt,'2026-09-08T00:00:00.000Z');
 });

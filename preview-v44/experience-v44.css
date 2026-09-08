@@ -1913,6 +1913,7 @@ html[data-theme=light] .nx45-ranking-empty{border-color:rgba(55,137,116,.2);back
 .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy h3,
 .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-description{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-actions{min-width:0;justify-self:end;align-self:start;padding-top:1px}
+.drawer-auth-card[data-auth-state=authenticated]>.drawer-profile-link{grid-column:1/-1;width:100%;max-width:none;min-height:31px;justify-content:space-between;margin:0;padding:9px 2px 0;border-top:1px solid rgba(255,255,255,.07);line-height:1.2}
 .drawer-account-tools{flex-wrap:nowrap;margin:0}
 .drawer-account-tools button{flex:0 0 32px;width:32px;height:32px;min-width:32px;min-height:32px!important}
 .drawer-account-tools button[data-nx-drawer-logout]{color:#ef7891}
@@ -1982,10 +1983,10 @@ html[data-theme=light] .search-result:hover{background:#faf1f4}
 
 @media(max-width:620px){
   .drawer-panel[data-auth-state=authenticated] .drawer-content{padding-top:14px}
-  .drawer-auth-card[data-auth-state=authenticated]{min-height:76px;padding:0 0 13px;grid-template-columns:42px minmax(0,1fr) auto;gap:8px;align-items:start}
+  .drawer-auth-card[data-auth-state=authenticated]{min-height:103px;padding:0 0 13px;grid-template-columns:42px minmax(0,1fr) auto;gap:8px;align-items:start}
   .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy{padding-top:0}
   .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-description{margin-top:2px}
-  .drawer-profile-link{margin-top:5px;line-height:1.25}
+  .drawer-auth-card[data-auth-state=authenticated]>.drawer-profile-link{margin-top:1px;padding-top:9px;line-height:1.25}
   .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-actions{padding-top:1px}
   .drawer-account-tools{gap:1px}
   .drawer-account-tools button{flex-basis:30px;width:30px;height:30px;min-width:30px;min-height:30px!important}
