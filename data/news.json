@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T13:40:07.590Z",
+  "generatedAt": "2026-09-08T17:33:14.567Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,508 @@
   ],
   "stats": {
     "collected": 46,
-    "grouped": 14,
-    "published": 14,
-    "newStories": 14,
-    "fullArticles": 14,
+    "grouped": 15,
+    "published": 15,
+    "newStories": 15,
+    "fullArticles": 15,
     "previewArticles": 0,
-    "avgWords": 397,
-    "withHeroImage": 14,
-    "withOrderedMedia": 11,
+    "avgWords": 388,
+    "withHeroImage": 15,
+    "withOrderedMedia": 12,
     "skippedTranslation": 0,
-    "skippedQuality": 31,
-    "durationMs": 3187
+    "skippedQuality": 30,
+    "durationMs": 2825
   },
   "items": [
+    {
+      "id": "animenew-28f216fb",
+      "slug": "hunter-x-hunter-confirma-novo-hiato-do-manga-animenew-28f216fb",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Hunter x Hunter confirma novo hiato do mangá",
+      "originalTitle": "Hunter x Hunter confirma novo hiato do mangá",
+      "summary": "O mangá Hunter x Hunter, de Yoshihiro Togashi, entrou novamente em hiato e ainda não possui data para retornar, enquanto uma nova peça ganhou anúncio. A informação ganhou força na edição 41 da Weekly Shonen Jump. A obra havia retomado a serialização em 29 de junho, mas agora terá sua volta anunciada posteriormente pela Shueisha.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Mangás",
+        "Notícias",
+        "Hunter x Hunter",
+        "Yoshihiro Togashi"
+      ],
+      "url": "https://animenew.com.br/hunter-x-hunter-entra-em-hiato-e-ganha-nova-peca",
+      "sourceUrl": "https://animenew.com.br/hunter-x-hunter-entra-em-hiato-e-ganha-nova-peca",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Hunter-x-Hunter-confirma-novo-hiato-do-manga.webp",
+      "mediaQuery": "Hunter x Hunter confirma novo hiato do mangá",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/hunter-x-hunter-scaled.webp",
+          "alt": "hunter x hunter",
+          "caption": "©P1998-2027 ・『HUNTER×HUNTER』THE STAGE 4製作委員会"
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O mangá Hunter x Hunter, de Yoshihiro Togashi, entrou novamente em hiato e ainda não possui data para retornar, enquanto uma nova peça ganhou anúncio. A informação ganhou força na edição 41 da Weekly Shonen Jump. A obra havia retomado a serialização em 29 de junho, mas agora terá sua volta anunciada posteriormente pela Shueisha.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Hunter x Hunter",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", de "
+            },
+            {
+              "text": "Yoshihiro Togashi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", entrou novamente em hiato e ainda não possui data para retornar, enquanto uma nova peça ganhou anúncio. A informação ganhou força na edição 41 da "
+            },
+            {
+              "text": "Weekly Shonen Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". A obra havia retomado a serialização em 29 de junho, mas agora terá sua volta anunciada posteriormente pela "
+            },
+            {
+              "text": "Shueisha",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Maria Holic retorna após 12 anos com novo mangá",
+              "runs": [
+                {
+                  "text": "Maria Holic retorna após 12 anos com novo mangá",
+                  "href": "https://animenew.com.br/maria-holic-novo-manga-sequencia"
+                }
+              ]
+            },
+            {
+              "text": "One Piece pode ter mais quatro anos de mangá",
+              "runs": [
+                {
+                  "text": "One Piece pode ter mais quatro anos de mangá",
+                  "href": "https://animenew.com.br/one-piece-fim-do-manga-quatro-anos"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Enquanto isso, a franquia ganhará a quarta adaptação para os palcos, intitulada Hunter X Hunter The Stage 4. A peça será baseada no arco das Chimera Ants e terá duas partes. A primeira será apresentada entre janeiro e fevereiro de 2027, enquanto a segunda chegará entre julho e agosto do mesmo ano. As apresentações acontecerão em Tóquio e Kyoto.",
+          "runs": [
+            {
+              "text": "Enquanto isso, a franquia ganhará a quarta adaptação para os palcos, intitulada "
+            },
+            {
+              "text": "Hunter X Hunter The Stage 4",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". A peça será baseada no arco das "
+            },
+            {
+              "text": "Chimera Ants",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e terá duas partes. A primeira será apresentada entre janeiro e fevereiro de 2027, enquanto a segunda chegará entre julho e agosto do mesmo ano. As apresentações acontecerão em Tóquio e Kyoto."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/hunter-x-hunter-scaled.webp",
+          "alt": "hunter x hunter",
+          "caption": "©P1998-2027 ・『HUNTER×HUNTER』THE STAGE 4製作委員会"
+        },
+        {
+          "type": "heading",
+          "text": "Mangá ultrapassou 100 milhões de cópias",
+          "runs": [
+            {
+              "text": "Mangá ultrapassou 100 milhões de cópias"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A série também alcançou a marca de mais de 100 milhões de cópias em circulação, considerando as versões físicas e digitais. Sendo assim o volume 39 estreou em julho, sendo o primeiro novo volume em 22 meses.",
+          "runs": [
+            {
+              "text": "A série também alcançou a marca de mais de 100 milhões de cópias em circulação, considerando as versões físicas e digitais. Sendo assim o volume 39 estreou em julho, sendo o primeiro novo volume em 22 meses."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Hunter x Hunter iniciou sua publicado em 1998 e passou por diversos hiatos ao longo dos anos. Em 2023, a Shueisha confirmou que a obra não seguiria mais o formato semanal devido às condições de saúde de Togashi.",
+          "runs": [
+            {
+              "text": "Hunter x Hunter",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " iniciou sua publicado em 1998 e passou por diversos hiatos ao longo dos anos. Em 2023, a Shueisha confirmou que a obra não seguiria mais o formato semanal devido às condições de saúde de Togashi."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: @hunter_stage",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "@hunter_stage",
+              "href": "https://x.com/hunter_stage"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Hunter x Hunter confirma novo hiato do mangá.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Hunter x Hunter confirma novo hiato do mangá",
+              "href": "https://animenew.com.br/hunter-x-hunter-entra-em-hiato-e-ganha-nova-peca/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-08T15:50:59.000Z",
+      "updatedAt": "2026-09-08T15:50:59.000Z",
+      "expiresAt": "2026-09-15T15:50:59.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/hunter-x-hunter-entra-em-hiato-e-ganha-nova-peca",
+          "publishedAt": "2026-09-08T15:50:59.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 239,
+      "qualityScore": 0.968,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-aa995b26",
+      "slug": "black-clover-2-temporada-estreia-em-outubro-animenew-aa995b26",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Black Clover: 2ª temporada estreia em outubro",
+      "originalTitle": "Black Clover: 2ª temporada estreia em outubro",
+      "summary": "A 2ª temporada do anime Black Clover estreia em 3 de outubro no Japão, com novo tema de encerramento interpretado pelo grupo ONE OR EIGHT. A confirmação veio na edição 41 da revista Weekly Shonen Jump, publicada esta semana. A série começará a ser exibida às 23h na TV Tokyo e emissoras afiliadas.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Black Clover"
+      ],
+      "url": "https://animenew.com.br/black-clover-2-temporada-estreia-outubro",
+      "sourceUrl": "https://animenew.com.br/black-clover-2-temporada-estreia-outubro",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Black-Clover-2a-temporada-estreia-em-outubro.webp",
+      "mediaQuery": "Black Clover: 2ª temporada estreia em outubro",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/4MYo8FfiXMA"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A 2ª temporada do anime Black Clover estreia em 3 de outubro no Japão, com novo tema de encerramento interpretado pelo grupo ONE OR EIGHT. A confirmação veio na edição 41 da revista Weekly Shonen Jump, publicada esta semana. A série começará a ser exibida às 23h na TV Tokyo e emissoras afiliadas.",
+          "runs": [
+            {
+              "text": "A 2ª temporada do "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Black Clover",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " estreia em 3 de outubro no Japão, com novo tema de encerramento interpretado pelo grupo "
+            },
+            {
+              "text": "ONE OR EIGHT",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A confirmação veio na edição 41 da revista "
+            },
+            {
+              "text": "Weekly Shonen Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", publicada esta semana. A série começará a ser exibida às 23h na TV Tokyo e emissoras afiliadas."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Black Clover apresenta abertura da 2ª temporada",
+              "runs": [
+                {
+                  "text": "Black Clover apresenta abertura da 2ª temporada",
+                  "href": "https://animenew.com.br/black-clover-2-temporada-abertura-wanima"
+                }
+              ]
+            },
+            {
+              "text": "Giant Ojosama revela elenco e equipe do anime",
+              "runs": [
+                {
+                  "text": "Giant Ojosama revela elenco e equipe do anime",
+                  "href": "https://animenew.com.br/anime-giant-ojosama-giant-ojo-sama-giant-young-lady-anime"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O novo encerramento será “Yellow Brick Road”, do ONE OR EIGHT. Já a abertura ficará por conta da banda WANIMA, que apresenta a música “Kienai Riyū”.",
+          "runs": [
+            {
+              "text": "O novo encerramento será “Yellow Brick Road”, do ONE OR EIGHT. Já a abertura ficará por conta da banda WANIMA, que apresenta a música “Kienai Riyū”."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=4MYo8FfiXMA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/4MYo8FfiXMA"
+        },
+        {
+          "type": "heading",
+          "text": "Produção de Black Clover",
+          "runs": [
+            {
+              "text": "Produção de Black Clover"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Ayataka Tanemura retorna à franquia na direção da 2ª temporada. Ele comandou os episódios 153 a 170 da primeira série e também dirigiu o filme Black Clover: Sword of the Wizard King. O Studio Pierrot novamente será responsável pela animação.",
+          "runs": [
+            {
+              "text": "Ayataka Tanemura retorna à franquia na direção da 2ª temporada. Ele comandou os episódios 153 a 170 da primeira série e também dirigiu o filme "
+            },
+            {
+              "text": "Black Clover: Sword of the Wizard King",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O Studio Pierrot novamente será responsável pela animação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A primeira temporada terminou em março de 2021, após 170 episódios. O anime começou em outubro de 2017 e adaptou o mangá de Yuki Tabata, publicado originalmente na Weekly Shonen Jump.",
+          "runs": [
+            {
+              "text": "A primeira temporada terminou em março de 2021, após 170 episódios. O anime começou em outubro de 2017 e adaptou o mangá de "
+            },
+            {
+              "text": "Yuki Tabata",
+              "href": "https://animenew.com.br/tag/yuki-tabata/"
+            },
+            {
+              "text": ", publicado originalmente na Weekly Shonen Jump."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Crunchyroll exibirá a nova temporada conforme a transmissão japonesa. Antes disso, a plataforma fará uma sessão especial nos cinemas dos Estados Unidos em 21 de setembro.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://animenew.com.br/tag/crunchyroll/"
+            },
+            {
+              "text": " exibirá a nova temporada conforme a transmissão japonesa. Antes disso, a plataforma fará uma sessão especial nos cinemas dos Estados Unidos em 21 de setembro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: ANN",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "ANN",
+              "href": "https://www.animenewsnetwork.com/news/2026-09-07/black-clover-anime-2nd-season-reveals-october-3-debut-ending-theme-by-one-or-eight/.241479"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Black Clover: 2ª temporada estreia em outubro.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Black Clover: 2ª temporada estreia em outubro",
+              "href": "https://animenew.com.br/black-clover-2-temporada-estreia-outubro/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-08T15:41:14.000Z",
+      "updatedAt": "2026-09-08T15:41:14.000Z",
+      "expiresAt": "2026-09-15T15:41:14.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/black-clover-2-temporada-estreia-outubro",
+          "publishedAt": "2026-09-08T15:41:14.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 217,
+      "qualityScore": 0.967,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-ccc66539",
       "slug": "the-shy-snow-woman-ganha-streaming-antecipado-animenew-ccc66539",
@@ -5200,310 +5689,6 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 2,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-211a006a",
-      "slug": "life-a-felicidade-depende-de-nos-sera-publicado-pela-newpop-jbox-211a006a",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Life – A Felicidade Depende de Nós’ será publicado pela NewPOP",
-      "originalTitle": "‘Life – A Felicidade Depende de Nós’ será publicado pela NewPOP",
-      "summary": "A editora NewPOP anunciou na última sexta (28), através do site Blyme, que publicará no Brasil o mangá Life – A Felicidade Depende de Nós (Life Senjou no Bokura).",
-      "author": "Jean Clemente",
-      "tags": [
-        "Mangá",
-        "a felicidade depende de nós",
-        "BL",
-        "Blyme",
-        "boys love bl",
-        "life",
-        "life mangá",
-        "miya tokokura",
-        "NewPop",
-        "selo pride"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/01/life-a-felicidade-depende-de-nos-sera-publicado-pela-newpop",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/01/life-a-felicidade-depende-de-nos-sera-publicado-pela-newpop",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/Life-AFelicidadeDependedeNos-destacada.jpg",
-      "mediaQuery": "‘Life – A Felicidade Depende de Nós’ será publicado pela NewPOP",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/life-capa.webp",
-          "alt": "Imagem mostra a capa japonesa do mangá, com os protagonistas se olhando de mãos dadas.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A editora NewPOP anunciou na última sexta (28), através do site Blyme, que publicará no Brasil o mangá Life – A Felicidade Depende de Nós (Life Senjou no Bokura).",
-          "runs": [
-            {
-              "text": "A editora "
-            },
-            {
-              "text": "NewPOP",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " anunciou na última sexta (28), através do site "
-            },
-            {
-              "text": "Blyme",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que publicará no Brasil o mangá "
-            },
-            {
-              "text": "Life – A Felicidade Depende de Nós",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Life Senjou no Bokura",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ")."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O título virá pelo selo Pride da editora e a previsão de lançamento é para o mês de setembro.",
-          "runs": [
-            {
-              "text": "O título virá pelo selo "
-            },
-            {
-              "text": "Pride",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " da editora e a previsão de lançamento é para o mês de "
-            },
-            {
-              "text": "setembro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/life-capa.webp",
-          "alt": "Imagem mostra a capa japonesa do mangá, com os protagonistas se olhando de mãos dadas."
-        },
-        {
-          "type": "paragraph",
-          "text": "Capa japonesa. | Imagem: Divulgação/Houbunsha",
-          "runs": [
-            {
-              "text": "Capa japonesa. | Imagem: Divulgação/Houbunsha"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Com autoria de Miya Tokokura, o mangá boys’ love foi publicado em 2016 na revista Hana Oto, da editora Houbunsha. A obra foi compilada em volume único e em 2020 foi adaptada em um dorama de quatro episódios.",
-          "runs": [
-            {
-              "text": "Com autoria de "
-            },
-            {
-              "text": "Miya Tokokura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", o mangá "
-            },
-            {
-              "text": "boys’ love",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " foi publicado em 2016 na revista "
-            },
-            {
-              "text": "Hana Oto",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", da editora "
-            },
-            {
-              "text": "Houbunsha",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A obra foi compilada em volume único e em 2020 foi adaptada em um dorama de quatro episódios."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Sinopse pelo site Blyme:",
-          "runs": [
-            {
-              "text": "Sinopse pelo site "
-            },
-            {
-              "text": "Blyme",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ":"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "O sincero Ito e o inocente Nishi se encontram por acaso enquanto brincam sozinhos de “seguir a linha branca” a caminho de casa depois da escola. Com o tempo eles se apaixonam, mas Ito, frustrado por seus “encontros apenas na linha branca”, impulsivamente beija Nishi… De estudantes do ensino médio a universitários e depois à vida adulta, esta obra comovente e aclamada retrata a vida de dois homens atormentados pelo amor, divididos entre sentimentos imutáveis e realidades em constante mudança.",
-          "runs": [
-            {
-              "text": "O sincero Ito e o inocente Nishi se encontram por acaso enquanto brincam sozinhos de “seguir a linha branca” a caminho de casa depois da escola. Com o tempo eles se apaixonam, mas Ito, frustrado por seus “encontros apenas na linha branca”, impulsivamente beija Nishi… De estudantes do ensino médio a universitários e depois à vida adulta, esta obra comovente e aclamada retrata a vida de dois homens atormentados pelo amor, divididos entre sentimentos imutáveis e realidades em constante mudança.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Blyme",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Blyme",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://blyme.com.br/noticias/exclusivo-editora-newpop-anuncia-manga-bl-life-a-felicidade-depende-de-nos/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-01T16:30:06.000Z",
-      "updatedAt": "2026-09-01T16:31:03.000Z",
-      "expiresAt": "2026-09-08T16:30:06.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/01/life-a-felicidade-depende-de-nos-sera-publicado-pela-newpop",
-          "publishedAt": "2026-09-01T16:30:06.000Z",
-          "author": "Jean Clemente"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 1,
-      "wordCount": 194,
-      "qualityScore": 0.904,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
         "sourcePagesRead": 0
       }
     }
