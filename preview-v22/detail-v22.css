@@ -63,3 +63,84 @@ body.nx22-detail-active .menu-btn{width:38px!important;height:38px!important}
 /* AniNexus V40.4 — player sob demanda e contenção móvel */
 .nx22-primary{min-width:0}.nx22-section-head>div small{color:#dc6f85}.nx22-theme-copy{min-width:0}.nx22-theme-play{position:absolute;z-index:3;inset:0;width:100%;border:0;background:linear-gradient(0deg,rgba(5,4,5,.66),rgba(5,4,5,.12));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;font:900 10px Manrope,sans-serif;cursor:pointer}.nx22-theme-play svg{width:42px;height:42px;padding:11px;border:1px solid rgba(255,255,255,.18);border-radius:50%;background:rgba(10,7,9,.72);fill:#fff;stroke:none}.nx22-theme-card.is-loaded .nx22-theme-play{display:none}.nx22-theme-code{z-index:4;pointer-events:none}.nx22-theme-error{z-index:5}
 @media(max-width:720px){.nx22-themes,.nx22-themes-results,.nx22-theme-grid,.nx22-theme-card{min-width:0;max-width:100%}.nx22-theme-grid{grid-template-columns:minmax(0,1fr)}.nx22-themes-loading{grid-template-columns:minmax(0,1fr)}.nx22-theme-play{touch-action:manipulation}}
+
+/* Detail experience shared by anime and manga. */
+.nx22-hero{min-height:0;border-bottom:0}
+.nx22-hero-bg img{object-position:center 28%;transform:none}
+.nx22-hero-shade{background:linear-gradient(90deg,rgba(7,5,7,.98) 0%,rgba(7,5,7,.86) 42%,rgba(7,5,7,.48) 75%,rgba(7,5,7,.76) 100%),linear-gradient(180deg,rgba(8,6,8,.10) 0%,rgba(8,6,8,.18) 48%,rgba(8,6,8,.82) 82%,#080608 100%)}
+.nx22-hero-content{padding:78px 0 30px}
+.nx22-hero-grid{grid-template-columns:220px minmax(0,1fr);gap:34px}
+.nx22-cover{border-radius:10px}
+.nx22-headcopy h1{max-width:760px;margin:6px 0 9px;font-size:clamp(30px,3vw,40px);line-height:1.1;letter-spacing:0;text-wrap:pretty}
+.nx22-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 10px;color:#a79ba0;font-size:10px;font-weight:700}
+.nx22-meta span+span:before{content:"·";margin-right:8px;color:#655b60}
+.nx22-chips{gap:6px}
+.nx22-chips span,.nx22-chips a{min-height:24px;padding:0 8px;border:1px solid rgba(255,255,255,.10);border-radius:4px;background:rgba(35,29,36,.76);backdrop-filter:blur(8px);color:#c9bfc3;display:inline-flex;align-items:center;font-size:9px;font-weight:800;text-decoration:none}
+.nx22-chips .nx22-status{border-color:rgba(67,206,176,.26);background:rgba(27,114,96,.22);color:#82dac6}
+.nx22-chips a.genre{border-color:rgba(227,38,79,.28);background:rgba(227,38,79,.08);color:#ff91a3;cursor:pointer;transition:background .16s ease,border-color .16s ease,color .16s ease}
+.nx22-chips a.genre:hover,.nx22-chips a.genre:focus-visible{border-color:rgba(244,76,108,.62);background:rgba(227,38,79,.17);color:#fff;outline:none}
+.nx22-actions{gap:7px;margin-top:14px}
+.nx22-actions button{height:34px;border-radius:5px;padding:0 10px;font-size:10px;font-weight:800}
+.nx22-actions svg{width:16px;height:16px}
+.nx22-list{min-width:150px;box-shadow:none}
+.nx22-fav,.nx22-share{width:34px!important;padding:0!important;border-radius:5px!important}
+.nx22-share span{display:none}
+.nx22-airing{width:max-content;max-width:100%;min-height:34px;margin-top:12px;padding:0 9px;border:1px solid rgba(255,255,255,.12);border-radius:4px;background:rgba(26,21,26,.72);display:flex;align-items:center;gap:8px;color:#a79ca1;font-size:9px;font-weight:800}
+.nx22-airing span:first-child,.nx22-airing span:nth-of-type(2){font-size:8px;letter-spacing:.05em}.nx22-airing strong{color:#f7f1f3;font-size:12px}.nx22-airing em{padding:3px 6px;border:1px dashed rgba(255,255,255,.18);border-radius:4px;color:#ddd3d7;font-style:normal;font-variant-numeric:tabular-nums}
+.nx22-publication em{border:0;padding-inline:3px;color:#8fd9c8}
+.nx22-community-summary{display:flex;align-items:flex-end;gap:22px;margin-top:15px}
+.nx22-rating{display:grid;grid-template-columns:auto auto;gap:4px 8px;align-items:center;flex:0 0 auto;padding-right:23px;border-right:1px solid rgba(255,255,255,.10)}
+.nx22-rating>span{grid-column:1/-1;color:#9f9398;font-size:8px;font-weight:900}
+.nx22-rating-stars{display:flex;align-items:center;gap:1px;min-width:101px}
+.nx22-rating-star{position:relative;width:20px;height:20px;padding:0;border:0;background:transparent;color:#675c61;cursor:pointer}
+.nx22-rating-star>span{position:absolute;inset:0;display:block;pointer-events:none}
+.nx22-rating-star svg{width:18px;height:18px;fill:transparent;stroke:currentColor;stroke-width:1.65}
+.nx22-rating-star .nx22-star-fill{width:var(--nx22-star-fill);overflow:hidden;color:#f2c94c}
+.nx22-rating-star .nx22-star-fill svg{max-width:none;fill:currentColor;stroke:currentColor}
+.nx22-rating-star:hover .nx22-star-empty,.nx22-rating-star:focus-visible .nx22-star-empty{color:#f2c94c}
+.nx22-rating-star:focus-visible{outline:2px solid #f05b76;outline-offset:2px;border-radius:4px}
+.nx22-rating output{min-width:27px;color:#f8f4f6;font:800 12px/1 Manrope,sans-serif}
+.nx22-stats{gap:24px;margin-top:0}
+.nx22-stats div{min-width:64px}
+.nx22-stats strong{font-size:19px;letter-spacing:0}
+.nx22-stats span{max-width:120px;margin-top:4px;font-size:8px;line-height:1.25;letter-spacing:0;text-transform:none}
+.nx22-average-stat{display:grid;grid-template-columns:auto 63px;column-gap:6px;align-items:center}
+.nx22-average-stat>span{grid-column:1/-1}
+.nx22-average-stars{display:flex;gap:1px;font-style:normal}
+.nx22-average-star{position:relative;display:block;width:11px;height:11px;color:#685d62}
+.nx22-average-star i,.nx22-average-star b{position:absolute;inset:0;display:block;overflow:hidden;font-style:normal}
+.nx22-average-star b{width:var(--nx22-star-fill);color:#f2c94c}
+.nx22-average-star svg{display:block;width:11px;height:11px;max-width:none;fill:currentColor;stroke:currentColor}
+.nx22-tags a,.nx22-tags span{padding:6px 9px;border:1px solid rgba(255,255,255,.08);border-radius:7px;background:#100b0f;color:#bfb3b8;font-size:9px;font-weight:800;text-decoration:none}
+.nx22-tags a{border-color:rgba(227,38,79,.22);color:#eb7188}
+.nx22-tags a:hover,.nx22-tags a:focus-visible{border-color:rgba(227,38,79,.52);background:rgba(227,38,79,.10);color:#fff;outline:none}
+
+@media(max-width:720px){
+  .nx22-hero{min-height:0;overflow:hidden}
+  .nx22-hero-bg{height:285px}.nx22-hero-bg img{object-position:center 24%}
+  .nx22-hero-shade{height:410px;background:linear-gradient(180deg,rgba(8,6,8,.18) 0%,rgba(8,6,8,.34) 39%,rgba(8,6,8,.88) 72%,#080608 96%)}
+  .nx22-hero-content{padding:17px 0 25px}
+  .nx22-hero-grid{display:block;padding-top:67px}
+  .nx22-cover{width:160px;border-radius:8px;margin-inline:auto}
+  .nx22-headcopy{margin-top:14px}
+  .nx22-eyebrow{font-size:9px}
+  .nx22-headcopy h1{max-width:560px;margin:4px 0 7px;font-size:24px;line-height:1.1;letter-spacing:0}
+  .nx22-meta{gap:6px;margin-bottom:9px;font-size:9px}.nx22-meta span+span:before{margin-right:6px}
+  .nx22-chips{display:flex;flex-wrap:wrap;gap:5px}.nx22-chips span,.nx22-chips a{min-height:24px;padding:0 7px;border-radius:4px;font-size:8px}
+  .nx22-actions{display:flex;gap:7px;margin-top:13px}
+  .nx22-actions button{height:32px;border-radius:4px;font-size:10px}
+  .nx22-list{order:2;flex:0 1 190px;min-width:0;width:auto}.nx22-fav{order:1;width:32px!important}.nx22-share{order:3;width:36px!important}
+  .nx22-airing{min-height:33px;margin-top:12px;gap:7px;padding-inline:7px;font-size:8px}.nx22-airing strong{font-size:11px}.nx22-airing em{padding-inline:5px}
+  .nx22-community-summary{display:grid;gap:12px;margin-top:14px}
+  .nx22-rating{grid-template-columns:auto auto 1fr;width:100%;gap:0 8px;padding:0 0 11px;border-right:0;border-bottom:1px solid rgba(255,255,255,.09)}
+  .nx22-rating>span{grid-column:auto;align-self:center}.nx22-rating-stars{min-width:0}.nx22-rating output{justify-self:end}
+  .nx22-rating-star{width:20px;height:20px}.nx22-rating-star svg{width:18px;height:18px}
+  .nx22-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
+  .nx22-stats div{min-width:0}.nx22-stats strong{font-size:18px}.nx22-stats span{font-size:8px}
+}
+
+@media(max-width:390px){
+  .nx22-headcopy h1{font-size:24px}
+  .nx22-rating-stars{gap:0}.nx22-rating-star{width:19px}
+  .nx22-community-summary{gap:10px}.nx22-stats{gap:6px}
+}

@@ -3,7 +3,7 @@
   try {
     const IS_PAGES=location.hostname.endsWith('github.io');
     const BASE=IS_PAGES?'/AniNexus':'';
-    const BUILD='44.29.0';
+    const BUILD='44.35.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=restored?restored.split('?')[0]:u.pathname;
@@ -20,7 +20,7 @@
       {owner:'schedule',match:path==='/animes/programacao',selector:'.nx18-schedule',label:'Carregando programação…'},
       {owner:'awards',match:path==='/anime-awards',selector:'.nx45-awards-page',label:'Carregando premiação…'},
       {owner:'season',match:/^\/animes\/temporadas(?:\/\d{4}\/(?:inverno|primavera|verao|outono))?$/.test(path),selector:'.nx-season',label:'Carregando temporada…'},
-      {owner:'detail',match:/^\/anime\/.+-\d+$/.test(path),selector:'.nx22-detail',label:'Carregando anime…'},
+      {owner:'detail',match:/^\/(?:anime|manga)\/.+-\d+$/.test(path),selector:'.nx22-detail',label:'Carregando obra…'},
       {owner:'news',match:path==='/noticias'||/^\/noticias\/[a-z0-9-]+$/.test(path),selector:'.nx35-news-page',label:'Carregando notícias…'},
       {owner:'community',match:path==='/comunidade',selector:'.nx40-community',label:'Carregando comunidade…'},
       {owner:'achievements',match:path==='/conquistas',selector:'.nx48-achievements-page',label:'Carregando conquistas…'},

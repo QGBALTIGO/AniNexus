@@ -6,7 +6,7 @@ const output = process.env.ANINEXUS_VISUAL_OUTPUT || 'test-results/visual-v42';
 const executablePath = process.env.ANINEXUS_CHROMIUM_EXECUTABLE_PATH || undefined;
 const requestedCase = String(process.env.ANINEXUS_VISUAL_CASE || '').trim();
 const mappedHost = new URL(origin).hostname === 'qgbaltigo.github.io';
-const buildUrl = route => `${origin}?build=44.22.0&p=${encodeURIComponent(route)}`;
+const buildUrl = route => `${origin}?build=44.35.0&p=${encodeURIComponent(route)}`;
 const artwork = new URL('assets/logo.png', origin).href;
 const communityArtwork = new URL('assets/radio-background-v44.png', origin).href;
 const media = (id, type = 'ANIME') => ({
@@ -14,11 +14,12 @@ const media = (id, type = 'ANIME') => ({
   type,
   title: { romaji: `Obra de teste ${id}`, english: `Obra de teste ${id}`, native: `Obra ${id}`, userPreferred: `Obra de teste ${id}` },
   coverImage: { extraLarge: artwork, large: artwork },
-  bannerImage: artwork,
+  bannerImage: communityArtwork,
   averageScore: 80 + (id % 10),
   popularity: 12_000 + id,
   favourites: 800 + id,
   genres: type === 'MANGA' ? ['Adventure', 'Drama'] : ['Action', 'Fantasy'],
+  tags: ['Isekai', 'Magic', 'School', 'Swordplay', 'Psychological'].map((name, index) => ({ name, rank: 90 - index * 4, isMediaSpoiler: false })),
   episodes: type === 'MANGA' ? null : 12,
   chapters: type === 'MANGA' ? 84 : null,
   volumes: type === 'MANGA' ? 10 : null,
@@ -29,6 +30,7 @@ const media = (id, type = 'ANIME') => ({
   externalLinks: [],
   startDate: { year: 2026, month: 7, day: 4 },
   endDate: null,
+  nextAiringEpisode: type === 'MANGA' ? null : { airingAt: Math.floor(Date.now() / 1000) + 4 * 86_400 + 17 * 3_600, episode: 13, timeUntilAiring: 4 * 86_400 + 17 * 3_600 },
   studios: { nodes: [{ name: 'Estúdio AniNexus' }] },
   relations: { edges: [] },
   recommendations: { nodes: [] },
@@ -66,6 +68,10 @@ const cases = [
   { name: 'desktop-season-dark', route: '/animes/temporadas', selector: '.nx-season', ready: '.nx-season-card', width: 1440, height: 900, theme: 'dark' },
   { name: 'mobile-news-dark', route: '/noticias', selector: '.nx35-news-page', ready: '.nx35-ncard', width: 390, height: 844, theme: 'dark' },
   { name: 'desktop-news-dark', route: '/noticias', selector: '.nx35-news-page', ready: '.nx35-ncard', width: 1440, height: 900, theme: 'dark' },
+  { name: 'mobile-detail-anime-dark', route: '/anime/obra-de-teste-101', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-rating-stars', width: 390, height: 844, theme: 'dark' },
+  { name: 'desktop-detail-anime-dark', route: '/anime/obra-de-teste-101', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-rating-stars', width: 1440, height: 900, theme: 'dark' },
+  { name: 'mobile-detail-manga-dark', route: '/manga/obra-de-teste-202', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-rating-stars', width: 390, height: 844, theme: 'dark' },
+  { name: 'desktop-detail-manga-dark', route: '/manga/obra-de-teste-202', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-rating-stars', width: 1440, height: 900, theme: 'dark' },
   { name: 'desktop-detail-light', route: '/anime/obra-de-teste-101', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-hero', width: 1440, height: 900, theme: 'light' },
 ];
 const selectedCases = requestedCase ? cases.filter(item => item.name === requestedCase) : cases;
@@ -100,6 +106,7 @@ try {
     };
     await page.route('**/api/catalog?**', fulfillCatalog);
     await page.route('**/api/reading?**', fulfillCatalog);
+    await page.route('**/api/**/rating', route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ score: 8.5, votes: 24 }) }));
     await page.route('https://graphql.anilist.co/**', async route => {
       const url = new URL(route.request().url());
       if (url.pathname === '/api/catalog' || url.pathname === '/api/reading') return fulfillCatalog(route);

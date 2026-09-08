@@ -13,7 +13,7 @@
   }
   function read() { try { return JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch { return null; } }
   function apply() {
-    if (applied || route() !== '/animes/catalogo') return;
+    if (applied || !['/animes/catalogo', '/mangas'].includes(route())) return;
     const filters = read();
     if (!filters || !window.AniNexusCatalog?.applyFilters) return;
     applied = true;
