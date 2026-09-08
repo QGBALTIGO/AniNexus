@@ -7,7 +7,7 @@
   if (!app) return;
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
-  const BUILD = '44.32.0';
+  const BUILD = '44.33.0';
   const PAGE_ROUTE = '/conquistas';
   const state = { data: null, catalog: [], statusFilter: 'ALL', tierFilter: 'ALL', busy: false, renderToken: 0, mountPromise: null, frame: 0, lastY: 0, direction: 0, travel: 0 };
   const categoryIcons = {
@@ -28,6 +28,11 @@
   const layersIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4-8 4-8-4 8-4Z"/><path d="m4 12 8 4 8-4M4 17l8 4 8-4"/></svg>';
 
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+  const normalizedData = data => {
+    if (!data) return null;
+    const pins = [...new Set((data.pins || []).map(String))].slice(0, 3), slots = new Map(pins.map((id, index) => [id, index + 1]));
+    return { ...data, pins, items: (data.items || []).map(item => ({ ...item, pinnedSlot: slots.get(String(item.id)) || null })) };
+  };
   const route = () => {
     try {
       const url = new URL(location.href), restored = url.searchParams.get('p');
@@ -90,12 +95,13 @@
     } catch { root.replaceChildren(); if (section) section.hidden = true; }
   }
 
-  function card(item, authenticated) {
+  function card(item, authenticated, pinnedCount = 0) {
     const current = Math.min(Number(item.progress || 0), Number(item.target || 1)), unlocked = item.unlocked === true;
     const progress = Math.min(100, Math.round((current / Math.max(1, Number(item.target || 1))) * 100));
     const description = unlocked ? item.unlockedDescription || item.description : item.description;
+    const pinLimitReached = authenticated && unlocked && !item.pinnedSlot && pinnedCount >= 3;
     return `<article class="nx48-achievement-card nx48-achievement-card--${String(item.tier || '').toLowerCase()}${unlocked ? ' is-unlocked' : ' is-locked'}" data-achievement-id="${esc(item.id)}" aria-label="${esc(item.title)}. ${esc(description)}${unlocked ? '. Desbloqueada' : `. ${progress}% concluída`}">
-      <header>${badge(item)}${authenticated && unlocked ? `<button type="button" class="nx48-pin${item.pinnedSlot ? ' is-pinned' : ''}" data-achievement-pin="${esc(item.id)}" aria-pressed="${Boolean(item.pinnedSlot)}" aria-label="${item.pinnedSlot ? 'Desafixar' : 'Fixar'} ${esc(item.title)}" title="${item.pinnedSlot ? 'Desafixar do perfil' : 'Fixar no perfil'}">${pinIcon}</button>` : ''}</header>
+      <header>${badge(item)}${authenticated && unlocked ? `<button type="button" class="nx48-pin${item.pinnedSlot ? ' is-pinned' : ''}" data-achievement-pin="${esc(item.id)}" aria-pressed="${Boolean(item.pinnedSlot)}" aria-label="${item.pinnedSlot ? 'Desafixar' : 'Fixar'} ${esc(item.title)}" title="${item.pinnedSlot ? 'Desafixar do perfil' : pinLimitReached ? 'Limite de três medalhas atingido' : 'Fixar no perfil'}"${pinLimitReached ? ' disabled aria-disabled="true"' : ''}>${pinIcon}</button>` : ''}</header>
       <div class="nx48-card-copy"><small>${esc(item.categoryLabel)} · ${esc(item.tierLabel)}</small><h3>${esc(item.title)}</h3><p>${esc(description)}</p></div>
     </article>`;
   }
@@ -113,7 +119,8 @@
     const root = app.querySelector('[data-achievement-grid]');
     if (!root) return;
     const items = filteredItems();
-    root.innerHTML = items.length ? items.map(item => card(item, Boolean(state.data))).join('') : '<div class="nx48-empty">Nenhuma conquista corresponde a estes filtros.</div>';
+    const pinnedCount = state.data?.pins?.length || 0;
+    root.innerHTML = items.length ? items.map(item => card(item, Boolean(state.data), pinnedCount)).join('') : '<div class="nx48-empty">Nenhuma conquista corresponde a estes filtros.</div>';
     app.querySelectorAll('[data-achievement-visible-count]').forEach(node => { node.textContent = `${items.length} ${items.length === 1 ? 'marco' : 'marcos'}`; });
     wireCards();
   }
@@ -135,7 +142,7 @@
   function pinnedMarkup(data) {
     if (!data?.pins?.length) return '';
     const byId = new Map((data.items || []).map(item => [item.id, item])), items = data.pins.map(id => byId.get(id)).filter(Boolean);
-    return `<section class="nx48-pinned"><header><small>NO SEU PERFIL</small><h2>Medalhas fixadas</h2></header><div>${items.map(item => `<button type="button" data-achievement-focus="${esc(item.id)}">${badge(item, { small: true })}<span><strong>${esc(item.title)}</strong><small>${esc(item.tierLabel)}</small></span></button>`).join('')}</div></section>`;
+    return `<section class="nx48-pinned"><header><small>NO SEU PERFIL</small><div><h2>Medalhas fixadas</h2><span class="nx48-pinned-count">${items.length} de 3</span></div><p class="nx48-pin-feedback" data-achievement-feedback aria-live="polite"></p></header><div>${items.map(item => `<button type="button" data-achievement-focus="${esc(item.id)}">${badge(item, { small: true })}<span><strong>${esc(item.title)}</strong><small>${esc(item.tierLabel)}</small></span></button>`).join('')}</div></section>`;
   }
 
   function filtersMarkup(compact = false) {
@@ -150,13 +157,13 @@
   }
 
   function shell(data, catalog) {
-    state.data = data;
-    state.catalog = data?.items || catalog || [];
-    const unlocked = Number(data?.unlockedCount || 0), total = Number(data?.total || state.catalog.length || 0), level = data?.level?.name || 'Nível Nexus 1';
+    state.data = normalizedData(data);
+    state.catalog = state.data?.items || catalog || [];
+    const unlocked = Number(state.data?.unlockedCount || 0), total = Number(state.data?.total || state.catalog.length || 0), level = state.data?.level?.name || 'Nível Nexus 1';
     document.title = 'Conquistas | AniNexus';
     document.body.classList.remove('nx35-home-active', 'nx38-library-active', 'nx38-profile-active', 'aqx-home-active');
     document.body.classList.add('nx48-achievements-active');
-    app.innerHTML = `<main class="nx48-achievements-page"><header class="nx48-page-head" id="nx48AchievementsHero"><div class="nx48-page-head-inner"><div class="nx48-page-title"><span>${trophyIcon}</span><div><h1>Conquistas</h1><small>${unlocked} DE ${total} · ${esc(level)}</small></div></div><p>Acompanhe sua evolução e escolha as medalhas que aparecem no seu perfil.</p></div></header>${islandMarkup(data)}<div class="nx48-shell">${summaryMarkup(data)}${pinnedMarkup(data)}<section class="nx48-collection"><header class="nx48-content-head"><div><small>SUA COLEÇÃO</small><h2>Conquistas</h2></div><span data-achievement-visible-count></span></header>${filtersMarkup()}<div class="nx48-grid" data-achievement-grid aria-live="polite"></div></section>${settingsMarkup(data)}</div></main>`;
+    app.innerHTML = `<main class="nx48-achievements-page"><header class="nx48-page-head" id="nx48AchievementsHero"><div class="nx48-page-head-inner"><div class="nx48-page-title"><span>${trophyIcon}</span><div><h1>Conquistas</h1><small>${unlocked} DE ${total} · ${esc(level)}</small></div></div><p>Acompanhe sua evolução e escolha as medalhas que aparecem no seu perfil.</p>${summaryMarkup(state.data)}</div></header>${islandMarkup(state.data)}<div class="nx48-shell">${pinnedMarkup(state.data)}<section class="nx48-collection"><header class="nx48-content-head"><div><small>SUA COLEÇÃO</small><h2>Conquistas</h2></div><span data-achievement-visible-count></span></header>${filtersMarkup()}<div class="nx48-grid" data-achievement-grid aria-live="polite"></div></section>${settingsMarkup(state.data)}</div></main>`;
     state.lastY = Math.max(0, scrollY); state.direction = 0; state.travel = 0;
     paintCards(); wirePage();
     requestAnimationFrame(() => { document.documentElement.classList.remove('nx48-achievements-boot'); syncScroll(); });
@@ -177,8 +184,10 @@
     state.busy = true;
     state.renderToken += 1;
     try {
-      state.data = await privateRequest('/api/me/achievements/pins', { method: 'PUT', body: JSON.stringify({ ids: pins }) });
+      const previousY = scrollY;
+      state.data = normalizedData(await privateRequest('/api/me/achievements/pins', { method: 'PUT', body: JSON.stringify({ ids: pins }) }));
       shell(state.data, state.catalog); feedback('Medalhas do perfil atualizadas.');
+      requestAnimationFrame(() => scrollTo(0, previousY));
     } catch { feedback('Não foi possível atualizar as medalhas agora.', true); }
     finally { state.busy = false; }
   }

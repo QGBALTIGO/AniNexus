@@ -1897,21 +1897,22 @@ html[data-theme=light] .nx45-ranking-empty{border-color:rgba(55,137,116,.2);back
   .nx45-rank-manga .nx35-rank-copy h3{font-size:13px}
 }
 
-/* V44.31.0: aligned account tools, unified search and safe sign-out. */
+/* V44.33.0: aligned account tools, unified search and safe sign-out. */
 .drawer-panel[data-auth-state=authenticated] .drawer-head{display:none}
 .drawer-panel[data-auth-state=authenticated] .drawer-content{padding-top:16px}
 .drawer-auth-card[data-auth-state=authenticated]{
   min-height:66px;
   padding:2px 0 14px;
   grid-template-columns:48px minmax(0,1fr) auto;
-  align-items:center;
+  align-items:start;
   gap:10px;
   overflow:visible
 }
-.drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy{align-self:center}
+.drawer-auth-card[data-auth-state=authenticated] .drawer-account-avatar{align-self:start}
+.drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy{align-self:start;padding-top:1px}
 .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy h3,
 .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-description{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.drawer-auth-card[data-auth-state=authenticated] .drawer-auth-actions{min-width:0;justify-self:end;align-self:center}
+.drawer-auth-card[data-auth-state=authenticated] .drawer-auth-actions{min-width:0;justify-self:end;align-self:start;padding-top:1px}
 .drawer-account-tools{flex-wrap:nowrap;margin:0}
 .drawer-account-tools button{flex:0 0 32px;width:32px;height:32px;min-width:32px;min-height:32px!important}
 .drawer-account-tools button[data-nx-drawer-logout]{color:#ef7891}
@@ -1981,7 +1982,11 @@ html[data-theme=light] .search-result:hover{background:#faf1f4}
 
 @media(max-width:620px){
   .drawer-panel[data-auth-state=authenticated] .drawer-content{padding-top:14px}
-  .drawer-auth-card[data-auth-state=authenticated]{min-height:58px;padding:0 0 13px;grid-template-columns:42px minmax(0,1fr) auto;gap:8px}
+  .drawer-auth-card[data-auth-state=authenticated]{min-height:76px;padding:0 0 13px;grid-template-columns:42px minmax(0,1fr) auto;gap:8px;align-items:start}
+  .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy{padding-top:0}
+  .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-description{margin-top:2px}
+  .drawer-profile-link{margin-top:5px;line-height:1.25}
+  .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-actions{padding-top:1px}
   .drawer-account-tools{gap:1px}
   .drawer-account-tools button{flex-basis:30px;width:30px;height:30px;min-width:30px;min-height:30px!important}
   .drawer-account-tools svg{width:16px;height:16px}
@@ -2005,7 +2010,7 @@ html[data-theme=light] .search-result:hover{background:#faf1f4}
   .drawer-account-tools{margin:0}
   .drawer-account-tools button{flex-basis:28px;width:28px;height:28px;min-width:28px;min-height:28px!important}
   .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy h3{font-size:15px}
-  .drawer-profile-link{font-size:8px}
+  .drawer-profile-link{font-size:8px;gap:3px}
   .search-user-result>b{font-size:0;gap:0}
   .search-user-result>b svg{width:16px;height:16px}
 }
