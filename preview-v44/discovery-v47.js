@@ -6,7 +6,7 @@
   const app = document.querySelector('#app');
   if (!app) return;
 
-  const BUILD = '44.34.1';
+  const BUILD = '44.35.3';
   const IS_PAGES = location.hostname.endsWith('github.io');
   const BASE = IS_PAGES ? '/AniNexus' : '';
   const ROUTES = new Set(['/animes/onde-assistir', '/animes/dublados', '/animes/estudios']);
@@ -63,7 +63,8 @@
     scrollTravel: 0,
     scrollLockUntil: 0,
     manualIslandUntil: 0,
-    toggleY: null
+    toggleY: null,
+    scrollHold: 0
   };
 
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
@@ -232,6 +233,18 @@
       panel.setAttribute('aria-hidden', String(!open));
     }
     island.querySelector('[data-nx47-island-toggle]')?.setAttribute('aria-expanded', String(open));
+  }
+
+  function holdScrollPosition(y) {
+    const token = ++state.scrollHold;
+    const started = performance.now();
+    const restore = () => {
+      if (token !== state.scrollHold || !ROUTES.has(route())) return;
+      if (Math.abs(scrollY - y) > 1) scrollTo({ top: y, left: 0, behavior: 'instant' });
+      if (performance.now() - started < 360) requestAnimationFrame(restore);
+      else state.lastScrollY = y;
+    };
+    restore();
   }
 
   function syncScroll() {
@@ -778,9 +791,7 @@
       state.toggleY = null;
       state.manualIslandUntil = performance.now() + 520;
       setIslandState(true, !island?.classList.contains('expanded'));
-      const restoreScroll = () => { if (Math.abs(scrollY - y) > 1) scrollTo(0, y); };
-      restoreScroll();
-      requestAnimationFrame(() => { restoreScroll(); requestAnimationFrame(restoreScroll); });
+      holdScrollPosition(y);
     });
   }
 
@@ -807,6 +818,7 @@
     state.scrollLockUntil = 0;
     state.manualIslandUntil = 0;
     state.toggleY = null;
+    state.scrollHold += 1;
     document.body.classList.remove('nx21-catalog', 'nx21-reading-catalog', 'nx-section-page', 'nx-scroll-down', 'nx-scroll-up');
     document.body.classList.add('nx47-discovery-active');
     document.body.classList.toggle('nx47-watch-active', path.endsWith('onde-assistir'));
@@ -839,6 +851,7 @@
     state.controller?.abort();
     state.controller = null;
     state.path = '';
+    state.scrollHold += 1;
     state.studioRailObservers.forEach(observer => observer.disconnect());
     state.studioRailObservers = [];
     document.body.classList.remove('nx47-discovery-active', 'nx47-watch-active', 'nx47-dubbed-active', 'nx47-studios-active', 'nx47-discovery-scrolled', 'nx47-discovery-scroll-down', 'nx47-discovery-scroll-up');
