@@ -76,6 +76,7 @@
   // Media fallback only. List/favorite state is owned exclusively by media-state-v2.js.
   document.addEventListener('error',e=>{
     const img=e.target;if(!(img instanceof HTMLImageElement)||img.dataset.nx38Broken)return;
+    if(img.matches('[data-nx22-banner]')&&img.dataset.nx22Fallback&&img.dataset.nx22FallbackUsed!=='1')return;
     img.dataset.nx38Broken='1';e.stopImmediatePropagation();img.classList.add('nx38-img-error');
     img.closest('.nx35-nmedia,.nx37-gallery-item,.nx24-card-poster,.aqx-media,.nx18-cover,.nx35-community-cover,.media,.poster,.nx21-poster,.nx22-cover,.nx22-hero-bg')?.classList.add('nx38-media-fallback');
   },true);

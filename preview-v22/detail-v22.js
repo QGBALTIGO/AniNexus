@@ -28,7 +28,7 @@
     share:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.5-4.4M8.2 13.2l7.5 4.4"/></svg>'
   };
 
-  const GENRE={Action:'Ação',Adventure:'Aventura',Comedy:'Comédia',Drama:'Drama',Fantasy:'Fantasia',Horror:'Terror',Mystery:'Mistério',Romance:'Romance','Sci-Fi':'Ficção Científica','Slice of Life':'Cotidiano',Sports:'Esportes',Supernatural:'Sobrenatural',Thriller:'Suspense',Psychological:'Psicológico',Music:'Música',Mecha:'Mecha',Ecchi:'Ecchi'};
+  const GENRE={Action:'Ação',Adventure:'Aventura',Comedy:'Comédia',Drama:'Drama',Fantasy:'Fantasia',Horror:'Terror',Mystery:'Mistério',Romance:'Romance','Sci-Fi':'Ficção Científica','Slice of Life':'Cotidiano',Sports:'Esportes',Supernatural:'Sobrenatural',Thriller:'Suspense',Psychological:'Psicológico',Music:'Música',Mecha:'Mecha',Ecchi:'Ecchi','Mahou Shoujo':'Garotas mágicas'};
   const TAG_PT={
     Magic:'Magia',School:'Escola',Swordplay:'Espadas',Psychological:'Psicológico',Superpowers:'Superpoderes','Super Power':'Superpoderes',Historical:'Histórico',Military:'Militar',Vampire:'Vampiros','Time Manipulation':'Viagem no tempo',
     Polyamorous:'Poliamor','Coming of Age':'Amadurecimento','Family Life':'Vida em família',Espionage:'Espionagem',Isekai:'Outro mundo',Reincarnation:'Reencarnação','Male Protagonist':'Protagonista masculino','Female Protagonist':'Protagonista feminina',
@@ -243,11 +243,41 @@
     return Array.from({length:5},(_,index)=>`<span class="nx22-average-star" style="--nx22-star-fill:${Math.max(0,Math.min(100,(scoreValue-index*2)*50))}%"><i>${SVG.star}</i><b>${SVG.star}</b></span>`).join('');
   }
 
+  const AKIRA_TONES={
+    Action:['entra na pasta das histórias que vivem de impulso, risco e decisões no limite','parece guardar ação suficiente para deixar cada nova etapa com gosto de perigo'],
+    Adventure:['abre caminho para uma jornada que promete crescer a cada descoberta','tem aquele espírito de aventura que transforma cada parada em uma nova pista'],
+    Comedy:['parece saber transformar confusão em parte da diversão','vai para a gaveta dos casos em que o caos também sabe contar uma boa história'],
+    Drama:['parece viver daqueles conflitos que continuam ecoando depois da cena','entra no arquivo das histórias que tratam sentimento como parte central do mistério'],
+    Fantasy:['abre a porta para um mundo cujas regras merecem ser descobertas aos poucos','tem fantasia suficiente para fazer o impossível parecer apenas a primeira pista'],
+    Horror:['vai direto para a gaveta dos casos que incomodam do jeito certo','parece preparado para transformar tensão em uma pista que não sai da cabeça'],
+    Mystery:['entra na pasta dos mistérios em que cada detalhe pode virar pista','tem cara de caso para observar com atenção e desconfiar até do silêncio'],
+    Romance:['coloca relações e timing emocional bem no centro do arquivo','parece tratar cada aproximação como uma pista sobre quem essas pessoas realmente são'],
+    'Sci-Fi':['mistura hipótese, consequência e possibilidades que pedem investigação cuidadosa','abre um caso em que tecnologia, futuro e escolhas pedem investigação cuidadosa'],
+    'Slice of Life':['faz o cotidiano parecer um caso digno de atenção','lembra que os pequenos momentos também escondem pistas importantes'],
+    Sports:['entra em campo com esforço, rivalidade e espaço para boas viradas','parece guardar tanta história nos bastidores quanto na competição'],
+    Supernatural:['abre um arquivo em que o estranho não costuma respeitar explicações fáceis','parece esconder suas melhores pistas justamente onde o normal deixa de funcionar'],
+    Thriller:['tem ritmo de caso que pede atenção até o último movimento','entra na pasta das histórias que sabem apertar a tensão sem avisar']
+  };
+  const AKIRA_FALLBACK=['tem uma combinação curiosa de ideias que merece uma investigação sem spoilers','abre um caso com personalidade suficiente para despertar a curiosidade da Akira'];
+  function stablePick(m,values,salt=''){return values[parseInt(hash(`${m.id}:${title(m)}:${salt}`),36)%values.length]}
+  function akiraComment(m){
+    const reading=String(m.mediaType).toUpperCase()==='MANGA',rawGenres=m.genres||[],localized=rawGenres.map(value=>GENRE[value]||value),primary=rawGenres[0],secondary=localized[1];
+    const tone=stablePick(m,AKIRA_TONES[primary]||AKIRA_FALLBACK,'tom'),translatedTag=tags(m).map(tagPT).find(label=>label&&!localized.includes(label)&&!/^(?:protagonista|elenco|shounen|shoujo|seinen|josei|heterossexual|temas lgbtqia)/i.test(label));
+    const clue=translatedTag?` A presença de ${translatedTag.toLocaleLowerCase('pt-BR')} é uma das pistas que mais chama atenção.`:secondary?` A mistura com ${secondary.toLocaleLowerCase('pt-BR')} deixa o caso ainda mais curioso.`:'';
+    const endings=m.status==='NOT_YET_RELEASED'
+      ?['Como ainda não estreou, este é um arquivo para acompanhar de perto antes de tirar conclusões.','Ainda não chegou a hora da estreia, então a Akira deixou esta pasta marcada para novas pistas.']
+      :m.status==='RELEASING'
+        ?[reading?'A leitura está em andamento, então novas páginas ainda podem mudar toda a investigação.':'A exibição está em andamento, então novos episódios ainda podem mudar toda a investigação.','O caso continua aberto — melhor entrar sabendo que ainda há pistas por revelar.']
+        :[reading?'Como a obra já está concluída, dá para investigar cada página no próprio ritmo.':'Como a obra já está concluída, dá para investigar tudo no próprio ritmo.','Arquivo completo: uma boa escolha para quem prefere chegar até a última pista.'];
+    return `${title(m)} ${tone}.${clue} ${stablePick(m,endings,'fecho')}`.replace(/\.\s*\./g,'.').replace(/\s+/g,' ').trim();
+  }
+
   function wireHeroBanner(){
     const image=root.querySelector('[data-nx22-banner]');if(!image)return;
     const host=image.closest('.nx22-hero-bg');
-    const validate=()=>{const ratio=image.naturalHeight?image.naturalWidth/image.naturalHeight:0;host?.classList.toggle('is-invalid',!Number.isFinite(ratio)||ratio<1.35)};
-    image.addEventListener('load',validate,{once:true});image.addEventListener('error',()=>host?.classList.add('is-invalid'),{once:true});
+    const validate=()=>{const ratio=image.naturalHeight?image.naturalWidth/image.naturalHeight:0,invalid=!Number.isFinite(ratio)||ratio<=0;host?.classList.toggle('is-invalid',invalid);host?.classList.toggle('is-portrait',!invalid&&ratio<1.35);host?.classList.toggle('is-loaded',!invalid)};
+    const recover=()=>{const fallback=image.dataset.nx22Fallback;if(fallback&&image.dataset.nx22FallbackUsed!=='1'){image.dataset.nx22FallbackUsed='1';host?.classList.add('is-cover-fallback');image.src=fallback;return}host?.classList.add('is-invalid')};
+    image.addEventListener('load',validate);image.addEventListener('error',recover);
     if(image.complete)validate();
   }
 
@@ -258,11 +288,11 @@
     const chars=m.characters?.edges||[],staff=m.staff?.edges||[],rels=m.relations?.edges||[],recs=(m.recommendations?.nodes||[]).filter(x=>x.mediaRecommendation),streams=uniqueLinks(m),tid=trailerId(m),ts=tags(m),alts=altTitles(m),j=m.jikan||{};
     const current=stateApi?.get?.(m.id)||{},listAttr=reading?'data-manga-list':'data-list',favAttr=reading?'data-manga-fav':'data-fav',catalogPath=reading?'/mangas':'/animes/catalogo';
     const internal=m.metricsSource==='aninexus',listCount=internal?Number(m.listCount)||0:0,popularity=internal?Number(m.popularity)||0:0;
-    const heroTags=ts.map(value=>({value,label:tagPT(value)})).filter(item=>item.label&&!(m.genres||[]).some(genre=>(GENRE[genre]||genre)===item.label)).slice(0,8),meta=[m.title?.native,m.seasonYear,FORMAT[m.format]||m.format].filter(Boolean);
+    const heroTags=ts.map(value=>({value,label:tagPT(value)})).filter(item=>item.label&&!(m.genres||[]).some(genre=>(GENRE[genre]||genre)===item.label)).slice(0,8),meta=[m.title?.native,m.seasonYear,FORMAT[m.format]||m.format].filter(Boolean),heroBanner=banner(m),heroCover=cover(m),heroArt=heroBanner||heroCover;
     const overviewSchedule=reading?(m.chapters||m.volumes?`<section class="nx22-overview-schedule" aria-label="Publicação"><div class="nx22-airing nx22-publication"><div class="nx22-airing-main"><span>CAPÍTULOS</span><strong>${esc(m.chapters||'—')}</strong></div><div class="nx22-airing-main"><span>VOLUMES</span><strong>${esc(m.volumes||'—')}</strong></div><em>${esc(STATUS[m.status]||'Publicação')}</em></div></section>`:''):(m.nextAiringEpisode?`<section class="nx22-overview-schedule" aria-label="Próximo episódio"><div class="nx22-airing"><div class="nx22-airing-main"><span>EPISÓDIO</span><strong>${m.nextAiringEpisode.episode}</strong></div><time datetime="${new Date(m.nextAiringEpisode.airingAt*1000).toISOString()}">${esc(new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'}).format(new Date(m.nextAiringEpisode.airingAt*1000)))}</time><em>${esc(fmtUntil(m.nextAiringEpisode.airingAt))}</em></div></section>`:'');
     root.innerHTML=`<article class="nx22-detail" data-nx22-id="${m.id}" data-nx-media="${m.id}" data-nx22-type="${media.type}">
       <header class="nx22-hero">
-        <div class="nx22-hero-bg">${banner(m)?`<img src="${esc(banner(m))}" alt="" data-nx22-banner decoding="async">`:''}</div><div class="nx22-hero-shade"></div>
+        <div class="nx22-hero-bg${heroBanner?'':' is-cover-fallback'}">${heroArt?`<img src="${esc(heroArt)}" alt="" data-nx22-banner data-nx22-fallback="${heroBanner&&heroCover&&heroCover!==heroBanner?esc(heroCover):''}" decoding="async" fetchpriority="high">`:''}</div><div class="nx22-hero-shade"></div>
         <div class="nx22-shell nx22-hero-content">
           <button type="button" class="nx22-back" data-nx22-back aria-label="Voltar">${SVG.back}<span>Voltar</span></button>
           <div class="nx22-hero-grid">
@@ -287,7 +317,8 @@
     const themeEntries=ts.map(value=>({value,label:tagPT(value)})).filter(item=>item.label&&!genreEntries.some(genre=>genre.label===item.label));
     const themes=genreEntries.length||themeEntries.length?`<section class="nx22-section"><div class="nx22-section-head"><div><small>TEMAS</small><h2>Gêneros e temas</h2></div></div><div class="nx22-tags">${genreEntries.map(item=>`<a href="${catalogPath}" data-nx22-genre="${esc(item.value)}">${esc(item.label)}</a>`).join('')}${themeEntries.map(item=>`<a href="${catalogPath}" data-nx22-tag="${esc(item.value)}">${esc(item.label)}</a>`).join('')}</div></section>`:'';
     const altsHtml=alts.length?`<div class="nx22-info-card">${alts.map(([k,v])=>`<div><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join('')}</div>`:'<div class="nx22-info-card"><div><span>Títulos</span><strong>Sem títulos alternativos</strong></div></div>';
-    const general=()=>{const preview=synopsisPreview(m);return `${overviewSchedule}<div class="nx22-layout"><main><section class="nx22-section"><div class="nx22-section-head"><div><small>HISTÓRIA</small><h2>Sinopse</h2></div><span class="nx22-translation-note" id="nx22SynopsisNote">${preview.pending?'Traduzindo…':'Em português'}</span></div><p class="nx22-synopsis" id="nx22Synopsis">${esc(preview.text)}</p></section>${trailer}${watch}${themes}${chars.length?`<section class="nx22-section"><div class="nx22-section-head"><div><small>ELENCO</small><h2>Personagens principais</h2></div><button type="button" data-nx22-jump="elenco">Ver todos</button></div><div class="nx22-people">${chars.slice(0,10).map(personCard).join('')}</div></section>`:''}</main><aside><section><h3>Ficha técnica</h3><div class="nx22-info-card">${infoRows(m)}</div></section><section><h3>Outros títulos</h3>${altsHtml}</section></aside></div>`};
+    const akira=`<section class="nx22-akira-file" aria-labelledby="nx22AkiraTitle"><div class="nx22-akira-head"><small>ARQUIVO X</small><h2 id="nx22AkiraTitle">Arquivo X da Akira</h2></div><div class="nx22-akira-body"><img src="${BASE}/assets/akira-arquivo-x-v1.png" alt="Akira analisando a obra" loading="lazy" decoding="async"><p>${esc(akiraComment(m))}</p></div></section>`;
+    const general=()=>{const preview=synopsisPreview(m);return `${overviewSchedule}<div class="nx22-layout"><main><section class="nx22-section"><div class="nx22-section-head"><div><small>HISTÓRIA</small><h2>Sinopse</h2></div><span class="nx22-translation-note" id="nx22SynopsisNote">${preview.pending?'Traduzindo…':'Em português'}</span></div><p class="nx22-synopsis" id="nx22Synopsis">${esc(preview.text)}</p></section>${akira}${trailer}${watch}${themes}${chars.length?`<section class="nx22-section"><div class="nx22-section-head"><div><small>ELENCO</small><h2>Personagens principais</h2></div><button type="button" data-nx22-jump="elenco">Ver todos</button></div><div class="nx22-people">${chars.slice(0,10).map(personCard).join('')}</div></section>`:''}</main><aside><section><h3>Ficha técnica</h3><div class="nx22-info-card">${infoRows(m)}</div></section><section><h3>Outros títulos</h3>${altsHtml}</section></aside></div>`};
     const cast=()=>`<section class="nx22-full"><div class="nx22-section-head"><div><small>ELENCO</small><h2>Personagens</h2></div></div><div class="nx22-people nx22-people-full">${chars.map(personCard).join('')||'<p>Nenhum personagem disponível.</p>'}</div>${staff.length?`<div class="nx22-section-head nx22-staff-head"><div><small>PRODUÇÃO</small><h2>Equipe</h2></div></div><div class="nx22-people nx22-people-full">${staff.map(staffCard).join('')}</div>`:''}</section>`;
     const openings=()=>`<section class="nx22-full nx22-themes"><div class="nx22-themes-intro"><div><small>TRILHA DA OBRA</small><h2>Aberturas e encerramentos</h2><p>Reproduza um tema por vez sem sair do AniNexus.</p></div></div><div id="nx22Themes" class="nx22-themes-results" data-state=""><div class="nx22-themes-loading" aria-hidden="true"><i></i><i></i><i></i><span>Buscando os temas disponíveis…</span></div></div></section>`;
     const franchise=()=>`<section class="nx22-full"><div class="nx22-section-head"><div><small>UNIVERSO</small><h2>Franquia e relações</h2></div></div><div class="nx22-related-grid">${rels.map(relationCard).join('')||'<p>Nenhuma relação cadastrada.</p>'}</div></section>`;
