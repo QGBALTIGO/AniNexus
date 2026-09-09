@@ -247,11 +247,25 @@ app.get('/api/miniapp/v1/reading',miniappPublicRate,async req=>miniappEnvelope(a
 app.get('/api/miniapp/v1/anime/:id',miniappPublicRate,async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({ok:false,apiVersion:'1',error:'INVALID_ID'});return miniappEnvelope(await getAnime(id));});
 app.get('/api/schedule',{config:{rateLimit:{max:100,timeWindow:'1 minute'}}},async(req,reply)=>{const now=Math.floor(Date.now()/1000),start=Number(req.query?.start||now-86400),end=Number(req.query?.end||now+7*86400);if(!Number.isFinite(start)||!Number.isFinite(end)||end<=start||end-start>10*86400)return reply.code(400).send({error:'INVALID_RANGE'});return getSchedule(start,end);});
 app.get('/api/anime/:id',{config:{rateLimit:{max:120,timeWindow:'1 minute'}}},async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});return getAnime(id);});
+async function mediaActivitySummary(id,mediaType){
+  const table=mediaType==='MANGA'?'user_manga':'user_anime';
+  const visible=`u.deleted_at IS NULL AND u.status='active' AND u.privacy='public' AND u.show_library IS DISTINCT FROM false AND u.show_stats IS DISTINCT FROM false`;
+  const [statusResult,reactionResult]=await Promise.all([
+    q(`SELECT l.status,count(*)::int count FROM ${table} l JOIN users u ON u.id=l.user_id WHERE l.media_id=$1 AND ${visible} AND l.status IN ('PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED') GROUP BY l.status`,[id]),
+    q(`SELECT reaction,count(*)::int count FROM ${table} l JOIN users u ON u.id=l.user_id CROSS JOIN LATERAL (SELECT DISTINCT value reaction FROM jsonb_array_elements_text(CASE WHEN jsonb_typeof(l.reactions)='array' AND jsonb_array_length(l.reactions)>0 THEN l.reactions WHEN l.reaction IS NOT NULL THEN jsonb_build_array(l.reaction) ELSE '[]'::jsonb END)) r WHERE l.media_id=$1 AND ${visible} AND reaction IN ('LOVE','LIKE','WOW','DISLIKE') GROUP BY reaction ORDER BY count DESC,reaction`,[id])
+  ]);
+  const statuses={PLANNING:0,CURRENT:0,COMPLETED:0,PAUSED:0,DROPPED:0};
+  for(const row of statusResult.rows||[])if(Object.hasOwn(statuses,row.status))statuses[row.status]=Number(row.count)||0;
+  const reactionLabels={LOVE:'Amei',LIKE:'Curtindo',WOW:'De arrepiar',DISLIKE:'Esperava mais'},reactionTotal=(reactionResult.rows||[]).reduce((sum,row)=>sum+(Number(row.count)||0),0);
+  return{mediaId:id,mediaType,total:Object.values(statuses).reduce((sum,count)=>sum+count,0),statuses,reactionTotal,reactions:(reactionResult.rows||[]).map(row=>({key:row.reaction,label:reactionLabels[row.reaction]||row.reaction,count:Number(row.count)||0,percentage:reactionTotal?Math.round(Number(row.count)*100/reactionTotal):0}))};
+}
+app.get('/api/anime/:id/activity',publicRate,async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});return mediaActivitySummary(id,'ANIME');});
 app.get('/api/anime/:id/rating',publicRate,async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});const {rows}=await q(`SELECT round(avg(score)::numeric,1) score,count(score)::int votes FROM user_anime WHERE media_id=$1 AND score IS NOT NULL`,[id]);return{score:rows[0]?.score==null?null:Number(rows[0].score),votes:Number(rows[0]?.votes||0)};});
 app.get('/api/manga/:id/rating',publicRate,async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});const {rows}=await q(`SELECT round(avg(score)::numeric,1) score,count(score)::int votes FROM user_manga WHERE media_id=$1 AND score IS NOT NULL`,[id]);return{score:rows[0]?.score==null?null:Number(rows[0].score),votes:Number(rows[0]?.votes||0)};});
 app.get('/api/anime/:id/themes',{config:{rateLimit:{max:120,timeWindow:'1 minute'}}},async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});return getAnimeThemes(id);});
 app.get('/api/media/summaries',{config:{rateLimit:{max:120,timeWindow:'1 minute'}}},async(req,reply)=>{const raw=String(req.query?.ids||'').split(',').slice(0,60),ids=raw.map(value=>safeInt(value)).filter(Boolean);if(!ids.length)return reply.code(400).send({error:'INVALID_IDS'});return{items:await getMediaSummaries(ids)}});
 app.get('/api/manga/:id',{config:{rateLimit:{max:120,timeWindow:'1 minute'}}},async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});return getManga(id);});
+app.get('/api/manga/:id/activity',publicRate,async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});return mediaActivitySummary(id,'MANGA');});
 app.get('/api/synopsis/:type/:id',{config:{rateLimit:{max:90,timeWindow:'1 minute'}}},async(req,reply)=>{
   const id=safeInt(req.params.id),type=String(req.params.type||'').toLowerCase();
   if(!id||!['anime','manga'].includes(type))return reply.code(400).send({error:'INVALID_MEDIA'});
