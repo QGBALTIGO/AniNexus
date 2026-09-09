@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T22:43:06.021Z",
+  "generatedAt": "2026-09-09T00:40:35.363Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -60,12 +60,12 @@
     "newStories": 15,
     "fullArticles": 15,
     "previewArticles": 0,
-    "avgWords": 388,
+    "avgWords": 392,
     "withHeroImage": 15,
     "withOrderedMedia": 12,
     "skippedTranslation": 0,
     "skippedQuality": 30,
-    "durationMs": 2899
+    "durationMs": 3302
   },
   "items": [
     {
@@ -1936,13 +1936,13 @@
     },
     {
       "id": "jbox-5b11fb1c",
-      "slug": "kamen-ride-my-th-estreia-so-no-sabado-que-vem-pelo-youtube-com-dublagem-em-portugues-jbox-5b11fb1c",
+      "slug": "kamen-ride-my-th-tem-estreia-adiada-no-brasil-at-jbox-5b11fb1c",
       "source": "JBox",
       "sourceType": "JBOX",
       "sourceLanguage": "pt-BR",
       "language": "pt-BR",
-      "title": "‘Kamen Ride My-th’ estreia só no sábado que vem pelo YouTube com dublagem em português",
-      "originalTitle": "‘Kamen Ride My-th’ estreia só no sábado que vem pelo YouTube com dublagem em português",
+      "title": "‘Kamen Ride My-th’ tem estreia adiada no Brasil (AT)",
+      "originalTitle": "‘Kamen Ride My-th’ tem estreia adiada no Brasil (AT)",
       "summary": "Eventos que se repetem todo ano: Natal, Páscoa, Carnaval e uma nova série Kamen Rider. Com o fim de ZEZTZ, um novo ciclo está para começar. Domingo (6), estreia no Japão Kamen Rider My-th.",
       "author": "Igor Lunei",
       "tags": [
@@ -1957,13 +1957,17 @@
       "url": "https://www.jbox.com.br/2026/09/04/kamen-ride-my-th-estreia-so-no-sabado-que-vem-pelo-youtube-com-dublagem-em-portugues",
       "sourceUrl": "https://www.jbox.com.br/2026/09/04/kamen-ride-my-th-estreia-so-no-sabado-que-vem-pelo-youtube-com-dublagem-em-portugues",
       "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/kamen-difer-my-th-destacada.png",
-      "mediaQuery": "‘Kamen Ride My-th’ estreia só no sábado que vem pelo YouTube com dublagem em português",
+      "mediaQuery": "‘Kamen Ride My-th’ tem estreia adiada no Brasil (AT)",
       "mediaType": "anime",
       "mediaGallery": [],
       "mediaEmbeds": [
         {
           "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/mFQ0T42ObGw"
+          "url": "https://www.youtube-nocookie.com/embed/JSjfJ9yqv1E"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/4hy3HS-TQnw"
         },
         {
           "type": "youtube",
@@ -2016,7 +2020,7 @@
         },
         {
           "type": "paragraph",
-          "text": "E o tokusatsu será exibido semanalmente aqui no Brasil, aos sábados, 23h30, novamente através do canal TokuSato, da Sato Company, no YouTube. Ele estrearia aqui no Brasil em simulcast com o Japão, na noite de sábado (5), mas por conta de problemas técnicos, o primeiro episódio não será exibido na data programada, ficando para semana que vem (dia 12), junto ao segundo capítulo.",
+          "text": "E o tokusatsu será exibido semanalmente aqui no Brasil, aos sábados, 23h30, novamente através do canal TokuSato, da Sato Company, no YouTube. Ele estrearia aqui no Brasil em simulcast com o Japão, na noite de sábado (5), mas por conta de problemas técnicos, o primeiro episódio não será exibido na data programada. Em um primeiro momento, foi noticiado que o adiamento ficaria para o sábado dia 12 (clique aqui para ver o comunicado), mas os planos mudaram no caminho e a estreia acontece nesta terça-feira, dia 8, às 21h.",
           "runs": [
             {
               "text": "E o tokusatsu será exibido semanalmente aqui no Brasil, "
@@ -2056,33 +2060,28 @@
               ]
             },
             {
-              "text": " com o Japão, na noite de sábado (5), mas por conta de problemas técnicos, o primeiro episódio não será exibido na data programada, ficando para "
+              "text": " com o Japão, na noite de sábado (5), mas por conta de problemas técnicos, o primeiro episódio não será exibido na data programada. Em um primeiro momento, foi noticiado que o adiamento ficaria para o sábado dia 12 ("
             },
             {
-              "text": "semana que vem (dia 12)",
+              "text": "clique aqui para ver o comunicado",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.youtube.com/shorts/mFQ0T42ObGw"
+            },
+            {
+              "text": "), mas os planos mudaram no caminho e"
+            },
+            {
+              "text": " a estreia acontece nesta terça-feira, dia 8, às 21h",
               "marks": [
                 "strong"
               ]
             },
             {
-              "text": ", junto ao segundo capítulo."
+              "text": "."
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira o comunicado publicado:",
-          "runs": [
-            {
-              "text": "Confira o comunicado publicado:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=mFQ0T42ObGw",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/mFQ0T42ObGw"
         },
         {
           "type": "paragraph",
@@ -2105,6 +2104,54 @@
             },
             {
               "text": " ou com o áudio original em japonês legendado (em português e espanhol)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "LINK DO 1º EPISÓDIO DUBLADO:",
+          "runs": [
+            {
+              "text": "LINK DO 1º EPISÓDIO DUBLADO:",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=JSjfJ9yqv1E",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/JSjfJ9yqv1E"
+        },
+        {
+          "type": "paragraph",
+          "text": "LINK DO 1º EPISÓDIO LEGENDADO:",
+          "runs": [
+            {
+              "text": "LINK DO 1º EPISÓDIO LEGENDADO:",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=4hy3HS-TQnw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/4hy3HS-TQnw"
+        },
+        {
+          "type": "paragraph",
+          "text": "TRAILER:",
+          "runs": [
+            {
+              "text": "TRAILER:",
+              "marks": [
+                "strong"
+              ]
             }
           ]
         },
@@ -2254,6 +2301,20 @@
           "embedUrl": "https://www.youtube-nocookie.com/embed/ODP7BZcRtbs"
         },
         {
+          "type": "heading",
+          "text": "O texto dessa matéria foi atualizado no dia 8 de setembro de 2026 para incluir a menção à nova data de estreia.",
+          "runs": [
+            {
+              "text": "O texto dessa matéria foi atualizado no dia 8 de setembro de 2026 para incluir a menção à nova data de estreia.",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            }
+          ],
+          "level": 4
+        },
+        {
           "type": "divider"
         },
         {
@@ -2329,7 +2390,7 @@
       ],
       "contentMode": "full",
       "publishedAt": "2026-09-04T19:24:39.000Z",
-      "updatedAt": "2026-09-04T19:25:43.000Z",
+      "updatedAt": "2026-09-08T23:29:08.000Z",
       "expiresAt": "2026-09-11T19:24:39.000Z",
       "category": "Animes",
       "eventType": "SEASON",
@@ -2345,18 +2406,18 @@
       ],
       "sourceCount": 1,
       "readingMinutes": 2,
-      "wordCount": 312,
-      "qualityScore": 0.922,
+      "wordCount": 367,
+      "qualityScore": 0.933,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
         "sections": 0,
-        "blocks": 14,
+        "blocks": 18,
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 0,
-        "embedCount": 3,
+        "embedCount": 4,
         "sourcePagesRead": 0
       }
     },
