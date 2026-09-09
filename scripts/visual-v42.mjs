@@ -6,7 +6,7 @@ const output = process.env.ANINEXUS_VISUAL_OUTPUT || 'test-results/visual-v42';
 const executablePath = process.env.ANINEXUS_CHROMIUM_EXECUTABLE_PATH || undefined;
 const requestedCase = String(process.env.ANINEXUS_VISUAL_CASE || '').trim();
 const mappedHost = new URL(origin).hostname === 'qgbaltigo.github.io';
-const buildUrl = route => `${origin}?build=44.36.0&p=${encodeURIComponent(route)}`;
+const buildUrl = route => `${origin}?build=44.37.0&p=${encodeURIComponent(route)}`;
 const artwork = new URL('assets/logo.png', origin).href;
 const communityArtwork = new URL('assets/radio-background-v44.png', origin).href;
 const media = (id, type = 'ANIME') => ({
@@ -68,10 +68,10 @@ const cases = [
   { name: 'desktop-season-dark', route: '/animes/temporadas', selector: '.nx-season', ready: '.nx-season-card', width: 1440, height: 900, theme: 'dark' },
   { name: 'mobile-news-dark', route: '/noticias', selector: '.nx35-news-page', ready: '.nx35-ncard', width: 390, height: 844, theme: 'dark' },
   { name: 'desktop-news-dark', route: '/noticias', selector: '.nx35-news-page', ready: '.nx35-ncard', width: 1440, height: 900, theme: 'dark' },
-  { name: 'mobile-detail-anime-dark', route: '/anime/obra-de-teste-101', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-rating-stars', width: 390, height: 844, theme: 'dark' },
-  { name: 'desktop-detail-anime-dark', route: '/anime/obra-de-teste-101', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-rating-stars', width: 1440, height: 900, theme: 'dark' },
-  { name: 'mobile-detail-manga-dark', route: '/manga/obra-de-teste-202', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-rating-stars', width: 390, height: 844, theme: 'dark' },
-  { name: 'desktop-detail-manga-dark', route: '/manga/obra-de-teste-202', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-rating-stars', width: 1440, height: 900, theme: 'dark' },
+  { name: 'mobile-detail-anime-dark', route: '/anime/obra-de-teste-101', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-stats', width: 390, height: 844, theme: 'dark' },
+  { name: 'desktop-detail-anime-dark', route: '/anime/obra-de-teste-101', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-stats', width: 1440, height: 900, theme: 'dark' },
+  { name: 'mobile-detail-manga-dark', route: '/manga/obra-de-teste-202', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-stats', width: 390, height: 844, theme: 'dark' },
+  { name: 'desktop-detail-manga-dark', route: '/manga/obra-de-teste-202', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-stats', width: 1440, height: 900, theme: 'dark' },
   { name: 'desktop-detail-light', route: '/anime/obra-de-teste-101', selector: '.nx22-detail:not(.nx22-fail)', ready: '.nx22-hero', width: 1440, height: 900, theme: 'light' },
 ];
 const selectedCases = requestedCase ? cases.filter(item => item.name === requestedCase) : cases;

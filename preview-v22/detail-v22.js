@@ -48,7 +48,7 @@
   const strip=v=>{const d=document.createElement('div');d.innerHTML=String(v||'');return(d.textContent||'').replace(/\s+/g,' ').trim()};
   const title=m=>m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||m?.jikan?.title_english||m?.jikan?.title||(String(m?.mediaType).toUpperCase()==='MANGA'?'Mangá':'Anime');
   const cover=m=>m?.coverImage?.extraLarge||m?.coverImage?.large||m?.jikan?.images?.jpg?.large_image_url||m?.jikan?.images?.jpg?.image_url||'';
-  const banner=m=>m?.bannerImage||m?.jikan?.images?.jpg?.large_image_url||cover(m);
+  const banner=m=>m?.bannerImage||'';
   const compact=n=>n?new Intl.NumberFormat('pt-BR',{notation:'compact',maximumFractionDigits:1}).format(Number(n)): '—';
   const score=m=>m?.metricsSource==='aninexus'&&m?.averageScore?String((m.averageScore/10).toFixed(1)).replace('.0',''):'—';
   const scoreFixed=m=>m?.metricsSource==='aninexus'&&m?.averageScore?(Number(m.averageScore)/10).toFixed(2):'—';
@@ -231,38 +231,17 @@
     return rows.map(([k,v])=>`<div><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join('')
   }
 
-  function ratingStars(value){
-    const scoreValue=Number.isFinite(Number(value))?Math.max(0,Math.min(10,Number(value))):0;
-    return Array.from({length:5},(_,index)=>{const fill=Math.max(0,Math.min(100,(scoreValue-index*2)*50));return `<button type="button" class="nx22-rating-star" data-nx22-rating-star="${index+1}" aria-label="Dar nota ${index*2+1} ou ${index*2+2}" aria-pressed="${fill>0}" style="--nx22-star-fill:${fill}%"><span class="nx22-star-empty">${SVG.star}</span><span class="nx22-star-fill">${SVG.star}</span></button>`}).join('');
-  }
-
-  function ratingMarkup(value){
-    const has=Number.isFinite(Number(value));
-    return `<div class="nx22-rating" data-nx22-rating><div class="nx22-rating-stars" role="group" aria-label="Sua avaliação de zero a dez">${ratingStars(has?Number(value):0)}</div></div>`;
-  }
   function averageStars(value){
     const scoreValue=Number.isFinite(Number(value))?Math.max(0,Math.min(10,Number(value))):0;
     return Array.from({length:5},(_,index)=>`<span class="nx22-average-star" style="--nx22-star-fill:${Math.max(0,Math.min(100,(scoreValue-index*2)*50))}%"><i>${SVG.star}</i><b>${SVG.star}</b></span>`).join('');
   }
 
-  function wireRating(m,stateApi){
-    const host=root.querySelector('[data-nx22-rating]');if(!host||!stateApi)return;
-    let userInteracted=false;
-    const current=()=>stateApi.get?.(m.id)||{};
-    const fill=value=>host.querySelectorAll('[data-nx22-rating-star]').forEach((button,index)=>button.style.setProperty('--nx22-star-fill',`${Math.max(0,Math.min(100,(Number(value)-index*2)*50))}%`));
-    const paintValue=value=>{host.querySelector('.nx22-rating-stars').innerHTML=ratingStars(value);bind()};
-    const choose=async scoreValue=>{
-      userInteracted=true;
-      const user=typeof window.AniNexusAuth?.requireAccount==='function'?await window.AniNexusAuth.requireAccount():null;if(!user)return;
-      const state=current(),reading=String(m.mediaType).toUpperCase()==='MANGA',progress=Math.max(Number(state.progress)||0,Number(state.volumeProgress)||0);
-      if(!state.status||state.status==='PLANNING'||(['CURRENT','PAUSED'].includes(state.status)&&progress<1)){
-        toast(reading?'Defina seu progresso de leitura antes de avaliar':'Defina seu progresso antes de avaliar');stateApi.open?.(m.id);return;
-      }
-      const total=reading?Number(m.chapters)||0:Number(m.episodes)||0;
-      stateApi.put?.(m.id,{...state,score:scoreValue},total);paintValue(scoreValue);
-    };
-    function bind(){host.querySelectorAll('[data-nx22-rating-star]').forEach(button=>{const value=event=>{const rect=button.getBoundingClientRect(),half=event.clientX&&event.clientX<rect.left+rect.width/2?1:2;return(Number(button.dataset.nx22RatingStar)-1)*2+half};button.onpointermove=event=>fill(value(event));button.onclick=event=>void choose(value(event))});host.onpointerleave=()=>fill(current().score||0)}
-    bind();setTimeout(()=>{if(!userInteracted)paintValue(current().score)},350);
+  function wireHeroBanner(){
+    const image=root.querySelector('[data-nx22-banner]');if(!image)return;
+    const host=image.closest('.nx22-hero-bg');
+    const validate=()=>{const ratio=image.naturalHeight?image.naturalWidth/image.naturalHeight:0;host?.classList.toggle('is-invalid',!Number.isFinite(ratio)||ratio<1.35)};
+    image.addEventListener('load',validate,{once:true});image.addEventListener('error',()=>host?.classList.add('is-invalid'),{once:true});
+    if(image.complete)validate();
   }
 
   function paint(m){
@@ -276,7 +255,7 @@
     const heroSchedule=reading?(m.chapters||m.volumes?`<div class="nx22-airing nx22-publication"><span>CAPÍTULOS</span><strong>${esc(m.chapters||'—')}</strong><span>VOLUMES</span><strong>${esc(m.volumes||'—')}</strong><em>${esc(STATUS[m.status]||'Publicação')}</em></div>`:''):(m.nextAiringEpisode?`<div class="nx22-airing"><span>EPISÓDIO</span><strong>${m.nextAiringEpisode.episode}</strong><span>${esc(new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'}).format(new Date(m.nextAiringEpisode.airingAt*1000)))}</span><em>${esc(fmtUntil(m.nextAiringEpisode.airingAt))}</em></div>`:'');
     root.innerHTML=`<article class="nx22-detail" data-nx22-id="${m.id}" data-nx-media="${m.id}" data-nx22-type="${media.type}">
       <header class="nx22-hero">
-        <div class="nx22-hero-bg">${banner(m)?`<img src="${esc(banner(m))}" alt="">`:''}</div><div class="nx22-hero-shade"></div>
+        <div class="nx22-hero-bg">${banner(m)?`<img src="${esc(banner(m))}" alt="" data-nx22-banner decoding="async">`:''}</div><div class="nx22-hero-shade"></div>
         <div class="nx22-shell nx22-hero-content">
           <button type="button" class="nx22-back" data-nx22-back aria-label="Voltar">${SVG.back}<span>Voltar</span></button>
           <div class="nx22-hero-grid">
@@ -286,7 +265,7 @@
               <div class="nx22-chips"><span class="nx22-status">${esc(STATUS[m.status]||(reading?'Mangá':'Anime'))}</span>${(m.genres||[]).slice(0,5).map(g=>`<a class="genre" href="${catalogPath}" data-nx22-genre="${esc(g)}">${esc(GENRE[g]||g)}</a>`).join('')}${heroTags.map(tag=>`<a href="${catalogPath}" data-nx22-tag="${esc(tag.value)}">${esc(tag.label)}</a>`).join('')}</div>
               <div class="nx22-actions detail-actions"><button type="button" class="nx22-fav" ${favAttr}="${m.id}" aria-label="Favoritar">${SVG.heart}</button><button type="button" class="nx22-list" ${listAttr}="${m.id}" aria-label="Adicionar à lista">${SVG.plus}<span>${current.status?(stateApi?.statuses?.[current.status]?.label||'Meu status'):'Adicionar à lista'}</span></button><button type="button" class="nx22-share" data-nx22-share aria-label="Compartilhar">${SVG.share}<span>Compartilhar</span></button></div>
               ${heroSchedule}
-              <div class="nx22-community-summary">${ratingMarkup(current.score)}<div class="nx22-stats"><div class="nx22-average-stat"><strong>${scoreFixed(m)}</strong><i class="nx22-average-stars" aria-hidden="true">${averageStars(internal?Number(m.averageScore||0)/10:0)}</i><span>NOTA MÉDIA</span></div><div><strong>${compact(popularity)}</strong><span>POPULARIDADE</span></div><div><strong>${compact(listCount)}</strong><span>MEMBROS</span></div></div></div>
+              <div class="nx22-community-summary"><div class="nx22-stats"><div class="nx22-average-stat"><div class="nx22-average-value"><strong>${scoreFixed(m)}</strong><i class="nx22-average-stars" aria-hidden="true">${averageStars(internal?Number(m.averageScore||0)/10:0)}</i></div><span>NOTA MÉDIA</span></div><div><strong>${compact(popularity)}</strong><span>POPULARIDADE</span></div><div><strong>${compact(listCount)}</strong><span>MEMBROS</span></div></div></div>
             </div>
           </div>
         </div>
@@ -295,6 +274,7 @@
       <div class="nx22-shell nx22-content" id="nx22Panel"></div>
     </article>`;
 
+    wireHeroBanner();
     const trailer=tid?`<section class="nx22-section"><div class="nx22-section-head"><div><small>VÍDEO</small><h2>Trailer oficial</h2></div><span>Reproduza sem sair do AniNexus</span></div><div class="nx22-video"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(tid)}?rel=0&modestbranding=1" title="Trailer de ${esc(title(m))}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></section>`:'';
     const watch=streams.length?`<section class="nx22-section"><div class="nx22-section-head"><div><small>STREAMING</small><h2>Onde assistir</h2></div></div><div class="nx22-streams">${streams.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${s.icon?`<img src="${esc(s.icon)}" alt="">`:SVG.play}<span>${esc(s.site)}</span>${SVG.external}</a>`).join('')}</div></section>`:'';
     const genreEntries=(m.genres||[]).map(value=>({value,label:GENRE[value]||value}));
@@ -318,7 +298,7 @@
     root.querySelector('[data-nx22-back]')?.addEventListener('click',()=>{let previous='',sameDocument=false;try{const raw=sessionStorage.getItem('nx22:previous-path')||'',saved=JSON.parse(raw);previous=String(saved?.path||'');sameDocument=Math.abs(Number(saved?.document)-performance.timeOrigin)<1}catch{}if(previous&&previous!==routePath()&&sameDocument&&history.length>1){history.back();return}openPath(previous&&previous!==routePath()?previous:catalogPath)});
     root.querySelector('[data-nx22-share]')?.addEventListener('click',async()=>{const data={title:title(m),text:`${title(m)} no AniNexus`,url:location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);toast('Link copiado')}}catch{}});
     show('geral');
-    stateApi?.sync?.(m.id);wireRating(m,stateApi);
+    stateApi?.sync?.(m.id);
     document.title=`${title(m)} | AniNexus`;
   }
 

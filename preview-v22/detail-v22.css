@@ -204,3 +204,41 @@ body.nx22-detail-active button.nx22-share[data-nx-action-owner="global"]{border-
   .nx22-average-stat{grid-template-columns:auto 62px;column-gap:5px}
   .nx22-average-star,.nx22-average-star svg{width:11px;height:11px}
 }
+
+/* AniNexus V44.37 — banner estável, ações com estado real e métricas centralizadas. */
+.nx22-hero-bg{overflow:hidden;background:radial-gradient(circle at 50% 20%,#25151e 0,#0b080a 62%)}
+.nx22-hero-bg img{display:block;object-fit:cover;object-position:center 35%}
+.nx22-hero-bg.is-invalid img{display:none}
+.nx22-cover{height:auto!important;aspect-ratio:2/3!important}
+.nx22-cover img{display:block;aspect-ratio:2/3!important;object-fit:cover!important}
+.nx22-list,.nx22-fav{border:1px solid rgba(255,255,255,.18)!important;background:rgba(8,6,8,.68)!important;box-shadow:none!important}
+.nx22-list:hover,.nx22-fav:hover{border-color:rgba(255,255,255,.34)!important;background:rgba(30,22,28,.88)!important}
+.nx22-list[data-nx-unified-status]:not([data-nx-unified-status=""]),.nx22-list.active{border-color:transparent!important;background:linear-gradient(135deg,#c82150,#e43a68)!important;box-shadow:0 8px 22px rgba(200,33,80,.24)!important}
+.nx22-fav.active,.nx22-fav[aria-pressed="true"]{border-color:transparent!important;background:linear-gradient(135deg,#ff6ca0,#dc235f)!important;box-shadow:0 8px 22px rgba(220,35,95,.24)!important}
+.nx22-fav.active svg,.nx22-fav[aria-pressed="true"] svg{fill:currentColor}
+body.nx22-detail-active button.nx22-fav[data-nx-action-owner="global"]{border:1px solid rgba(255,255,255,.18)!important;background:rgba(8,6,8,.68)!important}
+body.nx22-detail-active button.nx22-fav[data-nx-action-owner="global"][aria-pressed="true"]{border-color:transparent!important;background:linear-gradient(135deg,#ff6ca0,#dc235f)!important}
+.nx22-community-summary{display:block;margin-top:22px}
+.nx22-stats{display:grid;grid-template-columns:1.4fr 1fr 1fr;align-items:start;gap:20px;width:min(100%,620px);margin:0 auto}
+.nx22-stats>div{display:grid;justify-items:center;align-content:start;min-width:0;text-align:center}
+.nx22-stats strong{font-size:29px;font-weight:900;line-height:1;letter-spacing:-.035em;text-align:center}
+.nx22-stats>div>span{width:100%;margin-top:8px;color:#d8ccd1;font-size:8px;font-weight:900;line-height:1;text-align:center;letter-spacing:.045em;text-transform:uppercase}
+.nx22-average-stat{display:grid;grid-template-columns:1fr!important;column-gap:0!important}
+.nx22-average-value{position:relative;display:grid;place-items:center;width:100%;min-width:0}
+.nx22-average-value>strong{color:#f2c94c}
+.nx22-average-stars{position:absolute;left:calc(50% + 38px);top:50%;display:flex;align-items:center;gap:1px;transform:translateY(-50%)}
+.nx22-stats .nx22-average-star,.nx22-stats .nx22-average-star svg{width:12px;height:12px}
+
+@media(max-width:720px){
+  .nx22-hero-bg{inset:0 0 auto;height:230px}
+  .nx22-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:saturate(.92) contrast(.98)}
+  .nx22-hero-shade{height:340px;background:linear-gradient(180deg,rgba(8,6,8,.08) 0%,rgba(8,6,8,.18) 38%,rgba(8,6,8,.88) 68%,#080608 92%)}
+  .nx22-hero-grid{padding-top:112px!important}
+  .nx22-cover{width:136px!important;margin-inline:auto}
+  .nx22-community-summary{margin-top:20px}
+  .nx22-stats{grid-template-columns:1.4fr 1fr 1fr;gap:6px;width:100%}
+  .nx22-stats strong{font-size:24px}
+  .nx22-stats>div>span{margin-top:7px;font-size:7px}
+  .nx22-average-stars{left:calc(50% + 30px)}
+  .nx22-stats .nx22-average-star,.nx22-stats .nx22-average-star svg{width:9px;height:9px}
+}

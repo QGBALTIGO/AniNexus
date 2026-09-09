@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.36.0&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.37.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -70,7 +70,7 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-09-v44.36.0')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-09-v44.37.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -785,6 +785,8 @@ test('detail metrics and tags are presented in the requested Portuguese AniQuim 
   await page.setViewportSize({width:390,height:844});await page.goto(firstVisitUrl('/anime/anime-teste-101'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx22-detail:not(.nx22-fail)')).toBeVisible({timeout:30000});
   await expect(page.locator('.nx22-stats strong')).toHaveText(['9.00','328','95']);
   await expect(page.locator('.nx22-chips [data-nx22-tag]')).toHaveText(['Poliamor','Amadurecimento','Vida em família','Espionagem']);
+  await expect(page.locator('[data-nx22-rating],[data-nx22-rating-star]')).toHaveCount(0);await expect(page.locator('.nx22-hero-bg')).toHaveClass(/is-invalid/);
+  await expect(page.locator('.nx22-fav')).toHaveCSS('background-image','none');await expect(page.locator('.nx22-list')).toHaveCSS('background-image','none');
 });
 
 test('anime and manga details use AniQuim-sized controls, stable clicks and filtered genres',async({page})=>{
@@ -793,17 +795,16 @@ test('anime and manga details use AniQuim-sized controls, stable clicks and filt
   await page.setViewportSize({width:390,height:844});
   for(const item of [{route:'/anime/anime-teste-101',id:101,key:'aninexus:mediaState:v2',catalog:'/animes/catalogo',filterSelector:'[data-nx22-genre]',filterKey:'genre',filterValue:'Action',catalogState:'nx:v46:anime-catalog-state'},{route:'/manga/manga-teste-202',id:202,key:'aninexus:mangaState:v2',catalog:'/mangas',filterSelector:'[data-nx22-genre]',filterKey:'genre',filterValue:'Action',catalogState:'nx:v46:reading-catalog-state'}]){
     await page.goto(pageUrl(item.route),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx22-detail:not(.nx22-fail)')).toBeVisible({timeout:30000});await allowAccountActions(page);
-    const title=page.locator('.nx22-headcopy h1'),list=page.locator('.nx22-list'),favorite=page.locator('.nx22-fav'),stars=page.locator('[data-nx22-rating-star]');
-    expect(parseFloat(await title.evaluate(element=>getComputedStyle(element).fontSize))).toBeLessThanOrEqual(30);expect(parseFloat(await list.evaluate(element=>getComputedStyle(element).height))).toBeGreaterThanOrEqual(42);expect(parseFloat(await favorite.evaluate(element=>getComputedStyle(element).width))).toBeGreaterThanOrEqual(42);await expect(stars).toHaveCount(5);
-    await expect(page.locator('[data-nx22-back]')).toBeVisible();await expect(page.locator('[data-nx22-rating]')).not.toContainText('SUA NOTA');await expect(page.locator('[data-nx22-rating] output')).toHaveCount(0);
-    expect((await page.locator('[data-nx22-back]').boundingBox()).y).toBeGreaterThanOrEqual(54);await expect(favorite).toHaveCSS('background-image',/linear-gradient/);await expect(list).toHaveCSS('background-image',/linear-gradient/);
+    const title=page.locator('.nx22-headcopy h1'),list=page.locator('.nx22-list'),favorite=page.locator('.nx22-fav'),averageStars=page.locator('.nx22-average-star');
+    expect(parseFloat(await title.evaluate(element=>getComputedStyle(element).fontSize))).toBeLessThanOrEqual(30);expect(parseFloat(await list.evaluate(element=>getComputedStyle(element).height))).toBeGreaterThanOrEqual(42);expect(parseFloat(await favorite.evaluate(element=>getComputedStyle(element).width))).toBeGreaterThanOrEqual(42);await expect(averageStars).toHaveCount(5);
+    await expect(page.locator('[data-nx22-back]')).toBeVisible();await expect(page.locator('[data-nx22-rating],[data-nx22-rating-star]')).toHaveCount(0);
+    expect((await page.locator('[data-nx22-back]').boundingBox()).y).toBeGreaterThanOrEqual(54);await expect(favorite).toHaveCSS('background-image','none');await expect(favorite).toHaveAttribute('aria-pressed','false');await expect(list).toHaveCSS('background-image',/linear-gradient/);
     await expect(page.locator('.nx22-stats').first()).toContainText('NOTA MÉDIA');await expect(page.locator('.nx22-stats').first()).toContainText('POPULARIDADE');await expect(page.locator('.nx22-stats').first()).toContainText('MEMBROS');
-    await expect(page.locator('.nx22-hero-bg img')).toHaveCSS('object-fit','contain');
-    await page.evaluate(()=>window.__nxStableDocument={created:Date.now()});await stars.nth(3).click({position:{x:18,y:11}});
-    expect(await page.evaluate(({key,id})=>JSON.parse(localStorage.getItem(key)||'{}')?.[id]?.score,{key:item.key,id:item.id})).toBe(8);
-    expect(await page.evaluate(()=>Boolean(window.__nxStableDocument))).toBe(true);
+    await expect(page.locator('.nx22-hero-bg img')).toHaveCSS('object-fit','cover');await expect(page.locator('.nx22-cover')).toHaveCSS('aspect-ratio','2 / 3');
+    const aligned=await page.locator('.nx22-stats>div').evaluateAll(cells=>cells.map(cell=>{const strong=cell.querySelector('strong').getBoundingClientRect(),label=cell.querySelector(':scope>span').getBoundingClientRect();return Math.abs((strong.left+strong.width/2)-(label.left+label.width/2))}));expect(aligned.every(delta=>delta<=1)).toBe(true);
+    const averageGap=await page.locator('.nx22-average-value').evaluate(element=>{const score=element.querySelector('strong').getBoundingClientRect(),stars=element.querySelector('.nx22-average-stars').getBoundingClientRect();return stars.left-score.right});expect(averageGap).toBeLessThanOrEqual(6);
+    await page.evaluate(()=>window.__nxStableDocument={created:Date.now()});await favorite.click();await expect(favorite).toHaveAttribute('aria-pressed','true');await expect(favorite).toHaveCSS('background-image',/linear-gradient/);expect(await page.evaluate(()=>Boolean(window.__nxStableDocument))).toBe(true);
     await page.locator('[data-nx22-tab="elenco"]').click();expect(await page.evaluate(()=>Boolean(window.__nxStableDocument))).toBe(true);
-    const filled=await stars.evaluateAll(buttons=>buttons.map(button=>parseFloat(button.style.getPropertyValue('--nx22-star-fill'))));expect(filled).toEqual([100,100,100,100,0]);
     await page.locator(`.nx22-chips ${item.filterSelector}`).first().click();
     await expect(page.locator('.nx21-catalog-page')).toBeVisible({timeout:30000});
     await expect.poll(()=>page.evaluate(key=>JSON.parse(sessionStorage.getItem(key)||'{}'),item.catalogState)).toMatchObject({mode:'SEARCH',filters:{[item.filterKey]:item.filterValue}});
