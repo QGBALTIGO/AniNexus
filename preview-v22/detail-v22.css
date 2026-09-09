@@ -242,3 +242,30 @@ body.nx22-detail-active button.nx22-fav[data-nx-action-owner="global"][aria-pres
   .nx22-average-stars{left:calc(50% + 30px)}
   .nx22-stats .nx22-average-star,.nx22-stats .nx22-average-star svg{width:9px;height:9px}
 }
+
+/* AniNexus V44.38 — programação em destaque na visão geral. */
+.nx22-overview-schedule{display:flex;justify-content:center;width:100%;margin:0 auto 30px}
+.nx22-overview-schedule .nx22-airing{display:flex;align-items:center;justify-content:center;gap:20px;width:min(100%,680px);min-height:76px;margin:0;padding:13px 24px;border:1px solid rgba(255,255,255,.13);border-radius:15px;background:linear-gradient(135deg,rgba(32,24,31,.94),rgba(18,13,17,.96));box-shadow:0 16px 38px rgba(0,0,0,.22);color:#b9adb2;font-size:13px;font-weight:800}
+.nx22-overview-schedule .nx22-airing-main{display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+.nx22-overview-schedule .nx22-airing-main span{color:#d8ccd1;font-size:12px;font-weight:900;letter-spacing:.055em}
+.nx22-overview-schedule .nx22-airing-main strong{color:#fff;font:900 25px/1 Manrope,sans-serif;letter-spacing:-.035em}
+.nx22-overview-schedule .nx22-airing time{color:#d8ccd1;font-size:14px;font-weight:900;white-space:nowrap}
+.nx22-overview-schedule .nx22-airing em{padding:8px 12px;border:1px dashed rgba(255,255,255,.21);border-radius:9px;background:rgba(255,255,255,.025);color:#eee5e8;font-size:14px;font-style:normal;font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap}
+.nx22-overview-schedule .nx22-publication em{border:1px solid rgba(67,206,176,.20);background:rgba(27,114,96,.10);color:#8fd9c8}
+
+@media(max-width:720px){
+  .nx22-overview-schedule{margin-bottom:25px}
+  .nx22-overview-schedule .nx22-airing{gap:12px;min-height:68px;padding:11px 14px;border-radius:12px}
+  .nx22-overview-schedule .nx22-airing-main{gap:7px}
+  .nx22-overview-schedule .nx22-airing-main span{font-size:9px}
+  .nx22-overview-schedule .nx22-airing-main strong{font-size:20px}
+  .nx22-overview-schedule .nx22-airing time{font-size:11px}
+  .nx22-overview-schedule .nx22-airing em{padding:7px 9px;border-radius:8px;font-size:11px}
+}
+
+@media(max-width:390px){
+  .nx22-overview-schedule .nx22-airing{gap:9px;padding-inline:10px}
+  .nx22-overview-schedule .nx22-airing-main span{font-size:8px}
+  .nx22-overview-schedule .nx22-airing-main strong{font-size:18px}
+  .nx22-overview-schedule .nx22-airing time,.nx22-overview-schedule .nx22-airing em{font-size:10px}
+}
