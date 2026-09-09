@@ -363,5 +363,7 @@
   addEventListener('popstate',()=>setTimeout(()=>claim(true),0));
   document.addEventListener('aninexus:routechange',()=>setTimeout(()=>claim(true),0));
   document.addEventListener('click',()=>setTimeout(claim,0),true);
+  window.__NX_V22_DETAIL_READY__=true;
+  dispatchEvent(new CustomEvent('aninexus:detail-runtime-ready'));
   claim(true);
 })();
