@@ -17,6 +17,7 @@ import { AUTHORIZED_ORIGINS, CLERK_ENABLED, hashPassword, verifyPassword, create
 import { AVATAR_PRESETS, avatarForClerkUser, avatarPresetUrl, resolvedAvatar } from './lib/avatar.mjs';
 import { processClerkWebhook } from './lib/clerk-webhook.mjs';
 import { getCatalog, getReading, getSchedule, getAnime, getAnimeThemes, getMediaSummaries, getManga, getStudios, getDubbed, prewarm } from './lib/provider.mjs';
+import { cleanSynopsisText, getPortugueseSynopsis } from './lib/synopsis.mjs';
 import { lists } from './lib/content.mjs';
 import { getNativeNews, getNativeTrailerArticles, getNativeArticle, articleExpiry } from './lib/native-news.mjs';
 import { buildLatestTrailers } from './lib/trailers.mjs';
@@ -44,7 +45,7 @@ app.addHook('onSend',async(req,reply,payload)=>{
   reply.header('X-Permitted-Cross-Domain-Policies','none');
   const url=String(req.url||'').split('?')[0];
   if(url.startsWith('/api/auth/')||url.startsWith('/api/me')||url==='/api/achievements/feed')reply.header('Cache-Control','no-store');
-  else if(req.method==='GET'&&/^\/api\/(home|catalog|reading|trailers|characters\/ranking|achievements\/catalog|schedule|anime\/\d+|manga\/\d+|media\/summaries|studios|dublados|lists|list\/|users\/|news(?:\/|$)|community\/(?:impressions|activity|threads))/.test(url))reply.header('Cache-Control','public, max-age=20, stale-while-revalidate=180, stale-if-error=600');
+  else if(req.method==='GET'&&/^\/api\/(home|catalog|reading|trailers|characters\/ranking|achievements\/catalog|schedule|anime\/\d+|manga\/\d+|synopsis\/(?:anime|manga)\/\d+|media\/summaries|studios|dublados|lists|list\/|users\/|news(?:\/|$)|community\/(?:impressions|activity|threads))/.test(url))reply.header('Cache-Control','public, max-age=20, stale-while-revalidate=180, stale-if-error=600');
   else if(req.method==='GET'&&(url==='/'||reply.getHeader('content-type')?.toString().includes('text/html')))reply.header('Cache-Control','no-cache, max-age=0, must-revalidate');
   if(process.env.PUBLIC_ORIGIN?.startsWith('https://'))reply.header('Strict-Transport-Security','max-age=31536000; includeSubDomains; preload');
   return payload;
@@ -251,6 +252,14 @@ app.get('/api/manga/:id/rating',publicRate,async(req,reply)=>{const id=safeInt(r
 app.get('/api/anime/:id/themes',{config:{rateLimit:{max:120,timeWindow:'1 minute'}}},async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});return getAnimeThemes(id);});
 app.get('/api/media/summaries',{config:{rateLimit:{max:120,timeWindow:'1 minute'}}},async(req,reply)=>{const raw=String(req.query?.ids||'').split(',').slice(0,60),ids=raw.map(value=>safeInt(value)).filter(Boolean);if(!ids.length)return reply.code(400).send({error:'INVALID_IDS'});return{items:await getMediaSummaries(ids)}});
 app.get('/api/manga/:id',{config:{rateLimit:{max:120,timeWindow:'1 minute'}}},async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});return getManga(id);});
+app.get('/api/synopsis/:type/:id',{config:{rateLimit:{max:90,timeWindow:'1 minute'}}},async(req,reply)=>{
+  const id=safeInt(req.params.id),type=String(req.params.type||'').toLowerCase();
+  if(!id||!['anime','manga'].includes(type))return reply.code(400).send({error:'INVALID_MEDIA'});
+  const media=type==='manga'?await getManga(id):await getAnime(id),source=cleanSynopsisText(media?.description||'');
+  if(!source)return{text:'',language:'pt-BR',translated:false};
+  const text=await getPortugueseSynopsis(source).catch(()=> '');
+  return{text:cleanSynopsisText(text),language:'pt-BR',translated:!!text};
+});
 app.get('/api/studios',publicRate,async req=>getStudios(Number(req.query?.page||1)));
 app.get('/api/dublados',publicRate,async req=>getDubbed(Number(req.query?.page||1)));
 app.get('/api/lists',publicRate,async()=>lists);

@@ -243,36 +243,50 @@ body.nx22-detail-active button.nx22-fav[data-nx-action-owner="global"][aria-pres
   .nx22-stats .nx22-average-star,.nx22-stats .nx22-average-star svg{width:9px;height:9px}
 }
 
-/* AniNexus V44.38 — programação em destaque na visão geral. */
+/* AniNexus V44.40 — programação integrada ao sistema visual da obra. */
 .nx22-overview-schedule{display:flex;justify-content:center;width:100%;margin:0 auto 30px}
-.nx22-overview-schedule .nx22-airing{display:flex;align-items:center;justify-content:center;gap:20px;width:min(100%,680px);min-height:76px;margin:0;padding:13px 24px;border:1px solid rgba(255,255,255,.13);border-radius:15px;background:linear-gradient(135deg,rgba(32,24,31,.94),rgba(18,13,17,.96));box-shadow:0 16px 38px rgba(0,0,0,.22);color:#b9adb2;font-size:13px;font-weight:800}
-.nx22-overview-schedule .nx22-airing-main{display:flex;align-items:baseline;gap:10px;white-space:nowrap}
-.nx22-overview-schedule .nx22-airing-main span{color:#d8ccd1;font-size:12px;font-weight:900;letter-spacing:.055em}
-.nx22-overview-schedule .nx22-airing-main strong{color:#fff;font:900 25px/1 Manrope,sans-serif;letter-spacing:-.035em}
-.nx22-overview-schedule .nx22-airing time{color:#d8ccd1;font-size:14px;font-weight:900;white-space:nowrap}
-.nx22-overview-schedule .nx22-airing em{padding:8px 12px;border:1px dashed rgba(255,255,255,.21);border-radius:9px;background:rgba(255,255,255,.025);color:#eee5e8;font-size:14px;font-style:normal;font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap}
-.nx22-overview-schedule .nx22-publication em{border:1px solid rgba(67,206,176,.20);background:rgba(27,114,96,.10);color:#8fd9c8}
+.nx22-overview-schedule .nx22-airing{position:relative;overflow:hidden;display:grid;grid-template-columns:42px minmax(170px,1fr) auto auto;align-items:center;gap:16px;width:min(100%,680px);min-height:72px;margin:0;padding:12px 14px;border:1px solid rgba(255,255,255,.09);border-radius:12px;background:rgba(17,12,16,.92);box-shadow:0 12px 30px rgba(0,0,0,.18);color:#b9adb2}
+.nx22-overview-schedule .nx22-airing:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(180deg,#f05a78,#b91d43)}
+.nx22-airing-icon{width:36px;height:36px;border:1px solid rgba(236,64,98,.22);border-radius:9px;background:rgba(227,38,79,.09);color:#ef6881;display:grid;place-items:center}
+.nx22-airing-icon svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
+.nx22-airing-copy,.nx22-airing-fact,.nx22-airing-countdown,.nx22-overview-schedule time{display:grid;gap:4px;min-width:0}
+.nx22-overview-schedule small{color:#887b80;font-size:7px;font-weight:900;letter-spacing:.12em}
+.nx22-airing-copy strong{color:#f7f1f3;font:800 14px/1.1 Manrope,sans-serif}
+.nx22-overview-schedule time{padding-left:16px;border-left:1px solid rgba(255,255,255,.08);font-style:normal;white-space:nowrap}
+.nx22-overview-schedule time strong,.nx22-airing-fact strong{color:#e7dce0;font:800 13px/1 Manrope,sans-serif}
+.nx22-airing-countdown{min-width:91px;padding:9px 11px;border:1px solid rgba(227,38,79,.18);border-radius:8px;background:rgba(227,38,79,.07)}
+.nx22-airing-countdown strong{color:#f7e9ed;font:900 14px/1 Manrope,sans-serif;font-variant-numeric:tabular-nums}
+.nx22-overview-schedule .nx22-publication{grid-template-columns:42px minmax(150px,1fr) auto auto auto}
+.nx22-overview-schedule .nx22-publication em{padding:8px 10px;border:1px solid rgba(67,206,176,.16);border-radius:8px;background:rgba(27,114,96,.08);color:#8fd9c8;font-size:9px;font-style:normal;font-weight:900;white-space:nowrap}
 
 @media(max-width:720px){
   .nx22-overview-schedule{margin-bottom:25px}
-  .nx22-overview-schedule .nx22-airing{gap:12px;min-height:68px;padding:11px 14px;border-radius:12px}
-  .nx22-overview-schedule .nx22-airing-main{gap:7px}
-  .nx22-overview-schedule .nx22-airing-main span{font-size:9px}
-  .nx22-overview-schedule .nx22-airing-main strong{font-size:20px}
-  .nx22-overview-schedule .nx22-airing time{font-size:11px}
-  .nx22-overview-schedule .nx22-airing em{padding:7px 9px;border-radius:8px;font-size:11px}
+  .nx22-overview-schedule .nx22-airing{grid-template-columns:36px minmax(0,1fr) auto;grid-template-rows:auto auto;gap:4px 10px;min-height:72px;padding:10px 11px;border-radius:10px}
+  .nx22-airing-icon{grid-row:1/3;width:32px;height:32px;border-radius:8px}
+  .nx22-airing-icon svg{width:16px;height:16px}
+  .nx22-airing-copy{grid-column:2;grid-row:1;align-self:end;gap:2px}
+  .nx22-airing-copy strong{font-size:12px}
+  .nx22-overview-schedule time{grid-column:2;grid-row:2;display:flex;align-items:center;gap:6px;padding:0;border:0}
+  .nx22-overview-schedule time small{letter-spacing:.04em}
+  .nx22-overview-schedule time strong{font-size:10px}
+  .nx22-airing-countdown{grid-column:3;grid-row:1/3;align-self:center;min-width:76px;padding:8px 9px}
+  .nx22-airing-countdown strong{font-size:12px}
+  .nx22-overview-schedule .nx22-publication{display:flex;flex-wrap:wrap;gap:10px;padding:11px 12px}
+  .nx22-overview-schedule .nx22-publication .nx22-airing-icon{flex:0 0 32px}
+  .nx22-overview-schedule .nx22-publication .nx22-airing-copy{flex:1 1 150px}
+  .nx22-overview-schedule .nx22-publication .nx22-airing-fact{flex:0 0 auto}
 }
 
 @media(max-width:390px){
-  .nx22-overview-schedule .nx22-airing{gap:9px;padding-inline:10px}
-  .nx22-overview-schedule .nx22-airing-main span{font-size:8px}
-  .nx22-overview-schedule .nx22-airing-main strong{font-size:18px}
-  .nx22-overview-schedule .nx22-airing time,.nx22-overview-schedule .nx22-airing em{font-size:10px}
+  .nx22-overview-schedule .nx22-airing{gap:3px 8px;padding-inline:9px}
+  .nx22-airing-countdown{min-width:70px;padding-inline:7px}
 }
 
-/* AniNexus V44.39 — fallback artístico de banner e Arquivo X da Akira. */
-.nx22-hero-bg.is-cover-fallback img,.nx22-hero-bg.is-portrait img{object-fit:cover!important;object-position:center 24%!important;filter:blur(15px) saturate(.82) contrast(.94)!important;transform:scale(1.13)!important;opacity:.72}
-.nx22-hero-bg.is-cover-fallback:after,.nx22-hero-bg.is-portrait:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 22%,transparent 0,rgba(8,6,8,.14) 47%,rgba(8,6,8,.52) 100%);pointer-events:none}
+/* AniNexus V44.40 — banners uniformes, desfocados e dissolvidos no fundo. */
+.nx22-hero-bg{-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 55%,rgba(0,0,0,.82) 72%,rgba(0,0,0,.30) 88%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 55%,rgba(0,0,0,.82) 72%,rgba(0,0,0,.30) 88%,transparent 100%)}
+.nx22-hero-bg img,.nx22-hero-bg.is-cover-fallback img,.nx22-hero-bg.is-portrait img{object-fit:cover!important;object-position:center 28%!important;filter:blur(12px) saturate(.82) contrast(.94)!important;transform:scale(1.10)!important;opacity:.72}
+.nx22-hero-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 20%,transparent 0,rgba(8,6,8,.12) 48%,rgba(8,6,8,.48) 100%);pointer-events:none}
+.nx22-hero-shade{background:linear-gradient(90deg,rgba(7,5,7,.94) 0%,rgba(7,5,7,.78) 42%,rgba(7,5,7,.44) 75%,rgba(7,5,7,.68) 100%),linear-gradient(180deg,rgba(8,6,8,.08) 0%,rgba(8,6,8,.20) 48%,rgba(8,6,8,.74) 76%,#080608 100%)}
 .nx22-hero-bg.is-invalid img{display:none!important}
 
 .nx22-akira-file{margin:0 0 31px;padding:18px 0 20px;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)}
@@ -287,7 +301,9 @@ html[data-theme="light"] .nx22-akira-file{border-color:rgba(45,23,31,.13)}
 html[data-theme="light"] .nx22-akira-body p{border-color:rgba(45,23,31,.12);background:rgba(255,255,255,.72);color:#4a3d42}
 
 @media(max-width:720px){
-  .nx22-hero-bg.is-cover-fallback img,.nx22-hero-bg.is-portrait img{object-position:center 22%!important;filter:blur(12px) saturate(.84) contrast(.95)!important;transform:scale(1.15)!important;opacity:.68}
+  .nx22-hero-bg{height:350px!important;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 47%,rgba(0,0,0,.80) 66%,rgba(0,0,0,.22) 88%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 47%,rgba(0,0,0,.80) 66%,rgba(0,0,0,.22) 88%,transparent 100%)}
+  .nx22-hero-bg img,.nx22-hero-bg.is-cover-fallback img,.nx22-hero-bg.is-portrait img{object-position:center 25%!important;filter:blur(11px) saturate(.84) contrast(.95)!important;transform:scale(1.13)!important;opacity:.70}
+  .nx22-hero-shade{height:390px;background:linear-gradient(180deg,rgba(8,6,8,.08) 0%,rgba(8,6,8,.18) 36%,rgba(8,6,8,.70) 66%,#080608 96%)}
   .nx22-akira-file{margin-bottom:25px;padding:16px 0 18px}
   .nx22-akira-head{margin-bottom:9px}
   .nx22-akira-head h2{font-size:17px}

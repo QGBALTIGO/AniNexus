@@ -3,7 +3,7 @@
   const IS_PAGES=location.hostname.endsWith('github.io');
   const basePath=new URL(document.baseURI,location.href).pathname.replace(/\/+$/,'');
   const BASE=basePath==='/'?'':basePath;
-  const BUILD='44.39.1'; // Cache lineage: BUILD='44.39.0'.
+  const BUILD='44.40.0';
   const DEDICATED=['/','/animes/catalogo','/animes/programacao','/animes/temporadas','/animes/onde-assistir','/animes/dublados','/animes/estudios','/melhores-animes-para-assistir','/animes-mais-assistidos','/animes-mais-aguardados','/listas-de-animes','/animes-em-alta','/filmes-de-anime','/animes-curtos','/animes-de-acao','/animes-de-romance','/animes-de-fantasia','/animes-de-comedia','/animes-de-misterio','/animes-de-esporte','/animes-de-terror','/mangas','/light-novels','/noticias','/comunidade','/conquistas','/login','/criar-conta','/minha-conta','/minha-biblioteca','/meus-animes','/meus-mangas','/admin'];
   const CARD_SELECTOR='[data-nx21-open],[data-nx-media],[data-nx18-open],[data-nx22-open],[data-nx-still],[data-open][data-type="anime"]';
   const ACTION_SELECTOR='button,a,input,select,textarea,[data-list],[data-fav],[data-nx-list],[data-nx-fav],[data-nx18-status],[data-nx18-fav],[data-manga-list],[data-manga-fav]';
