@@ -67,7 +67,6 @@ async function mockInternalRankings(page){
   await page.route('**/api/characters/ranking',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({metricsSource:'aninexus',metric:'favorites',items:rankedCharacters()})}));
 }
 function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animethemes:Array.from({length:count},(_,index)=>({type:index%3===2?'ED':'OP',sequence:index+1,song:{title:`Tema ${index+1}`,artists:[{name:`Artista ${index+1}`}]},animethemeentries:[{episodes:String(index+1),nsfw:false,spoiler:false,videos:[{link:`https://v.animethemes.moe/test-${index+1}.webm`,mimetype:'video/webm',resolution:1080,nc:true,subbed:false,lyrics:false}]}]}))}]}}
-test.describe.configure({mode:'serial'});
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
@@ -1664,9 +1663,9 @@ test('Onde assistir is a platform-first responsive catalog with standard scroll 
     if(viewport.width<600){
       const columns=await page.locator('.nx47-provider-card').evaluateAll(cards=>new Set(cards.slice(0,3).map(card=>Math.round(card.getBoundingClientRect().left))).size);
       expect(columns).toBe(1);
-      await page.evaluate(()=>scrollTo(0,180));
+      await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';scrollTo(0,180)});
       await expect.poll(()=>page.evaluate(()=>Math.round(scrollY))).toBeGreaterThan(100);
-      await page.waitForTimeout(320);
+      await expect.poll(()=>page.evaluate(()=>document.querySelector('#topbar').getBoundingClientRect().bottom),{timeout:3000}).toBeLessThanOrEqual(2);
       const chrome=await page.evaluate(()=>{const bar=document.querySelector('#topbar').getBoundingClientRect(),island=document.querySelector('.nx47-island').getBoundingClientRect();return{barBottom:bar.bottom,islandTop:island.top,islandHeight:island.height}});
       expect(chrome.barBottom).toBeLessThanOrEqual(2);expect(chrome.islandTop).toBeLessThanOrEqual(1);expect(chrome.islandHeight).toBeLessThanOrEqual(49);
       const scrollBefore=await page.evaluate(()=>scrollY);
