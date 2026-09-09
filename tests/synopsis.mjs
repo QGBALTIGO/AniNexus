@@ -24,3 +24,14 @@ test('translates English through the first valid provider and cleans its attribu
   };
   assert.equal(await getPortugueseSynopsis(source, { cache: false, fetchImpl }), cleanSynopsisText(translated));
 });
+
+test('accepts a short Portuguese translation without requiring accented words', async () => {
+  const source = 'The second season of Bungou Stray Dogs Wan!';
+  const translated = await getPortugueseSynopsis(source, {
+    cache: false,
+    fetchImpl: async url => String(url).includes('translate.googleapis.com')
+      ? new Response(JSON.stringify([[['A segunda temporada de Bungou Stray Dogs Wan!', source]]]), { status: 200, headers: { 'content-type': 'application/json' } })
+      : new Response(JSON.stringify({ responseData: { translatedText: 'A segunda temporada de Bungou Stray Dogs Wan!' } }), { status: 200, headers: { 'content-type': 'application/json' } }),
+  });
+  assert.equal(translated, 'A segunda temporada de Bungou Stray Dogs Wan!');
+});
