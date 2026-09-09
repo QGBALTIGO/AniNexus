@@ -153,9 +153,9 @@ jobs:
         run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Install browser test runner
         run: |
-          if [ -f /etc/apt/sources.list.d/google-chrome.list ]; then
-            sudo mv /etc/apt/sources.list.d/google-chrome.list /tmp/google-chrome.list.disabled
-          fi
+          while IFS= read -r SOURCE_FILE; do
+            sudo mv "$SOURCE_FILE" "/tmp/$(basename "$SOURCE_FILE").disabled"
+          done < <(grep -rl 'dl.google.com/linux/chrome-stable' /etc/apt/sources.list.d || true)
           pnpm exec playwright install --with-deps chromium firefox webkit
       - name: Map GitHub Pages hostname locally
         run: echo "127.0.0.1 qgbaltigo.github.io" | sudo tee -a /etc/hosts
@@ -204,9 +204,9 @@ jobs:
         run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Install WebKit test runner
         run: |
-          if [ -f /etc/apt/sources.list.d/google-chrome.list ]; then
-            sudo mv /etc/apt/sources.list.d/google-chrome.list /tmp/google-chrome.list.disabled
-          fi
+          while IFS= read -r SOURCE_FILE; do
+            sudo mv "$SOURCE_FILE" "/tmp/$(basename "$SOURCE_FILE").disabled"
+          done < <(grep -rl 'dl.google.com/linux/chrome-stable' /etc/apt/sources.list.d || true)
           pnpm exec playwright install --with-deps webkit
       - name: Map GitHub Pages hostname locally
         run: echo "127.0.0.1 qgbaltigo.github.io" | sudo tee -a /etc/hosts
