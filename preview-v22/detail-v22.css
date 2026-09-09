@@ -91,8 +91,8 @@ body.nx22-detail-active .menu-btn{width:38px!important;height:38px!important}
 .nx22-community-summary{display:flex;align-items:flex-end;gap:22px;margin-top:15px}
 .nx22-rating{display:grid;grid-template-columns:auto auto;gap:4px 8px;align-items:center;flex:0 0 auto;padding-right:23px;border-right:1px solid rgba(255,255,255,.10)}
 .nx22-rating>span{grid-column:1/-1;color:#9f9398;font-size:8px;font-weight:900}
-.nx22-rating-stars{display:flex;align-items:center;gap:1px;min-width:101px}
-.nx22-rating-star{position:relative;width:20px;height:20px;padding:0;border:0;background:transparent;color:#675c61;cursor:pointer}
+.nx22-rating-stars{display:flex;align-items:center;gap:0;min-width:120px}
+.nx22-rating-star{position:relative;width:24px;height:24px;padding:0;border:0;background:transparent;color:#675c61;cursor:pointer}
 .nx22-rating-star>span{position:absolute;inset:0;display:block;pointer-events:none}
 .nx22-rating-star svg{width:18px;height:18px;fill:transparent;stroke:currentColor;stroke-width:1.65}
 .nx22-rating-star .nx22-star-fill{width:var(--nx22-star-fill);overflow:hidden;color:#f2c94c}
@@ -134,13 +134,13 @@ body.nx22-detail-active .menu-btn{width:38px!important;height:38px!important}
   .nx22-community-summary{display:grid;gap:12px;margin-top:14px}
   .nx22-rating{grid-template-columns:auto auto 1fr;width:100%;gap:0 8px;padding:0 0 11px;border-right:0;border-bottom:1px solid rgba(255,255,255,.09)}
   .nx22-rating>span{grid-column:auto;align-self:center}.nx22-rating-stars{min-width:0}.nx22-rating output{justify-self:end}
-  .nx22-rating-star{width:20px;height:20px}.nx22-rating-star svg{width:18px;height:18px}
+  .nx22-rating-star{width:24px;height:24px}.nx22-rating-star svg{width:18px;height:18px}
   .nx22-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
   .nx22-stats div{min-width:0}.nx22-stats strong{font-size:18px}.nx22-stats span{font-size:8px}
 }
 
 @media(max-width:390px){
   .nx22-headcopy h1{font-size:24px}
-  .nx22-rating-stars{gap:0}.nx22-rating-star{width:19px}
+  .nx22-rating-stars{gap:0}.nx22-rating-star{width:24px}
   .nx22-community-summary{gap:10px}.nx22-stats{gap:6px}
 }

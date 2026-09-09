@@ -237,10 +237,12 @@
 
   function wireRating(m,stateApi){
     const host=root.querySelector('[data-nx22-rating]');if(!host||!stateApi)return;
+    let userInteracted=false;
     const current=()=>stateApi.get?.(m.id)||{};
     const fill=value=>host.querySelectorAll('[data-nx22-rating-star]').forEach((button,index)=>button.style.setProperty('--nx22-star-fill',`${Math.max(0,Math.min(100,(Number(value)-index*2)*50))}%`));
     const paintValue=value=>{host.querySelector('.nx22-rating-stars').innerHTML=ratingStars(value);host.querySelector('output').textContent=Number.isFinite(Number(value))?Number(value).toFixed(1):'—';bind()};
     const choose=async scoreValue=>{
+      userInteracted=true;
       const user=typeof window.AniNexusAuth?.requireAccount==='function'?await window.AniNexusAuth.requireAccount():null;if(!user)return;
       const state=current(),reading=String(m.mediaType).toUpperCase()==='MANGA',progress=Math.max(Number(state.progress)||0,Number(state.volumeProgress)||0);
       if(!state.status||state.status==='PLANNING'||(['CURRENT','PAUSED'].includes(state.status)&&progress<1)){
@@ -250,7 +252,7 @@
       stateApi.put?.(m.id,{...state,score:scoreValue},total);paintValue(scoreValue);
     };
     function bind(){host.querySelectorAll('[data-nx22-rating-star]').forEach(button=>{const value=event=>{const rect=button.getBoundingClientRect(),half=event.clientX&&event.clientX<rect.left+rect.width/2?1:2;return(Number(button.dataset.nx22RatingStar)-1)*2+half};button.onpointermove=event=>fill(value(event));button.onclick=event=>void choose(value(event))});host.onpointerleave=()=>fill(current().score||0)}
-    bind();setTimeout(()=>paintValue(current().score),350);
+    bind();setTimeout(()=>{if(!userInteracted)paintValue(current().score)},350);
   }
 
   function paint(m){
@@ -271,7 +273,7 @@
             <div class="nx22-headcopy"><span class="nx22-eyebrow">${esc(m.title?.romaji||m.title?.native||(reading?'Mangá':'Anime'))}</span><h1>${esc(title(m))}</h1>
               ${meta.length?`<div class="nx22-meta">${meta.map(value=>`<span>${esc(value)}</span>`).join('')}</div>`:''}
               <div class="nx22-chips"><span class="nx22-status">${esc(STATUS[m.status]||(reading?'Mangá':'Anime'))}</span>${(m.genres||[]).slice(0,5).map(g=>`<a class="genre" href="${catalogPath}" data-nx22-genre="${esc(g)}">${esc(GENRE[g]||g)}</a>`).join('')}${heroTags.map(tag=>`<a href="${catalogPath}" data-nx22-tag="${esc(tag)}">${esc(TAG_PT[tag]||tag)}</a>`).join('')}</div>
-              <div class="nx22-actions"><button type="button" class="nx22-fav" ${favAttr}="${m.id}" aria-label="Favoritar">${SVG.heart}</button><button type="button" class="nx22-list" ${listAttr}="${m.id}" aria-label="Adicionar à lista">${SVG.plus}<span>${current.status?(stateApi?.statuses?.[current.status]?.label||'Meu status'):'Adicionar à lista'}</span></button><button type="button" class="nx22-share" data-nx22-share aria-label="Compartilhar">${SVG.share}<span>Compartilhar</span></button></div>
+              <div class="nx22-actions detail-actions"><button type="button" class="nx22-fav" ${favAttr}="${m.id}" aria-label="Favoritar">${SVG.heart}</button><button type="button" class="nx22-list" ${listAttr}="${m.id}" aria-label="Adicionar à lista">${SVG.plus}<span>${current.status?(stateApi?.statuses?.[current.status]?.label||'Meu status'):'Adicionar à lista'}</span></button><button type="button" class="nx22-share" data-nx22-share aria-label="Compartilhar">${SVG.share}<span>Compartilhar</span></button></div>
               ${heroSchedule}
               <div class="nx22-community-summary">${ratingMarkup(current.score)}<div class="nx22-stats"><div class="nx22-average-stat"><strong>${score(m)}</strong><i class="nx22-average-stars" aria-hidden="true">${averageStars(internal?Number(m.averageScore||0)/10:0)}</i><span>${ratingCount?`nota de ${compact(ratingCount)} ${ratingCount===1?'membro':'membros'}`:'sem avaliações ainda'}</span></div><div><strong>${compact(listCount)}</strong><span>nas listas</span></div><div><strong>${compact(favoriteCount)}</strong><span>favoritos</span></div></div></div>
             </div>
