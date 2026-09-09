@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T20:02:11.704Z",
+  "generatedAt": "2026-09-09T22:24:48.513Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 36,
+      "count": 35,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,523 @@
     }
   ],
   "stats": {
-    "collected": 46,
-    "grouped": 14,
-    "published": 14,
-    "newStories": 14,
-    "fullArticles": 14,
+    "collected": 45,
+    "grouped": 18,
+    "published": 18,
+    "newStories": 18,
+    "fullArticles": 18,
     "previewArticles": 0,
-    "avgWords": 368,
-    "withHeroImage": 14,
-    "withOrderedMedia": 12,
+    "avgWords": 346,
+    "withHeroImage": 18,
+    "withOrderedMedia": 16,
     "skippedTranslation": 0,
-    "skippedQuality": 31,
-    "durationMs": 3520
+    "skippedQuality": 27,
+    "durationMs": 3311
   },
   "items": [
+    {
+      "id": "animenew-3bde3e1b",
+      "slug": "nia-liston-ganha-novo-trailer-e-tera-2-cours-animenew-3bde3e1b",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Nia Liston ganha novo trailer e terá 2 cours",
+      "originalTitle": "Nia Liston ganha novo trailer e terá 2 cours",
+      "summary": "O anime Nia Liston: The Merciless Maiden revelou um novo trailer, quatro personagens do elenco e confirmou exibição durante dois cours consecutivos a partir de outubro. A prévia apresenta a música de abertura “Respawn!!”, interpretada pela VTuber Tsunomaki Watame.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Kyouran Reijou Nia Liston",
+        "Nia Liston: The Merciless Maiden"
+      ],
+      "url": "https://animenew.com.br/nia-liston-anime-novo-trailer-dois-cours",
+      "sourceUrl": "https://animenew.com.br/nia-liston-anime-novo-trailer-dois-cours",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Nia-Liston-ganha-novo-trailer-e-tera-2-cours.webp",
+      "mediaQuery": "Nia Liston ganha novo trailer e terá 2 cours",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/gxG4vntLtbk"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Nia Liston: The Merciless Maiden revelou um novo trailer, quatro personagens do elenco e confirmou exibição durante dois cours consecutivos a partir de outubro. A prévia apresenta a música de abertura “Respawn!!”, interpretada pela VTuber Tsunomaki Watame.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Nia Liston: The Merciless Maiden",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " revelou um novo trailer, quatro personagens do elenco e confirmou exibição durante dois cours consecutivos a partir de outubro. A prévia apresenta a música de abertura “Respawn!!”, interpretada pela "
+            },
+            {
+              "text": "VTuber",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Tsunomaki Watame",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "A Tale of the Secret Saint revela estreia e novo elenco",
+              "runs": [
+                {
+                  "text": "A Tale of the Secret Saint revela estreia e novo elenco",
+                  "href": "https://animenew.com.br/a-tale-of-the-secret-saint-anime-estreia-outubro"
+                }
+              ]
+            },
+            {
+              "text": "Magic Repo Man: Anime revela trailer, elenco e músicas",
+              "runs": [
+                {
+                  "text": "Magic Repo Man: Anime revela trailer, elenco e músicas",
+                  "href": "https://animenew.com.br/magic-repo-man-anime-trailer-elenco-musicas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Sendo assim também foram anunciados Kōichi Sakaguchi como Bendelio, Junichi Suwabe como Hyurence Altoire, Maaya Uchida como Sharro White e Kazuyuki Okitsu como Asuma.",
+          "runs": [
+            {
+              "text": "Sendo assim também foram anunciados Kōichi Sakaguchi como Bendelio, Junichi Suwabe como Hyurence Altoire, Maaya Uchida como Sharro White e Kazuyuki Okitsu como Asuma."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=gxG4vntLtbk",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/gxG4vntLtbk"
+        },
+        {
+          "type": "heading",
+          "text": "Estreia acontece em outubro",
+          "runs": [
+            {
+              "text": "Estreia acontece em outubro"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A série estreia em 6 de outubro, às 21h25 no Japão, pela Tokyo MX. A transmissão também passará pela BS NTV e MBS. No streaming, a produção estará disponível pela ABEMA, d Anime Store e U-NEXT, enquanto a HIDIVE fará a exibição simultânea.",
+          "runs": [
+            {
+              "text": "A série estreia em "
+            },
+            {
+              "text": "6 de outubro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", às 21h25 no Japão, pela Tokyo MX. A transmissão também passará pela BS NTV e MBS. No streaming, a produção estará disponível pela ABEMA, d Anime Store e U-NEXT, enquanto a HIDIVE fará a exibição simultânea."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Sinopse Nia Liston",
+          "runs": [
+            {
+              "text": "Sinopse Nia Liston"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A história acompanha uma grande guerreira que morre sem encontrar um adversário capaz de derrotá-la. Porém, ela desperta no corpo de Nia Liston, uma jovem extremamente debilitada. Com uma nova chance de viver, decide recuperar sua força para voltar ao campo de batalha.",
+          "runs": [
+            {
+              "text": "A história acompanha uma grande guerreira que morre sem encontrar um adversário capaz de derrotá-la. Porém, ela desperta no corpo de Nia Liston, uma jovem extremamente debilitada. Com uma nova chance de viver, decide recuperar sua força para voltar ao campo de batalha.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Motoki Nakanishi dirige o anime no estúdio KONAMI animation, com Haruta Segi como diretor assistente. Gigaemon Ichikawa cuida dos roteiros, enquanto Yūki Itō e Kana Tosaoka trabalham no design dos personagens.",
+          "runs": [
+            {
+              "text": "Motoki Nakanishi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dirige o anime no estúdio "
+            },
+            {
+              "text": "KONAMI animation",
+              "href": "https://animenew.com.br/studio/7494/konami-animation"
+            },
+            {
+              "text": ", com Haruta Segi como diretor assistente. Gigaemon Ichikawa cuida dos roteiros, enquanto Yūki Itō e Kana Tosaoka trabalham no design dos personagens."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A obra original de Umikaze Minamino começou no site Shōsetsuka ni Narō em 2019. Por fim a Hobby Japan publica as light novels desde 2022, com 11 volumes lançados até junho de 2026.",
+          "runs": [
+            {
+              "text": "A obra original de Umikaze Minamino começou no site Shōsetsuka ni Narō em 2019. Por fim a "
+            },
+            {
+              "text": "Hobby Japan",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " publica as "
+            },
+            {
+              "text": "light novels",
+              "href": "https://animenew.com.br/light-novel"
+            },
+            {
+              "text": " desde 2022, com 11 volumes lançados até junho de 2026."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Nia Liston ganha novo trailer e terá 2 cours.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Nia Liston ganha novo trailer e terá 2 cours",
+              "href": "https://animenew.com.br/nia-liston-anime-novo-trailer-dois-cours/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-09T21:00:28.000Z",
+      "updatedAt": "2026-09-09T21:00:28.000Z",
+      "expiresAt": "2026-09-16T21:00:28.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/nia-liston-anime-novo-trailer-dois-cours",
+          "publishedAt": "2026-09-09T21:00:28.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 261,
+      "qualityScore": 0.973,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-37da86bd",
+      "slug": "magic-repo-man-anime-revela-trailer-elenco-e-musicas-animenew-37da86bd",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Magic Repo Man: Anime revela trailer, elenco e músicas",
+      "originalTitle": "Magic Repo Man: Anime revela trailer, elenco e músicas",
+      "summary": "O anime Magic Repo Man (Kashita Maryoku wa [Ribo Harai] de Kyōsei Chōshū) ganhou um novo trailer com legendas em inglês, além de revelar um novo integrante do elenco e os artistas responsáveis pelas músicas de abertura e encerramento. A novidade foi divulgada pela TV Asahi nesta terça-feira. O grupo de idols BUDDiiS interpreta a abertura “Risk rate”, enquanto a artista Kotani canta o encerramento “Vase”.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Kashita Maryoku",
+        "Magic Repo Man",
+        "Synergy SP"
+      ],
+      "url": "https://animenew.com.br/magic-repo-man-anime-trailer-elenco-musicas",
+      "sourceUrl": "https://animenew.com.br/magic-repo-man-anime-trailer-elenco-musicas",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Magic-Repo-Man-anime-revela-trailer-elenco-e-musicas.webp",
+      "mediaQuery": "Magic Repo Man: Anime revela trailer, elenco e músicas",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/kXqx3rFSkxc"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Magic Repo Man (Kashita Maryoku wa [Ribo Harai] de Kyōsei Chōshū) ganhou um novo trailer com legendas em inglês, além de revelar um novo integrante do elenco e os artistas responsáveis pelas músicas de abertura e encerramento. A novidade foi divulgada pela TV Asahi nesta terça-feira. O grupo de idols BUDDiiS interpreta a abertura “Risk rate”, enquanto a artista Kotani canta o encerramento “Vase”.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Magic Repo Man",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Kashita Maryoku wa [Ribo Harai] de Kyōsei Chōshū",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") ganhou um novo trailer com legendas em inglês, além de revelar um novo integrante do elenco e os artistas responsáveis pelas músicas de abertura e encerramento. A novidade foi divulgada pela TV Asahi nesta terça-feira. O grupo de idols BUDDiiS interpreta a abertura “Risk rate”, enquanto a artista Kotani canta o encerramento “Vase”."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "A Tale of the Secret Saint revela estreia e novo elenco",
+              "runs": [
+                {
+                  "text": "A Tale of the Secret Saint revela estreia e novo elenco",
+                  "href": "https://animenew.com.br/a-tale-of-the-secret-saint-anime-estreia-outubro"
+                }
+              ]
+            },
+            {
+              "text": "MarriageToxin – 2ª temporada ganha novo trailer",
+              "runs": [
+                {
+                  "text": "MarriageToxin – 2ª temporada ganha novo trailer",
+                  "href": "https://animenew.com.br/marriage-toxin-2-temporada-trailer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Novo integrante do elenco",
+          "runs": [
+            {
+              "text": "Novo integrante do elenco"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Daisuke Namikawa entra na produção como Roger, líder do grupo de aventureiros de Rank A chamado Meteor Shower. Sendo assim o elenco também conta com Reiji Kawashima como Lent, Emiri Katō como Empee, Daiki Hamano como Guy, Akira Sekine como Misa, Yū Kobayashi como Elle e Risae Matsuda como Linka.",
+          "runs": [
+            {
+              "text": "Daisuke Namikawa entra na produção como Roger, líder do grupo de aventureiros de Rank A chamado Meteor Shower. Sendo assim o elenco também conta com Reiji Kawashima como Lent, Emiri Katō como Empee, Daiki Hamano como Guy, Akira Sekine como Misa, Yū Kobayashi como Elle e Risae Matsuda como Linka."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=kXqx3rFSkxc",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/kXqx3rFSkxc"
+        },
+        {
+          "type": "paragraph",
+          "text": "A estreia do anime Magic Repo Man acontece no dia 4 de outubro de 2026, no bloco NUMAnimation da TV Asahi e de outras 23 emissoras afiliadas, à 1h30 da manhã de domingo pelo horário local. A série também será exibida posteriormente pela BS Asahi.",
+          "runs": [
+            {
+              "text": "A estreia do anime Magic Repo Man acontece no dia "
+            },
+            {
+              "text": "4 de outubro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " de 2026, no bloco NUMAnimation da TV Asahi e de outras 23 emissoras afiliadas, à 1h30 da manhã de domingo pelo horário local. A série também será exibida posteriormente pela BS Asahi."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Sinopse",
+          "runs": [
+            {
+              "text": "Sinopse"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Na história, Lent possui uma habilidade capaz de emprestar grandes quantidades de pontos de magia aos companheiros. Depois de ser expulso do grupo Skypiercers, ele descobre uma nova função para seu poder e decide recuperar a magia emprestada.",
+          "runs": [
+            {
+              "text": "Na história, Lent possui uma habilidade capaz de emprestar grandes quantidades de pontos de magia aos companheiros. Depois de ser expulso do grupo Skypiercers, ele descobre uma nova função para seu poder e decide recuperar a magia emprestada.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ademais o estúdio Synergy SP produz a animação, com direção de Takahiro Tamano e roteiros de Ryūsuke Mori. Contudo a adaptação vem do mangá de Masakichi e Shingou Iijima, publicado desde 2023.",
+          "runs": [
+            {
+              "text": "Ademais o estúdio "
+            },
+            {
+              "text": "Synergy SP",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://animenew.com.br/studio/118/synergysp"
+            },
+            {
+              "text": " produz a animação, com direção de Takahiro Tamano e roteiros de Ryūsuke Mori. Contudo a adaptação vem do "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " de Masakichi e Shingou Iijima, publicado desde 2023."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Magic Repo Man: Anime revela trailer, elenco e músicas.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Magic Repo Man: Anime revela trailer, elenco e músicas",
+              "href": "https://animenew.com.br/magic-repo-man-anime-trailer-elenco-musicas/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-09T20:55:24.000Z",
+      "updatedAt": "2026-09-09T20:55:24.000Z",
+      "expiresAt": "2026-09-16T20:55:24.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/magic-repo-man-anime-trailer-elenco-musicas",
+          "publishedAt": "2026-09-09T20:55:24.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 275,
+      "qualityScore": 0.973,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-f5d82955",
       "slug": "novo-capitulo-de-saint-seiya-then-e-anunciado-jbox-f5d82955",
@@ -373,6 +876,566 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-5e62a709",
+      "slug": "marriagetoxin-2-temporada-ganha-novo-trailer-animenew-5e62a709",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "MarriageToxin – 2ª temporada ganha novo trailer",
+      "originalTitle": "MarriageToxin – 2ª temporada ganha novo trailer",
+      "summary": "A segunda temporada de Marriage Toxin ganhou um novo vídeo promocional e uma arte oficial, confirmando o retorno da equipe para a continuação do anime em 2027. A produção divulgou as novidades nesta terça-feira, mantendo a equipe responsável pela primeira temporada.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Marriagetoxin"
+      ],
+      "url": "https://animenew.com.br/marriage-toxin-2-temporada-trailer",
+      "sourceUrl": "https://animenew.com.br/marriage-toxin-2-temporada-trailer",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Marriage-Toxin-2a-temporada-ganha-novo-trailer.webp",
+      "mediaQuery": "MarriageToxin – 2ª temporada ganha novo trailer",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Marriage-Toxin-anime-scaled.webp",
+          "alt": "Marriage Toxin anime segunda temporada",
+          "caption": "©Joumyaku・Mizuki Yoda/SHUEISHA, MARRIAGETOXIN Project"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/OaHtuLHAYzo"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A segunda temporada de Marriage Toxin ganhou um novo vídeo promocional e uma arte oficial, confirmando o retorno da equipe para a continuação do anime em 2027. A produção divulgou as novidades nesta terça-feira, mantendo a equipe responsável pela primeira temporada.",
+          "runs": [
+            {
+              "text": "A segunda temporada de "
+            },
+            {
+              "text": "Marriage Toxin",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ganhou um novo vídeo promocional e uma arte oficial, confirmando o retorno da equipe para a continuação do anime em 2027. A produção divulgou as novidades nesta terça-feira, mantendo a equipe responsável pela primeira temporada."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "A Tale of the Secret Saint revela estreia e novo elenco",
+              "runs": [
+                {
+                  "text": "A Tale of the Secret Saint revela estreia e novo elenco",
+                  "href": "https://animenew.com.br/a-tale-of-the-secret-saint-anime-estreia-outubro"
+                }
+              ]
+            },
+            {
+              "text": "Hunter x Hunter confirma novo hiato do mangá",
+              "runs": [
+                {
+                  "text": "Hunter x Hunter confirma novo hiato do mangá",
+                  "href": "https://animenew.com.br/hunter-x-hunter-entra-em-hiato-e-ganha-nova-peca"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Motonobu Hori continua na direção, agora pelo estúdio Bones Film, com supervisão de produção da BONES.",
+          "runs": [
+            {
+              "text": "Motonobu Hori",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " continua na direção, agora pelo estúdio "
+            },
+            {
+              "text": "Bones Film",
+              "href": "https://animenew.com.br/studio/7585/bones-film"
+            },
+            {
+              "text": ", com supervisão de produção da BONES."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=OaHtuLHAYzo",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/OaHtuLHAYzo"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kimiko Ueno permanece à frente dos roteiros, enquanto Taisei Iwasaki e Yuma Yamaguchi retornam na composição da trilha sonora. Já Kōhei Tokuoka segue como designer de personagens e diretor-chefe de animação.",
+          "runs": [
+            {
+              "text": "Kimiko Ueno",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " permanece à frente dos roteiros, enquanto "
+            },
+            {
+              "text": "Taisei Iwasaki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Yuma Yamaguchi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " retornam na composição da trilha sonora. Já "
+            },
+            {
+              "text": "Kōhei Tokuoka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " segue como designer de personagens e diretor-chefe de animação."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Marriage-Toxin-anime-scaled.webp",
+          "alt": "Marriage Toxin anime segunda temporada",
+          "caption": "©Joumyaku・Mizuki Yoda/SHUEISHA, MARRIAGETOXIN Project"
+        },
+        {
+          "type": "heading",
+          "text": "História acompanha dupla inusitada",
+          "runs": [
+            {
+              "text": "História acompanha dupla inusitada"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama gira em torno de Hikaru Gero, herdeiro de uma família especializada em venenos e assassino de elite. Quando sua irmã é pressionada a gerar um herdeiro para preservar a linhagem, ele decide encontrar uma esposa para resolver o problema. Para isso, Hikaru procura Mei Kinosaki, uma especialista em golpes matrimoniais. A dupla então embarca em uma missão que mistura assassinatos, casamento e conflitos do submundo.",
+          "runs": [
+            {
+              "text": "A trama gira em torno de Hikaru Gero, herdeiro de uma família especializada em venenos e assassino de elite. Quando sua irmã é pressionada a gerar um herdeiro para preservar a linhagem, ele decide encontrar uma esposa para resolver o problema. Para isso, Hikaru procura Mei Kinosaki, uma especialista em golpes matrimoniais. A dupla então embarca em uma missão que mistura assassinatos, casamento e conflitos do submundo.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A primeira temporada estreou em 7 de abril de 2026 e foi transmitida pela Kansai TV e Fuji TV, com exibição internacional pela Crunchyroll.",
+          "runs": [
+            {
+              "text": "A primeira temporada estreou em 7 de abril de 2026 e foi transmitida pela Kansai TV e Fuji TV, com exibição internacional pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "href": "https://animenew.com.br/tag/crunchyroll/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Contudo o mangá de Jōmyaku e Mizuki Yoda começou no Shonen Jump+ em abril de 2022. Ademais o 18º volume estreou no Japão em 3 de julho.",
+          "runs": [
+            {
+              "text": "Contudo o "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " de Jōmyaku e Mizuki Yoda começou no "
+            },
+            {
+              "text": "Shonen Jump+",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " em abril de 2022. Ademais o 18º volume estreou no Japão em 3 de julho."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em MarriageToxin – 2ª temporada ganha novo trailer.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "MarriageToxin – 2ª temporada ganha novo trailer",
+              "href": "https://animenew.com.br/marriage-toxin-2-temporada-trailer/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-08T20:34:35.000Z",
+      "updatedAt": "2026-09-08T20:34:35.000Z",
+      "expiresAt": "2026-09-15T20:34:35.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/marriage-toxin-2-temporada-trailer",
+          "publishedAt": "2026-09-08T20:34:35.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 252,
+      "qualityScore": 0.972,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-eb24e6fe",
+      "slug": "a-tale-of-the-secret-saint-revela-estreia-e-novo-elenco-animenew-eb24e6fe",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "A Tale of the Secret Saint revela estreia e novo elenco",
+      "originalTitle": "A Tale of the Secret Saint revela estreia e novo elenco",
+      "summary": "O anime A Tale of the Secret Saint (Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu) ganhou um novo vídeo promocional que confirma a estreia para 3 de outubro e apresenta mais um integrante do elenco. A novidade foi divulgada nesta segunda-feira pelo site oficial da adaptação das light novels de Touya e chibi. Kikunosuke Toya entra na produção como Curtis Bannister, capitão da 13ª Brigada de Cavaleiros.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "A Tale of the Secret Saint",
+        "Tensei Shitara Dainana Ouji Datta no de Kimamani Majutsu o Kiwamemasu"
+      ],
+      "url": "https://animenew.com.br/a-tale-of-the-secret-saint-anime-estreia-outubro",
+      "sourceUrl": "https://animenew.com.br/a-tale-of-the-secret-saint-anime-estreia-outubro",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/A-Tale-of-the-Secret-Saint-revela-estreia-e-novo-elenco.webp",
+      "mediaQuery": "A Tale of the Secret Saint revela estreia e novo elenco",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/A-Tale-of-the-Secret.webp",
+          "alt": "A Tale of the Secret",
+          "caption": "©十夜/アース・スター エンターテイメント/黒竜騎士団"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/9oBywQ403ZA"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime A Tale of the Secret Saint (Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu) ganhou um novo vídeo promocional que confirma a estreia para 3 de outubro e apresenta mais um integrante do elenco. A novidade foi divulgada nesta segunda-feira pelo site oficial da adaptação das light novels de Touya e chibi. Kikunosuke Toya entra na produção como Curtis Bannister, capitão da 13ª Brigada de Cavaleiros.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "A Tale of the Secret Saint",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") ganhou um novo vídeo promocional que confirma a estreia para 3 de outubro e apresenta mais um integrante do elenco. A novidade foi divulgada nesta segunda-feira pelo site oficial da adaptação das "
+            },
+            {
+              "text": "light novels",
+              "href": "https://animenew.com.br/light-novel"
+            },
+            {
+              "text": " de Touya e chibi. "
+            },
+            {
+              "text": "Kikunosuke Toya",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " entra na produção como Curtis Bannister, capitão da 13ª Brigada de Cavaleiros."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Black Clover: 2ª temporada estreia em outubro",
+              "runs": [
+                {
+                  "text": "Black Clover: 2ª temporada estreia em outubro",
+                  "href": "https://animenew.com.br/black-clover-2-temporada-estreia-outubro"
+                }
+              ]
+            },
+            {
+              "text": "The Shy Snow Woman ganha streaming antecipado",
+              "runs": [
+                {
+                  "text": "The Shy Snow Woman ganha streaming antecipado",
+                  "href": "https://animenew.com.br/the-shy-snow-woman-anime-streaming-setembro"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A série estreia em 3 de outubro, às 22h, nos canais Tokyo MX e BS11. A exibição começa às 22h30 no Sun TV, enquanto a AT-X inicia a transmissão em 5 de outubro. No streaming, ABEMA e Amazon Prime Video disponibilizam os dois primeiros episódios simultaneamente à estreia televisiva. Depois, os episódios seguintes chegam uma semana antes da transmissão na TV japonesa.",
+          "runs": [
+            {
+              "text": "A série estreia em 3 de outubro, às 22h, nos canais Tokyo MX e BS11. A exibição começa às 22h30 no Sun TV, enquanto a "
+            },
+            {
+              "text": "AT-X",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " inicia a transmissão em 5 de outubro. No streaming, ABEMA e "
+            },
+            {
+              "text": "Amazon Prime",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Video disponibilizam os dois primeiros episódios simultaneamente à estreia televisiva. Depois, os episódios seguintes chegam uma semana antes da transmissão na TV japonesa."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=9oBywQ403ZA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/9oBywQ403ZA"
+        },
+        {
+          "type": "heading",
+          "text": "Elenco e produção",
+          "runs": [
+            {
+              "text": "Elenco e produção"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Shion Wakayama interpreta Fia Ruud, protagonista da história. O elenco também conta com Shinnosuke Tokudome, Yūichirō Umehara, Nobunaga Shimazaki, Tasuku Hatanaka, Daiki Hamano, Tomokazu Sugita, Yukari Tamura, Shunichi Toki, Daiki Yamashita e Miyuri Shimabukuro.",
+          "runs": [
+            {
+              "text": "Shion Wakayama interpreta Fia Ruud, protagonista da história. O elenco também conta com Shinnosuke Tokudome, Yūichirō Umehara, Nobunaga Shimazaki, Tasuku Hatanaka, Daiki Hamano, Tomokazu Sugita, Yukari Tamura, Shunichi Toki, Daiki Yamashita e Miyuri Shimabukuro."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/A-Tale-of-the-Secret.webp",
+          "alt": "A Tale of the Secret",
+          "caption": "©十夜/アース・スター エンターテイメント/黒竜騎士団"
+        },
+        {
+          "type": "paragraph",
+          "text": "Sendo assim a direção é de Tomoe Makino no estúdio Felix Film, com Naoki Murata como diretor assistente. Deko Akao cuida dos roteiros, enquanto Satomi Kurita assina o design dos personagens.",
+          "runs": [
+            {
+              "text": "Sendo assim a direção é de Tomoe Makino no estúdio "
+            },
+            {
+              "text": "Felix Film",
+              "href": "https://animenew.com.br/studio/6126/felix-film"
+            },
+            {
+              "text": ", com Naoki Murata como diretor assistente. Deko Akao cuida dos roteiros, enquanto Satomi Kurita assina o design dos personagens."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Sinopse",
+          "runs": [
+            {
+              "text": "Sinopse"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Fia, uma jovem de uma família de cavaleiros que luta para superar sua falta de talento. Após enfrentar um dragão e sofrer um ferimento mortal, ela recupera as memórias de sua vida passada como uma poderosa Santa que derrotou o Rei Demônio.",
+          "runs": [
+            {
+              "text": "A trama acompanha Fia, uma jovem de uma família de cavaleiros que luta para superar sua falta de talento. Após enfrentar um dragão e sofrer um ferimento mortal, ela recupera as memórias de sua vida passada como uma poderosa Santa que derrotou o Rei Demônio.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anime ganho adiamento de abril para outubro para permitir melhorias na produção. Ademais a franquia literária já ultrapassa 3,5 milhões de cópias em circulação.",
+          "runs": [
+            {
+              "text": "O anime ganho adiamento de abril para outubro para permitir melhorias na produção. Ademais a franquia literária já ultrapassa 3,5 milhões de cópias em circulação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://daiseijo-anime.com/news/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em A Tale of the Secret Saint revela estreia e novo elenco.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "A Tale of the Secret Saint revela estreia e novo elenco",
+              "href": "https://animenew.com.br/a-tale-of-the-secret-saint-anime-estreia-outubro/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-08T20:26:31.000Z",
+      "updatedAt": "2026-09-08T20:26:31.000Z",
+      "expiresAt": "2026-09-15T20:26:31.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/a-tale-of-the-secret-saint-anime-estreia-outubro",
+          "publishedAt": "2026-09-08T20:26:31.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 313,
+      "qualityScore": 0.981,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
         "sourcePagesRead": 0
       }
     },
@@ -966,6 +2029,215 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 2,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-906e6fa3",
+      "slug": "you-are-a-four-leaf-clover-ganhara-anime-animenew-906e6fa3",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "You Are a Four Leaf Clover ganhará anime",
+      "originalTitle": "You Are a Four Leaf Clover ganhará anime",
+      "summary": "O mangá You Are a Four Leaf Clover (Kimi wa Yotsuba no Clover), de Koushi, terá uma adaptação para anime. O próprio autor autor anunciou na terça-feira (9). A obra combina romance e suspense e acompanha Uichi, um estudante que já foi popular, mas passou a sofrer bullying constante no ensino médio.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Kimi wa Yotsuba no Clover",
+        "You Are a Four Leaf Clover"
+      ],
+      "url": "https://animenew.com.br/you-are-a-four-leaf-clover-anime",
+      "sourceUrl": "https://animenew.com.br/you-are-a-four-leaf-clover-anime",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/You-Are-a-Four-Leaf-Clover-ganhara-anime.webp",
+      "mediaQuery": "You Are a Four Leaf Clover ganhará anime",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/You-Are-a-Four-Leaf-Clover-anime.webp",
+          "alt": "You Are a Four Leaf Clover",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O mangá You Are a Four Leaf Clover (Kimi wa Yotsuba no Clover), de Koushi, terá uma adaptação para anime. O próprio autor autor anunciou na terça-feira (9). A obra combina romance e suspense e acompanha Uichi, um estudante que já foi popular, mas passou a sofrer bullying constante no ensino médio.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "You Are a Four Leaf Clover",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Kimi wa Yotsuba no Clover), de Koushi, terá uma adaptação para "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": ". O próprio autor autor anunciou na terça-feira (9). A obra combina romance e suspense e acompanha Uichi, um estudante que já foi popular, mas passou a sofrer bullying constante no ensino médio."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Hunter x Hunter confirma novo hiato do mangá",
+              "runs": [
+                {
+                  "text": "Hunter x Hunter confirma novo hiato do mangá",
+                  "href": "https://animenew.com.br/hunter-x-hunter-entra-em-hiato-e-ganha-nova-peca"
+                }
+              ]
+            },
+            {
+              "text": "Maria Holic retorna após 12 anos com novo mangá",
+              "runs": [
+                {
+                  "text": "Maria Holic retorna após 12 anos com novo mangá",
+                  "href": "https://animenew.com.br/maria-holic-novo-manga-sequencia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Primeiro amor retorna",
+          "runs": [
+            {
+              "text": "Primeiro amor retorna"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Quando Uichi chega ao seu limite por causa do bullying, Yotsuha reaparece inesperadamente em sua vida. À primeira vista, ela parece exatamente a mesma garota que ele conheceu anos atrás.No entanto, há algo diferente em seu olhar. Yotsuha guarda uma determinação secreta, que passa a mudar completamente a situação de Uichi.",
+          "runs": [
+            {
+              "text": "Quando Uichi chega ao seu limite por causa do bullying, Yotsuha reaparece inesperadamente em sua vida. À primeira vista, ela parece exatamente a mesma garota que ele conheceu anos atrás.No entanto, há algo diferente em seu olhar. Yotsuha guarda uma determinação secreta, que passa a mudar completamente a situação de Uichi."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/You-Are-a-Four-Leaf-Clover-anime.webp",
+          "alt": "You Are a Four Leaf Clover"
+        },
+        {
+          "type": "paragraph",
+          "text": "Koushi iniciou o mangá na revista Weekly Shōnen Champion, da Akita Shoten, em 18 de julho de 2024. O décimo volume foi publicado no Japão em 8 de setembro de 2026.",
+          "runs": [
+            {
+              "text": "Koushi iniciou o mangá na revista "
+            },
+            {
+              "text": "Weekly Shōnen Champion",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da Akita Shoten, em 18 de julho de 2024. O décimo volume foi publicado no Japão em 8 de setembro de 2026."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por enquanto, não foram divulgados detalhes sobre estúdio, equipe de produção, elenco ou previsão de estreia do anime.",
+          "runs": [
+            {
+              "text": "Por enquanto, não foram divulgados detalhes sobre estúdio, equipe de produção, elenco ou previsão de estreia do anime."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: X @kousikyun",
+          "runs": [
+            {
+              "text": "Fonte: X "
+            },
+            {
+              "text": "@kousikyun",
+              "href": "https://x.com/kousikyun"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em You Are a Four Leaf Clover ganhará anime.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "You Are a Four Leaf Clover ganhará anime",
+              "href": "https://animenew.com.br/you-are-a-four-leaf-clover-anime/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-08T18:00:00.000Z",
+      "updatedAt": "2026-09-08T18:00:00.000Z",
+      "expiresAt": "2026-09-15T18:00:00.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/you-are-a-four-leaf-clover-anime",
+          "publishedAt": "2026-09-08T18:00:00.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 195,
+      "qualityScore": 0.963,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
         "embedCount": 0,
         "sourcePagesRead": 0
       }
@@ -4098,262 +5370,6 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-30a801bc",
-      "slug": "my-hero-academia-all-s-justice-ganha-novo-dlc-de-deku-animenew-30a801bc",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "My Hero Academia: All’s Justice ganha novo DLC de Deku",
-      "originalTitle": "My Hero Academia: All’s Justice ganha novo DLC de Deku",
-      "summary": "O jogo My Hero Academia: All’s Justice adiciona Izuku Midoriya em seu estilo Overlay Full nesta quinta-feira, 3 de setembro de 2026, como personagem de DLC. A novidade faz parte do Season Pass e coloca Deku com seu visual e habilidades finais entre as opções jogáveis do título. A Bandai Namco também divulgou um trailer de lançamento da versão para Nintendo Switch 2.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Games",
-        "Nintendo",
-        "Notícias",
-        "Bandai Namco",
-        "My Hero Academia",
-        "My Hero Academia All’s Justice"
-      ],
-      "url": "https://animenew.com.br/my-hero-academia-alls-justice-dlc-deku",
-      "sourceUrl": "https://animenew.com.br/my-hero-academia-alls-justice-dlc-deku",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/My-Hero-Academia-Alls-Justice-ganha-novo-DLC-de-Deku.webp",
-      "mediaQuery": "My Hero Academia: All’s Justice ganha novo DLC de Deku",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/9TRzr0HkZy0"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/jTJ_BIz-xeY"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O jogo My Hero Academia: All’s Justice adiciona Izuku Midoriya em seu estilo Overlay Full nesta quinta-feira, 3 de setembro de 2026, como personagem de DLC. A novidade faz parte do Season Pass e coloca Deku com seu visual e habilidades finais entre as opções jogáveis do título. A Bandai Namco também divulgou um trailer de lançamento da versão para Nintendo Switch 2.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "jogo",
-              "href": "https://animenew.com.br/games"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "My Hero Academia: All’s Justice",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " adiciona "
-            },
-            {
-              "text": "Izuku Midoriya",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " em seu estilo "
-            },
-            {
-              "text": "Overlay Full",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " nesta quinta-feira, 3 de setembro de 2026, como personagem de DLC. A novidade faz parte do Season Pass e coloca Deku com seu visual e habilidades finais entre as opções jogáveis do título. A "
-            },
-            {
-              "text": "Bandai Namco",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " também divulgou um trailer de lançamento da versão para "
-            },
-            {
-              "text": "Nintendo",
-              "href": "https://animenew.com.br/tag/case-nintendo/"
-            },
-            {
-              "text": " Switch 2."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "BLEACH: Mirrors High confirma lançamento para 2026",
-              "runs": [
-                {
-                  "text": "BLEACH: Mirrors High confirma lançamento para 2026",
-                  "href": "https://animenew.com.br/bleach-mirrors-high-lancamento-2026"
-                }
-              ]
-            },
-            {
-              "text": "GTA 6 vai rodar em 30 fps nos consoles atuais",
-              "runs": [
-                {
-                  "text": "GTA 6 vai rodar em 30 fps nos consoles atuais",
-                  "href": "https://animenew.com.br/gta-6-rodando-a-30-fps-consoles"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Versão para Switch 2",
-          "runs": [
-            {
-              "text": "Versão para Switch 2"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=9TRzr0HkZy0",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/9TRzr0HkZy0"
-        },
-        {
-          "type": "paragraph",
-          "text": "A edição do console da Nintendo chega nesta quinta-feira, 3 de setembro, com um novo modo chamado “Minigame”. Entre as atrações está uma colaboração com Pac-Man. A versão também permite batalhas online por meio do GameShare, utilizando o GameChat.",
-          "runs": [
-            {
-              "text": "A edição do console da Nintendo chega nesta quinta-feira, 3 de setembro, com um novo modo chamado “Minigame”. Entre as atrações está uma colaboração com "
-            },
-            {
-              "text": "Pac-Man",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A versão também permite batalhas online por meio do GameShare, utilizando o GameChat."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=jTJ_BIz-xeY",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/jTJ_BIz-xeY"
-        },
-        {
-          "type": "paragraph",
-          "text": "O Season Pass já recebeu Star and Stripe em fevereiro e Nana Shimura em maio. Com o novo personagem, o pacote avança para seu terceiro conteúdo adicional.",
-          "runs": [
-            {
-              "text": "O Season Pass já recebeu Star and Stripe em fevereiro e Nana Shimura em maio. Com o novo personagem, o pacote avança para seu terceiro conteúdo adicional."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Lançado mundialmente em 6 de fevereiro, My Hero Academia: All’s Justice aposta em combates 3 contra 3 e reúne personagens da batalha final do mangá. O jogo também conta com Story Mode, Team Up Missions e Archives Battle, além de trazer as técnicas finais dos estudantes da Classe 1-A.",
-          "runs": [
-            {
-              "text": "Lançado mundialmente em 6 de fevereiro, "
-            },
-            {
-              "text": "My Hero Academia: All’s Justice",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " aposta em combates 3 contra 3 e reúne personagens da batalha final do mangá. O jogo também conta com Story Mode, Team Up Missions e Archives Battle, além de trazer as técnicas finais dos estudantes da Classe 1-A."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Gematsu",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Gematsu",
-              "href": "https://www.gematsu.com/2026/09/my-hero-academia-alls-justice-dlc-character-izuku-midoriya-overlay-full-style-launches-september-3"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em My Hero Academia: All’s Justice ganha novo DLC de Deku.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "My Hero Academia: All’s Justice ganha novo DLC de Deku",
-              "href": "https://animenew.com.br/my-hero-academia-alls-justice-dlc-deku/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-03T16:53:32.000Z",
-      "updatedAt": "2026-09-03T16:53:32.000Z",
-      "expiresAt": "2026-09-10T16:53:32.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/my-hero-academia-alls-justice-dlc-deku",
-          "publishedAt": "2026-09-03T16:53:32.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 223,
-      "qualityScore": 0.907,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 2,
         "sourcePagesRead": 0
       }
     },
