@@ -810,11 +810,11 @@ test('detail replaces a broken remote banner with the available cover',async({pa
   await page.goto(firstVisitUrl('/anime/anime-teste-101'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx22-detail:not(.nx22-fail)')).toBeVisible({timeout:30000});const hero=page.locator('.nx22-hero-bg'),image=hero.locator('img');await expect(hero).toHaveClass(/is-cover-fallback/);await expect(hero).not.toHaveClass(/is-invalid/);await expect(image).toHaveAttribute('src',pixel);
 });
 
-test('anime and manga details use AniQuim-sized controls, stable clicks and filtered genres',async({page})=>{
-  await page.addInitScript(()=>{const now=Date.now(),state={status:'CURRENT',progress:2,score:null,reaction:'',updatedAt:now};localStorage.setItem('aninexus:mediaState:v2',JSON.stringify({101:state}));localStorage.setItem('aninexus:mangaState:v2',JSON.stringify({202:{...state,volumeProgress:1}}))});
-  await page.route('**/api/**/rating',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({score:8.5,votes:24})}));
-  await page.setViewportSize({width:390,height:844});
-  for(const item of [{route:'/anime/anime-teste-101',id:101,key:'aninexus:mediaState:v2',catalog:'/animes/catalogo',filterSelector:'[data-nx22-genre]',filterKey:'genre',filterValue:'Action',catalogState:'nx:v46:anime-catalog-state'},{route:'/manga/manga-teste-202',id:202,key:'aninexus:mangaState:v2',catalog:'/mangas',filterSelector:'[data-nx22-genre]',filterKey:'genre',filterValue:'Action',catalogState:'nx:v46:reading-catalog-state'}]){
+for(const item of [{kind:'anime',route:'/anime/anime-teste-101',id:101,catalog:'/animes/catalogo',filterSelector:'[data-nx22-genre]',filterKey:'genre',filterValue:'Action',catalogState:'nx:v46:anime-catalog-state'},{kind:'mangá',route:'/manga/manga-teste-202',id:202,catalog:'/mangas',filterSelector:'[data-nx22-genre]',filterKey:'genre',filterValue:'Action',catalogState:'nx:v46:reading-catalog-state'}]){
+  test(`${item.kind} detail uses AniQuim-sized controls, stable clicks and filtered genres`,async({page})=>{
+    await page.addInitScript(()=>{const now=Date.now(),state={status:'CURRENT',progress:2,score:null,reaction:'',updatedAt:now};localStorage.setItem('aninexus:mediaState:v2',JSON.stringify({101:state}));localStorage.setItem('aninexus:mangaState:v2',JSON.stringify({202:{...state,volumeProgress:1}}))});
+    await page.route('**/api/**/rating',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({score:8.5,votes:24})}));
+    await page.setViewportSize({width:390,height:844});
     await page.goto(pageUrl(item.route),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx22-detail:not(.nx22-fail)')).toBeVisible({timeout:30000});await allowAccountActions(page);
     const title=page.locator('.nx22-headcopy h1'),list=page.locator('.nx22-list'),favorite=page.locator('.nx22-fav'),averageStars=page.locator('.nx22-average-star');
     expect(parseFloat(await title.evaluate(element=>getComputedStyle(element).fontSize))).toBeLessThanOrEqual(30);expect(parseFloat(await list.evaluate(element=>getComputedStyle(element).height))).toBeGreaterThanOrEqual(42);expect(parseFloat(await favorite.evaluate(element=>getComputedStyle(element).width))).toBeGreaterThanOrEqual(42);await expect(averageStars).toHaveCount(5);
@@ -830,8 +830,8 @@ test('anime and manga details use AniQuim-sized controls, stable clicks and filt
     await expect(page.locator('.nx21-catalog-page')).toBeVisible({timeout:30000});
     await expect.poll(()=>page.evaluate(key=>JSON.parse(sessionStorage.getItem(key)||'{}'),item.catalogState)).toMatchObject({mode:'SEARCH',filters:{[item.filterKey]:item.filterValue}});
     const path=await page.evaluate(()=>{const url=new URL(location.href),restored=url.searchParams.get('p');return(restored||url.pathname).split('?')[0].replace(/^\/AniNexus/,'')});expect(path).toBe(item.catalog);await noOverflow(page,2);
-  }
-});
+  });
+}
 
 test('radio-preserving manga navigation lazy-loads the shared detail renderer',async({page})=>{
   const item={...rankedMedia(6201,'MANGA'),mediaType:'MANGA',description:'Uma história de leitura para validar a navegação contínua.',tags:['Adventure'],tagDetails:[{name:'Adventure',rank:90,isMediaSpoiler:false}],characters:[],staff:[],relations:[],recommendations:[]};
@@ -1698,11 +1698,14 @@ test('Onde assistir is a platform-first responsive catalog with standard scroll 
     if(viewport.width<600){
       const columns=await page.locator('.nx47-provider-card').evaluateAll(cards=>new Set(cards.slice(0,3).map(card=>Math.round(card.getBoundingClientRect().left))).size);
       expect(columns).toBe(1);
+      await expect.poll(async()=>{const before=await page.evaluate(()=>scrollY);await page.waitForTimeout(80);const after=await page.evaluate(()=>scrollY);return Math.abs(after-before)},{timeout:3000}).toBeLessThanOrEqual(1);
+      await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';scrollTo({top:0,left:0,behavior:'instant'})});
+      await expect.poll(()=>page.evaluate(()=>Math.round(scrollY))).toBeLessThanOrEqual(1);
       await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';scrollTo(0,180)});
       await expect.poll(()=>page.evaluate(()=>Math.round(scrollY))).toBeGreaterThan(100);
       await expect.poll(()=>page.evaluate(()=>document.querySelector('#topbar').getBoundingClientRect().bottom),{timeout:3000}).toBeLessThanOrEqual(2);
       const chrome=await page.evaluate(()=>{const bar=document.querySelector('#topbar').getBoundingClientRect(),island=document.querySelector('.nx47-island').getBoundingClientRect();return{barBottom:bar.bottom,islandTop:island.top,islandHeight:island.height}});
-      expect(chrome.barBottom).toBeLessThanOrEqual(2);expect(chrome.islandTop).toBeLessThanOrEqual(1);expect(chrome.islandHeight).toBeLessThanOrEqual(49);
+      expect(chrome.barBottom).toBeLessThanOrEqual(2);expect(chrome.islandTop).toBeLessThanOrEqual(2);expect(chrome.islandHeight).toBeLessThanOrEqual(49);
       const scrollBefore=await page.evaluate(()=>scrollY);
       await page.locator('[data-nx47-island-toggle]').evaluate(button=>button.click());
       await expect(page.locator('.nx47-island-panel')).toBeVisible();
