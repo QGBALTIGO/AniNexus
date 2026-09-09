@@ -4,7 +4,7 @@
     const IS_PAGES=location.hostname.endsWith('github.io');
     const basePath=new URL(document.baseURI,location.href).pathname.replace(/\/+$/,'');
     const BASE=basePath==='/'?'':basePath;
-    const BUILD='44.41.0';
+    const BUILD='44.42.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=restored?restored.split('?')[0]:u.pathname;
