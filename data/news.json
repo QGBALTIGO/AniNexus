@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T13:58:01.089Z",
+  "generatedAt": "2026-09-09T17:45:08.653Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,327 @@
   ],
   "stats": {
     "collected": 46,
-    "grouped": 15,
-    "published": 15,
-    "newStories": 15,
-    "fullArticles": 15,
+    "grouped": 14,
+    "published": 14,
+    "newStories": 14,
+    "fullArticles": 14,
     "previewArticles": 0,
-    "avgWords": 392,
-    "withHeroImage": 15,
+    "avgWords": 368,
+    "withHeroImage": 14,
     "withOrderedMedia": 12,
     "skippedTranslation": 0,
-    "skippedQuality": 30,
-    "durationMs": 2734
+    "skippedQuality": 31,
+    "durationMs": 9127
   },
   "items": [
+    {
+      "id": "jbox-f5d82955",
+      "slug": "novo-capitulo-de-saint-seiya-then-e-anunciado-jbox-f5d82955",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Novo capítulo de ‘Saint Seiya THEN’ é anunciado",
+      "originalTitle": "Novo capítulo de ‘Saint Seiya THEN’ é anunciado",
+      "summary": "A revista Champion RED, da editora Akita Shoten, anunciou o lançamento do quarto capítulo da série Saint Seiya THEN, previsto para dezembro deste ano. Segundo as informações, o capítulo terá 8 páginas (como os anteriores) e inclui um personagem misterioso:",
+      "author": "gasseruto",
+      "tags": [
+        "Mangá",
+        "Cavaleiros do Zodíaco",
+        "cdz",
+        "Next Dimension",
+        "novo capítulo the saint seiya then",
+        "saint seiya then"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/09/novo-capitulo-de-saint-seiya-then-e-anunciado",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/09/novo-capitulo-de-saint-seiya-then-e-anunciado",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/shiryu-capachampionred-cdz-destacada.jpg",
+      "mediaQuery": "Novo capítulo de ‘Saint Seiya THEN’ é anunciado",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/shiryu-then-seiya.jpg",
+          "alt": "imagem: shiryu de dragão em prévia da capa da champion red de dezembro de 2026.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A revista Champion RED, da editora Akita Shoten, anunciou o lançamento do quarto capítulo da série Saint Seiya THEN, previsto para dezembro deste ano. Segundo as informações, o capítulo terá 8 páginas (como os anteriores) e inclui um personagem misterioso:",
+          "runs": [
+            {
+              "text": "A revista "
+            },
+            {
+              "text": "Champion RED",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da editora Akita Shoten, anunciou o lançamento do quarto capítulo da série "
+            },
+            {
+              "text": "Saint Seiya THEN",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", previsto para dezembro deste ano. Segundo as informações, o capítulo terá 8 páginas (como os anteriores) e inclui um personagem misterioso:"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "[Descubra] a situação atual de Shiryu e “aquele homem.”",
+          "runs": [
+            {
+              "text": "[Descubra] a situação atual de Shiryu e “aquele homem.”"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/shiryu-then-seiya.jpg",
+          "alt": "imagem: shiryu de dragão em prévia da capa da champion red de dezembro de 2026."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/Akita Shoten",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/Akita Shoten"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Até o momento, Saint Seiya THEN havia se focado em Saori Kido, Seiya de Pégaso e Shun de Andrômeda, todos personagens que estavam na região do Santuário e de Rodório, sem memórias. A minissérie tem servido como uma ponte entre Next Dimension e Tenkai-hen, a Saga do Céu, que também deve voltar a ter novos capítulos mais ou menos na mesma época na revista Shonen Champion, da mesma editora. O foco em Shiryu pode indicar que o personagem também aparecerá na nova leva de capítulos da Saga do Céu.",
+          "runs": [
+            {
+              "text": "Até o momento, "
+            },
+            {
+              "text": "Saint Seiya THEN",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " havia se focado em Saori Kido, Seiya de Pégaso e Shun de Andrômeda, todos personagens que estavam na região do Santuário e de Rodório, sem memórias. A minissérie tem servido como uma ponte entre "
+            },
+            {
+              "text": "Next Dimension",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e"
+            },
+            {
+              "text": " Tenkai-hen",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", a Saga do Céu, que também "
+            },
+            {
+              "text": "deve voltar a ter novos capítulos mais ou menos na mesma época",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/05/cavaleiros-do-zodiaco-autor-reforca-trabalho-na-saga-do-ceu/"
+            },
+            {
+              "text": " na revista "
+            },
+            {
+              "text": "Shonen Champion",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da mesma editora. O foco em Shiryu pode indicar que o personagem também aparecerá na nova leva de capítulos da Saga do Céu."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Até o momento, apenas Shiryu e Hyoga não apareceram em THEN ou Tenkai-hen. Dado o fim de Next Dimension, os dois devem estar sem memórias de suas vidas como guerreiros de Atena.",
+          "runs": [
+            {
+              "text": "Até o momento, apenas Shiryu e Hyoga não apareceram em"
+            },
+            {
+              "text": " THEN",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ou "
+            },
+            {
+              "text": "Tenkai-hen",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Dado o fim de "
+            },
+            {
+              "text": "Next Dimension",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", os dois devem estar sem memórias de suas vidas como guerreiros de Atena."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O autor d’Os Cavaleiros do Zodíaco, Masami Kurumada, recentemente fez uma coletiva de imprensa na qual alegou ter sido vítima de desvio de dinheiro por um ex-gerente de suas empresas, caso que tem ganhado forte repercussão na mídia japonesa. Mais informações devem surgir sobre o caso nos próximos dias.",
+          "runs": [
+            {
+              "text": "O autor d’"
+            },
+            {
+              "text": "Os Cavaleiros do Zodíaco",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", Masami Kurumada, recentemente fez uma coletiva de imprensa na qual alegou ter sido "
+            },
+            {
+              "text": "vítima de desvio de dinheiro por um ex-gerente de suas empresas",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/02/autor-de-cavaleiros-do-zodiaco-masami-kurumada-alega-ter-sido-vitima-de-desvio-de-dinheiro-por-ex-gerente/"
+            },
+            {
+              "text": ", caso que tem ganhado forte repercussão na mídia japonesa. Mais informações devem surgir sobre o caso nos próximos dias."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Cavaleiros de Bronze",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Cavaleiros de Bronze",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://santosdebronze.blogspot.com/2026/09/Data-Saint-Seiya-Then-IV.html#more"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-09T15:55:52.000Z",
+      "updatedAt": "2026-09-09T15:57:34.000Z",
+      "expiresAt": "2026-09-16T15:55:52.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/09/novo-capitulo-de-saint-seiya-then-e-anunciado",
+          "publishedAt": "2026-09-09T15:55:52.000Z",
+          "author": "gasseruto"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 243,
+      "qualityScore": 0.97,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-1164621f",
       "slug": "dragon-ball-super-nova-colecao-chega-oficialmente-ao-burger-king-nesta-semana-jbox-1164621f",
@@ -5184,643 +5492,6 @@
       "readingMinutes": 3,
       "wordCount": 489,
       "qualityScore": 0.943,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 15,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-7cd2bdc3",
-      "slug": "filme-compilado-de-o-pecado-original-de-takopi-chega-aos-cinemas-do-japao-em-novembro-jbox-7cd2bdc3",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Filme compilado de ‘O Pecado Original de Takopi’ chega aos cinemas do Japão em novembro",
-      "originalTitle": "Filme compilado de ‘O Pecado Original de Takopi’ chega aos cinemas do Japão em novembro",
-      "summary": "O filme compilado de O Pecado Original de Takopi, chamado originalmente de Takopii no Genzai -Arigatou, Mata Ashita- (O Pecado Original de Takopi: Obrigado, Até Amanhã, em tradução livre), ganhou um novo vídeo e data de estreia no Japão.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "filme de Takopi",
-        "O Pecado Original de Takopi",
-        "Takopii no Genzai"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/02/filme-compilado-de-o-pecado-original-de-takopi-chega-aos-cinemas-do-japao-em-novembro",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/02/filme-compilado-de-o-pecado-original-de-takopi-chega-aos-cinemas-do-japao-em-novembro",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/o-pecado-original-de-takopi-capa.jpg",
-      "mediaQuery": "Filme compilado de ‘O Pecado Original de Takopi’ chega aos cinemas do Japão em novembro",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/F0pqUWNrTXI"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O filme compilado de O Pecado Original de Takopi, chamado originalmente de Takopii no Genzai -Arigatou, Mata Ashita- (O Pecado Original de Takopi: Obrigado, Até Amanhã, em tradução livre), ganhou um novo vídeo e data de estreia no Japão.",
-          "runs": [
-            {
-              "text": "O filme compilado de "
-            },
-            {
-              "text": "O Pecado Original de Takopi",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", chamado originalmente de "
-            },
-            {
-              "text": "Takopii no Genzai -Arigatou, Mata Ashita-",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "O Pecado Original de Takopi: Obrigado, Até Amanhã",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", em tradução livre), ganhou um novo vídeo e data de estreia no Japão."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O lançamento no país está marcado para o dia 27 de novembro, e a prévia faz uma certa quebra de quarta parede, ao mostrar uma conversa entre Takopi e a jovem Shizuka sobre a possibilidade de adaptar a história para os cinemas.",
-          "runs": [
-            {
-              "text": "O lançamento no país está marcado para o dia "
-            },
-            {
-              "text": "27 de novembro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e a prévia faz uma certa quebra de quarta parede, ao mostrar uma conversa entre Takopi e a jovem Shizuka sobre a possibilidade de adaptar a história para os cinemas."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=F0pqUWNrTXI",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/F0pqUWNrTXI"
-        },
-        {
-          "type": "paragraph",
-          "text": "Segundo o site oficial do animê, o longa vai reeditar os seis episódios da produção seriada e incluir algumas cenas extras. Além disso, o vídeo e o texto brincam que o “P” de Takopi também pode significar “produtor”, indicando que o personagem pode aparecer em algum novo projeto da franquia futuramente.",
-          "runs": [
-            {
-              "text": "Segundo o site oficial do animê, o longa vai reeditar os seis episódios da produção seriada e incluir algumas cenas extras. Além disso, o vídeo e o texto brincam que o “P” de Takopi também pode significar “produtor”, indicando que o personagem pode aparecer em algum novo projeto da franquia futuramente."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O animê que serve de base para o filme foi exibido entre junho e agosto de 2025, exclusivamente nos streamings. No Brasil, está disponível na Crunchyroll com legendas em português.",
-          "runs": [
-            {
-              "text": "O animê que serve de base para o filme foi exibido entre junho e agosto de 2025, exclusivamente nos streamings. No Brasil, está disponível na "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " com legendas em português."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Completo em 2 volumes, o mangá original foi publicado na Shonen Jump+, revista digital da Shueisha. A história tem como protagonista um convidado do “planeta da felicidade”, o alienígena Takopi, que chega à Terra para espalhar felicidade e acaba conhecendo Shizuka, uma garota que nunca sorri.",
-          "runs": [
-            {
-              "text": "Completo em 2 volumes, o mangá original foi publicado na "
-            },
-            {
-              "text": "Shonen Jump+",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", revista digital da "
-            },
-            {
-              "text": "Shueisha",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A história tem como protagonista um convidado do “planeta da felicidade”, o alienígena Takopi, que chega à Terra para espalhar felicidade e acaba conhecendo Shizuka, uma garota que nunca sorri."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A série teve início em 2021, no Japão, e foi concluída em 2022. Criado por taizan5, ela esteve na lista final da última edição do Manga Taisho Awards, além de ter sido nomeado para o Prêmio Tezuka. O mangá foi publicado no Brasil em 2023 pela Panini.",
-          "runs": [
-            {
-              "text": "A série teve início em 2021, no Japão, e foi concluída em 2022. Criado por"
-            },
-            {
-              "text": " taizan5",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", ela esteve na lista final da última edição do "
-            },
-            {
-              "text": "Manga Taisho Awards",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2023/03/27/kore-kaite-shine-e-o-vencedor-do-16o-manga-taisho-awards/"
-            },
-            {
-              "text": ", além de ter sido nomeado para o Prêmio Tezuka. O mangá foi "
-            },
-            {
-              "text": "publicado no Brasil em 2023 pela Panini",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2023/05/02/takopi-no-genzai-manga-e-anunciado-pela-panini/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fontes: Anime News Network, site oficial do animê",
-          "runs": [
-            {
-              "text": "Fontes: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Anime News Network",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.animenewsnetwork.com/news/2026-08-17/takopi-original-sin-compilation-film-video-unveils-november-27-debut/.240669"
-            },
-            {
-              "text": ", ",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": "site oficial do animê",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.tbs.co.jp/anime/takopi_project/news/news20260817.html"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-02T16:58:45.000Z",
-      "updatedAt": "2026-09-02T17:03:30.000Z",
-      "expiresAt": "2026-09-09T16:58:45.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/02/filme-compilado-de-o-pecado-original-de-takopi-chega-aos-cinemas-do-japao-em-novembro",
-          "publishedAt": "2026-09-02T16:58:45.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 280,
-      "qualityScore": 0.914,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-094ddd05",
-      "slug": "autor-de-cavaleiros-do-zodiaco-masami-kurumada-alega-ter-sido-vitima-de-desvio-de-dinheiro-por-ex-gerente-jbox-094ddd05",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Autor de ‘Cavaleiros do Zodíaco’, Masami Kurumada alega ter sido vítima de desvio de dinheiro por ex-gerente",
-      "originalTitle": "Autor de ‘Cavaleiros do Zodíaco’, Masami Kurumada alega ter sido vítima de desvio de dinheiro por ex-gerente",
-      "summary": "O criador de Cavaleiros do Zodíaco (Saint Seiya), Masami Kurumada, veio a público dizer que foi vítima de um desvio de mais de 4,6 bilhões de ienes (148 milhões de reais, na cotação de hoje) por um antigo gerente que supostamente o isolou de outras pessoas dizendo que ele “odiava pessoas”.",
-      "author": "gasseruto",
-      "tags": [
-        "Cotidiano",
-        "Mangá",
-        "golpe kurumada",
-        "masami kurumada",
-        "saga do céu",
-        "Saint Seiya"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/02/autor-de-cavaleiros-do-zodiaco-masami-kurumada-alega-ter-sido-vitima-de-desvio-de-dinheiro-por-ex-gerente",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/02/autor-de-cavaleiros-do-zodiaco-masami-kurumada-alega-ter-sido-vitima-de-desvio-de-dinheiro-por-ex-gerente",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/seiyakurumada-destacada.jpg",
-      "mediaQuery": "Autor de ‘Cavaleiros do Zodíaco’, Masami Kurumada alega ter sido vítima de desvio de dinheiro por ex-gerente",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O criador de Cavaleiros do Zodíaco (Saint Seiya), Masami Kurumada, veio a público dizer que foi vítima de um desvio de mais de 4,6 bilhões de ienes (148 milhões de reais, na cotação de hoje) por um antigo gerente que supostamente o isolou de outras pessoas dizendo que ele “odiava pessoas”.",
-          "runs": [
-            {
-              "text": "O criador de "
-            },
-            {
-              "text": "Cavaleiros do Zodíaco ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "(Saint Seiya)",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", Masami Kurumada, veio a público dizer que foi vítima de um desvio de mais de 4,6 bilhões de ienes (148 milhões de reais, na cotação de hoje) por um antigo gerente que supostamente o isolou de outras pessoas dizendo que ele “odiava pessoas”."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ele abriu um processo pedindo indenizações, alegando que um total de 4.686.170.000 ienes foram desviados por pessoas em quem ele confiou por anos para questões fora de suas atividades criativas. Hoje (02), Kurumada esteve em uma coletiva de imprensa detalhando o caso. Segundo informado, 1,8 bilhão já teria sido recuperado.",
-          "runs": [
-            {
-              "text": "Ele abriu um processo pedindo indenizações, alegando que um total de 4.686.170.000 ienes foram desviados por pessoas em quem ele confiou por anos para questões fora de suas atividades criativas. Hoje (02), Kurumada esteve em uma coletiva de imprensa detalhando o caso. Segundo informado, "
-            },
-            {
-              "text": "1,8 bilhão já teria sido recuperado",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre os réus está o homem apontado como principal culpado pela defesa do mangaká, identificado como “M” na coletiva, e mais dez pessoas, incluindo um irmão do acusado, e quatro empresas ligadas ao homem.",
-          "runs": [
-            {
-              "text": "Entre os réus está o homem apontado como principal culpado pela defesa do mangaká, identificado como "
-            },
-            {
-              "text": "“M”",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " na coletiva, e mais dez pessoas, incluindo um irmão do acusado, e quatro empresas ligadas ao homem."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Segundo um dos advogados de Kurumada, Tomohiro Nozaki, “M” se aproveitou de um desejo do autor em concentrar em seus trabalhos criativos e centralizou toda a comunicação relativa ao mangaká. Por anos, ele teria criado mentiras sobre Kurumada, bloqueando contatos de terceiros e cortando toda a informação, de forma que só ele entendesse o que ocorria.",
-          "runs": [
-            {
-              "text": "Segundo um dos advogados de Kurumada, Tomohiro Nozaki, “M” se aproveitou de um desejo do autor em concentrar em seus trabalhos criativos e"
-            },
-            {
-              "text": " centralizou toda a comunicação relativa ao mangaká",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Por anos, ele teria criado mentiras sobre Kurumada, bloqueando contatos de terceiros e cortando toda a informação, de forma que só ele entendesse o que ocorria."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Kurumada e “M” mantinham uma relação há em torno de 25 anos, desde a época em que “M” trabalhava na Shueisha, onde foi editor do mangaká. Depois ele passou a trabalhar para o autor, e juntos eles criaram três empresas: NEXT WING, Kurumada Production, e K-PROJECT, todas responsáveis por cuidar de direitos autorais. Kurumada confiou em “M” para a contabilidade e negociações externas. Contudo, alega agora que havia um plano muito bem orquestrado por trás disso. Os desvios, no entanto, teriam começado em 2018, de acordo com reportagens.",
-          "runs": [
-            {
-              "text": "Kurumada e “M” mantinham uma relação há em torno de 25 anos, desde a época em que “M” trabalhava na Shueisha, onde foi editor do mangaká. Depois ele passou a trabalhar para o autor, e juntos eles criaram três empresas: NEXT WING, Kurumada Production, e K-PROJECT, todas responsáveis por cuidar de direitos autorais. Kurumada confiou em “M” para a contabilidade e negociações externas. Contudo, alega agora que havia um plano muito bem orquestrado por trás disso. Os desvios, no entanto, teriam começado em 2018, de acordo com reportagens."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Segundo o advogado Hiroyuki Kawai, “M” utilizada táticas sofisticadas, endeusando Kurumada e alegando que ele era uma pessoa difícil, que não queria se encontrar com ninguém, e que era melhor contar a ele qualquer coisa que quisessem contar ao autor, bloqueando qualquer tentativa de contato mais direta.",
-          "runs": [
-            {
-              "text": "Segundo o advogado Hiroyuki Kawai, “M” utilizada táticas sofisticadas, endeusando Kurumada e alegando que ele era uma pessoa difícil, que não queria se encontrar com ninguém, e que era melhor contar a ele qualquer coisa que quisessem contar ao autor, bloqueando qualquer tentativa de contato mais direta."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Conforme alegado, os supostos desvios ocorriam em três frentes. A primeira seria via custos de licenças, por meio de uma empresa própria com um nome parecido com NEXT WING, que recebia os pagamentos no lugar da empresa de Kurumada. A segunda seriam transferências de fundos sem autorização para empresas sob controle dele ou para pessoas próximas a ele, incluindo um irmão e outros conhecidos. A terceira seria um esquema que se aproveitava de um sistema de resseguro no exterior; prêmios de seguro pagos para empresas de seguros eram transferidos diversas vezes via resseguro para empresas de seguro estrangeiras, sendo por fim depositados em uma empresa com sede no exterior controlada por “M”, segundo a versão da defesa.",
-          "runs": [
-            {
-              "text": "Conforme alegado, os supostos desvios ocorriam em três frentes.",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " A primeira seria via custos de licenças, por meio de uma empresa própria com um nome parecido com NEXT WING, que recebia os pagamentos no lugar da empresa de Kurumada. A segunda seriam transferências de fundos sem autorização para empresas sob controle dele ou para pessoas próximas a ele, incluindo um irmão e outros conhecidos. A terceira seria um esquema que se aproveitava de um sistema de resseguro no exterior; prêmios de seguro pagos para empresas de seguros eram transferidos diversas vezes via resseguro para empresas de seguro estrangeiras, sendo por fim depositados em uma empresa com sede no exterior controlada por “M”, segundo a versão da defesa."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Tudo isso teria sido descoberto em fevereiro de 2024, por órgão japonês equivalente à Receita Federal. Quando o órgão enviou um questionamento ao próprio autor, “M” teria enviado uma resposta com uma assinatura forjada e um carimbo usado sem autorização (no Japão, as pessoas têm um “carimbo pessoal” que usam como assinatura), tentando inclusive enganar o governo. Conforme a defesa de Kurumada, a “Receita Federal” então fez uma investigação mais profunda, e a operação foi descoberta. Felizmente, foi possível recuperar uma parte dos ativos, segundo alegado.",
-          "runs": [
-            {
-              "text": "Tudo isso teria sido descoberto em fevereiro de 2024, por órgão japonês equivalente à Receita Federal. Quando o órgão enviou um questionamento ao próprio autor, “M” teria enviado "
-            },
-            {
-              "text": "uma resposta com uma assinatura forjada e um carimbo usado sem autorização",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (no Japão, as pessoas têm um “carimbo pessoal” que usam como assinatura), tentando inclusive enganar o governo. Conforme a defesa de Kurumada, a “Receita Federal” então fez uma investigação mais profunda, e a operação foi descoberta. Felizmente, foi possível recuperar uma parte dos ativos, segundo alegado."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na coletiva, Kurumada disse ter se sentido extremamente impotente:",
-          "runs": [
-            {
-              "text": "Na coletiva, Kurumada disse ter se sentido extremamente impotente:"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "Quando descobrimos, mal podia acreditar. Mais que raiva, senti um grande vazio. Ver que as pessoas podem nos trair tão facilmente para ganhos pessoais trouxe uma sensação insuportável de impotência. Em um momento, eu quase perdi a fé na humanidade.",
-          "runs": [
-            {
-              "text": "Quando descobrimos, mal podia acreditar. Mais que raiva, senti um grande vazio. Ver que as pessoas podem nos trair tão facilmente para ganhos pessoais trouxe uma sensação insuportável de impotência. Em um momento, eu quase perdi a fé na humanidade."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Também foi revelado que a exposição comemorativa marcada para 2024 foi cancelada por causa disso, e Kurumada pediu desculpas aos fãs — segundo a defesa do autor, a exposição apenas beneficiaria “M”. Embora não tenha sido mencionado, é capaz que o site e redes oficiais da franquia, que saíram do ar em março de 2024, também tenham relação com o caso.",
-          "runs": [
-            {
-              "text": "Também foi revelado que "
-            },
-            {
-              "text": "a exposição comemorativa marcada para 2024 foi cancelada por causa disso",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e Kurumada pediu desculpas aos fãs — segundo a defesa do autor, a exposição apenas beneficiaria “M”. Embora não tenha sido mencionado, é capaz que o site e redes oficiais da franquia, que "
-            },
-            {
-              "text": "saíram do ar em março de 2024",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2024/03/28/redes-sociais-oficias-de-cavaleiros-do-zodiaco-ficam-fora-do-ar/"
-            },
-            {
-              "text": ", também tenham relação com o caso."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim, Kurumada disse que pretende seguir escrevendo e que uma nova exposição com artes originais será realizada na próxima primavera japonesa (março a junho de 2027). O autor atualmente está escrevendo a Saga do Céu.",
-          "runs": [
-            {
-              "text": "Por fim, Kurumada disse que pretende seguir escrevendo e que uma nova exposição com artes originais será realizada na próxima primavera japonesa (março a junho de 2027). O autor atualmente está "
-            },
-            {
-              "text": "escrevendo a ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/05/cavaleiros-do-zodiaco-autor-reforca-trabalho-na-saga-do-ceu/"
-            },
-            {
-              "text": "Saga do Céu",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/05/cavaleiros-do-zodiaco-autor-reforca-trabalho-na-saga-do-ceu/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Yahoo Japan",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Yahoo Japan",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://news.yahoo.co.jp/articles/b7b9f059e46d2476d49ce7c9c73b42c87a65ea71?page=1"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-02T15:56:45.000Z",
-      "updatedAt": "2026-09-04T15:25:07.000Z",
-      "expiresAt": "2026-09-09T15:56:45.000Z",
-      "category": "Em alta",
-      "eventType": "TRENDING",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/02/autor-de-cavaleiros-do-zodiaco-masami-kurumada-alega-ter-sido-vitima-de-desvio-de-dinheiro-por-ex-gerente",
-          "publishedAt": "2026-09-02T15:56:45.000Z",
-          "author": "gasseruto"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 4,
-      "wordCount": 695,
-      "qualityScore": 0.966,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
