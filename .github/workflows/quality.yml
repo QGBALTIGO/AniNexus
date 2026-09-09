@@ -172,8 +172,14 @@ jobs:
             sleep 1
           done
           HEAVY_TEST='Catalog mobile menu exposes a complete Top 100 and a full search bar'
-          pnpm exec playwright test tests/e2e.spec.mjs tests/accessibility.spec.mjs tests/media-actions.spec.mjs tests/community-overview.spec.mjs --grep-invert "$HEAVY_TEST" --reporter=line --timeout=60000 --retries=1
-          pnpm exec playwright test tests/e2e.spec.mjs --grep "$HEAVY_TEST" --project=chromium --project=firefox --reporter=line --timeout=60000 --retries=1
+          for PROJECT in chromium firefox webkit; do
+            pnpm exec playwright test tests/e2e.spec.mjs tests/accessibility.spec.mjs tests/media-actions.spec.mjs tests/community-overview.spec.mjs \
+              --project="$PROJECT" --grep-invert "$HEAVY_TEST" --reporter=line --timeout=60000 --retries=1
+          done
+          for PROJECT in chromium firefox; do
+            pnpm exec playwright test tests/e2e.spec.mjs --grep "$HEAVY_TEST" \
+              --project="$PROJECT" --reporter=line --timeout=60000 --retries=1
+          done
       - name: Show static server log on failure
         if: failure()
         run: cat /tmp/aninexus-http.log || true
