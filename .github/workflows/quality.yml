@@ -152,7 +152,11 @@ jobs:
       - name: Install project dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Install browser test runner
-        run: pnpm exec playwright install --with-deps chromium firefox webkit
+        run: |
+          if [ -f /etc/apt/sources.list.d/google-chrome.list ]; then
+            sudo mv /etc/apt/sources.list.d/google-chrome.list /tmp/google-chrome.list.disabled
+          fi
+          pnpm exec playwright install --with-deps chromium firefox webkit
       - name: Map GitHub Pages hostname locally
         run: echo "127.0.0.1 qgbaltigo.github.io" | sudo tee -a /etc/hosts
       - name: Browser E2E — desktop and mobile
@@ -199,7 +203,11 @@ jobs:
       - name: Install project dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Install WebKit test runner
-        run: pnpm exec playwright install --with-deps webkit
+        run: |
+          if [ -f /etc/apt/sources.list.d/google-chrome.list ]; then
+            sudo mv /etc/apt/sources.list.d/google-chrome.list /tmp/google-chrome.list.disabled
+          fi
+          pnpm exec playwright install --with-deps webkit
       - name: Map GitHub Pages hostname locally
         run: echo "127.0.0.1 qgbaltigo.github.io" | sudo tee -a /etc/hosts
       - name: Top 100 mobile on WebKit
