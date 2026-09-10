@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T15:05:44.137Z",
+  "generatedAt": "2026-09-10T17:16:01.472Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,835 @@
   ],
   "stats": {
     "collected": 45,
-    "grouped": 17,
-    "published": 17,
-    "newStories": 17,
-    "fullArticles": 17,
+    "grouped": 18,
+    "published": 18,
+    "newStories": 18,
+    "fullArticles": 18,
     "previewArticles": 0,
-    "avgWords": 338,
-    "withHeroImage": 17,
-    "withOrderedMedia": 16,
+    "avgWords": 303,
+    "withHeroImage": 18,
+    "withOrderedMedia": 17,
     "skippedTranslation": 0,
-    "skippedQuality": 28,
-    "durationMs": 3129
+    "skippedQuality": 27,
+    "durationMs": 4219
   },
   "items": [
+    {
+      "id": "jbox-f6ae8530",
+      "slug": "witch-on-the-holy-night-filme-chega-aos-cinemas-brasileiros-em-janeiro-jbox-f6ae8530",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Witch on the Holy Night: Filme chega aos cinemas brasileiros em janeiro",
+      "originalTitle": "Witch on the Holy Night: Filme chega aos cinemas brasileiros em janeiro",
+      "summary": "Foi anunciado pela Crunchyroll que o filme Witch on the Holy Night (Mahoutsukai no Yoru) vai ser exibido nos cinemas brasileiros, sendo mais um lançamento em parceria com a Sony Pictures.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "Crunchyroll",
+        "Mahoutsukai no Yoru",
+        "Mahoyo",
+        "sony pictures",
+        "Witch on the Holy Night"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/10/witch-on-the-holy-night-filme-chega-aos-cinemas-brasileiros-em-janeiro",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/10/witch-on-the-holy-night-filme-chega-aos-cinemas-brasileiros-em-janeiro",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/witch-on-the-holy-night-destacada.jpg",
+      "mediaQuery": "Witch on the Holy Night: Filme chega aos cinemas brasileiros em janeiro",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/witch-on-the-holy-night-poster-nacional.jpg",
+          "alt": "imagem: Aoko Aozaki usando uma magia em pôster do filme 'Witch on the Holy Night'.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/rUB3yfko6Aw"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado pela Crunchyroll que o filme Witch on the Holy Night (Mahoutsukai no Yoru) vai ser exibido nos cinemas brasileiros, sendo mais um lançamento em parceria com a Sony Pictures.",
+          "runs": [
+            {
+              "text": "Foi anunciado pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " que o filme "
+            },
+            {
+              "text": "Witch on the Holy Night",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Mahoutsukai no Yoru",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") vai ser exibido nos cinemas brasileiros, sendo mais um lançamento em parceria com a "
+            },
+            {
+              "text": "Sony Pictures",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A estreia está marcada para o dia 28 de janeiro de 2027.",
+          "runs": [
+            {
+              "text": "A estreia está marcada para o dia "
+            },
+            {
+              "text": "28 de janeiro de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=rUB3yfko6Aw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/rUB3yfko6Aw"
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/witch-on-the-holy-night-poster-nacional.jpg",
+          "alt": "imagem: Aoko Aozaki usando uma magia em pôster do filme 'Witch on the Holy Night'."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Crunchyroll/Sony Pictures",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Crunchyroll/Sony Pictures"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O filme de Witch on the Holy Night tem lançamento marcado para o próximo dia 20 de novembro no Japão, contando com produção da animação pelo estúdio ufotable. A obra é uma adaptação da visual novel homônima desenvolvida pela Type-Moon, contando com os mesmos criadores de Fate/stay night.",
+          "runs": [
+            {
+              "text": "O filme de "
+            },
+            {
+              "text": "Witch on the Holy Night",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " tem lançamento marcado para o próximo dia "
+            },
+            {
+              "text": "20 de novembro no Japão",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", contando com produção da animação pelo estúdio "
+            },
+            {
+              "text": "ufotable",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A obra é uma adaptação da visual novel homônima desenvolvida pela "
+            },
+            {
+              "text": "Type-Moon",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", contando com os "
+            },
+            {
+              "text": "mesmos criadores de ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Fate/stay night",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A sinopse oficial da produção é a seguinte:",
+          "runs": [
+            {
+              "text": "A sinopse oficial da produção é a seguinte:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Aoko Aozaki, uma estudante do ensino médio comum, é na verdade uma maga que vive no mundo atual… apesar de ainda ser apenas uma aprendiz. Ela passa seus dias morando com sua colega de quarto, Alice Kuonji, enquanto se esforça para se tornar uma maga completa…",
+          "runs": [
+            {
+              "text": "Aoko Aozaki, uma estudante do ensino médio comum, é na verdade uma maga que vive no mundo atual… apesar de ainda ser apenas uma aprendiz. Ela passa seus dias morando com sua colega de quarto, Alice Kuonji, enquanto se esforça para se tornar uma maga completa…",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A garota conhece um garoto.",
+          "runs": [
+            {
+              "text": "A garota conhece um garoto.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Esse é o início da história de uma jovem… o conto de uma Bruxa.",
+          "runs": [
+            {
+              "text": "Esse é o início da história de uma jovem… o conto de uma Bruxa.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A visual novel original foi lançada originalmente em 2012 no Japão, ganhando em 2022 uma remasterização que contou com lançamento mundial. A versão mais recente está disponível para PlayStation 4, Switch e PC.",
+          "runs": [
+            {
+              "text": "A visual novel original foi lançada originalmente em 2012 no Japão, ganhando em 2022 uma remasterização que contou com lançamento mundial. A versão mais recente está disponível para PlayStation 4, Switch e PC."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O jogo escrito por Kinoko Nasu foi pensado primeiramente como um livro ainda nos anos 1990, mas foi ganhar seu lançamento oficial apenas na forma de visual novel em 2012. Na época do lançamento no Japão, foi divulgado que o título tem duas continuações em produção, porém elas não foram lançadas até hoje.",
+          "runs": [
+            {
+              "text": "O jogo escrito por "
+            },
+            {
+              "text": "Kinoko Nasu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " foi pensado primeiramente como um livro ainda nos anos 1990, mas foi ganhar seu lançamento oficial apenas na forma de "
+            },
+            {
+              "text": "visual novel",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " em 2012. Na época do lançamento no Japão, foi divulgado que o título tem duas continuações em produção, porém elas não foram lançadas até hoje."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Crunchyroll",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.crunchyroll.com/pt-br/news/announcements/2026/9/10/witch-on-the-holy-night-o-filme-estreia-mundial-janeiro-2027"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-10T16:34:21.000Z",
+      "updatedAt": "2026-09-10T16:35:00.000Z",
+      "expiresAt": "2026-09-17T16:34:21.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/10/witch-on-the-holy-night-filme-chega-aos-cinemas-brasileiros-em-janeiro",
+          "publishedAt": "2026-09-10T16:34:21.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 272,
+      "qualityScore": 0.979,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 15,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-e9e9ffff",
+      "slug": "2-temporada-de-nippon-sangoku-e-confirmada-jbox-e9e9ffff",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "2ª temporada de ‘Nippon Sangoku’ é confirmada",
+      "originalTitle": "2ª temporada de ‘Nippon Sangoku’ é confirmada",
+      "summary": "O estúdio Twin Engine anunciou a produção da 2ª temporada de Nippon Sangoku, animê que teve a primeira temporada exibida no Brasil pelo Amazon Prime Video.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "2ª temporada de Nippon Sangoku",
+        "Nippon Sangoku anime",
+        "Nippon Sangoku prime video",
+        "Segunda temporada de Nippon Sangoku"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/10/2a-temporada-de-nippon-sangoku-e-confirmada",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/10/2a-temporada-de-nippon-sangoku-e-confirmada",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/nippon-sangoku-destacada.jpg",
+      "mediaQuery": "2ª temporada de ‘Nippon Sangoku’ é confirmada",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/jRe6--W2b4w"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O estúdio Twin Engine anunciou a produção da 2ª temporada de Nippon Sangoku, animê que teve a primeira temporada exibida no Brasil pelo Amazon Prime Video.",
+          "runs": [
+            {
+              "text": "O estúdio "
+            },
+            {
+              "text": "Twin Engine",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou a produção da 2ª temporada de "
+            },
+            {
+              "text": "Nippon Sangoku",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", animê que teve a primeira temporada exibida no Brasil pelo "
+            },
+            {
+              "text": "Amazon Prime Video",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por enquanto não há detalhes sobre os novos episódios ou uma possível data de estreia. A empresa fez o anúncio com um vídeo que mostra cenas da primeira temporada, e confirma que a sequência será feita:",
+          "runs": [
+            {
+              "text": "Por enquanto não há detalhes sobre os novos episódios ou uma possível data de estreia. A empresa fez o anúncio com um vídeo que mostra cenas da primeira temporada, e confirma que a sequência será feita:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=jRe6--W2b4w",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/jRe6--W2b4w"
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama de Nippon Sangoku é situada em um futuro próximo, onde a humanidade regrediu por conta de uma guerra nuclear e desastres naturais. Nesse contexto, o Japão se dividiu em três grandes reinos, que seguem lutando pela soberania total, mas o estrategista Aoteru Misumi vê um caminho diferente: ele sonha com a unificação dos territórios e usará toda a inteligência que tem para atingir este objetivo. O animê é inspirado no mangá de Ikka Matsuki, lançado em 2021, e ainda inédito no Brasil.",
+          "runs": [
+            {
+              "text": "A trama de "
+            },
+            {
+              "text": "Nippon Sangoku ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "é situada em um futuro próximo, onde a humanidade regrediu por conta de uma guerra nuclear e desastres naturais. Nesse contexto, o Japão se dividiu em três grandes reinos, que seguem lutando pela soberania total, mas o estrategista Aoteru Misumi vê um caminho diferente: ele sonha com a unificação dos territórios e usará toda a inteligência que tem para atingir este objetivo. O animê é inspirado no mangá de"
+            },
+            {
+              "text": " Ikka Matsuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", lançado em 2021, e ainda inédito no Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre os nomes do elenco de voz original estão Kenshô Ono (Yuru em Daemons do Reino das Sombras) como Aoteru Misumi, Jun Fukuyama (o Hokuto de Hana-Kimi) como Yoshitsune Asama, Kazuhiro Yamaji (Kojiro Sasaki de Record of Ragnarok) como Mitsuhide Ryūmon, Yuuichi Nakamura (Satoru Gojo em Jujutsu Kaisen) como Yasuaki Kaku, Taihi Kimura (Kozuki em Sanda) como Fuji III e Minami Tsuda (jovem Loid em Spy x Family) como Oga Wajima.",
+          "runs": [
+            {
+              "text": "Entre os nomes do elenco de voz original estão "
+            },
+            {
+              "text": "Kenshô Ono",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Yuru em"
+            },
+            {
+              "text": " Daemons do Reino das Sombras",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como Aoteru Misumi, "
+            },
+            {
+              "text": "Jun Fukuyama",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/j-pedia/perfis/jun-fukuyama/"
+            },
+            {
+              "text": " (o Hokuto de "
+            },
+            {
+              "text": "Hana-Kimi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como Yoshitsune Asama, "
+            },
+            {
+              "text": "Kazuhiro Yamaji",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Kojiro Sasaki de "
+            },
+            {
+              "text": "Record of Ragnarok",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como Mitsuhide Ryūmon, "
+            },
+            {
+              "text": "Yuuichi Nakamura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Satoru Gojo em "
+            },
+            {
+              "text": "Jujutsu Kaisen",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como Yasuaki Kaku, "
+            },
+            {
+              "text": "Taihi Kimura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Kozuki em "
+            },
+            {
+              "text": "Sanda",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como Fuji III e "
+            },
+            {
+              "text": "Minami Tsuda",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (jovem Loid em "
+            },
+            {
+              "text": "Spy x Family",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como Oga Wajima."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fazem parte da equipe de produção do animê Teruko Utsumi (Tatsuki Fujimoto 17-26) no roteiro, Kazuaki Terasawa (Tatsuki Fujimoto 17-26, Overlord) na direção, Takahiko Abiru (Vinland Saga, Trigun Stampede, Attack on Titan) no design de personagens e direção de animação e Seiki Tamura (especiais de Lupin III) na direção de arte.",
+          "runs": [
+            {
+              "text": "Fazem parte da equipe de produção do animê "
+            },
+            {
+              "text": "Teruko Utsumi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Tatsuki Fujimoto 17-26) no roteiro, "
+            },
+            {
+              "text": "Kazuaki Terasawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Tatsuki Fujimoto 17-26",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Overlord",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") na direção, "
+            },
+            {
+              "text": "Takahiko Abiru",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Vinland Saga",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Trigun Stampede",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Attack on Titan",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") no design de personagens e direção de animação e"
+            },
+            {
+              "text": " Seiki Tamura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (especiais de "
+            },
+            {
+              "text": "Lupin III",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") na direção de arte."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Prime Video, a primeira temporada está disponível com 12 episódios, com legendas e dublagem em português.",
+          "runs": [
+            {
+              "text": "No Prime Video, a primeira temporada está disponível com 12 episódios, com legendas e dublagem em português."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Anime News Network",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-09-02/nippon-sangoku-anime-gets-sequel/.241284"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-10T16:21:21.000Z",
+      "updatedAt": "2026-09-10T16:22:09.000Z",
+      "expiresAt": "2026-09-17T16:21:21.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/10/2a-temporada-de-nippon-sangoku-e-confirmada",
+          "publishedAt": "2026-09-10T16:21:21.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 306,
+      "qualityScore": 0.976,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-de0272ae",
       "slug": "black-bullet-ganhara-reboot-com-novo-final-em-2027-animenew-de0272ae",
@@ -5481,619 +6297,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-55e5bb5d",
-      "slug": "diarios-de-uma-apotecaria-serie-live-action-estreia-pelo-prime-video-em-2028-jbox-55e5bb5d",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Diários de uma Apotecária: Série live-action estreia pelo Prime Video em 2028",
-      "originalTitle": "Diários de uma Apotecária: Série live-action estreia pelo Prime Video em 2028",
-      "summary": "A Amazon MGM Studios anunciou a produção de uma série live-action de Diários de uma Apotecária, com lançamento marcado para 2028, e transmissão mundial e exclusiva pelo Prime Video.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Dorama",
-        "Light Novel",
-        "Live Action",
-        "amazon prime video",
-        "Diários de uma Apotecária",
-        "Kusuriya no Hitorigoto",
-        "Live-action de Diários de uma Apotecária",
-        "Mana Ashida como Maomao",
-        "Série de Diários de Uma Apotecária",
-        "The Apothecary Diaries"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/03/diarios-de-uma-apotecaria-serie-live-action-estreia-pelo-prime-video-em-2028",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/03/diarios-de-uma-apotecaria-serie-live-action-estreia-pelo-prime-video-em-2028",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/diarios-de-uma-apotecaria-destacada.jpg",
-      "mediaQuery": "Diários de uma Apotecária: Série live-action estreia pelo Prime Video em 2028",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/diarios-de-uma-apotecaria-live-action-01.jpg",
-          "alt": "Imagem do live-action de Diários de uma Apotecária",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/diarios-de-uma-apotecaria-live-action-02.jpg",
-          "alt": "Montagem de Diários de Uma Apotecária",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A Amazon MGM Studios anunciou a produção de uma série live-action de Diários de uma Apotecária, com lançamento marcado para 2028, e transmissão mundial e exclusiva pelo Prime Video.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Amazon MGM Studios",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " anunciou a produção de uma série live-action de "
-            },
-            {
-              "text": "Diários de uma Apotecária",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", com lançamento marcado para 2028, e transmissão mundial e exclusiva pelo"
-            },
-            {
-              "text": " Prime Video",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O seriado terá Mana Ashida (a jovem Mako em Círculo de Fogo e voz de Scarlet no filme de 2025) no papel de Maomao, e uma primeira imagem conceitual da produção já foi divulgada:",
-          "runs": [
-            {
-              "text": "O seriado terá "
-            },
-            {
-              "text": "Mana Ashida",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (a jovem Mako em "
-            },
-            {
-              "text": "Círculo de Fogo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e voz de "
-            },
-            {
-              "text": "Scarlet",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " no filme de 2025) no papel de Maomao, e uma primeira imagem conceitual da produção já foi divulgada:"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/diarios-de-uma-apotecaria-live-action-01.jpg",
-          "alt": "Imagem do live-action de Diários de uma Apotecária"
-        },
-        {
-          "type": "paragraph",
-          "text": "Primeira imagem conceitual recria cena famosa de Maomao | Amazon/Divulgação",
-          "runs": [
-            {
-              "text": "Primeira imagem conceitual recria cena famosa de Maomao | Amazon/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Em comunicado oficial, Ashida afirmou:",
-          "runs": [
-            {
-              "text": "Em comunicado oficial, Ashida afirmou:"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "“Como fã das novels originais, senti uma grande pressão e nervosismo ao me envolver em uma obra que amo tanto. No entanto, ao trabalhar ao lado de um elenco e equipe que respeitam profundamente o material de origem e cuidam meticulosamente de cada detalhe, me dediquei de corpo e alma — e com todo meu amor pela Maomao e pela história em si — ao processo de gravação. Houve muitos momentos, ao interpretar a personagem, em que a fã que existe em mim despertou e meu coração disparou de empolgação. Fico imensamente feliz em compartilhar esse entusiasmo tanto com os fãs que já acompanham a série quanto com aqueles que a conhecerão agora. Espero que vocês aguardem ansiosamente pelo lançamento.”",
-          "runs": [
-            {
-              "text": "“Como fã das "
-            },
-            {
-              "text": "novels",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " originais, senti uma grande pressão e nervosismo ao me envolver em uma obra que amo tanto. No entanto, ao trabalhar ao lado de um elenco e equipe que respeitam profundamente o material de origem e cuidam meticulosamente de cada detalhe, me dediquei de corpo e alma — e com todo meu amor pela Maomao e pela história em si — ao processo de gravação. Houve muitos momentos, ao interpretar a personagem, em que a fã que existe em mim despertou e meu coração disparou de empolgação. Fico imensamente feliz em compartilhar esse entusiasmo tanto com os fãs que já acompanham a série quanto com aqueles que a conhecerão agora. Espero que vocês aguardem ansiosamente pelo lançamento.”"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já a autora Hyuganatsu destacou a jornada da franquia até se tornar um live-action, e citou como os astros de Maomao e Jinshi (ainda não revelado) combinam com seus personagens:",
-          "runs": [
-            {
-              "text": "Já a autora "
-            },
-            {
-              "text": "Hyuganatsu",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " destacou a jornada da franquia até se tornar um live-action, e citou como os astros de Maomao e Jinshi (ainda não revelado) combinam com seus personagens:"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "“Tem sido uma grande jornada até chegarmos a uma adaptação em live-action. Como o processo me afastou bastante do trabalho original — e reconhecendo que uma novel e uma produção live-action são entidades distintas –, senti que a melhor abordagem era simplesmente confiar o projeto aos profissionais. Sou profundamente grata a todos os envolvidos na produção, pelo trabalho verdadeiramente maravilhoso que eles fizeram. Quando Ashida foi escalada como Maomao, eu imediatamente pensei ‘ah, posso deixar isso nas mãos dela com total confiança’, e quando a conheci, senti ‘essa é a Maomao’. Também tive a oportunidade de visitar o set algumas vezes. Ao ver os cenários e figurinos grandiosos, me peguei pensando em coisas banais, como quanto tudo aquilo deve ter custado. Desde o roteiro, até os objetos de cena, cabelo, maquiagem e até as instruções de etiqueta e postura ao caminhar, cada detalhe reflete um compromisso com a qualidade, e acredito que o resultado será algo que todos vão apreciar. Uma curiosidade: quando levei minha sobrinha para visitar o set, o ator que interpreta Jinshi estava lá, e ela abriu um sorriso radiante. Preocupada com a possibilidade de que seus padrões para homens se tornassem elevados demais, cobri discretamente os olhos dela. O Jinshi da vida real”.",
-          "runs": [
-            {
-              "text": "“Tem sido uma grande jornada até chegarmos a uma adaptação em live-action. Como o processo me afastou bastante do trabalho original — e reconhecendo que uma"
-            },
-            {
-              "text": " novel",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e uma produção live-action são entidades distintas –, senti que a melhor abordagem era simplesmente confiar o projeto aos profissionais. Sou profundamente grata a todos os envolvidos na produção, pelo trabalho verdadeiramente maravilhoso que eles fizeram. Quando Ashida foi escalada como Maomao, eu imediatamente pensei ‘ah, posso deixar isso nas mãos dela com total confiança’, e quando a conheci, senti ‘essa é a Maomao’. Também tive a oportunidade de visitar o set algumas vezes. Ao ver os cenários e figurinos grandiosos, me peguei pensando em coisas banais, como quanto tudo aquilo deve ter custado. Desde o roteiro, até os objetos de cena, cabelo, maquiagem e até as instruções de etiqueta e postura ao caminhar, cada detalhe reflete um compromisso com a qualidade, e acredito que o resultado será algo que todos vão apreciar. Uma curiosidade: quando levei minha sobrinha para visitar o set, o ator que interpreta Jinshi estava lá, e ela abriu um sorriso radiante. Preocupada com a possibilidade de que seus padrões para homens se tornassem elevados demais, cobri discretamente os olhos dela. O Jinshi da vida real”."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim, vale destacar a fala de Hisashi Usui, executivo de planejamento de filmes da TOHO, que também falou sobre a equipe técnica da série:",
-          "runs": [
-            {
-              "text": "Por fim, vale destacar a fala de "
-            },
-            {
-              "text": "Hisashi Usui",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", executivo de planejamento de filmes da TOHO, que também falou sobre a equipe técnica da série:"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "“Chegamos a esse ponto graças a um alinhamento perfeito de elementos: a história mundialmente amada criada por Hyuganatsu; a presença singular de Mana Ashida no papel de Maomao; a paixão de toda a equipe, incluindo o diretor Yuki Saito [de Dias Coloridos em Rokuhodo] e a roteirista Erika Yoshida [do animê Bocchi the Rock!]; e a visão inabalável da Amazon MGM Studios. A TOHO faz mais do que filmes do Godzilla, sabiam? Nós realmente produzimos outras coisas também [risos]. Aguardem pelo mundo do palácio interior — meticulosamente criado por talentos cinematográficos de primeiro escalão — e pelas atuações de um elenco repleto de estrelas, que anunciaremos em breve.”",
-          "runs": [
-            {
-              "text": "“Chegamos a esse ponto graças a um alinhamento perfeito de elementos: a história mundialmente amada criada por Hyuganatsu; a presença singular de Mana Ashida no papel de Maomao; a paixão de toda a equipe, incluindo o diretor Yuki Saito [de "
-            },
-            {
-              "text": "Dias Coloridos em Rokuhodo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "] e a roteirista Erika Yoshida [do animê "
-            },
-            {
-              "text": "Bocchi the Rock!",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2023/01/11/bocchi-anime-resenha/"
-            },
-            {
-              "text": "]; e a visão inabalável da Amazon MGM Studios. A TOHO faz mais do que filmes do Godzilla, sabiam? Nós realmente produzimos outras coisas também [risos]. Aguardem pelo mundo do palácio interior — meticulosamente criado por talentos cinematográficos de primeiro escalão — e pelas atuações de um elenco repleto de estrelas, que anunciaremos em breve.”"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Pelas declarações, a série já está em fase de gravações, ou possivelmente até já foi filmada em sua totalidade para uma primeira temporada.",
-          "runs": [
-            {
-              "text": "Pelas declarações, a série já está em fase de gravações, ou possivelmente até já foi filmada em sua totalidade para uma primeira temporada."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/diarios-de-uma-apotecaria-live-action-02.jpg",
-          "alt": "Montagem de Diários de Uma Apotecária"
-        },
-        {
-          "type": "paragraph",
-          "text": "Já podemos contar com a adaptação da cena de Maomao provando venenos | TOHO/Reprodução",
-          "runs": [
-            {
-              "text": "Já podemos contar com a adaptação da cena de Maomao provando venenos | TOHO/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A série de light novels original é lançada desde 2011 de forma online e independente pelo site Shosetsuka ni Naro. Rendeu um volume compilado pela editora Shufunotomo, com ilustração de Megumi Matsuda, em 2012. Depois disso, em 2014, a Shufunotomo começou a publicá-la como uma série de livros, agora ilustrada por Touko Shino, já rendendo 17 volumes, sendo essa a versão que estreou no Brasil recentemente pela editora Alt.",
-          "runs": [
-            {
-              "text": "A série de light novels original é lançada desde 2011 de forma online e independente pelo site "
-            },
-            {
-              "text": "Shosetsuka ni Naro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Rendeu um volume compilado pela editora "
-            },
-            {
-              "text": "Shufunotomo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com ilustração de "
-            },
-            {
-              "text": "Megumi Matsuda",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", em 2012. Depois disso, em 2014, a Shufunotomo começou a publicá-la como uma série de livros, agora ilustrada por "
-            },
-            {
-              "text": "Touko Shino",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", já rendendo 17 volumes, sendo essa "
-            },
-            {
-              "text": "a versão que estreou no Brasil recentemente pela editora",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/29/diarios-de-uma-apotecaria-aparece-no-topo-de-lista-de-livros-mais-vendidos-no-brasil/"
-            },
-            {
-              "text": " ",
-              "href": "https://www.jbox.com.br/2026/07/29/diarios-de-uma-apotecaria-aparece-no-topo-de-lista-de-livros-mais-vendidos-no-brasil/"
-            },
-            {
-              "text": "Alt",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/29/diarios-de-uma-apotecaria-aparece-no-topo-de-lista-de-livros-mais-vendidos-no-brasil/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história se passa em uma corte imperial fictícia da China Antiga, e foca em Maomao, uma jovem de 17 anos que foi raptada e forçada a trabalhar como uma serviçal de baixo escalão no palácio imperial. Um dia, ela descobre que dois filhos do imperador estão doentes, e começa a utilizar seus conhecimentos farmacêuticos, e logo chama a atenção de pessoas influentes.",
-          "runs": [
-            {
-              "text": "A história se passa em uma corte imperial fictícia da China Antiga, e foca em Maomao, uma jovem de 17 anos que foi raptada e forçada a trabalhar como uma serviçal de baixo escalão no palácio imperial. Um dia, ela descobre que dois filhos do imperador estão doentes, e começa a utilizar seus conhecimentos farmacêuticos, e logo chama a atenção de pessoas influentes."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Uma versão em mangá, adaptada por Itsuki Nanao (coordenação do enredo) e Nekokurage (arte), é publicada no Brasil pela editora Panini. A obra ainda conta com outra adaptação para mangá, feita por Minoji Kurata, essa inédita por aqui.",
-          "runs": [
-            {
-              "text": "Uma versão em mangá, adaptada por "
-            },
-            {
-              "text": "Itsuki Nanao",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (coordenação do enredo) e "
-            },
-            {
-              "text": "Nekokurage",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (arte), é publicada no Brasil pela editora "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A obra ainda conta com outra adaptação para mangá, feita por "
-            },
-            {
-              "text": "Minoji Kurata",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", essa inédita por aqui."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Dirigida e roteirizada por Norihiro Naganuma (The Ancient Magus’ Bride), a adaptação para animê é uma produção da TOHO junto ao estúdio OLM (Pokémon). A série já conta com duas temporadas lançadas e, além do terceiro ano, que chega em 2 de outubro, terá um longa-metragem lançado em dezembro.",
-          "runs": [
-            {
-              "text": "Dirigida e roteirizada por"
-            },
-            {
-              "text": " Norihiro Naganuma",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "The Ancient Magus’ Bride",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "), a adaptação para animê é uma produção da "
-            },
-            {
-              "text": "TOHO",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " junto ao estúdio "
-            },
-            {
-              "text": "OLM",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Pokémon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "). A série já conta com duas temporadas lançadas e, além do "
-            },
-            {
-              "text": "terceiro ano, que chega em 2 de outubro",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/17/3a-temporada-de-diarios-de-uma-apotecaria-ganha-trailer-e-data-de-estreia/"
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "terá um longa-metragem lançado em dezembro",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/03/diarios-de-uma-apotecaria-filme-ganha-trailer-e-data-de-estreia/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A Netflix e a HBO Max contam com a primeira temporada da série, enquanto a Crunchyroll conta com as duas fases, todas com dublagem em português.",
-          "runs": [
-            {
-              "text": "A"
-            },
-            {
-              "text": " Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e a "
-            },
-            {
-              "text": "HBO Max",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " contam com a primeira temporada da série, enquanto a "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " conta com as duas fases, todas com dublagem em português."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fontes: Anime News Network, Comic Natalie",
-          "runs": [
-            {
-              "text": "Fontes: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Anime News Network",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.animenewsnetwork.com/news/2026-09-02/apothecary-diaries-novels-get-live-action-series-on-amazon-prime-globally-in-2028/.241285"
-            },
-            {
-              "text": ", ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Comic Natalie",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://natalie.mu/comic/news/687866"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-03T16:12:21.000Z",
-      "updatedAt": "2026-09-03T16:12:51.000Z",
-      "expiresAt": "2026-09-10T16:12:21.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/03/diarios-de-uma-apotecaria-serie-live-action-estreia-pelo-prime-video-em-2028",
-          "publishedAt": "2026-09-03T16:12:21.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 5,
-      "wordCount": 873,
-      "qualityScore": 0.97,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 21,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 2,
-        "embedCount": 0,
         "sourcePagesRead": 0
       }
     }
