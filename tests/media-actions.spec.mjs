@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 
-const origin=process.env.ANINEXUS_E2E_ORIGIN||'http://127.0.0.1:4173/';
+const origin=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const url=path=>`${origin}?p=${encodeURIComponent(path)}`;
 const snapshots=new WeakMap();
 // Persistence checks use reduced motion; animated cross-page controls are covered in e2e.spec.mjs.

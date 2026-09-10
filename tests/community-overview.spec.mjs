@@ -2,7 +2,7 @@ import {test,expect,devices} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import {readFileSync} from 'node:fs';
 
-const origin=process.env.ANINEXUS_E2E_ORIGIN||'http://127.0.0.1:4173/';
+const origin=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const localStaticOrigin=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
 const url=path=>`${origin}?p=${encodeURIComponent(path)}`;
 const cover='https://s4.anilist.co/community-test.png';
@@ -26,7 +26,7 @@ async function setup(page){
     const path=new URL(route.request().url()).pathname;
     if(path==='/api/community/overview')return route.fulfill(state.fail?{status:503,json:{error:'TEMPORARY'}}:{json:state.overview});
     if(path==='/api/community/activity')return route.fulfill({json:{items:state.activity}});
-    if(path==='/api/community/impressions')return route.fulfill({json:{items:state.impressions}});
+    if(path==='/api/community/impressions'||path==='/api/feed/impressions')return route.fulfill({json:{items:state.impressions}});
     if(path==='/api/community/threads')state.threadRequests++;
     return route.fulfill({json:{items:[],user:null}});
   });
@@ -279,14 +279,16 @@ test('Community separates impressions, expands activity and never exposes discus
   const state=await setup(page),now=Date.now(),entry=state.activity[0];
   state.activity=Array.from({length:9},(_,i)=>({...entry,media_id:101+i,created_at:new Date(now-i*60000).toISOString()}));
   state.activity.push({...entry,created_at:new Date(now-999999).toISOString()},{...entry,media_id:999,media:null,title:'Título temporariamente indisponível',cover:''});
-  state.impressions=[{...entry,id:'impression-a',body:'Uma leitura que vale cada capítulo.'},{...entry,id:'impression-b',body:'Não mostre este spoiler',spoiler:true}];
+  state.impressions=[{...entry,id:'impression-a',body:'Uma leitura que ||vale|| cada capítulo.'},{...entry,id:'impression-b',body:'Não mostre este spoiler',spoiler:true}];
   await page.goto(url('/comunidade'));
   await expect(page.locator('#nx40Feed .nx40-card')).toHaveCount(6);
   await expect(page.locator('#nx40Feed')).not.toContainText('indisponível');
   await expect(page.locator('#nx40Feed')).not.toContainText('Uma leitura');
   await expect(page.locator('#nx40Impressions .nx40-impression')).toHaveCount(2);
-  await expect(page.locator('#nx40Impressions')).toContainText('Uma leitura que vale cada capítulo.');
-  await expect(page.locator('#nx40Impressions')).not.toContainText('Não mostre este spoiler');
+  const spoilers=page.locator('#nx40Impressions .nx40-partial-spoiler');await expect(spoilers).toHaveCount(1);
+  await expect(page.locator('#nx40Impressions')).not.toContainText('||');
+  await expect(spoilers.first().locator('span')).toHaveCSS('filter','blur(6px)');
+  await spoilers.first().click();await expect(spoilers.first()).toHaveClass(/revealed/);
   await page.getByRole('button',{name:'Carregar mais atividade',exact:true}).click();
   await expect(page.locator('#nx40Feed .nx40-card')).toHaveCount(9);
   await expect(page.locator('[data-nx40-more-activity]')).toBeHidden();

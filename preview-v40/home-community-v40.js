@@ -20,6 +20,8 @@
   const pageUrl=path=>IS_PAGES?`/AniNexus/?p=${encodeURIComponent(path)}`:path;
   const mediaUrl=x=>{const slug=String(x.title).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,90)||'obra';return pageUrl(`/${type(x)==='MANGA'?'manga':'anime'}/${slug}-${Number(x.media_id)}`)};
   const relative=v=>{const t=Date.parse(v||'');if(!Number.isFinite(t))return'';const d=Math.max(0,Date.now()-t);if(d<60000)return'agora';if(d<3600000)return`há ${Math.max(1,Math.floor(d/60000))}min`;if(d<86400000)return`há ${Math.floor(d/3600000)}h`;return`há ${Math.floor(d/86400000)}d`};
+  const hasSpoiler=x=>Boolean(x?.spoiler||x?.has_spoilers||x?.hasSpoilers||(Array.isArray(x?.segments)&&x.segments.some(segment=>segment.type==='spoiler'))||/\|\|[^|]+\|\|/.test(String(x?.body||'')));
+  const cleanPreview=x=>String(x?.body||'').replace(/\|\|([^|]+?)\|\|/g,'').replace(/\s+/g,' ').trim().slice(0,100);
   async function json(path){try{if(REMOTE){const j=await window.AniNexusAuth.publicApi(path);return j?.items||[]}const r=await fetch(path,{credentials:'same-origin',cache:'no-store',headers:{accept:'application/json'}});if(!r.ok)return[];const j=await r.json();return j?.items||[]}catch{return[]}}
   async function resolveMedia(rows){
     for(const mediaType of ['ANIME','MANGA']){
@@ -51,7 +53,7 @@
       detail=[x.progress?`${reading?'Cap.':'Episódio'} ${Number(x.progress)}`:'',reading&&x.volume_progress?`Vol. ${Number(x.volume_progress)}`:''].filter(Boolean).join(' · ');
     }else if(kind==='impression'){
       st={label:'Impressão',icon:'chat'};phrase=`<span class="nx35-community-byline">${person} publicou uma impressão sobre</span> ${work}`;
-      detail=x.spoiler?'Spoiler oculto':String(x.body||'').slice(0,100);
+      detail=hasSpoiler(x)?cleanPreview(x)||'Spoiler oculto':String(x.body||'').slice(0,100);
     }
     const statusIcon=kind==='state'?(reading?window.AniNexusMangaState:window.AniNexusMediaState)?.statuses?.[x.status]?.icon:'';
     const art=artworkUrl(x.banner);
@@ -61,7 +63,7 @@
     const shared=window.AniNexusCommunityActivity;
     const local=shared?.local?.(40)||[];
     let activity=[],impressions=[];
-    if(!IS_PAGES||REMOTE)[activity,impressions]=await Promise.all([json('/api/community/activity?limit=30&includeManga=1'),json('/api/community/impressions?limit=8')]);
+    if(!IS_PAGES||REMOTE)[activity,impressions]=await Promise.all([json('/api/community/activity?limit=30&includeManga=1'),json('/api/feed/impressions?limit=8&filter=all&sort=recent&hideSpoilers=true')]);
     const raw=[...activity.map(x=>({...x,kind:'state',created_at:x.created_at||x.updated_at})),...local.filter(x=>x.kind!=='thread'),...impressions.map(x=>({...x,kind:'impression'}))];
     const enriched=shared?.enrich?await shared.enrich(raw):raw,rows=shared?.merge?shared.merge(enriched):enriched;
     await resolveMedia(rows.filter(x=>x.media_id&&(!usableTitle(x.title)&&!usableTitle(title(x.media))||!x.cover&&!cover(x.media))));

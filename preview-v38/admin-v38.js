@@ -55,7 +55,7 @@
   }
   function reportCard(report) {
     const reporter = report.reporter_name || report.reporter_username || 'Visitante';
-    const contentType = { THREAD: 'Discussão', POST: 'Resposta', IMPRESSION: 'Impressão', USER: 'Usuário' }[report.target_type] || report.target_type;
+    const contentType = { THREAD: 'Discussão', POST: 'Resposta', IMPRESSION: 'Impressão', IMPRESSION_REPLY: 'Resposta à impressão', ANIME_COMMENT: 'Comentário de episódio', NEWS_COMMENT: 'Comentário de notícia', USER: 'Usuário' }[report.target_type] || report.target_type;
     return `<article class="nx38-admin-report" data-report-id="${esc(report.id)}"><div><span class="status-${esc(report.status)}">${esc(statusLabel[report.status] || report.status)}</span><small>${esc(contentType)} · ${formatDate(report.created_at)}</small></div><h3>${esc(report.reason)}</h3><p>Enviada por ${esc(reporter)}</p><div class="nx38-admin-report-actions"><label><span>Situação</span><select data-report-status>${['open', 'reviewing', 'resolved', 'dismissed'].map(value => `<option value="${value}" ${report.status === value ? 'selected' : ''}>${statusLabel[value]}</option>`).join('')}</select></label>${report.target_type !== 'USER' ? '<button class="danger" type="button" data-hide-reported>Ocultar conteúdo</button>' : ''}</div></article>`;
   }
   function reportsView() {

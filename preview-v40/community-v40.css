@@ -110,6 +110,7 @@ body.nx40-community-active.nx40-scroll-down #topbar{transform:translateY(calc(-1
 .nx40-handle{font-size:11px;color:#ab95a4}
 .nx40-new-members{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:12px}
 #nx40Members,#nx40NewMembers,.nx40-feed{padding:0;background:transparent;border:0}
+.nx40-topics{display:grid;gap:8px}.nx40-topic{padding:13px;border:1px solid rgba(255,255,255,.09);border-radius:11px;background:rgba(255,255,255,.025)}.nx40-topic>span{color:#e95c78;font:900 8px Manrope,sans-serif;letter-spacing:.12em}.nx40-topic h3{margin:6px 0 4px;color:#f2e9ed;font:850 12px/1.35 Manrope,sans-serif}.nx40-topic p{margin:0;color:#8e8087;font-size:9px}.nx40-topic footer{display:flex;justify-content:space-between;gap:10px;margin-top:9px;padding-top:8px;border-top:1px solid rgba(255,255,255,.07);color:#9b8d94;font-size:9px}.nx40-topic footer b{color:#c8bbc0}
 .nx40-new-count{margin:0;color:var(--muted);font-size:12px;line-height:1.5}.nx40-new-count strong{color:#82c9b6}
 .nx40-new-members .nx40-avatar{--avatar-size:38px;border:2px solid #a8496a}.nx40-new-members .nx40-avatar:nth-child(3n+2){border-color:#518f9a}.nx40-new-members .nx40-avatar:nth-child(3n+3){border-color:#a58d54}
 .nx40-member:first-child>.nx40-avatar{border-color:#c29b57}.nx40-member:nth-child(2)>.nx40-avatar{border-color:#96aebc}.nx40-member:nth-child(3)>.nx40-avatar{border-color:#be8a94}
@@ -154,6 +155,7 @@ body.nx40-community-active.nx40-scroll-down #topbar{transform:translateY(calc(-1
 .nx40-load-more:hover{background:#301a26;border-color:#b55b7a}
 .nx40-load-more .ico{width:15px;height:15px;flex:none}
 #nx40Impressions{display:grid;gap:12px}
+.nx40-partial-spoiler{display:inline-grid;max-width:100%;margin:0 3px;padding:2px 8px;border:1px solid var(--line);border-radius:7px;background:#211820;color:inherit;font:inherit;vertical-align:baseline;cursor:pointer}.nx40-partial-spoiler span{filter:blur(6px);user-select:none;opacity:.42}.nx40-partial-spoiler b{font-size:10px;color:var(--muted)}.nx40-partial-spoiler.revealed span{filter:none;user-select:text;opacity:1}.nx40-partial-spoiler.revealed b{display:none}
 .nx40-impression{min-width:0;padding:16px;border:1px solid var(--community-border);border-radius:8px;background:var(--community-fill);box-shadow:var(--community-shadow)}
 .nx40-impression header{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:8px;align-items:center;font-size:12px}
 .nx40-impression header .nx40-avatar{--avatar-size:28px}

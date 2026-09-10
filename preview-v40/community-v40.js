@@ -7,7 +7,7 @@
   const BASE=IS_PAGES?'/AniNexus':'';
   const BUILD='44.24.4';
   const API='https://graphql.anilist.co';
-  let items=[],mounted=false,overview=null,overviewState='loading',selectedReaction='Chorei',reactionChosen=false,memberDays=7,loadEpoch=0,overviewEpoch=0,visibleActivity=6,visibleImpressions=3;
+  let items=[],topics=[],mounted=false,overview=null,overviewState='loading',selectedReaction='Chorei',reactionChosen=false,memberDays=7,loadEpoch=0,overviewEpoch=0,visibleActivity=6,visibleImpressions=3;
 
   const STATUS={
     PLANNING:{label:'Quero Ver',verb:'quer ver',emoji:'👀'},
@@ -47,8 +47,8 @@
   async function load(){
     const epoch=++loadEpoch;
     const localRows=localActivity(),local=window.AniNexusCommunityActivity?.enrich?await window.AniNexusCommunityActivity.enrich(localRows):localRows;
-    let activity=[],impressions=[];
-    if(!IS_PAGES||REMOTE){[activity,impressions]=await Promise.all([json('/api/community/activity?limit=40&includeManga=1'),json('/api/community/impressions?limit=24')])}
+    let activity=[],impressions=[],communityTopics=[];
+    if(!IS_PAGES||REMOTE){[activity,impressions,communityTopics]=await Promise.all([json('/api/community/activity?limit=40&includeManga=1'),json('/api/feed/impressions?limit=24&filter=all&sort=recent&hideSpoilers=true'),json('/api/feed/community?sort=hot&limit=8')])}
     const normalized=[
       ...activity.map(x=>({...x,kind:'state',created_at:x.created_at||x.updated_at})),
       ...local.filter(x=>x.kind!=='thread'),
@@ -58,7 +58,7 @@
     const missing=enriched.filter(x=>x.media_id&&(!usableTitle(x.title)&&!usableTitle(mediaTitle(x.media))||!x.cover&&!mediaCover(x.media)));
     const [anime,manga]=await Promise.all(['ANIME','MANGA'].map(type=>mediaByIds(missing.filter(x=>(x.media_type==='MANGA'?'MANGA':'ANIME')===type).map(x=>x.media_id),type)));
     if(epoch!==loadEpoch||!owns()||!app.querySelector('.nx40-community'))return;
-    const merged=window.AniNexusCommunityActivity?.merge?.(enriched)||enriched;items=merged.map(x=>{
+    const merged=window.AniNexusCommunityActivity?.merge?.(enriched)||enriched;topics=communityTopics;items=merged.map(x=>{
       const fetched=(x.media_type==='MANGA'?manga:anime).get(Number(x.media_id)),m=x.media||fetched||null;
       const id=x.id||`${x.kind}:${x.media_type||'ANIME'}:${x.media_id||'none'}:${x.created_at||''}:${x.username||''}:${x.status||''}`;
       return{...x,id,media:m,title:usableTitle(x.title)||usableTitle(mediaTitle(m))||usableTitle(mediaTitle(fetched)),cover:x.cover||mediaCover(m)||mediaCover(fetched),banner:x.banner||mediaBanner(m),created_at:x.created_at||x.updated_at||new Date().toISOString()}
@@ -67,6 +67,8 @@
   }
 
   function reactionText(v){const raw=String(v||'').trim();return({LIKE:'Curtindo',DISLIKE:'Esperava mais',LOVE:'Amei',WOW:'De arrepiar'})[raw]||raw}
+  function impressionSegments(x){const supplied=Array.isArray(x?.segments)?x.segments:[];if(supplied.length&&(!x?.spoiler||supplied.some(segment=>segment.type==='spoiler')))return supplied;const body=String(x?.body||''),segments=[];let cursor=0;for(const match of body.matchAll(/\|\|([^|]+?)\|\|/g)){if(match.index>cursor)segments.push({type:'text',content:body.slice(cursor,match.index)});segments.push({type:'spoiler',content:match[1]});cursor=match.index+match[0].length}if(cursor<body.length)segments.push({type:'text',content:body.slice(cursor)});return segments.length?segments:[{type:x?.spoiler||x?.has_spoilers||x?.hasSpoilers?'spoiler':'text',content:body}]}
+  function impressionBody(x){return impressionSegments(x).map(segment=>segment.type==='spoiler'?`<button type="button" class="nx40-partial-spoiler" data-nx40-spoiler aria-label="Revelar trecho com spoiler"><span>${esc(segment.content)}</span><b>Toque para revelar</b></button>`:`<span>${esc(segment.content)}</span>`).join('')}
   function avatar(x){const name=actorName(x),handle=actorHandle(x),body=window.AniNexusAvatar?.markup(x,{name})||`<img src="${IS_PAGES?'/AniNexus':''}/assets/avatars/mascot-pink.png" alt="">`;return handle?`<a class="nx40-avatar" href="${pageUrl(`/u/${encodeURIComponent(handle)}`)}" aria-label="Ver perfil de ${esc(name)}">${body}</a>`:`<div class="nx40-avatar">${body}</div>`}
   function actor(x){const name=actorName(x),handle=actorHandle(x);return handle?`<a class="nx40-actor" href="${pageUrl(`/u/${encodeURIComponent(handle)}`)}" aria-label="${esc(name)}"><b>@${esc(handle)}</b></a>`:`<b>${esc(name)}</b>`}
   function stateCard(x){
@@ -77,8 +79,9 @@
   }
   function impressionCard(x){
     const title=resolvedTitle(x),m={id:x.media_id,title,mediaType:x.media_type==='MANGA'?'MANGA':'ANIME',cover:x.cover};
-    return `<article class="nx40-impression"><header>${avatar(x)}${actor(x)}<time datetime="${esc(x.created_at)}">${esc(time(x.created_at))}</time></header><a class="nx40-impression-body" href="${href(m)}">${x.spoiler?'<span class="nx40-spoiler">Impressão com spoiler</span>':esc(x.body||'')}</a><a class="nx40-impression-work" href="${href(m)}">${mediaImage(m)}<div><strong>${esc(title)}</strong><small>${m.mediaType==='MANGA'?'Mangá':'Anime'}${x.progress?` · ${m.mediaType==='MANGA'?'Cap.':'Ep.'} ${Number(x.progress)}`:''}</small></div></a></article>`;
+    return `<article class="nx40-impression"><header>${avatar(x)}${actor(x)}<time datetime="${esc(x.created_at)}">${esc(time(x.created_at))}</time></header><p class="nx40-impression-body">${impressionBody(x)}</p><a class="nx40-impression-work" href="${href(m)}">${mediaImage(m)}<div><strong>${esc(title)}</strong><small>${m.mediaType==='MANGA'?'Mangá':'Anime'}${x.progress?` · ${m.mediaType==='MANGA'?'Cap.':'Ep.'} ${Number(x.progress)}`:''}</small></div></a></article>`;
   }
+  function topicCard(x){const author=x.authorUser?.displayName||x.authorUser?.username||'Membro',last=x.lastReplyUser?`Última resposta por @${x.lastReplyUser}`:`Criado por ${author}`;return `<article class="nx40-topic"><span>${esc(x.category||'GERAL')}</span><h3>${esc(x.title||'Discussão da comunidade')}</h3><p>${esc(last)}</p><footer><b>${Number(x.repliesCount)||0} ${Number(x.repliesCount)===1?'resposta':'respostas'}</b><time>${esc(time(x.lastReplyAt))}</time></footer></article>`}
   function trends(){const map=new Map();for(const x of items){if(!x.media_id)continue;const id=Number(x.media_id),mediaType=x.media_type==='MANGA'?'MANGA':'ANIME',key=mediaType+':'+id,cur=map.get(key)||{id,mediaType,count:0,title:resolvedTitle(x),cover:x.cover||mediaCover(x.media)||''};cur.count++;if(!cur.cover)cur.cover=x.cover||mediaCover(x.media)||'';map.set(key,cur)}return[...map.values()].sort((a,b)=>b.count-a.count).slice(0,6)}
 
 
@@ -169,6 +172,7 @@
       </div><aside class="nx40-side">
         <section class="nx40-section nx40-tool"><header class="nx40-toolbar"><h2>Mais <em>ativos</em></h2><div class="nx40-segment" aria-label="Período"><button type="button" data-nx40-days="7" aria-pressed="true">7 dias</button><button type="button" data-nx40-days="30" aria-pressed="false">30 dias</button></div></header><div id="nx40Members"></div></section>
         <section class="nx40-section"><h2>Novos <em>membros</em></h2><div id="nx40NewMembers"></div></section>
+        <section class="nx40-section" id="nx40TopicsSection"><header class="nx40-toolbar"><h2>Discussões <em>recentes</em></h2><span class="nx40-live-dot" aria-hidden="true"></span></header><div class="nx40-topics" id="nx40Topics"></div></section>
         <section class="nx40-section" id="nx40FeedSection"><header class="nx40-toolbar"><h2 id="nx40FeedTitle">Agora na <em>comunidade</em></h2><span class="nx40-live-dot" aria-hidden="true"></span></header>
           <div class="nx40-feed" id="nx40Feed"><p class="nx40-empty">Carregando atividade...</p></div>
           <button type="button" class="nx40-load-more" data-nx40-more-activity hidden>Carregar mais atividade <span data-icon="arrow" aria-hidden="true"></span></button>
@@ -186,10 +190,11 @@
     app.querySelector('#nx40ImpressionsSection').hidden=!impressions.length;
     app.querySelector('#nx40Impressions').innerHTML=impressions.slice(0,visibleImpressions).map(impressionCard).join('');
     app.querySelector('[data-nx40-more-impressions]').hidden=impressions.length<=visibleImpressions;
+    app.querySelector('#nx40Topics').innerHTML=topics.length?topics.map(topicCard).join(''):empty('As primeiras discussões vão aparecer aqui.');
     app.querySelector('#nx40Trending').innerHTML=trends().map((x,i)=>miniMedia({...x,mediaType:x.mediaType||'ANIME'},i)).join('')||empty('Ainda não há tendências.');
     bindCards();window.injectIcons?.(app);
   }
-  function bindCards(){app.querySelectorAll('[data-open-anime]').forEach(el=>{if(el.dataset.nx40Bound)return;el.dataset.nx40Bound='1';el.onclick=e=>{if(e.target.closest('button,a,input,textarea'))return;const id=Number(el.dataset.openAnime),name=el.dataset.title||'anime';if(id)go(`/${el.dataset.mediaType==='MANGA'?'manga':'anime'}/${slug(name)}-${id}`)}});app.querySelectorAll('[data-nx40-trend]').forEach(el=>{if(el.dataset.nx40Bound)return;el.dataset.nx40Bound='1';el.onclick=()=>go(`/anime/${slug(el.dataset.title)}-${Number(el.dataset.nx40Trend)}`)})}
+  function bindCards(){app.querySelectorAll('[data-open-anime]').forEach(el=>{if(el.dataset.nx40Bound)return;el.dataset.nx40Bound='1';el.onclick=e=>{if(e.target.closest('button,a,input,textarea'))return;const id=Number(el.dataset.openAnime),name=el.dataset.title||'anime';if(id)go(`/${el.dataset.mediaType==='MANGA'?'manga':'anime'}/${slug(name)}-${id}`)}});app.querySelectorAll('[data-nx40-trend]').forEach(el=>{if(el.dataset.nx40Bound)return;el.dataset.nx40Bound='1';el.onclick=()=>go(`/anime/${slug(el.dataset.title)}-${Number(el.dataset.nx40Trend)}`)});app.querySelectorAll('[data-nx40-spoiler]').forEach(button=>button.onclick=()=>{button.classList.toggle('revealed');button.setAttribute('aria-label',button.classList.contains('revealed')?'Ocultar trecho com spoiler':'Revelar trecho com spoiler')})}
   function bind(){
     for(const [selector,kind] of [['[data-nx40-more-activity]','state'],['[data-nx40-more-impressions]','impression']])app.querySelector(selector).onclick=()=>{
       const previous=kind==='state'?visibleActivity:visibleImpressions;
