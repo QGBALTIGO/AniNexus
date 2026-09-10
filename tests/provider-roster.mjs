@@ -50,6 +50,10 @@ assert.deepEqual(relations,[
 ]);
 assert.equal(normalizeMalPersonImage('<meta property="og:image" content="https://cdn.myanimelist.net/images/voiceactors/2/74096.jpg">'),'https://cdn.myanimelist.net/images/voiceactors/2/74096.jpg');
 assert.equal(normalizeMalPersonImage('<meta property="og:image" content="https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png">'),'', 'the MAL application icon is not a staff portrait');
+assert.deepEqual(mergeRoster(
+  [{id:1,name:'Pessoa',image:'https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png'}],
+  [{id:1,name:'Pessoa',image:'https://cdn.myanimelist.net/images/voiceactors/3/8743.jpg'}]
+),[{id:1,name:'Pessoa',image:'https://cdn.myanimelist.net/images/voiceactors/3/8743.jpg'}],'invalid provider artwork is removed before a valid secondary portrait is merged');
 
 const mangaRoster=normalizeMalRoster('<table class="js-manga-character-table"><tbody><tr><td><a href="https://myanimelist.net/character/1/Test"><img alt="Teste" data-src="https://cdn.myanimelist.net/images/characters/1/1.jpg"></a></td><td><h3 class="h3_character_name">Teste</h3><div class="spaceit_pad"><small>Main</small></div></td></tr></tbody></table><p><span class="dark_text">Authors:</span> <a href="https://myanimelist.net/people/1881/Eiichiro_Oda">Oda, Eiichiro</a> (Story & Art)</p>','MANGA');
 assert.equal(mangaRoster.characters[0].role,'MAIN');
