@@ -6,7 +6,7 @@
 
   const pathNow=()=>{try{const url=new URL(location.href),restored=url.searchParams.get('p');let path=restored?restored.split('?')[0]:url.pathname;if(pages&&!restored)path=path.replace(/^\/AniNexus/,'')||'/';return String(path||'/').replace(/\/+$/,'')||'/'}catch{return'/home-loader-error'}};
   const wantsHome=()=>window.__NX35_HOME_BOOT__||pathNow()==='/'||pathNow()==='/__nx35_home_boot__';
-  const restoreBootUrl=()=>{if(!window.__NX35_HOME_BOOT__&&!location.pathname.includes('__nx35_home_boot__'))return;history.replaceState({},'',pages?`${base}/?build=44.47.0&p=%2F`:'/');delete window.__NX35_HOME_BOOT__;document.documentElement.classList.remove('nx35-home-boot')};
+  const restoreBootUrl=()=>{if(!window.__NX35_HOME_BOOT__&&!location.pathname.includes('__nx35_home_boot__'))return;history.replaceState({},'',pages?`${base}/?build=44.47.1&p=%2F`:'/');delete window.__NX35_HOME_BOOT__;document.documentElement.classList.remove('nx35-home-boot')};
 
   const loadHome=()=>{
     if(window.__NX35_HOME__){loader.status='ready';return}
@@ -14,7 +14,7 @@
     document.querySelector('script[data-nx35-home-runtime]')?.remove();
     loader.status='loading';loader.attempts++;
     const script=document.createElement('script');
-    script.src=`${base}/preview-v35/home-v35.js?v=44.47.0`;
+    script.src=`${base}/preview-v35/home-v35.js?v=44.47.1`;
     script.defer=true;script.dataset.nx35HomeRuntime='1';
     script.addEventListener('load',()=>{if(window.__NX35_HOME__){loader.status='ready';return}loader.status='failed';script.remove();restoreBootUrl()},{once:true});
     script.addEventListener('error',()=>{loader.status='failed';script.remove();restoreBootUrl();console.error('[AniNexus Home V35] falha ao carregar')},{once:true});
