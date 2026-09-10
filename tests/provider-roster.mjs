@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { mergeRoster, normalizeJikanAuthors, normalizeJikanStaff, normalizeKitsuRoster, normalizeMalPersonImage, normalizeMalRelations, normalizeMalRoster } from '../lib/provider.mjs';
+import { compactMediaReference, mergeRoster, normalizeJikanAuthors, normalizeJikanStaff, normalizeKitsuRoster, normalizeMalPersonImage, normalizeMalRelations, normalizeMalRoster } from '../lib/provider.mjs';
 
 const jikanStaff=normalizeJikanStaff([{positions:['Director','Storyboard'],person:{mal_id:7,name:'Aya Teste',images:{jpg:{image_url:'https://cdn.example.test/aya.jpg'}}}}]);
 assert.deepEqual(jikanStaff,[{role:'Director, Storyboard',id:7,name:'Aya Teste',native:'',image:'https://cdn.example.test/aya.jpg'}]);
@@ -64,4 +64,7 @@ assert.deepEqual(mergeRoster(
   [{role:'Story & Art',id:1881,name:'Eiichiro Oda',native:'',image:'https://cdn.myanimelist.net/images/voiceactors/2/74096.jpg'}]
 ),[{role:'Story & Art',id:1881,name:'Eiichiro Oda',native:'',image:'https://cdn.myanimelist.net/images/voiceactors/2/74096.jpg'}]);
 
-console.log('Provider roster: 16 tests passed');
+const compact=compactMediaReference({id:21,mediaType:'ANIME',title:'Obra',cover:'https://cdn.example.test/cover.jpg',relations:[{media:{id:1,relations:[{media:{id:2}}]}}],recommendations:[{media:{id:3}}],characters:[{id:4}],staff:[{id:5}],editorial:{comment:'x'},jikan:{synopsis:'x'}});
+assert.deepEqual(compact,{id:21,mediaType:'ANIME',title:'Obra',cover:'https://cdn.example.test/cover.jpg'},'related works are persisted as shallow summaries instead of recursive detail graphs');
+
+console.log('Provider roster: 17 tests passed');
