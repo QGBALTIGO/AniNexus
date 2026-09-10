@@ -69,6 +69,16 @@ jobs:
           IP_HASH_SALT: ci-only-ip-salt-not-for-production-1234567890
           PUBLIC_ORIGIN: https://example.invalid
         run: docker compose config --quiet
+      - name: Validate safe load-test entrypoints
+        shell: bash
+        run: |
+          node --check scripts/load/local-smoke.mjs
+          node --check scripts/load/staging-ramp.k6.js
+          node scripts/load/local-smoke.mjs --dry-run
+          if LOAD_TARGET=https://aninexus.com.br node scripts/load/local-smoke.mjs --dry-run; then
+            echo 'The load runner accepted production unexpectedly.' >&2
+            exit 1
+          fi
       - name: Validate Nginx configuration
         run: |
           cp nginx.conf /tmp/aninexus-nginx.conf

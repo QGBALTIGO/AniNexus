@@ -43,7 +43,10 @@ services:
       IP_HASH_SALT: ${IP_HASH_SALT:?defina IP_HASH_SALT no .env}
       COOKIE_SECURE: ${COOKIE_SECURE:-true}
       PG_POOL_MIN: ${PG_POOL_MIN:-0}
-      PG_POOL_MAX: ${PG_POOL_MAX:-30}
+      PG_POOL_MAX: ${PG_POOL_MAX:-12}
+      REDIS_OPERATION_TIMEOUT_MS: ${REDIS_OPERATION_TIMEOUT_MS:-1500}
+      REDIS_CONNECT_TIMEOUT_MS: ${REDIS_CONNECT_TIMEOUT_MS:-6000}
+      REDIS_COMMAND_QUEUE_MAX: ${REDIS_COMMAND_QUEUE_MAX:-2000}
       UPSTREAM_TIMEOUT_MS: ${UPSTREAM_TIMEOUT_MS:-9000}
       PERSIST_MEDIA_CACHE: ${PERSIST_MEDIA_CACHE:-true}
       ANIMESCHEDULE_API_TOKEN: ${ANIMESCHEDULE_API_TOKEN:-}
@@ -70,6 +73,8 @@ services:
     security_opt:
       - no-new-privileges:true
     stop_grace_period: 20s
+    deploy:
+      replicas: ${APP_REPLICAS:-1}
 
   news-worker:
     build: .
@@ -84,6 +89,9 @@ services:
       IP_HASH_SALT: ${IP_HASH_SALT:?defina IP_HASH_SALT no .env}
       PG_POOL_MIN: ${PG_POOL_MIN:-0}
       PG_POOL_MAX: ${NEWS_PG_POOL_MAX:-5}
+      REDIS_OPERATION_TIMEOUT_MS: ${REDIS_OPERATION_TIMEOUT_MS:-1500}
+      REDIS_CONNECT_TIMEOUT_MS: ${REDIS_CONNECT_TIMEOUT_MS:-6000}
+      REDIS_COMMAND_QUEUE_MAX: ${REDIS_COMMAND_QUEUE_MAX:-2000}
       UPSTREAM_TIMEOUT_MS: ${UPSTREAM_TIMEOUT_MS:-9000}
       NEWS_WORKER_INTERVAL_MS: ${NEWS_WORKER_INTERVAL_MS:-300000}
       NEWS_RETENTION_DAYS: ${NEWS_RETENTION_DAYS:-7}
@@ -122,6 +130,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?defina POSTGRES_PASSWORD no .env}
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    command: ["postgres","-c","max_connections=${POSTGRES_MAX_CONNECTIONS:-150}"]
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U aninexus -d aninexus"]
       interval: 5s

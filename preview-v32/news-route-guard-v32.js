@@ -13,11 +13,14 @@
     style.textContent='html.nx32-news-boot #app{min-height:72vh}html.nx32-news-boot #app:empty{display:grid;place-items:center}html.nx32-news-boot #app:empty::before{content:"Carregando notícias…";color:#9f9299;font:700 12px Manrope,sans-serif;letter-spacing:.02em}';
     document.head.append(style);
     const app=document.querySelector('#app');let settled=false,timer=0;
+    const currentPath=()=>{const current=new URL(location.href);let next=current.searchParams.get('p')||current.pathname;if(IS_PAGES&&!current.searchParams.get('p'))next=next.replace(/^\/AniNexus/,'')||'/';return String(next||'/').split('?')[0].replace(/\/+$/,'')||'/'};
+    const current=()=>currentPath()===path;
+    const release=()=>{observer.disconnect();if(timer)clearTimeout(timer);document.documentElement.classList.remove('nx32-news-boot');style.remove()};
     const correct=()=>!!app?.querySelector('.nx35-news-page,.nx-route-fail[data-route-owner="news"]');
     const observer=new MutationObserver(()=>ready());
-    const ready=()=>{if(settled||!correct())return false;settled=true;observer.disconnect();if(timer)clearTimeout(timer);document.documentElement.classList.remove('nx32-news-boot');document.documentElement.classList.add('nx32-news-ready');style.remove();return true};
+    const ready=()=>{if(settled)return false;if(!current()){settled=true;release();return false}if(!correct())return false;settled=true;release();document.documentElement.classList.add('nx32-news-ready');return true};
     addEventListener('aninexus:news-v32-ready',ready);
     if(app)observer.observe(app,{childList:true,subtree:true});
-    ready();timer=setTimeout(()=>{if(ready()||!app)return;app.innerHTML='<main class="nx-route-fail" data-route-owner="news"><div><h1>As notícias demoraram para responder</h1><p>Tente novamente em instantes.</p><button type="button" data-news-reload>Tentar novamente</button></div></main>';app.querySelector('[data-news-reload]')?.addEventListener('click',()=>location.reload());ready()},6500);
+    if(!ready())timer=setTimeout(()=>{if(ready()||!app||!current()){if(!current()){settled=true;release()}return}app.innerHTML='<main class="nx-route-fail" data-route-owner="news"><div><h1>As notícias demoraram para responder</h1><p>Tente novamente em instantes.</p><button type="button" data-news-retry>Tentar novamente</button></div></main>';app.querySelector('[data-news-retry]')?.addEventListener('click',()=>{dispatchEvent(new CustomEvent('aninexus:route-retry',{detail:{owner:"news",path}}));dispatchEvent(new PopStateEvent('popstate'))},{once:true});ready()},6500);
   }catch{}
 })();

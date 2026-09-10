@@ -32,6 +32,13 @@
     ];
     const route=routes.find(item=>item.match);
     if(!route)return;
+    const currentPath=()=>{try{const current=new URL(location.href),restoredPath=current.searchParams.get('p');let next=restoredPath?restoredPath.split('?')[0]:current.pathname;if(IS_PAGES&&!restoredPath)next=next.replace(/^\/AniNexus/,'')||'/';return String(next||'/').replace(/\/+$/,'')||'/'}catch{return''}};
+    const isCurrent=()=>{
+      const current=currentPath();
+      if(current===path)return true;
+      const bootPaths={home:'/__nx35_home_boot__',catalog:'/__nx_catalog_boot',schedule:'/__nx_schedule_boot'};
+      return current===bootPaths[route.owner]&&window.__NX_ROUTE_OWNER__===route.owner&&window.__NX_DEDICATED_BOOT_PATH__===path;
+    };
     const html=document.documentElement;
     const bootClass='nx-dedicated-route-boot';
     html.classList.add(bootClass);
@@ -53,10 +60,13 @@
       if(!app){release();return}
       let timer=0,settled=false;
       const mo=new MutationObserver(()=>finish());
-      const finish=()=>{if(settled||!app.querySelector(route.selector))return false;settled=true;mo.disconnect();if(timer)clearTimeout(timer);release();dispatchEvent(new CustomEvent('aninexus:route-ready',{detail:{owner:route.owner,path}}));return true};
-      const fail=()=>{if(settled)return;settled=true;mo.disconnect();if(timer)clearTimeout(timer);app.innerHTML=`<main class="nx-route-fail" data-route-owner="${route.owner}" style="min-height:65vh;display:grid;place-items:center;padding:28px;text-align:center"><div><img src="${BASE}/assets/logo.png" alt="" style="width:64px;height:64px"><h1 style="font:800 24px Manrope,sans-serif">Esta página demorou para responder</h1><p style="color:#9c9095">Tente novamente. Seus dados neste aparelho foram preservados.</p><button type="button" data-route-retry style="margin-top:12px;padding:10px 16px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:#ef4f83;color:#fff;font:800 13px Manrope,sans-serif;cursor:pointer">Tentar novamente</button></div></main>`;app.querySelector('[data-route-retry]')?.addEventListener('click',()=>location.reload(),{once:true});release();dispatchEvent(new CustomEvent('aninexus:route-failed',{detail:{owner:route.owner,path}}))};
-      mo.observe(app,{childList:true,subtree:true});
-      if(!finish())timer=setTimeout(()=>{if(!finish())fail()},10000);
+      const abandon=()=>{settled=true;mo.disconnect();if(timer)clearTimeout(timer);release()};
+      const finish=()=>{if(settled)return false;if(!isCurrent()){abandon();return false}if(!app.querySelector(route.selector))return false;settled=true;mo.disconnect();if(timer)clearTimeout(timer);release();dispatchEvent(new CustomEvent('aninexus:route-ready',{detail:{owner:route.owner,path,phase:'shell'}}));return true};
+      const arm=()=>{if(!isCurrent()){abandon();return}settled=false;html.classList.add(bootClass);if(!style.isConnected)document.head.append(style);mo.observe(app,{childList:true,subtree:true});if(timer)clearTimeout(timer);timer=setTimeout(()=>{if(!finish())fail()},10000)};
+      const retry=()=>{if(!isCurrent())return;dispatchEvent(new CustomEvent('aninexus:route-retry',{detail:{owner:route.owner,path}}));dispatchEvent(new PopStateEvent('popstate'));arm();finish()};
+      const fail=()=>{if(settled)return;if(!isCurrent()){abandon();return}settled=true;mo.disconnect();if(timer)clearTimeout(timer);app.innerHTML=`<main class="nx-route-fail" data-route-owner="${route.owner}" style="min-height:65vh;display:grid;place-items:center;padding:28px;text-align:center"><div><img src="${BASE}/assets/logo.png" alt="" style="width:64px;height:64px"><h1 style="font:800 24px Manrope,sans-serif">Esta página demorou para responder</h1><p style="color:#9c9095">Tente novamente. Seus dados neste aparelho foram preservados.</p><button type="button" data-route-retry style="margin-top:12px;padding:10px 16px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:#ef4f83;color:#fff;font:800 13px Manrope,sans-serif;cursor:pointer">Tentar novamente</button></div></main>`;app.querySelector('[data-route-retry]')?.addEventListener('click',retry,{once:true});release();dispatchEvent(new CustomEvent('aninexus:route-failed',{detail:{owner:route.owner,path,category:'timeout'}}))};
+      arm();
+      finish();
     };
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
   } catch {document.documentElement.classList.remove('nx-dedicated-route-boot','nx21-catalog-boot','nx18-schedule-boot','nx45-awards-boot','nx22-detail-boot','nx22-news-boot')}

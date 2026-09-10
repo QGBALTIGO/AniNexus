@@ -10,6 +10,7 @@
   const API_ORIGIN = String(config.apiOrigin || '').replace(/\/+$/, '');
   const PUBLISHABLE_KEY = String(config.clerkPublishableKey || '');
   const ENABLED = config.authEnabled === true && /^https:\/\//.test(API_ORIGIN) && /^pk_(?:test|live)_/.test(PUBLISHABLE_KEY);
+  const Runtime = window.AniNexusRuntime;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   const routeUrl = path => IS_PAGES ? `${BASE}/?build=44.28.4&p=${encodeURIComponent(path)}` : path;
   const go = (path, replace = false) => location[replace ? 'replace' : 'assign'](routeUrl(path));
@@ -43,9 +44,9 @@
     script.addEventListener('error', () => finish(new Error('AUTH_SDK_UNAVAILABLE')), { once: true });
     if (!existing) document.head.append(script);
   });
-  async function loadLocalization() {
+  async function loadLocalization(signal) {
     try {
-      const response = await fetch(`${BASE}/clerk-localization-ptbr.json?v=40.9.0`, { cache: 'force-cache', credentials: 'omit' });
+      const response = await fetch(`${BASE}/clerk-localization-ptbr.json?v=40.9.0`, { cache: 'force-cache', credentials: 'omit', signal });
       if (response.ok) return await response.json();
       console.warn('[AniNexus auth] tradução pt-BR indisponível; usando o pacote mínimo interno.', { status: response.status });
     } catch (error) {
@@ -71,13 +72,16 @@
   async function loadClerk() {
     if (!ENABLED) return null;
     if (clerkPromise) return clerkPromise;
-    clerkPromise = (async () => {
+    const initialize = async signal => {
       const domain = clerkDomain();
       if (!/^[a-z0-9.-]+$/i.test(domain)) throw new Error('AUTH_CONFIGURATION_INVALID');
       await loadScript(`https://${domain}/npm/@clerk/ui@1/dist/ui.browser.js`);
+      if(signal.aborted)throw Runtime.deadlineError('navigation','Inicialização da conta');
       await loadScript(`https://${domain}/npm/@clerk/clerk-js@6/dist/clerk.browser.js`, { 'data-clerk-publishable-key': PUBLISHABLE_KEY });
+      if(signal.aborted)throw Runtime.deadlineError('navigation','Inicialização da conta');
       if (!window.Clerk || !window.__internal_ClerkUICtor) throw new Error('AUTH_SDK_UNAVAILABLE');
-      const localization = await loadLocalization();
+      const localization = await loadLocalization(signal);
+      if(signal.aborted)throw Runtime.deadlineError('navigation','Inicialização da conta');
       await window.Clerk.load({
         ui: { ClerkUI: window.__internal_ClerkUICtor },
         localization,
@@ -90,47 +94,48 @@
         window.Clerk.addListener(()=>syncHeader());
       }
       return window.Clerk;
-    })().catch(error => { clerkPromise = null; throw error; });
+    };
+    clerkPromise = Runtime.withDeadline(initialize,{timeout:12_000,label:'Inicialização da conta'}).catch(error => { clerkPromise = null; throw error; });
     return clerkPromise;
   }
   async function api(path, options = {}) {
     if (!ENABLED) throw Object.assign(new Error('AUTH_NOT_CONFIGURED'), { status: 503 });
-    const clerk = await loadClerk();
-    const token = await clerk?.session?.getToken();
-    if (!token) throw Object.assign(new Error('AUTH_REQUIRED'), { status: 401 });
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), Number(options.timeout || 12_000));
-    try {
+    const {timeout=12_000,signal:externalSignal,...requestOptions}=options;
+    return Runtime.withDeadline(async signal=>{
+      const clerk = await loadClerk();
+      if(signal.aborted)throw Runtime.deadlineError('navigation','Requisição autenticada');
+      const token = await clerk?.session?.getToken();
+      if(signal.aborted)throw Runtime.deadlineError('navigation','Requisição autenticada');
+      if (!token) throw Object.assign(new Error('AUTH_REQUIRED'), { status: 401 });
       const response = await fetch(`${API_ORIGIN}${path}`, {
-        ...options,
-        signal: options.signal || controller.signal,
+        ...requestOptions,
+        signal,
         cache: 'no-store',
         credentials: 'omit',
-        headers: { accept: 'application/json', authorization: `Bearer ${token}`, ...(options.body ? { 'content-type': 'application/json' } : {}), ...(options.headers || {}) },
+        headers: { accept: 'application/json', authorization: `Bearer ${token}`, ...Runtime.correlationHeaders(), ...(requestOptions.body ? { 'content-type': 'application/json' } : {}), ...(requestOptions.headers || {}) },
       });
       if (response.status === 204) return null;
-      let body = {}; try { body = await response.json(); } catch {}
+      let body = {}; try { body = await response.json(); } catch (error) { if(response.ok)throw Object.assign(new Error('INVALID_RESPONSE'),{code:'INVALID_RESPONSE',category:'data',cause:error}) }
       if (!response.ok) throw Object.assign(new Error(body?.error || `HTTP_${response.status}`), { status: response.status, code: body?.error, body });
       return body;
-    } finally { clearTimeout(timeout); }
+    },{timeout,signal:externalSignal,label:'Requisição autenticada'});
   }
   async function publicApi(path, options = {}) {
     if (!ENABLED) throw Object.assign(new Error('API_NOT_CONFIGURED'), { status: 503 });
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), Number(options.timeout || 12_000));
-    try {
+    const {timeout=12_000,signal:externalSignal,...requestOptions}=options;
+    return Runtime.withDeadline(async signal=>{
       const response = await fetch(`${API_ORIGIN}${path}`, {
-        ...options,
-        signal: options.signal || controller.signal,
+        ...requestOptions,
+        signal,
         cache: 'no-store',
         credentials: 'omit',
-        headers: { accept: 'application/json', ...(options.headers || {}) },
+        headers: { accept: 'application/json', ...Runtime.correlationHeaders(), ...(requestOptions.headers || {}) },
       });
       if (response.status === 204) return null;
-      let body = {}; try { body = await response.json(); } catch {}
+      let body = {}; try { body = await response.json(); } catch (error) { if(response.ok)throw Object.assign(new Error('INVALID_RESPONSE'),{code:'INVALID_RESPONSE',category:'data',cause:error}) }
       if (!response.ok) throw Object.assign(new Error(body?.error || `HTTP_${response.status}`), { status: response.status, body });
       return body;
-    } finally { clearTimeout(timeout); }
+    },{timeout,signal:externalSignal,label:'Requisição pública'});
   }
   async function getUser() {
     const clerk = await loadClerk();

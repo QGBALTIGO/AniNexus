@@ -15,6 +15,7 @@
   const DEMO_IMPRESSIONS = 'aninexus:impressions:v1';
   const ANILIST = 'https://graphql.anilist.co';
   const FALLBACK_TITLE = 'Título temporariamente indisponível';
+  const Runtime = window.AniNexusRuntime;
 
   const ICON = {
     library: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V5H6.5A2.5 2.5 0 0 0 4 7.5v12Z"/><path d="M8 7h8M8 11h7"/></svg>',
@@ -47,6 +48,9 @@
     sort: 'recent',
     anime: null,
     manga: null,
+    errors: {ANIME: null, MANGA: null},
+    loading: {ANIME: false, MANGA: false},
+    controller: null,
     token: 0,
     mounted: false,
     lastScrollY: 0,
@@ -102,17 +106,17 @@
       try { return await window.AniNexusAuth.api(path, options); }
       catch (error) { if (error?.status === 401) return {__unauth: true}; throw error; }
     }
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 12000);
-    try {
+    const {signal: externalSignal, timeout = 12000, ...requestOptions} = options;
+    return Runtime.withDeadline(async signal => {
       const response = await fetch(path, {
-        credentials: 'same-origin', cache: 'no-store', ...options, signal: controller.signal,
-        headers: {accept: 'application/json', ...(options.body ? {'content-type': 'application/json'} : {}), ...(options.headers || {})}
+        credentials: 'same-origin', cache: 'no-store', ...requestOptions, signal,
+        headers: {accept: 'application/json', ...(requestOptions.body ? {'content-type': 'application/json'} : {}), ...(requestOptions.headers || {})}
       });
       if (response.status === 401) return {__unauth: true};
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      return response.json().catch(() => ({}));
-    } finally { clearTimeout(timer); }
+      try { return await response.json(); }
+      catch (error) { throw Object.assign(new Error('INVALID_RESPONSE'), {name: 'DataError', code: 'INVALID_RESPONSE', category: 'data', cause: error}); }
+    }, {signal: externalSignal, timeout, label: 'Carregamento da biblioteca'});
   }
 
   function mediaOf(raw, id, mediaType) {
@@ -160,33 +164,32 @@
     };
   }
 
-  async function gqlMedia(ids, mediaType) {
+  async function gqlMedia(ids, mediaType, externalSignal) {
     ids = [...new Set(ids.map(Number).filter(Boolean))];
     if (!ids.length) return [];
     try {
       const query = 'query($ids:[Int],$type:MediaType){Page(page:1,perPage:50){media(id_in:$ids,type:$type){id title{romaji english native userPreferred}coverImage{extraLarge large}episodes chapters volumes status format seasonYear genres}}}';
-      const response = await fetch(ANILIST, {method: 'POST', headers: {'content-type': 'application/json', accept: 'application/json'}, body: JSON.stringify({query, variables: {ids: ids.slice(0, 50), type: mediaType}})});
+      const {response, body: payload} = await Runtime.jsonRequest(ANILIST, {method: 'POST', headers: {'content-type': 'application/json', accept: 'application/json'}, body: JSON.stringify({query, variables: {ids: ids.slice(0, 50), type: mediaType}})}, {signal: externalSignal, timeout: 8000, label: `Metadados de ${mediaType === 'MANGA' ? 'mangás' : 'animes'}`});
       if (!response.ok) return [];
-      const payload = await response.json();
       return (payload?.data?.Page?.media || []).map(item => mediaOf(item, item.id, mediaType));
-    } catch { return []; }
+    } catch (error) { if (error?.name === 'AbortError') throw error; return []; }
   }
-  async function localDataset(mediaType) {
+  async function localDataset(mediaType, signal) {
     const manga = mediaType === 'MANGA';
     const entries = manga ? (window.AniNexusMangaState?.entries?.() || {}) : {...read('aninexus:mediaState:v1', {}), ...read(STATE_KEY, {})};
     const favoriteIds = manga ? [...(window.AniNexusMangaState?.favorites?.() || new Set())] : (read(FAV_KEY, []) || []);
     const ids = [...new Set([...Object.keys(entries).map(Number), ...favoriteIds.map(Number)])].filter(Boolean);
-    const media = await gqlMedia(ids, mediaType);
+    const media = await gqlMedia(ids, mediaType, signal);
     const map = new Map(media.map(item => [item.id, item]));
     const list = Object.entries(entries).filter(([, value]) => value?.status).map(([id, value]) => normalizeRow({media_id: Number(id), ...value, updated_at: value.updatedAt ? new Date(value.updatedAt).toISOString() : new Date().toISOString(), media: map.get(Number(id))}, mediaType));
     const favorites = favoriteIds.map(id => normalizeFavorite({media_id: Number(id), created_at: new Date().toISOString(), media: map.get(Number(id))}, mediaType));
     const impressions = manga ? [] : (read(DEMO_IMPRESSIONS, []) || []).filter(item => String(item.mediaType || item.media_type || 'ANIME').toUpperCase() !== 'MANGA').map(item => normalizeImpression(item, mediaType));
     return {user: {username: 'Preview'}, list, favorites, impressions, impressionCount: impressions.length};
   }
-  async function loadDataset(mediaType) {
-    if (IS_PAGES && window.AniNexusAuth?.enabled !== true) return localDataset(mediaType);
+  async function loadDataset(mediaType, signal) {
+    if (IS_PAGES && window.AniNexusAuth?.enabled !== true) return localDataset(mediaType, signal);
     const endpoint = mediaType === 'MANGA' ? '/api/me/manga-library' : '/api/me/library';
-    const payload = await request(endpoint);
+    const payload = await request(endpoint, {signal});
     if (payload?.__unauth) return {user: null, list: [], favorites: [], impressions: [], impressionCount: 0, unauth: true};
     return {
       user: payload?.user || {},
@@ -362,10 +365,14 @@
   function emptyMarkup() {
     const manga = state.media === 'MANGA';
     const searching = Boolean(state.search.trim());
+    if (state.loading[state.media]) return `<div class="nx49-empty" aria-live="polite"><strong>Carregando seus ${manga ? 'mangás' : 'animes'}…</strong><p>A outra parte da biblioteca continua disponível enquanto isso.</p></div>`;
+    if (state.errors[state.media]) return `<div class="nx49-empty"><strong>Esta parte da biblioteca não carregou</strong><p>Seus outros dados continuam disponíveis e nada foi perdido.</p><button type="button" data-nx49-retry>Tentar novamente</button></div>`;
     return `<div class="nx49-empty"><strong>${searching ? 'Nenhum resultado' : 'Nada por aqui ainda'}</strong><p>${searching ? 'Tente outro título ou limpe a busca.' : `Explore o catálogo e adicione ${manga ? 'sua próxima leitura' : 'o próximo anime da sua jornada'}.`}</p><a href="${pageUrl(manga ? '/mangas' : '/animes/catalogo')}">Explorar ${manga ? 'mangás' : 'animes'}${ICON.arrow}</a></div>`;
   }
   function impressionsMarkup() {
     const impressions = combinedImpressions();
+    if (!impressions.length && (state.loading.ANIME || state.loading.MANGA)) return '<div class="nx49-empty" aria-live="polite"><strong>Carregando suas impressões…</strong><p>Animes e mangás aparecem juntos assim que cada parte fica pronta.</p></div>';
+    if (!impressions.length && (state.errors.ANIME || state.errors.MANGA)) return '<div class="nx49-empty"><strong>As impressões não carregaram agora</strong><p>Seus dados foram preservados. Tente novamente em instantes.</p><button type="button" data-nx49-retry>Tentar novamente</button></div>';
     if (!impressions.length) return `<div class="nx49-empty"><strong>Nenhuma impressão ainda</strong><p>Suas impressões sobre animes e mangás aparecerão juntas aqui.</p><a href="${pageUrl('/animes/catalogo')}">Explorar catálogo${ICON.arrow}</a></div>`;
     return `<div class="nx49-impressions">${impressions.map(item => {
       const manga = item.mediaType === 'MANGA';
@@ -380,6 +387,7 @@
       const counter = document.querySelector('[data-nx49-result-count]');
       if (counter) counter.textContent = `${combinedImpressions().length} impressões`;
       wireOpenCards();
+      root.querySelector('[data-nx49-retry]')?.addEventListener('click', mountLibrary, {once: true});
       return;
     }
     const items = filteredItems();
@@ -388,6 +396,7 @@
     if (counter) counter.textContent = `${items.length} ${items.length === 1 ? 'título' : 'títulos'}`;
     syncActions();
     wireOpenCards();
+    root.querySelector('[data-nx49-retry]')?.addEventListener('click', mountLibrary, {once: true});
   }
   function syncActions() {
     if (state.media === 'MANGA') window.AniNexusMangaState?.sync?.();
@@ -524,6 +533,9 @@
     state.scrollFrame = requestAnimationFrame(scrollUpdate);
   }
   function cleanup() {
+    state.controller?.abort('route-change');
+    state.controller = null;
+    state.token++;
     state.mounted = false;
     if (state.scrollFrame) cancelAnimationFrame(state.scrollFrame);
     state.scrollFrame = 0;
@@ -534,21 +546,47 @@
 
   async function mountLibrary() {
     if (!onLibrary()) { cleanup(); return; }
+    state.controller?.abort('superseded');
+    state.controller = new AbortController();
+    const signal = state.controller.signal;
     const token = ++state.token;
     state.media = initialMedia();
     state.view = 'MEDIA';
     state.filter = 'ALL';
     state.search = '';
+    state.anime = null;
+    state.manga = null;
+    state.errors = {ANIME: null, MANGA: null};
+    state.loading = {ANIME: true, MANGA: true};
     state.lastScrollY = Math.max(0, scrollY);
     loadingShell();
-    const settled = await Promise.allSettled([loadDataset('ANIME'), loadDataset('MANGA')]);
-    if (token !== state.token || !onLibrary()) return;
-    if (settled.every(result => result.status === 'rejected')) { errorShell(); return; }
-    state.anime = settled[0].status === 'fulfilled' ? settled[0].value : {user: null, list: [], favorites: [], impressions: [], impressionCount: 0};
-    state.manga = settled[1].status === 'fulfilled' ? settled[1].value : {user: null, list: [], favorites: [], impressions: [], impressionCount: 0};
-    const authenticatedUser = state.anime.user || state.manga.user;
-    if ((state.anime.unauth || state.manga.unauth) && !authenticatedUser) { loginRequired(); return; }
-    shell();
+    const primaryType = state.media;
+    const secondaryType = primaryType === 'ANIME' ? 'MANGA' : 'ANIME';
+    const assignDataset = (mediaType, value, error = null) => {
+      if (token !== state.token || !onLibrary()) return false;
+      state.loading[mediaType] = false;
+      state.errors[mediaType] = error;
+      state[mediaType.toLowerCase()] = value;
+      return true;
+    };
+    const secondary = loadDataset(secondaryType, signal).then(value => {
+      if (!assignDataset(secondaryType, value)) return;
+      if (state.media === secondaryType || state.view === 'IMPRESSIONS') shell();
+    }, error => {
+      if (error?.name === 'AbortError' || !assignDataset(secondaryType, null, error)) return;
+      if (state.media === secondaryType || state.view === 'IMPRESSIONS') shell();
+    });
+    try {
+      const primary = await loadDataset(primaryType, signal);
+      if (!assignDataset(primaryType, primary)) return;
+      if (primary?.unauth) { loginRequired(); return; }
+      shell();
+    } catch (error) {
+      if (error?.name === 'AbortError' || token !== state.token || !onLibrary()) return;
+      assignDataset(primaryType, null, error);
+      shell();
+    }
+    void secondary;
   }
 
   function updateDataset(mediaType, kind, detail) {

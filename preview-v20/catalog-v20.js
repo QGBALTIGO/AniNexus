@@ -10,6 +10,7 @@
   const PER_PAGE = 25;
   const MAX_PUBLIC_PAGE = 200;
   const CACHE_TTL = 8 * 60 * 1000;
+  const Runtime = window.AniNexusRuntime;
 
   const GENRES = [
     ['Action', 'Ação'], ['Adventure', 'Aventura'], ['Comedy', 'Comédia'], ['Drama', 'Drama'],
@@ -90,7 +91,7 @@
   const titleOf = media => media?.title?.english || media?.title?.userPreferred || media?.title?.romaji || media?.title?.native || (currentCatalog().mediaType === 'MANGA' ? 'Mangá' : 'Anime');
   const imageOf = media => media?.coverImage?.extraLarge || media?.coverImage?.large || `${BASE}/assets/logo.png`;
   const scoreOf = media => media?.metricsSource === 'aninexus' && Number(media?.ratingCount || 0) > 0 && Number.isFinite(Number(media?.averageScore)) ? (Number(media.averageScore) / 10).toFixed(1).replace('.0', '') : '';
-  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+  const sleep = (ms, signal) => Runtime.abortableDelay(ms, signal);
   const SECTION_MODES = Object.freeze({ todos: 'ALL', breve: 'SOON', temporada: 'SEASON', ranking: 'TOP', populares: 'POPULAR', membros: 'MEMBERS', busca: 'SEARCH', mangas: 'MANGA', 'one-shots': 'ONE_SHOT', 'light-novels': 'NOVEL' });
   const MODE_SECTIONS = Object.freeze(Object.fromEntries(Object.entries(SECTION_MODES).map(([section, mode]) => [mode, section])));
 
@@ -196,9 +197,9 @@
   async function apiJson(path, signal) {
     if (IS_PAGES && window.AniNexusAuth?.enabled) return window.AniNexusAuth.publicApi(path, { signal, timeout: 12000 });
     if (IS_PAGES) throw new Error('API_NOT_CONFIGURED');
-    const response = await fetch(path, { signal, credentials: 'same-origin', headers: { accept: 'application/json' } });
+    const {response,body}=await Runtime.jsonRequest(path,{credentials:'same-origin',headers:{accept:'application/json'}},{signal,timeout:12000,label:'Catálogo AniNexus'});
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return response.json();
+    return body;
   }
 
   async function serverCatalog(options, signal) {
@@ -254,7 +255,7 @@
       } catch (error) {
         lastError = error;
         if (error?.name === 'AbortError') throw error;
-        if (attempt < 2) await sleep(350 * (attempt + 1));
+        if (attempt < 2) await sleep(350 * (attempt + 1), signal);
       }
     }
     throw lastError || new Error('Falha de conexão');
@@ -470,7 +471,7 @@
     pagination.innerHTML = '';
     progress?.classList.add('loading');
     try {
-      const data = await fetchCatalog(state.controller.signal);
+      const data = await Runtime.withDeadline(signal=>fetchCatalog(signal),{signal:state.controller.signal,timeout:12000,label:'Carregamento do catálogo'});
       if (token !== state.token) return;
       state.items.clear();
       const total = Number(data.pageInfo?.total || 0);
@@ -483,8 +484,9 @@
       revealCards();
       window.dispatchEvent(new CustomEvent('aninexus:media-state-refresh'));
     } catch (error) {
-      if (error?.name === 'AbortError' || token !== state.token) return;
-      results.innerHTML = `<div class="nx21-error">${ICON.retry}<strong>O catálogo não carregou agora</strong><span>Sua busca foi preservada. Tente novamente em instantes.</span><button type="button" data-nx21-retry>${ICON.retry}<span>Tentar novamente</span></button></div>`;
+      if ((error?.name === 'AbortError' && error?.category !== 'timeout') || token !== state.token) return;
+      const timedOut=error?.name==='TimeoutError'||error?.category==='timeout';
+      results.innerHTML = `<div class="nx21-error">${ICON.retry}<strong>${timedOut?'O catálogo demorou para responder':'O catálogo não carregou agora'}</strong><span>${timedOut?'A conexão foi encerrada com segurança. Sua busca continua preservada.':'Sua busca foi preservada. Tente novamente em instantes.'}</span><button type="button" data-nx21-retry>${ICON.retry}<span>Tentar novamente</span></button></div>`;
     } finally {
       if (token === state.token) {
         results.removeAttribute('aria-busy');
@@ -734,7 +736,7 @@
   }
 
   function cleanup() {
-    state.controller?.abort();
+    state.controller?.abort('route-change');
     state.controller = null;
     state.revealObserver?.disconnect();
     state.revealObserver = null;

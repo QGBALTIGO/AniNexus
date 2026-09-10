@@ -19,12 +19,15 @@ Este documento existe para evitar que o projeto volte a crescer por sobreposiç�
 
 O frontend ainda possui camadas `preview-vXX` porque partes antigas continuam sendo usadas como compatibilidade. As únicas versões permitidas na raiz são as que ainda participam do runtime atual:
 
-`preview-v6`, `preview-v8`, `preview-v9`, `preview-v10`, `preview-v11`, `preview-v12`, `preview-v14`, `preview-v15`, `preview-v18`, `preview-v19`, `preview-v20`, `preview-v21`, `preview-v22`, `preview-v23`, `preview-v24`, `preview-v27`, `preview-v32`, `preview-v33`, `preview-v35`, `preview-v36`, `preview-v37`, `preview-v38`, `preview-v39`, `preview-v40`.
+`preview-v6`, `preview-v8`, `preview-v9`, `preview-v10`, `preview-v11`, `preview-v12`, `preview-v14`, `preview-v15`, `preview-v18`, `preview-v19`, `preview-v20`, `preview-v21`, `preview-v22`, `preview-v23`, `preview-v24`, `preview-v27`, `preview-v32`, `preview-v33`, `preview-v35`, `preview-v36`, `preview-v37`, `preview-v38`, `preview-v39`, `preview-v40`, `preview-v41`, `preview-v42`, `preview-v44`.
 
 Esses diretórios não significam que existem 24 aplicações diferentes. Eles são módulos/camadas de compatibilidade carregados pelo mesmo shell.
 
 ### Camadas principais
 
+- **V44**: experiência, navegação por rádio, rails, conquistas, descoberta e listas.
+- **V42**: produto, cabeçalho, mangás e sistema social canônico V50.
+- **V41**: tokens e ajustes de experiência compartilhada.
 - **V40**: comunidade e atividade social atual.
 - **V39**: ações globais de mídia e sincronização de estado.
 - **V38**: autenticação, conta, biblioteca e runtime base moderno.
@@ -61,6 +64,15 @@ Uma nova camada versionada só deve existir quando houver necessidade real de co
 - catálogo/providers: `lib/provider.mjs`
 - notícias: `lib/news-*.mjs` e `lib/native-news.mjs`
 - analytics: `lib/analytics.mjs`
+
+### Concorrência e disponibilidade
+
+- Rate limit, cache, locks e marcadores de tarefas usam Redis compartilhado; não há contador crítico apenas em memória por réplica.
+- `lib/cache.mjs` recusa fila offline ilimitada, aplica deadline e renova locks de produtores longos.
+- `lib/db.mjs` registra migrações por nome/checksum sob advisory lock.
+- A biblioteca carrega anime e mangá em paralelo e publica primeiro a mídia escolhida.
+- Guardas validam a identidade da navegação antes de escrever em `#app`.
+- Hipóteses e gates de escala estão em `CAPACITY_MODEL.md`; procedimentos operacionais em `docs/OPERATIONS_RUNBOOK.md`.
 
 ## Histórico
 

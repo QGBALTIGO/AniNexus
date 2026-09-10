@@ -40,6 +40,7 @@
     return detailRuntimePromise;
   }
   function navigate(path){
+    window.AniNexusRuntime?.renewNavigationId?.();
     const sequence=++navigationSequence;
     const current=cleanPathFromUrl(location.href).split('?')[0];
     if(DETAIL_ROUTE.test(String(path||'').split(/[?#]/)[0])&&current&&!DETAIL_ROUTE.test(current)){try{sessionStorage.setItem('nx22:previous-path',JSON.stringify({path:current,document:performance.timeOrigin}))}catch{}}

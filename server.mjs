@@ -8,11 +8,13 @@ import rawBody from 'fastify-raw-body';
 import crypto from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { monitorEventLoopDelay } from 'node:perf_hooks';
 import { z } from 'zod';
 import { mediaListEntry } from './lib/media-list.mjs';
 import { getCommunityOverview } from './lib/community-overview.mjs';
 import { initDb, q, pool, dbReady } from './lib/db.mjs';
-import { initCache, redis, cacheRemember } from './lib/cache.mjs';
+import { initCache, redis, cacheRemember, cacheReady, cacheRunOnce, cacheMetricsSnapshot } from './lib/cache.mjs';
+import { SharedRateLimitStore } from './lib/rate-limit-store.mjs';
 import { AUTHORIZED_ORIGINS, CLERK_ENABLED, hashPassword, verifyPassword, createSession, destroySession, currentUser, requireUser, requireRole, validateOrigin, getClerkClient, syncClerkUser, beginAccountDeletion, cancelAccountDeletion, bootstrapConfiguredAdmins, invalidateUserIdentityCache } from './lib/auth.mjs';
 import { AVATAR_PRESETS, avatarForClerkUser, avatarPresetUrl, resolvedAvatar } from './lib/avatar.mjs';
 import { processClerkWebhook } from './lib/clerk-webhook.mjs';
@@ -29,17 +31,31 @@ import { socialBodyPayload } from './lib/social.mjs';
 
 const __dirname=path.dirname(fileURLToPath(import.meta.url));
 const trustProxy=['127.0.0.1','::1','10.0.0.0/8','172.16.0.0/12','192.168.0.0/16'];
-const app=Fastify({logger:true,trustProxy,bodyLimit:1_000_000,requestTimeout:15_000,connectionTimeout:10_000,keepAliveTimeout:72_000});
+const app=Fastify({logger:true,trustProxy,bodyLimit:1_000_000,requestTimeout:15_000,connectionTimeout:10_000,keepAliveTimeout:72_000,genReqId:()=>crypto.randomUUID()});
+const eventLoopDelay=monitorEventLoopDelay({resolution:20});
+let operationalMetricsTimer=null;
+app.addHook('onClose',async()=>{if(operationalMetricsTimer)clearInterval(operationalMetricsTimer);eventLoopDelay.disable()});
 await app.register(cookie);
-await app.register(cors,{origin:(origin,callback)=>{if(!origin||AUTHORIZED_ORIGINS.includes(origin))return callback(null,true);return callback(null,false)},methods:['GET','HEAD','POST','PUT','PATCH','DELETE','OPTIONS'],allowedHeaders:['accept','authorization','content-type'],exposedHeaders:['retry-after'],credentials:false,maxAge:600,strictPreflight:true});
+await app.register(cors,{origin:(origin,callback)=>{if(!origin||AUTHORIZED_ORIGINS.includes(origin))return callback(null,true);return callback(null,false)},methods:['GET','HEAD','POST','PUT','PATCH','DELETE','OPTIONS'],allowedHeaders:['accept','authorization','content-type','x-aninexus-navigation-id','x-aninexus-client-release'],exposedHeaders:['retry-after','x-request-id','server-timing'],credentials:false,maxAge:600,strictPreflight:true});
 await app.register(rawBody,{field:'rawBody',global:false,encoding:false,runFirst:true,routes:['/api/webhooks/clerk']});
 await app.register(helmet,{global:true,crossOriginEmbedderPolicy:false,contentSecurityPolicy:{directives:{defaultSrc:["'self'"],scriptSrc:["'self'",'https://*.clerk.accounts.dev','https://*.clerk.com','https://challenges.cloudflare.com','https://*.protect.clerk.com'],styleSrc:["'self'","'unsafe-inline'",'https://fonts.googleapis.com'],fontSrc:["'self'",'https://fonts.gstatic.com'],imgSrc:["'self'",'data:','https:','https://img.clerk.com'],connectSrc:["'self'",'https://graphql.anilist.co','https://api.jikan.moe','https://api.mymemory.translated.net','https://translate.googleapis.com','https://api.animethemes.moe','https://listen.moe','wss://listen.moe','https://*.clerk.accounts.dev','https://api.clerk.com','https://*.protect.clerk.com:*'],mediaSrc:["'self'",'https://v.animethemes.moe','https://listen.moe'],frameSrc:["'self'",'https://www.youtube-nocookie.com','https://www.youtube.com','https://www.dailymotion.com','https://*.clerk.accounts.dev','https://challenges.cloudflare.com','https://*.protect.clerk.com'],workerSrc:["'self'",'blob:'],objectSrc:["'none'"],baseUri:["'self'"],frameAncestors:["'none'"],formAction:["'self'",'https://*.clerk.accounts.dev']}}});
-await app.register(rateLimit,{global:false,max:120,timeWindow:'1 minute',ban:2,hook:'preHandler'});
+await app.register(rateLimit,{global:false,max:120,timeWindow:'1 minute',ban:2,hook:'preHandler',store:SharedRateLimitStore,skipOnError:false});
 app.decorateRequest('aninexusUser',null);
+app.decorateRequest('aninexusStartedAt',0);
+app.decorateRequest('aninexusNavigationId','');
+app.decorateRequest('aninexusClientRelease','');
 await app.register(fastifyStatic,{root:path.join(__dirname,'public'),prefix:'/',decorateReply:true,maxAge:'1h',immutable:false,wildcard:false});
 await app.register(fastifyStatic,{root:path.join(__dirname,'assets'),prefix:'/assets/',decorateReply:false,maxAge:'7d',immutable:true});
 
-app.addHook('onRequest',async(req,reply)=>{if(!validateOrigin(req,reply))return reply;});
+app.addHook('onRequest',async(req,reply)=>{
+  req.aninexusStartedAt=performance.now();
+  const navigationId=String(req.headers['x-aninexus-navigation-id']||'');
+  req.aninexusNavigationId=/^[A-Za-z0-9_-]{1,80}$/.test(navigationId)?navigationId:'';
+  const clientRelease=String(req.headers['x-aninexus-client-release']||'');
+  req.aninexusClientRelease=/^[A-Za-z0-9._-]{1,80}$/.test(clientRelease)?clientRelease:'';
+  reply.header('X-Request-Id',req.id);
+  if(!validateOrigin(req,reply))return reply;
+});
 app.addHook('onSend',async(req,reply,payload)=>{
   reply.header('Permissions-Policy','camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=()');
   reply.header('Referrer-Policy','strict-origin-when-cross-origin');
@@ -50,9 +66,14 @@ app.addHook('onSend',async(req,reply,payload)=>{
   else if(req.method==='GET'&&/^\/api\/(home|catalog|reading|trailers|characters\/ranking|achievements\/catalog|schedule|anime\/\d+|manga\/\d+|impressions\/|feed\/|synopsis\/(?:anime|manga)\/\d+|media\/summaries|studios|dublados|lists|list\/|users\/|news(?:\/|$)|community\/(?:impressions|activity|threads))/.test(url))reply.header('Cache-Control','public, max-age=20, stale-while-revalidate=180, stale-if-error=600');
   else if(req.method==='GET'&&(url==='/'||reply.getHeader('content-type')?.toString().includes('text/html')))reply.header('Cache-Control','no-cache, max-age=0, must-revalidate');
   if(process.env.PUBLIC_ORIGIN?.startsWith('https://'))reply.header('Strict-Transport-Security','max-age=31536000; includeSubDomains; preload');
+  reply.header('Server-Timing',`app;dur=${Math.max(0,performance.now()-req.aninexusStartedAt).toFixed(1)}`);
   return payload;
 });
-app.setErrorHandler((error,req,reply)=>{req.log.error({err:error},'request failed');if(reply.sent)return;const status=error.statusCode&&error.statusCode>=400&&error.statusCode<600?error.statusCode:500;reply.code(status).send({error:status>=500?'INTERNAL_ERROR':'REQUEST_FAILED'});});
+app.addHook('onResponse',async req=>{
+  const durationMs=Math.max(0,performance.now()-req.aninexusStartedAt);
+  if(durationMs>=1000)req.log.warn({requestId:req.id,navigationId:req.aninexusNavigationId||undefined,clientRelease:req.aninexusClientRelease||undefined,route:req.routeOptions?.url||req.url.split('?')[0],phase:'api',durationMs:Number(durationMs.toFixed(1))},'slow request');
+});
+app.setErrorHandler((error,req,reply)=>{req.log.error({err:error},'request failed');if(reply.sent)return;const infrastructure=['CACHE_DEADLINE','CACHE_BUSY','RATE_LIMIT_UNAVAILABLE'].includes(error?.code),status=infrastructure?503:error.statusCode&&error.statusCode>=400&&error.statusCode<600?error.statusCode:500;if(status===503)reply.header('Retry-After','1');reply.code(status).send({error:status===503?'TEMPORARILY_UNAVAILABLE':status>=500?'INTERNAL_ERROR':'REQUEST_FAILED'});});
 
 const authenticateForRate=async(request,reply)=>{
   const user=await requireUser(request,reply);
@@ -107,7 +128,7 @@ const refreshAchievements=async(userId,source='ACTION')=>{try{return await syncU
 const recordContributionAchievement=async(userId,type,row,body)=>{if(String(body||'').trim().length<20)return null;try{await recordContributionHistory(userId,type,row?.id,body,row?.created_at);return await refreshAchievements(userId)}catch(error){app.log.warn({err:error,userId,type,contentId:row?.id},'achievement contribution failed');return null}};
 
 app.get('/health',async()=>({ok:true,uptime:Math.round(process.uptime()),time:new Date().toISOString()}));
-app.get('/health/ready',async(req,reply)=>{const [db,cache]=await Promise.all([dbReady(),(async()=>{try{return redis.isReady&&(await redis.ping())==='PONG'}catch{return false}})()]);const ok=db&&cache;return reply.code(ok?200:503).send({ok,db,cache});});
+app.get('/health/ready',async(req,reply)=>{const [db,cache]=await Promise.all([dbReady(),cacheReady()]);const ok=db&&cache;return reply.code(ok?200:503).send({ok,db,cache});});
 app.get('/api/me',privateReadRate,async(req,reply)=>{let user=await requireUser(req,reply);if(!user)return;if(CLERK_ENABLED&&user.clerk_user_id&&user.avatar_source==='clerk'){const fingerprint=crypto.createHash('sha256').update(String(user.avatar_url||'')).digest('hex').slice(0,12);try{user=await cacheRemember(`auth:profile-avatar-v44:${user.clerk_user_id}:${fingerprint}`,900,async()=>syncClerkUser(await getClerkClient().users.getUser(user.clerk_user_id)))}catch(error){req.log.warn({err:error,userId:user.id},'clerk avatar refresh failed')}}return{user:safeUser(user)}});
 app.get('/api/member/telegram',privateReadRate,async(req,reply)=>{const user=await requireUser(req,reply);if(!user)return;reply.header('Cache-Control','no-store');return{url:'https://t.me/BaltigoWorld',label:'BaltigoWorld no Telegram'};});
 app.patch('/api/me/profile',writeRate,async(req,reply)=>{
@@ -435,5 +456,12 @@ await initCache();
 await bootstrapConfiguredAdmins();
 await app.listen({port:Number(process.env.PORT||3000),host:'0.0.0.0'});
 app.log.info({port:Number(process.env.PORT||3000),clerk:CLERK_ENABLED},'AniNexus ready');
-prewarm().catch(e=>app.log.warn({err:e},'prewarm failed'));
-syncAllUsersAchievements({onError:(error,userId)=>app.log.warn({err:error,userId},'retroactive achievement sync failed')}).then(result=>app.log.info(result,'retroactive achievement sync complete')).catch(error=>app.log.warn({err:error},'retroactive achievement scan failed'));
+eventLoopDelay.enable();
+operationalMetricsTimer=setInterval(()=>{
+  const memory=process.memoryUsage();
+  app.log.info({phase:'runtime',eventLoopMs:{p95:Number((eventLoopDelay.percentile(95)/1e6).toFixed(2)),max:Number((eventLoopDelay.max/1e6).toFixed(2))},memoryMiB:{rss:Number((memory.rss/1048576).toFixed(1)),heapUsed:Number((memory.heapUsed/1048576).toFixed(1))},postgres:{total:pool.totalCount,idle:pool.idleCount,waiting:pool.waitingCount},redis:{ready:redis.isReady},cache:cacheMetricsSnapshot()},'operational metrics');
+  eventLoopDelay.reset();
+},60_000);
+operationalMetricsTimer.unref?.();
+cacheRunOnce('startup:prewarm:v1',300,prewarm).then(result=>app.log.info({ran:result.ran,reason:result.reason},'prewarm startup task')).catch(e=>app.log.warn({err:e},'prewarm failed'));
+cacheRunOnce('startup:achievements:v1',3600,()=>syncAllUsersAchievements({onError:(error,userId)=>app.log.warn({err:error,userId},'retroactive achievement sync failed')})).then(result=>app.log.info({ran:result.ran,reason:result.reason,result:result.value},'retroactive achievement startup task')).catch(error=>app.log.warn({err:error},'retroactive achievement scan failed'));

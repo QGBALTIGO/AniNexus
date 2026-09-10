@@ -5,6 +5,49 @@
   const IS_PAGES=location.hostname.endsWith('github.io');
   const ANILIST='https://graphql.anilist.co';
   const nativeFetch=window.fetch.bind(window);
+  const makeNavigationId=()=>globalThis.crypto?.randomUUID?.()||`${Date.now().toString(36)}-${Math.random().toString(36).slice(2,10)}`;
+  const navigationId=()=>window.__NX_NAVIGATION_ID__||(window.__NX_NAVIGATION_ID__=makeNavigationId());
+  const renewNavigationId=()=>window.__NX_NAVIGATION_ID__=makeNavigationId();
+  const clientRelease=()=>String(window.document?.querySelector?.('meta[name="aninexus-build"]')?.content||'').slice(0,80);
+  const correlationHeaders=()=>({'x-aninexus-navigation-id':navigationId(),...(clientRelease()?{'x-aninexus-client-release':clientRelease()}: {})});
+
+  const deadlineError=(category,label)=>Object.assign(new Error(category==='timeout'?`${label} excedeu o tempo limite`:`${label} foi cancelada`),{
+    name:category==='timeout'?'TimeoutError':'AbortError',
+    code:category==='timeout'?'REQUEST_TIMEOUT':'REQUEST_CANCELLED',
+    category
+  });
+  const abortableDelay=(milliseconds,signal)=>new Promise((resolve,reject)=>{
+    if(signal?.aborted)return reject(deadlineError('navigation','Espera'));
+    const timer=setTimeout(done,Math.max(0,Number(milliseconds)||0));
+    function done(){signal?.removeEventListener('abort',cancel);resolve()}
+    function cancel(){clearTimeout(timer);signal?.removeEventListener('abort',cancel);reject(deadlineError('navigation','Espera'))}
+    signal?.addEventListener('abort',cancel,{once:true});
+  });
+  async function withDeadline(task,{timeout=12000,signal,label='Operação'}={}){
+    const controller=new AbortController();
+    let category='',timer=0,removeExternal=()=>{};
+    const cancel=()=>{if(category)return;category='navigation';controller.abort(signal?.reason)};
+    if(signal?.aborted)cancel();
+    else if(signal){signal.addEventListener('abort',cancel,{once:true});removeExternal=()=>signal.removeEventListener('abort',cancel)}
+    if(!category)timer=setTimeout(()=>{if(category)return;category='timeout';controller.abort()},Math.max(1,Number(timeout)||12000));
+    const interrupted=controller.signal.aborted?Promise.reject(deadlineError(category||'navigation',label)):new Promise((_,reject)=>controller.signal.addEventListener('abort',()=>reject(deadlineError(category||'navigation',label)),{once:true}));
+    try{return await Promise.race([Promise.resolve().then(()=>task(controller.signal)),interrupted])}
+    finally{if(timer)clearTimeout(timer);removeExternal()}
+  }
+  async function jsonRequest(input,init={},options={}){
+    return withDeadline(async signal=>{
+      const target=new URL(typeof input==='string'?input:input?.url||String(input),location.href);
+      const headers={...(init.headers||{}),...(target.origin===location.origin?correlationHeaders(): {})};
+      const response=await window.fetch(input,{...init,headers,signal});
+      if(response.status===204)return{response,body:null};
+      let body={};
+      try{body=await response.json()}
+      catch(error){if(response.ok)throw Object.assign(new Error('Resposta JSON inválida'),{name:'DataError',code:'INVALID_RESPONSE',category:'data',cause:error})}
+      return{response,body};
+    },{...options,signal:options.signal||init.signal});
+  }
+  window.AniNexusRuntime=Object.freeze({withDeadline,jsonRequest,abortableDelay,deadlineError,navigationId,renewNavigationId,correlationHeaders});
+  addEventListener('popstate',renewNavigationId);
 
   // Production uses shared AniNexus read models (edge cache + Redis + stale fallback)
   // instead of repeating identical AniList GraphQL requests in every browser.
@@ -28,7 +71,7 @@
     const person=(x,staff=false)=>({role:x.role||'',node:{id:x.id,name:{full:x.name||'',native:x.native||''},image:{large:x.image||'',medium:x.image||''}},...(staff?{}:{})});
     const toDeep=m=>{const base=toGraph(m);return{...base,characters:{edges:(m.characters||[]).map(x=>person(x))},staff:{edges:(m.staff||[]).map(x=>person(x,true))},relations:{edges:(m.relations||[]).map(x=>({relationType:x.relationType,node:toGraph(x.media)}))},recommendations:{nodes:(m.recommendations||[]).map(x=>({rating:x.rating,mediaRecommendation:toGraph(x.media)})).filter(x=>x.mediaRecommendation)}}};
     const jsonResponse=data=>new Response(JSON.stringify({data}),{status:200,headers:{'content-type':'application/json; charset=utf-8','x-aninexus-bridge':'v38'}});
-    const apiJson=async(path,signal)=>{const r=await nativeFetch(path,{signal,credentials:'same-origin',headers:{accept:'application/json'}});if(!r.ok)throw new Error(`AniNexus API ${r.status}`);return r.json()};
+    const apiJson=async(path,signal)=>{const r=await nativeFetch(path,{signal,credentials:'same-origin',headers:{accept:'application/json',...correlationHeaders()}});if(!r.ok)throw new Error(`AniNexus API ${r.status}`);return r.json()};
     const seasonNow=()=>{const d=new Date(),m=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',month:'numeric'}).format(d)),year=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',year:'numeric'}).format(d));return{year,season:m<=3?'WINTER':m<=6?'SPRING':m<=9?'SUMMER':'FALL'}};
     const bridgeHome=async(body,signal)=>{
       const vars=body.variables||{},s=seasonNow(),season=vars.season||s.season,year=Number(vars.year||s.year),home=await apiJson(`/api/home?season=${encodeURIComponent(season)}&year=${year}`,signal);

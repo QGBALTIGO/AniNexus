@@ -14,15 +14,19 @@
     document.querySelector('script[data-nx35-home-runtime]')?.remove();
     loader.status='loading';loader.attempts++;
     const script=document.createElement('script');
+    let settled=false;
+    const finish=(status,error)=>{if(settled)return;settled=true;clearTimeout(timer);loader.status=status;if(status==='failed'){script.remove();restoreBootUrl();if(error)console.error('[AniNexus Home V35] falha ao carregar',error)}};
     script.src=`${base}/preview-v35/home-v35.js?v=44.48.0`;
     script.defer=true;script.dataset.nx35HomeRuntime='1';
-    script.addEventListener('load',()=>{if(window.__NX35_HOME__){loader.status='ready';return}loader.status='failed';script.remove();restoreBootUrl()},{once:true});
-    script.addEventListener('error',()=>{loader.status='failed';script.remove();restoreBootUrl();console.error('[AniNexus Home V35] falha ao carregar')},{once:true});
+    script.addEventListener('load',()=>finish(window.__NX35_HOME__?'ready':'failed',window.__NX35_HOME__?null:new Error('Runtime não iniciou')),{once:true});
+    script.addEventListener('error',()=>finish('failed',new Error('Script indisponível')),{once:true});
+    const timer=setTimeout(()=>finish('failed',Object.assign(new Error('Tempo limite excedido'),{name:'TimeoutError',category:'timeout'})),8000);
     document.head.append(script);
   };
 
-  const retryForCurrentRoute=()=>{if(wantsHome()&&loader.status==='failed')loadHome()};
+  const retryForCurrentRoute=()=>{if(wantsHome()&&(loader.status==='failed'||loader.status==='idle'))loadHome()};
   addEventListener('popstate',retryForCurrentRoute);
   addEventListener('aninexus:navigate',retryForCurrentRoute);
+  addEventListener('aninexus:route-retry',retryForCurrentRoute);
   loadHome();
 })();

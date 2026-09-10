@@ -967,6 +967,40 @@ test('news paints the first healthy feed while a fallback source is still pendin
 
 test('native news slugs with underscores open the reader',async({page})=>{const slug='life-a-felicidade-depende-de-nos-sera-publicado-pela-newpop-jbox_manga-211a006a',origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/api/news/${slug}`,route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({id:'211a006a',slug,title:'Life, A Felicidade Depende de Nós será publicado pela NewPOP',summary:'A editora confirmou a publicação brasileira do mangá.',event_type:'MANGA',source_name:'AniNexus Notícias',language:'pt-BR',published_at:new Date().toISOString(),facts:['A publicação foi confirmada.'],body:{sections:[{heading:'Publicação no Brasil',paragraphs:['A edição brasileira foi anunciada oficialmente.']}]}})}));await page.goto(firstVisitUrl(`/noticias/${slug}`),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-reader')).toBeVisible({timeout:15000});await expect(page.getByRole('heading',{name:/Felicidade Depende de Nós/})).toBeVisible();await expect(page.locator('#app')).not.toContainText('Página não encontrada');await noOverflow(page,2)});
 
+test('a superseded route timeout never overwrites the current page',async({page,browserName})=>{
+  test.skip(browserName!=='chromium','The stale timeout clock is exercised once.');
+  await page.route('**/preview-v20/catalog-v20.js*',route=>route.abort('failed'));
+  await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});
+  await page.evaluate(()=>{const url=new URL(location.href);url.searchParams.set('p','/');history.pushState({},'',url);dispatchEvent(new PopStateEvent('popstate'))});
+  await expect(page.locator('.nx35-home')).toBeVisible({timeout:15000});
+  await page.waitForTimeout(10500);
+  await expect(page.locator('.nx35-home')).toBeVisible();
+  await expect(page.locator('.nx-route-fail')).toHaveCount(0);
+});
+
+test('selected anime library paints before the manga request finishes',async({page})=>{
+  let releaseManga;
+  const mangaGate=new Promise(resolve=>{releaseManga=resolve});
+  await page.addInitScript(()=>{
+    const now=Date.now();
+    localStorage.setItem('aninexus:mediaState:v2',JSON.stringify({'101':{status:'CURRENT',progress:2,updatedAt:now}}));
+    localStorage.setItem('aninexus:mangaState:v2',JSON.stringify({'202':{status:'CURRENT',progress:7,updatedAt:now}}));
+  });
+  await page.unroute('https://graphql.anilist.co/');
+  await page.route('https://graphql.anilist.co/',async route=>{
+    const body=route.request().postDataJSON()||{};
+    if(body.variables?.type==='MANGA')await mangaGate;
+    const media=(body.variables?.ids||[]).map(id=>{const item=anime(Number(id));if(body.variables?.type==='MANGA'){item.format='MANGA';item.chapters=50;item.episodes=null;item.title={...item.title,english:`Mangá Teste ${id}`,userPreferred:`Mangá Teste ${id}`}}return item});
+    await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:{Page:{media}}})});
+  });
+  await page.goto(pageUrl('/meus-animes'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx49-media-card',{hasText:'Anime Teste 101'})).toBeVisible({timeout:10000});
+  expect(await page.locator('.nx49-media-card').count()).toBe(1);
+  releaseManga();
+  await page.getByRole('button',{name:/Meus mangás/}).first().click();
+  await expect(page.locator('.nx49-media-card',{hasText:'Mangá Teste 202'})).toBeVisible({timeout:10000});
+});
+
 test('news repairs AnimeNew image hosts and renders the cover',async({page})=>{
   const now=new Date(),expires=new Date(now.getTime()+86400000),item={id:'image-host-test',slug:'imagem-anime-new-teste',title:'Anime ganha novo trailer e data de estreia',summary:'O novo trailer do anime foi divulgado com informações sobre a estreia da temporada.',eventType:'TRAILER',category:'Trailers',image:'https://animenew.com.br/wp-content/uploads/2026/09/capa-teste.webp',language:'pt-BR',sourceContent:[{type:'paragraph',text:'O trailer foi divulgado.',runs:[{text:'O trailer foi divulgado.'}]}],contentMode:'full',publishedAt:now.toISOString(),expiresAt:expires.toISOString()};
   const body=JSON.stringify({items:[item]});
