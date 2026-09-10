@@ -21,6 +21,7 @@ function harness(query, user = { id: USER_ID, username: 'teste', display_name: '
     hydrateCommunityMedia: async rows => rows,
     mediaProjection: `'{}'::jsonb`,
     recordContributionAchievement: async () => {},
+    getNativeArticle: async () => ({ id: 'news-test' }),
   });
   return routes;
 }
@@ -102,4 +103,41 @@ test('popular episode comments rank roots without relying on a nested select ali
   assert.match(query, /ranked_like\.likeable_type='ANIME_COMMENT'/);
   assert.match(query, /root_comment\.created_at/);
   assert.doesNotMatch(query, /THEN likes_count/);
+});
+
+test('news comments use the shared spoiler parser, scoped replies and legacy body compatibility', async () => {
+  const calls = [];
+  const routes = harness(async (sql, params) => {
+    calls.push({ sql, params });
+    if (sql.includes('INSERT INTO news_comments')) return { rows: [{ id: CONTENT_ID, parent_id: PARENT_ID, root_id: PARENT_ID, depth: 2, created_at: new Date().toISOString() }] };
+    if (sql.startsWith('SELECT user_id FROM news_comments')) return { rows: [{ user_id: USER_ID }] };
+    throw new Error(`unexpected query: ${sql}`);
+  });
+  const reply = response();
+  await routes.get('POST /api/news/:slug/comments')({ params: { slug: 'noticia-teste' }, body: { body: 'Trecho seguro e ||revelação||.', parentId: PARENT_ID } }, reply);
+  const insert = calls.find(call => call.sql.includes('INSERT INTO news_comments'));
+  assert.equal(reply.status, 201);
+  assert.match(insert.sql, /id=\$5::uuid AND article_slug=\$1 AND hidden=false/);
+  assert.match(insert.sql, /parent\.depth\+1/);
+  assert.deepEqual(insert.params, ['noticia-teste', USER_ID, 'Trecho seguro e ||revelação||.', false, PARENT_ID, true]);
+});
+
+test('news comments hide descendants with a hidden root and share likes sorting', async () => {
+  let query = '';
+  const routes = harness(async sql => { query = sql; return { rows: [] }; });
+  const result = await routes.get('GET /api/news/:slug/comments')({ params: { slug: 'noticia-teste' }, query: { sort: 'popular', hideSpoilers: 'true' } }, response());
+  assert.match(query, /JOIN news_comments root ON root\.id=COALESCE\(c\.root_id,c\.id\).*root\.hidden=false/);
+  assert.match(query, /ranked_like\.likeable_type='NEWS_COMMENT'/);
+  assert.deepEqual(result, { items: [], sort: 'popular', hideSpoilers: true });
+});
+
+test('news comment edits and deletes remain author and article scoped', async () => {
+  const calls = [];
+  const routes = harness(async (sql, params) => { calls.push({ sql, params }); return { rows: [{ id: CONTENT_ID, body: 'Novo ||spoiler||', has_spoilers: true, edited_at: new Date().toISOString() }] }; });
+  const edited = await routes.get('PATCH /api/news/:slug/comments/:commentId')({ params: { slug: 'noticia-teste', commentId: CONTENT_ID }, body: { text: 'Novo ||spoiler||' } }, response());
+  await routes.get('DELETE /api/news/:slug/comments/:commentId')({ params: { slug: 'noticia-teste', commentId: CONTENT_ID } }, response());
+  assert.match(calls[0].sql, /article_slug=\$2 AND user_id=\$3/);
+  assert.deepEqual(calls[0].params.slice(0, 3), [CONTENT_ID, 'noticia-teste', USER_ID]);
+  assert.deepEqual(edited.segments.map(segment => segment.type), ['text', 'spoiler']);
+  assert.match(calls[1].sql, /article_slug=\$2 AND user_id=\$3/);
 });

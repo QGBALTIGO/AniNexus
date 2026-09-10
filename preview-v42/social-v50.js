@@ -92,6 +92,8 @@
     eyeOff: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 3 18 18M10.6 10.7a2 2 0 0 0 2.7 2.7M9.9 4.3A10.7 10.7 0 0 1 12 4c5.2 0 9 5 9 5a15.8 15.8 0 0 1-2.5 2.8M6.2 6.2C4.2 7.5 3 9 3 9s3.8 5 9 5c1 0 2-.2 2.8-.5"/></svg>',
     help: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.3 2.3 0 1 1 3.6 1.9c-.9.6-1.4 1-1.4 2.1M12 17h.01"/></svg>',
     star: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></svg>',
+    lock: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"/></svg>',
+    arrowRight: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M14 7.5l4.5 4.5-4.5 4.5"/></svg>',
   };
   const toast = message => {
     const root = document.querySelector('#toastRoot');
@@ -173,11 +175,12 @@
     });
     root.querySelectorAll('[data-nx50-delete]').forEach(button => button.onclick = () => {
       if (!options.endpoint) return;
+      const targetId = button.dataset.nx50Delete;
       openDelete(async () => {
-        await privateApi(options.endpoint(button.dataset.nx50Delete), { method: 'DELETE' });
+        await privateApi(options.endpoint(targetId), { method: 'DELETE' });
         await options.refresh?.();
         toast('Publicação excluída.');
-      }, { cascade: options.targetType === 'IMPRESSION' });
+      }, { cascade: typeof options.cascade === 'function' ? options.cascade(targetId) : Boolean(options.cascade), subject: options.subject });
     });
     root.querySelectorAll('[data-nx50-moderate]').forEach(button => button.onclick = () => {
       const targetType = button.dataset.nx50ModerateType, targetId = button.dataset.nx50Moderate;
@@ -186,7 +189,7 @@
         await privateApi(`/api/admin/content/${encodeURIComponent(targetType)}/${encodeURIComponent(targetId)}`, { method: 'PATCH', body: JSON.stringify({ hidden: true }) });
         await options.refresh?.();
         toast('Publicação removida pela moderação.');
-      }, { moderation: true, cascade: targetType === 'IMPRESSION' });
+      }, { moderation: true, cascade: typeof options.cascade === 'function' ? options.cascade(targetId) : Boolean(options.cascade), subject: options.subject });
     });
   }
 
@@ -208,11 +211,14 @@
     textarea.focus(); textarea.setSelectionRange(textarea.value.length, textarea.value.length);
   }
 
-  function openDelete(remove, { moderation = false, cascade = false } = {}) {
+  function openDelete(remove, { moderation = false, cascade = false, subject = 'publicação' } = {}) {
     document.querySelector('.nx50-report-layer')?.remove();
     const layer = document.createElement('div'); layer.className = 'nx50-report-layer';
-    const consequence = cascade ? 'A impressão e todas as respostas ligadas a ela deixarão de aparecer para a comunidade.' : 'A publicação deixará de aparecer para a comunidade.';
-    layer.innerHTML = `<button type="button" class="nx50-report-backdrop" data-nx50-dialog-close aria-label="Cancelar exclusão"></button><section class="nx50-report-dialog nx50-delete-dialog" role="dialog" aria-modal="true" aria-labelledby="nx50DeleteTitle"><small>${moderation ? 'MODERAÇÃO' : 'EXCLUIR'}</small><h2 id="nx50DeleteTitle">${moderation ? 'Remover esta publicação?' : 'Excluir esta publicação?'}</h2><p>${consequence}</p><footer><button type="button" data-nx50-dialog-close>Cancelar</button><button type="button" class="nx50-danger" data-nx50-delete-confirm>${moderation ? 'Remover' : 'Excluir'}</button></footer></section>`;
+    const feminine = ['impressão', 'publicação', 'resposta'].includes(String(subject).toLowerCase());
+    const consequence = cascade
+      ? `${feminine ? 'A' : 'O'} ${esc(subject)} e todas as respostas ligadas a ${feminine ? 'ela' : 'ele'} deixarão de aparecer para a comunidade.`
+      : `${feminine ? 'Esta' : 'Este'} ${esc(subject)} deixará de aparecer para a comunidade.`;
+    layer.innerHTML = `<button type="button" class="nx50-report-backdrop" data-nx50-dialog-close aria-label="Cancelar exclusão"></button><section class="nx50-report-dialog nx50-delete-dialog" role="dialog" aria-modal="true" aria-labelledby="nx50DeleteTitle"><small>${moderation ? 'MODERAÇÃO' : 'EXCLUIR'}</small><h2 id="nx50DeleteTitle">${moderation ? `Remover ${esc(subject)}?` : `Excluir ${esc(subject)}?`}</h2><p>${consequence}</p><footer><button type="button" data-nx50-dialog-close>Cancelar</button><button type="button" class="nx50-danger" data-nx50-delete-confirm>${moderation ? 'Remover' : 'Excluir'}</button></footer></section>`;
     document.body.append(layer);
     const close = () => layer.remove(); layer.querySelectorAll('[data-nx50-dialog-close]').forEach(button => button.onclick = close);
     layer.querySelector('[data-nx50-delete-confirm]').onclick = async event => {
@@ -221,16 +227,22 @@
     };
   }
 
-  function openImpressionHelp() {
+  function openSocialHelp(kind = 'impression') {
     document.querySelector('.nx50-report-layer')?.remove();
     const layer = document.createElement('div'); layer.className = 'nx50-report-layer';
-    const steps = [
+    const news = kind === 'news';
+    const steps = news ? [
+      ['Comente a notícia.', 'Compartilhe uma opinião ou informação relacionada à publicação.'],
+      ['Responda à comunidade.', 'As respostas permanecem ligadas ao comentário principal e podem receber curtidas.'],
+      ['Marque somente o spoiler.', 'Selecione o trecho revelador e use o botão de spoiler. Cada trecho pode ser revelado separadamente.'],
+      ['Ajude na moderação.', 'Spoilers não marcados, ataques, preconceito, assédio e spam podem ser denunciados.'],
+    ] : [
       ['Publique uma impressão.', 'Compartilhe uma reação, opinião ou teoria sobre a obra. Ela fica pública com seu nome de usuário.'],
       ['Dê contexto automaticamente.', 'Seu status, progresso e nota atuais são registrados no momento da publicação.'],
       ['Proteja quem ainda não chegou lá.', 'Selecione somente o trecho revelador e use o botão de spoiler. Ele fica oculto até o leitor escolher revelar.'],
       ['Ajude a manter o AniNexus positivo.', 'Spoilers não marcados, ataques, preconceito, assédio e spam podem ser denunciados e removidos pela moderação.'],
     ];
-    layer.innerHTML = `<button type="button" class="nx50-report-backdrop" data-nx50-dialog-close aria-label="Fechar ajuda"></button><section class="nx50-report-dialog nx50-help-dialog" role="dialog" aria-modal="true" aria-labelledby="nx50HelpTitle"><button type="button" class="nx50-dialog-x" data-nx50-dialog-close aria-label="Fechar ajuda">×</button><h2 id="nx50HelpTitle">Como funcionam as impressões</h2><ol>${steps.map((step, index) => `<li><b>${index + 1}</b><p><strong>${esc(step[0])}</strong> ${esc(step[1])}</p></li>`).join('')}</ol></section>`;
+    layer.innerHTML = `<button type="button" class="nx50-report-backdrop" data-nx50-dialog-close aria-label="Fechar ajuda"></button><section class="nx50-report-dialog nx50-help-dialog" role="dialog" aria-modal="true" aria-labelledby="nx50HelpTitle"><button type="button" class="nx50-dialog-x" data-nx50-dialog-close aria-label="Fechar ajuda">×</button><h2 id="nx50HelpTitle">Como funcionam ${news ? 'os comentários' : 'as impressões'}</h2><ol>${steps.map((step, index) => `<li><b>${index + 1}</b><p><strong>${esc(step[0])}</strong> ${esc(step[1])}</p></li>`).join('')}</ol></section>`;
     document.body.append(layer);
     layer.querySelectorAll('[data-nx50-dialog-close]').forEach(button => button.onclick = () => layer.remove());
   }
@@ -262,6 +274,11 @@
     return `<article class="nx50-card nx50-impression-card" data-nx50-impression="${esc(item.id)}"><header><i>${avatar(item)}</i><div class="nx50-author"><div class="nx50-byline">${username ? `<a href="${pageUrl(`/u/${encodeURIComponent(username)}`)}">@${esc(username)}</a>` : `<strong>${esc(name)}</strong>`}<time datetime="${esc(item.created_at)}">${esc(relative(item.created_at))}${item.edited_at ? ' · editado' : ''}</time></div><div class="nx50-context">${context}</div></div><div class="nx50-card-actions">${itemActions(item, 'IMPRESSION', own, canModerate)}</div></header><p class="nx50-body">${renderBody(item)}</p><footer><button type="button" class="nx50-like" data-nx50-like="IMPRESSION:${esc(item.id)}" aria-pressed="false" aria-label="Curtir impressão">${ICON.heart}<b>${Number(item.likes_count ?? item.likesCount) || 0}</b></button><button type="button" class="nx50-reply-action" data-nx50-open-replies="${esc(item.id)}" aria-label="Abrir respostas">${ICON.reply}<b>${Number(item.replies_count ?? item.repliesCount) || 0}</b><span>respostas</span></button></footer><div class="nx50-replies" data-nx50-replies="${esc(item.id)}" hidden></div></article>`;
   }
 
+  function newsCommentCard(item, own = false, canModerate = false) {
+    const username = handle(item), name = actor(item);
+    return `<article class="nx50-card nx50-news-card" data-nx50-news-comment="${esc(item.id)}"><header><i>${avatar(item)}</i><div class="nx50-author"><div class="nx50-byline">${username ? `<a href="${pageUrl(`/u/${encodeURIComponent(username)}`)}">@${esc(username)}</a>` : `<strong>${esc(name)}</strong>`}<time datetime="${esc(item.created_at)}">${esc(relative(item.created_at))}${item.edited_at ? ' · editado' : ''}</time></div></div><div class="nx50-card-actions">${itemActions(item, 'NEWS_COMMENT', own, canModerate)}</div></header><p class="nx50-body">${renderBody(item)}</p><footer><button type="button" class="nx50-like" data-nx50-like="NEWS_COMMENT:${esc(item.id)}" aria-pressed="false" aria-label="Curtir comentário">${ICON.heart}<b>${Number(item.likes_count ?? item.likesCount) || 0}</b></button><button type="button" class="nx50-reply-action" data-nx50-open-news-replies="${esc(item.id)}" aria-label="Abrir respostas">${ICON.reply}<b>${Number(item.replies_count ?? item.repliesCount) || 0}</b><span>respostas</span></button></footer><div class="nx50-replies" data-nx50-news-replies="${esc(item.id)}" hidden></div></article>`;
+  }
+
   function replyCard(item, type, parentName = '', own = false, canModerate = false) {
     const depth = Math.min(2, Math.max(0, Number(item.depth) || 0));
     const username = handle(item), name = actor(item);
@@ -270,15 +287,26 @@
 
   function composerMarkup(kind) {
     const impression = kind === 'impression';
-    const limit = 2000;
-    return `<form class="nx50-composer" data-nx50-composer="${kind}">${impression ? '' : '<header><strong>Responder à impressão</strong><span>A conversa permanece ligada a esta impressão.</span></header>'}<div class="nx50-editor-frame"><div class="nx50-editor-bar">${spoilerButton}${impression ? `<button class="nx50-help" type="button" data-nx50-help aria-label="Como funcionam as impressões" title="Como funcionam as impressões">${ICON.help}</button>` : ''}</div><textarea maxlength="${limit}" required placeholder="${impression ? 'Compartilhe uma reação, opinião ou teoria...' : 'Escreva uma resposta respeitosa...'}"></textarea></div><footer><span>${impression ? 'Seu status, progresso e nota serão registrados neste momento.' : 'Selecione um trecho antes de marcá-lo como spoiler.'}</span><div><b data-nx50-count>0/${limit}</b><button type="submit">Publicar</button></div></footer></form>`;
+    const news = kind === 'news', reply = !impression && !news;
+    const limit = news ? 1800 : 2000;
+    const header = reply ? '<header><strong>Responder à publicação</strong><span>A conversa permanece ligada à publicação principal.</span></header>' : '';
+    const helpKind = news ? 'news' : 'impression';
+    const placeholder = impression ? 'Compartilhe uma reação, opinião ou teoria...' : news ? 'Compartilhe sua opinião sobre esta notícia...' : 'Escreva uma resposta respeitosa...';
+    const hint = impression ? 'Seu status, progresso e nota serão registrados neste momento.' : 'Selecione um trecho antes de marcá-lo como spoiler.';
+    const help = reply ? '' : `<button class="nx50-help" type="button" data-nx50-help="${helpKind}" aria-label="Como funcionam ${news ? 'os comentários' : 'as impressões'}" title="Como funcionam ${news ? 'os comentários' : 'as impressões'}">${ICON.help}</button>`;
+    return `<form class="nx50-composer" data-nx50-composer="${kind}">${header}<div class="nx50-editor-frame"><div class="nx50-editor-bar">${spoilerButton}${help}</div><textarea maxlength="${limit}" required placeholder="${placeholder}"></textarea></div><footer><span>${hint}</span><div><b data-nx50-count>0/${limit}</b><button type="submit">Publicar</button></div></footer></form>`;
+  }
+
+  function loginPrompt(kind = 'impression') {
+    const news = kind === 'news';
+    return `<section class="nx50-login-prompt"><i aria-hidden="true">${ICON.lock}</i><div><small>CONTA ANINEXUS</small><strong>Participe da ${news ? 'conversa' : 'comunidade'}</strong><span>Entre para publicar ${news ? 'um comentário nesta notícia' : 'sua impressão sobre a obra'}.</span></div><button type="button" class="nx50-login-cta" aria-label="Entre na sua conta para publicar ${news ? 'um comentário' : 'uma impressão'}"><span>Entrar para publicar</span>${ICON.arrowRight}</button></section>`;
   }
 
   function bindComposer(form, submit) {
     const textarea = form.querySelector('textarea'), count = form.querySelector('[data-nx50-count]');
     textarea.oninput = () => count.textContent = `${textarea.value.length}/${textarea.maxLength}`;
     form.querySelector('[data-nx50-mark-spoiler]').onclick = () => toggleSpoilerMarkup(textarea);
-    form.querySelector('[data-nx50-help]')?.addEventListener('click', openImpressionHelp);
+    form.querySelector('[data-nx50-help]')?.addEventListener('click', event => openSocialHelp(event.currentTarget.dataset.nx50Help));
     form.onsubmit = async event => {
       event.preventDefault(); const button = form.querySelector('[type="submit"]'), text = textarea.value.trim();
       if (!text || !await requireAccount()) return;
@@ -301,14 +329,14 @@
         currentUser = user;
         if (!host.isConnected) return;
         list.innerHTML = items.length ? items.map(item => impressionCard(item, reading, Boolean(username && handle(item).toLowerCase() === username), canModerate)).join('') : '<div class="nx50-empty"><b>Primeiras impressões a caminho</b><p>Quando alguém compartilhar uma opinião sobre esta obra, ela aparecerá aqui.</p></div>';
-        bindSocialActions(list, null, { items, endpoint: itemId => `/api/impressions/${itemId}`, targetType: 'IMPRESSION', maxLength: 2000, refresh: load });
+        bindSocialActions(list, null, { items, endpoint: itemId => `/api/impressions/${itemId}`, targetType: 'IMPRESSION', maxLength: 2000, refresh: load, cascade: true, subject: 'impressão' });
         hydrateLikes(list, 'IMPRESSION', items.map(item => item.id));
         list.querySelectorAll('[data-nx50-open-replies]').forEach(button => button.onclick = () => toggleReplies(button.dataset.nx50OpenReplies));
       } catch { list.innerHTML = '<div class="nx50-empty error"><b>As impressões estão temporariamente indisponíveis</b><button type="button" data-nx50-retry>Tentar novamente</button></div>'; list.querySelector('[data-nx50-retry]')?.addEventListener('click', load, { once: true }); }
     };
     const renderAccess = async (knownUser) => {
       const user = knownUser === undefined ? await account() : knownUser; currentUser = user || null; if (!host.isConnected) return user;
-      if (!user) { access.innerHTML = '<button type="button" class="nx50-login-cta">Entre na sua conta para publicar uma impressão</button>'; access.querySelector('button').onclick = () => requireAccount(); return null; }
+      if (!user) { access.innerHTML = loginPrompt('impression'); access.querySelector('button').onclick = () => requireAccount(); return null; }
       access.innerHTML = composerMarkup('impression');
       bindComposer(access.querySelector('form'), async text => { await privateApi(endpoint, { method: 'POST', body: JSON.stringify({ text }) }); await load(); toast('Impressão publicada.'); });
       return user;
@@ -342,7 +370,130 @@
     await load(user);
   }
 
+  async function mountNewsComments(slug, host) {
+    if (!slug || !host) return;
+    const mounted = host.querySelector('.nx50-news-comments');
+    if (mounted?.dataset.nx50NewsSlug === slug) return;
+    mounted?.remove();
+    const endpoint = `/api/news/${encodeURIComponent(slug)}/comments`;
+    const section = document.createElement('section');
+    section.className = 'nx42-news-comments nx50-news-comments';
+    section.dataset.nx50NewsSlug = slug;
+    section.innerHTML = `<header><small>CONVERSA</small><h2>Comentários da comunidade</h2><p>Opine sobre a notícia e converse com outros membros.</p></header><div class="nx50-social"><div data-nx50-access></div><div class="nx50-filters"><div><button type="button" class="active" data-nx50-sort="popular">Populares</button><button type="button" data-nx50-sort="recent">Recentes</button></div><label class="nx50-spoiler-filter"><input type="checkbox" data-nx50-hide checked><i aria-hidden="true"></i><span>Ocultar spoilers</span></label></div><div class="nx50-list" data-nx50-list aria-live="polite"><p class="nx50-loading">Carregando comentários…</p></div></div>`;
+    host.append(section);
+    const list = section.querySelector('[data-nx50-list]'), access = section.querySelector('[data-nx50-access]');
+    let sort = 'popular', hideSpoilers = true, currentUser = null, allItems = [], openRoot = null;
+    const identity = user => ({ username: String(user?.username || '').toLowerCase(), canModerate: ['moderator', 'admin'].includes(String(user?.role || '').toLowerCase()) });
+    const itemIsOwn = (item, username) => Boolean(username && handle(item).toLowerCase() === username);
+    const rootFor = item => String(item.root_id || item.rootId || item.id);
+
+    const paintReplies = async (rootId, replyTo = null, replyName = '') => {
+      const box = list.querySelector(`[data-nx50-news-replies="${CSS.escape(rootId)}"]`);
+      if (!box) return;
+      openRoot = rootId;
+      box.hidden = false;
+      const { username, canModerate } = identity(currentUser), byId = new Map(allItems.map(item => [String(item.id), item]));
+      const replies = allItems.filter(item => Number(item.depth) > 0 && rootFor(item) === rootId);
+      box.innerHTML = `${replies.map(item => replyCard(item, 'NEWS_COMMENT', handle(byId.get(String(item.parent_id))), itemIsOwn(item, username), canModerate)).join('') || '<p class="nx50-no-replies">Ainda não há respostas.</p>'}${composerMarkup('reply')}`;
+      const form = box.querySelector('form');
+      form.querySelector('header strong').textContent = replyTo ? `Respondendo a @${replyName}` : 'Responder ao comentário';
+      form.querySelector('header span').textContent = 'A conversa permanece ligada a esta notícia.';
+      bindComposer(form, async text => {
+        await privateApi(endpoint, { method: 'POST', body: JSON.stringify({ text, parentId: replyTo }) });
+        await load(currentUser, rootId);
+        toast('Resposta publicada.');
+      });
+      bindSocialActions(box, (targetId, name) => paintReplies(rootId, targetId, name), {
+        items: replies,
+        endpoint: commentId => `${endpoint}/${commentId}`,
+        targetType: 'NEWS_COMMENT',
+        maxLength: 1800,
+        refresh: () => load(currentUser, rootId),
+        cascade: false,
+        subject: 'resposta',
+      });
+      hydrateLikes(box, 'NEWS_COMMENT', replies.map(item => item.id));
+      if (replyTo) form.querySelector('textarea').focus();
+    };
+
+    const load = async (knownUser = currentUser, reopenRoot = openRoot) => {
+      try {
+        const [data, resolvedUser] = await Promise.all([publicApi(`${endpoint}?sort=${sort}&hideSpoilers=${hideSpoilers}`), knownUser ? Promise.resolve(knownUser) : account()]);
+        currentUser = resolvedUser || null;
+        if (!section.isConnected) return;
+        allItems = data.items || [];
+        const roots = allItems.filter(item => Number(item.depth) === 0 || !item.parent_id);
+        const { username, canModerate } = identity(currentUser);
+        list.innerHTML = roots.length ? roots.map(item => newsCommentCard(item, itemIsOwn(item, username), canModerate)).join('') : '<div class="nx50-empty"><b>A conversa começa com você</b><p>Compartilhe uma opinião respeitosa sobre esta notícia.</p></div>';
+        bindSocialActions(list, null, {
+          items: roots,
+          endpoint: commentId => `${endpoint}/${commentId}`,
+          targetType: 'NEWS_COMMENT',
+          maxLength: 1800,
+          refresh: () => load(currentUser),
+          cascade: targetId => Number(roots.find(item => String(item.id) === String(targetId))?.depth || 0) === 0,
+          subject: 'comentário',
+        });
+        hydrateLikes(list, 'NEWS_COMMENT', roots.map(item => item.id));
+        list.querySelectorAll('[data-nx50-open-news-replies]').forEach(button => button.onclick = () => {
+          const rootId = button.dataset.nx50OpenNewsReplies, box = list.querySelector(`[data-nx50-news-replies="${CSS.escape(rootId)}"]`);
+          if (!box) return;
+          if (!box.hidden) { box.hidden = true; openRoot = null; return; }
+          paintReplies(rootId);
+        });
+        if (reopenRoot && list.querySelector(`[data-nx50-news-replies="${CSS.escape(reopenRoot)}"]`)) await paintReplies(reopenRoot);
+      } catch {
+        list.innerHTML = '<div class="nx50-empty error"><b>Os comentários estão temporariamente indisponíveis</b><button type="button" data-nx50-retry>Tentar novamente</button></div>';
+        list.querySelector('[data-nx50-retry]')?.addEventListener('click', () => load(currentUser), { once: true });
+      }
+    };
+
+    const renderAccess = async knownUser => {
+      const user = knownUser === undefined ? await account() : knownUser;
+      currentUser = user || null;
+      if (!section.isConnected) return user;
+      if (!user) {
+        access.innerHTML = loginPrompt('news');
+        access.querySelector('button').onclick = () => requireAccount();
+        return null;
+      }
+      access.innerHTML = composerMarkup('news');
+      bindComposer(access.querySelector('form'), async text => {
+        await privateApi(endpoint, { method: 'POST', body: JSON.stringify({ text }) });
+        await load(currentUser);
+        toast('Comentário publicado.');
+      });
+      return user;
+    };
+
+    section.querySelectorAll('[data-nx50-sort]').forEach(button => button.onclick = () => {
+      sort = button.dataset.nx50Sort;
+      section.querySelectorAll('[data-nx50-sort]').forEach(item => item.classList.toggle('active', item === button));
+      load(currentUser);
+    });
+    section.querySelector('[data-nx50-hide]').onchange = event => { hideSpoilers = event.target.checked; load(currentUser); };
+    section._nx50IdentityHandler = async event => {
+      if (!section.isConnected) { removeEventListener('aninexus:account-identity-changed', section._nx50IdentityHandler); return; }
+      const user = event.detail?.user || null;
+      await renderAccess(user);
+      await load(user);
+    };
+    addEventListener('aninexus:account-identity-changed', section._nx50IdentityHandler);
+    const user = await renderAccess();
+    await load(user);
+  }
+
+  function mountCurrentNewsComments() {
+    const match = route().match(/^\/noticias\/(.+)$/), host = document.querySelector('.nx35-reader .nx35-article-main');
+    if (match && host) mountNewsComments(decodeURIComponent(match[1]), host);
+  }
+
   addEventListener('aninexus:detail-panel', event => {
     if (event.detail?.key === 'impressoes') mountImpressions(event.detail);
   });
+  addEventListener('aninexus:news-v32-ready', mountCurrentNewsComments);
+  addEventListener('aninexus:route-ready', () => setTimeout(mountCurrentNewsComments, 0));
+  addEventListener('popstate', () => setTimeout(mountCurrentNewsComments, 0));
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => setTimeout(mountCurrentNewsComments, 0), { once: true });
+  else setTimeout(mountCurrentNewsComments, 0);
 })();

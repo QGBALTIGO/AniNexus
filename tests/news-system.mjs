@@ -97,6 +97,7 @@ const newsUi = read('preview-v35/news-ui-v35.js');
 const newsCss = read('preview-v36/news-v36.css');
 const experienceCss = read('preview-v44/experience-v44.css');
 const product = read('preview-v42/product-v42.js');
+const socialUi = read('preview-v42/social-v50.js');
 const migration = read('sql/018_news_source_fidelity.sql');
 const feed = JSON.parse(read('data/news.json'));
 
@@ -184,7 +185,9 @@ test('reader renders the preserved block sequence without source callouts', () =
   assert.ok(newsCss.includes('.nx40-source-image'));
   assert.ok(newsCss.includes('.nx40-source-video'));
   assert.ok(product.includes('script,style,textarea,input,.nx40-source-flow'));
-  assert.ok(product.includes("function enhanceNews(){const match=route().match(/^\\/noticias\\/(.+)$/);if(!match||!document.querySelector('.nx35-reader'))return;mountNewsComments"));
+  assert.equal(product.includes('nx42-news-comment-form'), false);
+  assert.ok(socialUi.includes("addEventListener('aninexus:news-v32-ready', mountCurrentNewsComments)"));
+  assert.ok(socialUi.includes('Comentários da comunidade'));
   assert.equal(product.includes("document.querySelectorAll('.nx35-article-stats span')"), false);
 });
 
