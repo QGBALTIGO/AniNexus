@@ -6,6 +6,9 @@ const root=path.resolve(process.argv[2]||'public');
 const errors=[];
 const required=['index.html','.nojekyll','clerk-localization-ptbr.json','assets/favicon.png','assets/logo.png'];
 const expectedBase=String(process.env.PUBLIC_BASE_PATH||'/').trim();
+const runtimeReferencePattern=/preview-v\d+\/[A-Za-z0-9._/-]+\?v=([A-Za-z0-9._-]+)/g;
+const runtimeVersions=[];
+let nestedRuntimeReferences=0;
 if(!/^\/(?:[A-Za-z0-9._~-]+\/)*$/.test(expectedBase))errors.push('PUBLIC_BASE_PATH inválido para a publicação');
 
 const exists=async file=>fs.access(path.join(root,file)).then(()=>true).catch(()=>false);
@@ -65,11 +68,25 @@ for(const file of files){
   const relative=path.relative(root,file).replaceAll(path.sep,'/');
   const size=(await fs.stat(file)).size;
   if(size===0&&!relative.endsWith('.nojekyll'))errors.push(`arquivo vazio: ${relative}`);
+  if(relative==='index.html'||(/^preview-v\d+\//.test(relative)&&/\.(?:css|js|mjs)$/.test(relative))){
+    const source=await fs.readFile(file,'utf8');
+    const versions=[...source.matchAll(runtimeReferencePattern)].map(match=>match[1]);
+    runtimeVersions.push(...versions);
+    if(relative!=='index.html')nestedRuntimeReferences+=versions.length;
+  }
   if(relative.endsWith('.js')){
     const checked=spawnSync(process.execPath,['--check',file],{encoding:'utf8'});
     if(checked.status!==0)errors.push(`JavaScript inválido: ${relative}\n${checked.stderr.trim()}`);
   }
   if(relative.endsWith('.css'))balancedCss(await fs.readFile(file,'utf8'),relative);
+}
+
+if(runtimeVersions.length===0)errors.push('nenhuma referência versionada do runtime foi encontrada');
+if(nestedRuntimeReferences===0)errors.push('nenhum carregador aninhado do runtime foi validado');
+const distinctRuntimeVersions=new Set(runtimeVersions);
+if(distinctRuntimeVersions.size>1)errors.push(`runtime publicado com versões divergentes: ${[...distinctRuntimeVersions].join(', ')}`);
+for(const version of distinctRuntimeVersions){
+  if(!/^[a-f0-9]{12}$/.test(version))errors.push(`fingerprint inválido do runtime: ${version}`);
 }
 
 if(errors.length){
