@@ -7,6 +7,7 @@
   const THEME_API='https://api.animethemes.moe';
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
+  const CACHE_VERSION='44.43.0';
   const CACHE_TTL=20*60*1000;
   const THEMES_CACHE_TTL=6*60*60*1000;
   const detailPromises=new Map();
@@ -142,7 +143,7 @@
     try{return await loader(controller.signal)}finally{clearTimeout(timer)}
   }
 
-  function cacheKey(id,type){return `nx22:detail:${type.toLowerCase()}:${id}`}
+  function cacheKey(id,type){return `nx22:detail:${CACHE_VERSION}:${type.toLowerCase()}:${id}`}
   function cacheRead(id,type){try{const x=JSON.parse(sessionStorage.getItem(cacheKey(id,type))||'null');if(x&&Date.now()-x.t<CACHE_TTL&&x.data?.id)return x.data}catch{}return null}
   function cacheWrite(id,type,data){try{sessionStorage.setItem(cacheKey(id,type),JSON.stringify({t:Date.now(),data}))}catch{}}
   async function loadDetail(id,type){
@@ -329,9 +330,9 @@
         </div>
       </header>
       <nav class="nx22-tabs" aria-label="Seções da obra">
-        <div class="nx22-shell nx22-tabs-row"><button type="button" class="nx22-tabs-toggle" data-nx22-tabs-toggle aria-expanded="false" aria-label="Abrir menu de seções">${SVG.menu}</button><div class="nx22-tab-list" role="tablist"><button class="active" role="tab" aria-selected="true" data-nx22-tab="geral">Geral</button>${reading?'':`<button role="tab" aria-selected="false" data-nx22-tab="aberturas">Aberturas & encerramentos</button>`}<button role="tab" aria-selected="false" data-nx22-tab="elenco">Personagens & equipe</button><button role="tab" aria-selected="false" data-nx22-tab="franquia">Franquia</button><button role="tab" aria-selected="false" data-nx22-tab="recomendacoes">Recomendações</button></div><button type="button" class="nx22-tabs-share" data-nx22-share-menu>${SVG.share}<span>Compartilhar</span></button></div>
+        <div class="nx22-shell nx22-tabs-row"><button type="button" class="nx22-tabs-toggle" data-nx22-tabs-toggle aria-expanded="false" aria-label="Abrir menu de seções">${SVG.menu}</button><div class="nx22-tab-list" role="tablist"><button class="active" role="tab" aria-selected="true" data-nx22-tab="geral">Geral</button>${reading?'':`<button role="tab" aria-selected="false" data-nx22-tab="aberturas">Aberturas & encerramentos</button>`}<button role="tab" aria-selected="false" data-nx22-tab="elenco">Personagens & equipe</button><button role="tab" aria-selected="false" data-nx22-tab="franquia">Franquia</button><button role="tab" aria-selected="false" data-nx22-tab="recomendacoes">Recomendações</button></div></div>
         <button type="button" class="nx22-tabs-backdrop" data-nx22-tabs-close aria-label="Fechar menu de seções"></button>
-        <section class="nx22-tabs-sheet" aria-label="Menu de seções"><header><strong>Menu</strong><button type="button" data-nx22-tabs-close aria-label="Fechar menu">×</button></header><div class="nx22-tabs-sheet-list"><button class="active" type="button" data-nx22-sheet-tab="geral">Geral</button>${reading?'':`<button type="button" data-nx22-sheet-tab="aberturas">Aberturas & encerramentos</button>`}<button type="button" data-nx22-sheet-tab="elenco">Personagens & equipe</button><button type="button" data-nx22-sheet-tab="franquia">Franquia</button><button type="button" data-nx22-sheet-tab="recomendacoes">Recomendações</button><button type="button" data-nx22-share-menu>Compartilhar</button></div></section>
+        <section class="nx22-tabs-sheet" aria-label="Menu de seções"><header><strong>Menu</strong><button type="button" data-nx22-tabs-close aria-label="Fechar menu">×</button></header><div class="nx22-tabs-sheet-list"><button class="active" type="button" data-nx22-sheet-tab="geral">Geral</button>${reading?'':`<button type="button" data-nx22-sheet-tab="aberturas">Aberturas & encerramentos</button>`}<button type="button" data-nx22-sheet-tab="elenco">Personagens & equipe</button><button type="button" data-nx22-sheet-tab="franquia">Franquia</button><button type="button" data-nx22-sheet-tab="recomendacoes">Recomendações</button></div></section>
       </nav>
       <div class="nx22-shell nx22-content" id="nx22Panel"></div>
     </article>`;
@@ -360,12 +361,17 @@
     }
     root.querySelectorAll('[data-nx22-tab]').forEach(b=>b.onclick=()=>show(b.dataset.nx22Tab));
     root.querySelectorAll('[data-nx22-sheet-tab]').forEach(b=>b.onclick=()=>show(b.dataset.nx22SheetTab));
+    const tabList=root.querySelector('.nx22-tab-list'),tabRow=root.querySelector('.nx22-tabs-row');
+    const updateTabEdges=()=>{if(!tabList||!tabRow)return;const max=Math.max(0,tabList.scrollWidth-tabList.clientWidth);tabRow.dataset.nx22Left=tabList.scrollLeft>2?'1':'0';tabRow.dataset.nx22Right=tabList.scrollLeft<max-2?'1':'0'};
+    tabList?.addEventListener('scroll',updateTabEdges,{passive:true});
+    if(tabList&&typeof ResizeObserver==='function')new ResizeObserver(updateTabEdges).observe(tabList);
+    requestAnimationFrame(updateTabEdges);
     root.querySelector('[data-nx22-tabs-toggle]')?.addEventListener('click',()=>{const nav=root.querySelector('.nx22-tabs'),open=!nav?.classList.contains('is-open');nav?.classList.toggle('is-open',open);document.body.classList.toggle('nx22-tabs-open',open);root.querySelector('[data-nx22-tabs-toggle]')?.setAttribute('aria-expanded',String(open))});
     root.querySelectorAll('[data-nx22-tabs-close]').forEach(button=>button.addEventListener('click',closeTabs));
     root.querySelector('.nx22-tabs')?.addEventListener('keydown',event=>{if(event.key==='Escape')closeTabs()});
     root.querySelector('[data-nx22-back]')?.addEventListener('click',()=>{let previous='',sameDocument=false;try{const raw=sessionStorage.getItem('nx22:previous-path')||'',saved=JSON.parse(raw);previous=String(saved?.path||'');sameDocument=Math.abs(Number(saved?.document)-performance.timeOrigin)<1}catch{}if(previous&&previous!==routePath()&&sameDocument&&history.length>1){history.back();return}openPath(previous&&previous!==routePath()?previous:catalogPath)});
-    const shareMedia=async()=>{const data={title:title(m),text:`${title(m)} no AniNexus`,url:location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);toast('Link copiado')}}catch{}finally{closeTabs()}};
-    root.querySelectorAll('[data-nx22-share],[data-nx22-share-menu]').forEach(button=>button.addEventListener('click',shareMedia));
+    const shareMedia=async()=>{const data={title:title(m),text:`${title(m)} no AniNexus`,url:location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);toast('Link copiado')}}catch{}};
+    root.querySelector('[data-nx22-share]')?.addEventListener('click',shareMedia);
     show('geral');
     stateApi?.sync?.(m.id);
     document.title=`${title(m)} | AniNexus`;

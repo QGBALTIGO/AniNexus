@@ -252,7 +252,7 @@ async function mediaActivitySummary(id,mediaType){
   const visible=`u.deleted_at IS NULL AND u.status='active' AND u.privacy='public' AND u.show_library IS DISTINCT FROM false AND u.show_stats IS DISTINCT FROM false`;
   const [statusResult,reactionResult]=await Promise.all([
     q(`SELECT l.status,count(*)::int count FROM ${table} l JOIN users u ON u.id=l.user_id WHERE l.media_id=$1 AND ${visible} AND l.status IN ('PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED') GROUP BY l.status`,[id]),
-    q(`SELECT reaction,count(*)::int count FROM ${table} l JOIN users u ON u.id=l.user_id CROSS JOIN LATERAL (SELECT DISTINCT value reaction FROM jsonb_array_elements_text(CASE WHEN jsonb_typeof(l.reactions)='array' AND jsonb_array_length(l.reactions)>0 THEN l.reactions WHEN l.reaction IS NOT NULL THEN jsonb_build_array(l.reaction) ELSE '[]'::jsonb END)) r WHERE l.media_id=$1 AND ${visible} AND reaction IN ('LOVE','LIKE','WOW','DISLIKE') GROUP BY reaction ORDER BY count DESC,reaction`,[id])
+    q(`SELECT r.reaction,count(*)::int count FROM ${table} l JOIN users u ON u.id=l.user_id CROSS JOIN LATERAL (SELECT DISTINCT value reaction FROM jsonb_array_elements_text(CASE WHEN jsonb_typeof(l.reactions)='array' AND jsonb_array_length(l.reactions)>0 THEN l.reactions WHEN l.reaction IS NOT NULL THEN jsonb_build_array(l.reaction) ELSE '[]'::jsonb END)) r WHERE l.media_id=$1 AND ${visible} AND r.reaction IN ('LOVE','LIKE','WOW','DISLIKE') GROUP BY r.reaction ORDER BY count DESC,r.reaction`,[id])
   ]);
   const statuses={PLANNING:0,CURRENT:0,COMPLETED:0,PAUSED:0,DROPPED:0};
   for(const row of statusResult.rows||[])if(Object.hasOwn(statuses,row.status))statuses[row.status]=Number(row.count)||0;
