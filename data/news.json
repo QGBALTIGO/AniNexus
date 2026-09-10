@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T09:36:30.043Z",
+  "generatedAt": "2026-09-10T13:46:45.093Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -60,14 +60,848 @@
     "newStories": 17,
     "fullArticles": 17,
     "previewArticles": 0,
-    "avgWords": 337,
+    "avgWords": 338,
     "withHeroImage": 17,
     "withOrderedMedia": 16,
     "skippedTranslation": 0,
     "skippedQuality": 28,
-    "durationMs": 5498
+    "durationMs": 2993
   },
   "items": [
+    {
+      "id": "animenew-de0272ae",
+      "slug": "black-bullet-ganhara-reboot-com-novo-final-em-2027-animenew-de0272ae",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Black Bullet ganhará reboot com novo final em 2027",
+      "originalTitle": "Black Bullet ganhará reboot com novo final em 2027",
+      "summary": "A light novel Black Bullet, de Shiden Kanzaki, ganhará um reboot com mudanças na história e um novo desfecho, além de uma obra inédita. O projeto, intitulado Black Bullet: New World Order, será publicado pela Dengeki Bunko entre novembro de 2026 e fevereiro de 2027.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Light Novel",
+        "Notícias",
+        "Black Bullet"
+      ],
+      "url": "https://animenew.com.br/black-bullet-reboot-new-world-order",
+      "sourceUrl": "https://animenew.com.br/black-bullet-reboot-new-world-order",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Black-Bullet-ganhara-reboot-com-novo-final-em-2027.webp",
+      "mediaQuery": "Black Bullet ganhará reboot com novo final em 2027",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Black-Bullet.webp",
+          "alt": "Black Bullet",
+          "caption": "2026年11月から2冊同時、4カ月連続での刊行予定。"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/6LvYZE_jbzE"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A light novel Black Bullet, de Shiden Kanzaki, ganhará um reboot com mudanças na história e um novo desfecho, além de uma obra inédita. O projeto, intitulado Black Bullet: New World Order, será publicado pela Dengeki Bunko entre novembro de 2026 e fevereiro de 2027.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "light novel",
+              "href": "https://animenew.com.br/light-novel"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Black Bullet",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", de "
+            },
+            {
+              "text": "Shiden Kanzaki",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", ganhará um reboot com mudanças na história e um novo desfecho, além de uma obra inédita. O projeto, intitulado "
+            },
+            {
+              "text": "Black Bullet: New World Order",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", será publicado pela "
+            },
+            {
+              "text": "Dengeki Bunko",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " entre novembro de 2026 e fevereiro de 2027."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Hunter x Hunter confirma novo hiato do mangá",
+              "runs": [
+                {
+                  "text": "Hunter x Hunter confirma novo hiato do mangá",
+                  "href": "https://animenew.com.br/hunter-x-hunter-entra-em-hiato-e-ganha-nova-peca"
+                }
+              ]
+            },
+            {
+              "text": "Maria Holic retorna após 12 anos com novo mangá",
+              "runs": [
+                {
+                  "text": "Maria Holic retorna após 12 anos com novo mangá",
+                  "href": "https://animenew.com.br/maria-holic-novo-manga-sequencia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A proposta começa revisitando a história original, com acréscimos e ajustes nos primeiros volumes. A partir de janeiro de 2027, porém, a narrativa seguirá por um caminho diferente.",
+          "runs": [
+            {
+              "text": "A proposta começa revisitando a história original, com acréscimos e ajustes nos primeiros volumes. A partir de janeiro de 2027, porém, a narrativa seguirá por um caminho diferente."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=6LvYZE_jbzE",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/6LvYZE_jbzE"
+        },
+        {
+          "type": "paragraph",
+          "text": "Os dois volumes previstos para fevereiro apresentarão acontecimentos inéditos, incluindo Justice & Unjustice, título que não existia na publicação original e encerrará a nova versão com um final completamente diferente.",
+          "runs": [
+            {
+              "text": "Os dois volumes previstos para fevereiro apresentarão acontecimentos inéditos, incluindo "
+            },
+            {
+              "text": "Justice & Unjustice",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", título que não existia na publicação original e encerrará a nova versão com um final completamente diferente."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Black-Bullet.webp",
+          "alt": "Black Bullet",
+          "caption": "2026年11月から2冊同時、4カ月連続での刊行予定。"
+        },
+        {
+          "type": "heading",
+          "text": "Nova obra do autor",
+          "runs": [
+            {
+              "text": "Nova obra do autor"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Kanzaki também prepara uma história original chamada Aku no Shinzui (The Quintessence of Evil), prevista para chegar à Dengeki Bunko na primavera de 2027. O ilustrador e outros detalhes serão revelados posteriormente.",
+          "runs": [
+            {
+              "text": "Kanzaki também prepara uma história original chamada "
+            },
+            {
+              "text": "Aku no Shinzui",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "The Quintessence of Evil",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), prevista para chegar à Dengeki Bunko na primavera de 2027. O ilustrador e outros detalhes serão revelados posteriormente."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Publicada originalmente entre 2011 e 2014, Black Bullet teve sete volumes ilustrados por Saki Ukai. A obra também ganhou mangá e uma adaptação em anime produzida por Kinema Citrus e Orange, exibida em 2014.",
+          "runs": [
+            {
+              "text": "Publicada originalmente entre 2011 e 2014, "
+            },
+            {
+              "text": "Black Bullet",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " teve sete volumes ilustrados por Saki Ukai. A obra também ganhou mangá e uma adaptação em "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " produzida por Kinema Citrus e Orange, exibida em 2014."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: X @bunko_dengeki",
+          "runs": [
+            {
+              "text": "Fonte: X "
+            },
+            {
+              "text": "@bunko_dengeki",
+              "href": "https://x.com/bunko_dengeki"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Black Bullet ganhará reboot com novo final em 2027.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Black Bullet ganhará reboot com novo final em 2027",
+              "href": "https://animenew.com.br/black-bullet-reboot-new-world-order/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-10T13:17:16.000Z",
+      "updatedAt": "2026-09-10T13:17:16.000Z",
+      "expiresAt": "2026-09-17T13:17:16.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/black-bullet-reboot-new-world-order",
+          "publishedAt": "2026-09-10T13:17:16.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 215,
+      "qualityScore": 0.968,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-55d7b86e",
+      "slug": "anime-goblin-reborn-recebe-novo-video-promocional-animenew-55d7b86e",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Anime Goblin Reborn recebe novo vídeo promocional",
+      "originalTitle": "Anime Goblin Reborn recebe novo vídeo promocional",
+      "summary": "O anime So What’s Wrong with Getting Reborn as a Goblin? (Tensei Goblin dakedo Shitsumon Aru?) revelou novo vídeo promocional, músicas-tema, equipe adicional e estreia marcada para 5 de outubro. A prévia apresenta a abertura “Hello”, interpretada por Sou, enquanto AHUB ficou responsável pelo encerramento “Chiisana Bokura”, que significa “Pequenos Nós”.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "So What's Wrong with Getting Reborn as a Goblin",
+        "Tensei Goblin dakedo"
+      ],
+      "url": "https://animenew.com.br/so-whats-wrong-with-getting-reborn-as-a-goblin-anime",
+      "sourceUrl": "https://animenew.com.br/so-whats-wrong-with-getting-reborn-as-a-goblin-anime",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Anime-Goblin-Reborn-recebe-novo-video-promocional.webp",
+      "mediaQuery": "Anime Goblin Reborn recebe novo vídeo promocional",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Tensei-Goblin-dakedo-Shitsumon-Aru-scaled.webp",
+          "alt": "So What's Wrong with Getting Reborn as a Goblin?",
+          "caption": "©三木なずな・荒木宰／集英社・「転ゴブ」製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/ynr8tFWrK4c"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime So What’s Wrong with Getting Reborn as a Goblin? (Tensei Goblin dakedo Shitsumon Aru?) revelou novo vídeo promocional, músicas-tema, equipe adicional e estreia marcada para 5 de outubro. A prévia apresenta a abertura “Hello”, interpretada por Sou, enquanto AHUB ficou responsável pelo encerramento “Chiisana Bokura”, que significa “Pequenos Nós”.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "So What’s Wrong with Getting Reborn as a Goblin?",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Tensei Goblin dakedo Shitsumon Aru?",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") revelou novo vídeo promocional, músicas-tema, equipe adicional e estreia marcada para 5 de outubro. A prévia apresenta a abertura “Hello”, interpretada por Sou, enquanto AHUB ficou responsável pelo encerramento “Chiisana Bokura”, que significa “Pequenos Nós”."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "A Tale of the Secret Saint revela estreia e novo elenco",
+              "runs": [
+                {
+                  "text": "A Tale of the Secret Saint revela estreia e novo elenco",
+                  "href": "https://animenew.com.br/a-tale-of-the-secret-saint-anime-estreia-outubro"
+                }
+              ]
+            },
+            {
+              "text": "You Are a Four Leaf Clover ganhará anime",
+              "runs": [
+                {
+                  "text": "You Are a Four Leaf Clover ganhará anime",
+                  "href": "https://animenew.com.br/you-are-a-four-leaf-clover-anime"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=ynr8tFWrK4c",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/ynr8tFWrK4c"
+        },
+        {
+          "type": "paragraph",
+          "text": "A produção também confirmou novos nomes na equipe, incluindo Maika Hosoda na direção de arte, Naomi Kiyota nas cores, Tsukasa Matsui na fotografia e Yūji Oka na edição.",
+          "runs": [
+            {
+              "text": "A produção também confirmou novos nomes na equipe, incluindo Maika Hosoda na direção de arte, Naomi Kiyota nas cores, Tsukasa Matsui na fotografia e Yūji Oka na edição."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Tensei-Goblin-dakedo-Shitsumon-Aru-scaled.webp",
+          "alt": "So What's Wrong with Getting Reborn as a Goblin?",
+          "caption": "©三木なずな・荒木宰／集英社・「転ゴブ」製作委員会"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ryūta Kawahara dirige a série no estúdio BAKKKA, com Yūichirō Momose nos roteiros e Hiroyuki Saita no design de personagens. O elenco conta com Kikunosuke Toya como Akira, Yōko Hikasa como Karen e Azusa Tachibana como Chloe.",
+          "runs": [
+            {
+              "text": "Ryūta Kawahara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dirige a série no "
+            },
+            {
+              "text": "estúdio BAKKKA",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com Yūichirō Momose nos roteiros e Hiroyuki Saita no design de personagens. O elenco conta com Kikunosuke Toya como Akira, Yōko Hikasa como Karen e Azusa Tachibana como Chloe."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Sinopse Goblin Reborn",
+          "runs": [
+            {
+              "text": "Sinopse Goblin Reborn"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A história acompanha Akira, um trabalhador comum que morre após salvar uma criança e renasce como um goblin. Diferente do padrão da espécie, ele desenvolve habilidades que ampliam sua vida e abrem caminho para evoluir nesse novo mundo.",
+          "runs": [
+            {
+              "text": "A história acompanha Akira, um trabalhador comum que morre após salvar uma criança e renasce como um goblin. Diferente do padrão da espécie, ele desenvolve habilidades que ampliam sua vida e abrem caminho para evoluir nesse novo mundo.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anime estreia em 5 de outubro DE 2026 na Tokyo MX, com transmissão posterior por BS11 e Sun TV. A série também estará disponível no ABEMA e Prime Video no Japão.",
+          "runs": [
+            {
+              "text": "O anime estreia em 5 de outubro DE 2026 na Tokyo MX, com transmissão posterior por BS11 e Sun TV. A série também estará disponível no ABEMA e Prime Video no Japão."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://tengobu-anime.com/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Anime Goblin Reborn recebe novo vídeo promocional.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Anime Goblin Reborn recebe novo vídeo promocional",
+              "href": "https://animenew.com.br/so-whats-wrong-with-getting-reborn-as-a-goblin-anime/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-10T12:55:41.000Z",
+      "updatedAt": "2026-09-10T12:55:41.000Z",
+      "expiresAt": "2026-09-17T12:55:41.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/so-whats-wrong-with-getting-reborn-as-a-goblin-anime",
+          "publishedAt": "2026-09-10T12:55:41.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 231,
+      "qualityScore": 0.969,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-1228dbee",
+      "slug": "the-apothecary-diaries-ganha-novo-jogo-de-misterio-animenew-1228dbee",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "The Apothecary Diaries ganha novo jogo de mistério",
+      "originalTitle": "The Apothecary Diaries ganha novo jogo de mistério",
+      "summary": "A Koei Tecmo anunciou um novo jogo de The Apothecary Diaries (Kusuriya no Hitorigoto), que chegará ao Nintendo Switch 2, Switch, PlayStation 5 e PC no início de 2027. Chamado The Apothecary Diaries: The False Imperial Brother, o título foi revelado durante uma transmissão do Nintendo Direct e ganhou um trailer após o evento.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Games",
+        "Nintendo",
+        "Notícias",
+        "PlayStation",
+        "Koei Tecmo",
+        "Kusuriya no Hitorigoto",
+        "The Apothecary Diaries"
+      ],
+      "url": "https://animenew.com.br/the-apothecary-diaries-ganha-novo-jogo-de-misterio",
+      "sourceUrl": "https://animenew.com.br/the-apothecary-diaries-ganha-novo-jogo-de-misterio",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/The-Apothecary-Diaries-ganha-novo-jogo-de-misterio.webp",
+      "mediaQuery": "The Apothecary Diaries ganha novo jogo de mistério",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/amdOkW4uKxA"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Koei Tecmo anunciou um novo jogo de The Apothecary Diaries (Kusuriya no Hitorigoto), que chegará ao Nintendo Switch 2, Switch, PlayStation 5 e PC no início de 2027. Chamado The Apothecary Diaries: The False Imperial Brother, o título foi revelado durante uma transmissão do Nintendo Direct e ganhou um trailer após o evento.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Koei Tecmo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou um "
+            },
+            {
+              "text": "novo jogo",
+              "href": "https://animenew.com.br/games"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "The Apothecary Diaries",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Kusuriya no Hitorigoto",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), que chegará ao "
+            },
+            {
+              "text": "Nintendo Switch 2",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", Switch, "
+            },
+            {
+              "text": "PlayStation 5",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e PC no início de 2027. Chamado "
+            },
+            {
+              "text": "The Apothecary Diaries: The False Imperial Brother",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o título foi revelado durante uma transmissão do Nintendo Direct e ganhou um trailer após o evento."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Ocarina of Time Remake ganha data no Switch 2",
+              "runs": [
+                {
+                  "text": "Ocarina of Time Remake ganha data no Switch 2",
+                  "href": "https://animenew.com.br/ocarina-of-time-remake-switch-2"
+                }
+              ]
+            },
+            {
+              "text": "Dragon Ball Xenoverse 3 destaca avatares e Androids",
+              "runs": [
+                {
+                  "text": "Dragon Ball Xenoverse 3 destaca avatares e Androids",
+                  "href": "https://animenew.com.br/dragon-ball-xenoverse-3-trailer-avatares-androids"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na aventura, os jogadores assumirão o controle de Maomao enquanto exploram diferentes áreas, preparam medicamentos e investigam uma série de mistérios.",
+          "runs": [
+            {
+              "text": "Na aventura, os jogadores assumirão o controle de "
+            },
+            {
+              "text": "Maomao",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " enquanto exploram diferentes áreas, preparam medicamentos e investigam uma série de mistérios."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=amdOkW4uKxA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/amdOkW4uKxA"
+        },
+        {
+          "type": "heading",
+          "text": "História do jogo Kusuriya no Hitorigoto",
+          "runs": [
+            {
+              "text": "História do jogo Kusuriya no Hitorigoto"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A história acompanha dois casos envolvendo fenômenos estranhos e conspirações que atingem o palácio, o distrito da luz vermelha e as ruas da capital. Maomao precisará usar seus conhecimentos para descobrir a verdade por trás do chamado Falso Irmão Imperial antes que a conspiração provoque consequências para a corte.",
+          "runs": [
+            {
+              "text": "A história acompanha dois casos envolvendo fenômenos estranhos e conspirações que atingem o palácio, o distrito da luz vermelha e as ruas da capital. Maomao precisará usar seus conhecimentos para descobrir a verdade por trás do chamado Falso Irmão Imperial antes que a conspiração provoque consequências para a corte.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Franquia continua em expansão",
+          "runs": [
+            {
+              "text": "Franquia continua em expansão"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A obra original de Hyuganatsu começou como uma web novel em 2011 e ganhou publicação impressa em 2014, com ilustrações de Touko Shino. O mangá de Nekokurage começou em 2017 na Monthly Big Gangan.",
+          "runs": [
+            {
+              "text": "A obra original de "
+            },
+            {
+              "text": "Hyuganatsu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " começou como uma web novel em 2011 e ganhou publicação impressa em 2014, com ilustrações de Touko Shino. O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " de Nekokurage começou em 2017 na Monthly Big Gangan."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anime estreou em 2023 e já conta com duas temporadas. A terceira temporada começa em 2 de outubro, enquanto o novo filme chega aos cinemas japoneses em 11 de dezembro. Uma série live-action também está prevista para 2028 no Amazon Prime Video.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " estreou em 2023 e já conta com duas temporadas. A terceira temporada começa em 2 de outubro, enquanto o novo filme chega aos cinemas japoneses em 11 de dezembro. Uma série "
+            },
+            {
+              "text": "live-action",
+              "href": "https://animenew.com.br/live-action"
+            },
+            {
+              "text": " também está prevista para 2028 no "
+            },
+            {
+              "text": "Amazon Prime Video",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Youtube Tecmo",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Youtube Tecmo",
+              "href": "https://www.youtube.com/watch?v=amdOkW4uKxA"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em The Apothecary Diaries ganha novo jogo de mistério.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "The Apothecary Diaries ganha novo jogo de mistério",
+              "href": "https://animenew.com.br/the-apothecary-diaries-ganha-novo-jogo-de-misterio/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-10T12:43:30.000Z",
+      "updatedAt": "2026-09-10T12:43:30.000Z",
+      "expiresAt": "2026-09-17T12:43:30.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/the-apothecary-diaries-ganha-novo-jogo-de-misterio",
+          "publishedAt": "2026-09-10T12:43:30.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 251,
+      "qualityScore": 0.972,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-3bde3e1b",
       "slug": "nia-liston-ganha-novo-trailer-e-tera-2-cours-animenew-3bde3e1b",
@@ -2243,6 +3077,277 @@
       }
     },
     {
+      "id": "animenew-a52f4b7c",
+      "slug": "ocarina-of-time-remake-ganha-data-no-switch-2-animenew-a52f4b7c",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Ocarina of Time Remake ganha data no Switch 2",
+      "originalTitle": "Ocarina of Time Remake ganha data no Switch 2",
+      "summary": "A Nintendo revelou que o remake de The Legend of Zelda: Ocarina of Time para Nintendo Switch 2 será lançado em 5 de novembro de 2026. O anúncio aconteceu durante o Direct de 40 anos de The Legend of Zelda, que também apresentou novos vídeos de gameplay.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Games",
+        "Nintendo",
+        "Notícias",
+        "Nintendo Switch 2",
+        "The Legend of Zelda",
+        "The Legend of Zelda: Ocarina of Time"
+      ],
+      "url": "https://animenew.com.br/ocarina-of-time-remake-switch-2",
+      "sourceUrl": "https://animenew.com.br/ocarina-of-time-remake-switch-2",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Ocarina-of-Time-Remake-ganha-data-no-Switch-2.webp",
+      "mediaQuery": "Ocarina of Time Remake ganha data no Switch 2",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/Ymw9UTRu1V0"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/Swigi7tgqOM"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Nintendo revelou que o remake de The Legend of Zelda: Ocarina of Time para Nintendo Switch 2 será lançado em 5 de novembro de 2026. O anúncio aconteceu durante o Direct de 40 anos de The Legend of Zelda, que também apresentou novos vídeos de gameplay.",
+          "runs": [
+            {
+              "text": "A Nintendo revelou que o remake de "
+            },
+            {
+              "text": "The Legend of Zelda: Ocarina of Time",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " para "
+            },
+            {
+              "text": "Nintendo Switch 2",
+              "href": "https://animenew.com.br/tag/nintendo-switch-2/"
+            },
+            {
+              "text": " será lançado em 5 de novembro de 2026. O anúncio aconteceu durante o Direct de 40 anos de "
+            },
+            {
+              "text": "The Legend of Zelda",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que também apresentou novos vídeos de gameplay."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Dragon Ball Xenoverse 3 destaca avatares e Androids",
+              "runs": [
+                {
+                  "text": "Dragon Ball Xenoverse 3 destaca avatares e Androids",
+                  "href": "https://animenew.com.br/dragon-ball-xenoverse-3-trailer-avatares-androids"
+                }
+              ]
+            },
+            {
+              "text": "My Hero Academia: All’s Justice ganha novo DLC de Deku",
+              "runs": [
+                {
+                  "text": "My Hero Academia: All’s Justice ganha novo DLC de Deku",
+                  "href": "https://animenew.com.br/my-hero-academia-alls-justice-dlc-deku"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=Ymw9UTRu1V0",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Ymw9UTRu1V0"
+        },
+        {
+          "type": "paragraph",
+          "text": "As cenas mostram a Floresta Kokiri, a primeira dungeon, Great Deku Tree, além de áreas como Hyrule Field, Hyrule Castle Town e Lon Lon Ranch. Assim um segundo trailer também revelou chefes e outras regiões do jogo, além da inclusão de dublagem.",
+          "runs": [
+            {
+              "text": "As cenas mostram a "
+            },
+            {
+              "text": "Floresta Kokiri",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", a primeira dungeon, "
+            },
+            {
+              "text": "Great Deku Tree",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", além de áreas como Hyrule Field, Hyrule Castle Town e Lon Lon Ranch. Assim um segundo trailer também revelou chefes e outras regiões do jogo, além da inclusão de dublagem."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Novos recursos em Ocarina of Time",
+          "runs": [
+            {
+              "text": "Novos recursos em "
+            },
+            {
+              "text": "Ocarina of Time",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=Swigi7tgqOM",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Swigi7tgqOM"
+        },
+        {
+          "type": "paragraph",
+          "text": "O remake terá controles de câmera tradicionais, controles por movimento, botão dedicado para pular e uma ação de rolamento com dash. Também será possível configurar itens no botão ZR e alterná-los por um menu rápido.",
+          "runs": [
+            {
+              "text": "O remake terá controles de câmera tradicionais, controles por movimento, botão dedicado para pular e uma ação de rolamento com dash. Também será possível configurar itens no botão ZR e alterná-los por um menu rápido."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Menu Threads of Time",
+          "runs": [
+            {
+              "text": "Menu Threads of Time"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Outra novidade é o menu Threads of Time, criado para recapitular a história e indicar o próximo objetivo. O tempo também passará dentro das cidades, algo que não acontecia no jogo original. O Switch 2 ainda permitirá cantar no microfone para tocar músicas, enquanto uma ocarina física compatível também poderá ser utilizada.",
+          "runs": [
+            {
+              "text": "Outra novidade é o menu Threads of Time, criado para recapitular a história e indicar o próximo objetivo. O tempo também passará dentro das cidades, algo que não acontecia no jogo original. O Switch 2 ainda permitirá cantar no microfone para tocar músicas, enquanto uma ocarina física compatível também poderá ser utilizada."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Quizzes e recursos na Ocarina",
+          "runs": [
+            {
+              "text": "Quizzes e recursos na Ocarina"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Sendo assim, o título terá integração com o aplicativo Nintendo Switch, incluindo desafios, quizzes e recursos ligados à ocarina.",
+          "runs": [
+            {
+              "text": "Sendo assim, o título terá integração com o aplicativo Nintendo Switch, incluindo desafios, quizzes e recursos ligados à ocarina."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim The Legend of Zelda: Ocarina of Time estreou originalmente para Nintendo 64 em novembro de 1998 e marcou a estreia da franquia nos gráficos 3D.",
+          "runs": [
+            {
+              "text": "Por fim "
+            },
+            {
+              "text": "The Legend of Zelda: Ocarina of Time",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " estreou originalmente para Nintendo 64 em novembro de 1998 e marcou a estreia da franquia nos gráficos 3D."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Ocarina of Time Remake ganha data no Switch 2.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Ocarina of Time Remake ganha data no Switch 2",
+              "href": "https://animenew.com.br/ocarina-of-time-remake-switch-2/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-08T17:24:00.000Z",
+      "updatedAt": "2026-09-08T17:24:00.000Z",
+      "expiresAt": "2026-09-15T17:24:00.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/ocarina-of-time-remake-switch-2",
+          "publishedAt": "2026-09-08T17:24:00.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 276,
+      "qualityScore": 0.977,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 2,
+        "sourcePagesRead": 0
+      }
+    },
+    {
       "id": "animenew-28f216fb",
       "slug": "hunter-x-hunter-confirma-novo-hiato-do-manga-animenew-28f216fb",
       "source": "AnimeNew",
@@ -2484,524 +3589,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-aa995b26",
-      "slug": "black-clover-2-temporada-estreia-em-outubro-animenew-aa995b26",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Black Clover: 2ª temporada estreia em outubro",
-      "originalTitle": "Black Clover: 2ª temporada estreia em outubro",
-      "summary": "A 2ª temporada do anime Black Clover estreia em 3 de outubro no Japão, com novo tema de encerramento interpretado pelo grupo ONE OR EIGHT. A confirmação veio na edição 41 da revista Weekly Shonen Jump, publicada esta semana. A série começará a ser exibida às 23h na TV Tokyo e emissoras afiliadas.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Black Clover"
-      ],
-      "url": "https://animenew.com.br/black-clover-2-temporada-estreia-outubro",
-      "sourceUrl": "https://animenew.com.br/black-clover-2-temporada-estreia-outubro",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Black-Clover-2a-temporada-estreia-em-outubro.webp",
-      "mediaQuery": "Black Clover: 2ª temporada estreia em outubro",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/4MYo8FfiXMA"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A 2ª temporada do anime Black Clover estreia em 3 de outubro no Japão, com novo tema de encerramento interpretado pelo grupo ONE OR EIGHT. A confirmação veio na edição 41 da revista Weekly Shonen Jump, publicada esta semana. A série começará a ser exibida às 23h na TV Tokyo e emissoras afiliadas.",
-          "runs": [
-            {
-              "text": "A 2ª temporada do "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Black Clover",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " estreia em 3 de outubro no Japão, com novo tema de encerramento interpretado pelo grupo "
-            },
-            {
-              "text": "ONE OR EIGHT",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A confirmação veio na edição 41 da revista "
-            },
-            {
-              "text": "Weekly Shonen Jump",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", publicada esta semana. A série começará a ser exibida às 23h na TV Tokyo e emissoras afiliadas."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Black Clover apresenta abertura da 2ª temporada",
-              "runs": [
-                {
-                  "text": "Black Clover apresenta abertura da 2ª temporada",
-                  "href": "https://animenew.com.br/black-clover-2-temporada-abertura-wanima"
-                }
-              ]
-            },
-            {
-              "text": "Giant Ojosama revela elenco e equipe do anime",
-              "runs": [
-                {
-                  "text": "Giant Ojosama revela elenco e equipe do anime",
-                  "href": "https://animenew.com.br/anime-giant-ojosama-giant-ojo-sama-giant-young-lady-anime"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O novo encerramento será “Yellow Brick Road”, do ONE OR EIGHT. Já a abertura ficará por conta da banda WANIMA, que apresenta a música “Kienai Riyū”.",
-          "runs": [
-            {
-              "text": "O novo encerramento será “Yellow Brick Road”, do ONE OR EIGHT. Já a abertura ficará por conta da banda WANIMA, que apresenta a música “Kienai Riyū”."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=4MYo8FfiXMA",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/4MYo8FfiXMA"
-        },
-        {
-          "type": "heading",
-          "text": "Produção de Black Clover",
-          "runs": [
-            {
-              "text": "Produção de Black Clover"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Ayataka Tanemura retorna à franquia na direção da 2ª temporada. Ele comandou os episódios 153 a 170 da primeira série e também dirigiu o filme Black Clover: Sword of the Wizard King. O Studio Pierrot novamente será responsável pela animação.",
-          "runs": [
-            {
-              "text": "Ayataka Tanemura retorna à franquia na direção da 2ª temporada. Ele comandou os episódios 153 a 170 da primeira série e também dirigiu o filme "
-            },
-            {
-              "text": "Black Clover: Sword of the Wizard King",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". O Studio Pierrot novamente será responsável pela animação."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A primeira temporada terminou em março de 2021, após 170 episódios. O anime começou em outubro de 2017 e adaptou o mangá de Yuki Tabata, publicado originalmente na Weekly Shonen Jump.",
-          "runs": [
-            {
-              "text": "A primeira temporada terminou em março de 2021, após 170 episódios. O anime começou em outubro de 2017 e adaptou o mangá de "
-            },
-            {
-              "text": "Yuki Tabata",
-              "href": "https://animenew.com.br/tag/yuki-tabata/"
-            },
-            {
-              "text": ", publicado originalmente na Weekly Shonen Jump."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A Crunchyroll exibirá a nova temporada conforme a transmissão japonesa. Antes disso, a plataforma fará uma sessão especial nos cinemas dos Estados Unidos em 21 de setembro.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://animenew.com.br/tag/crunchyroll/"
-            },
-            {
-              "text": " exibirá a nova temporada conforme a transmissão japonesa. Antes disso, a plataforma fará uma sessão especial nos cinemas dos Estados Unidos em 21 de setembro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: ANN",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "ANN",
-              "href": "https://www.animenewsnetwork.com/news/2026-09-07/black-clover-anime-2nd-season-reveals-october-3-debut-ending-theme-by-one-or-eight/.241479"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Black Clover: 2ª temporada estreia em outubro.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Black Clover: 2ª temporada estreia em outubro",
-              "href": "https://animenew.com.br/black-clover-2-temporada-estreia-outubro/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-08T15:41:14.000Z",
-      "updatedAt": "2026-09-08T15:41:14.000Z",
-      "expiresAt": "2026-09-15T15:41:14.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/black-clover-2-temporada-estreia-outubro",
-          "publishedAt": "2026-09-08T15:41:14.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 217,
-      "qualityScore": 0.967,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-ccc66539",
-      "slug": "the-shy-snow-woman-ganha-streaming-antecipado-animenew-ccc66539",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "The Shy Snow Woman ganha streaming antecipado",
-      "originalTitle": "The Shy Snow Woman ganha streaming antecipado",
-      "summary": "O anime The Shy Snow Woman and the Cursed Ring (Hitozukiai ga Nigate na Mibōjin no Yuki Onna-san to Noroi no Yubiwa) terá exibição antecipada em setembro, além de revelar seu tema de abertura e novo vídeo promocional. A adaptação do mangá adulto de Puuzaki Puuna será disponibilizada no OceanVeil em 11 de setembro, às 17h no horário do Japão.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Hitozukiai ga Nigate na Mibojin",
-        "The Shy Snow Woman"
-      ],
-      "url": "https://animenew.com.br/the-shy-snow-woman-anime-streaming-setembro",
-      "sourceUrl": "https://animenew.com.br/the-shy-snow-woman-anime-streaming-setembro",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/The-Shy-Snow-Woman-ganha-streaming-antecipado.webp",
-      "mediaQuery": "The Shy Snow Woman ganha streaming antecipado",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/The-Shy-Snow-Woman.webp",
-          "alt": "",
-          "caption": "© Puusaki Puuna, Suiseisha Inc."
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/NVbg3gNMz8I"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime The Shy Snow Woman and the Cursed Ring (Hitozukiai ga Nigate na Mibōjin no Yuki Onna-san to Noroi no Yubiwa) terá exibição antecipada em setembro, além de revelar seu tema de abertura e novo vídeo promocional. A adaptação do mangá adulto de Puuzaki Puuna será disponibilizada no OceanVeil em 11 de setembro, às 17h no horário do Japão.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "The Shy Snow Woman and the Cursed Ring",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Hitozukiai ga Nigate na Mibōjin no Yuki Onna-san to Noroi no Yubiwa",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") terá exibição antecipada em setembro, além de revelar seu tema de abertura e novo vídeo promocional. A adaptação do mangá adulto de "
-            },
-            {
-              "text": "Puuzaki Puuna",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " será disponibilizada no "
-            },
-            {
-              "text": "OceanVeil",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " em 11 de setembro, às 17h no horário do Japão."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Dragon Ball Super: Beerus ganha trailer e data de estreia",
-              "runs": [
-                {
-                  "text": "Dragon Ball Super: Beerus ganha trailer e data de estreia",
-                  "href": "https://animenew.com.br/dragon-ball-super-beerus-estreia-trailer"
-                }
-              ]
-            },
-            {
-              "text": "Pokémon: Wild Card – Novo filme anunciado para 2027",
-              "runs": [
-                {
-                  "text": "Pokémon: Wild Card – Novo filme anunciado para 2027",
-                  "href": "https://animenew.com.br/pokemon-wild-card-filme-anime-2027"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A plataforma da WWWave Corporation terá o lançamento na mesma data do AnimeFesta.",
-          "runs": [
-            {
-              "text": "A plataforma da WWWave Corporation terá o lançamento na mesma data do AnimeFesta."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=NVbg3gNMz8I",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/NVbg3gNMz8I"
-        },
-        {
-          "type": "paragraph",
-          "text": "O novo vídeo promocional apresenta a música de abertura “Choux Cream”, interpretada por Hitomi Suzune. A produção também divulgou um visual exclusivo da versão premium de streaming.",
-          "runs": [
-            {
-              "text": "O novo vídeo promocional apresenta a música de abertura “Choux Cream”, interpretada por Hitomi Suzune. A produção também divulgou um visual exclusivo da versão premium de streaming."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/The-Shy-Snow-Woman.webp",
-          "caption": "© Puusaki Puuna, Suiseisha Inc."
-        },
-        {
-          "type": "heading",
-          "text": "Estreia na televisão",
-          "runs": [
-            {
-              "text": "Estreia na televisão"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Na TV japonesa, a série estreia em 4 de outubro pela BS11 e chega à Tokyo MX em 6 de outubro.",
-          "runs": [
-            {
-              "text": "Na TV japonesa, a série estreia em "
-            },
-            {
-              "text": "4 de outubro pela BS11",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e chega à Tokyo MX em 6 de outubro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O elenco conta com Harumichi Shidō como Satoru Takahashi, Rikka Kitami como Mifuyu Yukino e Sara Ayumi como Kaede Kiryuin. A direção é de Kazuomi Koga, com composição de Eeyo Kurosaki e animação do Studio Hōkiboshi. A produção fica a cargo da Suiseisha.",
-          "runs": [
-            {
-              "text": "O elenco conta com Harumichi Shidō como Satoru Takahashi, Rikka Kitami como Mifuyu Yukino e Sara Ayumi como Kaede Kiryuin. A direção é de Kazuomi Koga, com composição de Eeyo Kurosaki e animação do "
-            },
-            {
-              "text": "Studio Hōkiboshi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A produção fica a cargo da Suiseisha."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama acompanha um proprietário que encontra um anel capaz de controlar criaturas como youkai. Ele decide usá-lo em uma mulher da neve que vive em um dos apartamentos. Segundo Puuzaki Puuna, o anime terá uma história original diferente do mangá.",
-          "runs": [
-            {
-              "text": "A trama acompanha um proprietário que encontra um anel capaz de controlar criaturas como youkai. Ele decide usá-lo em uma mulher da neve que vive em um dos apartamentos. Segundo Puuzaki Puuna, o anime terá uma história original diferente do "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://anime-yukionna.af-original.com/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em The Shy Snow Woman ganha streaming antecipado.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "The Shy Snow Woman ganha streaming antecipado",
-              "href": "https://animenew.com.br/the-shy-snow-woman-anime-streaming-setembro/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-07T20:34:04.000Z",
-      "updatedAt": "2026-09-07T20:34:04.000Z",
-      "expiresAt": "2026-09-14T20:34:04.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/the-shy-snow-woman-anime-streaming-setembro",
-          "publishedAt": "2026-09-07T20:34:04.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 254,
-      "qualityScore": 0.973,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     },
@@ -4893,482 +5480,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-dedf6511",
-      "slug": "giant-ojosama-revela-elenco-e-equipe-do-anime-animenew-dedf6511",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Giant Ojosama revela elenco e equipe do anime",
-      "originalTitle": "Giant Ojosama revela elenco e equipe do anime",
-      "summary": "O anime Giant Ojosama (Giant Young Lady) revelou seu elenco principal e novos integrantes da equipe em um teaser com legendas em inglês, além da estreia para janeiro de 2027. Yū Serizawa dará voz a Oriko Fujido, protagonista da história, enquanto Junya Enoki interpretará o Dr. Sebastian, seu mordomo.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Giant Ojou-sama",
-        "Giant Young Lady"
-      ],
-      "url": "https://animenew.com.br/anime-giant-ojosama-giant-ojo-sama-giant-young-lady-anime",
-      "sourceUrl": "https://animenew.com.br/anime-giant-ojosama-giant-ojo-sama-giant-young-lady-anime",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Giant-Ojosama-revela-elenco-e-equipe-do-anime.webp",
-      "mediaQuery": "Giant Ojosama revela elenco e equipe do anime",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/yOGfDfMGIO8"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Giant Ojosama (Giant Young Lady) revelou seu elenco principal e novos integrantes da equipe em um teaser com legendas em inglês, além da estreia para janeiro de 2027. Yū Serizawa dará voz a Oriko Fujido, protagonista da história, enquanto Junya Enoki interpretará o Dr. Sebastian, seu mordomo.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Giant Ojosama",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Giant Young Lady",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") revelou seu elenco principal e novos integrantes da equipe em um teaser com legendas em inglês, além da estreia para janeiro de 2027. Yū Serizawa dará voz a Oriko Fujido, protagonista da história, enquanto "
-            },
-            {
-              "text": "Junya Enoki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " interpretará o Dr. Sebastian, seu mordomo."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Dragon Ball Super: Beerus ganha trailer e data de estreia",
-              "runs": [
-                {
-                  "text": "Dragon Ball Super: Beerus ganha trailer e data de estreia",
-                  "href": "https://animenew.com.br/dragon-ball-super-beerus-estreia-trailer"
-                }
-              ]
-            },
-            {
-              "text": "The Long Summer of August 31 ganha anime pela SHAFT",
-              "runs": [
-                {
-                  "text": "The Long Summer of August 31 ganha anime pela SHAFT",
-                  "href": "https://animenew.com.br/the-long-summer-of-august-31-anime-shaft"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A animação ficará sob responsabilidade da Tatsunoko Production. A trilha sonora será composta por Yūsuke Shirato, Kijibato e Aira, do Dream Monster. A equipe também conta com Takashi Hiruma no design de arte e Akira Itō como diretor de arte.",
-          "runs": [
-            {
-              "text": "A animação ficará sob responsabilidade da "
-            },
-            {
-              "text": "Tatsunoko Production",
-              "href": "https://animenew.com.br/studio/103/tatsunoko-production"
-            },
-            {
-              "text": ". A trilha sonora será composta por Yūsuke Shirato, Kijibato e Aira, do Dream Monster. A equipe também conta com Takashi Hiruma no design de arte e Akira Itō como diretor de arte."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=yOGfDfMGIO8",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/yOGfDfMGIO8"
-        },
-        {
-          "type": "heading",
-          "text": "Produção",
-          "runs": [
-            {
-              "text": "Produção"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Hiroshi Ikehata, de WITCH WATCH, dirige a série, com Katsuya Oshima como diretor assistente. Hajime Mitsuda cuida do design dos personagens e da direção-chefe de animação. Yū Satō assina a composição da série e o roteiro.",
-          "runs": [
-            {
-              "text": "Hiroshi Ikehata, de "
-            },
-            {
-              "text": "WITCH WATCH",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", dirige a série, com Katsuya Oshima como diretor assistente. Hajime Mitsuda cuida do design dos personagens e da direção-chefe de animação. Yū Satō assina a composição da série e o roteiro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama acompanha Oriko Fujido, herdeira de uma família extremamente rica que recebeu uma cidade inteira como presente de aniversário aos quatro anos. Contudo quando um invasor gigante ameaça o local, Sebastian oferece uma bebida capaz de transformá-la em uma gigante. O problema é que, ao tentar proteger sua cidade, Oriko pode acabar destruindo tudo.",
-          "runs": [
-            {
-              "text": "A trama acompanha Oriko Fujido, herdeira de uma família extremamente rica que recebeu uma cidade inteira como presente de aniversário aos quatro anos. Contudo quando um invasor gigante ameaça o local, Sebastian oferece uma bebida capaz de transformá-la em uma gigante. O problema é que, ao tentar proteger sua cidade, Oriko pode acabar destruindo tudo.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Nikumura Q publica o mangá desde julho de 2020 no serviço Sunday Webry, da Shogakukan. Por fim o 12º volume estreou em 10 de agosto de 2026.",
-          "runs": [
-            {
-              "text": "Nikumura Q publica o "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " desde julho de 2020 no serviço "
-            },
-            {
-              "text": "Sunday Webry",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", da Shogakukan. Por fim o 12º volume estreou em 10 de agosto de 2026."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://giant-ojosama-anime.com/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Giant Ojosama revela elenco e equipe do anime.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Giant Ojosama revela elenco e equipe do anime",
-              "href": "https://animenew.com.br/anime-giant-ojosama-giant-ojo-sama-giant-young-lady-anime/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-03T17:05:27.000Z",
-      "updatedAt": "2026-09-03T17:05:27.000Z",
-      "expiresAt": "2026-09-10T17:05:27.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/anime-giant-ojosama-giant-ojo-sama-giant-young-lady-anime",
-          "publishedAt": "2026-09-03T17:05:27.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 251,
-      "qualityScore": 0.91,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-7b961450",
-      "slug": "dragon-ball-xenoverse-3-destaca-avatares-e-androids-animenew-7b961450",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Dragon Ball Xenoverse 3 destaca avatares e Androids",
-      "originalTitle": "Dragon Ball Xenoverse 3 destaca avatares e Androids",
-      "summary": "O novo trailer de Dragon Ball Xenoverse 3 revelou detalhes dos avatares personalizáveis, incluindo a nova raça Android, além de técnicas herdáveis. Durante a transmissão State of Play da Sony nesta quinta-feira, a Bandai Namco apresentou novas cenas do terceiro jogo da série Dragon Ball Xenoverse.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Games",
-        "Notícias",
-        "Bandai Namco",
-        "Dragon Ball",
-        "Dragon Ball Xenoverse 3"
-      ],
-      "url": "https://animenew.com.br/dragon-ball-xenoverse-3-trailer-avatares-androids",
-      "sourceUrl": "https://animenew.com.br/dragon-ball-xenoverse-3-trailer-avatares-androids",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Dragon-Ball-Xenoverse-3-destaca-avatares-e-Androids.webp",
-      "mediaQuery": "Dragon Ball Xenoverse 3 destaca avatares e Androids",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/912l6NX5lrY"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O novo trailer de Dragon Ball Xenoverse 3 revelou detalhes dos avatares personalizáveis, incluindo a nova raça Android, além de técnicas herdáveis. Durante a transmissão State of Play da Sony nesta quinta-feira, a Bandai Namco apresentou novas cenas do terceiro jogo da série Dragon Ball Xenoverse.",
-          "runs": [
-            {
-              "text": "O novo trailer de "
-            },
-            {
-              "text": "Dragon Ball Xenoverse 3",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " revelou detalhes dos avatares personalizáveis, incluindo a nova raça Android, além de técnicas herdáveis. Durante a transmissão "
-            },
-            {
-              "text": "State of Play",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " da Sony nesta quinta-feira, a "
-            },
-            {
-              "text": "Bandai Namco ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "apresentou novas cenas do terceiro "
-            },
-            {
-              "text": "jogo",
-              "href": "https://animenew.com.br/games"
-            },
-            {
-              "text": " da série "
-            },
-            {
-              "text": "Dragon Ball Xenoverse",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "My Hero Academia: All’s Justice ganha novo DLC de Deku",
-              "runs": [
-                {
-                  "text": "My Hero Academia: All’s Justice ganha novo DLC de Deku",
-                  "href": "https://animenew.com.br/my-hero-academia-alls-justice-dlc-deku"
-                }
-              ]
-            },
-            {
-              "text": "Dragon Ball Super: Beerus ganha trailer e data de estreia",
-              "runs": [
-                {
-                  "text": "Dragon Ball Super: Beerus ganha trailer e data de estreia",
-                  "href": "https://animenew.com.br/dragon-ball-super-beerus-estreia-trailer"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O vídeo mostra as opções de personalização dos personagens criados pelos jogadores e destaca a possibilidade de utilizar técnicas de outros personagens da franquia. Entre as novidades está a inclusão da raça Android, que amplia as opções disponíveis para os avatares.",
-          "runs": [
-            {
-              "text": "O vídeo mostra as opções de personalização dos personagens criados pelos jogadores e destaca a possibilidade de utilizar técnicas de outros personagens da franquia. Entre as novidades está a inclusão da raça Android, que amplia as opções disponíveis para os avatares."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=912l6NX5lrY",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/912l6NX5lrY"
-        },
-        {
-          "type": "paragraph",
-          "text": "O título também contará com personagens originais como Brett, Lilica, ROM e Tap. Bulma e Gamma 1 estão entre outros nomes da franquia confirmados na aventura.",
-          "runs": [
-            {
-              "text": "O título também contará com personagens originais como Brett, Lilica, ROM e Tap. Bulma e Gamma 1 estão entre outros nomes da franquia confirmados na aventura."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Lançamento de Xenoverse 3 em 2027",
-          "runs": [
-            {
-              "text": "Lançamento de Xenoverse 3 em 2027"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Dragon Ball Xenoverse 3 está em desenvolvimento em parceria com a Toei Animation e chegará em 2027 para PlayStation 5, Xbox Series X|S e PC via Steam.",
-          "runs": [
-            {
-              "text": "Dragon Ball Xenoverse 3",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " está em desenvolvimento em parceria com a Toei Animation e chegará em 2027 para PlayStation 5, Xbox Series X|S e PC via Steam."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O projeto está em produção há cerca de seis a sete anos e foi inicialmente apresentado sob o codinome “Age 1000”. A Bandai Namco também confirmou a presença de um personagem inédito criado por Akira Toriyama, que participou da construção do mundo e de outros elementos do jogo.",
-          "runs": [
-            {
-              "text": "O projeto está em produção há cerca de seis a sete anos e foi inicialmente apresentado sob o codinome “Age 1000”. A Bandai Namco também confirmou a presença de um personagem inédito criado por Akira Toriyama, que participou da construção do mundo e de outros elementos do jogo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Dragon Ball Xenoverse 3 destaca avatares e Androids.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Dragon Ball Xenoverse 3 destaca avatares e Androids",
-              "href": "https://animenew.com.br/dragon-ball-xenoverse-3-trailer-avatares-androids/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-03T16:58:50.000Z",
-      "updatedAt": "2026-09-03T16:58:50.000Z",
-      "expiresAt": "2026-09-10T16:58:50.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/dragon-ball-xenoverse-3-trailer-avatares-androids",
-          "publishedAt": "2026-09-03T16:58:50.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 234,
-      "qualityScore": 0.907,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 9,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
