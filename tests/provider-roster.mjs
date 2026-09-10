@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { normalizeJikanAuthors, normalizeJikanStaff, normalizeKitsuRoster } from '../lib/provider.mjs';
+import { normalizeJikanAuthors, normalizeJikanStaff, normalizeKitsuRoster, normalizeMalRoster } from '../lib/provider.mjs';
 
 const jikanStaff=normalizeJikanStaff([{positions:['Director','Storyboard'],person:{mal_id:7,name:'Aya Teste',images:{jpg:{image_url:'https://cdn.example.test/aya.jpg'}}}}]);
 assert.deepEqual(jikanStaff,[{role:'Director, Storyboard',id:7,name:'Aya Teste',native:'',image:'https://cdn.example.test/aya.jpg'}]);
@@ -26,4 +26,18 @@ assert.deepEqual(normalizeKitsuRoster(staffPayload,'staff'),[
 ]);
 assert.deepEqual(normalizeKitsuRoster({data:staffPayload.data,included:[]},'staff'),[],'relações sem pessoa incluída não geram placeholders falsos');
 
-console.log('Provider roster: 5 tests passed');
+const malHtml=`
+  <table class="js-anime-character-table"><tbody><tr>
+    <td><a href="https://myanimelist.net/character/31/Jirou_Azuma"><img alt="Azuma, Jirou" data-src="https://cdn.myanimelist.net/r/42x62/images/characters/1/31.jpg?x=1"></a></td>
+    <td><div class="spaceit_pad"><a><h3 class="h3_character_name">Azuma, Jirou</h3></a></div><div class="spaceit_pad"><small>Main</small></div></td>
+    <td><table><tr><td><a href="https://myanimelist.net/people/41/Ryouta_Suzuki"><img alt="Suzuki, Ryouta" data-src="https://cdn.myanimelist.net/r/42x62/images/voiceactors/1/41.jpg"></a></td><td>Japanese</td></tr></table></td>
+  </tr></tbody></table>
+  <div><h2>Staff</h2></div>
+  <table><tr><td><a href="https://myanimelist.net/people/51/Takeshi_Takadera"><img alt="Takadera, Takeshi" data-src="https://cdn.myanimelist.net/r/42x62/images/voiceactors/1/51.jpg"></a></td><td><div class="spaceit_pad"><small>Sound Director</small></div></td></tr></table>`;
+const malRoster=normalizeMalRoster(malHtml,'ANIME');
+assert.equal(malRoster.characters[0].name,'Jirou Azuma');
+assert.equal(malRoster.characters[0].image,'https://cdn.myanimelist.net/images/characters/1/31.jpg');
+assert.equal(malRoster.characters[0].voiceActor.person.name,'Ryouta Suzuki');
+assert.deepEqual(malRoster.staff,[{role:'Sound Director',id:51,name:'Takeshi Takadera',native:'',image:'https://cdn.myanimelist.net/images/voiceactors/1/51.jpg'}]);
+
+console.log('Provider roster: 9 tests passed');
