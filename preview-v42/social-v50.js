@@ -31,7 +31,18 @@
     if (!response.ok) throw Object.assign(new Error(body?.error || `HTTP_${response.status}`), { status: response.status, code: body?.error });
     return body;
   };
-  const account = async () => { try { return await window.AniNexusAuth?.getUser?.() || null; } catch { return null; } };
+  let accountIdentity = null;
+  addEventListener('aninexus:account-identity-changed', event => { accountIdentity = event.detail?.user || null; });
+  const account = async () => {
+    if (accountIdentity) return accountIdentity;
+    try {
+      const clerkUser = await window.AniNexusAuth?.getUser?.();
+      if (!clerkUser) return null;
+      try { accountIdentity = (await privateApi('/api/me'))?.user || clerkUser; }
+      catch { accountIdentity = clerkUser; }
+      return accountIdentity;
+    } catch { return null; }
+  };
   const requireAccount = async () => {
     const user = await account();
     if (user) return user;
@@ -166,7 +177,7 @@
         await privateApi(options.endpoint(button.dataset.nx50Delete), { method: 'DELETE' });
         await options.refresh?.();
         toast('Publicação excluída.');
-      });
+      }, { cascade: options.targetType === 'IMPRESSION' });
     });
     root.querySelectorAll('[data-nx50-moderate]').forEach(button => button.onclick = () => {
       const targetType = button.dataset.nx50ModerateType, targetId = button.dataset.nx50Moderate;
@@ -175,7 +186,7 @@
         await privateApi(`/api/admin/content/${encodeURIComponent(targetType)}/${encodeURIComponent(targetId)}`, { method: 'PATCH', body: JSON.stringify({ hidden: true }) });
         await options.refresh?.();
         toast('Publicação removida pela moderação.');
-      }, true);
+      }, { moderation: true, cascade: targetType === 'IMPRESSION' });
     });
   }
 
@@ -197,10 +208,11 @@
     textarea.focus(); textarea.setSelectionRange(textarea.value.length, textarea.value.length);
   }
 
-  function openDelete(remove, moderation = false) {
+  function openDelete(remove, { moderation = false, cascade = false } = {}) {
     document.querySelector('.nx50-report-layer')?.remove();
     const layer = document.createElement('div'); layer.className = 'nx50-report-layer';
-    layer.innerHTML = `<button type="button" class="nx50-report-backdrop" data-nx50-dialog-close aria-label="Cancelar exclusão"></button><section class="nx50-report-dialog nx50-delete-dialog" role="dialog" aria-modal="true"><small>${moderation ? 'MODERAÇÃO' : 'EXCLUIR'}</small><h2>${moderation ? 'Remover esta publicação?' : 'Excluir esta publicação?'}</h2><p>Ela deixará de aparecer para a comunidade.</p><footer><button type="button" data-nx50-dialog-close>Cancelar</button><button type="button" class="nx50-danger" data-nx50-delete-confirm>${moderation ? 'Remover' : 'Excluir'}</button></footer></section>`;
+    const consequence = cascade ? 'A impressão e todas as respostas ligadas a ela deixarão de aparecer para a comunidade.' : 'A publicação deixará de aparecer para a comunidade.';
+    layer.innerHTML = `<button type="button" class="nx50-report-backdrop" data-nx50-dialog-close aria-label="Cancelar exclusão"></button><section class="nx50-report-dialog nx50-delete-dialog" role="dialog" aria-modal="true" aria-labelledby="nx50DeleteTitle"><small>${moderation ? 'MODERAÇÃO' : 'EXCLUIR'}</small><h2 id="nx50DeleteTitle">${moderation ? 'Remover esta publicação?' : 'Excluir esta publicação?'}</h2><p>${consequence}</p><footer><button type="button" data-nx50-dialog-close>Cancelar</button><button type="button" class="nx50-danger" data-nx50-delete-confirm>${moderation ? 'Remover' : 'Excluir'}</button></footer></section>`;
     document.body.append(layer);
     const close = () => layer.remove(); layer.querySelectorAll('[data-nx50-dialog-close]').forEach(button => button.onclick = close);
     layer.querySelector('[data-nx50-delete-confirm]').onclick = async event => {
@@ -282,22 +294,24 @@
     if (!host) return;
     host.innerHTML = `<div class="nx50-social"><div data-nx50-access></div><div class="nx50-filters"><div><button type="button" class="active" data-nx50-sort="popular">Populares</button><button type="button" data-nx50-sort="recent">Recentes</button></div><label class="nx50-spoiler-filter"><input type="checkbox" data-nx50-hide checked><i aria-hidden="true"></i><span>Ocultar spoilers</span></label></div><div class="nx50-list" data-nx50-list aria-live="polite"><div class="nx22-panel-loading"><i></i><i></i><span>Carregando impressões…</span></div></div></div>`;
     const list = host.querySelector('[data-nx50-list]'), access = host.querySelector('[data-nx50-access]');
-    let sort = 'popular', hideSpoilers = true;
-    const load = async () => {
+    let sort = 'popular', hideSpoilers = true, currentUser = null;
+    const load = async (knownUser = currentUser) => {
       try {
-        const [data, user] = await Promise.all([publicApi(`${endpoint}?sort=${sort}&hideSpoilers=${hideSpoilers}`), account()]), items = data.items || [], username = String(user?.username || '').toLowerCase(), canModerate = ['moderator', 'admin'].includes(String(user?.role || '').toLowerCase());
+        const [data, resolvedUser] = await Promise.all([publicApi(`${endpoint}?sort=${sort}&hideSpoilers=${hideSpoilers}`), knownUser ? Promise.resolve(knownUser) : account()]), user = resolvedUser || null, items = data.items || [], username = String(user?.username || '').toLowerCase(), canModerate = ['moderator', 'admin'].includes(String(user?.role || '').toLowerCase());
+        currentUser = user;
         if (!host.isConnected) return;
         list.innerHTML = items.length ? items.map(item => impressionCard(item, reading, Boolean(username && handle(item).toLowerCase() === username), canModerate)).join('') : '<div class="nx50-empty"><b>Primeiras impressões a caminho</b><p>Quando alguém compartilhar uma opinião sobre esta obra, ela aparecerá aqui.</p></div>';
-        bindSocialActions(list, null, { items, endpoint: itemId => `/api/impressions/${itemId}`, maxLength: 2000, refresh: load });
+        bindSocialActions(list, null, { items, endpoint: itemId => `/api/impressions/${itemId}`, targetType: 'IMPRESSION', maxLength: 2000, refresh: load });
         hydrateLikes(list, 'IMPRESSION', items.map(item => item.id));
         list.querySelectorAll('[data-nx50-open-replies]').forEach(button => button.onclick = () => toggleReplies(button.dataset.nx50OpenReplies));
       } catch { list.innerHTML = '<div class="nx50-empty error"><b>As impressões estão temporariamente indisponíveis</b><button type="button" data-nx50-retry>Tentar novamente</button></div>'; list.querySelector('[data-nx50-retry]')?.addEventListener('click', load, { once: true }); }
     };
-    const renderAccess = async () => {
-      const user = await account(); if (!host.isConnected) return;
-      if (!user) { access.innerHTML = '<button type="button" class="nx50-login-cta">Entre na sua conta para publicar uma impressão</button>'; access.querySelector('button').onclick = () => requireAccount(); return; }
+    const renderAccess = async (knownUser) => {
+      const user = knownUser === undefined ? await account() : knownUser; currentUser = user || null; if (!host.isConnected) return user;
+      if (!user) { access.innerHTML = '<button type="button" class="nx50-login-cta">Entre na sua conta para publicar uma impressão</button>'; access.querySelector('button').onclick = () => requireAccount(); return null; }
       access.innerHTML = composerMarkup('impression');
       bindComposer(access.querySelector('form'), async text => { await privateApi(endpoint, { method: 'POST', body: JSON.stringify({ text }) }); await load(); toast('Impressão publicada.'); });
+      return user;
     };
     const toggleReplies = async impressionId => {
       const box = list.querySelector(`[data-nx50-replies="${CSS.escape(impressionId)}"]`); if (!box) return;
@@ -305,11 +319,12 @@
       box.hidden = false; box.innerHTML = '<p class="nx50-loading">Carregando respostas…</p>';
       const paint = async (replyTo = null, replyName = '') => {
         try {
-          const [data, user] = await Promise.all([publicApi(`/api/impressions/${impressionId}/replies?hideSpoilers=${hideSpoilers}`), account()]), items = data.items || [], byId = new Map(items.map(item => [item.id, item])), username = String(user?.username || '').toLowerCase(), canModerate = ['moderator', 'admin'].includes(String(user?.role || '').toLowerCase());
+          const [data, resolvedUser] = await Promise.all([publicApi(`/api/impressions/${impressionId}/replies?hideSpoilers=${hideSpoilers}`), currentUser ? Promise.resolve(currentUser) : account()]), user = resolvedUser || null, items = data.items || [], byId = new Map(items.map(item => [item.id, item])), username = String(user?.username || '').toLowerCase(), canModerate = ['moderator', 'admin'].includes(String(user?.role || '').toLowerCase());
+          currentUser = user;
           box.innerHTML = `${items.map(item => replyCard(item, 'IMPRESSION_REPLY', handle(byId.get(item.parent_id)), Boolean(username && handle(item).toLowerCase() === username), canModerate)).join('') || '<p class="nx50-no-replies">Ainda não há respostas.</p>'}${composerMarkup('reply')}`;
           const form = box.querySelector('form'); form.querySelector('header strong').textContent = replyTo ? `Respondendo a @${replyName}` : 'Responder à impressão'; form.querySelector('header span').textContent = 'A conversa permanece ligada a esta impressão.';
           bindComposer(form, async text => { await privateApi(`/api/impressions/${impressionId}/replies`, { method: 'POST', body: JSON.stringify({ text, parentId: replyTo }) }); await paint(); toast('Resposta publicada.'); });
-          bindSocialActions(box, paint, { items, endpoint: replyId => `/api/impressions/${impressionId}/replies/${replyId}`, maxLength: 2000, refresh: paint }); hydrateLikes(box, 'IMPRESSION_REPLY', items.map(item => item.id));
+          bindSocialActions(box, paint, { items, endpoint: replyId => `/api/impressions/${impressionId}/replies/${replyId}`, targetType: 'IMPRESSION_REPLY', maxLength: 2000, refresh: paint }); hydrateLikes(box, 'IMPRESSION_REPLY', items.map(item => item.id));
           if (replyTo) form.querySelector('textarea').focus();
         } catch { box.innerHTML = '<p class="nx50-no-replies">As respostas não carregaram agora.</p>'; }
       };
@@ -317,7 +332,14 @@
     };
     host.querySelectorAll('[data-nx50-sort]').forEach(button => button.onclick = () => { sort = button.dataset.nx50Sort; host.querySelectorAll('[data-nx50-sort]').forEach(item => item.classList.toggle('active', item === button)); load(); });
     host.querySelector('[data-nx50-hide]').onchange = event => { hideSpoilers = event.target.checked; load(); };
-    await Promise.all([renderAccess(), load()]);
+    if (host._nx50IdentityHandler) removeEventListener('aninexus:account-identity-changed', host._nx50IdentityHandler);
+    host._nx50IdentityHandler = async event => {
+      if (!host.isConnected) { removeEventListener('aninexus:account-identity-changed', host._nx50IdentityHandler); return; }
+      const user = event.detail?.user || null; currentUser = user; await renderAccess(user); await load(user);
+    };
+    addEventListener('aninexus:account-identity-changed', host._nx50IdentityHandler);
+    const user = await renderAccess();
+    await load(user);
   }
 
   addEventListener('aninexus:detail-panel', event => {

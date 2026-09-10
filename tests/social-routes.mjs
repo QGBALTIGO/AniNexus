@@ -64,6 +64,14 @@ test('editing an impression reply is author-scoped and reparses partial spoilers
   assert.deepEqual(result.segments.map(segment => segment.type), ['text', 'spoiler']);
 });
 
+test('impression replies disappear when their root impression is hidden', async () => {
+  let query = '';
+  const routes = harness(async sql => { query = sql; return { rows: [] }; });
+  const result = await routes.get('GET /api/impressions/:id/replies')({ params: { id: CONTENT_ID }, query: { hideSpoilers: 'true' } }, response());
+  assert.match(query, /JOIN impressions i ON i\.id=r\.impression_id AND i\.hidden=false/);
+  assert.deepEqual(result.items, []);
+});
+
 test('episode replies are scoped to the same anime and episode before depth is inherited', async () => {
   const calls = [];
   const routes = harness(async (sql, params) => { calls.push({ sql, params }); return { rows: [{ id: CONTENT_ID, parent_id: PARENT_ID, root_id: PARENT_ID, depth: 3, created_at: new Date().toISOString() }] }; });

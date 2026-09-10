@@ -245,31 +245,31 @@ body.nx22-detail-active button.nx22-fav[data-nx-action-owner="global"][aria-pres
 
 /* AniNexus V44.40 — programação integrada ao sistema visual da obra. */
 .nx22-overview-schedule{display:flex;justify-content:center;width:100%;margin:0 auto 30px}
-.nx22-overview-schedule .nx22-airing{position:relative;overflow:hidden;display:grid;grid-template-columns:42px minmax(170px,1fr) auto auto;align-items:center;gap:16px;width:min(100%,680px);min-height:72px;margin:0;padding:12px 14px;border:1px solid rgba(255,255,255,.09);border-radius:12px;background:rgba(17,12,16,.92);box-shadow:0 12px 30px rgba(0,0,0,.18);color:#b9adb2}
+.nx22-overview-schedule .nx22-airing{position:relative;overflow:hidden;display:grid;grid-template-columns:42px minmax(0,1fr) auto;align-items:center;gap:14px;width:min(100%,720px);min-height:78px;margin:0;padding:12px 14px;border:1px solid rgba(255,255,255,.09);border-radius:10px;background:linear-gradient(135deg,#100b13,#0d0910 72%);box-shadow:0 12px 30px rgba(0,0,0,.18);color:#b9adb2}
 .nx22-overview-schedule .nx22-airing:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(180deg,#f05a78,#b91d43)}
 .nx22-airing-icon{width:36px;height:36px;border:1px solid rgba(236,64,98,.22);border-radius:9px;background:rgba(227,38,79,.09);color:#ef6881;display:grid;place-items:center}
 .nx22-airing-icon svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
-.nx22-airing-copy,.nx22-airing-fact,.nx22-airing-countdown,.nx22-overview-schedule time{display:grid;gap:4px;min-width:0}
+.nx22-airing-copy,.nx22-airing-fact,.nx22-airing-countdown{display:grid;gap:4px;min-width:0}
 .nx22-overview-schedule small{color:#887b80;font-size:7px;font-weight:900;letter-spacing:.12em}
 .nx22-airing-copy strong{color:#f7f1f3;font:800 14px/1.1 Manrope,sans-serif}
-.nx22-overview-schedule time{padding-left:16px;border-left:1px solid rgba(255,255,255,.08);font-style:normal;white-space:nowrap}
-.nx22-overview-schedule time strong,.nx22-airing-fact strong{color:#e7dce0;font:800 13px/1 Manrope,sans-serif}
-.nx22-airing-countdown{min-width:91px;padding:9px 11px;border:1px solid rgba(227,38,79,.18);border-radius:8px;background:rgba(227,38,79,.07)}
-.nx22-airing-countdown strong{color:#f7e9ed;font:900 14px/1 Manrope,sans-serif;font-variant-numeric:tabular-nums}
+.nx22-airing-copy time{display:flex;align-items:center;gap:7px;margin-top:1px;color:#897b82;font-style:normal;font:750 9px/1.2 Manrope,sans-serif;white-space:nowrap}
+.nx22-airing-copy time b{padding-left:7px;border-left:1px solid rgba(255,255,255,.11);color:#d8ccd1;font:850 10px/1 Manrope,sans-serif}
+.nx22-airing-fact strong{color:#e7dce0;font:800 13px/1 Manrope,sans-serif}
+.nx22-airing-countdown{min-width:96px;padding:9px 11px;border:1px solid rgba(255,255,255,.075);border-radius:7px;background:linear-gradient(180deg,#17121a,#120e16)}
+.nx22-airing-countdown strong{color:#f4e9ed;font:900 13px/1 Manrope,sans-serif;font-variant-numeric:tabular-nums}
 .nx22-overview-schedule .nx22-publication{grid-template-columns:42px minmax(150px,1fr) auto auto auto}
 .nx22-overview-schedule .nx22-publication em{padding:8px 10px;border:1px solid rgba(67,206,176,.16);border-radius:8px;background:rgba(27,114,96,.08);color:#8fd9c8;font-size:9px;font-style:normal;font-weight:900;white-space:nowrap}
 
 @media(max-width:720px){
   .nx22-overview-schedule{margin-bottom:25px}
-  .nx22-overview-schedule .nx22-airing{grid-template-columns:36px minmax(0,1fr) auto;grid-template-rows:auto auto;gap:4px 10px;min-height:72px;padding:10px 11px;border-radius:10px}
-  .nx22-airing-icon{grid-row:1/3;width:32px;height:32px;border-radius:8px}
+  .nx22-overview-schedule .nx22-airing{grid-template-columns:36px minmax(0,1fr) auto;grid-template-rows:auto;gap:10px;min-height:70px;padding:10px 11px;border-radius:9px}
+  .nx22-airing-icon{width:32px;height:32px;border-radius:8px}
   .nx22-airing-icon svg{width:16px;height:16px}
-  .nx22-airing-copy{grid-column:2;grid-row:1;align-self:end;gap:2px}
+  .nx22-airing-copy{grid-column:2;align-self:center;gap:2px}
   .nx22-airing-copy strong{font-size:12px}
-  .nx22-overview-schedule time{grid-column:2;grid-row:2;display:flex;align-items:center;gap:6px;padding:0;border:0}
-  .nx22-overview-schedule time small{letter-spacing:.04em}
-  .nx22-overview-schedule time strong{font-size:10px}
-  .nx22-airing-countdown{grid-column:3;grid-row:1/3;align-self:center;min-width:76px;padding:8px 9px}
+  .nx22-airing-copy time{gap:6px;font-size:8px}
+  .nx22-airing-copy time b{font-size:9px}
+  .nx22-airing-countdown{grid-column:3;align-self:center;min-width:76px;padding:8px 9px}
   .nx22-airing-countdown strong{font-size:12px}
   .nx22-overview-schedule .nx22-publication{display:flex;flex-wrap:wrap;gap:10px;padding:11px 12px}
   .nx22-overview-schedule .nx22-publication .nx22-airing-icon{flex:0 0 32px}
