@@ -7,7 +7,7 @@
   const THEME_API='https://api.animethemes.moe';
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
-  const CACHE_VERSION='44.45.0';
+  const CACHE_VERSION='44.46.0';
   const CACHE_TTL=20*60*1000;
   const THEMES_CACHE_TTL=6*60*60*1000;
   const detailPromises=new Map();
@@ -126,12 +126,17 @@
       externalLinks:(m.streaming||[]).map(x=>({site:x.site,url:x.url,type:x.type||'STREAMING',icon:x.icon||'',color:x.color||''}))
     };
   }
+  function normalizedRelationMedia(m,type){
+    const complete=normalizedMedia({...m,mediaType:type});if(complete)return complete;
+    const name=String(m?.title||m?.titleRomaji||'').trim();if(!name||!Number(m?.idMal))return null;
+    return{id:0,idMal:Number(m.idMal),mediaType:type,title:{english:name,romaji:m.titleRomaji||name,native:m.titleNative||'',userPreferred:name},synonyms:m.synonyms||[],coverImage:{extraLarge:m.cover||'',large:m.cover||'',color:m.coverColor||''},bannerImage:m.banner||'',description:m.description||'',genres:m.genres||[],tags:[],averageScore:null,meanScore:null,popularity:0,favourites:0,ratingCount:0,listCount:0,metricsSource:'aninexus',episodes:m.episodes||null,chapters:m.chapters||null,volumes:m.volumes||null,duration:m.duration||null,format:m.format||null,status:m.status||null,season:m.season||null,seasonYear:m.seasonYear||null,countryOfOrigin:m.country||null,source:m.source||null,startDate:m.startDate||null,endDate:m.endDate||null,studios:{nodes:m.studios||[]},nextAiringEpisode:null,trailer:null,externalLinks:[],externalUrl:m.externalUrl||''};
+  }
   function normalizeServerMedia(payload,type){
     if(!payload||String(payload.mediaType||type).toUpperCase()!==type)throw new Error('Mídia inválida');
     const base=normalizedMedia({...payload,mediaType:type});if(!base)throw new Error(type==='MANGA'?'Mangá não encontrado':'Anime não encontrado');
     base.characters={edges:(payload.characters||[]).map(item=>({role:item.role||'SUPPORTING',voiceActors:item.voiceActor?[{id:item.voiceActor?.person?.mal_id||item.voiceActor?.mal_id||0,name:{full:item.voiceActor?.person?.name||item.voiceActor?.name||''},image:{large:item.voiceActor?.person?.images?.jpg?.image_url||item.voiceActor?.images?.jpg?.image_url||''}}]:[],node:{id:item.id,name:{full:item.name||'',native:item.native||''},image:{large:item.image||'',medium:item.image||''}}}))};
     base.staff={edges:(payload.staff||[]).filter(item=>item?.name&&!LEGACY_COMPANY_ROLES.has(String(item.role||'').trim().toLowerCase())).map(item=>({role:item.role||'Equipe',node:{id:item.id,name:{full:item.name||'',native:item.native||''},image:{large:item.image||'',medium:item.image||''}}}))};
-    base.relations={edges:(payload.relations||[]).map(item=>{const relatedType=String(item.media?.mediaType||item.media?.type||type).toUpperCase()==='MANGA'?'MANGA':'ANIME';return{relationType:item.relationType||'OTHER',node:normalizedMedia({...item.media,mediaType:relatedType})}}).filter(item=>item.node)};
+    base.relations={edges:(payload.relations||[]).map(item=>{const relatedType=String(item.media?.mediaType||item.media?.type||type).toUpperCase()==='MANGA'?'MANGA':'ANIME';return{relationType:item.relationType||'OTHER',node:normalizedRelationMedia(item.media,relatedType)}}).filter(item=>item.node)};
     base.recommendations={nodes:(payload.recommendations||[]).map(item=>({rating:item.rating||0,mediaRecommendation:normalizedMedia(item.media)})).filter(item=>item.mediaRecommendation)};
     return base;
   }
@@ -231,7 +236,7 @@
   function airedEnd(m){if(m.endDate?.year)return fmtDate(m.endDate);if(m.jikan?.aired?.to)return fmtDateIso(m.jikan.aired.to);return m.status==='RELEASING'?'Em exibição':m.status==='NOT_YET_RELEASED'?'Ainda não terminou':'—'}
   function airedStart(m){if(m.startDate?.year)return fmtDate(m.startDate);if(m.jikan?.aired?.from)return fmtDateIso(m.jikan.aired.from);return'—'}
 
-  function relationCard(edge){const m=edge?.node;if(!m)return'';const relatedType=String(m.mediaType||m.type||'ANIME').toUpperCase()==='MANGA'?'MANGA':'ANIME';return `<article class="nx22-related" tabindex="0" data-nx22-open="${m.id}" data-nx22-media-type="${relatedType}" data-kind="${relatedType.toLowerCase()}"><div class="nx22-related-cover">${cover(m)?`<img loading="lazy" src="${esc(cover(m))}" alt="${esc(title(m))}">`:''}</div><div><small>${esc(REL[edge.relationType]||String(edge.relationType||'Relacionado').replaceAll('_',' '))}</small><strong>${esc(title(m))}</strong><span>${esc(mediaFormatPT(m))}${m.seasonYear?` · ${m.seasonYear}`:''}</span></div></article>`}
+  function relationCard(edge){const m=edge?.node;if(!m)return'';const relatedType=String(m.mediaType||m.type||'ANIME').toUpperCase()==='MANGA'?'MANGA':'ANIME',internalId=Number(m.id)||0,action=internalId?`data-nx22-open="${internalId}"`:`data-nx22-search-title="${esc(title(m))}"`;return `<article class="nx22-related" tabindex="0" role="button" ${action} data-nx22-media-type="${relatedType}" data-kind="${relatedType.toLowerCase()}"><div class="nx22-related-cover">${cover(m)?`<img loading="lazy" src="${esc(cover(m))}" alt="${esc(title(m))}">`:''}</div><div><small>${esc(REL[edge.relationType]||String(edge.relationType||'Relacionado').replaceAll('_',' '))}</small><strong>${esc(title(m))}</strong><span>${esc(mediaFormatPT(m))}${m.seasonYear?` · ${m.seasonYear}`:''}</span></div></article>`}
   function recommendationCard(node){const m=node?.mediaRecommendation;if(!m)return'';const relatedType=String(m.mediaType||m.type||'ANIME').toUpperCase()==='MANGA'?'MANGA':'ANIME';return `<article class="nx22-rec" tabindex="0" data-nx22-open="${m.id}" data-nx22-media-type="${relatedType}" data-kind="${relatedType.toLowerCase()}"><div>${cover(m)?`<img loading="lazy" src="${esc(cover(m))}" alt="${esc(title(m))}">`:''}${m.metricsSource==='aninexus'&&m.averageScore?`<span>${SVG.star}${(m.averageScore/10).toFixed(1)}</span>`:''}</div><strong>${esc(title(m))}</strong><small>${esc((m.genres||[]).slice(0,2).map(g=>GENRE[g]||g).join(' · ')||(relatedType==='MANGA'?'Mangá':'Anime'))}</small></article>`}
   function initials(value){return String(value||'?').trim().split(/\s+/).slice(0,2).map(part=>part.charAt(0)).join('').toUpperCase()||'?'}
   function staffRolePT(value){return String(value||'Equipe').split(',').map(role=>{const clean=role.trim();return STAFF_ROLE_PT[clean]||clean}).filter(Boolean).join(' · ')}
@@ -363,6 +368,7 @@
       if(k==='geral'){synopsisPT(m).then(text=>{if(mediaId()===m.id){const el=root.querySelector('#nx22Synopsis'),note=root.querySelector('#nx22SynopsisNote');if(el)el.textContent=text;note?.remove()}});hydrateMediaActivity(media.type,m.id)}
       if(k==='aberturas'&&!reading)hydrateThemes(m);
       root.querySelectorAll('[data-nx22-open]').forEach(el=>{const open=()=>openMedia(Number(el.dataset.nx22Open),el.querySelector('strong')?.textContent||(reading?'manga':'anime'),el.dataset.nx22MediaType||media.type);el.addEventListener('click',e=>{if(e.target.closest('button,a'))return;open()});el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
+      root.querySelectorAll('[data-nx22-search-title]').forEach(el=>{const open=()=>{const type=el.dataset.nx22MediaType==='MANGA'?'MANGA':'ANIME';openCatalogFilter(type==='MANGA'?'/mangas':'/animes/catalogo',{search:el.dataset.nx22SearchTitle||''})};el.addEventListener('click',open);el.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open()}})});
     }
     root.querySelectorAll('[data-nx22-tab]').forEach(b=>b.onclick=()=>show(b.dataset.nx22Tab));
     root.querySelectorAll('[data-nx22-sheet-tab]').forEach(b=>b.onclick=()=>show(b.dataset.nx22SheetTab));

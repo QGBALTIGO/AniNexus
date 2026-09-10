@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { normalizeJikanAuthors, normalizeJikanStaff, normalizeKitsuRoster, normalizeMalRoster } from '../lib/provider.mjs';
+import { normalizeJikanAuthors, normalizeJikanStaff, normalizeKitsuRoster, normalizeMalPersonImage, normalizeMalRelations, normalizeMalRoster } from '../lib/provider.mjs';
 
 const jikanStaff=normalizeJikanStaff([{positions:['Director','Storyboard'],person:{mal_id:7,name:'Aya Teste',images:{jpg:{image_url:'https://cdn.example.test/aya.jpg'}}}}]);
 assert.deepEqual(jikanStaff,[{role:'Director, Storyboard',id:7,name:'Aya Teste',native:'',image:'https://cdn.example.test/aya.jpg'}]);
@@ -40,4 +40,18 @@ assert.equal(malRoster.characters[0].image,'https://cdn.myanimelist.net/images/c
 assert.equal(malRoster.characters[0].voiceActor.person.name,'Ryouta Suzuki');
 assert.deepEqual(malRoster.staff,[{role:'Sound Director',id:51,name:'Takeshi Takadera',native:'',image:'https://cdn.myanimelist.net/images/voiceactors/1/51.jpg'}]);
 
-console.log('Provider roster: 9 tests passed');
+const relations=normalizeMalRelations(`
+  <div class="related-entries"><div class="entry borderClass"><div class="image"><a href="https://myanimelist.net/anime/1735/Naruto__Shippuuden"><img alt="Naruto: Shippuuden" data-src="https://cdn.myanimelist.net/r/50x70/images/anime/1/1735.jpg?x=1"></a></div><div class="content"><div class="relation">Sequel (TV)</div><div class="title"><a>Naruto: Shippuuden</a></div></div></div>
+  <div class="entry"><div class="image"><a href="https://evil.example/anime/999/Injected"><img alt="Injected"></a></div><div class="relation">Other</div></div>
+  <table class="entries-table"><tr><td>Side Story:</td><td><ul class="entries"><li><a href="https://myanimelist.net/manga/11/Naruto">Naruto</a> (Manga)</li></ul></td></tr></table></div>`);
+assert.deepEqual(relations,[
+  {relationType:'SEQUEL',entry:{type:'anime',mal_id:1735,url:'https://myanimelist.net/anime/1735/Naruto__Shippuuden',name:'Naruto: Shippuuden',cover:'https://cdn.myanimelist.net/images/anime/1/1735.jpg',format:'TV'}},
+  {relationType:'SIDE_STORY',entry:{type:'manga',mal_id:11,url:'https://myanimelist.net/manga/11/Naruto',name:'Naruto',cover:'',format:'Manga'}}
+]);
+assert.equal(normalizeMalPersonImage('<meta property="og:image" content="https://cdn.myanimelist.net/images/voiceactors/2/74096.jpg">'),'https://cdn.myanimelist.net/images/voiceactors/2/74096.jpg');
+
+const mangaRoster=normalizeMalRoster('<table class="js-manga-character-table"><tbody><tr><td><a href="https://myanimelist.net/character/1/Test"><img alt="Teste" data-src="https://cdn.myanimelist.net/images/characters/1/1.jpg"></a></td><td><h3 class="h3_character_name">Teste</h3><div class="spaceit_pad"><small>Main</small></div></td></tr></tbody></table><p><span class="dark_text">Authors:</span> <a href="https://myanimelist.net/people/1881/Eiichiro_Oda">Oda, Eiichiro</a> (Story & Art)</p>','MANGA');
+assert.equal(mangaRoster.characters[0].role,'MAIN');
+assert.deepEqual(mangaRoster.staff,[{role:'Story & Art',id:1881,name:'Eiichiro Oda',native:'',image:''}]);
+
+console.log('Provider roster: 14 tests passed');

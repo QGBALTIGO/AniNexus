@@ -366,3 +366,10 @@ html[data-theme=light] .nx22-tabs-row>.nx22-tabs-toggle,html[data-theme=light] .
 .nx22-tab-list>button.active:after{background:linear-gradient(90deg,var(--nx-red,#e3264f),var(--nx-red-2,#ff4d68))}
 html[data-theme=light] .nx22-tabs{--nx22-tabs-surface:#f6f3f4;background:#f6f3f4}
 @media(prefers-reduced-motion:reduce){.nx22-tabs-row:before,.nx22-tabs-row:after{transition:none!important}}
+
+/* AniNexus V44.46 — chips retangulares clássicos e barra sem linha fantasma. */
+body.nx22-detail-active .nx22-chips>.nx22-status,body.nx22-detail-active .nx22-chips>a{min-height:30px;padding:0 10px;border-radius:5px;font-size:9px}
+body.nx22-detail-active .nx22-chips>a:not(.genre){border-color:rgba(255,255,255,.11);background:rgba(35,29,36,.82);color:#c9bfc3}
+body.nx22-detail-active .nx22-chips>a.genre{border-color:rgba(231,42,82,.34);background:rgba(231,42,82,.07);color:#f28ca0}
+.nx22-tabs>.nx22-tabs-backdrop{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;margin:0!important}
+@media(max-width:720px){.nx22-content{padding-top:12px}}
