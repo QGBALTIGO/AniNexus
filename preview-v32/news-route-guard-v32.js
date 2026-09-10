@@ -10,7 +10,7 @@
     document.documentElement.classList.add('nx32-news-boot');
     const style=document.createElement('style');
     style.dataset.nx32NewsBoot='1';
-    style.textContent='html.nx32-news-boot #app{min-height:72vh;opacity:0}html.nx32-news-ready #app{opacity:1;transition:opacity .16s ease}';
+    style.textContent='html.nx32-news-boot #app{min-height:72vh}html.nx32-news-boot #app:empty{display:grid;place-items:center}html.nx32-news-boot #app:empty::before{content:"Carregando notícias…";color:#9f9299;font:700 12px Manrope,sans-serif;letter-spacing:.02em}';
     document.head.append(style);
     const app=document.querySelector('#app');let settled=false,timer=0;
     const correct=()=>!!app?.querySelector('.nx35-news-page,.nx-route-fail[data-route-owner="news"]');
@@ -18,6 +18,6 @@
     const ready=()=>{if(settled||!correct())return false;settled=true;observer.disconnect();if(timer)clearTimeout(timer);document.documentElement.classList.remove('nx32-news-boot');document.documentElement.classList.add('nx32-news-ready');style.remove();return true};
     addEventListener('aninexus:news-v32-ready',ready);
     if(app)observer.observe(app,{childList:true,subtree:true});
-    ready();timer=setTimeout(()=>{if(ready()||!app)return;app.innerHTML='<main class="nx-route-fail" data-route-owner="news"><div><h1>As notícias demoraram para responder</h1><p>Tente novamente em instantes.</p></div></main>';ready()},10500);
+    ready();timer=setTimeout(()=>{if(ready()||!app)return;app.innerHTML='<main class="nx-route-fail" data-route-owner="news"><div><h1>As notícias demoraram para responder</h1><p>Tente novamente em instantes.</p><button type="button" data-news-reload>Tentar novamente</button></div></main>';app.querySelector('[data-news-reload]')?.addEventListener('click',()=>location.reload());ready()},6500);
   }catch{}
 })();

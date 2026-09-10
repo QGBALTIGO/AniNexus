@@ -322,7 +322,14 @@
         result = await renderPath(generation, path);
       }
       return result;
-    })().finally(() => {
+    })().catch(() => {
+      if (!owns()) return false;
+      activate(false);
+      app.innerHTML = '<main class="nx-route-fail" data-route-owner="news"><div><h1>As notícias não responderam agora</h1><p>A página continua disponível para uma nova tentativa.</p><button type="button" data-news-retry>Tentar novamente</button></div></main>';
+      app.querySelector('[data-news-retry]')?.addEventListener('click', () => { renderPending = true; render(); });
+      dispatchEvent(new CustomEvent('aninexus:news-v32-ready'));
+      return false;
+    }).finally(() => {
       renderPromise = null;
       if (renderPending) render();
     });
