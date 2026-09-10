@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.43.0&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.44.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -70,7 +70,7 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-09-v44.43.0')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-09-v44.44.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -406,6 +406,49 @@ test('header navigation preserves the same playing audio node',async({page})=>{
     expect(await page.evaluate(()=>document.querySelector('#nx44RadioAudio')===window.__nxOriginalAudio),key).toBe(true);
   }
   expect(await page.evaluate(()=>window.__nxPlayCalls)).toBe(1);
+});
+
+test('radio navigation reaches modern Home after a cold non-Home entry',async({page})=>{
+  await bridgeProductionAssets(page);
+  await page.addInitScript(()=>sessionStorage.setItem('aninexus:radio:activated:v44','1'));
+  await page.goto(firstVisitUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx21-catalog-page')).toBeVisible({timeout:30000});
+  await expect.poll(()=>page.evaluate(()=>window.__NX_HOME_V35_LOADER__?.status)).toBe('ready');
+  expect(await page.evaluate(()=>window.AniNexusRadio.navigate('/'))).toBe(true);
+  await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});
+  await expect(page.locator('.hero,.aqx-home')).toHaveCount(0);
+  await expect(page.locator('#app')).not.toContainText('Descubra. Acompanhe. Compartilhe.');
+});
+
+test('route guard replaces unrelated markup with an owned failure instead of revealing it',async({page,browserName})=>{
+  test.skip(browserName!=='chromium','The accelerated ten-second timeout is deterministic in Chromium.');
+  await page.addInitScript(()=>{
+    const nativeTimeout=window.setTimeout.bind(window);
+    window.setTimeout=(callback,delay,...args)=>nativeTimeout(callback,delay===10000?80:delay,...args);
+    addEventListener('DOMContentLoaded',()=>{document.querySelector('#app').innerHTML='<main class="wrong-route-renderer">Interface de outra rota</main>'},{once:true});
+  });
+  await page.route('**/preview-v20/catalog-v20.js*',route=>route.abort('failed'));
+  await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});
+  const failure=page.locator('.nx-route-fail[data-route-owner="catalog"]');
+  await expect(failure).toBeVisible({timeout:5000});
+  await expect(page.locator('.wrong-route-renderer')).toHaveCount(0);
+  await expect(page.locator('html')).not.toHaveClass(/nx-dedicated-route-boot/);
+});
+
+test('detail runtime removes a failed load and succeeds on the next real attempt',async({page})=>{
+  await bridgeProductionAssets(page);
+  let runtimeRequests=0,runtimeFailures=0,allowRuntime=false;
+  await page.route('**/preview-v22/detail-v22.js*',route=>{runtimeRequests++;if(!allowRuntime){runtimeFailures++;return route.abort('failed')}return route.fallback()});
+  await page.addInitScript(()=>sessionStorage.setItem('aninexus:radio:activated:v44','1'));
+  await page.goto(firstVisitUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});
+  const card=page.locator('[data-nx21-open]').first();
+  await expect(card).toBeVisible({timeout:30000});
+  await expect.poll(()=>runtimeFailures).toBeGreaterThanOrEqual(1);
+  const requestsBeforeRetry=runtimeRequests;allowRuntime=true;
+  await card.click();
+  await expect(page.locator('.nx22-detail:not(.nx22-fail)')).toBeVisible({timeout:30000});
+  expect(runtimeRequests).toBeGreaterThan(requestsBeforeRetry);
+  await expect(page.locator('script[data-nx22-runtime-state="failed"]')).toHaveCount(0);
 });
 
 test('floating radio stays above first-visit privacy controls',async({page})=>{
@@ -862,7 +905,7 @@ for(const item of [{kind:'anime',route:'/anime/anime-teste-101',id:101,catalog:'
   });
 }
 
-test('radio-preserving manga navigation lazy-loads the shared detail renderer',async({page})=>{
+test('radio-preserving manga navigation reuses the eager shared detail renderer',async({page})=>{
   const item={...rankedMedia(6201,'MANGA'),mediaType:'MANGA',description:'Uma história de leitura para validar a navegação contínua.',tags:['Adventure'],tagDetails:[{name:'Adventure',rank:90,isMediaSpoiler:false}],characters:[],staff:[],relations:[],recommendations:[]};
   await page.addInitScript(()=>sessionStorage.setItem('aninexus:radio:activated:v44','1'));
   await page.route('**/api/reading?**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:[item],pageInfo:{total:1,currentPage:1,lastPage:1,hasNextPage:false}})}));
@@ -874,11 +917,28 @@ test('radio-preserving manga navigation lazy-loads the shared detail renderer',a
   await card.locator('h3').click();
   await expect(page.locator('.nx22-detail:not(.nx22-fail)')).toBeVisible({timeout:15000});
   await expect(page.locator('.detail-hero,.nx-detail,.nx42-manga-page')).toHaveCount(0);
-  await expect.poll(()=>page.evaluate(()=>({owner:window.__NX_ROUTE_OWNER__,ready:window.__NX_V22_DETAIL_READY__,runtime:document.querySelectorAll('script[data-nx22-detail-runtime]').length,styles:document.querySelectorAll('link[data-nx22-detail-css]').length,path:location.pathname}))).toMatchObject({owner:'detail',ready:true,runtime:1,styles:1,path:expect.stringMatching(/^\/manga\//)});
+  await expect.poll(()=>page.evaluate(()=>({owner:window.__NX_ROUTE_OWNER__,ready:window.__NX_V22_DETAIL_READY__,runtime:document.querySelectorAll('script[src*="/preview-v22/detail-v22.js"]').length,dynamicRuntime:document.querySelectorAll('script[data-nx22-detail-runtime]').length,styles:document.querySelectorAll('link[data-nx22-detail-css]').length,path:location.pathname}))).toMatchObject({owner:'detail',ready:true,runtime:1,dynamicRuntime:0,styles:1,path:expect.stringMatching(/^\/manga\//)});
   await page.waitForTimeout(500);
   await expect(page.locator('.nx22-detail')).toHaveCount(1);
   await expect(page.locator('.detail-hero,.nx-detail,.nx42-manga-page')).toHaveCount(0);
   await noOverflow(page,2);
+});
+
+test('the latest news destination wins when an older article is still loading',async({page})=>{
+  let releaseArticle,markRequested;
+  const delayed=new Promise(resolve=>{releaseArticle=resolve}),requested=new Promise(resolve=>{markRequested=resolve});
+  const item=slug=>({id:slug,slug,title:slug==='artigo-a'?'Artigo antigo em carregamento':'Artigo mais recente escolhido',summary:'Uma notícia de anime em português para validar a navegação mais recente.',event_type:'ANIME',source_name:'AniNexus Notícias',language:'pt-BR',published_at:new Date().toISOString(),facts:['A publicação foi confirmada.'],body:{sections:[{heading:'Atualização',paragraphs:['Conteúdo completo da notícia escolhida.']}]}});
+  await page.route('**/api/news?limit=60',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:[item('artigo-a'),item('artigo-b')]})}));
+  await page.route('**/api/news/artigo-a',async route=>{markRequested();await delayed;await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(item('artigo-a'))}).catch(()=>{})});
+  await page.route('**/api/news/artigo-b',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(item('artigo-b'))}));
+  await page.goto(firstVisitUrl('/noticias/artigo-a'),{waitUntil:'domcontentloaded'});
+  await requested;
+  await page.evaluate(()=>window.NX35NewsData.go('/noticias/artigo-b'));
+  await expect.poll(()=>page.evaluate(()=>new URL(location.href).pathname)).toBe('/noticias/artigo-b');
+  releaseArticle();
+  await expect(page.locator('.nx35-article-head h1')).toHaveText('Artigo mais recente escolhido',{timeout:15000});
+  await page.waitForTimeout(250);
+  await expect(page.locator('.nx35-article-head h1')).not.toHaveText('Artigo antigo em carregamento');
 });
 
 test('native news slugs with underscores open the reader',async({page})=>{const slug='life-a-felicidade-depende-de-nos-sera-publicado-pela-newpop-jbox_manga-211a006a',origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/api/news/${slug}`,route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({id:'211a006a',slug,title:'Life, A Felicidade Depende de Nós será publicado pela NewPOP',summary:'A editora confirmou a publicação brasileira do mangá.',event_type:'MANGA',source_name:'AniNexus Notícias',language:'pt-BR',published_at:new Date().toISOString(),facts:['A publicação foi confirmada.'],body:{sections:[{heading:'Publicação no Brasil',paragraphs:['A edição brasileira foi anunciada oficialmente.']}]}})}));await page.goto(firstVisitUrl(`/noticias/${slug}`),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-reader')).toBeVisible({timeout:15000});await expect(page.getByRole('heading',{name:/Felicidade Depende de Nós/})).toBeVisible();await expect(page.locator('#app')).not.toContainText('Página não encontrada');await noOverflow(page,2)});

@@ -4,7 +4,6 @@
     const IS_PAGES=location.hostname.endsWith('github.io');
     const basePath=new URL(document.baseURI,location.href).pathname.replace(/\/+$/,'');
     const BASE=basePath==='/'?'':basePath;
-    const BUILD='44.43.0';
     const u=new URL(location.href);
     const restored=u.searchParams.get('p');
     let path=restored?restored.split('?')[0]:u.pathname;
@@ -33,8 +32,6 @@
     ];
     const route=routes.find(item=>item.match);
     if(!route)return;
-    const isDetail=route.owner==='detail';
-
     const html=document.documentElement;
     const bootClass='nx-dedicated-route-boot';
     html.classList.add(bootClass);
@@ -43,22 +40,23 @@
     if(route.owner==='awards')html.classList.add('nx45-awards-boot');
     window.__NX_ROUTE_OWNER__=route.owner;
     window.__NX_DEDICATED_BOOT_PATH__=path;
-    if(isDetail){window.__NX_USE_V22_DETAIL__=true;window.__NX_DETAIL_ROLLBACK_PATH__=path}
+    if(route.owner==='detail'){window.__NX_USE_V22_DETAIL__=true;window.__NX_DETAIL_ROLLBACK_PATH__=path}
 
     const style=document.createElement('style');
     style.dataset.nxDedicatedBoot='1';
     style.textContent=`html.${bootClass} #app{opacity:0!important;visibility:hidden!important;pointer-events:none!important;min-height:calc(100dvh - 54px)!important}html.${bootClass} body:after{content:'${route.label}';position:fixed;z-index:35;left:50%;top:50%;transform:translate(-50%,-50%);padding:10px 14px;border:1px solid rgba(255,255,255,.09);border-radius:999px;background:rgba(12,8,11,.90);backdrop-filter:blur(14px);color:#b9adb2;font:700 12px/1.2 'Nunito Sans',system-ui,sans-serif;box-shadow:0 14px 42px rgba(0,0,0,.30);pointer-events:none}`;
     document.head.append(style);
 
-    if(isDetail&&!document.querySelector('link[data-nx22-detail-css]')){const l=document.createElement('link');l.rel='stylesheet';l.href=`${BASE}/preview-v22/detail-v22.css?v=${BUILD}`;l.dataset.nx22DetailCss='1';document.head.append(l)}
-
     const boot=()=>{
-      const app=document.querySelector('#app');if(!app){html.classList.remove(bootClass,'nx21-catalog-boot','nx18-schedule-boot','nx45-awards-boot');style.remove();return}
-      let timer=0;
-      const finish=()=>{if(!app.querySelector(route.selector))return false;html.classList.remove(bootClass,'nx21-catalog-boot','nx18-schedule-boot','nx45-awards-boot');style.remove();if(timer)clearTimeout(timer);dispatchEvent(new CustomEvent('aninexus:route-ready',{detail:{owner:route.owner,path}}));return true};
-      const mo=new MutationObserver(()=>{if(finish())mo.disconnect()});mo.observe(app,{childList:true,subtree:true});
-      if(isDetail&&!document.querySelector('script[data-nx22-detail-runtime]')){const s=document.createElement('script');s.src=`${BASE}/preview-v22/detail-v22.js?v=${BUILD}`;s.async=false;s.dataset.nx22DetailRuntime='1';s.addEventListener('load',finish,{once:true});document.body.append(s)}
-      finish();timer=setTimeout(()=>{mo.disconnect();if(!finish()&&!app.firstElementChild)app.innerHTML='<main class="nx-route-fail" style="min-height:65vh;display:grid;place-items:center;padding:28px;text-align:center"><div><img src="'+BASE+'/assets/logo.png" alt="" style="width:64px;height:64px"><h1 style="font:800 24px Manrope,sans-serif">Esta página demorou para responder</h1><p style="color:#9c9095">Tente atualizar. Seus dados neste aparelho foram preservados.</p></div></main>';html.classList.remove(bootClass,'nx21-catalog-boot','nx18-schedule-boot','nx45-awards-boot');style.remove()},10000);
+      const app=document.querySelector('#app');
+      const release=()=>{html.classList.remove(bootClass,'nx21-catalog-boot','nx18-schedule-boot','nx45-awards-boot');style.remove()};
+      if(!app){release();return}
+      let timer=0,settled=false;
+      const mo=new MutationObserver(()=>finish());
+      const finish=()=>{if(settled||!app.querySelector(route.selector))return false;settled=true;mo.disconnect();if(timer)clearTimeout(timer);release();dispatchEvent(new CustomEvent('aninexus:route-ready',{detail:{owner:route.owner,path}}));return true};
+      const fail=()=>{if(settled)return;settled=true;mo.disconnect();if(timer)clearTimeout(timer);app.innerHTML=`<main class="nx-route-fail" data-route-owner="${route.owner}" style="min-height:65vh;display:grid;place-items:center;padding:28px;text-align:center"><div><img src="${BASE}/assets/logo.png" alt="" style="width:64px;height:64px"><h1 style="font:800 24px Manrope,sans-serif">Esta página demorou para responder</h1><p style="color:#9c9095">Tente novamente. Seus dados neste aparelho foram preservados.</p><button type="button" data-route-retry style="margin-top:12px;padding:10px 16px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:#ef4f83;color:#fff;font:800 13px Manrope,sans-serif;cursor:pointer">Tentar novamente</button></div></main>`;app.querySelector('[data-route-retry]')?.addEventListener('click',()=>location.reload(),{once:true});release();dispatchEvent(new CustomEvent('aninexus:route-failed',{detail:{owner:route.owner,path}}))};
+      mo.observe(app,{childList:true,subtree:true});
+      if(!finish())timer=setTimeout(()=>{if(!finish())fail()},10000);
     };
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
   } catch {document.documentElement.classList.remove('nx-dedicated-route-boot','nx21-catalog-boot','nx18-schedule-boot','nx45-awards-boot','nx22-detail-boot','nx22-news-boot')}

@@ -7,7 +7,9 @@
 
   const { BASE, esc, strip, route, owns, go, imageCandidates, bindImageFallbacks, readSet, markRead, loadFeed, loadArticle, relative, date } = D;
   let query = '';
-  let rendering = false;
+  let renderGeneration = 0;
+  let renderPromise = null;
+  let renderPending = false;
   let scrollHandler = null;
   let scrollFrame = 0;
   let lastScrollY = 0;
@@ -274,38 +276,57 @@
     bindProgress();
   }
 
-  async function render() {
-    if (!owns()) { deactivate(); return false; }
-    if (rendering) return false;
-    rendering = true;
-    try {
-      const path = route();
-      if (path === '/noticias') {
-        listShell();
-        await loadFeed();
-        if (route() === '/noticias') {
-          renderResults();
-        }
-        dispatchEvent(new CustomEvent('aninexus:news-v32-ready'));
-        return true;
-      }
-      const slug = decodeURIComponent(path.slice('/noticias/'.length));
-      if (!D.feed.length) await loadFeed();
-      const item = await loadArticle(slug);
-      if (!item) {
-        activate(false);
-        app.innerHTML = `<main class="nx35-news-page"><div class="nx35-shell nx35-news-empty full"><h1>Matéria indisponível.</h1><p>Ela pode ter expirado do feed recente ou ainda estar sendo processada.</p><button data-back>Voltar às notícias</button></div></main>`;
-        app.querySelector('[data-back]')?.addEventListener('click', () => go('/noticias'));
-        dispatchEvent(new CustomEvent('aninexus:news-v32-ready'));
-        return true;
-      }
-      if (!D.feed.some(entry => entry.slug === item.slug)) D.feed = [item, ...D.feed];
-      article(item);
+  async function renderPath(generation, path) {
+    const current = () => generation === renderGeneration && owns() && route() === path;
+    if (!current()) return false;
+    if (path === '/noticias') {
+      listShell();
+      await loadFeed();
+      if (!current()) return false;
+      renderResults();
       dispatchEvent(new CustomEvent('aninexus:news-v32-ready'));
       return true;
-    } finally {
-      rendering = false;
     }
+    const slug = decodeURIComponent(path.slice('/noticias/'.length));
+    if (!D.feed.length) {
+      await loadFeed();
+      if (!current()) return false;
+    }
+    const item = await loadArticle(slug);
+    if (!current()) return false;
+    if (!item) {
+      activate(false);
+      app.innerHTML = `<main class="nx35-news-page"><div class="nx35-shell nx35-news-empty full"><h1>Matéria indisponível.</h1><p>Ela pode ter expirado do feed recente ou ainda estar sendo processada.</p><button data-back>Voltar às notícias</button></div></main>`;
+      app.querySelector('[data-back]')?.addEventListener('click', () => go('/noticias'));
+      dispatchEvent(new CustomEvent('aninexus:news-v32-ready'));
+      return true;
+    }
+    if (!D.feed.some(entry => entry.slug === item.slug)) D.feed = [item, ...D.feed];
+    article(item);
+    dispatchEvent(new CustomEvent('aninexus:news-v32-ready'));
+    return true;
+  }
+
+  function render() {
+    renderGeneration++;
+    if (!owns()) { renderPending = false; deactivate(); return Promise.resolve(false); }
+    renderPending = true;
+    if (renderPromise) return renderPromise;
+    renderPromise = (async () => {
+      let result = false;
+      while (renderPending) {
+        renderPending = false;
+        const generation = renderGeneration;
+        const path = route();
+        if (!owns()) { deactivate(); continue; }
+        result = await renderPath(generation, path);
+      }
+      return result;
+    })().finally(() => {
+      renderPromise = null;
+      if (renderPending) render();
+    });
+    return renderPromise;
   }
 
   document.addEventListener('click', event => {

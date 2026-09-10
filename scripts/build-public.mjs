@@ -1,11 +1,38 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import {createHash} from 'node:crypto';
 import {ptBR} from '@clerk/localizations/pt-BR';
 import {ACTIVE_PREVIEW_DIRS} from './repository-layout.mjs';
 
 const root=process.cwd();
 const pub=path.join(root,'public');
 const exists=async p=>fs.access(p).then(()=>true).catch(()=>false);
+const runtimeExtensions=new Set(['.css','.js','.mjs']);
+const previewVersionPattern=/((?:(?:\$\{[A-Za-z_$][\w$]*\}|\.{1,2})\/|\/)?preview-v\d+\/[A-Za-z0-9._/-]+\?v=)(?:\$\{[^}\r\n]+\}|[A-Za-z0-9._-]+)/g;
+
+async function filesBelow(directory){
+  const output=[];
+  for(const entry of await fs.readdir(directory,{withFileTypes:true})){
+    const absolute=path.join(directory,entry.name);
+    if(entry.isDirectory())output.push(...await filesBelow(absolute));
+    else output.push(absolute);
+  }
+  return output;
+}
+
+async function runtimeFingerprint(){
+  const hash=createHash('sha256');
+  for(const name of ACTIVE_PREVIEW_DIRS){
+    const directory=path.join(root,name);
+    for(const file of (await filesBelow(directory)).filter(file=>runtimeExtensions.has(path.extname(file))).sort()){
+      hash.update(path.relative(root,file).replaceAll('\\','/'));
+      hash.update('\0');
+      hash.update(await fs.readFile(file));
+      hash.update('\0');
+    }
+  }
+  return hash.digest('hex').slice(0,12);
+}
 
 await fs.mkdir(pub,{recursive:true});
 await fs.rm(path.join(pub,'release.json'),{force:true});
@@ -58,6 +85,20 @@ for(const name of ACTIVE_PREVIEW_DIRS){
   await fs.cp(src,dst,{recursive:true,force:true});
 }
 
+// Every active frontend layer shares one content-derived version. A change in a
+// dynamically loaded child therefore invalidates both the shell URL and nested
+// loader URLs without relying on a manually bumped query string.
+const runtimeHash=await runtimeFingerprint();
+const versionedFiles=[path.join(pub,'index.html')];
+for(const name of ACTIVE_PREVIEW_DIRS){
+  versionedFiles.push(...(await filesBelow(path.join(pub,name))).filter(file=>runtimeExtensions.has(path.extname(file))));
+}
+for(const file of versionedFiles){
+  const source=await fs.readFile(file,'utf8');
+  const versioned=source.replace(previewVersionPattern,`$1${runtimeHash}`);
+  if(versioned!==source)await fs.writeFile(file,versioned,'utf8');
+}
+
 if(await exists(path.join(root,'data'))){
   const dst=path.join(pub,'data');
   await fs.rm(dst,{recursive:true,force:true});
@@ -74,4 +115,4 @@ for(const ref of refs){
 }
 if(missing.length)throw new Error(`Production shell references missing files: ${[...new Set(missing)].join(', ')}`);
 
-console.log(`[build-public] copied assets + ${ACTIVE_PREVIEW_DIRS.length} runtime layers + ${refs.length} validated local references`);
+console.log(`[build-public] copied assets + ${ACTIVE_PREVIEW_DIRS.length} runtime layers + ${refs.length} validated local references; runtime=${runtimeHash}`);
