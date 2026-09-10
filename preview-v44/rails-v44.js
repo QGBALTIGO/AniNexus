@@ -3,7 +3,7 @@
   if (window.__NX44_RAILS__) return;
   window.__NX44_RAILS__ = true;
 
-  const RAIL_SELECTOR = '.nx35-home .nx35-rail,.nx38-impressions-home .nx38-impressions-rail';
+  const RAIL_SELECTOR = '.nx35-home .nx35-rail,.nx38-impressions-home .nx38-impressions-rail,.nx22-detail [data-nx22-rail]';
   const controllers = new Set();
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   let railSequence = 0;
@@ -100,6 +100,19 @@
       if (link) {
         tuneSectionLink(link);
         actions.append(link);
+      }
+      return actions;
+    }
+
+    const detailSection = rail.closest('.nx22-detail-rail-section');
+    const detailHead = detailSection?.querySelector(':scope > .nx22-section-head');
+    if (detailHead) {
+      detailSection.classList.add('nx44-has-rail');
+      let actions = detailHead.querySelector(':scope > .nx44-rail-actions');
+      if (!actions) {
+        actions = document.createElement('div');
+        actions.className = 'nx44-rail-actions';
+        detailHead.append(actions);
       }
       return actions;
     }

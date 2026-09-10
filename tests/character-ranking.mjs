@@ -35,3 +35,16 @@ test('public character favorites preserve user order and expose catalog details'
   assert.equal(hydrated[0].work,'Naruto');
   assert.equal(hydrated[0].createdAt,'2026-09-08T00:00:00.000Z');
 });
+
+test('characters discovered on detail pages can enter the internal top ten',()=>{
+  const dynamic={character_id:987654,character_name:'Akira Teste',native_name:'アキラ',image_url:'https://cdn.example.test/akira.jpg',work_title:'Obra Teste',media_id:765,media_type:'MANGA'};
+  const ranked=rankCharacterCatalog(new Map([[987654,12]]),10,[dynamic]);
+  assert.equal(ranked[0].id,987654);
+  assert.equal(ranked[0].name,'Akira Teste');
+  assert.equal(ranked[0].work,'Obra Teste');
+  assert.equal(ranked[0].mediaType,'MANGA');
+  assert.equal(ranked[0].favoriteCount,12);
+  const [hydrated]=hydrateCharacterFavorites([{characterId:987654,createdAt:'2026-09-10T00:00:00.000Z',name:'Akira Teste',nativeName:'アキラ',image:'https://cdn.example.test/akira.jpg',work:'Obra Teste',mediaId:765,mediaType:'MANGA'}]);
+  assert.equal(hydrated.name,'Akira Teste');
+  assert.equal(hydrated.mediaId,765);
+});
