@@ -1,8 +1,8 @@
 'use strict';
 (() => {
   if(window.NX35NewsData)return;
-  const IS_PAGES=location.hostname.endsWith('github.io'),BASE=IS_PAGES?'/AniNexus':'',BUILD='44.14.2';
-  const CACHE_KEY='aninexus:news:v44.14.2',READ_KEY='aninexus:news:read:v35',TTL=90*1000;
+  const IS_PAGES=location.hostname.endsWith('github.io'),BASE=IS_PAGES?'/AniNexus':'',BUILD='44.48.0';
+  const CACHE_KEY='aninexus:news:v44.48.0',READ_KEY='aninexus:news:read:v35',TTL=90*1000;
   const strip=s=>String(s??'').replace(/<script[\s\S]*?<\/script>/gi,' ').replace(/<style[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&').replace(/&quot;/gi,'"').replace(/\s+/g,' ').trim();
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const hash=s=>{let h=2166136261;for(const c of String(s||'')){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return(h>>>0).toString(36)};
@@ -35,12 +35,13 @@
   function cacheSet(items){try{sessionStorage.setItem(CACHE_KEY,JSON.stringify({at:Date.now(),items}))}catch{}}
   function valid(x){return x.title&&x.summary&&likelyPt(x)&&(!x.expiresAt||new Date(x.expiresAt)>new Date())&&!/all the news and reviews|interest fool night|news and interest|weekly roundup|live blog/i.test(`${x.title} ${x.summary}`)}
   async function hydrateImages(items){return items.map(item=>({...item,image:imageCandidates(item)[0]||''}))}
-  async function readStatic(path){try{const r=await fetch(`${BASE}/${path}?v=${BUILD}`,{cache:'no-store',headers:{accept:'application/json'}});if(!r.ok)return[];const j=await r.json();return(j?.items||[]).map(normalize).filter(valid)}catch{return[]}}
-  async function serverFeed(){if(IS_PAGES)return[];try{const r=await fetch('/api/news?limit=60',{headers:{accept:'application/json'}});if(!r.ok)return[];const j=await r.json();return(j?.items||[]).map(normalize).filter(valid)}catch{return[]}}
+  async function boundedJson(url,timeoutMs=5500){const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),timeoutMs);try{const r=await fetch(url,{cache:'no-store',headers:{accept:'application/json'},signal:controller.signal});if(!r.ok)return null;return await r.json()}catch{return null}finally{clearTimeout(timeout)}}
+  async function readStatic(path){const j=await boundedJson(`${BASE}/${path}?v=${BUILD}`);return(j?.items||[]).map(normalize).filter(valid)}
+  async function serverFeed(){if(IS_PAGES)return[];const j=await boundedJson('/api/news?limit=60',4500);return(j?.items||[]).map(normalize).filter(valid)}
   async function staticFeed(){const [main,seed]=await Promise.all([readStatic('data/news.json'),readStatic('data/news-v36-seed.json')]),map=new Map();for(const x of [...seed,...main]){const key=storyKey(x);map.set(key,richer(map.get(key),x))}return[...map.values()].slice(0,60)}
   let feed=[];
-  async function loadFeed(force=false){if(!force){const c=cacheGet();if(c?.length){feed=c;return feed}}let items=await serverFeed();const staticItems=await staticFeed(),map=new Map();for(const x of [...staticItems,...items]){const key=storyKey(x);map.set(key,richer(map.get(key),x))}items=[...map.values()];items=await hydrateImages(items);feed=items.sort((a,b)=>new Date(b.publishedAt||0)-new Date(a.publishedAt||0)||Number(b.quality||0)-Number(a.quality||0)||Number(b.wordCount||0)-Number(a.wordCount||0));cacheSet(feed);return feed}
-  async function loadArticle(slug){if(!IS_PAGES){try{const r=await fetch(`/api/news/${encodeURIComponent(slug)}`,{headers:{accept:'application/json'}});if(r.ok){const x=normalize(await r.json());const [hydrated]=await hydrateImages([x]);if(valid(hydrated))return hydrated}}catch{}}if(!feed.length)await loadFeed();return feed.find(x=>x.slug===slug)||null}
+  async function loadFeed(force=false,onUpdate=null){if(!force){const c=cacheGet();if(c?.length){feed=c;onUpdate?.(feed);return feed}}const map=new Map(),publish=async items=>{if(!items?.length)throw new Error('empty news source');for(const x of items){const key=storyKey(x);map.set(key,richer(map.get(key),x))}feed=(await hydrateImages([...map.values()])).sort((a,b)=>new Date(b.publishedAt||0)-new Date(a.publishedAt||0)||Number(b.quality||0)-Number(a.quality||0)||Number(b.wordCount||0)-Number(a.wordCount||0));cacheSet(feed);onUpdate?.(feed);return feed},workers=[serverFeed().then(publish),staticFeed().then(publish)];void Promise.allSettled(workers);try{await Promise.any(workers)}catch{}return feed}
+  async function loadArticle(slug){if(!IS_PAGES){const raw=await boundedJson(`/api/news/${encodeURIComponent(slug)}`,4500);if(raw){const x=normalize(raw),[hydrated]=await hydrateImages([x]);if(valid(hydrated))return hydrated}}if(!feed.length)await loadFeed();return feed.find(x=>x.slug===slug)||null}
   function relative(value){const t=new Date(value).getTime();if(!Number.isFinite(t))return'';const d=Math.max(0,Date.now()-t);if(d<3600000)return`há ${Math.max(1,Math.floor(d/60000))} min`;if(d<86400000)return`há ${Math.floor(d/3600000)} h`;return`há ${Math.floor(d/86400000)} d`}
   function date(value,long=false){const d=new Date(value);if(Number.isNaN(d.getTime()))return'';return new Intl.DateTimeFormat('pt-BR',long?{day:'2-digit',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'}:{day:'2-digit',month:'short'}).format(d).replace('.','')}
   window.NX35NewsData={IS_PAGES,BASE,BUILD,esc,strip,route,owns,go,normalize,likelyPt,newsImageUrl,imageCandidates,bindImageFallbacks,readSet,markRead,loadFeed,loadArticle,relative,date,get feed(){return feed},set feed(v){feed=v}};

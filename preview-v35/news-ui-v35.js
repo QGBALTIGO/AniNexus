@@ -281,7 +281,7 @@
     if (!current()) return false;
     if (path === '/noticias') {
       listShell();
-      await loadFeed();
+      await loadFeed(false, () => { if (owns() && route() === path && app.querySelector('#nx35NewsResults')) renderResults(); });
       if (!current()) return false;
       renderResults();
       dispatchEvent(new CustomEvent('aninexus:news-v32-ready'));
