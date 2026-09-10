@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { normalizeJikanAuthors, normalizeJikanStaff, normalizeKitsuRoster, normalizeMalPersonImage, normalizeMalRelations, normalizeMalRoster } from '../lib/provider.mjs';
+import { mergeRoster, normalizeJikanAuthors, normalizeJikanStaff, normalizeKitsuRoster, normalizeMalPersonImage, normalizeMalRelations, normalizeMalRoster } from '../lib/provider.mjs';
 
 const jikanStaff=normalizeJikanStaff([{positions:['Director','Storyboard'],person:{mal_id:7,name:'Aya Teste',images:{jpg:{image_url:'https://cdn.example.test/aya.jpg'}}}}]);
 assert.deepEqual(jikanStaff,[{role:'Director, Storyboard',id:7,name:'Aya Teste',native:'',image:'https://cdn.example.test/aya.jpg'}]);
@@ -54,4 +54,9 @@ const mangaRoster=normalizeMalRoster('<table class="js-manga-character-table"><t
 assert.equal(mangaRoster.characters[0].role,'MAIN');
 assert.deepEqual(mangaRoster.staff,[{role:'Story & Art',id:1881,name:'Eiichiro Oda',native:'',image:''}]);
 
-console.log('Provider roster: 14 tests passed');
+assert.deepEqual(mergeRoster(
+  [{role:'Story & Art',id:1881,name:'Eiichiro Oda',native:'',image:''}],
+  [{role:'Story & Art',id:1881,name:'Eiichiro Oda',native:'',image:'https://cdn.myanimelist.net/images/voiceactors/2/74096.jpg'}]
+),[{role:'Story & Art',id:1881,name:'Eiichiro Oda',native:'',image:'https://cdn.myanimelist.net/images/voiceactors/2/74096.jpg'}]);
+
+console.log('Provider roster: 15 tests passed');
