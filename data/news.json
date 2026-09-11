@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T13:27:31.713Z",
+  "generatedAt": "2026-09-11T17:07:06.992Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 35,
+      "count": 34,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,563 @@
     }
   ],
   "stats": {
-    "collected": 45,
-    "grouped": 19,
-    "published": 19,
-    "newStories": 19,
-    "fullArticles": 19,
+    "collected": 44,
+    "grouped": 18,
+    "published": 18,
+    "newStories": 18,
+    "fullArticles": 18,
     "previewArticles": 0,
-    "avgWords": 296,
-    "withHeroImage": 19,
-    "withOrderedMedia": 17,
+    "avgWords": 298,
+    "withHeroImage": 18,
+    "withOrderedMedia": 16,
     "skippedTranslation": 0,
     "skippedQuality": 26,
-    "durationMs": 2459
+    "durationMs": 3058
   },
   "items": [
+    {
+      "id": "jbox-8a3f8225",
+      "slug": "novo-jogo-de-diarios-de-uma-apotecaria-e-anunciado-jbox-8a3f8225",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Novo jogo de ‘Diários de uma Apotecária’ é anunciado",
+      "originalTitle": "Novo jogo de ‘Diários de uma Apotecária’ é anunciado",
+      "summary": "A Koei Tecmo anunciou nessa quarta-feira (9), durante a transmissão do Nintendo Direct, um novo jogo baseado em Diários de uma Apotecária (Kusuriya no Hitorigoto). Intitulado The Apothecary Diaries: The False Imperial Brother, o game chegará ao Nintendo Switch 2, Nintendo Switch, PlayStation 5 e PC, via Steam, no início de 2027.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Games",
+        "Light Novel",
+        "apotecaria nintendo switch",
+        "Diários de uma Apotecária",
+        "jogo de Diários de uma Apotecária",
+        "The Apothecary Diaries: The False Imperial Brother"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/11/novo-jogo-de-diarios-de-uma-apotecaria-e-anunciado",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/11/novo-jogo-de-diarios-de-uma-apotecaria-e-anunciado",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/the-apothecary-diaries-the-false-imperial-brother-destacada.jpg",
+      "mediaQuery": "Novo jogo de ‘Diários de uma Apotecária’ é anunciado",
+      "mediaType": "manga",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/amdOkW4uKxA"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Koei Tecmo anunciou nessa quarta-feira (9), durante a transmissão do Nintendo Direct, um novo jogo baseado em Diários de uma Apotecária (Kusuriya no Hitorigoto). Intitulado The Apothecary Diaries: The False Imperial Brother, o game chegará ao Nintendo Switch 2, Nintendo Switch, PlayStation 5 e PC, via Steam, no início de 2027.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Koei Tecmo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou nessa quarta-feira (9), durante a transmissão do "
+            },
+            {
+              "text": "Nintendo Direct",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", um novo jogo baseado em "
+            },
+            {
+              "text": "Diários de uma Apotecária",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Kusuriya no Hitorigoto",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). Intitulado "
+            },
+            {
+              "text": "The Apothecary Diaries: The False Imperial Brother",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", o game chegará ao Nintendo Switch 2, Nintendo Switch, PlayStation 5 e PC, via Steam, no início de "
+            },
+            {
+              "text": "2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Após a apresentação, a Koei Tecmo divulgou um trailer do jogo, que coloca os jogadores no controle da Maomao, a protagonista da obra. A personagem deverá explorar diferentes locais, preparar medicamentos e investigar pistas para solucionar os mistérios que surgem ao longo da história.",
+          "runs": [
+            {
+              "text": "Após a apresentação, a Koei Tecmo divulgou um trailer do jogo, que coloca os jogadores no controle da "
+            },
+            {
+              "text": "Maomao",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", a protagonista da obra. A personagem deverá explorar diferentes locais, preparar medicamentos e investigar pistas para solucionar os mistérios que surgem ao longo da história."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira o trailer:",
+          "runs": [
+            {
+              "text": "Confira o trailer:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=amdOkW4uKxA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/amdOkW4uKxA"
+        },
+        {
+          "type": "paragraph",
+          "text": "De acordo com a descrição oficial, uma série de fenômenos estranhos e conspirações começa a causar problemas em diferentes pontos da capital, incluindo o palácio interno, o distrito da luz vermelha e as ruas da cidade. Cabe a Maomao usar seus conhecimentos e sua inteligência para investigar os acontecimentos e descobrir a verdade por trás do chamado “Falso Irmão Imperial” antes que os acontecimentos levem o caos à corte imperial. Essa é uma história inédita, pensada especialmente para o jogo.",
+          "runs": [
+            {
+              "text": "De acordo com a descrição oficial, uma série de fenômenos estranhos e conspirações começa a causar problemas em diferentes pontos da capital, incluindo o palácio interno, o distrito da luz vermelha e as ruas da cidade. Cabe a Maomao usar seus conhecimentos e sua inteligência para investigar os acontecimentos e descobrir a verdade por trás do chamado “Falso Irmão Imperial” antes que os acontecimentos levem o caos à corte imperial. Essa é uma história inédita, pensada especialmente para o jogo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além de explorar o cenário, o jogador poderá acompanhar Maomao em suas investigações e na preparação de compostos, utilizando essas atividades para avançar na resolução dos mistérios.",
+          "runs": [
+            {
+              "text": "Além de explorar o cenário, o jogador poderá acompanhar Maomao em suas investigações e na preparação de compostos, utilizando essas atividades para avançar na resolução dos mistérios."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Lembrando que, em maio desse ano, também foi anunciado o jogo de simulação The Apothecary Diaries Palace Chronicles, desenvolvido pela produtora G123.",
+          "runs": [
+            {
+              "text": "Lembrando que, em maio desse ano, também foi anunciado o jogo de simulação "
+            },
+            {
+              "text": "The Apothecary Diaries Palace Chronicles",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/27/diarios-de-uma-apotecaria-jogo-tem-trailer-divulgado/"
+            },
+            {
+              "text": ", desenvolvido pela produtora G123."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Diários de uma Apotecária vem de uma série de light novels lançada desde 2011 de forma online e independente pelo site Shosetsuka ni Naro. Ela rendeu um volume compilado pela editora Shufunotomo, com ilustração de Megumi Matsuda, em 2012. Depois disso, em 2014, a Shufunotomo começou a publicá-la como uma série de livros, agora ilustrada por Touko Shino, já rendendo 17 volumes, sendo essa a versão que estreou no Brasil recentemente pela editora Alt.",
+          "runs": [
+            {
+              "text": "Diários de uma Apotecária",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " vem de uma série de light novels lançada desde 2011 de forma online e independente pelo site "
+            },
+            {
+              "text": "Shosetsuka ni Naro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Ela rendeu um volume compilado pela editora "
+            },
+            {
+              "text": "Shufunotomo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com ilustração de "
+            },
+            {
+              "text": "Megumi Matsuda",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", em 2012. Depois disso, em 2014, a Shufunotomo começou a publicá-la como uma série de livros, agora ilustrada por "
+            },
+            {
+              "text": "Touko Shino",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", já rendendo 17 volumes, sendo essa "
+            },
+            {
+              "text": "a versão que estreou no Brasil recentemente pela editora",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/07/29/diarios-de-uma-apotecaria-aparece-no-topo-de-lista-de-livros-mais-vendidos-no-brasil/"
+            },
+            {
+              "text": " ",
+              "href": "https://www.jbox.com.br/2026/07/29/diarios-de-uma-apotecaria-aparece-no-topo-de-lista-de-livros-mais-vendidos-no-brasil/"
+            },
+            {
+              "text": "Alt",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/07/29/diarios-de-uma-apotecaria-aparece-no-topo-de-lista-de-livros-mais-vendidos-no-brasil/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história se passa em uma corte imperial fictícia do que parece ser a China Antiga, e foca em Maomao, uma jovem de 17 anos que foi raptada e forçada a trabalhar como uma serviçal de baixo escalão no palácio imperial. Um dia, ela descobre que dois filhos do imperador estão doentes, e começa a utilizar seus conhecimentos farmacêuticos, e logo chama a atenção de pessoas influentes.",
+          "runs": [
+            {
+              "text": "A história se passa em uma corte imperial fictícia do que parece ser a China Antiga, e foca em Maomao, uma jovem de 17 anos que foi raptada e forçada a trabalhar como uma serviçal de baixo escalão no palácio imperial. Um dia, ela descobre que dois filhos do imperador estão doentes, e começa a utilizar seus conhecimentos farmacêuticos, e logo chama a atenção de pessoas influentes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Uma versão em mangá, adaptada por Itsuki Nanao (coordenação do enredo) e Nekokurage (arte), é publicada no Brasil pela editora Panini. A obra ainda conta com outra adaptação para mangá, feita por Minoji Kurata, essa inédita por aqui.",
+          "runs": [
+            {
+              "text": "Uma versão em mangá, adaptada por "
+            },
+            {
+              "text": "Itsuki Nanao",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (coordenação do enredo) e "
+            },
+            {
+              "text": "Nekokurage",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (arte), é publicada no Brasil pela editora "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A obra ainda conta com outra adaptação para mangá, feita por "
+            },
+            {
+              "text": "Minoji Kurata",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", essa inédita por aqui."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Dirigida e roteirizada por Norihiro Naganuma (The Ancient Magus’ Bride), a adaptação para animê é uma produção da TOHO junto ao estúdio OLM (Pokémon). A série já conta com duas temporadas lançadas e, além do terceiro ano, que chega em 2 de outubro, terá um longa-metragem lançado em dezembro.",
+          "runs": [
+            {
+              "text": "Dirigida e roteirizada por"
+            },
+            {
+              "text": " Norihiro Naganuma",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "The Ancient Magus’ Bride",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), a adaptação para animê é uma produção da "
+            },
+            {
+              "text": "TOHO",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " junto ao estúdio "
+            },
+            {
+              "text": "OLM",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). A série já conta com duas temporadas lançadas e, além do "
+            },
+            {
+              "text": "terceiro ano, que chega em 2 de outubro",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/17/3a-temporada-de-diarios-de-uma-apotecaria-ganha-trailer-e-data-de-estreia/"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "terá um longa-metragem lançado em dezembro",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/07/03/diarios-de-uma-apotecaria-filme-ganha-trailer-e-data-de-estreia/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Netflix e a HBO Max contam com a primeira temporada da série, enquanto a Crunchyroll conta com as duas fases, todas com dublagem em português.",
+          "runs": [
+            {
+              "text": "A"
+            },
+            {
+              "text": " Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e a "
+            },
+            {
+              "text": "HBO Max",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " contam com a primeira temporada da série, enquanto a "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " conta com as duas fases, todas com dublagem em português."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "E recentemente, foi anunciada uma adaptação em live-action pela Prime Video.",
+          "runs": [
+            {
+              "text": "E recentemente, foi anunciada "
+            },
+            {
+              "text": "uma adaptação em ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/03/diarios-de-uma-apotecaria-serie-live-action-estreia-pelo-prime-video-em-2028/"
+            },
+            {
+              "text": "live-action",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/03/diarios-de-uma-apotecaria-serie-live-action-estreia-pelo-prime-video-em-2028/"
+            },
+            {
+              "text": " pela Prime Video",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/03/diarios-de-uma-apotecaria-serie-live-action-estreia-pelo-prime-video-em-2028/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Koei Tecmo America no YouTube",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Koei Tecmo America no YouTube",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.youtube.com/watch?v=amdOkW4uKxA"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-11T15:48:50.000Z",
+      "updatedAt": "2026-09-11T15:49:21.000Z",
+      "expiresAt": "2026-09-18T15:48:50.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/11/novo-jogo-de-diarios-de-uma-apotecaria-e-anunciado",
+          "publishedAt": "2026-09-11T15:48:50.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 516,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 16,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-6e9cba8d",
       "slug": "eat-man-ganha-novo-anime-com-retorno-de-bolt-crank-animenew-6e9cba8d",
@@ -5809,902 +6352,6 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 4,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-9c6a48f8",
-      "slug": "cinemark-cadastra-distribuicao-do-filme-de-umamusume-pretty-derby-jbox-9c6a48f8",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Cinemark cadastra distribuição do filme de ‘Umamusume – Pretty Derby’",
-      "originalTitle": "Cinemark cadastra distribuição do filme de ‘Umamusume – Pretty Derby’",
-      "summary": "A rede de cinemas Cinemark registrou no portal de classificação indicativa do Ministério da Justiça e Segurança Pública aqui do Brasil o título nacional do filme Umamusume — Pretty Derby – O Início de uma Nova Era (originalmente, Umamusume Puritidibi: Shinjidai no Tobira).",
-      "author": "Igor Lunei",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "filme de umamusume",
-        "filme de umamusume no brasil",
-        "umamusume",
-        "Umamusume - Pretty Derby - O Início de uma Nova Era",
-        "Umamusume Puritidibi: Shinjidai no Tobira"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/04/cinemark-cadastra-distribuicao-do-filme-de-umamusume-pretty-derby",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/04/cinemark-cadastra-distribuicao-do-filme-de-umamusume-pretty-derby",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2024/03/umamusume-filme-nova-destacada.jpg",
-      "mediaQuery": "Cinemark cadastra distribuição do filme de ‘Umamusume – Pretty Derby’",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/zgupmgLe5No"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A rede de cinemas Cinemark registrou no portal de classificação indicativa do Ministério da Justiça e Segurança Pública aqui do Brasil o título nacional do filme Umamusume — Pretty Derby – O Início de uma Nova Era (originalmente, Umamusume Puritidibi: Shinjidai no Tobira).",
-          "runs": [
-            {
-              "text": "A rede de cinemas "
-            },
-            {
-              "text": "Cinemark",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " registrou no portal de classificação indicativa do Ministério da Justiça e Segurança Pública aqui do Brasil o título nacional do filme"
-            },
-            {
-              "text": " Umamusume — Pretty Derby – O Início de uma Nova Era",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " (originalmente,"
-            },
-            {
-              "text": " Umamusume Puritidibi: Shinjidai no Tobira",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ")."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O longa-metragem foi lançado em 2024 lá no Japão. Por ter tido seu título em português, é bastante provável que ele será lançado por aqui em breve pela rede de cinemas. A classificação indicativa está como recomendado a maiores de 10 anos.",
-          "runs": [
-            {
-              "text": "O longa-metragem foi lançado em 2024 lá no Japão. Por ter tido seu título em português, é bastante provável que ele será lançado por aqui em breve pela rede de cinemas. A classificação indicativa está como recomendado a maiores de 10 anos."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Umamusume – Pretty Derby – O Início de uma Nova Era é produzido pelo estúdio CygamesPictures, com direção de Ken Yamamoto e roteiro de Kiyoko Yoshimura. Na trama, o sonho de consumo de qualquer garota-cavalo é chegar ao topo da Twinkle Series. Para Jungle Pocket, que só corria de brincadeira, essa ficha só cai de verdade após presenciar um show inesquecível de Fuji Kiseki nas pistas. Esbanjando moral e determinação, ela logo emplaca vitórias que a levam aos torneios de elite.",
-          "runs": [
-            {
-              "text": "Umamusume – Pretty Derby – O Início de uma Nova Era",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é produzido pelo estúdio "
-            },
-            {
-              "text": "CygamesPictures",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com direção de "
-            },
-            {
-              "text": "Ken Yamamoto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e roteiro de "
-            },
-            {
-              "text": "Kiyoko Yoshimura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Na trama, o sonho de consumo de qualquer garota-cavalo é chegar ao topo da Twinkle Series. Para Jungle Pocket, que só corria de brincadeira, essa ficha só cai de verdade após presenciar um show inesquecível de Fuji Kiseki nas pistas. Esbanjando moral e determinação, ela logo emplaca vitórias que a levam aos torneios de elite."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Só que a coisa fica séria quando ela divide a pista na sua primeira prova de nível G1 com Agnes Tachyon, uma prodígio genial e excêntrica. Ao sentir o peso do talento da rival, Jungle Pocket não se abala: transforma o choque em obsessão e jura dar o troco vencendo a lendária Tríplice Coroa. Nem mesmo a imprevisibilidade do esporte vai impedir seu objetivo de desbancar Tachyon e fazer história.",
-          "runs": [
-            {
-              "text": "Só que a coisa fica séria quando ela divide a pista na sua primeira prova de nível G1 com Agnes Tachyon, uma prodígio genial e excêntrica. Ao sentir o peso do talento da rival, Jungle Pocket não se abala: transforma o choque em obsessão e jura dar o troco vencendo a lendária Tríplice Coroa. Nem mesmo a imprevisibilidade do esporte vai impedir seu objetivo de desbancar Tachyon e fazer história."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=zgupmgLe5No",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/zgupmgLe5No"
-        },
-        {
-          "type": "paragraph",
-          "text": "Umamusume é uma franquia multimídia da Cygames, já possuindo vários mangás e temporadas de animê — a série ‘Pretty Derby’ está completa na Crunchyroll, enquanto o spin-off ‘Cinderella Gray’ está pelo Prime Video e gratuitamente pelo Bandplay e YouTube. O nome, “Garotas-Cavalo”, já dá uma dica do conteúdo da série: são garotas com rabo e orelhas de cavalo tentando se tornar grandes corredoras.",
-          "runs": [
-            {
-              "text": "Umamusume",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é uma franquia multimídia da Cygames, já possuindo vários mangás e temporadas de animê — a série"
-            },
-            {
-              "text": " ‘Pretty Derby’",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " está completa na Crunchyroll, enquanto o spin-off "
-            },
-            {
-              "text": "‘Cinderella Gray’",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " está pelo Prime Video e gratuitamente pelo Bandplay e "
-            },
-            {
-              "text": "YouTube",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.youtube.com/watch?v=LKjvc3p2lgg&list=PLhGamQZtJ7K9aElhFk89DyndS6JDvLh7z"
-            },
-            {
-              "text": ". O nome,"
-            },
-            {
-              "text": " “Garotas-Cavalo”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", já dá uma dica do conteúdo da série: são garotas com rabo e orelhas de cavalo tentando se tornar grandes corredoras."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Veja mais:",
-          "runs": [
-            {
-              "text": "Veja mais:",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            }
-          ],
-          "level": 4
-        },
-        {
-          "type": "paragraph",
-          "text": "⇒ Umamusume, a série que não recebeu nenhum material pornográfico na Comiket | Artigo",
-          "runs": [
-            {
-              "text": "⇒ ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
-            },
-            {
-              "text": "Umamusume",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
-            },
-            {
-              "text": ", a série que não recebeu nenhum material pornográfico na Comiket | Artigo",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Portal de consultas públicas",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Portal de consultas públicas",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://classindportal.mj.gov.br/consulta-filmes"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-04T16:15:25.000Z",
-      "updatedAt": "2026-09-04T16:24:40.000Z",
-      "expiresAt": "2026-09-11T16:15:25.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/04/cinemark-cadastra-distribuicao-do-filme-de-umamusume-pretty-derby",
-          "publishedAt": "2026-09-04T16:15:25.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 337,
-      "qualityScore": 0.921,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-dc31b4b4",
-      "slug": "dragon-ball-super-beerus-ganha-data-de-lancamento-novo-trailer-e-musicas-de-abertura-e-encerramento-jbox-dc31b4b4",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Dragon Ball Super: Beerus’ ganha data de lançamento, novo trailer e músicas de abertura e encerramento",
-      "originalTitle": "‘Dragon Ball Super: Beerus’ ganha data de lançamento, novo trailer e músicas de abertura e encerramento",
-      "summary": "A Toei Animation divulgou essa semana vários novos detalhes de Dragon Ball Super: Beerus, versão aprimorada do primeiro arco de Dragon Ball Super.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Música",
-        "dragon ball super",
-        "Dragon Ball Super: Beerus",
-        "remake de Dragon Ball Super",
-        "remake do Freeza dourado"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/04/dragon-ball-super-beerus-ganha-data-de-lancamento-novo-trailer-e-musicas-de-abertura-e-encerramento",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/04/dragon-ball-super-beerus-ganha-data-de-lancamento-novo-trailer-e-musicas-de-abertura-e-encerramento",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Dragon-Ball-Super-Beerus-destacada.jpg",
-      "mediaQuery": "‘Dragon Ball Super: Beerus’ ganha data de lançamento, novo trailer e músicas de abertura e encerramento",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Dragon-Ball-Super-Beerus.webp",
-          "alt": "Pôster de Dragon Ball Super: Beerus",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/CFgEL7ei8VE"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A Toei Animation divulgou essa semana vários novos detalhes de Dragon Ball Super: Beerus, versão aprimorada do primeiro arco de Dragon Ball Super.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Toei Animation",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " divulgou essa semana vários novos detalhes de "
-            },
-            {
-              "text": "Dragon Ball Super: Beerus",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", versão aprimorada do primeiro arco de"
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "Dragon Ball Super",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A estreia dos novos episódios foi confirmada para 11 de outubro, no Japão, e um trailer inédito foi revelado, mostrando mais cenas que foram refeitas:",
-          "runs": [
-            {
-              "text": "A estreia dos novos episódios foi confirmada para "
-            },
-            {
-              "text": "11 de outubro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", no Japão, e um trailer inédito foi revelado, mostrando mais cenas que foram refeitas:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=CFgEL7ei8VE",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/CFgEL7ei8VE"
-        },
-        {
-          "type": "paragraph",
-          "text": "Dentro do teaser, também foi divulgado que o tema de abertura do animê será a música “ONOGAMI”, assinada por Mega Terra Zero, e o encerramento é do cantor e compositor japonês VK Blanka, com “Kan Peki No Peki” — é possível ouvir trechos das duas no vídeo acima.",
-          "runs": [
-            {
-              "text": "Dentro do teaser, também foi divulgado que o tema de abertura do animê será a música"
-            },
-            {
-              "text": " ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "“ONOGAMI”",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", assinada por "
-            },
-            {
-              "text": "Mega Terra Zero",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e o encerramento é do cantor e compositor japonês "
-            },
-            {
-              "text": "VK Blanka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com"
-            },
-            {
-              "text": " ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "“Kan Peki No Peki” ",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": "— é possível ouvir trechos das duas no vídeo acima."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira também o novo pôster da produção:",
-          "runs": [
-            {
-              "text": "Confira também o novo pôster da produção:"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Dragon-Ball-Super-Beerus.webp",
-          "alt": "Pôster de Dragon Ball Super: Beerus"
-        },
-        {
-          "type": "paragraph",
-          "text": "Pôster de Dragon Ball Super: Beerus adianta muito quebra-pau em alta resolução | Toei Animation/Divulgação",
-          "runs": [
-            {
-              "text": "Pôster de Dragon Ball Super: Beerus adianta muito quebra-pau em alta resolução | Toei Animation/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Dragon Ball Super: Beerus é o título da nova versão de TV do primeiro arco de Dragon Ball Super, que por si só já é uma versão adaptada do filme Dragon Ball Z: A Batalha dos Deuses. A produção conta não apenas com cenas refeitas, mas também com trechos inéditos e uma história reconstruída de forma que se aproxime mais da ideia original de Akira Toriyama para o arco. O elenco original de Dragon Ball também regravou suas vozes para o novo animê, que conta ainda com aprimoramentos gerais de áudio, incluindo novas trilhas e melhoria dos efeitos sonoros.",
-          "runs": [
-            {
-              "text": "Dragon Ball Super: Beerus",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é o título da nova versão de TV do primeiro arco de "
-            },
-            {
-              "text": "Dragon Ball Super",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que por si só já é uma versão adaptada do filme "
-            },
-            {
-              "text": "Dragon Ball Z: A Batalha dos Deuses",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". A produção conta não apenas com cenas refeitas, mas também com trechos inéditos e uma "
-            },
-            {
-              "text": "história reconstruída de forma que se aproxime mais da ideia original de Akira Toriyama para o arco",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". O elenco original de "
-            },
-            {
-              "text": "Dragon Ball",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " também regravou suas vozes para o novo animê, que conta ainda com aprimoramentos gerais de áudio, incluindo novas trilhas e melhoria dos efeitos sonoros."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Até então, apenas o primeiro arco de Super tem remake confirmado de forma oficial, mas, com a inclusão de Freeza nas prévias, é provável que a nova versão se estenda por mais episódios. Além do lançamento aprimorado, uma continuação também já está confirmada, adaptando a saga Prisioneiro da Patrulha Galáctica, o arco do Moro.",
-          "runs": [
-            {
-              "text": "Até então, apenas o primeiro arco de "
-            },
-            {
-              "text": "Super",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " tem remake confirmado de forma oficial, mas, com a inclusão de Freeza nas prévias, é provável que a nova versão se estenda por mais episódios. Além do lançamento aprimorado, "
-            },
-            {
-              "text": "uma continuação também já está confirmada",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/01/24/toei-confirma-sequencia-de-dragon-ball-super/"
-            },
-            {
-              "text": ", adaptando a saga "
-            },
-            {
-              "text": "Prisioneiro da Patrulha Galáctica",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", o arco do Moro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No Brasil, os animês Dragon Ball, Dragon Ball Z, Dragon Ball GT, Dragon Ball Super, Dragon Ball Z Kai e Dragon Ball Daima estão no catálogo da Crunchyroll, que também conta com vários filmes da franquia. Já a HBO Max tem em seu catálogo a temporada única de Daima, além de Dragon Ball Z Kai e Dragon Ball Z Kai: The Final Chapters. A Netflix, por sua vez, conta com os episódios de Daima e o filme A Batalha dos Deuses, de 2013. Também há itens da franquia nos catálogos de Disney+ e Claro TV+.",
-          "runs": [
-            {
-              "text": "No Brasil, os animês "
-            },
-            {
-              "text": "Dragon Ball",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Dragon Ball Z",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Dragon Ball GT",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Dragon Ball Super",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Dragon Ball Z Kai",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Dragon Ball Daima",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " estão no catálogo da "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que também conta com vários filmes da franquia. Já a "
-            },
-            {
-              "text": "HBO Max",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " tem em seu catálogo a temporada única de "
-            },
-            {
-              "text": "Daima",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", além de "
-            },
-            {
-              "text": "Dragon Ball Z Kai",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Dragon Ball Z Kai: The Final Chapters",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". A "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", por sua vez, conta com os episódios de "
-            },
-            {
-              "text": "Daima",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e o filme "
-            },
-            {
-              "text": "A Batalha dos Deuses",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", de 2013. Também há itens da franquia nos catálogos de "
-            },
-            {
-              "text": "Disney+",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Claro TV+",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já o mangá da franquia está atualmente na fase Dragon Ball Super, que segue em hiato desde a morte do autor Akira Toriyama. O último capítulo da obra foi publicado na V-Jump em março de 2024, mês de falecimento do mangaká. Em fevereiro de 2025, a obra ganhou um one-shot. Desde então, ela segue parada.",
-          "runs": [
-            {
-              "text": "Já o mangá da franquia está atualmente na fase "
-            },
-            {
-              "text": "Dragon Ball Super",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que segue em hiato desde a morte do autor Akira Toriyama. O último capítulo da obra foi publicado na "
-            },
-            {
-              "text": "V-Jump",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " em março de 2024, mês de falecimento do mangaká. Em fevereiro de 2025, a obra ganhou um "
-            },
-            {
-              "text": "one-shot",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Desde então, ela segue parada."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site oficial de Dragon Ball Super",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Site oficial de Dragon Ball Super",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://dragonball-super.com/en/updates/index.html"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-04T15:37:36.000Z",
-      "updatedAt": "2026-09-04T15:41:07.000Z",
-      "expiresAt": "2026-09-11T15:37:36.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/04/dragon-ball-super-beerus-ganha-data-de-lancamento-novo-trailer-e-musicas-de-abertura-e-encerramento",
-          "publishedAt": "2026-09-04T15:37:36.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 445,
-      "qualityScore": 0.937,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 14,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     }
