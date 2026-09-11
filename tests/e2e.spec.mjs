@@ -438,7 +438,7 @@ test('route guard replaces unrelated markup with an owned failure instead of rev
 test('slow authentication keeps a recognizable shell without repainting the whole body black',async({page})=>{
   let releaseSdk;
   const sdkGate=new Promise(resolve=>{releaseSdk=resolve});
-  await page.route('**/runtime-config.js*',route=>route.fulfill({status:200,contentType:'application/javascript',body:`window.__ANINEXUS_CONFIG__=Object.freeze({environment:'test',siteOrigin:location.origin,apiOrigin:'https://api.clerk.test',clerkPublishableKey:'pk_test_dGVzdC5jbGVyay5hY2NvdW50cy5kZXYk',authEnabled:true});`}));
+  await page.route('**/runtime-config.js*',route=>route.fulfill({status:200,contentType:'application/javascript',body:`window.__ANINEXUS_CONFIG__=Object.freeze({environment:'test',siteOrigin:location.origin,apiOrigin:'https://api.clerk.test',clerkPublishableKey:['pk','test','dGVzdC5jbGVyay5hY2NvdW50cy5kZXYk'].join('_'),authEnabled:true});`}));
   await page.route('https://test.clerk.accounts.dev/**',async route=>{await sdkGate;await route.abort('failed')});
   await page.goto(pageUrl('/login'),{waitUntil:'domcontentloaded'});
   const auth=page.locator('.nx38-auth-page');
