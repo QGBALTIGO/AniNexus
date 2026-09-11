@@ -139,6 +139,8 @@ jobs:
             "${VPS_USER}@${VPS_HOST}" "install -d -m 0755 /var/www/aninexus/incoming"
           retry "${SCP[@]}" \
             "$ARCHIVE" "${VPS_USER}@${VPS_HOST}:/var/www/aninexus/incoming/${RELEASE_ID}.tar.gz"
+          retry "${SCP[@]}" \
+            ops/nginx/aninexus.conf "${VPS_USER}@${VPS_HOST}:/var/www/aninexus/incoming/${RELEASE_ID}.nginx.conf"
           if [[ "$FRONTEND_ONLY" != "true" ]]; then
             retry "${SSH[@]}" \
               "${VPS_USER}@${VPS_HOST}" "install -d -m 0755 /opt/aninexus/incoming /opt/aninexus/releases /opt/aninexus/shared"
@@ -174,6 +176,34 @@ jobs:
             "${VPS_USER}@${VPS_HOST}" \
             "bash -s -- '${RELEASE_ID}' '/var/www/aninexus/incoming/${RELEASE_ID}.tar.gz' '${DEPLOY_SHA}' '${ARCHIVE_SHA256}'" \
             < ops/deploy-vps.sh
+
+      - name: Atualizar Nginx com validação e rollback
+        shell: bash
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_PORT: ${{ secrets.VPS_PORT }}
+          RELEASE_ID: ${{ steps.release.outputs.id }}
+        run: |
+          ssh -i "$HOME/.ssh/aninexus" -p "$VPS_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            "${VPS_USER}@${VPS_HOST}" "bash -s -- '${RELEASE_ID}'" <<'REMOTE'
+          set -Eeuo pipefail
+          release_id="$1"
+          source_file="/var/www/aninexus/incoming/${release_id}.nginx.conf"
+          target_file='/etc/nginx/sites-available/aninexus'
+          backup_file="/etc/nginx/sites-available/.aninexus.${release_id}.bak"
+          [[ "$release_id" =~ ^[0-9]{8}T[0-9]{6}Z-[0-9a-f]{7,40}$ ]]
+          [[ -f "$source_file" ]]
+          sudo -n cp -- "$target_file" "$backup_file"
+          restore(){ sudo -n cp -- "$backup_file" "$target_file"; sudo -n /usr/sbin/nginx -t; sudo -n systemctl reload nginx; }
+          trap 'restore; rm -f -- "$source_file"; sudo -n rm -f -- "$backup_file"' ERR
+          sudo -n install -m 0644 -- "$source_file" "$target_file"
+          sudo -n /usr/sbin/nginx -t
+          sudo -n systemctl reload nginx
+          trap - ERR
+          rm -f -- "$source_file"
+          sudo -n rm -f -- "$backup_file"
+          REMOTE
 
       - name: Health check externo
         shell: bash

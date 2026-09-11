@@ -13,11 +13,12 @@
   const Runtime = window.AniNexusRuntime;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   const routeUrl = path => IS_PAGES ? `${BASE}/?build=44.28.4&p=${encodeURIComponent(path)}` : path;
-  const go = (path, replace = false) => location[replace ? 'replace' : 'assign'](routeUrl(path));
+  const go = (path, replace = false) => { const target=routeUrl(path); if(!IS_PAGES&&window.AniNexusGo?.(target,{replace}))return; location[replace ? 'replace' : 'assign'](target); };
   const avatarMarkup = (user, options = {}) => window.AniNexusAvatar?.markup(user, options) || `<img src="${BASE}/assets/avatars/mascot-pink.png" alt="">`;
   let clerkPromise = null;
   let apiUser = null;
   let clerkListenerInstalled = false;
+  let routeRenderGeneration = 0;
   let headerSyncToken = 0;
   const fallbackLocalization = {
     locale: 'pt-BR',
@@ -226,6 +227,7 @@
     setTimeout(() => { update(); observer.disconnect(); }, 5000);
   }
   async function renderAuth(mode) {
+    const generation=++routeRenderGeneration;
     activate();
     document.title = `${mode === 'login' ? 'Entrar' : 'Criar conta'} | AniNexus`;
     if (!ENABLED) {
@@ -236,6 +238,7 @@
     app.innerHTML = `<main class="nx38-auth-page">${story(mode)}${clerkCard(mode)}</main>`;
     try {
       const clerk = await loadClerk();
+      if(generation!==routeRenderGeneration||currentRoute()!==(mode==='register'?'/criar-conta':'/login'))return;
       if (clerk.user) { go('/minha-conta', true); return; }
       const mount = document.querySelector('#nx38ClerkMount');
       const props = { routing: 'virtual', fallbackRedirectUrl: routeUrl('/minha-conta'), signUpUrl: routeUrl('/criar-conta'), signInUrl: routeUrl('/login') };
@@ -243,6 +246,7 @@
       watchClerkUi(mount);
       document.querySelector('#nx38ClerkLoading')?.remove();
     } catch {
+      if(generation!==routeRenderGeneration)return;
       const message = document.querySelector('#nx38AuthError');
       if (message) message.textContent = 'Não foi possível abrir o acesso seguro agora. Tente novamente em instantes.';
       document.querySelector('#nx38ClerkLoading')?.remove();
@@ -283,12 +287,14 @@
     input.focus();
   }
   async function renderAccount() {
+    const generation=++routeRenderGeneration;
     activate(); document.title = 'Minha conta | AniNexus';
     if (!ENABLED) { app.innerHTML = `<main class="nx38-account-page"><div class="nx38-account-shell">${unavailableCard()}</div></main>`; dispatchEvent(new CustomEvent('aninexus:auth-v38-ready')); return; }
     app.innerHTML = '<main class="nx38-account-page"><div class="nx38-account-shell"><div class="nx38-auth-card" style="margin:auto"><i class="nx38-spin"></i><span class="sr-only">Carregando conta</span></div></div></main>';
     try {
-      const clerk = await loadClerk(); if (!clerk.user) { go('/login', true); return; }
+      const clerk = await loadClerk(); if(generation!==routeRenderGeneration||currentRoute()!=='/minha-conta')return; if (!clerk.user) { go('/login', true); return; }
       const [me, list, follows, notes, importStatus] = await Promise.all([api('/api/me'), api('/api/me/list'), api('/api/me/follows'), api('/api/me/notifications?limit=100'), api('/api/me/import-status')]);
+      if(generation!==routeRenderGeneration||currentRoute()!=='/minha-conta')return;
       apiUser = me?.user || null; if (!apiUser) throw new Error('AUTH_REQUIRED');
       const items = list?.items || [], notifications = notes?.items || [], payload = localPayload(), showImport = !importStatus?.imported && hasLocalData(payload) && localStorage.getItem('aninexus:local-import:ignored') !== 'true';
       const watching = items.filter(item => item.status === 'CURRENT').length, done = items.filter(item => item.status === 'COMPLETED').length, unread = notifications.filter(item => !item.read_at).length;
@@ -302,6 +308,7 @@
       if (importButton) importButton.onclick = async () => { const feedback = document.querySelector('.nx38-import-feedback'); importButton.disabled = true; try { const result = await api('/api/me/import-local', { method: 'POST', body: JSON.stringify(payload), timeout: 20_000 }); localStorage.setItem('aninexus:local-import:completed', new Date().toISOString()); feedback.textContent = `${result.itemCount || 0} registros foram sincronizados. Os dados locais foram preservados.`; setTimeout(() => document.querySelector('#nx38ImportCard')?.remove(), 2200); } catch (error) { feedback.textContent = error.status === 409 ? 'Esta conta já recebeu uma importação inicial.' : 'A importação não foi concluída. Seus dados locais continuam intactos.'; importButton.disabled = false; } };
       const ignore = document.querySelector('[data-ignore-local]'); if (ignore) ignore.onclick = () => { localStorage.setItem('aninexus:local-import:ignored', 'true'); document.querySelector('#nx38ImportCard')?.remove(); };
     } catch (error) {
+      if(generation!==routeRenderGeneration)return;
       if (error.status === 401) { go('/login', true); return; }
       app.innerHTML = `<main class="nx38-account-page"><div class="nx38-account-shell"><div class="nx38-pages-note">Não foi possível carregar sua conta agora. Seus dados locais foram preservados. <button type="button" data-retry-account>Tentar novamente</button></div></div></main>`;
       document.querySelector('[data-retry-account]')?.addEventListener('click', () => location.reload());
@@ -388,7 +395,7 @@
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action !== 'login' && action !== 'register') return;
     event.preventDefault(); event.stopImmediatePropagation();
-    location.assign(routeUrl(action === 'login' ? '/login' : '/criar-conta'));
+    go(action === 'login' ? '/login' : '/criar-conta');
   }, true);
   syncHeader();
   setTimeout(mountRoute, 0);

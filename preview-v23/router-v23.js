@@ -45,9 +45,9 @@
     const current=cleanPathFromUrl(location.href).split('?')[0];
     if(DETAIL_ROUTE.test(String(path||'').split(/[?#]/)[0])&&current&&!DETAIL_ROUTE.test(current)){try{sessionStorage.setItem('nx22:previous-path',JSON.stringify({path:current,document:performance.timeOrigin}))}catch{}}
     document.body?.classList.remove('modal-open');const drawer=document.querySelector('#drawer');if(drawer){drawer.hidden=true;drawer.setAttribute('aria-hidden','true')}
-    const radioNavigate=!IS_PAGES&&window.AniNexusRadio?.navigate;
-    if(radioNavigate&&DETAIL_ROUTE.test(String(path||'').split(/[?#]/)[0])){ensureDetailRuntime().then(()=>{if(sequence!==navigationSequence)return;markRouteOwner(path);if(!window.AniNexusRadio?.navigate?.(path))assign(path)}).catch(()=>{if(sequence===navigationSequence)assign(path)});return}
-    if(radioNavigate){markRouteOwner(path);if(window.AniNexusRadio.navigate(path))return}
+    const softNavigate=()=>{markRouteOwner(path);return !IS_PAGES&&window.AniNexusGo?.(path)===true};
+    if(!IS_PAGES&&DETAIL_ROUTE.test(String(path||'').split(/[?#]/)[0])){ensureDetailRuntime().then(()=>{if(sequence!==navigationSequence)return;if(!softNavigate())assign(path)}).catch(()=>{if(sequence===navigationSequence)assign(path)});return}
+    if(softNavigate())return;
     assign(path);
   }
   function rewrite(root=document){root.querySelectorAll?.('a[href]').forEach(a=>{if(a.target==='_blank')return;const p=cleanPathFromUrl(a.href);if(!isDedicated(p))return;a.dataset.nx23Dedicated=p;if(IS_PAGES)a.href=pagesUrl(p)})}

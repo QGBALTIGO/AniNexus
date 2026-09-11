@@ -16,7 +16,7 @@
     const script=document.createElement('script');
     let settled=false;
     const finish=(status,error)=>{if(settled)return;settled=true;clearTimeout(timer);loader.status=status;if(status==='failed'){script.remove();restoreBootUrl();if(error)console.error('[AniNexus Home V35] falha ao carregar',error)}};
-    script.src=`${base}/preview-v35/home-v35.js?v=44.48.0`;
+    script.src=`${base}/preview-v35/home-v35.js?v=44.54.2`;
     script.defer=true;script.dataset.nx35HomeRuntime='1';
     script.addEventListener('load',()=>finish(window.__NX35_HOME__?'ready':'failed',window.__NX35_HOME__?null:new Error('Runtime não iniciou')),{once:true});
     script.addEventListener('error',()=>finish('failed',new Error('Script indisponível')),{once:true});

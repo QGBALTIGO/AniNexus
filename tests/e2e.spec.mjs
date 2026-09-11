@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.54.1&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.54.2&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -70,7 +70,7 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-10-v44.54.1')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-11-v44.54.2')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -418,6 +418,50 @@ test('radio navigation reaches modern Home after a cold non-Home entry',async({p
   await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});
   await expect(page.locator('.hero,.aqx-home')).toHaveCount(0);
   await expect(page.locator('#app')).not.toContainText('Descubra. Acompanhe. Compartilhe.');
+});
+
+test('ordinary navigation keeps one healthy document across primary destinations',async({page})=>{
+  await bridgeProductionAssets(page);
+  await page.goto(firstVisitUrl('/'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});
+  const documentOrigin=await page.evaluate(()=>performance.timeOrigin);
+  const destinations=[['anime','.nx21-catalog-page'],['manga','.nx21-reading-page'],['schedule','.nx18-schedule'],['news','.nx35-news-page'],['home','.nx35-home']];
+  for(const[key,selector]of destinations){
+    await page.locator(`.main-nav [data-nav="${key}"]`).click();
+    await expect(page.locator(selector)).toBeVisible({timeout:30000});
+    expect(await page.evaluate(()=>performance.timeOrigin),key).toBe(documentOrigin);
+    await expect(page.locator('.nx-route-fail')).toHaveCount(0);
+  }
+});
+
+test('mobile login click renders the account shell without reloading the document',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await bridgeProductionAssets(page);
+  await page.goto(firstVisitUrl('/'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});
+  const documentOrigin=await page.evaluate(()=>performance.timeOrigin);
+  await page.locator('[data-action="drawer-open"]:visible').first().click();
+  await page.locator('#drawer [data-action="login"]').click();
+  await waitForLogin(page);
+  expect(await page.evaluate(()=>performance.timeOrigin)).toBe(documentOrigin);
+  await expect(page.locator('#topbar')).toBeVisible();
+  await expect(page.locator('.nx-route-fail')).toHaveCount(0);
+  await expect(page.locator('html')).not.toHaveClass(/nx-dedicated-route-boot/);
+});
+
+test('mobile work card click opens its detail without a reload or stuck route loader',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await bridgeProductionAssets(page);
+  await page.goto(firstVisitUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});
+  const card=page.locator('[data-nx21-open]').first();
+  await expect(card).toBeVisible({timeout:30000});
+  const documentOrigin=await page.evaluate(()=>performance.timeOrigin);
+  await card.click();
+  await expect(page.locator('.nx22-detail:not(.nx22-fail)')).toBeVisible({timeout:30000});
+  expect(await page.evaluate(()=>performance.timeOrigin)).toBe(documentOrigin);
+  await expect(page).toHaveURL(/\/anime\/[^/?#]+-\d+/);
+  await expect(page.locator('.nx-route-fail')).toHaveCount(0);
+  await expect(page.locator('html')).not.toHaveClass(/nx-dedicated-route-boot/);
 });
 
 test('route guard replaces unrelated markup with an owned failure instead of revealing it',async({page,browserName})=>{
