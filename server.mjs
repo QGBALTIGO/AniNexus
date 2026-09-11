@@ -562,7 +562,7 @@ app.post('/api/me/import-anilist',rateForUser(2,'10 minutes','anilist-import'),a
     const entries=await fetchAniListEntries({username:parsed.data.username,types:parsed.data.types,timeoutMs:Number(process.env.UPSTREAM_TIMEOUT_MS||9000)});
     const result=await transaction(async client=>{
       const changed=await importAniListRows(client,user.id,entries,parsed.data.strategy),skipped=Math.max(0,entries.length-changed),counts={anime:entries.filter(entry=>entry.mediaType==='ANIME').length,manga:entries.filter(entry=>entry.mediaType==='MANGA').length};
-      const {rows}=await client.query(`UPDATE list_transfers SET status='COMPLETED',item_count=$2,skipped_count=$3,details=$4::jsonb,completed_at=now() WHERE id=$1 RETURNING *`,[started.id,changed,skipped,JSON.stringify({found:entries.length,...counts})]);return rows[0];
+      const {rows}=await client.query(`UPDATE list_transfers SET status='COMPLETED',item_count=$2,skipped_count=$3,details=$4::jsonb,completed_at=now() WHERE id=$1 RETURNING *`,[started.id,changed,skipped,JSON.stringify({found:entries.length,...counts,source:entries.source||'GRAPHQL'})]);return rows[0];
     });
     warmImportedMedia(entries);await refreshAchievements(user.id,'RETROACTIVE');return{ok:true,transfer:transferSummary(result)};
   }catch(error){
