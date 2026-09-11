@@ -8,6 +8,7 @@ RUN pnpm install --prod --frozen-lockfile
 
 # Copy the repository runtime, then build /public from the same shell used by GitHub Pages.
 COPY --chown=node:node . .
+RUN mkdir -p /app/profile-media && chown node:node /app/profile-media
 RUN node scripts/build-public.mjs \
   && rm -rf tests docs .github \
   && find . -maxdepth 1 -type d -name 'preview-v*' -exec rm -rf {} +

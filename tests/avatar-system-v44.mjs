@@ -27,11 +27,13 @@ assert.match(index,/mascot-menu-perch-v44-2\.png/);
 assert.match(frontend,/clerkUser\?\.hasImage === false/);
 assert.match(auth,/await api\('\/api\/me'/);
 assert.match(profile,/name="avatarPreset"/);
-assert.match(profile,/data-avatar-personal/);
+assert.match(profile,/data-media-input=/);
+assert.match(profile,/image\/jpeg,image\/png,image\/webp/);
 assert.match(profile,/avatarMode/);
 assert.match(css,/\.drawer-mascot-perch img/);
 assert.match(css,/pointer-events:none/);
 assert.match(server,/app\.patch\('\/api\/me\/profile'/);
+assert.match(server,/app\.put\('\/api\/me\/profile-media\/:kind'/);
 assert.match(server,/withActorAvatars/);
 
-console.log('✓ avatar pessoal, presets coloridos e mascote do menu validados');
+console.log('✓ upload de avatar, presets coloridos e mascote do menu validados');

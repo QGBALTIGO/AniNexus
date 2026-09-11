@@ -6,10 +6,12 @@ import rateLimit from '@fastify/rate-limit';
 import fastifyStatic from '@fastify/static';
 import rawBody from 'fastify-raw-body';
 import crypto from 'node:crypto';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { monitorEventLoopDelay } from 'node:perf_hooks';
 import { z } from 'zod';
+import sharp from 'sharp';
 import { mediaListEntry } from './lib/media-list.mjs';
 import { getCommunityOverview } from './lib/community-overview.mjs';
 import { initDb, q, pool, dbReady } from './lib/db.mjs';
@@ -28,10 +30,14 @@ import { getCharacterRanking, getUserCharacterFavorites, hydrateCharacterFavorit
 import { achievementCatalog, getAchievementFeed, publicAchievementProfile, recordAnimeHistory, recordContributionHistory, setAchievementPins, setContributionHistoryValidity, syncAllUsersAchievements, syncUserAchievements, updateAchievementPreferences } from './lib/achievements.mjs';
 import { registerSocialRoutes } from './lib/social-routes.mjs';
 import { socialBodyPayload } from './lib/social.mjs';
+import { buildAniListImportXml, fetchAniListEntries, usernameModerationReason } from './lib/profile-settings.mjs';
 
 const __dirname=path.dirname(fileURLToPath(import.meta.url));
+const PROFILE_MEDIA_DIR=path.resolve(process.env.PROFILE_MEDIA_DIR||path.join(__dirname,'profile-media'));
+const PUBLIC_ORIGIN=/^https:\/\//.test(String(process.env.PUBLIC_ORIGIN||''))?String(process.env.PUBLIC_ORIGIN).replace(/\/+$/,''):'https://aninexus.com.br';
 const trustProxy=['127.0.0.1','::1','10.0.0.0/8','172.16.0.0/12','192.168.0.0/16'];
 const app=Fastify({logger:true,trustProxy,bodyLimit:1_000_000,requestTimeout:15_000,connectionTimeout:10_000,keepAliveTimeout:72_000,genReqId:()=>crypto.randomUUID()});
+app.addContentTypeParser(/^image\/(?:jpeg|png|webp)$/i,{parseAs:'buffer'},(_request,body,done)=>done(null,body));
 const eventLoopDelay=monitorEventLoopDelay({resolution:20});
 let operationalMetricsTimer=null;
 app.addHook('onClose',async()=>{if(operationalMetricsTimer)clearInterval(operationalMetricsTimer);eventLoopDelay.disable()});
@@ -96,15 +102,33 @@ app.get('/api/community/overview',publicRate,async()=>{
   return overview;
 });
 const currentSeason=()=>{const now=new Date(),month=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',month:'numeric'}).format(now)),year=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',year:'numeric'}).format(now));return{season:month<=3?'WINTER':month<=6?'SPRING':month<=9?'SUMMER':'FALL',year}};
-const safeUser=u=>{if(!u)return null;const avatar=resolvedAvatar(u);return{id:u.id,email:u.email,username:u.username,displayName:u.display_name||u.username,role:u.role,status:u.status||'active',avatarUrl:avatar.url,avatarPreset:avatar.preset,avatarSource:u.avatar_source||'clerk',bannerUrl:u.profile_banner_url||null,bio:u.bio,location:u.location||null,websiteUrl:u.website_url||null,instagramHandle:u.instagram_handle||null,telegramHandle:u.telegram_handle||null,showLibrary:u.show_library!==false,showActivity:u.show_activity!==false,showStats:u.show_stats!==false,theme:u.theme,privacy:u.privacy||'public',emailVerified:u.email_verified,createdAt:u.created_at}};
+const PROFILE_MEDIA_PATH=/^\/media\/profile\/([0-9a-f-]{36})\/(avatar|banner)-([a-f0-9]{16})\.webp$/;
+const publicProfileMedia=value=>{const raw=String(value||'').trim();if(/^https:\/\//i.test(raw))return raw.slice(0,2000);const pathOnly=raw.split('?')[0];return PROFILE_MEDIA_PATH.test(pathOnly)?`${PUBLIC_ORIGIN}${raw}`:null};
+const safeUser=u=>{if(!u)return null;const avatar=resolvedAvatar(u);return{id:u.id,email:u.email,username:u.username,displayName:u.display_name||u.username,role:u.role,status:u.status||'active',avatarUrl:avatar.url,avatarPreset:avatar.preset,avatarSource:u.avatar_source||'clerk',bannerUrl:publicProfileMedia(u.profile_banner_url),instagramHandle:u.instagram_handle||null,telegramHandle:u.telegram_handle||null,showLibrary:u.show_library!==false,showActivity:u.show_activity!==false,showStats:u.show_stats!==false,theme:u.theme,privacy:u.privacy==='followers'?'semi_public':u.privacy||'public',emailVerified:u.email_verified,createdAt:u.created_at}};
 const safeInt=(v,min=1,max=Number.MAX_SAFE_INTEGER)=>{const n=Number(v);return Number.isSafeInteger(n)&&n>=min&&n<=max?n:null};
 const safePath=v=>{const s=String(v||'').slice(0,500);return s.startsWith('/')&&!s.startsWith('//')?s:null};
 const strongPassword=z.string().min(10).max(128).refine(v=>/[A-Za-zÀ-ÿ]/.test(v)&&/\d/.test(v),{message:'WEAK_PASSWORD'});
-const usernameSchema=z.string().trim().min(3).max(30).regex(/^[\p{L}\p{N}_.-]+$/u).refine(value=>!/^(?:admin(?:istrator)?|moderador|moderator|suporte|support|aninexus|equipe|staff|sistema|system)$/i.test(value),{message:'RESERVED_USERNAME'});
+const usernameSchema=z.string().trim().min(3).max(30).regex(/^[\p{L}\p{N}_.-]+$/u).refine(value=>!/^(?:admin(?:istrator)?|moderador|moderator|suporte|support|aninexus|equipe|staff|sistema|system)$/i.test(value),{message:'RESERVED_USERNAME'}).refine(value=>!usernameModerationReason(value),{message:'OFFENSIVE_USERNAME'});
 const nullableText=(max,min=0)=>z.union([z.string().trim().min(min).max(max),z.literal(''),z.null()]).transform(value=>value||null);
 const nullableHttpsUrl=z.union([z.string().trim().url().max(2000).refine(value=>value.startsWith('https://')),z.literal(''),z.null()]).transform(value=>value||null);
 const characterFavoriteSchema=z.object({name:z.string().trim().min(1).max(180).optional(),nativeName:z.string().trim().max(180).optional(),image:nullableHttpsUrl.optional(),work:z.string().trim().max(240).optional(),mediaId:z.number().int().positive().optional(),mediaType:z.enum(['ANIME','MANGA']).optional()}).strict();
 const nullableHandle=max=>z.preprocess(value=>typeof value==='string'?value.trim().replace(/^@+/, ''):value,z.union([z.string().regex(/^[A-Za-z0-9_.]+$/).max(max),z.literal(''),z.null()])).transform(value=>value||null);
+const profileMediaStoredPath=(value,userId)=>{try{const pathname=new URL(String(value||''),PUBLIC_ORIGIN).pathname,match=pathname.match(PROFILE_MEDIA_PATH);return match&&match[1]===String(userId)?path.join(PROFILE_MEDIA_DIR,match[1],`${match[2]}-${match[3]}.webp`):null}catch{return null}};
+const removeStoredProfileMedia=async(value,userId)=>{const file=profileMediaStoredPath(value,userId);if(file)await fs.unlink(file).catch(error=>{if(error?.code!=='ENOENT')throw error})};
+const processProfileMedia=async(buffer,kind,userId)=>{
+  const limits=kind==='avatar'?{input:3_000_000,width:512,height:512,quality:84}:{input:6_000_000,width:1800,height:500,quality:82};
+  if(!Buffer.isBuffer(buffer)||buffer.length<128||buffer.length>limits.input)throw Object.assign(new Error('INVALID_IMAGE'),{code:'INVALID_IMAGE'});
+  try{
+    const image=sharp(buffer,{limitInputPixels:40_000_000,failOn:'warning',sequentialRead:true}),metadata=await image.metadata();
+    if(!['jpeg','png','webp'].includes(String(metadata.format))||Number(metadata.pages||1)!==1||!metadata.width||!metadata.height)throw new Error('unsupported image');
+    const output=await image.rotate().resize(limits.width,limits.height,{fit:'cover',position:'attention',withoutEnlargement:false}).webp({quality:limits.quality,effort:4,smartSubsample:true}).toBuffer();
+    if(output.length>1_500_000)throw new Error('processed image too large');
+    const hash=crypto.createHash('sha256').update(output).digest('hex').slice(0,16),directory=path.join(PROFILE_MEDIA_DIR,String(userId)),filename=`${kind}-${hash}.webp`,target=path.join(directory,filename);
+    await fs.mkdir(directory,{recursive:true});
+    await fs.writeFile(target,output,{flag:'wx'}).catch(error=>{if(error?.code!=='EEXIST')throw error});
+    return{storedUrl:`/media/profile/${userId}/${filename}`,width:limits.width,height:limits.height,bytes:output.length};
+  }catch(error){if(error?.code==='INVALID_IMAGE')throw error;throw Object.assign(new Error('INVALID_IMAGE'),{code:'INVALID_IMAGE',cause:error})}
+};
 const DUMMY_PASSWORD_HASH=CLERK_ENABLED?'':await hashPassword('aninexus-invalid-password-sentinel-do-not-use-8401');
 const mediaProjection=`CASE WHEN mc.media_id IS NULL THEN NULL ELSE jsonb_build_object(
   'id',mc.media_id,'title',mc.payload->>'title','cover',mc.payload->>'cover','banner',mc.payload->>'banner',
@@ -132,26 +156,41 @@ const recordContributionAchievement=async(userId,type,row,body)=>{if(String(body
 
 app.get('/health',async()=>({ok:true,uptime:Math.round(process.uptime()),time:new Date().toISOString()}));
 app.get('/health/ready',async(req,reply)=>{const [db,cache]=await Promise.all([dbReady(),cacheReady()]);const ok=db&&cache;return reply.code(ok?200:503).send({ok,db,cache});});
+app.get('/media/profile/:userId/:file',publicRate,async(req,reply)=>{
+  const userId=z.string().uuid().safeParse(req.params.userId),file=String(req.params.file||'');
+  if(!userId.success||!/^(?:avatar|banner)-[a-f0-9]{16}\.webp$/.test(file))return reply.code(404).send({error:'NOT_FOUND'});
+  try{
+    const content=await fs.readFile(path.join(PROFILE_MEDIA_DIR,userId.data,file));
+    return reply.type('image/webp').header('Cache-Control','public, max-age=31536000, immutable').send(content);
+  }catch(error){if(error?.code==='ENOENT')return reply.code(404).send({error:'NOT_FOUND'});throw error}
+});
 app.get('/api/me',privateReadRate,async(req,reply)=>{let user=await requireUser(req,reply);if(!user)return;if(CLERK_ENABLED&&user.clerk_user_id&&user.avatar_source==='clerk'){const fingerprint=crypto.createHash('sha256').update(String(user.avatar_url||'')).digest('hex').slice(0,12);try{user=await cacheRemember(`auth:profile-avatar-v44:${user.clerk_user_id}:${fingerprint}`,900,async()=>syncClerkUser(await getClerkClient().users.getUser(user.clerk_user_id)))}catch(error){req.log.warn({err:error,userId:user.id},'clerk avatar refresh failed')}}return{user:safeUser(user)}});
 app.get('/api/member/telegram',privateReadRate,async(req,reply)=>{const user=await requireUser(req,reply);if(!user)return;reply.header('Cache-Control','no-store');return{url:'https://t.me/BaltigoWorld',label:'BaltigoWorld no Telegram'};});
+app.get('/api/me/username-availability',privateReadRate,async(req,reply)=>{
+  const user=await requireUser(req,reply);if(!user)return;
+  const candidate=String(req.query?.username||'').trim(),parsed=usernameSchema.safeParse(candidate);
+  if(!parsed.success){const reason=usernameModerationReason(candidate)||parsed.error?.issues?.[0]?.message||'INVALID_USERNAME';return{available:false,reason}}
+  const {rows}=await q(`SELECT 1 FROM users WHERE username=$1 AND id<>$2 AND deleted_at IS NULL UNION ALL SELECT 1 FROM user_profile_aliases WHERE alias=$1 AND user_id<>$2 LIMIT 1`,[parsed.data,user.id]);
+  return{available:!rows[0],reason:rows[0]?'USERNAME_UNAVAILABLE':null};
+});
 app.patch('/api/me/profile',writeRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
   const parsed=z.object({
     username:usernameSchema,
     displayName:z.string().trim().min(1).max(80),
-    avatarMode:z.enum(['preset','custom','clerk']).optional(),
+    avatarMode:z.enum(['keep','preset','custom','clerk']).optional(),
     avatarPreset:z.enum(AVATAR_PRESETS).optional(),
     avatarUrl:nullableHttpsUrl.optional(),
-    bannerUrl:nullableHttpsUrl,
-    bio:nullableText(500),
-    location:nullableText(80),
-    websiteUrl:nullableHttpsUrl,
-    instagramHandle:nullableHandle(30),
-    telegramHandle:nullableHandle(32),
-    privacy:z.enum(['public','followers','private']),
-    showLibrary:z.boolean(),showActivity:z.boolean(),showStats:z.boolean(),
+    bannerUrl:nullableHttpsUrl.optional(),
+    bio:nullableText(500).optional(),
+    location:nullableText(80).optional(),
+    websiteUrl:nullableHttpsUrl.optional(),
+    instagramHandle:nullableHandle(30).optional(),
+    telegramHandle:nullableHandle(32).optional(),
+    privacy:z.enum(['public','semi_public','followers','private']).transform(value=>value==='followers'?'semi_public':value),
+    showLibrary:z.boolean().optional(),showActivity:z.boolean().optional(),showStats:z.boolean().optional(),
   }).strict().safeParse(req.body);
-  if(!parsed.success)return reply.code(422).send({error:'INVALID_INPUT'});
+  if(!parsed.success){const offensive=parsed.error?.issues?.some(issue=>issue.message==='OFFENSIVE_USERNAME');return reply.code(422).send({error:offensive?'OFFENSIVE_USERNAME':'INVALID_INPUT'})}
   const data=parsed.data;
   let avatarUrl=user.avatar_url,avatarSource=user.avatar_source||'clerk';
   if(data.avatarMode==='preset'){
@@ -178,7 +217,8 @@ app.patch('/api/me/profile',writeRate,async(req,reply)=>{
         await client.query('DELETE FROM user_profile_aliases WHERE alias=$1 AND user_id=$2',[data.username,user.id]);
         await client.query('INSERT INTO user_profile_aliases(alias,user_id) VALUES($1,$2) ON CONFLICT(alias) DO NOTHING',[current.username,user.id]);
       }
-      const result=await client.query(`UPDATE users SET username=$2,display_name=$3,avatar_url=$4,avatar_source=$5,profile_banner_url=$6,bio=$7,location=$8,website_url=$9,instagram_handle=$10,telegram_handle=$11,privacy=$12,show_library=$13,show_activity=$14,show_stats=$15,username_changed_at=CASE WHEN $16 THEN now() ELSE username_changed_at END,updated_at=now() WHERE id=$1 AND deleted_at IS NULL RETURNING *`,[user.id,data.username,data.displayName,avatarUrl,avatarSource,data.bannerUrl,data.bio,data.location,data.websiteUrl,data.instagramHandle,data.telegramHandle,data.privacy,data.showLibrary,data.showActivity,data.showStats,usernameChanged]);
+      const publiclyVisible=data.privacy!=='private';
+      const result=await client.query(`UPDATE users SET username=$2,display_name=$3,avatar_url=$4,avatar_source=$5,profile_banner_url=$6,bio=$7,location=$8,website_url=$9,instagram_handle=$10,telegram_handle=$11,privacy=$12,show_library=$13,show_activity=$14,show_stats=$15,username_changed_at=CASE WHEN $16 THEN now() ELSE username_changed_at END,updated_at=now() WHERE id=$1 AND deleted_at IS NULL RETURNING *`,[user.id,data.username,data.displayName,avatarUrl,avatarSource,data.bannerUrl===undefined?user.profile_banner_url:data.bannerUrl,data.bio===undefined?user.bio:data.bio,data.location===undefined?user.location:data.location,data.websiteUrl===undefined?user.website_url:data.websiteUrl,data.instagramHandle===undefined?user.instagram_handle:data.instagramHandle,data.telegramHandle===undefined?user.telegram_handle:data.telegramHandle,data.privacy,publiclyVisible,publiclyVisible,publiclyVisible,usernameChanged]);
       return result.rows[0];
     });
   }catch(error){if(error?.code==='USERNAME_UNAVAILABLE'||error?.code==='23505')return reply.code(409).send({error:'USERNAME_UNAVAILABLE'});throw error}
@@ -186,13 +226,33 @@ app.patch('/api/me/profile',writeRate,async(req,reply)=>{
   await refreshAchievements(user.id);
   return{user:safeUser(updated)};
 });
+app.put('/api/me/profile-media/:kind',{...rateForUser(8,'10 minutes','profile-media'),bodyLimit:6_100_000},async(req,reply)=>{
+  const user=await requireUser(req,reply);if(!user)return;
+  const kind=z.enum(['avatar','banner']).safeParse(req.params.kind);if(!kind.success)return reply.code(404).send({error:'NOT_FOUND'});
+  const contentType=String(req.headers['content-type']||'').split(';')[0].toLowerCase();if(!['image/jpeg','image/png','image/webp'].includes(contentType))return reply.code(415).send({error:'UNSUPPORTED_IMAGE'});
+  let media;try{media=await processProfileMedia(req.body,kind.data,user.id)}catch(error){if(error?.code==='INVALID_IMAGE')return reply.code(422).send({error:'INVALID_IMAGE'});throw error}
+  const previous=kind.data==='avatar'?user.avatar_url:user.profile_banner_url,column=kind.data==='avatar'?'avatar_url':'profile_banner_url';
+  const {rows}=await q(`UPDATE users SET ${column}=$2${kind.data==='avatar'?',avatar_source=\'custom\'':''},updated_at=now() WHERE id=$1 AND deleted_at IS NULL RETURNING *`,[user.id,media.storedUrl]);
+  await removeStoredProfileMedia(previous,user.id).catch(error=>req.log.warn({err:error,userId:user.id},'old profile media cleanup failed'));
+  await invalidateUserIdentityCache(rows[0]).catch(()=>{});
+  return{user:safeUser(rows[0]),media:{kind:kind.data,url:kind.data==='avatar'?resolvedAvatar(rows[0]).url:publicProfileMedia(media.storedUrl),width:media.width,height:media.height,bytes:media.bytes}};
+});
+app.delete('/api/me/profile-media/:kind',writeRate,async(req,reply)=>{
+  const user=await requireUser(req,reply);if(!user)return;
+  const kind=z.enum(['avatar','banner']).safeParse(req.params.kind);if(!kind.success)return reply.code(404).send({error:'NOT_FOUND'});
+  const previous=kind.data==='avatar'?user.avatar_url:user.profile_banner_url,preset=avatarPresetUrl(avatarForClerkUser({id:user.id,username:user.username}).preset);
+  const {rows}=kind.data==='avatar'?await q("UPDATE users SET avatar_url=$2,avatar_source='custom',updated_at=now() WHERE id=$1 AND deleted_at IS NULL RETURNING *",[user.id,preset]):await q('UPDATE users SET profile_banner_url=NULL,updated_at=now() WHERE id=$1 AND deleted_at IS NULL RETURNING *',[user.id]);
+  await removeStoredProfileMedia(previous,user.id).catch(error=>req.log.warn({err:error,userId:user.id},'profile media cleanup failed'));
+  await invalidateUserIdentityCache(rows[0]).catch(()=>{});
+  return{user:safeUser(rows[0])};
+});
 app.get('/api/users/search',publicRate,async(req,reply)=>{
   const parsed=z.string().trim().min(1).max(40).safeParse(String(req.query?.q||'').replace(/^@+/,''));
   if(!parsed.success)return reply.code(400).send({error:'INVALID_QUERY'});
   const term=parsed.data,escaped=term.replace(/[!%_]/g,'!$&'),contains=`%${escaped}%`,prefix=`${escaped}%`;
   const {rows}=await q(`SELECT username,display_name,avatar_url,avatar_source
     FROM users
-    WHERE deleted_at IS NULL AND status='active' AND privacy='public'
+    WHERE deleted_at IS NULL AND status='active' AND privacy IN ('public','semi_public')
       AND (username ILIKE $1 ESCAPE '!' OR display_name ILIKE $1 ESCAPE '!')
     ORDER BY CASE WHEN lower(username)=lower($2) THEN 0 WHEN username ILIKE $3 ESCAPE '!' THEN 1 ELSE 2 END,lower(username)
     LIMIT 12`,[contains,term,prefix]);
@@ -205,8 +265,8 @@ app.get('/api/users/:username',publicRate,async(req,reply)=>{
   let aliased=false;
   if(!result.rows[0]){result=await q(`SELECT u.* FROM user_profile_aliases a JOIN users u ON u.id=a.user_id WHERE a.alias=$1 AND u.deleted_at IS NULL AND u.status='active'`,[requested]);aliased=!!result.rows[0]}
   const user=result.rows[0];if(!user)return reply.code(404).send({error:'NOT_FOUND'});
-  const isPrivate=user.privacy!=='public';
-  const avatar=resolvedAvatar(user),profile={username:user.username,displayName:user.display_name||user.username,avatarUrl:avatar.url,avatarPreset:avatar.preset,bannerUrl:user.profile_banner_url||null,bio:isPrivate?null:user.bio,location:isPrivate?null:user.location,websiteUrl:isPrivate?null:user.website_url,instagramHandle:isPrivate?null:user.instagram_handle,telegramHandle:isPrivate?null:user.telegram_handle,role:user.role,privacy:user.privacy,isPrivate,showLibrary:user.show_library!==false,showActivity:user.show_activity!==false,showStats:user.show_stats!==false,createdAt:user.created_at};
+  const isPrivate=user.privacy==='private';
+  const avatar=resolvedAvatar(user),profile={username:user.username,displayName:user.display_name||user.username,avatarUrl:avatar.url,avatarPreset:avatar.preset,bannerUrl:isPrivate?null:publicProfileMedia(user.profile_banner_url),instagramHandle:isPrivate?null:user.instagram_handle,telegramHandle:isPrivate?null:user.telegram_handle,role:user.role,privacy:user.privacy==='followers'?'semi_public':user.privacy,isPrivate,showLibrary:user.show_library!==false,showActivity:user.show_activity!==false,showStats:user.show_stats!==false,createdAt:user.created_at};
   if(isPrivate)return{profile,canonicalUsername:user.username,aliased,stats:null,library:[],mangaLibrary:[],favoriteCharacters:[],activity:[],impressions:[],achievements:[]};
   const [statsResult,libraryResult,mangaResult,characterFavorites,activityResult,impressionsResult,achievementResult]=await Promise.all([
     user.show_stats===false?Promise.resolve({rows:[]}):q(`SELECT count(*)::int list_total,count(*) FILTER(WHERE status='CURRENT')::int watching,count(*) FILTER(WHERE status='COMPLETED')::int completed,count(*) FILTER(WHERE status='PLANNING')::int planning,COALESCE(sum(progress),0)::int episodes_watched,round(avg(score)::numeric,1) average_score,(SELECT count(*)::int FROM user_favorites WHERE user_id=$1) favorites FROM user_anime WHERE user_id=$1`,[user.id]),
@@ -473,6 +533,58 @@ app.post('/api/me/import-local',rateForUser(3,'10 minutes','initial-import'),asy
   });
   if(!result.alreadyImported)await refreshAchievements(user.id,'RETROACTIVE');
   return reply.code(result.alreadyImported?409:200).send(result.alreadyImported?{error:'IMPORT_ALREADY_COMPLETED',import:result}:{ok:true,...result});
+});
+
+const transferSummary=row=>({id:row.id,direction:row.direction,service:row.service,mediaType:row.media_type,sourceUsername:row.source_username,strategy:row.strategy,status:row.status,itemCount:Number(row.item_count||0),skippedCount:Number(row.skipped_count||0),details:row.details||{},errorCode:row.error_code,createdAt:row.created_at,completedAt:row.completed_at});
+const importAniListRows=async(client,userId,entries,strategy)=>{
+  let changed=0;
+  for(const mediaType of ['ANIME','MANGA']){
+    const rows=entries.filter(entry=>entry.mediaType===mediaType);if(!rows.length)continue;
+    const table=mediaType==='MANGA'?'user_manga':'user_anime',overwrite=strategy==='OVERWRITE';
+    const conflict=overwrite?`DO UPDATE SET status=EXCLUDED.status,score=EXCLUDED.score,progress=EXCLUDED.progress,volume_progress=EXCLUDED.volume_progress,updated_at=EXCLUDED.updated_at`:'DO NOTHING';
+    const payload=JSON.stringify(rows.map(entry=>({media_id:entry.mediaId,status:entry.status,score:entry.score,progress:entry.progress,volume_progress:entry.volumeProgress,updated_at:entry.updatedAt})));
+    const result=await client.query(`INSERT INTO ${table}(user_id,media_id,status,score,progress,volume_progress,updated_at) SELECT $1,x.media_id,x.status,x.score,x.progress,x.volume_progress,to_timestamp(x.updated_at) FROM jsonb_to_recordset($2::jsonb) AS x(media_id bigint,status text,score numeric,progress integer,volume_progress integer,updated_at bigint) ON CONFLICT(user_id,media_id) ${conflict}`,[userId,payload]);
+    changed+=result.rowCount;
+  }
+  return changed;
+};
+const warmImportedMedia=entries=>{for(const mediaType of ['ANIME','MANGA']){const ids=entries.filter(entry=>entry.mediaType===mediaType).map(entry=>entry.mediaId).slice(0,240);for(let index=0;index<ids.length;index+=60)void getMediaSummaries(ids.slice(index,index+60),mediaType).catch(()=>{})}};
+app.get('/api/me/list-transfers',privateReadRate,async(req,reply)=>{
+  const user=await requireUser(req,reply);if(!user)return;
+  const {rows}=await q('SELECT * FROM list_transfers WHERE user_id=$1 ORDER BY created_at DESC LIMIT 12',[user.id]);return{items:rows.map(transferSummary)};
+});
+app.post('/api/me/import-anilist',rateForUser(2,'10 minutes','anilist-import'),async(req,reply)=>{
+  const user=await requireUser(req,reply);if(!user)return;
+  const parsed=z.object({username:z.string().trim().min(2).max(30).regex(/^[A-Za-z0-9_-]+$/),types:z.array(z.enum(['ANIME','MANGA'])).min(1).max(2).transform(values=>[...new Set(values)]),strategy:z.enum(['KEEP','OVERWRITE'])}).strict().safeParse(req.body);
+  if(!parsed.success)return reply.code(422).send({error:'INVALID_IMPORT'});
+  const mediaType=parsed.data.types.length===2?'ALL':parsed.data.types[0],started=(await q(`INSERT INTO list_transfers(user_id,direction,service,media_type,source_username,strategy) VALUES($1,'IMPORT','ANILIST',$2,$3,$4) RETURNING id`,[user.id,mediaType,parsed.data.username,parsed.data.strategy])).rows[0];
+  try{
+    const entries=await fetchAniListEntries({username:parsed.data.username,types:parsed.data.types,timeoutMs:Number(process.env.UPSTREAM_TIMEOUT_MS||9000)});
+    const result=await transaction(async client=>{
+      const changed=await importAniListRows(client,user.id,entries,parsed.data.strategy),skipped=Math.max(0,entries.length-changed),counts={anime:entries.filter(entry=>entry.mediaType==='ANIME').length,manga:entries.filter(entry=>entry.mediaType==='MANGA').length};
+      const {rows}=await client.query(`UPDATE list_transfers SET status='COMPLETED',item_count=$2,skipped_count=$3,details=$4::jsonb,completed_at=now() WHERE id=$1 RETURNING *`,[started.id,changed,skipped,JSON.stringify({found:entries.length,...counts})]);return rows[0];
+    });
+    warmImportedMedia(entries);await refreshAchievements(user.id,'RETROACTIVE');return{ok:true,transfer:transferSummary(result)};
+  }catch(error){
+    const code=['ANILIST_USER_NOT_FOUND','ANILIST_UNAVAILABLE'].includes(error?.code)?error.code:'IMPORT_FAILED';
+    await q(`UPDATE list_transfers SET status='FAILED',error_code=$2,completed_at=now() WHERE id=$1`,[started.id,code]).catch(()=>{});
+    return reply.code(code==='ANILIST_USER_NOT_FOUND'?404:502).send({error:code});
+  }
+});
+const hydrateExportRows=async(rows,mediaType)=>{
+  const entries=rows.map(row=>({mediaId:Number(row.media_id),mediaType,status:row.status,score:row.score==null?null:Number(row.score),progress:Number(row.progress||0),volumeProgress:Number(row.volume_progress||0),idMal:Number(row.id_mal)||null,title:String(row.title||'')}));
+  const missing=entries.filter(entry=>!entry.idMal||!entry.title),byId=new Map();
+  for(let index=0;index<missing.length;index+=240){const batch=missing.slice(index,index+240),chunks=[];for(let offset=0;offset<batch.length;offset+=60)chunks.push(batch.slice(offset,offset+60));const resolved=await Promise.all(chunks.map(chunk=>getMediaSummaries(chunk.map(entry=>entry.mediaId),mediaType)));for(const media of resolved.flat())byId.set(Number(media.id),media)}
+  return entries.map(entry=>{const media=byId.get(entry.mediaId);return{...entry,idMal:entry.idMal||Number(media?.idMal)||null,title:entry.title||String(media?.title||'')}});
+};
+app.post('/api/me/export-list',privateHeavyRate,async(req,reply)=>{
+  const user=await requireUser(req,reply);if(!user)return;
+  const parsed=z.object({mediaType:z.enum(['ANIME','MANGA'])}).strict().safeParse(req.body);if(!parsed.success)return reply.code(422).send({error:'INVALID_EXPORT'});
+  const mediaType=parsed.data.mediaType,table=mediaType==='MANGA'?'user_manga':'user_anime';
+  const {rows}=await q(`SELECT l.media_id,l.status,l.score,l.progress,l.volume_progress,CASE WHEN (mc.payload->>'idMal')~'^[0-9]+$' THEN (mc.payload->>'idMal')::bigint END id_mal,mc.payload->>'title' title FROM ${table} l LEFT JOIN media_cache mc ON mc.media_type=$2 AND mc.media_id=l.media_id WHERE l.user_id=$1 ORDER BY l.media_id LIMIT 5000`,[user.id,mediaType]);
+  const entries=await hydrateExportRows(rows,mediaType),built=buildAniListImportXml({username:user.username,mediaType,entries}),filename=`aninexus-${mediaType==='MANGA'?'mangas':'animes'}-${new Date().toISOString().slice(0,10)}.xml`;
+  const {rows:transferRows}=await q(`INSERT INTO list_transfers(user_id,direction,service,media_type,status,item_count,skipped_count,details,completed_at) VALUES($1,'EXPORT','ANILIST',$2,'COMPLETED',$3,$4,$5::jsonb,now()) RETURNING *`,[user.id,mediaType,built.exported,built.skipped,JSON.stringify({format:'MAL_XML',filename})]);
+  return{filename,mimeType:'application/xml;charset=utf-8',content:built.content,transfer:transferSummary(transferRows[0])};
 });
 
 app.get('/api/me/export',privateHeavyRate,async(req,reply)=>{

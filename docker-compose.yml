@@ -9,6 +9,7 @@ services:
       - "${PUBLIC_PORT:-8080}:80"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - profile_media:/srv/media/profile:ro
     read_only: true
     tmpfs:
       - /var/cache/nginx:size=512m
@@ -58,6 +59,7 @@ services:
       NEWS_WORKER_INTERVAL_MS: ${NEWS_WORKER_INTERVAL_MS:-300000}
       NEWS_RETENTION_DAYS: ${NEWS_RETENTION_DAYS:-7}
       NEWS_STALE_GRACE_DAYS: ${NEWS_STALE_GRACE_DAYS:-14}
+      PROFILE_MEDIA_DIR: /app/profile-media
     depends_on:
       postgres:
         condition: service_healthy
@@ -66,6 +68,8 @@ services:
     expose:
       - "3000"
     read_only: true
+    volumes:
+      - profile_media:/app/profile-media
     tmpfs:
       - /tmp
     cap_drop:
@@ -161,3 +165,4 @@ services:
 volumes:
   postgres_data:
   redis_data:
+  profile_media:
