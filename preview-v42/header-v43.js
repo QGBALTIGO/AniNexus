@@ -138,8 +138,7 @@
       location.assign(`${BASE}/?build=${BUILD}&p=${encodeURIComponent(route)}`);
       return;
     }
-    history.pushState({}, '', route);
-    dispatchEvent(new PopStateEvent('popstate'));
+    if (!window.AniNexusGo?.(route)) location.assign(route);
   }
 
   async function openNotification(item, row) {

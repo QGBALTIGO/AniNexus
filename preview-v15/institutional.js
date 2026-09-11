@@ -38,7 +38,7 @@
     let path=location.pathname;if(IS_PAGES)path=path.replace(/^\/AniNexus/,'')||'/';return path.replace(/\/+$/,'')||'/';
   }
   const href=p=>`${BASE}${p}`;
-  function goto(path){history.pushState({},'',BASE+path);mount();window.scrollTo({top:0,behavior:'auto'})}
+  function goto(path){if(!window.AniNexusGo?.(BASE+path,{popstate:false}))location.assign(BASE+path)}
   const button=(label,path,primary=false)=>`<a class="nx-inst-btn${primary?' primary':''}" href="${href(path)}" data-nx-inst="${path}">${label}${ICON.arrow}</a>`;
   function socialCards(){return `<div class="nx-inst-socials">${Object.entries(SOCIAL).map(([k,s])=>`<a class="nx-inst-social" href="${s.url}" target="_blank" rel="noopener noreferrer"><div class="top"><span class="social-icon">${ICON[k]}</span><span class="arrow">↗</span></div><strong>${s.label}</strong><span>${s.handle}</span></a>`).join('')}</div>`}
   function hero(kicker,title,copy,actions='',mark=true){return `<section class="nx-inst-hero"><div class="nx-inst-shell nx-inst-hero-inner"><div class="nx-inst-hero-copy"><div class="nx-inst-kicker">${kicker}</div><h1>${title}</h1><p>${copy}</p>${actions?`<div class="nx-inst-hero-actions">${actions}</div>`:''}</div>${mark?`<div class="nx-inst-mark"><img src="${BASE}/assets/logo.png" alt="Logo AniNexus"><div class="nx-inst-mark-label"><strong>AniNexus</strong>anime · mangá · comunidade</div></div>`:''}</div></section>`}
@@ -128,8 +128,6 @@
     if(target.startsWith('#')){document.querySelector(target)?.scrollIntoView({behavior:'smooth',block:'start'});return}
     goto(target);
   },true);
-  const oldPush=history.pushState.bind(history),oldReplace=history.replaceState.bind(history);
-  history.pushState=function(...args){const r=oldPush(...args);queueMicrotask(mount);return r};history.replaceState=function(...args){const r=oldReplace(...args);queueMicrotask(mount);return r};
-  addEventListener('popstate',()=>setTimeout(mount,0));
+  addEventListener('aninexus:route-changed',()=>queueMicrotask(mount));
   setTimeout(mount,0);
 })();

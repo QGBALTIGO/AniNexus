@@ -361,11 +361,7 @@
     if (target.origin !== location.origin) return false;
     const route = `${target.pathname}${target.search}${target.hash}`;
     if (!route.startsWith('/')) return false;
-    history.pushState({}, '', route);
-    dispatchEvent(new PopStateEvent('popstate'));
-    dispatchEvent(new CustomEvent('aninexus:navigate', { detail: { route } }));
-    scrollTo({ top: 0, behavior: 'auto' });
-    return true;
+    return window.AniNexusGo?.(route)===true;
   }
 
   function retryAudio() {

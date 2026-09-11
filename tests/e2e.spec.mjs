@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.53.0&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.54.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -70,7 +70,7 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-10-v44.53.0')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-10-v44.54.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -433,6 +433,43 @@ test('route guard replaces unrelated markup with an owned failure instead of rev
   await expect(failure).toBeVisible({timeout:5000});
   await expect(page.locator('.wrong-route-renderer')).toHaveCount(0);
   await expect(page.locator('html')).not.toHaveClass(/nx-dedicated-route-boot/);
+});
+
+test('slow authentication keeps a recognizable shell without repainting the whole body black',async({page})=>{
+  let releaseSdk;
+  const sdkGate=new Promise(resolve=>{releaseSdk=resolve});
+  await page.route('**/runtime-config.js*',route=>route.fulfill({status:200,contentType:'application/javascript',body:`window.__ANINEXUS_CONFIG__=Object.freeze({environment:'test',siteOrigin:location.origin,apiOrigin:'https://api.clerk.test',clerkPublishableKey:'pk_test_dGVzdC5jbGVyay5hY2NvdW50cy5kZXYk',authEnabled:true});`}));
+  await page.route('https://test.clerk.accounts.dev/**',async route=>{await sdkGate;await route.abort('failed')});
+  await page.goto(pageUrl('/login'),{waitUntil:'domcontentloaded'});
+  const auth=page.locator('.nx38-auth-page');
+  await expect(auth).toBeVisible({timeout:5000});
+  await expect(page.locator('#nx38ClerkLoading')).toContainText('Preparando acesso seguro');
+  await expect(page.locator('#topbar')).toBeVisible();
+  const visual=await page.evaluate(()=>({body:getComputedStyle(document.body).backgroundColor,page:getComputedStyle(document.querySelector('.nx38-auth-page')).backgroundColor,boot:document.documentElement.classList.contains('nx-dedicated-route-boot')}));
+  expect(visual.body).toBe('rgb(8, 6, 11)');
+  expect(visual.page).toBe('rgb(8, 6, 8)');
+  expect(visual.boot).toBe(false);
+  releaseSdk();
+});
+
+test('shared navigation starts new pages at the top and restores the previous history entry',async({page})=>{
+  await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx21-catalog-page')).toBeVisible({timeout:30000});
+  const initialEntry=await page.evaluate(()=>history.state?.__aninexusEntryId);
+  await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto'});
+  await page.mouse.wheel(0,700);
+  await expect.poll(()=>page.evaluate(()=>Math.round(scrollY)),{timeout:3000}).toBeGreaterThan(100);
+  const previousY=await page.evaluate(()=>Math.round(scrollY));
+  expect(previousY).toBeGreaterThan(100);
+  expect(await page.evaluate(()=>window.AniNexusGo('/quem-somos',{popstate:false}))).toBe(true);
+  await expect(page.locator('.nx-inst')).toBeVisible({timeout:10000});
+  await expect.poll(()=>page.evaluate(()=>Math.round(scrollY))).toBeLessThanOrEqual(2);
+  await expect.poll(()=>page.evaluate(key=>JSON.parse(sessionStorage.getItem('aninexus:navigation-scroll:v1')||'{}')[key]?.y||0,initialEntry),{timeout:3000}).toBeGreaterThanOrEqual(previousY-2);
+  await expect(page.locator('body')).not.toHaveClass(/nx21-catalog-active|nx38-auth-active/);
+  await page.goBack({waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx21-catalog-page')).toBeVisible({timeout:30000});
+  await expect.poll(()=>page.evaluate(()=>Math.round(scrollY)),{timeout:5000}).toBeGreaterThanOrEqual(previousY-12);
+  await expect.poll(()=>page.evaluate(()=>Math.round(scrollY)),{timeout:5000}).toBeLessThanOrEqual(previousY+12);
 });
 
 test('detail runtime removes a failed load and succeeds on the next real attempt',async({page})=>{

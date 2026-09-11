@@ -137,10 +137,7 @@
       accessState('Não foi possível abrir o painel', 'A conexão segura falhou. Nenhuma alteração foi realizada.');
     } finally { mounting = false; }
   }
-  const push = history.pushState.bind(history), replace = history.replaceState.bind(history);
-  history.pushState = function (...args) { const result = push(...args); queueMicrotask(mount); return result; };
-  history.replaceState = function (...args) { const result = replace(...args); queueMicrotask(mount); return result; };
-  addEventListener('popstate', () => queueMicrotask(mount));
+  addEventListener('aninexus:route-changed', () => queueMicrotask(mount));
   new MutationObserver(() => {
     if (route() === '/admin' && !app.querySelector('.nx38-admin-page') && !mounting) queueMicrotask(mount);
   }).observe(app, { childList: true });

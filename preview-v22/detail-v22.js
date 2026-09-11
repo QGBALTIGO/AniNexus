@@ -417,7 +417,7 @@
   }
 
   function toast(msg){const host=document.querySelector('#toastRoot');if(!host)return;const n=document.createElement('div');n.className='toast';n.textContent=msg;host.append(n);setTimeout(()=>n.remove(),2200)}
-  function openPath(path){try{sessionStorage.setItem('nx22:previous-path',JSON.stringify({path:routePath(),document:performance.timeOrigin}))}catch{}history.pushState({},'',IS_PAGES?`${BASE}${path}`:path);dispatchEvent(new PopStateEvent('popstate'))}
+  function openPath(path){try{sessionStorage.setItem('nx22:previous-path',JSON.stringify({path:routePath(),document:performance.timeOrigin}))}catch{}const target=IS_PAGES?`${BASE}${path}`:path;if(!window.AniNexusGo?.(target))location.assign(target)}
   function openCatalogFilter(path,filters){
     const key='nx23:catalog:incoming';
     try{sessionStorage.setItem(key,JSON.stringify(filters))}catch{}

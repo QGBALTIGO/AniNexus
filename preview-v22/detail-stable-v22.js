@@ -45,7 +45,7 @@
   function fmtUntil(ts){const ms=Number(ts||0)*1000-Date.now();if(ms<=0)return'Em instantes';const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);return d?`${d}d ${h}h ${m}min`:`${h}h ${m}min`}
   function slug(s='anime'){return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,80)||'anime'}
   function pathTo(m){return `/anime/${slug(title(m))}-${m.id}`}
-  function openAnime(m){const p=pathTo(m);if(IS_PAGES)location.href=`${BASE}/?build=40.2.0&p=${encodeURIComponent(p)}`;else{history.pushState({},'',p);window.dispatchEvent(new PopStateEvent('popstate'))}}
+  function openAnime(m){const p=pathTo(m);if(IS_PAGES)location.href=`${BASE}/?build=40.2.0&p=${encodeURIComponent(p)}`;else if(!window.AniNexusGo?.(p))location.assign(p)}
 
   async function gql(q,v){const r=await fetch(API,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query:q,variables:v})});if(!r.ok)throw new Error(`Falha ao consultar o catálogo (${r.status})`);const j=await r.json();if(j.errors?.length)throw new Error(j.errors[0]?.message||'Falha ao consultar o anime');return j.data}
   const CORE=`id idMal title{romaji english native userPreferred} synonyms coverImage{extraLarge large color} bannerImage description genres tags{name rank isMediaSpoiler} averageScore meanScore popularity favourites episodes duration format status season seasonYear countryOfOrigin source startDate{year month day} endDate{year month day} studios(isMain:true){nodes{id name}} nextAiringEpisode{airingAt episode timeUntilAiring} trailer{id site thumbnail} externalLinks{site url type icon color}`;

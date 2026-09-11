@@ -82,10 +82,7 @@
   function go(path) {
     if (!IS_PAGES && window.AniNexusRadio?.navigate?.(path)) return;
     if (IS_PAGES) location.assign(pageUrl(path));
-    else {
-      history.pushState({}, '', path);
-      dispatchEvent(new PopStateEvent('popstate'));
-    }
+    else if (!window.AniNexusGo?.(path)) location.assign(path);
   }
   function replaceLibraryUrl(media) {
     const destination = `/minha-biblioteca?midia=${media === 'MANGA' ? 'mangas' : 'animes'}`;

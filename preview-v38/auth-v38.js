@@ -383,10 +383,7 @@
     if (path === '/minha-conta') return renderAccount();
     document.body.classList.remove('nx38-auth-active');
   }
-  const authPush = history.pushState.bind(history), authReplace = history.replaceState.bind(history);
-  history.pushState = function (...args) { const result = authPush(...args); queueMicrotask(mountRoute); return result; };
-  history.replaceState = function (...args) { const result = authReplace(...args); queueMicrotask(mountRoute); return result; };
-  addEventListener('popstate', () => queueMicrotask(mountRoute));
+  addEventListener('aninexus:route-changed', () => queueMicrotask(mountRoute));
   document.addEventListener('click', event => {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action !== 'login' && action !== 'register') return;

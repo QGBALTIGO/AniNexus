@@ -36,8 +36,7 @@
     closeDrawer();
     if(IS_PAGES) location.href=pagesUrl(path);
     else {
-      history.pushState({},'',path);
-      window.dispatchEvent(new PopStateEvent('popstate'));
+      if(!window.AniNexusGo?.(path))location.assign(path);
       document.dispatchEvent(new CustomEvent('aninexus:routechange'));
     }
   },true);

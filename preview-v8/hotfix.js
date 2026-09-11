@@ -19,7 +19,7 @@
     const generic=e.target.closest('[data-open]');
     if(generic&&!e.target.closest('[data-list],[data-fav]')){
       const nearest=e.target.closest('button,a');
-      if(!nearest||nearest===generic){const id=Number(generic.dataset.open),type=String(generic.dataset.type||'anime').toLowerCase();if(Number.isFinite(id)&&type==='anime'){e.preventDefault();e.stopImmediatePropagation();cleanupCatalog();cleanupShared();history.pushState({},'',`${BASE}/anime/titulo-${id}`);window.dispatchEvent(new PopStateEvent('popstate'));return}}
+      if(!nearest||nearest===generic){const id=Number(generic.dataset.open),type=String(generic.dataset.type||'anime').toLowerCase();if(Number.isFinite(id)&&type==='anime'){e.preventDefault();e.stopImmediatePropagation();cleanupCatalog();cleanupShared();const target=`${BASE}/anime/titulo-${id}`;if(!window.AniNexusGo?.(target))location.assign(target);return}}
     }
     const link=e.target.closest('a[data-link],a[href]');
     if(link){

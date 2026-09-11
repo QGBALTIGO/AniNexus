@@ -597,10 +597,7 @@
     const path = `/${currentCatalog().mediaType === 'MANGA' ? 'manga' : 'anime'}/${slug(titleOf(media))}-${media.id}`;
     cleanup();
     if (IS_PAGES) location.href = `${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}`;
-    else {
-      history.pushState({}, '', path);
-      window.dispatchEvent(new PopStateEvent('popstate'));
-    }
+    else if (!window.AniNexusGo?.(path)) location.assign(path);
   }
 
   function normalizeUrl() {
@@ -880,7 +877,7 @@
 
   addEventListener('scroll', handleScroll, { passive: true });
   addEventListener('resize', handleResize, { passive: true });
-  addEventListener('popstate', () => { if (onCatalog()) mount(); else cleanup(); });
+  addEventListener('aninexus:route-changed', () => { if (onCatalog()) mount(); else cleanup(); });
   addEventListener('aninexus:catalog-filter', event => applyIncoming(event.detail || {}));
   window.AniNexusCatalog = Object.freeze({ applyFilters: applyIncoming, reload: load });
   if (onCatalog()) mount();
