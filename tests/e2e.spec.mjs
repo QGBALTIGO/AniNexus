@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.54.2&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.55.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -70,7 +70,7 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-11-v44.54.2')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-11-v44.55.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -1211,6 +1211,88 @@ test('manga catalog mirrors the complete anime experience with reading-specific 
     expect(actual).toBe(columns);
     await noOverflow(page,2);
   }
+});
+
+test('administration V55 organizes reports, team roles and atomic moderation decisions',async({page,browserName})=>{
+  test.skip(browserName!=='chromium','The administrative interaction contract is covered once in Chromium.');
+  await page.setViewportSize({width:1280,height:820});
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  await page.evaluate(pixel=>{
+    const admin={id:'11111111-1111-4111-8111-111111111111',username:'admin',displayName:'Admin AniNexus',role:'admin',status:'active',avatarUrl:pixel};
+    const moderator={id:'22222222-2222-4222-8222-222222222222',username:'mod',display_name:'Moderadora',role:'moderator',status:'active',avatar_url:pixel,created_at:new Date().toISOString(),last_seen_at:new Date().toISOString()};
+    const member={id:'33333333-3333-4333-8333-333333333333',username:'membro',display_name:'Membro Teste',email:'membro@example.com',role:'user',status:'active',avatar_url:pixel,created_at:new Date().toISOString(),last_seen_at:new Date().toISOString(),list_count:4,impression_count:2};
+    const report={id:'44444444-4444-4444-8444-444444444444',reporter_username:'leitor',reporter_display_name:'Leitor',target_type:'IMPRESSION',target_id:'55555555-5555-4555-8555-555555555555',target_username:'autor',target_display_name:'Autor',target_excerpt:'Conteúdo denunciado para análise da equipe.',target_exists:true,target_hidden:false,status:'open',reason:'SPOILER_NAO_MARCADO: revela o final',assigned_to:null,created_at:new Date().toISOString()};
+    window.__nxAdminCalls=[];window.__nxAdminReportResolved=false;
+    window.AniNexusAuth={enabled:true,ready:async()=>({user:{id:'clerk-admin'}}),api:async(path,options={})=>{
+      let body=null;try{body=options.body?JSON.parse(options.body):null}catch{}
+      window.__nxAdminCalls.push({path,method:options.method||'GET',body});
+      if(path==='/api/me')return{user:admin};
+      if(path==='/api/admin/overview')return{users:{total:18,active:16,suspended:1,banned:1,new_week:3,moderators:1,admins:1},reports:{total:4,open:1,reviewing:0,resolved:2,dismissed:1},content:{impressions:12,threads:3,posts:5,comments:8}};
+      if(path.startsWith('/api/admin/v2/reports?'))return{items:window.__nxAdminReportResolved?[]:[report]};
+      if(path==='/api/admin/v2/reports/'+report.id&&options.method==='PATCH'){Object.assign(report,{status:body.status,assigned_to:body.assignedTo,assignee_display_name:'Admin AniNexus'});return{ok:true,report}};
+      if(path==='/api/admin/v2/reports/'+report.id+'/decision'){window.__nxAdminReportResolved=true;return{ok:true,report:{...report,status:'resolved'}}}
+      if(path.startsWith('/api/admin/v2/users?role=team'))return{items:[{...admin,display_name:admin.displayName,avatar_url:pixel,created_at:new Date().toISOString()},moderator]};
+      if(path.startsWith('/api/admin/v2/users?'))return{items:[member]};
+      if(path==='/api/admin/v2/users/'+member.id+'/moderation'){member.role=body.role;return{user:{...member,displayName:member.display_name},notificationSent:true}}
+      if(path.startsWith('/api/admin/audit-log'))return{items:[]};
+      throw new Error('Unexpected admin API '+path);
+    }};
+    document.documentElement.dataset.nxAuthState='authenticated';
+    window.AniNexusGo('/admin');
+  },pixel);
+  await expect(page.locator('.nx54-admin-workspace')).toBeVisible({timeout:15000});
+  await expect(page.getByRole('heading',{name:'Administração'})).toBeVisible();
+  await expect(page.locator('.nx54-admin-nav button')).toHaveText(['Visão geral','Denúncias1','Equipe2','Usuários','Auditoria']);
+  await page.getByRole('button',{name:/Denúncias/}).click();
+  await expect(page.locator('.nx54-report')).toContainText('Conteúdo denunciado para análise da equipe.');
+  await expect(page.locator('.nx54-report')).toContainText('Spoiler não marcado');
+  await page.getByRole('button',{name:'Assumir análise'}).click();
+  await expect(page.locator('.nx54-report')).toContainText('Responsável: Admin AniNexus');
+  await page.getByRole('button',{name:'Ocultar e resolver'}).click();
+  const reportDialog=page.locator('.nx54-dialog');
+  await reportDialog.locator('textarea[name="reason"]').fill('Confirmação após revisar o contexto completo.');
+  await reportDialog.getByRole('button',{name:'Ocultar e resolver'}).click();
+  await expect(page.locator('.nx54-empty')).toContainText('Nenhuma denúncia');
+  await page.getByRole('button',{name:'Usuários'}).click();
+  await expect(page.locator('.nx54-user')).toContainText('Membro Teste');
+  await page.getByRole('button',{name:'Alterar função'}).click();
+  const roleDialog=page.locator('.nx54-dialog');
+  await roleDialog.locator('select[name="role"]').selectOption('moderator');
+  await roleDialog.locator('textarea[name="reason"]').fill('Aprovado para colaborar com a moderação.');
+  await roleDialog.getByRole('button',{name:'Salvar função'}).click();
+  await expect(page.locator('#nx54AdminNotice')).toContainText('recebeu uma notificação');
+  const calls=await page.evaluate(()=>window.__nxAdminCalls);
+  expect(calls).toContainEqual(expect.objectContaining({path:'/api/admin/v2/reports/44444444-4444-4444-8444-444444444444/decision',method:'PATCH',body:{decision:'hide',reason:'Confirmação após revisar o contexto completo.'}}));
+  expect(calls).toContainEqual(expect.objectContaining({path:'/api/admin/v2/users/33333333-3333-4333-8333-333333333333/moderation',method:'PATCH',body:{role:'moderator',reason:'Aprovado para colaborar com a moderação.'}}));
+  await noOverflow(page,2);
+});
+
+test('moderator administration stays compact on mobile and hides administrator-only controls',async({page,browserName})=>{
+  test.skip(browserName!=='chromium','The mobile role boundary is covered once in Chromium.');
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  await page.evaluate(pixel=>{
+    const moderator={id:'22222222-2222-4222-8222-222222222222',username:'mod',displayName:'Moderadora',role:'moderator',status:'active',avatarUrl:pixel};
+    window.AniNexusAuth={enabled:true,ready:async()=>({user:{id:'clerk-mod'}}),api:async path=>{
+      if(path==='/api/me')return{user:moderator};
+      if(path==='/api/admin/overview')return{users:{total:12,active:12,new_week:1,moderators:1,admins:1},reports:{open:0,reviewing:0},content:{impressions:8,threads:2,posts:2,comments:3}};
+      if(path.startsWith('/api/admin/v2/users?role=team'))return{items:[{...moderator,display_name:moderator.displayName,avatar_url:pixel,created_at:new Date().toISOString()}]};
+      if(path.startsWith('/api/admin/v2/users?'))return{items:[]};
+      if(path.startsWith('/api/admin/v2/reports?'))return{items:[]};
+      throw new Error('Unexpected moderator API '+path);
+    }};
+    document.documentElement.dataset.nxAuthState='authenticated';
+    window.AniNexusGo('/admin');
+  },pixel);
+  await expect(page.getByRole('heading',{name:'Moderação'})).toBeVisible({timeout:15000});
+  await expect(page.getByRole('button',{name:'Auditoria'})).toHaveCount(0);
+  await page.locator('.nx54-admin-nav').getByRole('button',{name:/Equipe/}).click();
+  await expect(page.locator('.nx54-permissions')).toContainText('Não altera cargos');
+  await expect(page.getByRole('button',{name:'Alterar função'})).toHaveCount(0);
+  const mobileGeometry=await page.evaluate(()=>{const shell=document.querySelector('.nx54-admin-shell').getBoundingClientRect(),workspace=document.querySelector('.nx54-admin-workspace').getBoundingClientRect(),aside=document.querySelector('.nx54-admin-layout>aside').getBoundingClientRect();return{shellRight:shell.right,workspaceRight:workspace.right,asideRight:aside.right}});
+  expect(mobileGeometry.workspaceRight).toBeLessThanOrEqual(mobileGeometry.shellRight+1);
+  expect(mobileGeometry.asideRight).toBeLessThanOrEqual(mobileGeometry.shellRight+1);
+  await noOverflow(page,2);
 });
 
 test('Home reading cards share anime actions and trailers play inside AniNexus',async({page})=>{
