@@ -5,6 +5,8 @@ import pg from 'pg';
 import { getCommunityOverview } from '../lib/community-overview.mjs';
 import { setCharacterFavorite } from '../lib/character-ranking.mjs';
 import { pool } from '../lib/db.mjs';
+import Fastify from 'fastify';
+import { registerListImportRoutes, importListRows } from '../lib/list-import-routes.mjs';
 
 const connectionString=process.env.MEDIA_TEST_DATABASE_URL;
 if(!connectionString)throw new Error('MEDIA_TEST_DATABASE_URL is required');
@@ -75,5 +77,35 @@ try{
   assert.ok(overview.activeMembers.every(m=>!['private','hidden'].includes(m.username)));
   assert.equal(overview.studios[0].count,2);
   assert.ok(overview.newMembers.every(m=>m.username!=='private'));
-  console.log('Media lists and community: typed rankings, multiple reactions, zero scores, privacy and member periods verified.');
+  const transferMigration=await fs.readFile(new URL('../sql/028_profile_settings_and_list_transfers.sql',import.meta.url),'utf8');
+  await client.query(transferMigration.slice(transferMigration.indexOf('CREATE TABLE IF NOT EXISTS list_transfers')));
+  await client.query(await fs.readFile(new URL('../sql/030_confirmed_list_imports.sql',import.meta.url),'utf8'));
+  const app=Fastify();
+  const imported=[{mediaId:8001,idMal:21,mediaType:'ANIME',title:'Anime importado',status:'CURRENT',score:8,progress:5,volumeProgress:0,updatedAt:1700000000},{mediaId:8001,idMal:21,mediaType:'MANGA',title:'Mangá importado',status:'CURRENT',score:9,progress:20,volumeProgress:3,updatedAt:1700000000}];
+  registerListImportRoutes(app,{
+    requireUser:async req=>({id:req.headers['x-test-user']||alice}),q:(sql,params)=>client.query(sql,params),
+    transaction:async fn=>{await client.query('SAVEPOINT transfer_test');try{const value=await fn(client);await client.query('RELEASE SAVEPOINT transfer_test');return value}catch(error){await client.query('ROLLBACK TO SAVEPOINT transfer_test');throw error}},
+    rateForUser:()=>({}),resolveMal:async(ids,type)=>[{id:8001,idMal:21,mediaType:type,title:'Mapeado'}],importRows:importListRows,
+    persistMedia:async()=>{},summary:row=>({id:row.id,service:row.service,itemCount:row.item_count,skippedCount:row.skipped_count}),refreshAchievements:async()=>{},
+    fetchAniList:async()=>imported,fetchMal:async()=>({account:{username:'Tester',url:'https://myanimelist.net/profile/Tester'},entries:imported})
+  });
+  const preview=async(service,strategy='KEEP')=>(await app.inject({method:'POST',url:'/api/me/list-imports/preview',payload:{service,username:'Tester',types:['ANIME','MANGA'],strategy}})).json();
+  const confirm=(token,user=alice)=>app.inject({method:'POST',url:'/api/me/list-imports/confirm',headers:{'x-test-user':user},payload:{token}});
+  try{
+    const first=await preview('MAL');assert.equal(first.itemCount,2);
+    assert.equal((await client.query('SELECT count(*) FROM user_anime WHERE media_id=8001')).rows[0].count,'0','preview must not change the library');
+    assert.equal((await confirm(first.token,bob)).statusCode,409,'confirmation belongs to one user');
+    let result=await confirm(first.token);assert.equal(result.statusCode,200,result.body);const transfer=result.json().transfer;assert.equal(transfer.service,'MAL');assert.equal(transfer.itemCount,2);
+    result=await confirm(first.token);assert.equal(result.json().transfer.id,transfer.id,'retry must not repeat an import');
+    assert.equal((await client.query('SELECT count(*) FROM list_transfers')).rows[0].count,'1');
+    await client.query('UPDATE user_anime SET progress=77 WHERE user_id=$1 AND media_id=8001',[alice]);
+    result=await confirm((await preview('ANILIST')).token);assert.equal(result.json().transfer.skippedCount,2);
+    assert.equal((await client.query('SELECT progress FROM user_anime WHERE user_id=$1 AND media_id=8001',[alice])).rows[0].progress,77);
+    result=await confirm((await preview('ANILIST','OVERWRITE')).token);assert.equal(result.statusCode,200,result.body);
+    assert.equal((await client.query('SELECT progress FROM user_anime WHERE user_id=$1 AND media_id=8001',[alice])).rows[0].progress,5);
+    assert.equal((await client.query('SELECT volume_progress FROM user_manga WHERE user_id=$1 AND media_id=8001',[alice])).rows[0].volume_progress,3);
+    const expired=await preview('MAL');await client.query("UPDATE list_import_previews SET expires_at=now()-interval '1 minute' WHERE transfer_id IS NULL");assert.equal((await confirm(expired.token)).statusCode,409);
+    assert.equal((await app.inject({method:'POST',url:'/api/me/list-imports/confirm',payload:{token:first.token,username:'someone-else'}})).statusCode,422);
+  }finally{await app.close()}
+  console.log('Media lists, community and confirmed AniList/MAL imports: typed mappings, preview isolation, ownership, expiry, idempotency and conflict strategies verified.');
 }finally{await client.query('ROLLBACK');await client.end()}

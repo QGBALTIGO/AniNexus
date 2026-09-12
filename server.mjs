@@ -20,7 +20,7 @@ import { SharedRateLimitStore } from './lib/rate-limit-store.mjs';
 import { AUTHORIZED_ORIGINS, CLERK_ENABLED, hashPassword, verifyPassword, createSession, destroySession, currentUser, requireUser, requireRole, validateOrigin, getClerkClient, syncClerkUser, beginAccountDeletion, cancelAccountDeletion, bootstrapConfiguredAdmins, invalidateUserIdentityCache } from './lib/auth.mjs';
 import { AVATAR_PRESETS, avatarForClerkUser, avatarPresetUrl, resolvedAvatar } from './lib/avatar.mjs';
 import { processClerkWebhook } from './lib/clerk-webhook.mjs';
-import { getCatalog, getReading, getSchedule, getAnime, getAnimeThemes, getMediaSummaries, getManga, getStudios, getDubbed, prewarm, slugify } from './lib/provider.mjs';
+import { getCatalog, getReading, getSchedule, getAnime, getAnimeThemes, getMediaSummaries, getMediaByMalIds, getManga, getStudios, getDubbed, prewarm, slugify } from './lib/provider.mjs';
 import { cleanSynopsisText, getPortugueseSynopsis } from './lib/synopsis.mjs';
 import { lists } from './lib/content.mjs';
 import { getNativeNews, getNativeTrailerArticles, getNativeArticle, articleExpiry } from './lib/native-news.mjs';
@@ -31,6 +31,7 @@ import { achievementCatalog, getAchievementFeed, publicAchievementProfile, recor
 import { registerSocialRoutes } from './lib/social-routes.mjs';
 import { socialBodyPayload } from './lib/social.mjs';
 import { buildAniListImportXml, fetchAniListEntries, usernameModerationReason } from './lib/profile-settings.mjs';
+import { registerListImportRoutes, importListRows as importAniListRows } from './lib/list-import-routes.mjs';
 
 const __dirname=path.dirname(fileURLToPath(import.meta.url));
 const PROFILE_MEDIA_DIR=path.resolve(process.env.PROFILE_MEDIA_DIR||path.join(__dirname,'profile-media'));
@@ -629,41 +630,15 @@ app.post('/api/me/import-local',rateForUser(3,'10 minutes','initial-import'),asy
 });
 
 const transferSummary=row=>({id:row.id,direction:row.direction,service:row.service,mediaType:row.media_type,sourceUsername:row.source_username,strategy:row.strategy,status:row.status,itemCount:Number(row.item_count||0),skippedCount:Number(row.skipped_count||0),details:row.details||{},errorCode:row.error_code,createdAt:row.created_at,completedAt:row.completed_at});
-const importAniListRows=async(client,userId,entries,strategy)=>{
-  let changed=0;
-  for(const mediaType of ['ANIME','MANGA']){
-    const rows=entries.filter(entry=>entry.mediaType===mediaType);if(!rows.length)continue;
-    const table=mediaType==='MANGA'?'user_manga':'user_anime',overwrite=strategy==='OVERWRITE';
-    const conflict=overwrite?`DO UPDATE SET status=EXCLUDED.status,score=EXCLUDED.score,progress=EXCLUDED.progress,volume_progress=EXCLUDED.volume_progress,updated_at=EXCLUDED.updated_at`:'DO NOTHING';
-    const payload=JSON.stringify(rows.map(entry=>({media_id:entry.mediaId,status:entry.status,score:entry.score,progress:entry.progress,volume_progress:entry.volumeProgress,updated_at:entry.updatedAt})));
-    const result=await client.query(`INSERT INTO ${table}(user_id,media_id,status,score,progress,volume_progress,updated_at) SELECT $1,x.media_id,x.status,x.score,x.progress,x.volume_progress,to_timestamp(x.updated_at) FROM jsonb_to_recordset($2::jsonb) AS x(media_id bigint,status text,score numeric,progress integer,volume_progress integer,updated_at bigint) ON CONFLICT(user_id,media_id) ${conflict}`,[userId,payload]);
-    changed+=result.rowCount;
-  }
-  return changed;
-};
 app.get('/api/me/list-transfers',privateReadRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
   const {rows}=await q('SELECT * FROM list_transfers WHERE user_id=$1 ORDER BY created_at DESC LIMIT 12',[user.id]);return{items:rows.map(transferSummary)};
 });
 app.post('/api/me/import-anilist',rateForUser(2,'10 minutes','anilist-import'),async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
-  const parsed=z.object({username:z.string().trim().min(2).max(30).regex(/^[A-Za-z0-9_-]+$/),types:z.array(z.enum(['ANIME','MANGA'])).min(1).max(2).transform(values=>[...new Set(values)]),strategy:z.enum(['KEEP','OVERWRITE'])}).strict().safeParse(req.body);
-  if(!parsed.success)return reply.code(422).send({error:'INVALID_IMPORT'});
-  const mediaType=parsed.data.types.length===2?'ALL':parsed.data.types[0],started=(await q(`INSERT INTO list_transfers(user_id,direction,service,media_type,source_username,strategy) VALUES($1,'IMPORT','ANILIST',$2,$3,$4) RETURNING id`,[user.id,mediaType,parsed.data.username,parsed.data.strategy])).rows[0];
-  try{
-    const entries=await fetchAniListEntries({username:parsed.data.username,types:parsed.data.types,timeoutMs:Number(process.env.UPSTREAM_TIMEOUT_MS||9000)});
-    const result=await transaction(async client=>{
-      const changed=await importAniListRows(client,user.id,entries,parsed.data.strategy),skipped=Math.max(0,entries.length-changed),counts={anime:entries.filter(entry=>entry.mediaType==='ANIME').length,manga:entries.filter(entry=>entry.mediaType==='MANGA').length};
-      await persistImportedMedia((sql,params)=>client.query(sql,params),entries);
-      const {rows}=await client.query(`UPDATE list_transfers SET status='COMPLETED',item_count=$2,skipped_count=$3,details=$4::jsonb,completed_at=now() WHERE id=$1 RETURNING *`,[started.id,changed,skipped,JSON.stringify({found:entries.length,...counts,source:entries.source||'GRAPHQL'})]);return rows[0];
-    });
-    await refreshAchievements(user.id,'RETROACTIVE');return{ok:true,transfer:transferSummary(result)};
-  }catch(error){
-    const code=['ANILIST_USER_NOT_FOUND','ANILIST_UNAVAILABLE'].includes(error?.code)?error.code:'IMPORT_FAILED';
-    await q(`UPDATE list_transfers SET status='FAILED',error_code=$2,completed_at=now() WHERE id=$1`,[started.id,code]).catch(()=>{});
-    return reply.code(code==='ANILIST_USER_NOT_FOUND'?404:502).send({error:code});
-  }
+  return reply.code(428).send({error:'IMPORT_CONFIRMATION_REQUIRED'});
 });
+registerListImportRoutes(app,{requireUser,q,transaction,rateForUser,resolveMal:getMediaByMalIds,importRows:importAniListRows,persistMedia:persistImportedMedia,summary:transferSummary,refreshAchievements});
 const hydrateExportRows=async(rows,mediaType)=>{
   const entries=rows.map(row=>({mediaId:Number(row.media_id),mediaType,status:row.status,score:row.score==null?null:Number(row.score),progress:Number(row.progress||0),volumeProgress:Number(row.volume_progress||0),idMal:Number(row.id_mal)||null,title:String(row.title||'')}));
   const missing=entries.filter(entry=>!entry.idMal||!entry.title),byId=new Map();
