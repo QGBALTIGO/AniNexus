@@ -76,6 +76,7 @@
 <link rel="stylesheet" href="./preview-v44/awards-v45.css?v=44.25.2">
 <link rel="stylesheet" href="./preview-v44/discovery-v47.css?v=44.34.1">
 <link rel="stylesheet" href="./preview-v44/lists-v48.css?v=44.28.4">
+<link rel="stylesheet" href="./preview-v44/account-v56.css?v=44.56.0">
 <script src="./runtime-config.js?v=40.8.0"></script>
   <script src="./preview-v23/route-guard-v23.js?v=44.54.2"></script>
 <script src="./preview-v38/runtime-v38.js?v=44.40.0"></script>
@@ -184,11 +185,11 @@
   <button class="nx43-notification-backdrop" type="button" data-nx43-notifications-close aria-label="Fechar notificações"></button>
   <section class="nx43-notification-sheet" role="dialog" aria-modal="true" aria-labelledby="notificationTitle" tabindex="-1">
     <header>
-      <div><span>SUA CONTA</span><h2 id="notificationTitle">Notificações</h2></div>
+      <div class="nx43-notification-title"><i aria-hidden="true"><span data-icon="bell"></span></i><div><span>CENTRAL DE ATUALIZAÇÕES</span><h2 id="notificationTitle">Notificações</h2><p data-nx43-notification-summary>Consulte as novidades da sua conta.</p></div></div>
       <button class="nx43-notification-close" type="button" data-nx43-notifications-close aria-label="Fechar notificações"><span data-icon="close"></span></button>
     </header>
     <div class="nx43-notification-list" data-nx43-notification-list aria-live="polite"><p>Abra o painel para consultar suas notificações.</p></div>
-    <footer><a href="/minha-conta#notificacoes" data-nx43-notifications-all>Ver todas as notificações <span data-icon="arrow"></span></a></footer>
+    <footer><button type="button" data-nx43-notifications-read-all><span data-icon="check"></span>Marcar lidas</button><a href="/minha-conta#notificacoes" data-nx43-notifications-all>Ver central completa <span data-icon="arrow"></span></a></footer>
   </section>
 </div>
 <div class="auth-overlay" id="authOverlay" hidden role="dialog" aria-modal="true" aria-label="Acesso à conta"><button class="overlay-backdrop" data-action="auth-close" aria-label="Fechar acesso à conta"></button><div class="auth-card"><button class="auth-close" data-action="auth-close" aria-label="Fechar acesso à conta"><span data-icon="close"></span></button><img src="./assets/logo.png" alt=""><div id="authBody"></div></div></div>

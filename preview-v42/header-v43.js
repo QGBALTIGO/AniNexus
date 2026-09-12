@@ -14,6 +14,8 @@
   const list = layer?.querySelector('[data-nx43-notification-list]');
   const badge = trigger?.querySelector('.nx43-notification-badge');
   const allLink = layer?.querySelector('[data-nx43-notifications-all]');
+  const readAllButton = layer?.querySelector('[data-nx43-notifications-read-all]');
+  const summary = layer?.querySelector('[data-nx43-notification-summary]');
   if (!topbar || !trigger || !layer || !sheet || !list || !badge || !allLink) return;
 
   let notifications = [];
@@ -23,6 +25,7 @@
   let scrollFrame = 0;
   let navFrame = 0;
   let authGeneration = 0;
+  let serverUnread = 0;
 
   function currentRoute() {
     const url = new URL(location.href);
@@ -63,8 +66,12 @@
   }
 
   function updateBadge() {
-    const unread = notifications.filter(item => !item?.read_at).length;
+    const visibleUnread = notifications.filter(item => !item?.read_at).length;
+    const unread = Math.max(visibleUnread, Number(serverUnread || 0));
     badge.hidden = unread === 0;
+    badge.textContent = unread > 99 ? '99+' : String(unread);
+    if (summary) summary.textContent = unread ? `${unread} ${unread === 1 ? 'atualização não lida' : 'atualizações não lidas'}` : 'Você está em dia.';
+    if (readAllButton) readAllButton.disabled = unread === 0;
     trigger.setAttribute('aria-label', unread ? `Abrir notificações, ${unread} não lidas` : 'Abrir notificações');
   }
 
@@ -85,6 +92,7 @@
     trigger.hidden = !authenticated;
     if (!authenticated) {
       notifications = [];
+      serverUnread = 0;
       loadedAt = 0;
       updateBadge();
       closePanel();
@@ -147,6 +155,7 @@
       try {
         await window.AniNexusAuth?.api?.(`/api/me/notifications/${encodeURIComponent(item.id)}`, { method: 'PATCH' });
         item.read_at = new Date().toISOString();
+        serverUnread = Math.max(0, serverUnread - 1);
         row.classList.remove('is-unread');
         updateBadge();
       } catch {
@@ -172,6 +181,7 @@
       const mark = document.createElement('span');
       mark.className = 'nx43-notification-mark';
       mark.setAttribute('aria-hidden', 'true');
+      mark.textContent = ({ EPISODE: '▶', NEWS: 'N', COMMUNITY: '✦', SYSTEM: '•' })[row.dataset.kind] || '•';
       const copy = document.createElement('span');
       copy.className = 'nx43-notification-copy';
       const title = document.createElement('strong');
@@ -207,6 +217,7 @@
         const response = await window.AniNexusAuth?.api?.('/api/me/notifications?limit=20');
         if (generation !== authGeneration || root.dataset.nxAuthState !== 'authenticated') return;
         notifications = Array.isArray(response?.items) ? response.items.slice(0, 20) : [];
+        serverUnread = Number(response?.unread ?? notifications.filter(item => !item?.read_at).length);
         loadedAt = Date.now();
         renderNotifications();
       } catch {
@@ -263,11 +274,35 @@
     event.preventDefault();
     navigate('/minha-conta#notificacoes');
   });
+  readAllButton?.addEventListener('click', async () => {
+    if (readAllButton.disabled) return;
+    readAllButton.disabled = true;
+    try {
+      await window.AniNexusAuth?.api?.('/api/me/notifications/read-all', { method: 'POST' });
+      const readAt = new Date().toISOString();
+      notifications.forEach(item => { item.read_at = item.read_at || readAt; });
+      serverUnread = 0;
+      renderNotifications();
+      dispatchEvent(new CustomEvent('aninexus:notifications-changed', { detail: { unread: 0, source: 'header' } }));
+    } catch {
+      readAllButton.disabled = false;
+    }
+  });
   document.addEventListener('keydown', trapFocus);
   addEventListener('scroll', syncScrollState, { passive: true });
   addEventListener('popstate', syncNavigation);
   addEventListener('aninexus:route-ready', syncNavigation);
   addEventListener('aninexus:home-v34-ready', syncNavigation);
+  addEventListener('aninexus:notifications-changed', event => {
+    loadedAt = 0;
+    const unread = Number(event.detail?.unread);
+    if (Number.isFinite(unread)) {
+      serverUnread = Math.max(0, unread);
+      if (serverUnread === 0) notifications.forEach(item => { item.read_at ||= new Date().toISOString(); });
+      updateBadge();
+    }
+    if (!layer.hidden && event.detail?.source !== 'header') void loadNotifications(true);
+  });
 
   new MutationObserver(syncAuthentication).observe(root, { attributes: true, attributeFilter: ['data-nx-auth-state'] });
   new MutationObserver(syncNavigation).observe(document.querySelector('#app'), { childList: true, subtree: false });

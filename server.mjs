@@ -308,7 +308,11 @@ app.get('/api/users/:username',publicRate,async(req,reply)=>{
   const user=result.rows[0];if(!user)return reply.code(404).send({error:'NOT_FOUND'});
   const isPrivate=user.privacy==='private';
   const avatar=resolvedAvatar(user),profile={username:user.username,displayName:user.display_name||user.username,avatarUrl:avatar.url,avatarPreset:avatar.preset,bannerUrl:isPrivate?null:publicProfileMedia(user.profile_banner_url),instagramHandle:isPrivate?null:user.instagram_handle,telegramHandle:isPrivate?null:user.telegram_handle,role:user.role,privacy:user.privacy==='followers'?'semi_public':user.privacy,isPrivate,showLibrary:user.show_library!==false,showActivity:user.show_activity!==false,showStats:user.show_stats!==false,createdAt:user.created_at};
-  if(isPrivate)return{profile,canonicalUsername:user.username,aliased,stats:null,library:[],mangaLibrary:[],favoriteCharacters:[],activity:[],impressions:[],achievements:[]};
+  const socialResult=await q(`SELECT
+    (SELECT count(*)::int FROM profile_follows WHERE followed_id=$1) AS followers,
+    (SELECT count(*)::int FROM profile_follows WHERE follower_id=$1) AS following`,[user.id]);
+  const social=socialResult.rows[0]||{followers:0,following:0};
+  if(isPrivate)return{profile,canonicalUsername:user.username,aliased,social,stats:null,library:[],mangaLibrary:[],favoriteCharacters:[],activity:[],impressions:[],achievements:[]};
   const [statsResult,libraryResult,mangaResult,characterFavorites,activityResult,impressionsResult,achievementResult]=await Promise.all([
     user.show_stats===false?Promise.resolve({rows:[]}):q(`SELECT count(*)::int list_total,count(*) FILTER(WHERE status='CURRENT')::int watching,count(*) FILTER(WHERE status='COMPLETED')::int completed,count(*) FILTER(WHERE status='PLANNING')::int planning,COALESCE(sum(progress),0)::int episodes_watched,round(avg(score)::numeric,1) average_score,(SELECT count(*)::int FROM user_favorites WHERE user_id=$1) favorites FROM user_anime WHERE user_id=$1`,[user.id]),
     user.show_library===false?Promise.resolve({rows:[]}):q(`SELECT ua.media_id,ua.status,ua.score,ua.reaction,ua.reactions,ua.volume_progress,ua.progress,ua.updated_at,${mediaProjection} AS media FROM user_anime ua LEFT JOIN media_cache mc ON mc.media_id=ua.media_id AND mc.media_type='ANIME' WHERE ua.user_id=$1 ORDER BY ua.updated_at DESC LIMIT 36`,[user.id]),
@@ -320,7 +324,7 @@ app.get('/api/users/:username',publicRate,async(req,reply)=>{
   ]);
   const [library,mangaLibrary,activity,impressions]=await Promise.all([hydrateCommunityMedia(libraryResult.rows,'ANIME',user.id),hydrateCommunityMedia(mangaResult.rows,'MANGA',user.id),hydrateCommunityMedia(activityResult.rows,'ANIME',user.id),hydrateCommunityMedia(impressionsResult.rows,'ANIME',user.id)]);
   const stats=statsResult.rows[0]||null;
-  return{profile:{...profile,equippedTitle:achievementResult.equippedTitle},canonicalUsername:user.username,aliased,stats,rank:achievementResult.rank,achievements:achievementResult.achievements,pinnedAchievements:achievementResult.pinnedAchievements,library,mangaLibrary,favoriteCharacters:hydrateCharacterFavorites(characterFavorites),activity,impressions:withSocialBodies(impressions)};
+  return{profile:{...profile,equippedTitle:achievementResult.equippedTitle},canonicalUsername:user.username,aliased,social,stats,rank:achievementResult.rank,achievements:achievementResult.achievements,pinnedAchievements:achievementResult.pinnedAchievements,library,mangaLibrary,favoriteCharacters:hydrateCharacterFavorites(characterFavorites),activity,impressions:withSocialBodies(impressions)};
 });
 app.post('/api/auth/register',authRate,async(req,reply)=>{
   if(CLERK_ENABLED)return reply.code(410).send({error:'AUTH_MANAGED_BY_CLERK'});
@@ -531,9 +535,56 @@ app.get('/api/me/follows',privateReadRate,async(req,reply)=>{const u=await requi
 app.put('/api/me/follows/:mediaId',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const mediaId=safeInt(req.params.mediaId);if(!mediaId)return reply.code(400).send({error:'INVALID_ID'});const parsed=z.object({mediaType:z.enum(['ANIME','MANGA']).default('ANIME'),notifyEpisode:z.boolean().default(true),notifyNews:z.boolean().default(true)}).safeParse(req.body||{});if(!parsed.success)return reply.code(400).send({error:'INVALID_INPUT'});const data=parsed.data;await q(`INSERT INTO user_follows(user_id,media_id,media_type,notify_episode,notify_news) VALUES($1,$2,$3,$4,$5) ON CONFLICT(user_id,media_id,media_type) DO UPDATE SET notify_episode=EXCLUDED.notify_episode,notify_news=EXCLUDED.notify_news`,[u.id,mediaId,data.mediaType,data.notifyEpisode,data.notifyNews]);return{ok:true};});
 app.delete('/api/me/follows/:mediaId',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const mediaId=safeInt(req.params.mediaId);if(!mediaId)return reply.code(400).send({error:'INVALID_ID'});const mediaType=String(req.query?.mediaType||'ANIME').toUpperCase()==='MANGA'?'MANGA':'ANIME';await q('DELETE FROM user_follows WHERE user_id=$1 AND media_id=$2 AND media_type=$3',[u.id,mediaId,mediaType]);return{ok:true};});
 
-app.get('/api/me/notifications',privateReadRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const limit=safeInt(req.query?.limit,1,50)||20;const {rows}=await q('SELECT id,kind,title,body,media_id,url,url AS href,read_at,created_at FROM notifications WHERE user_id=$1 ORDER BY created_at DESC LIMIT $2',[u.id,limit]);return{items:rows};});
+app.get('/api/me/profile-connections',privateReadRate,async(req,reply)=>{
+  const u=await requireUser(req,reply);if(!u)return;
+  const [followingResult,followersResult]=await Promise.all([
+    q(`SELECT target.username,target.display_name,target.avatar_url,target.avatar_source,pf.created_at
+      FROM profile_follows pf JOIN users target ON target.id=pf.followed_id
+      WHERE pf.follower_id=$1 AND target.deleted_at IS NULL AND target.status='active'
+      ORDER BY pf.created_at DESC LIMIT 200`,[u.id]),
+    q(`SELECT source.username,source.display_name,source.avatar_url,source.avatar_source,pf.created_at
+      FROM profile_follows pf JOIN users source ON source.id=pf.follower_id
+      WHERE pf.followed_id=$1 AND source.deleted_at IS NULL AND source.status='active'
+      ORDER BY pf.created_at DESC LIMIT 200`,[u.id]),
+  ]);
+  const present=row=>{const avatar=resolvedAvatar(row);return{username:row.username,displayName:row.display_name||row.username,avatarUrl:avatar.url,avatarPreset:avatar.preset,createdAt:row.created_at}};
+  return{following:followingResult.rows.map(present),followers:followersResult.rows.map(present)};
+});
+
+app.get('/api/me/profile-follows/:username',privateReadRate,async(req,reply)=>{
+  const u=await requireUser(req,reply);if(!u)return;
+  const parsed=usernameSchema.safeParse(String(req.params.username||''));if(!parsed.success)return reply.code(404).send({error:'NOT_FOUND'});
+  const target=await q("SELECT id FROM users WHERE username=$1 AND deleted_at IS NULL AND status='active'",[parsed.data]);
+  if(!target.rows[0])return reply.code(404).send({error:'NOT_FOUND'});
+  const relation=await q('SELECT 1 FROM profile_follows WHERE follower_id=$1 AND followed_id=$2',[u.id,target.rows[0].id]);
+  return{following:!!relation.rows[0],self:u.id===target.rows[0].id};
+});
+
+app.put('/api/me/profile-follows/:username',writeRate,async(req,reply)=>{
+  const u=await requireUser(req,reply);if(!u)return;
+  const parsed=usernameSchema.safeParse(String(req.params.username||''));if(!parsed.success)return reply.code(404).send({error:'NOT_FOUND'});
+  const target=await q("SELECT id FROM users WHERE username=$1 AND deleted_at IS NULL AND status='active'",[parsed.data]);
+  if(!target.rows[0])return reply.code(404).send({error:'NOT_FOUND'});
+  if(target.rows[0].id===u.id)return reply.code(409).send({error:'CANNOT_FOLLOW_SELF'});
+  const inserted=await q('INSERT INTO profile_follows(follower_id,followed_id) VALUES($1,$2) ON CONFLICT DO NOTHING RETURNING created_at',[u.id,target.rows[0].id]);
+  if(inserted.rows[0])await q(`INSERT INTO notifications(user_id,kind,title,body,url)
+    VALUES($1,'COMMUNITY',$2,$3,$4)`,[target.rows[0].id,'Novo seguidor',`@${u.username} começou a seguir seu perfil.`,`/u/${u.username}`]);
+  return{ok:true,following:true};
+});
+
+app.delete('/api/me/profile-follows/:username',writeRate,async(req,reply)=>{
+  const u=await requireUser(req,reply);if(!u)return;
+  const parsed=usernameSchema.safeParse(String(req.params.username||''));if(!parsed.success)return reply.code(404).send({error:'NOT_FOUND'});
+  const target=await q("SELECT id FROM users WHERE username=$1 AND deleted_at IS NULL AND status='active'",[parsed.data]);
+  if(!target.rows[0])return reply.code(404).send({error:'NOT_FOUND'});
+  await q('DELETE FROM profile_follows WHERE follower_id=$1 AND followed_id=$2',[u.id,target.rows[0].id]);
+  return{ok:true,following:false};
+});
+
+app.get('/api/me/notifications',privateReadRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const limit=safeInt(req.query?.limit,1,100)||20;const [itemsResult,summaryResult]=await Promise.all([q('SELECT id,kind,title,body,media_id,url,url AS href,read_at,created_at FROM notifications WHERE user_id=$1 ORDER BY created_at DESC LIMIT $2',[u.id,limit]),q('SELECT count(*)::int total,count(*) FILTER(WHERE read_at IS NULL)::int unread FROM notifications WHERE user_id=$1',[u.id])]);return{items:itemsResult.rows,total:summaryResult.rows[0]?.total||0,unread:summaryResult.rows[0]?.unread||0};});
 app.patch('/api/me/notifications/:id',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const id=z.string().uuid().safeParse(req.params.id);if(!id.success)return reply.code(400).send({error:'INVALID_ID'});await q('UPDATE notifications SET read_at=COALESCE(read_at,now()) WHERE id=$1 AND user_id=$2',[id.data,u.id]);return reply.code(204).send();});
 app.post('/api/me/notifications/:id/read',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const id=z.string().uuid().safeParse(req.params.id);if(!id.success)return reply.code(400).send({error:'INVALID_ID'});await q('UPDATE notifications SET read_at=COALESCE(read_at,now()) WHERE id=$1 AND user_id=$2',[id.data,u.id]);return{ok:true};});
+app.post('/api/me/notifications/read-all',writeRate,async(req,reply)=>{const u=await requireUser(req,reply);if(!u)return;const result=await q('UPDATE notifications SET read_at=now() WHERE user_id=$1 AND read_at IS NULL',[u.id]);return{ok:true,updated:result.rowCount||0};});
 
 app.get('/api/me/library',privateHeavyRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
