@@ -14,7 +14,7 @@ test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})}
 async function setup(page){
   const state={fail:false,pending:false,overview:fixture,impressions:[],threadRequests:0,activity:[{media_id:101,media_type:'MANGA',username:'alice',display_name:'Alice',status:'CURRENT',progress:3,reactions:['Amei','Que arte!'],media:{id:101,title:'Leitura em andamento',cover},created_at:new Date().toISOString()}]};
   if(localStaticOrigin)await page.route(`${new URL(origin).origin}/**`,async route=>{
-    const requested=new URL(route.request().url()),path=requested.pathname.replace(/^\/AniNexus(?=\/)/,'');
+    const requested=new URL(route.request().url()),path=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`;
     for(let attempt=0;attempt<3;attempt++){
       try{const response=await route.fetch({url:new URL(path+requested.search,localStaticOrigin).href});return await route.fulfill({response})}
       catch(error){if(attempt===2||!/ECONNRESET|ECONNREFUSED|socket hang up/.test(String(error)))throw error;await new Promise(resolve=>setTimeout(resolve,100*(attempt+1)))}

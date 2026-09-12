@@ -214,7 +214,6 @@
   let refreshTimer;
   const refresh=()=>{if(!owns())return;clearTimeout(refreshTimer);refreshTimer=setTimeout(()=>{load();loadOverview()},350)};
   addEventListener('aninexus:community-activity-changed',refresh);
-  addEventListener('aninexus:account-identity-changed',refresh);
   addEventListener('aninexus:manga-media-state-changed',refresh);
   addEventListener('popstate',mount);addEventListener('aninexus:navigate',mount);addEventListener('aninexus:route-changed',mount);
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
