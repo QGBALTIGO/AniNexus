@@ -31,6 +31,8 @@ A suíte completa inclui login lento, entrada fria, saída e volta, reload do To
 
 O CI de `c23e30e` aprovou PostgreSQL, container, Chromium e Firefox, mas bloqueou o deploy por uma asserção da animação de personagem no WebKit. Após a correção descrita acima, o ciclo de incluir/remover favorito, contagem e movimento reduzido passou **9/9 vezes** (três por navegador), sem o skip da ponte estática local. `check`, build e validação do artefato passaram novamente. A suíte do CI foi separada por navegador em runners independentes, com `fail-fast: false`; nenhum cenário, retry ou gate de publicação foi removido.
 
+A execução seguinte ainda expôs a diferença de timing no WebKit/Linux. O ranking passou a atualizar e reordenar os cartões existentes, preservando a identidade do botão, e a remover a classe da animação no `animationend`, com limpeza de segurança. O teste verifica a identidade do elemento, além do evento e da gravação. A medida do degradê dos carrosséis aguarda sua transição. Os dois cenários passaram **18/18 vezes** (três repetições em cada navegador), e checks/build/artefato foram novamente aprovados. Falhas futuras de navegador no CI preservam screenshot, vídeo e trace por três dias.
+
 ## Publicação e limites de capacidade
 
 O envio passa pelo workflow **AniNexus quality**, incluindo o teste PostgreSQL em schema isolado com rollback, build de container e navegadores. A VPS só deve receber o commit se esse workflow aprovar; o deploy e o SHA de `release.json` precisam ser conferidos separadamente.

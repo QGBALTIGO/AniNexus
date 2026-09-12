@@ -103,7 +103,13 @@
   }
   function orderCharacters(items){return[...items].sort((a,b)=>Number(b.favoriteCount||0)-Number(a.favoriteCount||0)||Number(a.tieOrder||0)-Number(b.tieOrder||0)||Number(a.id)-Number(b.id)).map((item,index)=>{item.rank=index+1;return item})}
   function favoriteLabel(count){const value=Math.max(0,Number(count)||0);return`${value.toLocaleString('pt-BR')} ${value===1?'favorito':'favoritos'}`}
-  function animateCharacterFavorite(button){if(!button)return;button.classList.remove('nx39-pop');void button.offsetWidth;button.classList.add('nx39-pop');setTimeout(()=>button.classList.remove('nx39-pop'),260)}
+  function animateCharacterFavorite(button){
+    if(!button||button.classList.contains('nx39-pop'))return;
+    let timer;const finish=()=>{clearTimeout(timer);button.classList.remove('nx39-pop');button.removeEventListener('animationend',finish)};
+    button.addEventListener('animationend',finish,{once:true});
+    void button.offsetWidth;button.classList.add('nx39-pop');
+    timer=setTimeout(finish,1500);
+  }
   function characterCard(item){
     const id=Number(item.id),rank=Number(item.rank)||1,favorite=characterState.favorites.has(id),count=Math.max(0,Number(item.favoriteCount)||0),busy=characterState.pending.has(id),initials=String(item.name||'?').split(/\s+/).slice(0,2).map(part=>part.charAt(0)).join('').toUpperCase();
     return `<article class="nx47-character-card rank-${item.rank}" data-character-card="${id}"><span class="nx47-character-rank" aria-hidden="true">${rank}</span><div class="nx47-character-portrait${item.image?'':' is-image-missing'}"><span class="nx47-character-fallback" aria-hidden="true">${esc(initials)}</span>${item.image?`<img loading="lazy" decoding="async" src="${esc(item.image)}" alt="${esc(item.name)}">`:''}<div class="nx45-rank-actions nx47-character-actions"><button type="button" class="nx47-character-favorite${favorite?' active':''}" data-nx-action-kind="compact" data-character-favorite="${id}" aria-pressed="${favorite}" aria-label="${favorite?'Remover':'Adicionar'} ${esc(item.name)} ${favorite?'dos':'aos'} personagens favoritos" title="${favorite?'Remover dos favoritos':'Favoritar personagem'}"${busy?' disabled aria-busy="true"':''}>${SVG.heart}</button></div></div><div class="nx47-character-copy"><small>${item.rank}º NO ANINEXUS</small><h3>${esc(item.name)}</h3><p class="nx47-character-meta">${item.nativeName?`<span lang="ja">${esc(item.nativeName)}</span>`:''}<span>${esc(item.work)}</span></p><div class="nx47-character-count">${SVG.heart}<strong>${esc(favoriteLabel(count))}</strong></div></div></article>`;
@@ -116,9 +122,27 @@
     root.className='nx47-character-root';
     const draw=(focusId=null,animate=false)=>{
       characterState.items=orderCharacters(characterState.items);
-      root.innerHTML=rail(characterState.items.map(characterCard).join(''),'nx35-rank-rail nx47-character-rail');
-      root.querySelectorAll('.nx47-character-portrait img').forEach(image=>image.addEventListener('error',()=>image.closest('.nx47-character-portrait')?.classList.add('is-image-missing'),{once:true}));
-      bindRails();window.AniNexusRails?.refresh?.();
+      const existingRail=root.querySelector('.nx47-character-rail');
+      if(existingRail){
+        const cards=new Map([...existingRail.querySelectorAll('[data-character-card]')].map(card=>[Number(card.dataset.characterCard),card]));
+        characterState.items.forEach((item,index)=>{
+          const card=cards.get(item.id);if(!card)return;
+          if(existingRail.children[index]!==card)existingRail.insertBefore(card,existingRail.children[index]||null);
+          card.classList.remove(...[...card.classList].filter(name=>/^rank-\d+$/.test(name)));card.classList.add(`rank-${item.rank}`);
+          card.querySelector('.nx47-character-rank').textContent=String(item.rank);
+          card.querySelector('.nx47-character-copy small').textContent=`${item.rank}º NO ANINEXUS`;
+          card.querySelector('.nx47-character-count strong').textContent=favoriteLabel(item.favoriteCount);
+          const button=card.querySelector('[data-character-favorite]'),favorite=characterState.favorites.has(item.id),busy=characterState.pending.has(item.id);
+          button.classList.toggle('active',favorite);button.disabled=busy;button.setAttribute('aria-pressed',String(favorite));
+          if(busy)button.setAttribute('aria-busy','true');else button.removeAttribute('aria-busy');
+          button.setAttribute('title',favorite?'Remover dos favoritos':'Favoritar personagem');
+          button.setAttribute('aria-label',`${favorite?'Remover':'Adicionar'} ${item.name} ${favorite?'dos':'aos'} personagens favoritos`);
+        });
+      }else{
+        root.innerHTML=rail(characterState.items.map(characterCard).join(''),'nx35-rank-rail nx47-character-rail');
+        root.querySelectorAll('.nx47-character-portrait img').forEach(image=>image.addEventListener('error',()=>image.closest('.nx47-character-portrait')?.classList.add('is-image-missing'),{once:true}));
+        bindRails();window.AniNexusRails?.refresh?.();
+      }
       if(focusId)requestAnimationFrame(()=>{const button=root.querySelector(`[data-character-favorite="${focusId}"]`);button?.focus({preventScroll:true});button?.closest('.nx47-character-card')?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'center'});if(animate&&!matchMedia('(prefers-reduced-motion: reduce)').matches)animateCharacterFavorite(button)});
     };
     root.addEventListener('click',async event=>{

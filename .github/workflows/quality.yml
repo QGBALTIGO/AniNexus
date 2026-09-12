@@ -202,6 +202,13 @@ jobs:
       - name: Show static server log on failure
         if: failure()
         run: cat /tmp/aninexus-http.log || true
+      - name: Preserve browser failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-failure-${{ matrix.project }}
+          path: test-results/
+          retention-days: 3
 
   catalog-webkit:
     runs-on: ubuntu-latest

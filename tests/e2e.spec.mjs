@@ -186,7 +186,7 @@ test('Home rails share aligned controls smooth movement and directional fades',a
   await expect(next).toBeEnabled();
   await expect(frame).toHaveAttribute('data-nx44-left','0');
   await expect(frame).toHaveAttribute('data-nx44-right','1');
-  expect(await frame.evaluate(element=>parseFloat(getComputedStyle(element,'::after').opacity))).toBeGreaterThan(.5);
+  await expect.poll(()=>frame.evaluate(element=>parseFloat(getComputedStyle(element,'::after').opacity))).toBeGreaterThan(.5);
   expect(await actions.evaluate(element=>[...element.children].map(child=>child.tagName))).toEqual(['BUTTON','BUTTON','A']);
   const geometry=await actions.evaluate(element=>{const box=element.getBoundingClientRect(),head=element.closest('.nx35-head').getBoundingClientRect();return{left:box.left,right:box.right,headLeft:head.left,headRight:head.right}});
   expect(geometry.left).toBeGreaterThanOrEqual(geometry.headLeft-.5);
@@ -761,6 +761,7 @@ test('Home character ranking favorites and reorders with internal counts',async(
   const order=await page.locator('#nx42TopManga,.nx47-character-ranking,#nx35Awards').evaluateAll(nodes=>nodes.map(node=>node.id||node.className));
   expect(order[0]).toBe('nx42TopManga');
   const anya=section.getByRole('button',{name:/Adicionar Anya Forger/});
+  await anya.evaluate(button=>{window.__nxOriginalCharacterButton=button});
   await page.evaluate(()=>{window.__nxCharacterAnimations=[];document.addEventListener('animationstart',event=>{if(event.target.matches?.('[data-character-favorite="508"]'))window.__nxCharacterAnimations.push(event.animationName)},true)});
   await anya.click();
   const anyaFavorite=section.locator('[data-character-favorite="508"]');
@@ -772,7 +773,8 @@ test('Home character ranking favorites and reorders with internal counts',async(
   await expect(cards.first().getByRole('button')).toHaveAttribute('aria-pressed','true');
   const activeVisual=await cards.first().getByRole('button').evaluate(button=>{const reference=document.createElement('button');reference.dataset.nxActionOwner='global';reference.dataset.nxActionKind='compact';reference.setAttribute('aria-pressed','true');document.body.append(reference);const result={background:getComputedStyle(button).backgroundColor,expectedBackground:getComputedStyle(reference).backgroundColor,fill:getComputedStyle(button.querySelector('svg')).fill};reference.remove();return result});
   expect(activeVisual.background).toBe(activeVisual.expectedBackground);expect(activeVisual.fill).toBe('rgb(255, 255, 255)');
-  await expect(cards.first().getByRole('button')).not.toHaveClass(/nx39-pop/,{timeout:1000});
+  await expect(cards.first().getByRole('button')).not.toHaveClass(/nx39-pop/,{timeout:2000});
+  expect(await anyaFavorite.evaluate(button=>button===window.__nxOriginalCharacterButton)).toBe(true);
   await expect(section.locator('.nx47-character-status')).toHaveCount(0);
   await expect(section).not.toContainText(/foi adicionado aos|foi removido dos/i);
   await page.setViewportSize({width:390,height:844});
