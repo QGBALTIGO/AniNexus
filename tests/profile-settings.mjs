@@ -9,13 +9,19 @@ test('username moderation normalizes accents and common substitutions without bl
   assert.equal(usernameModerationReason('kayky.sousa'), null);
 });
 
-test('AniList list import normalizes anime manga scores progress and repeating status',async()=>{
-  const payload={data:{anime:{lists:[{entries:[{mediaId:1,status:'REPEATING',score:8.5,progress:12,progressVolumes:0,updatedAt:1_700_000_000,media:{id:1,idMal:101,type:'ANIME',title:{english:'Anime One'}}}]}]},manga:{lists:[{entries:[{mediaId:2,status:'CURRENT',score:0,progress:44,progressVolumes:7,updatedAt:1_700_000_100,media:{id:2,idMal:202,type:'MANGA',title:{romaji:'Manga Two'}}}]}]}}};
+test('AniList list import normalizes progress and carries durable anime and manga metadata',async()=>{
+  const animeEntry={mediaId:1,status:'REPEATING',score:8.5,progress:12,progressVolumes:0,updatedAt:1_700_000_000,media:{id:1,idMal:101,type:'ANIME',title:{english:'Anime One',romaji:'Anime Ichi'},coverImage:{extraLarge:'https://img.test/anime.jpg',color:'#123456'},bannerImage:'https://img.test/anime-banner.jpg',episodes:12,format:'TV',status:'FINISHED'}};
+  const mangaEntry={mediaId:2,status:'CURRENT',score:0,progress:44,progressVolumes:7,updatedAt:1_700_000_100,media:{id:2,idMal:202,type:'MANGA',title:{romaji:'Manga Two'},coverImage:{large:'https://img.test/manga.jpg'},chapters:80,volumes:8,format:'MANGA',status:'RELEASING'}};
+  const payload={data:{anime:{lists:[{entries:[animeEntry]}]},manga:{lists:[{entries:[mangaEntry]}]}}};
   const fetchImpl=async()=>new Response(JSON.stringify(payload),{status:200,headers:{'content-type':'application/json'}});
   const rows=await fetchAniListEntries({username:'reader',types:['ANIME','MANGA'],fetchImpl});
   assert.deepEqual(rows.map(row=>({id:row.mediaId,type:row.mediaType,status:row.status,score:row.score,progress:row.progress,volumes:row.volumeProgress})),[
     {id:1,type:'ANIME',status:'CURRENT',score:8.5,progress:12,volumes:0},
     {id:2,type:'MANGA',status:'CURRENT',score:null,progress:44,volumes:7},
+  ]);
+  assert.deepEqual(rows.map(row=>({id:row.media.id,title:row.media.title,cover:row.media.cover,format:row.media.format})),[
+    {id:1,title:'Anime One',cover:'https://img.test/anime.jpg',format:'TV'},
+    {id:2,title:'Manga Two',cover:'https://img.test/manga.jpg',format:'MANGA'},
   ]);
 });
 
@@ -31,6 +37,8 @@ test('AniList import falls back to the official public list pages during a Graph
     {id:21,type:'ANIME',status:'CURRENT',score:10,progress:1017,volumes:0},
     {id:30013,type:'MANGA',status:'CURRENT',score:8,progress:1071,volumes:105},
   ]);
+  assert.equal(rows[0].media.title,'ONE PIECE');
+  assert.equal(rows[1].media.mediaType,'MANGA');
   assert.equal(requests.length,3);
 });
 

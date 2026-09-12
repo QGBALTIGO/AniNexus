@@ -20,7 +20,7 @@ import { SharedRateLimitStore } from './lib/rate-limit-store.mjs';
 import { AUTHORIZED_ORIGINS, CLERK_ENABLED, hashPassword, verifyPassword, createSession, destroySession, currentUser, requireUser, requireRole, validateOrigin, getClerkClient, syncClerkUser, beginAccountDeletion, cancelAccountDeletion, bootstrapConfiguredAdmins, invalidateUserIdentityCache } from './lib/auth.mjs';
 import { AVATAR_PRESETS, avatarForClerkUser, avatarPresetUrl, resolvedAvatar } from './lib/avatar.mjs';
 import { processClerkWebhook } from './lib/clerk-webhook.mjs';
-import { getCatalog, getReading, getSchedule, getAnime, getAnimeThemes, getMediaSummaries, getManga, getStudios, getDubbed, prewarm } from './lib/provider.mjs';
+import { getCatalog, getReading, getSchedule, getAnime, getAnimeThemes, getMediaSummaries, getManga, getStudios, getDubbed, prewarm, slugify } from './lib/provider.mjs';
 import { cleanSynopsisText, getPortugueseSynopsis } from './lib/synopsis.mjs';
 import { lists } from './lib/content.mjs';
 import { getNativeNews, getNativeTrailerArticles, getNativeArticle, articleExpiry } from './lib/native-news.mjs';
@@ -135,17 +135,56 @@ const mediaProjection=`CASE WHEN mc.media_id IS NULL THEN NULL ELSE jsonb_build_
   'score',mc.payload->'score','episodes',mc.payload->'episodes','status',mc.payload->>'status','format',mc.payload->>'format',
   'seasonYear',mc.payload->'seasonYear','genres',COALESCE(mc.payload->'genres','[]'::jsonb),'slug',mc.payload->>'slug'
 ) END`;
+const persistImportedMedia=async(runQuery,entries)=>{
+  const rows=entries.map(entry=>{
+    const mediaType=entry.mediaType==='MANGA'?'MANGA':'ANIME',media={...(entry.media||{}),id:entry.mediaId,idMal:entry.idMal||entry.media?.idMal||null,mediaType,title:entry.title||entry.media?.title||''};
+    const payload=Object.fromEntries(Object.entries(media).filter(([,value])=>value!==''&&value!==null&&value!==undefined));
+    const slug=`${slugify(payload.title||mediaType.toLowerCase())}-${entry.mediaId}`;payload.slug=slug;
+    return{media_type:mediaType,media_id:entry.mediaId,slug,payload};
+  }).filter(row=>row.payload.title);
+  for(let index=0;index<rows.length;index+=500){const chunk=rows.slice(index,index+500);await runQuery(`INSERT INTO media_cache(media_type,media_id,slug,payload,updated_at) SELECT media_type,media_id,slug,payload,now() FROM jsonb_to_recordset($1::jsonb) AS x(media_type text,media_id bigint,slug text,payload jsonb) ON CONFLICT(media_type,media_id) DO UPDATE SET slug=COALESCE(NULLIF(EXCLUDED.slug,''),media_cache.slug),payload=media_cache.payload || EXCLUDED.payload,updated_at=now()`,[JSON.stringify(chunk)])}
+};
 const withActorAvatars=rows=>rows.map(row=>row?.username||row?.display_name?{...row,avatar_url:resolvedAvatar(row).url}:row);
 const withSocialBodies=(rows,hideSpoilers=true)=>withActorAvatars(rows).map(row=>socialBodyPayload(row,{hideSpoilers}));
-const hydrateCommunityMedia=async(rows,defaultType='ANIME')=>{
+const mediaHasTitle=media=>Boolean(String(media?.title||'').trim());
+const usableMediaSummary=media=>Boolean(String(media?.title||'').trim()&&String(media?.cover||'').trim());
+const resolveMediaSummaryBatches=async(ids,type)=>{
+  const chunks=[];for(let index=0;index<ids.length;index+=60)chunks.push(ids.slice(index,index+60));
+  const resolved=new Map();
+  for(let index=0;index<chunks.length;index+=4){
+    const batch=await Promise.all(chunks.slice(index,index+4).map(chunk=>getMediaSummaries(chunk,type)));
+    for(const media of batch.flat())resolved.set(Number(media.id),media);
+  }
+  return resolved;
+};
+const repairAniListTransferMedia=async(userId,type,ids)=>{
+  if(!userId||!ids.length)return new Map();
+  const transfer=await q(`SELECT source_username FROM list_transfers WHERE user_id=$1 AND direction='IMPORT' AND service='ANILIST' AND status='COMPLETED' AND source_username IS NOT NULL AND media_type IN ('ALL',$2) ORDER BY completed_at DESC NULLS LAST,created_at DESC LIMIT 1`,[userId,type]).catch(()=>({rows:[]}));
+  const username=String(transfer.rows?.[0]?.source_username||'');if(!username)return new Map();
+  try{
+    const wanted=new Set(ids),entries=(await fetchAniListEntries({username,types:[type],timeoutMs:Number(process.env.UPSTREAM_TIMEOUT_MS||9000)})).filter(entry=>wanted.has(entry.mediaId));
+    if(entries.length)await persistImportedMedia(q,entries);
+    return new Map(entries.map(entry=>[entry.mediaId,{...(entry.media||{}),id:entry.mediaId,mediaType:type,title:entry.title||entry.media?.title||''}]).filter(([,media])=>mediaHasTitle(media)));
+  }catch(error){app.log.warn({err:error,userId,mediaType:type},'AniList transfer metadata repair failed');return new Map()}
+};
+const hydrateCommunityMedia=async(rows,defaultType='ANIME',ownerId=null)=>{
   const normalized=withActorAvatars(rows),missingByType=new Map();
-  for(const row of normalized){if(!row?.media_id||row.media)continue;const type=String(row.media_type||defaultType).toUpperCase()==='MANGA'?'MANGA':'ANIME',ids=missingByType.get(type)||new Set();ids.add(Number(row.media_id));missingByType.set(type,ids)}
+  for(const row of normalized){if(!row?.media_id||usableMediaSummary(row.media))continue;const type=String(row.media_type||defaultType).toUpperCase()==='MANGA'?'MANGA':'ANIME',ids=missingByType.get(type)||new Set();ids.add(Number(row.media_id));missingByType.set(type,ids)}
   if(!missingByType.size)return normalized;
   try{
     const resolvedByType=new Map();
-    await Promise.all([...missingByType].map(async([type,ids])=>{const resolved=await getMediaSummaries([...ids].filter(Number.isSafeInteger),type);resolvedByType.set(type,new Map(resolved.map(media=>[Number(media.id),media])))}));
-    return normalized.map(row=>{if(row.media)return row;const type=String(row.media_type||defaultType).toUpperCase()==='MANGA'?'MANGA':'ANIME';return{...row,media:resolvedByType.get(type)?.get(Number(row.media_id))||null}});
+    await Promise.all([...missingByType].map(async([type,ids])=>{
+      const requested=[...ids].filter(Number.isSafeInteger),resolved=await resolveMediaSummaryBatches(requested,type),missingTitles=requested.filter(id=>!mediaHasTitle(resolved.get(id)));
+      if(missingTitles.length){const repaired=await repairAniListTransferMedia(ownerId,type,missingTitles);for(const [id,media] of repaired)resolved.set(id,media)}
+      resolvedByType.set(type,resolved);
+    }));
+    return normalized.map(row=>{if(usableMediaSummary(row.media))return row;const type=String(row.media_type||defaultType).toUpperCase()==='MANGA'?'MANGA':'ANIME',resolved=resolvedByType.get(type)?.get(Number(row.media_id));return resolved?{...row,media:{...(row.media||{}),...resolved}}:row});
   }catch(error){app.log.warn({err:error,mediaIds:[...missingByType.values()].flatMap(ids=>[...ids])},'community media hydration failed');return normalized}
+};
+const hydrateMediaCollections=async(collections,defaultType='ANIME',ownerId=null)=>{
+  const sizes=collections.map(rows=>rows.length),hydrated=await hydrateCommunityMedia(collections.flat(),defaultType,ownerId),result=[];let offset=0;
+  for(const size of sizes){result.push(hydrated.slice(offset,offset+size));offset+=size}
+  return result;
 };
 const transaction=async fn=>{const client=await pool.connect();try{await client.query('BEGIN');const result=await fn(client);await client.query('COMMIT');return result}catch(error){await client.query('ROLLBACK').catch(()=>{});throw error}finally{client.release()}};
 const MODERATED_CONTENT_TARGETS=Object.freeze({IMPRESSION:'impressions',IMPRESSION_REPLY:'impression_replies',ANIME_COMMENT:'media_comments',THREAD:'community_threads',POST:'community_posts',NEWS_COMMENT:'news_comments'});
@@ -277,7 +316,7 @@ app.get('/api/users/:username',publicRate,async(req,reply)=>{
     user.show_activity===false?Promise.resolve({rows:[]}):q(`SELECT i.id,i.media_id,i.media_type,i.body,i.spoiler,i.has_spoilers,i.status_snapshot,i.progress_snapshot,i.score_snapshot,i.impression_stage,i.created_at,i.edited_at,${mediaProjection} AS media FROM impressions i LEFT JOIN media_cache mc ON mc.media_id=i.media_id AND mc.media_type=i.media_type WHERE i.user_id=$1 AND i.hidden=false ORDER BY i.created_at DESC LIMIT 12`,[user.id]),
     publicAchievementProfile(user.id).catch(()=>({achievements:[],pinnedAchievements:[],equippedTitle:null,rank:{name:'Nível Nexus 1',xp:0,nextXp:30}})),
   ]);
-  const [library,mangaLibrary,activity,impressions]=await Promise.all([hydrateCommunityMedia(libraryResult.rows),hydrateCommunityMedia(mangaResult.rows,'MANGA'),hydrateCommunityMedia(activityResult.rows),hydrateCommunityMedia(impressionsResult.rows)]);
+  const [library,mangaLibrary,activity,impressions]=await Promise.all([hydrateCommunityMedia(libraryResult.rows,'ANIME',user.id),hydrateCommunityMedia(mangaResult.rows,'MANGA',user.id),hydrateCommunityMedia(activityResult.rows,'ANIME',user.id),hydrateCommunityMedia(impressionsResult.rows,'ANIME',user.id)]);
   const stats=statsResult.rows[0]||null;
   return{profile:{...profile,equippedTitle:achievementResult.equippedTitle},canonicalUsername:user.username,aliased,stats,rank:achievementResult.rank,achievements:achievementResult.achievements,pinnedAchievements:achievementResult.pinnedAchievements,library,mangaLibrary,favoriteCharacters:hydrateCharacterFavorites(characterFavorites),activity,impressions:withSocialBodies(impressions)};
 });
@@ -351,7 +390,7 @@ app.get('/api/anime/:id/activity',publicRate,async(req,reply)=>{const id=safeInt
 app.get('/api/anime/:id/rating',publicRate,async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});const {rows}=await q(`SELECT round(avg(score)::numeric,1) score,count(score)::int votes FROM user_anime WHERE media_id=$1 AND score IS NOT NULL`,[id]);return{score:rows[0]?.score==null?null:Number(rows[0].score),votes:Number(rows[0]?.votes||0)};});
 app.get('/api/manga/:id/rating',publicRate,async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});const {rows}=await q(`SELECT round(avg(score)::numeric,1) score,count(score)::int votes FROM user_manga WHERE media_id=$1 AND score IS NOT NULL`,[id]);return{score:rows[0]?.score==null?null:Number(rows[0].score),votes:Number(rows[0]?.votes||0)};});
 app.get('/api/anime/:id/themes',{config:{rateLimit:{max:120,timeWindow:'1 minute'}}},async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});return getAnimeThemes(id);});
-app.get('/api/media/summaries',{config:{rateLimit:{max:120,timeWindow:'1 minute'}}},async(req,reply)=>{const raw=String(req.query?.ids||'').split(',').slice(0,60),ids=raw.map(value=>safeInt(value)).filter(Boolean);if(!ids.length)return reply.code(400).send({error:'INVALID_IDS'});return{items:await getMediaSummaries(ids)}});
+app.get('/api/media/summaries',{config:{rateLimit:{max:120,timeWindow:'1 minute'}}},async(req,reply)=>{const raw=String(req.query?.ids||'').split(',').slice(0,60),ids=raw.map(value=>safeInt(value)).filter(Boolean),mediaType=String(req.query?.mediaType||'ANIME').toUpperCase()==='MANGA'?'MANGA':'ANIME';if(!ids.length)return reply.code(400).send({error:'INVALID_IDS'});return{items:await getMediaSummaries(ids,mediaType)}});
 app.get('/api/manga/:id',{config:{rateLimit:{max:120,timeWindow:'1 minute'}}},async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});return getManga(id);});
 app.get('/api/manga/:id/activity',publicRate,async(req,reply)=>{const id=safeInt(req.params.id);if(!id)return reply.code(400).send({error:'INVALID_ID'});return mediaActivitySummary(id,'MANGA');});
 app.get('/api/synopsis/:type/:id',{config:{rateLimit:{max:90,timeWindow:'1 minute'}}},async(req,reply)=>{
@@ -502,9 +541,10 @@ app.get('/api/me/library',privateHeavyRate,async(req,reply)=>{
     q(`SELECT i.id,i.media_id,i.media_type,i.body,i.spoiler,i.has_spoilers,i.status_snapshot,i.progress_snapshot,i.score_snapshot,i.impression_stage,i.created_at,i.edited_at,u.username,u.display_name,u.avatar_url,${mediaProjection} AS media FROM impressions i JOIN users u ON u.id=i.user_id LEFT JOIN media_cache mc ON mc.media_id=i.media_id AND mc.media_type='ANIME' WHERE i.user_id=$1 AND i.media_type='ANIME' AND i.hidden=false ORDER BY i.created_at DESC LIMIT 200`,[user.id]),
     q("SELECT count(*)::int AS count FROM impressions WHERE user_id=$1 AND media_type='ANIME' AND hidden=false",[user.id]),
   ]);
-  return{user:safeUser(user),list:list.rows,favorites:favorites.rows,impressions:withSocialBodies(impressions.rows),impressionCount:Number(count.rows[0]?.count||0)};
+  const [hydratedList,hydratedFavorites,hydratedImpressions]=await hydrateMediaCollections([list.rows,favorites.rows,impressions.rows],'ANIME',user.id);
+  return{user:safeUser(user),list:hydratedList,favorites:hydratedFavorites,impressions:withSocialBodies(hydratedImpressions),impressionCount:Number(count.rows[0]?.count||0)};
 });
-app.get('/api/me/manga-library',privateHeavyRate,async(req,reply)=>{const user=await requireUser(req,reply);if(!user)return;const [list,favorites,impressions]=await Promise.all([q(`SELECT um.media_id,um.status,um.score,um.reaction,um.reactions,um.volume_progress,um.progress,um.updated_at,${mediaProjection} AS media FROM user_manga um LEFT JOIN media_cache mc ON mc.media_id=um.media_id AND mc.media_type='MANGA' WHERE um.user_id=$1 ORDER BY um.updated_at DESC LIMIT 2000`,[user.id]),q(`SELECT uf.media_id,uf.media_type,uf.created_at,${mediaProjection} AS media FROM user_favorites uf LEFT JOIN media_cache mc ON mc.media_id=uf.media_id AND mc.media_type=uf.media_type WHERE uf.user_id=$1 AND uf.media_type='MANGA' ORDER BY uf.created_at DESC LIMIT 5000`,[user.id]),q(`SELECT i.id,i.media_id,i.media_type,i.body,i.spoiler,i.has_spoilers,i.status_snapshot,i.progress_snapshot,i.score_snapshot,i.impression_stage,i.created_at,i.edited_at,u.username,u.display_name,u.avatar_url,${mediaProjection} AS media FROM impressions i JOIN users u ON u.id=i.user_id LEFT JOIN media_cache mc ON mc.media_id=i.media_id AND mc.media_type='MANGA' WHERE i.user_id=$1 AND i.media_type='MANGA' AND i.hidden=false ORDER BY i.created_at DESC LIMIT 200`,[user.id])]);return{user:safeUser(user),list:list.rows,favorites:favorites.rows,impressions:withSocialBodies(impressions.rows)};});
+app.get('/api/me/manga-library',privateHeavyRate,async(req,reply)=>{const user=await requireUser(req,reply);if(!user)return;const [list,favorites,impressions]=await Promise.all([q(`SELECT um.media_id,um.status,um.score,um.reaction,um.reactions,um.volume_progress,um.progress,um.updated_at,${mediaProjection} AS media FROM user_manga um LEFT JOIN media_cache mc ON mc.media_id=um.media_id AND mc.media_type='MANGA' WHERE um.user_id=$1 ORDER BY um.updated_at DESC LIMIT 2000`,[user.id]),q(`SELECT uf.media_id,uf.media_type,uf.created_at,${mediaProjection} AS media FROM user_favorites uf LEFT JOIN media_cache mc ON mc.media_id=uf.media_id AND mc.media_type=uf.media_type WHERE uf.user_id=$1 AND uf.media_type='MANGA' ORDER BY uf.created_at DESC LIMIT 5000`,[user.id]),q(`SELECT i.id,i.media_id,i.media_type,i.body,i.spoiler,i.has_spoilers,i.status_snapshot,i.progress_snapshot,i.score_snapshot,i.impression_stage,i.created_at,i.edited_at,u.username,u.display_name,u.avatar_url,${mediaProjection} AS media FROM impressions i JOIN users u ON u.id=i.user_id LEFT JOIN media_cache mc ON mc.media_id=i.media_id AND mc.media_type='MANGA' WHERE i.user_id=$1 AND i.media_type='MANGA' AND i.hidden=false ORDER BY i.created_at DESC LIMIT 200`,[user.id])]);const [hydratedList,hydratedFavorites,hydratedImpressions]=await hydrateMediaCollections([list.rows,favorites.rows,impressions.rows],'MANGA',user.id);return{user:safeUser(user),list:hydratedList,favorites:hydratedFavorites,impressions:withSocialBodies(hydratedImpressions)};});
 
 app.get('/api/me/import-status',privateReadRate,async(req,reply)=>{const user=await requireUser(req,reply);if(!user)return;const {rows}=await q('SELECT imported_at,source_version,item_count FROM local_imports WHERE user_id=$1',[user.id]);return{imported:!!rows[0],import:rows[0]||null};});
 const localImportSchema=z.object({
@@ -548,7 +588,6 @@ const importAniListRows=async(client,userId,entries,strategy)=>{
   }
   return changed;
 };
-const warmImportedMedia=entries=>{for(const mediaType of ['ANIME','MANGA']){const ids=entries.filter(entry=>entry.mediaType===mediaType).map(entry=>entry.mediaId).slice(0,240);for(let index=0;index<ids.length;index+=60)void getMediaSummaries(ids.slice(index,index+60),mediaType).catch(()=>{})}};
 app.get('/api/me/list-transfers',privateReadRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
   const {rows}=await q('SELECT * FROM list_transfers WHERE user_id=$1 ORDER BY created_at DESC LIMIT 12',[user.id]);return{items:rows.map(transferSummary)};
@@ -562,9 +601,10 @@ app.post('/api/me/import-anilist',rateForUser(2,'10 minutes','anilist-import'),a
     const entries=await fetchAniListEntries({username:parsed.data.username,types:parsed.data.types,timeoutMs:Number(process.env.UPSTREAM_TIMEOUT_MS||9000)});
     const result=await transaction(async client=>{
       const changed=await importAniListRows(client,user.id,entries,parsed.data.strategy),skipped=Math.max(0,entries.length-changed),counts={anime:entries.filter(entry=>entry.mediaType==='ANIME').length,manga:entries.filter(entry=>entry.mediaType==='MANGA').length};
+      await persistImportedMedia((sql,params)=>client.query(sql,params),entries);
       const {rows}=await client.query(`UPDATE list_transfers SET status='COMPLETED',item_count=$2,skipped_count=$3,details=$4::jsonb,completed_at=now() WHERE id=$1 RETURNING *`,[started.id,changed,skipped,JSON.stringify({found:entries.length,...counts,source:entries.source||'GRAPHQL'})]);return rows[0];
     });
-    warmImportedMedia(entries);await refreshAchievements(user.id,'RETROACTIVE');return{ok:true,transfer:transferSummary(result)};
+    await refreshAchievements(user.id,'RETROACTIVE');return{ok:true,transfer:transferSummary(result)};
   }catch(error){
     const code=['ANILIST_USER_NOT_FOUND','ANILIST_UNAVAILABLE'].includes(error?.code)?error.code:'IMPORT_FAILED';
     await q(`UPDATE list_transfers SET status='FAILED',error_code=$2,completed_at=now() WHERE id=$1`,[started.id,code]).catch(()=>{});

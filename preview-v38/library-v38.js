@@ -66,7 +66,7 @@
   async function fetchMissing(ids){
     ids=[...new Set(ids.map(Number).filter(Boolean))];if(!ids.length)return[];
     const resolved=[];
-    for(let i=0;i<ids.length;i+=60){try{const part=ids.slice(i,i+60),data=await publicRequest(`/api/media/summaries?ids=${encodeURIComponent(part.join(','))}`);resolved.push(...(data?.items||[]).map(item=>mediaOf(item,item.id)))}catch{}}
+    for(let i=0;i<ids.length;i+=60){try{const part=ids.slice(i,i+60),data=await publicRequest(`/api/media/summaries?ids=${encodeURIComponent(part.join(','))}&mediaType=ANIME`);resolved.push(...(data?.items||[]).map(item=>mediaOf(item,item.id)))}catch{}}
     if(resolved.length||!IS_PAGES)return resolved;
     return gqlIds(ids);
   }
