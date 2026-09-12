@@ -27,8 +27,8 @@ test('AniList list import normalizes progress and carries durable anime and mang
 
 test('AniList import falls back to the official public list pages during a GraphQL outage',async()=>{
   const page=(type,entry)=>`<!doctype html><html><head><meta property="og:title" content="reader"></head><body><div class="user"><h1 class="name">reader</h1><div class="lists"><div class="list-wrap"><div class="list-entries">${entry}</div></div></div></div></body></html>`;
-  const anime=page('anime','<div class="entry row"><div class="title"><a href="/anime/21/ONE-PIECE/">ONE PIECE</a></div><div class="score" score="5"><svg data-icon="star"></svg></div><div class="progress">1017/1200<span>+</span></div><div class="status">Current</div></div>');
-  const manga=page('manga','<div class="entry row"><div class="title"><a href="/manga/30013/ONE-PIECE/">ONE PIECE</a></div><div class="score" score="4"><svg data-icon="star"></svg></div><div class="progress">1071/1200<span>+</span></div><div class="progress progress-volumes">105/120<span>+</span></div><div class="status">Repeating</div></div>');
+  const anime=page('anime','<div class="entry row"><div class="cover"><div class="image" style="background-image:url(https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21-test.jpg);"></div></div><div class="title"><a href="/anime/21/ONE-PIECE/">ONE PIECE</a></div><div class="score" score="5"><svg data-icon="star"></svg></div><div class="progress">1017/1200<span>+</span></div><div class="status">Current</div><div class="format">TV</div></div>');
+  const manga=page('manga','<div class="entry row"><div class="cover"><div class="image" style="background-image: url(\'https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx30013-test.jpg\');"></div></div><div class="title"><a href="/manga/30013/ONE-PIECE/">ONE PIECE</a></div><div class="score" score="4"><svg data-icon="star"></svg></div><div class="progress">1071/1200<span>+</span></div><div class="progress progress-volumes">105/120<span>+</span></div><div class="status">Repeating</div><div class="format">Manga</div></div>');
   const requests=[];
   const fetchImpl=async url=>{requests.push(String(url));if(String(url).includes('graphql'))return new Response(JSON.stringify({errors:[{message:'The AniList API has been temporarily disabled due to severe stability issues.',status:403}]}),{status:403,headers:{'content-type':'application/json'}});return new Response(String(url).endsWith('/mangalist')?manga:anime,{status:200,headers:{'content-type':'text/html; charset=UTF-8'}})};
   const rows=await fetchAniListEntries({username:'reader',types:['ANIME','MANGA'],fetchImpl,timeoutMs:3000});
@@ -38,7 +38,10 @@ test('AniList import falls back to the official public list pages during a Graph
     {id:30013,type:'MANGA',status:'CURRENT',score:8,progress:1071,volumes:105},
   ]);
   assert.equal(rows[0].media.title,'ONE PIECE');
+  assert.equal(rows[0].media.cover,'https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21-test.jpg');
+  assert.equal(rows[0].media.format,'TV');
   assert.equal(rows[1].media.mediaType,'MANGA');
+  assert.equal(rows[1].media.cover,'https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx30013-test.jpg');
   assert.equal(requests.length,3);
 });
 
