@@ -117,11 +117,27 @@
   if('caches' in window){caches.keys().then(keys=>Promise.allSettled(keys.filter(k=>/^aninexus-shell-/i.test(k)).map(k=>caches.delete(k)))).catch(()=>{})}
 
   // Media fallback only. List/favorite state is owned exclusively by media-state-v2.js.
+  const failedMediaHosts=new WeakMap();
+  const clearImageFailure=img=>{
+    img.classList.remove('nx38-img-error');delete img.dataset.nx38Broken;
+    const host=failedMediaHosts.get(img);failedMediaHosts.delete(img);
+    if(host&&![...host.querySelectorAll('.nx38-img-error')].some(other=>failedMediaHosts.get(other)===host))host.classList.remove('nx38-media-fallback');
+  };
+  document.addEventListener('load',e=>{if(e.target instanceof HTMLImageElement)clearImageFailure(e.target)},true);
   document.addEventListener('error',e=>{
-    const img=e.target;if(!(img instanceof HTMLImageElement)||img.dataset.nx38Broken)return;
-    if(img.matches('[data-nx22-banner]')&&img.dataset.nx22Fallback&&img.dataset.nx22FallbackUsed!=='1')return;
-    img.dataset.nx38Broken='1';e.stopImmediatePropagation();img.classList.add('nx38-img-error');
-    img.closest('.nx35-nmedia,.nx37-gallery-item,.nx24-card-poster,.aqx-media,.nx18-cover,.nx35-community-cover,.media,.poster,.nx21-poster,.nx22-cover,.nx22-hero-bg')?.classList.add('nx38-media-fallback');
+    const img=e.target;if(!(img instanceof HTMLImageElement))return;
+    const failedSource=img.currentSrc||img.src,requestedSource=img.src;
+    // Let component-specific handlers try another source before showing a placeholder.
+    setTimeout(()=>{
+      if(!img.isConnected||img.src!==requestedSource||img.naturalWidth||img.hidden)return;
+      const avatarFallback=img.dataset.nxAvatarFallback;
+      if(avatarFallback&&img.src!==new URL(avatarFallback,document.baseURI).href){clearImageFailure(img);img.removeAttribute('srcset');img.src=avatarFallback;return}
+      if((img.currentSrc||img.src)!==failedSource)return;
+      img.dataset.nx38Broken='1';img.classList.add('nx38-img-error');
+      const host=img.closest('.nx35-nmedia,.nx37-gallery-item,.nx24-card-poster,.aqx-media,.nx18-cover,.nx35-community-cover,.media,.poster,.nx21-poster,.nx22-cover,.nx22-hero-bg');
+      // A nested avatar/provider logo must never mark its surrounding cover as broken.
+      if(host&&(img.parentElement===host||(img.parentElement?.tagName==='A'&&img.parentElement.parentElement===host))){failedMediaHosts.set(img,host);host.classList.add('nx38-media-fallback')}
+    },0);
   },true);
 
   const tune=root=>{

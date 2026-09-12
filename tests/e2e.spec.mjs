@@ -2025,14 +2025,45 @@ test('public profile and profile editor are complete across viewports',async({pa
   await page.evaluate(()=>{window.AniNexusAuth={api:async path=>path.startsWith('/api/me/username-availability')?{available:true}:path==='/api/me/list-transfers'?{items:[]}:{user:{id:'user_kayky',username:'kayky',displayName:'Kayky',privacy:'public'}}};window.AniNexusProfileV38.openEditor({id:'user_kayky',username:'kayky',displayName:'Kayky',avatarUrl:'',bannerUrl:'',privacy:'public',showLibrary:true,showActivity:true,showStats:true})});await expect(page.getByRole('heading',{name:'Personalizar perfil'})).toBeVisible();await expect(page.locator('input[name="username"]')).toHaveValue('kayky');await expect(page.locator('input[name="avatarUrl"]')).toHaveCount(0);await expect(page.locator('[data-media-input="avatar"]')).toHaveAttribute('accept','image/jpeg,image/png,image/webp');await expect(page.locator('[data-media-input="banner"]')).toBeAttached();await expect(page.locator('input[name="avatarPreset"]')).toHaveCount(8);await page.locator('.nx38pe-avatar-option',{hasText:'Vermelho'}).click();await expect(page.locator('[data-preview-avatar] img')).toHaveAttribute('src',/mascot-red\.png/);await page.locator('.nx38pe-panels').evaluate(element=>{element.scrollTop=0});await page.screenshot({path:testInfo.outputPath('profile-settings-profile-mobile.png')});await page.getByRole('button',{name:'Privacidade'}).click();await expect(page.locator('input[name="privacy"]')).toHaveCount(3);await expect(page.locator('[data-settings-panel="privacy"]')).toContainText('feeds públicos globais');await page.screenshot({path:testInfo.outputPath('profile-settings-privacy-mobile.png')});await page.getByRole('button',{name:'Importar e exportar'}).click();await expect(page.getByRole('button',{name:'Importar agora'})).toBeVisible();await expect(page.getByRole('button',{name:'Exportar animes'})).toBeVisible();await expect(page.locator('input[name="bio"]')).toHaveCount(0);await expect(page.locator('input[name="location"]')).toHaveCount(0);await page.screenshot({path:testInfo.outputPath('profile-settings-transfer-mobile.png')});await noOverflow(page,2);await page.setViewportSize({width:1440,height:900});await expect(page.locator('.nx38pe-layout')).toBeVisible();await page.screenshot({path:testInfo.outputPath('profile-settings-transfer-desktop.png')});await page.getByRole('button',{name:'Perfil',exact:true}).click();await page.screenshot({path:testInfo.outputPath('profile-settings-profile-desktop.png')});await noOverflow(page,2)
 });
 
-test('public profile deep-links to an unlocked achievement and shows three pinned badges',async({page})=>{
+test('public profile deep-links to an unlocked achievement and shows three pinned badges',async({page},testInfo)=>{
   await page.setViewportSize({width:390,height:844});
   const collection=achievementPayload({pins:[achievementDefinitions[0].id,achievementDefinitions[7].id,achievementDefinitions[11].id]}),target='completed-living-encyclopedia';
   await page.route('**/runtime-config.js*',route=>route.fulfill({status:200,contentType:'application/javascript',body:`window.__ANINEXUS_CONFIG__=Object.freeze({environment:'test',siteOrigin:'https://qgbaltigo.github.io/AniNexus',apiOrigin:'https://graphql.anilist.co',clerkPublishableKey:'pk_test_profile',authEnabled:true});`}));
   await page.route('**/api/users/kayky',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({profile:{username:'kayky',displayName:'Kayky',avatarUrl:pixel,bannerUrl:pixel,bio:'Anime, mangá e boas conversas.',role:'user',privacy:'public',isPrivate:false,showLibrary:false,showActivity:false,showStats:false,createdAt:'2026-01-01T00:00:00.000Z',equippedTitle:collection.equippedTitle},rank:collection.level,achievements:collection.items.filter(item=>item.unlocked),pinnedAchievements:collection.pins.map(id=>collection.items.find(item=>item.id===id)),stats:null,library:[],mangaLibrary:[],activity:[],impressions:[]})}));
   await page.goto(pageUrl(`/u/kayky?tab=achievements&achievement=${target}`),{waitUntil:'domcontentloaded'});const profile=page.locator('.nx38p-page'),targetCard=profile.locator(`[data-public-achievement-id="${target}"]`);await expect(profile).toBeVisible({timeout:15000});await expect(profile.locator('.nx48-profile-title')).toHaveText('Enciclopédia Viva');await expect(profile.locator('.nx48-profile-pin')).toHaveCount(3);await expect(profile.locator('[data-profile-panel="achievements"]')).toHaveClass(/active/);await expect(targetCard).toHaveClass(/is-target/);await expect(targetCard).toContainText('Enciclopédia Viva');await expect(targetCard).toContainText('Concluiu 100 animes.');await noOverflow(page,2);
-  const badges=await profile.locator('.nx48-profile-achievements .nx48-badge').evaluateAll(items=>items.map(item=>{const badge=item.getBoundingClientRect(),icon=item.querySelector('svg').getBoundingClientRect();return{dx:Math.abs((badge.left+badge.right-icon.left-icon.right)/2),dy:Math.abs((badge.top+badge.bottom-icon.top-icon.bottom)/2)}}));
-  expect(badges.length).toBeGreaterThan(0);for(const badge of badges){expect(badge.dx).toBeLessThanOrEqual(1);expect(badge.dy).toBeLessThanOrEqual(1)}
+  for(const width of [390,768,1440]){
+    await page.setViewportSize({width,height:900});
+    const badges=await profile.locator('.nx48-profile-achievements .nx48-badge').evaluateAll(items=>items.map(item=>{const badge=item.getBoundingClientRect(),holder=item.querySelector('i').getBoundingClientRect(),icon=item.querySelector('svg').getBoundingClientRect();return{dx:Math.abs((badge.left+badge.right-icon.left-icon.right)/2),dy:Math.abs((badge.top+badge.bottom-icon.top-icon.bottom)/2),holderWidth:holder.width,iconWidth:icon.width}}));
+    expect(badges.length).toBeGreaterThan(0);for(const badge of badges){expect(badge.dx).toBeLessThanOrEqual(1);expect(badge.dy).toBeLessThanOrEqual(1);expect(badge.iconWidth).toBe(badge.holderWidth)}
+    await profile.locator('.nx48-profile-achievements').screenshot({path:testInfo.outputPath(`achievement-icons-${width}.png`)});
+  }
+});
+
+test('image failures recover without hiding replacement images or contaminating adjacent covers',async({page})=>{
+  await page.route('https://image-failure.example/**',route=>route.abort('failed'));
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});
+  await page.evaluate(pixel=>{
+    const host=document.createElement('section');host.id='image-regression';
+    host.innerHTML=`<div class="nx35-community-cover" id="avatar-cover"><a><img src="${pixel}"></a><i>${window.AniNexusAvatar.markup({username:'broken',avatarUrl:'https://image-failure.example/avatar.jpg'})}</i></div><div class="nx18-cover" id="provider-cover"><img src="${pixel}"><span class="nx18-provider-logo"><img src="https://image-failure.example/provider.png"><span hidden>Provider</span></span></div><div class="nx24-card-poster" id="recover-cover"><img></div><div class="nx24-card-poster" id="retry-cover"><img src="https://image-failure.example/retry.jpg"></div><div class="nx24-card-poster" id="missing-cover"><img src="https://image-failure.example/missing.jpg"></div>`;
+    const replacement=host.querySelector('#recover-cover img');replacement.addEventListener('error',()=>{replacement.dataset.recovered='1';replacement.src=pixel},{once:true});replacement.src='https://image-failure.example/replace.jpg';
+    document.body.append(host);host.querySelectorAll('img').forEach(img=>img.loading='eager');
+  },pixel);
+  const root=page.locator('#image-regression'),avatar=root.locator('#avatar-cover i img');
+  await expect(avatar).toHaveAttribute('src',/assets\/avatars\/mascot-.*\.png/);
+  await expect.poll(()=>avatar.evaluate(img=>img.naturalWidth>0&&getComputedStyle(img).visibility==='visible')).toBe(true);
+  await expect(root.locator('#avatar-cover')).not.toHaveClass(/nx38-media-fallback/);
+  await expect(root.locator('#provider-cover .nx18-provider-logo>span')).toBeVisible();
+  await expect(root.locator('#provider-cover')).not.toHaveClass(/nx38-media-fallback/);
+  await expect(root.locator('#recover-cover img')).toHaveAttribute('data-recovered','1');
+  await expect.poll(()=>root.locator('#recover-cover img').evaluate(img=>img.naturalWidth>0&&getComputedStyle(img).visibility==='visible')).toBe(true);
+  await expect(root.locator('#recover-cover')).not.toHaveClass(/nx38-media-fallback/);
+  await expect(root.locator('#retry-cover')).toHaveClass(/nx38-media-fallback/);
+  await expect(root.locator('#missing-cover')).toHaveClass(/nx38-media-fallback/);
+  await root.locator('#retry-cover img').evaluate((img,pixel)=>img.src=pixel,pixel);
+  await expect(root.locator('#retry-cover')).not.toHaveClass(/nx38-media-fallback/);
+  await expect.poll(()=>root.locator('#retry-cover img').evaluate(img=>img.naturalWidth>0&&getComputedStyle(img).visibility==='visible')).toBe(true);
+  await root.evaluate(element=>element.remove());
 });
 
 test('anime rankings and list hub share one responsive dedicated renderer',async({page})=>{

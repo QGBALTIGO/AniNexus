@@ -36,7 +36,8 @@
   }
   function markup(user, options = {}) {
     const name = String(options.name || user?.displayName || user?.display_name || user?.firstName || user?.username || 'membro');
-    return `<img src="${esc(url(user, options))}" alt="${options.decorative ? '' : esc(`Avatar de ${name}`)}"${options.loading ? ` loading="${esc(options.loading)}" decoding="async"` : ''}>`;
+    const fallback=asset(KEYS.has(String(user?.avatarPreset||user?.avatar_preset)) ? user.avatarPreset||user.avatar_preset : presetFor(user?.id||user?.username||user?.email||options.seed));
+    return `<img src="${esc(url(user, options))}" data-nx-avatar-fallback="${esc(fallback)}" alt="${options.decorative ? '' : esc(`Avatar de ${name}`)}"${options.loading ? ` loading="${esc(options.loading)}" decoding="async"` : ''}>`;
   }
   window.AniNexusAvatar = Object.freeze({ PRESETS, asset, presetFor, presetFromUrl, url, markup });
 })();
