@@ -50,8 +50,8 @@
   function save(list){write(KEY,list.slice(0,MAX));dispatchEvent(new CustomEvent('aninexus:community-activity-changed',{detail:{items:list.slice(0,MAX)}}))}
   function domMeta(id,type){
     const action=document.querySelector(type==='MANGA'?`[data-manga-list="${id}"],[data-manga-fav="${id}"]`:`[data-nx-list="${id}"],[data-nx-fav="${id}"]`);
-    const root=action?.closest('article');if(!root)return{};
-    const img=root.querySelector('img');
+    const root=action?.closest('article')||document.querySelector(`.nx35-community-card[data-media-type="${type}"][data-media-id="${id}"]`);if(!root)return{};
+    const img=root.querySelector('.nx35-community-cover>a>img,img');
     return{title:root.dataset?.title||root.querySelector('h3,h2,strong')?.textContent?.trim()||'',cover:img?.currentSrc||img?.src||''};
   }
   async function anilistMeta(id,type){
