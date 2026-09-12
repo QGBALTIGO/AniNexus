@@ -1,10 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fetchMalEntries, normalizeMalEntries, mapMalEntries } from '../lib/mal-import.mjs';
+import Fastify from 'fastify';
+import { registerListImportRoutes } from '../lib/list-import-routes.mjs';
 
 const row=(id=1,type='anime')=>({[`${type}_id`]:id,[`${type}_title`]:`Obra ${id}`,status:1,score:8,num_watched_episodes:5,num_read_chapters:12,num_read_volumes:2,[`${type}_image_path`]:'https://cdn.myanimelist.net/images/test.jpg'});
 const json=value=>new Response(JSON.stringify(value),{headers:{'content-type':'application/json'}});
 const profile=new Response(`<meta property="og:title" content="Tester&#039;s Profile - MyAnimeList.net">`);
+
+test('preview survives the short API connection timeout without changing other routes',async()=>{
+  const app=Fastify({connectionTimeout:30});
+  registerListImportRoutes(app,{requireUser:async()=>({id:'test'}),rateForUser:()=>({}),q:async()=>({rows:[]}),
+    fetchAniList:async()=>{await new Promise(resolve=>setTimeout(resolve,150));return[]}});
+  await app.listen({host:'127.0.0.1',port:0});
+  try{
+    const response=await fetch(`http://127.0.0.1:${app.server.address().port}/api/me/list-imports/preview`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({service:'ANILIST',username:'Tester',types:['ANIME'],strategy:'KEEP'})});
+    assert.equal(response.status,200);assert.equal((await response.json()).itemCount,0);
+    assert.equal(app.server.timeout,30,'global API deadline must remain unchanged');
+  }finally{await app.close()}
+});
 test('MAL public import reads every page and keeps anime and manga progress separate',async()=>{
   const calls=[];
   const result=await fetchMalEntries({username:'tester',fetchImpl:async(url,options)=>{calls.push(url);assert.equal(options.credentials,'omit');assert.equal(options.redirect,'error');if(url.includes('/profile/'))return profile.clone();if(url.includes('/mangalist/'))return json([row(1,'manga')]);return json(url.includes('offset=0')?Array.from({length:300},(_,i)=>row(i+1)):[row(301)])}});
