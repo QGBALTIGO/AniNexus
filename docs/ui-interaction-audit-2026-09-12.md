@@ -14,6 +14,7 @@ Base: `0e54b1c`. Correções aplicadas nos componentes canônicos existentes, se
 | Cliques rápidos em personagens | Duas intenções podiam ultrapassar a verificação de pendência durante o await de autenticação. | Nova checagem após autenticação e descarte de elementos desconectados; Home também emite o evento compartilhado de alteração. |
 | Detalhe em cache | O mesmo detalhe em cache era desenhado duas vezes na mesma chamada. | Retorno após a primeira renderização, evitando reconstrução redundante. |
 | Texto e acessibilidade | “há 1 dias” e resposta sem nome acessível quando o texto estava oculto no celular. | Singular correto e aria-label independente do texto visível. |
+| Âncora de Contato | O roteador interceptava `#formulario` como navegação para a raiz antes do manipulador da página. No Pages, o prefixo da base também alterava a âncora. | Links locais são preservados pela normalização e pelo clique dos roteadores. O teste clica em “Enviar mensagem”, confere o scroll e confirma que a URL não mudou, em quatro larguras. |
 
 ## Verificação local executada
 
@@ -21,6 +22,7 @@ Base: `0e54b1c`. Correções aplicadas nos componentes canônicos existentes, se
 - Chromium: suíte completa de `e2e`, `accessibility`, `media-actions` e `community-overview`: **134 aprovados, 5 skips condicionais, nenhuma falha** (8,5 min).
 - Firefox e WebKit: recorte de navegação/scroll, elenco, botões, respostas, comentários de notícias e conquistas: **12 aprovados, 2 skips condicionais, nenhuma falha**. Os skips são o cenário autenticado de ranking Home sob a ponte estática local; esse cenário passou no Chromium completo.
 - Teste final de respostas, com singular e nome acessível: **1/1 aprovado no Chromium**.
+- Complemento após encontrar a âncora de Contato: navegação geral, restauração de scroll e ações institucionais nos três navegadores: **9/9 aprovados**; `check`, build e validação do artefato repetidos e aprovados.
 - `build:public` e `validate:deploy`: aprovados. O build aplica um fingerprint de conteúdo comum ao shell e aos carregadores dinâmicos; não depende de aumentar manualmente cada query string.
 - Inspeção visual de Colabore no celular e das respostas com spoilers realizada. Capturas ficam nos artefatos locais dos testes.
 

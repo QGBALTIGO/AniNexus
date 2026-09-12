@@ -1451,6 +1451,13 @@ test('institutional actions and search dismissal remain aligned at every viewpor
       const icons=await page.locator('.nx-inst-btn svg').evaluateAll(items=>items.map(icon=>{const i=icon.getBoundingClientRect(),b=icon.parentElement.getBoundingClientRect();return{size:i.width,dy:Math.abs((b.top+b.bottom-i.top-i.bottom)/2),inside:i.left>=b.left&&i.right<=b.right,fill:getComputedStyle(icon).fill}}));
       for(const icon of icons){expect(icon.size).toBeLessThanOrEqual(20);expect(icon.dy).toBeLessThanOrEqual(1);expect(icon.inside).toBe(true);expect(icon.fill).toBe('none')}
       await noOverflow(page,2);
+      if(path==='/contato'){
+        const before=page.url();
+        await page.locator('.nx-inst-hero-actions [data-nx-inst]').click();
+        await expect.poll(()=>page.locator('#formulario').evaluate(element=>Math.abs(element.getBoundingClientRect().top))).toBeLessThan(120);
+        expect(page.url()).toBe(before);
+        await expect(page.locator('#nxContactForm')).toBeVisible();
+      }
     }
     if(await page.getByRole('button',{name:'Abrir menu',exact:true}).isVisible()){
       await page.evaluate(()=>window.AniNexusAuthV38.syncDrawerIdentity({id:'alignment-member',username:'member',firstName:'Member'}));

@@ -37,7 +37,7 @@
     if(p)return p.split('?')[0].replace(/\/+$/,'')||'/';
     let path=location.pathname;if(IS_PAGES)path=path.replace(/^\/AniNexus/,'')||'/';return path.replace(/\/+$/,'')||'/';
   }
-  const href=p=>`${BASE}${p}`;
+  const href=p=>p.startsWith('#')?p:`${BASE}${p}`;
   function goto(path){if(!window.AniNexusGo?.(BASE+path,{popstate:false}))location.assign(BASE+path)}
   const button=(label,path,primary=false)=>`<a class="nx-inst-btn${primary?' primary':''}" href="${href(path)}" data-nx-inst="${path}">${label}${ICON.arrow}</a>`;
   function socialCards(){return `<div class="nx-inst-socials">${Object.entries(SOCIAL).map(([k,s])=>`<a class="nx-inst-social" href="${s.url}" target="_blank" rel="noopener noreferrer"><div class="top"><span class="social-icon">${ICON[k]}</span><span class="arrow">↗</span></div><strong>${s.label}</strong><span>${s.handle}</span></a>`).join('')}</div>`}
