@@ -1907,7 +1907,7 @@ html[data-theme=light] .nx45-ranking-empty{border-color:rgba(55,137,116,.2);back
 .search-modal-head>div{min-width:0}
 .search-modal-head span{display:block;color:#e74a6f;font-size:8px;font-weight:900;letter-spacing:.1em}
 .search-modal-head h2{margin:3px 0 0;color:#f4eef1;font:800 19px/1.15 'Nunito Sans',sans-serif;letter-spacing:0}
-.search-close{width:34px;height:34px;flex:none;display:grid;place-items:center;border:1px solid rgba(255,255,255,.1);border-radius:50%;background:rgba(255,255,255,.035);color:#c8bdc3;cursor:pointer}
+.search-close{box-sizing:border-box;width:34px;height:34px;min-width:34px;min-height:34px;flex:none;padding:0;line-height:1;display:grid;place-items:center;border:1px solid rgba(255,255,255,.1);border-radius:50%;background:rgba(255,255,255,.035);color:#c8bdc3;cursor:pointer}
 .search-close:hover{background:rgba(239,68,105,.1);border-color:rgba(239,68,105,.3);color:#fff}
 .search-close svg{width:16px;height:16px}
 .search-input-row{height:48px;margin:0 18px 10px;padding:0 12px;border:1px solid rgba(255,255,255,.12);border-radius:7px;background:#08070a;color:#8d8087}

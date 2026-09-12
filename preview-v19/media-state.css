@@ -9,7 +9,7 @@
 .nx20-media-layer button:focus-visible,.nx20-media-layer input:focus-visible{outline:2px solid #ff8fa8;outline-offset:3px}
 .nx20-media-layer button:disabled{opacity:.4;cursor:default}
 .nx20-media-layer svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.nx20-close{position:absolute;right:16px;top:16px;width:34px;height:34px;border-radius:50%;border:1px solid var(--nx-line);background:var(--nx-panel-2);color:var(--nx-muted);display:grid;place-items:center;z-index:2}
+.nx20-close{position:absolute;right:16px;top:16px;width:34px;height:34px;min-width:34px;min-height:34px;padding:0;line-height:1;border-radius:50%;border:1px solid var(--nx-line);background:var(--nx-panel-2);color:var(--nx-muted);display:grid;place-items:center;z-index:2}
 .nx20-head{display:flex;gap:14px;align-items:center;padding-right:32px;min-height:88px}
 .nx20-head img{flex:none;width:60px;height:86px;object-fit:cover;border-radius:5px;background:var(--nx-panel-2)}
 .nx20-head>div{min-width:0}

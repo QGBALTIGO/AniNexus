@@ -83,7 +83,9 @@ body.nx48-achievements-scroll-down .nx48-achievements-island{top:0}.nx48-achieve
 .nx48-profile-pin>span:last-child{display:grid;gap:1px}.nx48-profile-pin strong{font-size:10px}.nx48-profile-pin small{color:#958990;font-size:8px}
 .nx42-achievements.nx48-profile-achievements{grid-template-columns:repeat(3,minmax(0,1fr))}
 .nx48-profile-achievements>article{position:relative;align-items:center}.nx48-profile-achievements>article.is-target{border-color:rgba(232,68,100,.6);box-shadow:0 0 0 2px rgba(232,68,100,.12)}
-.nx48-profile-achievements>article>div{display:grid;gap:3px}.nx48-profile-achievements>article small{color:#dcb860;font-size:8px;font-weight:800}
+.nx48-profile-achievements>article>div{display:grid;gap:3px;min-width:0}.nx48-profile-achievements>article small{color:#dcb860;font-size:8px;font-weight:800}
+.nx48-profile-achievements .nx48-badge{display:grid;margin:0;color:#fff;line-height:1}
+.nx48-profile-achievements .nx48-badge svg{display:block;width:23px;height:23px;stroke:currentColor}
 
 html[data-theme=light] body.nx48-achievements-active{background:#fffafb!important}
 html[data-theme=light] .nx48-achievements-page{--ach-bg:#fffafb;--ach-panel:#fff;--ach-panel-strong:#fff7f9;--ach-line:rgba(54,35,44,.14);--ach-muted:#756970;--ach-text:#271a21;background:#fffafb}

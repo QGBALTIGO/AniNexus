@@ -125,11 +125,13 @@
       const button=event.target.closest('[data-character-favorite]');if(!button)return;
       const id=Number(button.dataset.characterFavorite),item=characterState.items.find(candidate=>candidate.id===id);if(!item||characterState.pending.has(id))return;
       if(!await requireAccount())return;
+      if(characterState.pending.has(id)||!root.isConnected)return;
       const wasFavorite=characterState.favorites.has(id),previousCount=Number(item.favoriteCount)||0,nextFavorite=!wasFavorite;
       nextFavorite?characterState.favorites.add(id):characterState.favorites.delete(id);item.favoriteCount=Math.max(0,previousCount+(nextFavorite?1:-1));characterState.pending.add(id);draw(id,true);
       try{
         const result=await privateJson(`/api/me/character-favorites/${id}`,{method:nextFavorite?'PUT':'DELETE',headers:nextFavorite?{'content-type':'application/json'}:{},body:nextFavorite?JSON.stringify({name:item.name||'',nativeName:item.nativeName||'',image:item.image||'',work:item.work||'',mediaId:Number(item.mediaId)||undefined,mediaType:item.mediaType==='MANGA'?'MANGA':'ANIME'}):undefined});
         item.favoriteCount=Math.max(0,Number(result?.favoriteCount)||0);characterState.pending.delete(id);draw(id,true);
+        dispatchEvent(new CustomEvent('aninexus:character-favorites-changed',{detail:{characterId:id,favorite:nextFavorite}}));
       }catch(error){
         nextFavorite?characterState.favorites.delete(id):characterState.favorites.add(id);item.favoriteCount=previousCount;characterState.pending.delete(id);draw(id);if(error?.status===401)setTimeout(()=>go('/login'),350);
       }

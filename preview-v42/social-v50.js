@@ -57,7 +57,7 @@
     if (elapsed < 60_000) return 'agora';
     if (elapsed < 3_600_000) return `há ${Math.max(1, Math.floor(elapsed / 60_000))} min`;
     if (elapsed < 86_400_000) return `há ${Math.floor(elapsed / 3_600_000)} h`;
-    if (elapsed < 604_800_000) return `há ${Math.floor(elapsed / 86_400_000)} dias`;
+    if (elapsed < 604_800_000) { const days = Math.floor(elapsed / 86_400_000); return `há ${days} ${days === 1 ? 'dia' : 'dias'}`; }
     return new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short' }).format(new Date(timestamp)).replace('.', '');
   };
   const avatar = item => {
@@ -282,7 +282,7 @@
   function replyCard(item, type, parentName = '', own = false, canModerate = false) {
     const depth = Math.min(2, Math.max(0, Number(item.depth) || 0));
     const username = handle(item), name = actor(item);
-    return `<article class="nx50-reply" style="--nx50-depth:${depth}" data-nx50-reply="${esc(item.id)}"><header><i>${avatar(item)}</i><div class="nx50-author"><div class="nx50-byline">${username ? `<a href="${pageUrl(`/u/${encodeURIComponent(username)}`)}">@${esc(username)}</a>` : `<strong>${esc(name)}</strong>`}<time>${esc(relative(item.created_at))}${item.edited_at ? ' · editado' : ''}</time></div>${Number(item.depth) >= 3 && parentName ? `<span>@${esc(username || name)} respondeu a @${esc(parentName)}</span>` : ''}</div><div class="nx50-card-actions">${itemActions(item, type, own, canModerate)}</div></header><p class="nx50-body">${renderBody(item)}</p><footer><button type="button" class="nx50-like" data-nx50-like="${type}:${esc(item.id)}" aria-pressed="false" aria-label="Curtir resposta">${ICON.heart}<b>${Number(item.likes_count ?? item.likesCount) || 0}</b></button><button type="button" class="nx50-reply-action" data-nx50-reply-to="${esc(item.id)}" data-nx50-reply-name="${esc(username || name)}">${ICON.reply}<span>Responder</span></button></footer></article>`;
+    return `<article class="nx50-reply" style="--nx50-depth:${depth}" data-nx50-reply="${esc(item.id)}"><header><i>${avatar(item)}</i><div class="nx50-author"><div class="nx50-byline">${username ? `<a href="${pageUrl(`/u/${encodeURIComponent(username)}`)}">@${esc(username)}</a>` : `<strong>${esc(name)}</strong>`}<time>${esc(relative(item.created_at))}${item.edited_at ? ' · editado' : ''}</time></div>${Number(item.depth) >= 3 && parentName ? `<span>@${esc(username || name)} respondeu a @${esc(parentName)}</span>` : ''}</div><div class="nx50-card-actions">${itemActions(item, type, own, canModerate)}</div></header><p class="nx50-body">${renderBody(item)}</p><footer><button type="button" class="nx50-like" data-nx50-like="${type}:${esc(item.id)}" aria-pressed="false" aria-label="Curtir resposta">${ICON.heart}<b>${Number(item.likes_count ?? item.likesCount) || 0}</b></button><button type="button" class="nx50-reply-action" aria-label="Responder a @${esc(username || name)}" data-nx50-reply-to="${esc(item.id)}" data-nx50-reply-name="${esc(username || name)}">${ICON.reply}<span>Responder</span></button></footer></article>`;
   }
 
   function composerMarkup(kind) {

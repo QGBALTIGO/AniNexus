@@ -1441,6 +1441,51 @@ test('visitors reach login before publishing impressions or news comments',async
   const slug='comentario-de-visitante-teste';await page.route(`**/api/news/${slug}`,route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({id:'visitor-news',slug,title:'Notícia de teste',summary:'Resumo de teste.',event_type:'ANIME',source_name:'AniNexus Notícias',language:'pt-BR',published_at:new Date().toISOString(),facts:[],body:{sections:[{heading:'Atualização',paragraphs:['Conteúdo de teste para comentários.']}]}})}));await page.route(new RegExp(`/api/news/${slug}/comments(?:\\?.*)?$`),route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:[],sort:'popular',hideSpoilers:true})}));await page.goto(firstVisitUrl(`/noticias/${slug}`),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx50-news-comments .nx50-login-prompt')).toBeVisible({timeout:30000});await expect(page.locator('.nx42-news-comment-form')).toHaveCount(0);await page.getByRole('button',{name:'Entre na sua conta para publicar um comentário'}).click();await page.waitForURL(url=>{const current=new URL(url);return current.searchParams.get('p')==='/login'||current.pathname.replace(/\/+$/,'').endsWith('/login')},{timeout:15000});expect(writes).toHaveLength(0);
 });
 
+test('institutional actions and search dismissal remain aligned at every viewport',async({page},testInfo)=>{
+  test.setTimeout(120000);
+  for(const width of [360,390,768,1440]){
+    await page.setViewportSize({width,height:900});
+    for(const path of ['/colabore','/contato','/quem-somos','/dmca']){
+      await page.goto(pageUrl(path),{waitUntil:'domcontentloaded'});
+      await expect(page.locator('.nx-inst,.nx-legal').first()).toBeVisible({timeout:20000});
+      const icons=await page.locator('.nx-inst-btn svg').evaluateAll(items=>items.map(icon=>{const i=icon.getBoundingClientRect(),b=icon.parentElement.getBoundingClientRect();return{size:i.width,dy:Math.abs((b.top+b.bottom-i.top-i.bottom)/2),inside:i.left>=b.left&&i.right<=b.right,fill:getComputedStyle(icon).fill}}));
+      for(const icon of icons){expect(icon.size).toBeLessThanOrEqual(20);expect(icon.dy).toBeLessThanOrEqual(1);expect(icon.inside).toBe(true);expect(icon.fill).toBe('none')}
+      await noOverflow(page,2);
+    }
+    if(await page.getByRole('button',{name:'Abrir menu',exact:true}).isVisible()){
+      await page.evaluate(()=>window.AniNexusAuthV38.syncDrawerIdentity({id:'alignment-member',username:'member',firstName:'Member'}));
+      await page.getByRole('button',{name:'Abrir menu',exact:true}).click();
+      await page.locator('[data-nx-drawer-search]').click();
+    }else{
+      await page.locator('#topbar [data-action="search"]').click();
+    }
+    const close=page.locator('.search-close');await expect(close).toBeVisible();
+    const closeBox=await close.boundingBox();expect(Math.abs(closeBox.width-closeBox.height)).toBeLessThanOrEqual(1);
+    await close.click();await expect(close).toBeHidden();
+  }
+});
+
+test('impression replies keep compact aligned text including nested spoilers',async({page},testInfo)=>{
+  const now=new Date().toISOString(),rootId='51000000-0000-4000-8000-000000000001';
+  const root={id:rootId,body:'Estou curioso sobre a obra.',username:'diego',created_at:new Date(Date.now()-86_400_000).toISOString(),status_snapshot:'PLANNING',replies_count:2};
+  const replies=[{id:'51000000-0000-4000-8000-000000000002',body:'Teste',username:'diego',created_at:now,depth:0},{id:'51000000-0000-4000-8000-000000000003',body:'Resposta com ||um segredo|| e texto depois.',username:'reader',created_at:now,depth:2}];
+  await page.route(/\/api\/anime\/101\/impressions(?:\?.*)?$/,route=>route.fulfill({json:{items:[root]}}));
+  await page.route(`**/api/impressions/${rootId}/replies?**`,route=>route.fulfill({json:{items:replies}}));
+  await page.route('**/api/me/likes?**',route=>route.fulfill({json:{items:[]}}));
+  await page.goto(pageUrl('/anime/anime-teste-101'),{waitUntil:'domcontentloaded'});
+  await page.getByRole('tab',{name:'Impressões'}).click();await page.getByRole('button',{name:'Abrir respostas'}).click();
+  await expect(page.locator('.nx50-reply')).toHaveCount(2);
+  await expect(page.locator('.nx50-card > header time')).toHaveText('há 1 dia');
+  await expect(page.locator('.nx50-reply').first().getByRole('button',{name:'Responder a @diego',exact:true})).toBeVisible();
+  for(const width of [360,390,768,1440]){
+    await page.setViewportSize({width,height:900});
+    const layouts=await page.locator('.nx50-reply').evaluateAll(items=>items.map(item=>{const byline=item.querySelector('.nx50-author').getBoundingClientRect(),body=item.querySelector('.nx50-body').getBoundingClientRect(),footer=item.querySelector('footer').getBoundingClientRect();return{bodyGap:body.top-byline.bottom,footerGap:footer.top-body.bottom,alignment:Math.abs(body.left-byline.left)}}));
+    for(const layout of layouts){expect(layout.bodyGap).toBeLessThanOrEqual(6);expect(layout.footerGap).toBeLessThanOrEqual(5);expect(layout.alignment).toBeLessThanOrEqual(1)}
+    await noOverflow(page,2);
+    if(width===390)await page.locator('.nx50-list').screenshot({path:testInfo.outputPath('compact-replies-mobile.png')});
+  }
+});
+
 test('news community comments reuse the complete social system on mobile',async({page},testInfo)=>{
   const slug='comentarios-sociais-teste',rootId='41000000-0000-4000-8000-000000000001',replyId='41000000-0000-4000-8000-000000000002',otherId='41000000-0000-4000-8000-000000000003',now=new Date().toISOString();
   const items=[
@@ -1967,6 +2012,8 @@ test('public profile deep-links to an unlocked achievement and shows three pinne
   await page.route('**/runtime-config.js*',route=>route.fulfill({status:200,contentType:'application/javascript',body:`window.__ANINEXUS_CONFIG__=Object.freeze({environment:'test',siteOrigin:'https://qgbaltigo.github.io/AniNexus',apiOrigin:'https://graphql.anilist.co',clerkPublishableKey:'pk_test_profile',authEnabled:true});`}));
   await page.route('**/api/users/kayky',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({profile:{username:'kayky',displayName:'Kayky',avatarUrl:pixel,bannerUrl:pixel,bio:'Anime, mangá e boas conversas.',role:'user',privacy:'public',isPrivate:false,showLibrary:false,showActivity:false,showStats:false,createdAt:'2026-01-01T00:00:00.000Z',equippedTitle:collection.equippedTitle},rank:collection.level,achievements:collection.items.filter(item=>item.unlocked),pinnedAchievements:collection.pins.map(id=>collection.items.find(item=>item.id===id)),stats:null,library:[],mangaLibrary:[],activity:[],impressions:[]})}));
   await page.goto(pageUrl(`/u/kayky?tab=achievements&achievement=${target}`),{waitUntil:'domcontentloaded'});const profile=page.locator('.nx38p-page'),targetCard=profile.locator(`[data-public-achievement-id="${target}"]`);await expect(profile).toBeVisible({timeout:15000});await expect(profile.locator('.nx48-profile-title')).toHaveText('Enciclopédia Viva');await expect(profile.locator('.nx48-profile-pin')).toHaveCount(3);await expect(profile.locator('[data-profile-panel="achievements"]')).toHaveClass(/active/);await expect(targetCard).toHaveClass(/is-target/);await expect(targetCard).toContainText('Enciclopédia Viva');await expect(targetCard).toContainText('Concluiu 100 animes.');await noOverflow(page,2);
+  const badges=await profile.locator('.nx48-profile-achievements .nx48-badge').evaluateAll(items=>items.map(item=>{const badge=item.getBoundingClientRect(),icon=item.querySelector('svg').getBoundingClientRect();return{dx:Math.abs((badge.left+badge.right-icon.left-icon.right)/2),dy:Math.abs((badge.top+badge.bottom-icon.top-icon.bottom)/2)}}));
+  expect(badges.length).toBeGreaterThan(0);for(const badge of badges){expect(badge.dx).toBeLessThanOrEqual(1);expect(badge.dy).toBeLessThanOrEqual(1)}
 });
 
 test('anime rankings and list hub share one responsive dedicated renderer',async({page})=>{

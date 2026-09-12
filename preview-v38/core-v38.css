@@ -15,7 +15,7 @@ html.nx38-offline body:after{content:'Você está offline';position:fixed;z-inde
 
 /* Shared sizing for ordinary controls only. Media actions are excluded because V39 owns them. */
 @media(max-width:760px){
-  :where(button,.btn,.login-btn,.signup-btn,.icon-button,.menu-btn):not([data-list]):not([data-nx-list]):not([data-nx-detail-list]):not([data-nx18-status]):not([data-nx17-list]):not([data-fav]):not([data-nx-fav]):not([data-nx-detail-fav]):not([data-nx18-fav]):not([data-nx17-fav]){min-height:40px}
+  :where(:is(button,.btn,.login-btn,.signup-btn,.icon-button,.menu-btn):not([data-list]):not([data-nx-list]):not([data-nx-detail-list]):not([data-nx18-status]):not([data-nx17-list]):not([data-fav]):not([data-nx-fav]):not([data-nx-detail-fav]):not([data-nx18-fav]):not([data-nx17-fav])){min-height:40px}
   :where(.nx24-rail,.aqx-rail,.nx35-news-side,[data-scroll-rail]){scroll-snap-type:x proximity}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}

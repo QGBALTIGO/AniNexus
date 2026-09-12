@@ -3,6 +3,8 @@ import fs from 'node:fs/promises';
 import crypto from 'node:crypto';
 import pg from 'pg';
 import { getCommunityOverview } from '../lib/community-overview.mjs';
+import { setCharacterFavorite } from '../lib/character-ranking.mjs';
+import { pool } from '../lib/db.mjs';
 
 const connectionString=process.env.MEDIA_TEST_DATABASE_URL;
 if(!connectionString)throw new Error('MEDIA_TEST_DATABASE_URL is required');
@@ -42,6 +44,19 @@ try{
   assert.deepEqual(overview.totals,{works:0,reactions:0,completed:0,impressions:0,ratings:0});
   const alice=crypto.randomUUID(),bob=crypto.randomUUID(),privateUser=crypto.randomUUID(),hidden=crypto.randomUUID();
   await client.query(`INSERT INTO users(id,username) VALUES($1,'alice'),($2,'bob'),($3,'private'),($4,'hidden')`,[alice,bob,privateUser,hidden]);
+  for(const file of ['020_character_favorites.sql','023_character_favorite_metadata.sql'])await client.query(await fs.readFile(new URL(`../sql/${file}`,import.meta.url),'utf8'));
+  const originalQuery=pool.query;
+  try{
+    pool.query=(sql,params)=>client.query(sql,params);
+    for(const [id,mediaType] of [[999991,'ANIME'],[999992,'MANGA']]){
+      const metadata={name:'Personagem descoberto no elenco',mediaId:101,mediaType};
+      await setCharacterFavorite(alice,id,true,metadata);await setCharacterFavorite(bob,id,true,metadata);
+      assert.deepEqual(await setCharacterFavorite(alice,id,false),{characterId:id,favorite:false,favoriteCount:1});
+      assert.equal((await setCharacterFavorite(alice,id,false)).favoriteCount,1);
+      assert.equal((await client.query('SELECT user_id FROM character_favorites WHERE character_id=$1',[id])).rows[0].user_id,bob);
+      await setCharacterFavorite(bob,id,false);
+    }
+  }finally{pool.query=originalQuery}
   await client.query(`UPDATE users SET privacy='private' WHERE id=$1`,[privateUser]);
   await client.query(`UPDATE users SET show_stats=false,show_activity=false WHERE id=$1`,[hidden]);
   await client.query(`INSERT INTO media_cache VALUES(101,'ANIME','{"title":"Anime","cover":"https://example.test/anime.jpg","studios":[{"name":"Studio A"}]}'),(101,'MANGA','{"title":"Manga","cover":"https://example.test/manga.jpg"}')`);

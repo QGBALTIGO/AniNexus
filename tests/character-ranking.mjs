@@ -1,7 +1,29 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import fs from 'node:fs';
-import { hydrateCharacterFavorites, rankCharacterCatalog } from '../lib/character-ranking.mjs';
+import { hydrateCharacterFavorites, rankCharacterCatalog, setCharacterFavorite } from '../lib/character-ranking.mjs';
+import { pool } from '../lib/db.mjs';
+
+test('detail characters can be favorited then removed repeatedly without metadata',async t=>{
+  const saved=new Set();
+  t.mock.method(pool,'query',async(sql,params)=>{
+    if(sql.startsWith('INSERT INTO character_favorites'))saved.add(`${params[0]}:${params[1]}`);
+    else if(sql.startsWith('DELETE FROM character_favorites'))saved.delete(`${params[0]}:${params[1]}`);
+    else if(sql.startsWith('SELECT count(*)'))return{rows:[{favorite_count:[...saved].filter(key=>key.endsWith(`:${params[0]}`)).length}]};
+    else throw new Error(`Unexpected query: ${sql}`);
+    return{rows:[]};
+  });
+  for(const mediaType of ['ANIME','MANGA']){
+    const id=mediaType==='ANIME'?999991:999992;
+    const metadata={name:'Personagem fora do ranking inicial',mediaId:101,mediaType};
+    assert.equal((await setCharacterFavorite('member',id,true,metadata)).favorite,true);
+    await setCharacterFavorite('other',id,true,metadata);
+    assert.deepEqual(await setCharacterFavorite('member',id,false),{characterId:id,favorite:false,favoriteCount:1});
+    assert.equal((await setCharacterFavorite('member',id,false)).favoriteCount,1);
+    assert.equal(saved.has(`other:${id}`),true);
+  }
+  assert.equal(await setCharacterFavorite('member',999993,true,null),null);
+});
 
 const catalog=JSON.parse(fs.readFileSync(new URL('../data/characters.json',import.meta.url),'utf8'));
 
