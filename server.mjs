@@ -158,24 +158,26 @@ const resolveMediaSummaryBatches=async(ids,type)=>{
   return resolved;
 };
 const repairAniListTransferMedia=async(userId,type,ids)=>{
-  if(!userId||!ids.length)return new Map();
+  if(!userId||!ids.length)return{items:new Map(),source:null};
   const transfer=await q(`SELECT source_username FROM list_transfers WHERE user_id=$1 AND direction='IMPORT' AND service='ANILIST' AND status='COMPLETED' AND source_username IS NOT NULL AND media_type IN ('ALL',$2) ORDER BY completed_at DESC NULLS LAST,created_at DESC LIMIT 1`,[userId,type]).catch(()=>({rows:[]}));
-  const username=String(transfer.rows?.[0]?.source_username||'');if(!username)return new Map();
+  const username=String(transfer.rows?.[0]?.source_username||'');if(!username)return{items:new Map(),source:null};
   try{
-    const wanted=new Set(ids),entries=(await fetchAniListEntries({username,types:[type],timeoutMs:Number(process.env.UPSTREAM_TIMEOUT_MS||9000)})).filter(entry=>wanted.has(entry.mediaId));
+    const wanted=new Set(ids),imported=await fetchAniListEntries({username,types:[type],timeoutMs:Number(process.env.UPSTREAM_TIMEOUT_MS||9000)}),source=imported.source||'GRAPHQL',entries=imported.filter(entry=>wanted.has(entry.mediaId));
     if(entries.length)await persistImportedMedia(q,entries);
-    return new Map(entries.map(entry=>[entry.mediaId,{...(entry.media||{}),id:entry.mediaId,mediaType:type,title:entry.title||entry.media?.title||''}]).filter(([,media])=>mediaHasTitle(media)));
-  }catch(error){app.log.warn({err:error,userId,mediaType:type},'AniList transfer metadata repair failed');return new Map()}
+    return{source,items:new Map(entries.map(entry=>[entry.mediaId,{...(entry.media||{}),id:entry.mediaId,mediaType:type,title:entry.title||entry.media?.title||''}]).filter(([,media])=>mediaHasTitle(media)))};
+  }catch(error){app.log.warn({err:error,userId,mediaType:type},'AniList transfer metadata repair failed');return{items:new Map(),source:null}}
 };
 const hydrateCommunityMedia=async(rows,defaultType='ANIME',ownerId=null)=>{
-  const normalized=withActorAvatars(rows),missingByType=new Map();
-  for(const row of normalized){if(!row?.media_id||usableMediaSummary(row.media))continue;const type=String(row.media_type||defaultType).toUpperCase()==='MANGA'?'MANGA':'ANIME',ids=missingByType.get(type)||new Set();ids.add(Number(row.media_id));missingByType.set(type,ids)}
+  const normalized=withActorAvatars(rows),missingByType=new Map(),existingByType=new Map();
+  for(const row of normalized){if(!row?.media_id||usableMediaSummary(row.media))continue;const type=String(row.media_type||defaultType).toUpperCase()==='MANGA'?'MANGA':'ANIME',ids=missingByType.get(type)||new Set(),existing=existingByType.get(type)||new Map();ids.add(Number(row.media_id));existing.set(Number(row.media_id),row.media||null);missingByType.set(type,ids);existingByType.set(type,existing)}
   if(!missingByType.size)return normalized;
   try{
     const resolvedByType=new Map();
     await Promise.all([...missingByType].map(async([type,ids])=>{
-      const requested=[...ids].filter(Number.isSafeInteger),resolved=await resolveMediaSummaryBatches(requested,type),missingTitles=requested.filter(id=>!mediaHasTitle(resolved.get(id)));
-      if(missingTitles.length){const repaired=await repairAniListTransferMedia(ownerId,type,missingTitles);for(const [id,media] of repaired)resolved.set(id,media)}
+      const requested=[...ids].filter(Number.isSafeInteger),resolved=new Map(),repaired=await repairAniListTransferMedia(ownerId,type,requested),existing=existingByType.get(type)||new Map();
+      for(const [id,media] of repaired.items)resolved.set(id,{...(existing.get(id)||{}),...media});
+      const unresolved=requested.filter(id=>{const media=resolved.get(id)||existing.get(id);return repaired.source==='PUBLIC_PAGE'?!mediaHasTitle(media):!usableMediaSummary(media)});
+      if(unresolved.length){const providerMedia=await resolveMediaSummaryBatches(unresolved,type);for(const [id,media] of providerMedia)resolved.set(id,{...(existing.get(id)||{}),...(resolved.get(id)||{}),...media})}
       resolvedByType.set(type,resolved);
     }));
     return normalized.map(row=>{if(usableMediaSummary(row.media))return row;const type=String(row.media_type||defaultType).toUpperCase()==='MANGA'?'MANGA':'ANIME',resolved=resolvedByType.get(type)?.get(Number(row.media_id));return resolved?{...row,media:{...(row.media||{}),...resolved}}:row});
