@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T21:52:46.406Z",
+  "generatedAt": "2026-09-12T00:02:42.308Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 34,
+      "count": 35,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,1461 @@
     }
   ],
   "stats": {
-    "collected": 44,
-    "grouped": 17,
-    "published": 17,
-    "newStories": 17,
-    "fullArticles": 17,
+    "collected": 45,
+    "grouped": 19,
+    "published": 19,
+    "newStories": 19,
+    "fullArticles": 19,
     "previewArticles": 0,
-    "avgWords": 297,
-    "withHeroImage": 17,
-    "withOrderedMedia": 15,
+    "avgWords": 335,
+    "withHeroImage": 19,
+    "withOrderedMedia": 18,
     "skippedTranslation": 0,
-    "skippedQuality": 27,
-    "durationMs": 2464
+    "skippedQuality": 26,
+    "durationMs": 3120
   },
   "items": [
+    {
+      "id": "jbox-3dbf5f90",
+      "slug": "critica-uma-bruxa-na-mongolia-volume-1-panini-jbox-3dbf5f90",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Crítica | Uma Bruxa na Mongólia – Volume 1 | Panini",
+      "originalTitle": "Crítica | Uma Bruxa na Mongólia – Volume 1 | Panini",
+      "summary": "Toda obra tem a capacidade de apresentar uma determinada cultura para quem a consome. No caso de animês e mangás, o foco costuma ser nos costumes e tradições do Japão, demonstradas em tela com entidades que fazem parte do folclore do país, modos de falar e vestir, entre outras coisas. Porém, de vez em quando, obras produzidas por lá mostram a cultura de outro local, e este é o caso de Uma Bruxa na Mongólia, mangá que chegou recentemente ao Brasil pela editora Panini.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Mangá",
+        "Resenha",
+        "Jaadugar: A Witch in Mongolia",
+        "Mangá Uma Bruxa na Mongólia",
+        "mangás da Panini",
+        "Panini",
+        "Primeiro volume de Uma Bruxa na Mongólia",
+        "Tenmaku no Jaadugar",
+        "Tomato Soup",
+        "Uma Bruxa na Mongólia"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/11/critica-uma-bruxa-na-mongolia-volume-1-panini",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/11/critica-uma-bruxa-na-mongolia-volume-1-panini",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/jbox-critica-destacada-umabruxanamongoliavolume1.jpg",
+      "mediaQuery": "Crítica | Uma Bruxa na Mongólia – Volume 1 | Panini",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Uma-Bruxa-na-Mongolia-08-scaled.jpg",
+          "alt": "Uma Bruxa na Mongólia, volume 1",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Uma-Bruxa-na-Mongolia-12-scaled.jpg",
+          "alt": "Uma Bruxa na Mongólia, volume 1",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Uma-Bruxa-na-Mongolia-14-scaled.jpg",
+          "alt": "Uma Bruxa na Mongólia, volume 1",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Uma-Bruxa-na-Mongolia-09-scaled.jpg",
+          "alt": "Uma Bruxa na Mongólia, volume 1",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/umabruxanamongoliacapavolume1.jpg",
+          "alt": "capa de Uma Bruxa na Mongólia Volume 1",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/umabruxanamongoliacapavolume2.jpg",
+          "alt": "capa de Uma Bruxa na Mongólia Volume 2",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Toda obra tem a capacidade de apresentar uma determinada cultura para quem a consome. No caso de animês e mangás, o foco costuma ser nos costumes e tradições do Japão, demonstradas em tela com entidades que fazem parte do folclore do país, modos de falar e vestir, entre outras coisas. Porém, de vez em quando, obras produzidas por lá mostram a cultura de outro local, e este é o caso de Uma Bruxa na Mongólia, mangá que chegou recentemente ao Brasil pela editora Panini.",
+          "runs": [
+            {
+              "text": "Toda obra tem a capacidade de apresentar uma determinada cultura para quem a consome. No caso de animês e mangás, o foco costuma ser nos costumes e tradições do Japão, demonstradas em tela com entidades que fazem parte do folclore do país, modos de falar e vestir, entre outras coisas. Porém, de vez em quando, obras produzidas por lá mostram a cultura de outro local, e este é o caso de "
+            },
+            {
+              "text": "Uma Bruxa na Mongólia",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", mangá que chegou recentemente ao Brasil pela editora "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Escrita e ilustrada pela artista Tomato Soup, a publicação é situada na região do Oriente Médio e Ásia Oriental, no período de expansão do império de Gengis Khan. Neste contexto, a obra explora figuras históricas reais, em uma trama dramática e altamente instigante de acompanhar.",
+          "runs": [
+            {
+              "text": "Escrita e ilustrada pela artista "
+            },
+            {
+              "text": "Tomato Soup",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", a publicação é situada na região do Oriente Médio e Ásia Oriental, no período de expansão do império de "
+            },
+            {
+              "text": "Gengis Khan",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Neste contexto, a obra explora figuras históricas reais, em uma trama dramática e altamente instigante de acompanhar."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "A jornada de Sitara",
+          "runs": [
+            {
+              "text": "A jornada de Sitara"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Uma-Bruxa-na-Mongolia-08-scaled.jpg",
+          "alt": "Uma Bruxa na Mongólia, volume 1"
+        },
+        {
+          "type": "paragraph",
+          "text": "Os traços arredondados dão um aspecto “fofo” aos personagens, mas é no olhar que percebemos o mistério. | Foto: Cakes Sousa/JBox",
+          "runs": [
+            {
+              "text": "Os traços arredondados dão um aspecto “fofo” aos personagens, mas é no olhar que percebemos o mistério. | Foto: Cakes Sousa/JBox"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Desde a primeira página do mangá, a autora usa um traço que mistura fofura e mistério para apresentar Sitara, a protagonista da história. Ainda garotinha, ela é mostrada como uma escrava que é negociada para viver em uma casa. Não sabemos exatamente sua origem, nem quem são seus pais. Porém, a forma do desenho reflete uma característica importante da personagem: ela é, sim, uma menina buscando seu lugar no mundo, mas nem por isso é totalmente inofensiva.",
+          "runs": [
+            {
+              "text": "Desde a primeira página do mangá, a autora usa um traço que mistura fofura e mistério para apresentar "
+            },
+            {
+              "text": "Sitara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", a protagonista da história. Ainda garotinha, ela é mostrada como uma escrava que é negociada para viver em uma casa. Não sabemos exatamente sua origem, nem quem são seus pais. Porém, a forma do desenho reflete uma característica importante da personagem: ela é, sim, uma menina buscando seu lugar no mundo, mas nem por isso é totalmente inofensiva."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em algumas páginas, Sitara passa a ficar com uma determinada família, e é a partir deste momento que a apresentação de uma nova cultura brilha na narrativa de Tomato Soup. Desde roupas, até alimentos, preces e costumes, tudo é recriado de uma forma que se aproxime ao máximo do mesmo período no mundo real. A autora, inclusive, inclui notas de rodapé sobre escolhas de traduções, mostrando que houve uma pesquisa real e respeito pela cultura explorada na história.",
+          "runs": [
+            {
+              "text": "Em algumas páginas, Sitara passa a ficar com uma determinada família, e é a partir deste momento que a apresentação de uma nova cultura brilha na narrativa de Tomato Soup. Desde roupas, até alimentos, preces e costumes, tudo é recriado de uma forma que se aproxime ao máximo do mesmo período no mundo real. A autora, inclusive, inclui notas de rodapé sobre escolhas de traduções, mostrando que houve uma pesquisa real e respeito pela cultura explorada na história."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "É importante dizer, inclusive, que a trajetória de Uma Bruxa na Mongólia é inspirada em acontecimentos reais, depois que Sitara assume o nome de Fátima. Exatamente por isso, é importante não pesquisar sobre a jovem no Google, caso o leitor não queira algum spoiler sobre o que acontece — e que pode ou não ser seguido pelo mangá.",
+          "runs": [
+            {
+              "text": "É importante dizer, inclusive, que a trajetória de "
+            },
+            {
+              "text": "Uma Bruxa na Mongólia",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é inspirada em acontecimentos reais, depois que Sitara assume o nome de "
+            },
+            {
+              "text": "Fátima",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Exatamente por isso, é importante não pesquisar sobre a jovem no Google, caso o leitor não queira algum spoiler sobre o que acontece — e que pode ou não ser seguido pelo mangá."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Uma-Bruxa-na-Mongolia-12-scaled.jpg",
+          "alt": "Uma Bruxa na Mongólia, volume 1"
+        },
+        {
+          "type": "paragraph",
+          "text": "As notas de rodapé detalham escolhas de tradução, termos utilizados e mais. | Foto: Cakes Sousa/JBox",
+          "runs": [
+            {
+              "text": "As notas de rodapé detalham escolhas de tradução, termos utilizados e mais. | Foto: Cakes Sousa/JBox"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "A busca pelo conhecimento",
+          "runs": [
+            {
+              "text": "A busca pelo conhecimento"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Outro ponto interessante tratado por Uma Bruxa na Mongólia é como a busca pelo conhecimento é valorizada, e também permeia a jornada de Sitara. Ao ser negociada como escrava, ela termina indo para uma casa de uma família com linhagem acadêmica, que não separa o estudo da religião. Ao contrário, eles acreditam que a busca pelo conhecimento é algo estimulado pelas entidades em que acreditam, e por isso também desejam que Sitara estude.",
+          "runs": [
+            {
+              "text": "Outro ponto interessante tratado por "
+            },
+            {
+              "text": "Uma Bruxa na Mongólia",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é como a busca pelo conhecimento é valorizada, e também permeia a jornada de Sitara. Ao ser negociada como escrava, ela termina indo para uma casa de uma família com linhagem acadêmica, que não separa o estudo da religião. Ao contrário, eles acreditam que a busca pelo conhecimento é algo estimulado pelas entidades em que acreditam, e por isso também desejam que Sitara estude."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Essa forma de pensar expande o campo narrativo da história, e começa a gerar também os famosos questionamentos sobre o que está previamente estabelecido, especialmente na figura do jovem Muhammad, filho da mulher que acolhe Sitara. Ainda que sua passagem pelo primeiro volume do mangá seja breve, poucos diálogos deixam claro que muito do que ele pensa será explorado com o desenvolver da história.",
+          "runs": [
+            {
+              "text": "Essa forma de pensar expande o campo narrativo da história, e começa a gerar também os famosos questionamentos sobre o que está previamente estabelecido, especialmente na figura do jovem "
+            },
+            {
+              "text": "Muhammad",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", filho da mulher que acolhe Sitara. Ainda que sua passagem pelo primeiro volume do mangá seja breve, poucos diálogos deixam claro que muito do que ele pensa será explorado com o desenvolver da história."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Uma-Bruxa-na-Mongolia-14-scaled.jpg",
+          "alt": "Uma Bruxa na Mongólia, volume 1"
+        },
+        {
+          "type": "paragraph",
+          "text": "O jovem Muhammad aparece somente nos primeiros capítulos, mas fala muito sobre conhecimento. | Foto: Cakes Sousa/JBox",
+          "runs": [
+            {
+              "text": "O jovem Muhammad aparece somente nos primeiros capítulos, mas fala muito sobre conhecimento. | Foto: Cakes Sousa/JBox"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Quando Sitara entende porque ter conhecimento é importante, a história de Uma Bruxa na Mongólia apresenta uma série de acontecimentos que mudam o seu rumo. Até este momento, quem lê acredita que vai acompanhar o crescimento de uma jovem escrava até conquistar um espaço importante onde vive. Parte disso é verdade, mas Tomato Soup sai do caminho óbvio e, ao mesmo tempo em que insere Sitara em situações desafiadoras, instiga o leitor a continuar a jornada para saber o que vai acontecer.",
+          "runs": [
+            {
+              "text": "Quando Sitara entende porque ter conhecimento é importante, a história de"
+            },
+            {
+              "text": " Uma Bruxa na Mongólia",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " apresenta uma série de acontecimentos que mudam o seu rumo. Até este momento, quem lê acredita que vai acompanhar o crescimento de uma jovem escrava até conquistar um espaço importante onde vive. Parte disso é verdade, "
+            },
+            {
+              "text": "mas Tomato Soup sai do caminho óbvio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e, ao mesmo tempo em que insere Sitara em situações desafiadoras, instiga o leitor a continuar a jornada para saber o que vai acontecer."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por ser situada durante o período de Gengis Khan, a obra também não se abstém de mostrar a realidade da guerra e daqueles que são afetados por ela. Para além das mortes em si, muitas pessoas são feitas de refém e, para sobreviver, precisam trabalhar para aqueles que destruíram a realidade que elas conheciam. É um sentimento agridoce, que Sitara experimenta e passa a ter que lidar rapidamente.",
+          "runs": [
+            {
+              "text": "Por ser situada durante o período de Gengis Khan, a obra também não se abstém de mostrar a realidade da guerra e daqueles que são afetados por ela. Para além das mortes em si, muitas pessoas são feitas de refém e, para sobreviver, precisam trabalhar para aqueles que destruíram a realidade que elas conheciam. É um sentimento agridoce, que Sitara experimenta e passa a ter que lidar rapidamente."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Todo esse caminho mostra, ainda no primeiro volume, outros traços de personalidade da protagonista. Diante de situações extremas, ela usa o sorriso fofo e o fato de ser subestimada na maior parte do tempo para observar e, novamente, aprender. Como leitores, acompanhamos junto com ela essa descoberta sobre si mesma, e fica a dúvida de até onde ela conseguirá ir agindo dessa forma.",
+          "runs": [
+            {
+              "text": "Todo esse caminho mostra, ainda no primeiro volume, "
+            },
+            {
+              "text": "outros traços de personalidade da protagonista",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Diante de situações extremas, ela usa o sorriso fofo e o fato de ser subestimada na maior parte do tempo para observar e, novamente, aprender. Como leitores, acompanhamos junto com ela essa descoberta sobre si mesma, e fica a dúvida de até onde ela conseguirá ir agindo dessa forma."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Unindo todas essas características em sete capítulos iniciais, o primeiro volume de Uma Bruxa na Mongólia pode ser considerado um dos lançamentos de mangás mais interessantes do ano, acompanhando também a primeira temporada do animê, em transmissão no Brasil pela Crunchyroll.",
+          "runs": [
+            {
+              "text": "Unindo todas essas características em sete capítulos iniciais, o primeiro volume de "
+            },
+            {
+              "text": "Uma Bruxa na Mongólia",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " pode ser considerado um dos lançamentos de mangás mais interessantes do ano, acompanhando também a primeira temporada do animê, em transmissão no Brasil pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Uma-Bruxa-na-Mongolia-09-scaled.jpg",
+          "alt": "Uma Bruxa na Mongólia, volume 1"
+        },
+        {
+          "type": "paragraph",
+          "text": "Página dupla foca na destruição causada pela guerra | Cakes Sousa/Panini/Reprodução",
+          "runs": [
+            {
+              "text": "Página dupla foca na destruição causada pela guerra | Cakes Sousa/Panini/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ainda que a história de Sitara seja conhecida no mundo real, e seja possível traçar uma linha que a narrativa vai seguir, a criação de Tomato Soup é tão carismática e misteriosa quanto sua protagonista, sempre deixando um gostinho de “quero mais” ao final de cada quadro.",
+          "runs": [
+            {
+              "text": "Ainda que a história de Sitara seja conhecida no mundo real, e seja possível traçar uma linha que a narrativa vai seguir, a criação de Tomato Soup é tão carismática e misteriosa quanto sua protagonista, sempre deixando um gostinho de "
+            },
+            {
+              "text": "“quero mais”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ao final de cada quadro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O mangá Uma Bruxa na Mongólia começou a ser seriado em setembro de 2021, e segue em publicação, com 6 volumes publicados até o momento.",
+          "runs": [
+            {
+              "text": "O mangá "
+            },
+            {
+              "text": "Uma Bruxa na Mongólia",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " começou a ser seriado em setembro de 2021, e segue em publicação, com 6 volumes publicados até o momento."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "Galeria de fotos",
+          "runs": [
+            {
+              "text": "Galeria de fotos",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira no álbum abaixo alguns registros da edição nacional do 1º volume de Uma Bruxa na Mongólia pela Editora Panini:",
+          "runs": [
+            {
+              "text": "Confira no álbum abaixo alguns registros da edição nacional do 1º volume de "
+            },
+            {
+              "text": "Uma Bruxa na Mongólia",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " pela Editora Panini:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Se interessou? Compre pelos nossos links*:",
+          "runs": [
+            {
+              "text": "Se interessou? ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "Compre pelos nossos links*:",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/umabruxanamongoliacapavolume1.jpg",
+          "alt": "capa de Uma Bruxa na Mongólia Volume 1"
+        },
+        {
+          "type": "paragraph",
+          "text": "Volume 1",
+          "runs": [
+            {
+              "text": "Volume 1",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://link.amazon/B0ivDKdvc"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/umabruxanamongoliacapavolume2.jpg",
+          "alt": "capa de Uma Bruxa na Mongólia Volume 2"
+        },
+        {
+          "type": "paragraph",
+          "text": "Volume 2",
+          "runs": [
+            {
+              "text": "Volume 2",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://link.amazon/B003xNs61"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Essa resenha foi feita com base em uma edição adquirida de forma independente pela crítica, sem envolvimento da editora Panini.",
+          "runs": [
+            {
+              "text": "Essa resenha foi feita com base em uma edição adquirida de forma independente pela crítica, sem envolvimento da editora Panini.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+          "runs": [
+            {
+              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "*O JBox possui parcerias comerciais com a Amazon, podendo ganhar um valor em cima das compras realizadas a partir dos links do site. Contudo, o JBox não tem responsabilidade sobre possíveis erros presentes em recursos integrados ao site, mas produzidos por terceiros.",
+          "runs": [
+            {
+              "text": "*O JBox possui parcerias comerciais com a Amazon, podendo ganhar um valor em cima das compras realizadas a partir dos links do site. Contudo, o JBox não tem responsabilidade sobre possíveis erros presentes em recursos integrados ao site, mas produzidos por terceiros.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-11T23:12:00.000Z",
+      "updatedAt": "2026-09-11T23:12:26.000Z",
+      "expiresAt": "2026-09-18T23:12:00.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/11/critica-uma-bruxa-na-mongolia-volume-1-panini",
+          "publishedAt": "2026-09-11T23:12:00.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 5,
+      "wordCount": 1008,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 35,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 6,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-5f27bfc9",
+      "slug": "yu-gi-oh-gx-tag-force-3-jogo-sera-relancado-em-versao-atualizada-em-2027-jbox-5f27bfc9",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Yu-Gi-Oh! GX Tag Force 3: Jogo será relançado em versão atualizada em 2027",
+      "originalTitle": "Yu-Gi-Oh! GX Tag Force 3: Jogo será relançado em versão atualizada em 2027",
+      "summary": "A Konami anunciou, durante a transmissão do Nintendo Direct dessa quarta-feira (9), uma nova versão de Yu-Gi-Oh! GX Tag Force 3, jogo lançado originalmente para PlayStation Portable, o PSP, em 2008. Intitulada Yu-Gi-Oh! Tag Force GX, a versão atualizada chegará ao Nintendo Switch 2, Nintendo Switch e PC, via Steam, em 16 de fevereiro.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "Games",
+        "jogo de yugioh",
+        "Yu-Gi-Oh! GX",
+        "Yu-Gi-Oh! GX 20th remaster",
+        "Yu-Gi-Oh! GX Tag Force 3",
+        "Yu-Gi-Oh! Tag Force GX"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/11/yu-gi-oh-gx-tag-force-3-jogo-sera-relancado-em-versao-atualizada-em-2027",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/11/yu-gi-oh-gx-tag-force-3-jogo-sera-relancado-em-versao-atualizada-em-2027",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Yu-Gi-Oh-TAG-Force-GX-destacada.jpg",
+      "mediaQuery": "Yu-Gi-Oh! GX Tag Force 3: Jogo será relançado em versão atualizada em 2027",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/DzGpTjuzelg"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Konami anunciou, durante a transmissão do Nintendo Direct dessa quarta-feira (9), uma nova versão de Yu-Gi-Oh! GX Tag Force 3, jogo lançado originalmente para PlayStation Portable, o PSP, em 2008. Intitulada Yu-Gi-Oh! Tag Force GX, a versão atualizada chegará ao Nintendo Switch 2, Nintendo Switch e PC, via Steam, em 16 de fevereiro.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Konami",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou, durante a transmissão do "
+            },
+            {
+              "text": "Nintendo Direct",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " dessa quarta-feira (9), uma nova versão de "
+            },
+            {
+              "text": "Yu-Gi-Oh! GX Tag Force 3",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", jogo lançado originalmente para PlayStation Portable, o PSP, em 2008. Intitulada "
+            },
+            {
+              "text": "Yu-Gi-Oh! Tag Force GX",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", a versão atualizada chegará ao Nintendo Switch 2, Nintendo Switch e PC, via Steam, em "
+            },
+            {
+              "text": "16 de fevereiro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A nova edição contará com visuais atualizados e melhorias nos modos de Duelo e Duelo em Equipe, além de reunir mais de 3.800 cartas. O lançamento também marca a primeira vez que o conteúdo de Yu-Gi-Oh! GX Tag Force 3 estará disponível oficialmente na América do Norte e na América Latina, já que o jogo original não foi lançado nessas regiões.",
+          "runs": [
+            {
+              "text": "A nova edição contará com visuais atualizados e melhorias nos modos de Duelo e Duelo em Equipe, além de reunir mais de 3.800 cartas. O lançamento também marca a primeira vez que o conteúdo de "
+            },
+            {
+              "text": "Yu-Gi-Oh! GX Tag Force 3",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estará disponível oficialmente na América do Norte e na América Latina, já que o jogo original não foi lançado nessas regiões."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na página do jogo na Steam, é sinalizado que ele contará com legendas e interface em português.",
+          "runs": [
+            {
+              "text": "Na "
+            },
+            {
+              "text": "página do jogo na Steam",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://store.steampowered.com/app/4416300/YuGiOh_TAG_FORCE_GX/"
+            },
+            {
+              "text": ", é sinalizado que ele contará com "
+            },
+            {
+              "text": "legendas e interface em português",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira o trailer:",
+          "runs": [
+            {
+              "text": "Confira o trailer:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=DzGpTjuzelg",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/DzGpTjuzelg"
+        },
+        {
+          "type": "paragraph",
+          "text": "As edições físicas para Nintendo Switch 2 e Nintendo Switch incluirão três cartas físicas do Yu-Gi-Oh! Trading Card Game: Yubel, Wicked Canon e Hope for the Future. Já quem fizer a pré-venda das versões digitais para Switch 2 e Switch receberá as mesmas cartas em formato digital, além de um Duel Mate de Winged Kuriboh para Yu-Gi-Oh! Master Duel.",
+          "runs": [
+            {
+              "text": "As edições físicas para Nintendo Switch 2 e Nintendo Switch incluirão três cartas físicas do "
+            },
+            {
+              "text": "Yu-Gi-Oh! Trading Card Game: Yubel, Wicked Canon ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "e"
+            },
+            {
+              "text": " Hope for the Future",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Já quem fizer a pré-venda das versões digitais para Switch 2 e Switch receberá as mesmas cartas em formato digital, além de um "
+            },
+            {
+              "text": "Duel Mate",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Winged Kuriboh",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " para Yu-Gi-Oh! Master Duel."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Yu-Gi-Oh! GX Tag Force 3 foi lançado originalmente no Japão para PSP em novembro de 2008. O jogo também chegou à Europa e à Austrália, mas não recebeu lançamento na América do Norte e do Sul. Os dois títulos anteriores da série, Yu-Gi-Oh! GX Tag Force e Yu-Gi-Oh! GX Tag Force 2, foram lançados para PSP em 2006 e 2007, respectivamente.",
+          "runs": [
+            {
+              "text": "Yu-Gi-Oh! GX Tag Force 3",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi lançado originalmente no Japão para PSP em novembro de 2008. O jogo também chegou à Europa e à Austrália, mas não recebeu lançamento na América do Norte e do Sul. Os dois títulos anteriores da série, "
+            },
+            {
+              "text": "Yu-Gi-Oh! GX Tag Force ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "e "
+            },
+            {
+              "text": "Yu-Gi-Oh! GX Tag Force 2",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", foram lançados para PSP em 2006 e 2007, respectivamente."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Sucessor direto da primeira série, Yu-Gi-Oh! GX foi exibido no Japão por 3 anos e meio, a partir outubro de 2004, acompanhando o jovem Jaden Yuki, estudante de uma academia especializada em jogadores de Monstros de Duelo. A história se passa tempos após a antecessora, e juntou 180 episódios.",
+          "runs": [
+            {
+              "text": "Sucessor direto da primeira série, "
+            },
+            {
+              "text": "Yu-Gi-Oh! GX",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi exibido no Japão por 3 anos e meio, a partir outubro de 2004, acompanhando o jovem Jaden Yuki, estudante de uma academia especializada em jogadores de Monstros de Duelo. A história se passa tempos após a antecessora, e juntou 180 episódios."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "‘GX’ chegou ao Brasil em março de 2006, quando foi transmitido pelo canal Nickelodeon, com passagens posteriores pela Globo e RedeTV!, além de um lançamento incompleto em DVD. Como padrão da época, assistimos à versão editada nos EUA pela empresa 4kids, que nunca trouxe a 4ª e última temporada.",
+          "runs": [
+            {
+              "text": "‘GX’",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " chegou ao Brasil em março de 2006, quando foi transmitido pelo canal Nickelodeon, com passagens posteriores pela Globo e RedeTV!, além de um lançamento incompleto em DVD. Como padrão da época, assistimos à versão editada nos EUA pela empresa 4kids, que nunca trouxe a 4ª e última temporada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "As 3 temporadas que foram dubladas estão disponíveis gratuitamente pelo canal oficial da franquia no YouTube.",
+          "runs": [
+            {
+              "text": "As 3 temporadas que foram dubladas estão disponíveis gratuitamente pelo"
+            },
+            {
+              "text": " canal oficial da franquia no YouTube",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.youtube.com/watch?v=1vnyaulvWzQ&list=PLhIid9p4AHHXUIT7_crdKhonHo7kIPBhz"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em 2025, Yu-Gi-Oh! GX também ganhou uma versão remasterizada de seu animê. Yu-Gi-Oh! Duel Monsters GX 20th Remaster começou a ser exibido pela TV Tokyo em abril de 2025, como parte das comemorações pelos 20 anos da série.",
+          "runs": [
+            {
+              "text": "Em 2025, "
+            },
+            {
+              "text": "Yu-Gi-Oh! GX",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " também ganhou uma versão remasterizada de seu animê. "
+            },
+            {
+              "text": "Yu-Gi-Oh! Duel Monsters GX 20th Remaster",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " começou a ser exibido pela TV Tokyo em abril de 2025, como parte das comemorações pelos 20 anos da série."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Nintendo Direct através do canal Nintendo of America no YouTube",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Nintendo Direct através do canal Nintendo of America no YouTube",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.youtube.com/watch?v=DzGpTjuzelg"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-11T22:18:54.000Z",
+      "updatedAt": "2026-09-11T22:20:21.000Z",
+      "expiresAt": "2026-09-18T22:18:54.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/11/yu-gi-oh-gx-tag-force-3-jogo-sera-relancado-em-versao-atualizada-em-2027",
+          "publishedAt": "2026-09-11T22:18:54.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 435,
+      "qualityScore": 0.996,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 14,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-7e769d16",
+      "slug": "filme-scarlet-entra-no-catalogo-da-hbo-max-nas-versoes-dublada-e-legendada-jbox-7e769d16",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Filme ‘Scarlet’ entra no catálogo da HBO Max nas versões dublada e legendada",
+      "originalTitle": "Filme ‘Scarlet’ entra no catálogo da HBO Max nas versões dublada e legendada",
+      "summary": "O filme em animê Scarlet, escrito e dirigido por Mamoru Hosoda, entrou no catálogo do streaming HBO Max no último dia 4, nas versões dublada e legendada.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "Streaming",
+        "assistir scarlet",
+        "filme de mamoru hosoda",
+        "hbo max",
+        "mamoru hosoda",
+        "scarlet",
+        "scarlet dublado",
+        "Scarlet na HBO Max"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/11/filme-scarlet-entra-no-catalogo-da-hbo-max-nas-versoes-dublada-e-legendada",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/11/filme-scarlet-entra-no-catalogo-da-hbo-max-nas-versoes-dublada-e-legendada",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Scarlet-destacada.jpg",
+      "mediaQuery": "Filme ‘Scarlet’ entra no catálogo da HBO Max nas versões dublada e legendada",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Scarlet-01.jpg",
+          "alt": "Filme Scarlet na HBO Max",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/2AfKVDmc5io"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O filme em animê Scarlet, escrito e dirigido por Mamoru Hosoda, entrou no catálogo do streaming HBO Max no último dia 4, nas versões dublada e legendada.",
+          "runs": [
+            {
+              "text": "O filme em animê "
+            },
+            {
+              "text": "Scarlet",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", escrito e dirigido por "
+            },
+            {
+              "text": "Mamoru Hosoda",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", entrou no catálogo do streaming "
+            },
+            {
+              "text": "HBO Max",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://play.hbomax.com/movie/1464da07-b3f5-4b1d-add5-36f7e1306456"
+            },
+            {
+              "text": " no último dia 4, nas versões dublada e legendada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O lançamento na plataforma acontece três meses após o longa ser disponibilizado para aluguel e compra digital, em lojas como Prime Video, Apple TV+ e YouTube.",
+          "runs": [
+            {
+              "text": "O lançamento na plataforma acontece três meses após o longa ser disponibilizado para aluguel e compra digital, em lojas como "
+            },
+            {
+              "text": "Prime Video",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.primevideo.com/detail/0O9TTWBUQQMAHKUWU6KRDZW42D/"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Apple TV+",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://tv.apple.com/br/movie/scarlet/umc.cmc.2gnoah2xxly9xz4drkel9qo0o"
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "YouTube",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.youtube.com/watch?v=7l0WVCzYseo"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Scarlet-01.jpg",
+          "alt": "Filme Scarlet na HBO Max"
+        },
+        {
+          "type": "paragraph",
+          "text": "Filme estreou no catálogo da HBO no começo deste mês. | Imagem: Reprodução/HBO Max",
+          "runs": [
+            {
+              "text": "Filme estreou no catálogo da HBO no começo deste mês. | Imagem: Reprodução/HBO Max"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A chegada do filme ao mercado digital é uma notícia agridoce. Por um lado, é sempre bom vermos um filme chegando oficialmente, e com dublagem, aos streamings. Porém, devemos lembrar que esta era uma produção marcada para chegar primeiramente aos cinemas.",
+          "runs": [
+            {
+              "text": "A chegada do filme ao mercado digital é uma notícia agridoce. Por um lado, é sempre bom vermos um filme chegando oficialmente, e com dublagem, aos streamings. Porém, devemos lembrar que esta era uma produção marcada para chegar primeiramente aos cinemas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Depois de um anúncio feito em outubro de 2025, Scarlet chegou a ser agendado para as salas nacionais com estreia em 16 de abril deste ano. O filme apareceu em sites de redes de cinemas, no Ingresso.com, além de ter o pôster divulgado nos halls de alguns complexos cinematográficos. Mas o dia marcado chegou e nada do filme estrear.",
+          "runs": [
+            {
+              "text": "Depois de um anúncio feito em "
+            },
+            {
+              "text": "outubro de 2025",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2025/10/03/scarlet-novo-filme-de-mamoru-hosoda-chega-aos-cinemas-brasileiros-em-2026/"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Scarlet",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " chegou a ser agendado para as salas nacionais com estreia em 16 de abril deste ano. O filme apareceu em sites de redes de cinemas, no Ingresso.com"
+            },
+            {
+              "text": ",",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " além de ter o pôster divulgado nos halls de alguns complexos cinematográficos. Mas o dia marcado chegou e nada do filme estrear."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na época contatamos a assessoria de imprensa da Sony, responsável pela distribuição. Em nota, foi informado que não havia uma nova data de lançamento.",
+          "runs": [
+            {
+              "text": "Na época contatamos a assessoria de imprensa da "
+            },
+            {
+              "text": "Sony",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", responsável pela distribuição. Em nota, foi informado que "
+            },
+            {
+              "text": "não havia uma nova data de lançamento.",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/04/16/scarlet-estreia-do-filme-no-brasil-segue-indefinida/"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=2AfKVDmc5io",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/2AfKVDmc5io"
+        },
+        {
+          "type": "paragraph",
+          "text": "Scarlet é uma história original escrita pelo próprio Hosoda (conhecido por Crianças Lobo, Guerras de Verão, Mirai, BELLE, dentre outros), produzido também pelo seu estúdio, o Chizu. O enredo acompanha uma princesa, a Scarlet, que falhou na busca de vingança pelo assassinato de seu pai. Em sua jornada, ela acorda na chamada Terra dos Monstros e é acompanhada por Hijiri, um homem vindo do Japão moderno.",
+          "runs": [
+            {
+              "text": "Scarlet",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é uma história original escrita pelo próprio Hosoda (conhecido por "
+            },
+            {
+              "text": "Crianças Lobo",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/03/19/criancas-lobo-filme-chega-com-nova-dublagem-pelo-filmelier/"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Guerras de Verão",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Mirai",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ","
+            },
+            {
+              "text": " BELLE",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", dentre outros), produzido também pelo seu estúdio, o "
+            },
+            {
+              "text": "Chizu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O enredo acompanha uma princesa, a Scarlet, que falhou na busca de vingança pelo assassinato de seu pai. Em sua jornada, ela acorda na chamada Terra dos Monstros e é acompanhada por Hijiri, um homem vindo do Japão moderno."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em setembro do ano passado, o longa fez sua estreia para o mundo durante o 82º Festival de Cinema de Veneza, chegando aos cinemas do Japão em novembro. Em Veneza, concorreu nas categorias de Filme Independente, Direção e Roteiro, mas não levou nenhum prêmio. Também concorreu no Crunchyroll Anime Awards 2026 na categoria Filme do Ano, mas perdeu a categoria para Demon Slayer: Kimetsu no Yaiba – Castelo Infinito.",
+          "runs": [
+            {
+              "text": "Em setembro do ano passado, o longa fez sua estreia para o mundo durante o 82º Festival de Cinema de Veneza, chegando aos cinemas do Japão em novembro. Em Veneza, concorreu nas categorias de Filme Independente, Direção e Roteiro, mas não levou nenhum prêmio. Também "
+            },
+            {
+              "text": "concorreu no Crunchyroll Anime Awards 2026",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/04/02/com-dan-da-dan-na-lideranca-crunchyroll-anuncia-os-indicados-ao-anime-awards-2026/"
+            },
+            {
+              "text": " na categoria "
+            },
+            {
+              "text": "Filme do Ano",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", mas perdeu a categoria para "
+            },
+            {
+              "text": "Demon Slayer: Kimetsu no Yaiba – Castelo Infinito",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: HBO Max",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "HBO Max",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://play.hbomax.com/movie/1464da07-b3f5-4b1d-add5-36f7e1306456"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-11T21:54:34.000Z",
+      "updatedAt": "2026-09-11T22:04:36.000Z",
+      "expiresAt": "2026-09-18T21:54:34.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/11/filme-scarlet-entra-no-catalogo-da-hbo-max-nas-versoes-dublada-e-legendada",
+          "publishedAt": "2026-09-11T21:54:34.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 346,
+      "qualityScore": 0.985,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-2c71c520",
       "slug": "the-vermilion-mask-revela-musicas-e-estreia-em-outubro-na-crunchyroll-animenew-2c71c520",
@@ -5387,515 +6828,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 2,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-5fcdf3ff",
-      "slug": "morre-ettore-zuim-dublador-de-one-piece-frieren-e-samurai-champloo-jbox-5fcdf3ff",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Morre Ettore Zuim, dublador de ‘One Piece’, ‘Frieren’ e ‘Samurai Champloo’",
-      "originalTitle": "Morre Ettore Zuim, dublador de ‘One Piece’, ‘Frieren’ e ‘Samurai Champloo’",
-      "summary": "Morreu hoje (4), aos 66 anos, o ator e dublador Ettore Zuim. O falecimento foi confirmado pela Associação Brasileira de Dubladores, mas a causa da morte não foi divulgada. Em 2023, Ettore foi diagnosticado com DAOP (Doença Arterial Obstrutiva Periférica). Desde então, ele vinha convivendo com algumas fragilidades de saúde.",
-      "author": "Igor Lunei",
-      "tags": [
-        "Anime",
-        "Cotidiano",
-        "Dublagem",
-        "Ettore Zuim"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/04/morre-ettore-zuim-dublador-de-one-piece-frieren-e-samurai-champloo",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/04/morre-ettore-zuim-dublador-de-one-piece-frieren-e-samurai-champloo",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/ettorezuim-destacada.jpg",
-      "mediaQuery": "Morre Ettore Zuim, dublador de ‘One Piece’, ‘Frieren’ e ‘Samurai Champloo’",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Morreu hoje (4), aos 66 anos, o ator e dublador Ettore Zuim. O falecimento foi confirmado pela Associação Brasileira de Dubladores, mas a causa da morte não foi divulgada. Em 2023, Ettore foi diagnosticado com DAOP (Doença Arterial Obstrutiva Periférica). Desde então, ele vinha convivendo com algumas fragilidades de saúde.",
-          "runs": [
-            {
-              "text": "Morreu hoje (4), aos 66 anos, o ator e dublador "
-            },
-            {
-              "text": "Ettore Zuim",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". O falecimento foi confirmado pela Associação Brasileira de Dubladores, mas a causa da morte não foi divulgada. Em 2023, Ettore foi diagnosticado com DAOP (Doença Arterial Obstrutiva Periférica). Desde então, ele vinha convivendo com algumas fragilidades de saúde."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Em animês, Zuim deu voz a personagens como o Mihawk, de One Piece (incluindo sua adaptação live-action), o Heiter, de Frieren e a Jornada para o Além, Mugen, de Samurai Champloo, além de ter passado por séries como Astro Boy (versão de 2003), Dragon Ball Super, Vinland Saga, My Hero Academia, One-Punch Man, dentre outras. Também passou pelo tokusatsu, sendo o Tetsuo de Ultraman Tiga e, mais recentemente, o monstro Mephilas no filme Shin Ultraman.",
-          "runs": [
-            {
-              "text": "Em animês, Zuim deu voz a personagens como o Mihawk, de "
-            },
-            {
-              "text": "One Piece",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " (incluindo sua adaptação live-action), o Heiter, de "
-            },
-            {
-              "text": "Frieren e a Jornada para o Além",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", Mugen, de "
-            },
-            {
-              "text": "Samurai Champloo",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", além de ter passado por séries como "
-            },
-            {
-              "text": "Astro Boy ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "(versão de 2003), "
-            },
-            {
-              "text": "Dragon Ball Super",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Vinland Saga",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "My Hero Academia",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "One-Punch Man",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", dentre outras. Também passou pelo tokusatsu, sendo o Tetsuo de "
-            },
-            {
-              "text": "Ultraman Tiga",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "e, mais recentemente, o monstro Mephilas no filme "
-            },
-            {
-              "text": "Shin Ultraman",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Nascido no Rio de Janeiro no dia 11 de janeiro de 1960, Ettore Zuim descobriu a paixão pelos palcos aos 13 anos, quando assistiu a uma apresentação de teatro durante suas férias em Sepetiba. O palco foi sua primeira grande paixão e o ponto de partida de uma carreira marcada por atuações no Teatro Musical carioca do início dos anos 1980, quando fez parte do grupo Nós Que Bebemos.",
-          "runs": [
-            {
-              "text": "Nascido no Rio de Janeiro no dia 11 de janeiro de 1960, Ettore Zuim descobriu a paixão pelos palcos aos 13 anos, quando assistiu a uma apresentação de teatro durante suas férias em Sepetiba. O palco foi sua primeira grande paixão e o ponto de partida de uma carreira marcada por atuações no Teatro Musical carioca do início dos anos 1980, quando fez parte do grupo "
-            },
-            {
-              "text": "Nós Que Bebemos",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Sua entrada para a dublagem veio incentivada por dois colegas de elenco que já dublavam: Nizo Neto e Nádia Carvalho. Eles o levaram ao estúdio da Herbert Richers, onde começou como estagiário por cerca de 45 dias antes de se consolidar na profissão. Desde então, foram mais de 40 anos no ofício.",
-          "runs": [
-            {
-              "text": "Sua entrada para a dublagem veio incentivada por dois colegas de elenco que já dublavam: "
-            },
-            {
-              "text": "Nizo Neto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Nádia Carvalho",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Eles o levaram ao estúdio da "
-            },
-            {
-              "text": "Herbert Richers",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", onde começou como estagiário por cerca de 45 dias antes de se consolidar na profissão. Desde então, foram mais de 40 anos no ofício."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ele definia dublagem como um exercício complexo de coordenação motora e interpretação, onde o ator precisa ouvir, ler, interpretar e sincronizar sem fazer ruídos indesejados ao microfone.",
-          "runs": [
-            {
-              "text": "Ele definia dublagem como um exercício complexo de coordenação motora e interpretação, onde o ator precisa ouvir, ler, interpretar e sincronizar sem fazer ruídos indesejados ao microfone."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para além do universo dos animês, Ettore deu voz a papéis de atores como Antonio Banderas, Owen Wilson e Christian Bale. Esse último traz uma história curiosa: enquanto era diretor de dublagem no estúdio Delart, ele se auto-escalou para dublar o personagem do ator no filme Extra! Extra!, originalmente lançado em 1992. Por se tornar a voz oficial do ator aqui no Brasil, ele o dublou na trilogia de filmes do Batman dirigida pelo Christopher Nolan. Posteriormente, isso fez com que ele dublasse o Morcegão em diferentes animações e jogos.",
-          "runs": [
-            {
-              "text": "Para além do universo dos animês, Ettore deu voz a papéis de atores como "
-            },
-            {
-              "text": "Antonio Banderas,",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Owen Wilson",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Christian Bale",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Esse último traz uma história curiosa: enquanto era diretor de dublagem no estúdio "
-            },
-            {
-              "text": "Delart",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", ele se auto-escalou para dublar o personagem do ator no filme "
-            },
-            {
-              "text": "Extra! Extra!",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", originalmente lançado em 1992. Por se tornar a voz oficial do ator aqui no Brasil, ele o dublou na trilogia de filmes do "
-            },
-            {
-              "text": "Batman",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " dirigida pelo Christopher Nolan. Posteriormente, isso fez com que ele dublasse o Morcegão em diferentes animações e jogos."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Outros personagens de desenhos animados com sua voz foram o Príncipe Encantado, dos filmes Shrek, o Hércules, da Disney, o vilão Raio de Fogo, em Super Choque, dentre outros.",
-          "runs": [
-            {
-              "text": "Outros personagens de desenhos animados com sua voz foram o "
-            },
-            {
-              "text": "Príncipe Encantado",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", dos filmes "
-            },
-            {
-              "text": "Shrek",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", o "
-            },
-            {
-              "text": "Hércules",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", da Disney, o vilão "
-            },
-            {
-              "text": "Raio de Fogo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", em "
-            },
-            {
-              "text": "Super Choque",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", dentre outros."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Dublador, ator, diretor, locutor e professor, Ettore Zuim construiu uma trajetória guiada pela dedicação absoluta à arte de atuar, deixando sua marca na cultura pop e no coração de diferentes gerações.",
-          "runs": [
-            {
-              "text": "Dublador, ator, diretor, locutor e professor, Ettore Zuim construiu uma trajetória guiada pela dedicação absoluta à arte de atuar, deixando sua marca na cultura pop e no coração de diferentes gerações."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fontes: Associação Brasileira de Dubladores e os canais Comentário Nerd, Plugado Cast e Canal Making Of no YouTube.",
-          "runs": [
-            {
-              "text": "Fontes:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Associação Brasileira de Dubladores",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.instagram.com/p/Dc3yMvex9sk/"
-            },
-            {
-              "text": " e os canais ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Comentário Nerd",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.youtube.com/watch?v=mEx9rMCEO9E&pp=ygULZXR0b3JlIHp1aW0%3D"
-            },
-            {
-              "text": ", ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Plugado Cast",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.youtube.com/watch?v=Jb3mibwE4pM&pp=ygULZXR0b3JlIHp1aW0%3D"
-            },
-            {
-              "text": " e ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Canal Making Of",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.youtube.com/watch?v=l9kQVEDhd_4&pp=ygULZXR0b3JlIHp1aW0%3D"
-            },
-            {
-              "text": " no YouTube.",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-04T22:08:35.000Z",
-      "updatedAt": "2026-09-04T22:10:04.000Z",
-      "expiresAt": "2026-09-11T22:08:35.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/04/morre-ettore-zuim-dublador-de-one-piece-frieren-e-samurai-champloo",
-          "publishedAt": "2026-09-04T22:08:35.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 458,
-      "qualityScore": 0.935,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
         "embedCount": 0,
         "sourcePagesRead": 0
       }
