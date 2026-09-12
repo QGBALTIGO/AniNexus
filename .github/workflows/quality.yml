@@ -152,6 +152,10 @@ jobs:
   browser-e2e:
     runs-on: ubuntu-latest
     timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [chromium, firefox, webkit]
     steps:
       - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v4
@@ -168,12 +172,13 @@ jobs:
           while IFS= read -r SOURCE_FILE; do
             sudo mv "$SOURCE_FILE" "/tmp/$(basename "$SOURCE_FILE").disabled"
           done < <(grep -rl 'dl.google.com/linux/chrome-stable' /etc/apt/sources.list.d || true)
-          pnpm exec playwright install --with-deps chromium firefox webkit
+          pnpm exec playwright install --with-deps "${{ matrix.project }}"
       - name: Map GitHub Pages hostname locally
         run: echo "127.0.0.1 qgbaltigo.github.io" | sudo tee -a /etc/hosts
       - name: Browser E2E — desktop and mobile
         env:
           ANINEXUS_E2E_ORIGIN: http://qgbaltigo.github.io:4173/AniNexus/
+          BROWSER_PROJECT: ${{ matrix.project }}
         run: |
           rm -rf /tmp/aninexus-e2e-root
           mkdir -p /tmp/aninexus-e2e-root/AniNexus
@@ -188,14 +193,12 @@ jobs:
             sleep 1
           done
           HEAVY_TEST='Catalog mobile menu exposes a complete Top 100 and a full search bar'
-          for PROJECT in chromium firefox webkit; do
-            pnpm exec playwright test tests/e2e.spec.mjs tests/accessibility.spec.mjs tests/media-actions.spec.mjs tests/community-overview.spec.mjs \
-              --project="$PROJECT" --grep-invert "$HEAVY_TEST" --reporter=line --timeout=60000 --retries=1
-          done
-          for PROJECT in chromium firefox; do
+          pnpm exec playwright test tests/e2e.spec.mjs tests/accessibility.spec.mjs tests/media-actions.spec.mjs tests/community-overview.spec.mjs \
+            --project="$BROWSER_PROJECT" --grep-invert "$HEAVY_TEST" --reporter=line --timeout=60000 --retries=1
+          if [ "$BROWSER_PROJECT" != "webkit" ]; then
             pnpm exec playwright test tests/e2e.spec.mjs --grep "$HEAVY_TEST" \
-              --project="$PROJECT" --reporter=line --timeout=60000 --retries=1
-          done
+              --project="$BROWSER_PROJECT" --reporter=line --timeout=60000 --retries=1
+          fi
       - name: Show static server log on failure
         if: failure()
         run: cat /tmp/aninexus-http.log || true

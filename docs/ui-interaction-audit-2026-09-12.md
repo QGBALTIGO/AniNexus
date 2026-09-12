@@ -15,6 +15,7 @@ Base: `0e54b1c`. Correções aplicadas nos componentes canônicos existentes, se
 | Detalhe em cache | O mesmo detalhe em cache era desenhado duas vezes na mesma chamada. | Retorno após a primeira renderização, evitando reconstrução redundante. |
 | Texto e acessibilidade | “há 1 dias” e resposta sem nome acessível quando o texto estava oculto no celular. | Singular correto e aria-label independente do texto visível. |
 | Âncora de Contato | O roteador interceptava `#formulario` como navegação para a raiz antes do manipulador da página. No Pages, o prefixo da base também alterava a âncora. | Links locais são preservados pela normalização e pelo clique dos roteadores. O teste clica em “Enviar mensagem”, confere o scroll e confirma que a URL não mudou, em quatro larguras. |
+| Animação de personagem | A classe temporária durava 260 ms, mas o CSS de animação só incluía ações globais. A amostragem da classe também era instável no WebKit. | Personagens usam a animação compartilhada, respeitando movimento reduzido; teste observa `animationstart`, além da persistência e contagem. |
 
 ## Verificação local executada
 
@@ -27,6 +28,8 @@ Base: `0e54b1c`. Correções aplicadas nos componentes canônicos existentes, se
 - Inspeção visual de Colabore no celular e das respostas com spoilers realizada. Capturas ficam nos artefatos locais dos testes.
 
 A suíte completa inclui login lento, entrada fria, saída e volta, reload do Top 100, início/restauração de scroll, identidade do renderizador, acessibilidade, conta/administração, Home, biblioteca, programação, catálogo, notícias, erros offline, cliques repetidos, isolamento anime/mangá e troca de conta durante sincronização. Os testes de navegador usam respostas controladas para reproduzir falhas; não equivalem a testar cada conta real ou cada aparelho físico.
+
+O CI de `c23e30e` aprovou PostgreSQL, container, Chromium e Firefox, mas bloqueou o deploy por uma asserção da animação de personagem no WebKit. Após a correção descrita acima, o ciclo de incluir/remover favorito, contagem e movimento reduzido passou **9/9 vezes** (três por navegador), sem o skip da ponte estática local. `check`, build e validação do artefato passaram novamente. A suíte do CI foi separada por navegador em runners independentes, com `fail-fast: false`; nenhum cenário, retry ou gate de publicação foi removido.
 
 ## Publicação e limites de capacidade
 

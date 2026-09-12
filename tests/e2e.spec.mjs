@@ -736,7 +736,6 @@ test('Top 10 arrows replace all cards visible on the current page',async({page})
 });
 
 test('Home character ranking favorites and reorders with internal counts',async({page})=>{
-  test.skip(new URL(ORIGIN).hostname.endsWith('github.io')&&!!LOCAL_STATIC_ORIGIN,'Authenticated write behavior is covered against the source shell.');
   await mockInternalRankings(page);
   let writeMethod='';
   const favoriteRoute=async route=>{
@@ -745,7 +744,7 @@ test('Home character ranking favorites and reorders with internal counts',async(
     writeMethod=request.method();
     const id=Number(url.pathname.split('/').pop());
     await new Promise(resolve=>setTimeout(resolve,180));
-    return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({ok:true,characterId:id,favorite:true,favoriteCount:99})});
+    return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({ok:true,characterId:id,favorite:request.method()==='PUT',favoriteCount:request.method()==='PUT'?99:12})});
   };
   await page.route('**/api/me/character-favorites',favoriteRoute);
   await page.route('**/api/me/character-favorites/*',favoriteRoute);
@@ -762,9 +761,10 @@ test('Home character ranking favorites and reorders with internal counts',async(
   const order=await page.locator('#nx42TopManga,.nx47-character-ranking,#nx35Awards').evaluateAll(nodes=>nodes.map(node=>node.id||node.className));
   expect(order[0]).toBe('nx42TopManga');
   const anya=section.getByRole('button',{name:/Adicionar Anya Forger/});
+  await page.evaluate(()=>{window.__nxCharacterAnimations=[];document.addEventListener('animationstart',event=>{if(event.target.matches?.('[data-character-favorite="508"]'))window.__nxCharacterAnimations.push(event.animationName)},true)});
   await anya.click();
   const anyaFavorite=section.locator('[data-character-favorite="508"]');
-  await expect(anyaFavorite).toHaveClass(/nx39-pop/);
+  await expect.poll(()=>page.evaluate(()=>window.__nxCharacterAnimations)).toContain('nx39-action-pop');
   await expect(anyaFavorite).toHaveAttribute('aria-pressed','true');
   await expect.poll(()=>writeMethod).toBe('PUT');
   await expect(cards.first().locator('h3')).toHaveText('Anya Forger');
@@ -783,6 +783,16 @@ test('Home character ranking favorites and reorders with internal counts',async(
   });
   expect(visual).toEqual({kicker:'RANKING',bar:'none',actionKind:'compact',width:34,height:34,right:9,bottom:9});
   await noOverflow(page,3);
+  await anyaFavorite.click();
+  await expect.poll(()=>writeMethod).toBe('DELETE');
+  await expect(anyaFavorite).toHaveAttribute('aria-pressed','false');
+  await expect(section.locator('[data-character-card="508"] .nx47-character-count')).toContainText('12 favoritos');
+  await expect(anyaFavorite).toBeEnabled();
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await anyaFavorite.click();
+  await expect.poll(()=>writeMethod).toBe('PUT');
+  await expect(anyaFavorite).toHaveAttribute('aria-pressed','true');
+  await expect(anyaFavorite).toHaveCSS('animation-name','none');
 });
 
 test('static fallback never turns provider metrics into AniNexus rankings',async({page})=>{test.skip(!new URL(ORIGIN).hostname.endsWith('github.io'),'This policy is exercised by the static provider fallback.');await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('#nx35Top .nx35-metric-empty')).toContainText('avaliações da comunidade',{timeout:30000});await expect(page.locator('#nx35Popular .nx35-metric-empty')).toContainText('listas, favoritos e impressões');await expect(page.locator('#nx42TopManga .nx45-ranking-empty')).toContainText('comunidade avalia');await expect(page.locator('#nx35Top .nx35-rank')).toHaveCount(0);await expect(page.locator('#nx35Popular .nx35-anime')).toHaveCount(0);await expect(page.locator('#nx42TopManga .nx35-rank')).toHaveCount(0)});

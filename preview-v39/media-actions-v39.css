@@ -51,10 +51,10 @@ button[data-nx-action-owner="global"][data-nx-action-role="favorite"][aria-press
 }
 button[data-nx-action-owner="global"]:focus-visible{outline:2px solid #fff!important;outline-offset:3px!important}
 button[data-nx-action-owner="global"].nx39-press{transform:scale(.9)!important}
-button[data-nx-action-owner="global"].nx39-pop{animation:nx39-action-pop .25s ease}
+button[data-nx-action-owner="global"].nx39-pop,.nx47-character-favorite.nx39-pop{animation:nx39-action-pop .25s ease}
 button[data-nx-action-owner="global"]:disabled{opacity:.5;cursor:wait}
 .nx21-actions,.nx18-cover-actions,.nx35-cover>aside,.nx35-book>aside,.nx17-actions,.nx-season-actions,.aqx-actions,.nx38-library-card-actions,.nx42-manga-actions{gap:var(--nx39-action-gap)!important}
 .nx-media-sync-notice{position:fixed;z-index:500;bottom:20px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 32px);padding:12px 16px;display:flex;align-items:center;gap:12px;border:1px solid #76535d;border-radius:8px;background:#21171c;color:#fff;font:600 13px/1.4 'Nunito Sans',sans-serif;box-shadow:0 8px 28px #0006}
 .nx-media-sync-notice button{flex:none;background:transparent;border:0;color:#ff8fa8;text-decoration:underline;cursor:pointer}
 @keyframes nx39-action-pop{50%{transform:scale(1.13)}}
-@media(prefers-reduced-motion:reduce){button[data-nx-action-owner="global"]{animation:none!important;transition:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){button[data-nx-action-owner="global"],.nx47-character-favorite{animation:none!important;transition:none!important;transform:none!important}}
