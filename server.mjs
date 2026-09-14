@@ -136,6 +136,45 @@ const mediaProjection=`CASE WHEN mc.media_id IS NULL THEN NULL ELSE jsonb_build_
   'score',mc.payload->'score','episodes',mc.payload->'episodes','status',mc.payload->>'status','format',mc.payload->>'format',
   'seasonYear',mc.payload->'seasonYear','genres',COALESCE(mc.payload->'genres','[]'::jsonb),'slug',mc.payload->>'slug'
 ) END`;
+const publicProfileStatsSql=`WITH entries AS (
+  SELECT 'ANIME'::text AS media_type,ua.status,ua.score,ua.progress,0::integer AS volume_progress,mc.payload
+  FROM user_anime ua LEFT JOIN media_cache mc ON mc.media_id=ua.media_id AND mc.media_type='ANIME'
+  WHERE ua.user_id=$1
+  UNION ALL
+  SELECT 'MANGA'::text,um.status,um.score,um.progress,um.volume_progress,mc.payload
+  FROM user_manga um LEFT JOIN media_cache mc ON mc.media_id=um.media_id AND mc.media_type='MANGA'
+  WHERE um.user_id=$1
+),status_rows AS (
+  SELECT media_type,status,count(*)::int AS total FROM entries GROUP BY media_type,status
+),score_rows AS (
+  SELECT media_type,round(score)::int AS score,count(*)::int AS total FROM entries WHERE score IS NOT NULL GROUP BY media_type,round(score)
+),format_rows AS (
+  SELECT media_type,COALESCE(NULLIF(payload->>'format',''),'OUTRO') AS format,count(*)::int AS total FROM entries GROUP BY media_type,COALESCE(NULLIF(payload->>'format',''),'OUTRO')
+),year_rows AS (
+  SELECT media_type,(payload->>'seasonYear')::int AS year,count(*)::int AS total FROM entries WHERE payload->>'seasonYear' ~ '^[0-9]{4}$' GROUP BY media_type,(payload->>'seasonYear')::int
+)
+SELECT
+  count(*) FILTER(WHERE media_type='ANIME')::int AS list_total,
+  count(*) FILTER(WHERE media_type='MANGA')::int AS manga_total,
+  count(*)::int AS total_titles,
+  count(*) FILTER(WHERE media_type='ANIME' AND status='CURRENT')::int AS watching,
+  count(*) FILTER(WHERE media_type='ANIME' AND status='COMPLETED')::int AS completed,
+  count(*) FILTER(WHERE media_type='ANIME' AND status='PLANNING')::int AS planning,
+  count(*) FILTER(WHERE media_type='MANGA' AND status='CURRENT')::int AS reading,
+  count(*) FILTER(WHERE media_type='MANGA' AND status='COMPLETED')::int AS manga_completed,
+  COALESCE(sum(progress) FILTER(WHERE media_type='ANIME'),0)::int AS episodes_watched,
+  COALESCE(sum(progress) FILTER(WHERE media_type='MANGA'),0)::int AS chapters_read,
+  round(avg(score) FILTER(WHERE media_type='ANIME')::numeric,1) AS average_score,
+  round(avg(score) FILTER(WHERE media_type='MANGA')::numeric,1) AS manga_average_score,
+  round(avg(score)::numeric,1) AS overall_average_score,
+  (SELECT count(*)::int FROM user_favorites WHERE user_id=$1) AS favorites,
+  COALESCE((SELECT jsonb_agg(to_jsonb(status_rows) ORDER BY media_type,status) FROM status_rows),'[]'::jsonb) AS statuses,
+  COALESCE((SELECT jsonb_agg(to_jsonb(score_rows) ORDER BY media_type,score) FROM score_rows),'[]'::jsonb) AS scores,
+  COALESCE((SELECT jsonb_agg(to_jsonb(format_rows) ORDER BY media_type,total DESC,format) FROM format_rows),'[]'::jsonb) AS formats,
+  COALESCE((SELECT jsonb_agg(to_jsonb(year_rows) ORDER BY media_type,year) FROM year_rows),'[]'::jsonb) AS years
+FROM entries`;
+const encodePublicProfileCursor=row=>Buffer.from(JSON.stringify([new Date(row.updated_at).toISOString(),Number(row.media_id)])).toString('base64url');
+const decodePublicProfileCursor=value=>{try{const [updatedAt,mediaId]=JSON.parse(Buffer.from(String(value||''),'base64url').toString('utf8'));const timestamp=new Date(updatedAt),id=safeInt(mediaId);return id&&!Number.isNaN(timestamp.getTime())?[timestamp.toISOString(),id]:null}catch{return null}};
 const persistImportedMedia=async(runQuery,entries)=>{
   const rows=entries.map(entry=>{
     const mediaType=entry.mediaType==='MANGA'?'MANGA':'ANIME',media={...(entry.media||{}),id:entry.mediaId,idMal:entry.idMal||entry.media?.idMal||null,mediaType,title:entry.title||entry.media?.title||''};
@@ -300,6 +339,24 @@ app.get('/api/users/search',publicRate,async(req,reply)=>{
     LIMIT 12`,[contains,term,prefix]);
   return{items:rows.map(user=>{const avatar=resolvedAvatar(user);return{username:user.username,displayName:user.display_name||user.username,avatarUrl:avatar.url,avatarPreset:avatar.preset}})};
 });
+app.get('/api/users/:username/library',publicRate,async(req,reply)=>{
+  const parsed=usernameSchema.safeParse(String(req.params.username||''));if(!parsed.success)return reply.code(404).send({error:'NOT_FOUND'});
+  const userResult=await q("SELECT id,privacy,show_library FROM users WHERE username=$1 AND deleted_at IS NULL AND status='active'",[parsed.data]);
+  const user=userResult.rows[0];if(!user)return reply.code(404).send({error:'NOT_FOUND'});
+  if(user.privacy==='private'||user.show_library===false)return reply.code(403).send({error:'PROFILE_LIBRARY_PRIVATE'});
+  const mediaType=String(req.query?.mediaType||'ANIME').toUpperCase()==='MANGA'?'MANGA':'ANIME',table=mediaType==='MANGA'?'user_manga':'user_anime',alias=mediaType==='MANGA'?'um':'ua';
+  const statusValue=String(req.query?.status||'').toUpperCase(),status=['PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED'].includes(statusValue)?statusValue:null;
+  const search=String(req.query?.q||'').trim().slice(0,80),limit=safeInt(req.query?.limit,1,48)||24,cursorValue=String(req.query?.cursor||''),cursor=cursorValue?decodePublicProfileCursor(cursorValue):null;
+  if(cursorValue&&!cursor)return reply.code(400).send({error:'INVALID_CURSOR'});
+  const values=[user.id],where=[`${alias}.user_id=$1`];
+  if(status){values.push(status);where.push(`${alias}.status=$${values.length}`)}
+  if(search){values.push(`%${search.replace(/[!%_]/g,'!$&')}%`);where.push(`COALESCE(mc.payload->>'title','') ILIKE $${values.length} ESCAPE '!'`)}
+  if(cursor){values.push(cursor[0],cursor[1]);where.push(`(${alias}.updated_at,${alias}.media_id)<($${values.length-1}::timestamptz,$${values.length}::bigint)`)}
+  values.push(limit+1);
+  const {rows}=await q(`SELECT ${alias}.media_id,${alias}.status,${alias}.score,${alias}.reaction,${alias}.reactions,${alias}.volume_progress,${alias}.progress,${alias}.updated_at,${mediaProjection} AS media FROM ${table} ${alias} LEFT JOIN media_cache mc ON mc.media_id=${alias}.media_id AND mc.media_type='${mediaType}' WHERE ${where.join(' AND ')} ORDER BY ${alias}.updated_at DESC,${alias}.media_id DESC LIMIT $${values.length}`,values);
+  const hasMore=rows.length>limit,visible=rows.slice(0,limit),items=await hydrateCommunityMedia(visible,mediaType,user.id);
+  return{items:items.map(item=>({...item,media_type:mediaType})),hasMore,nextCursor:hasMore?encodePublicProfileCursor(visible.at(-1)):null};
+});
 app.get('/api/users/:username',publicRate,async(req,reply)=>{
   const parsed=usernameSchema.safeParse(String(req.params.username||''));if(!parsed.success)return reply.code(404).send({error:'NOT_FOUND'});
   const requested=parsed.data;
@@ -314,18 +371,22 @@ app.get('/api/users/:username',publicRate,async(req,reply)=>{
     (SELECT count(*)::int FROM profile_follows WHERE follower_id=$1) AS following`,[user.id]);
   const social=socialResult.rows[0]||{followers:0,following:0};
   if(isPrivate)return{profile,canonicalUsername:user.username,aliased,social,stats:null,library:[],mangaLibrary:[],favoriteCharacters:[],activity:[],impressions:[],achievements:[]};
-  const [statsResult,libraryResult,mangaResult,characterFavorites,activityResult,impressionsResult,achievementResult]=await Promise.all([
-    user.show_stats===false?Promise.resolve({rows:[]}):q(`SELECT count(*)::int list_total,count(*) FILTER(WHERE status='CURRENT')::int watching,count(*) FILTER(WHERE status='COMPLETED')::int completed,count(*) FILTER(WHERE status='PLANNING')::int planning,COALESCE(sum(progress),0)::int episodes_watched,round(avg(score)::numeric,1) average_score,(SELECT count(*)::int FROM user_favorites WHERE user_id=$1) favorites FROM user_anime WHERE user_id=$1`,[user.id]),
+  const [statsResult,libraryResult,mangaResult,characterFavorites,activityResult,impressionsResult,achievementResult,favoriteResult,followingResult,followersResult]=await Promise.all([
+    user.show_stats===false?Promise.resolve({rows:[]}):q(publicProfileStatsSql,[user.id]),
     user.show_library===false?Promise.resolve({rows:[]}):q(`SELECT ua.media_id,ua.status,ua.score,ua.reaction,ua.reactions,ua.volume_progress,ua.progress,ua.updated_at,${mediaProjection} AS media FROM user_anime ua LEFT JOIN media_cache mc ON mc.media_id=ua.media_id AND mc.media_type='ANIME' WHERE ua.user_id=$1 ORDER BY ua.updated_at DESC LIMIT 36`,[user.id]),
     user.show_library===false?Promise.resolve({rows:[]}):q(`SELECT um.media_id,um.status,um.score,um.reaction,um.reactions,um.volume_progress,um.progress,um.updated_at,${mediaProjection} AS media FROM user_manga um LEFT JOIN media_cache mc ON mc.media_id=um.media_id AND mc.media_type='MANGA' WHERE um.user_id=$1 ORDER BY um.updated_at DESC LIMIT 36`,[user.id]),
     user.show_library===false?Promise.resolve([]):getUserCharacterFavorites(user.id),
     user.show_activity===false?Promise.resolve({rows:[]}):q(`SELECT ua.media_id,ua.status,ua.score,ua.reaction,ua.reactions,ua.volume_progress,ua.progress,ua.updated_at AS created_at,${mediaProjection} AS media FROM user_anime ua LEFT JOIN media_cache mc ON mc.media_id=ua.media_id AND mc.media_type='ANIME' WHERE ua.user_id=$1 ORDER BY ua.updated_at DESC LIMIT 12`,[user.id]),
     user.show_activity===false?Promise.resolve({rows:[]}):q(`SELECT i.id,i.media_id,i.media_type,i.body,i.spoiler,i.has_spoilers,i.status_snapshot,i.progress_snapshot,i.score_snapshot,i.impression_stage,i.created_at,i.edited_at,${mediaProjection} AS media FROM impressions i LEFT JOIN media_cache mc ON mc.media_id=i.media_id AND mc.media_type=i.media_type WHERE i.user_id=$1 AND i.hidden=false ORDER BY i.created_at DESC LIMIT 12`,[user.id]),
     publicAchievementProfile(user.id).catch(()=>({achievements:[],pinnedAchievements:[],equippedTitle:null,rank:{name:'Nível Nexus 1',xp:0,nextXp:30}})),
+    user.show_library===false?Promise.resolve({rows:[]}):q(`SELECT uf.media_id,uf.media_type,uf.created_at,${mediaProjection} AS media FROM user_favorites uf LEFT JOIN media_cache mc ON mc.media_id=uf.media_id AND mc.media_type=uf.media_type WHERE uf.user_id=$1 ORDER BY uf.created_at DESC LIMIT 36`,[user.id]),
+    q(`SELECT target.username,target.display_name,target.avatar_url,target.avatar_source,pf.created_at FROM profile_follows pf JOIN users target ON target.id=pf.followed_id WHERE pf.follower_id=$1 AND target.deleted_at IS NULL AND target.status='active' AND target.privacy IN ('public','semi_public','followers') ORDER BY pf.created_at DESC LIMIT 24`,[user.id]),
+    q(`SELECT source.username,source.display_name,source.avatar_url,source.avatar_source,pf.created_at FROM profile_follows pf JOIN users source ON source.id=pf.follower_id WHERE pf.followed_id=$1 AND source.deleted_at IS NULL AND source.status='active' AND source.privacy IN ('public','semi_public','followers') ORDER BY pf.created_at DESC LIMIT 24`,[user.id]),
   ]);
-  const [library,mangaLibrary,activity,impressions]=await Promise.all([hydrateCommunityMedia(libraryResult.rows,'ANIME',user.id),hydrateCommunityMedia(mangaResult.rows,'MANGA',user.id),hydrateCommunityMedia(activityResult.rows,'ANIME',user.id),hydrateCommunityMedia(impressionsResult.rows,'ANIME',user.id)]);
+  const [library,mangaLibrary,activity,impressions,favorites]=await Promise.all([hydrateCommunityMedia(libraryResult.rows,'ANIME',user.id),hydrateCommunityMedia(mangaResult.rows,'MANGA',user.id),hydrateCommunityMedia(activityResult.rows,'ANIME',user.id),hydrateCommunityMedia(impressionsResult.rows,'ANIME',user.id),hydrateCommunityMedia(favoriteResult.rows,'ANIME',user.id)]);
   const stats=statsResult.rows[0]||null;
-  return{profile:{...profile,equippedTitle:achievementResult.equippedTitle},canonicalUsername:user.username,aliased,social,stats,rank:achievementResult.rank,achievements:achievementResult.achievements,pinnedAchievements:achievementResult.pinnedAchievements,library,mangaLibrary,favoriteCharacters:hydrateCharacterFavorites(characterFavorites),activity,impressions:withSocialBodies(impressions)};
+  const presentConnection=row=>{const connectionAvatar=resolvedAvatar(row);return{username:row.username,displayName:row.display_name||row.username,avatarUrl:connectionAvatar.url,avatarPreset:connectionAvatar.preset,createdAt:row.created_at}};
+  return{profile:{...profile,equippedTitle:achievementResult.equippedTitle},canonicalUsername:user.username,aliased,social,stats,rank:achievementResult.rank,achievements:achievementResult.achievements,pinnedAchievements:achievementResult.pinnedAchievements,library,mangaLibrary,favorites,favoriteCharacters:hydrateCharacterFavorites(characterFavorites),activity,impressions:withSocialBodies(impressions),connections:{following:followingResult.rows.map(presentConnection),followers:followersResult.rows.map(presentConnection)}};
 });
 app.post('/api/auth/register',authRate,async(req,reply)=>{
   if(CLERK_ENABLED)return reply.code(410).send({error:'AUTH_MANAGED_BY_CLERK'});

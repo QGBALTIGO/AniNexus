@@ -40,7 +40,10 @@ try{
     CREATE TABLE user_favorites(user_id uuid,media_id bigint,media_type text,created_at timestamptz DEFAULT now());
     CREATE TABLE impressions(user_id uuid,hidden boolean DEFAULT false,created_at timestamptz DEFAULT now());
     CREATE TABLE community_threads(id uuid PRIMARY KEY,user_id uuid,hidden boolean DEFAULT false,created_at timestamptz DEFAULT now());
-    CREATE TABLE community_posts(user_id uuid,thread_id uuid,hidden boolean DEFAULT false,created_at timestamptz DEFAULT now());`);
+    CREATE TABLE community_posts(user_id uuid,thread_id uuid,hidden boolean DEFAULT false,created_at timestamptz DEFAULT now());
+    CREATE TABLE profile_follows(follower_id uuid NOT NULL,followed_id uuid NOT NULL,created_at timestamptz NOT NULL DEFAULT now(),PRIMARY KEY(follower_id,followed_id));`);
+  const publicProfileMigration=await fs.readFile(new URL('../sql/031_public_profile_library.sql',import.meta.url),'utf8');
+  await client.query(publicProfileMigration);await client.query(publicProfileMigration);
   const query=(sql,args)=>client.query(sql,args);
   let overview=await getCommunityOverview(query);
   assert.deepEqual(overview.totals,{works:0,reactions:0,completed:0,impressions:0,ratings:0});
@@ -66,6 +69,9 @@ try{
   await client.query(`INSERT INTO user_manga(user_id,media_id,status,score,reaction,updated_at) VALUES($1,101,'COMPLETED',9,'LOVE',now()-interval '15 days')`,[bob]);
   await client.query(`INSERT INTO user_favorites(user_id,media_id,media_type) VALUES($1,101,'ANIME'),($2,101,'MANGA'),($3,101,'ANIME')`,[alice,bob,privateUser]);
   await client.query(`INSERT INTO impressions(user_id,hidden) VALUES($1,false),($1,true),($2,false)`,[alice,privateUser]);
+  const publicStatsSql=source.match(/const publicProfileStatsSql=`([\s\S]+?)`;/)?.[1];assert.ok(publicStatsSql,'public profile statistics query must come from the actual server');
+  const bobProfileStats=(await client.query(publicStatsSql,[bob])).rows[0];assert.equal(bobProfileStats.list_total,1);assert.equal(bobProfileStats.manga_total,1);assert.equal(bobProfileStats.total_titles,2);assert.equal(bobProfileStats.manga_completed,1);assert.equal(Number(bobProfileStats.overall_average_score),6.5);assert.ok(Array.isArray(bobProfileStats.statuses));
+  const publicIndexes=(await client.query("SELECT indexname FROM pg_indexes WHERE schemaname=current_schema() AND indexname LIKE '%public_profile%'")).rows.map(row=>row.indexname);assert.ok(publicIndexes.includes('user_anime_public_profile_status_idx'));assert.ok(publicIndexes.includes('user_manga_public_profile_status_idx'));
   overview=await getCommunityOverview(query);
   assert.deepEqual(overview.totals,{works:2,reactions:3,completed:2,impressions:1,ratings:3});
   assert.equal(overview.rankings.filter(r=>r.label==='Amei').length,2,'anime and manga IDs must remain distinct');
