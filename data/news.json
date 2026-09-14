@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T18:29:20.585Z",
+  "generatedAt": "2026-09-14T21:58:18.093Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,112 +55,619 @@
   ],
   "stats": {
     "collected": 45,
-    "grouped": 20,
-    "published": 20,
-    "newStories": 20,
-    "fullArticles": 20,
+    "grouped": 22,
+    "published": 22,
+    "newStories": 22,
+    "fullArticles": 22,
     "previewArticles": 0,
     "avgWords": 361,
-    "withHeroImage": 20,
-    "withOrderedMedia": 19,
+    "withHeroImage": 22,
+    "withOrderedMedia": 20,
     "skippedTranslation": 0,
-    "skippedQuality": 24,
-    "durationMs": 3079
+    "skippedQuality": 21,
+    "durationMs": 2879
   },
   "items": [
     {
-      "id": "animenew-297e1640",
-      "slug": "game-freak-anuncia-novo-jogo-mobile-ame-nochi-hare-onna-animenew-297e1640",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
+      "id": "jbox-8c903ac4",
+      "slug": "ranma-trailer-da-3-temporada-mostra-novos-personagens-e-musicas-de-abertura-e-encerramento-jbox-8c903ac4",
+      "source": "JBox",
+      "sourceType": "JBOX",
       "sourceLanguage": "pt-BR",
       "language": "pt-BR",
-      "title": "Game Freak anuncia novo jogo mobile Ame nochi Hare Onna",
-      "originalTitle": "Game Freak anuncia novo jogo mobile Ame nochi Hare Onna",
-      "summary": "A Game Freak, desenvolvedora da franquia Pokémon, anunciou Ame nochi Hare Onna, novo jogo mobile que chega ao Japão para iOS e Android no inverno deste ano.",
-      "author": "Rafael Shinzo",
+      "title": "Ranma ½: trailer da 3ª temporada mostra novos personagens e músicas de abertura e encerramento",
+      "originalTitle": "Ranma ½: trailer da 3ª temporada mostra novos personagens e músicas de abertura e encerramento",
+      "summary": "O estúdio MAPPA divulgou uma nova prévia da 3ª temporada de Ranma ½, que mostra a chegada de novos personagens e prévias das músicas de abertura e encerramento dos episódios.",
+      "author": "Cakes Sousa",
       "tags": [
-        "Games",
-        "Notícias",
-        "Ame nochi Hare Onna",
-        "Game Freak"
+        "Anime",
+        "Música",
+        "3ª temporada de Ranma",
+        "estúdio MAPPA",
+        "netflix",
+        "nova temporada de ranma",
+        "quando tem novos episodios de ranma?",
+        "ranma",
+        "Ranma 1/2",
+        "Ranma ½",
+        "rumiko takahashi"
       ],
-      "url": "https://animenew.com.br/ame-nochi-hare-onna-jogo-game-freak",
-      "sourceUrl": "https://animenew.com.br/ame-nochi-hare-onna-jogo-game-freak",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Game-Freak-anuncia-novo-jogo-mobile-Ame-nochi-Hare-Onna.webp",
-      "mediaQuery": "Game Freak anuncia novo jogo mobile Ame nochi Hare Onna",
+      "url": "https://www.jbox.com.br/2026/09/14/ranma-%c2%bd-trailer-da-3a-temporada-mostra-novos-personagens-e-musicas-de-abertura-e-encerramento",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/14/ranma-%c2%bd-trailer-da-3a-temporada-mostra-novos-personagens-e-musicas-de-abertura-e-encerramento",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/ranma-12-destacada.jpg",
+      "mediaQuery": "Ranma ½: trailer da 3ª temporada mostra novos personagens e músicas de abertura e encerramento",
       "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Ame-nochi-Hare-Onna.webp",
-          "alt": "Ame nochi Hare Onna",
-          "caption": "© GAME FREAK inc. Developed by CHRONOGATE Inc."
-        }
-      ],
+      "mediaGallery": [],
       "mediaEmbeds": [
         {
           "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/n8e8swKZhPY"
+          "url": "https://www.youtube-nocookie.com/embed/3uLb6c-4ni0"
         }
       ],
       "sourceContent": [
         {
           "type": "paragraph",
-          "text": "A Game Freak, desenvolvedora da franquia Pokémon, anunciou Ame nochi Hare Onna, novo jogo mobile que chega ao Japão para iOS e Android no inverno deste ano.",
+          "text": "O estúdio MAPPA divulgou uma nova prévia da 3ª temporada de Ranma ½, que mostra a chegada de novos personagens e prévias das músicas de abertura e encerramento dos episódios.",
           "runs": [
             {
-              "text": "A "
+              "text": "O estúdio "
             },
             {
-              "text": "Game Freak",
+              "text": "MAPPA",
               "marks": [
                 "strong"
               ]
             },
             {
-              "text": ", desenvolvedora da franquia "
+              "text": " divulgou uma nova prévia da 3ª temporada de "
             },
             {
-              "text": "Pokémon",
-              "href": "https://animenew.com.br/tag/pokemon/"
+              "text": "Ranma ½",
+              "marks": [
+                "strong",
+                "em"
+              ]
             },
             {
-              "text": ", anunciou "
+              "text": ", que mostra a chegada de novos personagens e prévias das músicas de abertura e encerramento dos episódios."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A abertura tem o nome de “Sunao Miman”, e é assinada pela cantora Fumino, enquanto o encerramento é “Kawaikunai”, de Yuika. Já sobre os novos personagens, a prévia já começa mostrando uma suposta irmã de Ryoga, e depois apresenta Tsubasa Kurenai, entre outras novidades.",
+          "runs": [
+            {
+              "text": "A abertura tem o nome de "
             },
             {
-              "text": "Ame nochi Hare Onna",
+              "text": "“Sunao Miman”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", e é assinada pela cantora "
+            },
+            {
+              "text": "Fumino",
               "marks": [
                 "strong"
               ]
             },
             {
-              "text": ", "
+              "text": ", enquanto o encerramento é "
             },
             {
-              "text": "novo jogo",
-              "href": "https://animenew.com.br/games"
+              "text": "“Kawaikunai”",
+              "marks": [
+                "em"
+              ]
             },
             {
-              "text": " mobile que chega ao Japão para "
+              "text": ", de "
             },
             {
-              "text": "iOS",
+              "text": "Yuika",
               "marks": [
                 "strong"
               ]
             },
             {
-              "text": " e "
-            },
+              "text": ". Já sobre os novos personagens, a prévia já começa mostrando uma suposta irmã de Ryoga, e depois apresenta Tsubasa Kurenai, entre outras novidades."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=3uLb6c-4ni0",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/3uLb6c-4ni0"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kounosuke Uda (Pluto) retorna para a direção geral do animê, com roteiro principal de Kimiko Ueno (Sanda), também veterana na produção. Yoshiko Saito (Mushoku Tensei) e Kousuke Kawamura (Sala de Aula dos Heróis) seguem como os diretores principais de animação, e contarão com as chegadas de Riko Kaneda (Chainsaw Man – O Filme: Arco da Reze) e Haruki Miura (My Hero Academia: Vigilantes) para a mesma área. Entre o time de animadores, um destaque vai para a volta de Atsuko Ishida, que trabalhou na equipe da 1ª versão animada, de 1989.",
+          "runs": [
             {
-              "text": "Android",
+              "text": "Kounosuke Uda",
               "marks": [
                 "strong"
               ]
             },
             {
-              "text": " no inverno deste ano."
+              "text": " ("
+            },
+            {
+              "text": "Pluto",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") retorna para a direção geral do animê, com roteiro principal de"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Kimiko Ueno",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/j-pedia/perfis/kimiko-ueno/"
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Sanda",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), também veterana na produção. "
+            },
+            {
+              "text": "Yoshiko Saito",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Mushoku Tensei",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") e "
+            },
+            {
+              "text": "Kousuke Kawamura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Sala de Aula dos Heróis",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") seguem como os diretores principais de animação, e contarão com as chegadas de "
+            },
+            {
+              "text": "Riko Kaneda",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Chainsaw Man – O Filme: Arco da Reze",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2025/10/26/critica-chainsaw-man-o-filme-arco-da-reze/"
+            },
+            {
+              "text": ") e "
+            },
+            {
+              "text": "Haruki Miura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "My Hero Academia: Vigilantes",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") para a mesma área. Entre o time de animadores, um destaque vai para a volta de "
+            },
+            {
+              "text": "Atsuko Ishida",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que trabalhou na equipe da 1ª versão animada, de 1989."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama segue os jovens Ranma Saotome (voz original de Kappei Yamaguchi, o Usopp, de One Piece) e Akane Tendo (voz original de Noriko Hidaka, a Yuki, de Jujutsu Kaisen) que são prometidos em casamento pelas respectivas famílias. O que ninguém contava é que, após um treinamento em uma área remota da China, Ranma começasse a se transformar em mulher quando molhado com água fria, e voltasse a ser homem quando molhado com água quente. Em um primeiro momento, Ranma e Akane se odeiam, mas o mangá de Rumiko Takahashi mistura humor, momentos absurdos e uma pitada de romance para mostrar como os sentimentos dos dois começam a mudar.",
+          "runs": [
+            {
+              "text": "A trama segue os jovens Ranma Saotome (voz original de "
+            },
+            {
+              "text": "Kappei Yamaguchi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o Usopp, de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") e Akane Tendo (voz original de "
+            },
+            {
+              "text": "Noriko Hidaka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", a Yuki, de "
+            },
+            {
+              "text": "Jujutsu Kaisen",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") que são prometidos em casamento pelas respectivas famílias. O que ninguém contava é que, após um treinamento em uma área remota da China, Ranma começasse a se transformar em mulher quando molhado com água fria, e voltasse a ser homem quando molhado com água quente. Em um primeiro momento, Ranma e Akane se odeiam, mas o mangá de "
+            },
+            {
+              "text": "Rumiko Takahashi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " mistura humor, momentos absurdos e uma pitada de romance para mostrar como os sentimentos dos dois começam a mudar."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O mangá de Ranma ½ tem uma história de publicação curiosa no Brasil. Em meados dos anos 2000, a história de Ranma chegou ao país pela Animangá, em formato americano, numa coleção que nunca foi finalizada. Anos depois, a editora JBC relançou Ranma, dessa vez com a história completa, totalizando 38 volumes, sendo que muitos já estão esgotados. Por conta disso, e aproveitando o lançamento do novo animê, a mesma editora anunciou em 2025 uma republicação do mangá. A ideia é compilar toda a história em 20 volumes com capas personalizadas, na versão wideban. A previsão é que a nova coleção chegue para os fãs a partir do segundo semestre deste ano, com data ainda a ser anunciada.",
+          "runs": [
+            {
+              "text": "O mangá de "
+            },
+            {
+              "text": "Ranma ½",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " tem uma história de publicação curiosa no Brasil. Em meados dos anos 2000, a história de Ranma chegou ao país pela "
+            },
+            {
+              "text": "Animangá",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", em formato americano, numa coleção que nunca foi finalizada. Anos depois, a editora "
+            },
+            {
+              "text": "JBC",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " relançou "
+            },
+            {
+              "text": "Ranma",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", dessa vez com a história completa, totalizando 38 volumes, sendo que muitos já estão esgotados. Por conta disso, e aproveitando o lançamento do novo animê, a mesma editora"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "anunciou em 2025 uma republicação do mangá",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2025/08/02/ranma-%c2%bd-jbc-negocia-versao-wideban-do-manga-para-2026/"
+            },
+            {
+              "text": ". A ideia é compilar toda a história em 20 volumes com capas personalizadas, na versão "
+            },
+            {
+              "text": "wideban",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". A previsão é que a nova coleção chegue para os fãs a partir do segundo semestre deste ano, com data ainda a ser anunciada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já o animê também já teve uma primeira versão lançada originalmente entre 1989 e 1992. No Brasil, a versão clássica está disponível pelo canal Koiplay, uma assinatura adicional dentro do Amazon Prime Video. As duas temporadas já lançadas do remake seguem no catálogo da Netflix, enquanto a terceira tem estreia marcada para o dia 3 de outubro.",
+          "runs": [
+            {
+              "text": "Já o animê também já teve uma primeira versão lançada originalmente entre 1989 e 1992. No Brasil, a versão clássica está disponível pelo canal "
+            },
+            {
+              "text": "Koiplay",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", uma assinatura adicional dentro do "
+            },
+            {
+              "text": "Amazon Prime Video",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". As duas temporadas já lançadas do remake seguem no catálogo da "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", enquanto a terceira tem estreia marcada para o dia "
+            },
+            {
+              "text": "3 de outubro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fontes: Site oficial de Ranma ½",
+          "runs": [
+            {
+              "text": "Fontes: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Site oficial de Ranma ½",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://ranma-pr.com/news/2506/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-14T21:47:10.000Z",
+      "updatedAt": "2026-09-14T21:48:35.000Z",
+      "expiresAt": "2026-09-21T21:47:10.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/14/ranma-%c2%bd-trailer-da-3a-temporada-mostra-novos-personagens-e-musicas-de-abertura-e-encerramento",
+          "publishedAt": "2026-09-14T21:47:10.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 472,
+      "qualityScore": 0.995,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-cfb650b3",
+      "slug": "funso-deshitara-hatta-made-ganhara-anime-animenew-cfb650b3",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Funsō Deshitara Hatta made ganhará anime",
+      "originalTitle": "Funsō Deshitara Hatta made ganhará anime",
+      "summary": "O mangá Funsō Deshitara Hatta made (If It’s a Conflict, Leave it to Hatta), de Motohiro Den, terá uma adaptação para anime. Mais detalhes serão divulgados posteriormente. A confirmação aconteceu nesta segunda-feira (14) pelo site oficial da revista Morning, da Kodansha.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Funsō Deshitara Hatta made",
+        "If It's a Conflict Leave it to Hatta"
+      ],
+      "url": "https://animenew.com.br/funso-deshitara-hatta-made-anime",
+      "sourceUrl": "https://animenew.com.br/funso-deshitara-hatta-made-anime",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Funso-Deshitara-Hatta-made-ganhara-anime.webp",
+      "mediaQuery": "Funsō Deshitara Hatta made ganhará anime",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Funso-Deshitara-Hatta-made-anime.webp",
+          "alt": "Funsō Deshitara Hatta made anime",
+          "caption": "© Motohiro Den, Kodansha"
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O mangá Funsō Deshitara Hatta made (If It’s a Conflict, Leave it to Hatta), de Motohiro Den, terá uma adaptação para anime. Mais detalhes serão divulgados posteriormente. A confirmação aconteceu nesta segunda-feira (14) pelo site oficial da revista Morning, da Kodansha.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Funsō Deshitara Hatta made",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "If It’s a Conflict, Leave it to Hatta",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), de Motohiro Den, terá uma adaptação para "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": ". Mais detalhes serão divulgados posteriormente. A confirmação aconteceu nesta segunda-feira (14) pelo site oficial da revista Morning, da "
+            },
+            {
+              "text": "Kodansha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
             }
           ]
         },
@@ -169,104 +676,106 @@
           "ordered": false,
           "items": [
             {
-              "text": "Melty Blood: Twi-Lumina ganha data de lançamento",
+              "text": "#I’m Looking for Zombie ganha trailer e elenco",
               "runs": [
                 {
-                  "text": "Melty Blood: Twi-Lumina ganha data de lançamento",
-                  "href": "https://animenew.com.br/melty-blood-twi-lumina-data-white-len"
+                  "text": "#I’m Looking for Zombie ganha trailer e elenco",
+                  "href": "https://animenew.com.br/im-looking-for-zombie-anime-trailer-elenco"
                 }
               ]
             },
             {
-              "text": "The Apothecary Diaries ganha novo jogo de mistério",
+              "text": "Ranma ½ revela novo trailer da 3ª temporada",
               "runs": [
                 {
-                  "text": "The Apothecary Diaries ganha novo jogo de mistério",
-                  "href": "https://animenew.com.br/the-apothecary-diaries-ganha-novo-jogo-de-misterio"
+                  "text": "Ranma ½ revela novo trailer da 3ª temporada",
+                  "href": "https://animenew.com.br/ranma-terceira-temporada-trailer"
                 }
               ]
             }
           ]
         },
         {
-          "type": "paragraph",
-          "text": "A empresa divulgou um vídeo promocional, uma arte principal e detalhes dos primeiros personagens. Hiyori Kōno dará voz a Himawari Harewatari, uma garota mágica capaz de transformar o clima em poder para animar as pessoas.",
-          "runs": [
-            {
-              "text": "A empresa divulgou um vídeo promocional, uma arte principal e detalhes dos primeiros personagens. Hiyori Kōno dará voz a "
-            },
-            {
-              "text": "Himawari Harewatari",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", uma garota mágica capaz de transformar o clima em poder para animar as pessoas."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=n8e8swKZhPY",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/n8e8swKZhPY"
-        },
-        {
-          "type": "paragraph",
-          "text": "Yuki Nagano interpreta Pon Arai, um mensageiro divino com aparência de tanuki conhecido como Kumorin. Ele concede poderes à garota mágica e atua como seu parceiro.",
-          "runs": [
-            {
-              "text": "Yuki Nagano interpreta Pon Arai, um mensageiro divino com aparência de tanuki conhecido como Kumorin. Ele concede poderes à garota mágica e atua como seu parceiro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Outras duplas também foram apresentadas. Mirika Kawa interpreta Yūri Amanohara, acompanhada pela Kumorin Kon Oribe, com voz de Ayaka Fujimoto. Chinatsu Hirose dá voz a Izu Shinotsuki, enquanto Momoka Tsuji interpreta sua parceira Chuchu Yumekawa.",
-          "runs": [
-            {
-              "text": "Outras duplas também foram apresentadas. Mirika Kawa interpreta Yūri Amanohara, acompanhada pela Kumorin Kon Oribe, com voz de Ayaka Fujimoto. Chinatsu Hirose dá voz a Izu Shinotsuki, enquanto Momoka Tsuji interpreta sua parceira Chuchu Yumekawa."
-            }
-          ]
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Funso-Deshitara-Hatta-made-anime.webp",
+          "alt": "Funsō Deshitara Hatta made anime",
+          "caption": "© Motohiro Den, Kodansha"
         },
         {
           "type": "heading",
-          "text": "Clima influencia a jogabilidade",
+          "text": "Sinopse",
           "runs": [
             {
-              "text": "Clima influencia a jogabilidade"
+              "text": "Sinopse"
             }
           ],
           "level": 3
         },
         {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Ame-nochi-Hare-Onna.webp",
-          "alt": "Ame nochi Hare Onna",
-          "caption": "© GAME FREAK inc. Developed by CHRONOGATE Inc."
+          "type": "paragraph",
+          "text": "A obra acompanha Yuri Hatta, uma consultora especializada em riscos geopolíticos que atua em diferentes regiões do mundo. Em seus trabalhos, Hatta precisa lidar com conflitos e situações políticas complexas. Para encontrar soluções, ela combina seu conhecimento sobre geopolítica com estratégias ousadas.",
+          "runs": [
+            {
+              "text": "A obra acompanha Yuri Hatta, uma consultora especializada em riscos geopolíticos que atua em diferentes regiões do mundo. Em seus trabalhos, Hatta precisa lidar com conflitos e situações políticas complexas. Para encontrar soluções, ela combina seu conhecimento sobre geopolítica com estratégias ousadas.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mangá começou em 2019",
+          "runs": [
+            {
+              "text": "Mangá começou em 2019"
+            }
+          ],
+          "level": 3
         },
         {
           "type": "paragraph",
-          "text": "O jogo terá a misteriosa máquina Sentakki, criada por Ken Sugimori. Assim a previsão do tempo em tempo real de diferentes regiões do Japão será integrada à experiência e poderá alterar elementos da jogabilidade diariamente.",
+          "text": "Motohiro Den iniciou a publicação em novembro de 2019 na revista Morning e no aplicativo D Morning. Atualmente, a série continua sendo publicada exclusivamente no D Morning.",
           "runs": [
             {
-              "text": "O jogo terá a misteriosa máquina Sentakki, criada por Ken Sugimori. Assim a previsão do tempo em tempo real de diferentes regiões do Japão será integrada à experiência e poderá alterar elementos da jogabilidade diariamente."
+              "text": "Motohiro Den iniciou a publicação em novembro de 2019 na revista Morning e no aplicativo D Morning. Atualmente, a série continua sendo publicada exclusivamente no D Morning."
             }
           ]
         },
         {
           "type": "paragraph",
-          "text": "Por fim Shigeru Oomori dirige e produz o projeto, desenvolvido pela Game Freak em parceria com a CHRONOGATE.",
+          "text": "A Kodansha lançou o primeiro volume compilado em março de 2020. Por fim o 20º volume está programado para chegar às lojas japonesas em 18 de setembro.",
           "runs": [
             {
-              "text": "Por fim Shigeru Oomori dirige e produz o projeto, desenvolvido pela Game Freak em parceria com a CHRONOGATE."
+              "text": "A "
+            },
+            {
+              "text": "Kodansha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " lançou o primeiro volume compilado em março de 2020. Por fim o 20º volume está programado para chegar às lojas japonesas em 18 de setembro."
             }
           ]
         },
         {
           "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Game Freak anuncia novo jogo mobile Ame nochi Hare Onna.",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://morning.kodansha.co.jp/news/4251.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Funsō Deshitara Hatta made ganhará anime.",
           "runs": [
             {
               "text": "Este artigo foi publicado originalmente no "
@@ -279,8 +788,8 @@
               "text": ".  Leia a versão completa em "
             },
             {
-              "text": "Game Freak anuncia novo jogo mobile Ame nochi Hare Onna",
-              "href": "https://animenew.com.br/ame-nochi-hare-onna-jogo-game-freak/"
+              "text": "Funsō Deshitara Hatta made ganhará anime",
+              "href": "https://animenew.com.br/funso-deshitara-hatta-made-anime/"
             },
             {
               "text": "."
@@ -289,34 +798,1350 @@
         }
       ],
       "contentMode": "full",
-      "publishedAt": "2026-09-14T16:58:46.000Z",
-      "updatedAt": "2026-09-14T16:58:46.000Z",
-      "expiresAt": "2026-09-21T16:58:46.000Z",
+      "publishedAt": "2026-09-14T21:22:16.000Z",
+      "updatedAt": "2026-09-14T21:22:16.000Z",
+      "expiresAt": "2026-09-21T21:22:16.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/funso-deshitara-hatta-made-anime",
+          "publishedAt": "2026-09-14T21:22:16.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 183,
+      "qualityScore": 0.963,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-f3d71a8d",
+      "slug": "yu-gi-oh-ganha-video-especial-para-exposicao-do-criador-do-manga-animenew-f3d71a8d",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Yu-Gi-Oh! ganha vídeo especial para exposição do criador do mangá",
+      "originalTitle": "Yu-Gi-Oh! ganha vídeo especial para exposição do criador do mangá",
+      "summary": "A franquia Yu-Gi-Oh! divulgou um vídeo animado especial para promover a exposição dedicada às artes de Kazuki Takahashi, criador do mangá. O material estreou no canal oficial da franquia no YouTube nesta segunda-feira.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Yu-Gi-Oh"
+      ],
+      "url": "https://animenew.com.br/yu-gi-oh-art-works-exposicao-kazuki-takahashi",
+      "sourceUrl": "https://animenew.com.br/yu-gi-oh-art-works-exposicao-kazuki-takahashi",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Yu-Gi-Oh-ganha-video-especial-para-exposicao-do-criador.webp",
+      "mediaQuery": "Yu-Gi-Oh! ganha vídeo especial para exposição do criador do mangá",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/edklrtKN77o"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A franquia Yu-Gi-Oh! divulgou um vídeo animado especial para promover a exposição dedicada às artes de Kazuki Takahashi, criador do mangá. O material estreou no canal oficial da franquia no YouTube nesta segunda-feira.",
+          "runs": [
+            {
+              "text": "A franquia "
+            },
+            {
+              "text": "Yu-Gi-Oh!",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " divulgou um vídeo animado especial para promover a exposição dedicada às artes de "
+            },
+            {
+              "text": "Kazuki Takahashi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", criador do "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": ". O material estreou no canal oficial da franquia no YouTube nesta segunda-feira."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "#I’m Looking for Zombie ganha trailer e elenco",
+              "runs": [
+                {
+                  "text": "#I’m Looking for Zombie ganha trailer e elenco",
+                  "href": "https://animenew.com.br/im-looking-for-zombie-anime-trailer-elenco"
+                }
+              ]
+            },
+            {
+              "text": "Ranma ½ revela novo trailer da 3ª temporada",
+              "runs": [
+                {
+                  "text": "Ranma ½ revela novo trailer da 3ª temporada",
+                  "href": "https://animenew.com.br/ranma-terceira-temporada-trailer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A animação serve como divulgação para a mostra “YU-GI-OH! ART WORKS”, que reunirá trabalhos do autor falecido em 2022.",
+          "runs": [
+            {
+              "text": "A animação serve como divulgação para a mostra “YU-GI-OH! ART WORKS”, que reunirá trabalhos do autor falecido em 2022."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=edklrtKN77o",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/edklrtKN77o"
+        },
+        {
+          "type": "paragraph",
+          "text": "A exposição acontecerá no Creative Museum Tokyo, no Japão, entre 12 de dezembro de 2026 e 21 de fevereiro de 2027. A iniciativa celebra o legado artístico de Takahashi e sua contribuição para uma das franquias japonesas mais conhecidas mundialmente.",
+          "runs": [
+            {
+              "text": "A exposição acontecerá no Creative Museum Tokyo, no Japão, entre "
+            },
+            {
+              "text": "12 de dezembro de 2026 e 21 de fevereiro de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A iniciativa celebra o legado artístico de Takahashi e sua contribuição para uma das franquias japonesas mais conhecidas mundialmente."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Legado de Kazuki Takahashi",
+          "runs": [
+            {
+              "text": "Legado de Kazuki Takahashi"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Publicado na Weekly Shonen Jump entre 1996 e 2004, o mangá deu origem a uma franquia que se expandiu para animes, jogos de cartas, brinquedos e novas séries de mangá.",
+          "runs": [
+            {
+              "text": "Publicado na "
+            },
+            {
+              "text": "Weekly Shonen Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " entre 1996 e 2004, o mangá deu origem a uma franquia que se expandiu para animes, jogos de cartas, brinquedos e novas séries de mangá."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anime mais recente da linha principal foi Yu-Gi-Oh! Go Rush!!, exibido entre abril de 2022 e março de 2025. Já o Yu-Gi-Oh! Duel Monsters GX 20th Remaster começou a ser transmitido em abril de 2025, celebrando os 20 anos da série.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " mais recente da linha principal foi Yu-Gi-Oh! Go Rush!!, exibido entre abril de 2022 e março de 2025. Já o Yu-Gi-Oh! Duel Monsters GX 20th Remaster começou a ser transmitido em abril de 2025, celebrando os 20 anos da série."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Yu-Gi-Oh! ganha vídeo especial para exposição do criador do mangá.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Yu-Gi-Oh! ganha vídeo especial para exposição do criador do mangá",
+              "href": "https://animenew.com.br/yu-gi-oh-art-works-exposicao-kazuki-takahashi/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-14T21:13:20.000Z",
+      "updatedAt": "2026-09-14T21:13:20.000Z",
+      "expiresAt": "2026-09-21T21:13:20.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/yu-gi-oh-art-works-exposicao-kazuki-takahashi",
+          "publishedAt": "2026-09-14T21:13:20.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 206,
+      "qualityScore": 0.964,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-20502ccc",
+      "slug": "i-m-looking-for-zombie-ganha-trailer-e-elenco-animenew-20502ccc",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "#I’m Looking for Zombie ganha trailer e elenco",
+      "originalTitle": "#I’m Looking for Zombie ganha trailer e elenco",
+      "summary": "O anime #I’m Looking for Zombie (Zombie Sagashitemasu) ganhou seu trailer principal, novos nomes no elenco e na equipe, além da confirmação da estreia para 3 de outubro no Japão. O vídeo também apresenta trechos das músicas de abertura e encerramento. “Raki Raki”, de Surii, será a abertura, enquanto “Soft Apocalypse”, da banda cadode, ficará responsável pelo encerramento.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "I'm Looking for a Zombie",
+        "Zombie Sagashitemasu"
+      ],
+      "url": "https://animenew.com.br/im-looking-for-zombie-anime-trailer-elenco",
+      "sourceUrl": "https://animenew.com.br/im-looking-for-zombie-anime-trailer-elenco",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Im-Looking-for-Zombie-ganha-trailer-e-elenco.webp",
+      "mediaQuery": "#I’m Looking for Zombie ganha trailer e elenco",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/anime-Im-Looking-for-Zombie.webp",
+          "alt": "anime #I’m Looking for Zombie",
+          "caption": "©カツヲ/KADOKAWA/ゾンます製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/Q72YGjPWpRc"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime #I’m Looking for Zombie (Zombie Sagashitemasu) ganhou seu trailer principal, novos nomes no elenco e na equipe, além da confirmação da estreia para 3 de outubro no Japão. O vídeo também apresenta trechos das músicas de abertura e encerramento. “Raki Raki”, de Surii, será a abertura, enquanto “Soft Apocalypse”, da banda cadode, ficará responsável pelo encerramento.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "#I’m Looking for Zombie",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Zombie Sagashitemasu",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") ganhou seu trailer principal, novos nomes no elenco e na equipe, além da confirmação da estreia para 3 de outubro no Japão. O vídeo também apresenta trechos das músicas de abertura e encerramento. “Raki Raki”, de Surii, será a abertura, enquanto “Soft Apocalypse”, da banda cadode, ficará responsável pelo encerramento."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Ranma ½ revela novo trailer da 3ª temporada",
+              "runs": [
+                {
+                  "text": "Ranma ½ revela novo trailer da 3ª temporada",
+                  "href": "https://animenew.com.br/ranma-terceira-temporada-trailer"
+                }
+              ]
+            },
+            {
+              "text": "Gundam RG XARX-ZERO estreia em abril de 2027",
+              "runs": [
+                {
+                  "text": "Gundam RG XARX-ZERO estreia em abril de 2027",
+                  "href": "https://animenew.com.br/gundam-rg-xarx-zero-estreia-abril-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre as novas vozes estão Yoko Hikasa como Mikazuki, Makoto Koichi como Toka, Tomoyo Takayanagi como Takamo e Aino Shimada como Saigo. Kosuke Toriumi também participa como o pai de Aki, desaparecido desde que deixou a filha ainda criança.",
+          "runs": [
+            {
+              "text": "Entre as novas vozes estão "
+            },
+            {
+              "text": "Yoko Hikasa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Mikazuki, "
+            },
+            {
+              "text": "Makoto Koichi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Toka, "
+            },
+            {
+              "text": "Tomoyo Takayanagi ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "como Takamo e "
+            },
+            {
+              "text": "Aino Shimada",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Saigo. Kosuke Toriumi também participa como o pai de Aki, desaparecido desde que deixou a filha ainda criança."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=Q72YGjPWpRc",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Q72YGjPWpRc"
+        },
+        {
+          "type": "paragraph",
+          "text": "A animação estreia em 3 de outubro no bloco IMAnimation da TV Asahi e de outras 23 emissoras afiliadas, às 23h30 no horário japonês. A produção é do Studio Comet, com direção de Shin’ya Une.",
+          "runs": [
+            {
+              "text": "A animação estreia em 3 de outubro no bloco "
+            },
+            {
+              "text": "IMAnimation",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " da TV Asahi e de outras 23 emissoras afiliadas, às 23h30 no horário japonês. A produção é do "
+            },
+            {
+              "text": "Studio Comet",
+              "href": "https://animenew.com.br/studio/126/studio-comet"
+            },
+            {
+              "text": ", com direção de Shin’ya Une."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/anime-Im-Looking-for-Zombie.webp",
+          "alt": "anime #I’m Looking for Zombie",
+          "caption": "©カツヲ/KADOKAWA/ゾンます製作委員会"
+        },
+        {
+          "type": "heading",
+          "text": "Sinopse",
+          "runs": [
+            {
+              "text": "Sinopse"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama se passa após o “Red Day”, evento que dizimou grande parte da humanidade e transformou pessoas em zumbis. Assim Treze anos depois, uma nova geração cresce sem conhecer o mundo antigo. Aki e suas amigas iniciam uma jornada fora da vila segura, explorando cidades abandonadas e enfrentando ameaças. A narrativa destaca adaptação, memória e reconstrução da sociedade.",
+          "runs": [
+            {
+              "text": "A trama se passa após o “Red Day”, evento que dizimou grande parte da humanidade e transformou pessoas em zumbis. Assim Treze anos depois, uma nova geração cresce sem conhecer o mundo antigo. Aki e suas amigas iniciam uma jornada fora da vila segura, explorando cidades abandonadas e enfrentando ameaças. A narrativa destaca adaptação, memória e reconstrução da sociedade.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim o mangá de Katsuwo começou em 2022 na Comic Dengeki DaiohG e foi concluído com três volumes publicados pela Kadokawa.",
+          "runs": [
+            {
+              "text": "Por fim o "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " de Katsuwo começou em 2022 na Comic Dengeki DaiohG e foi concluído com três volumes publicados pela "
+            },
+            {
+              "text": "Kadokawa",
+              "href": "https://animenew.com.br/tag/kadokawa/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em #I’m Looking for Zombie ganha trailer e elenco.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "#I’m Looking for Zombie ganha trailer e elenco",
+              "href": "https://animenew.com.br/im-looking-for-zombie-anime-trailer-elenco/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-14T21:05:48.000Z",
+      "updatedAt": "2026-09-14T21:05:48.000Z",
+      "expiresAt": "2026-09-21T21:05:48.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/im-looking-for-zombie-anime-trailer-elenco",
+          "publishedAt": "2026-09-14T21:05:48.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 251,
+      "qualityScore": 0.97,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-5094e86c",
+      "slug": "adult-swim-os-cavaleiros-do-zodiaco-devem-deixar-o-canal-em-outubro-jbox-5094e86c",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Adult Swim: ‘Os Cavaleiros do Zodíaco’ devem deixar o canal em outubro",
+      "originalTitle": "Adult Swim: ‘Os Cavaleiros do Zodíaco’ devem deixar o canal em outubro",
+      "summary": "O Adult Swim está prestes a passar por mudanças em sua grade de programação. Segundo o site mexicano TV Laint, o canal a cabo deve ter reestruturações similares aos que outros canais da Warner Bros. Discovery vem passando.",
+      "author": "Jean Clemente",
+      "tags": [
+        "Anime",
+        "Programação",
+        "TV",
+        "adult swim",
+        "Cavaleiros do Zodíaco",
+        "cdz",
+        "Lazarus",
+        "Saint Seiya",
+        "tv a cabo",
+        "Warner Bros"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/14/adult-swim-os-cavaleiros-do-zodiaco-devem-deixar-o-canal-em-outubro",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/14/adult-swim-os-cavaleiros-do-zodiaco-devem-deixar-o-canal-em-outubro",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/cavaleirosdozodiaco1986-destacada.jpg",
+      "mediaQuery": "Adult Swim: ‘Os Cavaleiros do Zodíaco’ devem deixar o canal em outubro",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O Adult Swim está prestes a passar por mudanças em sua grade de programação. Segundo o site mexicano TV Laint, o canal a cabo deve ter reestruturações similares aos que outros canais da Warner Bros. Discovery vem passando.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "Adult Swim",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " está prestes a passar por mudanças em sua grade de programação. Segundo o site mexicano "
+            },
+            {
+              "text": "TV Laint",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o canal a cabo deve ter reestruturações similares aos que outros canais da "
+            },
+            {
+              "text": "Warner Bros. Discovery",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " vem passando."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para começar, teremos a diminuição de programas indo ao ar, com a baixa mais significativa sendo Os Cavaleiros do Zodíaco. Segundo o site, a saída de Seiya e seus shiryus amigos deve se dar pelo término da licença, que começou ainda na época do extinto bloco Wanimé, no Warner Channel, em 2023. Atualmente, o animê é reprisado todos os dias em vários horários da programação, onde estreou em fevereiro de 2024.",
+          "runs": [
+            {
+              "text": "Para começar, teremos a diminuição de programas indo ao ar, com a baixa mais significativa sendo"
+            },
+            {
+              "text": " Os Cavaleiros do",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Zodíaco",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". Segundo o site, a saída de Seiya e seus "
+            },
+            {
+              "text": "shiryus amigos",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " deve se dar pelo término da licença, que começou ainda"
+            },
+            {
+              "text": " na época do extinto bloco ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2023/10/30/warner-channel-divulga-horarios-de-dragon-ball-e-cavaleiros-do-zodiaco/"
+            },
+            {
+              "text": "Wanimé",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2023/10/30/warner-channel-divulga-horarios-de-dragon-ball-e-cavaleiros-do-zodiaco/"
+            },
+            {
+              "text": ", no "
+            },
+            {
+              "text": "Warner Channel",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", em 2023. Atualmente, o animê é reprisado todos os dias em vários horários da programação, onde estreou em fevereiro de 2024."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já para os hermanos, eles também contarão com a saída de One Piece, que seguirá na grade brasileira de programação. Fora das animações nipônicas, as outras baixas são Ambient Swim, Mike Tyson Mysteries, Samurai Jack, As Terríveis Aventuras de Billy & Mandy e A Vaca e o Frango.",
+          "runs": [
+            {
+              "text": "Já para os hermanos, eles também contarão com a saída de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", que seguirá na grade brasileira de programação. Fora das animações nipônicas, as outras baixas são "
+            },
+            {
+              "text": "Ambient Swim",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Mike Tyson Mysteries",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Samurai Jack",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "As Terríveis Aventuras de Billy & Mandy",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "A Vaca e o Frango",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Outra mudança é a união do sinal mexicano com o panregional, que modificará a grade do canal por lá. Agora, as séries adultas ficarão restritas apenas ao horário noturno. Ao que tudo indica, o mesmo acontecerá com o sinal brasileiro, que ainda manterá algumas séries exclusivas em sua programação.",
+          "runs": [
+            {
+              "text": "Outra mudança é a união do sinal mexicano com o panregional, que modificará a grade do canal por lá. Agora, as séries adultas ficarão restritas apenas ao horário noturno. Ao que tudo indica, o mesmo acontecerá com o sinal brasileiro, que ainda manterá algumas séries exclusivas em sua programação."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: TV Laint",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "TV Laint",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.tvlaint.com/2026/09/el-inicio-del-fin-adult-swim-mexico.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-14T20:00:17.000Z",
+      "updatedAt": "2026-09-14T20:01:46.000Z",
+      "expiresAt": "2026-09-21T20:00:17.000Z",
       "category": "Notícias",
       "eventType": "OTHER",
       "facts": [],
       "contentSections": [],
       "sources": [
         {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/ame-nochi-hare-onna-jogo-game-freak",
-          "publishedAt": "2026-09-14T16:58:46.000Z",
-          "author": "Rafael Shinzo"
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/14/adult-swim-os-cavaleiros-do-zodiaco-devem-deixar-o-canal-em-outubro",
+          "publishedAt": "2026-09-14T20:00:17.000Z",
+          "author": "Jean Clemente"
         }
       ],
       "sourceCount": 1,
       "readingMinutes": 2,
-      "wordCount": 225,
-      "qualityScore": 0.969,
+      "wordCount": 226,
+      "qualityScore": 0.964,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 7,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-4fe98377",
+      "slug": "ame-no-chi-hare-onna-game-freak-estudio-de-pokemon-anuncia-novo-jogo-jbox-4fe98377",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Ame no Chi Hare Onna: Game Freak, estúdio de ‘Pokémon’, anuncia novo jogo",
+      "originalTitle": "Ame no Chi Hare Onna: Game Freak, estúdio de ‘Pokémon’, anuncia novo jogo",
+      "summary": "Foi anunciado pela Game Freak, conhecida principalmente pelos jogos de Pokémon, um novo título chamado Ame no Chi Hare Onna. O lançamento é para celulares, chegando entre o final de 2026 e início de 2027.",
+      "author": "Teke",
+      "tags": [
+        "Games",
+        "Ame no Chi Hare Onna",
+        "CHRONOGATE",
+        "Gamefreak"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/14/ame-no-chi-hare-onna-game-freak-estudio-de-pokemon-anuncia-novo-jogo",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/14/ame-no-chi-hare-onna-game-freak-estudio-de-pokemon-anuncia-novo-jogo",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Ame-no-Chi-Hare-Onna-destacada.jpg",
+      "mediaQuery": "Ame no Chi Hare Onna: Game Freak, estúdio de ‘Pokémon’, anuncia novo jogo",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/JtVI0nYlohM"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado pela Game Freak, conhecida principalmente pelos jogos de Pokémon, um novo título chamado Ame no Chi Hare Onna. O lançamento é para celulares, chegando entre o final de 2026 e início de 2027.",
+          "runs": [
+            {
+              "text": "Foi anunciado pela "
+            },
+            {
+              "text": "Game Freak",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", conhecida principalmente pelos jogos de "
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", um novo título chamado "
+            },
+            {
+              "text": "Ame no Chi Hare Onna",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ". O lançamento é para celulares, chegando entre o final de 2026 e início de 2027."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira o trailer de anúncio:",
+          "runs": [
+            {
+              "text": "Confira o trailer de anúncio:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=JtVI0nYlohM",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/JtVI0nYlohM"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ame no Chi Hare Onna é desenvolvido pela Game Freak em parceria com a CHRONOGATE. Na direção e produção está Shigeru Ohmori, cargo que ele já ocupou em vários dos jogos de Pokémon. Katsunori Suginaka (Pokémon Sword & Shield) é responsável pela coordenação do roteiro. Dois nomes foram confirmados para o design de personagens, sendo eles Aki Minamino e Kyoko Abe, que foi responsável por alguns dos designs de personagens humanos e também de Pokémon em jogos e também em animês da franquia.",
+          "runs": [
+            {
+              "text": "Ame no Chi Hare Onna",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é desenvolvido pela Game Freak em parceria com a "
+            },
+            {
+              "text": "CHRONOGATE",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Na direção e produção está "
+            },
+            {
+              "text": "Shigeru Ohmori",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", cargo que ele já ocupou em vários dos jogos de "
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". "
+            },
+            {
+              "text": "Katsunori Suginaka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Pokémon Sword & Shield",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") é responsável pela coordenação do roteiro. Dois nomes foram confirmados para o design de personagens, sendo eles "
+            },
+            {
+              "text": "Aki Minamino",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://x.com/_poo_illust"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "e"
+            },
+            {
+              "text": " Kyoko Abe",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que foi responsável por alguns dos designs de personagens humanos e também de "
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " em jogos e também em animês da franquia."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na história, as garotas mágicas conhecidas como Hare Onna tem o poder de usar o clima para melhorar o humor das pessoas. Elas são acompanhadas dos Kumorin, mascotes que atuam como mensageiros divinos do clima e responsáveis pelos poderes das Hare Onna.",
+          "runs": [
+            {
+              "text": "Na história, as garotas mágicas conhecidas como Hare Onna tem o poder de usar o clima para melhorar o humor das pessoas. Elas são acompanhadas dos Kumorin, mascotes que atuam como mensageiros divinos do clima e responsáveis pelos poderes das Hare Onna."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Através de uma mecânica atrelada diretamente com a previsão do tempo, o gameplay é dividido em patrulha da cidade, participação em batalhas e em lavagem de roupas, manuseando o dia a dia das garotas mágicas ao redor disso. Por enquanto, o título tem lançamento confirmado apenas para o Japão.",
+          "runs": [
+            {
+              "text": "Através de uma mecânica atrelada diretamente com a previsão do tempo, o gameplay é dividido em patrulha da cidade, participação em batalhas e em lavagem de roupas, manuseando o dia a dia das garotas mágicas ao redor disso. Por enquanto, o título tem lançamento confirmado apenas para o Japão."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O jogo teve uma transmissão especial para divulgação detalhes, incluindo elenco e personagens. Mais informações serão divulgados entre os dias 17 e 21 de setembro, durante a Tokyo Game Show. O elenco divulgado inclui:",
+          "runs": [
+            {
+              "text": "O jogo teve uma "
+            },
+            {
+              "text": "transmissão especial para divulgação detalhes, incluindo elenco e personagens",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://youtu.be/nh4MisfbXsQ"
+            },
+            {
+              "text": ". Mais informações serão divulgados entre os dias 17 e 21 de setembro, durante a Tokyo Game Show. O elenco divulgado inclui:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Hiyori Kouno (Hinata em Healin’ Good Pretty Cure) como Himawari Harewatari",
+              "runs": [
+                {
+                  "text": "Hiyori Kouno ",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "(Hinata em "
+                },
+                {
+                  "text": "Healin’ Good Pretty Cure",
+                  "marks": [
+                    "em"
+                  ]
+                },
+                {
+                  "text": ") como "
+                },
+                {
+                  "text": "Himawari Harewatari",
+                  "marks": [
+                    "strong"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Yuki Nagano (Alice em The Hidden Dungeon Only I Can Enter) como Pon Arai",
+              "runs": [
+                {
+                  "text": "Yuki Nagano ",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "(Alice em "
+                },
+                {
+                  "text": "The Hidden Dungeon Only I Can Enter",
+                  "marks": [
+                    "em"
+                  ]
+                },
+                {
+                  "text": ") como "
+                },
+                {
+                  "text": "Pon Arai",
+                  "marks": [
+                    "strong"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Mirika Kawa (Eri em BanG Dream! It’s MyGo!!!!!) como Yuuri Amanohara",
+              "runs": [
+                {
+                  "text": "Mirika Kawa",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " (Eri em "
+                },
+                {
+                  "text": "BanG Dream! It’s MyGo!!!!!",
+                  "marks": [
+                    "em"
+                  ]
+                },
+                {
+                  "text": ") como "
+                },
+                {
+                  "text": "Yuuri Amanohara",
+                  "marks": [
+                    "strong"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Ayaka Fujimoto (Atsumi em The Idolmaster: Cinderella Girls) como Kon Oribe",
+              "runs": [
+                {
+                  "text": "Ayaka Fujimoto ",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "(Atsumi em "
+                },
+                {
+                  "text": "The Idolmaster: Cinderella Girls",
+                  "marks": [
+                    "em"
+                  ]
+                },
+                {
+                  "text": ") como "
+                },
+                {
+                  "text": "Kon Oribe",
+                  "marks": [
+                    "strong"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Chinatsu Hirose (Matsuri em Waccha PriMagi!) como Izu Shinotsuki",
+              "runs": [
+                {
+                  "text": "Chinatsu Hirose",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " (Matsuri em "
+                },
+                {
+                  "text": "Waccha PriMagi!",
+                  "marks": [
+                    "em"
+                  ]
+                },
+                {
+                  "text": ") como "
+                },
+                {
+                  "text": "Izu Shinotsuki",
+                  "marks": [
+                    "strong"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Momoka Tsuji (Ywitte em Brigandine Abyss) como Chuchu Yumekawa",
+              "runs": [
+                {
+                  "text": "Momoka Tsuji",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " (Ywitte em "
+                },
+                {
+                  "text": "Brigandine Abyss",
+                  "marks": [
+                    "em"
+                  ]
+                },
+                {
+                  "text": ") como "
+                },
+                {
+                  "text": "Chuchu Yumekawa",
+                  "marks": [
+                    "strong"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Ame no Chi Hare Onna (YouTube)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Ame no Chi Hare Onna (YouTube)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://youtu.be/nh4MisfbXsQ"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-14T19:08:57.000Z",
+      "updatedAt": "2026-09-14T19:16:40.000Z",
+      "expiresAt": "2026-09-21T19:08:57.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/14/ame-no-chi-hare-onna-game-freak-estudio-de-pokemon-anuncia-novo-jogo",
+          "publishedAt": "2026-09-14T19:08:57.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 337,
+      "qualityScore": 0.981,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
         "sections": 0,
         "blocks": 11,
         "sourceCount": 1,
-        "ingestMode": "rss-full",
+        "ingestMode": "wp-rest",
         "contentMode": "full",
-        "mediaCount": 1,
+        "mediaCount": 0,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
@@ -2900,743 +4725,6 @@
       }
     },
     {
-      "id": "animenew-157af4c6",
-      "slug": "bless-revela-elenco-principal-e-estreia-para-janeiro-de-2027-animenew-157af4c6",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Bless revela elenco principal e estreia para janeiro de 2027",
-      "originalTitle": "Bless revela elenco principal e estreia para janeiro de 2027",
-      "summary": "O anime de Bless, mangá de Yukino Sonoyama, revelou seu elenco principal, primeiro visual e estreia para janeiro de 2027 durante evento da Aniplex. Tomohiro Ono dará voz a Aia Udagawa, enquanto Chiyuki Miura interpretará Jun Sumisaki. O evento também apresentou vídeos curtos das duas personagens.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Bless"
-      ],
-      "url": "https://animenew.com.br/bless-anime-estreia-janeiro-2027",
-      "sourceUrl": "https://animenew.com.br/bless-anime-estreia-janeiro-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Bless-revela-elenco-principal-e-estreia-para-janeiro-de-2027.webp",
-      "mediaQuery": "Bless revela elenco principal e estreia para janeiro de 2027",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Bless-anime.webp",
-          "alt": "Bless anime",
-          "caption": "©園山ゆきの・講談社／ブレス製作委員会"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/lYD2OdSXdTk"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/8-PCtkf8kpI"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime de Bless, mangá de Yukino Sonoyama, revelou seu elenco principal, primeiro visual e estreia para janeiro de 2027 durante evento da Aniplex. Tomohiro Ono dará voz a Aia Udagawa, enquanto Chiyuki Miura interpretará Jun Sumisaki. O evento também apresentou vídeos curtos das duas personagens.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " de "
-            },
-            {
-              "text": "Bless",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", mangá de Yukino Sonoyama, revelou seu elenco principal, primeiro visual e estreia para janeiro de 2027 durante evento da "
-            },
-            {
-              "text": "Aniplex",
-              "href": "https://animenew.com.br/tag/aniplex/"
-            },
-            {
-              "text": ". Tomohiro Ono dará voz a Aia Udagawa, enquanto Chiyuki Miura interpretará Jun Sumisaki. O evento também apresentou vídeos curtos das duas personagens."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Bleach: Thousand-Year Blood War adia episódios finais do anime",
-              "runs": [
-                {
-                  "text": "Bleach: Thousand-Year Blood War adia episódios finais do anime",
-                  "href": "https://animenew.com.br/bleach-thousand-year-blood-war-episodios-finais"
-                }
-              ]
-            },
-            {
-              "text": "Romelia War Chronicle revela estreia antecipada em streaming",
-              "runs": [
-                {
-                  "text": "Romelia War Chronicle revela estreia antecipada em streaming",
-                  "href": "https://animenew.com.br/romelia-war-chronicle-anime-estreia-outubro"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=lYD2OdSXdTk",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/lYD2OdSXdTk"
-        },
-        {
-          "type": "paragraph",
-          "text": "A série será exibida no bloco Noitamina da Fuji TV a partir de janeiro de 2027. Shōtarō Kitamura dirige a produção no estúdio A-1 Pictures, com Takayuki Kikuchi como diretor assistente.",
-          "runs": [
-            {
-              "text": "A série será exibida no bloco Noitamina da "
-            },
-            {
-              "text": "Fuji TV",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " a partir de janeiro de 2027. Shōtarō Kitamura dirige a produção no estúdio "
-            },
-            {
-              "text": "A-1 Pictures",
-              "href": "https://animenew.com.br/studio/561/a-1-pictures"
-            },
-            {
-              "text": ", com Takayuki Kikuchi como diretor assistente."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=8-PCtkf8kpI",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/8-PCtkf8kpI"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fukurou Kamiza cuida dos roteiros, enquanto Honoka Yokoyama é responsável pelo design dos personagens e direção-chefe de animação. Tetsuya Kawakami e Reina Iwasaki também atuam como diretores-chefes de animação. Ryō Yoshimata compõe a trilha sonora.",
-          "runs": [
-            {
-              "text": "Fukurou Kamiza cuida dos roteiros, enquanto Honoka Yokoyama é responsável pelo design dos personagens e direção-chefe de animação. Tetsuya Kawakami e Reina Iwasaki também atuam como diretores-chefes de animação. Ryō Yoshimata compõe a trilha sonora."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Bless-anime.webp",
-          "alt": "Bless anime",
-          "caption": "©園山ゆきの・講談社／ブレス製作委員会"
-        },
-        {
-          "type": "heading",
-          "text": "Sinopse",
-          "runs": [
-            {
-              "text": "Sinopse"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A história acompanha Aia, considerada destinada a se tornar modelo, e Jun, que sofreu bullying por causa de suas sardas. Juntas, elas buscam recuperar o controle sobre a própria imagem em uma trama ambientada no mundo da moda.",
-          "runs": [
-            {
-              "text": "A história acompanha Aia, considerada destinada a se tornar modelo, e Jun, que sofreu bullying por causa de suas sardas. Juntas, elas buscam recuperar o controle sobre a própria imagem em uma trama ambientada no mundo da moda.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Sonoyama iniciou o mangá na Shonen Magazine Edge em 2022. Atualmente, a obra é publicada na Monthly Shonen Sirius e já ultrapassa 1,25 milhão de cópias em circulação. O nono volume chega ao Japão em 8 de outubro.",
-          "runs": [
-            {
-              "text": "Sonoyama iniciou o "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " na "
-            },
-            {
-              "text": "Shonen Magazine Edge",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " em 2022. Atualmente, a obra é publicada na Monthly Shonen Sirius e já ultrapassa 1,25 milhão de cópias em circulação. O nono volume chega ao Japão em 8 de outubro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além do anime, Bless também ganhará uma série live-action com transmissão mundial exclusiva pelo Amazon Prime Video na primavera de 2027.",
-          "runs": [
-            {
-              "text": "Além do anime, Bless também ganhará uma série "
-            },
-            {
-              "text": "live-action",
-              "href": "https://animenew.com.br/live-action"
-            },
-            {
-              "text": " com transmissão mundial exclusiva pelo "
-            },
-            {
-              "text": "Amazon Prime Video",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " na primavera de 2027."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Bless revela elenco principal e estreia para janeiro de 2027.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Bless revela elenco principal e estreia para janeiro de 2027",
-              "href": "https://animenew.com.br/bless-anime-estreia-janeiro-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-13T10:45:45.000Z",
-      "updatedAt": "2026-09-13T10:45:45.000Z",
-      "expiresAt": "2026-09-20T10:45:45.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/bless-anime-estreia-janeiro-2027",
-          "publishedAt": "2026-09-13T10:45:45.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 250,
-      "qualityScore": 0.973,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 2,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-f0974f47",
-      "slug": "bleach-thousand-year-blood-war-adia-episodios-finais-do-anime-animenew-f0974f47",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Bleach: Thousand-Year Blood War adia episódios finais do anime",
-      "originalTitle": "Bleach: Thousand-Year Blood War adia episódios finais do anime",
-      "summary": "Os episódios finais 49 e 50 de Bleach: Thousand-Year Blood War – The Calamity foram adiados para 19 e 26 de outubro, respectivamente, no Japão. Assim a comissão de produção anunciou neste sábado que os dois episódios finais terão novas datas de exibição.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Bleach",
-        "Tite Kubo"
-      ],
-      "url": "https://animenew.com.br/bleach-thousand-year-blood-war-episodios-finais",
-      "sourceUrl": "https://animenew.com.br/bleach-thousand-year-blood-war-episodios-finais",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Bleach-Thousand-Year-Blood-War-adia-episodios-finais-do-anime.webp",
-      "mediaQuery": "Bleach: Thousand-Year Blood War adia episódios finais do anime",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Bleach-Thousand-Year-Blood-War.webp",
-          "alt": "Bleach: Thousand-Year Blood War",
-          "caption": "© 久保帯人／集英社・テレビ東京・ｄｅｎｔｓｕ・ぴえろ"
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Os episódios finais 49 e 50 de Bleach: Thousand-Year Blood War – The Calamity foram adiados para 19 e 26 de outubro, respectivamente, no Japão. Assim a comissão de produção anunciou neste sábado que os dois episódios finais terão novas datas de exibição.",
-          "runs": [
-            {
-              "text": "Os episódios finais 49 e 50 de "
-            },
-            {
-              "text": "Bleach: Thousand-Year Blood War – The Calamity",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " foram adiados para 19 e 26 de outubro, respectivamente, no Japão. Assim a comissão de produção anunciou neste sábado que os dois episódios finais terão novas datas de exibição."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Vertex Force revela músicas-tema e novo elenco em trailer",
-              "runs": [
-                {
-                  "text": "Vertex Force revela músicas-tema e novo elenco em trailer",
-                  "href": "https://animenew.com.br/vertex-force-revela-musicas-e-novo-elenco"
-                }
-              ]
-            },
-            {
-              "text": "The Vermilion Mask revela músicas e estreia na Crunchyroll",
-              "runs": [
-                {
-                  "text": "The Vermilion Mask revela músicas e estreia na Crunchyroll",
-                  "href": "https://animenew.com.br/the-vermilion-mask-anime-estreia-outubro"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Bleach-Thousand-Year-Blood-War.webp",
-          "alt": "Bleach: Thousand-Year Blood War",
-          "caption": "© 久保帯人／集英社・テレビ東京・ｄｅｎｔｓｕ・ぴえろ"
-        },
-        {
-          "type": "paragraph",
-          "text": "Segundo o comunicado, a equipe está trabalhando para melhorar a qualidade da animação enquanto a história se aproxima de seu clímax. Portanto Antes da transmissão dos episódios finais de Bleach, a emissora exibirá uma seleção de capítulos importantes:",
-          "runs": [
-            {
-              "text": "Segundo o comunicado, a equipe está trabalhando para melhorar a qualidade da animação enquanto a história se aproxima de seu clímax. Portanto Antes da transmissão dos episódios finais de Bleach, a emissora exibirá uma seleção de capítulos importantes:"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Última parte do anime Bleach",
-          "runs": [
-            {
-              "text": "Última parte do anime Bleach"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Bleach: Thousand-Year Blood War – The Calamity é a quarta e última parte da adaptação do arco final do mangá do autor Tite Kubo. A produção terá quatro cours, com intervalos entre eles, e adapta o restante da história até a conclusão original.",
-          "runs": [
-            {
-              "text": "Bleach: Thousand-Year Blood War – The Calamity",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " é a quarta e última parte da adaptação do arco final do "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " do autor Tite Kubo. A produção terá quatro cours, com intervalos entre eles, e adapta o restante da história até a conclusão original."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Contudo a temporada estreou em 25 de julho no Japão. O anime conta com “I-BULL”, de jo0ji, como tema de abertura, enquanto 9Lana interpreta a música de encerramento “Rasen”.",
-          "runs": [
-            {
-              "text": "Contudo a temporada estreou em 25 de julho no Japão. O anime conta com “I-BULL”, de jo0ji, como tema de abertura, enquanto 9Lana interpreta a música de encerramento “Rasen”."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim o arco Thousand-Year Blood War corresponde aos volumes 55 a 74 do mangá de Bleach.",
-          "runs": [
-            {
-              "text": "Por fim o arco Thousand-Year Blood War corresponde aos volumes 55 a 74 do mangá de "
-            },
-            {
-              "text": "Bleach",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://bleach-anime.com/news/?id=71205"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Bleach: Thousand-Year Blood War adia episódios finais do anime.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Bleach: Thousand-Year Blood War adia episódios finais do anime",
-              "href": "https://animenew.com.br/bleach-thousand-year-blood-war-episodios-finais/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-13T00:59:46.000Z",
-      "updatedAt": "2026-09-13T00:59:46.000Z",
-      "expiresAt": "2026-09-20T00:59:46.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/bleach-thousand-year-blood-war-episodios-finais",
-          "publishedAt": "2026-09-13T00:59:46.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 219,
-      "qualityScore": 0.967,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-ead7c17b",
-      "slug": "vertex-force-revela-musicas-tema-e-novo-elenco-em-trailer-animenew-ead7c17b",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Vertex Force revela músicas-tema e novo elenco em trailer",
-      "originalTitle": "Vertex Force revela músicas-tema e novo elenco em trailer",
-      "summary": "O anime original Vertex Force revelou um novo trailer promocional, os artistas das músicas-tema e integrantes adicionais do elenco durante o evento Aniplex One Focus. A prévia apresenta trechos das duas canções da série.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Vertex Force"
-      ],
-      "url": "https://animenew.com.br/vertex-force-revela-musicas-e-novo-elenco",
-      "sourceUrl": "https://animenew.com.br/vertex-force-revela-musicas-e-novo-elenco",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Vertex-Force-revela-musicas-tema-e-novo-elenco-em-trailer.webp",
-      "mediaQuery": "Vertex Force revela músicas-tema e novo elenco em trailer",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Vertex-Force-Anime.webp",
-          "alt": "Vertex Force Anime",
-          "caption": "©VERTEX Project"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/JqjXaJysS5w"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime original Vertex Force revelou um novo trailer promocional, os artistas das músicas-tema e integrantes adicionais do elenco durante o evento Aniplex One Focus. A prévia apresenta trechos das duas canções da série.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime original",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Vertex Force",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " revelou um novo trailer promocional, os artistas das músicas-tema e integrantes adicionais do elenco durante o evento "
-            },
-            {
-              "text": "Aniplex",
-              "href": "https://animenew.com.br/tag/aniplex/"
-            },
-            {
-              "text": " One Focus. A prévia apresenta trechos das duas canções da série."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Chitose Is in the Ramune Bottle revela estreia da 2ª parte",
-              "runs": [
-                {
-                  "text": "Chitose Is in the Ramune Bottle revela estreia da 2ª parte",
-                  "href": "https://animenew.com.br/chitose-ramune-2-parte-estreia-outubro"
-                }
-              ]
-            },
-            {
-              "text": "Black Torch revela vídeo promocional do final do anime",
-              "runs": [
-                {
-                  "text": "Black Torch revela vídeo promocional do final do anime",
-                  "href": "https://animenew.com.br/black-torch-revela-video-promocional-final"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O grupo ClariS interpreta a abertura “Synchro Blue”, enquanto Hashimero fica responsável pelo encerramento “Emerald”.",
-          "runs": [
-            {
-              "text": "O grupo ClariS interpreta a abertura “Synchro Blue”, enquanto Hashimero fica responsável pelo encerramento “Emerald”."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=JqjXaJysS5w",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/JqjXaJysS5w"
-        },
-        {
-          "type": "paragraph",
-          "text": "A estreia acontece em 3 de outubro, às 23h30, nos canais Tokyo MX, BS11, Gunma TV e Tochigi TV. No Japão, a série também terá transmissão pela U-NEXT e outros serviços. O elenco reúne Makoto Koichi como Akira Todo, Kaede Hondo como Haruka Todo, Ami Koshimizu como Eleanor Northbrook, Megumi Han como Lala Zudenstein e Rie Takahashi como Yoko Nishina.",
-          "runs": [
-            {
-              "text": "A estreia acontece em 3 de outubro, às 23h30, nos canais Tokyo MX, BS11, Gunma TV e Tochigi TV. No Japão, a série também terá transmissão pela U-NEXT e outros serviços. O elenco reúne Makoto Koichi como Akira Todo, Kaede Hondo como Haruka Todo, Ami Koshimizu como Eleanor Northbrook, Megumi Han como Lala Zudenstein e Rie Takahashi como Yoko Nishina."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Vertex-Force-Anime.webp",
-          "alt": "Vertex Force Anime",
-          "caption": "©VERTEX Project"
-        },
-        {
-          "type": "heading",
-          "text": "História e produção",
-          "runs": [
-            {
-              "text": "História e produção"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Akira leva uma vida tranquila ao lado da irmã mais velha, Haruka, e da mãe, dona de um café. Porém, a família guarda um segredo: Haruka herdou do pai uma habilidade chamada “Engine”. Akira não recebeu o mesmo poder e desenvolveu um complexo de inferioridade. Enquanto isso, acontecimentos misteriosos começam a surgir ao redor do mundo.",
-          "runs": [
-            {
-              "text": "Akira leva uma vida tranquila ao lado da irmã mais velha, Haruka, e da mãe, dona de um café. Porém, a família guarda um segredo: Haruka herdou do pai uma habilidade chamada “Engine”. Akira não recebeu o mesmo poder e desenvolveu um complexo de inferioridade. Enquanto isso, acontecimentos misteriosos começam a surgir ao redor do mundo.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Kazuhiro Takamura, diretor de Strike Witches e Vividred Operation, comanda o projeto no estúdio SMDE e também assina o design dos personagens. Gorō Kuji atua como diretor assistente, enquanto Kanetake Ebikawa cuida do design dos “Engine” e JNTHED trabalha no design de “ENIA”.",
-          "runs": [
-            {
-              "text": "Kazuhiro Takamura, diretor de "
-            },
-            {
-              "text": "Strike Witches",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://animenew.com.br/anime/3667/strike-witches"
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Vividred Operation",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", comanda o projeto no estúdio SMDE e também assina o design dos personagens. Gorō Kuji atua como diretor assistente, enquanto Kanetake Ebikawa cuida do design dos “Engine” e JNTHED trabalha no design de “ENIA”."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://vertexforce.jp/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Vertex Force revela músicas-tema e novo elenco em trailer.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Vertex Force revela músicas-tema e novo elenco em trailer",
-              "href": "https://animenew.com.br/vertex-force-revela-musicas-e-novo-elenco/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-13T00:49:34.000Z",
-      "updatedAt": "2026-09-13T00:49:34.000Z",
-      "expiresAt": "2026-09-20T00:49:34.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/vertex-force-revela-musicas-e-novo-elenco",
-          "publishedAt": "2026-09-13T00:49:34.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 257,
-      "qualityScore": 0.972,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
       "id": "jbox-3dbf5f90",
       "slug": "critica-uma-bruxa-na-mongolia-volume-1-panini-jbox-3dbf5f90",
       "source": "JBox",
@@ -5063,7 +6151,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 346,
-      "qualityScore": 0.985,
+      "qualityScore": 0.925,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
