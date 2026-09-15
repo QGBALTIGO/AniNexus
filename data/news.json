@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T05:11:34.182Z",
+  "generatedAt": "2026-09-15T10:07:37.758Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -65,7 +65,7 @@
     "withOrderedMedia": 20,
     "skippedTranslation": 0,
     "skippedQuality": 21,
-    "durationMs": 4279
+    "durationMs": 3014
   },
   "items": [
     {
@@ -2190,7 +2190,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Já para os hermanos, eles também contarão com a saída de One Piece, que seguirá na grade brasileira de programação. Fora das animações nipônicas, as outras baixas são Ambient Swim, Mike Tyson Mysteries, Samurai Jack, As Terríveis Aventuras de Billy & Mandy e A Vaca e o Frango.",
+          "text": "Já para os hermanos, eles também contarão com a saída de One Piece, que seguirá na grade brasileira de programação. Fora das animações nipônicas, as outras baixas são Ambient Swim, Mike Tyson Mysteries e Samurai Jack, além de As Terríveis Aventuras de Billy & Mandy e A Vaca e o Frango para a programação mexicana (esses já não eram mais exibidos no Brasil).",
           "runs": [
             {
               "text": "Já para os hermanos, eles também contarão com a saída de "
@@ -2215,13 +2215,13 @@
               "text": ", "
             },
             {
-              "text": "Mike Tyson Mysteries",
+              "text": "Mike Tyson Mysteries ",
               "marks": [
                 "em"
               ]
             },
             {
-              "text": ", "
+              "text": "e "
             },
             {
               "text": "Samurai Jack",
@@ -2230,7 +2230,7 @@
               ]
             },
             {
-              "text": ", "
+              "text": ", além de "
             },
             {
               "text": "As Terríveis Aventuras de Billy & Mandy",
@@ -2248,7 +2248,7 @@
               ]
             },
             {
-              "text": "."
+              "text": " para a programação mexicana (esses já não eram mais exibidos no Brasil)."
             }
           ]
         },
@@ -2337,7 +2337,7 @@
       ],
       "contentMode": "full",
       "publishedAt": "2026-09-14T20:00:17.000Z",
-      "updatedAt": "2026-09-14T20:01:46.000Z",
+      "updatedAt": "2026-09-15T05:11:32.000Z",
       "expiresAt": "2026-09-21T20:00:17.000Z",
       "category": "Notícias",
       "eventType": "OTHER",
@@ -2353,8 +2353,8 @@
       ],
       "sourceCount": 1,
       "readingMinutes": 2,
-      "wordCount": 226,
-      "qualityScore": 0.964,
+      "wordCount": 241,
+      "qualityScore": 0.966,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
