@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T12:11:09.535Z",
+  "generatedAt": "2026-09-16T17:01:33.866Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,891 @@
   ],
   "stats": {
     "collected": 45,
-    "grouped": 25,
-    "published": 25,
-    "newStories": 25,
-    "fullArticles": 25,
+    "grouped": 26,
+    "published": 26,
+    "newStories": 26,
+    "fullArticles": 26,
     "previewArticles": 0,
-    "avgWords": 405,
-    "withHeroImage": 25,
-    "withOrderedMedia": 23,
+    "avgWords": 409,
+    "withHeroImage": 26,
+    "withOrderedMedia": 24,
     "skippedTranslation": 0,
-    "skippedQuality": 20,
-    "durationMs": 5151
+    "skippedQuality": 19,
+    "durationMs": 4520
   },
   "items": [
+    {
+      "id": "jbox-5ff13d38",
+      "slug": "guerreiras-magicas-de-rayearth-crunchyroll-confirma-transmissao-de-novo-anime-no-brasil-jbox-5ff13d38",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Guerreiras Mágicas de Rayearth: Crunchyroll confirma transmissão de novo animê no Brasil",
+      "originalTitle": "Guerreiras Mágicas de Rayearth: Crunchyroll confirma transmissão de novo animê no Brasil",
+      "summary": "A Crunchyroll confirmou que fará a transmissão do remake de Guerreiras Mágicas de Rayearth no Brasil. A novidade foi anunciada com a divulgação de uma nova prévia legendada, que mostra belas imagens do animê.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Streaming",
+        "anime da clamp",
+        "assistir guerreiras magicas de rayearth",
+        "Clamp",
+        "Guerreiras Mágicas de Rayearth na Crunchyroll",
+        "magic knight rayearth",
+        "Novo anime de Garotas Mágicas de Rayearth",
+        "Rayearth"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/16/guerreiras-magicas-de-rayearth-crunchyroll-confirma-transmissao-de-novo-anime-no-brasil",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/16/guerreiras-magicas-de-rayearth-crunchyroll-confirma-transmissao-de-novo-anime-no-brasil",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Guerreiras-Magicas-de-Rayearth.jpg",
+      "mediaQuery": "Guerreiras Mágicas de Rayearth: Crunchyroll confirma transmissão de novo animê no Brasil",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/CTm3ynhIRbQ"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Crunchyroll confirmou que fará a transmissão do remake de Guerreiras Mágicas de Rayearth no Brasil. A novidade foi anunciada com a divulgação de uma nova prévia legendada, que mostra belas imagens do animê.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " confirmou que fará a transmissão do remake de "
+            },
+            {
+              "text": "Guerreiras Mágicas de Rayearth",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " no Brasil. A novidade foi anunciada com a divulgação de uma nova prévia legendada, que mostra belas imagens do animê."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Japão, a estreia da produção está marcada para o dia 7 de outubro (quinta-feira), dentro da Temporada de Outono dos animês de 2026. No Brasil, a expectativa é que os episódios cheguem em seguida à plataforma, porém, no teaser, uma data ainda não foi cravada e está escrito somente um “em breve” no final do vídeo.",
+          "runs": [
+            {
+              "text": "No Japão, a estreia da produção está marcada para o dia "
+            },
+            {
+              "text": "7 de outubro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (quinta-feira), dentro da "
+            },
+            {
+              "text": "Temporada de Outono",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " dos animês de 2026. No Brasil, a expectativa é que os episódios cheguem em seguida à plataforma, porém, no teaser, uma data ainda não foi cravada e está escrito somente um “em breve” no final do vídeo."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=CTm3ynhIRbQ",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/CTm3ynhIRbQ"
+        },
+        {
+          "type": "paragraph",
+          "text": "Yui Miura (Ninja Kamui) faz a direção geral do animê, Shigeru Murakoshi (Solo Leveling) assina os roteiros, Satomi Watanabe (Aikatsu Friends!) cuida do design de personagens e a música é assinada pelo trio Yuki Kajiura (Demon Slayer: Kimetsu no Yaiba Castelo Infinito), Shiho Terada (Delicious Party Precure) e Takumi Ozawa (Magia Record: Puella Magi Madoka Magica Side Story). A animação é produzida pelo E&H production, com planejamento geral e produção da UNLIMITED PRODUCE by TMS.",
+          "runs": [
+            {
+              "text": "Yui Miura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Ninja Kamui",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") faz a direção geral do animê, "
+            },
+            {
+              "text": "Shigeru Murakoshi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Solo Leveling",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") assina os roteiros, "
+            },
+            {
+              "text": "Satomi Watanabe",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Aikatsu Friends!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") cuida do design de personagens e a música é assinada pelo trio "
+            },
+            {
+              "text": "Yuki Kajiura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Demon Slayer: Kimetsu no Yaiba Castelo Infinito",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), "
+            },
+            {
+              "text": "Shiho Terada",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Delicious Party Precure",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") e "
+            },
+            {
+              "text": "Takumi Ozawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Magia Record: Puella Magi Madoka Magica Side Story",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). A animação é produzida pelo "
+            },
+            {
+              "text": "E&H production",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com planejamento geral e produção da "
+            },
+            {
+              "text": "UNLIMITED PRODUCE by TMS",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já o elenco de voz principal tem Ayane Sakura (voz de Ochaco Uraraka em My Hero Academia) como Hikaru, Rumi Okubo (Mem-Cho em Oshi no Ko) como Umi e Rie Takahashi (Lucy Steel em JoJo’s Bizarre Adventure: Steel Ball Run) como Fuu.",
+          "runs": [
+            {
+              "text": "Já o elenco de voz principal tem "
+            },
+            {
+              "text": "Ayane Sakura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (voz de Ochaco Uraraka em "
+            },
+            {
+              "text": "My Hero Academia",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como Hikaru, "
+            },
+            {
+              "text": "Rumi Okubo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Mem-Cho em "
+            },
+            {
+              "text": "Oshi no Ko",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como Umi e "
+            },
+            {
+              "text": "Rie Takahashi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Lucy Steel em "
+            },
+            {
+              "text": "JoJo’s Bizarre Adventure: Steel Ball Run",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como Fuu."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Com o mangá publicado originalmente entre 1993 e 1996, Guerreiras Mágicas de Rayearth conta a história de três amigas que vão até a Torre de Tóquio em uma excursão escolar, e acabam em um reino mágico, após o pedido de ajuda da Princesa Emeraude (ou Esmeralda).",
+          "runs": [
+            {
+              "text": "Com o mangá publicado originalmente entre 1993 e 1996, "
+            },
+            {
+              "text": "Guerreiras Mágicas de Rayearth",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " conta a história de três amigas que vão até a Torre de Tóquio em uma excursão escolar, e acabam em um reino mágico, após o pedido de ajuda da Princesa Emeraude (ou Esmeralda)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O animê clássico foi adaptado em duas fases, entre 1994 e 1995, e teve um interessante resgate recente no Brasil. Desde o ano passado, episódios de Guerreiras Mágicas de Rayearth foram adicionados em plataformas como +SBT e Netflix, e também foram exibidos na TV Cultura.",
+          "runs": [
+            {
+              "text": "O animê clássico foi adaptado em duas fases, entre 1994 e 1995, e teve um interessante resgate recente no Brasil. Desde o ano passado, episódios de "
+            },
+            {
+              "text": "Guerreiras Mágicas de Rayearth",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foram adicionados em plataformas como "
+            },
+            {
+              "text": "+SBT",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e também "
+            },
+            {
+              "text": "foram exibidos na TV Cultura",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/03/25/guerreiras-magicas-de-rayearth-estreia-hoje-na-tv-cultura/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já o mangá começou recentemente uma republicação pela JBC, em formato Premium Collection.",
+          "runs": [
+            {
+              "text": "Já o mangá começou recentemente uma republicação pela "
+            },
+            {
+              "text": "JBC",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", em formato "
+            },
+            {
+              "text": "Premium Collection",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://link.amazon/B02MSyf0b"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: YouTube Crunchyroll Brasil",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "YouTube Crunchyroll Brasil",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.youtube.com/@CrunchyrollBR"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-16T16:11:53.000Z",
+      "updatedAt": "2026-09-16T16:13:52.000Z",
+      "expiresAt": "2026-09-23T16:11:53.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/16/guerreiras-magicas-de-rayearth-crunchyroll-confirma-transmissao-de-novo-anime-no-brasil",
+          "publishedAt": "2026-09-16T16:11:53.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 333,
+      "qualityScore": 0.981,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-21953e48",
+      "slug": "one-piece-exibicao-de-filme-nos-cinemas-brasileiros-e-adiada-jbox-21953e48",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "One Piece: Exibição de filme nos cinemas brasileiros é adiada",
+      "originalTitle": "One Piece: Exibição de filme nos cinemas brasileiros é adiada",
+      "summary": "Foi divulgado pela Paris Filmes que a exibição do primeiro filme de One Piece nos cinemas brasileiros vai ser adiada em uma semana. Anteriormente previsto para amanhã, dia 17, o longa estreia agora apenas no dia 24 de setembro. A produção vai contar com uma dublagem inédita.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "data do filme de one piece no brasil",
+        "One Piece",
+        "One Piece filme adiado",
+        "One Piece: O Filme",
+        "Paris Filmes"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/16/one-piece-exibicao-de-filme-nos-cinemas-brasileiros-e-adiada",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/16/one-piece-exibicao-de-filme-nos-cinemas-brasileiros-e-adiada",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/07/one-piece-o-filme-destacada.jpg",
+      "mediaQuery": "One Piece: Exibição de filme nos cinemas brasileiros é adiada",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/07/one-piece-o-filme-poster.jpg",
+          "alt": "imagem: pôster brasileiro de 'One Piece: O Filme', destancando os personagens Luffy, Zoro, Usopp e Nami. O vilão El Drago aparece ao fundo.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi divulgado pela Paris Filmes que a exibição do primeiro filme de One Piece nos cinemas brasileiros vai ser adiada em uma semana. Anteriormente previsto para amanhã, dia 17, o longa estreia agora apenas no dia 24 de setembro. A produção vai contar com uma dublagem inédita.",
+          "runs": [
+            {
+              "text": "Foi divulgado pela "
+            },
+            {
+              "text": "Paris Filmes",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " que a exibição do primeiro filme de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " nos cinemas brasileiros vai ser "
+            },
+            {
+              "text": "adiada em uma semana",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Anteriormente previsto para amanhã, dia 17, o longa "
+            },
+            {
+              "text": "estreia agora apenas no dia 24 de setembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A produção vai contar com uma "
+            },
+            {
+              "text": "dublagem inédita",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O segundo (Aventura na Ilha Espiral) e o terceiro (O Reino de Chopper na Ilha dos Animais Estranhos) filmes do pirata que estica também vão ganhar exibição nos cinemas brasileiros ainda este ano, previstos, respectivamente, para os dias 22 de outubro e 3 de dezembro.",
+          "runs": [
+            {
+              "text": "O segundo ("
+            },
+            {
+              "text": "Aventura na Ilha Espiral",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") e o terceiro ("
+            },
+            {
+              "text": "O Reino de Chopper na Ilha dos Animais Estranhos",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") filmes do pirata que estica também vão ganhar exibição nos cinemas brasileiros ainda este ano, previstos, respectivamente, para os dias 22 de outubro e 3 de dezembro."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/07/one-piece-o-filme-poster.jpg",
+          "alt": "imagem: pôster brasileiro de 'One Piece: O Filme', destancando os personagens Luffy, Zoro, Usopp e Nami. O vilão El Drago aparece ao fundo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Paris Filmes",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Paris Filmes"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em sua data original, dia 17, o longa estrearia no mesmo dia de Umamusume: Pretty Derby – O Início de uma Nova Era e do novo live-action de Resident Evil, que podem ter sido fatores decisivos para a alteração.",
+          "runs": [
+            {
+              "text": "Em sua data original, dia 17, o longa estrearia no mesmo dia de "
+            },
+            {
+              "text": "Umamusume: Pretty Derby – O Início de uma Nova Era",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/14/umamusume-filme-estreia-na-rede-cinemark-esta-semana/"
+            },
+            {
+              "text": " e do novo live-action de "
+            },
+            {
+              "text": "Resident Evil",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que podem ter sido fatores decisivos para a alteração."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na história de One Piece: O Filme, El Drago está em busca do tesouro deixado por Woonan, o grande pirata dourado, que conseguiu para si 1/3 de todo o ouro do mundo e, certo dia, desapareceu junto de toda sua fortuna. Depois de conseguir um mapa que leva até a ilha onde o tesouro pode estar escondido, El Drago antes acaba atacando o navio de Luffy e seus companheiros, o que faz com que eles acabem envolvidos na situação em torno do tesouro de Woonan.",
+          "runs": [
+            {
+              "text": "Na história de "
+            },
+            {
+              "text": "One Piece: O Filme",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", El Drago está em busca do tesouro deixado por Woonan, o grande pirata dourado, que conseguiu para si 1/3 de todo o ouro do mundo e, certo dia, desapareceu junto de toda sua fortuna. Depois de conseguir um mapa que leva até a ilha onde o tesouro pode estar escondido, El Drago antes acaba atacando o navio de Luffy e seus companheiros, o que faz com que eles acabem envolvidos na situação em torno do tesouro de Woonan."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Como de praxe nos animês da franquia, o longa contou com produção do estúdio Toei Animation, tendo direção e composição de enredo por Junji Shimizu. Um diferencial na filmografia é que este é o único filme realizado com técnicas mais tradicionais de animação, utilizando células pintadas à mão — a partir do segundo, é usada animação digital.",
+          "runs": [
+            {
+              "text": "Como de praxe nos animês da franquia, o longa contou com produção do estúdio "
+            },
+            {
+              "text": "Toei Animation",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", tendo direção e composição de enredo por "
+            },
+            {
+              "text": "Junji Shimizu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Um diferencial na filmografia é que este é o único filme realizado com técnicas mais tradicionais de animação, utilizando células pintadas à mão — a partir do segundo, é usada animação digital."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O lançamento de One Piece: O Filme virá acompanhado do especial O Carnaval de Dança do Jango, que, no Japão, foi exibido originalmente não junto ao primeiro, mas sim ao segundo filme. Os outros dois filmes que chegam ao Brasil este ano também chegam acompanhados de animações especiais.",
+          "runs": [
+            {
+              "text": "O lançamento de "
+            },
+            {
+              "text": "One Piece: O Filme",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " virá acompanhado do especial "
+            },
+            {
+              "text": "O Carnaval de Dança do Jango",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", que, no Japão, foi exibido originalmente não junto ao primeiro, mas sim ao segundo filme. Os outros dois filmes que chegam ao Brasil este ano também chegam acompanhados de animações especiais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "One Piece: O Filme é apenas o segundo longa-metragem da franquia que chega às telonas do Brasil, sendo que o primeiro lançamento foi justamente o filme mais recente, One Piece: RED, que estreou por aqui em novembro de 2022. Alguns outros filmes da franquia já chegaram dublados via streaming, como One Piece: Strong World e One Piece: Gold — esse tendo sido o primeiro longa-metragem da série a receber dublagem em português.",
+          "runs": [
+            {
+              "text": "One Piece: O Filme",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é apenas o segundo longa-metragem da franquia que chega às telonas do Brasil, sendo que o primeiro lançamento foi justamente o filme mais recente, "
+            },
+            {
+              "text": "One Piece: RED",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2022/11/02/critica-one-piece-film-red-shounen-de-musiquinha/"
+            },
+            {
+              "text": ", que estreou por aqui em novembro de 2022. Alguns outros filmes da franquia já chegaram dublados via streaming, como "
+            },
+            {
+              "text": "One Piece: Strong World",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "One Piece: Gold",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " — esse tendo sido o primeiro longa-metragem da série a receber dublagem em português."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Paris Filmes (Instagram)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Paris Filmes (Instagram)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.instagram.com/p/DdTlOBSDEOF/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-16T15:36:18.000Z",
+      "updatedAt": "2026-09-16T15:46:00.000Z",
+      "expiresAt": "2026-09-23T15:36:18.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/16/one-piece-exibicao-de-filme-nos-cinemas-brasileiros-e-adiada",
+          "publishedAt": "2026-09-16T15:36:18.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 417,
+      "qualityScore": 0.991,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-f39a827e",
       "slug": "crunchyroll-revela-calendario-de-animes-do-outono-de-2026-animenew-f39a827e",
@@ -10053,314 +10925,6 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-f5d82955",
-      "slug": "novo-capitulo-de-saint-seiya-then-e-anunciado-jbox-f5d82955",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Novo capítulo de ‘Saint Seiya THEN’ é anunciado",
-      "originalTitle": "Novo capítulo de ‘Saint Seiya THEN’ é anunciado",
-      "summary": "A revista Champion RED, da editora Akita Shoten, anunciou o lançamento do quarto capítulo da série Saint Seiya THEN, previsto para dezembro deste ano. Segundo as informações, o capítulo terá 8 páginas (como os anteriores) e inclui um personagem misterioso:",
-      "author": "gasseruto",
-      "tags": [
-        "Mangá",
-        "Cavaleiros do Zodíaco",
-        "cdz",
-        "Next Dimension",
-        "novo capítulo the saint seiya then",
-        "saint seiya then"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/09/novo-capitulo-de-saint-seiya-then-e-anunciado",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/09/novo-capitulo-de-saint-seiya-then-e-anunciado",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/shiryu-capachampionred-cdz-destacada.jpg",
-      "mediaQuery": "Novo capítulo de ‘Saint Seiya THEN’ é anunciado",
-      "mediaType": "manga",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/shiryu-then-seiya.jpg",
-          "alt": "imagem: shiryu de dragão em prévia da capa da champion red de dezembro de 2026.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A revista Champion RED, da editora Akita Shoten, anunciou o lançamento do quarto capítulo da série Saint Seiya THEN, previsto para dezembro deste ano. Segundo as informações, o capítulo terá 8 páginas (como os anteriores) e inclui um personagem misterioso:",
-          "runs": [
-            {
-              "text": "A revista "
-            },
-            {
-              "text": "Champion RED",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", da editora Akita Shoten, anunciou o lançamento do quarto capítulo da série "
-            },
-            {
-              "text": "Saint Seiya THEN",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", previsto para dezembro deste ano. Segundo as informações, o capítulo terá 8 páginas (como os anteriores) e inclui um personagem misterioso:"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "[Descubra] a situação atual de Shiryu e “aquele homem.”",
-          "runs": [
-            {
-              "text": "[Descubra] a situação atual de Shiryu e “aquele homem.”"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/shiryu-then-seiya.jpg",
-          "alt": "imagem: shiryu de dragão em prévia da capa da champion red de dezembro de 2026."
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Reprodução/Akita Shoten",
-          "runs": [
-            {
-              "text": "Imagem: Reprodução/Akita Shoten"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Até o momento, Saint Seiya THEN havia se focado em Saori Kido, Seiya de Pégaso e Shun de Andrômeda, todos personagens que estavam na região do Santuário e de Rodório, sem memórias. A minissérie tem servido como uma ponte entre Next Dimension e Tenkai-hen, a Saga do Céu, que também deve voltar a ter novos capítulos mais ou menos na mesma época na revista Shonen Champion, da mesma editora. O foco em Shiryu pode indicar que o personagem também aparecerá na nova leva de capítulos da Saga do Céu.",
-          "runs": [
-            {
-              "text": "Até o momento, "
-            },
-            {
-              "text": "Saint Seiya THEN",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " havia se focado em Saori Kido, Seiya de Pégaso e Shun de Andrômeda, todos personagens que estavam na região do Santuário e de Rodório, sem memórias. A minissérie tem servido como uma ponte entre "
-            },
-            {
-              "text": "Next Dimension",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e"
-            },
-            {
-              "text": " Tenkai-hen",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", a Saga do Céu, que também "
-            },
-            {
-              "text": "deve voltar a ter novos capítulos mais ou menos na mesma época",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/05/cavaleiros-do-zodiaco-autor-reforca-trabalho-na-saga-do-ceu/"
-            },
-            {
-              "text": " na revista "
-            },
-            {
-              "text": "Shonen Champion",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", da mesma editora. O foco em Shiryu pode indicar que o personagem também aparecerá na nova leva de capítulos da Saga do Céu."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Até o momento, apenas Shiryu e Hyoga não apareceram em THEN ou Tenkai-hen. Dado o fim de Next Dimension, os dois devem estar sem memórias de suas vidas como guerreiros de Atena.",
-          "runs": [
-            {
-              "text": "Até o momento, apenas Shiryu e Hyoga não apareceram em"
-            },
-            {
-              "text": " THEN",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ou "
-            },
-            {
-              "text": "Tenkai-hen",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Dado o fim de "
-            },
-            {
-              "text": "Next Dimension",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", os dois devem estar sem memórias de suas vidas como guerreiros de Atena."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O autor d’Os Cavaleiros do Zodíaco, Masami Kurumada, recentemente fez uma coletiva de imprensa na qual alegou ter sido vítima de desvio de dinheiro por um ex-gerente de suas empresas, caso que tem ganhado forte repercussão na mídia japonesa. Mais informações devem surgir sobre o caso nos próximos dias.",
-          "runs": [
-            {
-              "text": "O autor d’"
-            },
-            {
-              "text": "Os Cavaleiros do Zodíaco",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", Masami Kurumada, recentemente fez uma coletiva de imprensa na qual alegou ter sido "
-            },
-            {
-              "text": "vítima de desvio de dinheiro por um ex-gerente de suas empresas",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/09/02/autor-de-cavaleiros-do-zodiaco-masami-kurumada-alega-ter-sido-vitima-de-desvio-de-dinheiro-por-ex-gerente/"
-            },
-            {
-              "text": ", caso que tem ganhado forte repercussão na mídia japonesa. Mais informações devem surgir sobre o caso nos próximos dias."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Cavaleiros de Bronze",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Cavaleiros de Bronze",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://santosdebronze.blogspot.com/2026/09/Data-Saint-Seiya-Then-IV.html#more"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-09T15:55:52.000Z",
-      "updatedAt": "2026-09-09T15:57:34.000Z",
-      "expiresAt": "2026-09-16T15:55:52.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/09/novo-capitulo-de-saint-seiya-then-e-anunciado",
-          "publishedAt": "2026-09-09T15:55:52.000Z",
-          "author": "gasseruto"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 243,
-      "qualityScore": 0.909,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
         "sourcePagesRead": 0
       }
     }
