@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T15:37:20.340Z",
+  "generatedAt": "2026-09-17T19:18:42.669Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 35,
+      "count": 37,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,750 @@
     }
   ],
   "stats": {
-    "collected": 45,
-    "grouped": 26,
-    "published": 26,
-    "newStories": 26,
-    "fullArticles": 26,
+    "collected": 47,
+    "grouped": 25,
+    "published": 25,
+    "newStories": 25,
+    "fullArticles": 25,
     "previewArticles": 0,
-    "avgWords": 412,
-    "withHeroImage": 26,
-    "withOrderedMedia": 24,
+    "avgWords": 418,
+    "withHeroImage": 25,
+    "withOrderedMedia": 23,
     "skippedTranslation": 0,
-    "skippedQuality": 19,
-    "durationMs": 5268
+    "skippedQuality": 22,
+    "durationMs": 2801
   },
   "items": [
+    {
+      "id": "jbox-54d35169",
+      "slug": "toei-anuncia-ativacao-com-baloes-gigantes-de-one-piece-na-ccxp-2026-jbox-54d35169",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Toei anuncia ativação com balões gigantes de ‘One Piece’ na CCXP 2026",
+      "originalTitle": "Toei anuncia ativação com balões gigantes de ‘One Piece’ na CCXP 2026",
+      "summary": "A edição 2026 da CCXP contará com um espaço especial para os fãs de One Piece: uma ativação intitulada de Grand Showcase, com três balões gigantes do protagonista Luffy.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Eventos",
+        "Balões de One Piece",
+        "Balões de One Piece no Brasil",
+        "Balões do Luffy",
+        "CCXP 2026",
+        "CCXP26",
+        "Crunchyroll",
+        "One Piece",
+        "One Piece Grand Showcase",
+        "Toei Animation"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/17/toei-anuncia-ativacao-com-baloes-gigantes-de-one-piece-na-ccxp-2026",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/17/toei-anuncia-ativacao-com-baloes-gigantes-de-one-piece-na-ccxp-2026",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/baloes-one-piece-destacada.jpg",
+      "mediaQuery": "Toei anuncia ativação com balões gigantes de ‘One Piece’ na CCXP 2026",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A edição 2026 da CCXP contará com um espaço especial para os fãs de One Piece: uma ativação intitulada de Grand Showcase, com três balões gigantes do protagonista Luffy.",
+          "runs": [
+            {
+              "text": "A edição 2026 da "
+            },
+            {
+              "text": "CCXP",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " contará com um espaço especial para os fãs de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ": uma ativação intitulada de "
+            },
+            {
+              "text": "Grand Showcase",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", com três balões gigantes do protagonista "
+            },
+            {
+              "text": "Luffy",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Seguindo experiências que já foram feitas em outros eventos no exterior, a Toei Animation anunciou que terá uma área de aproximadamente 500m² dedicada ao personagem, mostrando as transformações em Gear2, Gear4 e Gear5. Essa é a primeira vez que os balões gigantes serão trazidos ao Brasil.",
+          "runs": [
+            {
+              "text": "Seguindo experiências que já foram feitas em outros eventos no exterior, a "
+            },
+            {
+              "text": "Toei Animation",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou que terá uma área de aproximadamente 500m² dedicada ao personagem, mostrando as transformações em Gear2, Gear4 e Gear5. Essa é a primeira vez que os balões gigantes serão trazidos ao Brasil."
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "View this post on Instagram",
+          "runs": [
+            {
+              "text": " View this post on Instagram ",
+              "href": "https://www.instagram.com/p/DdHG7EGkSo_/?utm_source=ig_embed&utm_campaign=loading"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anúncio de uma ativação focada em One Piece segue uma tendência do evento nos últimos anos, de focar mais em espaços voltados para animês e mangás. Para a edição deste ano, por exemplo, a CCXP também terá as credenciais inspiradas na obra de Eiichiro Oda.",
+          "runs": [
+            {
+              "text": "O anúncio de uma ativação focada em "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " segue uma tendência do evento nos últimos anos, de focar mais em espaços voltados para animês e mangás. Para a edição deste ano, por exemplo, "
+            },
+            {
+              "text": "a CCXP também terá as credenciais inspiradas na obra de Eiichiro Oda",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/14/ccxp-2026-evento-conta-com-credenciais-tematicas-de-one-piece/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A CCXP 2026 acontece entre os dias 3 a 6 de dezembro de 2026 no São Paulo Expo, na capital paulista. Para o público dos mangás, já foi confirmada a presença de Shintaro Kago, autor do gênero ero guro que já teve suas obras publicadas por várias editoras no Brasil.",
+          "runs": [
+            {
+              "text": "A CCXP 2026 acontece entre os dias "
+            },
+            {
+              "text": "3 a 6 de dezembro de 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no "
+            },
+            {
+              "text": "São Paulo Expo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", na capital paulista. Para o público dos mangás, já foi confirmada a presença de "
+            },
+            {
+              "text": "Shintaro Kago",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/06/02/shintaro-kago-mestre-do-ero-guro-e-confirmado-na-ccxp26/"
+            },
+            {
+              "text": ", autor do gênero"
+            },
+            {
+              "text": " ero guro",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " que já teve suas obras publicadas por várias editoras no Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já o animê de One Piece é transmitido semanalmente no Brasil pela Crunchyroll, que disponibiliza os episódios no mesmo dia de estreia no Japão. A Netflix também exibe a temporada mais recente, focada no Arco de Elbaph, com uma semana de atraso. A plataforma conta ainda com episódios dublados e, recentemente, lançou os capítulos finais do arco Whole Cake com a voz em português. O mangá é publicado no país pela Panini.",
+          "runs": [
+            {
+              "text": "Já o animê de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é transmitido semanalmente no Brasil pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que disponibiliza os episódios no mesmo dia de estreia no Japão. A "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " também exibe a temporada mais recente, focada no "
+            },
+            {
+              "text": "Arco de Elbaph",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", com uma semana de atraso. A plataforma conta ainda com episódios dublados e, recentemente, lançou "
+            },
+            {
+              "text": "os capítulos finais do arco ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/06/01/one-piece-episodios-finais-de-whole-cake-estreiam-dublados-na-netflix/"
+            },
+            {
+              "text": "Whole Cake",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/06/01/one-piece-episodios-finais-de-whole-cake-estreiam-dublados-na-netflix/"
+            },
+            {
+              "text": " com a voz em português",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/06/01/one-piece-episodios-finais-de-whole-cake-estreiam-dublados-na-netflix/"
+            },
+            {
+              "text": ". O mangá é publicado no país pela "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Instagram CCXP e Toei Animation",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Instagram CCXP e Toei Animation",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.instagram.com/ccxpoficial/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-17T18:23:45.000Z",
+      "updatedAt": "2026-09-17T18:24:30.000Z",
+      "expiresAt": "2026-09-24T18:23:45.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/17/toei-anuncia-ativacao-com-baloes-gigantes-de-one-piece-na-ccxp-2026",
+          "publishedAt": "2026-09-17T18:23:45.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 271,
+      "qualityScore": 0.971,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-6e72cc35",
+      "slug": "colaboracao-entre-one-piece-e-bob-esponja-chega-ao-mcdonald-s-brasil-jbox-6e72cc35",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Colaboração entre ‘One Piece’ e ‘Bob Esponja’ chega ao McDonald’s Brasil",
+      "originalTitle": "Colaboração entre ‘One Piece’ e ‘Bob Esponja’ chega ao McDonald’s Brasil",
+      "summary": "Após alguns rumores sobre datas, a parceria entre One Piece e Bob Esponja chegou oficialmente ao McDonald’s Brasil no último dia 15.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Produtos",
+        "Bob Esponja",
+        "Bob Esponja e One Piece no Brasil",
+        "mcdonalds",
+        "mclanche feliz",
+        "One Piece",
+        "one piece e bob esponja",
+        "one piece e bob esponja mcdonalds brasil"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/17/colaboracao-entre-one-piece-e-bob-esponja-chega-ao-mcdonalds-brasil",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/17/colaboracao-entre-one-piece-e-bob-esponja-chega-ao-mcdonalds-brasil",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Bob-Esponja-One-Piece-destacada-01.jpg",
+      "mediaQuery": "Colaboração entre ‘One Piece’ e ‘Bob Esponja’ chega ao McDonald’s Brasil",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Bob-Esponja-One-Piece.jpg",
+          "alt": "Bob Esponja e One Piece",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/5wo7d82o9tg"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Após alguns rumores sobre datas, a parceria entre One Piece e Bob Esponja chegou oficialmente ao McDonald’s Brasil no último dia 15.",
+          "runs": [
+            {
+              "text": "Após alguns rumores sobre datas, a parceria entre "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Bob Esponja",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " chegou oficialmente ao "
+            },
+            {
+              "text": "McDonald’s Brasil",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no último dia 15."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ao todo, a ação conta com 12 brinquedos que fazem misturas prováveis (ou improváveis) dos personagens das animações, como Bob Esponja e Luffy, Patrick Estrela e Zoro, Sandy Bochechas e Nami, Gary e Chopper, Lula Molusco e Sanji, entre outros. Curiosamente, embora apareça em imagens da campanha em outros países, a versão de Bob Esponja e Luffy Gear5 não veio para o Brasil.",
+          "runs": [
+            {
+              "text": "Ao todo, a ação conta com 12 brinquedos que fazem misturas prováveis (ou improváveis) dos personagens das animações, como Bob Esponja e Luffy, Patrick Estrela e Zoro, Sandy Bochechas e Nami, Gary e Chopper, Lula Molusco e Sanji, entre outros. Curiosamente, embora apareça em imagens da campanha em outros países, a versão de "
+            },
+            {
+              "text": "Bob Esponja e Luffy Gear5 não veio para o Brasil",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "View this post on Instagram",
+          "runs": [
+            {
+              "text": " View this post on Instagram ",
+              "href": "https://www.instagram.com/reel/DdTzsEOR61y/?utm_source=ig_embed&utm_campaign=loading"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Bob-Esponja-One-Piece.jpg",
+          "alt": "Bob Esponja e One Piece"
+        },
+        {
+          "type": "paragraph",
+          "text": "Colecionáveis da collab disponíveis no Brasil | McDonald’s/Divulgação",
+          "runs": [
+            {
+              "text": "Colecionáveis da collab disponíveis no Brasil | McDonald’s/Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Como de praxe, os brinquedos podem ser adquiridos junto com o combo McLache Feliz, e também de forma individual nos restaurantes e delivery. Além dos brinquedos, caixa temática e coroa inspirada na collab, a ação conta com uma bebida sabor manga e abacaxi, e as sobremesas McColosso, Sundae e Top Sundae com o sabor cereja e laranja.",
+          "runs": [
+            {
+              "text": "Como de praxe, os brinquedos podem ser adquiridos junto com o combo "
+            },
+            {
+              "text": "McLache Feliz",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e também de forma individual nos restaurantes e delivery. Além dos brinquedos, caixa temática e coroa inspirada na "
+            },
+            {
+              "text": "collab",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", a ação conta com uma "
+            },
+            {
+              "text": "bebida sabor manga e abacaxi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e as sobremesas McColosso, Sundae e Top Sundae com o sabor cereja e laranja."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=5wo7d82o9tg",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/5wo7d82o9tg"
+        },
+        {
+          "type": "paragraph",
+          "text": "Apesar do McDonald’s já ter tido algumas colaborações com One Piece, essa é a primeira que chega oficialmente ao Brasil.",
+          "runs": [
+            {
+              "text": "Apesar do McDonald’s já ter tido algumas colaborações com "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", essa é a primeira que chega oficialmente ao Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O animê de One Piece é transmitido semanalmente por aqui pela Crunchyroll, que disponibiliza os episódios no mesmo dia de estreia no Japão. A Netflix também exibe a temporada mais recente, focada no Arco de Elbaph, com uma semana de atraso. A plataforma conta ainda com episódios dublados e, recentemente, lançou os capítulos finais do arco Whole Cake com a voz em português. O mangá é publicado no país pela Panini.",
+          "runs": [
+            {
+              "text": "O animê de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é transmitido semanalmente por aqui pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que disponibiliza os episódios no mesmo dia de estreia no Japão. A "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " também exibe a temporada mais recente, focada no "
+            },
+            {
+              "text": "Arco de Elbaph",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", com uma semana de atraso. A plataforma conta ainda com episódios dublados e, recentemente, lançou "
+            },
+            {
+              "text": "os capítulos finais do arco ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/06/01/one-piece-episodios-finais-de-whole-cake-estreiam-dublados-na-netflix/"
+            },
+            {
+              "text": "Whole Cake",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/06/01/one-piece-episodios-finais-de-whole-cake-estreiam-dublados-na-netflix/"
+            },
+            {
+              "text": " com a voz em português",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/06/01/one-piece-episodios-finais-de-whole-cake-estreiam-dublados-na-netflix/"
+            },
+            {
+              "text": ". O mangá é publicado no país pela "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Instagram McDonald’s Brasil",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Instagram McDonald’s Brasil",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.instagram.com/mcdonalds_br/?hl=pt-br"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-17T15:40:21.000Z",
+      "updatedAt": "2026-09-17T15:41:01.000Z",
+      "expiresAt": "2026-09-24T15:40:21.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/17/colaboracao-entre-one-piece-e-bob-esponja-chega-ao-mcdonalds-brasil",
+          "publishedAt": "2026-09-17T15:40:21.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 267,
+      "qualityScore": 0.975,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-2e087db3",
       "slug": "naruto-shippuden-inicia-financiamento-para-jogo-de-tabuleiro-animenew-2e087db3",
@@ -6699,7 +7429,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 337,
-      "qualityScore": 0.981,
+      "qualityScore": 0.921,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -7244,7 +7974,7 @@
       "sourceCount": 1,
       "readingMinutes": 4,
       "wordCount": 636,
-      "qualityScore": 1,
+      "qualityScore": 0.962,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -9853,1165 +10583,6 @@
         "facts": 0,
         "sections": 0,
         "blocks": 16,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-cc14e1c6",
-      "slug": "animacao-go-astro-boy-go-estreia-este-mes-na-tv-cultura-jbox-cc14e1c6",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Animação ‘Go Astro Boy Go!’ estreia este mês na TV Cultura",
-      "originalTitle": "Animação ‘Go Astro Boy Go!’ estreia este mês na TV Cultura",
-      "summary": "A TV Cultura anunciou que vai exibir a animação Go Astro Boy Go! a partir de 16 de setembro, dentro do programa Antimatéria: Energia Geek.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Animação",
-        "Programação",
-        "Animação Go Astro Boy Go",
-        "animes no antimateria",
-        "antimatéria",
-        "astro boy",
-        "go astro boy go",
-        "Go Astro Boy Go na Cultura",
-        "Go Astro Boy Go na TV Aberta",
-        "tv cultura antimateria"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/10/animacao-go-astro-boy-go-estreia-este-mes-na-tv-cultura",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/10/animacao-go-astro-boy-go-estreia-este-mes-na-tv-cultura",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/go-astro-boy-go-destacada.jpg",
-      "mediaQuery": "Animação ‘Go Astro Boy Go!’ estreia este mês na TV Cultura",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A TV Cultura anunciou que vai exibir a animação Go Astro Boy Go! a partir de 16 de setembro, dentro do programa Antimatéria: Energia Geek.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "TV Cultura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " anunciou que vai exibir a animação "
-            },
-            {
-              "text": "Go Astro Boy Go!",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "a partir de "
-            },
-            {
-              "text": "16 de setembro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", dentro do programa"
-            },
-            {
-              "text": " Antimatéria: Energia Geek",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A novidade foi confirmada no próprio programa e nas redes sociais com uma foto da produção, destacando que a exibição na emissora é às quartas e quintas, a partir das 18h30 — substituindo Guerreiras Mágicas de Rayearth, que teve seu último episódio exibido ontem (9), capítulo que será reexibido nesta quinta (10).",
-          "runs": [
-            {
-              "text": "A novidade foi confirmada no próprio programa e nas redes sociais com uma foto da produção, destacando que a exibição na emissora é às "
-            },
-            {
-              "text": "quartas e quintas",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", a partir das "
-            },
-            {
-              "text": "18h30",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " — substituindo "
-            },
-            {
-              "text": "Guerreiras Mágicas de Rayearth",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", que teve seu último episódio exibido ontem (9), capítulo que será reexibido nesta quinta (10)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Como a série tem episódios curtos em comparação às outras já transmitidas pelo Antimatéria, serão exibidos 2 capítulos por dia.",
-          "runs": [
-            {
-              "text": "Como a série tem episódios curtos em comparação às outras já transmitidas pelo "
-            },
-            {
-              "text": "Antimatéria",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", serão exibidos "
-            },
-            {
-              "text": "2 capítulos por dia",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "View this post on Instagram",
-          "runs": [
-            {
-              "text": " View this post on Instagram ",
-              "href": "https://www.instagram.com/p/Dc4R023FAQp/?utm_source=ig_embed&utm_campaign=loading"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Lançado originalmente em 2019, Go Astro Boy Go! coloca a criação clássica de Osamu Tezuka ao lado de personagens como Astro Kitty e Suzu, em aventuras que misturam ação, ciência, tecnologia, natureza, e são focadas em um público mais jovem, em idade pré-escolar.",
-          "runs": [
-            {
-              "text": "Lançado originalmente em 2019, "
-            },
-            {
-              "text": "Go Astro Boy Go!",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " coloca a criação clássica de "
-            },
-            {
-              "text": "Osamu Tezuka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ao lado de personagens como Astro Kitty e Suzu, em aventuras que misturam ação, ciência, tecnologia, natureza, e são focadas em um público mais jovem, em idade pré-escolar."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O projeto foi anunciado em 2014, no Festival Internacional de Animação de Annecy, e teve 52 episódios ao todo, com duração em torno de 11 minutos cada. A produção é da empresa francesa de animações Planet Nemo, em parceria com a Tezuka Productions.",
-          "runs": [
-            {
-              "text": "O projeto foi anunciado em 2014, no "
-            },
-            {
-              "text": "Festival Internacional de Animação de Annecy",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", e teve 52 episódios ao todo, com duração em torno de 11 minutos cada. A produção é da empresa francesa de animações "
-            },
-            {
-              "text": "Planet Nemo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", em parceria com a "
-            },
-            {
-              "text": "Tezuka Productions",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No Brasil, a série já esteve disponível pelo Amazon Prime Video, mas agora está fora do catálogo do streaming.",
-          "runs": [
-            {
-              "text": "No Brasil, a série já esteve disponível pelo "
-            },
-            {
-              "text": "Amazon Prime Video",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", mas agora está fora do catálogo do streaming."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Instagram Antimatéria",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " Instagram Antimatéria",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.instagram.com/comantimateria/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-10T17:35:37.000Z",
-      "updatedAt": "2026-09-10T17:37:29.000Z",
-      "expiresAt": "2026-09-17T17:35:37.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/10/animacao-go-astro-boy-go-estreia-este-mes-na-tv-cultura",
-          "publishedAt": "2026-09-10T17:35:37.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 227,
-      "qualityScore": 0.908,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-f6ae8530",
-      "slug": "witch-on-the-holy-night-filme-chega-aos-cinemas-brasileiros-em-janeiro-jbox-f6ae8530",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Witch on the Holy Night: Filme chega aos cinemas brasileiros em janeiro",
-      "originalTitle": "Witch on the Holy Night: Filme chega aos cinemas brasileiros em janeiro",
-      "summary": "Foi anunciado pela Crunchyroll que o filme Witch on the Holy Night (Mahoutsukai no Yoru) vai ser exibido nos cinemas brasileiros, sendo mais um lançamento em parceria com a Sony Pictures.",
-      "author": "Teke",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "Crunchyroll",
-        "Mahoutsukai no Yoru",
-        "Mahoyo",
-        "sony pictures",
-        "Witch on the Holy Night"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/10/witch-on-the-holy-night-filme-chega-aos-cinemas-brasileiros-em-janeiro",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/10/witch-on-the-holy-night-filme-chega-aos-cinemas-brasileiros-em-janeiro",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/witch-on-the-holy-night-destacada.jpg",
-      "mediaQuery": "Witch on the Holy Night: Filme chega aos cinemas brasileiros em janeiro",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/witch-on-the-holy-night-poster-nacional.jpg",
-          "alt": "imagem: Aoko Aozaki usando uma magia em pôster do filme 'Witch on the Holy Night'.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/rUB3yfko6Aw"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Foi anunciado pela Crunchyroll que o filme Witch on the Holy Night (Mahoutsukai no Yoru) vai ser exibido nos cinemas brasileiros, sendo mais um lançamento em parceria com a Sony Pictures.",
-          "runs": [
-            {
-              "text": "Foi anunciado pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " que o filme "
-            },
-            {
-              "text": "Witch on the Holy Night",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Mahoutsukai no Yoru",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") vai ser exibido nos cinemas brasileiros, sendo mais um lançamento em parceria com a "
-            },
-            {
-              "text": "Sony Pictures",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A estreia está marcada para o dia 28 de janeiro de 2027.",
-          "runs": [
-            {
-              "text": "A estreia está marcada para o dia "
-            },
-            {
-              "text": "28 de janeiro de 2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=rUB3yfko6Aw",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/rUB3yfko6Aw"
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/witch-on-the-holy-night-poster-nacional.jpg",
-          "alt": "imagem: Aoko Aozaki usando uma magia em pôster do filme 'Witch on the Holy Night'."
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Divulgação/Crunchyroll/Sony Pictures",
-          "runs": [
-            {
-              "text": "Imagem: Divulgação/Crunchyroll/Sony Pictures"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O filme de Witch on the Holy Night tem lançamento marcado para o próximo dia 20 de novembro no Japão, contando com produção da animação pelo estúdio ufotable. A obra é uma adaptação da visual novel homônima desenvolvida pela Type-Moon, contando com os mesmos criadores de Fate/stay night.",
-          "runs": [
-            {
-              "text": "O filme de "
-            },
-            {
-              "text": "Witch on the Holy Night",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " tem lançamento marcado para o próximo dia "
-            },
-            {
-              "text": "20 de novembro no Japão",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", contando com produção da animação pelo estúdio "
-            },
-            {
-              "text": "ufotable",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A obra é uma adaptação da visual novel homônima desenvolvida pela "
-            },
-            {
-              "text": "Type-Moon",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", contando com os "
-            },
-            {
-              "text": "mesmos criadores de ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Fate/stay night",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A sinopse oficial da produção é a seguinte:",
-          "runs": [
-            {
-              "text": "A sinopse oficial da produção é a seguinte:"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Aoko Aozaki, uma estudante do ensino médio comum, é na verdade uma maga que vive no mundo atual… apesar de ainda ser apenas uma aprendiz. Ela passa seus dias morando com sua colega de quarto, Alice Kuonji, enquanto se esforça para se tornar uma maga completa…",
-          "runs": [
-            {
-              "text": "Aoko Aozaki, uma estudante do ensino médio comum, é na verdade uma maga que vive no mundo atual… apesar de ainda ser apenas uma aprendiz. Ela passa seus dias morando com sua colega de quarto, Alice Kuonji, enquanto se esforça para se tornar uma maga completa…",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A garota conhece um garoto.",
-          "runs": [
-            {
-              "text": "A garota conhece um garoto.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Esse é o início da história de uma jovem… o conto de uma Bruxa.",
-          "runs": [
-            {
-              "text": "Esse é o início da história de uma jovem… o conto de uma Bruxa.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A visual novel original foi lançada originalmente em 2012 no Japão, ganhando em 2022 uma remasterização que contou com lançamento mundial. A versão mais recente está disponível para PlayStation 4, Switch e PC.",
-          "runs": [
-            {
-              "text": "A visual novel original foi lançada originalmente em 2012 no Japão, ganhando em 2022 uma remasterização que contou com lançamento mundial. A versão mais recente está disponível para PlayStation 4, Switch e PC."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O jogo escrito por Kinoko Nasu foi pensado primeiramente como um livro ainda nos anos 1990, mas foi ganhar seu lançamento oficial apenas na forma de visual novel em 2012. Na época do lançamento no Japão, foi divulgado que o título tem duas continuações em produção, porém elas não foram lançadas até hoje.",
-          "runs": [
-            {
-              "text": "O jogo escrito por "
-            },
-            {
-              "text": "Kinoko Nasu",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " foi pensado primeiramente como um livro ainda nos anos 1990, mas foi ganhar seu lançamento oficial apenas na forma de "
-            },
-            {
-              "text": "visual novel",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " em 2012. Na época do lançamento no Japão, foi divulgado que o título tem duas continuações em produção, porém elas não foram lançadas até hoje."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Crunchyroll",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.crunchyroll.com/pt-br/news/announcements/2026/9/10/witch-on-the-holy-night-o-filme-estreia-mundial-janeiro-2027"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-10T16:34:21.000Z",
-      "updatedAt": "2026-09-10T16:35:00.000Z",
-      "expiresAt": "2026-09-17T16:34:21.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/10/witch-on-the-holy-night-filme-chega-aos-cinemas-brasileiros-em-janeiro",
-          "publishedAt": "2026-09-10T16:34:21.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 272,
-      "qualityScore": 0.919,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 15,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-e9e9ffff",
-      "slug": "2-temporada-de-nippon-sangoku-e-confirmada-jbox-e9e9ffff",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "2ª temporada de ‘Nippon Sangoku’ é confirmada",
-      "originalTitle": "2ª temporada de ‘Nippon Sangoku’ é confirmada",
-      "summary": "O estúdio Twin Engine anunciou a produção da 2ª temporada de Nippon Sangoku, animê que teve a primeira temporada exibida no Brasil pelo Amazon Prime Video.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "2ª temporada de Nippon Sangoku",
-        "Nippon Sangoku anime",
-        "Nippon Sangoku prime video",
-        "Segunda temporada de Nippon Sangoku"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/10/2a-temporada-de-nippon-sangoku-e-confirmada",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/10/2a-temporada-de-nippon-sangoku-e-confirmada",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/nippon-sangoku-destacada.jpg",
-      "mediaQuery": "2ª temporada de ‘Nippon Sangoku’ é confirmada",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/jRe6--W2b4w"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O estúdio Twin Engine anunciou a produção da 2ª temporada de Nippon Sangoku, animê que teve a primeira temporada exibida no Brasil pelo Amazon Prime Video.",
-          "runs": [
-            {
-              "text": "O estúdio "
-            },
-            {
-              "text": "Twin Engine",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " anunciou a produção da 2ª temporada de "
-            },
-            {
-              "text": "Nippon Sangoku",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", animê que teve a primeira temporada exibida no Brasil pelo "
-            },
-            {
-              "text": "Amazon Prime Video",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por enquanto não há detalhes sobre os novos episódios ou uma possível data de estreia. A empresa fez o anúncio com um vídeo que mostra cenas da primeira temporada, e confirma que a sequência será feita:",
-          "runs": [
-            {
-              "text": "Por enquanto não há detalhes sobre os novos episódios ou uma possível data de estreia. A empresa fez o anúncio com um vídeo que mostra cenas da primeira temporada, e confirma que a sequência será feita:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=jRe6--W2b4w",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/jRe6--W2b4w"
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama de Nippon Sangoku é situada em um futuro próximo, onde a humanidade regrediu por conta de uma guerra nuclear e desastres naturais. Nesse contexto, o Japão se dividiu em três grandes reinos, que seguem lutando pela soberania total, mas o estrategista Aoteru Misumi vê um caminho diferente: ele sonha com a unificação dos territórios e usará toda a inteligência que tem para atingir este objetivo. O animê é inspirado no mangá de Ikka Matsuki, lançado em 2021, e ainda inédito no Brasil.",
-          "runs": [
-            {
-              "text": "A trama de "
-            },
-            {
-              "text": "Nippon Sangoku ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "é situada em um futuro próximo, onde a humanidade regrediu por conta de uma guerra nuclear e desastres naturais. Nesse contexto, o Japão se dividiu em três grandes reinos, que seguem lutando pela soberania total, mas o estrategista Aoteru Misumi vê um caminho diferente: ele sonha com a unificação dos territórios e usará toda a inteligência que tem para atingir este objetivo. O animê é inspirado no mangá de"
-            },
-            {
-              "text": " Ikka Matsuki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", lançado em 2021, e ainda inédito no Brasil."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre os nomes do elenco de voz original estão Kenshô Ono (Yuru em Daemons do Reino das Sombras) como Aoteru Misumi, Jun Fukuyama (o Hokuto de Hana-Kimi) como Yoshitsune Asama, Kazuhiro Yamaji (Kojiro Sasaki de Record of Ragnarok) como Mitsuhide Ryūmon, Yuuichi Nakamura (Satoru Gojo em Jujutsu Kaisen) como Yasuaki Kaku, Taihi Kimura (Kozuki em Sanda) como Fuji III e Minami Tsuda (jovem Loid em Spy x Family) como Oga Wajima.",
-          "runs": [
-            {
-              "text": "Entre os nomes do elenco de voz original estão "
-            },
-            {
-              "text": "Kenshô Ono",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Yuru em"
-            },
-            {
-              "text": " Daemons do Reino das Sombras",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Aoteru Misumi, "
-            },
-            {
-              "text": "Jun Fukuyama",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/j-pedia/perfis/jun-fukuyama/"
-            },
-            {
-              "text": " (o Hokuto de "
-            },
-            {
-              "text": "Hana-Kimi",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Yoshitsune Asama, "
-            },
-            {
-              "text": "Kazuhiro Yamaji",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Kojiro Sasaki de "
-            },
-            {
-              "text": "Record of Ragnarok",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Mitsuhide Ryūmon, "
-            },
-            {
-              "text": "Yuuichi Nakamura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Satoru Gojo em "
-            },
-            {
-              "text": "Jujutsu Kaisen",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Yasuaki Kaku, "
-            },
-            {
-              "text": "Taihi Kimura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Kozuki em "
-            },
-            {
-              "text": "Sanda",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Fuji III e "
-            },
-            {
-              "text": "Minami Tsuda",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (jovem Loid em "
-            },
-            {
-              "text": "Spy x Family",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Oga Wajima."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fazem parte da equipe de produção do animê Teruko Utsumi (Tatsuki Fujimoto 17-26) no roteiro, Kazuaki Terasawa (Tatsuki Fujimoto 17-26, Overlord) na direção, Takahiko Abiru (Vinland Saga, Trigun Stampede, Attack on Titan) no design de personagens e direção de animação e Seiki Tamura (especiais de Lupin III) na direção de arte.",
-          "runs": [
-            {
-              "text": "Fazem parte da equipe de produção do animê "
-            },
-            {
-              "text": "Teruko Utsumi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Tatsuki Fujimoto 17-26) no roteiro, "
-            },
-            {
-              "text": "Kazuaki Terasawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Tatsuki Fujimoto 17-26",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Overlord",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") na direção, "
-            },
-            {
-              "text": "Takahiko Abiru",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Vinland Saga",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Trigun Stampede",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Attack on Titan",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") no design de personagens e direção de animação e"
-            },
-            {
-              "text": " Seiki Tamura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (especiais de "
-            },
-            {
-              "text": "Lupin III",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") na direção de arte."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No Prime Video, a primeira temporada está disponível com 12 episódios, com legendas e dublagem em português.",
-          "runs": [
-            {
-              "text": "No Prime Video, a primeira temporada está disponível com 12 episódios, com legendas e dublagem em português."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Anime News Network",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Anime News Network",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.animenewsnetwork.com/news/2026-09-02/nippon-sangoku-anime-gets-sequel/.241284"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-10T16:21:21.000Z",
-      "updatedAt": "2026-09-10T16:22:09.000Z",
-      "expiresAt": "2026-09-17T16:21:21.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/10/2a-temporada-de-nippon-sangoku-e-confirmada",
-          "publishedAt": "2026-09-10T16:21:21.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 306,
-      "qualityScore": 0.917,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "contentMode": "full",
