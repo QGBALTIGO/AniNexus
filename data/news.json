@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T19:18:42.669Z",
+  "generatedAt": "2026-09-17T22:14:17.626Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,671 @@
   ],
   "stats": {
     "collected": 47,
-    "grouped": 25,
-    "published": 25,
-    "newStories": 25,
-    "fullArticles": 25,
+    "grouped": 27,
+    "published": 27,
+    "newStories": 27,
+    "fullArticles": 27,
     "previewArticles": 0,
-    "avgWords": 418,
-    "withHeroImage": 25,
-    "withOrderedMedia": 23,
+    "avgWords": 408,
+    "withHeroImage": 27,
+    "withOrderedMedia": 25,
     "skippedTranslation": 0,
-    "skippedQuality": 22,
-    "durationMs": 2801
+    "skippedQuality": 20,
+    "durationMs": 3467
   },
   "items": [
+    {
+      "id": "jbox-63e1137d",
+      "slug": "virada-nerd-2026-kore-yamazaki-autora-de-the-ancient-magus-bride-vem-ao-brasil-para-o-evento-jbox-63e1137d",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Virada Nerd 2026: Kore Yamazaki, autora de ‘The Ancient Magus’ Bride’, vem ao Brasil para o evento",
+      "originalTitle": "Virada Nerd 2026: Kore Yamazaki, autora de ‘The Ancient Magus’ Bride’, vem ao Brasil para o evento",
+      "summary": "Foi anunciado pel editora Devir que Kore Yamazaki vem ao Brasil este ano para participar da Virada Nerd 2026. A autora é conhecida principalmente pelo mangá The Ancient Magus’ Bride (Mahoutsukai no Yome).",
+      "author": "Teke",
+      "tags": [
+        "Eventos",
+        "Mangá",
+        "Devir",
+        "Frau Faust",
+        "kore yamazaki",
+        "mahoutsukai no yome",
+        "MahoYome",
+        "the ancient magus bride",
+        "Virada Nerd 2026"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/17/virada-nerd-2026-kore-yamazaki-autora-de-the-ancient-magus-bride-vem-ao-brasil-para-o-evento",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/17/virada-nerd-2026-kore-yamazaki-autora-de-the-ancient-magus-bride-vem-ao-brasil-para-o-evento",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2023/12/mahotsukai-yome-manga-destacada.jpg",
+      "mediaQuery": "Virada Nerd 2026: Kore Yamazaki, autora de ‘The Ancient Magus’ Bride’, vem ao Brasil para o evento",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/ancient-magus-bride.jpg",
+          "alt": "imagem: Elias, Chise e Ruth juntos em ilustração de 'The Ancient Magus' Bride'.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado pel editora Devir que Kore Yamazaki vem ao Brasil este ano para participar da Virada Nerd 2026. A autora é conhecida principalmente pelo mangá The Ancient Magus’ Bride (Mahoutsukai no Yome).",
+          "runs": [
+            {
+              "text": "Foi anunciado pel editora "
+            },
+            {
+              "text": "Devir",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " que "
+            },
+            {
+              "text": "Kore Yamazaki ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "vem ao Brasil este ano para participar da "
+            },
+            {
+              "text": "Virada Nerd 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A autora é conhecida principalmente pelo mangá "
+            },
+            {
+              "text": "The Ancient Magus’ Bride",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Mahoutsukai no Yome",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ")."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No evento, a autora participará de painéis e sessões de autógrafos. Para a ocasião, a Devir começa a publicar durante a Virada Nerd deste ano o mangá Frau Faust, que também tem autoria de Yamazaki. O mangá foi anunciado durante a Virada Nerd do ano passado.",
+          "runs": [
+            {
+              "text": "No evento, a autora participará de painéis e sessões de autógrafos. Para a ocasião, a Devir começa a publicar durante a Virada Nerd deste ano o mangá "
+            },
+            {
+              "text": "Frau Faust",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", que também tem autoria de Yamazaki. O mangá foi anunciado durante a Virada Nerd do ano passado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Virada Nerd 2026 acontece no Centro Cultural de São Paulo, nos dias 14 e 15 de novembro. O evento existe desde 2014, reunindo editoras e quadrinistas para sessões de autógrafos, painéis e workshops. O Dia do Quadrinho Grátis é outra atração da Virada Nerd, com quadrinhos sendo distribuídos para o público especialmente para o evento. A entrada é gratuita.",
+          "runs": [
+            {
+              "text": "A Virada Nerd 2026 acontece no "
+            },
+            {
+              "text": "Centro Cultural de São Paulo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", nos dias "
+            },
+            {
+              "text": "14 e 15 de novembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O evento existe desde 2014, reunindo editoras e quadrinistas para sessões de autógrafos, painéis e workshops. O "
+            },
+            {
+              "text": "Dia do Quadrinho Grátis",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " é outra atração da Virada Nerd, com quadrinhos sendo distribuídos para o público especialmente para o evento. A "
+            },
+            {
+              "text": "entrada é gratuita",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Sobre Kore Yamazaki",
+          "runs": [
+            {
+              "text": "Sobre Kore Yamazaki",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/ancient-magus-bride.jpg",
+          "alt": "imagem: Elias, Chise e Ruth juntos em ilustração de 'The Ancient Magus' Bride'."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Kore Yamazaki começou oficialmente sua carreira como mangaká em 2012, com o lançamento de Futari no Renai Shoka. Sua obra de maior sucesso, The Ancient Magus’ Bride, já viria no ano seguinte, estando em publicação até hoje e contando também com spin-offs, adaptações para animê, novel e outras produções derivadas. O mangá conta com 25 volumes publicados até então, sendo que inicialmente era lançado pela Mag Garden, mas posteriormente a Bushiroad passou a ser responsável pela obra. No Brasil, a Devir publica a série desde 2017.",
+          "runs": [
+            {
+              "text": "Kore Yamazaki começou oficialmente sua carreira como mangaká em 2012, com o lançamento de "
+            },
+            {
+              "text": "Futari no Renai Shoka",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". Sua obra de maior sucesso, "
+            },
+            {
+              "text": "The Ancient Magus’ Bride",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", já viria no ano seguinte, estando em publicação até hoje e contando também com spin-offs, adaptações para animê, novel e outras produções derivadas. O mangá conta com 25 volumes publicados até então, sendo que inicialmente era lançado pela "
+            },
+            {
+              "text": "Mag Garden",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", mas posteriormente a "
+            },
+            {
+              "text": "Bushiroad",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " passou a ser responsável pela obra. No Brasil, a Devir publica a série desde 2017."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além desse, há outro mangá em publicação, chamado Ghost & Witch, contando com 3 volumes até então. Frau Faust, que chega em breve por aqui, conta com 5 volumes ao todo.",
+          "runs": [
+            {
+              "text": "Além desse, há outro mangá em publicação, chamado "
+            },
+            {
+              "text": "Ghost & Witch",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", contando com 3 volumes até então. "
+            },
+            {
+              "text": "Frau Faust",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que chega em breve por aqui, conta com 5 volumes ao todo."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Fora do Plástico",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Fora do Plástico",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://foradoplastico.com.br/kore-yamazaki-autora-do-manga-the-ancient-magus-bride-estara-no-brasil-para-a-virada-nerd-2026/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-17T19:59:23.000Z",
+      "updatedAt": "2026-09-17T20:00:46.000Z",
+      "expiresAt": "2026-09-24T19:59:23.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/17/virada-nerd-2026-kore-yamazaki-autora-de-the-ancient-magus-bride-vem-ao-brasil-para-o-evento",
+          "publishedAt": "2026-09-17T19:59:23.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 282,
+      "qualityScore": 0.975,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-c9a501ed",
+      "slug": "the-failure-at-god-school-tem-adaptacao-para-anime-anunciada-jbox-c9a501ed",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘The Failure at God School’ tem adaptação para animê anunciada",
+      "originalTitle": "‘The Failure at God School’ tem adaptação para animê anunciada",
+      "summary": "Foi anunciado com a inauguração de um site e redes oficiais que The Failure at God School (Kami-sama Gakkou no Ochikobore) vai ganhar uma adaptação para animê. A obra é escrita por Hyuganatsu, autora também de Diários de uma Apotecária.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "Hyuganatsu",
+        "Kami-sama Gakkou no Ochikobore",
+        "Kamisama School",
+        "Modomu Akagawara",
+        "The Failure at God School"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/17/the-failure-at-god-school-tem-adaptacao-para-anime-anunciada",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/17/the-failure-at-god-school-tem-adaptacao-para-anime-anunciada",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/the-failure-at-god-school-destacada.jpg",
+      "mediaQuery": "‘The Failure at God School’ tem adaptação para animê anunciada",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/The-Failure-at-God-School-poster-anime.jpg",
+          "alt": "imagem: os três personagens principais de 'The Failure at God School' em pôster do animê.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado com a inauguração de um site e redes oficiais que The Failure at God School (Kami-sama Gakkou no Ochikobore) vai ganhar uma adaptação para animê. A obra é escrita por Hyuganatsu, autora também de Diários de uma Apotecária.",
+          "runs": [
+            {
+              "text": "Foi anunciado com a inauguração de um site e redes oficiais que "
+            },
+            {
+              "text": "The Failure at God School",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Kami-sama Gakkou no Ochikobore",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") vai ganhar uma adaptação para animê. A obra é escrita por "
+            },
+            {
+              "text": "Hyuganatsu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", autora também de "
+            },
+            {
+              "text": "Diários de uma Apotecária",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira o primeiro pôster do animê:",
+          "runs": [
+            {
+              "text": "Confira o primeiro pôster do animê:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/The-Failure-at-God-School-poster-anime.jpg",
+          "alt": "imagem: os três personagens principais de 'The Failure at God School' em pôster do animê."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Failure at God School é originalmente um mangá ilustrado Modomu Akagawara. A obra começou a ser publicada em 2021 na revista Hana to Yume, contando até então com 15 volumes encadernados pela Hakusensha. Hyuganatsu começou a escrever também uma light novel da obra em 2022, que conta até então com 5 volumes lançados pela Seikasha. Akagawara também ilustra as light novels.",
+          "runs": [
+            {
+              "text": "The Failure at God School",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é originalmente um mangá ilustrado "
+            },
+            {
+              "text": "Modomu Akagawara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A obra começou a ser publicada em 2021 na revista "
+            },
+            {
+              "text": "Hana to Yume",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", contando até então com 15 volumes encadernados pela "
+            },
+            {
+              "text": "Hakusensha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Hyuganatsu começou a escrever também uma light novel da obra em 2022, que conta até então com 5 volumes lançados pela "
+            },
+            {
+              "text": "Seikasha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Akagawara também ilustra as light novels."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Apesar da light novel ser uma adaptação, ela não conta exatamente a mesma história do mangá. As obras têm diferenças em relação ao romance adotado para a protagonista, com as consequências de cada escolha alterando também o andamento da narrativa.",
+          "runs": [
+            {
+              "text": "Apesar da "
+            },
+            {
+              "text": "light novel",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ser uma adaptação, ela não conta exatamente a mesma história do mangá. As obras têm diferenças em relação ao romance adotado para a protagonista, com as consequências de cada escolha alterando também o andamento da narrativa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história se passa em uma versão do Japão moderno onde quem tem poderes divinos é chamado de “Himiko” por uma classificação especial do governo, mas apenas aqueles que conseguem uma certificação especial conseguem ser chamados de “Deus”. Depois que a avó de Nagi morre, ela precisa urgentemente encontrar alguém para assumir o papel de divindade no templo onde vive, mas a situação não parece boa já que Takeru, que herdou o poder divino na família, vive enfurnado em seu quarto e não quer fazer o teste para virar Deus.",
+          "runs": [
+            {
+              "text": "A história se passa em uma versão do Japão moderno onde quem tem poderes divinos é chamado de “Himiko” por uma classificação especial do governo, mas apenas aqueles que conseguem uma certificação especial conseguem ser chamados de “Deus”. Depois que a avó de Nagi morre, ela precisa urgentemente encontrar alguém para assumir o papel de divindade no templo onde vive, mas a situação não parece boa já que Takeru, que herdou o poder divino na família, vive enfurnado em seu quarto e não quer fazer o teste para virar Deus."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Certo dia, no entanto, Nagi acaba se envolvendo com um caso sobrenatural, o que eventualmente faz com que ela seja matriculada na Escola dos Deuses, mesmo que, pelo o que ela saiba, não tenha poderes divinos.",
+          "runs": [
+            {
+              "text": "Certo dia, no entanto, Nagi acaba se envolvendo com um caso sobrenatural, o que eventualmente faz com que ela seja matriculada na Escola dos Deuses, mesmo que, pelo o que ela saiba, não tenha poderes divinos."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: The Failure at God School (site oficial)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "The Failure at God School (site oficial)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.kamisama-school-anime.net/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-17T19:21:42.000Z",
+      "updatedAt": "2026-09-17T19:22:59.000Z",
+      "expiresAt": "2026-09-24T19:21:42.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/17/the-failure-at-god-school-tem-adaptacao-para-anime-anunciada",
+          "publishedAt": "2026-09-17T19:21:42.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 299,
+      "qualityScore": 0.976,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-54d35169",
       "slug": "toei-anuncia-ativacao-com-baloes-gigantes-de-one-piece-na-ccxp-2026-jbox-54d35169",
@@ -6613,7 +7265,7 @@
       "sourceCount": 1,
       "readingMinutes": 3,
       "wordCount": 472,
-      "qualityScore": 0.995,
+      "qualityScore": 0.935,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -6928,7 +7580,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 241,
-      "qualityScore": 0.966,
+      "qualityScore": 0.906,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
