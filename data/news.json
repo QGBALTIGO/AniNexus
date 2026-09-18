@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T00:22:55.362Z",
+  "generatedAt": "2026-09-18T05:04:47.729Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,802 @@
   ],
   "stats": {
     "collected": 47,
-    "grouped": 27,
-    "published": 27,
-    "newStories": 27,
-    "fullArticles": 27,
+    "grouped": 26,
+    "published": 26,
+    "newStories": 26,
+    "fullArticles": 26,
     "previewArticles": 0,
-    "avgWords": 408,
-    "withHeroImage": 27,
-    "withOrderedMedia": 25,
+    "avgWords": 386,
+    "withHeroImage": 26,
+    "withOrderedMedia": 24,
     "skippedTranslation": 0,
     "skippedQuality": 20,
-    "durationMs": 3613
+    "durationMs": 3115
   },
   "items": [
+    {
+      "id": "animenew-c3863c61",
+      "slug": "gachiakuta-breakout-ganha-trailer-de-gameplay-animenew-c3863c61",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Gachiakuta: BREAKOUT ganha trailer de gameplay",
+      "originalTitle": "Gachiakuta: BREAKOUT ganha trailer de gameplay",
+      "summary": "A Com2uS Group revelou o título oficial GACHIAKUTA: BREAKOUT, novo RPG de ação baseado no mangá Gachiakuta, durante a transmissão Xbox Tokyo Game Show 2026.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Games",
+        "Notícias",
+        "Com2uS Group",
+        "Gachiakuta",
+        "GACHIAKUTA: BREAKOUT"
+      ],
+      "url": "https://animenew.com.br/gachiakuta-breakout-trailer-gameplay",
+      "sourceUrl": "https://animenew.com.br/gachiakuta-breakout-trailer-gameplay",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Gachiakuta-BREAKOUT-ganha-trailer-de-gameplay.webp",
+      "mediaQuery": "Gachiakuta: BREAKOUT ganha trailer de gameplay",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/UYu__vsFa7k"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Com2uS Group revelou o título oficial GACHIAKUTA: BREAKOUT, novo RPG de ação baseado no mangá Gachiakuta, durante a transmissão Xbox Tokyo Game Show 2026.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Com2uS Group",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " revelou o título oficial "
+            },
+            {
+              "text": "GACHIAKUTA: BREAKOUT",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", novo RPG de ação baseado no "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " Gachiakuta, durante a transmissão Xbox Tokyo Game Show 2026."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Naruto Shippuden inicia financiamento para jogo de tabuleiro",
+              "runs": [
+                {
+                  "text": "Naruto Shippuden inicia financiamento para jogo de tabuleiro",
+                  "href": "https://animenew.com.br/naruto-shippuden-battle-campanha-financiamento"
+                }
+              ]
+            },
+            {
+              "text": "Jujutsu Kaisen Rumble: Survivaton é adiado para 2027",
+              "runs": [
+                {
+                  "text": "Jujutsu Kaisen Rumble: Survivaton é adiado para 2027",
+                  "href": "https://animenew.com.br/jujutsu-kaisen-rumble-survivaton-adiado-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O jogo chegará em 2027 para PlayStation 5, Xbox Series X|S e PC via Steam. Antes chamado provisoriamente de Gachiakuta: The Game, o título busca recriar a atmosfera do anime e permitirá aos jogadores explorar seu universo.",
+          "runs": [
+            {
+              "text": "O jogo chegará em 2027 para PlayStation 5, Xbox Series X|S e PC via Steam. Antes chamado provisoriamente de "
+            },
+            {
+              "text": "Gachiakuta: The Game",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o título busca recriar a atmosfera do "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " e permitirá aos jogadores explorar seu universo."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=UYu__vsFa7k",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/UYu__vsFa7k"
+        },
+        {
+          "type": "paragraph",
+          "text": "O trailer também apresentou cenas de gameplay do RPG de ação com elementos de sobrevivência. A proposta coloca os jogadores dentro do cenário da obra, embora novos detalhes sobre personagens e sistemas ainda não tenham sido divulgados.",
+          "runs": [
+            {
+              "text": "O trailer também apresentou cenas de gameplay do RPG de ação com elementos de sobrevivência. A proposta coloca os jogadores dentro do cenário da obra, embora novos detalhes sobre personagens e sistemas ainda não tenham sido divulgados."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de Gachiakuta",
+          "runs": [
+            {
+              "text": "História de Gachiakuta"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Rudo, um jovem que vive nas favelas de uma cidade flutuante. Após ser acusado injustamente de assassinato, ele recebe como punição o exílio e é lançado ao abismo junto com o lixo descartado pela população.",
+          "runs": [
+            {
+              "text": "A trama acompanha Rudo, um jovem que vive nas favelas de uma cidade flutuante. Após ser acusado injustamente de assassinato, ele recebe como punição o exílio e é lançado ao abismo junto com o lixo descartado pela população.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Portanto o mangá de Kei Urana começou em 2022 na Weekly Shōnen Magazine e atualmente conta com 19 volumes publicados. Por fim Hideyoshi Ando participa do projeto como responsável pelos designs de graffiti.",
+          "runs": [
+            {
+              "text": "Portanto o mangá de "
+            },
+            {
+              "text": "Kei Urana",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " começou em 2022 na "
+            },
+            {
+              "text": "Weekly Shōnen Magazine",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e atualmente conta com 19 volumes publicados. Por fim Hideyoshi Ando participa do projeto como responsável pelos designs de graffiti."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Youtube Canal",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Youtube Canal",
+              "href": "https://www.youtube.com/watch?v=UYu__vsFa7k"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Gachiakuta: BREAKOUT ganha trailer de gameplay.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Gachiakuta: BREAKOUT ganha trailer de gameplay",
+              "href": "https://animenew.com.br/gachiakuta-breakout-trailer-gameplay/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-18T01:45:48.000Z",
+      "updatedAt": "2026-09-18T01:45:48.000Z",
+      "expiresAt": "2026-09-25T01:45:48.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/gachiakuta-breakout-trailer-gameplay",
+          "publishedAt": "2026-09-18T01:45:48.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 210,
+      "qualityScore": 0.966,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-e34386a5",
+      "slug": "be-forever-yamato-rebel-3199-revela-trailer-do-setimo-filme-animenew-e34386a5",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Be Forever Yamato: Rebel 3199 revela trailer do sétimo filme",
+      "originalTitle": "Be Forever Yamato: Rebel 3199 revela trailer do sétimo filme",
+      "summary": "A Bandai Namco Filmworks divulgou o trailer principal e uma nova arte de Be Forever Yamato: Rebel 3199 (Star Blazers: Be Forever Yamato – Rebel 3199), sétimo e último filme do projeto que reimagina a franquia Space Battleship Yamato.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Cinema",
+        "Notícias",
+        "Be Forever Yamato"
+      ],
+      "url": "https://animenew.com.br/be-forever-yamato-rebel-3199-setimo-filme",
+      "sourceUrl": "https://animenew.com.br/be-forever-yamato-rebel-3199-setimo-filme",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Be-Forever-Yamato-Rebel-3199-revela-trailer-do-setimo-filme.webp",
+      "mediaQuery": "Be Forever Yamato: Rebel 3199 revela trailer do sétimo filme",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/7th-Be-Forever-Yamato-Rebel-3199.webp",
+          "alt": "7th Be Forever Yamato: Rebel 3199",
+          "caption": "© 西﨑義展／宇宙戦艦ヤマト3199製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/arYxrKukR5c"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Bandai Namco Filmworks divulgou o trailer principal e uma nova arte de Be Forever Yamato: Rebel 3199 (Star Blazers: Be Forever Yamato – Rebel 3199), sétimo e último filme do projeto que reimagina a franquia Space Battleship Yamato.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Bandai Namco Filmworks",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " divulgou o trailer principal e uma nova arte de "
+            },
+            {
+              "text": "Be Forever Yamato: Rebel 3199",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Star Blazers: Be Forever Yamato – Rebel 3199",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), sétimo e último filme do projeto que reimagina a franquia Space Battleship Yamato."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Shangri-La Frontier: 3ª temporada estreia em janeiro de 2027",
+              "runs": [
+                {
+                  "text": "Shangri-La Frontier: 3ª temporada estreia em janeiro de 2027",
+                  "href": "https://animenew.com.br/shangri-la-frontier-3-temporada-janeiro"
+                }
+              ]
+            },
+            {
+              "text": "Crunchyroll revela calendário de animes do outono de 2026",
+              "runs": [
+                {
+                  "text": "Crunchyroll revela calendário de animes do outono de 2026",
+                  "href": "https://animenew.com.br/animes-outono-2026-crunchyroll-calendario"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Intitulado Nijiiro no Rinne, o longa chega aos cinemas japoneses em 30 de outubro de 2026. Sendo assim o character designer Nobuteru Yūki, responsável pelo visual dos personagens, também assina a nova ilustração promocional.",
+          "runs": [
+            {
+              "text": "Intitulado "
+            },
+            {
+              "text": "Nijiiro no Rinne",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o longa chega aos "
+            },
+            {
+              "text": "cinemas japoneses",
+              "href": "https://animenew.com.br/cinema"
+            },
+            {
+              "text": " em "
+            },
+            {
+              "text": "30 de outubro de 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Sendo assim o character designer Nobuteru Yūki, responsável pelo visual dos personagens, também assina a nova ilustração promocional."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=arYxrKukR5c",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/arYxrKukR5c"
+        },
+        {
+          "type": "paragraph",
+          "text": "A história de Be Forever Yamato: Rebel 3199 é apresentada em sete filmes. No Brasil, o projeto também é conhecido por meio do título Star Blazers: Space Battleship Yamato 3199, disponibilizado pela Crunchyroll.",
+          "runs": [
+            {
+              "text": "A história de Be Forever Yamato: Rebel 3199 é apresentada em sete filmes. No Brasil, o projeto também é conhecido por meio do título Star Blazers: Space Battleship Yamato 3199, disponibilizado pela Crunchyroll."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/7th-Be-Forever-Yamato-Rebel-3199.webp",
+          "alt": "7th Be Forever Yamato: Rebel 3199",
+          "caption": "© 西﨑義展／宇宙戦艦ヤマト3199製作委員会"
+        },
+        {
+          "type": "heading",
+          "text": "Produção",
+          "runs": [
+            {
+              "text": "Produção"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Naomiichi Yamato dirige a produção, enquanto Harutoshi Fukui atua como diretor supervisor, roteirista-chefe e responsável pelos roteiros. Hideki Oka também retorna como coautor.",
+          "runs": [
+            {
+              "text": "Naomiichi Yamato",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dirige a produção, enquanto "
+            },
+            {
+              "text": "Harutoshi Fukui",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " atua como diretor supervisor, roteirista-chefe e responsável pelos roteiros. "
+            },
+            {
+              "text": "Hideki Oka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " também retorna como coautor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nobuteru Yūki novamente cuida do design dos personagens. A trilha sonora reúne Akira Miyagawa e Shū Kanematsu, com músicas do falecido Hiroshi Miyagawa, compositor da série original.",
+          "runs": [
+            {
+              "text": "Nobuteru Yūki novamente cuida do design dos personagens. A trilha sonora reúne Akira Miyagawa e Shū Kanematsu, com músicas do falecido Hiroshi Miyagawa, compositor da série original."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim o sexto filme, Aoi Meikyū, estreou no Japão em 26 de junho. Ademais a produção é uma sequência direta de Space Battleship Yamato 2205: The New Voyage Part II: Stasha, lançado em 2022.",
+          "runs": [
+            {
+              "text": "Por fim o sexto filme, "
+            },
+            {
+              "text": "Aoi Meikyū",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", estreou no Japão em 26 de junho. Ademais a produção é uma sequência direta de "
+            },
+            {
+              "text": "Space Battleship Yamato 2205: The New Voyage Part II: Stasha",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", lançado em 2022."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Be Forever Yamato: Rebel 3199 revela trailer do sétimo filme.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Be Forever Yamato: Rebel 3199 revela trailer do sétimo filme",
+              "href": "https://animenew.com.br/be-forever-yamato-rebel-3199-setimo-filme/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-18T01:16:53.000Z",
+      "updatedAt": "2026-09-18T01:16:53.000Z",
+      "expiresAt": "2026-09-25T01:16:53.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/be-forever-yamato-rebel-3199-setimo-filme",
+          "publishedAt": "2026-09-18T01:16:53.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 234,
+      "qualityScore": 0.97,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-e05f3508",
+      "slug": "firefly-wedding-revela-musica-de-abertura-do-anime-animenew-e05f3508",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Firefly Wedding revela música de abertura do anime",
+      "originalTitle": "Firefly Wedding revela música de abertura do anime",
+      "summary": "O anime de Firefly Wedding revelou nesta música de abertura “Period”, interpretada pela cantora iri. A faixa marca sua estreia em uma produção da série. A novidade foi acompanhada por um novo vídeo promocional, que apresenta uma prévia da canção.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Crunchyroll",
+        "David Production",
+        "Firefly Wedding"
+      ],
+      "url": "https://animenew.com.br/firefly-wedding-anime-musica-abertura-iri",
+      "sourceUrl": "https://animenew.com.br/firefly-wedding-anime-musica-abertura-iri",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Firefly-Wedding-revela-musica-de-abertura-do-anime.webp",
+      "mediaQuery": "Firefly Wedding revela música de abertura do anime",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/Ex9LrBK-7hk"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime de Firefly Wedding revelou nesta música de abertura “Period”, interpretada pela cantora iri. A faixa marca sua estreia em uma produção da série. A novidade foi acompanhada por um novo vídeo promocional, que apresenta uma prévia da canção.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Firefly Wedding",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " revelou nesta música de abertura “Period”, interpretada pela cantora iri. A faixa marca sua estreia em uma produção da série. A novidade foi acompanhada por um novo vídeo promocional, que apresenta uma prévia da canção."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Shangri-La Frontier: 3ª temporada estreia em janeiro de 2027",
+              "runs": [
+                {
+                  "text": "Shangri-La Frontier: 3ª temporada estreia em janeiro de 2027",
+                  "href": "https://animenew.com.br/shangri-la-frontier-3-temporada-janeiro"
+                }
+              ]
+            },
+            {
+              "text": "Crunchyroll revela calendário de animes do outono de 2026",
+              "runs": [
+                {
+                  "text": "Crunchyroll revela calendário de animes do outono de 2026",
+                  "href": "https://animenew.com.br/animes-outono-2026-crunchyroll-calendario"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Estreia e produção",
+          "runs": [
+            {
+              "text": "Estreia e produção"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A adaptação estreia em 9 de outubro, no bloco Noitamina, da Fuji TV, com exibição às sextas-feiras, às 23h30. A Crunchyroll transmitirá o anime de Firefly Wedding simultaneamente.",
+          "runs": [
+            {
+              "text": "A adaptação estreia em "
+            },
+            {
+              "text": "9 de outubro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", no bloco Noitamina, da Fuji TV, com exibição às sextas-feiras, às 23h30. A "
+            },
+            {
+              "text": "Crunchyroll",
+              "href": "https://animenew.com.br/tag/crunchyroll/"
+            },
+            {
+              "text": " transmitirá o anime de Firefly Wedding simultaneamente."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=Ex9LrBK-7hk",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Ex9LrBK-7hk"
+        },
+        {
+          "type": "heading",
+          "text": "Firefly Wedding Personagens",
+          "runs": [
+            {
+              "text": "Firefly Wedding",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Personagens"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Lynn interpreta Satoko Kirigaya, enquanto Kōki Uchiyama dá voz a Shinpei Gotō. O elenco também conta com Kent Itō como Kōtarō Ogawa e Kenjirō Tsuda como Mitsueda.",
+          "runs": [
+            {
+              "text": "Lynn interpreta Satoko Kirigaya, enquanto Kōki Uchiyama dá voz a Shinpei Gotō. O elenco também conta com Kent Itō como Kōtarō Ogawa e Kenjirō Tsuda como Mitsueda."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Sinopse",
+          "runs": [
+            {
+              "text": "Sinopse"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A história acompanha Satoko, uma jovem nobre gravemente doente que tenta garantir um casamento antes de morrer. Porém, seus planos mudam quando ela se torna alvo do assassino Shinpei e propõe casamento para sobreviver.",
+          "runs": [
+            {
+              "text": "A história acompanha Satoko, uma jovem nobre gravemente doente que tenta garantir um casamento antes de morrer. Porém, seus planos mudam quando ela se torna alvo do assassino Shinpei e propõe casamento para sobreviver.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Takahiro Kamei dirige a produção no estúdio david production, com Yukiko Aikei no design de personagens. Por fim Yūko Kakihara cuida dos roteiros, enquanto NOGRID assina a composição musical. TOOBOE interpreta a música de encerramento, “Yumegokochi”.",
+          "runs": [
+            {
+              "text": "Takahiro Kamei dirige a produção no estúdio "
+            },
+            {
+              "text": "david productio",
+              "href": "https://animenew.com.br/studio/287/david-production"
+            },
+            {
+              "text": "n",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com Yukiko Aikei no design de personagens. Por fim Yūko Kakihara cuida dos roteiros, enquanto NOGRID assina a composição musical. TOOBOE interpreta a música de encerramento, “Yumegokochi”."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Firefly Wedding revela música de abertura do anime.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Firefly Wedding revela música de abertura do anime",
+              "href": "https://animenew.com.br/firefly-wedding-anime-musica-abertura-iri/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-18T01:09:37.000Z",
+      "updatedAt": "2026-09-18T01:09:37.000Z",
+      "expiresAt": "2026-09-25T01:09:37.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/firefly-wedding-anime-musica-abertura-iri",
+          "publishedAt": "2026-09-18T01:09:37.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 210,
+      "qualityScore": 0.967,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-63e1137d",
       "slug": "virada-nerd-2026-kore-yamazaki-autora-de-the-ancient-magus-bride-vem-ao-brasil-para-o-evento-jbox-63e1137d",
@@ -4015,257 +4798,6 @@
       }
     },
     {
-      "id": "animenew-633c0fad",
-      "slug": "jujutsu-kaisen-rumble-survivaton-e-adiado-para-2027-animenew-633c0fad",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Jujutsu Kaisen Rumble: Survivaton é adiado para 2027",
-      "originalTitle": "Jujutsu Kaisen Rumble: Survivaton é adiado para 2027",
-      "summary": "O game Jujutsu Kaisen Rumble: Survivaton teve seu lançamento adiado para 2027. sendo assim a decisão foi anunciada nesta terça-feira (15), junto de um novo trailer.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Games",
-        "Notícias",
-        "Gege Akutami",
-        "Jujutsu Kaisen Rumble: Survivaton",
-        "Shueisha Games",
-        "Weekly Shonen Jump"
-      ],
-      "url": "https://animenew.com.br/jujutsu-kaisen-rumble-survivaton-adiado-2027",
-      "sourceUrl": "https://animenew.com.br/jujutsu-kaisen-rumble-survivaton-adiado-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Jujutsu-Kaisen-Rumble-Survivaton-e-adiado-para-2027.webp",
-      "mediaQuery": "Jujutsu Kaisen Rumble: Survivaton é adiado para 2027",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Jujutsu-Kaisen-Rumble-Survivaton.webp",
-          "alt": "Jujutsu Kaisen Rumble: Survivaton",
-          "caption": "©SHUEISHA, SHUEISHA GAMES developed by Poncle Limited"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/N3mi8DprGpI"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O game Jujutsu Kaisen Rumble: Survivaton teve seu lançamento adiado para 2027. sendo assim a decisão foi anunciada nesta terça-feira (15), junto de um novo trailer.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "game",
-              "href": "https://animenew.com.br/games"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Jujutsu Kaisen Rumble: Survivaton",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " teve seu lançamento adiado para 2027. sendo assim a decisão foi anunciada nesta terça-feira (15), junto de um novo trailer."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Desenvolvido pela Shueisha Games em parceria com a poncle, responsável por Vampire Survivors, o jogo estava previsto para chegar ainda em 2026. Segundo a equipe, o adiamento busca garantir uma experiência satisfatória aos jogadores.",
-          "runs": [
-            {
-              "text": "Desenvolvido pela "
-            },
-            {
-              "text": "Shueisha Games",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " em parceria com a poncle, responsável por "
-            },
-            {
-              "text": "Vampire Survivors",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", o jogo estava previsto para chegar ainda em 2026. Segundo a equipe, o adiamento busca garantir uma experiência satisfatória aos jogadores."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=N3mi8DprGpI",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/N3mi8DprGpI"
-        },
-        {
-          "type": "paragraph",
-          "text": "O novo título chegará ao Nintendo Switch 2, PlayStation 5, Xbox Series X|S e PC via Steam. O game combina ação e sobrevivência em partidas para até oito jogadores.",
-          "runs": [
-            {
-              "text": "O novo título chegará ao "
-            },
-            {
-              "text": "Nintendo Switch 2",
-              "href": "https://animenew.com.br/tag/nintendo-switch-2/"
-            },
-            {
-              "text": ", PlayStation 5, Xbox Series X|S e PC via Steam. O game combina ação e sobrevivência em partidas para até oito jogadores."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Disputa entre feiticeiros em Jujutsu Kaisen Rumble",
-          "runs": [
-            {
-              "text": "Disputa entre feiticeiros em Jujutsu Kaisen Rumble"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Os jogadores poderão controlar mais de 20 personagens de Jujutsu Kaisen, utilizando suas habilidades características e Expansões de Domínio. Durante as partidas, os participantes enfrentam espíritos amaldiçoados para acumular pontos e também competem entre si.",
-          "runs": [
-            {
-              "text": "Os jogadores poderão controlar mais de 20 personagens de "
-            },
-            {
-              "text": "Jujutsu Kaisen",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", utilizando suas habilidades características e Expansões de Domínio. Durante as partidas, os participantes enfrentam espíritos amaldiçoados para acumular pontos e também competem entre si."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Jujutsu-Kaisen-Rumble-Survivaton.webp",
-          "alt": "Jujutsu Kaisen Rumble: Survivaton",
-          "caption": "©SHUEISHA, SHUEISHA GAMES developed by Poncle Limited"
-        },
-        {
-          "type": "paragraph",
-          "text": "O game terá ainda o sistema “Rule Additions”, inspirado no Jogo do Abate da obra, além de habilidades aleatórias em cada partida.",
-          "runs": [
-            {
-              "text": "O game terá ainda o sistema “Rule Additions”, inspirado no Jogo do Abate da obra, além de habilidades aleatórias em cada partida."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Contudo o mangá de Gege Akutami começou na Weekly Shonen Jump em março de 2018 e chegou ao fim em setembro de 2024. Ademais a adaptação em anime estreou em 2020 e atualmente conta com três temporadas.",
-          "runs": [
-            {
-              "text": "Contudo o "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/games"
-            },
-            {
-              "text": " de Gege Akutami começou na "
-            },
-            {
-              "text": "Weekly Shonen Jump",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " em março de 2018 e chegou ao fim em setembro de 2024. Ademais a adaptação em anime estreou em 2020 e atualmente conta com três temporadas."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Anime! Anime!",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Anime! Anime!",
-              "href": "https://animeanime.jp/article/2026/09/15/102956.html"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Jujutsu Kaisen Rumble: Survivaton é adiado para 2027.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Jujutsu Kaisen Rumble: Survivaton é adiado para 2027",
-              "href": "https://animenew.com.br/jujutsu-kaisen-rumble-survivaton-adiado-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-16T01:00:33.000Z",
-      "updatedAt": "2026-09-16T01:00:33.000Z",
-      "expiresAt": "2026-09-23T01:00:33.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/jujutsu-kaisen-rumble-survivaton-adiado-2027",
-          "publishedAt": "2026-09-16T01:00:33.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 220,
-      "qualityScore": 0.968,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
       "id": "jbox-48a2ad6f",
       "slug": "critica-jaadugar-a-witch-in-mongolia-1-temporada-jbox-48a2ad6f",
       "source": "JBox",
@@ -5375,1386 +5907,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-9935a3a7",
-      "slug": "my-hero-academia-dlc-de-deku-em-all-s-justice-detalhado-animenew-9935a3a7",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "My Hero Academia: DLC de Deku em All’s Justice detalhado",
-      "originalTitle": "My Hero Academia: DLC de Deku em All’s Justice detalhado",
-      "summary": "A nova DLC de Deku para o jogo My Hero Academia: All’s Justice adiciona ainda mais conteúdo ao jogo de luta baseado no popular anime e mangá de Kohei Horikoshi. Sendo assim a expansão coloca o protagonista Izuku Midoriya em destaque e amplia as opções disponíveis para os jogadores.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Games",
-        "Nintendo",
-        "Notícias",
-        "My Hero Academia",
-        "My Hero Academia All’s Justice"
-      ],
-      "url": "https://animenew.com.br/my-hero-academia-alls-justice-continua-recebendo-novidades",
-      "sourceUrl": "https://animenew.com.br/my-hero-academia-alls-justice-continua-recebendo-novidades",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/My-Hero-Academia-Alls-Justice-continua-recebendo-novidades.webp",
-      "mediaQuery": "My Hero Academia: DLC de Deku em All’s Justice detalhado",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/My-Hero-Academia_-Alls-Justice-3.webp",
-          "alt": "",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/My-Hero-Academia_-Alls-Justice-2.webp",
-          "alt": "",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/My-Hero-Academia_-Alls-Justice-1.webp",
-          "alt": "",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/9TRzr0HkZy0"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/jTJ_BIz-xeY"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A nova DLC de Deku para o jogo My Hero Academia: All’s Justice adiciona ainda mais conteúdo ao jogo de luta baseado no popular anime e mangá de Kohei Horikoshi. Sendo assim a expansão coloca o protagonista Izuku Midoriya em destaque e amplia as opções disponíveis para os jogadores.",
-          "runs": [
-            {
-              "text": "A nova DLC de Deku para o "
-            },
-            {
-              "text": "jogo",
-              "href": "https://animenew.com.br/games"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "My Hero Academia: All’s Justice",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " adiciona ainda mais conteúdo ao jogo de luta baseado no popular anime e "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " de Kohei Horikoshi. Sendo assim a expansão coloca o protagonista "
-            },
-            {
-              "text": "Izuku Midoriya",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " em destaque e amplia as opções disponíveis para os jogadores."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "My Hero Academia: All’s Justice ganha novo DLC de Deku",
-              "runs": [
-                {
-                  "text": "My Hero Academia: All’s Justice ganha novo DLC de Deku",
-                  "href": "https://animenew.com.br/my-hero-academia-alls-justice-dlc-deku"
-                }
-              ]
-            },
-            {
-              "text": "Ocarina of Time Remake ganha data no Switch 2",
-              "runs": [
-                {
-                  "text": "Ocarina of Time Remake ganha data no Switch 2",
-                  "href": "https://animenew.com.br/ocarina-of-time-remake-switch-2"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "O que é o DLC de Deku em My Hero Academia: All’s Justice?",
-          "runs": [
-            {
-              "text": "O que é o DLC de Deku em My Hero Academia: All’s Justice?"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "O DLC adiciona uma nova versão jogável de Deku, baseada em um dos momentos mais importantes de sua trajetória em My Hero Academia. No entanto, a proposta é levar para o jogo novas habilidades e golpes inspirados diretamente nos acontecimentos da obra.",
-          "runs": [
-            {
-              "text": "O DLC adiciona uma nova versão jogável de "
-            },
-            {
-              "text": "Deku",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", baseada em um dos momentos mais importantes de sua trajetória em "
-            },
-            {
-              "text": "My Hero Academia",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". No entanto, a proposta é levar para o jogo novas habilidades e golpes inspirados diretamente nos acontecimentos da obra."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/My-Hero-Academia_-Alls-Justice-3.webp"
-        },
-        {
-          "type": "paragraph",
-          "text": "Com isso, os jogadores poderão controlar Deku com um conjunto de movimentos diferente das versões já disponíveis no jogo, trazendo novas possibilidades para as batalhas.",
-          "runs": [
-            {
-              "text": "Com isso, os jogadores poderão controlar Deku com um conjunto de movimentos diferente das versões já disponíveis no jogo, trazendo novas possibilidades para as batalhas."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Quando será lançado o DLC de Deku?",
-          "runs": [
-            {
-              "text": "Quando será lançado o DLC de Deku?"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=9TRzr0HkZy0",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/9TRzr0HkZy0"
-        },
-        {
-          "type": "paragraph",
-          "text": "A data de lançamento do DLC de Deku é um dos principais detalhes de interesse dos jogadores. A expansão será disponibilizada como conteúdo adicional de My Hero Academia: All’s Justice, seguindo o calendário divulgado pela equipe responsável pelo jogo.",
-          "runs": [
-            {
-              "text": "A data de lançamento do DLC de Deku é um dos principais detalhes de interesse dos jogadores. A expansão será disponibilizada como conteúdo adicional de "
-            },
-            {
-              "text": "My Hero Academia: All’s Justice",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", seguindo o calendário divulgado pela equipe responsável pelo jogo."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/My-Hero-Academia_-Alls-Justice-2.webp"
-        },
-        {
-          "type": "paragraph",
-          "text": "O lançamento aconteceu oficialmente no dia 3 de setembro de 2026, já que conteúdos adicionais podem ter cronogramas diferentes dependendo da plataforma e da região. O próximo personagem de DLC pago será revelado no 1º trimestre de 2027, seguido do quinto e último no passe de temporada de 2027.",
-          "runs": [
-            {
-              "text": "O lançamento aconteceu oficialmente no dia 3 de setembro de 2026",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", já que conteúdos adicionais podem ter cronogramas diferentes dependendo da plataforma e da região. O próximo personagem de DLC pago será revelado no 1º trimestre de 2027, seguido do quinto e último no passe de temporada de 2027."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "O que o DLC adiciona ao jogo?",
-          "runs": [
-            {
-              "text": "O que o DLC adiciona ao jogo?"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/My-Hero-Academia_-Alls-Justice-1.webp"
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre os principais conteúdos associados ao DLC estão:",
-          "runs": [
-            {
-              "text": "Entre os principais conteúdos associados ao DLC estão:",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Deku como personagem jogável;",
-              "runs": [
-                {
-                  "text": "Deku como personagem jogável;"
-                }
-              ]
-            },
-            {
-              "text": "novos golpes e habilidades;",
-              "runs": [
-                {
-                  "text": "novos golpes e habilidades;"
-                }
-              ]
-            },
-            {
-              "text": "técnicas inspiradas no anime e mangá;",
-              "runs": [
-                {
-                  "text": "técnicas inspiradas no anime e mangá;"
-                }
-              ]
-            },
-            {
-              "text": "novas possibilidades para as batalhas;",
-              "runs": [
-                {
-                  "text": "novas possibilidades para as batalhas;"
-                }
-              ]
-            },
-            {
-              "text": "conteúdo adicional relacionado ao protagonista.",
-              "runs": [
-                {
-                  "text": "conteúdo adicional relacionado ao protagonista."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Contudo a chegada de uma nova versão de Deku também é importante para os fãs que acompanham sua evolução ao longo da história.",
-          "runs": [
-            {
-              "text": "Contudo a chegada de uma nova versão de Deku também é importante para os fãs que acompanham sua evolução ao longo da história."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Como Deku funciona em All’s Justice?",
-          "runs": [
-            {
-              "text": "Como Deku funciona em All’s Justice?"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=jTJ_BIz-xeY",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/jTJ_BIz-xeY"
-        },
-        {
-          "type": "paragraph",
-          "text": "Deku é um dos personagens centrais de My Hero Academia: All’s Justice e utiliza diferentes recursos do One For All durante os combates.",
-          "runs": [
-            {
-              "text": "Deku é um dos personagens centrais de "
-            },
-            {
-              "text": "My Hero Academia: All’s Justice",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e utiliza diferentes recursos do "
-            },
-            {
-              "text": "One For All",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " durante os combates."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A versão adicionada pelo DLC busca representar uma fase mais avançada do personagem, permitindo que os jogadores utilizem técnicas que refletem sua evolução como herói.",
-          "runs": [
-            {
-              "text": "A versão adicionada pelo DLC busca representar uma fase mais avançada do personagem, permitindo que os jogadores utilizem técnicas que refletem sua evolução como herói."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Sendo assim, isso faz com que o conteúdo seja especialmente interessante para quem acompanha as diferentes formas e estilos de combate apresentados por Deku durante a história.",
-          "runs": [
-            {
-              "text": "Sendo assim, isso faz com que o conteúdo seja especialmente interessante para quem acompanha as diferentes formas e estilos de combate apresentados por Deku durante a história."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Vale a pena comprar o DLC de Deku?",
-          "runs": [
-            {
-              "text": "Vale a pena comprar o DLC de Deku?"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "Para os fãs de My Hero Academia, o DLC pode ser uma opção interessante principalmente por adicionar uma nova versão de um dos personagens mais importantes da franquia.",
-          "runs": [
-            {
-              "text": "Para os fãs de "
-            },
-            {
-              "text": "My Hero Academia",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", o DLC pode ser uma opção interessante principalmente por adicionar uma nova versão de um dos personagens mais importantes da franquia."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além de oferecer novas possibilidades de gameplay, o conteúdo permite explorar uma representação diferente de Deku dentro do sistema de combate de All’s Justice.",
-          "runs": [
-            {
-              "text": "Além de oferecer novas possibilidades de gameplay, o conteúdo permite explorar uma representação diferente de Deku dentro do sistema de combate de "
-            },
-            {
-              "text": "All’s Justice",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Perguntas frequentes sobre o DLC de Deku",
-          "runs": [
-            {
-              "text": "Perguntas frequentes sobre o DLC de Deku"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "heading",
-          "text": "Quem é o personagem do DLC de My Hero Academia: All’s Justice?",
-          "runs": [
-            {
-              "text": "Quem é o personagem do DLC de My Hero Academia: All’s Justice?"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "O DLC adiciona Izuku Midoriya, o Deku, como conteúdo adicional para My Hero Academia: All’s Justice.",
-          "runs": [
-            {
-              "text": "O DLC adiciona "
-            },
-            {
-              "text": "Izuku Midoriya, o Deku",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", como conteúdo adicional para "
-            },
-            {
-              "text": "My Hero Academia: All’s Justice",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "O DLC de Deku adiciona novos golpes?",
-          "runs": [
-            {
-              "text": "O DLC de Deku adiciona novos golpes?"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Sim. O conteúdo apresenta habilidades e técnicas associadas à versão de Deku adicionada ao jogo.",
-          "runs": [
-            {
-              "text": "Sim. O conteúdo apresenta habilidades e técnicas associadas à versão de Deku adicionada ao jogo."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "O DLC de Deku é jogável?",
-          "runs": [
-            {
-              "text": "O DLC de Deku é jogável?"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Sim. Deku é disponibilizado como personagem jogável no conteúdo adicional.",
-          "runs": [
-            {
-              "text": "Sim. Deku é disponibilizado como personagem jogável no conteúdo adicional."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "O DLC está disponível para todas as plataformas?",
-          "runs": [
-            {
-              "text": "O DLC está disponível para todas as plataformas?"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A disponibilidade depende das plataformas nas quais My Hero Academia: All’s Justice foi lançado e do cronograma de distribuição do conteúdo adicional.",
-          "runs": [
-            {
-              "text": "A disponibilidade depende das plataformas nas quais "
-            },
-            {
-              "text": "My Hero Academia: All’s Justice",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " foi lançado e do cronograma de distribuição do conteúdo adicional."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "O DLC de Deku faz parte do jogo base?",
-          "runs": [
-            {
-              "text": "O DLC de Deku faz parte do jogo base?"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Não. O personagem é disponibilizado como conteúdo adicional, sendo necessário adquirir o DLC caso ele não esteja incluído em uma edição ou pacote que já contenha a expansão.",
-          "runs": [
-            {
-              "text": "Não. O personagem é disponibilizado como "
-            },
-            {
-              "text": "conteúdo adicional",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", sendo necessário adquirir o DLC caso ele não esteja incluído em uma edição ou pacote que já contenha a expansão."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "My Hero Academia: All’s Justice continua recebendo novidades",
-          "runs": [
-            {
-              "text": "My Hero Academia: All’s Justice continua recebendo novidades"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A chegada do DLC de Deku reforça a estratégia de ampliar My Hero Academia: All’s Justice com novos conteúdos e personagens. Assim para os fãs da franquia, a expansão representa mais uma oportunidade de reviver momentos importantes da história por meio das batalhas do jogo.",
-          "runs": [
-            {
-              "text": "A chegada do "
-            },
-            {
-              "text": "DLC de Deku",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " reforça a estratégia de ampliar "
-            },
-            {
-              "text": "My Hero Academia: All’s Justice",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " com novos conteúdos e personagens. Assim para os fãs da franquia, a expansão representa mais uma oportunidade de reviver momentos importantes da história por meio das batalhas do jogo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim esta matéria será atualizada caso novas informações oficiais sobre o DLC, incluindo data, preço, plataformas e detalhes das habilidades de Deku, sejam divulgadas.",
-          "runs": [
-            {
-              "text": "Por fim esta matéria será atualizada caso novas informações oficiais sobre o DLC, incluindo data, preço, plataformas e detalhes das habilidades de Deku, sejam divulgadas.",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em My Hero Academia: DLC de Deku em All’s Justice detalhado.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "My Hero Academia: DLC de Deku em All’s Justice detalhado",
-              "href": "https://animenew.com.br/my-hero-academia-alls-justice-continua-recebendo-novidades/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-15T12:03:40.000Z",
-      "updatedAt": "2026-09-15T12:03:40.000Z",
-      "expiresAt": "2026-09-22T12:03:40.000Z",
-      "category": "Em alta",
-      "eventType": "TRENDING",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/my-hero-academia-alls-justice-continua-recebendo-novidades",
-          "publishedAt": "2026-09-15T12:03:40.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 4,
-      "wordCount": 686,
-      "qualityScore": 1,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 39,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 3,
-        "embedCount": 2,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-ea0fb5f1",
-      "slug": "toyotaro-mostra-seu-time-para-o-futuro-de-dragon-ball-animenew-ea0fb5f1",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Toyotarō mostra seu time para o futuro de Dragon Ball",
-      "originalTitle": "Toyotarō mostra seu time para o futuro de Dragon Ball",
-      "summary": "Toyotarō, responsável por Dragon Ball após Akira Toriyama, já definiu seu time para o futuro da série. Desde a morte do criador da obra, os leitores passaram mais de um ano sem grandes atualizações sobre o mangá. Agora, porém, o cenário começa a mudar: o sucessor de Toriyama confirmou que a história continuará e, em breve, deve revelar novas informações que prometem reacender o interesse dos fãs.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Mangás",
-        "Notícias",
-        "Otaku",
-        "Akira Toriyama",
-        "Dragon Ball",
-        "Dragon Ball Super",
-        "Toyotaro"
-      ],
-      "url": "https://animenew.com.br/toyotaro-define-seu-time-para-o-futuro-de-dragon-ball",
-      "sourceUrl": "https://animenew.com.br/toyotaro-define-seu-time-para-o-futuro-de-dragon-ball",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2025/05/Toyotaro-define-seu-time-para-o-futuro-de-Dragon-Ball.webp",
-      "mediaQuery": "Toyotarō mostra seu time para o futuro de Dragon Ball",
-      "mediaType": "manga",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2025/05/Goku-Ultra-Instinto.webp",
-          "alt": "Goku Ultra Instinto: Toyotarō Dragon Ball",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2025/05/Vegeta-Ultra-Ego.webp",
-          "alt": "Vegeta Ultra Ego",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2025/05/Gohan-Beast.webp",
-          "alt": "Gohan Beast: Toyotarō Dragon Ball",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2025/05/Broly-Super-Saiyajin.webp",
-          "alt": "Broly Super Saiyajin: Toyotarō Dragon Ball",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2025/05/Piccolo-laranja.webp",
-          "alt": "5. Piccolo laranja",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Toyotarō, responsável por Dragon Ball após Akira Toriyama, já definiu seu time para o futuro da série. Desde a morte do criador da obra, os leitores passaram mais de um ano sem grandes atualizações sobre o mangá. Agora, porém, o cenário começa a mudar: o sucessor de Toriyama confirmou que a história continuará e, em breve, deve revelar novas informações que prometem reacender o interesse dos fãs.",
-          "runs": [
-            {
-              "text": "Toyotarō, responsável por Dragon Ball após Akira Toriyama, já definiu seu time para o futuro da série.",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " Desde a morte do criador da obra, os leitores passaram mais de um ano sem grandes atualizações sobre o "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": ". Agora, porém, o cenário começa a mudar: o sucessor de Toriyama confirmou que a história continuará e, em breve, deve revelar novas informações que prometem reacender o interesse dos fãs."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Dragon Ball Super: Remake ganha novo trailer",
-              "runs": [
-                {
-                  "text": "Dragon Ball Super: Remake ganha novo trailer",
-                  "href": "https://animenew.com.br/dragon-ball-super-remake-do-arco-beerus-ganha-novo-trailer/"
-                }
-              ]
-            },
-            {
-              "text": "Black Clover: Spoilers 390, 391 e 392 explicado",
-              "runs": [
-                {
-                  "text": "Black Clover: Spoilers 390, 391 e 392 explicado",
-                  "href": "https://animenew.com.br/black-clover-final-spoilers-390-391-392/"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além de aumentar a expectativa dos fãs, Toyotarō já trabalha ao lado de sua equipe principal, que terá um papel importante nos próximos passos da série. Confira os personagens que Toyotarō terá ao seu lado no futuro de Dragon Ball.",
-          "runs": [
-            {
-              "text": "Além de aumentar a expectativa dos fãs, Toyotarō já trabalha ao lado de sua equipe principal, que terá um papel importante nos próximos passos da série. "
-            },
-            {
-              "text": "Confira os personagens que Toyotarō terá ao seu lado no futuro de Dragon Ball.",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "1. Goku Ultra Instinto",
-          "runs": [
-            {
-              "text": "1. Goku Ultra Instinto"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2025/05/Goku-Ultra-Instinto.webp",
-          "alt": "Goku Ultra Instinto: Toyotarō Dragon Ball"
-        },
-        {
-          "type": "paragraph",
-          "text": "Desde o Torneio do Poder, Goku aprimorou sua habilidade mais poderosa: o Ultra Instinto, técnica divina que permite ao corpo reagir automaticamente aos ataques. Anteriormente, essa forma representava um desafio, mas, posteriormente, Goku a aperfeiçoou, assumindo o papel de líder dos protetores do Universo 7. Assim, ele continua sendo o símbolo de paz e o maior artista marcial da franquia.",
-          "runs": [
-            {
-              "text": "Desde o Torneio do Poder, "
-            },
-            {
-              "text": "Goku",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " aprimorou sua habilidade mais poderosa: o "
-            },
-            {
-              "text": "Ultra Instinto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", técnica divina que permite ao corpo reagir automaticamente aos ataques. Anteriormente, essa forma representava um desafio, mas, posteriormente, Goku a aperfeiçoou, assumindo o papel de líder dos protetores do Universo 7. Assim, ele continua sendo o símbolo de paz e o maior artista marcial da franquia."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "2. Vegeta Ultra Ego",
-          "runs": [
-            {
-              "text": "2. Vegeta Ultra Ego"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2025/05/Vegeta-Ultra-Ego.webp",
-          "alt": "Vegeta Ultra Ego"
-        },
-        {
-          "type": "paragraph",
-          "text": "Enquanto Goku abraçou a força dos Anjos, Vegeta seguiu outro caminho, invocando o poder destrutivo com o Ultra Ego. Embora ainda não tenha total domínio, sua capacidade de transformar dano em força ofensiva o torna essencial no grupo. Portanto, Vegeta se destaca como o “tanque” da equipe, absorvendo impactos para retaliar com ataques avassaladores.",
-          "runs": [
-            {
-              "text": "Enquanto Goku abraçou a força dos Anjos, Vegeta seguiu outro caminho, invocando o poder destrutivo com o Ultra Ego. Embora ainda não tenha total domínio, sua capacidade de transformar dano em força ofensiva o torna essencial no grupo. Portanto, Vegeta se destaca como o “tanque” da equipe, absorvendo impactos para retaliar com ataques avassaladores."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "3. Gohan Beast",
-          "runs": [
-            {
-              "text": "3. Gohan Beast"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2025/05/Gohan-Beast.webp",
-          "alt": "Gohan Beast: Toyotarō Dragon Ball"
-        },
-        {
-          "type": "paragraph",
-          "text": "Embora Gohan sempre tenha apresentado potencial extraordinário, sua transformação Beast elevou esse aspecto a outro nível. Surpreendentemente, com pouco treinamento, ele atingiu o mesmo patamar de poder de Goku e Vegeta, provando, assim, sua capacidade natural. Embora isso divida opiniões entre os fãs, inegavelmente Gohan será um dos pilares do futuro da série, utilizando força bruta para dominar adversários.",
-          "runs": [
-            {
-              "text": "Embora "
-            },
-            {
-              "text": "Gohan",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " sempre tenha apresentado potencial extraordinário, sua transformação Beast elevou esse aspecto a outro nível. Surpreendentemente, com pouco treinamento, ele atingiu o mesmo patamar de poder de Goku e Vegeta, provando, assim, sua capacidade natural. Embora isso divida opiniões entre os fãs, inegavelmente Gohan será um dos pilares do futuro da série, utilizando força bruta para dominar adversários."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "4. Broly Super Saiyajin",
-          "runs": [
-            {
-              "text": "4. Broly Super Saiyajin"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2025/05/Broly-Super-Saiyajin.webp",
-          "alt": "Broly Super Saiyajin: Toyotarō Dragon Ball"
-        },
-        {
-          "type": "paragraph",
-          "text": "Anteriormente, Broly era conhecido por sua força descomunal, mas incapaz de controlá-la. Contudo, recentemente, ele demonstrou ter conquistado o domínio de sua forma lendária, conseguindo lutar ao lado dos demais heróis. Eventualmente, ao dominar completamente esse poder, Broly poderá se tornar o mais forte de todos.",
-          "runs": [
-            {
-              "text": "Anteriormente, Broly era conhecido por sua força descomunal, mas incapaz de controlá-la. Contudo, recentemente, ele demonstrou ter conquistado o domínio de sua forma lendária, conseguindo lutar ao lado dos demais heróis. Eventualmente, ao dominar completamente esse poder, Broly poderá se tornar o mais forte de todos."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "5. Piccolo laranja",
-          "runs": [
-            {
-              "text": "5. Piccolo laranja"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2025/05/Piccolo-laranja.webp",
-          "alt": "5. Piccolo laranja"
-        },
-        {
-          "type": "paragraph",
-          "text": "Surpreendentemente, Piccolo, sempre subestimado em termos de força, agora se iguala aos Saiyajins com sua transformação laranja. Embora não seja o mais ofensivo do grupo, seu papel estratégico será crucial para liderar com inteligência as batalhas futuras, garantindo, assim, equilíbrio à equipe.",
-          "runs": [
-            {
-              "text": "Surpreendentemente, "
-            },
-            {
-              "text": "Piccolo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", sempre subestimado em termos de força, agora se iguala aos Saiyajins com sua transformação laranja. Embora não seja o mais ofensivo do grupo, seu papel estratégico será crucial para liderar com inteligência as batalhas futuras, garantindo, assim, equilíbrio à equipe."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "O que Toyotarō planeja para o futuro de Dragon Ball",
-          "runs": [
-            {
-              "text": "O que Toyotarō planeja para o futuro de Dragon Ball"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Toyotarō deve manter o legado de Toriyama em Dragon Ball, ampliando as técnicas divinas e fortalecendo personagens como Gohan, Broly e Piccolo. Assim, o futuro da franquia promete equilíbrio entre tradição e inovação, com novas sagas e transformações impactantes.",
-          "runs": [
-            {
-              "text": "Toyotarō deve manter o legado de Toriyama em Dragon Ball, ampliando as técnicas divinas e fortalecendo personagens como "
-            },
-            {
-              "text": "Gohan",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Broly",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Piccolo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Assim, o futuro da franquia promete equilíbrio entre tradição e inovação, com novas sagas e transformações impactantes."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Conclusão: Continue acompanhando atualizações dos capítulos do mangá de Dragon Ball no canal oficial do WhatsApp e siga também no Instagram.",
-          "runs": [
-            {
-              "text": "Conclusão: Continue acompanhando atualizações dos capítulos do "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas/"
-            },
-            {
-              "text": " de "
-            },
-            {
-              "text": "Dragon Ball",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no canal oficial do "
-            },
-            {
-              "text": "WhatsApp",
-              "href": "https://whatsapp.com/channel/0029VaAjsq3H5JM4Pi16l60h"
-            },
-            {
-              "text": " e siga também no "
-            },
-            {
-              "text": "Instagram",
-              "href": "https://www.instagram.com/animenew_/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Toyotarō mostra seu time para o futuro de Dragon Ball.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Toyotarō mostra seu time para o futuro de Dragon Ball",
-              "href": "https://animenew.com.br/toyotaro-define-seu-time-para-o-futuro-de-dragon-ball/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-15T00:44:23.000Z",
-      "updatedAt": "2026-09-15T00:44:23.000Z",
-      "expiresAt": "2026-09-22T00:44:23.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/toyotaro-define-seu-time-para-o-futuro-de-dragon-ball",
-          "publishedAt": "2026-09-15T00:44:23.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 493,
-      "qualityScore": 1,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 22,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 5,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-5892eeca",
-      "slug": "manga-de-lycoris-recoil-chega-ao-fim-em-dois-capitulos-animenew-5892eeca",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Mangá de Lycoris Recoil chega ao fim em dois capítulos",
-      "originalTitle": "Mangá de Lycoris Recoil chega ao fim em dois capítulos",
-      "summary": "O mangá de Lycoris Recoil, escrito por Spider Lily e desenhado por Yasunori Bizen, está próximo do fim e terminará após mais dois capítulos. A informação chegou na edição de outubro da revista Comic Flapper, da Kadokawa, publicada em 4 de setembro.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Mangás",
-        "Notícias",
-        "Lycoris Recoil"
-      ],
-      "url": "https://animenew.com.br/manga-lycoris-recoil-terminara-dois-capitulos",
-      "sourceUrl": "https://animenew.com.br/manga-lycoris-recoil-terminara-dois-capitulos",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Manga-de-Lycoris-Recoil-chega-ao-fim-em-dois-capitulos.webp",
-      "mediaQuery": "Mangá de Lycoris Recoil chega ao fim em dois capítulos",
-      "mediaType": "manga",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Manga-Lycoris-Recoil-Vol.8.webp",
-          "alt": "Lycoris Recoil Vol.8",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O mangá de Lycoris Recoil, escrito por Spider Lily e desenhado por Yasunori Bizen, está próximo do fim e terminará após mais dois capítulos. A informação chegou na edição de outubro da revista Comic Flapper, da Kadokawa, publicada em 4 de setembro.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " de "
-            },
-            {
-              "text": "Lycoris Recoil",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", escrito por "
-            },
-            {
-              "text": "Spider Lily",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e desenhado por "
-            },
-            {
-              "text": "Yasunori Bizen",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", está próximo do fim e terminará após mais dois capítulos. A informação chegou na edição de outubro da revista Comic Flapper, da "
-            },
-            {
-              "text": "Kadokawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", publicada em 4 de setembro."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Hunter x Hunter confirma novo hiato do mangá",
-              "runs": [
-                {
-                  "text": "Hunter x Hunter confirma novo hiato do mangá",
-                  "href": "https://animenew.com.br/hunter-x-hunter-entra-em-hiato-e-ganha-nova-peca"
-                }
-              ]
-            },
-            {
-              "text": "Maria Holic retorna após 12 anos com novo mangá",
-              "runs": [
-                {
-                  "text": "Maria Holic retorna após 12 anos com novo mangá",
-                  "href": "https://animenew.com.br/maria-holic-novo-manga-sequencia"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A adaptação começou em setembro de 2022 e acompanha a história do anime original, contudo a Kadokawa lançou o nono volume compilado em 21 de agosto. No mercado internacional, a Yen Press publica a obra em inglês e já lançou o quinto volume em 23 de junho.",
-          "runs": [
-            {
-              "text": "A adaptação começou em setembro de 2022 e acompanha a história do anime original, contudo a "
-            },
-            {
-              "text": "Kadokawa",
-              "href": "https://animenew.com.br/tag/kadokawa/"
-            },
-            {
-              "text": " lançou o nono volume compilado em 21 de agosto. No mercado internacional, a "
-            },
-            {
-              "text": "Yen Press",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " publica a obra em inglês e já lançou o quinto volume em 23 de junho."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Manga-Lycoris-Recoil-Vol.8.webp",
-          "alt": "Lycoris Recoil Vol.8"
-        },
-        {
-          "type": "heading",
-          "text": "História de Lycoris Recoil",
-          "runs": [
-            {
-              "text": "História de Lycoris Recoil"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama se passa em um Japão onde crimes violentos e atos de terrorismo praticamente desapareceram. Por trás dessa aparente tranquilidade estão as Lycoris, jovens agentes que atuam secretamente para manter a paz.",
-          "runs": [
-            {
-              "text": "A trama se passa em um Japão onde crimes violentos e atos de terrorismo praticamente desapareceram. Por trás dessa aparente tranquilidade estão as Lycoris, jovens agentes que atuam secretamente para manter a paz.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Formato light novel",
-          "runs": [
-            {
-              "text": "Formato light novel"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A franquia também conta com a light novel Lycoris Recoil: Ordinary Days, escrita por Asaura, que acompanha o cotidiano de Chisato, Takina e outras personagens no Café LycoReco.",
-          "runs": [
-            {
-              "text": "A franquia também conta com a "
-            },
-            {
-              "text": "light novel",
-              "href": "https://animenew.com.br/light-novel"
-            },
-            {
-              "text": " Lycoris Recoil: Ordinary Days, escrita por Asaura, que acompanha o cotidiano de "
-            },
-            {
-              "text": "Chisato",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Takina",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e outras personagens no Café LycoReco."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O anime original estreou em julho de 2022, com produção do estúdio A-1 Pictures e direção de Shingo Adachi. Por fim em 2025, a franquia ganhou seis curtas de anime, intitulados Lycoris Recoil: Friends are thieves of time.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " original estreou em julho de 2022, com produção do estúdio "
-            },
-            {
-              "text": "A-1 Pictures",
-              "href": "https://animenew.com.br/studio/561/a-1-pictures"
-            },
-            {
-              "text": " e direção de "
-            },
-            {
-              "text": "Shingo Adachi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Por fim em 2025, a franquia ganhou seis curtas de anime, intitulados Lycoris Recoil: Friends are thieves of time."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: ANN",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "ANN",
-              "href": "https://www.animenewsnetwork.com/news/2026-09-14/lycoris-recoil-manga-ends-in-2-chapters/.241734"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Mangá de Lycoris Recoil chega ao fim em dois capítulos.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Mangá de Lycoris Recoil chega ao fim em dois capítulos",
-              "href": "https://animenew.com.br/manga-lycoris-recoil-terminara-dois-capitulos/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-15T00:29:00.000Z",
-      "updatedAt": "2026-09-15T00:29:00.000Z",
-      "expiresAt": "2026-09-22T00:29:00.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/manga-lycoris-recoil-terminara-dois-capitulos",
-          "publishedAt": "2026-09-15T00:29:00.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 236,
-      "qualityScore": 0.97,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
         "sourcePagesRead": 0
       }
     },
