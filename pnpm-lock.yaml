@@ -12,8 +12,8 @@ importers:
         specifier: 3.16.10
         version: 3.16.10(react@19.2.8)
       '@clerk/localizations':
-        specifier: 4.15.7
-        version: 4.15.7(react@19.2.8)
+        specifier: 4.16.1
+        version: 4.16.1(react@19.2.8)
       '@fastify/cookie':
         specifier: ^11.0.2
         version: 11.1.2
@@ -78,8 +78,8 @@ packages:
     resolution: {integrity: sha512-rYGgr3sshL6Jaq5bvw3hGYnvOj31o6Yie/jWYiNUnlET9RFH82GywxWIGv6YVGSdYIFVm6DnaCyKqXc/hff/hA==}
     engines: {node: '>=20.9.0'}
 
-  '@clerk/localizations@4.15.7':
-    resolution: {integrity: sha512-/oG4hsJ6ue7Lfd/OYgsRz0myY2Jz8pSSYgu927zn3ZGeK4YiBPJ0soemhbn4Kt+vo4a0YA7zJsOCQwo8yMS6bw==}
+  '@clerk/localizations@4.16.1':
+    resolution: {integrity: sha512-dYJpUu7EnQ/lIl5n02X4Q+sq0+YxYZVQwVqL4Wwq0ds759oG3WQ6735JU9vQIhCimK133daU+6rWwjeSR8x2PQ==}
     engines: {node: '>=20.9.0'}
 
   '@clerk/shared@4.29.3':
@@ -94,8 +94,8 @@ packages:
       react-dom:
         optional: true
 
-  '@clerk/shared@4.30.1':
-    resolution: {integrity: sha512-Mawatm7CTKZXBqIW8t/z9LfoAKgOHtRRxROpnJ4VIkTdgzj/mmAZhPOPjzUttPXXtulR1uLWisvQXEMNeF/jTQ==}
+  '@clerk/shared@4.31.1':
+    resolution: {integrity: sha512-j3cDEZ/j7r5tAv4mmo2JhpFRtL1z0JghjCgvBJjZSR6Q4ZVIlwd2Bv0loM+opKReeN17H30u1/WHEBl7pZuxrw==}
     engines: {node: '>=20.9.0'}
     peerDependencies:
       react: ^18.0.0 || ~19.0.3 || ~19.1.4 || ~19.2.3 || ~19.3.0-0
@@ -385,6 +385,9 @@ packages:
   '@tanstack/query-core@5.102.2':
     resolution: {integrity: sha512-zQ5794PXBlV5Wl7N23SR1/Ss+wPE/h2Ye4XlKpm3omN8i8b/Fd4DAdqpLS2AXj5M/RMObt3k5qy3E7kzt/AvBA==}
 
+  '@tanstack/query-core@5.102.8':
+    resolution: {integrity: sha512-ZNjkJ33CqvPNec/6lZBnHqLc3EVGPZ9ySLhYahU9TcuRFdmwXewuj0c4hwSWcGHqEUwcSrKeZ+oGcvPBqXcQcg==}
+
   abstract-logging@2.0.1:
     resolution: {integrity: sha512-2BjRTZxTPvheOvGbBslFSYOUkr+SjPtOnrLP33f+VIWLzezQpZcqVg7ja3L4dBXmzzgwT+a029jRx5PCi3JuiA==}
 
@@ -633,6 +636,9 @@ packages:
   js-cookie@3.0.7:
     resolution: {integrity: sha512-z/wZZgDrkNV1eA0ULjM/F9/50Ya8fbzgKneSpoPsXSGd0KnpdtHfOZWK+GcwLk+EZbS4F9RBhU+K2RgzuDaItw==}
     engines: {node: '>=20'}
+
+  js-cookie@3.0.8:
+    resolution: {integrity: sha512-yeJd4aNAdYZQjaon2bpD/Gb0B/omw7HQOsynXXcOiWVCacbBcPlgn8S/d1X6blFSaHao7ozqtW7NZW19xpCtIw==}
 
   json-schema-ref-resolver@3.0.0:
     resolution: {integrity: sha512-hOrZIVL5jyYFjzk7+y7n5JDzGlU8rfWDuYyHwGa2WA8/pcmMHezp2xsVwxrebD/Q9t8Nc5DboieySDpCp4WG4A==}
@@ -953,9 +959,9 @@ snapshots:
       - react
       - react-dom
 
-  '@clerk/localizations@4.15.7(react@19.2.8)':
+  '@clerk/localizations@4.16.1(react@19.2.8)':
     dependencies:
-      '@clerk/shared': 4.30.1(react@19.2.8)
+      '@clerk/shared': 4.31.1(react@19.2.8)
     transitivePeerDependencies:
       - react
       - react-dom
@@ -969,12 +975,12 @@ snapshots:
     optionalDependencies:
       react: 19.2.8
 
-  '@clerk/shared@4.30.1(react@19.2.8)':
+  '@clerk/shared@4.31.1(react@19.2.8)':
     dependencies:
-      '@tanstack/query-core': 5.102.2
+      '@tanstack/query-core': 5.102.8
       dequal: 2.0.3
       glob-to-regexp: 0.4.1
-      js-cookie: 3.0.7
+      js-cookie: 3.0.8
     optionalDependencies:
       react: 19.2.8
 
@@ -1199,6 +1205,8 @@ snapshots:
   '@stablelib/base64@1.0.1': {}
 
   '@tanstack/query-core@5.102.2': {}
+
+  '@tanstack/query-core@5.102.8': {}
 
   abstract-logging@2.0.1: {}
 
@@ -1466,6 +1474,8 @@ snapshots:
       '@isaacs/cliui': 9.0.0
 
   js-cookie@3.0.7: {}
+
+  js-cookie@3.0.8: {}
 
   json-schema-ref-resolver@3.0.0:
     dependencies:
