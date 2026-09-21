@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T16:29:25.451Z",
+  "generatedAt": "2026-09-21T20:30:35.388Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 38,
+      "count": 37,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,723 @@
     }
   ],
   "stats": {
-    "collected": 48,
-    "grouped": 22,
-    "published": 22,
-    "newStories": 22,
-    "fullArticles": 22,
+    "collected": 47,
+    "grouped": 21,
+    "published": 21,
+    "newStories": 21,
+    "fullArticles": 21,
     "previewArticles": 0,
-    "avgWords": 334,
-    "withHeroImage": 22,
+    "avgWords": 382,
+    "withHeroImage": 21,
     "withOrderedMedia": 20,
     "skippedTranslation": 0,
-    "skippedQuality": 25,
-    "durationMs": 3009
+    "skippedQuality": 24,
+    "durationMs": 3081
   },
   "items": [
+    {
+      "id": "jbox-25bdf674",
+      "slug": "critica-blue-lock-live-action-jbox-25bdf674",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Crítica | Blue Lock (live-action)",
+      "originalTitle": "Crítica | Blue Lock (live-action)",
+      "summary": "Fazer adaptações nunca é uma tarefa fácil. Há quem reclame quando a obra fica parecida demais com o material de origem, e também muitas críticas quando o lançamento se distancia do que busca adaptar. Porém, vez ou outra, nos deparamos com um bom exemplo de como fazer essa transposição de mídias de forma satisfatória, e este é o caso do live-action de Blue Lock, dirigido por Yusuke Taki e lançado nos cinemas do Brasil em 10 de de setembro deste ano, pela Sato Company.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Cinema",
+        "Live Action",
+        "Mangá",
+        "Resenha",
+        "Blue Lock",
+        "Crítica do filme de Blue Lock",
+        "Crítica do live-action de Blue Lock",
+        "filme de blue lock é bom?",
+        "filme de Blue Lock no Brasil",
+        "Fumiya Takahashi",
+        "Live-action de Blue Lock",
+        "Sato Company"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/21/critica-blue-lock-live-action",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/21/critica-blue-lock-live-action",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/jbox-critica-destacada-bluelock.jpg",
+      "mediaQuery": "Crítica | Blue Lock (live-action)",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Blue-Lock-01.webp",
+          "alt": "Imagem do live-action de Blue Lock",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Blue-Lock-02-scaled.jpg",
+          "alt": "Imagem do live-action de Blue Lock",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Blue-Lock-03.webp",
+          "alt": "Imagem do live-action de Blue Lock",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/rHQgPqrPviw"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Fazer adaptações nunca é uma tarefa fácil. Há quem reclame quando a obra fica parecida demais com o material de origem, e também muitas críticas quando o lançamento se distancia do que busca adaptar. Porém, vez ou outra, nos deparamos com um bom exemplo de como fazer essa transposição de mídias de forma satisfatória, e este é o caso do live-action de Blue Lock, dirigido por Yusuke Taki e lançado nos cinemas do Brasil em 10 de de setembro deste ano, pela Sato Company.",
+          "runs": [
+            {
+              "text": "Fazer adaptações nunca é uma tarefa fácil. Há quem reclame quando a obra fica parecida demais com o material de origem, e também muitas críticas quando o lançamento se distancia do que busca adaptar. Porém, vez ou outra, nos deparamos com um bom exemplo de como fazer essa transposição de mídias de forma satisfatória, e este é o caso do live-action de "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", dirigido por "
+            },
+            {
+              "text": "Yusuke Taki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e lançado nos cinemas do Brasil em 10 de de setembro deste ano, pela "
+            },
+            {
+              "text": "Sato Company",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama é a mesma do mangá escrito por Muneyuki Kaneshiro e ilustrado por Yusuke Nomura. Após várias eliminações em Copas do Mundo (e a de 2026 ainda nem entrava nesse conta), a Associação de Futebol do Japão decidiu começar a iniciativa Blue Lock, um treinamento intensivo para formar um artilheiro “egoísta”, ou seja, alguém com sede de gols para fazer a seleção do país finalmente deslanchar. Do outro lado dessa história está Yoichi Isagi (interpretado no filme por Fumiya Takahashi), um jovem que ficou frustrado após seu time de futebol da escola perder uma partida no último minuto — em uma jogada que ele iniciou, mas decidiu passar para um colega de equipe marcar.",
+          "runs": [
+            {
+              "text": "A trama é a mesma do mangá escrito por "
+            },
+            {
+              "text": "Muneyuki Kaneshiro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e ilustrado por "
+            },
+            {
+              "text": "Yusuke Nomura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Após várias eliminações em "
+            },
+            {
+              "text": "Copas do Mundo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (e a de 2026 ainda nem entrava nesse conta), a Associação de Futebol do Japão decidiu começar a iniciativa "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", um treinamento intensivo para formar um artilheiro “egoísta”, ou seja, alguém com sede de gols para fazer a seleção do país finalmente deslanchar. Do outro lado dessa história está "
+            },
+            {
+              "text": "Yoichi Isagi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (interpretado no filme por "
+            },
+            {
+              "text": "Fumiya Takahashi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "), um jovem que ficou frustrado após seu time de futebol da escola perder uma partida no último minuto — em uma jogada que ele iniciou, mas decidiu passar para um colega de equipe marcar."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Sem saber direito no que estava se metendo, Yoichi é convidado pela iniciativa Blue Lock e vai para o centro de treinamento entender sobre suas próprias capacidades e, se possível, se tornar um grande artilheiro.",
+          "runs": [
+            {
+              "text": "Sem saber direito no que estava se metendo, Yoichi é convidado pela iniciativa "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e vai para o centro de treinamento entender sobre suas próprias capacidades e, se possível, se tornar um grande artilheiro."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Blue-Lock-01.webp",
+          "alt": "Imagem do live-action de Blue Lock"
+        },
+        {
+          "type": "paragraph",
+          "text": "Vale a máxima de que: se todo mundo é atacante, ninguém é atacante? | Sato Company/Divulgação",
+          "runs": [
+            {
+              "text": "Vale a máxima de que: se todo mundo é atacante, ninguém é atacante? | Sato Company/Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Tanto no mangá quanto no animê e no live-action, Blue Lock brinca com a percepção de que o futebol jogado pelo Japão é “colaborativo” demais, e esse seria o motivo das inúmeras eliminações precoces. Por conta disso, a história pode parecer meio maluca, em um primeiro momento, especialmente para quem gosta de futebol. Como todos os convocados para o treinamento são atacantes, e o saldo de gols é uma parte importante para seguir em frente na seleção, o que vemos nas primeiras partidas é um aglomerado de moleques ansiosos tentando fazer um gol. Não há técnica, nem posições em campo, e isso é explicado dentro da história, mas é curioso como quem gosta do esporte pode se sentir meio deixado de lado em um primeiro momento.",
+          "runs": [
+            {
+              "text": "Tanto no mangá quanto no animê e no live-action, "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " brinca com a percepção de que o futebol jogado pelo Japão é"
+            },
+            {
+              "text": " “colaborativo”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " demais, e esse seria o motivo das inúmeras eliminações precoces. Por conta disso, a história pode parecer meio maluca, em um primeiro momento, especialmente para quem gosta de futebol. Como todos os convocados para o treinamento são atacantes, e o saldo de gols é uma parte importante para seguir em frente na seleção, o que vemos nas primeiras partidas é um aglomerado de moleques ansiosos tentando fazer um gol. Não há técnica, nem posições em campo, e isso é explicado dentro da história, mas é curioso como "
+            },
+            {
+              "text": "quem gosta do esporte pode se sentir meio deixado de lado em um primeiro momento",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Felizmente, o live-action entende rapidamente que, apesar de precisar desconstruir o que é futebol, as partidas são importantes para cativar o público, e as disputas mostradas em tela são bem filmadas e coreografadas, de forma até mais satisfatória do que na adaptação em animê. Mesmo quando as jogadas são dinâmicas, o talento de todos fica perceptível, e a produção acerta em um aspecto de difícil equilíbrio: dar o peso e a velocidade necessários para a cena, mas deixá-la clara o suficiente para que todos entendam o que está acontecendo. Sabe aquela sensação de ver vários acontecimentos amontoados em um filme de ação e não conseguir identificar cada movimento dos personagens? Isso não acontece aqui.",
+          "runs": [
+            {
+              "text": "Felizmente, o live-action entende rapidamente que, apesar de precisar desconstruir o que é futebol, as partidas são importantes para cativar o público, e as disputas mostradas em tela são bem filmadas e coreografadas, de forma até mais satisfatória do que na "
+            },
+            {
+              "text": "adaptação em animê",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2022/11/26/blue-lock-resenha/"
+            },
+            {
+              "text": ". Mesmo quando as jogadas são dinâmicas, o talento de todos fica perceptível, e a produção acerta em um aspecto de difícil equilíbrio:"
+            },
+            {
+              "text": " dar o peso e a velocidade necessários para a cena",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", mas deixá-la clara o suficiente para que todos entendam o que está acontecendo. Sabe aquela sensação de ver vários acontecimentos amontoados em um filme de ação e não conseguir identificar cada movimento dos personagens? Isso não acontece aqui."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além de bem filmado, o live-action de Blue Lock também se destaca em outros quesitos técnicos. A fotografia, por exemplo, marca bem as mudanças de ambiente, com cores mais quentes no começo da história do protagonista Yoichi, um tom já esperadamente azulado dentro do centro de treinamento, e até mudanças sutis quando outros personagens aparecem, como a cor branca que acompanha Nagi. Pode parecer algo óbvio fazer tais mudanças no ambiente, mas a verdade é que, quando bem utilizado, o óbvio não incomoda, e sim complementa a narrativa.",
+          "runs": [
+            {
+              "text": "Além de bem filmado, o live-action de "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " também se destaca em outros quesitos técnicos. A fotografia, por exemplo, marca bem as mudanças de ambiente, com cores mais quentes no começo da história do protagonista Yoichi, um tom já esperadamente azulado dentro do centro de treinamento, e até mudanças sutis quando outros personagens aparecem, como a cor branca que acompanha Nagi. Pode parecer algo óbvio fazer tais mudanças no ambiente, mas a verdade é que, quando bem utilizado, o óbvio não incomoda, e sim complementa a narrativa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O mesmo pode ser dito da trilha sonora do filme, tanto das músicas incidentais quanto da música-tema, cantada pela Ado. As inserções ajudam a dar o tom das cenas, fazendo com que quem está assistindo se sinta aflito, ou até mesmo empolgado, acompanhando os sentimentos dos personagens em tela.",
+          "runs": [
+            {
+              "text": "O mesmo pode ser dito da trilha sonora do filme, tanto das músicas incidentais quanto da música-tema, cantada pela "
+            },
+            {
+              "text": "Ado",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". As inserções ajudam a dar o tom das cenas, fazendo com que quem está assistindo se sinta aflito, ou até mesmo empolgado, acompanhando os sentimentos dos personagens em tela."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Ser ou não ser um egoísta?",
+          "runs": [
+            {
+              "text": "Ser ou não ser um egoísta?",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Blue-Lock-02-scaled.jpg",
+          "alt": "Imagem do live-action de Blue Lock"
+        },
+        {
+          "type": "paragraph",
+          "text": "O paralelo entre Yoichi e Nagi é um dos destaques da parte final do longa | Sato Company/Divulgação",
+          "runs": [
+            {
+              "text": "O paralelo entre Yoichi e Nagi é um dos destaques da parte final do longa | Sato Company/Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Se o clima funciona na maior parte das cenas, é mérito também do elenco que está, em sua maioria, muito bem em seus respectivos papéis. Fumiya Takahashi às vezes parece um pouco velho demais para interpretar um jovem em época de ensino médio, mas compensa essa percepção quando abre um sorriso largo com uma pitada de ingenuidade, que nos faz gostar imediatamente de Yoichi.",
+          "runs": [
+            {
+              "text": "Se o clima funciona na maior parte das cenas, é mérito também do elenco que está, em sua maioria, muito bem em seus respectivos papéis. "
+            },
+            {
+              "text": "Fumiya Takahashi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " às vezes parece um pouco velho demais para interpretar um jovem em época de ensino médio, mas compensa essa percepção quando abre um sorriso largo com uma pitada de ingenuidade, que nos faz gostar imediatamente de Yoichi."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Outro destaque importante é Masataka Kubota no papel de Jinpachi Ego, o técnico responsável pelos treinamentos da iniciativa Blue Lock. Com uma caracterização precisa, mas menos afetado do que na versão animê, o ator confere ao comandante um ar de mais respeito e menos maluquice, deixando que exista uma mística ao redor de seus métodos, sem precisar de exageros para isso. De longe, uma das melhores escalações do filme.",
+          "runs": [
+            {
+              "text": "Outro destaque importante é "
+            },
+            {
+              "text": "Masataka Kubota",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no papel de "
+            },
+            {
+              "text": "Jinpachi Ego",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o técnico responsável pelos treinamentos da iniciativa "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Com uma caracterização precisa, mas menos afetado do que na versão animê, o ator confere ao comandante um ar de mais respeito e menos maluquice, deixando que exista uma mística ao redor de seus métodos, sem precisar de exageros para isso. De longe, uma das melhores escalações do filme."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O ponto mais baixo do elenco é para Koga Yudai (também conhecido como K, integrante do grupo &Team) como Nagi. Destaque no terço final do filme por sua grande habilidade com a bola, Nagi soa mais apagado do que deveria — mas vale a colher de chá pela dificuldade de imbuir emoções em um personagem que está constantemente com um ar blasé para tudo o que acontece ao redor.",
+          "runs": [
+            {
+              "text": "O ponto mais baixo do elenco é para "
+            },
+            {
+              "text": "Koga Yudai",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (também conhecido como K, integrante do grupo "
+            },
+            {
+              "text": "&Team",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como Nagi. Destaque no terço final do filme por sua grande habilidade com a bola, Nagi soa mais apagado do que deveria — mas vale a colher de chá pela dificuldade de imbuir emoções em um personagem que está constantemente com um ar "
+            },
+            {
+              "text": "blasé",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " para tudo o que acontece ao redor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além de todos esses elementos, é importante ressaltar que o live-action tem outro grande acerto: é, por si só, um longa interessante de assistir. Para quem conhece a franquia, é a oportunidade de ver uma nova versão da trama, mais direta e menos enrolada do que o começo do animê. E, para quem for direto ao cinema, todos os elementos para entender a narrativa estão lá, e são desenvolvidos de uma forma coesa e instigante. Em poucas cenas, queremos saber o que vai acontecer com os personagens, e o que raios Jinpachi Ego está planejando.",
+          "runs": [
+            {
+              "text": "Além de todos esses elementos, é importante ressaltar que o live-action tem outro grande acerto: é, por si só, um longa interessante de assistir. Para quem conhece a franquia, é a oportunidade de ver uma nova versão da trama, mais direta e menos enrolada do que o começo do animê. E, para quem for direto ao cinema, todos os elementos para entender a narrativa estão lá, e são desenvolvidos de uma forma coesa e instigante. Em poucas cenas, queremos saber o que vai acontecer com os personagens, e o que raios Jinpachi Ego está planejando."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Essa jornada traz, ainda, um dos pontos mais importantes da franquia Blue Lock: como o futebol (tradicional ou recriado) faz com que cada jovem descubra um pouco mais sobre si mesmo. Seja em um momento de tomada de decisão rápida, nas reações à traição de um amigo, ou até ao reconhecimento das próprias fraquezas sobre determinado assunto, Blue Lock insere o futebol como um catalisador da identidade que cada um está construindo em um momento tão importante da vida quanto a juventude.",
+          "runs": [
+            {
+              "text": "Essa jornada traz, ainda, um dos pontos mais importantes da franquia "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ": como o futebol (tradicional ou recriado) faz com que cada jovem descubra um pouco mais sobre si mesmo. Seja em um momento de tomada de decisão rápida, nas reações à traição de um amigo, ou até ao reconhecimento das próprias fraquezas sobre determinado assunto, "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " insere o futebol como um catalisador da identidade que cada um está construindo em um momento tão importante da vida quanto a juventude."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Blue-Lock-03.webp",
+          "alt": "Imagem do live-action de Blue Lock"
+        },
+        {
+          "type": "paragraph",
+          "text": "Para além do esporte, Blue Lock também mostra o amadurecimento pessoal dos personagens | Sato Company/Divulgação",
+          "runs": [
+            {
+              "text": "Para além do esporte, Blue Lock também mostra o amadurecimento pessoal dos personagens | Sato Company/Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "E assim, mantendo o que precisa ser mantido, mas enxugando certos exageros do material de origem, o live-action de Blue Lock é um dos lançamentos do universo de animês mais interessantes do ano, e que abre caminho para uma possível sequência, ao terminar com um gancho e até cena pós-crédito. Agora é esperar que a produção faça o sucesso necessário para justificar um segundo filme, que mantenha a boa qualidade do primeiro.",
+          "runs": [
+            {
+              "text": "E assim, mantendo o que precisa ser mantido, mas enxugando certos exageros do material de origem, o live-action de "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é um dos lançamentos do universo de animês mais interessantes do ano, e que abre caminho para uma possível sequência, ao terminar com um gancho e "
+            },
+            {
+              "text": "até cena pós-crédito",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/21/critica-blue-lock-live-action/"
+            },
+            {
+              "text": ". Agora é esperar que a produção faça o sucesso necessário para justificar um segundo filme, que mantenha a boa qualidade do primeiro."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=rHQgPqrPviw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/rHQgPqrPviw"
+        },
+        {
+          "type": "paragraph",
+          "text": "O animê seriado de Blue Lock começou a ser lançado em outubro de 2022, assinado pelo estúdio 8-Bit. No Brasil, as duas temporadas estão nos catálogos da Netflix, HBO Max e Crunchyroll, que também conta com o filme Episódio Nagi. As duas temporadas também são exibidas no canal Adult Swim e o mangá, lançado desde agosto de 2018, chega ao país pela Panini.",
+          "runs": [
+            {
+              "text": "O animê seriado de "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " começou a ser lançado em outubro de 2022, assinado pelo estúdio "
+            },
+            {
+              "text": "8-Bit",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". No Brasil, as duas temporadas estão nos catálogos da "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "HBO Max",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e"
+            },
+            {
+              "text": " Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que também conta com o filme "
+            },
+            {
+              "text": "Episódio Nagi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". As duas temporadas também são exibidas no canal "
+            },
+            {
+              "text": "Adult Swim ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "e o mangá, lançado desde agosto de 2018, chega ao país pela "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Vale lembrar que, este ano, a Associação de Futebol do Japão lançou um programa de formação de atletas no mundo real, inspirado na história de Blue Lock.",
+          "runs": [
+            {
+              "text": "Vale lembrar que, este ano, a Associação de Futebol do Japão"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "lançou um programa de formação de atletas no mundo real, inspirado na história de ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/13/associacao-de-futebol-do-japao-lanca-projeto-de-formacao-de-atletas-inspirado-em-blue-lock/"
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/13/associacao-de-futebol-do-japao-lanca-projeto-de-formacao-de-atletas-inspirado-em-blue-lock/"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site. A crítica foi feita de forma totalmente independente, em uma exibição comum de cinema, sem envolvimento de cabine de imprensa.",
+          "runs": [
+            {
+              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site. A crítica foi feita de forma totalmente independente, em uma exibição comum de cinema, sem envolvimento de cabine de imprensa.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-21T16:40:55.000Z",
+      "updatedAt": "2026-09-21T17:46:05.000Z",
+      "expiresAt": "2026-09-28T16:40:55.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/21/critica-blue-lock-live-action",
+          "publishedAt": "2026-09-21T16:40:55.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 7,
+      "wordCount": 1262,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 26,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 3,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-1228039b",
       "slug": "daemons-of-the-shadow-realm-tem-2-temporada-confirmada-jbox-1228039b",
@@ -1377,7 +2080,7 @@
       "sourceCount": 1,
       "readingMinutes": 3,
       "wordCount": 486,
-      "qualityScore": 1,
+      "qualityScore": 0.943,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -7208,822 +7911,6 @@
         "facts": 0,
         "sections": 0,
         "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-5094e86c",
-      "slug": "adult-swim-os-cavaleiros-do-zodiaco-devem-deixar-o-canal-em-outubro-jbox-5094e86c",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Adult Swim: ‘Os Cavaleiros do Zodíaco’ devem deixar o canal em outubro",
-      "originalTitle": "Adult Swim: ‘Os Cavaleiros do Zodíaco’ devem deixar o canal em outubro",
-      "summary": "O Adult Swim está prestes a passar por mudanças em sua grade de programação. Segundo o site mexicano TV Laint, o canal a cabo deve ter reestruturações similares aos que outros canais da Warner Bros. Discovery vem passando.",
-      "author": "Jean Clemente",
-      "tags": [
-        "Anime",
-        "Programação",
-        "TV",
-        "adult swim",
-        "Cavaleiros do Zodíaco",
-        "cdz",
-        "Lazarus",
-        "Saint Seiya",
-        "tv a cabo",
-        "Warner Bros"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/14/adult-swim-os-cavaleiros-do-zodiaco-devem-deixar-o-canal-em-outubro",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/14/adult-swim-os-cavaleiros-do-zodiaco-devem-deixar-o-canal-em-outubro",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/cavaleirosdozodiaco1986-destacada.jpg",
-      "mediaQuery": "Adult Swim: ‘Os Cavaleiros do Zodíaco’ devem deixar o canal em outubro",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O Adult Swim está prestes a passar por mudanças em sua grade de programação. Segundo o site mexicano TV Laint, o canal a cabo deve ter reestruturações similares aos que outros canais da Warner Bros. Discovery vem passando.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "Adult Swim",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " está prestes a passar por mudanças em sua grade de programação. Segundo o site mexicano "
-            },
-            {
-              "text": "TV Laint",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", o canal a cabo deve ter reestruturações similares aos que outros canais da "
-            },
-            {
-              "text": "Warner Bros. Discovery",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " vem passando."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para começar, teremos a diminuição de programas indo ao ar, com a baixa mais significativa sendo Os Cavaleiros do Zodíaco. Segundo o site, a saída de Seiya e seus shiryus amigos deve se dar pelo término da licença, que começou ainda na época do extinto bloco Wanimé, no Warner Channel, em 2023. Atualmente, o animê é reprisado todos os dias em vários horários da programação, onde estreou em fevereiro de 2024.",
-          "runs": [
-            {
-              "text": "Para começar, teremos a diminuição de programas indo ao ar, com a baixa mais significativa sendo"
-            },
-            {
-              "text": " Os Cavaleiros do",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Zodíaco",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ". Segundo o site, a saída de Seiya e seus "
-            },
-            {
-              "text": "shiryus amigos",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " deve se dar pelo término da licença, que começou ainda"
-            },
-            {
-              "text": " na época do extinto bloco ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2023/10/30/warner-channel-divulga-horarios-de-dragon-ball-e-cavaleiros-do-zodiaco/"
-            },
-            {
-              "text": "Wanimé",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2023/10/30/warner-channel-divulga-horarios-de-dragon-ball-e-cavaleiros-do-zodiaco/"
-            },
-            {
-              "text": ", no "
-            },
-            {
-              "text": "Warner Channel",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", em 2023. Atualmente, o animê é reprisado todos os dias em vários horários da programação, onde estreou em fevereiro de 2024."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já para os hermanos, eles também contarão com a saída de One Piece, que seguirá na grade brasileira de programação. Fora das animações nipônicas, as outras baixas são Ambient Swim, Mike Tyson Mysteries e Samurai Jack, além de As Terríveis Aventuras de Billy & Mandy e A Vaca e o Frango para a programação mexicana (esses já não eram mais exibidos no Brasil).",
-          "runs": [
-            {
-              "text": "Já para os hermanos, eles também contarão com a saída de "
-            },
-            {
-              "text": "One Piece",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", que seguirá na grade brasileira de programação. Fora das animações nipônicas, as outras baixas são "
-            },
-            {
-              "text": "Ambient Swim",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Mike Tyson Mysteries ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "e "
-            },
-            {
-              "text": "Samurai Jack",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", além de "
-            },
-            {
-              "text": "As Terríveis Aventuras de Billy & Mandy",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "A Vaca e o Frango",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " para a programação mexicana (esses já não eram mais exibidos no Brasil)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Outra mudança é a união do sinal mexicano com o panregional, que modificará a grade do canal por lá. Agora, as séries adultas ficarão restritas apenas ao horário noturno. Ao que tudo indica, o mesmo acontecerá com o sinal brasileiro, que ainda manterá algumas séries exclusivas em sua programação.",
-          "runs": [
-            {
-              "text": "Outra mudança é a união do sinal mexicano com o panregional, que modificará a grade do canal por lá. Agora, as séries adultas ficarão restritas apenas ao horário noturno. Ao que tudo indica, o mesmo acontecerá com o sinal brasileiro, que ainda manterá algumas séries exclusivas em sua programação."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: TV Laint",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "TV Laint",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.tvlaint.com/2026/09/el-inicio-del-fin-adult-swim-mexico.html"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-14T20:00:17.000Z",
-      "updatedAt": "2026-09-15T05:11:32.000Z",
-      "expiresAt": "2026-09-21T20:00:17.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/14/adult-swim-os-cavaleiros-do-zodiaco-devem-deixar-o-canal-em-outubro",
-          "publishedAt": "2026-09-14T20:00:17.000Z",
-          "author": "Jean Clemente"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 241,
-      "qualityScore": 0.906,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 7,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-4fe98377",
-      "slug": "ame-no-chi-hare-onna-game-freak-estudio-de-pokemon-anuncia-novo-jogo-jbox-4fe98377",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Ame no Chi Hare Onna: Game Freak, estúdio de ‘Pokémon’, anuncia novo jogo",
-      "originalTitle": "Ame no Chi Hare Onna: Game Freak, estúdio de ‘Pokémon’, anuncia novo jogo",
-      "summary": "Foi anunciado pela Game Freak, conhecida principalmente pelos jogos de Pokémon, um novo título chamado Ame no Chi Hare Onna. O lançamento é para celulares, chegando entre o final de 2026 e início de 2027.",
-      "author": "Teke",
-      "tags": [
-        "Games",
-        "Ame no Chi Hare Onna",
-        "CHRONOGATE",
-        "Gamefreak"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/14/ame-no-chi-hare-onna-game-freak-estudio-de-pokemon-anuncia-novo-jogo",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/14/ame-no-chi-hare-onna-game-freak-estudio-de-pokemon-anuncia-novo-jogo",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Ame-no-Chi-Hare-Onna-destacada.jpg",
-      "mediaQuery": "Ame no Chi Hare Onna: Game Freak, estúdio de ‘Pokémon’, anuncia novo jogo",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/JtVI0nYlohM"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Foi anunciado pela Game Freak, conhecida principalmente pelos jogos de Pokémon, um novo título chamado Ame no Chi Hare Onna. O lançamento é para celulares, chegando entre o final de 2026 e início de 2027.",
-          "runs": [
-            {
-              "text": "Foi anunciado pela "
-            },
-            {
-              "text": "Game Freak",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", conhecida principalmente pelos jogos de "
-            },
-            {
-              "text": "Pokémon",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", um novo título chamado "
-            },
-            {
-              "text": "Ame no Chi Hare Onna",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ". O lançamento é para celulares, chegando entre o final de 2026 e início de 2027."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira o trailer de anúncio:",
-          "runs": [
-            {
-              "text": "Confira o trailer de anúncio:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=JtVI0nYlohM",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/JtVI0nYlohM"
-        },
-        {
-          "type": "paragraph",
-          "text": "Ame no Chi Hare Onna é desenvolvido pela Game Freak em parceria com a CHRONOGATE. Na direção e produção está Shigeru Ohmori, cargo que ele já ocupou em vários dos jogos de Pokémon. Katsunori Suginaka (Pokémon Sword & Shield) é responsável pela coordenação do roteiro. Dois nomes foram confirmados para o design de personagens, sendo eles Aki Minamino e Kyoko Abe, que foi responsável por alguns dos designs de personagens humanos e também de Pokémon em jogos e também em animês da franquia.",
-          "runs": [
-            {
-              "text": "Ame no Chi Hare Onna",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é desenvolvido pela Game Freak em parceria com a "
-            },
-            {
-              "text": "CHRONOGATE",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Na direção e produção está "
-            },
-            {
-              "text": "Shigeru Ohmori",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", cargo que ele já ocupou em vários dos jogos de "
-            },
-            {
-              "text": "Pokémon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". "
-            },
-            {
-              "text": "Katsunori Suginaka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Pokémon Sword & Shield",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") é responsável pela coordenação do roteiro. Dois nomes foram confirmados para o design de personagens, sendo eles "
-            },
-            {
-              "text": "Aki Minamino",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://x.com/_poo_illust"
-            },
-            {
-              "text": " ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "e"
-            },
-            {
-              "text": " Kyoko Abe",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que foi responsável por alguns dos designs de personagens humanos e também de "
-            },
-            {
-              "text": "Pokémon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " em jogos e também em animês da franquia."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na história, as garotas mágicas conhecidas como Hare Onna tem o poder de usar o clima para melhorar o humor das pessoas. Elas são acompanhadas dos Kumorin, mascotes que atuam como mensageiros divinos do clima e responsáveis pelos poderes das Hare Onna.",
-          "runs": [
-            {
-              "text": "Na história, as garotas mágicas conhecidas como Hare Onna tem o poder de usar o clima para melhorar o humor das pessoas. Elas são acompanhadas dos Kumorin, mascotes que atuam como mensageiros divinos do clima e responsáveis pelos poderes das Hare Onna."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Através de uma mecânica atrelada diretamente com a previsão do tempo, o gameplay é dividido em patrulha da cidade, participação em batalhas e em lavagem de roupas, manuseando o dia a dia das garotas mágicas ao redor disso. Por enquanto, o título tem lançamento confirmado apenas para o Japão.",
-          "runs": [
-            {
-              "text": "Através de uma mecânica atrelada diretamente com a previsão do tempo, o gameplay é dividido em patrulha da cidade, participação em batalhas e em lavagem de roupas, manuseando o dia a dia das garotas mágicas ao redor disso. Por enquanto, o título tem lançamento confirmado apenas para o Japão."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O jogo teve uma transmissão especial para divulgação detalhes, incluindo elenco e personagens. Mais informações serão divulgados entre os dias 17 e 21 de setembro, durante a Tokyo Game Show. O elenco divulgado inclui:",
-          "runs": [
-            {
-              "text": "O jogo teve uma "
-            },
-            {
-              "text": "transmissão especial para divulgação detalhes, incluindo elenco e personagens",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://youtu.be/nh4MisfbXsQ"
-            },
-            {
-              "text": ". Mais informações serão divulgados entre os dias 17 e 21 de setembro, durante a Tokyo Game Show. O elenco divulgado inclui:"
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Hiyori Kouno (Hinata em Healin’ Good Pretty Cure) como Himawari Harewatari",
-              "runs": [
-                {
-                  "text": "Hiyori Kouno ",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": "(Hinata em "
-                },
-                {
-                  "text": "Healin’ Good Pretty Cure",
-                  "marks": [
-                    "em"
-                  ]
-                },
-                {
-                  "text": ") como "
-                },
-                {
-                  "text": "Himawari Harewatari",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "Yuki Nagano (Alice em The Hidden Dungeon Only I Can Enter) como Pon Arai",
-              "runs": [
-                {
-                  "text": "Yuki Nagano ",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": "(Alice em "
-                },
-                {
-                  "text": "The Hidden Dungeon Only I Can Enter",
-                  "marks": [
-                    "em"
-                  ]
-                },
-                {
-                  "text": ") como "
-                },
-                {
-                  "text": "Pon Arai",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "Mirika Kawa (Eri em BanG Dream! It’s MyGo!!!!!) como Yuuri Amanohara",
-              "runs": [
-                {
-                  "text": "Mirika Kawa",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " (Eri em "
-                },
-                {
-                  "text": "BanG Dream! It’s MyGo!!!!!",
-                  "marks": [
-                    "em"
-                  ]
-                },
-                {
-                  "text": ") como "
-                },
-                {
-                  "text": "Yuuri Amanohara",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "Ayaka Fujimoto (Atsumi em The Idolmaster: Cinderella Girls) como Kon Oribe",
-              "runs": [
-                {
-                  "text": "Ayaka Fujimoto ",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": "(Atsumi em "
-                },
-                {
-                  "text": "The Idolmaster: Cinderella Girls",
-                  "marks": [
-                    "em"
-                  ]
-                },
-                {
-                  "text": ") como "
-                },
-                {
-                  "text": "Kon Oribe",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "Chinatsu Hirose (Matsuri em Waccha PriMagi!) como Izu Shinotsuki",
-              "runs": [
-                {
-                  "text": "Chinatsu Hirose",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " (Matsuri em "
-                },
-                {
-                  "text": "Waccha PriMagi!",
-                  "marks": [
-                    "em"
-                  ]
-                },
-                {
-                  "text": ") como "
-                },
-                {
-                  "text": "Izu Shinotsuki",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "Momoka Tsuji (Ywitte em Brigandine Abyss) como Chuchu Yumekawa",
-              "runs": [
-                {
-                  "text": "Momoka Tsuji",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " (Ywitte em "
-                },
-                {
-                  "text": "Brigandine Abyss",
-                  "marks": [
-                    "em"
-                  ]
-                },
-                {
-                  "text": ") como "
-                },
-                {
-                  "text": "Chuchu Yumekawa",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Ame no Chi Hare Onna (YouTube)",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Ame no Chi Hare Onna (YouTube)",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://youtu.be/nh4MisfbXsQ"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-14T19:08:57.000Z",
-      "updatedAt": "2026-09-14T19:16:40.000Z",
-      "expiresAt": "2026-09-21T19:08:57.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/14/ame-no-chi-hare-onna-game-freak-estudio-de-pokemon-anuncia-novo-jogo",
-          "publishedAt": "2026-09-14T19:08:57.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 337,
-      "qualityScore": 0.921,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "contentMode": "full",
