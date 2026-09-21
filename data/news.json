@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T10:13:52.470Z",
+  "generatedAt": "2026-09-21T16:29:25.451Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 37,
+      "count": 38,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,415 @@
     }
   ],
   "stats": {
-    "collected": 47,
-    "grouped": 23,
-    "published": 23,
-    "newStories": 23,
-    "fullArticles": 23,
+    "collected": 48,
+    "grouped": 22,
+    "published": 22,
+    "newStories": 22,
+    "fullArticles": 22,
     "previewArticles": 0,
-    "avgWords": 358,
-    "withHeroImage": 23,
-    "withOrderedMedia": 21,
+    "avgWords": 334,
+    "withHeroImage": 22,
+    "withOrderedMedia": 20,
     "skippedTranslation": 0,
-    "skippedQuality": 23,
-    "durationMs": 3376
+    "skippedQuality": 25,
+    "durationMs": 3009
   },
   "items": [
+    {
+      "id": "jbox-1228039b",
+      "slug": "daemons-of-the-shadow-realm-tem-2-temporada-confirmada-jbox-1228039b",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Daemons of the Shadow Realm’ tem 2ª temporada confirmada",
+      "originalTitle": "‘Daemons of the Shadow Realm’ tem 2ª temporada confirmada",
+      "summary": "No mesmo dia (19) em que a primeira temporada de Daemons of the Shadow Realm foi encerrada com o final do segundo cour, a Aniplex confirmou a produção de novos episódios.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "2ª temporada de Daemons of the Shadow Realm",
+        "aemons of the Shadow Realm",
+        "Daemons do Reino das Sombras",
+        "fullmetal alchemist",
+        "hiromu arakawa",
+        "mangá de hiromu arakawa",
+        "novo anime da autora de fullmetal",
+        "novo anime de hiromu arakawa",
+        "Yomi no Tsugai"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/21/daemons-of-the-shadow-realm-tem-2a-temporada-confirmada",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/21/daemons-of-the-shadow-realm-tem-2a-temporada-confirmada",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-destacada.jpg",
+      "mediaQuery": "‘Daemons of the Shadow Realm’ tem 2ª temporada confirmada",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-01.jpg",
+          "alt": "Pôster da 2ª temporada de Daemons of the Shadow Realm",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/rDXDLCMomdA"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "No mesmo dia (19) em que a primeira temporada de Daemons of the Shadow Realm foi encerrada com o final do segundo cour, a Aniplex confirmou a produção de novos episódios.",
+          "runs": [
+            {
+              "text": "No mesmo dia (19) em que a primeira temporada de "
+            },
+            {
+              "text": "Daemons of the Shadow Realm",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " foi encerrada com o final do segundo "
+            },
+            {
+              "text": "cour",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", a "
+            },
+            {
+              "text": "Aniplex",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " confirmou a produção de novos episódios."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A novidade foi anunciada com um cartaz e um teaser que mostram os principais personagens da história. Por enquanto, não há previsão de lançamento da segunda temporada.",
+          "runs": [
+            {
+              "text": "A novidade foi anunciada com um cartaz e um teaser que mostram os principais personagens da história. Por enquanto, não há previsão de lançamento da segunda temporada."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=rDXDLCMomdA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/rDXDLCMomdA"
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-01.jpg",
+          "alt": "Pôster da 2ª temporada de Daemons of the Shadow Realm"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pôster da 2ª temporada de Daemons of the Shadow Realm | Aniplex/Divulgação",
+          "runs": [
+            {
+              "text": "Pôster da 2ª temporada de Daemons of the Shadow Realm | Aniplex/Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "▶️ Entrevista com os dubladores Pedro Crispim, Natália Alves, Filipe Albuquerque e Jennifer Gouveia, de Daemons of the Shadow Realm",
+          "runs": [
+            {
+              "text": "▶️ ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Entrevista com os dubladores Pedro Crispim, Natália Alves, Filipe Albuquerque e Jennifer Gouveia, de Daemons of the Shadow Realm",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/07/31/dubladores-de-daemons-of-the-shadow-realm-contam-sua-experiencia-com-a-serie-jbox-entrevista/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Criada por Hiromu Arakawa, autora de nada menos do que Fullmetal Alchemist e Silver Spoon, a história de Daemons of the Shadow Realm começa focada no jovem Yuru, que mora em uma vila bucólica com ares medievais, e busca cuidar da irmã mais nova, Asa, após o desaparecimento dos pais. Porém, a realidade do rapaz muda de forma brusca e violenta, e ele precisa fugir para descobrir todos os mistérios envolvendo sua família.",
+          "runs": [
+            {
+              "text": "Criada por "
+            },
+            {
+              "text": "Hiromu Arakawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", autora de nada menos do que "
+            },
+            {
+              "text": "Fullmetal Alchemist",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Silver Spoon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", a história de "
+            },
+            {
+              "text": "Daemons of the Shadow Realm",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " começa focada no jovem Yuru, que mora em uma vila bucólica com ares medievais, e busca cuidar da irmã mais nova, Asa, após o desaparecimento dos pais. Porém, a realidade do rapaz muda de forma brusca e violenta, e ele precisa fugir para descobrir todos os mistérios envolvendo sua família."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Masahiro Andou (Fullmetal Alchemist) assina a direção do animê, com composição de série de Noboru Takagi (Golden Kamui) e design de personagens de Nobuhiro Arai (Naruto Shippuden). A primeira temporada está disponível no catálogo da Crunchyroll.",
+          "runs": [
+            {
+              "text": "Masahiro Andou",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Fullmetal Alchemist",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") assina a direção do animê, com composição de série de "
+            },
+            {
+              "text": "Noboru Takagi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Golden Kamui",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") e design de personagens de "
+            },
+            {
+              "text": "Nobuhiro Arai",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Naruto Shippuden",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). A primeira temporada está disponível no catálogo da "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O mangá é publicado desde dezembro de 2021, na Monthly Shonen Gangan, de propriedade da Square Enix. Até o momento, 13 volumes já foram lançados e a trama ainda não foi encerrada. No Brasil, a publicação é da JBC — confira o que achamos do primeiro volume.",
+          "runs": [
+            {
+              "text": "O mangá é publicado desde dezembro de 2021, na "
+            },
+            {
+              "text": "Monthly Shonen Gangan",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", de propriedade da "
+            },
+            {
+              "text": "Square Enix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Até o momento, 13 volumes já foram lançados e a trama ainda não foi encerrada. No Brasil, a publicação é da "
+            },
+            {
+              "text": "JBC",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " — "
+            },
+            {
+              "text": "confira o que achamos do primeiro volume",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/03/25/critica-yomi-no-tsugai-daemons-do-reino-das-sombras-volume-1-jbc/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site oficial de Daemons of the Shadow Realm",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Site oficial de Daemons of the Shadow Realm",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://yominotsugai.com/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-21T13:53:50.000Z",
+      "updatedAt": "2026-09-21T13:54:31.000Z",
+      "expiresAt": "2026-09-28T13:53:50.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/21/daemons-of-the-shadow-realm-tem-2a-temporada-confirmada",
+          "publishedAt": "2026-09-21T13:53:50.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 272,
+      "qualityScore": 0.975,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-01a7a7a8",
       "slug": "anime-de-suikoden-ganha-musica-de-encerramento-e-data-animenew-01a7a7a8",
@@ -7629,1170 +8024,6 @@
         "facts": 0,
         "sections": 0,
         "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-b5acfe85",
-      "slug": "sato-company-confirma-reunioes-para-trazer-novo-filme-de-madoka-magica-ao-brasil-mas-pede-cautela-aos-fas-jbox-b5acfe85",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Sato Company confirma reuniões para trazer novo filme de ‘Madoka Magica’ ao Brasil, mas pede cautela aos fãs",
-      "originalTitle": "Sato Company confirma reuniões para trazer novo filme de ‘Madoka Magica’ ao Brasil, mas pede cautela aos fãs",
-      "summary": "Após os fãs de Madoka Magica iniciarem a campanha #MadokanoBrasil, para incentivar a distribuição do filme Walpurgisnacht Rising no país, a Sato Company confirmou que está fazendo reuniões sobre o tema, mas pediu cautela aos fãs.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "anime no cinema",
-        "filme de madoka",
-        "Madoka filme 4",
-        "Madoka Magica novo filme",
-        "Madoka Magina na Sato Company",
-        "madoka no brasil",
-        "Novo filme de Madoka Magica no Brasil",
-        "Puella Magi Madoka Magica The Movie: Walpurgisnacht: Rising",
-        "Sato Company",
-        "Walpurgisnacht Rising"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/14/sato-company-confirma-reunioes-para-trazer-novo-filme-de-madoka-magica-ao-brasil-mas-pede-cautela-aos-fas",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/14/sato-company-confirma-reunioes-para-trazer-novo-filme-de-madoka-magica-ao-brasil-mas-pede-cautela-aos-fas",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2024/09/madokaWalpurgisnachtRisingpv-destacada.jpg",
-      "mediaQuery": "Sato Company confirma reuniões para trazer novo filme de ‘Madoka Magica’ ao Brasil, mas pede cautela aos fãs",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/Wu4JASdGFWQ"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/Se4Iej_z_NI"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Após os fãs de Madoka Magica iniciarem a campanha #MadokanoBrasil, para incentivar a distribuição do filme Walpurgisnacht Rising no país, a Sato Company confirmou que está fazendo reuniões sobre o tema, mas pediu cautela aos fãs.",
-          "runs": [
-            {
-              "text": "Após os fãs de "
-            },
-            {
-              "text": "Madoka Magica",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " iniciarem a campanha "
-            },
-            {
-              "text": "#MadokanoBrasil",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", para incentivar a distribuição do filme "
-            },
-            {
-              "text": "Walpurgisnacht Rising",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " no país, a "
-            },
-            {
-              "text": "Sato Company",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " confirmou que está fazendo reuniões sobre o tema, mas pediu cautela aos fãs."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A novidade foi divulgada por Victor Sato, Diretor de Negócios e Operações da Sato Company, durante uma live realizada no canal Resistência Tokusatsu. No vídeo, Victor elogiou o movimento organizado pelos fãs, mas ressaltou que não deseja criar falsas esperanças.",
-          "runs": [
-            {
-              "text": "A novidade foi divulgada por"
-            },
-            {
-              "text": " Victor Sato",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", Diretor de Negócios e Operações da "
-            },
-            {
-              "text": "Sato Company",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", durante uma live realizada no canal "
-            },
-            {
-              "text": "Resistência Tokusatsu",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". No vídeo, Victor elogiou o movimento organizado pelos fãs, mas ressaltou que não deseja criar falsas esperanças."
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "“Sim, temos conversas, estamos trabalhando. Também não quero gerar expectativa, porque sei que é uma galera que está muito ansiosa, muito empolgada, e querendo ter [o filme no Brasil]. As coisas não são rápidas, tem que alinhar com um monte de parceiros, tem questão de contrato, um monte de detalhes que precisam ser conversados e negociados para fazer a coisa acontecer. Assim, temos conversas, temos esse interesse, já estamos sabendo da vontade dos fãs de Madoka, temos o desejo [de trazer o filme], mas não vou prometer nada, é muito irresponsável eu gerar uma expectativa que talvez não se concretize. Então sim, estamos conversando, temos reuniões marcadas para tentar fazer isso acontecer, mas espero que entendam que não é tão simples, não é tão rápido. Não é alguém me mandar um link no WhatsApp e pronto, agora tenho o filme para lançar. É um negócio um pouco mais complicadinho. Mas, sim, estamos trabalhando.”",
-          "runs": [
-            {
-              "text": "“Sim, temos conversas, estamos trabalhando. Também não quero gerar expectativa, porque sei que é uma galera que está muito ansiosa, muito empolgada, e querendo ter [o filme no Brasil]. As coisas não são rápidas, tem que alinhar com um monte de parceiros, tem questão de contrato, um monte de detalhes que precisam ser conversados e negociados para fazer a coisa acontecer. Assim, temos conversas, temos esse interesse, já estamos sabendo da vontade dos fãs de Madoka, temos o desejo [de trazer o filme], mas não vou prometer nada, é muito irresponsável eu gerar uma expectativa que talvez não se concretize. Então sim, estamos conversando, temos reuniões marcadas para tentar fazer isso acontecer, mas espero que entendam que não é tão simples, não é tão rápido. Não é alguém me mandar um link no WhatsApp e pronto, agora tenho o filme para lançar. É um negócio um pouco mais complicadinho. Mas, sim, estamos trabalhando.”"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira o trecho abaixo, a partir de 1:40:07:",
-          "runs": [
-            {
-              "text": "Confira o trecho abaixo, a partir de 1:40:07:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=Wu4JASdGFWQ",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/Wu4JASdGFWQ"
-        },
-        {
-          "type": "paragraph",
-          "text": "Puella Magi Madoka Magica the Movie: Walpurgisnacht Rising é o quarto filme da franquia Madoka Magica, que segue contando uma história inédita iniciada em Rebellion, lançado em 2013.",
-          "runs": [
-            {
-              "text": "Puella Magi Madoka Magica the Movie: Walpurgisnacht Rising",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " é o quarto filme da franquia "
-            },
-            {
-              "text": "Madoka Magica",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que segue contando uma história inédita iniciada em "
-            },
-            {
-              "text": "Rebellion",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", lançado em 2013."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O imbróglio sobre a estreia no Brasil existe há alguns meses, após a distribuidora Konnichiwa! anunciar o lançamento da produção em vários territórios que falam o idioma espanhol, o que não inclui o nosso país.",
-          "runs": [
-            {
-              "text": "O imbróglio sobre a estreia no Brasil existe há alguns meses, após a distribuidora "
-            },
-            {
-              "text": "Konnichiwa! anunciar o lançamento da produção em vários territórios que falam o idioma espanhol",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/29/konnichiwa-anuncia-distribuicao-do-novo-filme-de-madoka-magica-na-america-latina-brasil-ainda-nao-foi-confirmado/"
-            },
-            {
-              "text": ", o que não inclui o nosso país."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Em entrevista exclusiva ao JBox durante a LicensingCon Latam 2026, realizada em São Paulo, representantes da Aniplex of America confirmaram que o longa Walpurgisnacht Rising será lançado no Brasil, mas ressaltaram que estavam em busca de uma distribuidora nacional. No momento, os fãs aguardam que uma empresa parceira seja anunciada, para que exista ao menos uma previsão de lançamento.",
-          "runs": [
-            {
-              "text": "Em entrevista exclusiva ao "
-            },
-            {
-              "text": "JBox ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "durante a"
-            },
-            {
-              "text": " LicensingCon Latam 2026",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", realizada em São Paulo, representantes da "
-            },
-            {
-              "text": "Aniplex of America",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "confirmaram que o longa ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/12/exclusivo-novo-filme-de-madoka-magica-sera-lancado-no-brasil/"
-            },
-            {
-              "text": "Walpurgisnacht Rising",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/12/exclusivo-novo-filme-de-madoka-magica-sera-lancado-no-brasil/"
-            },
-            {
-              "text": " será lançado no Brasil",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/12/exclusivo-novo-filme-de-madoka-magica-sera-lancado-no-brasil/"
-            },
-            {
-              "text": ", mas ressaltaram que estavam em busca de uma distribuidora nacional. No momento, os fãs aguardam que uma empresa parceira seja anunciada, para que exista ao menos uma previsão de lançamento."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Lançada originalmente em 2011 como uma história inédita nos animês, Madoka Magica segue a trama de garotas do ensino médio que aceitam o convite de uma criatura chamada Kyubey e se tornam garotas mágicas. Após selar o pacto, elas precisam derrotar seres denominados como “bruxas” e, em troca, cada uma pode realizar um desejo. Com o tempo, no entanto, elas descobrem todos os desafios que envolvem se tornar uma garota mágica e que há mais por trás disso do que elas imaginavam.",
-          "runs": [
-            {
-              "text": "Lançada originalmente em 2011 como uma história inédita nos animês, "
-            },
-            {
-              "text": "Madoka Magica",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " segue a trama de garotas do ensino médio que aceitam o convite de uma criatura chamada Kyubey e se tornam garotas mágicas. Após selar o pacto, elas precisam derrotar seres denominados como “bruxas” e, em troca, cada uma pode realizar um desejo. Com o tempo, no entanto, elas descobrem todos os desafios que envolvem se tornar uma garota mágica e que há mais por trás disso do que elas imaginavam."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O animê original contou com apenas 12 episódios que encerram a primeira parte da história, e seguem sem transmissão oficial no Brasil. Depois disso, a franquia ganhou dois filmes, Beginnings e Eternal, ambos de 2012, que fazem um resumo da trama do animê seriado, com algumas cenas refeitas. Já em 2013 foi lançado Rebellion, filme contando uma história completamente nova, com todas as personagens de volta.",
-          "runs": [
-            {
-              "text": "O animê original contou com apenas 12 episódios que encerram a primeira parte da história, e seguem sem transmissão oficial no Brasil. Depois disso, a franquia ganhou dois filmes, "
-            },
-            {
-              "text": "Beginnings",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Eternal",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", ambos de 2012, que fazem um resumo da trama do animê seriado, com algumas cenas refeitas. Já em 2013 foi lançado "
-            },
-            {
-              "text": "Rebellion",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", filme contando uma história completamente nova, com todas as personagens de volta."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além do roteirista original Gen Urobuchi, estão de volta em Walpurgisnacht Rising Akiyuki Shimbo e Yukihiro Miyamoto na direção, Ume Aoki no desenho de personagens e Yuki Kajiura compondo a trilha sonora. O estúdio SHAFT segue responsável pela animação. Anteriormente foi confirmado o retorno de grande parte da equipe de produção dos animês da franquia, com adições de Tomohiro Furukawa no storyboard e no design artístico conceitual e Shuiichi Kusamori na arte.",
-          "runs": [
-            {
-              "text": "Além do roteirista original "
-            },
-            {
-              "text": "Gen Urobuchi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", estão de volta em "
-            },
-            {
-              "text": "Walpurgisnacht Rising",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Akiyuki Shimbo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Yukihiro Miyamoto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " na direção,"
-            },
-            {
-              "text": " Ume Aoki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no desenho de personagens e "
-            },
-            {
-              "text": "Yuki Kajiura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " compondo a trilha sonora. O estúdio"
-            },
-            {
-              "text": " SHAFT",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " segue responsável pela animação. Anteriormente foi confirmado o retorno de grande parte da equipe de produção dos animês da franquia, com adições de "
-            },
-            {
-              "text": "Tomohiro Furukawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no storyboard e no design artístico conceitual e "
-            },
-            {
-              "text": "Shuiichi Kusamori",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " na arte."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Garotas mágicas em 2026",
-          "runs": [
-            {
-              "text": "Garotas mágicas em 2026",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "Madoka Magica fez parte da lista de um vídeo em nosso canal no YouTube, em que listamos os lançamentos de animês de garotas mágicas que chegam este ano. Confira pelo link abaixo:",
-          "runs": [
-            {
-              "text": "Madoka Magica",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " fez parte da lista de um vídeo em nosso canal no YouTube, em que listamos os lançamentos de animês de garotas mágicas que chegam este ano. Confira pelo link abaixo:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=Se4Iej_z_NI",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/Se4Iej_z_NI"
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Canal Resistência Tokusatsu",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Canal Resistência Tokusatsu",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.youtube.com/@ResistenciaTokusatsu"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-14T16:22:26.000Z",
-      "updatedAt": "2026-09-14T16:22:56.000Z",
-      "expiresAt": "2026-09-21T16:22:26.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/14/sato-company-confirma-reunioes-para-trazer-novo-filme-de-madoka-magica-ao-brasil-mas-pede-cautela-aos-fas",
-          "publishedAt": "2026-09-14T16:22:26.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 4,
-      "wordCount": 636,
-      "qualityScore": 0.962,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 17,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 2,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-cb16c37c",
-      "slug": "umamusume-filme-estreia-na-rede-cinemark-esta-semana-at-jbox-cb16c37c",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Umamusume: Filme estreia na rede Cinemark esta semana (AT)",
-      "originalTitle": "Umamusume: Filme estreia na rede Cinemark esta semana (AT)",
-      "summary": "A rede de cinemas Cinemark confirmou que o filme Umamusume — Pretty Derby – O Início de uma Nova Era (Beginning of a New Era) estreia nas salas do circuito na próxima quinta (17). Os horários e as salas já estão disponíveis em seu site oficial, podendo sofrer alterações sem aviso prévio, e constam apenas com sessões legendadas.",
-      "author": "Jean Clemente",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "cinemark",
-        "filme de umamusume",
-        "filme de umamusume no brasil",
-        "onde vai passar o filme de umamusume?",
-        "umamusume",
-        "Umamusume - Pretty Derby - O Início de uma Nova Era"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/14/umamusume-filme-estreia-na-rede-cinemark-esta-semana",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/14/umamusume-filme-estreia-na-rede-cinemark-esta-semana",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2024/03/umamusume-filme-nova-destacada.jpg",
-      "mediaQuery": "Umamusume: Filme estreia na rede Cinemark esta semana (AT)",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/zgupmgLe5No"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A rede de cinemas Cinemark confirmou que o filme Umamusume — Pretty Derby – O Início de uma Nova Era (Beginning of a New Era) estreia nas salas do circuito na próxima quinta (17). Os horários e as salas já estão disponíveis em seu site oficial, podendo sofrer alterações sem aviso prévio, e constam apenas com sessões legendadas.",
-          "runs": [
-            {
-              "text": "A rede de cinemas "
-            },
-            {
-              "text": "Cinemark",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " confirmou que o filme "
-            },
-            {
-              "text": "Umamusume — Pretty Derby – O Início de uma Nova Era ",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": "(Beginning of a New Era) ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "estreia nas salas do circuito na próxima quinta (17). Os horários e as salas já estão disponíveis em seu "
-            },
-            {
-              "text": "site oficial",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.cinemark.com.br/filme/umamusume-pretty-derby"
-            },
-            {
-              "text": ", podendo sofrer alterações sem aviso prévio, e constam "
-            },
-            {
-              "text": "apenas com sessões legendadas",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Como você viu aqui, no início deste mês a Cinemark obteve o registro de classificação indicativa do filme como recomendado para maiores de 10 anos.",
-          "runs": [
-            {
-              "text": "Como"
-            },
-            {
-              "text": " você viu aqui",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/09/04/cinemark-cadastra-distribuicao-do-filme-de-umamusume-pretty-derby/"
-            },
-            {
-              "text": ", no início deste mês a Cinemark obteve o registro de classificação indicativa do filme como recomendado para maiores de 10 anos."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Um trailer legendado foi divulgado no Instagram do Cinemark:",
-          "runs": [
-            {
-              "text": "Um trailer legendado foi divulgado no Instagram do Cinemark:"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "View this post on Instagram",
-          "runs": [
-            {
-              "text": " View this post on Instagram ",
-              "href": "https://www.instagram.com/reel/DdKrSD9FUYm/?utm_source=ig_embed&utm_campaign=loading"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Vale destacar que a estreia do longa é no mesmo dia do novo Resident Evil e seria também a data de One Piece – O Filme — porém este foi adiado para a próxima semana, chegando no dia 24 de setembro.",
-          "runs": [
-            {
-              "text": "Vale destacar que a estreia do longa é no mesmo dia do novo"
-            },
-            {
-              "text": " Resident Evil ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "e seria também a data de "
-            },
-            {
-              "text": "One Piece – O Filme ",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/28/one-piece-1o-filme-vai-ser-exibido-dublado-nos-cinemas/"
-            },
-            {
-              "text": "— porém este foi adiado para a próxima semana, chegando no dia 24 de setembro."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Essa publicação foi atualizada em 15 de setembro de 2026 para corrigir a informação da estreia de One Piece.",
-          "runs": [
-            {
-              "text": "Essa publicação foi atualizada em 15 de setembro de 2026 para corrigir a informação da estreia de One Piece.",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            }
-          ],
-          "level": 4
-        },
-        {
-          "type": "heading",
-          "text": "Onde assistir?",
-          "runs": [
-            {
-              "text": "Onde assistir?"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Mesmo com o Cinemark estando presente em diversas cidades pelo país, nem todas receberão o longa, nem mesmo as capitais. Para ajudar a saber se o filme está programado para sua cidade, fizemos a pequena lista abaixo:",
-          "runs": [
-            {
-              "text": "Mesmo com o Cinemark estando presente em diversas cidades pelo país, nem todas receberão o longa, nem mesmo as capitais. Para ajudar a saber se o filme está programado para sua cidade, fizemos a pequena lista abaixo:"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Distrito Federal",
-          "runs": [
-            {
-              "text": "Distrito Federal",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Brasília — Shopping Pier 21",
-              "runs": [
-                {
-                  "text": "Brasília — Shopping Pier 21"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Mato Grosso do Sul",
-          "runs": [
-            {
-              "text": "Mato Grosso do Sul",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Campo Grande — Shopping Campo Grande",
-              "runs": [
-                {
-                  "text": "Campo Grande — Shopping Campo Grande"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Paraná",
-          "runs": [
-            {
-              "text": "Paraná",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Curitiba — Shopping Mueller",
-              "runs": [
-                {
-                  "text": "Curitiba — Shopping Mueller"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Pernambuco",
-          "runs": [
-            {
-              "text": "Pernambuco",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Recife — Shopping RioMar Recife",
-              "runs": [
-                {
-                  "text": "Recife — Shopping RioMar Recife"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Rio de Janeiro",
-          "runs": [
-            {
-              "text": "Rio de Janeiro",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Niterói — Plaza Shopping Niterói",
-              "runs": [
-                {
-                  "text": "Niterói — Plaza Shopping Niterói"
-                }
-              ]
-            },
-            {
-              "text": "Rio de Janeiro — Botafogo Praia Shopping",
-              "runs": [
-                {
-                  "text": "Rio de Janeiro — Botafogo Praia Shopping"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "São Paulo",
-          "runs": [
-            {
-              "text": "São Paulo",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Guarulhos — Internacional Shopping Guarulhos",
-              "runs": [
-                {
-                  "text": "Guarulhos — Internacional Shopping Guarulhos"
-                }
-              ]
-            },
-            {
-              "text": "São Paulo — Shopping Market Place / Shopping Metrô Santa Cruz / Shopping Metrô Tatuapé",
-              "runs": [
-                {
-                  "text": "São Paulo — Shopping Market Place / Shopping Metrô Santa Cruz / Shopping Metrô Tatuapé"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=zgupmgLe5No",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/zgupmgLe5No"
-        },
-        {
-          "type": "paragraph",
-          "text": "Umamusume – Pretty Derby – O Início de uma Nova Era é uma história independente em relação à série de TV ‘Pretty Derby’, sendo produzida pelo estúdio CygamesPictures, com direção de Ken Yamamoto e roteiro de Kiyoko Yoshimura. Na trama, o sonho de consumo de qualquer garota-cavalo é chegar ao topo da Twinkle Series. Para Jungle Pocket, que só corria de brincadeira, essa ficha só cai de verdade após presenciar um show inesquecível de Fuji Kiseki nas pistas. Esbanjando moral e determinação, ela logo emplaca vitórias que a levam aos torneios de elite.",
-          "runs": [
-            {
-              "text": "Umamusume – Pretty Derby – O Início de uma Nova Era",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é uma história independente em relação à série de TV"
-            },
-            {
-              "text": " ‘Pretty Derby’",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", sendo produzida pelo estúdio "
-            },
-            {
-              "text": "CygamesPictures",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com direção de "
-            },
-            {
-              "text": "Ken Yamamoto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e roteiro de "
-            },
-            {
-              "text": "Kiyoko Yoshimura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Na trama, o sonho de consumo de qualquer garota-cavalo é chegar ao topo da Twinkle Series. Para Jungle Pocket, que só corria de brincadeira, essa ficha só cai de verdade após presenciar um show inesquecível de Fuji Kiseki nas pistas. Esbanjando moral e determinação, ela logo emplaca vitórias que a levam aos torneios de elite."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Só que a coisa fica séria quando ela divide a pista na sua primeira prova de nível G1 com Agnes Tachyon, uma prodígio genial e excêntrica. Ao sentir o peso do talento da rival, Jungle Pocket não se abala: transforma o choque em obsessão e jura dar o troco vencendo a lendária Tríplice Coroa. Nem mesmo a imprevisibilidade do esporte vai impedir seu objetivo de desbancar Tachyon e fazer história.",
-          "runs": [
-            {
-              "text": "Só que a coisa fica séria quando ela divide a pista na sua primeira prova de nível G1 com Agnes Tachyon, uma prodígio genial e excêntrica. Ao sentir o peso do talento da rival, Jungle Pocket não se abala: transforma o choque em obsessão e jura dar o troco vencendo a lendária Tríplice Coroa. Nem mesmo a imprevisibilidade do esporte vai impedir seu objetivo de desbancar Tachyon e fazer história."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Umamusume é uma franquia multimídia da Cygames, já possuindo vários mangás e temporadas de animê — a série ‘Pretty Derby’ está completa na Crunchyroll, enquanto o spin-off ‘Cinderella Gray’ está pelo Prime Video e gratuitamente pelo Bandplay e YouTube. O nome traduzido, “Garotas-Cavalo”, já dá uma dica do conteúdo da série: são garotas com rabo e orelhas de cavalo tentando se tornar grandes corredoras.",
-          "runs": [
-            {
-              "text": "Umamusume",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é uma franquia multimídia da Cygames, já possuindo vários mangás e temporadas de animê — a série"
-            },
-            {
-              "text": " ‘Pretty Derby’",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " está completa na Crunchyroll, enquanto o spin-off "
-            },
-            {
-              "text": "‘Cinderella Gray’",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " está pelo Prime Video e gratuitamente pelo Bandplay e "
-            },
-            {
-              "text": "YouTube",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.youtube.com/watch?v=LKjvc3p2lgg&list=PLhGamQZtJ7K9aElhFk89DyndS6JDvLh7z"
-            },
-            {
-              "text": ". O nome traduzido,"
-            },
-            {
-              "text": " “Garotas-Cavalo”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", já dá uma dica do conteúdo da série: são garotas com rabo e orelhas de cavalo tentando se tornar grandes corredoras."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Veja mais:",
-          "runs": [
-            {
-              "text": "Veja mais:",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            }
-          ],
-          "level": 4
-        },
-        {
-          "type": "paragraph",
-          "text": "⇒ Umamusume, a série que não recebeu nenhum material pornográfico na Comiket | Artigo",
-          "runs": [
-            {
-              "text": "⇒ ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
-            },
-            {
-              "text": "Umamusume",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
-            },
-            {
-              "text": ", a série que não recebeu nenhum material pornográfico na Comiket | Artigo",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Cinemark",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Cinemark",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.instagram.com/p/DdKrSD9FUYm/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-14T15:01:50.000Z",
-      "updatedAt": "2026-09-15T20:47:50.000Z",
-      "expiresAt": "2026-09-21T15:01:50.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/14/umamusume-filme-estreia-na-rede-cinemark-esta-semana",
-          "publishedAt": "2026-09-14T15:01:50.000Z",
-          "author": "Jean Clemente"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 523,
-      "qualityScore": 0.964,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 29,
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "contentMode": "full",
