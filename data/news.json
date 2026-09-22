@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T19:54:33.536Z",
+  "generatedAt": "2026-09-22T22:51:13.288Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -60,14 +60,953 @@
     "newStories": 19,
     "fullArticles": 19,
     "previewArticles": 0,
-    "avgWords": 436,
+    "avgWords": 397,
     "withHeroImage": 19,
-    "withOrderedMedia": 18,
+    "withOrderedMedia": 17,
     "skippedTranslation": 0,
     "skippedQuality": 25,
-    "durationMs": 3321
+    "durationMs": 5009
   },
   "items": [
+    {
+      "id": "jbox-834c6b18",
+      "slug": "panini-anuncia-versao-remasterizada-de-x-men-o-manga-jbox-834c6b18",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Panini anuncia versão remasterizada de ‘X-Men: O Mangá’",
+      "originalTitle": "Panini anuncia versão remasterizada de ‘X-Men: O Mangá’",
+      "summary": "A Panini vai lançar no Brasil a versão “remasterizada” de X-Men: o Mangá, publicação original da década de 1990.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Mangá",
+        "mangá de x-men",
+        "Panini",
+        "X-Men",
+        "X-Men Manga",
+        "X-Men: o Mangá",
+        "X-Men: O Mangá Remasterizado"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/22/panini-anuncia-versao-remasterizada-de-x-men-o-manga",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/22/panini-anuncia-versao-remasterizada-de-x-men-o-manga",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/xmen-manga-ilustracaojp-destacada.jpg",
+      "mediaQuery": "Panini anuncia versão remasterizada de ‘X-Men: O Mangá’",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/X-Men-o-manga.png",
+          "alt": "Capa da nova versão de X-Men: O Mangá",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Panini vai lançar no Brasil a versão “remasterizada” de X-Men: o Mangá, publicação original da década de 1990.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " vai lançar no Brasil a versão “remasterizada” de "
+            },
+            {
+              "text": "X-Men: o Mangá",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", publicação original da década de 1990."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O primeiro volume, com capa cartão e 512 páginas, está em pré-venda no site da editora pelo valor de R$ 99,90, com envio previsto para a segunda quinzena do mês de novembro.",
+          "runs": [
+            {
+              "text": "O primeiro volume, com capa cartão e "
+            },
+            {
+              "text": "512 páginas",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", está em "
+            },
+            {
+              "text": "pré-venda no site da editora",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/links/NCylc8wpltjPGihbHId8Jyv9I9BCeV.k.MZUcKF_BKZoPF3cE22ik_UuLL9J2q8eHw/x-men-o-manga-remasterizado-vol-01/post/"
+            },
+            {
+              "text": " pelo valor de "
+            },
+            {
+              "text": "R$ 99,90",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com envio previsto para a segunda quinzena do mês de novembro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira a capa abaixo:",
+          "runs": [
+            {
+              "text": "Confira a capa abaixo:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/X-Men-o-manga.png",
+          "alt": "Capa da nova versão de X-Men: O Mangá"
+        },
+        {
+          "type": "paragraph",
+          "text": "Capa da nova versão é a mesma da edição em inglês, e destaca Magneto. | Panini/Divulgação",
+          "runs": [
+            {
+              "text": "Capa da nova versão é a mesma da edição em inglês, e destaca Magneto. | Panini/Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Segundo a sinopse do site,",
+          "runs": [
+            {
+              "text": "Segundo a sinopse do site,"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "Jubilation Lee é uma adolescente com um segredo: ela é uma mutante, o próximo nível da evolução humana, e tem poderes fantásticos. Tudo que ela quer é uma vida normal, com suas idas ao shopping para manter distância de seus pais. Mas, quando os robôs caçadores de mutantes chamados Sentinelas vão atrás dela, essa vida normal fica ainda mais longe de seu alcance! Então, Jubileu conhece os X-Men: os heróis mutantes odiados e temidos pelo mundo que juraram proteger… Nesta série, em sua clássica versão mangá!",
+          "runs": [
+            {
+              "text": "Jubilation Lee é uma adolescente com um segredo: ela é uma mutante, o próximo nível da evolução humana, e tem poderes fantásticos. Tudo que ela quer é uma vida normal, com suas idas ao shopping para manter distância de seus pais. Mas, quando os robôs caçadores de mutantes chamados Sentinelas vão atrás dela, essa vida normal fica ainda mais longe de seu alcance! Então, Jubileu conhece os X-Men: os heróis mutantes odiados e temidos pelo mundo que juraram proteger… Nesta série, em sua clássica versão mangá!"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O mangá de X-Men é de autoria de diversos artistas do Japão, como Hirofumi Ichikawa, Hiroshi Higuchi, Koji Yasue, Miyako Kojima, Rei Nakahara e Reiji Hagiwara, e é inspirado na série animada dos personagens da década de 1990 — e que mais recentemente ganhou continuação com a série X-Men ’97.",
+          "runs": [
+            {
+              "text": "O mangá de "
+            },
+            {
+              "text": "X-Men",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é de autoria de diversos artistas do Japão, como "
+            },
+            {
+              "text": "Hirofumi Ichikawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Hiroshi Higuchi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Koji Yasue",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Miyako Kojima",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Rei Nakahara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Reiji Hagiwara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e é inspirado na série animada dos personagens da década de 1990 — e que mais recentemente ganhou continuação com a série "
+            },
+            {
+              "text": "X-Men ’97",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "▶️ A tentativa de emplacar o desenho dos ‘X-Men’ no Japão dos anos 1990",
+          "runs": [
+            {
+              "text": "▶️ ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "A tentativa de emplacar o desenho dos ‘X-Men’ no Japão dos anos 1990",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2025/12/10/a-tentativa-de-emplacar-o-desenho-dos-x-men-no-japao-dos-anos-90/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Brasil, X-Men Mangá chegou a ter dois volumes publicados em meados de 1998, pela Mythos Editora. Já a versão “remasterizada” que chega ao território nacional este ano foi lançada em inglês pela VIZ Media, em novembro de 2024.",
+          "runs": [
+            {
+              "text": "No Brasil, "
+            },
+            {
+              "text": "X-Men Mangá",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " chegou a ter dois volumes publicados em meados de 1998, pela "
+            },
+            {
+              "text": "Mythos Editora",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Já a versão "
+            },
+            {
+              "text": "“remasterizada”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " que chega ao território nacional este ano foi lançada em inglês pela"
+            },
+            {
+              "text": " VIZ Media",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", em novembro de 2024."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Vale lembrar que, antes dos mutantes, a Marvel tentou emplacar outros personagens no Japão com versões em mangá, incluindo os títulos Spider-Man: The Manga e Hulk: The Manga, ambos lançados no país entre 1970 e 1971. No Brasil, a Mythos chegou a publicar edições do mangá do Homem-Aranha, também em 1998.",
+          "runs": [
+            {
+              "text": "Vale lembrar que, antes dos mutantes, a "
+            },
+            {
+              "text": "Marvel",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " tentou emplacar outros personagens no Japão com versões em mangá, incluindo os títulos "
+            },
+            {
+              "text": "Spider-Man: The Manga",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Hulk: The Manga",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", ambos lançados no país entre 1970 e 1971. No Brasil, a Mythos chegou a publicar edições do mangá do Homem-Aranha, também em 1998."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site oficial da Panini",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Site oficial da Panini",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://panini.com.br/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-22T21:24:54.000Z",
+      "updatedAt": "2026-09-22T21:25:20.000Z",
+      "expiresAt": "2026-09-29T21:24:54.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/22/panini-anuncia-versao-remasterizada-de-x-men-o-manga",
+          "publishedAt": "2026-09-22T21:24:54.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 338,
+      "qualityScore": 0.805,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 14,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-d403b387",
+      "slug": "injustice-3-ganha-novo-rumor-com-supergirl-e-batwoman-animenew-d403b387",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Injustice 3 ganha novo rumor com Supergirl e Batwoman",
+      "originalTitle": "Injustice 3 ganha novo rumor com Supergirl e Batwoman",
+      "summary": "Um novo vazamento reforça a existência do jogo Injustice 3, indicando que a NetherRealm pode estar trabalhando no próximo jogo da franquia e citando dois personagens.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Games",
+        "Notícias",
+        "Injustice 3"
+      ],
+      "url": "https://animenew.com.br/injustice-3-vazamento-supergirl-batwoman",
+      "sourceUrl": "https://animenew.com.br/injustice-3-vazamento-supergirl-batwoman",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Injustice-3-ganha-novo-rumor-com-Supergirl-e-Batwoman.webp",
+      "mediaQuery": "Injustice 3 ganha novo rumor com Supergirl e Batwoman",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Um novo vazamento reforça a existência do jogo Injustice 3, indicando que a NetherRealm pode estar trabalhando no próximo jogo da franquia e citando dois personagens.",
+          "runs": [
+            {
+              "text": "Um novo vazamento reforça a existência do jogo "
+            },
+            {
+              "text": "Injustice 3",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", indicando que a "
+            },
+            {
+              "text": "NetherRealm",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " pode estar trabalhando no próximo jogo da franquia e citando dois personagens."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Dragon Ball Xenoverse 3 parece não ter evoluído",
+              "runs": [
+                {
+                  "text": "Dragon Ball Xenoverse 3 parece não ter evoluído",
+                  "href": "https://animenew.com.br/dragon-ball-xenoverse-3-demo"
+                }
+              ]
+            },
+            {
+              "text": "Gachiakuta: BREAKOUT ganha trailer de gameplay",
+              "runs": [
+                {
+                  "text": "Gachiakuta: BREAKOUT ganha trailer de gameplay",
+                  "href": "https://animenew.com.br/gachiakuta-breakout-trailer-gameplay"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Segundo informações do MP1st, um currículo de um dublê menciona sessões de captura de movimento realizadas para Injustice 3. O profissional já trabalhou anteriormente com a NetherRealm, o que dá maior peso ao registro. Até o momento, porém, Warner Bros. e o estúdio não anunciaram o projeto oficialmente.",
+          "runs": [
+            {
+              "text": "Segundo informações do MP1st, um currículo de um dublê menciona sessões de captura de movimento realizadas para "
+            },
+            {
+              "text": "Injustice 3",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O profissional já trabalhou anteriormente com a NetherRealm, o que dá maior peso ao registro. Até o momento, porém, "
+            },
+            {
+              "text": "Warner Bros",
+              "href": "https://animenew.com.br/tag/warner-bros/"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e o estúdio não anunciaram o projeto oficialmente."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre os nomes mencionados no currículo estão Supergirl e Batwoman. A presença de Supergirl não seria uma grande surpresa, já que a personagem teve papel importante em Injustice 2, lançado em 2017.",
+          "runs": [
+            {
+              "text": "Entre os nomes mencionados no currículo estão "
+            },
+            {
+              "text": "Supergirl",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Batwoman",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A presença de Supergirl não seria uma grande surpresa, já que a personagem teve papel importante em "
+            },
+            {
+              "text": "Injustice 2",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", lançado em 2017."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Batwoman pode retornar",
+          "runs": [
+            {
+              "text": "Batwoman pode retornar"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Batwoman é a principal novidade do novo vazamento. Nos quadrinhos da franquia, que são considerados parte do universo dos jogos, a personagem morreu. Ainda assim, seu retorno poderia acontecer de diferentes maneiras, incluindo uma nova pessoa assumindo o manto ou uma trama envolvendo viagem no tempo.",
+          "runs": [
+            {
+              "text": "Batwoman é a principal novidade do novo vazamento. Nos quadrinhos da franquia, que são considerados parte do universo dos jogos, a personagem morreu. Ainda assim, seu retorno poderia acontecer de diferentes maneiras, incluindo uma nova pessoa assumindo o manto ou uma trama envolvendo viagem no tempo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim Caso o projeto realmente esteja em produção, Injustice 3 marcaria o retorno da NetherRealm ao universo da DC após anos concentrada em Mortal Kombat.",
+          "runs": [
+            {
+              "text": "Por fim Caso o projeto realmente esteja em produção, "
+            },
+            {
+              "text": "Injustice 3",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " marcaria o retorno da NetherRealm ao universo da DC após anos concentrada em "
+            },
+            {
+              "text": "Mortal Kombat",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Injustice 3 ganha novo rumor com Supergirl e Batwoman.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Injustice 3 ganha novo rumor com Supergirl e Batwoman",
+              "href": "https://animenew.com.br/injustice-3-vazamento-supergirl-batwoman/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-22T21:23:41.000Z",
+      "updatedAt": "2026-09-22T21:23:41.000Z",
+      "expiresAt": "2026-09-29T21:23:41.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/injustice-3-vazamento-supergirl-batwoman",
+          "publishedAt": "2026-09-22T21:23:41.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 216,
+      "qualityScore": 0.964,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 8,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-85e4000c",
+      "slug": "grand-blue-dreaming-e-renovado-para-4-temporada-animenew-85e4000c",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Grand Blue Dreaming é renovado para 4ª temporada",
+      "originalTitle": "Grand Blue Dreaming é renovado para 4ª temporada",
+      "summary": "O anime Grand Blue Dreaming terá uma quarta temporada. O anúncio aconteceu nesta terça-feira (22) pelo site oficial da série, logo após a exibição do episódio final da terceira temporada.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Grand Blue Dreaming"
+      ],
+      "url": "https://animenew.com.br/grand-blue-dreaming-4-temporada",
+      "sourceUrl": "https://animenew.com.br/grand-blue-dreaming-4-temporada",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Grand-Blue-Dreaming-e-renovado-para-4a-temporada.webp",
+      "mediaQuery": "Grand Blue Dreaming é renovado para 4ª temporada",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Grand-Blue-Dreaming-quarta-temporada.webp",
+          "alt": "Grand Blue Dreaming quarta temporada",
+          "caption": "© 井上堅二・吉岡公威・講談社／ぐらんぶる３製作委員会"
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Grand Blue Dreaming terá uma quarta temporada. O anúncio aconteceu nesta terça-feira (22) pelo site oficial da série, logo após a exibição do episódio final da terceira temporada.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Grand Blue Dreaming",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " terá uma quarta temporada. O anúncio aconteceu nesta terça-feira (22) pelo site oficial da série, logo após a exibição do episódio final da terceira temporada."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Daemons of the Shadow Realm terá 2ª temporada",
+              "runs": [
+                {
+                  "text": "Daemons of the Shadow Realm terá 2ª temporada",
+                  "href": "https://animenew.com.br/daemons-of-the-shadow-realm-2-temporada"
+                }
+              ]
+            },
+            {
+              "text": "Alya Sometimes Hides Feelings revela teaser da 2ª temporada",
+              "runs": [
+                {
+                  "text": "Alya Sometimes Hides Feelings revela teaser da 2ª temporada",
+                  "href": "https://animenew.com.br/alya-sometimes-hides-feelings-russian-2-temporada"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A terceira temporada terminou com seu 12º episódio na segunda-feira. A produção estreou em 6 de julho nos canais Tokyo MX e BS11, levando a história para Palau, em uma mudança inédita de cenário, já que a trama passou a se desenvolver fora do Japão.",
+          "runs": [
+            {
+              "text": "A terceira temporada terminou com seu 12º episódio na segunda-feira. A produção estreou em 6 de julho nos canais Tokyo MX e BS11, levando a história para Palau, em uma mudança inédita de cenário, já que a trama passou a se desenvolver fora do Japão."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Grand-Blue-Dreaming-quarta-temporada.webp",
+          "alt": "Grand Blue Dreaming quarta temporada",
+          "caption": "© 井上堅二・吉岡公威・講談社／ぐらんぶる３製作委員会"
+        },
+        {
+          "type": "paragraph",
+          "text": "A equipe ainda não revelou a data de estreia da quarta temporada.",
+          "runs": [
+            {
+              "text": "A equipe ainda não revelou a data de estreia da quarta temporada."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de Grand Blue Dreaming",
+          "runs": [
+            {
+              "text": "História de "
+            },
+            {
+              "text": "Grand Blue Dreaming",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A série acompanha Iori Kitahara, um jovem que se muda para uma cidade litorânea para começar a faculdade. No novo ambiente, ele acaba envolvido com mergulho, novas amizades e diversas situações caóticas.",
+          "runs": [
+            {
+              "text": "A série acompanha Iori Kitahara, um jovem que se muda para uma cidade litorânea para começar a faculdade. No novo ambiente, ele acaba envolvido com mergulho, novas amizades e diversas situações caóticas.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Kenji Inoue e Kimitake Yoshioka lançaram o mangá na revista Good! Afternoon, da Kodansha, em abril de 2014. Assim a obra continua em publicação e também ganhou uma adaptação em filme live-action, lançada no Japão em agosto de 2020.",
+          "runs": [
+            {
+              "text": "Kenji Inoue",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Kimitake Yoshioka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " lançaram o "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " na revista "
+            },
+            {
+              "text": "Good! Afternoon",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", da "
+            },
+            {
+              "text": "Kodansha",
+              "href": "https://animenew.com.br/tag/kodansha/"
+            },
+            {
+              "text": ", em abril de 2014. Assim a obra continua em publicação e também ganhou uma adaptação em "
+            },
+            {
+              "text": "filme live-action",
+              "href": "https://animenew.com.br/live-action"
+            },
+            {
+              "text": ", lançada no Japão em agosto de 2020."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anime estreou em julho de 2018 e teve sua segunda temporada encerrada em setembro de 2025. Ademais a terceira fase começou em julho de 2026 e agora dá lugar à próxima temporada.",
+          "runs": [
+            {
+              "text": "O anime estreou em julho de 2018 e teve sua segunda temporada encerrada em setembro de 2025. Ademais a terceira fase começou em julho de 2026 e agora dá lugar à próxima temporada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://grandblue-anime.com/news/index01000000.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Grand Blue Dreaming é renovado para 4ª temporada.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Grand Blue Dreaming é renovado para 4ª temporada",
+              "href": "https://animenew.com.br/grand-blue-dreaming-4-temporada/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-22T20:45:39.000Z",
+      "updatedAt": "2026-09-22T20:45:39.000Z",
+      "expiresAt": "2026-09-29T20:45:39.000Z",
+      "category": "Episódios",
+      "eventType": "EPISODE",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/grand-blue-dreaming-4-temporada",
+          "publishedAt": "2026-09-22T20:45:39.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 238,
+      "qualityScore": 0.97,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-b98a2822",
       "slug": "anime-tensei-elf-revela-primeiros-minutos-com-data-de-lancamento-animenew-b98a2822",
@@ -3764,541 +4703,6 @@
       }
     },
     {
-      "id": "animenew-e34386a5",
-      "slug": "be-forever-yamato-rebel-3199-revela-trailer-do-setimo-filme-animenew-e34386a5",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Be Forever Yamato: Rebel 3199 revela trailer do sétimo filme",
-      "originalTitle": "Be Forever Yamato: Rebel 3199 revela trailer do sétimo filme",
-      "summary": "A Bandai Namco Filmworks divulgou o trailer principal e uma nova arte de Be Forever Yamato: Rebel 3199 (Star Blazers: Be Forever Yamato – Rebel 3199), sétimo e último filme do projeto que reimagina a franquia Space Battleship Yamato.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Cinema",
-        "Notícias",
-        "Be Forever Yamato"
-      ],
-      "url": "https://animenew.com.br/be-forever-yamato-rebel-3199-setimo-filme",
-      "sourceUrl": "https://animenew.com.br/be-forever-yamato-rebel-3199-setimo-filme",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Be-Forever-Yamato-Rebel-3199-revela-trailer-do-setimo-filme.webp",
-      "mediaQuery": "Be Forever Yamato: Rebel 3199 revela trailer do sétimo filme",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/7th-Be-Forever-Yamato-Rebel-3199.webp",
-          "alt": "7th Be Forever Yamato: Rebel 3199",
-          "caption": "© 西﨑義展／宇宙戦艦ヤマト3199製作委員会"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/arYxrKukR5c"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A Bandai Namco Filmworks divulgou o trailer principal e uma nova arte de Be Forever Yamato: Rebel 3199 (Star Blazers: Be Forever Yamato – Rebel 3199), sétimo e último filme do projeto que reimagina a franquia Space Battleship Yamato.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Bandai Namco Filmworks",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " divulgou o trailer principal e uma nova arte de "
-            },
-            {
-              "text": "Be Forever Yamato: Rebel 3199",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Star Blazers: Be Forever Yamato – Rebel 3199",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "), sétimo e último filme do projeto que reimagina a franquia Space Battleship Yamato."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Shangri-La Frontier: 3ª temporada estreia em janeiro de 2027",
-              "runs": [
-                {
-                  "text": "Shangri-La Frontier: 3ª temporada estreia em janeiro de 2027",
-                  "href": "https://animenew.com.br/shangri-la-frontier-3-temporada-janeiro"
-                }
-              ]
-            },
-            {
-              "text": "Crunchyroll revela calendário de animes do outono de 2026",
-              "runs": [
-                {
-                  "text": "Crunchyroll revela calendário de animes do outono de 2026",
-                  "href": "https://animenew.com.br/animes-outono-2026-crunchyroll-calendario"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Intitulado Nijiiro no Rinne, o longa chega aos cinemas japoneses em 30 de outubro de 2026. Sendo assim o character designer Nobuteru Yūki, responsável pelo visual dos personagens, também assina a nova ilustração promocional.",
-          "runs": [
-            {
-              "text": "Intitulado "
-            },
-            {
-              "text": "Nijiiro no Rinne",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", o longa chega aos "
-            },
-            {
-              "text": "cinemas japoneses",
-              "href": "https://animenew.com.br/cinema"
-            },
-            {
-              "text": " em "
-            },
-            {
-              "text": "30 de outubro de 2026",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Sendo assim o character designer Nobuteru Yūki, responsável pelo visual dos personagens, também assina a nova ilustração promocional."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=arYxrKukR5c",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/arYxrKukR5c"
-        },
-        {
-          "type": "paragraph",
-          "text": "A história de Be Forever Yamato: Rebel 3199 é apresentada em sete filmes. No Brasil, o projeto também é conhecido por meio do título Star Blazers: Space Battleship Yamato 3199, disponibilizado pela Crunchyroll.",
-          "runs": [
-            {
-              "text": "A história de Be Forever Yamato: Rebel 3199 é apresentada em sete filmes. No Brasil, o projeto também é conhecido por meio do título Star Blazers: Space Battleship Yamato 3199, disponibilizado pela Crunchyroll."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/7th-Be-Forever-Yamato-Rebel-3199.webp",
-          "alt": "7th Be Forever Yamato: Rebel 3199",
-          "caption": "© 西﨑義展／宇宙戦艦ヤマト3199製作委員会"
-        },
-        {
-          "type": "heading",
-          "text": "Produção",
-          "runs": [
-            {
-              "text": "Produção"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Naomiichi Yamato dirige a produção, enquanto Harutoshi Fukui atua como diretor supervisor, roteirista-chefe e responsável pelos roteiros. Hideki Oka também retorna como coautor.",
-          "runs": [
-            {
-              "text": "Naomiichi Yamato",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " dirige a produção, enquanto "
-            },
-            {
-              "text": "Harutoshi Fukui",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " atua como diretor supervisor, roteirista-chefe e responsável pelos roteiros. "
-            },
-            {
-              "text": "Hideki Oka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " também retorna como coautor."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Nobuteru Yūki novamente cuida do design dos personagens. A trilha sonora reúne Akira Miyagawa e Shū Kanematsu, com músicas do falecido Hiroshi Miyagawa, compositor da série original.",
-          "runs": [
-            {
-              "text": "Nobuteru Yūki novamente cuida do design dos personagens. A trilha sonora reúne Akira Miyagawa e Shū Kanematsu, com músicas do falecido Hiroshi Miyagawa, compositor da série original."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim o sexto filme, Aoi Meikyū, estreou no Japão em 26 de junho. Ademais a produção é uma sequência direta de Space Battleship Yamato 2205: The New Voyage Part II: Stasha, lançado em 2022.",
-          "runs": [
-            {
-              "text": "Por fim o sexto filme, "
-            },
-            {
-              "text": "Aoi Meikyū",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", estreou no Japão em 26 de junho. Ademais a produção é uma sequência direta de "
-            },
-            {
-              "text": "Space Battleship Yamato 2205: The New Voyage Part II: Stasha",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", lançado em 2022."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Be Forever Yamato: Rebel 3199 revela trailer do sétimo filme.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Be Forever Yamato: Rebel 3199 revela trailer do sétimo filme",
-              "href": "https://animenew.com.br/be-forever-yamato-rebel-3199-setimo-filme/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-18T01:16:53.000Z",
-      "updatedAt": "2026-09-18T01:16:53.000Z",
-      "expiresAt": "2026-09-25T01:16:53.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/be-forever-yamato-rebel-3199-setimo-filme",
-          "publishedAt": "2026-09-18T01:16:53.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 234,
-      "qualityScore": 0.91,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-e05f3508",
-      "slug": "firefly-wedding-revela-musica-de-abertura-do-anime-animenew-e05f3508",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Firefly Wedding revela música de abertura do anime",
-      "originalTitle": "Firefly Wedding revela música de abertura do anime",
-      "summary": "O anime de Firefly Wedding revelou nesta música de abertura “Period”, interpretada pela cantora iri. A faixa marca sua estreia em uma produção da série. A novidade foi acompanhada por um novo vídeo promocional, que apresenta uma prévia da canção.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Crunchyroll",
-        "David Production",
-        "Firefly Wedding"
-      ],
-      "url": "https://animenew.com.br/firefly-wedding-anime-musica-abertura-iri",
-      "sourceUrl": "https://animenew.com.br/firefly-wedding-anime-musica-abertura-iri",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Firefly-Wedding-revela-musica-de-abertura-do-anime.webp",
-      "mediaQuery": "Firefly Wedding revela música de abertura do anime",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/Ex9LrBK-7hk"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime de Firefly Wedding revelou nesta música de abertura “Period”, interpretada pela cantora iri. A faixa marca sua estreia em uma produção da série. A novidade foi acompanhada por um novo vídeo promocional, que apresenta uma prévia da canção.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " de "
-            },
-            {
-              "text": "Firefly Wedding",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " revelou nesta música de abertura “Period”, interpretada pela cantora iri. A faixa marca sua estreia em uma produção da série. A novidade foi acompanhada por um novo vídeo promocional, que apresenta uma prévia da canção."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Shangri-La Frontier: 3ª temporada estreia em janeiro de 2027",
-              "runs": [
-                {
-                  "text": "Shangri-La Frontier: 3ª temporada estreia em janeiro de 2027",
-                  "href": "https://animenew.com.br/shangri-la-frontier-3-temporada-janeiro"
-                }
-              ]
-            },
-            {
-              "text": "Crunchyroll revela calendário de animes do outono de 2026",
-              "runs": [
-                {
-                  "text": "Crunchyroll revela calendário de animes do outono de 2026",
-                  "href": "https://animenew.com.br/animes-outono-2026-crunchyroll-calendario"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Estreia e produção",
-          "runs": [
-            {
-              "text": "Estreia e produção"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A adaptação estreia em 9 de outubro, no bloco Noitamina, da Fuji TV, com exibição às sextas-feiras, às 23h30. A Crunchyroll transmitirá o anime de Firefly Wedding simultaneamente.",
-          "runs": [
-            {
-              "text": "A adaptação estreia em "
-            },
-            {
-              "text": "9 de outubro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", no bloco Noitamina, da Fuji TV, com exibição às sextas-feiras, às 23h30. A "
-            },
-            {
-              "text": "Crunchyroll",
-              "href": "https://animenew.com.br/tag/crunchyroll/"
-            },
-            {
-              "text": " transmitirá o anime de Firefly Wedding simultaneamente."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=Ex9LrBK-7hk",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/Ex9LrBK-7hk"
-        },
-        {
-          "type": "heading",
-          "text": "Firefly Wedding Personagens",
-          "runs": [
-            {
-              "text": "Firefly Wedding",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " Personagens"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Lynn interpreta Satoko Kirigaya, enquanto Kōki Uchiyama dá voz a Shinpei Gotō. O elenco também conta com Kent Itō como Kōtarō Ogawa e Kenjirō Tsuda como Mitsueda.",
-          "runs": [
-            {
-              "text": "Lynn interpreta Satoko Kirigaya, enquanto Kōki Uchiyama dá voz a Shinpei Gotō. O elenco também conta com Kent Itō como Kōtarō Ogawa e Kenjirō Tsuda como Mitsueda."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Sinopse",
-          "runs": [
-            {
-              "text": "Sinopse"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A história acompanha Satoko, uma jovem nobre gravemente doente que tenta garantir um casamento antes de morrer. Porém, seus planos mudam quando ela se torna alvo do assassino Shinpei e propõe casamento para sobreviver.",
-          "runs": [
-            {
-              "text": "A história acompanha Satoko, uma jovem nobre gravemente doente que tenta garantir um casamento antes de morrer. Porém, seus planos mudam quando ela se torna alvo do assassino Shinpei e propõe casamento para sobreviver.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Takahiro Kamei dirige a produção no estúdio david production, com Yukiko Aikei no design de personagens. Por fim Yūko Kakihara cuida dos roteiros, enquanto NOGRID assina a composição musical. TOOBOE interpreta a música de encerramento, “Yumegokochi”.",
-          "runs": [
-            {
-              "text": "Takahiro Kamei dirige a produção no estúdio "
-            },
-            {
-              "text": "david productio",
-              "href": "https://animenew.com.br/studio/287/david-production"
-            },
-            {
-              "text": "n",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com Yukiko Aikei no design de personagens. Por fim Yūko Kakihara cuida dos roteiros, enquanto NOGRID assina a composição musical. TOOBOE interpreta a música de encerramento, “Yumegokochi”."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Firefly Wedding revela música de abertura do anime.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Firefly Wedding revela música de abertura do anime",
-              "href": "https://animenew.com.br/firefly-wedding-anime-musica-abertura-iri/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-18T01:09:37.000Z",
-      "updatedAt": "2026-09-18T01:09:37.000Z",
-      "expiresAt": "2026-09-25T01:09:37.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/firefly-wedding-anime-musica-abertura-iri",
-          "publishedAt": "2026-09-18T01:09:37.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 1,
-      "wordCount": 210,
-      "qualityScore": 0.907,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
       "id": "jbox-63e1137d",
       "slug": "virada-nerd-2026-kore-yamazaki-autora-de-the-ancient-magus-bride-vem-ao-brasil-para-o-evento-jbox-63e1137d",
       "source": "JBox",
@@ -6549,565 +6953,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-48a2ad6f",
-      "slug": "critica-jaadugar-a-witch-in-mongolia-1-temporada-jbox-48a2ad6f",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Crítica | Jaadugar: a Witch in Mongolia | 1ª temporada",
-      "originalTitle": "Crítica | Jaadugar: a Witch in Mongolia | 1ª temporada",
-      "summary": "Quem acompanha as temporadas sazonais de animês sabe que é impossível ver todos os lançamentos, ao mesmo tempo em que toda nova leva de produções tem alguma joia escondida aqui e ali. Saindo do circuito dos shounens de porradinha, romances e slices of life, um dos destaques da Temporada de Verão de 2026 é Jaadugar: a Witch in Mongolia. Uma produção que começa até meio modesta, mas recompensa quem continua a jornada.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Resenha",
-        "Crítica de Jaadugar",
-        "Crunchyroll",
-        "Jaadugar dublado",
-        "Jaadugar: A Witch in Mongolia",
-        "Tenmaku no Jaadugar",
-        "Tomato Soup",
-        "Uma Bruxa na Mongólia"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/15/critica-jaadugar-a-witch-in-mongolia-1a-temporada",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/15/critica-jaadugar-a-witch-in-mongolia-1a-temporada",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/jbox-critica-destacada-jaadugar.jpg",
-      "mediaQuery": "Crítica | Jaadugar: a Witch in Mongolia | 1ª temporada",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Jaadugar-01.webp",
-          "alt": "Imagem de Jaadugar: a Witch in Mongolia",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Jaadugar-02.webp",
-          "alt": "Imagem de Jaadugar: a Witch in Mongolia",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Jaadugar.jpg",
-          "alt": "Imagem de Jaadugar: a Witch in Mongolia",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/9rGAeOQMitE"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Quem acompanha as temporadas sazonais de animês sabe que é impossível ver todos os lançamentos, ao mesmo tempo em que toda nova leva de produções tem alguma joia escondida aqui e ali. Saindo do circuito dos shounens de porradinha, romances e slices of life, um dos destaques da Temporada de Verão de 2026 é Jaadugar: a Witch in Mongolia. Uma produção que começa até meio modesta, mas recompensa quem continua a jornada.",
-          "runs": [
-            {
-              "text": "Quem acompanha as temporadas sazonais de animês sabe que é impossível ver todos os lançamentos, ao mesmo tempo em que toda nova leva de produções tem alguma joia escondida aqui e ali. Saindo do circuito dos shounens de porradinha, romances e slices of life, um dos destaques da "
-            },
-            {
-              "text": "Temporada de Verão",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " de 2026 é "
-            },
-            {
-              "text": "Jaadugar: a Witch in Mongolia",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ". Uma produção que começa até meio modesta, mas recompensa quem continua a jornada."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Inspirada em uma história real (que você não deve procurar no Google, caso não queira receber spoilers), a trama é situada na região da Pérsia, na época de expansão do império Mongol de Genghis Khan. Nesse contexto, acompanhamos a jovem Sitara, uma escrava que é retirada de seu lar durante uma invasão do exército Mongol, e começa uma jornada em busca de vingança.",
-          "runs": [
-            {
-              "text": "Inspirada em uma história real (que você não deve procurar no Google, caso não queira receber spoilers), a trama é situada na região da Pérsia, na época de expansão do império Mongol de "
-            },
-            {
-              "text": "Genghis Khan",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Nesse contexto, acompanhamos a jovem "
-            },
-            {
-              "text": "Sitara",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", uma escrava que é retirada de seu lar durante uma invasão do exército Mongol, e começa uma jornada em busca de vingança."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A sinopse, por si só, mescla elementos curiosos. Ao mesmo tempo em que uma jornada de vingança contra invasores é algo bem trivial em histórias da cultura pop, o local em que a trama de Jaadugar é situada, e o esmero do estúdio Science Saru em criar algo belo de se acompanhar, tornam este um animê que vale estar na lista de qualquer um que busca algo fora do comum.",
-          "runs": [
-            {
-              "text": "A sinopse, por si só, mescla elementos curiosos. Ao mesmo tempo em que uma jornada de vingança contra invasores é algo bem trivial em histórias da cultura pop, o local em que a trama de "
-            },
-            {
-              "text": "Jaadugar",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é situada, e o esmero do estúdio "
-            },
-            {
-              "text": "Science Saru",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " em criar algo belo de se acompanhar, tornam este um animê que vale estar na lista de qualquer um que busca algo fora do comum."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Visual que confunde, mas enche os olhos",
-          "runs": [
-            {
-              "text": "Visual que confunde, mas enche os olhos"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Jaadugar-01.webp",
-          "alt": "Imagem de Jaadugar: a Witch in Mongolia"
-        },
-        {
-          "type": "paragraph",
-          "text": "As texturas utilizadas nos cenários do animê são de encher os olhos | Science Saru/Reprodução",
-          "runs": [
-            {
-              "text": "As texturas utilizadas nos cenários do animê são de encher os olhos | Science Saru/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Seguindo o traço criado pela autora Tomato Soup no mangá que inspira a produção, Jaadugar: a Witch in Mongolia surpreende em um primeiro momento por suas linhas arredondadas, que dão um ar mais ingênuo aos personagens. Pensando apenas nas imagens do animê, não é surpreendente que alguém passe direto ao achar que se trata de uma história bobinha.",
-          "runs": [
-            {
-              "text": "Seguindo o traço criado pela autora "
-            },
-            {
-              "text": "Tomato Soup",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no mangá que inspira a produção, "
-            },
-            {
-              "text": "Jaadugar: a Witch in Mongolia",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " surpreende em um primeiro momento por suas linhas arredondadas, que dão um ar mais ingênuo aos personagens. Pensando apenas nas imagens do animê, não é surpreendente que alguém passe direto ao achar que se trata de uma história bobinha."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Mas essa percepção inicial é quebrada rapidamente, quando a produção mostra que vai contar uma história repleta de seriedade, com apenas alguns momentos de humor aqui e ali. Quando esse véu é retirado e o peso da narrativa é apresentado, há quase uma sensação de que história e visual não combinam, mas essa estranheza é superada quando o espectador entende exatamente o oposto: ali, tudo se complementa, só não é da forma mais óbvia.",
-          "runs": [
-            {
-              "text": "Mas essa percepção inicial é quebrada rapidamente, quando a produção mostra que vai contar "
-            },
-            {
-              "text": "uma história repleta de seriedade",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com apenas alguns momentos de humor aqui e ali. Quando esse véu é retirado e o peso da narrativa é apresentado, há quase uma sensação de que história e visual não combinam, mas essa estranheza é superada quando o espectador entende exatamente o oposto: ali, tudo se complementa, só não é da forma mais óbvia."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Vale destacar como o Science Saru utilizou contornos, texturas e cores para tornar o mundo de Jaadugar um ambiente vivo. Não somente em relação aos personagens e roupas, mostrados em tela com inúmeros detalhes, mas também quando falamos das paisagens das regiões percorridas por Sitara em sua jornada. Tudo é de encher os olhos, e pode surpreender até quem já é fã de carteirinha do Science Saru em outras produções.",
-          "runs": [
-            {
-              "text": "Vale destacar como o Science Saru utilizou contornos, texturas e cores para tornar o mundo de "
-            },
-            {
-              "text": "Jaadugar",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " um ambiente vivo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Não somente em relação aos personagens e roupas, mostrados em tela com inúmeros detalhes, mas também quando falamos das paisagens das regiões percorridas por Sitara em sua jornada. Tudo é de encher os olhos, e pode surpreender até quem já é fã de carteirinha do Science Saru em outras produções."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Talvez o animê perca algumas pessoas neste caminho de estranheza inicial, mas quem decide ficar, no final das contas, é premiado com episódios que surpreenderam a cada semana, inserindo a protagonista em momentos de perigo real, em um mundo em que a disputa de poder e de aparências pode determinar a vitória ou fracasso de um personagem, ideia, ou até de um clã inteiro.",
-          "runs": [
-            {
-              "text": "Talvez o animê perca algumas pessoas neste caminho de estranheza inicial, mas quem decide ficar, no final das contas, é premiado com episódios que surpreenderam a cada semana, inserindo a protagonista em momentos de perigo real, em um mundo em que a disputa de poder e de aparências pode determinar a vitória ou fracasso de um personagem, ideia, ou até de um clã inteiro."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Sitara, que também é Fátima",
-          "runs": [
-            {
-              "text": "Sitara, que também é Fátima"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Jaadugar-02.webp",
-          "alt": "Imagem de Jaadugar: a Witch in Mongolia"
-        },
-        {
-          "type": "paragraph",
-          "text": "Sabendo que os perigos são iminentes, Sitara usa palavras suaves para influenciar as pessoas ao redor. | Science Saru/Reprodução",
-          "runs": [
-            {
-              "text": "Sabendo que os perigos são iminentes, Sitara usa palavras suaves para influenciar as pessoas ao redor. | Science Saru/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Uma das maiores sacadas de Tomato Soup, e também do animê de Jaadugar, é entender que a mistura entre o que é fofo e o que é perigoso é parte fundamental da construção dos personagens. Ou seja, o visual não está ali apenas para ser bonito, ele também reflete a construção de personalidades, especialmente da jovem Sitara — que, em determinado momento da história, assume o nome de Fátima.",
-          "runs": [
-            {
-              "text": "Uma das maiores sacadas de Tomato Soup, e também do animê de "
-            },
-            {
-              "text": "Jaadugar",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", é entender que a mistura entre o que é fofo e o que é perigoso é parte fundamental da construção dos personagens. Ou seja, "
-            },
-            {
-              "text": "o visual não está ali apenas para ser bonito",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", ele também reflete a construção de personalidades, especialmente da jovem Sitara — que, em determinado momento da história, assume o nome de Fátima."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Apresentada inicialmente como uma escrava sem lar, a jovem entende desde cedo que um sorriso amável e um rostinho bonito podem abrir portas e retirá-la de perigos. Assim, ela segue sua jornada utilizando desses artifícios, e fazendo com que acreditem nela, enquanto seu objetivo inicial é apenas voltar para casa e não precisar servir a ninguém.",
-          "runs": [
-            {
-              "text": "Apresentada inicialmente como uma escrava sem lar, a jovem entende desde cedo que um sorriso amável e um rostinho bonito podem abrir portas e retirá-la de perigos. Assim, ela segue sua jornada utilizando desses artifícios, e fazendo com que acreditem nela, enquanto seu objetivo inicial é apenas voltar para casa e não precisar servir a ninguém."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Porém, quando vê o lugar que passou a chamar de lar ser destruído pelo Império Mongol, os objetivos de Sitara mudam. Agora ela quer vingança, mas é esperta demais para sair apenas gritando isso por aí — na única vez em que tentou agir dessa forma, ela perdeu uma das coisas mais importantes de sua vida. Lição aprendida, ela passa a ler os ambientes e pessoas, quase nunca confiando 100% em alguém para falar sobre os desejos mais profundos de seu coração.",
-          "runs": [
-            {
-              "text": "Porém, quando vê o lugar que passou a chamar de lar ser destruído pelo Império Mongol, os objetivos de Sitara mudam. Agora ela quer vingança, mas é esperta demais para sair apenas gritando isso por aí — na única vez em que tentou agir dessa forma, ela perdeu uma das coisas mais importantes de sua vida. Lição aprendida, ela passa a ler os ambientes e pessoas, quase nunca confiando 100% em alguém para falar sobre os desejos mais profundos de seu coração."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "De muitas formas, Jaadugar: a Witch in Mongolia é uma história de descoberta e amadurecimento, em que seguimos a jornada junto com a personagem e vamos entendendo, aos poucos, que ela também tem suas camadas questionáveis, embora ainda carregue todos os tropes característicos dos heróis.",
-          "runs": [
-            {
-              "text": "De muitas formas, "
-            },
-            {
-              "text": "Jaadugar: a Witch in Mongolia",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é uma história de descoberta e amadurecimento, em que seguimos a jornada junto com a personagem e vamos entendendo, aos poucos, que ela também tem suas camadas questionáveis, embora ainda carregue todos os tropes característicos dos heróis."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "E se Sitara tem uma jornada tão bem construída ao longo dos 12 episódios da primeira temporada do animê, exibidos pela Crunchyroll, o mesmo pode ser dito dos coadjuvantes da história. O jovem Muhammad, por exemplo, aparece pouquíssimo na temporada, mas o suficiente para deixar sua marca sobre a importância da busca por conhecimento — um ensinamento que salvou a vida de Sitara várias vezes.",
-          "runs": [
-            {
-              "text": "E se Sitara tem uma jornada tão bem construída ao longo dos 12 episódios da primeira temporada do animê, exibidos pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", o mesmo pode ser dito dos coadjuvantes da história. O jovem "
-            },
-            {
-              "text": "Muhammad",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", por exemplo, aparece pouquíssimo na temporada, mas o suficiente para deixar sua marca sobre a importância da busca por conhecimento — um ensinamento que salvou a vida de Sitara várias vezes."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Jaadugar.jpg",
-          "alt": "Imagem de Jaadugar: a Witch in Mongolia"
-        },
-        {
-          "type": "paragraph",
-          "text": "A busca por conhecimento é um dos pontos importantes da primeira temporada. | Science Saru/Reprodução",
-          "runs": [
-            {
-              "text": "A busca por conhecimento é um dos pontos importantes da primeira temporada. | Science Saru/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Töregene também tem suas motivações apresentadas ao longo dos episódios, o que faz a ligação com Sitara ser tão profunda quando as duas se encontram. E, mesmo que gere uma antipatia inicial, é impossível não falar de Tolui, um dos herdeiros mais briguentos de Genghis Khan, e que possui uma ótima risada no áudio original, feita por Ryôta Suzuki (também voz original de Ryusui Nanami, de Dr. STONE).",
-          "runs": [
-            {
-              "text": "Töregene",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " também tem suas motivações apresentadas ao longo dos episódios, o que faz a ligação com Sitara ser tão profunda quando as duas se encontram. E, mesmo que gere uma antipatia inicial, é impossível não falar de "
-            },
-            {
-              "text": "Tolui",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", um dos herdeiros mais briguentos de Genghis Khan, e que possui uma ótima risada no áudio original, feita por"
-            },
-            {
-              "text": " Ryôta Suzuki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (também voz original de Ryusui Nanami, de "
-            },
-            {
-              "text": "Dr. STONE",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ")."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Poucos, ou melhor, nenhum personagem apresentado em Jaadugar é somente bom ou ruim. Todos possuem camadas de erros e acertos, pontos fortes e fracos, e atitudes questionáveis. Exatamente por isso, cada episódio tem um ar de mistério sobre o que pode acontecer em seguida. Afinal, se até mesmo a pequena Fátima pode desejar o mal contra aqueles que considera como seus algozes, imagine o que outros nomes não podem fazer quando se sentem em perigo, ou melhor, confiantes demais.",
-          "runs": [
-            {
-              "text": "Poucos, ou melhor, nenhum personagem apresentado em "
-            },
-            {
-              "text": "Jaadugar",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é somente bom ou ruim. Todos possuem camadas de erros e acertos, pontos fortes e fracos, e atitudes questionáveis. Exatamente por isso, cada episódio tem um ar de mistério sobre o que pode acontecer em seguida. Afinal, se até mesmo a pequena Fátima pode desejar o mal contra aqueles que considera como seus algozes, imagine o que outros nomes não podem fazer quando se sentem em perigo, ou melhor, confiantes demais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Com tantos animês e mangás que preferem seguir clichês (tanto narrativos quanto visuais), Jaadugar: a Witch in Mongolia é um sopro de novidade na temporada, que termina nos deixando torcendo por Sitara, mas com a certeza de que seu caminho não será nada linear de acompanhar.",
-          "runs": [
-            {
-              "text": "Com tantos animês e mangás que preferem seguir clichês (tanto narrativos quanto visuais), "
-            },
-            {
-              "text": "Jaadugar: a Witch in Mongolia",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é um sopro de novidade na temporada, que termina nos deixando torcendo por Sitara, mas com a certeza de que seu caminho não será nada linear de acompanhar."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=9rGAeOQMitE",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/9rGAeOQMitE"
-        },
-        {
-          "type": "paragraph",
-          "text": "▶️ Crítica | Uma Bruxa na Mongólia (Volume 1)",
-          "runs": [
-            {
-              "text": "▶️ Crítica | Uma Bruxa na Mongólia (Volume 1)",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/09/11/critica-uma-bruxa-na-mongolia-volume-1-panini/"
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
-          "runs": [
-            {
-              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-15T20:35:49.000Z",
-      "updatedAt": "2026-09-15T20:37:11.000Z",
-      "expiresAt": "2026-09-22T20:35:49.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/15/critica-jaadugar-a-witch-in-mongolia-1a-temporada",
-          "publishedAt": "2026-09-15T20:35:49.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 6,
-      "wordCount": 1086,
-      "qualityScore": 0.97,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 28,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 3,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     }
