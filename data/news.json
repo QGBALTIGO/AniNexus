@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T18:58:38.598Z",
+  "generatedAt": "2026-09-23T22:09:58.509Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 37,
+      "count": 38,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,957 @@
     }
   ],
   "stats": {
-    "collected": 47,
-    "grouped": 20,
-    "published": 20,
-    "newStories": 20,
-    "fullArticles": 20,
+    "collected": 48,
+    "grouped": 21,
+    "published": 21,
+    "newStories": 21,
+    "fullArticles": 21,
     "previewArticles": 0,
-    "avgWords": 389,
-    "withHeroImage": 20,
-    "withOrderedMedia": 18,
+    "avgWords": 429,
+    "withHeroImage": 21,
+    "withOrderedMedia": 19,
     "skippedTranslation": 0,
-    "skippedQuality": 25,
-    "durationMs": 5264
+    "skippedQuality": 24,
+    "durationMs": 4614
   },
   "items": [
+    {
+      "id": "jbox-6d10f68e",
+      "slug": "street-fighter-6-ganha-colaboracao-com-star-detective-precure-jbox-6d10f68e",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Street Fighter 6’ ganha colaboração com ‘Star Detective Precure!’",
+      "originalTitle": "‘Street Fighter 6’ ganha colaboração com ‘Star Detective Precure!’",
+      "summary": "Foi anunciado pela Capcom e pela Toei Animation que o jogo Street Fighter 6 vai ganhar uma colaboração com Star Detective Precure! (Meitantei Precure!), animê mais recente da franquia. A colaboração chega ao jogo de luta no dia 17 de dezembro deste ano.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "Games",
+        "Capcom",
+        "Meitantei Precure",
+        "precure",
+        "Pretty Cure",
+        "Star Detective Precure",
+        "Street Fighter",
+        "Street Fighter 6",
+        "Toei Animation"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/23/street-fighter-6-ganha-colaboracao-com-star-detective-precure",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/23/street-fighter-6-ganha-colaboracao-com-star-detective-precure",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/street-fighter-6-star-detective-precure-destacada.jpg",
+      "mediaQuery": "‘Street Fighter 6’ ganha colaboração com ‘Star Detective Precure!’",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/street-fighter-6-star-detective-precure-colaboracao-scaled.jpg",
+          "alt": "imagem: ilustração da parceria de 'Street Fighter 6' com 'Star Detective Precure!\", destacando reunidos enquanto o mapa de uma investigação. Um quadro branco ao fundo também conta com vários apontamentos de uma investigação.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado pela Capcom e pela Toei Animation que o jogo Street Fighter 6 vai ganhar uma colaboração com Star Detective Precure! (Meitantei Precure!), animê mais recente da franquia. A colaboração chega ao jogo de luta no dia 17 de dezembro deste ano.",
+          "runs": [
+            {
+              "text": "Foi anunciado pela Capcom e pela Toei Animation que o jogo "
+            },
+            {
+              "text": "Street Fighter 6",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " vai ganhar uma colaboração com ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Star Detective Precure!",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Meitantei Precure!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), animê mais recente da franquia. A colaboração chega ao jogo de luta no dia "
+            },
+            {
+              "text": "17 de dezembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " deste ano."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Tamio, artista da Capcom, fez uma ilustração para a colaboração com os personagens de Street Fighter 6 e Star Detective Precure!. Confira:",
+          "runs": [
+            {
+              "text": "Tamio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", artista da Capcom, fez uma ilustração para a colaboração com os personagens de "
+            },
+            {
+              "text": "Street Fighter 6",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Star Detective Precure!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Confira:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/street-fighter-6-star-detective-precure-colaboracao-scaled.jpg",
+          "alt": "imagem: ilustração da parceria de 'Street Fighter 6' com 'Star Detective Precure!\", destacando reunidos enquanto o mapa de uma investigação. Um quadro branco ao fundo também conta com vários apontamentos de uma investigação."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Capcom/Toei Animation",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Capcom/Toei Animation"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A colaboração entre as franquias consiste em uma história especial para o hub de batalha de Street Fighter 6. Nela, os lutadores da franquia se unem às Cures detetives para solucionar casos em uma narrativa dividida em quatro partes. A primeira parte da história envolve um fliperama que de repente aparece destruído. Também teremos personagens de Street Fighter 6 com o estilo visual do animê de garotas mágicas.",
+          "runs": [
+            {
+              "text": "A colaboração entre as franquias consiste em uma história especial para o"
+            },
+            {
+              "text": " hub",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de batalha de "
+            },
+            {
+              "text": "Street Fighter 6",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Nela, os lutadores da franquia se unem às Cures detetives para solucionar casos em uma narrativa dividida em quatro partes. A primeira parte da história envolve um fliperama que de repente aparece destruído. Também teremos personagens de "
+            },
+            {
+              "text": "Street Fighter 6",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " com o estilo visual do animê de garotas mágicas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além da história, a colaboração traz ao jogo avatares especiais, e também panfletos exclusivos com a ilustração de Tamio que vão estar disponíveis em eventos e lojas das duas franquias no Japão. Mais conteúdos ainda devem ser anunciados para a colaboração.",
+          "runs": [
+            {
+              "text": "Além da história, a colaboração traz ao jogo"
+            },
+            {
+              "text": " avatares especiais",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e também panfletos exclusivos com a ilustração de Tamio que vão estar disponíveis em eventos e lojas das duas franquias no Japão. Mais conteúdos ainda devem ser anunciados para a colaboração."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ainda não foi confirmado se essa fusão com Street Fighter 6 será de via de mão dupla como foi o caso com Detective Conan, que trouxe episódios crossovers para ambos os animês.",
+          "runs": [
+            {
+              "text": "Ainda não foi confirmado se essa fusão com "
+            },
+            {
+              "text": "Street Fighter 6",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " será de via de mão dupla "
+            },
+            {
+              "text": "como foi o caso com ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/27/detective-conan-e-star-detective-precure-farao-crossover-entre-maio-e-junho/"
+            },
+            {
+              "text": "Detective Conan",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/27/detective-conan-e-star-detective-precure-farao-crossover-entre-maio-e-junho/"
+            },
+            {
+              "text": ", que trouxe episódios crossovers para ambos os animês."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Star Detective Precure! é a série mais recente da franquia de garotas mágicas da Toei Animation, estando em exibição desde o último mês de fevereiro. Na história, Anna Akechi encontra uma fada e um pingente mágico que a faz viajar para o passado, saindo de 2027 para 1999. Nessa versão de sua cidade natal ela conhece Mikuru Kobayashi, uma garota que sonha em se tornar uma grande detetive. Com a ameaça dos Ladrões Fantasmas, a dupla acaba ganhando os poderes de Precures para impedi-los.",
+          "runs": [
+            {
+              "text": "Star Detective Precure!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é a série mais recente da franquia de garotas mágicas da Toei Animation, estando em exibição desde o último mês de fevereiro. Na história, Anna Akechi encontra uma fada e um pingente mágico que a faz viajar para o passado, saindo de 2027 para 1999. Nessa versão de sua cidade natal ela conhece Mikuru Kobayashi, uma garota que sonha em se tornar uma grande detetive. Com a ameaça dos Ladrões Fantasmas, a dupla acaba ganhando os poderes de Precures para impedi-los."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já Street Fighter 6 é o jogo de luta mais recente da clássica franquia da Capcom. O título foi lançado em junho de 2023 e está atualmente disponível para PlayStation 5, PlayStation 4, Xbox Series, Switch 2 e PC, além de arcades no Japão.",
+          "runs": [
+            {
+              "text": "Já "
+            },
+            {
+              "text": "Street Fighter 6",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é o jogo de luta mais recente da clássica franquia da Capcom. O título foi lançado em junho de 2023 e está atualmente disponível para PlayStation 5, PlayStation 4, Xbox Series, Switch 2 e PC, além de arcades no Japão."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Street Fighter 6 (site oficial)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Street Fighter 6 (site oficial)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.streetfighter.com/6/ja-jp/news/detail/precure"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-23T19:59:09.000Z",
+      "updatedAt": "2026-09-23T19:59:41.000Z",
+      "expiresAt": "2026-09-30T19:59:09.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/23/street-fighter-6-ganha-colaboracao-com-star-detective-precure",
+          "publishedAt": "2026-09-23T19:59:09.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 360,
+      "qualityScore": 0.985,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-5c7b2435",
+      "slug": "critica-daemons-of-the-shadow-realm-1-temporada-jbox-5c7b2435",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Crítica | Daemons of the Shadow Realm | 1ª temporada",
+      "originalTitle": "Crítica | Daemons of the Shadow Realm | 1ª temporada",
+      "summary": "Não é exagero dizer que vivemos de forma acelerada nos dias atuais, e isso também influencia a forma como consumimos conteúdos. Prova disso é o sucesso de vídeos curtos nas redes sociais e até o fato de um streaming como a Netflix orientar roteiristas para que escrevam textos considerando que o espectador estará distraído com o celular (incluindo, assim, mais explicações e exposição nos diálogos).",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Resenha",
+        "Crítica de Daemons of the Shadow Realm",
+        "Daemons do Reino das Sombras",
+        "Daemons of the Shadow Realm",
+        "fullmetal alchemist",
+        "hiromu arakawa",
+        "mangá de hiromu arakawa",
+        "novo anime da autora de fullmetal",
+        "novo anime de hiromu arakawa",
+        "Yomi no Tsugai"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/23/critica-daemons-of-the-shadow-realm-1a-temporada",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/23/critica-daemons-of-the-shadow-realm-1a-temporada",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/jbox-critica-destacada-daemons-temporada1.jpg",
+      "mediaQuery": "Crítica | Daemons of the Shadow Realm | 1ª temporada",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-06.webp",
+          "alt": "Imagem de Daemons of the Shadow Realm",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-03.webp",
+          "alt": "Imagem de Daemons of the Shadow Realm",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-04.webp",
+          "alt": "Imagem de Daemons of the Shadow Realm",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Não é exagero dizer que vivemos de forma acelerada nos dias atuais, e isso também influencia a forma como consumimos conteúdos. Prova disso é o sucesso de vídeos curtos nas redes sociais e até o fato de um streaming como a Netflix orientar roteiristas para que escrevam textos considerando que o espectador estará distraído com o celular (incluindo, assim, mais explicações e exposição nos diálogos). Dessa forma, não é surpresa que um animê como Daemons of the Shadow Realm (Yomi no Tsugai) desagrade parte do público, justamente por não ter a mínima pressa de contar sua história.",
+          "runs": [
+            {
+              "text": "Não é exagero dizer que vivemos de forma acelerada nos dias atuais, e isso também influencia a forma como consumimos conteúdos. Prova disso é o sucesso de vídeos curtos nas redes sociais e até o fato de um streaming como a Netflix orientar roteiristas para que escrevam textos considerando que o espectador estará distraído com o celular (incluindo, assim, mais explicações e exposição nos diálogos). Dessa forma, não é surpresa que um animê como "
+            },
+            {
+              "text": "Daemons of the Shadow Realm",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Yomi no Tsugai",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") desagrade parte do público, justamente por não ter a mínima pressa de contar sua história."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Inspirada no mangá de Hiromu Arakawa, autora de nada menos do que Fullmetal Alchemist e Silver Spoon, a trama começa focada em um jovem chamado Yuru. Ele vive em uma vila com ares medievais, caçando, convivendo com a comunidade e, principalmente, cuidando da irmã, Asa. O primeiro episódio, especialmente, usa grande parte de seu tempo para apresentar essa atmosfera bucólica. Mas tudo muda (e muito rapidamente), quando Yuru descobre que grande parte do que ele conhecia se trata de uma grande mentira, e agora ele precisa deixar o local em que cresceu para descobrir mistérios envolvendo seus pais e irmã.",
+          "runs": [
+            {
+              "text": "Inspirada no mangá de "
+            },
+            {
+              "text": "Hiromu Arakawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", autora de nada menos do que "
+            },
+            {
+              "text": "Fullmetal Alchemist",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Silver Spoon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", a trama começa focada em um jovem chamado "
+            },
+            {
+              "text": "Yuru",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Ele vive em uma vila com ares medievais, caçando, convivendo com a comunidade e, principalmente, cuidando da irmã,"
+            },
+            {
+              "text": " Asa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O primeiro episódio, especialmente, usa grande parte de seu tempo para apresentar essa atmosfera bucólica. Mas tudo muda (e muito rapidamente), quando Yuru descobre que grande parte do que ele conhecia se trata de uma grande mentira, e agora ele precisa deixar o local em que cresceu para descobrir mistérios envolvendo seus pais e irmã."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "E, talvez, o grande primeiro erro da história seja justamente começar tão acelerada, para depois colocar o pé no freio. Muitos que assistiram ao episódio 1, “Asa e Yuru”, podem ter pensado que veriam uma trama tão apressada quanto um feed de redes sociais. Mas o que acontece nos 23 capítulos seguintes dos dois cours do animê, disponíveis no Brasil pela Crunchyroll, é exatamente o oposto. E ainda bem.",
+          "runs": [
+            {
+              "text": "E, talvez, o grande primeiro erro da história seja justamente"
+            },
+            {
+              "text": " começar tão acelerada, para depois colocar o pé no freio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Muitos que assistiram ao episódio 1, "
+            },
+            {
+              "text": "“Asa e Yuru",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "”, podem ter pensado que veriam uma trama tão apressada quanto um feed de redes sociais. Mas o que acontece nos 23 capítulos seguintes dos dois "
+            },
+            {
+              "text": "cours",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " do animê, disponíveis no Brasil pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", é exatamente o oposto. E ainda bem."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Quem, afinal, é Yuru?",
+          "runs": [
+            {
+              "text": "Quem, afinal, é Yuru?"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-06.webp",
+          "alt": "Imagem de Daemons of the Shadow Realm"
+        },
+        {
+          "type": "paragraph",
+          "text": "A narrativa tenta tanto proteger Yuru, que parece até o pessoal de Higashimura. | Imagem: Square Enix/Divulgação",
+          "runs": [
+            {
+              "text": "A narrativa tenta tanto proteger Yuru, que parece até o pessoal de Higashimura. | Imagem: Square Enix/Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ao ter sua realidade virada de cabeça para baixo, Yuru inicia uma jornada de descoberta, que serve também como os olhos do público. Ao assistir aos episódios, começamos tão perdidos quanto o personagem e, com as poucas informações que chegam, vamos montando cenários do que poderia ter acontecido na vila Higashimura, e por que os pais de Yuru e Asa estão desaparecidos.",
+          "runs": [
+            {
+              "text": "Ao ter sua realidade virada de cabeça para baixo, Yuru inicia uma jornada de descoberta, que serve também como os olhos do público. Ao assistir aos episódios, começamos tão perdidos quanto o personagem e, com as poucas informações que chegam, vamos montando cenários do que poderia ter acontecido na vila Higashimura, e por que os pais de Yuru e Asa estão desaparecidos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nesta jornada, muitos personagens são apresentados, incluindo coadjuvantes humanos e Tsugai, que são os demônios que acompanham alguns personagens. Neste ponto, Daemons of the Shadow Realm comete seu segundo erro, que é abrir tanto o leque de coadjuvantes, que se esquece de desenvolver mais justamente Yuru, que divide o coração da história com Asa.",
+          "runs": [
+            {
+              "text": "Nesta jornada, muitos personagens são apresentados, incluindo coadjuvantes humanos e Tsugai, que são os demônios que acompanham alguns personagens. Neste ponto, "
+            },
+            {
+              "text": "Daemons of the Shadow Realm",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " comete"
+            },
+            {
+              "text": " seu segundo erro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que é abrir tanto o leque de coadjuvantes, que se esquece de desenvolver mais justamente Yuru, que divide o coração da história com Asa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Embora apareça menos do que o irmão, a personagem tem uma personalidade mais definida ao longo dos episódios, mostrando que possui uma força muito grande, mas que também tem os medos e sonhos comuns para uma garota de sua idade (como ir para a Disney). Já Yuru, embora tenha mais tempo de tela, soa mais fechado, o que dificulta com que o espectador crie uma relação mais profunda com ele.",
+          "runs": [
+            {
+              "text": "Embora apareça menos do que o irmão, a personagem tem uma personalidade mais definida ao longo dos episódios, mostrando que possui uma força muito grande, mas que também tem os medos e sonhos comuns para uma garota de sua idade (como ir para a Disney). Já Yuru, embora tenha mais tempo de tela, soa mais fechado, o que dificulta com que o espectador crie uma relação mais profunda com ele."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Sim, há cenas mais leves com o jovem, momentos de diversão e até de descoberta de um mundo novo. Mas elas são espaçadas demais e com pouco peso para o que um protagonista como Yuru precisa ter para criar um laço mais forte com quem está assistindo. Para quem está acostumado a acompanhar animês e mangás, o motivo para isso é bem claro: a produção tenta, de certa forma, blindar o protagonista para que ele pareça heroico quase o tempo todo. Mas é um equilíbrio muito fácil de se perder entre tornar alguém admirável ou inalcançável.",
+          "runs": [
+            {
+              "text": "Sim, há cenas mais leves com o jovem, momentos de diversão e até de descoberta de um mundo novo. Mas elas são espaçadas demais e com pouco peso para o que um protagonista como Yuru precisa ter para criar um laço mais forte com quem está assistindo. Para quem está acostumado a acompanhar animês e mangás, o motivo para isso é bem claro: a produção tenta, de certa forma, "
+            },
+            {
+              "text": "blindar o protagonista para que ele pareça heroico quase o tempo todo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Mas é um equilíbrio muito fácil de se perder entre tornar alguém admirável ou inalcançável."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-03.webp",
+          "alt": "Imagem de Daemons of the Shadow Realm"
+        },
+        {
+          "type": "paragraph",
+          "text": "Yuru e Asa têm cenas mais leves, mas a personalidade dela tem mais pontos de desenvolvimento | Square Enix/Divulgação",
+          "runs": [
+            {
+              "text": "Yuru e Asa têm cenas mais leves, mas a personalidade dela tem mais pontos de desenvolvimento | Square Enix/Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Mas, não me entenda errado, caro leitor. Ainda que o desenvolvimento de Yuru tenha problemas, não há como negar que a primeira temporada de Daemons of the Shadow Realm é extremamente sólida e interessante de acompanhar, incluindo boas cenas de ação, especialmente quando os Tsugai de Yuru, Esquerda e Direita, entram em ação. Para os fãs de uma boa lutinha sem perder a amizade, o animê entrega ótimas sequências, em que as habilidades dos personagens — seja luta corporal, com espadas, ou até arco e flecha — são bem exploradas. Nesse quesito, nada a reclamar.",
+          "runs": [
+            {
+              "text": "Mas, não me entenda errado, caro leitor. Ainda que o desenvolvimento de Yuru tenha problemas, não há como negar que a primeira temporada de "
+            },
+            {
+              "text": "Daemons of the Shadow Realm",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "é extremamente sólida e interessante de acompanhar",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", incluindo boas cenas de ação, especialmente quando os Tsugai de Yuru, Esquerda e Direita, entram em ação. Para os fãs de uma boa lutinha sem perder a amizade, o animê entrega ótimas sequências, em que as habilidades dos personagens — seja luta corporal, com espadas, ou até arco e flecha — são bem exploradas. Nesse quesito, nada a reclamar."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Gêmeos separados pelo dia e pela noite",
+          "runs": [
+            {
+              "text": "Gêmeos separados pelo dia e pela noite"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Ao deixar Higashimura e iniciar sua jornada, Yuru descobre que ele e a irmã nasceram “separados pelo dia e pela noite”, o que conferiu a eles os poderes de Quebra (para Asa) e Selo (para Yuru). O nascimento dos dois e a aquisição de tais habilidades é algo raro, e é por isso que a família começa a ser perseguida por pessoas que desejam controlar estes poderes.",
+          "runs": [
+            {
+              "text": "Ao deixar Higashimura e iniciar sua jornada, Yuru descobre que ele e a irmã nasceram "
+            },
+            {
+              "text": "“separados pelo dia e pela noite”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o que conferiu a eles os poderes de Quebra (para Asa) e Selo (para Yuru). O nascimento dos dois e a aquisição de tais habilidades é algo raro, e é por isso que a família começa a ser perseguida por pessoas que desejam controlar estes poderes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Assim como Yuru, iniciamos a história sem saber exatamente em quem confiar. Pessoas comuns se mostram perigosas, supostos aliados também escondem segredos, e um detalhe em um diálogo pode mudar toda a percepção que temos sobre uma determinada situação.",
+          "runs": [
+            {
+              "text": "Assim como Yuru, iniciamos a história sem saber exatamente em quem confiar. Pessoas comuns se mostram perigosas, supostos aliados também escondem segredos, e um detalhe em um diálogo pode mudar toda a percepção que temos sobre uma determinada situação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "É aqui que ‘Daemons’ brilha em sua total falta de pressa em explicar tudo. É preciso assistir, prestar atenção e, de fato, se engajar na tarefa de montar o quebra-cabeça de intrigas que envolve os gêmeos e todos que querem se aproximar deles. Quem não for fisgado por essa parte da história, com certeza terá vontade de largar o animê. Porém, aqueles que aceitam a proposta ganham uma narrativa instigante, que em nenhum momento subestima quem está assistindo.",
+          "runs": [
+            {
+              "text": "É aqui que ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "‘Daemons’",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " brilha em sua total falta de pressa em explicar tudo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". É preciso assistir, prestar atenção e, de fato, se engajar na tarefa de montar o quebra-cabeça de intrigas que envolve os gêmeos e todos que querem se aproximar deles. Quem não for fisgado por essa parte da história, com certeza terá vontade de largar o animê. Porém, aqueles que aceitam a proposta ganham uma narrativa instigante, que em nenhum momento subestima quem está assistindo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "E um trunfo importante é que a produção cria todo esse emaranhado de interesses sem se tornar desnecessariamente pesada. Há, sim, momentos mais densos, e até tendendo um pouco para o gore, com sangues jorrando aqui e ali. Por conta disso, os personagens correm riscos reais em diversos momentos, e não seria surpreendente se um coadjuvante importante morresse do nada. O mundo de Daemons of the Shadow Realm é assim mesmo.",
+          "runs": [
+            {
+              "text": "E um trunfo importante é que a produção cria todo esse emaranhado de interesses sem se tornar desnecessariamente pesada. Há, sim, momentos mais densos, e até tendendo um pouco para o "
+            },
+            {
+              "text": "gore",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", com sangues jorrando aqui e ali. Por conta disso, os personagens correm riscos reais em diversos momentos, e não seria surpreendente se um coadjuvante importante morresse do nada. O mundo de "
+            },
+            {
+              "text": "Daemons of the Shadow Realm",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é assim mesmo."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-04.webp",
+          "alt": "Imagem de Daemons of the Shadow Realm"
+        },
+        {
+          "type": "paragraph",
+          "text": "O animê tem momentos bem sangrentos (e bem legais). | Square Enix/Divulgação",
+          "runs": [
+            {
+              "text": "O animê tem momentos bem sangrentos (e bem legais). | Square Enix/Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Mas tudo isso é intercalado com sequências de ação e momentos de dia a dia, que complementam a narrativa, sem tirar o peso de momentos importantes. Neste ponto, o equilíbrio do animê é preciso, de uma forma até rara de encontrar nos dias atuais.",
+          "runs": [
+            {
+              "text": "Mas tudo isso é intercalado com sequências de ação e momentos de dia a dia, que complementam a narrativa, sem tirar o peso de momentos importantes. Neste ponto, o equilíbrio do animê é preciso, de uma forma até rara de encontrar nos dias atuais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "E é por isso que, mesmo com defeitos aqui e ali, Daemons of the Shadow Realm é uma das produções mais interessantes lançadas recentemente. Com o mangá ainda em andamento, e uma segunda temporada do animê já confirmada, a franquia tem tudo para se tornar ainda mais conhecida nos próximos anos — basta que os espectadores deixem a pressa de lado e aceitem curtir a jornada com menos ansiedade para chegar ao final.",
+          "runs": [
+            {
+              "text": "E é por isso que, mesmo com defeitos aqui e ali,"
+            },
+            {
+              "text": " Daemons of the Shadow Realm",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é uma das produções mais interessantes lançadas recentemente. Com o mangá ainda em andamento, e "
+            },
+            {
+              "text": "uma segunda temporada do animê já confirmada",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/21/daemons-of-the-shadow-realm-tem-2a-temporada-confirmada/"
+            },
+            {
+              "text": ", a franquia tem tudo para se tornar ainda mais conhecida nos próximos anos — basta que os espectadores deixem a pressa de lado e aceitem curtir a jornada com menos ansiedade para chegar ao final."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "▶️ Entrevista com os dubladores Pedro Crispim, Natália Alves, Filipe Albuquerque e Jennifer Gouveia, de Daemons of the Shadow Realm",
+          "runs": [
+            {
+              "text": "▶️ ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Entrevista com os dubladores Pedro Crispim, Natália Alves, Filipe Albuquerque e Jennifer Gouveia, de ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/07/31/dubladores-de-daemons-of-the-shadow-realm-contam-sua-experiencia-com-a-serie-jbox-entrevista/"
+            },
+            {
+              "text": "Daemons of the Shadow Realm",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/07/31/dubladores-de-daemons-of-the-shadow-realm-contam-sua-experiencia-com-a-serie-jbox-entrevista/"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+          "runs": [
+            {
+              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-23T19:43:00.000Z",
+      "updatedAt": "2026-09-23T19:44:28.000Z",
+      "expiresAt": "2026-09-30T19:43:00.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/23/critica-daemons-of-the-shadow-realm-1a-temporada",
+          "publishedAt": "2026-09-23T19:43:00.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 6,
+      "wordCount": 1129,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 26,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 3,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-b65df50a",
       "slug": "ilustracao-original-de-inuyasha-e-leiloada-para-arrecadar-fundos-para-a-caridade-jbox-b65df50a",
@@ -4227,401 +5164,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 3,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-1228039b",
-      "slug": "daemons-of-the-shadow-realm-tem-2-temporada-confirmada-jbox-1228039b",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Daemons of the Shadow Realm’ tem 2ª temporada confirmada",
-      "originalTitle": "‘Daemons of the Shadow Realm’ tem 2ª temporada confirmada",
-      "summary": "No mesmo dia (19) em que a primeira temporada de Daemons of the Shadow Realm foi encerrada com o final do segundo cour, a Aniplex confirmou a produção de novos episódios.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "2ª temporada de Daemons of the Shadow Realm",
-        "aemons of the Shadow Realm",
-        "Daemons do Reino das Sombras",
-        "fullmetal alchemist",
-        "hiromu arakawa",
-        "mangá de hiromu arakawa",
-        "novo anime da autora de fullmetal",
-        "novo anime de hiromu arakawa",
-        "Yomi no Tsugai"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/21/daemons-of-the-shadow-realm-tem-2a-temporada-confirmada",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/21/daemons-of-the-shadow-realm-tem-2a-temporada-confirmada",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-destacada.jpg",
-      "mediaQuery": "‘Daemons of the Shadow Realm’ tem 2ª temporada confirmada",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-01.jpg",
-          "alt": "Pôster da 2ª temporada de Daemons of the Shadow Realm",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/rDXDLCMomdA"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "No mesmo dia (19) em que a primeira temporada de Daemons of the Shadow Realm foi encerrada com o final do segundo cour, a Aniplex confirmou a produção de novos episódios.",
-          "runs": [
-            {
-              "text": "No mesmo dia (19) em que a primeira temporada de "
-            },
-            {
-              "text": "Daemons of the Shadow Realm",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " foi encerrada com o final do segundo "
-            },
-            {
-              "text": "cour",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", a "
-            },
-            {
-              "text": "Aniplex",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " confirmou a produção de novos episódios."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A novidade foi anunciada com um cartaz e um teaser que mostram os principais personagens da história. Por enquanto, não há previsão de lançamento da segunda temporada.",
-          "runs": [
-            {
-              "text": "A novidade foi anunciada com um cartaz e um teaser que mostram os principais personagens da história. Por enquanto, não há previsão de lançamento da segunda temporada."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=rDXDLCMomdA",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/rDXDLCMomdA"
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-01.jpg",
-          "alt": "Pôster da 2ª temporada de Daemons of the Shadow Realm"
-        },
-        {
-          "type": "paragraph",
-          "text": "Pôster da 2ª temporada de Daemons of the Shadow Realm | Aniplex/Divulgação",
-          "runs": [
-            {
-              "text": "Pôster da 2ª temporada de Daemons of the Shadow Realm | Aniplex/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "▶️ Entrevista com os dubladores Pedro Crispim, Natália Alves, Filipe Albuquerque e Jennifer Gouveia, de Daemons of the Shadow Realm",
-          "runs": [
-            {
-              "text": "▶️ ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Entrevista com os dubladores Pedro Crispim, Natália Alves, Filipe Albuquerque e Jennifer Gouveia, de Daemons of the Shadow Realm",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/31/dubladores-de-daemons-of-the-shadow-realm-contam-sua-experiencia-com-a-serie-jbox-entrevista/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Criada por Hiromu Arakawa, autora de nada menos do que Fullmetal Alchemist e Silver Spoon, a história de Daemons of the Shadow Realm começa focada no jovem Yuru, que mora em uma vila bucólica com ares medievais, e busca cuidar da irmã mais nova, Asa, após o desaparecimento dos pais. Porém, a realidade do rapaz muda de forma brusca e violenta, e ele precisa fugir para descobrir todos os mistérios envolvendo sua família.",
-          "runs": [
-            {
-              "text": "Criada por "
-            },
-            {
-              "text": "Hiromu Arakawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", autora de nada menos do que "
-            },
-            {
-              "text": "Fullmetal Alchemist",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Silver Spoon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", a história de "
-            },
-            {
-              "text": "Daemons of the Shadow Realm",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " começa focada no jovem Yuru, que mora em uma vila bucólica com ares medievais, e busca cuidar da irmã mais nova, Asa, após o desaparecimento dos pais. Porém, a realidade do rapaz muda de forma brusca e violenta, e ele precisa fugir para descobrir todos os mistérios envolvendo sua família."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Masahiro Andou (Fullmetal Alchemist) assina a direção do animê, com composição de série de Noboru Takagi (Golden Kamui) e design de personagens de Nobuhiro Arai (Naruto Shippuden). A primeira temporada está disponível no catálogo da Crunchyroll.",
-          "runs": [
-            {
-              "text": "Masahiro Andou",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Fullmetal Alchemist",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") assina a direção do animê, com composição de série de "
-            },
-            {
-              "text": "Noboru Takagi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Golden Kamui",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") e design de personagens de "
-            },
-            {
-              "text": "Nobuhiro Arai",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Naruto Shippuden",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "). A primeira temporada está disponível no catálogo da "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O mangá é publicado desde dezembro de 2021, na Monthly Shonen Gangan, de propriedade da Square Enix. Até o momento, 13 volumes já foram lançados e a trama ainda não foi encerrada. No Brasil, a publicação é da JBC — confira o que achamos do primeiro volume.",
-          "runs": [
-            {
-              "text": "O mangá é publicado desde dezembro de 2021, na "
-            },
-            {
-              "text": "Monthly Shonen Gangan",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", de propriedade da "
-            },
-            {
-              "text": "Square Enix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Até o momento, 13 volumes já foram lançados e a trama ainda não foi encerrada. No Brasil, a publicação é da "
-            },
-            {
-              "text": "JBC",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " — "
-            },
-            {
-              "text": "confira o que achamos do primeiro volume",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/03/25/critica-yomi-no-tsugai-daemons-do-reino-das-sombras-volume-1-jbc/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site oficial de Daemons of the Shadow Realm",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Site oficial de Daemons of the Shadow Realm",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://yominotsugai.com/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-21T13:53:50.000Z",
-      "updatedAt": "2026-09-21T13:54:31.000Z",
-      "expiresAt": "2026-09-28T13:53:50.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/21/daemons-of-the-shadow-realm-tem-2a-temporada-confirmada",
-          "publishedAt": "2026-09-21T13:53:50.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 272,
-      "qualityScore": 0.975,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
