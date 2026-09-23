@@ -20,6 +20,10 @@ body:not(.nx35-home-active) #app>main:first-child{padding-top:var(--nx43-header-
 .nx35-community-cover>.nx35-community-avatar{right:-2px!important;bottom:-2px!important;width:26px!important;height:26px!important;overflow:hidden!important;padding:0!important;line-height:1!important;isolation:isolate;transform:none!important}
 .nx35-community-card.compact .nx35-community-cover>.nx35-community-avatar{right:-2px!important;bottom:-2px!important;width:22px!important;height:22px!important}
 .nx35-community-cover>.nx35-community-avatar img{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;object-fit:cover!important;object-position:50% 0!important;border-radius:50%!important;transform:none!important}
+.nx35-home .nx35-community-cover>a:first-child{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+.nx35-home .nx35-community-cover>.nx35-community-avatar{position:absolute!important;z-index:2;display:block!important;right:-2px!important;bottom:-2px!important;width:30px!important;height:30px!important;min-width:0!important;min-height:0!important;border:2px solid #100b0f;border-radius:50%!important;background:#100c14;box-shadow:0 0 0 1px #463648}
+.nx35-home .nx35-community-card.compact .nx35-community-cover>.nx35-community-avatar{width:26px!important;height:26px!important}
+.nx35-home .nx35-community-cover>.nx35-community-avatar:focus-visible{outline:2px solid #ff83a4;outline-offset:2px}
 
 .nx44-radio,.nx44-radio *{box-sizing:border-box}
 .nx44-radio{
@@ -1995,4 +1999,12 @@ html[data-theme=light] .search-result:hover{background:#faf1f4}
   .drawer-auth-card[data-auth-state=authenticated] .drawer-auth-copy h3{font-size:15px}
   .search-user-result>b{font-size:0;gap:0}
   .search-user-result>b svg{width:16px;height:16px}
+}
+
+@media(max-width:720px){
+  body.nx22-detail-active .nx22-hero-bg{height:340px}
+  body.nx22-detail-active .nx22-hero-shade{height:455px}
+  body.nx22-detail-active .nx22-back{top:calc(var(--nx43-header-height,54px) + 14px);left:0}
+  body.nx22-detail-active .nx22-hero-grid{padding-top:105px!important}
+  body.nx22-detail-active .nx22-cover{width:clamp(180px,48vw,210px)!important}
 }

@@ -57,7 +57,8 @@
     }
     const statusIcon=kind==='state'?(reading?window.AniNexusMangaState:window.AniNexusMediaState)?.statuses?.[x.status]?.icon:'';
     const art=artworkUrl(x.banner);
-    return `<article class="nx35-community-card${compact?' compact':''}" data-community-kind="${esc(kind)}" data-media-id="${Number(x.media_id)||''}" data-media-type="${type(x)}" data-status="${esc(x.status||kind)}">${art?`<img class="nx35-community-art" data-src="${esc(art)}" alt="" aria-hidden="true" loading="lazy" decoding="async">`:''}<div class="nx35-community-cover"><a href="${href}" aria-label="${esc(x.title)}">${x.cover?`<img src="${esc(x.cover)}" alt="" loading="lazy" decoding="async">`:'<span data-icon="chat" aria-hidden="true"></span>'}</a><i class="nx35-community-avatar" aria-hidden="true">${avatar}</i></div><div class="nx35-community-copy"><p>${phrase}</p><div class="nx35-community-meta"><span class="nx35-community-status">${statusIcon||`<span data-icon="chat" aria-hidden="true"></span>`}${esc(st.label)}</span>${detail?`<span class="nx35-community-detail">${esc(detail)}</span>`:''}</div><small>${reactionMarks(x)}<time datetime="${esc(x.created_at)}">${esc(relative(x.created_at))}</time></small></div></article>`;
+    const actorAvatar=profile?`<a class="nx35-community-avatar" href="${profile}" aria-label="Ver perfil de ${esc(name)}">${avatar}</a>`:`<span class="nx35-community-avatar" aria-hidden="true">${avatar}</span>`;
+    return `<article class="nx35-community-card${compact?' compact':''}" data-community-kind="${esc(kind)}" data-media-id="${Number(x.media_id)||''}" data-media-type="${type(x)}" data-status="${esc(x.status||kind)}">${art?`<img class="nx35-community-art" data-src="${esc(art)}" alt="" aria-hidden="true" loading="lazy" decoding="async">`:''}<div class="nx35-community-cover"><a href="${href}" aria-label="${esc(x.title)}">${x.cover?`<img src="${esc(x.cover)}" alt="" loading="lazy" decoding="async">`:'<span data-icon="chat" aria-hidden="true"></span>'}</a>${actorAvatar}</div><div class="nx35-community-copy"><p>${phrase}</p><div class="nx35-community-meta"><span class="nx35-community-status">${statusIcon||`<span data-icon="chat" aria-hidden="true"></span>`}${esc(st.label)}</span>${detail?`<span class="nx35-community-detail">${esc(detail)}</span>`:''}</div><small>${reactionMarks(x)}<time datetime="${esc(x.created_at)}">${esc(relative(x.created_at))}</time></small></div></article>`;
   }
   async function load(){
     const shared=window.AniNexusCommunityActivity;
@@ -65,7 +66,7 @@
     let activity=[],impressions=[];
     if(!IS_PAGES||REMOTE)[activity,impressions]=await Promise.all([json('/api/community/activity?limit=30&includeManga=1'),json('/api/feed/impressions?limit=8&filter=all&sort=recent&hideSpoilers=true')]);
     const raw=[...activity.map(x=>({...x,kind:'state',created_at:x.created_at||x.updated_at})),...local.filter(x=>x.kind!=='thread'),...impressions.map(x=>({...x,kind:'impression'}))];
-    const enriched=shared?.enrich?await shared.enrich(raw):raw,rows=shared?.merge?shared.merge(enriched):enriched;
+    const enriched=shared?.enrich?await shared.enrich(raw):raw,identified=enriched.filter(x=>!x.local||handle(x)),rows=shared?.merge?shared.merge(identified):identified;
     await resolveMedia(rows.filter(x=>x.media_id&&(!usableTitle(x.title)&&!usableTitle(title(x.media))||!x.cover&&!cover(x.media))));
     return rows.map(x=>{const fetched=mediaCache.get(mediaKey(x));return {...x,title:usableTitle(x.title)||usableTitle(title(x.media))||usableTitle(title(fetched)),cover:x.cover||cover(x.media)||cover(fetched),banner:x.banner||banner(x.media)||banner(fetched),created_at:x.created_at||x.updated_at||''}}).filter(x=>!!x.media_id&&!!x.title&&!!x.cover).slice(0,12);
   }

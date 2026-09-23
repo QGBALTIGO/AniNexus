@@ -51,3 +51,14 @@ html[data-theme=light] body.nx38-profile-active,html[data-theme=light] .nx38p-pa
 @media(max-width:760px){.nx38p-identity{gap:9px 12px}.nx38p-social{width:28px;height:28px;min-height:28px;padding:0}.nx56-profile-actions .nx38p-share,.nx56-profile-actions .nx56-profile-follow{height:32px;min-height:32px}.nx56-profile-actions .nx38p-share{width:32px;padding:0;border-radius:50%}.nx56-profile-actions .nx38p-share span{display:none}}
 @media(max-width:340px){.nx57-library-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nx38p-characters{grid-template-columns:repeat(2,minmax(0,1fr))}.nx57-profile-tabs button{padding-inline:9px}}
 @media(prefers-reduced-motion:reduce){.nx38p-page *{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+@media(max-width:760px){
+  .nx57-profile-action-row{position:relative;left:-108px;width:calc(100% + 108px);min-width:0}
+  .nx57-profile-aside .nx48-profile-pins{display:flex;align-items:flex-start;justify-content:flex-start;flex-wrap:wrap;gap:12px}
+  .nx57-profile-aside .nx48-profile-pin{display:grid;grid-template-columns:44px;width:44px;padding:0;justify-items:center}
+  .nx57-profile-aside .nx48-badge{width:44px;height:44px}
+  .nx57-profile-aside .nx48-badge>i,.nx57-profile-aside .nx48-badge svg{width:18px;height:18px}
+}
+@media(max-width:460px){
+  .nx57-profile-action-row{left:-92px;width:calc(100% + 92px)}
+}
