@@ -328,10 +328,10 @@ test('Home community cover survives initialization without redundant metadata fe
   const card=hero.locator('.nx35-community-card.compact').first();
   await expect(card).toBeVisible({timeout:30000});
   await expect(hero).toHaveAttribute('data-nx-community-owner','shared');
-  await expect(card.locator('.nx35-community-cover>a>img')).toHaveAttribute('src',pixel);
+  await expect(card.locator('.nx35-community-cover>a:first-child>img')).toHaveAttribute('src',pixel);
   await page.waitForTimeout(1100);
   expect(communityMediaQueries).toBe(0);
-  await expect(card.locator('.nx35-community-cover>a>img')).toHaveAttribute('src',pixel);
+  await expect(card.locator('.nx35-community-cover>a:first-child>img')).toHaveAttribute('src',pixel);
 });
 
 test('radio has a stable volume popover and becomes one floating button after play',async({page})=>{

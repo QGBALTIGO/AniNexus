@@ -67,6 +67,7 @@ test('Local reading activity preserves volumes and multiple reactions independen
   await setup(page);await page.goto(url('/'));
   await expect(page.locator('#nx35CommunityHero .nx35-community-card')).toHaveCount(1);
   const result=await page.evaluate(()=>{
+    window.AniNexusAccountData=async()=>({username:'reader-a',displayName:'Leitor A'});
     const state={status:'CURRENT',progress:5,volumeProgress:2,reactions:['Amei','Que arte!'],updatedAt:Date.now()};
     document.dispatchEvent(new CustomEvent('aninexus:manga-media-state-changed',{detail:{id:101,state}}));
     document.dispatchEvent(new CustomEvent('aninexus:media-state-changed',{detail:{id:101,state:{...state,volumeProgress:0}}}));
@@ -123,8 +124,8 @@ test('Both Home community previews keep readable covers, type and status colors 
       for(const id of ['#nx35CommunityHero','#nx35Community']){
         const root=page.locator(id),card=root.locator('.nx35-community-card').first();
         await root.scrollIntoViewIfNeeded();
-        await expect(card.locator('.nx35-community-cover>a>img')).toBeVisible();
-        await expect.poll(()=>card.locator('.nx35-community-cover>a>img').evaluate(img=>img.naturalWidth)).toBeGreaterThan(0);
+        await expect(card.locator('.nx35-community-cover>a:first-child>img')).toBeVisible();
+        await expect.poll(()=>card.locator('.nx35-community-cover>a:first-child>img').evaluate(img=>img.naturalWidth)).toBeGreaterThan(0);
         expect(await card.evaluate(el=>getComputedStyle(el,'::before').display)).toBe('none');
         expect(await card.locator('p').evaluate(el=>parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(12);
         const framed=id==='#nx35Community'?card:page.locator('.nx35-live');
