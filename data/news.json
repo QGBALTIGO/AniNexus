@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T22:11:06.209Z",
+  "generatedAt": "2026-09-25T00:34:39.441Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,723 @@
   ],
   "stats": {
     "collected": 48,
-    "grouped": 18,
-    "published": 18,
-    "newStories": 18,
-    "fullArticles": 18,
+    "grouped": 19,
+    "published": 19,
+    "newStories": 19,
+    "fullArticles": 19,
     "previewArticles": 0,
-    "avgWords": 452,
-    "withHeroImage": 18,
-    "withOrderedMedia": 17,
+    "avgWords": 453,
+    "withHeroImage": 19,
+    "withOrderedMedia": 18,
     "skippedTranslation": 0,
-    "skippedQuality": 27,
-    "durationMs": 6517
+    "skippedQuality": 26,
+    "durationMs": 2829
   },
   "items": [
+    {
+      "id": "animenew-1b3a0aa3",
+      "slug": "fatal-fury-ganha-trailer-animado-de-kim-kaphwan-animenew-1b3a0aa3",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Fatal Fury ganha trailer animado de Kim Kaphwan",
+      "originalTitle": "Fatal Fury ganha trailer animado de Kim Kaphwan",
+      "summary": "A SNK revelou nesta quinta-feira um novo trailer animado de Fatal Fury: City of the Wolves, desta vez com destaque para Kim Kaphwan, que também entrou no elenco como personagem de DLC. Portanto Masami Obari assumiu a direção do vídeo, sendo responsável pelos trailers animados anteriores do jogo. O projeto contou ainda com produção do Studio G-1 Neo.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Games",
+        "Notícias",
+        "Fatal Fury",
+        "SNK"
+      ],
+      "url": "https://animenew.com.br/fatal-fury-city-of-the-wolves-kim-kaphwan",
+      "sourceUrl": "https://animenew.com.br/fatal-fury-city-of-the-wolves-kim-kaphwan",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Fatal-Fury-ganha-trailer-animado-de-Kim-Kaphwan.webp",
+      "mediaQuery": "Fatal Fury ganha trailer animado de Kim Kaphwan",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/X0LXRFkp2iI"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/5-FvdmPj3BQ"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A SNK revelou nesta quinta-feira um novo trailer animado de Fatal Fury: City of the Wolves, desta vez com destaque para Kim Kaphwan, que também entrou no elenco como personagem de DLC. Portanto Masami Obari assumiu a direção do vídeo, sendo responsável pelos trailers animados anteriores do jogo. O projeto contou ainda com produção do Studio G-1 Neo.",
+          "runs": [
+            {
+              "text": "A SNK revelou nesta quinta-feira um novo trailer animado de "
+            },
+            {
+              "text": "Fatal Fury: City of the Wolves",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", desta vez com destaque para "
+            },
+            {
+              "text": "Kim Kaphwan",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que também entrou no elenco como personagem de DLC. Portanto Masami Obari assumiu a direção do vídeo, sendo responsável pelos trailers animados anteriores do jogo. O projeto contou ainda com produção do "
+            },
+            {
+              "text": "Studio G-1 Neo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Injustice 3 ganha novo rumor com Supergirl e Batwoman",
+              "runs": [
+                {
+                  "text": "Injustice 3 ganha novo rumor com Supergirl e Batwoman",
+                  "href": "https://animenew.com.br/injustice-3-vazamento-supergirl-batwoman"
+                }
+              ]
+            },
+            {
+              "text": "Dragon Ball Xenoverse 3 parece não ter evoluído",
+              "runs": [
+                {
+                  "text": "Dragon Ball Xenoverse 3 parece não ter evoluído",
+                  "href": "https://animenew.com.br/dragon-ball-xenoverse-3-demo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Kim Kaphwan recebeu vozes de June Yoon na versão em inglês e Kunihiro Kawamoto na versão japonesa. A SNK também disponibilizou um guia do personagem e uma nova música de fundo.",
+          "runs": [
+            {
+              "text": "Kim Kaphwan recebeu vozes de June Yoon na versão em inglês e Kunihiro Kawamoto na versão japonesa. A SNK também disponibilizou um guia do personagem e uma nova música de fundo."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=X0LXRFkp2iI",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/X0LXRFkp2iI"
+        },
+        {
+          "type": "heading",
+          "text": "Novos personagens chegam ao jogo",
+          "runs": [
+            {
+              "text": "Novos personagens chegam ao jogo"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Sendo assim a terceira temporada começou em 23 de julho com seis personagens adicionais. Rick Strowd abriu a lista, seguido por Duck King em agosto. Em outubro, Manjiro Sano e Ken Ryuguji, de Tokyo Revengers, serão adicionados ao jogo.",
+          "runs": [
+            {
+              "text": "Sendo assim a terceira temporada começou em 23 de julho com seis personagens adicionais. Rick Strowd abriu a lista, seguido por Duck King em agosto. Em outubro, Manjiro Sano e Ken Ryuguji, de "
+            },
+            {
+              "text": "Tokyo Revengers",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", serão adicionados ao jogo."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=5-FvdmPj3BQ",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/5-FvdmPj3BQ"
+        },
+        {
+          "type": "paragraph",
+          "text": "Laocorn chegará em novembro, enquanto um personagem ainda não revelado está previsto para dezembro.",
+          "runs": [
+            {
+              "text": "Laocorn chegará em novembro, enquanto um personagem ainda não revelado está previsto para dezembro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fatal Fury: City of the Wolves estreou em abril de 2025 para PlayStation 5, PlayStation 4, Xbox Series X|S e PC. Por fim a versão digital para Nintendo Switch 2 ganhou lançamento para o dia 22 de outubro, enquanto a edição física estreia em janeiro de 2027.",
+          "runs": [
+            {
+              "text": "Fatal Fury: City of the Wolves",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " estreou em abril de 2025 para PlayStation 5, PlayStation 4, Xbox Series X|S e PC. Por fim a versão digital para Nintendo Switch 2 ganhou lançamento para o dia 22 de outubro, enquanto a edição física estreia em janeiro de 2027."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Youtube Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Youtube Oficial",
+              "href": "https://www.youtube.com/watch?v=X0LXRFkp2iI"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Fatal Fury ganha trailer animado de Kim Kaphwan.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Fatal Fury ganha trailer animado de Kim Kaphwan",
+              "href": "https://animenew.com.br/fatal-fury-city-of-the-wolves-kim-kaphwan/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-25T00:32:45.000Z",
+      "updatedAt": "2026-09-25T00:32:45.000Z",
+      "expiresAt": "2026-10-02T00:32:45.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/fatal-fury-city-of-the-wolves-kim-kaphwan",
+          "publishedAt": "2026-09-25T00:32:45.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 234,
+      "qualityScore": 0.97,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 2,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-f9931e84",
+      "slug": "site-brasileiro-aniquim-e-lancado-reunindo-catalogo-de-animes-listas-e-mais-jbox-f9931e84",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Site brasileiro ANIQuim é lançado reunindo catálogo de animês, listas e mais",
+      "originalTitle": "Site brasileiro ANIQuim é lançado reunindo catálogo de animês, listas e mais",
+      "summary": "Os fãs brasileiros de animês ganharam um novo lugar para acompanhar lançamentos das temporadas, montar listas do que assistir, organizar títulos mais: trata-se do ANIQuim, plataforma brasileira com ares de My Anime List, pensada para a comunidade nacional. A proposta, inclusive, está no próprio nome, uma mistura de animê + tupiniquim.",
+      "author": "Equipe JBox",
+      "tags": [
+        "Anime",
+        "Streaming",
+        "ANIQuim",
+        "lista de animes no ANIQuim",
+        "My Anime List",
+        "site brasileiro ANIQuim"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/24/site-brasileiro-aniquim-e-lancado-reunindo-catalogo-de-animes-listas-e-mais",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/24/site-brasileiro-aniquim-e-lancado-reunindo-catalogo-de-animes-listas-e-mais",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/site-aniquim-destacada.jpg",
+      "mediaQuery": "Site brasileiro ANIQuim é lançado reunindo catálogo de animês, listas e mais",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/aniquim-home.jpg",
+          "alt": "Imagem do site ANIQuim",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Lista-de-Animes.png",
+          "alt": "Imagem do site ANIQuim",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/aniquim-programacao.jpg",
+          "alt": "Imagem do site ANIQuim",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Os fãs brasileiros de animês ganharam um novo lugar para acompanhar lançamentos das temporadas, montar listas do que assistir, organizar títulos mais: trata-se do ANIQuim, plataforma brasileira com ares de My Anime List, pensada para a comunidade nacional. A proposta, inclusive, está no próprio nome, uma mistura de animê + tupiniquim.",
+          "runs": [
+            {
+              "text": "Os fãs brasileiros de animês ganharam um novo lugar para acompanhar lançamentos das temporadas, montar listas do que assistir, organizar títulos mais: trata-se do "
+            },
+            {
+              "text": "ANIQuim",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.aniquim.com.br/"
+            },
+            {
+              "text": ", plataforma brasileira com ares de "
+            },
+            {
+              "text": "My Anime List",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", pensada para a comunidade nacional. A proposta, inclusive, está no próprio nome, "
+            },
+            {
+              "text": "uma mistura de animê + tupiniquim",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Totalmente em português, o ANIQuim reúne catálogo e descoberta de novos títulos, com um acompanhamento pessoal e construção de comunidade. Na plataforma, é possível encontrar novos títulos, descobrir onde assistir oficialmente no Brasil, acompanhar lançamentos, organizar o que já viu ou pretende assistir e conferir avaliações e opiniões de outros fãs.",
+          "runs": [
+            {
+              "text": "Totalmente em português, o "
+            },
+            {
+              "text": "ANIQuim",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " reúne catálogo e descoberta de novos títulos, com um acompanhamento pessoal e construção de comunidade. Na plataforma, é possível encontrar novos títulos, descobrir onde assistir oficialmente no Brasil, acompanhar lançamentos, organizar o que já viu ou pretende assistir e conferir avaliações e opiniões de outros fãs."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/aniquim-home.jpg",
+          "alt": "Imagem do site ANIQuim"
+        },
+        {
+          "type": "paragraph",
+          "text": "Home do site conta com os animês em alta na semana. | ANIQuim/Reprodução",
+          "runs": [
+            {
+              "text": "Home do site conta com os animês em alta na semana. | ANIQuim/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A ideia surgiu de uma necessidade dos próprios criadores, Ana Lima e Hugo Machado: ter um espaço em que recomendações, discussões e informações sobre animê não estivessem espalhadas por diferentes plataformas.",
+          "runs": [
+            {
+              "text": "A ideia surgiu de uma necessidade dos próprios criadores, "
+            },
+            {
+              "text": "Ana Lima",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Hugo Machado",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": ter um espaço em que recomendações, discussões e informações sobre animê não estivessem espalhadas por diferentes plataformas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre as principais funcionalidades do site está a lista pessoal, na qual cada animê pode ser classificado entre Quero Ver, Assistindo, Terminei, Pausei e Desisti. Além de acompanhar episódios, dar notas e favoritar produções, os usuários podem adicionar reações como “Bombando”, “Amei”, “Deu sono” e “Lento”, além de publicar Impressões, comentários curtos sobre animês ou episódios com proteção contra spoilers. Essas interações também alimentam os dados da comunidade, incluindo um Top 100 e estatísticas sobre popularidade, avaliações e comportamento dos fãs.",
+          "runs": [
+            {
+              "text": "Entre as principais funcionalidades do site está a "
+            },
+            {
+              "text": "lista pessoal",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", na qual cada animê pode ser classificado entre "
+            },
+            {
+              "text": "Quero Ver",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Assistindo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Terminei",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ","
+            },
+            {
+              "text": " Pausei",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Desisti",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Além de acompanhar episódios, dar notas e favoritar produções, os usuários podem adicionar reações como "
+            },
+            {
+              "text": "“Bombando”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "“Amei”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "“Deu sono”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "“Lento”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", além de publicar "
+            },
+            {
+              "text": "Impressões",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", comentários curtos sobre animês ou episódios com proteção contra spoilers. Essas interações também alimentam os dados da comunidade, incluindo um Top 100 e estatísticas sobre popularidade, avaliações e comportamento dos fãs."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Lista-de-Animes.png",
+          "alt": "Imagem do site ANIQuim"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ao incluir um título, o usuário pode acrescentar diversas reações e uma nota. | ANIQuim/Reprodução",
+          "runs": [
+            {
+              "text": "Ao incluir um título, o usuário pode acrescentar diversas reações e uma nota. | ANIQuim/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para quem acompanha as temporadas em andamento, o site conta ainda com uma programação semanal, indicando quais episódios chegam a cada dia e onde assistir oficialmente no Brasil. O catálogo, atualmente com mais de 8 mil animês, é curado manualmente e reúne sinopses e títulos em português quando disponíveis, trailers, personagens, estúdios, direção e recomendações, além de filtros para ajudar na descoberta de novas produções.",
+          "runs": [
+            {
+              "text": "Para quem acompanha as temporadas em andamento, o site conta ainda com uma programação semanal, indicando quais episódios chegam a cada dia e onde assistir oficialmente no Brasil. O catálogo, atualmente com mais de 8 mil animês, é curado manualmente e reúne sinopses e títulos em português quando disponíveis, trailers, personagens, estúdios, direção e recomendações, além de filtros para ajudar na descoberta de novas produções."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O ANIQuim também busca aproximar os animês do conteúdo produzido pela própria comunidade brasileira. A plataforma já reúne episódios de podcasts nacionais relacionados a cada título, direcionando os usuários para parceiros como o MDA – Mundo dos Animes, e pretende ampliar essa integração para outros formatos e criadores.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "ANIQuim",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " também busca aproximar os animês do conteúdo produzido pela própria comunidade brasileira. A plataforma já reúne episódios de podcasts nacionais relacionados a cada título, direcionando os usuários para parceiros como o "
+            },
+            {
+              "text": "MDA – Mundo dos Animes",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", e pretende ampliar essa integração para outros formatos e criadores."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/aniquim-programacao.jpg",
+          "alt": "Imagem do site ANIQuim"
+        },
+        {
+          "type": "paragraph",
+          "text": "O calendário mostra data e horário de exibição dos animês, e tem um filtro para mostrar somente a lista do usuário. | ANIQuim/Reprodução",
+          "runs": [
+            {
+              "text": "O calendário mostra data e horário de exibição dos animês, e tem um filtro para mostrar somente a lista do usuário. | ANIQuim/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Com algumas semanas no ar, a plataforma contabiliza 6,9 mil usuários ativos/sessões e 61 mil visualizações de páginas. Entre os 8,5 mil animês cadastrados, mais de 13,6 mil já foram marcados como concluídos, 1,6 mil estão sendo assistidos e outros 2,7 mil entraram nas listas de títulos que os usuários pretendem conferir.",
+          "runs": [
+            {
+              "text": "Com algumas semanas no ar, a plataforma contabiliza 6,9 mil usuários ativos/sessões e 61 mil visualizações de páginas. Entre os 8,5 mil animês cadastrados, mais de 13,6 mil já foram marcados como concluídos, 1,6 mil estão sendo assistidos e outros 2,7 mil entraram nas listas de títulos que os usuários pretendem conferir."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre os próximos passos estão a expansão contínua do catálogo, novas parcerias com a comunidade e o desenvolvimento de um aplicativo nativo. A equipe também pretende transformar os dados gerados pelos usuários em um termômetro de “o que o Brasil está vendo”, com rankings e curiosidades baseados no comportamento dos fãs brasileiros.",
+          "runs": [
+            {
+              "text": "Entre os próximos passos estão a expansão contínua do catálogo, novas parcerias com a comunidade e o desenvolvimento de um aplicativo nativo. A equipe também pretende transformar os dados gerados pelos usuários em um termômetro de "
+            },
+            {
+              "text": "“o que o Brasil está vendo”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", com rankings e curiosidades baseados no comportamento dos fãs brasileiros."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O ANIQuim pode ser acessado gratuitamente em aniquim.com.br.",
+          "runs": [
+            {
+              "text": "O ANIQuim pode ser acessado gratuitamente em "
+            },
+            {
+              "text": "aniquim.com.br",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.aniquim.com.br/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Comunicado de imprensa",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Comunicado de imprensa",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-25T00:30:53.000Z",
+      "updatedAt": "2026-09-25T00:31:44.000Z",
+      "expiresAt": "2026-10-02T00:30:53.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/24/site-brasileiro-aniquim-e-lancado-reunindo-catalogo-de-animes-listas-e-mais",
+          "publishedAt": "2026-09-25T00:30:53.000Z",
+          "author": "Equipe JBox"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 511,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 18,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 3,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-992c5a88",
       "slug": "now-that-we-draw-revela-trailer-completo-e-estreia-em-2027-animenew-992c5a88",
@@ -4659,268 +5363,6 @@
         "facts": 0,
         "sections": 0,
         "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-5023c673",
-      "slug": "alya-sometimes-hides-feelings-revela-teaser-da-2-temporada-animenew-5023c673",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Alya Sometimes Hides Feelings revela teaser da 2ª temporada",
-      "originalTitle": "Alya Sometimes Hides Feelings revela teaser da 2ª temporada",
-      "summary": "A segunda temporada de Alya Sometimes Hides Her Feelings in Russian ganhou um novo teaser durante o evento KyoMAF, realizado neste final de semana. A prévia também reforça o lançamento do anime em 2027.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Alya Sometimes Hides Her Feelings in Russian",
-        "Doga Kobo"
-      ],
-      "url": "https://animenew.com.br/alya-sometimes-hides-feelings-russian-2-temporada",
-      "sourceUrl": "https://animenew.com.br/alya-sometimes-hides-feelings-russian-2-temporada",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Alya-Sometimes-Hides-Feelings-revela-teaser-da-2a-temporada.webp",
-      "mediaQuery": "Alya Sometimes Hides Feelings revela teaser da 2ª temporada",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/sAJ_nczJnJM"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A segunda temporada de Alya Sometimes Hides Her Feelings in Russian ganhou um novo teaser durante o evento KyoMAF, realizado neste final de semana. A prévia também reforça o lançamento do anime em 2027.",
-          "runs": [
-            {
-              "text": "A segunda temporada de "
-            },
-            {
-              "text": "Alya Sometimes Hides Her Feelings in Russian",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ganhou um novo teaser durante o evento "
-            },
-            {
-              "text": "KyoMAF",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", realizado neste final de semana. A prévia também reforça o lançamento do "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " em 2027."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Broken Saintess 2 revela música-tema em novo teaser",
-              "runs": [
-                {
-                  "text": "Broken Saintess 2 revela música-tema em novo teaser",
-                  "href": "https://animenew.com.br/broken-saintess-2-revela-musica-tema"
-                }
-              ]
-            },
-            {
-              "text": "Anime de Suikoden ganha música de encerramento e data",
-              "runs": [
-                {
-                  "text": "Anime de Suikoden ganha música de encerramento e data",
-                  "href": "https://animenew.com.br/anime-de-suikoden-estreia-em-outubro"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A Kadokawa aproveitou a ocasião para anunciar que a série de light novels escrita por Sunsunsun e ilustrada por Momoco alcançou 5,5 milhões de cópias em circulação mundial, incluindo as versões digitais.",
-          "runs": [
-            {
-              "text": "A Kadokawa aproveitou a ocasião para anunciar que a série de light novels escrita por Sunsunsun e ilustrada por Momoco alcançou 5,5 milhões de cópias em circulação mundial, incluindo as versões digitais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A nova temporada estava prevista para 2026, mas foi adiada para 2027 com o objetivo de aprimorar a qualidade da produção.",
-          "runs": [
-            {
-              "text": "A nova temporada estava prevista para 2026, mas foi adiada para 2027 com o objetivo de aprimorar a qualidade da produção.",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Mudanças na equipe de Alya Sometimes",
-          "runs": [
-            {
-              "text": "Mudanças na equipe de Alya Sometimes"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Hiroshi Haraguchi, diretor do episódio 4 da primeira temporada, assume a direção no lugar de Ryota Itoh no estúdio Doga Kobo. Yuka Yamada também passa a cuidar dos roteiros da série, enquanto Yūhei Murota retorna ao design dos personagens. Seong Min Kim será o diretor assistente.",
-          "runs": [
-            {
-              "text": "Hiroshi Haraguchi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", diretor do episódio 4 da primeira temporada, assume a direção no lugar de Ryota Itoh no "
-            },
-            {
-              "text": "estúdio Doga Kobo",
-              "href": "https://animenew.com.br/studio/95/doga-kobo"
-            },
-            {
-              "text": ". Yuka Yamada também passa a cuidar dos roteiros da série, enquanto Yūhei Murota retorna ao design dos personagens. Seong Min Kim será o diretor assistente."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=sAJ_nczJnJM",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/sAJ_nczJnJM"
-        },
-        {
-          "type": "heading",
-          "text": "História",
-          "runs": [
-            {
-              "text": "História"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama acompanha Alisa Mikhailovna Kujou, uma estudante de origem russa conhecida como a “princesa solitária” da escola. Ao lado dela está Masachika Kuze, seu colega de classe aparentemente desleixado. Alya costuma esconder seus sentimentos falando em russo, sem saber que Masachika entende o idioma.",
-          "runs": [
-            {
-              "text": "A trama acompanha Alisa Mikhailovna Kujou, uma estudante de origem russa conhecida como a “princesa solitária” da escola. Ao lado dela está Masachika Kuze, seu colega de classe aparentemente desleixado. Alya costuma esconder seus sentimentos falando em russo, sem saber que Masachika entende o idioma.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Contudo a história continuará a partir do quarto volume da light novel. Ademais a primeira temporada estreou em julho de 2024 e teve 12 episódios. A Crunchyroll exibiu a série durante a transmissão no Japão.",
-          "runs": [
-            {
-              "text": "Contudo a história continuará a partir do quarto volume da "
-            },
-            {
-              "text": "light novel",
-              "href": "https://animenew.com.br/light-novel"
-            },
-            {
-              "text": ". Ademais a primeira temporada estreou em julho de 2024 e teve 12 episódios. A "
-            },
-            {
-              "text": "Crunchyroll",
-              "href": "https://animenew.com.br/tag/crunchyroll/"
-            },
-            {
-              "text": " exibiu a série durante a transmissão no Japão."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://roshidere.com/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Alya Sometimes Hides Feelings revela teaser da 2ª temporada.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Alya Sometimes Hides Feelings revela teaser da 2ª temporada",
-              "href": "https://animenew.com.br/alya-sometimes-hides-feelings-russian-2-temporada/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-22T18:02:01.000Z",
-      "updatedAt": "2026-09-22T18:02:01.000Z",
-      "expiresAt": "2026-09-29T18:02:01.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/alya-sometimes-hides-feelings-russian-2-temporada",
-          "publishedAt": "2026-09-22T18:02:01.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 261,
-      "qualityScore": 0.974,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
         "sourceCount": 1,
         "ingestMode": "rss-full",
         "contentMode": "full",
