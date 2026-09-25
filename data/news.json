@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T00:34:39.441Z",
+  "generatedAt": "2026-09-25T05:17:44.263Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,747 @@
   ],
   "stats": {
     "collected": 48,
-    "grouped": 19,
-    "published": 19,
-    "newStories": 19,
-    "fullArticles": 19,
+    "grouped": 20,
+    "published": 20,
+    "newStories": 20,
+    "fullArticles": 20,
     "previewArticles": 0,
-    "avgWords": 453,
-    "withHeroImage": 19,
-    "withOrderedMedia": 18,
+    "avgWords": 459,
+    "withHeroImage": 20,
+    "withOrderedMedia": 19,
     "skippedTranslation": 0,
-    "skippedQuality": 26,
-    "durationMs": 2829
+    "skippedQuality": 25,
+    "durationMs": 2706
   },
   "items": [
+    {
+      "id": "jbox-b0e3f863",
+      "slug": "jogo-isekai-slow-life-lanca-colaboracao-com-demon-slayer-kimetsu-no-yaiba-por-tempo-limitado-jbox-b0e3f863",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Jogo ‘Isekai: Slow Life’ lança colaboração com ‘Demon Slayer: Kimetsu no Yaiba’ por tempo limitado",
+      "originalTitle": "Jogo ‘Isekai: Slow Life’ lança colaboração com ‘Demon Slayer: Kimetsu no Yaiba’ por tempo limitado",
+      "summary": "O jogo mobile Isekai: Slow Life deu início, no começo deste mês, a uma colaboração com a franquia Demon Slayer: Kimetsu no Yaiba por tempo limitado.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Games",
+        "Mobile",
+        "Collab de Demon Slayer e Isekai: Slow Life",
+        "Demon Slayer",
+        "Demon Slayer: Kimetsu no Yaiba",
+        "Isekai Slow Life e Demon Slayer",
+        "Isekai: Slow Life"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/24/jogo-isekai-slow-life-lanca-colaboracao-com-demon-slayer-kimetsu-no-yaiba-por-tempo-limitado",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/24/jogo-isekai-slow-life-lanca-colaboracao-com-demon-slayer-kimetsu-no-yaiba-por-tempo-limitado",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/isekai-slow-life-demon-slayer-destacada.jpg",
+      "mediaQuery": "Jogo ‘Isekai: Slow Life’ lança colaboração com ‘Demon Slayer: Kimetsu no Yaiba’ por tempo limitado",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Iseaki-Slow-Life-x-Demon-Slayer-Reward-Art.png",
+          "alt": "Isekai Slow Life e Demon Slayer",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/6ZDhXtiQ2sE"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O jogo mobile Isekai: Slow Life deu início, no começo deste mês, a uma colaboração com a franquia Demon Slayer: Kimetsu no Yaiba por tempo limitado.",
+          "runs": [
+            {
+              "text": "O jogo mobile "
+            },
+            {
+              "text": "Isekai: Slow Life",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " deu início, no começo deste mês, a uma colaboração com a franquia "
+            },
+            {
+              "text": "Demon Slayer: Kimetsu no Yaiba",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " por tempo limitado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "De acordo com a Mars Games, o evento Isekai Demon Hunter Arc fica disponível até o dia 30 de setembro, para smartphones com os sistemas iOS e Android.",
+          "runs": [
+            {
+              "text": "De acordo com a "
+            },
+            {
+              "text": "Mars Games",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o evento"
+            },
+            {
+              "text": " Isekai Demon Hunter Arc",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " fica disponível "
+            },
+            {
+              "text": "até o dia 30 de setembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", para smartphones com os sistemas "
+            },
+            {
+              "text": "iOS",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://apps.apple.com/us/app/isekai-slow-life/id6449289088"
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Android",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://play.google.com/store/apps/details?id=com.iskslowtest.mislen&hl=en_US"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=6ZDhXtiQ2sE",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/6ZDhXtiQ2sE"
+        },
+        {
+          "type": "paragraph",
+          "text": "Durante o período, os jogadores terão acesso a seis personagens da franquia. São eles (segundo a descrição oficial):",
+          "runs": [
+            {
+              "text": "Durante o período, os jogadores terão acesso a seis personagens da franquia. São eles (segundo a descrição oficial):"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Tanjiro Kamado: um gentil garoto que se junta ao Corpo de Exterminadores de Demônios para transformar sua jovem irmã em uma humana. Ele usa a técnica de Respiração da Água, além da Hinokami Kagura. Ele também possui um excelente olfato.",
+              "runs": [
+                {
+                  "text": "Tanjiro Kamado:",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " um gentil garoto que se junta ao Corpo de Exterminadores de Demônios para transformar sua jovem irmã em uma humana. Ele usa a técnica de Respiração da Água, além da Hinokami Kagura. Ele também possui um excelente olfato."
+                }
+              ]
+            },
+            {
+              "text": "Nezuko Kamado: a irmã mais nova de Tanjiro, que foi transformada em um demônio. Graças à sugestão hipnótica de Urokodaki e sua própria força de vontade, ela luta para proteger os humanos. Após conquistar sua fraqueza com a luz solar, ela é capaz de ficar ativa durante o dia.",
+              "runs": [
+                {
+                  "text": "Nezuko Kamado:",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " a irmã mais nova de Tanjiro, que foi transformada em um demônio. Graças à sugestão hipnótica de Urokodaki e sua própria força de vontade, ela luta para proteger os humanos. Após conquistar sua fraqueza com a luz solar, ela é capaz de ficar ativa durante o dia."
+                }
+              ]
+            },
+            {
+              "text": "Zenitsu Agatsuma: um espadachim do Corpo de Exterminadores de Demônios e um dos companheiros de Tanjiro. Usuário da técnica Respiração do Trovão. Normalmente, ele é bastante tímido, mas, quando ele está terrivelmente assustado, ele acaba entrando em um transe, demonstrando sua verdadeira habilidade. Ele tem uma audição apurada e adora garotas.",
+              "runs": [
+                {
+                  "text": "Zenitsu Agatsuma:",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " um espadachim do Corpo de Exterminadores de Demônios e um dos companheiros de Tanjiro. Usuário da técnica Respiração do Trovão. Normalmente, ele é bastante tímido, mas, quando ele está terrivelmente assustado, ele acaba entrando em um transe, demonstrando sua verdadeira habilidade. Ele tem uma audição apurada e adora garotas."
+                }
+              ]
+            },
+            {
+              "text": "Inosuke Hashibira: um espadachim do Corpo de Exterminadores de Demônios e um dos companheiros de Tanjiro. Ele adora batalhas, sempre sendo o primeiro a entrar em combate. Ele utiliza a técnica da Respiração da Besta e está sempre utilizando uma máscara de porco que esconde seu rosto. Por ser criado nas montanhas, ele possui uma intuição afiada e é altamente perspicaz.",
+              "runs": [
+                {
+                  "text": "Inosuke Hashibira:",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " um espadachim do Corpo de Exterminadores de Demônios e um dos companheiros de Tanjiro. Ele adora batalhas, sempre sendo o primeiro a entrar em combate. Ele utiliza a técnica da Respiração da Besta e está sempre utilizando uma máscara de porco que esconde seu rosto. Por ser criado nas montanhas, ele possui uma intuição afiada e é altamente perspicaz."
+                }
+              ]
+            },
+            {
+              "text": "Giyu Tomioka: um dos espadachins de maior ranque do Corpo de Exterminadores de Demônios. O Hashira da Água. Ele não se considerava digno de ser um Hashira, contudo, ele se lembra das esperanças de seu amigo, Sabito, incutidas nele, e está determinado a levá-las adiante.",
+              "runs": [
+                {
+                  "text": "Giyu Tomioka:",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " um dos espadachins de maior ranque do Corpo de Exterminadores de Demônios. O Hashira da Água. Ele não se considerava digno de ser um Hashira, contudo, ele se lembra das esperanças de seu amigo, Sabito, incutidas nele, e está determinado a levá-las adiante."
+                }
+              ]
+            },
+            {
+              "text": "Shinobu Kocho: uma das espadachins de maior ranque do Corpo de Exterminadores de Demônios, o Hashira. O Pilar do Inseto. Ela possui conhecimento excepcional de medicamentos e luta com um veneno especial que pode derrotar demônios.",
+              "runs": [
+                {
+                  "text": "Shinobu Kocho:",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " uma das espadachins de maior ranque do Corpo de Exterminadores de Demônios, o Hashira. O Pilar do Inseto. Ela possui conhecimento excepcional de medicamentos e luta com um veneno especial que pode derrotar demônios."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Iseaki-Slow-Life-x-Demon-Slayer-Reward-Art.png",
+          "alt": "Isekai Slow Life e Demon Slayer"
+        },
+        {
+          "type": "paragraph",
+          "text": "Colaboração também brinca com memes e emojis de Demon Slayer | Mars Games/Divulgação",
+          "runs": [
+            {
+              "text": "Colaboração também brinca com memes e emojis de Demon Slayer | Mars Games/Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Os jogadores podem selecionar o estágio, encontrar demônios e batalhar usando o sistema de combate Match-3, e então utilizar as recompensas para melhorar seus personagens e completar estágios ainda mais difíceis, que culminam em uma batalha contra um chefão final. Pelo caminho, também é possível subir o nível dos personagens para receber artes exclusivas, além de avatares dinâmicos, emojis grátis e pagos, novos artefatos e muito mais.",
+          "runs": [
+            {
+              "text": "Os jogadores podem selecionar o estágio, encontrar demônios e batalhar usando o sistema de combate Match-3, e então utilizar as recompensas para melhorar seus personagens e completar estágios ainda mais difíceis, que culminam em uma batalha contra um chefão final. Pelo caminho, também é possível subir o nível dos personagens para receber artes exclusivas, além de avatares dinâmicos, emojis grátis e pagos, novos artefatos e muito mais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Focado na construção de cidades, Isekai: Slow Life é um jogo mobile gratuito para jogar com opções de compras através de uma loja interna, disponível desde agosto de 2023.",
+          "runs": [
+            {
+              "text": "Focado na construção de cidades, "
+            },
+            {
+              "text": "Isekai: Slow Life",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é um jogo mobile gratuito para jogar com opções de compras através de uma loja interna, disponível desde agosto de 2023."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já a franquia Demon Slayer segue em alta, com a chegada do filme Castelo Infinito a diversos streamings no Brasil este mês. Atualmente, o estúdio Ufotable já trabalha em Demon Slayer: Kimetsu no Yaiba Castelo Infinito II, que teve o primeiro logo divulgado, mas segue sem previsão de lançamento.",
+          "runs": [
+            {
+              "text": "Já a franquia "
+            },
+            {
+              "text": "Demon Slayer",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " segue em alta, com "
+            },
+            {
+              "text": "a chegada do filme ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/15/demon-slayer-castelo-infinito-estreia-este-mes-na-netflix-e-prime-video/"
+            },
+            {
+              "text": "Castelo Infinito",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/15/demon-slayer-castelo-infinito-estreia-este-mes-na-netflix-e-prime-video/"
+            },
+            {
+              "text": " a diversos streamings no Brasil este mês",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/15/demon-slayer-castelo-infinito-estreia-este-mes-na-netflix-e-prime-video/"
+            },
+            {
+              "text": ". Atualmente, o estúdio "
+            },
+            {
+              "text": "Ufotable",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " já trabalha em "
+            },
+            {
+              "text": "Demon Slayer: Kimetsu no Yaiba Castelo Infinito II",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que teve o primeiro logo divulgado, mas segue sem previsão de lançamento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Brasil, o animê regular de Demon Slayer está disponível na Crunchyroll e Netflix. Já o mangá, finalizado em 2020, foi publicado no país pela Panini.",
+          "runs": [
+            {
+              "text": "No Brasil, o animê regular de "
+            },
+            {
+              "text": "Demon Slayer",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " está disponível na "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e"
+            },
+            {
+              "text": " Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Já o mangá, finalizado em 2020, foi publicado no país pela "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Comunicado de imprensa",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Comunicado de imprensa",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-25T01:30:39.000Z",
+      "updatedAt": "2026-09-25T01:32:25.000Z",
+      "expiresAt": "2026-10-02T01:30:39.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/24/jogo-isekai-slow-life-lanca-colaboracao-com-demon-slayer-kimetsu-no-yaiba-por-tempo-limitado",
+          "publishedAt": "2026-09-25T01:30:39.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 559,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 14,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-f0d1ef29",
+      "slug": "sekiro-no-defeat-sera-lancado-como-serie-de-8-episodios-animenew-f0d1ef29",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Sekiro: No Defeat será lançado como série de 8 episódios",
+      "originalTitle": "Sekiro: No Defeat será lançado como série de 8 episódios",
+      "summary": "A adaptação de Sekiro: Shadows Die Twice ganhou data para chegar ao streaming. Sekiro: No Defeat estreia em janeiro de 2027 na Crunchyroll, agora como uma série de oito episódios. Os cinemas do Japão exibiram inicialmente a produção como um filme de 107 minutos.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Sekiro No Defeat"
+      ],
+      "url": "https://animenew.com.br/sekiro-no-defeat-serie-8-episodios",
+      "sourceUrl": "https://animenew.com.br/sekiro-no-defeat-serie-8-episodios",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Sekiro-No-Defeat-sera-lancado-como-serie-de-8-episodios.webp",
+      "mediaQuery": "Sekiro: No Defeat será lançado como série de 8 episódios",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Sekiro-No-Defeat.webp",
+          "alt": "Sekiro No Defeat",
+          "caption": "© FS. Published by Activision. ©KA/SNDP"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/q0zQNh0wSb0"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A adaptação de Sekiro: Shadows Die Twice ganhou data para chegar ao streaming. Sekiro: No Defeat estreia em janeiro de 2027 na Crunchyroll, agora como uma série de oito episódios. Os cinemas do Japão exibiram inicialmente a produção como um filme de 107 minutos.",
+          "runs": [
+            {
+              "text": "A adaptação de "
+            },
+            {
+              "text": "Sekiro: Shadows Die Twice",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ganhou data para chegar ao streaming. "
+            },
+            {
+              "text": "Sekiro: No Defeat",
+              "href": "https://animenew.com.br/anime/197620/sekiro-no-defeat"
+            },
+            {
+              "text": " estreia em janeiro de 2027 na "
+            },
+            {
+              "text": "Crunchyroll",
+              "href": "https://animenew.com.br/tag/crunchyroll/"
+            },
+            {
+              "text": ", agora como uma série de oito episódios. Os "
+            },
+            {
+              "text": "cinemas",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " do Japão exibiram inicialmente a produção como um filme de 107 minutos."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Now That We Draw revela trailer completo e estreia em 2027",
+              "runs": [
+                {
+                  "text": "Now That We Draw revela trailer completo e estreia em 2027",
+                  "href": "https://animenew.com.br/now-that-we-draw-anime-trailer-estreia-2027"
+                }
+              ]
+            },
+            {
+              "text": "Isshiki-san revela novos personagens do anime",
+              "runs": [
+                {
+                  "text": "Isshiki-san revela novos personagens do anime",
+                  "href": "https://animenew.com.br/isshiki-san-anime-novos-personagens-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Sendo assim a versão para streaming será diferente e terá cenas e cortes que não aparecem na edição cinematográfica.",
+          "runs": [
+            {
+              "text": "Sendo assim a versão para streaming será diferente e terá cenas e cortes que não aparecem na edição cinematográfica."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=q0zQNh0wSb0",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/q0zQNh0wSb0"
+        },
+        {
+          "type": "heading",
+          "text": "Anime terá episódios semanais",
+          "runs": [
+            {
+              "text": "Anime terá episódios semanais"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "O produtor Tetsushi Suzuki explicou no site oficial que o projeto começou originalmente como uma série de oito episódios. Contudo durante a produção, a equipe decidiu montar uma versão editada para os cinemas, priorizando a experiência com imagem e som em tela grande.",
+          "runs": [
+            {
+              "text": "O produtor "
+            },
+            {
+              "text": "Tetsushi Suzuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " explicou no site oficial que o projeto começou originalmente como uma série de oito episódios. Contudo durante a produção, a equipe decidiu montar uma versão editada para os cinemas, priorizando a experiência com imagem e som em tela grande."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Sekiro-No-Defeat.webp",
+          "alt": "Sekiro No Defeat",
+          "caption": "© FS. Published by Activision. ©KA/SNDP"
+        },
+        {
+          "type": "paragraph",
+          "text": "Segundo Suzuki, a série apresentará uma experiência diferente para quem já assistiu ao filme, mantendo a mesma história como base. Os episódios serão lançados semanalmente.",
+          "runs": [
+            {
+              "text": "Segundo Suzuki, a série apresentará uma experiência diferente para quem já assistiu ao filme, mantendo a mesma história como base. Os episódios serão lançados semanalmente."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Kenichi Kutsuna dirige o anime no estúdio Qzil.la, com Shunsuke Fukui como diretor assistente. Takahiro Kishida cuida do design de personagens, enquanto Shuta Hasunuma assina a composição musical.",
+          "runs": [
+            {
+              "text": "Kenichi Kutsuna",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dirige o anime no "
+            },
+            {
+              "text": "estúdio Qzil.la",
+              "href": "https://animenew.com.br/studio/7092/qzilla"
+            },
+            {
+              "text": ", com Shunsuke Fukui como diretor assistente. Takahiro Kishida cuida do design de personagens, enquanto Shuta Hasunuma assina a composição musical."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim a história acompanha Sekiro, um shinobi encarregado de proteger o Herdeiro Divino em meio às guerras que dividem o Japão. Sekiro: No Defeat estreia na Crunchyroll em janeiro de 2027.",
+          "runs": [
+            {
+              "text": "Por fim a história acompanha Sekiro, um shinobi encarregado de proteger o Herdeiro Divino em meio às guerras que dividem o Japão. Sekiro: No Defeat estreia na Crunchyroll em janeiro de 2027."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Sekiro: No Defeat será lançado como série de 8 episódios.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Sekiro: No Defeat será lançado como série de 8 episódios",
+              "href": "https://animenew.com.br/sekiro-no-defeat-serie-8-episodios/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-25T00:58:18.000Z",
+      "updatedAt": "2026-09-25T00:58:18.000Z",
+      "expiresAt": "2026-10-02T00:58:18.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/sekiro-no-defeat-serie-8-episodios",
+          "publishedAt": "2026-09-25T00:58:18.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 240,
+      "qualityScore": 0.97,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-1b3a0aa3",
       "slug": "fatal-fury-ganha-trailer-animado-de-kim-kaphwan-animenew-1b3a0aa3",
@@ -622,10 +1350,10 @@
         },
         {
           "type": "paragraph",
-          "text": "Com algumas semanas no ar, a plataforma contabiliza 6,9 mil usuários ativos/sessões e 61 mil visualizações de páginas. Entre os 8,5 mil animês cadastrados, mais de 13,6 mil já foram marcados como concluídos, 1,6 mil estão sendo assistidos e outros 2,7 mil entraram nas listas de títulos que os usuários pretendem conferir.",
+          "text": "Com algumas semanas no ar, a plataforma contabiliza 6,9 mil usuários ativos/sessões e 61 mil visualizações de páginas. Entre os 8,5 mil animês cadastrados, são mais de 13,6 mil marcações de séries completas, 1,6 mil estão sendo assistidos e outros 2,7 mil entraram nas listas de títulos que os usuários pretendem conferir.",
           "runs": [
             {
-              "text": "Com algumas semanas no ar, a plataforma contabiliza 6,9 mil usuários ativos/sessões e 61 mil visualizações de páginas. Entre os 8,5 mil animês cadastrados, mais de 13,6 mil já foram marcados como concluídos, 1,6 mil estão sendo assistidos e outros 2,7 mil entraram nas listas de títulos que os usuários pretendem conferir."
+              "text": "Com algumas semanas no ar, a plataforma contabiliza 6,9 mil usuários ativos/sessões e 61 mil visualizações de páginas. Entre os 8,5 mil animês cadastrados, são mais de 13,6 mil marcações de séries completas, 1,6 mil estão sendo assistidos e outros 2,7 mil entraram nas listas de títulos que os usuários pretendem conferir."
             }
           ]
         },
@@ -741,7 +1469,7 @@
       ],
       "contentMode": "full",
       "publishedAt": "2026-09-25T00:30:53.000Z",
-      "updatedAt": "2026-09-25T00:31:44.000Z",
+      "updatedAt": "2026-09-25T01:40:46.000Z",
       "expiresAt": "2026-10-02T00:30:53.000Z",
       "category": "Notícias",
       "eventType": "OTHER",
@@ -5109,265 +5837,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-b98a2822",
-      "slug": "anime-tensei-elf-revela-primeiros-minutos-com-data-de-lancamento-animenew-b98a2822",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Anime Tensei Elf revela primeiros minutos com data de lançamento",
-      "originalTitle": "Anime Tensei Elf revela primeiros minutos com data de lançamento",
-      "summary": "O anime The Reincarnated Elf Left on a Journey to Master His Magic revelou os dois primeiros minutos do episódio inicial e confirmou sua estreia para janeiro de 2027.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Majutsu o Kiwamete Tabi ni Deta Tensei Elf",
-        "The Reincarnated Elf Left"
-      ],
-      "url": "https://animenew.com.br/the-reincarnated-elf-anime-janeiro-2027",
-      "sourceUrl": "https://animenew.com.br/the-reincarnated-elf-anime-janeiro-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Anime-Tensei-Elf-revela-primeiros-minutos-com-data-de-lancamento.webp",
-      "mediaQuery": "Anime Tensei Elf revela primeiros minutos com data de lançamento",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/swAIVfYAZDQ"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime The Reincarnated Elf Left on a Journey to Master His Magic revelou os dois primeiros minutos do episódio inicial e confirmou sua estreia para janeiro de 2027.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "The Reincarnated Elf Left on a Journey to Master His Magic",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " revelou os dois primeiros minutos do episódio inicial e confirmou sua estreia para janeiro de 2027."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Alya Sometimes Hides Feelings revela teaser da 2ª temporada",
-              "runs": [
-                {
-                  "text": "Alya Sometimes Hides Feelings revela teaser da 2ª temporada",
-                  "href": "https://animenew.com.br/alya-sometimes-hides-feelings-russian-2-temporada"
-                }
-              ]
-            },
-            {
-              "text": "Broken Saintess 2 revela música-tema em novo teaser",
-              "runs": [
-                {
-                  "text": "Broken Saintess 2 revela música-tema em novo teaser",
-                  "href": "https://animenew.com.br/broken-saintess-2-revela-musica-tema"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A prévia foi divulgada no domingo (20) pelo site oficial da adaptação da light novel de Monshō Sakakibara. A produção também apresentou detalhes do elenco e da equipe responsável pela série.",
-          "runs": [
-            {
-              "text": "A prévia foi divulgada no domingo (20) pelo site oficial da adaptação da "
-            },
-            {
-              "text": "light novel",
-              "href": "https://animenew.com.br/light-novel"
-            },
-            {
-              "text": " de "
-            },
-            {
-              "text": "Monshō Sakakibara",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". A produção também apresentou detalhes do elenco e da equipe responsável pela série."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=swAIVfYAZDQ",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/swAIVfYAZDQ"
-        },
-        {
-          "type": "heading",
-          "text": "História de The Reincarnated Elf Left",
-          "runs": [
-            {
-              "text": "História de "
-            },
-            {
-              "text": "The Reincarnated Elf Left",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A história acompanha um homem que morre após um acidente e renasce como um elfo com uma expectativa de vida de mil anos. Decidido a viver sem arrependimentos e deixar sua marca no mundo, ele parte em uma jornada e reencontra uma garota que salvou no passado.",
-          "runs": [
-            {
-              "text": "A história acompanha um homem que morre após um acidente e renasce como um elfo com uma expectativa de vida de mil anos. Decidido a viver sem arrependimentos e deixar sua marca no mundo, ele parte em uma jornada e reencontra uma garota que salvou no passado.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Produção e elenco do anime",
-          "runs": [
-            {
-              "text": "Produção e elenco do anime"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Daiki Yamashita interpreta Liese, enquanto Hana Hishikawa dá voz a Minori. Yuki Inaba dirige a animação no Studio Palette e também assume a composição da série. Sakakibara iniciou a publicação da história no site Kakuyomu em 2021. Sendo assim a Starts Publishing lançou um volume da light novel em 2022, com ilustrações de Hatori Kyoka.",
-          "runs": [
-            {
-              "text": "Daiki Yamashita interpreta Liese, enquanto "
-            },
-            {
-              "text": "Hana Hishikawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " dá voz a Minori. Yuki Inaba dirige a animação no "
-            },
-            {
-              "text": "Studio Palette",
-              "href": "https://animenew.com.br/studio/6738/studio-palette"
-            },
-            {
-              "text": " e também assume a composição da série. Sakakibara iniciou a publicação da história no site Kakuyomu em 2021. Sendo assim a Starts Publishing lançou um volume da light novel em 2022, com ilustrações de Hatori Kyoka."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Contudo a adaptação em mangá, desenhada por kanco, começou em maio de 2023. Por fim o sexto volume chegou ao mercado em 26 de junho.",
-          "runs": [
-            {
-              "text": "Contudo a adaptação em "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": ", desenhada por kanco, começou em maio de 2023. Por fim o sexto volume chegou ao mercado em 26 de junho."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://tenseielf.asmik-ace.co.jp/news/81/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Anime Tensei Elf revela primeiros minutos com data de lançamento.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Anime Tensei Elf revela primeiros minutos com data de lançamento",
-              "href": "https://animenew.com.br/the-reincarnated-elf-anime-janeiro-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-22T18:37:24.000Z",
-      "updatedAt": "2026-09-22T18:37:24.000Z",
-      "expiresAt": "2026-09-29T18:37:24.000Z",
-      "category": "Episódios",
-      "eventType": "EPISODE",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/the-reincarnated-elf-anime-janeiro-2027",
-          "publishedAt": "2026-09-22T18:37:24.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 240,
-      "qualityScore": 0.97,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     },
