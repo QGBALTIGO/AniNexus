@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T10:14:15.196Z",
+  "generatedAt": "2026-09-25T15:18:02.681Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,817 @@
   ],
   "stats": {
     "collected": 48,
-    "grouped": 20,
-    "published": 20,
-    "newStories": 20,
-    "fullArticles": 20,
+    "grouped": 21,
+    "published": 21,
+    "newStories": 21,
+    "fullArticles": 21,
     "previewArticles": 0,
-    "avgWords": 459,
-    "withHeroImage": 20,
-    "withOrderedMedia": 19,
+    "avgWords": 448,
+    "withHeroImage": 21,
+    "withOrderedMedia": 21,
     "skippedTranslation": 0,
     "skippedQuality": 25,
-    "durationMs": 2961
+    "durationMs": 3741
   },
   "items": [
+    {
+      "id": "animenew-d1b4be22",
+      "slug": "diarios-de-uma-apotecaria-revela-tema-de-encerramento-da-3-temporada-animenew-d1b4be22",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Diários de uma Apotecária revela tema de encerramento da 3ª temporada",
+      "originalTitle": "Diários de uma Apotecária revela tema de encerramento da 3ª temporada",
+      "summary": "A 3ª temporada de Diários de uma Apotecária (Kusuriya no Hitorigoto) ganhou um novo trailer nesta sexta-feira, que revelou “AIYOU”, interpretada por Eve, como tema de encerramento. O vídeo divulgado pela TOHO animation também apresenta novas cenas da continuação, que estreia em 2 de outubro de 2026, no bloco Friday Anime Night da NTV e outras 29 emissoras afiliadas.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Diários de uma Apotecária",
+        "Kusuriya no Hitorigoto",
+        "Toho Animation"
+      ],
+      "url": "https://animenew.com.br/diarios-de-uma-apotecaria-3-tema-encerramento",
+      "sourceUrl": "https://animenew.com.br/diarios-de-uma-apotecaria-3-tema-encerramento",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Diarios-de-uma-Apotecaria-revela-tema-de-encerramento-da-3a-temporada.webp",
+      "mediaQuery": "Diários de uma Apotecária revela tema de encerramento da 3ª temporada",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/YvNvvUeCztE"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A 3ª temporada de Diários de uma Apotecária (Kusuriya no Hitorigoto) ganhou um novo trailer nesta sexta-feira, que revelou “AIYOU”, interpretada por Eve, como tema de encerramento. O vídeo divulgado pela TOHO animation também apresenta novas cenas da continuação, que estreia em 2 de outubro de 2026, no bloco Friday Anime Night da NTV e outras 29 emissoras afiliadas.",
+          "runs": [
+            {
+              "text": "A 3ª temporada de "
+            },
+            {
+              "text": "Diários de uma Apotecária",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Kusuriya no Hitorigoto",
+              "href": "https://animenew.com.br/anime/195516/kusuriya-no-hitorigoto-3rd-season"
+            },
+            {
+              "text": ") ganhou um novo trailer nesta sexta-feira, que revelou “AIYOU”, interpretada por Eve, como tema de encerramento. O vídeo divulgado pela "
+            },
+            {
+              "text": "TOHO animation",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " também apresenta novas cenas da continuação, que estreia em "
+            },
+            {
+              "text": "2 de outubro de 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", no bloco "
+            },
+            {
+              "text": "Friday Anime Night",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " da NTV e outras 29 emissoras afiliadas."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "The Fake Alchemist revela elenco e equipe em novo vídeo",
+              "runs": [
+                {
+                  "text": "The Fake Alchemist revela elenco e equipe em novo vídeo",
+                  "href": "https://animenew.com.br/the-fake-alchemist-anime-elenco-equipe"
+                }
+              ]
+            },
+            {
+              "text": "Where is the Elf Teacher’s Toilet? ganha anime",
+              "runs": [
+                {
+                  "text": "Where is the Elf Teacher’s Toilet? ganha anime",
+                  "href": "https://animenew.com.br/where-is-the-elf-teachers-toilet-anime"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A terceira temporada terá dois cours, ou seja duas partes. A primeira parte começa em outubro, enquanto a segunda estreia em abril de 2027. Portanto a cantora e dubladora Reina Ueda também entra para o elenco como Bai Niangniang, uma misteriosa ninfa de aparência pálida.",
+          "runs": [
+            {
+              "text": "A terceira temporada terá dois cours, ou seja duas partes. A primeira parte começa em outubro, enquanto a segunda estreia em "
+            },
+            {
+              "text": "abril de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Portanto a cantora e dubladora Reina Ueda também entra para o elenco como "
+            },
+            {
+              "text": "Bai Niangniang",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", uma misteriosa ninfa de aparência pálida."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=YvNvvUeCztE",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/YvNvvUeCztE"
+        },
+        {
+          "type": "heading",
+          "text": "Nova música de abertura",
+          "runs": [
+            {
+              "text": "Nova música de abertura"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Sendo assim a banda yorushika ficará responsável pela abertura com a música “Kumo o Nukekazashimo e Watashidake” na 3ª temporada do anime Diários de uma Apotecária.",
+          "runs": [
+            {
+              "text": "Sendo assim a banda yorushika ficará responsável pela abertura com a música “Kumo o Nukekazashimo e Watashidake” na 3ª temporada do anime Diários de uma Apotecária."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além da nova temporada, a franquia terá o filme The Apothecary Diaries: The Deceased Empress’ Treasure, com estreia nos cinemas japoneses em 11 de dezembro de 2026. A produção contará uma história inédita escrita por Hyuganatsu, autora das novels originais.",
+          "runs": [
+            {
+              "text": "Além da nova temporada, a franquia terá o filme "
+            },
+            {
+              "text": "The Apothecary Diaries: The Deceased Empress’ Treasure",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com estreia nos cinemas japoneses em 11 de dezembro de 2026. A produção contará uma história inédita escrita por Hyuganatsu, autora das novels originais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A série acompanha Maomao, uma jovem especialista em medicina que é vendida como serva no palácio imperial. Por fim sua inteligência e conhecimento sobre venenos chamam a atenção de Jinshi, que a coloca a serviço da consorte favorita do imperador.",
+          "runs": [
+            {
+              "text": "A série acompanha Maomao, uma jovem especialista em medicina que é vendida como serva no palácio imperial. Por fim sua inteligência e conhecimento sobre venenos chamam a atenção de Jinshi, que a coloca a serviço da consorte favorita do imperador."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Diários de uma Apotecária revela tema de encerramento da 3ª temporada.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Diários de uma Apotecária revela tema de encerramento da 3ª temporada",
+              "href": "https://animenew.com.br/diarios-de-uma-apotecaria-3-tema-encerramento/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-25T14:25:29.000Z",
+      "updatedAt": "2026-09-25T14:25:29.000Z",
+      "expiresAt": "2026-10-02T14:25:29.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/diarios-de-uma-apotecaria-3-tema-encerramento",
+          "publishedAt": "2026-09-25T14:25:29.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 255,
+      "qualityScore": 0.97,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-e687b2a6",
+      "slug": "where-is-the-elf-teacher-s-toilet-ganha-anime-animenew-e687b2a6",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Where is the Elf Teacher’s Toilet? ganha anime",
+      "originalTitle": "Where is the Elf Teacher’s Toilet? ganha anime",
+      "summary": "O mangá Where is the Elf Teacher’s Toilet? (Elf-Sensei no Toire wa Doko Desu ka?), de Chizuna Nakajima, terá uma adaptação para anime de TV. A Kadokawa anunciou a novidade nesta sexta-feira (25). Para marcar o anúncio, Nakajima publicou uma ilustração especial. Até o momento, a produção não teve estúdio, elenco ou previsão de estreia divulgados.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Elf-Sensei no Toire wa Doko Desu ka?",
+        "Kadokawa",
+        "Where is the Elf Teacher's Toilet?"
+      ],
+      "url": "https://animenew.com.br/where-is-the-elf-teachers-toilet-anime",
+      "sourceUrl": "https://animenew.com.br/where-is-the-elf-teachers-toilet-anime",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Where-is-the-Elf-Teachers-Toilet-ganha-anime.webp",
+      "mediaQuery": "Where is the Elf Teacher’s Toilet? ganha anime",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Where-is-the-Elf-Teachers-Toilet.webp",
+          "alt": "Where is the Elf Teacher's Toilet? Anime",
+          "caption": "©中嶋ちずな／KADOKAWA／ウェイブ"
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O mangá Where is the Elf Teacher’s Toilet? (Elf-Sensei no Toire wa Doko Desu ka?), de Chizuna Nakajima, terá uma adaptação para anime de TV. A Kadokawa anunciou a novidade nesta sexta-feira (25). Para marcar o anúncio, Nakajima publicou uma ilustração especial. Até o momento, a produção não teve estúdio, elenco ou previsão de estreia divulgados.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Where is the Elf Teacher’s Toilet?",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Elf-Sensei no Toire wa Doko Desu ka?",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), de Chizuna Nakajima, terá uma adaptação para "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " de TV. A "
+            },
+            {
+              "text": "Kadokawa",
+              "href": "https://animenew.com.br/tag/kadokawa/"
+            },
+            {
+              "text": " anunciou a novidade nesta sexta-feira (25). Para marcar o anúncio, "
+            },
+            {
+              "text": "Nakajima",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " publicou uma ilustração especial. Até o momento, a produção não teve estúdio, elenco ou previsão de estreia divulgados."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "The Fake Alchemist revela elenco e equipe em novo vídeo",
+              "runs": [
+                {
+                  "text": "The Fake Alchemist revela elenco e equipe em novo vídeo",
+                  "href": "https://animenew.com.br/the-fake-alchemist-anime-elenco-equipe"
+                }
+              ]
+            },
+            {
+              "text": "Sekiro: No Defeat será lançado como série de 8 episódios",
+              "runs": [
+                {
+                  "text": "Sekiro: No Defeat será lançado como série de 8 episódios",
+                  "href": "https://animenew.com.br/sekiro-no-defeat-serie-8-episodios"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Where-is-the-Elf-Teachers-Toilet.webp",
+          "alt": "Where is the Elf Teacher's Toilet? Anime",
+          "caption": "©中嶋ちずな／KADOKAWA／ウェイブ"
+        },
+        {
+          "type": "heading",
+          "text": "História Elf Teacher’s Toilet?",
+          "runs": [
+            {
+              "text": "História Elf Teacher’s Toilet?"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A comédia acompanha Eruru, uma aprendiz de professora elfa que veio de outro mundo. Ao chegar ao novo ambiente, ela descobre um problema bastante peculiar: só consegue fazer suas necessidades em uma floresta exuberante.",
+          "runs": [
+            {
+              "text": "A comédia acompanha Eruru, uma aprendiz de professora elfa que veio de outro mundo. Ao chegar ao novo ambiente, ela descobre um problema bastante peculiar: só consegue fazer suas necessidades em uma floresta exuberante.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O mangá começou a ser publicado na revista Comic Cune, da Kadokawa, em janeiro de 2024. A série entrará novamente em publicação neste sábado. A editora lançou o primeiro volume compilado em julho de 2024 e o segundo em fevereiro de 2025.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " começou a ser publicado na revista "
+            },
+            {
+              "text": "Comic Cune",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", da Kadokawa, em janeiro de 2024. A série entrará novamente em publicação neste sábado. A editora lançou o primeiro volume compilado em julho de 2024 e o segundo em fevereiro de 2025."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nakajima também é conhecida por Angel’s Drop, mangá de comédia que terminou em 2013 e ganhou um especial de anime produzido pelo estúdio AIC Frontier em 2013.",
+          "runs": [
+            {
+              "text": "Nakajima também é conhecida por "
+            },
+            {
+              "text": "Angel’s Drop",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", mangá de comédia que terminou em 2013 e ganhou um especial de anime produzido pelo "
+            },
+            {
+              "text": "estúdio AIC Frontier",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://animenew.com.br/studio/805/aic-frontier"
+            },
+            {
+              "text": " em 2013."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Comic Natalie",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Comic Natalie",
+              "marks": [
+                "em"
+              ],
+              "href": "https://natalie.mu/comic/news/690935"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Where is the Elf Teacher’s Toilet? ganha anime.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Where is the Elf Teacher’s Toilet? ganha anime",
+              "href": "https://animenew.com.br/where-is-the-elf-teachers-toilet-anime/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-25T14:08:05.000Z",
+      "updatedAt": "2026-09-25T14:08:05.000Z",
+      "expiresAt": "2026-10-02T14:08:05.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/where-is-the-elf-teachers-toilet-anime",
+          "publishedAt": "2026-09-25T14:08:05.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 207,
+      "qualityScore": 0.964,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-9d158655",
+      "slug": "the-fake-alchemist-revela-elenco-e-equipe-em-novo-video-animenew-9d158655",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "The Fake Alchemist revela elenco e equipe em novo vídeo",
+      "originalTitle": "The Fake Alchemist revela elenco e equipe em novo vídeo",
+      "summary": "O anime The Fake Alchemist (Nisemono no Renkinjutsushi) revelou seu elenco principal e a equipe de produção em um novo teaser divulgado pela Kadokawa nesta sexta-feira (25). Yōhei Matsuoka dará voz a Paracelsus, enquanto Miyari Nemoto interpretará Nora.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Nisemono no Renkinjutsushi",
+        "The Fake Alchemist"
+      ],
+      "url": "https://animenew.com.br/the-fake-alchemist-anime-elenco-equipe",
+      "sourceUrl": "https://animenew.com.br/the-fake-alchemist-anime-elenco-equipe",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/The-Fake-Alchemist-revela-elenco-e-equipe-em-novo-video.webp",
+      "mediaQuery": "The Fake Alchemist revela elenco e equipe em novo vídeo",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/EpQLKHbT_qo"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime The Fake Alchemist (Nisemono no Renkinjutsushi) revelou seu elenco principal e a equipe de produção em um novo teaser divulgado pela Kadokawa nesta sexta-feira (25). Yōhei Matsuoka dará voz a Paracelsus, enquanto Miyari Nemoto interpretará Nora.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "The Fake Alchemist",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Nisemono no Renkinjutsushi) revelou seu elenco principal e a equipe de produção em um novo teaser divulgado pela "
+            },
+            {
+              "text": "Kadokawa",
+              "href": "https://animenew.com.br/tag/kadokawa/"
+            },
+            {
+              "text": " nesta sexta-feira (25). "
+            },
+            {
+              "text": "Yōhei Matsuoka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dará voz a Paracelsus, enquanto "
+            },
+            {
+              "text": "Miyari Nemoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " interpretará Nora."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Sekiro: No Defeat – Anime ganhará 8 episódios",
+              "runs": [
+                {
+                  "text": "Sekiro: No Defeat – Anime ganhará 8 episódios",
+                  "href": "https://animenew.com.br/sekiro-no-defeat-serie-8-episodios"
+                }
+              ]
+            },
+            {
+              "text": "Fatal Fury ganha trailer animado de Kim Kaphwan",
+              "runs": [
+                {
+                  "text": "Fatal Fury ganha trailer animado de Kim Kaphwan",
+                  "href": "https://animenew.com.br/fatal-fury-city-of-the-wolves-kim-kaphwan"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A adaptação do mangá de Jirō Sugiura e Umemaru será produzida pelo estúdio Passione.",
+          "runs": [
+            {
+              "text": "A adaptação do "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " de Jirō Sugiura e Umemaru será produzida pelo estúdio "
+            },
+            {
+              "text": "Passione",
+              "href": "https://animenew.com.br/studio/911/passione"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=EpQLKHbT_qo",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/EpQLKHbT_qo"
+        },
+        {
+          "type": "paragraph",
+          "text": "Takeo Takahashi atua como diretor-chefe, com Hijiri Sanpei na direção. Kenta Ihara cuida da composição da série, enquanto Yuka Takashina é responsável pelo design dos personagens. Luke Standridge compõe a trilha sonora.",
+          "runs": [
+            {
+              "text": "Takeo Takahashi atua como diretor-chefe, com "
+            },
+            {
+              "text": "Hijiri Sanpei",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na direção. "
+            },
+            {
+              "text": "Kenta Ihara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " cuida da composição da série, enquanto "
+            },
+            {
+              "text": "Yuka Takashina",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " é responsável pelo design dos personagens. "
+            },
+            {
+              "text": "Luke Standridge",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " compõe a trilha sonora."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de The Fake Alchemist",
+          "runs": [
+            {
+              "text": "História de The Fake Alchemist"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Paracelsus, um homem reencarnado que vive como alquimista na cidade-estado de Orichalconia, onde magia e alquimia fazem parte do cotidiano. Ele esconde suas habilidades especiais enquanto tenta levar uma vida tranquila.",
+          "runs": [
+            {
+              "text": "A trama acompanha Paracelsus, um homem reencarnado que vive como alquimista na cidade-estado de Orichalconia, onde magia e alquimia fazem parte do cotidiano. Ele esconde suas habilidades especiais enquanto tenta levar uma vida tranquila.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Tudo muda quando ele firma um contrato com Nora, uma jovem escravizada que atua como xamã. Mais tarde, os dois conhecem Coco, uma elfa que perdeu os quatro membros e os cinco sentidos. Ao tentar ajudá-la, Paracelsus acaba envolvido em um conflito que ultrapassa os limites da alquimia e da magia.",
+          "runs": [
+            {
+              "text": "Tudo muda quando ele firma um contrato com Nora, uma jovem escravizada que atua como xamã. Mais tarde, os dois conhecem Coco, uma elfa que perdeu os quatro membros e os cinco sentidos. Ao tentar ajudá-la, Paracelsus acaba envolvido em um conflito que ultrapassa os limites da alquimia e da magia.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Contudo o mangá iniciou sua publicação em 2023 no KadoComi e continua em andamento. Ademais o quinto volume estreou no mês de fevereiro de 2026.",
+          "runs": [
+            {
+              "text": "Contudo o mangá iniciou sua publicação em 2023 no "
+            },
+            {
+              "text": "KadoComi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e continua em andamento. Ademais o quinto volume estreou no mês de fevereiro de 2026."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em The Fake Alchemist revela elenco e equipe em novo vídeo.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "The Fake Alchemist revela elenco e equipe em novo vídeo",
+              "href": "https://animenew.com.br/the-fake-alchemist-anime-elenco-equipe/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-25T13:56:37.000Z",
+      "updatedAt": "2026-09-25T13:56:37.000Z",
+      "expiresAt": "2026-10-02T13:56:37.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/the-fake-alchemist-anime-elenco-equipe",
+          "publishedAt": "2026-09-25T13:56:37.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 237,
+      "qualityScore": 0.969,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-b0e3f863",
       "slug": "jogo-isekai-slow-life-lanca-colaboracao-com-demon-slayer-kimetsu-no-yaiba-por-tempo-limitado-jbox-b0e3f863",
@@ -5324,516 +6122,6 @@
         "blocks": 14,
         "sourceCount": 1,
         "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-d403b387",
-      "slug": "injustice-3-ganha-novo-rumor-com-supergirl-e-batwoman-animenew-d403b387",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Injustice 3 ganha novo rumor com Supergirl e Batwoman",
-      "originalTitle": "Injustice 3 ganha novo rumor com Supergirl e Batwoman",
-      "summary": "Um novo vazamento reforça a existência do jogo Injustice 3, indicando que a NetherRealm pode estar trabalhando no próximo jogo da franquia e citando dois personagens.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Games",
-        "Notícias",
-        "Injustice 3"
-      ],
-      "url": "https://animenew.com.br/injustice-3-vazamento-supergirl-batwoman",
-      "sourceUrl": "https://animenew.com.br/injustice-3-vazamento-supergirl-batwoman",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Injustice-3-ganha-novo-rumor-com-Supergirl-e-Batwoman.webp",
-      "mediaQuery": "Injustice 3 ganha novo rumor com Supergirl e Batwoman",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Um novo vazamento reforça a existência do jogo Injustice 3, indicando que a NetherRealm pode estar trabalhando no próximo jogo da franquia e citando dois personagens.",
-          "runs": [
-            {
-              "text": "Um novo vazamento reforça a existência do jogo "
-            },
-            {
-              "text": "Injustice 3",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", indicando que a "
-            },
-            {
-              "text": "NetherRealm",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " pode estar trabalhando no próximo jogo da franquia e citando dois personagens."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Dragon Ball Xenoverse 3 parece não ter evoluído",
-              "runs": [
-                {
-                  "text": "Dragon Ball Xenoverse 3 parece não ter evoluído",
-                  "href": "https://animenew.com.br/dragon-ball-xenoverse-3-demo"
-                }
-              ]
-            },
-            {
-              "text": "Gachiakuta: BREAKOUT ganha trailer de gameplay",
-              "runs": [
-                {
-                  "text": "Gachiakuta: BREAKOUT ganha trailer de gameplay",
-                  "href": "https://animenew.com.br/gachiakuta-breakout-trailer-gameplay"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Segundo informações do MP1st, um currículo de um dublê menciona sessões de captura de movimento realizadas para Injustice 3. O profissional já trabalhou anteriormente com a NetherRealm, o que dá maior peso ao registro. Até o momento, porém, Warner Bros. e o estúdio não anunciaram o projeto oficialmente.",
-          "runs": [
-            {
-              "text": "Segundo informações do MP1st, um currículo de um dublê menciona sessões de captura de movimento realizadas para "
-            },
-            {
-              "text": "Injustice 3",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". O profissional já trabalhou anteriormente com a NetherRealm, o que dá maior peso ao registro. Até o momento, porém, "
-            },
-            {
-              "text": "Warner Bros",
-              "href": "https://animenew.com.br/tag/warner-bros/"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e o estúdio não anunciaram o projeto oficialmente."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre os nomes mencionados no currículo estão Supergirl e Batwoman. A presença de Supergirl não seria uma grande surpresa, já que a personagem teve papel importante em Injustice 2, lançado em 2017.",
-          "runs": [
-            {
-              "text": "Entre os nomes mencionados no currículo estão "
-            },
-            {
-              "text": "Supergirl",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Batwoman",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A presença de Supergirl não seria uma grande surpresa, já que a personagem teve papel importante em "
-            },
-            {
-              "text": "Injustice 2",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", lançado em 2017."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Batwoman pode retornar",
-          "runs": [
-            {
-              "text": "Batwoman pode retornar"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Batwoman é a principal novidade do novo vazamento. Nos quadrinhos da franquia, que são considerados parte do universo dos jogos, a personagem morreu. Ainda assim, seu retorno poderia acontecer de diferentes maneiras, incluindo uma nova pessoa assumindo o manto ou uma trama envolvendo viagem no tempo.",
-          "runs": [
-            {
-              "text": "Batwoman é a principal novidade do novo vazamento. Nos quadrinhos da franquia, que são considerados parte do universo dos jogos, a personagem morreu. Ainda assim, seu retorno poderia acontecer de diferentes maneiras, incluindo uma nova pessoa assumindo o manto ou uma trama envolvendo viagem no tempo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim Caso o projeto realmente esteja em produção, Injustice 3 marcaria o retorno da NetherRealm ao universo da DC após anos concentrada em Mortal Kombat.",
-          "runs": [
-            {
-              "text": "Por fim Caso o projeto realmente esteja em produção, "
-            },
-            {
-              "text": "Injustice 3",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " marcaria o retorno da NetherRealm ao universo da DC após anos concentrada em "
-            },
-            {
-              "text": "Mortal Kombat",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Injustice 3 ganha novo rumor com Supergirl e Batwoman.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Injustice 3 ganha novo rumor com Supergirl e Batwoman",
-              "href": "https://animenew.com.br/injustice-3-vazamento-supergirl-batwoman/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-22T21:23:41.000Z",
-      "updatedAt": "2026-09-22T21:23:41.000Z",
-      "expiresAt": "2026-09-29T21:23:41.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/injustice-3-vazamento-supergirl-batwoman",
-          "publishedAt": "2026-09-22T21:23:41.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 216,
-      "qualityScore": 0.964,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 8,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-85e4000c",
-      "slug": "grand-blue-dreaming-e-renovado-para-4-temporada-animenew-85e4000c",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Grand Blue Dreaming é renovado para 4ª temporada",
-      "originalTitle": "Grand Blue Dreaming é renovado para 4ª temporada",
-      "summary": "O anime Grand Blue Dreaming terá uma quarta temporada. O anúncio aconteceu nesta terça-feira (22) pelo site oficial da série, logo após a exibição do episódio final da terceira temporada.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Grand Blue Dreaming"
-      ],
-      "url": "https://animenew.com.br/grand-blue-dreaming-4-temporada",
-      "sourceUrl": "https://animenew.com.br/grand-blue-dreaming-4-temporada",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Grand-Blue-Dreaming-e-renovado-para-4a-temporada.webp",
-      "mediaQuery": "Grand Blue Dreaming é renovado para 4ª temporada",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Grand-Blue-Dreaming-quarta-temporada.webp",
-          "alt": "Grand Blue Dreaming quarta temporada",
-          "caption": "© 井上堅二・吉岡公威・講談社／ぐらんぶる３製作委員会"
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Grand Blue Dreaming terá uma quarta temporada. O anúncio aconteceu nesta terça-feira (22) pelo site oficial da série, logo após a exibição do episódio final da terceira temporada.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Grand Blue Dreaming",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " terá uma quarta temporada. O anúncio aconteceu nesta terça-feira (22) pelo site oficial da série, logo após a exibição do episódio final da terceira temporada."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Daemons of the Shadow Realm terá 2ª temporada",
-              "runs": [
-                {
-                  "text": "Daemons of the Shadow Realm terá 2ª temporada",
-                  "href": "https://animenew.com.br/daemons-of-the-shadow-realm-2-temporada"
-                }
-              ]
-            },
-            {
-              "text": "Alya Sometimes Hides Feelings revela teaser da 2ª temporada",
-              "runs": [
-                {
-                  "text": "Alya Sometimes Hides Feelings revela teaser da 2ª temporada",
-                  "href": "https://animenew.com.br/alya-sometimes-hides-feelings-russian-2-temporada"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A terceira temporada terminou com seu 12º episódio na segunda-feira. A produção estreou em 6 de julho nos canais Tokyo MX e BS11, levando a história para Palau, em uma mudança inédita de cenário, já que a trama passou a se desenvolver fora do Japão.",
-          "runs": [
-            {
-              "text": "A terceira temporada terminou com seu 12º episódio na segunda-feira. A produção estreou em 6 de julho nos canais Tokyo MX e BS11, levando a história para Palau, em uma mudança inédita de cenário, já que a trama passou a se desenvolver fora do Japão."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Grand-Blue-Dreaming-quarta-temporada.webp",
-          "alt": "Grand Blue Dreaming quarta temporada",
-          "caption": "© 井上堅二・吉岡公威・講談社／ぐらんぶる３製作委員会"
-        },
-        {
-          "type": "paragraph",
-          "text": "A equipe ainda não revelou a data de estreia da quarta temporada.",
-          "runs": [
-            {
-              "text": "A equipe ainda não revelou a data de estreia da quarta temporada."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "História de Grand Blue Dreaming",
-          "runs": [
-            {
-              "text": "História de "
-            },
-            {
-              "text": "Grand Blue Dreaming",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A série acompanha Iori Kitahara, um jovem que se muda para uma cidade litorânea para começar a faculdade. No novo ambiente, ele acaba envolvido com mergulho, novas amizades e diversas situações caóticas.",
-          "runs": [
-            {
-              "text": "A série acompanha Iori Kitahara, um jovem que se muda para uma cidade litorânea para começar a faculdade. No novo ambiente, ele acaba envolvido com mergulho, novas amizades e diversas situações caóticas.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Kenji Inoue e Kimitake Yoshioka lançaram o mangá na revista Good! Afternoon, da Kodansha, em abril de 2014. Assim a obra continua em publicação e também ganhou uma adaptação em filme live-action, lançada no Japão em agosto de 2020.",
-          "runs": [
-            {
-              "text": "Kenji Inoue",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Kimitake Yoshioka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " lançaram o "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " na revista "
-            },
-            {
-              "text": "Good! Afternoon",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", da "
-            },
-            {
-              "text": "Kodansha",
-              "href": "https://animenew.com.br/tag/kodansha/"
-            },
-            {
-              "text": ", em abril de 2014. Assim a obra continua em publicação e também ganhou uma adaptação em "
-            },
-            {
-              "text": "filme live-action",
-              "href": "https://animenew.com.br/live-action"
-            },
-            {
-              "text": ", lançada no Japão em agosto de 2020."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O anime estreou em julho de 2018 e teve sua segunda temporada encerrada em setembro de 2025. Ademais a terceira fase começou em julho de 2026 e agora dá lugar à próxima temporada.",
-          "runs": [
-            {
-              "text": "O anime estreou em julho de 2018 e teve sua segunda temporada encerrada em setembro de 2025. Ademais a terceira fase começou em julho de 2026 e agora dá lugar à próxima temporada."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://grandblue-anime.com/news/index01000000.html"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Grand Blue Dreaming é renovado para 4ª temporada.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Grand Blue Dreaming é renovado para 4ª temporada",
-              "href": "https://animenew.com.br/grand-blue-dreaming-4-temporada/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-22T20:45:39.000Z",
-      "updatedAt": "2026-09-22T20:45:39.000Z",
-      "expiresAt": "2026-09-29T20:45:39.000Z",
-      "category": "Episódios",
-      "eventType": "EPISODE",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/grand-blue-dreaming-4-temporada",
-          "publishedAt": "2026-09-22T20:45:39.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 238,
-      "qualityScore": 0.97,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 0,
