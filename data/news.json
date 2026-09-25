@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T15:18:02.681Z",
+  "generatedAt": "2026-09-25T19:17:10.854Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,41 +55,599 @@
   ],
   "stats": {
     "collected": 48,
-    "grouped": 21,
-    "published": 21,
-    "newStories": 21,
-    "fullArticles": 21,
+    "grouped": 22,
+    "published": 22,
+    "newStories": 22,
+    "fullArticles": 22,
     "previewArticles": 0,
-    "avgWords": 448,
-    "withHeroImage": 21,
-    "withOrderedMedia": 21,
+    "avgWords": 486,
+    "withHeroImage": 22,
+    "withOrderedMedia": 22,
     "skippedTranslation": 0,
-    "skippedQuality": 25,
-    "durationMs": 3741
+    "skippedQuality": 23,
+    "durationMs": 7694
   },
   "items": [
     {
-      "id": "animenew-d1b4be22",
-      "slug": "diarios-de-uma-apotecaria-revela-tema-de-encerramento-da-3-temporada-animenew-d1b4be22",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
+      "id": "jbox-73d1ad05",
+      "slug": "critica-buchigire-reijou-1-temporada-jbox-73d1ad05",
+      "source": "JBox",
+      "sourceType": "JBOX",
       "sourceLanguage": "pt-BR",
       "language": "pt-BR",
-      "title": "Diários de uma Apotecária revela tema de encerramento da 3ª temporada",
-      "originalTitle": "Diários de uma Apotecária revela tema de encerramento da 3ª temporada",
-      "summary": "A 3ª temporada de Diários de uma Apotecária (Kusuriya no Hitorigoto) ganhou um novo trailer nesta sexta-feira, que revelou “AIYOU”, interpretada por Eve, como tema de encerramento. O vídeo divulgado pela TOHO animation também apresenta novas cenas da continuação, que estreia em 2 de outubro de 2026, no bloco Friday Anime Night da NTV e outras 29 emissoras afiliadas.",
-      "author": "Rafael Shinzo",
+      "title": "Crítica | Buchigire Reijou | 1ª temporada",
+      "originalTitle": "Crítica | Buchigire Reijou | 1ª temporada",
+      "summary": "Com o passar dos anos e a popularização de discussões online acerca de mídia consideradas canceláveis, uma série de animês politicamente incorretos recentes levantaram reações negativas de parte da audiência, pautando as conversas em seus respectivos períodos de lançamento. Alguns exemplos são The Rising of the Shield Hero, Goblin Slayer, Redo of Healer, Mushoku Tensei e Attack on Titan (por conta da saga final, onde o protagonista vira um vilão genocida).",
+      "author": "Igor Lunei",
       "tags": [
-        "Animes",
-        "Notícias",
+        "Anime",
+        "Resenha",
+        "A Livid Lady's Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
+        "A Livid Lady's Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires é bom?",
+        "Buchigire",
+        "Buchigire é bom?",
+        "crítica de A Livid Lady's Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
+        "crítica de Buchigire"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/25/critica-buchigire-reijou-1a-temporada",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/25/critica-buchigire-reijou-1a-temporada",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/jbox-critica-destacada-buchigirereijou.jpg",
+      "mediaQuery": "Crítica | Buchigire Reijou | 1ª temporada",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/buchigire-1.jpg",
+          "alt": "Imagem: protagonista do animê 'Buchigire' sendo imobilizada por um guarda real no meio de um baile.",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/buchigire-2.jpg",
+          "alt": "Imagem: protagonista do animê 'Buchigire' em close-up sorrindo",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/buchigire-3.jpg",
+          "alt": "Imagem: protagonista do animê 'Buchigire' com sangue espirrando",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/sYra4SM3Qms"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Com o passar dos anos e a popularização de discussões online acerca de mídia consideradas canceláveis, uma série de animês politicamente incorretos recentes levantaram reações negativas de parte da audiência, pautando as conversas em seus respectivos períodos de lançamento. Alguns exemplos são The Rising of the Shield Hero, Goblin Slayer, Redo of Healer, Mushoku Tensei e Attack on Titan (por conta da saga final, onde o protagonista vira um vilão genocida).",
+          "runs": [
+            {
+              "text": "Com o passar dos anos e a popularização de discussões online acerca de mídia consideradas canceláveis, uma série de animês politicamente incorretos recentes levantaram reações negativas de parte da audiência, pautando as conversas em seus respectivos períodos de lançamento. Alguns exemplos são "
+            },
+            {
+              "text": "The Rising of the Shield Hero",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Goblin Slayer",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Redo of Healer",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Mushoku Tensei",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Attack on Titan",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2021/04/08/critica-attack-on-titan-shingeki-no-kyojin-temporadas-1-4-parte-1/"
+            },
+            {
+              "text": " (por conta da saga final, onde o protagonista vira um vilão genocida)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Com exceção de Attack on Titan, que é excelente, acredito que os demais da lista devam sim ser cancelados pela opinião pública, mas pelo quão mal feitos eles são, sem cuidado algum com coisas básicas como roteiro e direção, mas não é esse o ponto aqui.",
+          "runs": [
+            {
+              "text": "Com exceção de "
+            },
+            {
+              "text": "Attack on Titan",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que é excelente, acredito que os demais da lista devam sim ser cancelados pela opinião pública, mas pelo quão mal feitos eles são, sem cuidado algum com coisas básicas como roteiro e direção, mas não é esse o ponto aqui."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O ponto é a perigosíssima direção moralista em que a percepção e discussão sobre mídias num geral (não só animês e mangás, mas filmes, séries, livros e por aí vai) tem tomado, como se por autores optarem por dar desenvolvimentos e desfechos polêmicos, degenerados mesmo, as suas obras fossem um atestado de que eles apoiam isso na vida real. Sendo que parte da graça da ficção é poder ir para qualquer lugar, por mais esquisito que ele seja, já que o intuito é desenvolver algo através dela.",
+          "runs": [
+            {
+              "text": "O ponto é a perigosíssima direção moralista em que a percepção e discussão sobre mídias num geral (não só animês e mangás, mas filmes, séries, livros e por aí vai) tem tomado, como se por autores optarem por dar desenvolvimentos e desfechos polêmicos, degenerados mesmo, as suas obras fossem um atestado de que eles apoiam isso na vida real. Sendo que parte da graça da ficção é poder ir para qualquer lugar, por mais esquisito que ele seja, já que o intuito é desenvolver algo através dela."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Então, é bem engraçado assistir hoje a um animê como A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires, ou simplesmente Buchigire Reijou, pois ele é a antítese de todas as reclamações infantis sobre a arte precisar ser moralmente correta que insistem em existir. Ele é tão polêmico, tão controverso e tão agressivo em decepcionar qualquer um que espere alguma moral tirada dele que é simplesmente encantador. E diferentemente do animê do Herói do Escudo e companhia acima, ele é muito bem escrito e dirigido!",
+          "runs": [
+            {
+              "text": "Então, é bem engraçado assistir hoje a um animê como "
+            },
+            {
+              "text": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", ou simplesmente "
+            },
+            {
+              "text": "Buchigire Reijou",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", pois ele é a antítese de todas as reclamações infantis sobre a arte precisar ser moralmente correta que insistem em existir. Ele é tão polêmico, tão controverso e tão agressivo em decepcionar qualquer um que espere alguma moral tirada dele que é simplesmente encantador. E diferentemente do animê do Herói do Escudo e companhia acima, ele é "
+            },
+            {
+              "text": "muito bem escrito e dirigido!",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/buchigire-1.jpg",
+          "alt": "Imagem: protagonista do animê 'Buchigire' sendo imobilizada por um guarda real no meio de um baile."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Studio Comet/Reprodução",
+          "runs": [
+            {
+              "text": "Imagem: Studio Comet/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na trama, acompanhamos a vigésima nona história a se passar em um mundo medieval de fantasia gamer só neste ano. A protagonista, Elizabeth Leiston, faz parte de uma casa ducal num grande reino e está prometida em casamento para o príncipe, um panaca que absolutamente ninguém respeita, só faz besteira e frequentemente coloca o próprio país em perigo. Elizabeth é extremamente inteligente, prestativa, política e basicamente cuida de todos os afazeres reais do príncipe. Só que o mané, que se sente inferiorizado, acaba trocando ela por outra garota da corte, e eles armam para que Elizabeth seja considerada traidora da Coroa e presa.",
+          "runs": [
+            {
+              "text": "Na trama, acompanhamos a vigésima nona história a se passar em um mundo medieval de fantasia "
+            },
+            {
+              "text": "gamer",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " só neste ano. A protagonista, "
+            },
+            {
+              "text": "Elizabeth Leiston",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", faz parte de uma casa ducal num grande reino e está prometida em casamento para o príncipe, um panaca que absolutamente ninguém respeita, só faz besteira e frequentemente coloca o próprio país em perigo. Elizabeth é extremamente inteligente, prestativa, política e basicamente cuida de todos os afazeres reais do príncipe. Só que o mané, que se sente inferiorizado, acaba trocando ela por outra garota da corte, e eles armam para que Elizabeth seja considerada traidora da Coroa e presa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em paralelo, o casal espalha rumores de que ela é uma pessoa terrível, que estava armando planos maquiavélicos, coisas do tipo, de modo que o povo do reino, que sempre a amou, passa a odiá-la, tratá-la como uma bruxa a ser queimada. E quando Elizabeth se dá conta de que nem o rei, nem seu pai (que é o chanceler do reino) farão nada para ajudá-la, ela decide que já está de saco cheio do príncipe e do reino em si, e partirá num plano de vingança que colocará aquele país abaixo.",
+          "runs": [
+            {
+              "text": "Em paralelo, o casal espalha rumores de que ela é uma pessoa terrível, que estava armando planos maquiavélicos, coisas do tipo, de modo que o povo do reino, que sempre a amou, passa a odiá-la, tratá-la como uma bruxa a ser queimada. E quando Elizabeth se dá conta de que nem o rei, nem seu pai (que é o chanceler do reino) farão nada para ajudá-la, ela decide que já está de saco cheio do príncipe e do reino em si, e partirá num plano de vingança que colocará aquele país abaixo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Porque a Elizabeth é uma bruxa, é uma vilã, ela realmente não presta! Diferentemente de outros animês do tipo, que tentam disfarçar os atos mais asquerosos de seus protagonistas em discursos frágeis de “naquele mundo, isso é normal” ou “é um anti-herói que foi jogado nessa posição”, Buchigire Reijou arranca o cano de esgoto e inunda tudo em imundice, assumindo que a protagonista é a vilã. Ela é ruim, fria, perversa, sádica, escrota, nefasta, calculista. E a cada episódio vamos mais a fundo no inferno que ela causa.",
+          "runs": [
+            {
+              "text": "Porque a Elizabeth é uma bruxa, é uma vilã, ela realmente não presta! Diferentemente de outros animês do tipo, que tentam disfarçar os atos mais asquerosos de seus protagonistas em discursos frágeis de “naquele mundo, isso é normal” ou “é um anti-herói que foi jogado nessa posição”, "
+            },
+            {
+              "text": "Buchigire Reijou",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " arranca o cano de esgoto e inunda tudo em imundice,"
+            },
+            {
+              "text": " assumindo que a protagonista é a vilã",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Ela é ruim, fria, perversa, sádica, escrota, nefasta, calculista. E a cada episódio vamos mais a fundo no inferno que ela causa."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/buchigire-2.jpg",
+          "alt": "Imagem: protagonista do animê 'Buchigire' em close-up sorrindo"
+        },
+        {
+          "type": "paragraph",
+          "text": "E quando digo que ela é uma bruxa, não é uma figura de linguagem. Ocorre que, nesse mundo, algumas pessoas possuem artefatos poderosíssimos que os colocam em vantagem perante outros. Elizabeth, secretamente, carrega um dos mais poderosos: um conjunto de sete grimórios, cada um representando um pecado capital, que permitem que ela execute feitiços extraordinários. E ela os usa para moldar toda a política internacional daquele local. E também para levar o mal a seus inimigos.",
+          "runs": [
+            {
+              "text": "E quando digo que ela é uma bruxa, não é uma figura de linguagem. Ocorre que, nesse mundo, algumas pessoas possuem artefatos poderosíssimos que os colocam em vantagem perante outros. Elizabeth, secretamente, carrega um dos mais poderosos: "
+            },
+            {
+              "text": "um conjunto de sete grimórios",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", cada um representando um pecado capital, que permitem que ela execute feitiços extraordinários. E ela os usa para moldar toda a política internacional daquele local. E também para levar o mal a seus inimigos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Há uma passagem tão grotesca que chega a ser poética. Quando ela encontra o cavaleiro braço direito do príncipe, que a prendeu e tratou como indigente, em uma guerra (causada pelo próprio príncipe depois de servir de chacota num treino de espada, longa história), ela o ajuda para que aquele combate acabe e promete levar ele e seu exército de volta para o reino em segurança. Contudo, no meio do caminho, Elizabeth usa um de seus feitiços para invocar uma besta slime primordial demoníaca, que devora a horda de cavaleiros lentamente, reservando a eles uma morte agoniante, apenas para que o cavaleiro que a fez mal observe sem poder fazer nada.",
+          "runs": [
+            {
+              "text": "Há uma passagem tão grotesca que chega a ser poética.",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Quando ela encontra o cavaleiro braço direito do príncipe, que a prendeu e tratou como indigente, em uma guerra (causada pelo próprio príncipe depois de servir de chacota num treino de espada, longa história), ela o ajuda para que aquele combate acabe e promete levar ele e seu exército de volta para o reino em segurança. Contudo, no meio do caminho, Elizabeth usa um de seus feitiços para invocar uma besta "
+            },
+            {
+              "text": "slime",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " primordial demoníaca, que devora a horda de cavaleiros lentamente, reservando a eles uma morte agoniante, apenas para que o cavaleiro que a fez mal observe sem poder fazer nada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Quem prendeu e humilhou ela foi o braço direito do príncipe, não aqueles jovens do exército. Mas ela é má! Ela quis descontar neles! Pois ela é uma vilã! E vilões fazem maldades!",
+          "runs": [
+            {
+              "text": "Quem prendeu e humilhou ela foi o braço direito do príncipe, não aqueles jovens do exército. Mas ela é má! Ela quis descontar neles! Pois ela é uma vilã! E vilões fazem maldades!"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/buchigire-3.jpg",
+          "alt": "Imagem: protagonista do animê 'Buchigire' com sangue espirrando"
+        },
+        {
+          "type": "paragraph",
+          "text": "Rola também outra passagem que ilustra bem o que o animê parece querer passar com essa personagem. Em dado momento, enquanto Elizabeth, sua maid e uma menininha que as acompanha estão montando uma companhia de cosméticos (de novo, longa história) numa nova cidade, as duas adultas chegam casualmente à conclusão de que vão precisar comprar uma escrava para ajudar nos serviços. A menininha, que não tem muito conhecimento de como é o mundo, fica chocada com aquilo, de modo que a Elizabeth diz que não irá pedir para ela achar aquilo correto, mas que era algo que faziam e ponto.",
+          "runs": [
+            {
+              "text": "Rola também outra passagem que ilustra bem o que o animê parece querer passar com essa personagem. Em dado momento, enquanto Elizabeth, sua "
+            },
+            {
+              "text": "maid",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e uma menininha que as acompanha estão montando uma companhia de cosméticos (de novo, longa história) numa nova cidade, as duas adultas chegam casualmente à conclusão de que vão precisar comprar uma escrava para ajudar nos serviços. A menininha, que não tem muito conhecimento de como é o mundo, fica chocada com aquilo, de modo que a Elizabeth diz que não irá pedir para ela achar aquilo correto, mas que era algo que faziam e ponto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Mesmo com o animê mostrando que há senhores de escravos que tratam os escravizados melhor do que outros, inclusive com um local que dá estudos de diferentes tipos para eles e treinamento de combate, é pontuado ali mesmo que isso é feito visando o lucro, que escravos mais bem tratados e melhor capacitados podem ser vendidos por um preço maior. Não há disfarce. No subtexto e no texto, o animê mostra que escravidão é algo horrível e que todos os envolvidos com isso são pessoas terríveis, incluindo a protagonista.",
+          "runs": [
+            {
+              "text": "Mesmo com o animê mostrando que há senhores de escravos que tratam os escravizados melhor do que outros, inclusive com um local que dá estudos de diferentes tipos para eles e treinamento de combate, é pontuado ali mesmo que isso é feito visando o lucro, que escravos mais bem tratados e melhor capacitados podem ser vendidos por um preço maior. "
+            },
+            {
+              "text": "Não há disfarce.",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " No subtexto e no texto, o animê mostra que escravidão é algo horrível e que todos os envolvidos com isso são pessoas terríveis, incluindo a protagonista."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nessa, Buchigire Reijou vai nos levando por uma trama de vingança totalmente torta, em que temos total noção de que a protagonista nela, embora tenha seus motivos para executar isso, o faz da maneira mais assumidamente escrota, corrompida, depravada, pervertida e degradada possível. E por isso mesmo é um dos negócios mais hipnotizantes deste ano. Que bom que é ficção e não realidade, embora muitos hoje confundam essa fronteira.",
+          "runs": [
+            {
+              "text": "Nessa, "
+            },
+            {
+              "text": "Buchigire Reijou",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " vai nos levando por uma trama de vingança totalmente torta, em que temos total noção de que a protagonista nela, embora tenha seus motivos para executar isso, o faz da maneira mais assumidamente escrota, corrompida, depravada, pervertida e degradada possível. E por isso mesmo é um dos negócios mais hipnotizantes deste ano. Que bom que é ficção e não realidade, embora muitos hoje confundam essa fronteira."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=sYra4SM3Qms",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/sYra4SM3Qms"
+        },
+        {
+          "type": "paragraph",
+          "text": "Exibido por aqui pela Crunchyroll, o animê de A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires (Buchigire Reijou wa Houfuku o Chikachimashita: Madousho no Chikara de Sokoku o Tatakitsubushimasu) é produzido pelo Studio Comet, com direção de Naoyuki Kuzuya e roteiro de Mitsutaka Hirota. Ele adapta a novel escrita por Metabo Hagure, que tem também adaptações em light novel e mangá publicadas pela Hobby Japan, ainda em andamento, que ainda não foram publicados no Brasil.",
+          "runs": [
+            {
+              "text": "Exibido por aqui pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o animê de "
+            },
+            {
+              "text": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Buchigire Reijou wa Houfuku o Chikachimashita: Madousho no Chikara de Sokoku o Tatakitsubushimasu",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") é produzido pelo "
+            },
+            {
+              "text": "Studio Comet",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com direção de "
+            },
+            {
+              "text": "Naoyuki Kuzuya",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e roteiro de "
+            },
+            {
+              "text": "Mitsutaka Hirota",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Ele adapta a novel escrita por "
+            },
+            {
+              "text": "Metabo Hagure",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que tem também adaptações em "
+            },
+            {
+              "text": "light novel",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e mangá publicadas pela "
+            },
+            {
+              "text": "Hobby Japan",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", ainda em andamento, que ainda não foram publicados no Brasil."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+          "runs": [
+            {
+              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-25T18:06:07.000Z",
+      "updatedAt": "2026-09-25T18:06:41.000Z",
+      "expiresAt": "2026-10-02T18:06:07.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/25/critica-buchigire-reijou-1a-temporada",
+          "publishedAt": "2026-09-25T18:06:07.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 6,
+      "wordCount": 1178,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 22,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 3,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-16ff2c45",
+      "slug": "diarios-de-uma-apotecaria-3-temporada-ganha-trailer-cheio-de-intrigas-e-com-a-musica-de-encerramento-jbox-16ff2c45",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Diários de uma Apotecária: 3ª temporada ganha trailer cheio de intrigas e com a música de encerramento",
+      "originalTitle": "Diários de uma Apotecária: 3ª temporada ganha trailer cheio de intrigas e com a música de encerramento",
+      "summary": "A 3ª temporada de Diários de uma Apotecária ganhou um novo trailer, que mostra mais intrigas envolvendo Jinshi e também a música de encerramento dos novos episódios.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Música",
+        "3ª temporada",
         "Diários de uma Apotecária",
         "Kusuriya no Hitorigoto",
-        "Toho Animation"
+        "season 3",
+        "Terceira temporada de Diários de uma Apotecária",
+        "The Apothecary Diaries"
       ],
-      "url": "https://animenew.com.br/diarios-de-uma-apotecaria-3-tema-encerramento",
-      "sourceUrl": "https://animenew.com.br/diarios-de-uma-apotecaria-3-tema-encerramento",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Diarios-de-uma-Apotecaria-revela-tema-de-encerramento-da-3a-temporada.webp",
-      "mediaQuery": "Diários de uma Apotecária revela tema de encerramento da 3ª temporada",
+      "url": "https://www.jbox.com.br/2026/09/25/diarios-de-uma-apotecaria-3a-temporada-ganha-trailer-cheio-de-intrigas-e-com-a-musica-de-encerramento",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/25/diarios-de-uma-apotecaria-3a-temporada-ganha-trailer-cheio-de-intrigas-e-com-a-musica-de-encerramento",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/diarios-de-uma-apotecaria-terceira-temporada-destacada.jpg",
+      "mediaQuery": "Diários de uma Apotecária: 3ª temporada ganha trailer cheio de intrigas e com a música de encerramento",
       "mediaType": "anime",
       "mediaGallery": [],
       "mediaEmbeds": [
@@ -101,7 +659,7 @@
       "sourceContent": [
         {
           "type": "paragraph",
-          "text": "A 3ª temporada de Diários de uma Apotecária (Kusuriya no Hitorigoto) ganhou um novo trailer nesta sexta-feira, que revelou “AIYOU”, interpretada por Eve, como tema de encerramento. O vídeo divulgado pela TOHO animation também apresenta novas cenas da continuação, que estreia em 2 de outubro de 2026, no bloco Friday Anime Night da NTV e outras 29 emissoras afiliadas.",
+          "text": "A 3ª temporada de Diários de uma Apotecária ganhou um novo trailer, que mostra mais intrigas envolvendo Jinshi e também a música de encerramento dos novos episódios.",
           "runs": [
             {
               "text": "A 3ª temporada de "
@@ -109,96 +667,66 @@
             {
               "text": "Diários de uma Apotecária",
               "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Kusuriya no Hitorigoto",
-              "href": "https://animenew.com.br/anime/195516/kusuriya-no-hitorigoto-3rd-season"
-            },
-            {
-              "text": ") ganhou um novo trailer nesta sexta-feira, que revelou “AIYOU”, interpretada por Eve, como tema de encerramento. O vídeo divulgado pela "
-            },
-            {
-              "text": "TOHO animation",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " também apresenta novas cenas da continuação, que estreia em "
-            },
-            {
-              "text": "2 de outubro de 2026",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", no bloco "
-            },
-            {
-              "text": "Friday Anime Night",
-              "marks": [
+                "strong",
                 "em"
               ]
             },
             {
-              "text": " da NTV e outras 29 emissoras afiliadas."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "The Fake Alchemist revela elenco e equipe em novo vídeo",
-              "runs": [
-                {
-                  "text": "The Fake Alchemist revela elenco e equipe em novo vídeo",
-                  "href": "https://animenew.com.br/the-fake-alchemist-anime-elenco-equipe"
-                }
-              ]
-            },
-            {
-              "text": "Where is the Elf Teacher’s Toilet? ganha anime",
-              "runs": [
-                {
-                  "text": "Where is the Elf Teacher’s Toilet? ganha anime",
-                  "href": "https://animenew.com.br/where-is-the-elf-teachers-toilet-anime"
-                }
-              ]
+              "text": " ganhou um novo trailer, que mostra mais intrigas envolvendo Jinshi e também a música de encerramento dos novos episódios."
             }
           ]
         },
         {
           "type": "paragraph",
-          "text": "A terceira temporada terá dois cours, ou seja duas partes. A primeira parte começa em outubro, enquanto a segunda estreia em abril de 2027. Portanto a cantora e dubladora Reina Ueda também entra para o elenco como Bai Niangniang, uma misteriosa ninfa de aparência pálida.",
+          "text": "A novidade foi publicada no canal oficial da TOHO Animation, revelando também a chegada de novos (e importantes) personagens. O final de cada capítulo será embalado pela canção “AIYOU”, de Eve, e a estreia dos episódios está marcada para o dia 02 de outubro, com transmissão no Brasil pela Crunchyroll.",
           "runs": [
             {
-              "text": "A terceira temporada terá dois cours, ou seja duas partes. A primeira parte começa em outubro, enquanto a segunda estreia em "
+              "text": "A novidade foi publicada no canal oficial da"
             },
             {
-              "text": "abril de 2027",
+              "text": " TOHO Animation",
               "marks": [
                 "strong"
               ]
             },
             {
-              "text": ". Portanto a cantora e dubladora Reina Ueda também entra para o elenco como "
+              "text": ", revelando também a chegada de novos (e importantes) personagens. O final de cada capítulo será embalado pela canção "
             },
             {
-              "text": "Bai Niangniang",
+              "text": "“AIYOU”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", de "
+            },
+            {
+              "text": "Eve",
               "marks": [
                 "strong"
               ]
             },
             {
-              "text": ", uma misteriosa ninfa de aparência pálida."
+              "text": ", e a estreia dos episódios está marcada para o dia "
+            },
+            {
+              "text": "02 de outubro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com transmissão no Brasil pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
             }
           ]
         },
@@ -209,102 +737,350 @@
           "embedUrl": "https://www.youtube-nocookie.com/embed/YvNvvUeCztE"
         },
         {
-          "type": "heading",
-          "text": "Nova música de abertura",
-          "runs": [
-            {
-              "text": "Nova música de abertura"
-            }
-          ],
-          "level": 3
-        },
-        {
           "type": "paragraph",
-          "text": "Sendo assim a banda yorushika ficará responsável pela abertura com a música “Kumo o Nukekazashimo e Watashidake” na 3ª temporada do anime Diários de uma Apotecária.",
+          "text": "A história de Diários de uma Apotecária se passa em uma corte imperial fictícia da China Antiga, e foca em Maomao, uma jovem de 17 anos que foi raptada e forçada a trabalhar como uma serviçal de baixo escalão no palácio imperial. Um dia, ela descobre que dois filhos do imperador estão doentes, e começa a utilizar seus conhecimentos farmacêuticos, e logo chama a atenção de pessoas influentes.",
           "runs": [
             {
-              "text": "Sendo assim a banda yorushika ficará responsável pela abertura com a música “Kumo o Nukekazashimo e Watashidake” na 3ª temporada do anime Diários de uma Apotecária."
+              "text": "A história de "
+            },
+            {
+              "text": "Diários de uma Apotecária",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " se passa em uma corte imperial fictícia da China Antiga, e foca em Maomao, uma jovem de 17 anos que foi raptada e forçada a trabalhar como uma serviçal de baixo escalão no palácio imperial. Um dia, ela descobre que dois filhos do imperador estão doentes, e começa a utilizar seus conhecimentos farmacêuticos, e logo chama a atenção de pessoas influentes."
             }
           ]
         },
         {
           "type": "paragraph",
-          "text": "Além da nova temporada, a franquia terá o filme The Apothecary Diaries: The Deceased Empress’ Treasure, com estreia nos cinemas japoneses em 11 de dezembro de 2026. A produção contará uma história inédita escrita por Hyuganatsu, autora das novels originais.",
+          "text": "As light novels originais com autoria de Hyuganatsu são seriadas desde 2011 de forma online e independente pelo site Shosetsuka ni Naro. A trama rendeu um volume compilado pela editora Shufunotomo, com ilustração de Megumi Matsuda, em 2012. Depois disso, em 2014, a Shufunotomo começou a publicá-la como uma série de livros, agora ilustrada por Touko Shino, já rendendo 17 volumes, sendo essa a versão que estreou no Brasil recentemente pela editora Alt.",
           "runs": [
             {
-              "text": "Além da nova temporada, a franquia terá o filme "
+              "text": "As "
             },
             {
-              "text": "The Apothecary Diaries: The Deceased Empress’ Treasure",
+              "text": "light novels",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " originais com autoria de "
+            },
+            {
+              "text": "Hyuganatsu",
               "marks": [
                 "strong"
               ]
             },
             {
-              "text": ", com estreia nos cinemas japoneses em 11 de dezembro de 2026. A produção contará uma história inédita escrita por Hyuganatsu, autora das novels originais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A série acompanha Maomao, uma jovem especialista em medicina que é vendida como serva no palácio imperial. Por fim sua inteligência e conhecimento sobre venenos chamam a atenção de Jinshi, que a coloca a serviço da consorte favorita do imperador.",
-          "runs": [
-            {
-              "text": "A série acompanha Maomao, uma jovem especialista em medicina que é vendida como serva no palácio imperial. Por fim sua inteligência e conhecimento sobre venenos chamam a atenção de Jinshi, que a coloca a serviço da consorte favorita do imperador."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Diários de uma Apotecária revela tema de encerramento da 3ª temporada.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
+              "text": " são seriadas desde 2011 de forma online e independente pelo site "
             },
             {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
+              "text": "Shosetsuka ni Naro",
+              "marks": [
+                "strong"
+              ]
             },
             {
-              "text": ".  Leia a versão completa em "
+              "text": ". A trama rendeu um volume compilado pela editora "
             },
             {
-              "text": "Diários de uma Apotecária revela tema de encerramento da 3ª temporada",
-              "href": "https://animenew.com.br/diarios-de-uma-apotecaria-3-tema-encerramento/"
+              "text": "Shufunotomo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com ilustração de "
+            },
+            {
+              "text": "Megumi Matsuda",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", em 2012. Depois disso, em 2014, a Shufunotomo começou a publicá-la como uma série de livros, agora ilustrada por "
+            },
+            {
+              "text": "Touko Shino",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", já rendendo 17 volumes, sendo essa "
+            },
+            {
+              "text": "a versão que estreou no Brasil recentemente pela editora",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/07/29/diarios-de-uma-apotecaria-aparece-no-topo-de-lista-de-livros-mais-vendidos-no-brasil/"
+            },
+            {
+              "text": " ",
+              "href": "https://www.jbox.com.br/2026/07/29/diarios-de-uma-apotecaria-aparece-no-topo-de-lista-de-livros-mais-vendidos-no-brasil/"
+            },
+            {
+              "text": "Alt",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/07/29/diarios-de-uma-apotecaria-aparece-no-topo-de-lista-de-livros-mais-vendidos-no-brasil/"
             },
             {
               "text": "."
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Uma versão em mangá, adaptada por Itsuki Nanao (coordenação do enredo) e Nekokurage (arte), é publicada no Brasil pela editora Panini. A obra ainda conta com outra adaptação para mangá, feita por Minoji Kurata, essa inédita por aqui.",
+          "runs": [
+            {
+              "text": "Uma versão em mangá, adaptada por "
+            },
+            {
+              "text": "Itsuki Nanao",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (coordenação do enredo) e "
+            },
+            {
+              "text": "Nekokurage",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (arte), é publicada no Brasil pela editora "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A obra ainda conta com outra adaptação para mangá, feita por "
+            },
+            {
+              "text": "Minoji Kurata",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", essa inédita por aqui."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Dirigida e roteirizada por Norihiro Naganuma (The Ancient Magus’ Bride), a adaptação para animê é uma produção da TOHO junto ao estúdio OLM (Pokémon). A série já conta com duas temporadas lançadas e, além do terceiro ano, terá um longa-metragem lançado em dezembro.",
+          "runs": [
+            {
+              "text": "Dirigida e roteirizada por"
+            },
+            {
+              "text": " Norihiro Naganuma",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "The Ancient Magus’ Bride",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), a adaptação para animê é uma produção da "
+            },
+            {
+              "text": "TOHO",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " junto ao estúdio "
+            },
+            {
+              "text": "OLM",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). A série já conta com duas temporadas lançadas e, além do terceiro ano, "
+            },
+            {
+              "text": "terá um longa-metragem lançado em dezembro",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/07/03/diarios-de-uma-apotecaria-filme-ganha-trailer-e-data-de-estreia/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Netflix e a HBO Max contam com a primeira temporada da série, enquanto a Crunchyroll conta com as duas fases, todas com dublagem em português.",
+          "runs": [
+            {
+              "text": "A"
+            },
+            {
+              "text": " Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e a "
+            },
+            {
+              "text": "HBO Max",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " contam com a primeira temporada da série, enquanto a "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " conta com as duas fases, todas com dublagem em português."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fontes: Anime News Network",
+          "runs": [
+            {
+              "text": "Fontes: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-09-25/the-apothecary-diaries-season-3-anime-2nd-trailer-reveals-eve-ending-theme/.242175"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
         }
       ],
       "contentMode": "full",
-      "publishedAt": "2026-09-25T14:25:29.000Z",
-      "updatedAt": "2026-09-25T14:25:29.000Z",
-      "expiresAt": "2026-10-02T14:25:29.000Z",
+      "publishedAt": "2026-09-25T15:30:45.000Z",
+      "updatedAt": "2026-09-25T15:31:31.000Z",
+      "expiresAt": "2026-10-02T15:30:45.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
       "facts": [],
       "contentSections": [],
       "sources": [
         {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/diarios-de-uma-apotecaria-3-tema-encerramento",
-          "publishedAt": "2026-09-25T14:25:29.000Z",
-          "author": "Rafael Shinzo"
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/25/diarios-de-uma-apotecaria-3a-temporada-ganha-trailer-cheio-de-intrigas-e-com-a-musica-de-encerramento",
+          "publishedAt": "2026-09-25T15:30:45.000Z",
+          "author": "Cakes Sousa"
         }
       ],
       "sourceCount": 1,
       "readingMinutes": 2,
-      "wordCount": 255,
-      "qualityScore": 0.97,
+      "wordCount": 346,
+      "qualityScore": 0.982,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
         "sections": 0,
-        "blocks": 9,
+        "blocks": 11,
         "sourceCount": 1,
-        "ingestMode": "rss-full",
+        "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 1,
@@ -6791,7 +7567,7 @@
       "sourceCount": 1,
       "readingMinutes": 7,
       "wordCount": 1437,
-      "qualityScore": 1,
+      "qualityScore": 0.97,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
