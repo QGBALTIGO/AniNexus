@@ -32,6 +32,7 @@ import { registerSocialRoutes } from './lib/social-routes.mjs';
 import { socialBodyPayload } from './lib/social.mjs';
 import { buildAniListImportXml, fetchAniListEntries, usernameModerationReason } from './lib/profile-settings.mjs';
 import { registerListImportRoutes, importListRows as importAniListRows } from './lib/list-import-routes.mjs';
+import { consumeSourceLink, fetchSourceProfile, revokeSourceLink, sealSourceRevokeToken, openSourceRevokeToken, publicSourceProfile, SourceIntegrationError } from './lib/source-integration.mjs';
 
 const __dirname=path.dirname(fileURLToPath(import.meta.url));
 const PROFILE_MEDIA_DIR=path.resolve(process.env.PROFILE_MEDIA_DIR||path.join(__dirname,'profile-media'));
@@ -246,6 +247,74 @@ app.get('/media/profile/:userId/:file',publicRate,async(req,reply)=>{
   }catch(error){if(error?.code==='ENOENT')return reply.code(404).send({error:'NOT_FOUND'});throw error}
 });
 app.get('/api/me',privateReadRate,async(req,reply)=>{let user=await requireUser(req,reply);if(!user)return;if(CLERK_ENABLED&&user.clerk_user_id&&user.avatar_source==='clerk'){const fingerprint=crypto.createHash('sha256').update(String(user.avatar_url||'')).digest('hex').slice(0,12);try{user=await cacheRemember(`auth:profile-avatar-v44:${user.clerk_user_id}:${fingerprint}`,900,async()=>syncClerkUser(await getClerkClient().users.getUser(user.clerk_user_id)))}catch(error){req.log.warn({err:error,userId:user.id},'clerk avatar refresh failed')}}return{user:safeUser(user)}});
+
+const sourceConnectionPayload=(row,profile,stale=false)=>({
+  linked:true,
+  profile:profile||null,
+  publicVisible:row.public_visible!==false,
+  linkedAt:row.linked_at,
+  refreshedAt:row.refreshed_at,
+  stale:Boolean(stale),
+});
+const sourceConnectionRow=async userId=>(await q('SELECT user_id,source_subject,source_link_id,source_revoke_token,public_visible,source_profile,linked_at,refreshed_at FROM source_account_links WHERE user_id=$1',[userId])).rows[0]||null;
+const revokeSourceBeforeAccountDeletion=async(userId,log)=>{const row=await sourceConnectionRow(userId);if(!row)return;try{await revokeSourceLink(row.source_link_id,openSourceRevokeToken(row.source_revoke_token))}catch(error){if(!(error instanceof SourceIntegrationError&&error.status===404))log?.warn?.({err:error,userId},'Source link revoke during account deletion failed')}};
+const sourceError=(reply,error)=>{
+  const status=error instanceof SourceIntegrationError?error.status:503,code=error instanceof SourceIntegrationError?error.code:'SOURCE_UNAVAILABLE';
+  return reply.code(status>=400&&status<600?status:503).send({error:code,message:error?.message||'Integração Source indisponível.'});
+};
+app.get('/api/me/source',privateReadRate,async(req,reply)=>{
+  const user=await requireUser(req,reply);if(!user)return;
+  const row=await sourceConnectionRow(user.id);if(!row)return{linked:false};
+  try{
+    const profile=await fetchSourceProfile(row.source_link_id);
+    await q('UPDATE source_account_links SET source_profile=$2::jsonb,refreshed_at=now() WHERE user_id=$1',[user.id,JSON.stringify(profile)]);
+    return sourceConnectionPayload({...row,refreshed_at:new Date()},profile,false);
+  }catch(error){
+    if(error instanceof SourceIntegrationError&&error.status===404){
+      await q('DELETE FROM source_account_links WHERE user_id=$1',[user.id]);
+      return{linked:false,revoked:true};
+    }
+    const cached=publicSourceProfile(row.source_profile);
+    if(cached)return sourceConnectionPayload(row,cached,true);
+    return sourceError(reply,error);
+  }
+});
+app.post('/api/me/source/link',writeRate,async(req,reply)=>{
+  const user=await requireUser(req,reply);if(!user)return;
+  const parsed=z.object({token:z.string().trim().min(20).max(256)}).strict().safeParse(req.body);
+  if(!parsed.success)return reply.code(422).send({error:'INVALID_SOURCE_LINK'});
+  let linked;try{linked=await consumeSourceLink(parsed.data.token)}catch(error){return sourceError(reply,error)}
+  const sealed=sealSourceRevokeToken(linked.revokeToken),previous=await sourceConnectionRow(user.id);
+  await transaction(async client=>{
+    await client.query('DELETE FROM source_account_links WHERE source_subject=$1 AND user_id<>$2',[linked.sourceSubject,user.id]);
+    await client.query(`INSERT INTO source_account_links(user_id,source_subject,source_link_id,source_revoke_token,source_profile,linked_at,refreshed_at)
+      VALUES($1,$2,$3,$4,$5::jsonb,now(),now())
+      ON CONFLICT(user_id) DO UPDATE SET source_subject=EXCLUDED.source_subject,source_link_id=EXCLUDED.source_link_id,
+        source_revoke_token=EXCLUDED.source_revoke_token,source_profile=EXCLUDED.source_profile,linked_at=now(),refreshed_at=now()`,
+      [user.id,linked.sourceSubject,linked.linkId,sealed,JSON.stringify(linked.profile)]);
+  });
+  if(previous&&String(previous.source_link_id)!==String(linked.linkId)){
+    try{await revokeSourceLink(previous.source_link_id,openSourceRevokeToken(previous.source_revoke_token))}catch(error){if(!(error instanceof SourceIntegrationError&&error.status===404))req.log.warn({err:error,userId:user.id},'old Source link revoke failed')}
+  }
+  const row=await sourceConnectionRow(user.id);
+  return sourceConnectionPayload(row,linked.profile,false);
+});
+app.patch('/api/me/source',writeRate,async(req,reply)=>{
+  const user=await requireUser(req,reply);if(!user)return;
+  const parsed=z.object({publicVisible:z.boolean()}).strict().safeParse(req.body);if(!parsed.success)return reply.code(422).send({error:'INVALID_INPUT'});
+  const {rows}=await q('UPDATE source_account_links SET public_visible=$2 WHERE user_id=$1 RETURNING *',[user.id,parsed.data.publicVisible]);
+  if(!rows[0])return reply.code(404).send({error:'SOURCE_NOT_LINKED'});
+  return sourceConnectionPayload(rows[0],publicSourceProfile(rows[0].source_profile),false);
+});
+app.delete('/api/me/source',writeRate,async(req,reply)=>{
+  const user=await requireUser(req,reply);if(!user)return;
+  const row=await sourceConnectionRow(user.id);if(!row)return{ok:true,linked:false};
+  let revokeToken;try{revokeToken=openSourceRevokeToken(row.source_revoke_token)}catch(error){return sourceError(reply,error)}
+  try{await revokeSourceLink(row.source_link_id,revokeToken)}catch(error){if(!(error instanceof SourceIntegrationError&&error.status===404))return sourceError(reply,error)}
+  await q('DELETE FROM source_account_links WHERE user_id=$1',[user.id]);
+  return{ok:true,linked:false};
+});
+
 app.get('/api/member/telegram',privateReadRate,async(req,reply)=>{const user=await requireUser(req,reply);if(!user)return;reply.header('Cache-Control','no-store');return{url:'https://t.me/BaltigoWorld',label:'BaltigoWorld no Telegram'};});
 app.get('/api/me/username-availability',privateReadRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
@@ -370,8 +439,8 @@ app.get('/api/users/:username',publicRate,async(req,reply)=>{
     (SELECT count(*)::int FROM profile_follows WHERE followed_id=$1) AS followers,
     (SELECT count(*)::int FROM profile_follows WHERE follower_id=$1) AS following`,[user.id]);
   const social=socialResult.rows[0]||{followers:0,following:0};
-  if(isPrivate)return{profile,canonicalUsername:user.username,aliased,social,stats:null,library:[],mangaLibrary:[],favoriteCharacters:[],activity:[],impressions:[],achievements:[]};
-  const [statsResult,libraryResult,mangaResult,characterFavorites,activityResult,impressionsResult,achievementResult,favoriteResult,followingResult,followersResult]=await Promise.all([
+  if(isPrivate)return{profile,canonicalUsername:user.username,aliased,social,stats:null,library:[],mangaLibrary:[],favoriteCharacters:[],activity:[],impressions:[],achievements:[],sourceSummary:null};
+  const [statsResult,libraryResult,mangaResult,characterFavorites,activityResult,impressionsResult,achievementResult,favoriteResult,followingResult,followersResult,sourceLinkResult]=await Promise.all([
     user.show_stats===false?Promise.resolve({rows:[]}):q(publicProfileStatsSql,[user.id]),
     user.show_library===false?Promise.resolve({rows:[]}):q(`SELECT ua.media_id,ua.status,ua.score,ua.reaction,ua.reactions,ua.volume_progress,ua.progress,ua.updated_at,${mediaProjection} AS media FROM user_anime ua LEFT JOIN media_cache mc ON mc.media_id=ua.media_id AND mc.media_type='ANIME' WHERE ua.user_id=$1 ORDER BY ua.updated_at DESC LIMIT 36`,[user.id]),
     user.show_library===false?Promise.resolve({rows:[]}):q(`SELECT um.media_id,um.status,um.score,um.reaction,um.reactions,um.volume_progress,um.progress,um.updated_at,${mediaProjection} AS media FROM user_manga um LEFT JOIN media_cache mc ON mc.media_id=um.media_id AND mc.media_type='MANGA' WHERE um.user_id=$1 ORDER BY um.updated_at DESC LIMIT 36`,[user.id]),
@@ -382,11 +451,14 @@ app.get('/api/users/:username',publicRate,async(req,reply)=>{
     user.show_library===false?Promise.resolve({rows:[]}):q(`SELECT uf.media_id,uf.media_type,uf.created_at,${mediaProjection} AS media FROM user_favorites uf LEFT JOIN media_cache mc ON mc.media_id=uf.media_id AND mc.media_type=uf.media_type WHERE uf.user_id=$1 ORDER BY uf.created_at DESC LIMIT 36`,[user.id]),
     q(`SELECT target.username,target.display_name,target.avatar_url,target.avatar_source,pf.created_at FROM profile_follows pf JOIN users target ON target.id=pf.followed_id WHERE pf.follower_id=$1 AND target.deleted_at IS NULL AND target.status='active' AND target.privacy IN ('public','semi_public','followers') ORDER BY pf.created_at DESC LIMIT 24`,[user.id]),
     q(`SELECT source.username,source.display_name,source.avatar_url,source.avatar_source,pf.created_at FROM profile_follows pf JOIN users source ON source.id=pf.follower_id WHERE pf.followed_id=$1 AND source.deleted_at IS NULL AND source.status='active' AND source.privacy IN ('public','semi_public','followers') ORDER BY pf.created_at DESC LIMIT 24`,[user.id]),
+    (async()=>{const sourceRow=(await q('SELECT source_link_id,public_visible FROM source_account_links WHERE user_id=$1',[user.id])).rows[0];if(!sourceRow?.public_visible)return null;try{const live=await fetchSourceProfile(sourceRow.source_link_id,{timeoutMs:2500});await q('UPDATE source_account_links SET source_profile=$2::jsonb,refreshed_at=now() WHERE user_id=$1',[user.id,JSON.stringify(live)]);return live}catch(error){if(error instanceof SourceIntegrationError&&error.status===404)await q('DELETE FROM source_account_links WHERE user_id=$1',[user.id]).catch(()=>{});return null}})(),
   ]);
   const [library,mangaLibrary,activity,impressions,favorites]=await Promise.all([hydrateCommunityMedia(libraryResult.rows,'ANIME',user.id),hydrateCommunityMedia(mangaResult.rows,'MANGA',user.id),hydrateCommunityMedia(activityResult.rows,'ANIME',user.id),hydrateCommunityMedia(impressionsResult.rows,'ANIME',user.id),hydrateCommunityMedia(favoriteResult.rows,'ANIME',user.id)]);
   const stats=statsResult.rows[0]||null;
   const presentConnection=row=>{const connectionAvatar=resolvedAvatar(row);return{username:row.username,displayName:row.display_name||row.username,avatarUrl:connectionAvatar.url,avatarPreset:connectionAvatar.preset,createdAt:row.created_at}};
-  return{profile:{...profile,equippedTitle:achievementResult.equippedTitle},canonicalUsername:user.username,aliased,social,stats,rank:achievementResult.rank,achievements:achievementResult.achievements,pinnedAchievements:achievementResult.pinnedAchievements,library,mangaLibrary,favorites,favoriteCharacters:hydrateCharacterFavorites(characterFavorites),activity,impressions:withSocialBodies(impressions),connections:{following:followingResult.rows.map(presentConnection),followers:followersResult.rows.map(presentConnection)}};
+  const sourceCached=publicSourceProfile(sourceLinkResult);
+  const sourceSummary=sourceCached?.public?{displayName:sourceCached.displayName,username:sourceCached.username||null,favorite:sourceCached.favorite||null,updatedAt:sourceCached.updatedAt,stats:{level:sourceCached.stats.level,xp:sourceCached.stats.xp,uniqueCharacters:sourceCached.stats.uniqueCharacters,totalCharacters:sourceCached.stats.totalCharacters,totalAvailableCharacters:sourceCached.stats.totalAvailableCharacters,collectionPercent:sourceCached.stats.collectionPercent}}:null;
+  return{profile:{...profile,equippedTitle:achievementResult.equippedTitle},canonicalUsername:user.username,aliased,social,stats,rank:achievementResult.rank,achievements:achievementResult.achievements,pinnedAchievements:achievementResult.pinnedAchievements,library,mangaLibrary,favorites,favoriteCharacters:hydrateCharacterFavorites(characterFavorites),activity,impressions:withSocialBodies(impressions),connections:{following:followingResult.rows.map(presentConnection),followers:followersResult.rows.map(presentConnection)},sourceSummary};
 });
 app.post('/api/auth/register',authRate,async(req,reply)=>{
   if(CLERK_ENABLED)return reply.code(410).send({error:'AUTH_MANAGED_BY_CLERK'});
@@ -718,8 +790,9 @@ app.post('/api/me/export-list',privateHeavyRate,async(req,reply)=>{
 
 app.get('/api/me/export',privateHeavyRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
-  const [profile,preferences,list,mangaList,favorites,characterFavorites,watched,follows,impressions,newsComments,threads,posts]=await Promise.all([
+  const [profile,preferences,list,mangaList,favorites,characterFavorites,watched,follows,impressions,newsComments,threads,posts,sourceConnection]=await Promise.all([
     q('SELECT email,username,display_name,avatar_url,profile_banner_url,bio,location,website_url,instagram_handle,telegram_handle,avatar_source,theme,privacy,show_library,show_activity,show_stats,username_changed_at,email_verified,created_at,updated_at FROM users WHERE id=$1',[user.id]),q('SELECT * FROM user_preferences WHERE user_id=$1',[user.id]),q('SELECT media_id,status,score,reaction,reactions,progress,volume_progress,updated_at FROM user_anime WHERE user_id=$1 ORDER BY media_id',[user.id]),q('SELECT media_id,status,score,reaction,reactions,progress,volume_progress,updated_at FROM user_manga WHERE user_id=$1 ORDER BY media_id',[user.id]),q('SELECT media_id,media_type,created_at FROM user_favorites WHERE user_id=$1 ORDER BY media_type,media_id',[user.id]),q('SELECT character_id,created_at FROM character_favorites WHERE user_id=$1 ORDER BY character_id',[user.id]),q('SELECT media_id,episode,watched_at FROM watched_episodes WHERE user_id=$1 ORDER BY media_id,episode',[user.id]),q('SELECT media_id,media_type,notify_episode,notify_news,created_at FROM user_follows WHERE user_id=$1 ORDER BY media_type,media_id',[user.id]),q('SELECT media_id,media_type,body,spoiler,has_spoilers,status_snapshot,progress_snapshot,score_snapshot,impression_stage,created_at,updated_at,edited_at FROM impressions WHERE user_id=$1 ORDER BY created_at',[user.id]),q('SELECT article_slug,parent_id,body,spoiler,has_spoilers,created_at,updated_at,edited_at FROM news_comments WHERE user_id=$1 ORDER BY created_at',[user.id]),q('SELECT id,media_id,title,body,spoiler,created_at,updated_at FROM community_threads WHERE user_id=$1 ORDER BY created_at',[user.id]),q('SELECT thread_id,parent_id,body,spoiler,created_at,updated_at FROM community_posts WHERE user_id=$1 ORDER BY created_at',[user.id]),
+    q('SELECT public_visible,source_profile,linked_at,refreshed_at FROM source_account_links WHERE user_id=$1',[user.id]),
   ]);
   const [achievementProfile,achievementAnimeHistory,achievementActivityDays,achievementContributionHistory,achievementUnlocks,achievementPins]=await Promise.all([
     q('SELECT share_feed,timezone,equipped_title,first_evaluated_at,last_evaluated_at,updated_at FROM achievement_profiles WHERE user_id=$1',[user.id]),
@@ -730,17 +803,18 @@ app.get('/api/me/export',privateHeavyRate,async(req,reply)=>{
     q('SELECT slot,achievement_id,pinned_at FROM achievement_pins WHERE user_id=$1 ORDER BY slot',[user.id]),
   ]);
   reply.header('Cache-Control','no-store').header('Content-Disposition',`attachment; filename="aninexus-${new Date().toISOString().slice(0,10)}.json"`);
-  return{exportedAt:new Date().toISOString(),profile:profile.rows[0],preferences:preferences.rows[0]||null,list:list.rows,animeList:list.rows,mangaList:mangaList.rows,favorites:favorites.rows,characterFavorites:characterFavorites.rows,watchedEpisodes:watched.rows,follows:follows.rows,impressions:impressions.rows,newsComments:newsComments.rows,threads:threads.rows,posts:posts.rows,achievements:{profile:achievementProfile.rows[0]||null,animeHistory:achievementAnimeHistory.rows,activityDays:achievementActivityDays.rows,contributionHistory:achievementContributionHistory.rows,unlocks:achievementUnlocks.rows,pins:achievementPins.rows}};
+  return{exportedAt:new Date().toISOString(),profile:profile.rows[0],preferences:preferences.rows[0]||null,list:list.rows,animeList:list.rows,mangaList:mangaList.rows,favorites:favorites.rows,characterFavorites:characterFavorites.rows,watchedEpisodes:watched.rows,follows:follows.rows,impressions:impressions.rows,newsComments:newsComments.rows,threads:threads.rows,posts:posts.rows,sourceConnection:sourceConnection.rows[0]||null,achievements:{profile:achievementProfile.rows[0]||null,animeHistory:achievementAnimeHistory.rows,activityDays:achievementActivityDays.rows,contributionHistory:achievementContributionHistory.rows,unlocks:achievementUnlocks.rows,pins:achievementPins.rows}};
 });
 app.delete('/api/me/account',rateForUser(2,'1 hour','account-delete'),async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
   const parsed=z.object({confirmation:z.literal('EXCLUIR')}).safeParse(req.body);if(!parsed.success)return reply.code(422).send({error:'CONFIRMATION_REQUIRED'});
   if(!CLERK_ENABLED||!user.clerk_user_id)return reply.code(409).send({error:'CLERK_ACCOUNT_REQUIRED'});
   await beginAccountDeletion(user);
+  await revokeSourceBeforeAccountDeletion(user.id,req.log).catch(error=>req.log.warn({err:error,userId:user.id},'Source unlink lookup during account deletion failed'));
   try{await getClerkClient().users.deleteUser(user.clerk_user_id);await q('DELETE FROM users WHERE id=$1',[user.id])}catch(error){await cancelAccountDeletion(user).catch(()=>{});throw error}
   return reply.code(204).send();
 });
-app.post('/api/me/account/deletion',writeRate,async(req,reply)=>{const user=await requireUser(req,reply);if(!user)return;const parsed=z.object({password:z.string().max(128).optional()}).safeParse(req.body||{});if(!parsed.success)return reply.code(400).send({error:'INVALID_INPUT'});if(!CLERK_ENABLED){if(!parsed.data.password)return reply.code(400).send({error:'PASSWORD_REQUIRED'});const {rows}=await q('SELECT password_hash FROM users WHERE id=$1',[user.id]);if(!await verifyPassword(rows[0]?.password_hash||'',parsed.data.password))return reply.code(401).send({error:'INVALID_CREDENTIALS'})}await beginAccountDeletion(user);try{if(CLERK_ENABLED&&user.clerk_user_id)await getClerkClient().users.deleteUser(user.clerk_user_id);await q('DELETE FROM users WHERE id=$1',[user.id]);return reply.code(204).send()}catch(error){await cancelAccountDeletion(user).catch(()=>{});throw error}});
+app.post('/api/me/account/deletion',writeRate,async(req,reply)=>{const user=await requireUser(req,reply);if(!user)return;const parsed=z.object({password:z.string().max(128).optional()}).safeParse(req.body||{});if(!parsed.success)return reply.code(400).send({error:'INVALID_INPUT'});if(!CLERK_ENABLED){if(!parsed.data.password)return reply.code(400).send({error:'PASSWORD_REQUIRED'});const {rows}=await q('SELECT password_hash FROM users WHERE id=$1',[user.id]);if(!await verifyPassword(rows[0]?.password_hash||'',parsed.data.password))return reply.code(401).send({error:'INVALID_CREDENTIALS'})}await beginAccountDeletion(user);await revokeSourceBeforeAccountDeletion(user.id,req.log).catch(error=>req.log.warn({err:error,userId:user.id},'Source unlink lookup during account deletion failed'));try{if(CLERK_ENABLED&&user.clerk_user_id)await getClerkClient().users.deleteUser(user.clerk_user_id);await q('DELETE FROM users WHERE id=$1',[user.id]);return reply.code(204).send()}catch(error){await cancelAccountDeletion(user).catch(()=>{});throw error}});
 
 registerSocialRoutes(app,{q,currentUser,requireUser,rateForUser,publicRate,safeInt,withActorAvatars,hydrateCommunityMedia,mediaProjection,recordContributionAchievement,getNativeArticle});
 

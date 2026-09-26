@@ -46,6 +46,10 @@ jobs:
         env:
           MEDIA_TEST_DATABASE_URL: postgres://postgres:ci-media-list@127.0.0.1:5432/aninexus_test
         run: node tests/media-list-database.mjs
+      - name: Source account-link migration and one-to-one identity
+        env:
+          SOURCE_INTEGRATION_TEST_DATABASE_URL: postgres://postgres:ci-media-list@127.0.0.1:5432/aninexus_test
+        run: node --test tests/source-integration-database.mjs
       - name: Validate production frontend assembly
         run: |
           pnpm run build:public
@@ -111,7 +115,7 @@ jobs:
           CID=$(docker create aninexus-ci:${{ github.sha }})
           trap 'docker rm -f "$CID" >/dev/null 2>&1 || true' EXIT
           docker cp "$CID:/app/public/index.html" /tmp/aninexus-index.html
-          grep -q '2026-09-25-v44.58.1' /tmp/aninexus-index.html
+          grep -q '2026-09-26-v44.59.0' /tmp/aninexus-index.html
           for FILE in \
             preview-v22/detail-stable-v22.js \
             preview-v38/admin-v38.js \
