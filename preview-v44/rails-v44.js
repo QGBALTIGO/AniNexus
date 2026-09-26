@@ -245,7 +245,15 @@
     if (!scanFrame) scanFrame = requestAnimationFrame(scan);
   }
 
-  const observer = new MutationObserver(scheduleScan);
+  // Counters and text updates do not add rails. Avoid rescanning the entire
+  // document on every countdown tick or unrelated community update.
+  const observer = new MutationObserver(records => {
+    const relevant = records.some(record => [...record.addedNodes, ...record.removedNodes].some(node =>
+      node instanceof Element && (node.matches(RAIL_SELECTOR) || node.querySelector(RAIL_SELECTOR) ||
+        [...controllers].some(controller => node.contains(controller.rail)))
+    ));
+    if (relevant) scheduleScan();
+  });
   observer.observe(document.documentElement, { childList: true, subtree: true });
   addEventListener('aninexus:home-v34-ready', scheduleScan);
   addEventListener('aninexus:route-ready', scheduleScan);

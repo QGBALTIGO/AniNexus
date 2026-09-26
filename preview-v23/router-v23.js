@@ -45,6 +45,7 @@
     const current=cleanPathFromUrl(location.href).split('?')[0];
     if(DETAIL_ROUTE.test(String(path||'').split(/[?#]/)[0])&&current&&!DETAIL_ROUTE.test(current)){try{sessionStorage.setItem('nx22:previous-path',JSON.stringify({path:current,document:performance.timeOrigin}))}catch{}}
     document.body?.classList.remove('modal-open');const drawer=document.querySelector('#drawer');if(drawer){drawer.hidden=true;drawer.setAttribute('aria-hidden','true')}
+    document.querySelectorAll('[data-action="drawer-open"]').forEach(button=>button.setAttribute('aria-expanded','false'));
     const softNavigate=()=>{markRouteOwner(path);return !IS_PAGES&&window.AniNexusGo?.(path)===true};
     if(!IS_PAGES&&DETAIL_ROUTE.test(String(path||'').split(/[?#]/)[0])){ensureDetailRuntime().then(()=>{if(sequence!==navigationSequence)return;if(!softNavigate())assign(path)}).catch(()=>{if(sequence===navigationSequence)assign(path)});return}
     if(softNavigate())return;

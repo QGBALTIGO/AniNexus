@@ -201,7 +201,12 @@
   async function fetchThemes(id){
     const cached=themeCacheRead(id);if(cached)return cached;if(themePromises.has(id))return themePromises.get(id);
     const request=(async()=>{
-      if(!IS_PAGES){try{const response=await fetch(`/api/anime/${id}/themes`,{headers:{accept:'application/json'}});if(response.ok){const remote=await response.json(),data={items:(remote.items||[]).map(item=>({...item,url:safeThemeVideo(item.url)})).filter(item=>item.url).slice(0,24)};themeCacheWrite(id,data);return data}}catch{}}
+      if(!IS_PAGES){
+        const {response,body:remote}=await window.AniNexusRuntime.jsonRequest(`/api/anime/${id}/themes`,{headers:{accept:'application/json'}},{timeout:10000,label:'Acervo de temas'});
+        if(!response.ok||!Array.isArray(remote?.items))throw new Error('Acervo temporariamente indisponível');
+        const data={items:remote.items.map(item=>({...item,url:safeThemeVideo(item.url)})).filter(item=>item.url).slice(0,24)};
+        themeCacheWrite(id,data);return data;
+      }
       const url=new URL(`${THEME_API}/anime`);url.searchParams.set('filter[has]','resources');url.searchParams.set('filter[site]','Anilist');url.searchParams.set('filter[external_id]',String(id));url.searchParams.set('include','animethemes.animethemeentries.videos,animethemes.song.artists');url.searchParams.set('page[size]','1');const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12000);
       try{const response=await fetch(url,{headers:{accept:'application/json'},credentials:'omit',signal:controller.signal});if(!response.ok)throw new Error('Não foi possível consultar o acervo.');const payload=await response.json(),data=normalizeThemes(payload?.anime?.[0]);themeCacheWrite(id,data);return data}catch(error){if(error?.name==='AbortError')throw new Error('A consulta demorou mais que o esperado.');throw error}finally{clearTimeout(timer)}
     })().finally(()=>themePromises.delete(id));themePromises.set(id,request);return request;

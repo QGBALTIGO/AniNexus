@@ -375,6 +375,8 @@
 
   function paginationMarkup(info) {
     const current = Math.max(1, Number(info.currentPage || state.page));
+    const estimated=info.totalIsEstimated||info.hasNextPage===true&&Number(info.total)>=5000;
+    if(estimated)return `<nav class="nx21-pages" aria-label="Paginação do catálogo"><button type="button" class="nx21-page-arrow" data-nx21-page="${Math.max(1,current-1)}"${current===1?' disabled':''} aria-label="Página anterior">${ICON.left}</button><span aria-current="page">Página ${current}</span><button type="button" class="nx21-page-arrow" data-nx21-page="${current+1}"${info.hasNextPage===false||current>=MAX_PUBLIC_PAGE?' disabled':''} aria-label="Próxima página">${ICON.right}</button></nav>`;
     const last = Math.max(1, Math.min(Number(info.lastPage || current), state.mode === 'TOP' ? 4 : MAX_PUBLIC_PAGE));
     if (last <= 1) return '';
     const pages = [...new Set([1, current - 1, current, current + 1, last].filter(page => page >= 1 && page <= last))].sort((a, b) => a - b);
@@ -452,9 +454,7 @@
     }, { rootMargin: '80px 0px', threshold: 0.06 });
     cards.forEach((card, index) => {
       card.style.setProperty('--nx21-delay', `${Math.min(index % 5, 4) * 45}ms`);
-      const box = card.getBoundingClientRect();
-      if (box.bottom >= -80 && box.top <= innerHeight + 80) card.classList.add('visible');
-      else state.revealObserver.observe(card);
+      state.revealObserver.observe(card);
     });
   }
 
@@ -476,7 +476,8 @@
       state.items.clear();
       const total = Number(data.pageInfo?.total || 0);
       const count = document.querySelector('#nx21Count');
-      if (count) count.textContent = total ? state.mode === 'TOP' ? `${Math.min(total, 100).toLocaleString('pt-BR')} posições` : `${total >= 5000 ? '5.000+' : total.toLocaleString('pt-BR')} títulos` : '';
+      const estimated=data.pageInfo?.totalIsEstimated||data.pageInfo?.hasNextPage===true&&total>=5000;
+      if (count) count.textContent = estimated ? `Página ${Number(data.pageInfo.currentPage)||state.page} · Explore os resultados` : total ? state.mode === 'TOP' ? `${Math.min(total, 100).toLocaleString('pt-BR')} posições` : `${total.toLocaleString('pt-BR')} títulos` : '';
       results.innerHTML = data.items.length
         ? `<div class="nx21-grid">${data.items.map(cardMarkup).join('')}</div>`
         : `<div class="nx21-empty"><strong>Nenhuma ${currentCatalog().noun} encontrada</strong><span>Altere os filtros para ampliar os resultados.</span></div>`;

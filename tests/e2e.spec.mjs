@@ -70,9 +70,33 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals,.nx35-hero-actions')).toHaveCount(0);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-14-v44.57.1')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals')).toHaveCount(0);await expect(page.locator('.nx35-hero-actions a')).toHaveCount(2);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-25-v44.58.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
+
+test('mobile header keeps search reachable and drawer state closes after navigation',async({page},testInfo)=>{
+  for(const width of [320,390]){
+    await page.setViewportSize({width,height:844});
+    await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+    await expect(page.locator('.nx35-hero-actions')).toBeVisible();
+    const search=page.locator('#topbar [data-action="search"]');
+    await expect(search).toBeVisible();
+    const geometry=await search.evaluate(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right,width:r.width,height:r.height}});
+    expect(geometry.left).toBeGreaterThanOrEqual(0);
+    expect(geometry.right).toBeLessThanOrEqual(width);
+    expect(geometry.width).toBeGreaterThanOrEqual(40);
+    expect(geometry.height).toBeGreaterThanOrEqual(40);
+    await page.screenshot({path:testInfo.outputPath(`home-${width}.png`)});
+    const trigger=page.locator('[data-action="drawer-open"]');
+    await trigger.click();
+    await expect(trigger).toHaveAttribute('aria-expanded','true');
+    await page.locator('#drawer .drawer-nav-grid>a').filter({hasText:'Animes'}).click();
+    await expect(page.locator('.nx21-catalog-page')).toBeVisible();
+    await expect(trigger).toHaveAttribute('aria-expanded','false');
+    await expect(page.locator('#drawer')).toBeHidden();
+    await noOverflow(page,2);
+  }
+});
 
 test('Home achievement feed shows four cards on desktop and a page-and-a-half on mobile',async({page})=>{
   await page.route('**/api/achievements/feed?**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:achievementFeed()})}));
@@ -1764,17 +1788,17 @@ test('Community V40 exposes public activity without a discussion composer',async
   expect(threadRequests).toBe(0);await noOverflow(page);
 });
 
-test('Catalog exposes all pages, keeps its chrome together and darkens the header only after scroll',async({page})=>{
+test('Catalog keeps estimated pagination honest and its scroll chrome together',async({page})=>{
   const requested=[];
   await page.unroute('https://graphql.anilist.co/');
   await page.route('https://graphql.anilist.co/',async route=>{const body=route.request().postDataJSON(),current=Number(body.variables?.page||1);requested.push(body);await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:{Page:{pageInfo:{total:5000,currentPage:current,lastPage:200,hasNextPage:current<200},media:catalogPage(current)}}})})});
   await page.setViewportSize({width:1440,height:900});
   await page.goto(pageUrl('/animes/catalogo'),{waitUntil:'domcontentloaded'});
   await expect(page.locator('.nx21-card')).toHaveCount(25,{timeout:30000});
-  await expect(page.locator('#nx21Count')).toHaveText('5.000+ títulos');
-  await expect(page.locator('.nx21-pages').getByRole('button',{name:'1',exact:true})).toBeVisible();
-  await expect(page.locator('.nx21-pages').getByRole('button',{name:'2',exact:true})).toBeVisible();
-  await expect(page.locator('.nx21-pages').getByRole('button',{name:'200',exact:true})).toBeVisible();
+  await expect(page.locator('#nx21Count')).toHaveText('Página 1 · Explore os resultados');
+  await expect(page.locator('.nx21-pages [aria-current="page"]')).toHaveText('Página 1');
+  await expect(page.locator('.nx21-pages').getByRole('button',{name:'Página anterior',exact:true})).toBeDisabled();
+  await expect(page.locator('.nx21-pages').getByRole('button',{name:'200',exact:true})).toHaveCount(0);
   const columns=await page.locator('.nx21-card').evaluateAll(cards=>new Set(cards.slice(0,5).map(card=>Math.round(card.getBoundingClientRect().left))).size);
   expect(columns).toBe(5);
   const topGeometry=await page.evaluate(()=>{const chrome=document.querySelector('.nx21-chrome').getBoundingClientRect(),heading=document.querySelector('.nx21-intro h1').getBoundingClientRect(),title=document.querySelector('.nx21-title').getBoundingClientRect(),tabs=document.querySelector('#nx21Hero .nx21-tabbar').getBoundingClientRect();return{chromeTop:Math.round(chrome.top),titleTop:Math.round(heading.top),tabsTop:Math.round(tabs.top),titleCenter:title.left+title.width/2,chromeCenter:chrome.left+chrome.width/2}});
@@ -1809,7 +1833,7 @@ test('Catalog exposes all pages, keeps its chrome together and darkens the heade
   await expect(page.locator('#nx21Island')).not.toHaveClass(/expanded/);
   await page.locator('[data-nx21-island-toggle]').click();
   await expect(page.locator('#nx21Island')).toHaveClass(/expanded/);
-  await page.locator('.nx21-pages').getByRole('button',{name:'2',exact:true}).click();
+  await page.locator('.nx21-pages').getByRole('button',{name:'Próxima página',exact:true}).click();
   await expect(page.locator('.nx21-card').first().locator('h3')).toHaveText('Anime Teste 2001',{timeout:10000});
   expect(requested.some(body=>Number(body.variables?.page)===2)).toBe(true);
   await noOverflow(page,2);

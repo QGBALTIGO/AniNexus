@@ -17,6 +17,7 @@
   function closeDrawer(){
     const d=document.querySelector('#drawer');
     if(d){d.hidden=true;d.setAttribute('aria-hidden','true')}
+    document.querySelectorAll('[data-action="drawer-open"]').forEach(button=>button.setAttribute('aria-expanded','false'));
     document.body.classList.remove('modal-open');
   }
   function isInternal(a){

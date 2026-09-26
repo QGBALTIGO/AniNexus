@@ -28,13 +28,15 @@ globalThis.fetch = async (_url, options = {}) => {
   return new Response(JSON.stringify({ data: { Page: { pageInfo: { total: 5000, currentPage: page, lastPage: 200, hasNextPage: page < 200 }, media } } }), { status: 200, headers: { 'content-type': 'application/json' } });
 };
 
-const { getCatalog, getReading, studiosFromCachedMedia } = await import('../lib/provider.mjs');
+const { getCatalog, getReading, studiosFromCachedMedia, catalogPageInfo } = await import('../lib/provider.mjs');
 const { pool } = await import('../lib/db.mjs');
 
 test('catalog omits inactive optional variables and keeps deep pagination', async () => {
   const result = await getCatalog({ page: 2, perPage: 25, sort: 'NEW' });
   assert.equal(result.items.length, 25);
-  assert.equal(result.pageInfo.total, 5000);
+  assert.equal(result.pageInfo.total, null);
+  assert.equal(result.pageInfo.lastPage, null);
+  assert.equal(result.pageInfo.totalIsEstimated, true);
   assert.equal(result.pageInfo.currentPage, 2);
   const variables = requests.at(-1).variables;
   assert.deepEqual(Object.keys(variables).sort(), ['page', 'perPage', 'sort']);
@@ -104,6 +106,13 @@ test('cached studio fallback groups, sorts and paginates local anime', () => {
   const second = studiosFromCachedMedia(rows, 2, 1);
   assert.equal(second.items[0].name, 'MAPPA');
   assert.equal(second.pageInfo.hasNextPage, false);
+});
+
+test('exact last pages and empty results retain their actual counts', () => {
+  for(const info of [
+    {total:26,currentPage:2,lastPage:2,hasNextPage:false},
+    {total:0,currentPage:1,lastPage:1,hasNextPage:false}
+  ]) assert.deepEqual(catalogPageInfo(info),info);
 });
 
 test.after(async () => { await pool.end(); });
