@@ -118,6 +118,7 @@
 
   // Media fallback only. List/favorite state is owned exclusively by media-state-v2.js.
   const failedMediaHosts=new WeakMap();
+  const avatarRetries=new WeakMap();
   const clearImageFailure=img=>{
     img.classList.remove('nx38-img-error');delete img.dataset.nx38Broken;
     const host=failedMediaHosts.get(img);failedMediaHosts.delete(img);
@@ -131,7 +132,15 @@
     setTimeout(()=>{
       if(!img.isConnected||img.src!==requestedSource||img.naturalWidth||img.hidden)return;
       const avatarFallback=img.dataset.nxAvatarFallback;
-      if(avatarFallback&&img.src!==new URL(avatarFallback,document.baseURI).href){clearImageFailure(img);img.removeAttribute('srcset');img.src=avatarFallback;return}
+      if(avatarFallback&&img.src!==new URL(avatarFallback,document.baseURI).href){
+        const previous=avatarRetries.get(img),retry=previous?.source===requestedSource?previous:{source:requestedSource,attempts:0};
+        avatarRetries.set(img,retry);
+        clearImageFailure(img);img.removeAttribute('srcset');img.src=avatarFallback;
+        const fallbackSource=img.src;
+        // A brief CDN/network failure must not make the default avatar permanent.
+        if(retry.attempts<2){retry.attempts+=1;setTimeout(()=>{if(img.isConnected&&img.src===fallbackSource&&avatarRetries.get(img)===retry)img.src=retry.source},retry.attempts===1?1500:4000)}
+        return;
+      }
       if((img.currentSrc||img.src)!==failedSource)return;
       img.dataset.nx38Broken='1';img.classList.add('nx38-img-error');
       const host=img.closest('.nx35-nmedia,.nx37-gallery-item,.nx24-card-poster,.aqx-media,.nx18-cover,.nx35-community-cover,.media,.poster,.nx21-poster,.nx22-cover,.nx22-hero-bg');

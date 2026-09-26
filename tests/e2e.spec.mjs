@@ -70,9 +70,88 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals')).toHaveCount(0);await expect(page.locator('.nx35-hero-actions a')).toHaveCount(2);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-25-v44.58.0')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals')).toHaveCount(0);await expect(page.locator('.nx35-hero-actions a')).toHaveCount(2);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-25-v44.58.1')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
+
+async function mockHeaderIdentity(page, respond) {
+  await page.route('**/runtime-config.js*',route=>route.fulfill({contentType:'application/javascript',body:`window.__ANINEXUS_CONFIG__={environment:'test',siteOrigin:location.origin,apiOrigin:'https://api.clerk.com',clerkPublishableKey:'pk_test_dGVzdC5jbGVyay5hY2NvdW50cy5kZXYk',authEnabled:true};`}));
+  await page.route('https://test.clerk.accounts.dev/npm/@clerk/ui@1/dist/ui.browser.js',route=>route.fulfill({contentType:'application/javascript',body:'window.__internal_ClerkUICtor=function(){};'}));
+  await page.route('https://test.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js',route=>route.fulfill({contentType:'application/javascript',body:`window.Clerk={user:{id:'clerk_test',hasImage:false},session:{getToken:async()=>"token"},load:async()=>{},addListener:fn=>{window.__identityListener=fn},signOut:async()=>{}};`}));
+  await page.route('https://api.clerk.com/**',route=>new URL(route.request().url()).pathname==='/api/me'?respond(route):route.fulfill({contentType:'application/json',body:'{"items":[]}'}));
+}
+
+test('header recovers a custom avatar after a transient first-load profile failure',async({page})=>{
+  let firstRequest=0;
+  await mockHeaderIdentity(page,route=>{firstRequest ||= Date.now();return route.fulfill({status:Date.now()-firstRequest<2500?503:200,contentType:'application/json',body:JSON.stringify({user:{id:'app_member',displayName:'Foto personalizada',avatarUrl:pixel}})})});
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx38-account-chip img')).toHaveAttribute('src',pixel,{timeout:12000});
+  await expect(page.locator('.drawer-account-avatar img')).toHaveAttribute('src',pixel);
+  await expect(page.locator('.nx38-account-chip')).toHaveCount(1);
+  await page.locator('.nx38-account-chip').click();
+  await expect(page.locator('.nx42-account-menu header img')).toHaveAttribute('src',pixel);
+});
+
+test('header retries a temporarily broken avatar image without a reload',async({page})=>{
+  let imageRequests=0; const avatar='https://s4.anilist.co/avatar-recovery.png';
+  await mockHeaderIdentity(page,route=>route.fulfill({contentType:'application/json',body:JSON.stringify({user:{id:'app_member',displayName:'Foto personalizada',avatarUrl:avatar}})}));
+  await page.route(avatar,route=>++imageRequests<=2?route.fulfill({status:503,body:''}):route.fulfill({contentType:'image/gif',body:imageBytes}));
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  const img=page.locator('.nx38-account-chip img');
+  await expect.poll(async()=>img.evaluate((el,url)=>el.src===url&&el.currentSrc===url&&el.complete&&el.naturalWidth>0,avatar),{timeout:12000}).toBe(true);
+  expect(imageRequests).toBeGreaterThan(2);
+});
+
+test('late profile responses cannot restore the avatar after signout',async({page})=>{
+  let release; const pending=new Promise(resolve=>{release=resolve}); let started=false;
+  await mockHeaderIdentity(page,async route=>{started=true;await pending;await route.fulfill({contentType:'application/json',body:JSON.stringify({user:{id:'old_member',displayName:'Conta antiga',avatarUrl:pixel}})}).catch(()=>{})});
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  await expect.poll(()=>started).toBe(true);
+  await page.evaluate(async()=>{window.Clerk.user=null;window.Clerk.session=null;await window.AniNexusAuthV38.syncHeader()});
+  release();
+  await page.waitForTimeout(700);
+  await expect(page.locator('html')).toHaveAttribute('data-nx-auth-state','anonymous');
+  await expect(page.locator('.nx38-account-chip')).toHaveCount(0);
+  await expect(page.locator('.drawer-auth-card')).toHaveAttribute('data-auth-state','anonymous');
+});
+
+test('new account identity wins over a pending shared profile refresh',async({page})=>{
+  await mockHeaderIdentity(page,route=>route.fulfill({contentType:'application/json',body:JSON.stringify({user:{id:'member_a',displayName:'Conta A',avatarUrl:pixel}})}));
+  await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx38-account-chip')).toHaveCount(1);
+  await page.evaluate(()=>{
+    window.__pendingIdentity=new Promise(resolve=>{window.__releaseIdentity=resolve});
+    window.AniNexusAuth={...window.AniNexusAuth,api:()=>window.__pendingIdentity};
+    window.__profileRefresh=window.AniNexusAccountData({refresh:true});
+  });
+  const outcome=await page.evaluate(async()=>{
+    dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:{id:'member_b',displayName:'Conta B'}}}));
+    window.__releaseIdentity({user:{id:'member_a',displayName:'Conta A'}});
+    await window.__profileRefresh;
+    return window.AniNexusAccountData();
+  });
+  expect(outcome.id).toBe('member_b');
+  await page.locator('.nx38-account-chip').click();
+  await expect(page.locator('.nx42-account-menu header')).toContainText('Conta B');
+  await page.evaluate(()=>dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:null}})));
+  await expect(page.locator('.nx42-account-menu')).toHaveCount(0);
+});
+
+test('detail back controls stay circular unobscured and tappable across viewport sizes',async({page},testInfo)=>{
+  for(const width of [320,390,430,768,1440]){
+    await page.setViewportSize({width,height:900});
+    for(const kind of ['anime','manga']){
+      await page.goto(pageUrl(`/${kind}/obra-teste-101`),{waitUntil:'domcontentloaded'});
+      const back=page.locator('[data-nx22-back]');await expect(back).toBeVisible({timeout:30000});
+      const geometry=await back.evaluate(el=>{const r=el.getBoundingClientRect(),header=document.querySelector('#topbar').getBoundingClientRect(),style=getComputedStyle(el);return{width:r.width,height:r.height,top:r.top,headerBottom:header.bottom,radius:style.borderRadius,hit:el.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2))}});
+      expect(Math.abs(geometry.width-geometry.height)).toBeLessThanOrEqual(1);
+      expect(geometry.width).toBeGreaterThanOrEqual(44);expect(geometry.radius).toBe('50%');
+      expect(geometry.top).toBeGreaterThanOrEqual(geometry.headerBottom+8);expect(geometry.hit).toBe(true);
+      await noOverflow(page,2);
+      if(width===390)await page.screenshot({path:testInfo.outputPath(`${kind}-detail-mobile.png`)});
+    }
+  }
+});
 
 test('mobile header keeps search reachable and drawer state closes after navigation',async({page},testInfo)=>{
   for(const width of [320,390]){

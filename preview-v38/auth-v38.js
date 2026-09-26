@@ -39,6 +39,7 @@
   let clerkListenerInstalled = false;
   let routeRenderGeneration = 0;
   let headerSyncToken = 0;
+  let headerRetryTimer = null;
   const fallbackLocalization = {
     locale: 'pt-BR',
     signIn: { start: { title: 'Entre no AniNexus', subtitle: 'Continue sua jornada de onde parou.', actionText: 'Ainda não tem uma conta?', actionLink: 'Criar conta' } },
@@ -389,19 +390,23 @@
       if (logout) bindSignOutDialog(logout);
     }
   }
-  async function syncHeader() {
+  async function syncHeader(retry = 0) {
     const syncToken = ++headerSyncToken;
+    clearTimeout(headerRetryTimer);
     const actions = document.querySelector('.top-actions'); if (!actions) return;
-    actions.querySelectorAll('.nx38-account-chip').forEach(chip=>chip.remove());
     const login = actions.querySelector('[data-action="login"]'), register = actions.querySelector('[data-action="register"]');
-    const setAnonymous=()=>{document.documentElement.dataset.nxAuthState='anonymous';if(login)login.hidden=false;if(register)register.hidden=false;syncDrawerIdentity()};
+    const setAnonymous=()=>{actions.querySelectorAll('.nx38-account-chip').forEach(chip=>chip.remove());document.documentElement.dataset.nxAuthState='anonymous';if(login)login.hidden=false;if(register)register.hidden=false;syncDrawerIdentity()};
     if (!ENABLED) { setAnonymous(); return; }
-    document.documentElement.dataset.nxAuthState='loading';if(login)login.hidden=false;if(register)register.hidden=false;
+    if(!actions.querySelector('.nx38-account-chip')){document.documentElement.dataset.nxAuthState='loading';if(login)login.hidden=false;if(register)register.hidden=false;}
     try {
       const clerkUser = await getUser();
       if(syncToken!==headerSyncToken||!actions.isConnected)return;
       if (clerkUser) {
-        let user=clerkUser;try{user=(await api('/api/me',{timeout:8_000}))?.user||clerkUser}catch{}
+        let user=clerkUser, profileUnavailable=false;
+        try{user=(await api('/api/me',{timeout:8_000}))?.user||clerkUser}catch{profileUnavailable=true}
+        // A Clerk event can arrive while /api/me is pending (logout/account switch).
+        if(syncToken!==headerSyncToken||!actions.isConnected||window.Clerk?.user?.id!==clerkUser.id)return;
+        if(profileUnavailable&&retry<2)headerRetryTimer=setTimeout(()=>syncHeader(retry+1),retry?4000:1500);
         document.documentElement.dataset.nxAuthState='authenticated';
         if (login) login.hidden = true; if (register) register.hidden = true;
         actions.querySelectorAll('.nx38-account-chip').forEach(chip=>chip.remove());
@@ -413,7 +418,7 @@
         setAnonymous();
         dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:null}}));
       }
-    } catch (error) { if(syncToken!==headerSyncToken)return;console.warn('[AniNexus auth] não foi possível confirmar a sessão no cabeçalho.',error); setAnonymous(); }
+    } catch (error) { if(syncToken!==headerSyncToken)return;console.warn('[AniNexus auth] não foi possível confirmar a sessão no cabeçalho.',error); setAnonymous();dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:null}})); }
   }
   window.AniNexusAuthV38 = { renderAuth, renderAccount, syncHeader, syncDrawerIdentity, getUser, api };
   function currentRoute() {

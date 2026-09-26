@@ -9,14 +9,17 @@ const json=value=>new Response(JSON.stringify(value),{headers:{'content-type':'a
 const profile=new Response(`<meta property="og:title" content="Tester&#039;s Profile - MyAnimeList.net">`);
 
 test('preview survives the short API connection timeout without changing other routes',async()=>{
-  const app=Fastify({connectionTimeout:30});
+  // Keep the deadline shorter than the provider delay, but above local HTTP/JIT startup.
+  const connectionTimeout=1000,app=Fastify({connectionTimeout});
+  let previewSocket;
+  app.addHook('onRequest',async req=>{previewSocket=req.raw.socket});
   registerListImportRoutes(app,{requireUser:async()=>({id:'test'}),rateForUser:()=>({}),q:async()=>({rows:[]}),
-    fetchAniList:async()=>{await new Promise(resolve=>setTimeout(resolve,150));return[]}});
+    fetchAniList:async()=>{assert.equal(previewSocket.timeout,120000);await new Promise(resolve=>setTimeout(resolve,connectionTimeout+200));return[]}});
   await app.listen({host:'127.0.0.1',port:0});
   try{
     const response=await fetch(`http://127.0.0.1:${app.server.address().port}/api/me/list-imports/preview`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({service:'ANILIST',username:'Tester',types:['ANIME'],strategy:'KEEP'})});
     assert.equal(response.status,200);assert.equal((await response.json()).itemCount,0);
-    assert.equal(app.server.timeout,30,'global API deadline must remain unchanged');
+    assert.equal(app.server.timeout,connectionTimeout,'global API deadline must remain unchanged');
   }finally{await app.close()}
 });
 test('MAL public import reads every page and keeps anime and manga progress separate',async()=>{

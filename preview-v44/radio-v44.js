@@ -22,6 +22,7 @@
   let accountPromise = null;
   let accountValue = null;
   let accountResolved = false;
+  let accountGeneration = 0;
 
   function waitForAuthState(timeout = 4500) {
     const state = document.documentElement.dataset.nxAuthState;
@@ -49,20 +50,26 @@
     const state = await waitForAuthState();
     if (state !== 'authenticated') return null;
     if (refresh) {
+      accountGeneration += 1;
       accountPromise = null;
       accountValue = null;
       accountResolved = false;
     }
     if (accountResolved) return accountValue;
     if (!accountPromise) {
+      const generation = accountGeneration;
       accountPromise = window.AniNexusAuth.api('/api/me', { timeout: 8000 })
         .then(result => result?.user || null)
-        .catch(() => null)
         .then(user => {
+          if(generation!==accountGeneration)return accountValue;
           accountValue = user;
           accountResolved = true;
           dispatchEvent(new CustomEvent('aninexus:account-identity-changed', { detail: { user } }));
           return user;
+        }).catch(() => {
+          if(generation!==accountGeneration)return accountValue;
+          accountPromise = null;
+          return null;
         });
     }
     return accountPromise;
@@ -70,6 +77,7 @@
   window.AniNexusAccountData = accountData;
   addEventListener('aninexus:account-identity-changed', event => {
     if (!event.detail || !Object.prototype.hasOwnProperty.call(event.detail, 'user')) return;
+    accountGeneration += 1;
     accountValue = event.detail.user || null;
     accountResolved = true;
     accountPromise = Promise.resolve(accountValue);
