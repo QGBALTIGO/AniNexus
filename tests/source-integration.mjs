@@ -5,7 +5,8 @@ process.env.SOURCE_API_ORIGIN='https://source.test';
 process.env.SOURCE_LINK_ENCRYPTION_KEY='synthetic-source-link-key-that-is-never-production';
 const mod=await import('../lib/source-integration.mjs');
 
-const profile={displayName:'Source Fixture',username:'fixture',favorite:{id:1,name:'Mihawk',work:'One Piece',image:'https://img.test/mihawk.webp'},stats:{level:4,xp:1321,xpCurrent:321,xpNeeded:1000,coins:42,uniqueCharacters:12,totalCharacters:19,totalAvailableCharacters:500,collectionPercent:2.4},public:true,updatedAt:new Date().toISOString()};
+const reward={coins:50,dados:1,claimed:true,available:false,claimedAt:new Date().toISOString(),coinsGranted:50,dadosGranted:1};
+const profile={displayName:'Source Fixture',username:'fixture',favorite:{id:1,name:'Mihawk',work:'One Piece',image:'https://img.test/mihawk.webp'},stats:{level:4,xp:1321,xpCurrent:321,xpNeeded:1000,coins:92,uniqueCharacters:12,totalCharacters:19,totalAvailableCharacters:500,collectionPercent:2.4},public:true,integration:{linked:true,badge:'Source AniNexus',reward},updatedAt:new Date().toISOString()};
 const originalFetch=globalThis.fetch;
 test.after(()=>{globalThis.fetch=originalFetch});
 
@@ -22,9 +23,12 @@ test('revocation capability is encrypted at rest and round-trips',()=>{
 
 test('consume sends only the one-time token and validates the Source contract',async()=>{
   let seen;
-  globalThis.fetch=async(url,options)=>{seen={url,options};return response(200,{linkId:'7cf86bb2-4be4-4a10-9690-a40ac64c25dd',sourceSubject:'src_'+'a'.repeat(64),revokeToken:'r'.repeat(40),profile})};
+  globalThis.fetch=async(url,options)=>{seen={url,options};return response(200,{linkId:'7cf86bb2-4be4-4a10-9690-a40ac64c25dd',sourceSubject:'src_'+'a'.repeat(64),revokeToken:'r'.repeat(40),reward,profile})};
   const result=await mod.consumeSourceLink('t'.repeat(40));
   assert.equal(result.profile.stats.uniqueCharacters,12);
+  assert.equal(result.reward.coinsGranted,50);
+  assert.equal(result.profile.integration.badge,'Source AniNexus');
+  assert.equal(result.profile.integration.reward.claimed,true);
   assert.equal(seen.url,'https://source.test/api/integrations/aninexus/consume');
   assert.equal(seen.options.method,'POST');
   assert.equal(seen.options.redirect,'error');

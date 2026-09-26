@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {achievementCatalog,levelFromXp} from '../lib/achievements.mjs';
 const ORIGIN=process.env.ANINEXUS_E2E_ORIGIN||'http://qgbaltigo.github.io:4173/AniNexus/';
 const LOCAL_STATIC_ORIGIN=process.env.ANINEXUS_LOCAL_STATIC_ORIGIN||'';
-const pageUrl=route=>`${ORIGIN}?build=44.59.0&p=${encodeURIComponent(route)}`;
+const pageUrl=route=>`${ORIGIN}?build=44.60.0&p=${encodeURIComponent(route)}`;
 const firstVisitUrl=route=>{const url=new URL(pageUrl(route));if(url.hostname.endsWith('github.io'))url.hostname='127.0.0.1';return url.href};
 async function fulfillLocalStatic(route){const requested=new URL(route.request().url()),pathname=requested.pathname.startsWith('/AniNexus/')?requested.pathname:`/AniNexus${requested.pathname}`,local=new URL(pathname+requested.search,LOCAL_STATIC_ORIGIN);let lastError;for(let attempt=0;attempt<3;attempt++){try{const response=await route.fetch({url:local.href});return await route.fulfill({response})}catch(error){lastError=error;if(!/ECONNRESET|ECONNREFUSED|socket hang up/i.test(String(error?.message))||attempt===2)throw error;await new Promise(resolve=>setTimeout(resolve,80*(attempt+1)))}}throw lastError}
 async function bridgeProductionAssets(page){if(!new URL(ORIGIN).hostname.endsWith('github.io'))return;const origin=new URL(firstVisitUrl('/')).origin;await page.route(`${origin}/**`,async route=>{const requested=new URL(route.request().url());if(!/^\/(?:preview-v\d+|assets|data)\//.test(requested.pathname))return route.continue();const response=await route.fetch({url:`${origin}/AniNexus${requested.pathname}${requested.search}`});return route.fulfill({response})})}
@@ -70,7 +70,7 @@ function themeApiData(count=24){return{anime:[{slug:'anime-teste-101',animetheme
 test.beforeEach(async({page})=>{if(LOCAL_STATIC_ORIGIN){const publicOrigin=new URL(ORIGIN).origin;await page.route(`${publicOrigin}/**`,fulfillLocalStatic)}await page.route('https://a.storyblok.com/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://s4.anilist.co/**',route=>route.fulfill({status:200,contentType:'image/gif',body:imageBytes}));await page.route('https://graphql.anilist.co/',async route=>{let body={};try{body=route.request().postDataJSON()||{}}catch{}await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:graphData(body.query,body.variables)})})});await page.route('https://api.jikan.moe/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({data:null})}))});
 test.afterEach(async({page})=>{await page.unrouteAll({behavior:'ignoreErrors'})});
 
-test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals')).toHaveCount(0);await expect(page.locator('.nx35-hero-actions a')).toHaveCount(2);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-26-v44.59.0')});
+test('V44 Home is the current renderer',async({page})=>{await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.aqx-home')).toHaveCount(0);await expect(page.locator('.nx35-kicker,.nx35-signals')).toHaveCount(0);await expect(page.locator('.nx35-hero-actions a')).toHaveCount(2);await expect(page.locator('meta[name="aninexus-build"]')).toHaveAttribute('content','2026-09-26-v44.60.0')});
 
 test('Home theme is complete and empty achievements do not consume space',async({page})=>{await page.addInitScript(()=>localStorage.setItem('aninexus:theme','dark'));await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx35-home')).toBeVisible({timeout:30000});await expect(page.locator('.nx35-achievement-section')).toBeHidden();await page.locator('[data-action="theme"]').click();await expect(page.locator('html')).toHaveAttribute('data-theme','light');await expect(page.locator('body')).toHaveCSS('background-color','rgb(246, 243, 244)');await expect(page.locator('.nx35-hero h1')).toHaveCSS('color','rgb(36, 24, 30)');await noOverflow(page,2)});
 
@@ -2124,7 +2124,8 @@ test('account overview exposes real profile connections and one responsive notif
 
 test('Source handoff links the authenticated AniNexus account and can be hidden or disconnected',async({page})=>{
   const token='source-one-time-link-token-1234567890';let linked=false,publicVisible=true,consumed='';
-  const sourceProfile={displayName:'Zoro Source',username:'kayky_sousa',favorite:{id:101,name:'Dracule Mihawk',work:'ONE PIECE',image:pixel},stats:{level:4,xp:1321,xpCurrent:321,xpNeeded:1000,coins:50,uniqueCharacters:289,totalCharacters:412,totalAvailableCharacters:500,collectionPercent:57.8},public:true,updatedAt:new Date().toISOString()};
+  const sourceReward={coins:50,dados:1,claimed:true,available:false,claimedAt:'2026-09-26T12:00:00.000Z',coinsGranted:50,dadosGranted:1};
+  const sourceProfile={displayName:'Zoro Source',username:'kayky_sousa',favorite:{id:101,name:'Dracule Mihawk',work:'ONE PIECE',image:pixel},stats:{level:4,xp:1321,xpCurrent:321,xpNeeded:1000,coins:100,uniqueCharacters:289,totalCharacters:412,totalAvailableCharacters:500,collectionPercent:57.8},public:true,integration:{linked:true,badge:'Source AniNexus',reward:sourceReward},updatedAt:new Date().toISOString()};
   const connection=()=>linked?{linked:true,profile:sourceProfile,publicVisible,linkedAt:'2026-09-26T12:00:00.000Z',refreshedAt:new Date().toISOString(),stale:false}:{linked:false};
   await page.route('**/runtime-config.js*',route=>route.fulfill({contentType:'application/javascript',body:`window.__ANINEXUS_CONFIG__={environment:'test',siteOrigin:location.origin,apiOrigin:'https://api.clerk.com',clerkPublishableKey:['pk','test','dGVzdC5jbGVyay5hY2NvdW50cy5kZXYk'].join('_'),authEnabled:true};`}));
   await page.route('https://test.clerk.accounts.dev/npm/@clerk/ui@1/dist/ui.browser.js',route=>route.fulfill({contentType:'application/javascript',body:'window.__internal_ClerkUICtor=function(){};'}));
@@ -2133,7 +2134,7 @@ test('Source handoff links the authenticated AniNexus account and can be hidden 
     const request=route.request(),url=new URL(request.url()),path=url.pathname,method=request.method();let body={};
     if(path==='/api/me')body={user:{id:'10000000-0000-4000-8000-000000000001',username:'kayky',displayName:'Kayky',email:'kayky@example.com',role:'user',privacy:'public',emailVerified:true,createdAt:'2026-01-01T00:00:00.000Z'}};
     else if(path==='/api/me/list')body={items:[]};else if(path==='/api/me/follows')body={items:[]};else if(path==='/api/me/import-status')body={imported:false};else if(path==='/api/me/profile-connections')body={following:[],followers:[]};else if(path==='/api/me/notifications')body={total:0,unread:0,items:[]};
-    else if(path==='/api/me/source/link'&&method==='POST'){const payload=request.postDataJSON();consumed=payload.token;linked=true;body=connection()}
+    else if(path==='/api/me/source/link'&&method==='POST'){const payload=request.postDataJSON();consumed=payload.token;linked=true;body={...connection(),reward:sourceReward}}
     else if(path==='/api/me/source'&&method==='PATCH'){publicVisible=Boolean(request.postDataJSON().publicVisible);body=connection()}
     else if(path==='/api/me/source'&&method==='DELETE'){linked=false;body={ok:true,linked:false}}
     else if(path==='/api/me/source')body=connection();
@@ -2143,9 +2144,18 @@ test('Source handoff links the authenticated AniNexus account and can be hidden 
   await page.setViewportSize({width:390,height:844});
   await page.goto(`${pageUrl('/conectar-source')}#source_token=${token}`,{waitUntil:'domcontentloaded'});
   const source=page.locator('#source');await expect(source).toBeVisible({timeout:15000});
-  await expect(source).toContainText('Conectar à conta AniNexus atual?');expect(consumed).toBe('');
+  await expect(source).toContainText('Conectar à conta atual?');expect(consumed).toBe('');
   await source.locator('[data-source-confirm]').click();
-  await expect(page.locator('#source')).toContainText('Zoro Source');await expect(page.locator('#source')).toContainText('Dracule Mihawk');await expect(page.locator('#source')).toContainText('Nível 4');await expect(page.locator('#source')).toContainText('289');expect(consumed).toBe(token);
+  await expect(page.locator('#source')).toContainText('Source AniNexus');await expect(page.locator('#source')).toContainText('Zoro Source');await expect(page.locator('#source')).toContainText('Dracule Mihawk');await expect(page.locator('#source')).toContainText('Nível 4');await expect(page.locator('#source')).toContainText('289');await expect(page.locator('#source')).toContainText('+50 Coins');expect(consumed).toBe(token);
+  await page.locator('#source [data-source-sync]').click();await expect(page.locator('#source')).toContainText('Dados do Source sincronizados agora.');
+  for(const width of [320,390,768]){
+    await page.setViewportSize({width,height:844});
+    await expect(page.locator('#source')).toBeVisible();
+    await noOverflow(page,2);
+    const geometry=await page.locator('#source').evaluate(element=>({width:element.getBoundingClientRect().width,viewport:document.documentElement.clientWidth,actions:[...element.querySelectorAll('.nx56-source-actions button')].map(button=>button.getBoundingClientRect().height)}));
+    expect(geometry.width).toBeLessThanOrEqual(geometry.viewport);
+    expect(Math.min(...geometry.actions)).toBeGreaterThanOrEqual(34);
+  }
   await page.locator('#source [data-source-visibility]').click();await expect(page.locator('#source [data-source-visibility]')).toContainText('Oculto no perfil');expect(publicVisible).toBe(false);
   page.once('dialog',dialog=>dialog.accept());await page.locator('#source [data-source-disconnect]').click();await expect(page.locator('#source')).toContainText('Não conectado');expect(linked).toBe(false);
   await noOverflow(page,2);
