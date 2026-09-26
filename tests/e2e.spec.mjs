@@ -777,6 +777,16 @@ test('mobile search closes explicitly and finds public users by handle',async({p
   await noOverflow(page,2);
 });
 
+test('Home ranking distinguishes one episode from multiple episodes',async({page})=>{
+  await mockInternalRankings(page);
+  const top=[{...rankedMedia(101),episodes:1,format:'MOVIE'},{...rankedMedia(102),episodes:12}];
+  await page.route('**/api/home?**',route=>route.fulfill({json:{season:top,top,popular:top,schedule:[],reading:[],soon:[]}}));
+  await page.goto(firstVisitUrl('/'),{waitUntil:'domcontentloaded'});
+  await expect(page.locator('#nx35Top .nx45-rank-facts').first()).toContainText('1 episódio');
+  await expect(page.locator('#nx35Top .nx45-rank-facts').first()).not.toContainText('1 episódios');
+  await expect(page.locator('#nx35Top .nx45-rank-facts').nth(1)).toContainText('12 episódios');
+});
+
 test('Home keeps anime and manga rankings separate and visually distinct',async({page})=>{
   test.skip(new URL(ORIGIN).hostname.endsWith('github.io'),'Rankings require internal AniNexus metrics.');
   await mockInternalRankings(page);
