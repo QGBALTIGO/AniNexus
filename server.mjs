@@ -13,6 +13,7 @@ import { monitorEventLoopDelay } from 'node:perf_hooks';
 import { z } from 'zod';
 import sharp from 'sharp';
 import { mediaListEntry } from './lib/media-list.mjs';
+import { registerMangaWebappLink } from './lib/manga-webapp-link.mjs';
 import { getCommunityOverview } from './lib/community-overview.mjs';
 import { initDb, q, pool, dbReady } from './lib/db.mjs';
 import { initCache, redis, cacheRemember, cacheReady, cacheRunOnce, cacheMetricsSnapshot } from './lib/cache.mjs';
@@ -772,6 +773,7 @@ app.post('/api/me/import-anilist',rateForUser(2,'10 minutes','anilist-import'),a
   return reply.code(428).send({error:'IMPORT_CONFIRMATION_REQUIRED'});
 });
 registerListImportRoutes(app,{requireUser,q,transaction,rateForUser,resolveMal:getMediaByMalIds,importRows:importAniListRows,persistMedia:persistImportedMedia,summary:transferSummary,refreshAchievements});
+registerMangaWebappLink(app,{q,transaction,requireUser});
 const hydrateExportRows=async(rows,mediaType)=>{
   const entries=rows.map(row=>({mediaId:Number(row.media_id),mediaType,status:row.status,score:row.score==null?null:Number(row.score),progress:Number(row.progress||0),volumeProgress:Number(row.volume_progress||0),idMal:Number(row.id_mal)||null,title:String(row.title||'')}));
   const missing=entries.filter(entry=>!entry.idMal||!entry.title),byId=new Map();
