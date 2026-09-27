@@ -57,6 +57,10 @@ Aniquim: seis páginas públicas obtidas com Scrapling e renderizadas com CSS or
 | Notificações / Safari | acionamento por mouse não focava o botão e Escape perdia o ponto de retorno | restaurar o acionador real, independente de activeElement; regressão WebKit |
 | Biblioteca / filtros | ação primária clara demais | contraste corrigido e regressão do diálogo nos dois temas |
 | Biblioteca / teclado | Tab escapava do diálogo e fechar/aplicar/limpar perdia o foco | ciclo de foco, indicação no rádio e restauração após recriar a lista; Escape não altera outros modais |
+| Carregamento / rodapé | altura provisória insuficiente fazia o rodapé aparecer e saltar ao resolver a autenticação/rota | altura mínima estável da área principal; regressão móvel/desktop nos três motores |
+| Comunidade / carregamento | ranking trocava uma linha por um pódio inteiro, deslocando as seções seguintes | placeholder com a mesma geometria do pódio, estado ocupado acessível e liberação no vazio/erro |
+
+São 47 grupos de problemas corrigidos. Severidade, arquivos, rotas e retestes estão em AUDIT_TECHNICAL_TRACE.md; revisão de tipografia, movimento e medições está em DESIGN_SYSTEM_AUDIT.md.
 
 ## Regressão e proteção de dados
 

@@ -2386,6 +2386,9 @@ test('Onde assistir is a platform-first responsive catalog with standard scroll 
       await expect.poll(async()=>{const before=await page.evaluate(()=>scrollY);await page.waitForTimeout(80);const after=await page.evaluate(()=>scrollY);return Math.abs(after-before)},{timeout:3000}).toBeLessThanOrEqual(1);
       await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';scrollTo({top:0,left:0,behavior:'instant'})});
       await expect.poll(()=>page.evaluate(()=>Math.round(scrollY))).toBeLessThanOrEqual(1);
+      // Scroll position changes synchronously, but the chrome consumes it on rAF.
+      // Wait for that reset before testing a new downward gesture.
+      await expect(page.locator('body')).not.toHaveClass(/nx47-discovery-scrolled/);
       await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';scrollTo(0,180)});
       await expect.poll(()=>page.evaluate(()=>Math.round(scrollY))).toBeGreaterThan(100);
       await expect(page.locator('body')).toHaveClass(/nx47-discovery-scroll-down/,{timeout:3000});

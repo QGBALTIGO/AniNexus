@@ -19,11 +19,11 @@ await fs.mkdir('audit-artifacts',{recursive:true});
 await fs.writeFile('audit-artifacts/inventory.json',JSON.stringify({createdAt:new Date().toISOString(),routes,widths,components,files,routeCandidates:Object.fromEntries(candidates),endpoints:Object.fromEntries(endpoints)},null,2));
 async function rows(run){try{return(await fs.readFile('audit-artifacts/'+run+'/results.jsonl','utf8')).trim().split('\n').filter(Boolean).map(JSON.parse)}catch{return[]}}
 const captures=[],faults=[],navigation=new Map();
-for(const run of ['baseline-guest','preview-all-viewports','preview-admin-final','preview-header-final','post-release-guest','post-release-admin','post-release-last-fixes'])for(const item of await rows(run))captures.push({...item,run});
-for(const run of ['chaos','chaos-remaining','chaos-timeout-final','chaos-detail-final','chaos-deadlines-final','chaos-final-retest','chaos-news-final'])for(const item of await rows(run))faults.push({...item,run});
-for(const run of ['navigation-adversarial','navigation-header-retest','navigation-final','post-release-navigation','post-release-admin-nav'])for(const item of await rows(run))navigation.set(item.route,{...item,run});
+for(const run of ['baseline-guest','preview-all-viewports','preview-admin-final','preview-header-final','post-release-guest','post-release-admin','post-release-last-fixes','preview-layout-final','post-release-final'])for(const item of await rows(run))captures.push({...item,run});
+for(const run of ['chaos','chaos-remaining','chaos-timeout-final','chaos-detail-final','chaos-deadlines-final','chaos-final-retest','chaos-news-final','chaos-post-fixes','chaos-layout-final'])for(const item of await rows(run))faults.push({...item,run});
+for(const run of ['navigation-adversarial','navigation-header-retest','navigation-final','post-release-navigation','post-release-admin-nav','navigation-layout-final','post-release-final-navigation'])for(const item of await rows(run))navigation.set(item.route,{...item,run});
 const viewport=(route,width)=>{const found=captures.filter(x=>x.route===route&&x.width===width);return found.some(x=>x.run.startsWith('post-release'))?'E-live':found.some(x=>x.mode==='preview')?'E-preview':found.length?'E-base':'P'};
-const fault=(route,state)=>{const x=faults.filter(x=>x.route===route&&x.state===state).at(-1);if(!x)return'P';return !x.failure&&!x.errors?.length&&!x.diagnosticLeak&&!x.unresolvedLoading&&!/Carregando perfil|Organizando suas conquistas|Consultando catálogo|Consultando seleção|Carregando ranking/.test(x.content||'')&&x.views?.every(v=>v.scrollWidth<=v.width+2)?'E-fault':'F'};
+const fault=(route,state)=>{const x=faults.filter(x=>x.route===route&&x.state===state).at(-1);if(!x)return'P';return !x.failure&&!x.errors?.length&&!x.diagnosticLeak&&!x.unresolvedLoading&&(x.content||'').trim().length>=20&&!/Carregando perfil|Organizando suas conquistas|Consultando catálogo|Consultando seleção|Carregando ranking/.test(x.content||'')&&x.views?.every(v=>v.appVisible&&v.scrollWidth<=v.width+2)?'E-fault':'F'};
 const nav=route=>{const record=navigation.get(route);return record&&!record.failure&&record.checks.length===9?'T-nav':record?.failure?'F':'P'};
 const matrix=[
 '# AUDIT_ROUTE_MATRIX','',
@@ -50,6 +50,7 @@ const matrix=[
 '- Conta/admin reais: preview-admin-final/, somente leitura. Sem exclusões, bloqueios ou publicações de teste.',
 '- Revisão pós-publicação: post-release-admin-panels/ (cinco painéis, dois temas), post-release-member-panels/ (conta, três painéis de edição no topo e após rolagem, notificações e filtros). Os resultados JSON desses diretórios distinguem execução concluída de pendência.',
 '- Regressões autenticadas: editor com teclado e foco; Source conectado, desconectado e indisponível; notificações lidas/não lidas; filtros da biblioteca; tests/total-audit.spec.mjs nos três motores.',
+'- Estabilidade durante carregamento: placeholder do pódio e altura da página; tests/total-audit.spec.mjs. Medições e inventário de estilos: DESIGN_SYSTEM_AUDIT.md. Rastreabilidade de 47 correções: AUDIT_TECHNICAL_TRACE.md.',
 '- Acessibilidade: 28 cenários × claro móvel/claro desktop/escuro móvel; última rodada: 84/84 sem violações sérias/críticas.',
 '- Revisão visual humana: folhas das 66 rotas no escuro móvel, 39 páginas no claro móvel/desktop, oito áreas autenticadas, login/cadastro, modal de programação, fallback de detalhe e seis referências. Não se afirma revisão manual de cada pixel de cada captura.','',
 '## Reconciliação de rotas dinâmicas','',

@@ -1,6 +1,6 @@
 # AUDIT_ROUTE_MATRIX
 
-Atualizado em 2026-09-27T15:48:12.583Z. Base inicial: 6ed65bb4162c164d3b078728dfd0ade184343b90; atualização editorial 39c65a545261 incorporada durante a auditoria.
+Atualizado em 2026-09-27T16:28:16.767Z. Base inicial: 6ed65bb4162c164d3b078728dfd0ade184343b90; atualização editorial 39c65a545261 incorporada durante a auditoria.
 
 **E = evidência renderizada; T = jornada com asserções; F = falha; P = pendente.** E-preview usa correções locais e dados reais somente leitura. E-live é pós-publicação. E-fault verifica renderização, overflow, erros JS e vazamento de diagnóstico com API simulada; não aprova sozinho cada ação. Evidência privada: audit-artifacts/ (fora de Git, Docker e publicação).
 
@@ -185,6 +185,7 @@ overview; reports; users; team; audit; authorization; filters; dialogs; confirma
 - Conta/admin reais: preview-admin-final/, somente leitura. Sem exclusões, bloqueios ou publicações de teste.
 - Revisão pós-publicação: post-release-admin-panels/ (cinco painéis, dois temas), post-release-member-panels/ (conta, três painéis de edição no topo e após rolagem, notificações e filtros). Os resultados JSON desses diretórios distinguem execução concluída de pendência.
 - Regressões autenticadas: editor com teclado e foco; Source conectado, desconectado e indisponível; notificações lidas/não lidas; filtros da biblioteca; tests/total-audit.spec.mjs nos três motores.
+- Estabilidade durante carregamento: placeholder do pódio e altura da página; tests/total-audit.spec.mjs. Medições e inventário de estilos: DESIGN_SYSTEM_AUDIT.md. Rastreabilidade de 47 correções: AUDIT_TECHNICAL_TRACE.md.
 - Acessibilidade: 28 cenários × claro móvel/claro desktop/escuro móvel; última rodada: 84/84 sem violações sérias/críticas.
 - Revisão visual humana: folhas das 66 rotas no escuro móvel, 39 páginas no claro móvel/desktop, oito áreas autenticadas, login/cadastro, modal de programação, fallback de detalhe e seis referências. Não se afirma revisão manual de cada pixel de cada captura.
 

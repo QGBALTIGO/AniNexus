@@ -53,3 +53,4 @@ async function worker(){
   }
 }
 try{await Promise.all([worker(),worker()])}finally{await fs.writeFile(`${out}/summary.json`,JSON.stringify(records,null,2));await browser.close()}
+if(records.some(x=>x.failure||x.errors?.length||x.diagnosticLeak||x.unresolvedLoading||(x.content||'').trim().length<20||x.views?.some(v=>!v.appVisible||v.scrollWidth>v.width+2)))process.exitCode=1;

@@ -27,7 +27,7 @@ async function inspect(name,appearance,scope){
   const result=await axe.analyze();
   const violations=result.violations.filter(x=>['serious','critical'].includes(x.impact)).map(x=>({id:x.id,nodes:x.nodes.map(n=>({target:n.target,summary:n.failureSummary}))}));
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
-  await page.screenshot({path:`${out}/${name}-${appearance.width}-${appearance.theme}.png`,fullPage:true});
+  await page.screenshot({path:`${out}/${name}-${appearance.width}-${appearance.theme}.png`,fullPage:!scope});
   const record={name,...appearance,violations,overflow};records.push(record);console.log(JSON.stringify(record));
 }
 try{
