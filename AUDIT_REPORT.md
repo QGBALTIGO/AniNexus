@@ -50,6 +50,12 @@ Aniquim: seis páginas públicas obtidas com Scrapling e renderizadas com CSS or
 | Notícia completa / tema claro | corpo enriquecido, citações, tabelas, legendas e comentários herdavam cores escuras | estilos completos de leitura nos dois temas; fixture com todos os blocos e Axe |
 | Notícia completa / navegação | cabeçalho claro transparente sobre capa e botão voltar sem nome no celular | superfície clara específica do artigo, nome acessível e arte decorativa fora da árvore de acessibilidade |
 | Biblioteca móvel | Favoritos/Filtros perdiam o nome acessível com texto oculto | rótulos persistentes; biblioteca autenticada com fixtures e teste Axe nos dois temas |
+| Conta autenticada / Source | textos auxiliares, notificações lidas e bônus com contraste insuficiente | cores semânticas por tema; conta real somente leitura e fixtures com conexão ativa, ausente e indisponível |
+| Editor de perfil | diálogo sem semântica, Escape e contenção/restauração de foco | diálogo rotulado, ciclo Tab/Shift+Tab, Escape, limpeza do timer e retorno ao acionador |
+| Editor / tema claro | privacidade, rótulos de transferência e histórico herdavam cores escuras | contraste em todos os painéis, incluindo conteúdo após rolagem |
+| Notificações do cabeçalho | tipografia de 7–9px e contraste insuficiente no tema claro | tamanho legível e cores por tema, mantendo estrutura e identidade do painel |
+| Notificações / Safari | acionamento por mouse não focava o botão e Escape perdia o ponto de retorno | restaurar o acionador real, independente de activeElement; regressão WebKit |
+| Biblioteca / filtros | ação primária clara demais | contraste corrigido e regressão do diálogo nos dois temas |
 
 ## Regressão e proteção de dados
 
@@ -63,6 +69,7 @@ Aniquim: seis páginas públicas obtidas com Scrapling e renderizadas com CSS or
 - Conta real administradora validada em leitura. Alterações sociais, importações, permissões e administração usam fixtures ou banco transacional do CI, não membros reais.
 - E2E completo local: 309 passaram, 15 condicionais foram pulados, seis falhas foram investigadas. Erros de temporada/notícias corrigidos; cenários longos receberam orçamento de teste adequado sem relaxar asserções; carrossel ganhou diagnóstico e correção própria.
 - Novos testes incluídos no CI para evitar que a cobertura exista apenas nesta sessão.
+- Passagem adicional autenticada: 20 estados reais de conta, editor, notificações e filtros, sem alterações nos dados; regressões equivalentes nos três motores.
 - Artefatos de sessão/screenshot fora de Git, imagem Docker e publicação estática.
 
 ## Publicação e limites

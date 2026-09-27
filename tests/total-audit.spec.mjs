@@ -11,6 +11,42 @@ const media = (id, type = 'ANIME', name = type === 'MANGA' ? 'Mangá de teste' :
 });
 const fulfill = (route, data, status = 200) => route.fulfill({ status, contentType: 'application/json', body: JSON.stringify(data) });
 
+for(const theme of ['dark','light'])for(const width of [390,1440])test(`profile settings are readable and keyboard-contained ${theme} ${width}`,async({page},info)=>{
+  test.setTimeout(90000);
+  await page.setViewportSize({width,height:900});
+  await page.addInitScript(value=>localStorage.setItem('aninexus:theme',value),theme);
+  await page.goto(new URL('/quem-somos',origin).href);
+  const opener=page.locator('#topbar [data-action="search"]');await opener.focus();
+  await page.evaluate(()=>{
+    window.__auditProfileWrites=[];
+    window.AniNexusAuth={api:async(path,options={})=>{
+      if(options.method&&options.method!=='GET'){window.__auditProfileWrites.push(path);throw new Error('Unexpected write')}
+      if(path==='/api/me/list-transfers')return{items:[{direction:'IMPORT',service:'MAL',mediaType:'ALL',status:'COMPLETED',createdAt:'2026-09-01T12:00:00Z',itemCount:18}]};
+      return{available:true,items:[]};
+    }};
+    window.AniNexusProfileV38.openEditor({id:'fixture',username:'leitor',displayName:'Leitor de teste',privacy:'public'});
+  });
+  const dialog=page.getByRole('dialog',{name:'Personalizar perfil'}),close=dialog.getByRole('button',{name:'Fechar',exact:true}),save=dialog.getByRole('button',{name:'Salvar alterações',exact:true});
+  await expect(dialog).toBeVisible();await expect(close).toBeFocused();
+  await page.keyboard.press('Shift+Tab');await expect(save).toBeFocused();
+  await page.keyboard.press('Tab');await expect(close).toBeFocused();
+  for(const tab of ['profile','privacy','transfer']){
+    await page.locator(`[data-settings-tab="${tab}"]`).click();
+    await expect(page.locator(`[data-settings-panel="${tab}"]`)).toBeVisible();
+    for(const bottom of [false,true]){
+      await page.locator('.nx38pe-panels').evaluate((el,end)=>el.scrollTop=end?el.scrollHeight:0,bottom);
+      const results=await new AxeBuilder({page}).include('.nx38pe-layer').withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
+      const blocking=results.violations.filter(x=>['serious','critical'].includes(x.impact));
+      if(blocking.length)await info.attach(`${tab}-${bottom}-axe`,{body:JSON.stringify(blocking,null,2),contentType:'application/json'});
+      expect(blocking.map(x=>({id:x.id,nodes:x.nodes.map(n=>n.target)})),`${tab} bottom=${bottom}`).toEqual([]);
+    }
+    await page.screenshot({path:info.outputPath(`profile-settings-${tab}.png`)});
+  }
+  await page.keyboard.press('Escape');await expect(dialog).toHaveCount(0);await expect(opener).toBeFocused();
+  await expect(page.locator('body')).not.toHaveClass(/modal-open/);
+  expect(await page.evaluate(()=>window.__auditProfileWrites)).toEqual([]);
+});
+
 for(const theme of ['dark','light'])for(const width of [390,1440])test(`library filters retain accessible names ${theme} ${width}`,async({page},info)=>{
   await page.setViewportSize({width,height:900});
   await page.addInitScript(value=>localStorage.setItem('aninexus:theme',value),theme);
@@ -25,6 +61,56 @@ for(const theme of ['dark','light'])for(const width of [390,1440])test(`library 
   const blocking=results.violations.filter(x=>['serious','critical'].includes(x.impact));
   if(blocking.length)await info.attach('library-axe',{body:JSON.stringify(blocking,null,2),contentType:'application/json'});
   expect(blocking.map(x=>({id:x.id,nodes:x.nodes.map(n=>n.target)}))).toEqual([]);
+  await page.locator('[data-nx49-filter-open]').click();
+  await expect(page.locator('.nx49-filter-dialog')).toBeVisible();
+  const dialog=await new AxeBuilder({page}).include('.nx49-filter-dialog').withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
+  expect(dialog.violations.filter(x=>['serious','critical'].includes(x.impact)).map(x=>({id:x.id,nodes:x.nodes.map(n=>n.target)}))).toEqual([]);
+  await page.keyboard.press('Escape');await expect(page.locator('.nx49-filter-dialog')).toBeHidden();
+});
+
+for(const theme of ['dark','light'])for(const width of [390,1440])test(`member account and notification states are readable ${theme} ${width}`,async({page},info)=>{
+  test.setTimeout(90000);
+  let sourceState='linked';const writes=[];
+  await page.setViewportSize({width,height:900});
+  await page.addInitScript(value=>localStorage.setItem('aninexus:theme',value),theme);
+  await page.route('**/runtime-config.js*',route=>route.fulfill({contentType:'application/javascript',body:`window.__ANINEXUS_CONFIG__={environment:'test',siteOrigin:location.origin,apiOrigin:'https://api.clerk.com',clerkPublishableKey:['pk','test','dGVzdC5jbGVyay5hY2NvdW50cy5kZXYk'].join('_'),authEnabled:true};`}));
+  await page.route('https://test.clerk.accounts.dev/npm/@clerk/ui@1/dist/ui.browser.js',route=>route.fulfill({contentType:'application/javascript',body:'window.__internal_ClerkUICtor=function(){};'}));
+  await page.route('https://test.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js',route=>route.fulfill({contentType:'application/javascript',body:'window.Clerk={user:{id:"clerk_test"},session:{getToken:async()=>"fixture-token"},load:async()=>{},addListener:()=>{},signOut:async()=>{}};'}));
+  await page.route('https://api.clerk.com/**',route=>{
+    const path=new URL(route.request().url()).pathname,method=route.request().method();
+    if(!['GET','OPTIONS'].includes(method)){writes.push(path);return fulfill(route,{},409)}
+    if(path==='/api/me')return fulfill(route,{user:{id:'fixture',username:'leitor',displayName:'Leitor de teste',email:'test@example.invalid',role:'user',privacy:'public',emailVerified:true,createdAt:'2026-01-01T00:00:00Z'}});
+    if(path==='/api/me/list')return fulfill(route,{items:[{status:'CURRENT'},{status:'COMPLETED'}]});
+    if(path==='/api/me/import-status')return fulfill(route,{imported:true});
+    if(path==='/api/me/profile-connections')return fulfill(route,{following:[{username:'amigo',displayName:'Amigo de teste',avatarUrl:image}],followers:[]});
+    if(path==='/api/me/notifications')return fulfill(route,{total:2,unread:1,items:[{id:'n1',kind:'EPISODE',title:'Novo episódio disponível',body:'Um novo episódio chegou à sua lista.',read_at:null,created_at:new Date().toISOString()},{id:'n2',kind:'SYSTEM',title:'Nova conquista',body:'Você completou mais uma etapa.',read_at:new Date().toISOString(),created_at:'2026-08-01T12:00:00Z'}]});
+    if(path==='/api/me/source')return sourceState==='error'?fulfill(route,{error:'Unavailable'},503):fulfill(route,sourceState==='unlinked'?{linked:false}:{linked:true,publicVisible:true,profile:{displayName:'Leitor Source',username:'leitor',favorite:{name:'Personagem de teste',work:'Obra de teste',image},stats:{level:4,xp:1300,uniqueCharacters:25,collectionPercent:10},integration:{reward:{claimed:true,coinsGranted:50,dadosGranted:1}}}});
+    return fulfill(route,{items:[]});
+  });
+  for(const state of ['linked','unlinked','error']){
+    sourceState=state;
+    await page.goto(new URL('/minha-conta',origin).href);
+    await expect(page.locator('.nx56-account-page')).toBeVisible({timeout:20000});
+    await expect(page.locator('[data-edit-profile]').first()).toBeVisible();
+    if(state==='error')await expect(page.locator('.nx56-source-card')).toContainText('temporariamente indisponível');
+    const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
+    const blocking=result.violations.filter(x=>['serious','critical'].includes(x.impact));
+    if(blocking.length)await info.attach(`account-${state}-axe`,{body:JSON.stringify(blocking,null,2),contentType:'application/json'});
+    expect(blocking.map(x=>({id:x.id,nodes:x.nodes.map(n=>n.target)})),state).toEqual([]);
+    await page.screenshot({path:info.outputPath(`account-${state}.png`),fullPage:true});
+  }
+  const edit=page.locator('[data-edit-profile]').first();await edit.click();
+  const editor=page.getByRole('dialog',{name:'Personalizar perfil'});await expect(editor).toBeVisible();
+  await expect(editor.getByRole('button',{name:'Fechar',exact:true})).toBeFocused();
+  await page.keyboard.press('Escape');await expect(editor).toHaveCount(0);await expect(edit).toBeFocused();
+  const bell=page.locator('#topbar [data-action="notifications"]');await bell.click();
+  await expect(page.locator('.nx43-notification-row')).toHaveCount(2);
+  const sheet=page.locator('.nx43-notification-sheet');
+  await expect.poll(()=>sheet.evaluate(el=>getComputedStyle(el).opacity)).toBe('1');
+  const drawer=await new AxeBuilder({page}).include('#notificationPanel').withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
+  expect(drawer.violations.filter(x=>['serious','critical'].includes(x.impact)).map(x=>({id:x.id,nodes:x.nodes.map(n=>n.target)}))).toEqual([]);
+  await page.keyboard.press('Escape');await expect(page.locator('#notificationPanel')).toBeHidden();await expect(bell).toBeFocused();
+  expect(writes).toEqual([]);
 });
 
 for(const theme of ['dark','light'])for(const width of [390,1440])test(`full news reader has readable source blocks ${theme} ${width}`,async({page},info)=>{
@@ -45,7 +131,7 @@ for(const theme of ['dark','light'])for(const width of [390,1440])test(`full new
   await page.goto(new URL('/noticias/noticia-de-teste',origin).href);
   await expect(page.locator('.nx40-source-flow')).toBeVisible();
   await expect(page.getByRole('button',{name:'Voltar às notícias',exact:true})).toBeVisible();
-  if(theme==='light')expect(await page.locator('#topbar').evaluate(el=>getComputedStyle(el).backgroundColor)).toBe('rgba(255, 255, 255, 0.97)');
+  if(theme==='light')await expect(page.locator('#topbar')).toHaveCSS('background-color','rgba(255, 255, 255, 0.97)');
   const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
   const blocking=result.violations.filter(x=>['serious','critical'].includes(x.impact));
   if(blocking.length)await info.attach('reader-axe',{body:JSON.stringify(blocking,null,2),contentType:'application/json'});

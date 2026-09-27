@@ -177,7 +177,7 @@ body.nx49-scroll-down .nx49-island-head{height:42px}
 .nx49-filter-dialog label input:checked+span{border-color:rgba(233,50,90,.45);background:var(--nx49-accent-soft);color:var(--nx49-text)}
 .nx49-filter-dialog>footer{display:flex;justify-content:flex-end;gap:7px;padding-top:13px;border-top:1px solid var(--nx49-line)}
 .nx49-filter-dialog>footer button{height:36px;padding:0 13px;border:1px solid var(--nx49-line);border-radius:7px;background:transparent;color:var(--nx49-text);font:800 9px/1 'Nunito Sans',sans-serif;cursor:pointer}
-.nx49-filter-dialog>footer button.primary{border-color:var(--nx49-accent);background:var(--nx49-accent)}
+.nx49-filter-dialog>footer button.primary{border-color:#b8183c;background:#b8183c;color:#fff}
 
 html[data-theme='light'] .nx49-island{background:rgba(255,250,251,.98);box-shadow:0 12px 30px rgba(64,34,48,.12)}
 

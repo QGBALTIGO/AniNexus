@@ -66,7 +66,7 @@ try {
           await page.waitForTimeout(400);
         }
         const metrics = await page.evaluate(() => {
-          const visible = el => { const r = el.getBoundingClientRect(), s = getComputedStyle(el); return r.width > 0 && r.height > 0 && s.visibility !== 'hidden' && s.display !== 'none'; };
+          const visible = el => { const r = el.getBoundingClientRect(), s = getComputedStyle(el); for(let parent=el.parentElement;parent;parent=parent.parentElement)if(parent.matches('details:not([open])')&&!parent.querySelector(':scope > summary')?.contains(el))return false; return r.width > 0 && r.height > 0 && s.visibility !== 'hidden' && s.display !== 'none'; };
           const app = document.querySelector('#app');
           const overflow = [...document.querySelectorAll('#app *')].filter(el => visible(el) && el.getBoundingClientRect().right > innerWidth + 2 && !el.closest('[data-nx44-rail],.nx35-rail,.nx44-rail,[role="tablist"],.nx22-tabs,.nx18-day-nav')).slice(0, 12).map(el => ({ tag: el.tagName, cls: String(el.className).slice(0, 100), right: Math.round(el.getBoundingClientRect().right) }));
           return { path: location.pathname + location.search + location.hash, title: document.title, h1: [...(app?.querySelectorAll('h1') || [])].map(el => el.innerText), textLength: app?.innerText.length || 0, textStart: app?.innerText.slice(0, 300), width: innerWidth, scrollWidth: document.documentElement.scrollWidth, height: document.documentElement.scrollHeight, theme: document.documentElement.dataset.theme, mainCount: document.querySelectorAll('main').length, overflow,

@@ -1,6 +1,6 @@
 # AUDIT_ROUTE_MATRIX
 
-Atualizado em 2026-09-27T15:12:22.239Z. Base inicial: 6ed65bb4162c164d3b078728dfd0ade184343b90; atualização editorial 39c65a545261 incorporada durante a auditoria.
+Atualizado em 2026-09-27T15:48:12.583Z. Base inicial: 6ed65bb4162c164d3b078728dfd0ade184343b90; atualização editorial 39c65a545261 incorporada durante a auditoria.
 
 **E = evidência renderizada; T = jornada com asserções; F = falha; P = pendente.** E-preview usa correções locais e dados reais somente leitura. E-live é pós-publicação. E-fault verifica renderização, overflow, erros JS e vazamento de diagnóstico com API simulada; não aprova sozinho cada ação. Evidência privada: audit-artifacts/ (fora de Git, Docker e publicação).
 
@@ -129,7 +129,7 @@ T-nav: entrada direta, reload, pesquisa pelo teclado e retorno do foco, voltar, 
 | /meus-mangas | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /u/Diego | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /u/qa-perfil-inexistente | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
-| /admin | F | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
+| /admin | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /quem-somos | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /colabore | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /contato | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
@@ -183,6 +183,8 @@ overview; reports; users; team; audit; authorization; filters; dialogs; confirma
 - Comunidade, biblioteca, perfil privado/público/inexistente, importação com confirmação, administração e permissões: tests/e2e.spec.mjs, tests/community-overview.spec.mjs; mutações com fixtures, não em membros reais.
 - Login/cadastro reais: real-auth-theme/ (18 capturas, rascunho preservado, seis análises Axe). Sem enviar novos códigos nem cadastrar usuários.
 - Conta/admin reais: preview-admin-final/, somente leitura. Sem exclusões, bloqueios ou publicações de teste.
+- Revisão pós-publicação: post-release-admin-panels/ (cinco painéis, dois temas), post-release-member-panels/ (conta, três painéis de edição no topo e após rolagem, notificações e filtros). Os resultados JSON desses diretórios distinguem execução concluída de pendência.
+- Regressões autenticadas: editor com teclado e foco; Source conectado, desconectado e indisponível; notificações lidas/não lidas; filtros da biblioteca; tests/total-audit.spec.mjs nos três motores.
 - Acessibilidade: 28 cenários × claro móvel/claro desktop/escuro móvel; última rodada: 84/84 sem violações sérias/críticas.
 - Revisão visual humana: folhas das 66 rotas no escuro móvel, 39 páginas no claro móvel/desktop, oito áreas autenticadas, login/cadastro, modal de programação, fallback de detalhe e seis referências. Não se afirma revisão manual de cada pixel de cada captura.
 

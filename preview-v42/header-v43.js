@@ -232,7 +232,8 @@
 
   function openPanel() {
     if (trigger.hidden || root.dataset.nxAuthState !== 'authenticated') return;
-    returnFocus = document.activeElement;
+    // Safari does not focus buttons on pointer activation; restore the actual trigger.
+    returnFocus = trigger;
     layer.hidden = false;
     layer.setAttribute('aria-hidden', 'false');
     trigger.setAttribute('aria-expanded', 'true');
