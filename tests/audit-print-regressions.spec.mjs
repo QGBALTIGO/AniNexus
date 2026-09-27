@@ -53,14 +53,15 @@ for(const theme of ['dark','light'])test(`print: account loading communicates pr
   expect(await loading.locator('.nx61-loading-heading>i').evaluate(el=>getComputedStyle(el).animationName)).toBe('none');
   release();
 });
-test('print: horizontal position stays visible and follows keyboard scrolling',async({page})=>{
+test('print: extra position bars are absent and tabs still scroll',async({page})=>{
   await page.setViewportSize({width:320,height:844});await partialManga(page);
-  const tabs=page.locator('.nx22-tab-list'),track=page.locator('.nx22-tabs-row>.nx61-scroll-track');
-  await expect(track).toBeVisible();
-  const before=await track.locator('i').evaluate(el=>getComputedStyle(el).transform);
+  const tabs=page.locator('.nx22-tab-list'),track=page.locator('.nx61-scroll-track');
+  await expect(track).toHaveCount(0);
+  const before=await tabs.evaluate(el=>el.scrollLeft);
   await tabs.evaluate(el=>el.scrollTo({left:el.scrollWidth,behavior:'instant'}));
-  await expect.poll(()=>track.locator('i').evaluate(el=>getComputedStyle(el).transform)).not.toBe(before);
-  await page.setViewportSize({width:1920,height:900});await expect(track).toBeHidden();
+  await expect.poll(()=>tabs.evaluate(el=>el.scrollLeft)).toBeGreaterThan(before);
+  await page.locator('[data-nx22-tab="recomendacoes"]').click();await expect(page.locator('.nx22-detail-empty')).toBeVisible();
+  await page.setViewportSize({width:1920,height:900});await expect(track).toHaveCount(0);
 });
 test('print: news back control matches the shared title back control',async({page},info)=>{
   await page.setViewportSize({width:390,height:844});await partialManga(page);
