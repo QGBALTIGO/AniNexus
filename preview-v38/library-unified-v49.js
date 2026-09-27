@@ -249,6 +249,7 @@
       <button type="button" class="${state.view === 'MEDIA' && state.media === 'MANGA' ? 'active' : ''}" data-nx49-media="MANGA">${ICON.manga}<span>Meus mangás</span><b>${manga.total}</b></button>
       <button type="button" class="${state.view === 'IMPRESSIONS' ? 'active' : ''}" data-nx49-view="IMPRESSIONS">${ICON.message}<span>Impressões</span><b>${impressions}</b></button>
       <a href="${pageUrl('/conquistas')}">${ICON.trophy}<span>Conquistas</span></a>
+      <a href="${pageUrl('/minha-biblioteca?view=diary')}">${ICON.manga}<span>Meu diário</span></a>
     </nav>`;
   }
   function statusTabs(compact = false) {
@@ -555,6 +556,10 @@
 
   async function mountLibrary() {
     if (!onLibrary()) { cleanup(); return; }
+    if (routeInfo().search.get('view') === 'diary' && window.AniNexusDiary) {
+      cleanup();
+      return window.AniNexusDiary.mount(app);
+    }
     state.controller?.abort('superseded');
     state.controller = new AbortController();
     const signal = state.controller.signal;

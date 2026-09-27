@@ -206,4 +206,11 @@ Navegador comum bloqueado. Scrapling recuperou seis páginas públicas (HTTP 200
 
 ## Inventário técnico
 
+### Novos estados após a auditoria-base
+
+- `/`: central pessoal autenticada, visitante, vazio, falha recuperável, saída com resposta atrasada, continuação anime/mangá; `tests/personal-home.spec.mjs` e lógica/SQL. Publicado e bytes verificados em `6fe6dff1`.
+- `/anime/:slug-id` e `/manga/:slug-id`, aba Franquia: sequência/release/extras/spin-offs, cronologia sem curadoria, progresso privado, sugestão de sequência, vazio, cobertura parcial, saída da conta/aba; `tests/franchise.spec.mjs`, testes de lógica/SQL. Implementação ainda não publicada.
+- `/minha-biblioteca?view=diary`: carregando, privado/vazio, erro/retry, período, registro anime/mangá, nota zero, spoiler, erro ao salvar preservando texto/chave, edição, confirmação de exclusão, card PNG, saída durante resposta e histórico voltar/avançar. `tests/diary.spec.mjs` e `tests/diary-database.mjs`. Implementação ainda não publicada; SQL real pendente do CI.
+- Novas telas com claro/escuro, medidas de reflow em 15 larguras, teclado e Axe; os PNGs estão em `audit-artifacts/diary-final`, `diary-cross-browser`, `franchise-fixed` e `personal-home-final`. Não substituir a inspeção visual pelos totais automatizados.
+
 158 arquivos ativos; 176 candidatos de API. Inventário detalhado privado: audit-artifacts/inventory.json. Status de release e limites: FINAL_QA_REPORT.md. Reexecutar o gerador após terminar as rodadas pendentes.

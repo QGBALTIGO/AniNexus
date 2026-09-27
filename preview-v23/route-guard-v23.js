@@ -96,7 +96,7 @@
       {owner:'auth',match:['/login','/criar-conta','/minha-conta','/conectar-source'].includes(path),selector:'.nx38-auth-page,.nx38-account-page',label:'Carregando conta…'},
       {owner:'profile',match:/^\/u\/[\p{L}\p{N}_.-]{3,30}$/u.test(path),selector:'.nx38p-page',label:'Carregando perfil…'},
       {owner:'admin',match:path==='/admin',selector:'.nx38-admin-page',label:'Carregando administração…'},
-      {owner:'library',match:['/minha-biblioteca','/meus-animes','/meus-mangas'].includes(path),selector:'.nx49-library',label:'Carregando biblioteca…'},
+      {owner:'library',match:['/minha-biblioteca','/meus-animes','/meus-mangas'].includes(path),selector:'.nx49-library,.nx61-diary',label:'Carregando biblioteca…'},
       {owner:'legal',match:['/termos-de-uso','/politica-de-privacidade','/dmca'].includes(path),selector:'.nx-legal',label:'Carregando documento…'},
       {owner:'institutional',match:['/quem-somos','/colabore','/contato'].includes(path),selector:'.nx-inst',label:'Carregando página…'}
     ];

@@ -1,0 +1,31 @@
+CREATE TABLE IF NOT EXISTS personal_diary (
+ id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+ user_id uuid NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+ client_key uuid NOT NULL,
+ request_hash text NOT NULL,
+ media_id bigint NOT NULL CHECK (media_id > 0),
+ media_type text NOT NULL CHECK (media_type IN ('ANIME','MANGA')),
+ media_snapshot jsonb NOT NULL,
+ entry_date date NOT NULL,
+ time_zone text NOT NULL,
+ kind text NOT NULL CHECK (kind IN ('EPISODE','CHAPTER','WORK')),
+ start_unit integer,
+ end_unit integer,
+ score numeric(3,1) CHECK (score BETWEEN 0 AND 10),
+ favorite boolean NOT NULL DEFAULT false,
+ rewatch boolean NOT NULL DEFAULT false,
+ completed boolean NOT NULL DEFAULT false,
+ reactions text[] NOT NULL DEFAULT '{}',
+ note text NOT NULL DEFAULT '' CHECK (char_length(note) <= 2000),
+ spoiler boolean NOT NULL DEFAULT false,
+ minutes integer CHECK (minutes BETWEEN 0 AND 100000),
+ time_source text CHECK (time_source IN ('EXPLICIT','ESTIMATED')),
+ created_at timestamptz NOT NULL DEFAULT now(),
+ updated_at timestamptz NOT NULL DEFAULT now(),
+ UNIQUE(user_id,client_key),
+ CHECK ((kind='WORK' AND start_unit IS NULL AND end_unit IS NULL) OR
+   (kind IN ('EPISODE','CHAPTER') AND start_unit IS NOT NULL AND end_unit IS NOT NULL AND start_unit BETWEEN 1 AND 100000 AND end_unit BETWEEN start_unit AND 100000 AND end_unit-start_unit < 1000)),
+ CHECK ((minutes IS NULL AND time_source IS NULL) OR (minutes IS NOT NULL AND time_source IS NOT NULL)),
+ CHECK ((media_type='ANIME' AND kind IN ('EPISODE','WORK')) OR (media_type='MANGA' AND kind IN ('CHAPTER','WORK')))
+);
+CREATE INDEX IF NOT EXISTS personal_diary_user_date_idx ON personal_diary(user_id,entry_date DESC,id DESC);

@@ -37,4 +37,23 @@ Solicitação de 27/09/2026. A evidência da auditoria anterior não encerra est
 - Central pessoal implementada em `/api/me/home`: consulta privada somente ao banco/cache, sem hidratação remota no caminho crítico. Anime/mangá têm identidade separada. Agenda respeita fuso, ignora horários com metadados antigos e informa que são previsões. Pendências são calculadas somente com total finalizado conhecido.
 - Estado vazio, erro com recuperação, saída durante requisição, visitante e claro/escuro têm testes. A publicação desta etapa ainda depende do CI e da verificação pós-deploy.
 
-Status: implementação em andamento. Franquias ampliadas, diário, retrospectivas, afinidade, novas notificações e evolução de importação/músicas ainda não estão entregues. A lista de execução é escopo, não comprovação de entrega.
+## Franquias
+
+- Implementado percurso limitado a 60 obras/quatro níveis do catálogo em cache, com identidades anime/mangá distintas, detecção de ciclos e aviso de cobertura parcial.
+- Visualizações por sequência prequela/continuação, lançamento, filmes/especiais e spin-offs. A opção cronológica explica a ausência de curadoria; não inventa ordem narrativa a partir da data de lançamento.
+- Progresso obtido em consulta privada e separada do cache público. Continuação fora da lista é sugerida quando a obra atual está concluída. Sair da conta remove a informação pessoal; sair da aba invalida respostas atrasadas.
+- 12/12 cenários novos e três regressões de ficha passaram nos três motores; inspeção renderizada em claro/escuro. Unitários cobrem ciclos, limites, relações incompletas e privacidade. SQL isolado e publicação ainda em acompanhamento.
+
+## Diário e retrospectiva
+
+- Implementados registros privados por data, tipo de obra e intervalo de episódios/capítulos, com nota histórica, favorito, rewatch/releitura, reações e anotação protegida por spoiler. Não modificam a biblioteca atual.
+- Migração 034, chave idempotente por usuário, consulta paginada por data/UUID e índice iniciando por usuário. Exclusão da conta remove os registros; exportação da conta inclui o diário. Teste PostgreSQL isolado incluído no CI, ainda aguardando execução nesta etapa.
+- Semana, mês, ano e intervalo personalizado produzem um resumo somente dos registros datados. Tempo estimado fica identificado e ausência de duração não vira tempo assistido fictício. Card PNG opt-in inclui somente métricas agregadas.
+- Cinco cenários passaram nos três motores; adicionados também teste de navegação voltar/avançar, foco/acessibilidade do formulário e 15 larguras. Inspeção renderizada corrigiu o bloqueio de boot da biblioteca, espaço sob o cabeçalho e gêneros em inglês.
+
+## Publicação verificada
+
+- Prints e central pessoal: `6fe6dff1e60585e3af430d3259ac8f616fa1c79c`, qualidade verde nos seis jobs, deploy VPS/domínio concluídos. Em 27/09 às 18:15 UTC, 129 arquivos servidos com SHA idêntico ao build LF; HTTPS autorizado e saúde de banco/cache confirmados.
+- Franquias e diário: implementação local e testes em andamento; ainda não considerar publicados.
+
+Status: implementação em andamento. Afinidade, estatísticas ampliadas, recomendações explicáveis, novas notificações e evolução de importação/músicas permanecem pendentes. A lista de execução é escopo, não comprovação de entrega.

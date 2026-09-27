@@ -399,6 +399,7 @@
       root.querySelector('[data-nx22-jump="elenco"]')?.addEventListener('click',()=>show('elenco'));
       if(k==='geral'){synopsisPT(m).then(text=>{if(mediaId()===m.id){const el=root.querySelector('#nx22Synopsis'),note=root.querySelector('#nx22SynopsisNote');if(el)el.textContent=text;note?.remove()}});hydrateMediaActivity(media.type,m.id)}
       if(k==='aberturas'&&!reading)hydrateThemes(m);
+      if(k==='franquia')window.AniNexusFranchise?.mount?.(root.querySelector('#nx22Panel'),media.type,m.id);
       root.querySelectorAll('[data-nx22-open]').forEach(el=>{const open=()=>openMedia(Number(el.dataset.nx22Open),el.querySelector('strong')?.textContent||(reading?'manga':'anime'),el.dataset.nx22MediaType||media.type);el.addEventListener('click',e=>{if(e.target.closest('button,a'))return;open()});el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
       root.querySelectorAll('[data-nx22-search-title]').forEach(el=>{const open=()=>{const type=el.dataset.nx22MediaType==='MANGA'?'MANGA':'ANIME';openCatalogFilter(type==='MANGA'?'/mangas':'/animes/catalogo',{search:el.dataset.nx22SearchTitle||''})};el.addEventListener('click',open);el.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open()}})});
       bindCharacterFavorites();window.AniNexusRails?.refresh?.();

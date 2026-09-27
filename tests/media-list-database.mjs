@@ -8,6 +8,7 @@ import { pool } from '../lib/db.mjs';
 import Fastify from 'fastify';
 import { registerListImportRoutes, importListRows } from '../lib/list-import-routes.mjs';
 import { personalHomeSql, personalHome } from '../lib/personal-home.mjs';
+import { franchiseCacheSql, franchiseProgressSql } from '../lib/franchise.mjs';
 
 const connectionString=process.env.MEDIA_TEST_DATABASE_URL;
 if(!connectionString)throw new Error('MEDIA_TEST_DATABASE_URL is required');
@@ -123,5 +124,8 @@ try{
   assert.ok(homeRows.every(r=>Number(r.media_id)!==909),'another account never enters the personal home');
   assert.equal(personalHome(homeRows).coverage.tracked,3);
   await client.query('EXPLAIN '+personalHomeSql,[alice]);
+  assert.equal((await client.query(franchiseCacheSql,[[101],[101]])).rows.length,2);
+  const franchiseState=(await client.query(franchiseProgressSql,[alice,[8001],[8001]])).rows;
+  assert.equal(franchiseState.length,2);assert.deepEqual(franchiseState.map(r=>r.media_type).sort(),['ANIME','MANGA']);
   console.log('Media lists, community, personal home and confirmed imports: SQL, typed mappings, ownership and idempotency verified.');
 }finally{await client.query('ROLLBACK');await client.end()}

@@ -15,6 +15,8 @@ import sharp from 'sharp';
 import { mediaListEntry } from './lib/media-list.mjs';
 import { registerMangaWebappLink } from './lib/manga-webapp-link.mjs';
 import { registerPersonalHome } from './lib/personal-home.mjs';
+import { registerFranchise } from './lib/franchise.mjs';
+import { registerDiary } from './lib/diary.mjs';
 import { getCommunityOverview } from './lib/community-overview.mjs';
 import { initDb, q, pool, dbReady } from './lib/db.mjs';
 import { initCache, redis, cacheRemember, cacheReady, cacheRunOnce, cacheMetricsSnapshot } from './lib/cache.mjs';
@@ -97,6 +99,8 @@ const privateHeavyRate=rateForUser(20,'1 minute','private-heavy');
 const writeRate=rateForUser(30,'1 minute','private-write');
 const publicRate={config:{rateLimit:{max:240,timeWindow:'1 minute'}}};
 registerPersonalHome(app,{q,requireUser,privateReadRate});
+registerFranchise(app,{q,getAnime,getManga,cacheRemember,requireUser,publicRate,privateReadRate});
+registerDiary(app,{q,requireUser,privateReadRate,writeRate});
 app.get('/api/community/overview',publicRate,async()=>{
   const overview=await getCommunityOverview(q),groups=['rankings','favorites','dropped'];
   const works=groups.flatMap(key=>overview[key]).map(m=>({media_id:m.id,media_type:m.mediaType,media:m.title&&m.cover?m:null}));
@@ -794,6 +798,7 @@ app.post('/api/me/export-list',privateHeavyRate,async(req,reply)=>{
 
 app.get('/api/me/export',privateHeavyRate,async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
+  const diary=await q('SELECT id,media_id,media_type,media_snapshot,entry_date,time_zone,kind,start_unit,end_unit,score,favorite,rewatch,completed,reactions,note,spoiler,minutes,time_source,created_at,updated_at FROM personal_diary WHERE user_id=$1 ORDER BY entry_date,id',[user.id]);
   const [profile,preferences,list,mangaList,favorites,characterFavorites,watched,follows,impressions,newsComments,threads,posts,sourceConnection]=await Promise.all([
     q('SELECT email,username,display_name,avatar_url,profile_banner_url,bio,location,website_url,instagram_handle,telegram_handle,avatar_source,theme,privacy,show_library,show_activity,show_stats,username_changed_at,email_verified,created_at,updated_at FROM users WHERE id=$1',[user.id]),q('SELECT * FROM user_preferences WHERE user_id=$1',[user.id]),q('SELECT media_id,status,score,reaction,reactions,progress,volume_progress,updated_at FROM user_anime WHERE user_id=$1 ORDER BY media_id',[user.id]),q('SELECT media_id,status,score,reaction,reactions,progress,volume_progress,updated_at FROM user_manga WHERE user_id=$1 ORDER BY media_id',[user.id]),q('SELECT media_id,media_type,created_at FROM user_favorites WHERE user_id=$1 ORDER BY media_type,media_id',[user.id]),q('SELECT character_id,created_at FROM character_favorites WHERE user_id=$1 ORDER BY character_id',[user.id]),q('SELECT media_id,episode,watched_at FROM watched_episodes WHERE user_id=$1 ORDER BY media_id,episode',[user.id]),q('SELECT media_id,media_type,notify_episode,notify_news,created_at FROM user_follows WHERE user_id=$1 ORDER BY media_type,media_id',[user.id]),q('SELECT media_id,media_type,body,spoiler,has_spoilers,status_snapshot,progress_snapshot,score_snapshot,impression_stage,created_at,updated_at,edited_at FROM impressions WHERE user_id=$1 ORDER BY created_at',[user.id]),q('SELECT article_slug,parent_id,body,spoiler,has_spoilers,created_at,updated_at,edited_at FROM news_comments WHERE user_id=$1 ORDER BY created_at',[user.id]),q('SELECT id,media_id,title,body,spoiler,created_at,updated_at FROM community_threads WHERE user_id=$1 ORDER BY created_at',[user.id]),q('SELECT thread_id,parent_id,body,spoiler,created_at,updated_at FROM community_posts WHERE user_id=$1 ORDER BY created_at',[user.id]),
     q('SELECT public_visible,source_profile,linked_at,refreshed_at FROM source_account_links WHERE user_id=$1',[user.id]),
@@ -807,7 +812,7 @@ app.get('/api/me/export',privateHeavyRate,async(req,reply)=>{
     q('SELECT slot,achievement_id,pinned_at FROM achievement_pins WHERE user_id=$1 ORDER BY slot',[user.id]),
   ]);
   reply.header('Cache-Control','no-store').header('Content-Disposition',`attachment; filename="aninexus-${new Date().toISOString().slice(0,10)}.json"`);
-  return{exportedAt:new Date().toISOString(),profile:profile.rows[0],preferences:preferences.rows[0]||null,list:list.rows,animeList:list.rows,mangaList:mangaList.rows,favorites:favorites.rows,characterFavorites:characterFavorites.rows,watchedEpisodes:watched.rows,follows:follows.rows,impressions:impressions.rows,newsComments:newsComments.rows,threads:threads.rows,posts:posts.rows,sourceConnection:sourceConnection.rows[0]||null,achievements:{profile:achievementProfile.rows[0]||null,animeHistory:achievementAnimeHistory.rows,activityDays:achievementActivityDays.rows,contributionHistory:achievementContributionHistory.rows,unlocks:achievementUnlocks.rows,pins:achievementPins.rows}};
+  return{diary:diary.rows,exportedAt:new Date().toISOString(),profile:profile.rows[0],preferences:preferences.rows[0]||null,list:list.rows,animeList:list.rows,mangaList:mangaList.rows,favorites:favorites.rows,characterFavorites:characterFavorites.rows,watchedEpisodes:watched.rows,follows:follows.rows,impressions:impressions.rows,newsComments:newsComments.rows,threads:threads.rows,posts:posts.rows,sourceConnection:sourceConnection.rows[0]||null,achievements:{profile:achievementProfile.rows[0]||null,animeHistory:achievementAnimeHistory.rows,activityDays:achievementActivityDays.rows,contributionHistory:achievementContributionHistory.rows,unlocks:achievementUnlocks.rows,pins:achievementPins.rows}};
 });
 app.delete('/api/me/account',rateForUser(2,'1 hour','account-delete'),async(req,reply)=>{
   const user=await requireUser(req,reply);if(!user)return;
