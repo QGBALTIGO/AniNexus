@@ -2144,10 +2144,10 @@ test('Source handoff links the authenticated AniNexus account and can be hidden 
   await page.setViewportSize({width:390,height:844});
   await page.goto(`${pageUrl('/conectar-source')}#source_token=${token}`,{waitUntil:'domcontentloaded'});
   const source=page.locator('#source');await expect(source).toBeVisible({timeout:15000});
-  await expect(source).toContainText('Conectar à conta atual?');expect(consumed).toBe('');
+  await expect(source).toContainText('Conectar à conta AniNexus atual?');expect(consumed).toBe('');
   await source.locator('[data-source-confirm]').click();
   await expect(page.locator('#source')).toContainText('Source AniNexus');await expect(page.locator('#source')).toContainText('Zoro Source');await expect(page.locator('#source')).toContainText('Dracule Mihawk');await expect(page.locator('#source')).toContainText('Nível 4');await expect(page.locator('#source')).toContainText('289');await expect(page.locator('#source')).toContainText('+50 Coins');expect(consumed).toBe(token);
-  await page.locator('#source [data-source-sync]').click();await expect(page.locator('#source')).toContainText('Dados do Source sincronizados agora.');
+  await page.locator('#source [data-source-refresh]').click();await expect(page.locator('#source')).toContainText('Dados do Source sincronizados.');
   for(const width of [320,390,768]){
     await page.setViewportSize({width,height:844});
     await expect(page.locator('#source')).toBeVisible();
