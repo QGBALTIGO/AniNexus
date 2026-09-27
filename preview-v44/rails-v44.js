@@ -4,7 +4,9 @@
   window.__NX44_RAILS__ = true;
 
   const RAIL_SELECTOR = '.nx35-home .nx35-rail,.nx38-impressions-home .nx38-impressions-rail,.nx22-detail [data-nx22-rail]';
+  const INDICATOR_SELECTOR = `${RAIL_SELECTOR},.nx22-tab-list,.nx57-profile-tabs`;
   const controllers = new Set();
+  const indicators = new Map();
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   let railSequence = 0;
   let scanFrame = 0;
@@ -132,6 +134,23 @@
     return { max, left, overflow: max > 3 };
   }
 
+  function mountIndicator(rail) {
+    if(indicators.has(rail))return;
+    const track=document.createElement('span'),thumb=document.createElement('i');
+    track.className='nx61-scroll-track';track.setAttribute('aria-hidden','true');track.append(thumb);rail.after(track);
+    let frame=0;
+    const update=()=>{frame=0;const {max,left,overflow}=metrics(rail);track.hidden=!overflow;
+      const width=track.clientWidth,thumbWidth=Math.max(18,width*rail.clientWidth/Math.max(1,rail.scrollWidth));
+      track.style.setProperty('--nx61-thumb',`${Math.min(width,thumbWidth)}px`);
+      track.style.setProperty('--nx61-offset',`${max?left/max*Math.max(0,width-thumbWidth):0}px`);
+    };
+    const queue=()=>{if(!frame)frame=requestAnimationFrame(update)};
+    const resize=new ResizeObserver(queue);resize.observe(rail);
+    const mutation=new MutationObserver(queue);mutation.observe(rail,{childList:true});
+    rail.addEventListener('scroll',queue,{passive:true});queue();
+    indicators.set(rail,()=>{resize.disconnect();mutation.disconnect();rail.removeEventListener('scroll',queue);if(frame)cancelAnimationFrame(frame);track.remove()});
+  }
+
   function scrollStep(rail) {
     const first = rail.firstElementChild;
     if (!first) {
@@ -239,6 +258,8 @@
       controllers.delete(controller);
     }
     document.querySelectorAll(RAIL_SELECTOR).forEach(mountRail);
+    for(const [rail,destroy] of indicators)if(!rail.isConnected){destroy();indicators.delete(rail)}
+    document.querySelectorAll(INDICATOR_SELECTOR).forEach(mountIndicator);
   }
 
   function scheduleScan() {
@@ -249,7 +270,7 @@
   // document on every countdown tick or unrelated community update.
   const observer = new MutationObserver(records => {
     const relevant = records.some(record => [...record.addedNodes, ...record.removedNodes].some(node =>
-      node instanceof Element && (node.matches(RAIL_SELECTOR) || node.querySelector(RAIL_SELECTOR) ||
+      node instanceof Element && (node.matches(INDICATOR_SELECTOR) || node.querySelector(INDICATOR_SELECTOR) ||
         [...controllers].some(controller => node.contains(controller.rail)))
     ));
     if (relevant) scheduleScan();

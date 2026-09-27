@@ -79,4 +79,8 @@ São 47 grupos de problemas corrigidos. Severidade, arquivos, rotas e retestes e
 
 ## Publicação e limites
 
+### Continuação dos prints e central pessoal
+
+A rodada anterior não cobria o `main` interno sem metadados: a regra global criava aproximadamente 378px de lacuna. Esse caso foi reproduzido e corrigido, junto do vazio de recomendações em uma coluna estreita e do carregamento de conta com spinner deformado. Controles de voltar, notificações e indicadores horizontais foram padronizados; os dois botões redundantes da abertura foram retirados. Testes e escopo novo em PRODUCT_EVOLUTION.md. Não confundir a central pessoal implementada com a entrega de todas as ideias adicionais.
+
 Consultar FINAL_QA_REPORT.md para o estado de publicação. Nenhuma contagem de screenshots é apresentada como prova de todas as ações. Provedores externos podem mudar; esta auditoria adiciona recuperação e regressões, não uma garantia de ausência eterna de defeitos. Não foram feitos testes de carga destrutivos nem moderação em contas reais.

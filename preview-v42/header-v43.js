@@ -181,7 +181,9 @@
       const mark = document.createElement('span');
       mark.className = 'nx43-notification-mark';
       mark.setAttribute('aria-hidden', 'true');
-      mark.textContent = ({ EPISODE: '▶', NEWS: 'N', COMMUNITY: '✦', SYSTEM: '•' })[row.dataset.kind] || '•';
+      const visual = window.AniNexusUI.notification(item);
+      mark.innerHTML = visual.svg;
+      mark.dataset.icon = visual.icon;
       const copy = document.createElement('span');
       copy.className = 'nx43-notification-copy';
       const title = document.createElement('strong');

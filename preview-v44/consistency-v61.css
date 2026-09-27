@@ -1,0 +1,48 @@
+/* Shared product controls: no route-specific redesign. */
+.nx22-layout > main{min-height:0}
+.nx22-rec-grid > .nx22-detail-empty{grid-column:1/-1}
+.nx22-detail-empty{width:100%;min-width:0}
+
+:is(.nx22-back,.nx40-reader-actions>button[data-back]){
+  box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;min-width:44px;min-height:44px;max-width:44px;padding:0;
+  border:1px solid rgba(255,255,255,.14);border-radius:50%;
+  background:rgba(8,6,8,.76);color:#fff;box-shadow:0 7px 24px rgba(0,0,0,.25);
+}
+:is(.nx22-back,.nx40-reader-actions>button[data-back]) svg{
+  display:block;width:22px;height:22px;fill:none;stroke:currentColor;
+  stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;
+}
+:is(.nx22-back,.nx40-reader-actions>button[data-back]) span{display:none}
+:is(.nx22-back,.nx40-reader-actions>button[data-back]):focus-visible{outline:2px solid #ff7893;outline-offset:4px}
+.nx43-notification-mark svg,.nx56-notification-icon svg{display:block;width:21px;height:21px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.nx43-notification-mark{display:grid;place-items:center}
+
+.nx61-account-loading{padding:24px 0;color:var(--nx-text,#f7f2f5)}
+.nx61-loading-heading{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+.nx61-loading-heading>i{display:block;flex:none;width:56px;height:56px;border-radius:50%;background:var(--nx61-skeleton,#21171d)}
+.nx61-loading-heading strong{display:block;font:800 18px/1.4 Manrope,sans-serif}
+.nx61-loading-heading span{display:block;margin-top:4px;font-size:13px;line-height:1.5;color:var(--nx-muted,#c0b1ba)}
+.nx61-loading-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.nx61-loading-stats>i{display:block;height:88px;border-radius:12px;background:var(--nx61-skeleton,#21171d)}
+.nx61-loading-panel{display:grid;gap:14px;margin-top:20px;padding:24px;border:1px solid var(--nx-line,#34262e);border-radius:12px}
+.nx61-loading-panel>i{display:block;max-width:100%;width:75%;height:14px;border-radius:4px;background:var(--nx61-skeleton,#21171d)}
+.nx61-loading-panel>i:first-child{width:45%;height:22px;margin-bottom:12px}
+.nx61-loading-panel>i:last-child{width:60%}
+.nx61-account-loading i{animation:nx61-breathe 1.7s ease-in-out infinite}
+html[data-theme=light] .nx61-account-loading{--nx61-skeleton:#e7dce2;--nx-line:#dbccd5;color:#30232a}
+html[data-theme=light] .nx61-loading-heading span{color:#6d5865}
+@keyframes nx61-breathe{50%{opacity:.5}}
+@media(prefers-reduced-motion:reduce){.nx61-account-loading i{animation:none}}
+
+/* A persistent, unobtrusive position indicator also works on iOS, which hides native scrollbars. */
+.nx61-scroll-track{display:block;position:relative;width:100%;height:3px;margin-top:10px;border-radius:3px;background:rgba(190,151,168,.18);overflow:hidden;pointer-events:none}
+.nx61-scroll-track[hidden]{display:none!important}
+.nx61-scroll-track>i{position:absolute;inset:0 auto 0 0;display:block;width:var(--nx61-thumb,20%);height:100%;border-radius:inherit;background:#e84464;transform:translateX(var(--nx61-offset,0px));will-change:transform}
+.nx22-tabs-row{position:relative;padding-bottom:7px}
+.nx22-tabs-row>.nx61-scroll-track{position:absolute;left:0;right:0;bottom:0;margin:0}
+.nx38p-hero>.nx61-scroll-track{margin-top:0;border-radius:0}
+.nx57-profile-aside .nx48-profile-pins{justify-content:flex-start;justify-items:start;text-align:left}
+.nx57-profile-aside .nx48-profile-pin{justify-items:start;text-align:left}
+.nx57-achievements-panel .nx48-profile-achievements>article{justify-content:start;justify-items:start;text-align:left;align-content:start}
+.nx57-achievements-panel .nx48-profile-achievements>article>div{width:100%;text-align:left}

@@ -221,7 +221,7 @@ jobs:
             if [ "$i" = "20" ]; then cat /tmp/aninexus-audit-http.log; exit 1; fi
             sleep 1
           done
-          pnpm exec playwright test tests/total-audit.spec.mjs tests/audit-forms.spec.mjs tests/audit-content-states.spec.mjs \
+          pnpm exec playwright test tests/total-audit.spec.mjs tests/audit-forms.spec.mjs tests/audit-content-states.spec.mjs tests/audit-print-regressions.spec.mjs tests/personal-home.spec.mjs \
             --project="$BROWSER_PROJECT" --reporter=line --timeout=60000
       - name: Show audit server log on failure
         if: failure()

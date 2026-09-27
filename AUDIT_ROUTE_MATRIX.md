@@ -6,6 +6,8 @@ Atualizado em 2026-09-27T16:28:16.767Z. Base inicial: 6ed65bb4162c164d3b078728df
 
 ## Rotas × larguras
 
+Continuação solicitada em 27/09: as evidências abaixo pertencem à auditoria-base; não aprovam automaticamente as novas funcionalidades de PRODUCT_EVOLUTION.md. Os novos casos de prints estão em `tests/audit-print-regressions.spec.mjs` (24/24). A central pessoal usa `tests/personal-home.spec.mjs`, mais testes de lógica e SQL isolado. Publicação e QA desses acréscimos permanecem em acompanhamento.
+
 | Rota | Família | 320 | 360 | 375 | 390 | 393 | 412 | 430 | 480 | 768 | 820 | 1024 | 1280 | 1366 | 1440 | 1920 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | / | home | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |

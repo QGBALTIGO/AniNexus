@@ -7,6 +7,7 @@ import { setCharacterFavorite } from '../lib/character-ranking.mjs';
 import { pool } from '../lib/db.mjs';
 import Fastify from 'fastify';
 import { registerListImportRoutes, importListRows } from '../lib/list-import-routes.mjs';
+import { personalHomeSql, personalHome } from '../lib/personal-home.mjs';
 
 const connectionString=process.env.MEDIA_TEST_DATABASE_URL;
 if(!connectionString)throw new Error('MEDIA_TEST_DATABASE_URL is required');
@@ -113,5 +114,14 @@ try{
     const expired=await preview('MAL');await client.query("UPDATE list_import_previews SET expires_at=now()-interval '1 minute' WHERE transfer_id IS NULL");assert.equal((await confirm(expired.token)).statusCode,409);
     assert.equal((await app.inject({method:'POST',url:'/api/me/list-imports/confirm',payload:{token:first.token,username:'someone-else'}})).statusCode,422);
   }finally{await app.close()}
-  console.log('Media lists, community and confirmed AniList/MAL imports: typed mappings, preview isolation, ownership, expiry, idempotency and conflict strategies verified.');
+  await client.query(`ALTER TABLE media_cache ADD COLUMN updated_at timestamptz DEFAULT now();
+    CREATE TABLE user_follows(user_id uuid,media_id bigint,media_type text,created_at timestamptz DEFAULT now(),PRIMARY KEY(user_id,media_id,media_type));`);
+  await client.query(`INSERT INTO user_follows(user_id,media_id,media_type) VALUES($1,101,'ANIME'),($1,8001,'ANIME'),($2,909,'ANIME')`,[alice,bob]);
+  const homeRows=(await client.query(personalHomeSql,[alice])).rows;
+  assert.equal(homeRows.filter(r=>Number(r.media_id)===8001).length,2,'anime and manga remain distinct');
+  assert.equal(homeRows.filter(r=>Number(r.media_id)===8001&&r.media_type==='ANIME').length,1,'followed library title is not duplicated');
+  assert.ok(homeRows.every(r=>Number(r.media_id)!==909),'another account never enters the personal home');
+  assert.equal(personalHome(homeRows).coverage.tracked,3);
+  await client.query('EXPLAIN '+personalHomeSql,[alice]);
+  console.log('Media lists, community, personal home and confirmed imports: SQL, typed mappings, ownership and idempotency verified.');
 }finally{await client.query('ROLLBACK');await client.end()}

@@ -47,6 +47,25 @@
     },{...options,signal:options.signal||init.signal});
   }
   window.AniNexusRuntime=Object.freeze({withDeadline,jsonRequest,abortableDelay,deadlineError,navigationId,renewNavigationId,correlationHeaders});
+  // One semantic icon vocabulary for both notification surfaces. Never insert
+  // server-provided markup: the returned SVG is selected from this fixed map.
+  const uiPaths={
+    play:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3Z"/>',
+    news:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h3M8 15h8M8 18h8"/>',
+    people:'<circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 4v2"/>',
+    bell:'<path d="M6 9a6 6 0 0 1 12 0c0 6 2 6 2 8H4c0-2 2-2 2-8M10 21h4"/>',
+    trophy:'<path d="M8 3h8v6a4 4 0 0 1-8 0ZM8 5H4v2a4 4 0 0 0 4 4M16 5h4v2a4 4 0 0 1-4 4M12 13v5M8 21h8M9 18h6"/>',
+    calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 11h18M8 15h2M14 15h2"/>',
+    branch:'<circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M6 7v10M18 7a8 8 0 0 1-8 8H6"/>',
+    volume:'<path d="m11 4-6 5H2v6h3l6 5ZM15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/>',
+  };
+  const notification=item=>{
+    const kind=String(item?.kind||'SYSTEM').toUpperCase(),href=String(item?.href||item?.url||'');
+    const map={EPISODE:['Novo episódio','play'],NEWS:['Notícia','news'],COMMUNITY:['Comunidade','people'],SYSTEM:['AniNexus','bell'],ACHIEVEMENT:['Conquista','trophy'],SCHEDULE:['Programação','calendar'],DELAY:['Mudança de horário','calendar'],FRANCHISE:['Franquia','branch'],DUBBING:['Dublagem','volume'],AVAILABILITY:['Onde assistir','play']};
+    const [label,icon]=kind==='SYSTEM'&&/^\/conquistas(?:[?#]|$)/.test(href)?map.ACHIEVEMENT:(map[kind]||map.SYSTEM);
+    return{label,icon,svg:`<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">${uiPaths[icon]}</svg>`};
+  };
+  window.AniNexusUI=Object.freeze({notification});
   addEventListener('popstate',renewNavigationId);
 
   // Production uses shared AniNexus read models (edge cache + Redis + stale fallback)
