@@ -1,7 +1,7 @@
 /* AniNexus V38.1 — Meus Animes + Últimas Impressões */
 :root{--nxlib-accent:#b51f43;--nxlib-accent2:#d94367;--nxlib-bg:#0b090d;--nxlib-card:#141117;--nxlib-card2:#1a151d;--nxlib-line:rgba(255,255,255,.09);--nxlib-muted:#aaa2ae;--nxlib-text:#f8f4f8;--nxlib-ok:#55c27a;--nxlib-warn:#d5aa54}
 html[data-theme="light"]{--nxlib-bg:#f6f3f5;--nxlib-card:#fff;--nxlib-card2:#f1ecef;--nxlib-line:rgba(45,25,35,.12);--nxlib-muted:#726873;--nxlib-text:#221923}
-html.nx38-library-boot #app{min-height:75vh;opacity:0}
+html.nx38-library-boot #app{min-height:100vh;min-height:100svh;opacity:0}
 body.nx38-library-active{background:var(--nxlib-bg)}
 body.nx38-library-active .site-footer{margin-top:0}
 .nx38-library{min-height:78vh;background:radial-gradient(circle at 12% -10%,rgba(181,31,67,.14),transparent 28%),var(--nxlib-bg);color:var(--nxlib-text);padding:34px 0 80px}

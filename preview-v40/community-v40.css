@@ -52,6 +52,7 @@ body.nx40-community-active.nx40-scroll-down #topbar{transform:translateY(calc(-1
 .nx40-podium:has(>.nx40-poster-card:only-child){grid-template-columns:minmax(0,1fr)}
 .nx40-podium .nx40-poster-card{width:100%;max-width:210px;justify-self:center}
 .nx40-poster-card{min-width:0}
+.nx40-skeleton-title{display:block;height:20px;max-width:80%;margin:11px auto 0;border-radius:4px;background:var(--line)}
 .nx40-poster{position:relative;aspect-ratio:2/3;overflow:hidden;border:1px solid var(--line);border-radius:8px;background:#1b151e}
 .nx40-poster>a{display:block;width:100%;height:100%}
 .nx40-poster img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .25s ease}

@@ -11,6 +11,24 @@ const media = (id, type = 'ANIME', name = type === 'MANGA' ? 'Mangá de teste' :
 });
 const fulfill = (route, data, status = 200) => route.fulfill({ status, contentType: 'application/json', body: JSON.stringify(data) });
 
+for(const width of [390,1440])test(`loading layout reserves the viewport and community podium ${width}`,async({page})=>{
+  await page.setViewportSize({width,height:900});
+  let release;const pending=new Promise(resolve=>release=resolve);
+  await page.route('**/api/community/overview',async route=>{await pending;return fulfill(route,{totals:{},rankings:[],distribution:[],activeMembers:[]})});
+  await page.goto(new URL('/comunidade',origin).href);
+  const ranking=page.locator('#nx40ReactionRanking');
+  await expect(ranking).toHaveAttribute('aria-busy','true');
+  await expect(ranking.locator('.nx40-podium .nx40-poster-card:visible')).toHaveCount(width>760?3:1);
+  expect((await ranking.boundingBox()).height).toBeGreaterThan(300);
+  expect(await page.locator('.site-footer').evaluate(el=>el.getBoundingClientRect().top+scrollY)).toBeGreaterThanOrEqual(900);
+  release();await expect(ranking).toHaveAttribute('aria-busy','false');
+  await expect(ranking).toContainText('Ainda não há obras com essa reação.');
+  await expect(ranking.locator('.nx40-podium')).toHaveCount(0);
+  await page.goto(new URL('/minha-biblioteca',origin).href);
+  expect(await page.locator('#app').evaluate(el=>el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(900);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
+});
+
 for(const theme of ['dark','light'])for(const width of [390,1440])test(`profile settings are readable and keyboard-contained ${theme} ${width}`,async({page},info)=>{
   test.setTimeout(90000);
   await page.setViewportSize({width,height:900});

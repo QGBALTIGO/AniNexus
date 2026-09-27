@@ -86,6 +86,7 @@
 
 
   const empty=text=>`<p class="nx40-empty">${esc(text)}</p>`;
+  const rankingSkeleton=()=>`<p class="nx40-sr">Carregando ranking...</p><div class="nx40-podium" aria-hidden="true">${Array.from({length:3},()=>'<article class="nx40-poster-card"><div class="nx40-poster"></div><span class="nx40-skeleton-title"></span><span class="nx40-place-label">&nbsp;</span></article>').join('')}</div>`;
   const number=value=>new Intl.NumberFormat('pt-BR',{notation:Number(value)>=10000?'compact':'standard',maximumFractionDigits:1}).format(Number(value)||0);
   const imageUrl=value=>/^(https?:\/\/|\/[^/]|data:image\/)/i.test(String(value||''))?esc(value):'';
   const href=m=>pageUrl(`/${m.mediaType==='MANGA'?'manga':'anime'}/${slug(m.title)}-${Number(m.id)}`);
@@ -135,7 +136,9 @@
     const ranking=(overview?.rankings||[]).filter(x=>x.label===selectedReaction);
     const questions={'Chorei':'O que fez a comunidade chorar?','Rachei':'O que mais fez a comunidade rir?','Viciante':'Quais obras são difíceis de largar?','Amei':'As obras que ganharam nosso coração','Que trilha!':'Qual trilha ficou na memória?','Joia escondida':'Quais obras merecem mais atenção?','Final incrível':'Quais finais ficaram na memória?','Esperava mais':'De quais obras a comunidade esperava mais?'};
     app.querySelector('#nx40ReactionTitle').textContent=questions[selectedReaction]||`As obras que mais receberam “${selectedReaction}”`;
-    app.querySelector('#nx40ReactionRanking').innerHTML=ranking.length?`<div class="nx40-podium">${ranking.slice(0,3).map((m,i)=>poster(m,i,true)).join('')}</div><div class="nx40-ranking-list">${ranking.slice(1).map((m,i)=>`<div class="${i<2?'nx40-mobile-runner':''}">${miniMedia(m,i+1,ranking[0].count)}</div>`).join('')}</div>`:empty(overviewState==='loading'?'Carregando ranking...':'Ainda não há obras com essa reação.');
+    const root=app.querySelector('#nx40ReactionRanking'),loading=overviewState==='loading'&&!overview;
+    root.setAttribute('aria-busy',String(loading));
+    root.innerHTML=ranking.length?`<div class="nx40-podium">${ranking.slice(0,3).map((m,i)=>poster(m,i,true)).join('')}</div><div class="nx40-ranking-list">${ranking.slice(1).map((m,i)=>`<div class="${i<2?'nx40-mobile-runner':''}">${miniMedia(m,i+1,ranking[0].count)}</div>`).join('')}</div>`:loading?rankingSkeleton():empty('Ainda não há obras com essa reação.');
     window.injectIcons?.(app.querySelector('#nx40ReactionRanking'));
   }
   function renderMembers(){

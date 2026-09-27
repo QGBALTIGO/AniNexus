@@ -1,5 +1,7 @@
 /* AniNexus V44: persistent radio, global transparent header and account polish. */
 :root{--nx44-radio-accent:#ec3f63;--nx44-radio-accent-2:#a31335;--nx44-radio-gold:#e5bd5f}
+/* Keep the footer below the first viewport while route/auth data is loading. */
+#app{min-height:100vh;min-height:100svh}
 
 #topbar{
   position:fixed!important;
