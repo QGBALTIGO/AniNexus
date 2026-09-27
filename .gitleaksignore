@@ -1,0 +1,10 @@
+# Reviewed historical false positives only; new commits remain fully scanned.
+# Public Clerk publishable keys in browser fixtures, not server secrets.
+fdddcb027b998d94dd9f00e9494941528e0bf678:tests/e2e.spec.mjs:generic-api-key:78
+9360e2a64f33e085936e0008450bcd9b8c60ea31:tests/e2e.spec.mjs:generic-api-key:441
+# Explicit replace-me password in a historical .env.example template.
+01cff3f181426c47dfecfd3501df402cec81756b:.env.example:generic-api-key:3
+# localStorage key names, used by readJSON/writeJSON in the old public client.
+c99b697bc10fde194bff95c0d5bff202d49128e0:app.js:generic-api-key:13
+c99b697bc10fde194bff95c0d5bff202d49128e0:app.js:generic-api-key:14
+

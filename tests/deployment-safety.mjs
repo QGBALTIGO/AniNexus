@@ -10,6 +10,7 @@ test('scheduled news dispatches quality, never an unchecked deployment',()=>{
   assert.match(news,/push:\s*\n\s+branches: \[main\]/);
   assert.match(news,/actions\/checkout@v6\s*\n\s+with:\s*\n\s+ref: main/);
   assert.match(read('.github/workflows/quality.yml'),/on:\s*\n\s+workflow_dispatch:/);
+  assert.match(read('.github/workflows/quality.yml'),/cancel-in-progress: \$\{\{ github\.event_name == 'push' \}\}/);
   assert.match(read('.github/workflows/deploy-vps.yml'),/github\.event\.workflow_run\.conclusion == 'success'/);
 });
 

@@ -12,7 +12,9 @@ permissions:
 
 concurrency:
   group: quality-${{ github.ref }}
-  cancel-in-progress: true
+  # Feed dispatches are frequent. Queue the newest without cancelling a full QA
+  # run that is already validating the same runtime; code pushes can supersede it.
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 
 jobs:
   checks:
