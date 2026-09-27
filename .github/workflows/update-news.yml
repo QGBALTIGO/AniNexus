@@ -5,6 +5,7 @@ on:
   schedule:
     - cron: '7,22,37,52 * * * *'
   push:
+    branches: [main]
     paths:
       - 'scripts/update-news-v36.mjs'
       - 'lib/news-rich-v37.mjs'
@@ -40,6 +41,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
+          ref: main
           fetch-depth: 0
       - uses: pnpm/action-setup@v4
         with:
