@@ -9,6 +9,8 @@ body.nx35-home-active .nx35-home .nx35-hero-copy>p{max-width:52ch;font-size:15px
 .nx35-home .nx35-hero-actions a:focus-visible{outline:2px solid #f56582;outline-offset:4px}
 body.nx35-home-active .nx35-home .nx35-head p{font-size:13px;line-height:1.55}
 body.nx35-home-active .nx35-home .nx35-anime h3,body.nx35-home-active .nx35-home .nx35-reading h3{font-size:13px;line-height:1.4;min-height:2.8em}
+/* Reading metadata follows the actual title, without reserving an empty second line. */
+body.nx35-home-active .nx35-home .nx35-reading h3{min-height:0}
 @media(max-width:720px){
  body.nx35-home-active .nx35-home .nx35-hero h1{font-size:clamp(29px,8.5vw,42px);line-height:1.12;letter-spacing:-.045em}
  body.nx35-home-active .nx35-home .nx35-hero-copy>p{font-size:14px;max-width:38ch;margin-inline:auto}
