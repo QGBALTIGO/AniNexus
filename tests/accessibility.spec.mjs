@@ -105,8 +105,11 @@ test.beforeEach(async ({ page }) => {
 });
 test.afterEach(async ({ page }) => { await page.unrouteAll({ behavior: 'ignoreErrors' }); });
 
-for (const route of ['/', '/animes/catalogo', '/animes/onde-assistir', '/animes/dublados', '/animes/estudios', '/melhores-animes-para-assistir', '/animes-mais-assistidos', '/animes-mais-aguardados', '/listas-de-animes', '/mangas', '/animes/programacao', '/anime-awards', '/anime/anime-teste-101', '/comunidade', '/noticias', '/conquistas', '/u/accessibility', '/login', '/admin', '/quem-somos', '/termos-de-uso']) {
-  test(`WCAG AA sem falhas sérias em ${route}`, async ({ page }) => {
+const appearances=process.env.ANINEXUS_AUDIT_MATRIX==='1'?[{theme:'dark',width:390},{theme:'light',width:390},{theme:'light',width:1440}]:[{theme:'dark',width:1440}];
+for (const appearance of appearances) for (const route of ['/', '/animes/catalogo', '/animes/onde-assistir', '/animes/dublados', '/animes/estudios', '/melhores-animes-para-assistir', '/animes-mais-assistidos', '/animes-mais-aguardados', '/listas-de-animes', '/mangas', '/animes/programacao', '/animes/temporadas', '/anime-awards', '/anime/anime-teste-101', '/manga/manga-teste-101', '/comunidade', '/noticias', '/conquistas', '/u/accessibility', '/login', '/criar-conta', '/admin', '/quem-somos', '/colabore', '/contato', '/termos-de-uso', '/politica-de-privacidade', '/dmca']) {
+  test(`WCAG AA sem falhas sérias em ${route} ${appearance.theme} ${appearance.width}`, async ({ page }) => {
+    await page.setViewportSize({width:appearance.width,height:900});
+    await page.addInitScript(theme=>localStorage.setItem('aninexus:theme',theme),appearance.theme);
     if (route === '/u/accessibility') {
       test.slow();
       await page.route('**/runtime-config.js*', request => request.fulfill({
@@ -128,6 +131,7 @@ for (const route of ['/', '/animes/catalogo', '/animes/onde-assistir', '/animes/
       if (tab && tab !== 'overview') await page.locator(`[data-profile-tab="${tab}"]`).click();
       const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
       const blocking = results.violations.filter(item => ['serious', 'critical'].includes(item.impact));
+      if(blocking.length)await test.info().attach(`axe-${tab||'page'}`,{body:JSON.stringify(blocking,null,2),contentType:'application/json'});
       const summary = blocking.map(item => ({ id: item.id, nodes: item.nodes.map(node => node.target.join(' ')).slice(0, 30) }));
       expect(summary, `${tab || route}\n${blocking.map(item => `${item.id}: ${item.help} (${item.nodes.length})`).join('\n')}`).toEqual([]);
     }

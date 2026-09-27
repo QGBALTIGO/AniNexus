@@ -1,4 +1,10 @@
 /* AniNexus V14.0.1 — restrained institutional/legal layout */
+html[data-theme=light] .nx-legal :is(.nx-legal-intro strong,.nx-legal-note strong){color:#30232d}
+html[data-theme=light] .nx-legal :is(.nx-legal-updated,.nx-legal-tabs a,.nx-legal-note,.nx-legal-note>div>span,.nx-legal-side a){color:#66566c}
+html[data-theme=light] .nx-legal :is(.nx-legal-intro a,.nx-legal-section a,.nx-legal-contact a){color:#a51b42;border-bottom-color:#c7899b}
+html[data-theme=light] .nx-legal .nx-legal-overline{color:#a82043}
+html[data-theme=light] .nx-legal :is(.nx-legal-definition dt,.nx-legal-english>h2){color:var(--nx-ink,#30232d)}
+html[data-theme=light] .nx-legal :is(.nx-legal-definition dd,.nx-legal-form-head>p,.nx-legal-field label,.nx-legal-check span,.nx-legal-preview){color:var(--nx-muted,#665461)}
 body.nx-legal-active{background:#08060b;color:#f6f2f6}
 .nx-legal{--legal-line:rgba(255,255,255,.095);--legal-muted:#a89dab;--legal-soft:#110d13;--legal-accent:#ef3d5d;--legal-serif:'Source Serif 4',Georgia,'Times New Roman',serif;min-height:70vh;background:#08060b;color:#f6f2f6;font-family:'Nunito Sans',system-ui,sans-serif}
 .nx-legal *{box-sizing:border-box}.nx-legal a{color:inherit}.nx-legal-shell{width:min(1100px,calc(100% - 48px));margin-inline:auto}

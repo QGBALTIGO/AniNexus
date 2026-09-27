@@ -26,6 +26,7 @@
   let lastScrollY=Math.max(0,scrollY);
   let scrollRaf=0;
   let openModal=null;
+  let modalReturnFocus=null;
 
   const SVG={
     heart:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.7 8.7c0 5-8.7 10.1-8.7 10.1S3.3 13.7 3.3 8.7A4.6 4.6 0 0 1 12 6.2a4.6 4.6 0 0 1 8.7 2.5Z"/></svg>',
@@ -132,13 +133,13 @@
   const FIELDS=`id title{romaji english native userPreferred} coverImage{extraLarge large} genres episodes format seasonYear externalLinks{site url type icon color}`;
   async function fetchPage(page,start,end,signal){
     const query=`query($page:Int,$start:Int,$end:Int){Page(page:$page,perPage:50){pageInfo{hasNextPage}airingSchedules(airingAt_greater:$start,airingAt_lesser:$end,sort:TIME){airingAt episode media{${FIELDS}}}}}`;
-    const r=await fetch(API,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables:{page,start,end}}),signal});
-    if(!r.ok)throw new Error(`HTTP ${r.status}`);const j=await r.json();if(j.errors?.length)throw new Error(j.errors[0]?.message||'Falha ao carregar');
+    const {response:r,body:j}=await window.AniNexusRuntime.jsonRequest(API,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables:{page,start,end}}),signal},{timeout:8000});
+    if(!r.ok)throw new Error(`HTTP ${r.status}`);if(j.errors?.length)throw new Error(j.errors[0]?.message||'Falha ao carregar');
     return{items:j?.data?.Page?.airingSchedules||[],next:!!j?.data?.Page?.pageInfo?.hasNextPage};
   }
   async function fetchServer(start,end,signal){
     if(IS_PAGES)return null;
-    try{const r=await fetch(`/api/schedule?start=${start}&end=${end}`,{signal,headers:{accept:'application/json'}});if(!r.ok)return null;const d=await r.json();return Array.isArray(d)?d:null}catch{return null}
+    try{const {response:r,body:d}=await window.AniNexusRuntime.jsonRequest(`/api/schedule?start=${start}&end=${end}`,{signal,headers:{accept:'application/json'}},{timeout:8000});if(!r.ok)return null;return Array.isArray(d)?d:null}catch(error){if(signal?.aborted)throw error;return null}
   }
 
   function providerKey(link){
@@ -244,16 +245,39 @@
   }
 
   function closeAnyModal(){
-    openModal?.remove();openModal=null;document.body.classList.remove('modal-open');
+    const opener=modalReturnFocus;
+    openModal?.remove();openModal=null;modalReturnFocus=null;document.body.classList.remove('modal-open');
+    if(opener?.isConnected&&opener.getClientRects().length)opener.focus({preventScroll:true});
   }
-  function providerModal(){
+  function prepareDialog(modal,opener){
+    modalReturnFocus=opener;
+    const panel=modal.querySelector('.nx18-provider-modal,.nx18-tracker'),heading=panel?.querySelector('h2');
+    if(!panel)return;
+    panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.tabIndex=-1;
+    if(heading){heading.id='nx18DialogTitle';panel.setAttribute('aria-labelledby',heading.id)}
+    modal.querySelector('.nx18-modal-backdrop')?.setAttribute('tabindex','-1');
+    modal.addEventListener('keydown',event=>{
+      if(event.key==='Escape'){event.preventDefault();event.stopPropagation();closeAnyModal();return}
+      if(event.key!=='Tab')return;
+      const current=modal.querySelector('[role=dialog]');
+      const controls=[...current.querySelectorAll('button:not(:disabled),a[href],input:not(:disabled),select:not(:disabled),textarea:not(:disabled),[tabindex="0"]')].filter(el=>el.getClientRects().length);
+      if(!controls.length){event.preventDefault();current.focus();return}
+      const first=controls[0],last=controls.at(-1);
+      if(event.shiftKey&&(document.activeElement===first||!controls.includes(document.activeElement))){event.preventDefault();last.focus()}
+      else if(!event.shiftKey&&(document.activeElement===last||!controls.includes(document.activeElement))){event.preventDefault();first.focus()}
+    });
+    panel.querySelector('[data-close]')?.focus({preventScroll:true});
+  }
+  function providerModal(event){
+    const opener=event?.currentTarget||document.activeElement;
     closeAnyModal();const ps=providers();const modal=document.createElement('div');modal.className='nx18-modal';
     modal.innerHTML=`<button class="nx18-modal-backdrop" data-close aria-label="Fechar"></button><div class="nx18-provider-modal"><button class="nx18-modal-x" data-close aria-label="Fechar">${SVG.close}</button><h2>Onde assistir</h2><p>Pesquise os animes da semana pelas plataformas de streaming. Selecione uma ou mais para filtrar a programação.</p><div class="nx18-provider-list">${ps.map(p=>`<button type="button" class="nx18-provider ${selectedProviders.has(p.key)?'active':''}" data-provider="${esc(p.key)}">${providerIcon(p.link,'filter')}<span>${esc(p.label)}</span></button>`).join('')||'<span class="nx18-no-providers">Nenhuma plataforma identificada nesta programação.</span>'}</div><div class="nx18-modal-actions"><button type="button" class="clear" data-clear>Limpar</button><button type="button" class="apply" data-apply>Aplicar</button></div></div>`;
     document.body.append(modal);document.body.classList.add('modal-open');openModal=modal;
+    prepareDialog(modal,opener);
     const draft=new Set(selectedProviders);
-    modal.querySelectorAll('[data-provider]').forEach(b=>b.onclick=()=>{const k=b.dataset.provider;draft.has(k)?draft.delete(k):draft.add(k);b.classList.toggle('active',draft.has(k))});
+    modal.querySelectorAll('[data-provider]').forEach(b=>{b.setAttribute('aria-pressed',String(draft.has(b.dataset.provider)));b.onclick=()=>{const k=b.dataset.provider;draft.has(k)?draft.delete(k):draft.add(k);b.classList.toggle('active',draft.has(k));b.setAttribute('aria-pressed',String(draft.has(k)))}});
     const close=()=>closeAnyModal();modal.querySelectorAll('[data-close]').forEach(b=>b.onclick=close);
-    modal.querySelector('[data-clear]').onclick=()=>{draft.clear();modal.querySelectorAll('[data-provider]').forEach(b=>b.classList.remove('active'))};
+    modal.querySelector('[data-clear]').onclick=()=>{draft.clear();modal.querySelectorAll('[data-provider]').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false')})};
     modal.querySelector('[data-apply]').onclick=()=>{selectedProviders=draft;close();renderData()};
   }
 
@@ -334,7 +358,7 @@
       const first=await fetchPage(1,r.start,r.end,controller.signal);items=merge(cached?.items||[],first.items);writeCache(items);renderData();startTimer();rebuildIsland();
       let page=2,next=first.next;
       while(next&&page<=MAX_PAGES){const d=await fetchPage(page,r.start,r.end,controller.signal);items=merge(items,d.items);writeCache(items);renderData();next=d.next;page++}
-    }catch(err){if(err?.name==='AbortError')return;if(!items.length){const root=document.querySelector('#nx18Root');if(root)root.innerHTML='<div class="nx18-empty">Não foi possível carregar a programação agora. Tente novamente em instantes.</div>'}}
+    }catch(err){if(err?.name==='AbortError')return;if(!items.length){const root=document.querySelector('#nx18Root');if(root){root.innerHTML='<div class="nx18-empty"><p>Não foi possível carregar a programação agora.</p><button type="button" data-schedule-retry>Tentar novamente</button></div>';root.querySelector('[data-schedule-retry]')?.addEventListener('click',()=>{root.innerHTML='<div class="nx18-empty" role="status">Carregando programação…</div>';load()},{once:true})}}}
   }
 
   function cleanup(){

@@ -48,18 +48,17 @@
   };
   const publicRequest = async path => {
     if (window.AniNexusAuth?.enabled) return window.AniNexusAuth.publicApi(path);
-    const response = await fetch(path, { headers: { accept: 'application/json' }, cache: 'no-store', credentials: 'same-origin' });
+    const { response, body } = await window.AniNexusRuntime.jsonRequest(path, { headers: { accept: 'application/json' }, cache: 'no-store', credentials: 'same-origin' }, { timeout: 12000, label: 'Conquistas' });
     if (!response.ok) throw Object.assign(new Error(`HTTP_${response.status}`), { status: response.status });
-    return response.json();
+    return body;
   };
   const privateRequest = async (path, options = {}) => {
     if (window.AniNexusAuth?.enabled) return window.AniNexusAuth.api(path, options);
-    const response = await fetch(path, {
+    const { response, body } = await window.AniNexusRuntime.jsonRequest(path, {
       ...options, cache: 'no-store', credentials: 'same-origin',
       headers: { accept: 'application/json', ...(options.body ? { 'content-type': 'application/json' } : {}), ...(options.headers || {}) },
-    });
-    let body = {}; try { body = await response.json(); } catch {}
-    if (!response.ok) throw Object.assign(new Error(body.error || `HTTP_${response.status}`), { status: response.status, code: body.error });
+    }, { timeout: 12000, label: 'Suas conquistas' });
+    if (!response.ok) throw Object.assign(new Error(body?.error || `HTTP_${response.status}`), { status: response.status, code: body?.error });
     return body;
   };
   const relative = value => {
@@ -270,11 +269,11 @@
       document.documentElement.classList.add('nx48-achievements-boot');
       document.body.classList.add('nx48-achievements-active');
       app.innerHTML = '<main class="nx48-achievements-page"><div class="nx48-shell"><div class="nx48-loading"><i></i><span>Organizando suas conquistas…</span></div></div></main>';
-      let catalog = [];
-      try { catalog = (await publicRequest('/api/achievements/catalog')).items || []; } catch {}
-      let data = null;
-      try { data = await privateRequest('/api/me/achievements'); }
-      catch (error) { if (error.status !== 401 && error.status !== 503) console.warn('[AniNexus achievements]', error); }
+      const [catalogResult, accountResult] = await Promise.allSettled([
+        publicRequest('/api/achievements/catalog'), privateRequest('/api/me/achievements'),
+      ]);
+      const catalog = catalogResult.status === 'fulfilled' && Array.isArray(catalogResult.value?.items) ? catalogResult.value.items : [];
+      const data = accountResult.status === 'fulfilled' && Array.isArray(accountResult.value?.items) ? accountResult.value : null;
       if (token !== state.renderToken || route() !== PAGE_ROUTE) return;
       if (!data && !catalog.length) {
         app.innerHTML = `<main class="nx48-achievements-page"><div class="nx48-shell"><div class="nx48-unavailable"><h1>Conquistas indisponíveis agora</h1><p>Não foi possível consultar a coleção. Tente novamente em instantes.</p><button type="button" data-achievement-retry>Tentar novamente</button></div></div></main>`;

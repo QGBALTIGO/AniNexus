@@ -207,6 +207,25 @@ jobs:
       - name: Show static server log on failure
         if: failure()
         run: cat /tmp/aninexus-http.log || true
+      - name: Audit regressions — production routes, faults and all viewport boundaries
+        env:
+          ANINEXUS_E2E_ORIGIN: http://127.0.0.1:4174/
+          PORT: 4174
+          BROWSER_PROJECT: ${{ matrix.project }}
+        run: |
+          node scripts/audit-preview.mjs > /tmp/aninexus-audit-http.log 2>&1 &
+          AUDIT_PID=$!
+          trap 'kill $AUDIT_PID 2>/dev/null || true' EXIT
+          for i in {1..20}; do
+            if curl --noproxy '*' -fsS http://127.0.0.1:4174/ >/dev/null; then break; fi
+            if [ "$i" = "20" ]; then cat /tmp/aninexus-audit-http.log; exit 1; fi
+            sleep 1
+          done
+          pnpm exec playwright test tests/total-audit.spec.mjs tests/audit-forms.spec.mjs tests/audit-content-states.spec.mjs \
+            --project="$BROWSER_PROJECT" --reporter=line --timeout=60000
+      - name: Show audit server log on failure
+        if: failure()
+        run: cat /tmp/aninexus-audit-http.log || true
       - name: Preserve browser failure evidence
         if: failure()
         uses: actions/upload-artifact@v4

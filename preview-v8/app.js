@@ -115,15 +115,14 @@
         const wait = Math.max(0, 230 - (Date.now()-lastRequestAt));
         if(wait) await sleep(wait);
         lastRequestAt = Date.now();
-        const res = await fetch(ENDPOINT,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables}),signal,...(force?{cache:'reload'}:{})});
+        const {response:res,body:json} = await window.AniNexusRuntime.jsonRequest(ENDPOINT,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables}),signal,...(force?{cache:'reload'}:{})},{timeout:10000});
         if(res.status===429 || res.status>=500){ throw Object.assign(new Error(`HTTP ${res.status}`),{retryable:true}); }
         if(!res.ok) throw new Error(`HTTP ${res.status}`);
-        const json = await res.json();
         if(json.errors?.length) throw new Error(json.errors[0]?.message || 'Falha ao consultar catálogo');
         return json.data;
       }catch(err){
         lastErr = err;
-        if(err?.name==='AbortError') throw err;
+        if(err?.name==='AbortError'||err?.name==='TimeoutError') throw err;
         if(attempt<retries-1) await sleep(550*(2**attempt)+Math.floor(Math.random()*180));
       }
     }
@@ -248,7 +247,7 @@
     const sequels=all.filter(isContinuation).length;
     const premieres=Math.max(0,all.length-sequels);
     const tags=tagRows(all), types=typeRows(all), shown=filteredItems(all);
-    root.innerHTML=`<section class="nx-season" data-season="${sel.season}">
+    root.innerHTML=`<main class="nx-season" data-season="${sel.season}">
       <div class="nx-season-hero"><div class="nx-season-shell">
         <div class="nx-season-title"><span class="nx-season-icon">${ICON[meta.icon]}</span><div><h1>${meta.name} <em>${sel.year}</em></h1><p>TEMPORADA DE ANIMES</p></div></div>
         <div class="nx-season-stats" role="group" aria-label="Números da temporada" aria-busy="${loading||!!data?.refreshing}"><div><strong>${loading?'—':all.length}</strong><span>ANIMES</span></div><div><strong>${loading?'—':premieres}</strong><span>ESTREIAS</span></div><div><strong>${loading?'—':sequels}</strong><span>SEQUÊNCIAS</span></div></div>
@@ -257,7 +256,7 @@
       <div class="nx-season-shell nx-season-content">
         ${loading?`<div class="nx-season-grid nx-skeleton">${Array.from({length:10},()=>'<article><span></span><i></i></article>').join('')}</div>`:error?`<div class="nx-season-error"><strong>Não foi possível atualizar esta temporada.</strong><span>${esc(error)}</span><button type="button" data-nx-retry>Tentar novamente</button></div>`:`<div class="nx-season-grid">${shown.map(card).join('')||'<div class="nx-season-empty">Nenhum título encontrado neste filtro.</div>'}</div>${data?.partial?`<div class="nx-season-load-status" role="status"><span>${data.refreshing?'Carregando os próximos animes...':'Alguns títulos ainda não puderam ser carregados.'}</span>${data.refreshing?'':'<button type="button" data-nx-retry>Carregar restantes</button>'}</div>`:''}<div id="nxStillAiring"></div>`}
       </div>
-    </section>`;
+    </main>`;
     document.title=`${meta.name} ${sel.year} | AniNexus`;
     bindSeason(sel,tags,types);
     bindBrokenImages();
@@ -494,7 +493,7 @@
       }
     }
     const generic=e.target.closest('[data-open]');
-    if(generic&&!e.target.closest('[data-list],[data-fav],button,a')){
+    if(generic&&String(generic.dataset.type||'anime').toLowerCase()==='anime'&&!e.target.closest('[data-list],[data-fav],button,a')){
       const id=Number(generic.dataset.open);if(Number.isFinite(id)){e.preventDefault();e.stopImmediatePropagation();setRoute(`/anime/titulo-${id}`);renderAnimeDetail(id);}
     }
   },true);

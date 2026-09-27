@@ -169,6 +169,8 @@ body.nx40-scrolled .nx40-guide{opacity:1;visibility:visible;transform:none}
 body.nx40-scroll-down .nx40-guide{top:0}
 .nx40-sr{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 html[data-theme=light] body.nx40-community-active{background:#f6f3f4!important;color:#2d2027}
+html[data-theme=light] #nx40OverviewNotice p{color:var(--nx-muted,#665461)}
+html[data-theme=light] #nx40OverviewNotice button{color:var(--nx-link,#a51b42)}
 html[data-theme=light] .nx40-community{--line:#49313e21;--muted:#74616f;--soft:#55414f;--community-surface:#fff;--community-border:#ddcbd2;--community-fill:linear-gradient(130deg,#fff7f9,#fff 85%);--community-shadow:0 6px 24px #53323b08;color:#2d2027}
 html[data-theme=light] .nx40-community .nx40-hero{background:linear-gradient(115deg,#fffafb,#f3e8ed 65%,#faf6f8);border-color:#bf536a30}
 html[data-theme=light] .nx40-community :is(.nx40-hero h1,.nx40-section h2,.nx40-stat b,.nx40-poster-title,.nx40-mini-media strong,.nx40-studios strong,.nx40-actor b,.nx40-thread-title){color:#30212c}

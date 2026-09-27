@@ -145,7 +145,12 @@ html[data-theme=light] body.nx47-discovery-active .site-footer{background:#fffaf
 html[data-theme=light] .nx47-chrome{background:linear-gradient(112deg,#fffafb,#f8f1f4 58%,#fffafb)}
 html[data-theme=light] .nx47-chrome:before{background:linear-gradient(110deg,rgba(226,45,82,.055),transparent 44%,rgba(73,39,54,.025))}
 html[data-theme=light] .nx47-title-row h1,html[data-theme=light] :is(.nx47-section-head,.nx47-results-head) h2,html[data-theme=light] .nx47-media-card h3,html[data-theme=light] .nx47-provider-copy strong,html[data-theme=light] .nx47-empty strong{color:#302229}
-html[data-theme=light] .nx47-provider-logo{background:#f8f3f5;border-color:rgba(58,31,43,.1)}
+/* White brand artwork retains its dark tile in both themes. */
+html[data-theme=light] .nx47-provider-logo{background:#151116;border-color:rgba(58,31,43,.1)}
+html[data-theme=light] :is(.nx47-section-head small,.nx47-results-head small,.nx47-studio-head small,.nx47-results-head>a,.nx47-empty a,.nx47-empty button,.nx47-studio-more button){color:var(--nx-link,#a51b42)}
+html[data-theme=light] :is(.nx47-section-head>span,.nx47-dubbed-meta,.nx47-empty p,.nx47-provider-copy small,.nx47-media-card>p,.nx47-pagination span,.nx47-studio-head p){color:var(--nx-muted,#665461)}
+html[data-theme=light] :is(.nx47-search input,.nx47-pagination strong){color:var(--nx-ink,#30232d)}
+html[data-theme=light] .nx47-search input::placeholder{color:var(--nx-muted,#665461)}
 html[data-theme=light] .nx47-island{background:rgba(255,250,251,.98);box-shadow:0 13px 34px rgba(67,34,48,.09)}
 html[data-theme=light] .nx47-island-head,html[data-theme=light] .nx47-island-copy strong{color:#302229}
 html[data-theme=light] .nx47-island-arrow{border-color:rgba(58,31,43,.13);background:rgba(58,31,43,.035);color:#6e6066}

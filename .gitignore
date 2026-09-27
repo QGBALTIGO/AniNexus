@@ -4,6 +4,7 @@ node_modules/
 !.env.example
 playwright-report/
 test-results/
+audit-artifacts/
 public/assets/
 public/data/
 public/preview-v*/

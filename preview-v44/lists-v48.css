@@ -74,6 +74,9 @@ html[data-theme=light] body.nx48-lists-active{--nx48-bg:#fffafb;--nx48-panel:#ff
 html[data-theme=light] .nx48-list-chrome{background:linear-gradient(112deg,#fffafb,#f8f1f4 58%,#fffafb)}
 html[data-theme=light] .nx48-list-title-row h1,html[data-theme=light] .nx48-list-media h3,html[data-theme=light] .nx48-list-group h2,html[data-theme=light] .nx48-list-card strong,html[data-theme=light] .nx48-list-empty strong{color:#302229}
 html[data-theme=light] .nx48-list-nav-band{border-color:rgba(58,31,43,.08);background:rgba(255,255,255,.25)}
+html[data-theme=light] :is(.nx48-list-group>header small,.nx48-list-card small,.nx48-list-empty button){color:var(--nx-link,#a51b42)}
+html[data-theme=light] :is(.nx48-list-card p,.nx48-list-status,.nx48-list-media>p,.nx48-list-pagination span,.nx48-list-empty p){color:var(--nx-muted,#665461)}
+html[data-theme=light] .nx48-list-pagination strong{color:var(--nx-ink,#30232d)}
 html[data-theme=light] .nx48-list-tabs a.active{background:#f9e7ec;color:#d9234d}
 html[data-theme=light] .nx48-list-island{background:rgba(255,250,251,.98);box-shadow:0 13px 34px rgba(67,34,48,.09)}
 html[data-theme=light] .nx48-list-island-head,html[data-theme=light] .nx48-list-island-copy strong{color:#302229}

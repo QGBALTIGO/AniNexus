@@ -30,6 +30,7 @@ button{transition-timing-function:var(--ease)}
 
 html[data-theme='light'] .topbar{background:rgba(255,255,255,.94)}
 html[data-theme='light'] .drawer-panel{background:linear-gradient(165deg,#fff,#f8f4f5)}
+html[data-theme='light']{--nx-surface:#fff;--nx-surface-2:#f3eef1;--nx-border:#dacfd6;--nx-muted:#665461;--nx-ink:#30232d;--nx-link:#a51b42}
 
 @media(max-width:720px){
   .topbar .brand{gap:7px}.topbar .brand img{width:36px;height:36px}.topbar .brand span{font-size:20px}

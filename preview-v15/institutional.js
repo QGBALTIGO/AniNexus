@@ -102,14 +102,17 @@
   function bindForm(){
     const form=document.querySelector('#nxContactForm');if(!form)return;
     form.addEventListener('submit',async e=>{
-      e.preventDefault();const status=document.querySelector('#nxContactStatus');if(!form.reportValidity())return;
+      e.preventDefault();const status=form.querySelector('#nxContactStatus');if(form.querySelector('button[type="submit"]').disabled||!form.reportValidity())return;
       const fd=new FormData(form);if(String(fd.get('website')||'')){status.textContent='Mensagem recebida.';form.reset();return;}
       const name=String(fd.get('name')||'').trim(),email=String(fd.get('email')||'').trim(),category=String(fd.get('category')||'').trim(),message=String(fd.get('message')||'').trim();
       const payload={name,email,subject:`${category} — AniNexus`,message};const btn=form.querySelector('button[type="submit"]');btn.disabled=true;status.className='nx-contact-status';status.textContent=IS_PAGES?'Preparando e-mail…':'Enviando…';
+      form.setAttribute('aria-busy','true');
+      const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12000);
+      let failure='Não foi possível confirmar o envio. Seus dados foram mantidos. Se o problema continuar, fale conosco pelo e-mail desta página.';
       try{
         if(IS_PAGES){const body=`Nome: ${name}\nE-mail: ${email}\nAssunto: ${category}\n\n${message}`;location.href=`mailto:${CONTACT}?subject=${encodeURIComponent(payload.subject)}&body=${encodeURIComponent(body)}`;status.className='nx-contact-status ok';status.textContent='Mensagem preparada no seu aplicativo de e-mail.';}
-        else{const r=await fetch('/api/contact',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify(payload)});if(!r.ok)throw new Error(r.status===429?'Muitas tentativas. Aguarde um pouco e tente novamente.':'Não foi possível enviar agora.');form.reset();status.className='nx-contact-status ok';status.textContent='Mensagem recebida. Obrigado por falar com o AniNexus.';}
-      }catch(err){status.className='nx-contact-status err';status.textContent=err?.message||'Não foi possível enviar agora.'}finally{btn.disabled=false;}
+        else{const r=await fetch('/api/contact',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify(payload),signal:controller.signal});if(!r.ok){if(r.status===429)failure='Muitas tentativas. Aguarde um pouco e tente novamente.';throw new Error('SEND_FAILED')}form.reset();status.className='nx-contact-status ok';status.textContent='Mensagem recebida. Obrigado por falar com o AniNexus.';}
+      }catch{status.className='nx-contact-status err';status.textContent=failure}finally{clearTimeout(timer);btn.disabled=false;form.removeAttribute('aria-busy');}
     });
   }
   function replaceFooterSocials(){

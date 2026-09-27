@@ -643,6 +643,9 @@ html[data-theme="light"] .nx45-award-card:hover,html[data-theme="light"] .nx45-a
 html[data-theme="light"] .nx45-award-card-copy strong,html[data-theme="light"] .nx45-award-related-item>i strong{color:#2d2026}
 html[data-theme="light"] .nx45-awards-island{background:rgba(255,250,251,.98);border-color:rgba(217,45,81,.15);box-shadow:0 13px 34px rgba(67,34,48,.09)}
 html[data-theme="light"] .nx45-awards-island-head,html[data-theme="light"] .nx45-awards-island-copy strong{color:#2d2026}
+html[data-theme=light] :is(.nx45-awards-stage-head small,.nx45-awards-gallery-head small,.nx45-award-card-copy small,.nx45-award-related>header small,.nx45-award-related-item>i small,.nx45-awards-source a,.nx45-award-feature-copy>p){color:var(--nx-link,#a51b42)}
+html[data-theme=light] :is([data-nx45-stage-index],[data-nx45-count],.nx45-award-card-copy>span,.nx45-awards-source,.nx45-awards-error p){color:var(--nx-muted,#665461)}
+html[data-theme=light] .nx45-award-related>header strong{color:var(--nx-ink,#30232d)}
 
 @media(max-width:1120px){
   .nx45-awards-grid{grid-template-columns:repeat(3,minmax(0,1fr))}

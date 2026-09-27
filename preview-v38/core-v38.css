@@ -1,6 +1,8 @@
 /* AniNexus V38 — global stability/accessibility layer.
    Media list/favorite visuals are intentionally owned only by preview-v39/media-actions-v39.css. */
-html{scrollbar-gutter:stable;text-size-adjust:100%;-webkit-text-size-adjust:100%}
+/* Focus/history scrolling must finish synchronously. Components opt into smooth
+   motion explicitly; a global smooth scroll can move controls during a click. */
+html{scrollbar-gutter:stable;text-size-adjust:100%;-webkit-text-size-adjust:100%;scroll-behavior:auto}
 body{overflow-x:clip;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
 #app{min-width:0;overflow-x:clip}
 img{max-width:100%}
@@ -9,7 +11,10 @@ button,a,[role=button]{-webkit-tap-highlight-color:transparent}
 :where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:2px solid rgba(239,69,103,.9);outline-offset:3px}
 :where(.nx24-rail,.aqx-rail,.nx35-news-side,.nx35-related .nx35-news-grid,[data-scroll-rail]){overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
 .nx38-img-error{visibility:hidden!important}
-.nx38-media-fallback{position:relative!important;background:radial-gradient(circle at 50% 42%,rgba(227,38,79,.10),transparent 35%),linear-gradient(145deg,#130d11,#0b080a)!important}
+/* Supply a containing block only when the component has no positioning rule.
+   Absolute hero artwork must stay out of document flow after an image failure. */
+:where(.nx38-media-fallback){position:relative}
+.nx38-media-fallback{background:radial-gradient(circle at 50% 42%,rgba(227,38,79,.10),transparent 35%),linear-gradient(145deg,#130d11,#0b080a)!important}
 .nx38-media-fallback:after{content:'ANINEXUS';position:absolute;inset:auto 10px 10px;z-index:2;color:#695c63;font-size:7px;font-weight:900;letter-spacing:.12em;text-align:center;pointer-events:none}
 html.nx38-offline body:after{content:'Você está offline';position:fixed;z-index:9999;left:50%;bottom:14px;transform:translateX(-50%);padding:7px 11px;border:1px solid rgba(255,255,255,.10);border-radius:999px;background:rgba(10,7,9,.94);color:#cbbfc5;font-size:8px;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.3)}
 
@@ -194,3 +199,7 @@ html[data-theme='light'] .drawer-panel .drawer-nav-grid>a small{color:#8b7b82}
   .nx38-account-chip span{display:none}
 }
 @media(max-width:360px){html:not([data-nx-auth-state="authenticated"]) .top-actions>.login-btn:not([hidden]){min-width:64px;padding-inline:10px}}
+/* One footer palette regardless of which page owned the previous render. */
+html[data-theme=light] body .site-footer{background:#f1edf3!important;color:#30232d;border-color:#d5cbd2}
+html[data-theme=light] body .site-footer :is(.brand,.footer-col h3){color:#30232d}
+html[data-theme=light] body .site-footer :is(.footer-about p,.footer-col a,.footer-note){color:#665461}

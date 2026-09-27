@@ -5,10 +5,10 @@ import {runInNewContext} from 'node:vm';
 
 const source=readFileSync(new URL('../preview-v40/activity-v40.js',import.meta.url),'utf8');
 function activity(){
-  const storage=new Map(),window={},listeners=new Map();
-  runInNewContext(source,{window,localStorage:{getItem:key=>storage.get(key),setItem:(key,value)=>storage.set(key,value)},document:{readyState:'loading',querySelector:()=>null,addEventListener:(name,fn)=>listeners.set(name,fn)},addEventListener:()=>{},dispatchEvent:()=>{},CustomEvent:class{},fetch:async()=>({ok:false})});
+  const storage=new Map(),window={},listeners=new Map(),calls={fetch:0,events:0,writes:0};
+  runInNewContext(source,{window,localStorage:{getItem:key=>storage.get(key),setItem:(key,value)=>{calls.writes++;storage.set(key,value)}},document:{readyState:'loading',querySelector:()=>null,addEventListener:(name,fn)=>listeners.set(name,fn)},addEventListener:()=>{},dispatchEvent:()=>{calls.events++},CustomEvent:class{},fetch:async()=>{calls.fetch++;return{ok:false}}});
   const api=window.AniNexusCommunityActivity;
-  return{api,listeners,plain:rows=>JSON.parse(JSON.stringify(rows))};
+  return{api,listeners,storage,calls,plain:rows=>JSON.parse(JSON.stringify(rows))};
 }
 const entry={kind:'state',media_id:101,username:'alice',status:'CURRENT',created_at:'2026-09-05T12:00:00Z'};
 
@@ -41,4 +41,19 @@ test('identical local saves coalesce but a changed secondary reaction remains an
   assert.equal(api.local().length,1);
   api.record(101,{...state,reactions:['Amei','Chorei']},now+200);
   assert.equal(api.local().length,2);
+});
+
+test('large-library bootstrap is bounded, newest-first, idempotent and makes no detail requests',()=>{
+  const {api,storage,calls}=activity(),now=Date.now();
+  for(const [key,offset] of [['aninexus:mediaState:v2',0],['aninexus:mangaState:v2',1000]]){
+    storage.set(key,JSON.stringify(Object.fromEntries(Array.from({length:1000},(_,index)=>[index+1,{status:'CURRENT',progress:1,updatedAt:now-(index+offset)*1000}]))));
+  }
+  api.seed();
+  assert.equal(api.local(80).length,80);
+  assert.deepEqual([...api.local(80)].map(row=>row.media_id),Array.from({length:80},(_,i)=>i+1));
+  assert.equal(calls.fetch,0);assert.equal(calls.events,1);assert.equal(calls.writes,1);
+  api.seed();
+  assert.equal(calls.fetch,0);assert.equal(calls.events,1);assert.equal(calls.writes,1);
+  api.record(2001,{status:'CURRENT',progress:2},now+1000);
+  assert.equal(calls.fetch,1);
 });

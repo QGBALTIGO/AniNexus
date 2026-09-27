@@ -35,7 +35,7 @@
   function cacheSet(items){try{sessionStorage.setItem(CACHE_KEY,JSON.stringify({at:Date.now(),items}))}catch{}}
   function valid(x){return x.title&&x.summary&&likelyPt(x)&&(!x.expiresAt||new Date(x.expiresAt)>new Date())&&!/all the news and reviews|interest fool night|news and interest|weekly roundup|live blog/i.test(`${x.title} ${x.summary}`)}
   async function hydrateImages(items){return items.map(item=>({...item,image:imageCandidates(item)[0]||''}))}
-  async function boundedJson(url,timeoutMs=5500){const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),timeoutMs);try{const r=await fetch(url,{cache:'no-store',headers:{accept:'application/json'},signal:controller.signal});if(!r.ok)return null;return await r.json()}catch{return null}finally{clearTimeout(timeout)}}
+  async function boundedJson(url,timeoutMs=5500){try{const {response,body}=await window.AniNexusRuntime.jsonRequest(url,{cache:'no-store',headers:{accept:'application/json'}},{timeout:timeoutMs});return response.ok?body:null}catch{return null}}
   async function readStatic(path){const j=await boundedJson(`${BASE}/${path}?v=${BUILD}`);return(j?.items||[]).map(normalize).filter(valid)}
   async function serverFeed(){if(IS_PAGES)return[];const j=await boundedJson('/api/news?limit=60',4500);return(j?.items||[]).map(normalize).filter(valid)}
   async function staticFeed(){const [main,seed]=await Promise.all([readStatic('data/news.json'),readStatic('data/news-v36-seed.json')]),map=new Map();for(const x of [...seed,...main]){const key=storyKey(x);map.set(key,richer(map.get(key),x))}return[...map.values()].slice(0,60)}

@@ -74,11 +74,45 @@
     if(!LEGAL.has(path)){document.body.classList.remove('nx-legal-active');return false}
     document.body.classList.remove('nx-season-active','nx-detail-active','nx-dmca-active');document.body.classList.add('nx-legal-active');
     app.innerHTML=path==='/termos-de-uso'?terms():path==='/politica-de-privacidade'?privacy():dmca();
+    const root=app.querySelector(':scope>.nx-legal');
+    if(root&&root.tagName!=='MAIN'){
+      const main=document.createElement('main');main.className=root.className;
+      main.append(...root.childNodes);root.replaceWith(main);
+    }
     document.title=(path==='/termos-de-uso'?'Termos de Serviço':path==='/politica-de-privacidade'?'Política de Privacidade':'DMCA')+' | AniNexus';
+    for(const field of app.querySelectorAll('.nx-legal-field')){
+      const control=field.querySelector('input,textarea,select'),label=field.querySelector('label');
+      if(control&&label){control.id=`nxLegal-${control.name}`;label.htmlFor=control.id}
+    }
+    const formIntro=app.querySelector('.nx-legal-form-head p');
+    if(formIntro)formIntro.textContent='Identifique a obra, informe a página do AniNexus e descreva a solicitação. Nossa equipe analisará as informações enviadas.';
+    const mailNotice=app.querySelector('.nx-legal-preview');
+    if(mailNotice)mailNotice.textContent='O botão prepara a notificação no seu aplicativo de e-mail. Revise os dados e confirme o envio por lá.';
     bindDmca(); window.scrollTo({top:0,behavior:'instant'}); return true;
   }
   function mailBody(d){return `DMCA - AniNexus\n\nNome: ${d.requesterName}\nE-mail: ${d.requesterEmail}\nTitular dos direitos: ${d.rightsHolder}\nURL: ${d.contentUrl}\nAssinatura: ${d.signature}\n\nDescrição:\n${d.description}\n\nBoa-fé: SIM\nVeracidade e autorização: SIM`}
-  function bindDmca(){const form=document.querySelector('#nxLegalDmca');if(!form)return;form.addEventListener('submit',async e=>{e.preventDefault();if(!form.reportValidity())return;const fd=new FormData(form),status=document.querySelector('#nxLegalStatus');const payload={requesterName:String(fd.get('requesterName')||'').trim(),requesterEmail:String(fd.get('requesterEmail')||'').trim(),rightsHolder:String(fd.get('rightsHolder')||'').trim(),contentUrl:String(fd.get('contentUrl')||'').trim(),description:String(fd.get('description')||'').trim(),goodFaith:fd.get('goodFaith')==='on',signature:String(fd.get('signature')||'').trim()};if(fd.get('accuracy')!=='on'||!payload.goodFaith){status.className='nx-legal-status err';status.textContent='Confirme as declarações antes de continuar.';return}const btn=form.querySelector('.nx-legal-submit');btn.disabled=true;status.className='nx-legal-status';status.textContent=IS_PAGES?'Preparando e-mail…':'Enviando…';try{if(IS_PAGES){location.href=`mailto:${CONTACT}?subject=${encodeURIComponent('DMCA - AniNexus')}&body=${encodeURIComponent(mailBody(payload))}`;status.className='nx-legal-status ok';status.textContent='Notificação preparada no seu aplicativo de e-mail.'}else{const r=await fetch('/api/dmca',{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},credentials:'same-origin',body:JSON.stringify(payload)});if(!r.ok)throw new Error(r.status===429?'Muitas tentativas. Aguarde antes de reenviar.':'Não foi possível registrar a notificação.');form.reset();status.className='nx-legal-status ok';status.textContent='Notificação registrada para análise.'}}catch(err){status.className='nx-legal-status err';status.textContent=err?.message||'Falha no envio. Utilize o e-mail informado nesta página.'}finally{btn.disabled=false}})}
+  function bindDmca(){
+    const form=document.querySelector('#nxLegalDmca');if(!form)return;
+    form.addEventListener('submit',async event=>{
+      event.preventDefault();const btn=form.querySelector('.nx-legal-submit');
+      if(btn.disabled||!form.reportValidity())return;
+      const fd=new FormData(form),status=form.querySelector('#nxLegalStatus');
+      const payload={requesterName:String(fd.get('requesterName')||'').trim(),requesterEmail:String(fd.get('requesterEmail')||'').trim(),rightsHolder:String(fd.get('rightsHolder')||'').trim(),contentUrl:String(fd.get('contentUrl')||'').trim(),description:String(fd.get('description')||'').trim(),goodFaith:fd.get('goodFaith')==='on',signature:String(fd.get('signature')||'').trim()};
+      if(fd.get('accuracy')!=='on'||!payload.goodFaith){status.className='nx-legal-status err';status.textContent='Confirme as declarações antes de continuar.';return}
+      btn.disabled=true;form.setAttribute('aria-busy','true');status.className='nx-legal-status';status.textContent=IS_PAGES?'Preparando e-mail…':'Enviando…';
+      const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12000);
+      let failure='Não foi possível confirmar o envio. Seus dados foram mantidos. Utilize o e-mail informado nesta página se o problema continuar.';
+      try{
+        if(IS_PAGES){location.href=`mailto:${CONTACT}?subject=${encodeURIComponent('DMCA - AniNexus')}&body=${encodeURIComponent(mailBody(payload))}`;status.className='nx-legal-status ok';status.textContent='Notificação preparada no seu aplicativo de e-mail.'}
+        else{
+          const response=await fetch('/api/dmca',{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},credentials:'same-origin',body:JSON.stringify(payload),signal:controller.signal});
+          if(!response.ok){if(response.status===429)failure='Muitas tentativas. Aguarde antes de reenviar.';throw new Error('SEND_FAILED')}
+          form.reset();status.className='nx-legal-status ok';status.textContent='Notificação registrada para análise.';
+        }
+      }catch{status.className='nx-legal-status err';status.textContent=failure}
+      finally{clearTimeout(timer);btn.disabled=false;form.removeAttribute('aria-busy')}
+    });
+  }
 
   document.addEventListener('click',e=>{const a=e.target.closest('a[data-nx-legal]');if(!a)return;e.preventDefault();e.stopImmediatePropagation();const p=a.dataset.nxLegal;if(!LEGAL.has(p))return;const target=BASE+p;if(!window.AniNexusGo?.(target,{popstate:false}))location.assign(target)},true);
   addEventListener('aninexus:route-changed',()=>queueMicrotask(()=>render(route())));

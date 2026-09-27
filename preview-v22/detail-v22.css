@@ -147,6 +147,7 @@ body.nx22-detail-active .menu-btn{width:38px!important;height:38px!important}
 
 /* AniNexus V44.36 — ações e indicadores alinhados ao detalhe do AniQuim. */
 .nx22-hero-bg img{object-fit:cover;object-position:center center;transform:none}
+.nx22-headcopy h1{overflow-wrap:anywhere;word-break:normal}
 .nx22-back{z-index:5;top:calc(var(--nx43-header-height,66px) + 14px);box-sizing:border-box;width:44px;height:44px;min-width:44px;min-height:44px;max-width:44px;max-height:44px;aspect-ratio:1;flex:none;padding:0;justify-content:center;border:1px solid rgba(255,255,255,.14);border-radius:50%;background:rgba(8,6,8,.76);color:#fff;box-shadow:0 7px 24px rgba(0,0,0,.25)}
 .nx22-back span{display:none}
 .nx22-back svg{width:22px;height:22px}
@@ -364,6 +365,11 @@ html[data-theme=light] .nx22-tabs-row>.nx22-tabs-toggle,html[data-theme=light] .
 .nx22-tabs-row[data-nx22-left="1"]:before,.nx22-tabs-row[data-nx22-right="1"]:after{opacity:1}
 .nx22-tab-list>button.active:after{background:linear-gradient(90deg,var(--nx-red,#e3264f),var(--nx-red-2,#ff4d68))}
 html[data-theme=light] .nx22-tabs{--nx22-tabs-surface:#f6f3f4;background:#f6f3f4}
+html[data-theme=light] .nx22-content .nx22-synopsis{color:#584750}
+html[data-theme=light] .nx22-content :is(.nx22-section-head,.nx22-akira-head) small{color:#a51b42}
+html[data-theme=light] .nx22-content .nx22-section-head>span{color:#66545e}
+/* Artwork stays dark; the transparent header must remain legible over it. */
+html[data-theme=light] body.nx22-detail-active #topbar:not(.is-scrolled) :is(.brand,.main-nav a){color:#fff!important}
 @media(prefers-reduced-motion:reduce){.nx22-tabs-row:before,.nx22-tabs-row:after{transition:none!important}}
 
 /* AniNexus V44.46 — chips retangulares clássicos e barra sem linha fantasma. */

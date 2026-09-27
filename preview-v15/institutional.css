@@ -23,3 +23,13 @@ html[data-theme='light'] body.nx-institution-active,html[data-theme='light'] .nx
 .nx-inst-band-item span{color:#a99eac}
 @media(max-width:900px){.nx-inst-hero-inner{grid-template-columns:1fr;gap:20px;padding:55px 0}.nx-inst-mark{display:none}.nx-inst-section-head{grid-template-columns:1fr;gap:16px}.nx-inst-story,.nx-contact-grid{grid-template-columns:1fr}.nx-inst-values{grid-template-columns:repeat(2,1fr)}.nx-inst-socials{grid-template-columns:1fr 1fr}.nx-contact-side{grid-template-columns:1fr 1fr}.nx-inst-cta{grid-template-columns:1fr}.nx-inst-cta-actions{justify-content:flex-start}}
 @media(max-width:600px){.nx-inst-shell{width:calc(100% - 32px)}.nx-inst-hero-inner{min-height:auto;padding:42px 0 40px}.nx-inst-hero h1{font-size:39px;line-height:1.01}.nx-inst-hero-copy>p{font-size:14px;line-height:1.68}.nx-inst-hero-actions{margin-top:22px}.nx-inst-btn{height:40px;font-size:11px}.nx-inst-band-inner{grid-template-columns:1fr}.nx-inst-band-item{padding:14px 0!important;border-right:0;border-bottom:1px solid var(--ix-line)}.nx-inst-band-item:last-child{border-bottom:0}.nx-inst-section{padding:48px 0}.nx-inst-section-head{margin-bottom:26px}.nx-inst-section-head h2{font-size:29px}.nx-inst-section-head p{font-size:13px;line-height:1.7}.nx-inst-story-copy p{font-size:15px;line-height:1.75}.nx-inst-quote blockquote{font-size:21px}.nx-inst-values,.nx-inst-socials,.nx-inst-paths{grid-template-columns:1fr}.nx-inst-value{min-height:auto;padding:22px}.nx-inst-social{min-height:112px}.nx-inst-path{padding:22px}.nx-inst-cta{padding:27px 0}.nx-inst-cta h2{font-size:23px}.nx-contact-fields{grid-template-columns:1fr}.nx-contact-field.full{grid-column:auto}.nx-contact-side{grid-template-columns:1fr}.nx-contact-card{padding:18px 0}.nx-contact-submit{align-items:flex-start;flex-direction:column}}
+/* Light surfaces need their own text tokens, including supporting copy. */
+html[data-theme=light] .nx-inst :is(.nx-inst-band-item strong,.nx-inst-quote blockquote){color:#30232d}
+html[data-theme=light] .nx-inst :is(.nx-inst-band-item span,.nx-inst-section-head p,.nx-inst-quote>span,.nx-inst-value p,.nx-inst-cta p,.nx-inst-card p){color:#655461}
+html[data-theme=light] .nx-inst .nx-inst-section-head small{color:#a82043}
+html[data-theme=light] .nx-inst .nx-inst-btn:not(.primary){background:#fff;color:#44313d;border-color:#cdbdc7}
+.nx-contact-note{color:#a79baa}
+html[data-theme=light] .nx-contact-note{color:#665461}
+html[data-theme=light] .nx-contact-field label{color:var(--nx-muted,#665461)}
+html[data-theme=light] .nx-inst-path small{color:var(--nx-link,#a51b42)}
+html[data-theme=light] :is(.nx-inst-path p,.nx-inst-path li,.nx-inst-social span){color:var(--nx-muted,#665461)}

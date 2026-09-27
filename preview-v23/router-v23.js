@@ -5,7 +5,7 @@
   const BASE=basePath==='/'?'':basePath;
   const BUILD='44.60.0';
   const DEDICATED=['/','/animes/catalogo','/animes/programacao','/animes/temporadas','/animes/onde-assistir','/animes/dublados','/animes/estudios','/melhores-animes-para-assistir','/animes-mais-assistidos','/animes-mais-aguardados','/listas-de-animes','/animes-em-alta','/filmes-de-anime','/animes-curtos','/animes-de-acao','/animes-de-romance','/animes-de-fantasia','/animes-de-comedia','/animes-de-misterio','/animes-de-esporte','/animes-de-terror','/mangas','/light-novels','/noticias','/comunidade','/conquistas','/login','/criar-conta','/minha-conta','/conectar-source','/minha-biblioteca','/meus-animes','/meus-mangas','/admin'];
-  const CARD_SELECTOR='[data-nx21-open],[data-nx-media],[data-nx18-open],[data-nx22-open],[data-nx-still],[data-open][data-type="anime"]';
+  const CARD_SELECTOR='[data-nx21-open],[data-nx-media],[data-nx18-open],[data-nx22-open],[data-nx-still],[data-open][data-type="anime"],[data-open][data-type="manga"]';
   const ACTION_SELECTOR='button,a,input,select,textarea,[data-list],[data-fav],[data-nx-list],[data-nx-fav],[data-nx18-status],[data-nx18-fav],[data-manga-list],[data-manga-fav]';
   const DETAIL_ROUTE=/^\/(?:anime|manga)\/.+-\d+$/;
   let detailRuntimePromise=null;
@@ -42,6 +42,8 @@
   function navigate(path){
     window.AniNexusRuntime?.renewNavigationId?.();
     const sequence=++navigationSequence;
+    // Dismiss the source interaction before waiting for a lazy detail runtime.
+    const search=document.querySelector('#searchOverlay');if(search){search.hidden=true;search.setAttribute('aria-hidden','true')}
     const current=cleanPathFromUrl(location.href).split('?')[0];
     if(DETAIL_ROUTE.test(String(path||'').split(/[?#]/)[0])&&current&&!DETAIL_ROUTE.test(current)){try{sessionStorage.setItem('nx22:previous-path',JSON.stringify({path:current,document:performance.timeOrigin}))}catch{}}
     document.body?.classList.remove('modal-open');const drawer=document.querySelector('#drawer');if(drawer){drawer.hidden=true;drawer.setAttribute('aria-hidden','true')}

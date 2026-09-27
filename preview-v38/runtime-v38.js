@@ -90,9 +90,11 @@
     };
     const bridgeDetail=async(body,signal,type)=>{
       const id=Number(body.variables?.id||0);if(!Number.isSafeInteger(id)||id<=0)return null;
-      const m=await apiJson(type==='MANGA'?`/api/manga/${id}`:`/api/anime/${id}`,signal),deep=toDeep(m),q=String(body.query||'');
-      if(type==='ANIME'&&q.includes('characters('))return jsonResponse({Media:{characters:deep.characters,staff:deep.staff,relations:deep.relations,recommendations:deep.recommendations}});
-      if(type==='MANGA'&&q.includes('relations{'))return jsonResponse({Media:deep});
+      const m=await apiJson(type==='MANGA'?`/api/manga/${id}`:`/api/anime/${id}`,signal);
+      if(!m||Number(m.id)!==id||(m.mediaType&&String(m.mediaType).toUpperCase()!==type))throw new Error('AniNexus API returned an invalid detail');
+      const deep=toDeep(m);
+      // Full queries also request characters. Returning only that subsection loses
+      // the ID/title and leaves the shared detail renderer in its loading state.
       return jsonResponse({Media:deep});
     };
     window.fetch=async function(input,init={}){

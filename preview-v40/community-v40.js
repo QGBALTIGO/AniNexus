@@ -31,7 +31,7 @@
   const resolvedTitle=x=>usableTitle(x?.title)||usableTitle(mediaTitle(x?.media))||'Título temporariamente indisponível';
   const actorName=x=>String(x?.display_name||x?.displayName||x?.username||'membro').trim()||'membro';
   const actorHandle=x=>/^(?:voc[eê]|you)$/i.test(String(x?.username||'').trim())?'':String(x?.username||'').trim();
-  async function json(path){try{if(REMOTE){const j=await window.AniNexusAuth.publicApi(path);return Array.isArray(j)?j:j?.items||[]}const r=await fetch(path,{credentials:'same-origin',cache:'no-store',headers:{accept:'application/json'}});if(!r.ok)throw new Error(`HTTP ${r.status}`);const j=await r.json();return Array.isArray(j)?j:j?.items||[]}catch(error){console.warn('[AniNexus comunidade] fonte indisponível.',{path,error});return[]}}
+  async function json(path){try{if(REMOTE){const j=await window.AniNexusAuth.publicApi(path);return Array.isArray(j)?j:j?.items||[]}const {response:r,body:j}=await window.AniNexusRuntime.jsonRequest(path,{credentials:'same-origin',cache:'no-store',headers:{accept:'application/json'}},{timeout:8000});if(!r.ok)throw new Error(`HTTP ${r.status}`);return Array.isArray(j)?j:j?.items||[]}catch(error){console.warn('[AniNexus comunidade] fonte indisponível.',{path,error});return[]}}
   async function mediaByIds(ids,type='ANIME'){
     ids=[...new Set(ids.map(Number).filter(Boolean))].slice(0,35);if(!ids.length)return new Map();
     try{
@@ -100,7 +100,7 @@
     try{
       let data;
       if(REMOTE)data=await window.AniNexusAuth.publicApi('/api/community/overview');
-      else{const response=await fetch('/api/community/overview',{headers:{accept:'application/json'}});if(!response.ok)throw Error('overview unavailable');data=await response.json()}
+      else{const result=await window.AniNexusRuntime.jsonRequest('/api/community/overview',{headers:{accept:'application/json'}},{timeout:8000});if(!result.response.ok)throw Error('overview unavailable');data=result.body}
       if(!data?.totals||!Array.isArray(data.rankings))throw Error('invalid overview');
       if(epoch!==overviewEpoch||!owns())return;
       overview=data;overviewState='ready';

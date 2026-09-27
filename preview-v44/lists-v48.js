@@ -84,9 +84,9 @@
   async function apiJson(path, signal) {
     if (IS_PAGES && window.AniNexusAuth?.enabled) return window.AniNexusAuth.publicApi(path, { signal, timeout: 15000 });
     if (IS_PAGES) throw new Error('API_NOT_CONFIGURED');
-    const response = await fetch(path, { signal, credentials: 'same-origin', headers: { accept: 'application/json' } });
+    const { response, body } = await window.AniNexusRuntime.jsonRequest(path, { signal, credentials: 'same-origin', headers: { accept: 'application/json' } }, { timeout: 8000 });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return response.json();
+    return body;
   }
 
   async function directList(config, page, signal) {
@@ -95,9 +95,8 @@
     if (config.status) variables.status = config.status;
     if (config.format) variables.format = config.format;
     if (config.genre) variables.genre = config.genre;
-    const response = await fetch('https://graphql.anilist.co/', { method: 'POST', signal, headers: { 'content-type': 'application/json', accept: 'application/json' }, body: JSON.stringify({ query, variables }) });
+    const { response, body: json } = await window.AniNexusRuntime.jsonRequest('https://graphql.anilist.co/', { method: 'POST', signal, headers: { 'content-type': 'application/json', accept: 'application/json' }, body: JSON.stringify({ query, variables }) }, { timeout: 8000 });
     if (!response.ok) throw new Error(`AniList HTTP ${response.status}`);
-    const json = await response.json();
     if (json.errors?.length) throw new Error(json.errors[0].message || 'AniList error');
     return { items: json.data?.Page?.media || [], pageInfo: json.data?.Page?.pageInfo || {} };
   }

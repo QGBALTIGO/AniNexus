@@ -4,6 +4,7 @@
   const KEY='aninexus:community:activity:v40';
   const API='https://graphql.anilist.co';
   const MAX=80;
+  let seedBatch=null;
 
   const read=(k,f)=>{try{return JSON.parse(localStorage.getItem(k)||'null')??f}catch{return f}};
   const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
@@ -46,8 +47,8 @@
     })
   }
 
-  function rows(){const v=read(KEY,[]);return Array.isArray(v)?v:[]}
-  function save(list){write(KEY,list.slice(0,MAX));dispatchEvent(new CustomEvent('aninexus:community-activity-changed',{detail:{items:list.slice(0,MAX)}}))}
+  function rows(){if(seedBatch)return seedBatch;const v=read(KEY,[]);return Array.isArray(v)?v:[]}
+  function save(list){const limited=list.slice(0,MAX);if(seedBatch){seedBatch=limited;return}write(KEY,limited);dispatchEvent(new CustomEvent('aninexus:community-activity-changed',{detail:{items:limited}}))}
   function domMeta(id,type){
     const action=document.querySelector(type==='MANGA'?`[data-manga-list="${id}"],[data-manga-fav="${id}"]`:`[data-nx-list="${id}"],[data-nx-fav="${id}"]`);
     const root=action?.closest('article')||document.querySelector(`.nx35-community-card[data-media-type="${type}"][data-media-id="${id}"]`);if(!root)return{};
@@ -70,11 +71,29 @@
     if(seed&&list.some(x=>x.media_id===id&&mediaType(x)===type&&Date.parse(x.created_at)>=stamp-1000))return null;
     snapshot.id=`state:${type}:${id}:${stamp}:${Math.random().toString(36).slice(2,7)}`;
     list.unshift(snapshot);save(list);
-    if(!snapshot.title||!snapshot.cover)anilistMeta(id,type).then(m=>updateMeta(snapshot.id,m));
+    // Bootstrap is a local snapshot, not a user action. Visible feeds hydrate
+    // their missing metadata in batches; fetching the entire library here
+    // caused hundreds of detail requests on every authenticated page load.
+    if(!seed&&(!snapshot.title||!snapshot.cover))anilistMeta(id,type).then(m=>updateMeta(snapshot.id,m));
     return snapshot;
   }
 
-  function seed(){for(const [key,type] of [['aninexus:mediaState:v2','ANIME'],['aninexus:mangaState:v2','MANGA']]){const states=read(key,{});if(!states||typeof states!=='object')continue;for(const [raw,s] of Object.entries(states)){const id=validId(raw);if(id&&s?.status)record(id,s,Number(s.updatedAt)||Date.now(),true,type)}}}
+  function seed(){
+    const candidates=[],now=Date.now();
+    for(const [key,type] of [['aninexus:mediaState:v2','ANIME'],['aninexus:mangaState:v2','MANGA']]){
+      const states=read(key,{});if(!states||typeof states!=='object')continue;
+      for(const [raw,state] of Object.entries(states)){
+        const id=validId(raw);if(id&&state?.status)candidates.push({id,state,type,at:Number(state.updatedAt)||now});
+      }
+    }
+    const before=rows();seedBatch=before;
+    try{
+      // Insert oldest first so the bounded store keeps the newest snapshots.
+      for(const item of candidates.sort((a,b)=>b.at-a.at).slice(0,MAX).reverse())record(item.id,item.state,item.at,true,item.type);
+      const next=seedBatch;seedBatch=null;
+      if(JSON.stringify(next)!==JSON.stringify(before))save(next);
+    }finally{seedBatch=null}
+  }
   function local(limit=30){return rows().filter(x=>x?.kind==='state'&&x?.status).sort((a,b)=>Date.parse(b.created_at||0)-Date.parse(a.created_at||0)).slice(0,Math.max(1,Math.min(80,Number(limit)||30)))}
 
   document.addEventListener('aninexus:media-state-changed',e=>{const id=validId(e.detail?.id),s=e.detail?.state;if(id&&s?.status)record(id,s,Number(s.updatedAt)||Date.now())});

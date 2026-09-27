@@ -46,7 +46,7 @@
     controller: null,
     path: '',
     provider: 'crunchyroll',
-    watchItems: [],
+    watchItems: [], watchLoading: true, watchError: false,
     dubbedItems: [],
     dubbedInfo: {},
     dubbedPage: 1,
@@ -102,9 +102,9 @@
   async function apiJson(path, signal) {
     if (IS_PAGES && window.AniNexusAuth?.enabled) return window.AniNexusAuth.publicApi(path, { signal, timeout: 15000 });
     if (IS_PAGES) throw new Error('API_NOT_CONFIGURED');
-    const response = await fetch(path, { signal, credentials: 'same-origin', headers: { accept: 'application/json' } });
+    const { response, body } = await window.AniNexusRuntime.jsonRequest(path, { signal, credentials: 'same-origin', headers: { accept: 'application/json' } }, { timeout: 8000 });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return response.json();
+    return body;
   }
 
   async function directCatalog(page, signal, ids = []) {
@@ -112,28 +112,26 @@
     const query = withIds
       ? `query($page:Int,$ids:[Int]){Page(page:$page,perPage:30){pageInfo{total currentPage lastPage hasNextPage} media(type:ANIME,id_in:$ids,sort:POPULARITY_DESC){id title{romaji english native userPreferred} coverImage{extraLarge large} episodes format status seasonYear startDate{year month day} externalLinks{site url type}}}}`
       : `query($page:Int){Page(page:$page,perPage:30){pageInfo{total currentPage lastPage hasNextPage} media(type:ANIME,sort:POPULARITY_DESC){id title{romaji english native userPreferred} coverImage{extraLarge large} episodes format status seasonYear startDate{year month day} externalLinks{site url type}}}}`;
-    const response = await fetch('https://graphql.anilist.co/', {
+    const { response, body: json } = await window.AniNexusRuntime.jsonRequest('https://graphql.anilist.co/', {
       method: 'POST',
       signal,
       headers: { 'content-type': 'application/json', accept: 'application/json' },
       body: JSON.stringify({ query, variables: withIds ? { page, ids } : { page } })
-    });
+    }, { timeout: 8000 });
     if (!response.ok) throw new Error(`AniList HTTP ${response.status}`);
-    const json = await response.json();
     if (json.errors?.length) throw new Error(json.errors[0].message || 'AniList error');
     return { items: json.data?.Page?.media || [], pageInfo: json.data?.Page?.pageInfo || {} };
   }
 
   async function directStudios(page, signal) {
     const query = `query($page:Int){Page(page:$page,perPage:12){pageInfo{total currentPage lastPage hasNextPage} studios(sort:FAVOURITES_DESC){id name isAnimationStudio media(perPage:12,sort:START_DATE_DESC){pageInfo{total} nodes{id title{romaji english native userPreferred} coverImage{extraLarge large} episodes format status seasonYear startDate{year month day}}}}}}`;
-    const response = await fetch('https://graphql.anilist.co/', {
+    const { response, body: json } = await window.AniNexusRuntime.jsonRequest('https://graphql.anilist.co/', {
       method: 'POST',
       signal,
       headers: { 'content-type': 'application/json', accept: 'application/json' },
       body: JSON.stringify({ query, variables: { page } })
-    });
+    }, { timeout: 8000 });
     if (!response.ok) throw new Error(`AniList HTTP ${response.status}`);
-    const json = await response.json();
     if (json.errors?.length) throw new Error(json.errors[0].message || 'AniList error');
     const source = json.data?.Page;
     return {
@@ -326,7 +324,7 @@
     return PROVIDERS.map(provider => {
       const count = state.watchItems.filter(media => providerLinks(media, provider).length).length;
       const selected = state.provider === provider.key;
-      const detail = state.watchItems.length ? (count ? `${count} ${count === 1 ? 'título identificado' : 'títulos identificados'}` : 'Catálogo em atualização') : 'Consultando catálogo';
+      const detail = state.watchError ? 'Disponibilidade indisponível agora' : state.watchLoading ? 'Consultando catálogo' : (count ? `${count} ${count === 1 ? 'título identificado' : 'títulos identificados'}` : 'Catálogo em atualização');
       return `<button type="button" class="nx47-provider-card${selected ? ' active' : ''}" data-nx47-provider="${provider.key}" aria-pressed="${selected}" style="--nx47-provider:${provider.color}">
         <span class="nx47-provider-logo">${providerMark(provider)}</span>
         <span class="nx47-provider-copy"><strong>${esc(provider.label)}</strong><small>${esc(detail)}</small></span>
@@ -396,6 +394,7 @@
 
   async function loadWatch() {
     const token = ++state.token;
+    state.watchLoading = true; state.watchError = false; renderProviderCards();
     state.controller?.abort();
     state.controller = new AbortController();
     try {
@@ -412,12 +411,14 @@
           if (media) map.set(Number(media.id), media);
         }
       }
-      state.watchItems = [...map.values()];
+      state.watchItems = [...map.values()]; state.watchLoading = false;
       renderProviderCards();
       renderWatchResults();
     } catch (error) {
       if (error?.name === 'AbortError' || token !== state.token) return;
       const root = document.querySelector('#nx47WatchResults');
+      state.watchLoading = false; state.watchError = true; renderProviderCards();
+      const count = document.querySelector('#nx47WatchCount'); if (count) count.textContent = 'Disponibilidade indisponível';
       if (root) {
         root.removeAttribute('aria-busy');
         root.innerHTML = emptyMarkup('O catálogo não carregou agora', 'Tente novamente em instantes.', `<button type="button" data-nx47-watch-retry>${ICON.retry} Tentar novamente</button>`);
@@ -549,6 +550,7 @@
       if (root) {
         root.removeAttribute('aria-busy');
         root.innerHTML = emptyMarkup('Os animes dublados não carregaram agora', 'Sua página foi preservada. Tente novamente.', `<button type="button" data-nx47-dub-retry>${ICON.retry} Tentar novamente</button>`);
+        const count = document.querySelector('#nx47DubbedCount'); if (count) count.textContent = 'Catálogo indisponível';
       }
     }
   }

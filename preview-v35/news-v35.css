@@ -76,4 +76,16 @@ body.nx35-news-scroll-down .nx35-news-island-head{height:44px}
   .nx35-news-island .nx35-news-controls{gap:6px}
 }
 
+html[data-theme=light] body.nx35-news-active{background:#faf7f9!important;color:var(--nx-ink)}
+html[data-theme=light] body.nx35-news-active .nx35-news-page{background:#faf7f9;color:var(--nx-ink)}
+html[data-theme=light] :is(.nx35-news-hero,.nx35-news-island,.nx35-news-toolbar,.nx35-related){background:var(--nx-surface-2);border-color:var(--nx-border)}
+html[data-theme=light] :is(.nx35-news-hero h1,.nx35-news-island-head,.nx35-sidebar strong){color:var(--nx-ink)}
+html[data-theme=light] :is(.nx35-news-hero h1 em,.nx35-news-heading small,.nx35-news-island-copy small,.nx35-news-title small,.nx35-news-sub small,.nx35-ncopy footer b,.nx35-summary small){background:none;color:var(--nx-link)}
+html[data-theme=light] :is(.nx35-ncard,.nx35-news-controls label,.nx35-news-toolbar label,.nx35-sidebar>div,.nx35-sidebar>button){background:var(--nx-surface);border-color:var(--nx-border)}
+html[data-theme=light] :is(.nx35-news-controls input,.nx35-news-toolbar input){color:var(--nx-ink)}
+html[data-theme=light] :is(.nx35-news-hero>.nx35-shell>p,.nx35-news-cats button,.nx35-news-title>span,.nx35-ncopy>small,.nx35-ncard.feature p,.nx35-ncopy footer,.nx35-news-empty p,.nx35-summary li,.nx35-article-section p,.nx35-article-section li,.nx35-editorial p,.nx35-sidebar p,.nx35-sidebar small,.nx35-sidebar button){color:var(--nx-muted)}
+html[data-theme=light] :is(.nx35-news-cats button.active,.nx35-news-cats button:hover,.nx35-news-empty button){background:#fae8ee;color:var(--nx-link);border-color:#d6a5b5}
+html[data-theme=light] .nx35-news-loading{background:linear-gradient(100deg,#f3eef1 30%,#fff 50%,#f3eef1 70%);background-size:200% 100%}
+html[data-theme=light] .nx35-article-hero{color:#f8f2f5}
+html[data-theme=light] :is(.nx35-news-empty,.nx35-editorial){border-color:var(--nx-border)}
 @media(prefers-reduced-motion:reduce){.nx35-news-island,.nx35-news-island-head,.nx35-news-island-panel,.nx35-news-island-chevron svg{transition:none!important;animation:none!important}}

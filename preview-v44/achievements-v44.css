@@ -103,6 +103,8 @@ html[data-theme=light] .nx48-achievements-island{background:rgba(255,250,251,.98
 html[data-theme=light] .nx48-achievements-island-head,html[data-theme=light] .nx48-achievements-island-copy strong{color:#302229}
 html[data-theme=light] .nx48-achievements-island-arrow{border-color:rgba(58,31,43,.13);background:rgba(58,31,43,.035);color:#6e6066}
 html[data-theme=light] .nx48-badge>b{border-color:#fff}
+html[data-theme=light] :is(.nx48-content-head small,.nx48-pinned>header small,.nx48-overview-main small,.nx48-guest a){color:var(--nx-link,#a51b42)}
+html[data-theme=light] :is(.nx48-pinned-count,[data-achievement-visible-count],.nx48-status-filter button:not(.active)){color:var(--nx-muted,#665461)}
 html[data-theme=light] .nx48-feed-card{border-color:rgba(54,35,44,.13);background:#fff;color:#2b1e25;box-shadow:0 8px 22px rgba(65,37,48,.06)}
 html[data-theme=light] .nx48-feed-card:hover{background:#fff9fb}.nx48-feed-copy h3{color:inherit}
 html[data-theme=light] .nx48-feed-avatar{background:#f3e7eb;color:#3b2730}

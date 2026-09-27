@@ -186,6 +186,8 @@ html[data-theme=light] .nx54-filters input,html[data-theme=light] .nx54-filters 
 html[data-theme=light] .nx54-report blockquote{border-color:#e6dce1;background:#fbf8f9}
 html[data-theme=light] .nx54-report blockquote p{color:#514149}
 html[data-theme=light] .nx54-dialog{border-color:#d9cdd3;background:#fff;color:#302229}
+html[data-theme=light] .nx54-summary dd{color:#302229}
+html[data-theme=light] :is(.nx54-summary dt,.nx54-priority p,.nx54-priority small){color:#665461}
 @media(max-width:980px){
   .nx54-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
   .nx54-overview-grid{grid-template-columns:1fr}
@@ -261,6 +263,9 @@ html[data-theme=light] .nx54-dialog{border-color:#d9cdd3;background:#fff;color:#
   .nx54-admin-nav button{grid-template-columns:auto auto}
   .nx54-admin-nav button b{display:none}
 }
+html[data-theme=light] .nx54-admin-access>span{color:var(--nx-link,#a51b42)}
+html[data-theme=light] .nx54-admin-access>p{color:var(--nx-muted,#665461)}
+
 @media(prefers-reduced-motion:reduce){
   .nx54-admin-loading i{animation:none}
   .nx54-admin-notice{transition:none}

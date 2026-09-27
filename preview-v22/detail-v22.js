@@ -121,7 +121,7 @@
   const DETAIL_FIELDS=`id idMal siteUrl type title{romaji english native userPreferred} synonyms coverImage{extraLarge large color} bannerImage description genres tags{name rank isMediaSpoiler} averageScore meanScore popularity favourites stats{scoreDistribution{score amount} statusDistribution{status amount}} episodes chapters volumes duration format status season seasonYear countryOfOrigin source hashtag isAdult startDate{year month day} endDate{year month day} studios(isMain:true){nodes{id name}} nextAiringEpisode{airingAt episode timeUntilAiring} trailer{id site thumbnail} externalLinks{site url type icon color}`;
   async function loadAni(id,type,signal){
     const q=`query($id:Int){Media(id:$id,type:${type}){${DETAIL_FIELDS} characters(perPage:18,sort:[ROLE,RELEVANCE]){edges{role voiceActors(language:JAPANESE,sort:[RELEVANCE]){id name{full} image{large}} node{id name{full native} image{large medium}}}} staff(perPage:16,sort:[RELEVANCE]){edges{role node{id name{full native} image{large medium}}}} relations{edges{relationType node{${DETAIL_FIELDS}}}} recommendations(perPage:12,sort:RATING_DESC){nodes{rating mediaRecommendation{${DETAIL_FIELDS}}}}}}}`;
-    const d=await gql(q,{id:Number(id)},signal);if(!d?.Media)throw new Error(type==='MANGA'?'Mangá não encontrado':'Anime não encontrado');
+    const d=await gql(q,{id:Number(id)},signal);if(!d?.Media||Number(d.Media.id)!==Number(id)||(d.Media.type&&d.Media.type!==type))throw new Error(type==='MANGA'?'Mangá não encontrado':'Anime não encontrado');
     const ratingCount=(d.Media.stats?.scoreDistribution||[]).reduce((sum,item)=>sum+(Number(item?.amount)||0),0),listCount=(d.Media.stats?.statusDistribution||[]).reduce((sum,item)=>sum+(Number(item?.amount)||0),0);
     Object.assign(d.Media,{mediaType:type,metricsSource:'aninexus',ratingCount,listCount});
     return d.Media;
@@ -159,7 +159,9 @@
   async function loadServerMedia(id,type,signal){
     const response=await fetch(`/api/${type==='MANGA'?'manga':'anime'}/${Number(id)}`,{signal,headers:{accept:'application/json'}});
     if(!response.ok)throw new Error(`Catálogo ${response.status}`);
-    return normalizeServerMedia(await response.json(),type);
+    const result=normalizeServerMedia(await response.json(),type);
+    if(result.id!==Number(id))throw new Error('Mídia inválida');
+    return result;
   }
   async function timedLoad(loader,timeout){
     const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),timeout);
@@ -241,7 +243,7 @@
     if(result){try{localStorage.setItem(key,result)}catch{}return result}
     return fallbackSynopsis(m);
   }
-  function fallbackSynopsis(m){const reading=String(m.mediaType).toUpperCase()==='MANGA',gs=(m.genres||[]).slice(0,3).map(g=>GENRE[g]||g).join(', '),st=STATUS[m.status]||(reading?'Em publicação':'Em exibição'),kind=reading?'mangá':m.format==='MOVIE'?'filme':'anime';return `${title(m)} é um ${kind}${gs?` de ${gs}`:''}, atualmente ${st.toLowerCase()}. A obra reúne os elementos centrais dessa proposta em uma história para acompanhar sem spoilers.`}
+  function fallbackSynopsis(){return 'A sinopse desta obra ainda não está disponível em português. Os demais dados disponíveis podem ser consultados abaixo.'}
 
   function trailerId(m){if(m?.trailer?.id&&String(m.trailer.site||'').toLowerCase()==='youtube')return String(m.trailer.id);const u=String(m?.jikan?.trailer?.youtube_id||'');return u||''}
   function uniqueLinks(m){
@@ -450,7 +452,8 @@
     if(!id)return;
     if(!force&&isOwned()&&lastId===id)return;
     const cached=cacheRead(id,type);if(cached){paint(cached);return}if(!cached)skeleton(id);
-    try{const m=cached||await loadDetail(id,type);if(mediaId()===id)paint(m)}catch(e){if(mediaId()===id&&!cached)fail(id,type)}
+    const current=()=>{const route=mediaRoute();return route?.id===id&&route?.type===type};
+    try{const m=cached||await loadDetail(id,type);if(current())paint(m)}catch(e){if(current()&&!cached)fail(id,type)}
   }
   function claim(force=false){
     if(claiming)return;claiming=true;

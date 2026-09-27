@@ -158,6 +158,7 @@ html[data-theme=light] .nx43-notification-sheet>footer a{color:#4f3f47}
 @media(max-width:1180px){
   #topbar .topbar-inner{grid-template-columns:minmax(0,1fr) auto}
   #topbar .main-nav{display:none!important}
+  #topbar .top-actions [data-action="search"]{display:inline-flex!important;align-items:center;justify-content:center}
   #topbar .top-actions>.menu-btn{display:grid!important}
   #topbar .nx43-notification-trigger{display:none!important}
 }

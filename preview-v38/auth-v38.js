@@ -44,7 +44,11 @@
   const fallbackLocalization = {
     locale: 'pt-BR',
     signIn: { start: { title: 'Entre no AniNexus', subtitle: 'Continue sua jornada de onde parou.', actionText: 'Ainda não tem uma conta?', actionLink: 'Criar conta' } },
-    signUp: { start: { title: 'Crie sua conta', subtitle: 'Uma conta para acompanhar todo o seu universo.', actionText: 'Já possui uma conta?', actionLink: 'Entrar' } },
+    signUp: { start: { title: 'Crie sua conta', subtitle: 'Uma conta para acompanhar todo o seu universo.', actionText: 'Já possui uma conta?', actionLink: 'Entrar' }, legalConsent: { checkbox: {
+      label__onlyPrivacyPolicy: 'Concordo com a {{privacyPolicyLink || link("Política de Privacidade")}}',
+      label__onlyTermsOfService: 'Concordo com os {{termsOfServiceLink || link("Termos de Uso")}}',
+      label__termsOfServiceAndPrivacyPolicy: 'Concordo com os {{termsOfServiceLink || link("Termos de Uso")}} e com a {{privacyPolicyLink || link("Política de Privacidade")}}',
+    }, continue: { title: 'Continuar', subtitle: 'Leia e aceite os termos para continuar.' } } },
     socialButtonsBlockButton: 'Continuar com {{provider|titleize}}',
     dividerText: 'ou continue com e-mail', formFieldLabel__emailAddress: 'E-mail', formFieldLabel__password: 'Senha',
     formFieldInputPlaceholder__emailAddress: 'Digite seu e-mail', formButtonPrimary: 'Continuar',
@@ -68,8 +72,8 @@
   });
   async function loadLocalization(signal) {
     try {
-      const response = await fetch(`${BASE}/clerk-localization-ptbr.json?v=40.9.0`, { cache: 'force-cache', credentials: 'omit', signal });
-      if (response.ok) return await response.json();
+      const response = await fetch(`${BASE}/clerk-localization-ptbr.json?v=20260927.1`, { cache: 'force-cache', credentials: 'omit', signal });
+      if (response.ok) { const locale = await response.json(); return { ...locale, signUp: { ...locale.signUp, legalConsent: fallbackLocalization.signUp.legalConsent } }; }
       console.warn('[AniNexus auth] tradução pt-BR indisponível; usando o pacote mínimo interno.', { status: response.status });
     } catch (error) {
       console.warn('[AniNexus auth] não foi possível carregar a tradução pt-BR; usando o pacote mínimo interno.', error);
@@ -79,16 +83,16 @@
   function clerkAppearance() {
     return {
       variables: {
-        colorPrimary: '#e9325a', colorPrimaryForeground: '#ffffff', colorDanger: '#ff637d', colorSuccess: '#5fd08a', colorWarning: '#f1bb55',
-        colorNeutral: '#8f8289', colorForeground: '#f8f2f5', colorMutedForeground: '#a99ca2', colorMuted: '#171116', colorBackground: 'transparent',
-        colorInput: '#0d0a0d', colorInputForeground: '#f8f2f5', colorRing: '#f14b70', colorBorder: '#3a2f36', colorShadow: '#000000',
+        colorPrimary: '#b8183c', colorPrimaryForeground: '#ffffff', colorDanger: 'var(--nx-auth-danger)', colorSuccess: 'var(--nx-auth-success)', colorWarning: 'var(--nx-auth-warning)',
+        colorNeutral: 'var(--nx-auth-muted)', colorForeground: 'var(--nx-auth-ink)', colorMutedForeground: 'var(--nx-auth-muted)', colorMuted: 'var(--nx-auth-fill)', colorBackground: 'transparent',
+        colorInput: 'var(--nx-auth-fill)', colorInputForeground: 'var(--nx-auth-ink)', colorRing: '#b8183c', colorBorder: 'var(--nx-auth-border)', colorShadow: '#000000',
         fontFamily: 'Nunito Sans, system-ui, sans-serif', fontFamilyButtons: 'Manrope, Nunito Sans, system-ui, sans-serif', fontSize: '0.875rem', borderRadius: '0.75rem', spacing: '0.9rem',
       },
       options: {
         elevation: 'flush', socialButtonsPlacement: 'top', socialButtonsVariant: 'iconButton', autoFocus: false,
         termsPageUrl: routeUrl('/termos-de-uso'), privacyPageUrl: routeUrl('/politica-de-privacidade'),
       },
-      captcha: { theme: 'dark', size: 'flexible', language: 'pt-BR' },
+      captcha: { theme: document.documentElement.dataset.theme==='light'?'light':'dark', size: 'flexible', language: 'pt-BR' },
     };
   }
   async function loadClerk() {
