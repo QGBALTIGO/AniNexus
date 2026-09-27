@@ -79,7 +79,7 @@ done
 printf '%s\n' "$expected_commit" > "${staging_dir}/.deploy-commit"
 
 compose "$staging_dir" config --quiet
-compose "$staging_dir" build --pull app news-worker
+compose "$staging_dir" build --pull
 mv "$staging_dir" "$release_dir"
 if [[ -L "$CURRENT_LINK" ]]; then previous_release="$(readlink -f "$CURRENT_LINK")"; fi
 ln -s "$release_dir" "$temporary_link"

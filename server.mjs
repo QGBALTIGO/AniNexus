@@ -15,6 +15,7 @@ import sharp from 'sharp';
 import { mediaListEntry } from './lib/media-list.mjs';
 import { registerMangaWebappLink } from './lib/manga-webapp-link.mjs';
 import { registerPersonalHome } from './lib/personal-home.mjs';
+import { registerPredictions } from './lib/predictions.mjs';
 import { getCommunityOverview } from './lib/community-overview.mjs';
 import { initDb, q, pool, dbReady } from './lib/db.mjs';
 import { initCache, redis, cacheRemember, cacheReady, cacheRunOnce, cacheMetricsSnapshot } from './lib/cache.mjs';
@@ -97,6 +98,7 @@ const privateHeavyRate=rateForUser(20,'1 minute','private-heavy');
 const writeRate=rateForUser(30,'1 minute','private-write');
 const publicRate={config:{rateLimit:{max:240,timeWindow:'1 minute'}}};
 registerPersonalHome(app,{q,requireUser,privateReadRate});
+registerPredictions(app,{q,pool,requireUser,publicRate,privateReadRate,writeRate,enabled:process.env.PREDICTIONS_ENABLED==='1'});
 app.get('/api/community/overview',publicRate,async()=>{
   const overview=await getCommunityOverview(q),groups=['rankings','favorites','dropped'];
   const works=groups.flatMap(key=>overview[key]).map(m=>({media_id:m.id,media_type:m.mediaType,media:m.title&&m.cover?m:null}));
