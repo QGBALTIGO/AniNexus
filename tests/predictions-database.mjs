@@ -13,7 +13,7 @@ if(!connectionString)throw new Error('MEDIA_TEST_DATABASE_URL is required; only 
 const schema='predictions_test_'+randomBytes(8).toString('hex');
 const bootstrap=new pg.Client({connectionString});await bootstrap.connect();
 const pool=new pg.Pool({connectionString,options:`-c search_path=${schema},public`,max:8});
-const query=pool.query.bind(pool),user=randomUUID(),other=randomUUID(),app=Fastify();
+const query=pool.query.bind(pool),user=randomUUID(),other=randomUUID(),observer=randomUUID(),app=Fastify();
 let checks=0;
 const check=()=>checks++;
 try{
@@ -22,7 +22,8 @@ try{
   // permissive stub that could conceal a column, enum or length mismatch.
   for(const file of ['schema.sql','002_notifications_and_accounts.sql','009_clerk_identity_and_preferences.sql','011_administration_and_moderation.sql','012_public_profiles.sql','028_profile_settings_and_list_transfers.sql'])await query(await fs.readFile(new URL(`../sql/${file}`,import.meta.url),'utf8'));
   const migration=await fs.readFile(new URL('../sql/035_predictions.sql',import.meta.url),'utf8');await query(migration);await query(migration);check();
-  await query("INSERT INTO users(id,username,email) VALUES($1,'alice','alice@example.test'),($2,'bob','bob@example.test')",[user,other]);
+  const detailMigration=await fs.readFile(new URL('../sql/037_prediction_detail.sql',import.meta.url),'utf8');await query(detailMigration);await query(detailMigration);check();
+  await query("INSERT INTO users(id,username,email) VALUES($1,'alice','alice@example.test'),($2,'bob','bob@example.test'),($3,'observer','observer@example.test')",[user,other,observer]);
   const now=new Date((await query('SELECT clock_timestamp() now')).rows[0].now);
   const c=generatePredictionCandidate({mediaId:101,mediaType:'ANIME',title:'Teste SQL',averageScore:80},{now}).candidate;
   const publications=await Promise.all(Array.from({length:5},()=>publishPrediction(pool,c)));
@@ -33,6 +34,8 @@ try{
   assert.equal(votes.every(result=>!result.error),true);assert.equal((await query('SELECT count(*) FROM prediction_votes WHERE question_id=$1',[id])).rows[0].count,'1');
   assert.equal((await query('SELECT count(*) FROM prediction_snapshots WHERE question_id=$1',[id])).rows[0].count,'11');check();
   assert.equal((await votePrediction(pool,id,user,'YES')).userVote.choice,'YES');assert.equal((await votePrediction(pool,id,other,'NO')).item.voteCount,2);check();
+  assert.equal((await votePrediction(pool,id,user,'YES',75)).userVote.confidence,75);
+  assert.equal((await query('SELECT confidence_pct FROM prediction_votes WHERE question_id=$1 AND user_id=$2',[id,user])).rows[0].confidence_pct,75);check();
   const trendItem=(await votePrediction(pool,id,user,'YES')).item;assert.equal(trendItem.trend24h.yesDelta,1);assert.equal(trendItem.trend24h.noDelta,1);assert.equal(trendItem.trend24h.completeWindow,false);check();
   await assert.rejects(query("UPDATE prediction_questions SET question='Critério alterado indevidamente' WHERE id=$1",[id]),/PREDICTION_CRITERIA_IMMUTABLE/);check();
 
@@ -59,7 +62,7 @@ try{
   assert.equal((await votePrediction(pool,ready.id,user,'NO')).error,'PREDICTION_CLOSED');check();
   const missing=await fixture();assert.equal((await resolvePrediction(pool,missing.id,null)).status,'PENDING');check();
   const expired=await fixture({deadlineOffset:-3601000,closeOffset:-90001000});await addVote(expired.id);const voided=await resolvePrediction(pool,expired.id,null);assert.equal(voided.status,'VOID');assert.equal(voided.result,null);check();
-  const userStats=(await query(predictionStatsSql,[user])).rows[0];assert.equal(userStats.resolved,1);assert.equal(userStats.correct,1);assert.equal(userStats.voided,1);check();
+  const userStats=(await query(predictionStatsSql,[user])).rows[0];assert.equal(userStats.resolved,1);assert.equal(userStats.correct,1);assert.equal(userStats.voided,1);assert.equal(userStats.reputation_points,50);check();
   const wrong=await fixture();assert.equal((await resolvePrediction(pool,wrong.id,{...evidence,mediaId:102})).status,'PENDING');check();
   const due=await fixture({status:'OPEN'});const locked=await lockPredictions(pool);assert.ok(locked.locked>=1);assert.equal((await query('SELECT status FROM prediction_questions WHERE id=$1',[due.id])).rows[0].status,'LOCKED');check();
   // Retry retains the original even though this modified retry payload is expired.
@@ -81,6 +84,14 @@ try{
   registerPredictions(app,{enabled:true,pool,q:query,requireUser:async(req,reply)=>{if(req.headers['x-test-user'])return{id:req.headers['x-test-user']};reply.code(401).send({error:'UNAUTHORIZED'});return null}});
   for(const filter of ['hot','new','closing','divided','resolved']){const response=await app.inject({url:`/api/predictions?filter=${filter}`});assert.equal(response.statusCode,200,response.body);assert.ok(Array.isArray(response.json().items));}check();
   let response=await app.inject({url:`/api/me/predictions?ids=${ready.id}`,headers:{'x-test-user':user}});assert.equal(response.statusCode,200,response.body);assert.equal(response.json().items.length,1);assert.equal(response.json().items[0].userVote.choice,'YES');assert.equal(response.headers['cache-control'],'no-store');check();
+  response=await app.inject({url:`/api/predictions/${id}/detail`});assert.equal(response.statusCode,200,response.body);assert.equal(response.json().collective.votes,2);assert.equal(response.json().collective.weightedYesPercent,60);assert.ok(response.json().history.length>=3);check();
+  response=await app.inject({url:`/api/me/predictions/${id}/vote`,method:'PUT',headers:{'x-test-user':user},payload:{choice:'YES',confidence:17}});assert.equal(response.statusCode,422);check();
+  response=await app.inject({url:`/api/me/predictions/${id}/follow`,method:'PUT',headers:{'x-test-user':observer},payload:{following:true}});assert.equal(response.statusCode,200);assert.equal(response.json().following,true);
+  response=await app.inject({url:`/api/me/predictions/${id}/detail`,headers:{'x-test-user':observer}});assert.equal(response.json().following,true);assert.equal(response.json().userVote,null);check();
+  response=await app.inject({url:`/api/me/predictions/${id}/argument`,method:'PUT',headers:{'x-test-user':observer},payload:{text:'Preciso votar antes de publicar.'}});assert.equal(response.statusCode,403);check();
+  response=await app.inject({url:`/api/me/predictions/${id}/argument`,method:'PUT',headers:{'x-test-user':user},payload:{text:'A nota da fonte parece estável nesta semana.'}});assert.equal(response.statusCode,200,response.body);
+  response=await app.inject({url:`/api/predictions/${id}/detail`});assert.equal(response.json().arguments.length,1);assert.equal(response.json().arguments[0].author.username,'alice');check();
+  response=await app.inject({url:`/api/me/predictions/${id}/follow`,method:'PUT',headers:{'x-test-user':observer},payload:{following:false}});assert.equal(response.json().following,false);check();
   response=await app.inject({url:`/api/me/predictions?ids=${ready.id}&offset=1`,headers:{'x-test-user':user}});assert.equal(response.statusCode,400);check();
   response=await app.inject({url:'/api/predictions/ranking'});assert.equal(response.statusCode,200,response.body);assert.deepEqual(response.json().items,[]);assert.equal(response.json().minimumResolved,20);check();
   response=await app.inject({url:'/api/me/predictions'});assert.equal(response.statusCode,401);check();
@@ -88,7 +99,8 @@ try{
   // Exercise nonempty Wilson ranking and public-profile privacy filtering.
   for(let i=0;i<20;i++){const ranked=await fixture();await addVote(ranked.id);await resolvePrediction(pool,ranked.id,{...evidence,observedAt:new Date((await query('SELECT clock_timestamp() now')).rows[0].now).toISOString()});}
   response=await app.inject({url:'/api/predictions/ranking'});assert.equal(response.statusCode,200,response.body);assert.equal(response.json().items[0].username,'alice');assert.ok(response.json().items[0].confidence>0);check();
-  await query("UPDATE users SET privacy='private' WHERE id=$1",[user]);response=await app.inject({url:'/api/predictions/ranking'});assert.deepEqual(response.json().items,[]);check();
+  await query("UPDATE users SET privacy='private' WHERE id=$1",[user]);response=await app.inject({url:'/api/predictions/ranking'});assert.deepEqual(response.json().items,[]);
+  response=await app.inject({url:`/api/predictions/${id}/detail`});assert.deepEqual(response.json().arguments,[]);check();
 
   // Real worker integration: only HTTP is mocked; all locking, state, publication,
   // resolution and notification writes use the real PostgreSQL transaction code.

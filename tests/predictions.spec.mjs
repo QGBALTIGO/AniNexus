@@ -28,12 +28,14 @@ async function fixture(page,{theme='dark',signedIn=false,items=[base,second,clos
     const custom=await state.handler?.(call,state);if(custom)return route.fulfill(custom);
     if(call.path==='/api/predictions/ranking')return route.fulfill({json:{items:[{rank:1,username:'leitor',displayName:'Leitor',correct:80,total:100,accuracy:80,confidence:.71}],minimumResolved:20}});
     if(call.path==='/api/predictions')return route.fulfill(state.failure?{status:state.failure,json:{error:'UNAVAILABLE'}}:{json:{items:state.items,nextOffset:null}});
+    if(call.path.match(/^\/api\/predictions\/[\da-f-]+\/detail$/)){const id=call.path.split('/')[3],item=state.items.find(i=>i.id===id)||closed;return route.fulfill({json:{item,collective:{votes:item.voteCount,weightedYesPercent:item.voteCount?Math.round(item.yesCount/item.voteCount*100):null,conviction:item.voteCount?50:null},history:[{at:'2030-09-01T12:00:00Z',yesCount:0,noCount:0},{at:'2030-09-20T12:00:00Z',yesCount:item.yesCount,noCount:item.noCount}],arguments:[],related:state.items.filter(i=>i.id!==id)}});}
+    if(call.path.match(/^\/api\/me\/predictions\/[\da-f-]+\/detail$/))return route.fulfill({json:{userVote:state.mine.find(i=>i.id===call.path.split('/')[4])?.userVote||null,following:false,argument:null}});
     if(call.path==='/api/me/predictions')return route.fulfill({json:{items:state.mine,nextOffset:null}});
     if(call.path.endsWith('/vote'))return route.fulfill(state.voteFailure?{status:state.voteFailure,json:{error:'PREDICTION_CLOSED'}}:{json:{item:{...base,yesCount:call.body.choice==='YES'?2:1,noCount:call.body.choice==='NO'?1:0,voteCount:2},userVote:{choice:call.body.choice,eligible:true}}});
     return route.fulfill({json:{user:signedIn?{id:'fixture',username:'leitor',displayName:'Leitor'}:null,items:[]}});
   });
   await page.goto(new URL(path,origin).href);
-  if(path.startsWith('/previsoes'))await expect(page.locator('.nx61-predictions h1')).toHaveText('Previsões');
+  if(path==='/previsoes')await expect(page.locator('.nx61-predictions h1')).toHaveText('Previsões');
   return state;
 }
 
@@ -133,9 +135,39 @@ test('predictions: personal pagination loads the next page instead of repeating 
 });
 
 test('predictions: notification deep link opens a resolved item outside the first page',async({page})=>{
-  await fixture(page,{path:'/previsoes?previsao='+thirdId,items:[base],handler:call=>call.path==='/api/predictions/'+thirdId?{json:{item:closed}}:null});
-  const linked=page.locator(`[data-prediction="${thirdId}"]`);
-  await expect(linked).toBeVisible();await expect(linked).toContainText('Anulada');
+  await fixture(page,{path:'/previsoes?previsao='+thirdId,items:[base]});
+  await expect(page.locator('.nx62-detail h1')).toContainText(closed.question);
+  await expect(page.locator('.nx62-result')).toContainText('anulada');
+});
+
+for(const theme of ['dark','light'])test(`prediction detail ${theme}: complete responsive page, real chart ranges and accessible controls`,async({page},info)=>{
+  const now=Date.now(),history=[0,3,6].map((days,index)=>({at:new Date(now-(6-days)*86400000).toISOString(),yesCount:index+1,noCount:index}));
+  await fixture(page,{theme,path:'/previsoes?previsao='+firstId,handler:call=>call.path==='/api/predictions/'+firstId+'/detail'?{json:{item:{...base,yesCount:3,noCount:2,voteCount:5},collective:{votes:5,estimatedYesPercent:54,weightedYesPercent:60,conviction:70},history,arguments:[{id:'a',text:'Acompanharei a fonte e compararei a nota no prazo.',choice:'YES',createdAt:new Date(now).toISOString(),author:{username:'leitor',displayName:'Leitor'}}],related:[second]}}:null});
+  await expect(page.locator('.nx62-detail h1')).toContainText('One Piece');
+  await expect(page.locator('.nx62-intelligence')).toContainText('54% Sim');
+  await expect(page.locator('.nx62-intelligence')).toContainText('60% Sim');
+  await expect(page.locator('.nx62-chart-panel svg')).toBeVisible();
+  await expect(page.locator('.nx62-argument')).toContainText('Acompanharei a fonte');
+  await expect(page.locator('.nx62-disclaimer')).toContainText('Não há depósitos, saques, prêmios');
+  const allPath=await page.locator('.nx62-chart-line.yes').getAttribute('d');
+  await page.getByRole('button',{name:'1D',exact:true}).click();
+  await expect(page.locator('.nx62-chart-panel svg')).toBeVisible();
+  expect(await page.locator('.nx62-chart-line.yes').getAttribute('d')).not.toBe(allPath);
+  await page.getByRole('button',{name:'Tudo',exact:true}).click();
+  await expect(page.locator('.nx62-chart-panel svg')).toBeVisible();
+  for(const width of [320,390,768,1160]){await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth),`${width} overflow`).toBeLessThanOrEqual(2);if(width===390||width===1160)await page.screenshot({path:info.outputPath(`prediction-detail-${theme}-${width}.png`),fullPage:true});}
+  const a11y=await new AxeBuilder({page}).include('.nx62-detail').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();expect(a11y.violations).toEqual([]);
+});
+
+test('prediction detail: Prever opens the vote section and saves choice with confidence',async({page})=>{
+  const state=await fixture(page,{signedIn:true,path:'/previsoes?previsao='+firstId+'&foco=prever'});
+  await expect(page.locator('#nx62-prever')).toBeVisible();
+  await expect.poll(()=>page.locator('#nx62-prever').evaluate(el=>Math.round(el.getBoundingClientRect().top))).toBeGreaterThanOrEqual(0);
+  await page.locator('[data-pred-choice="YES"]').click();
+  await page.locator('[data-pred-confidence="75"]').click();
+  await page.getByRole('button',{name:'Confirmar previsão'}).click();
+  await expect.poll(()=>state.calls.filter(call=>call.path==='/api/me/predictions/'+firstId+'/vote').length).toBe(1);
+  expect(state.calls.find(call=>call.path==='/api/me/predictions/'+firstId+'/vote').body).toEqual({choice:'YES',confidence:75});
 });
 
 test('predictions: rounded consensus sums to 100 and identity errors leave a retryable vote',async({page})=>{
@@ -268,15 +300,15 @@ test('predictions: identity outage does not hide public cards and cannot record 
 });
 
 test('predictions: same-route notification navigation refreshes its target and back removes it',async({page})=>{
-  const state=await fixture(page,{items:[base],handler:call=>call.path==='/api/predictions/'+thirdId?{json:{item:closed}}:null});
+  const state=await fixture(page,{items:[base]});
   await expect(page.locator(`[data-prediction="${firstId}"]`)).toBeVisible();
   await page.getByRole('button',{name:'Ranking',exact:true}).click();
   await expect(page.locator('.nx61-pred-ranking')).toBeVisible();
   await page.evaluate(id=>window.AniNexusGo('/previsoes?previsao='+id),thirdId);
-  await expect(page.locator(`[data-prediction="${thirdId}"]`)).toBeVisible();
-  await expect(page.getByRole('button',{name:'Em alta',exact:true})).toHaveAttribute('aria-pressed','true');
+  await expect(page.locator('.nx62-detail h1')).toBeVisible();
+  await expect(page.locator('.nx62-result')).toContainText('anulada');
   await expect(page.locator('.nx61-pred-ranking')).toHaveCount(0);
-  expect(state.calls.some(call=>call.path==='/api/predictions/'+thirdId)).toBe(true);
+  expect(state.calls.some(call=>call.path==='/api/predictions/'+thirdId+'/detail')).toBe(true);
   await page.goBack();
   await expect(page).toHaveURL(new URL('/previsoes',origin).href);
   await expect(page.locator(`[data-prediction="${firstId}"]`)).toBeVisible();
@@ -285,12 +317,13 @@ test('predictions: same-route notification navigation refreshes its target and b
 });
 
 test('predictions: native hash navigation refreshes an already mounted page',async({page})=>{
-  await fixture(page,{items:[base],handler:call=>call.path==='/api/predictions/'+thirdId?{json:{item:closed}}:null});
+  await fixture(page,{items:[base]});
   await expect(page.locator(`[data-prediction="${firstId}"]`)).toBeVisible();
   await page.evaluate(id=>{location.hash=id;},thirdId);
-  await expect(page.locator(`[data-prediction="${thirdId}"]`)).toBeVisible();
+  await expect(page.locator('.nx62-detail h1')).toBeVisible();
+  await expect(page.locator('.nx62-result')).toContainText('anulada');
   await page.evaluate(()=>{location.hash='';});
-  await expect(page.locator(`[data-prediction="${thirdId}"]`)).toHaveCount(0);
+  await expect(page.locator('.nx62-detail')).toHaveCount(0);
   await expect(page.locator(`[data-prediction="${firstId}"]`)).toBeVisible();
 });
 

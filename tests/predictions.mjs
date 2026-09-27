@@ -99,7 +99,7 @@ test('vote retains its validated database acceptance time if INSERT crosses the 
     if(sql.startsWith('INSERT INTO prediction_votes')){
       // Simulate I/O latency after the locked validation. Calling the clock here
       // would invalidate or overwrite a previously valid choice at resolution.
-      simulatedClock=afterDeadline;insertSql=sql;savedTimestamp=params[3];
+      simulatedClock=afterDeadline;insertSql=sql;savedTimestamp=params[4];
       return{rows:[{choice:params[2],eligible:true,updated_at:savedTimestamp}]};
     }
     if(sql.startsWith('SELECT p.*'))return{rows:[{...question,yes_count:1,no_count:0}]};
@@ -108,6 +108,6 @@ test('vote retains its validated database acceptance time if INSERT crosses the 
   const result=await votePrediction({connect:async()=>client},'question','user','YES');
   assert.ok(+simulatedClock>Date.parse(c.closesAt));assert.equal(+savedTimestamp,+acceptedAt);
   assert.equal(result.userVote.updatedAt,acceptedAt.toISOString());assert.equal(result.userVote.eligible,true);
-  assert.match(insertSql,/created_at,updated_at\) VALUES\(\$1,\$2,\$3,\$4,\$4\)/);
+  assert.match(insertSql,/confidence_pct,created_at,updated_at\) VALUES\(\$1,\$2,\$3,\$4,\$5,\$5\)/);
   assert.match(insertSql,/updated_at=EXCLUDED.updated_at/);assert.doesNotMatch(insertSql,/clock_timestamp|now\(\)/);
 });
