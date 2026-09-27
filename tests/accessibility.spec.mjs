@@ -129,6 +129,12 @@ for (const appearance of appearances) for (const route of ['/', '/animes/catalog
       : [null];
     for (const tab of profileTabs) {
       if (tab && tab !== 'overview') await page.locator(`[data-profile-tab="${tab}"]`).click();
+      if (route === '/animes/temporadas') {
+        await expect(page.locator('.nx-season-card').last()).toBeVisible();
+        // Contrast must be measured after the finite entrance fade, not midway
+        // through its opacity interpolation. Keep animations enabled in the UI.
+        await expect(page.locator('.nx-season-card').last()).toHaveCSS('opacity', '1');
+      }
       const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
       const blocking = results.violations.filter(item => ['serious', 'critical'].includes(item.impact));
       if(blocking.length)await test.info().attach(`axe-${tab||'page'}`,{body:JSON.stringify(blocking,null,2),contentType:'application/json'});

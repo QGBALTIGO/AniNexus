@@ -255,7 +255,7 @@
     if (state.view !== 'MEDIA') return '';
     return `<div class="nx49-status-row${compact ? ' compact' : ''}" aria-label="Estados de ${state.media === 'MANGA' ? 'leitura' : 'acompanhamento'}">
       <div class="nx49-status-tabs">${STATUS_ORDER.map(key => `<button type="button" class="${state.filter === key ? 'active' : ''}" aria-pressed="${state.filter === key}" data-nx49-status="${key}">${LABELS[state.media][key]}<b>${statusCount(key)}</b></button>`).join('')}</div>
-      <button type="button" class="nx49-favorite-filter${state.filter === 'FAVORITES' ? ' active' : ''}" aria-pressed="${state.filter === 'FAVORITES'}" data-nx49-status="FAVORITES">${ICON.heart}<span>Favoritos</span><b>${statusCount('FAVORITES')}</b></button>
+      <button type="button" class="nx49-favorite-filter${state.filter === 'FAVORITES' ? ' active' : ''}" aria-label="Favoritos" aria-pressed="${state.filter === 'FAVORITES'}" data-nx49-status="FAVORITES">${ICON.heart}<span>Favoritos</span><b>${statusCount('FAVORITES')}</b></button>
     </div>`;
   }
   function activityMarkup() {
@@ -300,7 +300,7 @@
     const noun = state.media === 'MANGA' ? 'mangás' : 'animes';
     return `<div class="nx49-toolbar">
       <label class="nx49-search">${ICON.search}<span class="sr-only">Buscar nos meus ${noun}</span><input type="search" value="${esc(state.search)}" placeholder="Buscar nos meus ${noun}…" data-nx49-search></label>
-      <button type="button" class="nx49-filter-button" data-nx49-filter-open>${ICON.filter}<span>Filtros</span></button>
+      <button type="button" class="nx49-filter-button" aria-label="Filtros" data-nx49-filter-open>${ICON.filter}<span>Filtros</span></button>
     </div>`;
   }
   function filterModalMarkup() {

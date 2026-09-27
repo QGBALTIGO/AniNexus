@@ -127,6 +127,9 @@ html[data-theme=light] .nx50-composer textarea::placeholder{color:#8c7b85}
 html[data-theme=light] .nx50-login-cta{border-color:#dbcbd2;background:#fff;color:#6b3445}
 html[data-theme=light] .nx50-login-prompt{border-color:#dfd3d9;background:linear-gradient(135deg,#fff,#f8f3f5);box-shadow:0 10px 28px rgba(69,31,49,.06)}
 html[data-theme=light] .nx50-login-prompt strong{color:#392a31}
+html[data-theme=light] .nx50-login-prompt span,html[data-theme=light] .nx50-news-comments>header p{color:#665461}
+html[data-theme=light] .nx50-news-comments>header small{color:#a51b42}
+.nx50-login-prompt .nx50-login-cta span{color:inherit}
 html[data-theme=light] .nx50-login-prompt>i{border-color:#e9adba;background:#fff1f4}
 html[data-theme=light] .nx50-filters,html[data-theme=light] .nx50-list,html[data-theme=light] .nx50-card{border-color:#e2d8dd}
 html[data-theme=light] .nx50-filters>div{border-color:#ddd1d7;background:#f4eef1}

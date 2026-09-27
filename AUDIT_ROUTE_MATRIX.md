@@ -1,6 +1,6 @@
 # AUDIT_ROUTE_MATRIX
 
-Atualizado em 2026-09-27T14:26:24.390Z. Base inicial: 6ed65bb4162c164d3b078728dfd0ade184343b90; atualização editorial 39c65a545261 incorporada durante a auditoria.
+Atualizado em 2026-09-27T15:12:22.239Z. Base inicial: 6ed65bb4162c164d3b078728dfd0ade184343b90; atualização editorial 39c65a545261 incorporada durante a auditoria.
 
 **E = evidência renderizada; T = jornada com asserções; F = falha; P = pendente.** E-preview usa correções locais e dados reais somente leitura. E-live é pós-publicação. E-fault verifica renderização, overflow, erros JS e vazamento de diagnóstico com API simulada; não aprova sozinho cada ação. Evidência privada: audit-artifacts/ (fora de Git, Docker e publicação).
 
@@ -8,72 +8,72 @@ Atualizado em 2026-09-27T14:26:24.390Z. Base inicial: 6ed65bb4162c164d3b078728df
 
 | Rota | Família | 320 | 360 | 375 | 390 | 393 | 412 | 430 | 480 | 768 | 820 | 1024 | 1280 | 1366 | 1440 | 1920 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| / | home | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes/catalogo | catalog | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /mangas | catalog | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /light-novels | catalog | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes/programacao | schedule | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes/temporadas | season | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes/temporadas/2026/inverno | season | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes/temporadas/2026/primavera | season | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes/temporadas/2026/verao | season | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes/temporadas/2026/outono | season | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes/onde-assistir | discovery | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes/dublados | discovery | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes/estudios | discovery | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /listas-de-animes | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /melhores-animes-para-assistir | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes-mais-assistidos | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes-mais-aguardados | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes-em-alta | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /filmes-de-anime | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes-curtos | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes-de-acao | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes-de-romance | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes-de-fantasia | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes-de-comedia | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes-de-misterio | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes-de-esporte | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes-de-terror | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /descubra | lists | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /anime/naruto-20 | detail | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /anime/one-piece-21 | detail | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /anime/cowboy-bebop-1 | detail | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /manga/one-piece-30013 | detail | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /manga/solo-leveling-105398 | detail | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /noticias | news | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /noticias/draw-this-then-die-ganha-2-temporada-animenew-197c1986 | news | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /noticias/qa-noticia-inexistente | news | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /comunidade | community | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /anime-awards | awards | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /conquistas | achievements | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /login | auth | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /criar-conta | auth | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /conectar-source | auth | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /minha-conta | account | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /minha-biblioteca | library | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /meus-animes | library | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /meus-mangas | library | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /u/Diego | profile | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /u/qa-perfil-inexistente | profile | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /admin | admin | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /quem-somos | institutional | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /colabore | institutional | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /contato | institutional | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /termos-de-uso | legal | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /politica-de-privacidade | legal | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /dmca | legal | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /qa-rota-inexistente | notfound | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /animes | alias | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /catalogo | alias | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /programacao | alias | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /temporadas | alias | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /news | alias | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /community | alias | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /manga | alias | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /entrar | alias | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /cadastro | alias | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
-| /conta | alias | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview | E-preview |
+| / | home | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes/catalogo | catalog | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /mangas | catalog | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /light-novels | catalog | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes/programacao | schedule | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes/temporadas | season | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes/temporadas/2026/inverno | season | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes/temporadas/2026/primavera | season | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes/temporadas/2026/verao | season | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes/temporadas/2026/outono | season | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes/onde-assistir | discovery | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes/dublados | discovery | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes/estudios | discovery | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /listas-de-animes | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /melhores-animes-para-assistir | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes-mais-assistidos | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes-mais-aguardados | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes-em-alta | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /filmes-de-anime | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes-curtos | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes-de-acao | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes-de-romance | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes-de-fantasia | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes-de-comedia | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes-de-misterio | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes-de-esporte | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes-de-terror | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /descubra | lists | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /anime/naruto-20 | detail | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /anime/one-piece-21 | detail | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /anime/cowboy-bebop-1 | detail | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /manga/one-piece-30013 | detail | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /manga/solo-leveling-105398 | detail | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /noticias | news | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /noticias/draw-this-then-die-ganha-2-temporada-animenew-197c1986 | news | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /noticias/qa-noticia-inexistente | news | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /comunidade | community | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /anime-awards | awards | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /conquistas | achievements | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /login | auth | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /criar-conta | auth | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /conectar-source | auth | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /minha-conta | account | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /minha-biblioteca | library | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /meus-animes | library | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /meus-mangas | library | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /u/Diego | profile | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /u/qa-perfil-inexistente | profile | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /admin | admin | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /quem-somos | institutional | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /colabore | institutional | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /contato | institutional | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /termos-de-uso | legal | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /politica-de-privacidade | legal | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /dmca | legal | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /qa-rota-inexistente | notfound | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /animes | alias | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /catalogo | alias | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /programacao | alias | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /temporadas | alias | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /news | alias | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /community | alias | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /manga | alias | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /entrar | alias | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /cadastro | alias | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
+| /conta | alias | E-live | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-preview | E-preview | E-preview | E-preview | E-live | E-live |
 
 ## Estados adversariais e navegação
 
@@ -91,8 +91,8 @@ T-nav: entrada direta, reload, pesquisa pelo teclado e retorno do foco, voltar, 
 | /animes/temporadas/2026/primavera | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /animes/temporadas/2026/verao | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /animes/temporadas/2026/outono | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
-| /animes/onde-assistir | T-nav | F | F | F | F | F | E-fault |
-| /animes/dublados | T-nav | F | F | E-fault | E-fault | F | E-fault |
+| /animes/onde-assistir | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
+| /animes/dublados | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /animes/estudios | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /listas-de-animes | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /melhores-animes-para-assistir | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
@@ -101,14 +101,14 @@ T-nav: entrada direta, reload, pesquisa pelo teclado e retorno do foco, voltar, 
 | /animes-em-alta | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /filmes-de-anime | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /animes-curtos | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
-| /animes-de-acao | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | F |
-| /animes-de-romance | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | F |
-| /animes-de-fantasia | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | F |
-| /animes-de-comedia | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | F |
-| /animes-de-misterio | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | F |
-| /animes-de-esporte | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | F |
-| /animes-de-terror | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | F |
-| /descubra | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | F |
+| /animes-de-acao | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
+| /animes-de-romance | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
+| /animes-de-fantasia | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
+| /animes-de-comedia | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
+| /animes-de-misterio | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
+| /animes-de-esporte | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
+| /animes-de-terror | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
+| /descubra | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /anime/naruto-20 | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /anime/one-piece-21 | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /anime/cowboy-bebop-1 | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
@@ -117,9 +117,9 @@ T-nav: entrada direta, reload, pesquisa pelo teclado e retorno do foco, voltar, 
 | /noticias | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /noticias/draw-this-then-die-ganha-2-temporada-animenew-197c1986 | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /noticias/qa-noticia-inexistente | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
-| /comunidade | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | F |
+| /comunidade | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /anime-awards | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
-| /conquistas | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | F |
+| /conquistas | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /login | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /criar-conta | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /conectar-source | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
@@ -127,9 +127,9 @@ T-nav: entrada direta, reload, pesquisa pelo teclado e retorno do foco, voltar, 
 | /minha-biblioteca | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /meus-animes | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /meus-mangas | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
-| /u/Diego | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | F |
-| /u/qa-perfil-inexistente | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | F |
-| /admin | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
+| /u/Diego | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
+| /u/qa-perfil-inexistente | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
+| /admin | F | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /quem-somos | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /colabore | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /contato | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
@@ -142,7 +142,7 @@ T-nav: entrada direta, reload, pesquisa pelo teclado e retorno do foco, voltar, 
 | /programacao | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /temporadas | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /news | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
-| /community | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | F |
+| /community | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /manga | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /entrar | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |
 | /cadastro | T-nav | E-fault | E-fault | E-fault | E-fault | E-fault | E-fault |

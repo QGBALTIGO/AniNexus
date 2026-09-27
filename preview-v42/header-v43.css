@@ -183,6 +183,8 @@ html[data-theme=light] .nx43-notification-sheet>footer a{color:#4f3f47}
   #topbar .brand img{width:34px!important;height:34px!important}
   #topbar .brand span{font-size:17px!important}
 }
+/* The article's cover sits under the header; light navigation needs its own surface. */
+html[data-theme=light] body.nx35-news-active:has(.nx35-reader) #topbar:not(.is-scrolled){background:rgba(255,255,255,.97)!important}
 /* Keep global search reachable without opening the mobile drawer. */
 @media(max-width:720px){
   #topbar .top-actions [data-action="search"]{display:inline-flex!important;align-items:center;justify-content:center;width:40px;height:40px;flex:0 0 40px}

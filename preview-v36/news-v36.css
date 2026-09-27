@@ -73,6 +73,18 @@
 .nx40-source-table table{width:100%;border-collapse:collapse;color:#b8abb1;font-size:10px}
 .nx40-source-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.06);vertical-align:top}
 
+.nx35-article-meta,.nx35-article-stats{color:#cbbfc5}
+.nx40-source-image figcaption,.nx35-sidebar small,.nx35-sidebar p{color:#aea0a7}
+html[data-theme=light] .nx40-source-flow :is(p,blockquote,ul,ol,li,em){color:var(--nx-muted,#665461)}
+html[data-theme=light] :is(.nx40-source-flow h2,.nx40-source-flow h3,.nx40-source-flow h4,.nx40-source-flow strong,.nx40-preview-note strong,.nx35-sidebar>div:first-child strong){color:var(--nx-ink,#30232d)}
+html[data-theme=light] .nx40-source-flow a{color:var(--nx-link,#a51b42)}
+html[data-theme=light] .nx40-source-flow code{background:#f0e5eb;color:#a51b42}
+html[data-theme=light] :is(.nx40-preview-note p,.nx40-source-image figcaption,.nx40-source-table table,.nx35-sidebar small,.nx35-sidebar p){color:var(--nx-muted,#665461)}
+html[data-theme=light] :is(.nx40-source-flow>blockquote,.nx40-preview-note,.nx40-source-table){background:#f5eef2;border-color:#d9c8d1}
+html[data-theme=light] .nx40-source-table td{border-color:#d9c8d1}
+html[data-theme=light] .nx40-source-flow>hr{background:#d9c8d1}
+html[data-theme=light] .nx35-sidebar>div:first-child{background:var(--nx-surface,#fff);border-color:var(--nx-border,#d9c8d1)}
+
 @media(max-width:760px){
   .nx40-reader-actions>button{width:38px;padding:0}
   .nx40-reader-actions>button span{display:none}

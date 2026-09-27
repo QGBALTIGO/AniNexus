@@ -14,6 +14,7 @@ const ready=async()=>{
   await expect(page.locator('#app')).toBeVisible({timeout:20000});
   await expect.poll(()=>page.locator('#app').innerText(),{timeout:20000}).not.toMatch(/^\s*$/);
   await page.waitForFunction(()=>!document.querySelector('.nx22-loading'),null,{timeout:20000});
+  await page.waitForFunction(()=>!document.querySelector('.nx54-admin-loading'),null,{timeout:20000});
 };
 try{
   for(const item of selected){

@@ -44,6 +44,12 @@ Aniquim: seis páginas públicas obtidas com Scrapling e renderizadas com CSS or
 | Notícias | cancelamento não garantia término do carregamento | deadline que também limita provedores que não respeitam abort |
 | Notícias / camada complementar | enriquecimento antigo voltava a bloquear feed e perdia atualizações progressivas | primeiro feed saudável, callback preservado e imagens assíncronas limitadas |
 | Cadastro real | aceite legal em inglês | localização pt-BR explícita e invalidação do cache da tradução; formulário real verificado |
+| Administração / histórico | identidade ou overview tardios redirecionavam outra página para login | geração de montagem e guarda de rota em cada retorno assíncrono; 18 regressões nos três motores |
+| Administração / contraste | textos auxiliares e estados pouco legíveis nos painéis autenticados | tokens de contraste por tema; cinco painéis reais somente leitura e confirmação com fixture |
+| Temporadas / cadastro | botão vermelho claro sobre branco tinha contraste insuficiente no tema escuro | cor acessível em ambos os temas; nove repetições nos três motores |
+| Notícia completa / tema claro | corpo enriquecido, citações, tabelas, legendas e comentários herdavam cores escuras | estilos completos de leitura nos dois temas; fixture com todos os blocos e Axe |
+| Notícia completa / navegação | cabeçalho claro transparente sobre capa e botão voltar sem nome no celular | superfície clara específica do artigo, nome acessível e arte decorativa fora da árvore de acessibilidade |
+| Biblioteca móvel | Favoritos/Filtros perdiam o nome acessível com texto oculto | rótulos persistentes; biblioteca autenticada com fixtures e teste Axe nos dois temas |
 
 ## Regressão e proteção de dados
 

@@ -52,12 +52,13 @@ body.nx49-library-active .site-footer{margin-top:0}
 .nx49-profile-stats>span{min-height:56px;display:grid;place-content:center;text-align:center;border-radius:6px;background:var(--nx49-surface-2)}
 .nx49-profile-stats strong{color:var(--nx49-text);font:800 18px/1 'Manrope',sans-serif}
 .nx49-profile-stats small{margin-top:6px;color:var(--nx49-muted);font:800 6.5px/1 'Nunito Sans',sans-serif;text-transform:uppercase}
-.nx49-switch-media{height:36px;display:flex;align-items:center;justify-content:center;gap:7px;padding:0 11px;border:1px solid rgba(233,50,90,.4);border-radius:6px;background:var(--nx49-accent);color:#fff;font:800 10px/1 'Nunito Sans',sans-serif;white-space:nowrap;cursor:pointer}
+.nx49-switch-media{height:36px;display:flex;align-items:center;justify-content:center;gap:7px;padding:0 11px;border:1px solid rgba(233,50,90,.4);border-radius:6px;background:#b8183c;color:#fff;font:800 10px/1 'Nunito Sans',sans-serif;white-space:nowrap;cursor:pointer}
 .nx49-switch-media svg{width:14px;height:14px;transition:transform .16s ease}
 .nx49-switch-media:hover svg{transform:translateX(2px)}
 
 .nx49-content-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:12px}
 .nx49-content-head small{display:block;margin-bottom:5px;color:var(--nx49-accent);font:800 7.5px/1 'Nunito Sans',sans-serif}
+html[data-theme=light] .nx49-content-head small{color:#a51b42}
 .nx49-content-head h2{margin:0;color:var(--nx49-text);font:800 20px/1.15 'Manrope',sans-serif}
 .nx49-content-head>span{color:var(--nx49-muted);font:700 9px/1 'Nunito Sans',sans-serif}
 .nx49-status-row{display:flex;align-items:center;justify-content:space-between;gap:7px;margin-bottom:8px;min-width:0}

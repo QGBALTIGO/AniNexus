@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
 const origin = process.env.ANINEXUS_E2E_ORIGIN || 'http://127.0.0.1:4174/';
 const image = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 const media = (id, type = 'ANIME', name = type === 'MANGA' ? 'Mangá de teste' : 'Anime de teste') => ({
@@ -9,6 +10,105 @@ const media = (id, type = 'ANIME', name = type === 'MANGA' ? 'Mangá de teste' :
   recommendations: { nodes: [] }, characters: { edges: [] }, staff: { edges: [] }, externalLinks: [],
 });
 const fulfill = (route, data, status = 200) => route.fulfill({ status, contentType: 'application/json', body: JSON.stringify(data) });
+
+for(const theme of ['dark','light'])for(const width of [390,1440])test(`library filters retain accessible names ${theme} ${width}`,async({page},info)=>{
+  await page.setViewportSize({width,height:900});
+  await page.addInitScript(value=>localStorage.setItem('aninexus:theme',value),theme);
+  const dataset={user:{username:'teste'},list:[{media_id:20,status:'CURRENT',progress:2,media:{id:20,title:'Anime de teste',cover:image,episodes:12,format:'TV'}}],favorites:[],impressions:[]};
+  await page.route('**/api/me/library',route=>fulfill(route,dataset));
+  await page.route('**/api/me/manga-library',route=>fulfill(route,{user:dataset.user,list:[],favorites:[],impressions:[]}));
+  await page.goto(new URL('/minha-biblioteca',origin).href);
+  await expect(page.locator('.nx49-media-card')).toBeVisible();
+  await expect(page.locator('.nx49-favorite-filter').first()).toHaveAccessibleName('Favoritos');
+  await expect(page.locator('.nx49-filter-button')).toHaveAccessibleName('Filtros');
+  const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
+  const blocking=results.violations.filter(x=>['serious','critical'].includes(x.impact));
+  if(blocking.length)await info.attach('library-axe',{body:JSON.stringify(blocking,null,2),contentType:'application/json'});
+  expect(blocking.map(x=>({id:x.id,nodes:x.nodes.map(n=>n.target)}))).toEqual([]);
+});
+
+for(const theme of ['dark','light'])for(const width of [390,1440])test(`full news reader has readable source blocks ${theme} ${width}`,async({page},info)=>{
+  await page.setViewportSize({width,height:900});
+  await page.addInitScript(value=>localStorage.setItem('aninexus:theme',value),theme);
+  const item={id:'audit-reader',slug:'noticia-de-teste',title:'Novo anime ganha data de estreia',summary:'Uma nova temporada foi anunciada para o Brasil.',eventType:'SEASON',category:'Animes',language:'pt-BR',image,sourceAuthor:'Redação',contentMode:'full',publishedAt:new Date().toISOString(),expiresAt:new Date(Date.now()+86400000).toISOString(),sourceContent:[
+    {type:'paragraph',runs:[{text:'Uma nova temporada foi anunciada '},{text:'com elenco confirmado',marks:['strong']},{text:' para o Brasil.',marks:['em']}]},
+    {type:'heading',text:'Elenco e produção',level:2},
+    {type:'paragraph',runs:[{text:'Leia a confirmação oficial.',href:'https://example.com/noticia'}]},
+    {type:'blockquote',text:'A produção confirmou a estreia.'},
+    {type:'list',items:[{text:'Primeiro episódio'},{text:'Nova temporada'}]},
+    {type:'table',rows:[['Temporada','Ano'],['Primeira','2026']]},
+    {type:'image',url:image,alt:'Ilustração de teste',caption:'Imagem divulgada pela produção.'},
+  ]};
+  await page.route('**/api/news/noticia-de-teste',route=>fulfill(route,item));
+  await page.route('**/api/news?*',route=>fulfill(route,{items:[]}));
+  await page.route('**/data/news*.json*',route=>fulfill(route,{items:[]}));
+  await page.goto(new URL('/noticias/noticia-de-teste',origin).href);
+  await expect(page.locator('.nx40-source-flow')).toBeVisible();
+  await expect(page.getByRole('button',{name:'Voltar às notícias',exact:true})).toBeVisible();
+  if(theme==='light')expect(await page.locator('#topbar').evaluate(el=>getComputedStyle(el).backgroundColor)).toBe('rgba(255, 255, 255, 0.97)');
+  const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
+  const blocking=result.violations.filter(x=>['serious','critical'].includes(x.impact));
+  if(blocking.length)await info.attach('reader-axe',{body:JSON.stringify(blocking,null,2),contentType:'application/json'});
+  expect(blocking.map(x=>({id:x.id,nodes:x.nodes.map(n=>n.target)}))).toEqual([]);
+  await page.screenshot({path:info.outputPath('reader.png'),fullPage:true});
+});
+
+for(const theme of ['dark','light'])for(const width of [390,1440])test(`authenticated admin panels and confirmation are readable ${theme} ${width}`,async({page})=>{
+  test.setTimeout(60000);
+  await page.setViewportSize({width,height:900});
+  await page.addInitScript(value=>localStorage.setItem('aninexus:theme',value),theme);
+  await page.goto(new URL('/quem-somos',origin).href);
+  await page.evaluate(pixel=>{
+    const now=new Date().toISOString(),admin={id:'admin',username:'admin',displayName:'Admin de teste',display_name:'Admin de teste',role:'admin',status:'active',avatar_url:pixel,created_at:now,last_seen_at:now};
+    const members=['active','suspended','banned'].map((status,i)=>({id:'member-'+i,username:'leitor'+i,display_name:'Leitor de teste',role:i===1?'moderator':'user',status,avatar_url:pixel,created_at:now,last_seen_at:now,email:'teste@example.invalid'}));
+    const reports=['open','reviewing','resolved','dismissed'].map((status,i)=>({id:'report-'+i,target_type:'IMPRESSION',target_id:'content',target_exists:true,target_excerpt:'Texto de teste para análise.',target_username:'leitor',reporter_username:'leitor2',reason:'SPAM: conteúdo repetido',status,created_at:now}));
+    window.AniNexusAuth={enabled:true,ready:async()=>({user:{id:'audit'}}),api:async(path,options={})=>{
+      if(options.method&&options.method!=='GET')throw new Error('Unexpected write in visual audit');
+      if(path==='/api/me')return{user:admin};
+      if(path==='/api/admin/overview')return{users:{active:8,moderators:1,admins:1},reports:{open:1,reviewing:1},content:{}};
+      if(path.includes('/reports?'))return{items:reports};
+      if(path.includes('/users?role=team'))return{items:[admin,members[1]]};
+      if(path.includes('/users?'))return{items:members};
+      if(path.includes('/audit-log'))return{items:[{action:'USER_MODERATION',actor_username:'admin',target_type:'USER',created_at:now}]};
+      return{items:[]};
+    }};
+    history.pushState({},'','/admin');dispatchEvent(new PopStateEvent('popstate'));
+  },image);
+  for(const section of ['overview','reports','team','users','audit']){
+    await page.locator(`[data-admin-tab="${section}"]`).click();
+    await expect(page.locator(`[data-admin-tab="${section}"]`)).toHaveAttribute('aria-current','page');
+    const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
+    const blocking=results.violations.filter(x=>['serious','critical'].includes(x.impact));
+    expect(blocking.map(x=>({id:x.id,nodes:x.nodes.map(n=>n.target)})),section).toEqual([]);
+  }
+  await page.locator('[data-admin-tab="users"]').click();
+  await page.locator('[data-user-action="suspend"]').first().click();
+  await expect(page.locator('.nx54-dialog')).toBeVisible();
+  const dialog=await new AxeBuilder({page}).include('.nx54-dialog-layer').withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
+  expect(dialog.violations.filter(x=>['serious','critical'].includes(x.impact)).map(x=>({id:x.id,nodes:x.nodes.map(n=>n.target)}))).toEqual([]);
+});
+
+for (const stage of ['ready', 'identity', 'overview']) for (const rejected of [false, true]) test(`late admin ${stage} ${rejected ? 'failure' : 'success'} cannot redirect or repaint another page`, async ({ page }) => {
+  await page.goto(new URL('/quem-somos', origin).href);
+  await expect(page.locator('.nx-inst')).toBeVisible();
+  await page.evaluate(({stage, rejected}) => {
+    const pending = new Promise((resolve, reject) => { window.__auditReleaseAdmin = () => rejected ? reject(Object.assign(new Error('Expired'), {status:401})) : resolve(); });
+    const wait = async name => { if (name === stage) { window.__auditAdminStarted = true; await pending; } };
+    window.AniNexusAuth = {
+      enabled:true,
+      ready:async () => { await wait('ready'); return {user:{id:'audit'}}; },
+      api:async path => { if(path==='/api/me'){await wait('identity');return {user:{id:'audit',username:'audit',role:'admin'}};} await wait('overview');return {users:{},reports:{}}; },
+    };
+    history.pushState({}, '', '/admin');dispatchEvent(new PopStateEvent('popstate'));
+  }, {stage, rejected});
+  await expect.poll(() => page.evaluate(() => window.__auditAdminStarted)).toBe(true);
+  await page.evaluate(() => { history.pushState({}, '', '/quem-somos');dispatchEvent(new PopStateEvent('popstate')); });
+  await expect(page.locator('.nx-inst')).toBeVisible();
+  await page.evaluate(() => window.__auditReleaseAdmin());
+  await page.waitForTimeout(300);
+  await expect(page.locator('.nx-inst')).toBeVisible();
+  expect(new URL(page.url()).pathname).toBe('/quem-somos');
+});
 
 test('news enrichment cannot block readable news when remote images and the hot feed stall', async ({ page }) => {
   const item={id:'audit-news',slug:'noticia-de-teste',title:'Notícia pronta para leitura',summary:'Uma atualização em português pronta para leitura.',event_type:'ANIME',source_name:'AniNexus Notícias',language:'pt-BR',published_at:new Date().toISOString(),expires_at:new Date(Date.now()+86400000).toISOString(),reading_minutes:1};

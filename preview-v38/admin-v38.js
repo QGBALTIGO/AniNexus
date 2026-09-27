@@ -41,6 +41,7 @@
 
   let me = null;
   let mounting = false;
+  let mountGeneration = 0;
   let loadGeneration = 0;
   let noticeTimer = 0;
   const state = {
@@ -250,13 +251,16 @@
   }
 
   function view() {
+    if (route() !== '/admin') return;
     app.innerHTML = pageShell(currentView());
     bind();
     finish();
   }
 
   async function fetchOverview() {
-    state.overview = await auth().api('/api/admin/overview');
+    const generation = mountGeneration;
+    const overview = await auth().api('/api/admin/overview');
+    if (generation === mountGeneration && route() === '/admin') state.overview = overview;
   }
 
   async function load(section = state.tab) {
@@ -429,10 +433,14 @@
   async function mount() {
     if (route() !== '/admin') {
       loadGeneration += 1;
+      mountGeneration += 1;
+      mounting = false;
       document.body.classList.remove('nx38-admin-active');
       return;
     }
     if (mounting) return;
+    const generation = ++mountGeneration;
+    const current = () => generation === mountGeneration && route() === '/admin';
     mounting = true;
     activate();
     document.title = 'Administração | AniNexus';
@@ -444,11 +452,14 @@
         return;
       }
       const clerk = await auth().ready();
+      if (!current()) return;
       if (!clerk?.user) {
         navigate('/login');
         return;
       }
-      me = (await auth().api('/api/me'))?.user;
+      const user = (await auth().api('/api/me'))?.user;
+      if (!current()) return;
+      me = user;
       if (!['moderator', 'admin'].includes(me?.role)) {
         accessState('Acesso restrito', 'Esta área é exclusiva para a equipe de moderação.');
         return;
@@ -457,16 +468,19 @@
       const allowed = ['overview', 'reports', 'team', 'users', 'audit'];
       state.tab = allowed.includes(requested) && (requested !== 'audit' || me.role === 'admin') ? requested : 'overview';
       await fetchOverview();
+      if (!current()) return;
       if (state.tab !== 'overview') await load(state.tab);
+      if (!current()) return;
       view();
     } catch (error) {
+      if (!current()) return;
       if (error?.status === 401) {
         navigate('/login');
         return;
       }
       accessState('Não foi possível abrir o painel', 'A conexão segura falhou. Nenhuma alteração foi realizada.');
     } finally {
-      mounting = false;
+      if (generation === mountGeneration) mounting = false;
     }
   }
 

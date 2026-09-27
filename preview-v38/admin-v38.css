@@ -266,6 +266,30 @@ html[data-theme=light] :is(.nx54-summary dt,.nx54-priority p,.nx54-priority smal
 html[data-theme=light] .nx54-admin-access>span{color:var(--nx-link,#a51b42)}
 html[data-theme=light] .nx54-admin-access>p{color:var(--nx-muted,#665461)}
 
+/* Secondary copy remains readable in both administrative appearances. */
+.nx54-admin-page,.nx54-dialog-layer{--admin-muted:#afa2aa;--admin-accent:#ef7893}
+html[data-theme=light] :is(.nx54-admin-page,.nx54-dialog-layer){--admin-muted:#665461;--admin-accent:#a51b42}
+.nx54-admin-head p,.nx54-admin-identity small,.nx54-admin-layout>aside>p,
+.nx54-section-head p,.nx54-metric small,.nx54-shortcuts small,
+.nx54-filters label>span,.nx54-dialog label>span,.nx54-dialog>p,
+.nx54-report time,.nx54-report blockquote>small,.nx54-report blockquote cite,
+.nx54-report>footer>div:first-child,.nx54-permissions p,.nx54-team-head span,
+.nx54-user-identity p,.nx54-user-identity>span>small,.nx54-audit p,.nx54-audit time,
+.nx54-empty p{color:var(--admin-muted)}
+.nx54-admin-head-copy>span,.nx54-section-head>div>span,.nx54-report-reason>small,
+.nx54-dialog>header>span,.nx54-user-identity h3 small{color:var(--admin-accent)}
+html[data-theme=light] .nx54-admin-nav button:not(.active){color:#665461}
+html[data-theme=light] :is(.nx54-empty strong,.nx54-admin-loading strong){color:#302229}
+html[data-theme=light] .nx54-role-badge.role-admin{color:#a51b42;background:#fff1f4}
+html[data-theme=light] .nx54-role-badge.role-moderator{color:#245d81;background:#edf6fc}
+html[data-theme=light] :is(.nx54-status.status-active,.nx54-status.status-resolved){color:#176b43;background:#eef8f2}
+html[data-theme=light] :is(.nx54-status.status-open,.nx54-status.status-banned){color:#a51b42;background:#fff1f4}
+html[data-theme=light] :is(.nx54-status.status-reviewing,.nx54-status.status-suspended){color:#775014;background:#fff7e9}
+html[data-theme=light] .nx54-metric.attention strong{color:#a51b42}
+html[data-theme=light] .nx54-report-reason p{color:#665461}
+html[data-theme=light] .nx54-type{color:#665461}
+html[data-theme=light] .nx54-report>footer>div:first-child strong{color:#302229}
+
 @media(prefers-reduced-motion:reduce){
   .nx54-admin-loading i{animation:none}
   .nx54-admin-notice{transition:none}

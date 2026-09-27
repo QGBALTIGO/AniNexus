@@ -113,7 +113,8 @@ body.nx-section-page .nx-v10-seasonbar__filters .nx-v10-seasonbar__btn{min-width
 
 html[data-theme=light] .nx-section-title>p{color:var(--nx-muted,#665461)!important}
 html[data-theme=light] article[data-nx-still]>strong{color:var(--nx-ink,#30232d)!important}
-html[data-theme=light] body.nx-season-active #topbar .signup-btn{background:#b8183c!important;color:#fff!important}
+body.nx-season-active #topbar .signup-btn{background:#b8183c!important;color:#fff!important}
+body.nx-season-active #topbar .signup-btn:hover{background:#a51435!important;filter:none}
 
 @media(prefers-reduced-motion:reduce){
   body.nx-section-page .topbar,body.nx-section-page .nx-v10-seasonbar,body.nx-section-page .nx-v10-seasonbar__head,body.nx-section-page .nx-v10-seasonbar__controls,body.nx-section-page .nx-v10-seasonbar__toggle svg{transition:none!important;animation:none!important}
