@@ -1,0 +1,68 @@
+name: Source AniNexus layout workbench
+on:
+  push:
+    branches: [codex/source-integration-layout-20260926]
+    paths: ['.github/workflows/source-layout-workbench.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_PASSWORD: source-layout-ci
+          POSTGRES_DB: aninexus_test
+        ports: ['5432:5432']
+        options: --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Full non-browser contracts
+        run: pnpm run check
+      - name: Repeat Source integration contract three times
+        run: |
+          for round in 1 2 3; do
+            echo "source_contract_round=$round"
+            node --test tests/source-integration.mjs
+          done
+      - name: Source database migration three times
+        env:
+          SOURCE_INTEGRATION_TEST_DATABASE_URL: postgres://postgres:source-layout-ci@127.0.0.1:5432/aninexus_test
+        run: |
+          for round in 1 2 3; do
+            echo "source_db_round=$round"
+            node --test tests/source-integration-database.mjs
+          done
+      - name: Build and validate public release
+        run: |
+          pnpm run build:public
+          pnpm run validate:deploy
+      - name: Install Chromium
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Repeat Source AniNexus mobile/desktop handoff three times
+        env:
+          ANINEXUS_E2E_ORIGIN: http://qgbaltigo.github.io:4173/AniNexus/
+        run: |
+          echo "127.0.0.1 qgbaltigo.github.io" | sudo tee -a /etc/hosts
+          rm -rf /tmp/aninexus-source-layout
+          mkdir -p /tmp/aninexus-source-layout/AniNexus
+          rsync -a --exclude '.git' --exclude 'node_modules' ./ /tmp/aninexus-source-layout/AniNexus/
+          sed -i 's/; upgrade-insecure-requests//' /tmp/aninexus-source-layout/AniNexus/index.html
+          (cd /tmp/aninexus-source-layout && python3 -m http.server 4173 >/tmp/aninexus-source-layout.log 2>&1) &
+          PID=$!
+          trap 'kill $PID 2>/dev/null || true' EXIT
+          for i in {1..20}; do
+            curl --noproxy '*' -fsS http://qgbaltigo.github.io:4173/AniNexus/ >/dev/null && break
+            sleep 1
+          done
+          pnpm exec playwright test tests/e2e.spec.mjs --project=chromium --grep "Source handoff links" --repeat-each=3 --reporter=line --timeout=60000 --retries=1
