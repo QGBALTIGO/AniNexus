@@ -4,6 +4,9 @@
     sessionStorage.setItem('anx_manga_approval', JSON.stringify({code:incoming,at:Date.now()}));
     history.replaceState(null,'',location.pathname+location.search);
   }
+  // Capture the one-time fragment before the SPA router rewrites the URL.
+  // The dialog itself waits until deferred authentication scripts are ready.
+  function mountApproval() {
   let pending;try{pending=JSON.parse(sessionStorage.getItem('anx_manga_approval')||'null');}catch{}
   if(!pending || Date.now()-pending.at>600000)return;
   const dialog=document.createElement('dialog');
@@ -34,4 +37,7 @@
     }catch(error){status.textContent='Não foi possível autorizar. Se o código expirou, inicie uma nova conexão no webapp.';}
     finally{button.disabled=false;}
   };
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mountApproval,{once:true});
+  else mountApproval();
 })();
