@@ -17,6 +17,7 @@ import { registerMangaWebappLink } from './lib/manga-webapp-link.mjs';
 import { registerPersonalHome } from './lib/personal-home.mjs';
 import { registerFranchise } from './lib/franchise.mjs';
 import { registerDiary } from './lib/diary.mjs';
+import { registerPredictions } from './lib/predictions.mjs';
 import { getCommunityOverview } from './lib/community-overview.mjs';
 import { initDb, q, pool, dbReady } from './lib/db.mjs';
 import { initCache, redis, cacheRemember, cacheReady, cacheRunOnce, cacheMetricsSnapshot } from './lib/cache.mjs';
@@ -101,6 +102,7 @@ const publicRate={config:{rateLimit:{max:240,timeWindow:'1 minute'}}};
 registerPersonalHome(app,{q,requireUser,privateReadRate});
 registerFranchise(app,{q,getAnime,getManga,cacheRemember,requireUser,publicRate,privateReadRate});
 registerDiary(app,{q,requireUser,privateReadRate,writeRate});
+registerPredictions(app,{q,pool,requireUser,publicRate,privateReadRate,writeRate,enabled:process.env.PREDICTIONS_ENABLED==='1'});
 app.get('/api/community/overview',publicRate,async()=>{
   const overview=await getCommunityOverview(q),groups=['rankings','favorites','dropped'];
   const works=groups.flatMap(key=>overview[key]).map(m=>({media_id:m.id,media_type:m.mediaType,media:m.title&&m.cover?m:null}));
@@ -876,3 +878,4 @@ operationalMetricsTimer=setInterval(()=>{
 operationalMetricsTimer.unref?.();
 cacheRunOnce('startup:prewarm:v1',300,prewarm).then(result=>app.log.info({ran:result.ran,reason:result.reason},'prewarm startup task')).catch(e=>app.log.warn({err:e},'prewarm failed'));
 cacheRunOnce('startup:achievements:v1',3600,()=>syncAllUsersAchievements({onError:(error,userId)=>app.log.warn({err:error,userId},'retroactive achievement sync failed')})).then(result=>app.log.info({ran:result.ran,reason:result.reason,result:result.value},'retroactive achievement startup task')).catch(error=>app.log.warn({err:error},'retroactive achievement scan failed'));
+

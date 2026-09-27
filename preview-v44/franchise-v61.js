@@ -21,9 +21,15 @@
     const cover=/^https:\/\//i.test(n.cover||'')?`<img src="${esc(n.cover)}" alt="" loading="lazy" decoding="async">`:'<span aria-hidden="true"></span>';
     return `<li><span class="nx61-franchise-number" aria-hidden="true">${index+1}</span><a href="${path(n)}" class="nx61-franchise-work"><span class="nx61-franchise-cover">${cover}</span><span><small>${esc(isRoot?'Você está aqui':labels[relation?.relation]||'Obra relacionada')}</small><strong>${esc(n.title)}</strong><span>${esc([n.mediaType==='MANGA'?'Mangá':n.format||'Anime',n.year||'Ano não informado'].join(' · '))}</span>${value?`<b class="${value.status==='COMPLETED'?'is-completed':''}">${esc(statuses[value.status]||'Na sua lista')}</b>`:''}</span></a></li>`;
   }
+  function appendUnmapped(state){
+    if(!state.unmapped.length)return;
+    const section=document.createElement('section');section.className='nx22-full nx22-static-section nx61-franchise-unmapped';
+    section.innerHTML='<div class="nx22-section-head"><div><small>OUTRAS REFERÊNCIAS</small><h3>Relações ainda não associadas</h3></div></div><p class="nx61-franchise-note">A fonte informou estas obras, mas elas ainda não têm uma associação confirmada no catálogo. Abra uma referência para buscar pelo título.</p><div class="nx22-related-grid nx22-related-grid-full"></div>';
+    section.querySelector('.nx22-related-grid').append(...state.unmapped);state.host.append(section);
+  }
   function paint(state) {
     if(!state.host.isConnected)return;
-    if(state.data.nodes.length===1&&!state.data.edges.length){state.host.innerHTML='<section class="nx22-full"><div class="nx22-section-head"><div><small>UNIVERSO</small><h2>Franquia e relações</h2></div></div><div class="nx22-detail-empty"><div><strong>Franquia ainda não disponível</strong><p>A fonte ainda não informou outras obras relacionadas a este título.</p></div></div></section>';return;}
+    if(state.data.nodes.length===1&&!state.data.edges.length){state.host.innerHTML='<section class="nx22-full"><div class="nx22-section-head"><div><small>UNIVERSO</small><h2>Franquia e relações</h2></div></div><div class="nx22-detail-empty"><div><strong>Franquia ainda não disponível</strong><p>Ainda não há outras obras com associação confirmada nesta coleção.</p></div></div></section>';appendUnmapped(state);return;}
     const {host,data,mode,progress}=state,items=rows(state),completed=progress?data.nodes.filter(n=>progress.get(n.key)?.status==='COMPLETED').length:null;
     const rootDone=progress?.get(data.root)?.status==='COMPLETED';
     const nextKeys=rootDone?data.edges.filter(e=>e.from===data.root&&e.relation==='SEQUEL').map(e=>e.to):[];
@@ -39,6 +45,7 @@
     host.querySelector('[data-franchise-progress-retry]')?.addEventListener('click',()=>loadProgress(state));
     host.querySelectorAll('a[href^="/"]').forEach(a=>a.addEventListener('click',event=>{if(event.button||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;if(window.AniNexusGo?.(a.getAttribute('href')))event.preventDefault();}));
     host.querySelectorAll('img').forEach(img=>img.addEventListener('error',()=>img.remove(),{once:true}));
+    appendUnmapped(state);
   }
   async function loadProgress(state) {
     const auth=window.AniNexusAuth;state.progressError=false;
@@ -51,8 +58,12 @@
       state.progress=new Map((result.items||[]).map(r=>[`${r.media_type}:${Number(r.media_id)}`,r]));paint(state);
     }catch{if(current===state&&state.host.isConnected&&!state.controller.signal.aborted){state.progressError=true;paint(state);}}
   }
-  async function mount(host,type,id) {
-    current?.controller.abort();const state={host,type,id,controller:new AbortController(),mode:'sequence',progress:null,signedIn:false};current=state;
+  async function mount(host,type,id,knownSections=null) {
+    current?.controller.abort();
+    // Keep the already-rendered relation nodes, including their navigation
+    // handlers, instead of losing known links when the larger graph is offline.
+    const known=knownSections||[...host.children].filter(section=>section.querySelector('.nx22-related'));
+    const state={host,type,id,controller:new AbortController(),mode:'sequence',progress:null,signedIn:false,knownSections:known,unmapped:known.flatMap(section=>[...section.querySelectorAll('[data-nx22-search-title]')])};current=state;
     host.innerHTML='<section class="nx22-full"><div class="nx22-section-head"><div><small>UNIVERSO</small><h2>Franquia e relações</h2></div></div><div class="nx22-panel-loading" role="status" aria-busy="true"><i></i><i></i><span>Organizando as obras relacionadas...</span></div></section>';
     try {
       const endpoint=`/api/${type==='MANGA'?'manga':'anime'}/${Number(id)}/franchise`;
@@ -60,10 +71,14 @@
       if(current!==state||!host.isConnected)return;
       if(!Array.isArray(data.nodes)||!data.nodes.length||!data.order)throw Error('FRANCHISE_INVALID');
       state.data=data;paint(state);loadProgress(state);
-    }catch(error){if(state.controller.signal.aborted||current!==state||!host.isConnected)return;host.innerHTML='<section class="nx22-full"><h2>Franquia e relações</h2><div class="nx61-franchise-empty" role="status"><p>As relações não carregaram agora. Você pode tentar novamente.</p><button type="button" data-franchise-retry>Tentar novamente</button></div></section>';host.querySelector('button').onclick=()=>mount(host,type,id);}
+    }catch(error){if(state.controller.signal.aborted||current!==state||!host.isConnected)return;
+      host.innerHTML=state.knownSections.length?'<div class="nx22-full nx61-franchise-empty" role="status"><p>A organização completa não carregou agora. As relações já disponíveis continuam abaixo.</p><button type="button" data-franchise-retry>Tentar novamente</button></div>':'<section class="nx22-full"><h2>Franquia e relações</h2><div class="nx61-franchise-empty" role="status"><p>As relações não carregaram agora. Você pode tentar novamente.</p><button type="button" data-franchise-retry>Tentar novamente</button></div></section>';
+      host.append(...state.knownSections);host.querySelector('[data-franchise-retry]').onclick=()=>mount(host,type,id,state.knownSections);
+    }
   }
   addEventListener('aninexus:account-identity-changed',()=>{if(!current?.data||!current.host.isConnected)return;current.controller.abort();current={...current,controller:new AbortController(),progress:null,signedIn:false,progressError:false};paint(current);loadProgress(current);});
   addEventListener('aninexus:detail-panel',event=>{if(current&&(event.detail?.key!=='franquia'||Number(event.detail?.id)!==Number(current.id))){current.controller.abort();current=null;}});
   for(const name of ['aninexus:media-state-changed','aninexus:manga-media-state-changed'])document.addEventListener(name,event=>{const state=current;if(!state?.progress||!state.host.isConnected)return;const type=name.includes('manga-')?'MANGA':'ANIME',key=`${type}:${event.detail?.id}`;if(event.detail?.state?.status)state.progress.set(key,event.detail.state);else state.progress.delete(key);paint(state);});
   window.AniNexusFranchise={mount};
 })();
+

@@ -79,7 +79,24 @@ done
 printf '%s\n' "$expected_commit" > "${staging_dir}/.deploy-commit"
 
 compose "$staging_dir" config --quiet
-compose "$staging_dir" build --pull app news-worker
+compose "$staging_dir" build --pull
+# Validate immutable migration bytes inside the built image before replacing any
+# running service. Packaging/EOL errors must fail while the old release is live.
+compose "$staging_dir" run --rm --no-deps -T app node --input-type=module <<'NODE'
+import {pool} from './lib/db.mjs';
+import fs from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+try {
+  const exists=await pool.query("SELECT to_regclass('public.aninexus_schema_migrations') AS name");
+  const rows=exists.rows[0]?.name?(await pool.query('SELECT name,checksum FROM aninexus_schema_migrations')).rows:[];
+  for(const row of rows){
+    if(!/^[a-zA-Z0-9_.-]+\.sql$/.test(row.name))throw new Error('Invalid migration name');
+    const bytes=await fs.readFile('/app/sql/'+row.name);
+    if(createHash('sha256').update(bytes).digest('hex')!==row.checksum)throw new Error('Migration checksum mismatch: '+row.name);
+  }
+  console.log('Migration image preflight passed: '+rows.length+' applied files');
+} finally { await pool.end(); }
+NODE
 mv "$staging_dir" "$release_dir"
 if [[ -L "$CURRENT_LINK" ]]; then previous_release="$(readlink -f "$CURRENT_LINK")"; fi
 ln -s "$release_dir" "$temporary_link"
@@ -113,3 +130,4 @@ for ((index=5; index<${#releases[@]}; index++)); do
 done
 
 echo "API implantada: ${release_id} (${expected_commit})"
+

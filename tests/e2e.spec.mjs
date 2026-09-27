@@ -1076,6 +1076,7 @@ test('detail tabs stay in one document, load real sections and preserve cross-me
   const impression={id:'10000000-0000-4000-8000-000000000001',body:'Trecho seguro e ||segredo importante||.',has_spoilers:true,hideSpoilers:true,status_snapshot:'CURRENT',progress_snapshot:7,score_snapshot:8,impression_stage:'PRELIMINARY',created_at:new Date().toISOString(),likes_count:2,replies_count:1,user:{username:'reviewer',displayName:'Reviewer',avatarUrl:pixel},username:'reviewer',display_name:'Reviewer',avatar_url:pixel};
   const characterWrites=[],moderationWrites=[];let characterDeleteAttempts=0;
   await page.route('**/api/anime/101',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(media)}));
+  await page.route('**/api/anime/101/franchise',route=>route.fulfill({status:503,json:{error:'FRANCHISE_UNAVAILABLE'}}));
   await page.route(/\/api\/anime\/101\/impressions(?:\?.*)?$/,route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({items:[impression]})}));
   await page.route('**/api/anime/101/episodes/*/comments/spoiler-check',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({allowed:true,userProgress:2,episodesAhead:0,status:'CURRENT'})}));
   await page.route(/\/api\/anime\/101\/episodes\/\d+\/comments(?:\?.*)?$/,route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({animeId:101,episode:1,items:[],sort:'recent',hideSpoilers:true})}));

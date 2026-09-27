@@ -50,6 +50,7 @@ services:
       REDIS_COMMAND_QUEUE_MAX: ${REDIS_COMMAND_QUEUE_MAX:-2000}
       UPSTREAM_TIMEOUT_MS: ${UPSTREAM_TIMEOUT_MS:-9000}
       PERSIST_MEDIA_CACHE: ${PERSIST_MEDIA_CACHE:-true}
+      PREDICTIONS_ENABLED: ${PREDICTIONS_ENABLED:-0}
       ANIMESCHEDULE_API_TOKEN: ${ANIMESCHEDULE_API_TOKEN:-}
       ANIMESCHEDULE_API_ENDPOINT: ${ANIMESCHEDULE_API_ENDPOINT:-https://animeschedule.net/api/v3}
       ANALYTICS_MAX_QUEUE: ${ANALYTICS_MAX_QUEUE:-10000}
@@ -124,6 +125,36 @@ services:
       timeout: 3s
       start_period: 10s
       retries: 3
+
+  predictions-worker:
+    profiles: ["predictions"]
+    build: .
+    restart: unless-stopped
+    init: true
+    command: ["node","lib/predictions-worker.mjs"]
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgres://aninexus:${POSTGRES_PASSWORD:?defina POSTGRES_PASSWORD no .env}@postgres:5432/aninexus
+      PG_POOL_MAX: 4
+      PREDICTIONS_ENABLED: ${PREDICTIONS_ENABLED:-0}
+      PREDICTIONS_ANILIST_AUTHORIZED: ${PREDICTIONS_ANILIST_AUTHORIZED:-0}
+    healthcheck:
+      test: ["CMD-SHELL","kill -0 1"]
+      interval: 30s
+      timeout: 3s
+      start_period: 10s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 30s
 
   postgres:
     image: postgres:17-alpine

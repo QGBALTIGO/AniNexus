@@ -132,8 +132,11 @@ jobs:
           echo "Não foi possível publicar o feed após 3 tentativas."
           exit 1
 
-      - name: Implantar feed atualizado na VPS
+      - name: Validar feed antes de qualquer deploy
         if: steps.publish.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run deploy-vps.yml --ref main
+        # GITHUB_TOKEN commits do not trigger push workflows. Dispatch quality
+        # explicitly; the existing workflow_run gate deploys only after success.
+        run: gh workflow run quality.yml --ref main
+
