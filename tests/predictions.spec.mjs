@@ -196,6 +196,30 @@ test('predictions embeds: community stays below its opening and empty home creat
   state.items=[];await page.evaluate(()=>window.AniNexusGo('/'));
   await expect(page.locator('.nx35-home')).toBeVisible();
   await expect(page.locator('.nx35-home .nx61-pred-embed')).toHaveCount(0);
+  await expect(page.locator('.nx35-home .nx61-pred-home')).toHaveCount(0);
+});
+
+test('predictions Home appears on first visit below impressions, recovers a transient request, and scrolls as a carousel',async({page})=>{
+  let requests=0;
+  await fixture(page,{path:'/',handler:call=>call.path==='/api/predictions'?(++requests===1?{status:503,json:{error:'TEMPORARY'}}:{json:{items:[base,second,closed],nextOffset:null}}):null});
+  const home=page.locator('.nx35-home'),section=home.locator('.nx61-pred-home');
+  await expect(section.locator('.nx61-pred-home-card')).toHaveCount(3,{timeout:15000});
+  expect(requests).toBeGreaterThanOrEqual(2);
+  expect(await section.evaluate(el=>el.previousElementSibling?.id)).toBe('nx38HomeImpressions');
+  await expect(home.locator('#nx35Community .nx61-pred-embed')).toHaveCount(0);
+  await page.setViewportSize({width:390,height:844});
+  const rail=section.locator('.nx61-pred-home-rail');
+  await expect(rail).toHaveAttribute('aria-roledescription','carrossel');
+  const before=await rail.evaluate(el=>el.scrollLeft);
+  await section.getByRole('button',{name:/Próximos itens de Previsões/}).click();
+  await expect.poll(()=>rail.evaluate(el=>el.scrollLeft)).toBeGreaterThan(before);
+  await expect(section.locator('.nx61-pred-home-card').first()).toContainText('Consenso geral');
+  await expect(section.locator('.nx61-pred-home-card').first()).toContainText('Tendência 24h');
+  await expect(section.locator('.nx61-pred-home-card').first()).toContainText('Votos');
+  await expect(section.locator('.nx61-pred-home-card').first()).toContainText('Prazo');
+  await expect(section.locator('.nx61-pred-home-card').first()).not.toContainText('100%');
+  await expect(section.getByRole('link',{name:'Prever'}).first()).toHaveAttribute('href',new RegExp('/previsoes\\?previsao='+firstId));
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(2);
 });
 
 test('predictions: expired open cards are closed and date evidence is not presented as a score',async({page})=>{
@@ -293,13 +317,13 @@ test('predictions presentation: compact cards align their links without stretchi
   const after=await cards.nth(1).boundingBox();expect(after.height).toBeCloseTo(before.height,0);
   expect((await cards.first().boundingBox()).height).toBeGreaterThan(after.height);
   await page.evaluate(()=>window.AniNexusGo('/'));
-  const embed=page.locator('.nx35-home .nx61-pred-embed');await expect(embed).toHaveCount(1);
+  const embed=page.locator('.nx35-home .nx61-pred-home');await expect(embed).toHaveCount(1);
   for(const theme of ['dark','light'])for(const width of [320,390,768,1440]){
     await page.setViewportSize({width,height:900});await page.evaluate(theme=>{localStorage.setItem('aninexus:theme',theme);document.documentElement.dataset.theme=theme;},theme);
     await expect(page.locator('html')).toHaveAttribute('data-theme',theme);
     await page.evaluate(async()=>{await document.fonts.ready;await document.fonts.load('800 16px Manrope');});
     await embed.evaluate(el=>scrollTo({top:scrollY+el.getBoundingClientRect().top-100,behavior:'instant'}));
-    const positions=await embed.locator('[data-prediction]').evaluateAll(nodes=>nodes.map(el=>({height:el.getBoundingClientRect().height,top:el.getBoundingClientRect().top,link:el.querySelector('.nx61-pred-link').getBoundingClientRect().top})));
+    const positions=await embed.locator('[data-prediction]').evaluateAll(nodes=>nodes.map(el=>({height:el.getBoundingClientRect().height,top:el.getBoundingClientRect().top,link:el.querySelector('.nx61-pred-home-buttons').getBoundingClientRect().top})));
     for(const item of positions.filter(p=>Math.abs(p.top-positions[0].top)<1)){
       expect(item.height).toBeCloseTo(positions[0].height,0);expect(item.link).toBeCloseTo(positions[0].link,0);
     }
@@ -307,4 +331,3 @@ test('predictions presentation: compact cards align their links without stretchi
     if(width===390||width===1440)await page.screenshot({path:info.outputPath(`compact-refined-${theme}-${width}.png`),animations:'disabled'});
   }
 });
-

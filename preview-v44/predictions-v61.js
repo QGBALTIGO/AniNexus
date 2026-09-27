@@ -25,6 +25,18 @@
   const privateApi=(path,options)=>window.AniNexusAuth.api(path,options);
   const active=state=>current===state&&state.host.isConnected;
   const arrow='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6M8 12h12"/></svg>';
+  const predictionHref=item=>url('/previsoes?previsao='+encodeURIComponent(item.id));
+  function homeCard(item){
+    const votes=Number(item.voteCount)||0,yes=Number(item.yesCount)||0,no=Number(item.noCount)||0;
+    const closed=item.status!=='OPEN'||Date.parse(item.closesAt)<=Date.now();
+    const yesPercent=votes?Math.round(yes/votes*100):0;
+    const closeDate=new Date(item.closesAt);
+    const days=Number.isFinite(closeDate.getTime())?Math.max(0,Math.ceil((closeDate.getTime()-Date.now())/86400000)):null;
+    const deadline=closed?'Palpites encerrados':days===null?'Prazo a confirmar':days===0?'Fecha hoje':`Fecha em ${days} ${days===1?'dia':'dias'}`;
+    const count=votes>=20?`${yesPercent}% Sim · ${100-yesPercent}% Não`:votes?`${yes} Sim · ${no} Não`:'Sem palpites ainda';
+    const target=predictionHref(item);
+    return `<article class="nx61-pred-home-card" data-prediction="${esc(item.id)}"><div class="nx61-pred-home-card-top"><span class="nx61-pred-home-chip">${item.mediaType==='MANGA'?'Mangás':'Animes'}</span><span class="nx61-pred-home-status">${closed?'Encerrada':'Aberta'}</span></div><div class="nx61-pred-home-question"><small>${esc(item.mediaTitle)}</small><h3>${esc(questionLabel(item))}</h3></div><div class="nx61-pred-home-consensus"><div><span>Consenso geral</span><strong>${count}</strong></div><div class="nx61-pred-home-bar" role="img" aria-label="${esc(count)}"><span style="width:${votes>=20?yesPercent:0}%"></span></div></div><div class="nx61-pred-home-meta"><span title="Ainda não há histórico de 24 horas para esta previsão"><small>Tendência 24h</small><strong>—</strong></span><span><small>Votos</small><strong>${votes}</strong></span><span title="${esc(date(item.closesAt))}"><small>Prazo</small><strong>${deadline}</strong></span></div><div class="nx61-pred-home-buttons"><a href="${target}" class="secondary">Ver detalhes</a><a href="${target}" class="primary">${closed?'Ver resultado':'Prever'}</a></div></article>`;
+  }
   function card(item,compact=false){
     const votes=Number(item.voteCount)||0,yes=Number(item.yesCount)||0,no=Number(item.noCount)||0;
     const closed=item.status!=='OPEN'||Date.parse(item.closesAt)<=Date.now(),chosen=item.userVote?.choice||item.userVote;
@@ -117,17 +129,47 @@
       const section=document.createElement('section');section.className='nx61-pred-embed';section.innerHTML=`<div class="nx61-pred-embed-head"><h2>${heading}</h2><a href="${url('/previsoes')}">Ver todas →</a></div><div class="nx61-pred-grid">${data.items.slice(0,3).map(i=>card(i,true)).join('')}</div>`;host.append(section);
     }catch{/* Auxiliary recommendations never block the page or create empty gaps. */}
   }
+  const homeRequests=new WeakMap();
+  function homeEmbed(impressions){
+    const home=impressions.closest('.nx35-home');if(!home)return;
+    let section=home.querySelector(':scope > .nx61-pred-home');
+    if(section&&section.previousElementSibling!==impressions)impressions.insertAdjacentElement('afterend',section);
+    if(section)return;
+    section=document.createElement('section');section.className='nx35-section nx61-pred-home';
+    section.innerHTML=`<div class="nx35-shell"><div class="nx35-head"><div><small>COMUNIDADE</small><h2>Previsões <em>em alta</em></h2><p>Palpites sobre as obras que você acompanha, com resultados verificáveis.</p></div><a href="${url('/previsoes')}">Ver todas ${arrow}</a></div><div class="nx35-edge"><div class="nx35-rail nx61-pred-home-rail" tabindex="0" aria-label="Previsões em alta"><div class="nx61-pred-home-loading" role="status">Carregando previsões…</div></div></div></div>`;
+    impressions.insertAdjacentElement('afterend',section);
+    const request=Symbol('home-predictions');homeRequests.set(section,request);
+    const rail=section.querySelector('.nx61-pred-home-rail');
+    const loadHome=async(attempt=0)=>{
+      if(!section.isConnected||homeRequests.get(section)!==request)return;
+      try{
+        const data=await publicApi('/api/predictions?filter=hot',AbortSignal.timeout(12000));
+        if(!section.isConnected||homeRequests.get(section)!==request)return;
+        if(!data.items?.length){section.remove();return;}
+        rail.innerHTML=data.items.slice(0,8).map(homeCard).join('');
+        window.AniNexusRails?.refresh?.();
+      }catch(error){
+        if(!section.isConnected||homeRequests.get(section)!==request)return;
+        if(error.status===404){section.remove();return;}
+        if(attempt<2){setTimeout(()=>loadHome(attempt+1),attempt?4000:1500);return;}
+        rail.innerHTML='<div class="nx61-pred-home-error" role="status">As previsões não carregaram agora. <button type="button">Tentar novamente</button></div>';
+        rail.querySelector('button').addEventListener('click',()=>{rail.innerHTML='<div class="nx61-pred-home-loading" role="status">Carregando previsões…</div>';loadHome();},{once:true});
+      }
+    };
+    loadHome();
+  }
   function scan(){
     scheduled=false;mount();
-    const home=document.querySelector('.nx35-home #nx35Community')?.closest('.nx35-shell');if(home)embed(home);
+    const impressions=document.querySelector('.nx35-home #nx38HomeImpressions');if(impressions)homeEmbed(impressions);
     const community=document.querySelector('.nx40-community .nx40-main');if(community)embed(community);
     const detail=document.querySelector('.nx22-detail'),panel=detail?.querySelector('#nx22Panel');
     if(panel&&detail.querySelector('[data-nx22-tab="geral"].active'))embed(panel,'&mediaId='+encodeURIComponent(detail.dataset.nx22Id)+'&mediaType='+encodeURIComponent(detail.dataset.nx22Type||'ANIME'),'Previsões sobre esta obra');
   }
   function schedule(){if(!scheduled){scheduled=true;requestAnimationFrame(scan);}}
-  const observer=new MutationObserver(records=>{if(records.some(r=>[...r.addedNodes].some(n=>n instanceof Element&&n.matches('main,article.nx22-detail,.nx35-home,.nx40-community'))))schedule();});
+  const observer=new MutationObserver(records=>{if(records.some(r=>[...r.addedNodes].some(n=>n instanceof Element&&(n.matches('main,article.nx22-detail,.nx35-home,.nx40-community,#nx38HomeImpressions')||n.querySelector('#nx38HomeImpressions')))))schedule();});
   const init=()=>{observer.observe(document.querySelector('#app')||document.body,{childList:true,subtree:true});schedule();};
   addEventListener('aninexus:route-changed',schedule);addEventListener('aninexus:route-ready',schedule);
+  addEventListener('aninexus:home-v34-ready',schedule);
   addEventListener('hashchange',schedule);addEventListener('popstate',schedule);addEventListener('aninexus:navigate',schedule);
   addEventListener('aninexus:detail-panel',event=>{
     const host=event.detail?.host;if(!host)return;
@@ -138,4 +180,3 @@
   window.AniNexusPredictions=Object.freeze({mount});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
-
