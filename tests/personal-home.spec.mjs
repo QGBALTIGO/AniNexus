@@ -26,6 +26,12 @@ test('personal home: guest does not query private data',async({page})=>{
   let calls=0;await authFixture(page,route=>{calls++;return route.fulfill({json:fixture})},{signedIn:false});await page.goto(origin);
   await expect(page.locator('.nx35-home')).toBeVisible();await expect(page.locator('.nx35-hero')).toBeVisible();await expect(page.locator('.nx61-personal-home')).toHaveCount(0);expect(calls).toBe(0);
 });
+test('personal home: continue opens the correct dedicated detail route',async({page})=>{
+  await authFixture(page,route=>route.fulfill({json:fixture}));
+  await page.route('**/api/anime/1',route=>route.fulfill({json:{id:1,mediaType:'ANIME',title:'One Piece',description:'Uma aventura em português.',status:'RELEASING',cover:'/assets/logo.png',relations:[],characters:[],staff:[],recommendations:[]}}));
+  await page.goto(origin);await expect(page.locator('.nx61-continue-card').first()).toBeVisible();await page.locator('.nx61-continue-card').first().click();
+  await expect(page).toHaveURL(/\/anime\/one-piece-1$/);await expect(page.locator('.nx22-detail h1')).toHaveText('One Piece');
+});
 test('personal home: failure is recoverable and empty account is honest',async({page},info)=>{
   let fail=true;await authFixture(page,route=>route.fulfill(fail?{status:503,json:{error:'TEMPORARILY_UNAVAILABLE'}}:{json:{...fixture,continue:[],todayItems:[],week:[],backlog:[],premieres:[],coverage:{tracked:0}}}));
   await page.goto(origin);const hub=page.locator('.nx61-personal-home');await expect(hub).toContainText('Sua central não carregou agora.');

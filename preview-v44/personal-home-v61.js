@@ -6,7 +6,8 @@
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const icon = name => window.AniNexusUI?.notification({kind:name === 'book' ? 'NEWS' : name === 'calendar' ? 'SCHEDULE' : 'EPISODE'}).svg || '';
   const timeZone = () => Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Sao_Paulo';
-  const href = item => `/${item.mediaType === 'MANGA' ? 'manga' : 'anime'}/${Number(item.id)}`;
+  const slug = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,90)||'obra';
+  const href = item => `/${item.mediaType === 'MANGA' ? 'manga' : 'anime'}/${slug(item.title)}-${Number(item.id)}`;
   const dayLabel = day => new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'short',timeZone:'UTC'}).format(new Date(day+'T12:00:00Z'));
   const clockLabel = (seconds, zone) => new Intl.DateTimeFormat('pt-BR',{hour:'2-digit',minute:'2-digit',timeZone:zone}).format(new Date(seconds*1000));
   const empty = text => `<p class="nx61-home-empty">${esc(text)}</p>`;

@@ -8,7 +8,7 @@ const row = (id, changes = {}) => ({ media_id:id, media_type:'ANIME',status:'CUR
 test('personal home is type-safe and uses real progress without invented releases',()=>{
   const data=personalHome([row(1),row(1,{media_type:'MANGA',media:{title:'Mangá',chapters:20,status:'FINISHED'}}),row(2,{media:{title:'No ar',episodes:100,status:'RELEASING'}}),row(3,{progress:12}),row(4,{status:'PAUSED'})],{now});
   assert.equal(data.continue.length,3);assert.equal(data.continue[0].next,4);assert.equal(data.backlog.length,1);assert.equal(data.backlog[0].remaining,9);
-  assert.equal(data.continue[1].href,'/manga/1');assert.equal(data.coverage.tracked,5);
+  assert.equal(data.continue[1].href,'/manga/manga-1');assert.equal(data.coverage.tracked,5);
 });
 test('schedule uses the requested local day, rejects stale metadata and never assumes unknown dates',()=>{
   const episode={airingAt:Date.parse('2026-09-27T02:00:00Z')/1000,episode:4};
