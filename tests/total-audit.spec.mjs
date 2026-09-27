@@ -10,6 +10,17 @@ const media = (id, type = 'ANIME', name = type === 'MANGA' ? 'Mangá de teste' :
 });
 const fulfill = (route, data, status = 200) => route.fulfill({ status, contentType: 'application/json', body: JSON.stringify(data) });
 
+test('news enrichment cannot block readable news when remote images and the hot feed stall', async ({ page }) => {
+  const item={id:'audit-news',slug:'noticia-de-teste',title:'Notícia pronta para leitura',summary:'Uma atualização em português pronta para leitura.',event_type:'ANIME',source_name:'AniNexus Notícias',language:'pt-BR',published_at:new Date().toISOString(),expires_at:new Date(Date.now()+86400000).toISOString(),reading_minutes:1};
+  await page.route('**/api/news?*', route => fulfill(route, {items:[item]}));
+  const stall = async route => { await new Promise(resolve => setTimeout(resolve, 20000)); await fulfill(route, {}).catch(() => {}); };
+  await page.route('**/data/news*.json*', stall);
+  await page.route('https://graphql.anilist.co/**', stall);
+  await page.goto(new URL('/noticias', origin).href, {waitUntil:'domcontentloaded'});
+  await expect(page.locator('.nx35-ncard', {hasText:item.title})).toBeVisible({timeout:5000});
+  await expect(page.locator('#nx35NewsCount')).not.toContainText('Carregando');
+});
+
 for (const [path, recovery] of [
   ['/animes/programacao', '[data-schedule-retry]'],
   ['/animes/temporadas', '.nx-season-error'],

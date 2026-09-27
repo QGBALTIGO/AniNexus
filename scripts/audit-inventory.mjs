@@ -20,7 +20,7 @@ await fs.writeFile('audit-artifacts/inventory.json',JSON.stringify({createdAt:ne
 async function rows(run){try{return(await fs.readFile('audit-artifacts/'+run+'/results.jsonl','utf8')).trim().split('\n').filter(Boolean).map(JSON.parse)}catch{return[]}}
 const captures=[],faults=[],navigation=new Map();
 for(const run of ['baseline-guest','preview-all-viewports','preview-admin-final','preview-header-final','post-release-guest','post-release-admin'])for(const item of await rows(run))captures.push({...item,run});
-for(const run of ['chaos','chaos-remaining','chaos-timeout-final','chaos-detail-final','chaos-deadlines-final','chaos-final-retest'])for(const item of await rows(run))faults.push({...item,run});
+for(const run of ['chaos','chaos-remaining','chaos-timeout-final','chaos-detail-final','chaos-deadlines-final','chaos-final-retest','chaos-news-final'])for(const item of await rows(run))faults.push({...item,run});
 for(const run of ['navigation-adversarial','navigation-header-retest','navigation-final','post-release-navigation'])for(const item of await rows(run))navigation.set(item.route,{...item,run});
 const viewport=(route,width)=>{const found=captures.filter(x=>x.route===route&&x.width===width);return found.some(x=>x.run.startsWith('post-release'))?'E-live':found.some(x=>x.mode==='preview')?'E-preview':found.length?'E-base':'P'};
 const fault=(route,state)=>{const x=faults.filter(x=>x.route===route&&x.state===state).at(-1);if(!x)return'P';return !x.failure&&!x.errors?.length&&!x.diagnosticLeak&&!x.unresolvedLoading&&!/Carregando perfil|Organizando suas conquistas|Consultando catálogo|Consultando seleção|Carregando ranking/.test(x.content||'')&&x.views?.every(v=>v.scrollWidth<=v.width+2)?'E-fault':'F'};

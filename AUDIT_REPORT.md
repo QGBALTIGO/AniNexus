@@ -42,6 +42,7 @@ Aniquim: seis páginas públicas obtidas com Scrapling e renderizadas com CSS or
 | Descoberta/listas/temporada/programação/comunidade | consultas diretas sem prazo deixavam skeletons infinitos | JSON com deadline incluindo corpo, fallback limitado e retry |
 | Contadores da descoberta | após erro, cards ainda diziam “Consultando catálogo” | loading/erro explícitos e contadores coerentes |
 | Notícias | cancelamento não garantia término do carregamento | deadline que também limita provedores que não respeitam abort |
+| Notícias / camada complementar | enriquecimento antigo voltava a bloquear feed e perdia atualizações progressivas | primeiro feed saudável, callback preservado e imagens assíncronas limitadas |
 | Cadastro real | aceite legal em inglês | localização pt-BR explícita e invalidação do cache da tradução; formulário real verificado |
 
 ## Regressão e proteção de dados
@@ -49,6 +50,7 @@ Aniquim: seis páginas públicas obtidas com Scrapling e renderizadas com CSS or
 - 1.980 capturas de visitante antes e 1.980 depois das correções principais; 15 larguras, dois temas.
 - 66 jornadas de navegação com reteste das seis falhas iniciais.
 - 144/144 novos testes de busca, rotas, formulários e recuperação nos três motores.
+- Regressão ampliada final: 216/216 testes; depois, três testes adicionais de notícias sem depender das imagens passaram.
 - 84/84 cenários Axe sem violações sérias/críticas; não equivale a certificação WCAG integral.
 - 33/33 testes de conteúdo/viewport após corrigir fallback; repetição ampliada para título sem espaços.
 - 18 capturas de login/cadastro reais, seis análises Axe e preservação de texto ao alternar tema.
