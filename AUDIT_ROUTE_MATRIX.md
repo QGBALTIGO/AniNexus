@@ -209,8 +209,63 @@ Navegador comum bloqueado. Scrapling recuperou seis páginas públicas (HTTP 200
 ### Novos estados após a auditoria-base
 
 - `/`: central pessoal autenticada, visitante, vazio, falha recuperável, saída com resposta atrasada, continuação anime/mangá; `tests/personal-home.spec.mjs` e lógica/SQL. Publicado e bytes verificados em `6fe6dff1`.
-- `/anime/:slug-id` e `/manga/:slug-id`, aba Franquia: sequência/release/extras/spin-offs, cronologia sem curadoria, progresso privado, sugestão de sequência, vazio, cobertura parcial, saída da conta/aba; `tests/franchise.spec.mjs`, testes de lógica/SQL. Implementação ainda não publicada.
-- `/minha-biblioteca?view=diary`: carregando, privado/vazio, erro/retry, período, registro anime/mangá, nota zero, spoiler, erro ao salvar preservando texto/chave, edição, confirmação de exclusão, card PNG, saída durante resposta e histórico voltar/avançar. `tests/diary.spec.mjs` e `tests/diary-database.mjs`. Implementação ainda não publicada; SQL real pendente do CI.
+- `/anime/:slug-id` e `/manga/:slug-id`, aba Franquia: sequência/release/extras/spin-offs, cronologia sem curadoria, progresso privado, sugestão de sequência, vazio, cobertura parcial, saída da conta/aba; `tests/franchise.spec.mjs`, testes de lógica/SQL. Estado naquela rodada: ainda não publicada; atualização de publicação na seção da release integrada ao final.
+- `/minha-biblioteca?view=diary`: carregando, privado/vazio, erro/retry, período, registro anime/mangá, nota zero, spoiler, erro ao salvar preservando texto/chave, edição, confirmação de exclusão, card PNG, saída durante resposta e histórico voltar/avançar. `tests/diary.spec.mjs` e `tests/diary-database.mjs`. Estado naquela rodada: ainda não publicada, SQL real pendente do CI; atualização de publicação na seção da release integrada ao final.
 - Novas telas com claro/escuro, medidas de reflow em 15 larguras, teclado e Axe; os PNGs estão em `audit-artifacts/diary-final`, `diary-cross-browser`, `franchise-fixed` e `personal-home-final`. Não substituir a inspeção visual pelos totais automatizados.
 
 158 arquivos ativos; 176 candidatos de API. Inventário detalhado privado: audit-artifacts/inventory.json. Status de release e limites: FINAL_QA_REPORT.md. Reexecutar o gerador após terminar as rodadas pendentes.
+
+### Home restaurada por orientação posterior — 27/09, 18:56 UTC
+
+A proposta de central pessoal no topo e indicadores horizontais foi substituída. A abertura original permanece e somente a prateleira de continuidade fica entre Personagens e Vencedores. Sem indicadores extras em home/fichas/perfil. Evidências: 42/42 regressões em Chromium/Firefox/WebKit, claro/escuro, 15 larguras, visitante/vazio/falha/saída durante carregamento, teclado e links. Conta real somente leitura em produção: 390/1440px e ambos os temas, com capas e dados reais; PNGs inspecionados em `audit-artifacts/home-restoration-live`. Release isolada `5fe9fc689ca2`, 129 arquivos SHA verificados e HTTPS válido. Detalhes: `HOME_RESTORATION_20260927.md`. Demais funcionalidades seguem em validação, sem serem incluídas neste deploy.
+
+### Previsões e espaçamento dos cards — release anterior 86286bb6c285
+
+Artefato auditado: `86286bb6c2855121cbce0c39e06e80226e0cbc81`, sobre o ajuste de espaçamento `d9b6c3cbcbca0246826db8888400e4efc8e240b7`. Esta seção não altera nem reutiliza como aprovação da candidata os resultados de produção das releases anteriores.
+
+**Estado histórico: publicada e validada em 16 combinações live, depois substituída pelo fluxo de notícias.** A primeira tentativa de atualização da API falhou por CRLF no empacotamento e teve rollback saudável. Após correção, o responsável pelo deploy confirmou a release `20260927T202100Z-86286bb6c285`, 33 checksums comparados dentro da imagem antes da ativação e 34 migrações aplicadas. O primeiro ciclo do worker publicou 10 perguntas reais, todas OPEN e sem votos no momento da checagem. Evidência operacional E-live histórica: 131 arquivos servidos com SHA exato, `release.json` estável antes/depois da conferência, HTTPS válido com certificado Let's Encrypt YE2 até 24/11/2026, health/db/cache saudáveis, GETs públicos verificados com HTTP 200 e endpoint privado anônimo com HTTP 401. O workflow editorial substituiu depois essa versão por `f7f7a73`; não usar os resultados desta seção para declarar a versão atual aprovada.
+
+| Superfície / estado | Evidência na candidata | Limite da cobertura |
+| --- | --- | --- |
+| `/previsoes`: cartões, critérios, fonte, encerramento, janela de leitura e resultado | E-preview + T; Chromium, Firefox e WebKit; claro/escuro; 320, 390, 768 e 1440 px | PNGs de 390/1440 px; demais larguras da matriz-base continuam P para esta nova rota |
+| Visitante, identidade indisponível, lista vazia, erro recuperável e recurso desativado | T; conteúdo público independente da consulta de identidade; visitante não envia voto nem consulta histórico privado | Identidade e API simuladas nos testes de navegador; não é login real de produção |
+| Voto Sim/Não, troca de opção, clique concorrente, falha de gravação e encerramento | T; uma gravação por ação; escolha anterior preservada em falha; 409 impede nova mudança | Concorrência e horários também testados em PostgreSQL isolado; sem votos em contas de membros |
+| Filtros, histórico pessoal, paginação, ranking e amostra pequena | T; paginação sem repetição, porcentagens coerentes e reputação inelegível explicada | Não afirmar ranking populado nem precisão estatística aferida com comunidade real |
+| Links de notificação, mudança de alvo na mesma rota, hash nativo e voltar | T; alvo fora da primeira página e navegação com rota já montada | Notificação interna; push e e-mail não fazem parte desta entrega |
+| `/`: seção compacta de Previsões e retorno da rota | T; hero existente preservado, ausência de seção vazia e de barras vermelhas extras | Não volta a central pessoal ao topo; continuidade mantém a posição já aprovada |
+| `/comunidade`: seção de Previsões abaixo da abertura | T; posição e montagem sem duplicação | Sem redesign da página ou cópia visual do UpVer |
+| `/anime/:slug-id` e `/manga/:slug-id`: previsões relacionadas na aba Geral | T; resposta atrasada não invade outra aba; retorno monta uma única seção | O worker inicial gera somente perguntas de nota para animes; não há geração automática para mangás |
+| `/`: título e gêneros nos cards da prateleira de leitura | E-preview + T; três engines, claro/escuro; 320, 390, 768, 1440 e 1920 px | Título curto ocupa uma linha, longo até duas; intervalo de 0–6 px; capa, área de toque e rolagem preservadas |
+| Worker: origem válida, deduplicação, limite semanal, 429, falha da fonte e reinício | T em lógica e banco real isolado; leitura pública AniList somente leitura | Não comprova operação contínua futura nem substitui a confirmação de saúde do worker implantado |
+
+Totais desta rodada: **40/40** testes de core/worker, **40/40** verificações com PostgreSQL real isolado e **60/60** testes de navegador no artefato exato (**54** de Previsões + **6** de espaçamento). Axe foi executado na nova página para WCAG 2 A/AA e 2.1 AA; isso não representa certificação de acessibilidade de todo o site.
+
+Referências: `tests/predictions.mjs`, `tests/predictions-worker.mjs`, `tests/predictions-database.mjs`, `tests/predictions.spec.mjs`, `tests/home-card-spacing.spec.mjs`. Artefatos: `audit-artifacts/api-release-86286bb6c285/`, `audit-artifacts/release-build-86286bb6c285/`, `audit-artifacts/predictions-release-exact/`; rodada visual anterior de espaçamento em `audit-artifacts/home-spacing-verified/`. Escopo, limitações e gates restantes: `PREVISOES_RELEASE_20260927.md`.
+
+### Release integrada e proteção do deploy — fechamento do recorte em 27/09/2026
+
+Runtime de regressão: `7f279fd699a8e694d6fc7d7530510e3cf2cdcb7a`. Commit publicado: `0902d355c8fe11cf76f0a51dc78ed868201a7139`. A diferença entre eles fica somente em feeds `data/news.json`/`data/trailers.json`, guard de `.github/workflows/update-news.yml` e `tests/deployment-safety.mjs`. A comparação dos artefatos confirmou 137 arquivos HTML/JS/CSS com hashes iguais; as diferenças de feeds verificadas ficaram em `generatedAt`/`duration`.
+
+**Estado atual: E-live neste recorte; auditoria total não declarada concluída.** API e web `0902d355c8fe` foram ativadas às 20:47:43 UTC na release `20260927T204306Z-0902d355c8fe`. Foram aprovados 35 checksums dentro da imagem, 35 migrações aplicadas e 135 arquivos servidos exatos; HTTPS válido e saúde de todos os serviços confirmados. O worker está ativo: seu reinício publicou zero perguntas novas e preservou as 10 existentes, sem duplicação e com zero votos; um segundo ciclo também terminou corretamente, sem duplicatas. A etapa anterior em `f7f7a73`, sem worker, foi superada por esta publicação.
+
+Causa confirmada da substituição: o workflow de notícias despachava deploy diretamente e aceitava push sem limitar branches, com checkout da referência disparadora. O workflow corrigido despacha qualidade, habilita `workflow_dispatch` em qualidade, limita push a `main` e faz checkout explícito de `main`; o gate de deploy depende da conclusão bem-sucedida de qualidade. **2/2** testes de segurança do deploy passaram. O CI geral ainda não tem confirmação verde, portanto não atribuir essa aprovação à pipeline inteira.
+
+Adendo de CI: qualidade agora usa `cancel-in-progress` somente em evento `push`; despachos frequentes de notícias não cancelam uma análise em curso. `tests/deployment-safety.mjs` inclui a asserção correspondente. A correção foi publicada em `main` no commit `4d5559a0dd1a2ab75128e33870e74dab088c9356`; é apenas de workflow/teste, sem mudança de runtime nem necessidade de novo deploy. O runtime servido continua `0902d355c8fe` e a confirmação verde do CI geral permanece pendente.
+
+| Área / estado novo | Evidência atual | Limite / pendência |
+| --- | --- | --- |
+| `/previsoes` e seções compactas: perguntas com data/hora de Brasília e links alinhados | 63/63 integrados; regras desconhecidas preservam a pergunta registrada; QA live final autenticado: 16 combinações, capas 3 mobile/8 desktop, zero erros/escritas | Leitura em produção; votos gravados foram testados somente em ambientes isolados |
+| Comunidade e ficha de One Piece | E-live em 390/1440 px: três previsões na Comunidade e uma em One Piece, zero erros/escritas | Sem promessa de previsões para toda obra; V1 gera somente perguntas de nota de anime |
+| Fichas anime/mangá, aba Franquia: grafo indisponível/incompleto, relações entre tipos e títulos não resolvidos | 21/21 na suíte específica; 18/18 integrados; leitura live: 31 obras/30 relações, capas 4 mobile/10 desktop em 390/1440 px, zero erros/escritas | Não inventa cronologia curada; estados de escrita reais não foram exercitados na conta do usuário |
+| `/minha-biblioteca?view=diary` | Diário de `main` integrado; 18/18 testes de navegador aprovados | Não declarar todas as ações reais de gravação do Diário aprovadas em produção |
+| `/`: espaçamento título/gêneros e rolagem existente | Seis testes integrados aprovados; QA live de leitura da release atual concluído | Demais larguras/estados não cobertos continuam com os status próprios da matriz |
+| Pacote de runtime e operação | `npm run check` passou; 137 HTML/JS/CSS equivalentes; 135 arquivos servidos exatos; serviços/worker/HTTPS saudáveis | Observação contínua futura e CI geral não comprovados por essa fotografia |
+
+**Rodada exata concluída: 105/105 testes de navegador**, divididos em 63 Previsões + 6 espaçamento + 18 Franquia + 18 Diário. Os status antigos de Diário/Franquia acima documentam o escopo daquela rodada; a release atual os integra e possui evidências posteriores específicas, sem reclassificar como aprovadas todas as ações históricas pendentes.
+
+Gitleaks do CI apontou cinco falsos positivos históricos, inspecionados como chaves públicas de teste do Clerk, placeholder de `.env.example` e chaves de armazenamento do cliente. As exceções em `.gitleaksignore` usam fingerprints exatos. O binário 8.24.3 teve checksum oficial verificado; a varredura local de 1.275 commits, com essas exceções pontuais, não reportou vazamentos. O resultado geral do CI permanece sem confirmação verde.
+
+**Limite da V1:** só `SCORE_AT_DEADLINE` é gerado/resolvido automaticamente. A primeira resolução real das perguntas publicadas é futura, em 05/10/2026; a lógica foi testada, mas não afirmar que esse evento já ocorreu em produção. O QA live registrado foi somente leitura, sem criação de votos nem alterações na biblioteca dos membros. A auditoria total do site continua fora da afirmação de conclusão deste recorte.
+
+Artefatos: `audit-artifacts/api-release-7f279fd699a8/`, `audit-artifacts/release-build-7f279fd699a8/`, `audit-artifacts/api-release-0902d355c8fe/`, `audit-artifacts/release-build-0902d355c8fe/`; evidências específicas em `audit-artifacts/predictions-final-refinement/`, `audit-artifacts/franchise-fallback/`, `audit-artifacts/predictions-live/`, `audit-artifacts/predictions-embeds-live/` e `audit-artifacts/gitleaks-8.24.3/`. O detalhamento temporal está em `PREVISOES_RELEASE_20260927.md`.
+
