@@ -84,6 +84,7 @@ try{
   registerPredictions(app,{enabled:true,pool,q:query,requireUser:async(req,reply)=>{if(req.headers['x-test-user'])return{id:req.headers['x-test-user']};reply.code(401).send({error:'UNAUTHORIZED'});return null}});
   for(const filter of ['hot','new','closing','divided','resolved']){const response=await app.inject({url:`/api/predictions?filter=${filter}`});assert.equal(response.statusCode,200,response.body);assert.ok(Array.isArray(response.json().items));}check();
   let response=await app.inject({url:`/api/me/predictions?ids=${ready.id}`,headers:{'x-test-user':user}});assert.equal(response.statusCode,200,response.body);assert.equal(response.json().items.length,1);assert.equal(response.json().items[0].userVote.choice,'YES');assert.equal(response.headers['cache-control'],'no-store');check();
+  await votePrediction(pool,id,user,'YES',75);
   response=await app.inject({url:`/api/predictions/${id}/detail`});assert.equal(response.statusCode,200,response.body);assert.equal(response.json().collective.votes,2);assert.equal(response.json().collective.weightedYesPercent,60);assert.ok(response.json().history.length>=3);check();
   response=await app.inject({url:`/api/me/predictions/${id}/vote`,method:'PUT',headers:{'x-test-user':user},payload:{choice:'YES',confidence:17}});assert.equal(response.statusCode,422);check();
   response=await app.inject({url:`/api/me/predictions/${id}/follow`,method:'PUT',headers:{'x-test-user':observer},payload:{following:true}});assert.equal(response.statusCode,200);assert.equal(response.json().following,true);

@@ -170,6 +170,15 @@ test('prediction detail: Prever opens the vote section and saves choice with con
   expect(state.calls.find(call=>call.path==='/api/me/predictions/'+firstId+'/vote').body).toEqual({choice:'YES',confidence:75});
 });
 
+test('prediction detail: final result explains reputation and cannot be followed anew',async({page})=>{
+  const item={...base,status:'RESOLVED',result:'YES',resolvedAt:new Date().toISOString()};
+  await fixture(page,{signedIn:true,path:'/previsoes?previsao='+firstId,items:[item],mine:[{...item,userVote:{choice:'YES',confidence:75,eligible:true}}]});
+  await expect(page.locator('.nx62-result')).toContainText('Resultado confirmado');
+  await expect(page.locator('.nx62-reputation-result')).toContainText('+50 pontos reputacionais');
+  await expect(page.locator('[data-pred-follow]')).toHaveCount(0);
+  await expect(page.locator('[data-pred-confirm]')).toHaveCount(0);
+});
+
 test('predictions: rounded consensus sums to 100 and identity errors leave a retryable vote',async({page})=>{
   const state=await fixture(page,{signedIn:true,items:[{...base,yesCount:15,noCount:25,voteCount:40}]});
   const first=page.locator(`[data-prediction="${firstId}"]`);
