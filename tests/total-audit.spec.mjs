@@ -63,9 +63,17 @@ for(const theme of ['dark','light'])for(const width of [390,1440])test(`library 
   expect(blocking.map(x=>({id:x.id,nodes:x.nodes.map(n=>n.target)}))).toEqual([]);
   await page.locator('[data-nx49-filter-open]').click();
   await expect(page.locator('.nx49-filter-dialog')).toBeVisible();
+  const close=page.locator('.nx49-filter-dialog [data-nx49-filter-close]'),apply=page.locator('[data-nx49-filter-apply]');
+  await expect(close).toBeFocused();await page.keyboard.press('Shift+Tab');await expect(apply).toBeFocused();
+  await page.keyboard.press('Tab');await expect(close).toBeFocused();
   const dialog=await new AxeBuilder({page}).include('.nx49-filter-dialog').withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
   expect(dialog.violations.filter(x=>['serious','critical'].includes(x.impact)).map(x=>({id:x.id,nodes:x.nodes.map(n=>n.target)}))).toEqual([]);
   await page.keyboard.press('Escape');await expect(page.locator('.nx49-filter-dialog')).toBeHidden();
+  await expect(page.locator('[data-nx49-filter-open]')).toBeFocused();
+  await page.locator('[data-nx49-filter-open]').click();await page.locator('.nx49-filter-dialog label',{hasText:'Título'}).click();await apply.click();
+  await expect(page.locator('.nx49-filter-dialog')).toBeHidden();await expect(page.locator('[data-nx49-filter-open]')).toBeFocused();
+  await page.locator('[data-nx49-filter-open]').click();await expect(page.locator('input[name="nx49-sort"][value="title"]')).toBeChecked();
+  await page.locator('[data-nx49-filter-reset]').click();await expect(page.locator('[data-nx49-filter-open]')).toBeFocused();
 });
 
 for(const theme of ['dark','light'])for(const width of [390,1440])test(`member account and notification states are readable ${theme} ${width}`,async({page},info)=>{

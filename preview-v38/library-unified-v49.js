@@ -464,17 +464,23 @@
     state.filter = state.filter === filter ? 'ALL' : filter;
     shell();
   }
-  function openFilters() {
+  let filterReturnFocus=null,filterWasModalOpen=false;
+  function openFilters(event) {
     const layer = document.querySelector('[data-nx49-filter-layer]');
     if (!layer) return;
+    filterReturnFocus=event?.currentTarget||document.querySelector('[data-nx49-filter-open]');
+    filterWasModalOpen=document.body.classList.contains('modal-open');
     layer.hidden = false;
     document.body.classList.add('modal-open');
-    layer.querySelector('input:checked')?.focus();
+    layer.querySelector('.nx49-filter-dialog [data-nx49-filter-close]')?.focus();
   }
   function closeFilters() {
     const layer = document.querySelector('[data-nx49-filter-layer]');
-    if (layer) layer.hidden = true;
-    document.body.classList.remove('modal-open');
+    if (!layer||layer.hidden)return;
+    layer.hidden = true;
+    if(!filterWasModalOpen)document.body.classList.remove('modal-open');
+    if(filterReturnFocus?.isConnected)filterReturnFocus.focus({preventScroll:true});
+    filterReturnFocus=null;
   }
   function wire() {
     document.querySelectorAll('[data-nx49-media]').forEach(button => button.addEventListener('click', () => switchMedia(button.dataset.nx49Media)));
@@ -484,11 +490,17 @@
     document.querySelector('[data-nx49-search]')?.addEventListener('input', event => { state.search = event.target.value; paintContent(); });
     document.querySelector('[data-nx49-filter-open]')?.addEventListener('click', openFilters);
     document.querySelectorAll('[data-nx49-filter-close]').forEach(button => button.addEventListener('click', closeFilters));
-    document.querySelector('[data-nx49-filter-reset]')?.addEventListener('click', () => { state.sort = 'recent'; state.filter = 'ALL'; closeFilters(); shell(); });
-    document.querySelector('[data-nx49-filter-apply]')?.addEventListener('click', () => { state.sort = document.querySelector('input[name="nx49-sort"]:checked')?.value || 'recent'; closeFilters(); shell(); });
+    document.querySelector('[data-nx49-filter-reset]')?.addEventListener('click', () => { state.sort = 'recent'; state.filter = 'ALL'; closeFilters(); shell(); document.querySelector('[data-nx49-filter-open]')?.focus({preventScroll:true}); });
+    document.querySelector('[data-nx49-filter-apply]')?.addEventListener('click', () => { state.sort = document.querySelector('input[name="nx49-sort"]:checked')?.value || 'recent'; closeFilters(); shell(); document.querySelector('[data-nx49-filter-open]')?.focus({preventScroll:true}); });
     document.querySelector('[data-nx49-island-toggle]')?.addEventListener('click', toggleIsland);
   }
   function closeOnEscape(event) {
+    const layer=document.querySelector('[data-nx49-filter-layer]');
+    if(layer&&!layer.hidden&&event.key==='Tab'){
+      const controls=[...layer.querySelectorAll('.nx49-filter-dialog button,.nx49-filter-dialog input')].filter(el=>!el.disabled&&el.getClientRects().length),first=controls[0],last=controls.at(-1),active=document.activeElement;
+      if(event.shiftKey&&(active===first||!controls.includes(active))){event.preventDefault();last?.focus()}
+      else if(!event.shiftKey&&(active===last||!controls.includes(active))){event.preventDefault();first?.focus()}
+    }
     if (event.key === 'Escape' && state.mounted) { closeFilters(); setIslandExpanded(false); }
   }
   function setIslandExpanded(expanded) {

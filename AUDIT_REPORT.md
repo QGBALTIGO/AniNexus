@@ -56,6 +56,7 @@ Aniquim: seis páginas públicas obtidas com Scrapling e renderizadas com CSS or
 | Notificações do cabeçalho | tipografia de 7–9px e contraste insuficiente no tema claro | tamanho legível e cores por tema, mantendo estrutura e identidade do painel |
 | Notificações / Safari | acionamento por mouse não focava o botão e Escape perdia o ponto de retorno | restaurar o acionador real, independente de activeElement; regressão WebKit |
 | Biblioteca / filtros | ação primária clara demais | contraste corrigido e regressão do diálogo nos dois temas |
+| Biblioteca / teclado | Tab escapava do diálogo e fechar/aplicar/limpar perdia o foco | ciclo de foco, indicação no rádio e restauração após recriar a lista; Escape não altera outros modais |
 
 ## Regressão e proteção de dados
 
