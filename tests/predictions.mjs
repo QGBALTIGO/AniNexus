@@ -67,6 +67,11 @@ test('public shape exposes aggregate statistics but no raw baseline, dedupe or u
   const c=base();const item=publicPrediction({id:'x',media_id:'101',media_type:'ANIME',media_title:'Teste',source:'AniList',source_url:c.sourceUrl,status:'OPEN',opens_at:c.opensAt,closes_at:c.closesAt,resolution_deadline:c.resolutionDeadline,yes_count:'1',no_count:0,dedupe_key:'private',baseline:c.baseline,user_id:'private'});
   assert.equal(item.mediaId,101);assert.equal(item.consensus.yesPercent,null);assert.equal('baseline' in item,false);assert.equal('dedupe_key' in item,false);assert.equal('user_id' in item,false);
 });
+test('public trend identifies partial history without inventing past votes',()=>{
+  const c=base(),row={id:'x',media_id:'101',media_type:'ANIME',media_title:'Teste',status:'OPEN',opens_at:c.opensAt,closes_at:c.closesAt,resolution_deadline:c.resolutionDeadline,yes_count:1,no_count:0,trend_since:'2026-10-01T11:00:00Z',trend_yes:1,trend_no:0,trend_complete:false};
+  assert.deepEqual(publicPrediction(row,now).trend24h,{yesDelta:0,noDelta:0,since:'2026-10-01T11:00:00.000Z',completeWindow:false});
+  assert.equal(publicPrediction({...row,trend_since:null},now).trend24h,null);
+});
 test('feature disabled makes every endpoint 404 without database or authentication calls',async()=>{
   const authRate={preValidation:()=>{throw Error('auth rate called')}};
   const app=Fastify();registerPredictions(app,{privateReadRate:authRate,writeRate:authRate,pool:{connect:()=>{throw Error('database called')}},q:()=>{throw Error('database called')},requireUser:()=>{throw Error('auth called')}});

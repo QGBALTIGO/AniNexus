@@ -5,7 +5,7 @@ const origin=process.env.ANINEXUS_E2E_ORIGIN||'http://127.0.0.1:4174/';
 const firstId='11111111-1111-4111-8111-111111111111';
 const secondId='22222222-2222-4222-8222-222222222222';
 const thirdId='33333333-3333-4333-8333-333333333333';
-const base={id:firstId,mediaId:21,mediaType:'ANIME',mediaTitle:'One Piece',type:'SCORE_AT_DEADLINE',question:'One Piece terá nota média de pelo menos 88/100 no AniList na próxima leitura?',criteria:'SIM se a primeira leitura válida da nota média no AniList for maior ou igual a 88/100. Sem leitura válida, a previsão será anulada.',source:'AniList',sourceUrl:'https://anilist.co/anime/21',status:'OPEN',opensAt:'2030-09-01T12:00:00Z',closesAt:'2030-09-30T12:00:00Z',resolutionDeadline:'2030-10-01T12:00:00Z',yesCount:1,noCount:0,voteCount:1};
+const base={id:firstId,mediaId:21,mediaType:'ANIME',mediaTitle:'One Piece',type:'SCORE_AT_DEADLINE',question:'One Piece terá nota média de pelo menos 88/100 no AniList na próxima leitura?',criteria:'SIM se a primeira leitura válida da nota média no AniList for maior ou igual a 88/100. Sem leitura válida, a previsão será anulada.',source:'AniList',sourceUrl:'https://anilist.co/anime/21',status:'OPEN',opensAt:'2030-09-01T12:00:00Z',closesAt:'2030-09-30T12:00:00Z',resolutionDeadline:'2030-10-01T12:00:00Z',yesCount:1,noCount:0,voteCount:1,trend24h:{yesDelta:0,noDelta:0,since:'2030-09-27T12:00:00Z',completeWindow:false}};
 const second={...base,id:secondId,mediaTitle:'The Beginning After the End: uma história com um título muito longo',question:'A nota média de The Beginning After the End terá alcançado o critério publicado na leitura indicada?',yesCount:15,noCount:5,voteCount:20};
 const closed={...base,id:thirdId,mediaTitle:'Frieren',status:'VOID',closesAt:'2020-09-30T12:00:00Z',resolutionDeadline:'2020-10-01T12:00:00Z'};
 
@@ -210,6 +210,10 @@ test('predictions Home appears on first visit below impressions, recovers a tran
   await page.setViewportSize({width:390,height:844});
   const rail=section.locator('.nx61-pred-home-rail');
   await expect(rail).toHaveAttribute('aria-roledescription','carrossel');
+  await expect.poll(()=>rail.evaluate(el=>el.scrollWidth-el.clientWidth)).toBeGreaterThan(20);
+  await rail.evaluate(el=>{el.scrollLeft=0;});
+  await expect.poll(()=>rail.evaluate(el=>el.scrollLeft)).toBe(0);
+  await expect(section.getByRole('button',{name:/Próximos itens de Previsões/})).toBeEnabled();
   const before=await rail.evaluate(el=>el.scrollLeft);
   await section.getByRole('button',{name:/Próximos itens de Previsões/}).click();
   await expect.poll(()=>rail.evaluate(el=>el.scrollLeft)).toBeGreaterThan(before);
@@ -217,7 +221,12 @@ test('predictions Home appears on first visit below impressions, recovers a tran
   await expect(section.locator('.nx61-pred-home-card').first()).toContainText('Tendência 24h');
   await expect(section.locator('.nx61-pred-home-card').first()).toContainText('Votos');
   await expect(section.locator('.nx61-pred-home-card').first()).toContainText('Prazo');
-  await expect(section.locator('.nx61-pred-home-card').first()).not.toContainText('100%');
+  await expect(section.locator('.nx61-pred-home-card').first()).toContainText('100% Sim · 0% Não');
+  await expect(section.locator('.nx61-pred-home-card').first()).toContainText('Votos1');
+  await expect(section.locator('.nx61-pred-home-card').first()).toContainText('Sim +0');
+  await expect(section.locator('.nx61-pred-home-card').first().locator('.nx61-pred-home-bar .yes')).toHaveAttribute('style','width:100%');
+  await expect(section.locator('.nx61-pred-home-card').nth(1).locator('.nx61-pred-home-bar .yes')).toHaveAttribute('style','width:75%');
+  await expect(section.locator('.nx61-pred-home-card').nth(1).locator('.nx61-pred-home-bar .no')).toHaveAttribute('style','width:25%');
   await expect(section.getByRole('link',{name:'Prever'}).first()).toHaveAttribute('href',new RegExp('/previsoes\\?previsao='+firstId));
   expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(2);
 });

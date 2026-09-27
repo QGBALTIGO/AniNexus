@@ -33,9 +33,14 @@
     const closeDate=new Date(item.closesAt);
     const days=Number.isFinite(closeDate.getTime())?Math.max(0,Math.ceil((closeDate.getTime()-Date.now())/86400000)):null;
     const deadline=closed?'Palpites encerrados':days===null?'Prazo a confirmar':days===0?'Fecha hoje':`Fecha em ${days} ${days===1?'dia':'dias'}`;
-    const count=votes>=20?`${yesPercent}% Sim · ${100-yesPercent}% Não`:votes?`${yes} Sim · ${no} Não`:'Sem palpites ainda';
+    const count=votes?`${yesPercent}% Sim · ${100-yesPercent}% Não`:'Sem palpites ainda';
+    const trend=item.trend24h,yesDelta=Number(trend?.yesDelta)||0,noDelta=Number(trend?.noDelta)||0;
+    const trendSide=yesDelta>noDelta?'Sim':noDelta>yesDelta?'Não':yes>=no?'Sim':'Não';
+    const trendGain=trendSide==='Sim'?yesDelta:noDelta;
+    const trendText=trend?`${trendSide} ${trendGain>=0?'+':''}${trendGain}`:'—';
+    const trendTitle=trend?`${trend.completeWindow?'Variação nas últimas 24 horas':'Variação desde o primeiro registro disponível; ainda não há 24 horas completas'} (${date(trend.since)}).`:'Ainda não há histórico de votos para esta previsão.';
     const target=predictionHref(item);
-    return `<article class="nx61-pred-home-card" data-prediction="${esc(item.id)}"><div class="nx61-pred-home-card-top"><span class="nx61-pred-home-chip">${item.mediaType==='MANGA'?'Mangás':'Animes'}</span><span class="nx61-pred-home-status">${closed?'Encerrada':'Aberta'}</span></div><div class="nx61-pred-home-question"><small>${esc(item.mediaTitle)}</small><h3>${esc(questionLabel(item))}</h3></div><div class="nx61-pred-home-consensus"><div><span>Consenso geral</span><strong>${count}</strong></div><div class="nx61-pred-home-bar" role="img" aria-label="${esc(count)}"><span style="width:${votes>=20?yesPercent:0}%"></span></div></div><div class="nx61-pred-home-meta"><span title="Ainda não há histórico de 24 horas para esta previsão"><small>Tendência 24h</small><strong>—</strong></span><span><small>Votos</small><strong>${votes}</strong></span><span title="${esc(date(item.closesAt))}"><small>Prazo</small><strong>${deadline}</strong></span></div><div class="nx61-pred-home-buttons"><a href="${target}" class="secondary">Ver detalhes</a><a href="${target}" class="primary">${closed?'Ver resultado':'Prever'}</a></div></article>`;
+    return `<article class="nx61-pred-home-card" data-prediction="${esc(item.id)}"><div class="nx61-pred-home-card-top"><span class="nx61-pred-home-chip">${item.mediaType==='MANGA'?'Mangás':'Animes'}</span><span class="nx61-pred-home-status">${closed?'Encerrada':'Aberta'}</span></div><div class="nx61-pred-home-question"><small>${esc(item.mediaTitle)}</small><h3>${esc(questionLabel(item))}</h3></div><div class="nx61-pred-home-consensus"><div><span>Consenso geral</span><strong>${count}</strong></div><div class="nx61-pred-home-bar" role="img" aria-label="${esc(count)}"><span class="yes" style="width:${yesPercent}%"></span><span class="no" style="width:${votes?100-yesPercent:0}%"></span></div></div><div class="nx61-pred-home-meta"><span title="${esc(trendTitle)}"><small>Tendência 24h</small><strong>${trendText}</strong></span><span><small>Votos</small><strong>${votes}</strong></span><span title="${esc(date(item.closesAt))}"><small>Prazo</small><strong>${deadline}</strong></span></div><div class="nx61-pred-home-buttons"><a href="${target}" class="secondary">Ver detalhes</a><a href="${target}" class="primary">${closed?'Ver resultado':'Prever'}</a></div></article>`;
   }
   function card(item,compact=false){
     const votes=Number(item.voteCount)||0,yes=Number(item.yesCount)||0,no=Number(item.noCount)||0;
@@ -147,6 +152,7 @@
         if(!section.isConnected||homeRequests.get(section)!==request)return;
         if(!data.items?.length){section.remove();return;}
         rail.innerHTML=data.items.slice(0,8).map(homeCard).join('');
+        rail.scrollLeft=0;
         window.AniNexusRails?.refresh?.();
       }catch(error){
         if(!section.isConnected||homeRequests.get(section)!==request)return;

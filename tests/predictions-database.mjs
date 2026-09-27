@@ -28,9 +28,12 @@ try{
   const publications=await Promise.all(Array.from({length:5},()=>publishPrediction(pool,c)));
   assert.equal(publications.filter(item=>item.created).length,1);assert.equal(new Set(publications.map(item=>item.item.id)).size,1);check();
   const id=publications[0].item.id;
+  assert.equal((await query('SELECT yes_count,no_count FROM prediction_snapshots WHERE question_id=$1',[id])).rows.length,1);
   const votes=await Promise.all(Array.from({length:10},(_,i)=>votePrediction(pool,id,user,i%2?'YES':'NO')));
-  assert.equal(votes.every(result=>!result.error),true);assert.equal((await query('SELECT count(*) FROM prediction_votes WHERE question_id=$1',[id])).rows[0].count,'1');check();
+  assert.equal(votes.every(result=>!result.error),true);assert.equal((await query('SELECT count(*) FROM prediction_votes WHERE question_id=$1',[id])).rows[0].count,'1');
+  assert.equal((await query('SELECT count(*) FROM prediction_snapshots WHERE question_id=$1',[id])).rows[0].count,'11');check();
   assert.equal((await votePrediction(pool,id,user,'YES')).userVote.choice,'YES');assert.equal((await votePrediction(pool,id,other,'NO')).item.voteCount,2);check();
+  const trendItem=(await votePrediction(pool,id,user,'YES')).item;assert.equal(trendItem.trend24h.yesDelta,1);assert.equal(trendItem.trend24h.noDelta,1);assert.equal(trendItem.trend24h.completeWindow,false);check();
   await assert.rejects(query("UPDATE prediction_questions SET question='Critério alterado indevidamente' WHERE id=$1",[id]),/PREDICTION_CRITERIA_IMMUTABLE/);check();
 
   // Fixtures deliberately insert past timelines into this disposable schema;
@@ -41,6 +44,9 @@ try{
   }
   async function addVote(questionId,choice='YES',uid=user,offset=-172800000){await query(`INSERT INTO prediction_votes(question_id,user_id,choice,created_at,updated_at) VALUES($1,$2,$3,clock_timestamp()+($4::text||' milliseconds')::interval,clock_timestamp()+($4::text||' milliseconds')::interval)`,[questionId,uid,choice,offset]);}
   const ready=await fixture();await addVote(ready.id);await addVote(ready.id,'NO',other);
+  const trendMigration=await fs.readFile(new URL('../sql/036_prediction_trend_baseline.sql',import.meta.url),'utf8');
+  await query(trendMigration);await query(trendMigration);
+  assert.deepEqual((await query('SELECT yes_count,no_count FROM prediction_snapshots WHERE question_id=$1',[ready.id])).rows,[{yes_count:1,no_count:1}]);check();
   const evidence={source:'AniList',mediaId:101,mediaType:'ANIME',observedAt:new Date((await query('SELECT clock_timestamp() now')).rows[0].now).toISOString(),data:{averageScore:83}};
   const resolutions=await Promise.all(Array.from({length:5},()=>resolvePrediction(pool,ready.id,evidence)));
   assert.equal(resolutions.filter(r=>!r.idempotent).length,1);assert.equal(resolutions.every(r=>r.result==='YES'),true);
