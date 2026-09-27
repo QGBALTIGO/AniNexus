@@ -37,8 +37,8 @@
     const trend=item.trend24h,yesDelta=Number(trend?.yesDelta)||0,noDelta=Number(trend?.noDelta)||0;
     const trendSide=yesDelta>noDelta?'Sim':noDelta>yesDelta?'Não':yes>=no?'Sim':'Não';
     const trendGain=trendSide==='Sim'?yesDelta:noDelta;
-    const trendText=trend?`${trendSide} ${trendGain>=0?'+':''}${trendGain}`:'—';
-    const trendTitle=trend?`${trend.completeWindow?'Variação nas últimas 24 horas':'Variação desde o primeiro registro disponível; ainda não há 24 horas completas'} (${date(trend.since)}).`:'Ainda não há histórico de votos para esta previsão.';
+    const trendText=trend&&votes?`${trendSide} ${trendGain>=0?'+':''}${trendGain}`:'—';
+    const trendTitle=trend&&votes?`${trend.completeWindow?'Variação nas últimas 24 horas':'Variação desde o primeiro registro disponível; ainda não há 24 horas completas'} (${date(trend.since)}).`:'Ainda não há votos para esta previsão.';
     const target=predictionHref(item);
     return `<article class="nx61-pred-home-card" data-prediction="${esc(item.id)}"><div class="nx61-pred-home-card-top"><span class="nx61-pred-home-chip">${item.mediaType==='MANGA'?'Mangás':'Animes'}</span><span class="nx61-pred-home-status">${closed?'Encerrada':'Aberta'}</span></div><div class="nx61-pred-home-question"><small>${esc(item.mediaTitle)}</small><h3>${esc(questionLabel(item))}</h3></div><div class="nx61-pred-home-consensus"><div><span>Consenso geral</span><strong>${count}</strong></div><div class="nx61-pred-home-bar" role="img" aria-label="${esc(count)}"><span class="yes" style="width:${yesPercent}%"></span><span class="no" style="width:${votes?100-yesPercent:0}%"></span></div></div><div class="nx61-pred-home-meta"><span title="${esc(trendTitle)}"><small>Tendência 24h</small><strong>${trendText}</strong></span><span><small>Votos</small><strong>${votes}</strong></span><span title="${esc(date(item.closesAt))}"><small>Prazo</small><strong>${deadline}</strong></span></div><div class="nx61-pred-home-buttons"><a href="${target}" class="secondary">Ver detalhes</a><a href="${target}" class="primary">${closed?'Ver resultado':'Prever'}</a></div></article>`;
   }

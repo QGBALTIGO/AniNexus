@@ -231,6 +231,14 @@ test('predictions Home appears on first visit below impressions, recovers a tran
   expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(2);
 });
 
+test('predictions Home does not invent a trend before the first vote',async({page})=>{
+  await fixture(page,{path:'/',items:[{...base,yesCount:0,noCount:0,voteCount:0,trend24h:{yesDelta:0,noDelta:0,since:'2030-09-27T12:00:00Z',completeWindow:false}}]});
+  const card=page.locator('.nx61-pred-home-card').first();await expect(card).toBeVisible();
+  await expect(card.locator('.nx61-pred-home-meta')).toContainText('Tendência 24h—');
+  await expect(card.locator('.nx61-pred-home-meta')).toContainText('Votos0');
+  await expect(card.locator('.nx61-pred-home-bar .yes')).toHaveAttribute('style','width:0%');
+});
+
 test('predictions: expired open cards are closed and date evidence is not presented as a score',async({page})=>{
   const expired={...base,closesAt:'2020-09-30T12:00:00Z'};
   const dateEvidence={...second,status:'RESOLVED',type:'CATALOG_DATE_OBSERVED',result:'YES',evidence:{observation:{observedAt:'2030-10-01T12:03:00Z',data:{startDate:{year:2031,month:1,day:8}}}}};
