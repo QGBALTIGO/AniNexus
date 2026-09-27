@@ -35,13 +35,6 @@ html[data-theme=light] .nx61-loading-heading span{color:#6d5865}
 @keyframes nx61-breathe{50%{opacity:.5}}
 @media(prefers-reduced-motion:reduce){.nx61-account-loading i{animation:none}}
 
-/* A persistent, unobtrusive position indicator also works on iOS, which hides native scrollbars. */
-.nx61-scroll-track{display:block;position:relative;width:100%;height:3px;margin-top:10px;border-radius:3px;background:rgba(190,151,168,.18);overflow:hidden;pointer-events:none}
-.nx61-scroll-track[hidden]{display:none!important}
-.nx61-scroll-track>i{position:absolute;inset:0 auto 0 0;display:block;width:var(--nx61-thumb,20%);height:100%;border-radius:inherit;background:#e84464;transform:translateX(var(--nx61-offset,0px));will-change:transform}
-.nx22-tabs-row{position:relative;padding-bottom:7px}
-.nx22-tabs-row>.nx61-scroll-track{position:absolute;left:0;right:0;bottom:0;margin:0}
-.nx38p-hero>.nx61-scroll-track{margin-top:0;border-radius:0}
 .nx57-profile-aside .nx48-profile-pins{justify-content:flex-start;justify-items:start;text-align:left}
 .nx57-profile-aside .nx48-profile-pin{justify-items:start;text-align:left}
 .nx57-achievements-panel .nx48-profile-achievements>article{justify-content:start;justify-items:start;text-align:left;align-content:start}
