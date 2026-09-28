@@ -61,3 +61,13 @@ html[data-theme=light]{--nx-auth-ink:#30232d;--nx-auth-muted:#665461;--nx-auth-f
 .nx38-clerk-card .cl-formFieldRow__legalAccepted .cl-formFieldCheckboxLabel a{color:#f36a85;text-decoration:underline;text-underline-offset:2px}
 @media(max-width:760px){.nx38-auth-copy h1{letter-spacing:0}.nx38-clerk-card .cl-socialButtonsBlockButton{height:54px!important;min-height:54px;font-size:12px}.nx38-clerk-card .cl-socialButtonsBlockButtonText{font-size:12px}.nx38-clerk-card .cl-formFieldRow__legalAccepted .cl-formFieldCheckboxLabel{font-size:12.5px}}
 @media(max-width:360px){.nx38-clerk-card .cl-socialButtonsBlockButton{height:50px!important;min-height:50px;padding-inline:10px}.nx38-clerk-card .cl-otpCodeFieldInputs{gap:6px}.nx38-clerk-card .cl-otpCodeFieldInputs .cl-otpCodeFieldInput,.nx38-clerk-card .cl-otpCodeFieldInputs [data-testid="otp-input-segment"]{flex-basis:36px!important;width:36px!important;min-width:36px!important;height:48px!important;min-height:48px!important;font-size:21px}}
+/* Resilient fallback for a cached Clerk environment that still emits icon buttons. */
+.nx38-clerk-card .cl-socialButtons{grid-template-columns:minmax(0,1fr)}
+.nx38-clerk-card .cl-socialButtonsIconButton{grid-column:1/-1;width:100%;min-height:58px;flex-direction:row;align-items:center;justify-content:center;gap:10px}
+.nx38-clerk-card .cl-socialButtonsIconButton:after{font:800 13px/1.2 'Manrope',sans-serif;color:#d8cdd2}
+.nx38-clerk-card .cl-socialButtonsIconButton__apple:after{content:'Continuar com Apple'}
+.nx38-clerk-card .cl-socialButtonsIconButton__facebook:after{content:'Continuar com Facebook'}
+.nx38-clerk-card .cl-socialButtonsIconButton__github:after{content:'Continuar com GitHub'}
+.nx38-clerk-card .cl-socialButtonsIconButton__google:after{content:'Continuar com Google'}
+@media(max-width:760px){.nx38-clerk-card .cl-socialButtonsIconButton{min-height:54px}.nx38-clerk-card .cl-socialButtonsIconButton:after{font-size:12px}}
+@media(max-width:360px){.nx38-clerk-card .cl-socialButtons{grid-template-columns:minmax(0,1fr)}.nx38-clerk-card .cl-socialButtonsIconButton{min-height:50px}}

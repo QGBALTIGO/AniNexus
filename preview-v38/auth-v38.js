@@ -90,7 +90,7 @@
         fontFamily: 'Nunito Sans, system-ui, sans-serif', fontFamilyButtons: 'Manrope, Nunito Sans, system-ui, sans-serif', fontSize: '0.875rem', borderRadius: '0.75rem', spacing: '0.9rem',
       },
       options: {
-        elevation: 'flush', socialButtonsPlacement: 'top', socialButtonsVariant: 'iconButton', autoFocus: false,
+        elevation: 'flush', socialButtonsPlacement: 'top', socialButtonsVariant: 'blockButton', autoFocus: false,
         termsPageUrl: routeUrl('/termos-de-uso'), privacyPageUrl: routeUrl('/politica-de-privacidade'),
       },
       captcha: { theme: document.documentElement.dataset.theme==='light'?'light':'dark', size: 'flexible', language: 'pt-BR' },
@@ -279,7 +279,10 @@
       const mount = document.querySelector('#nx38ClerkMount');
       const accountUrl = absoluteRouteUrl('/minha-conta');
       const props = {
-        routing: 'virtual',
+        // AniNexus is a client-side routed application. Clerk documents hash
+        // routing for SPAs and keeps intermediate steps (such as the e-mail
+        // code) anchored to the correct /login or /criar-conta page.
+        routing: 'hash',
         // OAuth providers briefly take over this tab, then return to AniNexus.
         // A popup creates an unwanted second tab on mobile browsers.
         oauthFlow: 'redirect',

@@ -13,13 +13,18 @@ test('Clerk global configuration points sign-in and sign-up back to AniNexus',()
   assert.match(auth,/signUpForceRedirectUrl: accountUrl/);
 });
 
-test('mounted Clerk components stay embedded and use same-tab OAuth',()=>{
-  assert.match(auth,/routing: 'virtual'/);
+test('mounted Clerk components keep SPA steps on their page and use same-tab OAuth',()=>{
+  assert.match(auth,/routing: 'hash'/);
+  assert.doesNotMatch(auth,/routing: 'virtual'/);
   assert.match(auth,/oauthFlow: 'redirect'/);
   assert.doesNotMatch(auth,/oauthFlow: 'popup'/);
   assert.match(auth,/signUpUrl: absoluteRouteUrl\('\/criar-conta'\)/);
   assert.match(auth,/signInUrl: absoluteRouteUrl\('\/login'\)/);
   assert.match(auth,/forceRedirectUrl: accountUrl/);
+});
+
+test('social login is rendered as a readable full-width button',()=>{
+  assert.match(auth,/socialButtonsVariant: 'blockButton'/);
 });
 
 test('generic Clerk failure is localized inside AniNexus',()=>{
