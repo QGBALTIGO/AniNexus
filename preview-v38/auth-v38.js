@@ -280,7 +280,9 @@
       const accountUrl = absoluteRouteUrl('/minha-conta');
       const props = {
         routing: 'virtual',
-        oauthFlow: 'popup',
+        // OAuth providers briefly take over this tab, then return to AniNexus.
+        // A popup creates an unwanted second tab on mobile browsers.
+        oauthFlow: 'redirect',
         fallbackRedirectUrl: accountUrl,
         forceRedirectUrl: accountUrl,
         signUpUrl: absoluteRouteUrl('/criar-conta'),

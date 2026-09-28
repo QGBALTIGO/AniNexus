@@ -13,9 +13,10 @@ test('Clerk global configuration points sign-in and sign-up back to AniNexus',()
   assert.match(auth,/signUpForceRedirectUrl: accountUrl/);
 });
 
-test('mounted Clerk components stay embedded and use popup OAuth',()=>{
+test('mounted Clerk components stay embedded and use same-tab OAuth',()=>{
   assert.match(auth,/routing: 'virtual'/);
-  assert.match(auth,/oauthFlow: 'popup'/);
+  assert.match(auth,/oauthFlow: 'redirect'/);
+  assert.doesNotMatch(auth,/oauthFlow: 'popup'/);
   assert.match(auth,/signUpUrl: absoluteRouteUrl\('\/criar-conta'\)/);
   assert.match(auth,/signInUrl: absoluteRouteUrl\('\/login'\)/);
   assert.match(auth,/forceRedirectUrl: accountUrl/);
