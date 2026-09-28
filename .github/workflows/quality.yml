@@ -53,6 +53,10 @@ jobs:
         env:
           SOURCE_INTEGRATION_TEST_DATABASE_URL: postgres://postgres:ci-media-list@127.0.0.1:5432/aninexus_test
         run: node --test tests/source-integration-database.mjs
+      - name: Clerk Production cutover preserves internal identity and data
+        env:
+          CLERK_CUTOVER_TEST_DATABASE_URL: postgres://postgres:ci-media-list@127.0.0.1:5432/aninexus_test
+        run: node --test tests/clerk-cutover-database.mjs
       - name: Diary migration, private snapshots and recap persistence
         env:
           MEDIA_TEST_DATABASE_URL: postgres://postgres:ci-media-list@127.0.0.1:5432/aninexus_test
