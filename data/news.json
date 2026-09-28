@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T16:01:02.851Z",
+  "generatedAt": "2026-09-28T21:46:57.416Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 38,
+      "count": 39,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,972 @@
     }
   ],
   "stats": {
-    "collected": 48,
-    "grouped": 21,
-    "published": 21,
-    "newStories": 21,
-    "fullArticles": 21,
+    "collected": 49,
+    "grouped": 22,
+    "published": 22,
+    "newStories": 22,
+    "fullArticles": 22,
     "previewArticles": 0,
-    "avgWords": 485,
-    "withHeroImage": 21,
+    "avgWords": 435,
+    "withHeroImage": 22,
     "withOrderedMedia": 21,
     "skippedTranslation": 0,
-    "skippedQuality": 25,
-    "durationMs": 4247
+    "skippedQuality": 26,
+    "durationMs": 2628
   },
   "items": [
+    {
+      "id": "jbox-35ec4240",
+      "slug": "universo-dos-livros-abre-pre-venda-do-1-volume-de-e-se-eu-disser-que-te-amo-jbox-35ec4240",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Universo dos Livros abre pré-venda do 1° volume de ‘E Se Eu Disser que Te Amo?’",
+      "originalTitle": "Universo dos Livros abre pré-venda do 1° volume de ‘E Se Eu Disser que Te Amo?’",
+      "summary": "O mangá E se eu disser que te amo?, de Kumosoku, entrou recentemente em pré-venda no Brasil pelo selo Hoo da editora Universo dos Livros. A obra é do gênero boys’ love, ou seja, que tem com foco em relacionamentos afetivos entre personagens masculinos.",
+      "author": "João Guilherme Lopes",
+      "tags": [
+        "Mangá",
+        "e se eu disser que te amo?",
+        "manga bl",
+        "mangá boys love",
+        "Ore ga Sukitte Ittara Dou Suru",
+        "selo hoo",
+        "Universo dos livros"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/28/universo-dos-livros-abre-pre-venda-do-1-volume-de-e-se-eu-disser-que-te-amo",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/28/universo-dos-livros-abre-pre-venda-do-1-volume-de-e-se-eu-disser-que-te-amo",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/eseeudisserqueteamo-destacada.jpg",
+      "mediaQuery": "Universo dos Livros abre pré-venda do 1° volume de ‘E Se Eu Disser que Te Amo?’",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Eseeudisserqueteamo_vol1_Capaebrinde.jpg",
+          "alt": "imagem: ilustração demostrando um volume do mangá E se eu disser que te amo? ao lado da ilustração do cartão postal",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Eseeudisserqueteamo_vol1_paginas.jpg",
+          "alt": "imagem: ilustração demostrando páginas internas do volume 1 do mangá E se eu disser que te amo?",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O mangá E se eu disser que te amo?, de Kumosoku, entrou recentemente em pré-venda no Brasil pelo selo Hoo da editora Universo dos Livros. A obra é do gênero boys’ love, ou seja, que tem com foco em relacionamentos afetivos entre personagens masculinos.",
+          "runs": [
+            {
+              "text": "O mangá "
+            },
+            {
+              "text": "E se eu disser que te amo?",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", de"
+            },
+            {
+              "text": " Kumosoku",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", entrou recentemente em pré-venda no Brasil pelo selo "
+            },
+            {
+              "text": "Hoo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " da editora "
+            },
+            {
+              "text": "Universo dos Livros",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A obra é do gênero "
+            },
+            {
+              "text": "boys’ love",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", ou seja, que tem com foco em relacionamentos afetivos entre personagens masculinos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Com 176 páginas e tradução de Lucas Cabral, a edição pode ser reservada por R$ 49,90 no site da Amazon ou no da livraria Martins Fontes. Os envios estão com previsão para começar no próximo dia 20 de novembro (uma sexta-feira).",
+          "runs": [
+            {
+              "text": "Com 176 páginas e tradução de Lucas Cabral, a edição pode ser reservada por "
+            },
+            {
+              "text": "R$ 49,90",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no "
+            },
+            {
+              "text": "site da Amazon",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://link.amazon/B02ovpXLO"
+            },
+            {
+              "text": " ou no da "
+            },
+            {
+              "text": "livraria Martins Fontes",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.martinsfontespaulista.com.br/e-se-eu-disser-que-te-amo--volume-1-1223657/p?srsltid=AU7gw4WO_wHXBQ7R80WdWLxgTMlPFmgdsG-LeCiwVjje6UdbzGe_-qiR"
+            },
+            {
+              "text": ". Os envios estão com previsão para começar no próximo dia "
+            },
+            {
+              "text": "20 de novembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (uma sexta-feira)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Também acompanha um card de brinde.",
+          "runs": [
+            {
+              "text": "Também acompanha um"
+            },
+            {
+              "text": " card de brinde",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Eseeudisserqueteamo_vol1_Capaebrinde.jpg",
+          "alt": "imagem: ilustração demostrando um volume do mangá E se eu disser que te amo? ao lado da ilustração do cartão postal"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Universo dos Livros",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Universo dos Livros"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história acompanha dois amigos de infância que se distanciaram na adolescência por conta de sentimentos reprimidos e do medo de arriscar a amizade pelo primeiro amor.",
+          "runs": [
+            {
+              "text": "A história acompanha dois amigos de infância que se distanciaram na adolescência por conta de sentimentos reprimidos e do medo de arriscar a amizade pelo primeiro amor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Japão, o título original Ore ga Sukitte Ittara Dou Suru? começou a ser publicado em 2024 pela editora Kodansha, e já conta com 4 volumes lançados, o mais recente publicado em abril deste ano.",
+          "runs": [
+            {
+              "text": "No Japão, o título original "
+            },
+            {
+              "text": "Ore ga Sukitte Ittara Dou Suru?",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " começou a ser publicado em 2024 pela editora Kodansha, e já conta com 4 volumes lançados, o mais recente publicado em abril deste ano."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Eseeudisserqueteamo_vol1_paginas.jpg",
+          "alt": "imagem: ilustração demostrando páginas internas do volume 1 do mangá E se eu disser que te amo?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Sinopse oficial:",
+          "runs": [
+            {
+              "text": "Sinopse oficial:"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "“Quando você fizer essas coisas, quero que seja pelo mesmo motivo que eu.” Kazuho e Tokio, dois alunos do ensino médio, são amigos desde o primário. Na infância, eles eram próximos a ponto de um carregar o outro no colo, mas essa relação acabou esfriando com o tempo. Isso porque Kazuho se viu obrigado a esconder o que sentia por Tokio… Mas, certo dia, quando Kazuho acaba pegando no sono durante a aula, Tokio faz algo que traz todos esses sentimentos à tona, e com força total. Kazuho e Tokio, dois alunos do ensino médio, são amigos desde o primário. Na infância, eles eram próximos a ponto de um carregar o outro no colo, mas essa relação acabou esfriando com o tempo. Isso porque Kazuho se viu obrigado a esconder o que sentia por Tokio… Mas, certo dia, quando Kazuho acaba pegando no sono durante a aula, Tokio faz algo que traz todos esses sentimentos à tona, e com força total.",
+          "runs": [
+            {
+              "text": "“Quando você fizer essas coisas, quero que seja pelo mesmo motivo que eu.”",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Kazuho e Tokio, dois alunos do ensino médio, são amigos desde o primário. Na infância, eles eram próximos a ponto de um carregar o outro no colo, mas essa relação acabou esfriando com o tempo. Isso porque Kazuho se viu obrigado a esconder o que sentia por Tokio… Mas, certo dia, quando Kazuho acaba pegando no sono durante a aula, Tokio faz algo que traz todos esses sentimentos à tona, e com força total. Kazuho e Tokio, dois alunos do ensino médio, são amigos desde o primário. Na infância, eles eram próximos a ponto de um carregar o outro no colo, mas essa relação acabou esfriando com o tempo. Isso porque Kazuho se viu obrigado a esconder o que sentia por Tokio… Mas, certo dia, quando Kazuho acaba pegando no sono durante a aula, Tokio faz algo que traz todos esses sentimentos à tona, e com força total."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Comunicado de imprensa",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Comunicado de imprensa",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-28T20:55:59.000Z",
+      "updatedAt": "2026-09-28T20:57:17.000Z",
+      "expiresAt": "2026-10-05T20:55:59.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/28/universo-dos-livros-abre-pre-venda-do-1-volume-de-e-se-eu-disser-que-te-amo",
+          "publishedAt": "2026-09-28T20:55:59.000Z",
+          "author": "João Guilherme Lopes"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 341,
+      "qualityScore": 0.984,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-3da458d8",
+      "slug": "code-geass-star-chaser-aspal-ganha-teaser-e-estreia-em-2027-animenew-3da458d8",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Code Geass Star Chaser Aspal ganha teaser e estreia em 2027",
+      "originalTitle": "Code Geass Star Chaser Aspal ganha teaser e estreia em 2027",
+      "summary": "O novo anime da franquia Code Geass, intitulado Code Geass Star Chaser Aspal (Code Geass Hoshi Oi no Aspal), ganhou seu primeiro teaser neste sábado e confirmou a estreia para 2027. O vídeo apresenta as primeiras imagens da produção e reforça a expansão da franquia durante seu projeto de 20º aniversário.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Code Geass",
+        "Code Geass Star Chaser Aspal"
+      ],
+      "url": "https://animenew.com.br/code-geass-star-chaser-aspal-teaser-2027",
+      "sourceUrl": "https://animenew.com.br/code-geass-star-chaser-aspal-teaser-2027",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Code-Geass-Star-Chaser-Aspal-ganha-teaser-e-estreia-em-2027.webp",
+      "mediaQuery": "Code Geass Star Chaser Aspal ganha teaser e estreia em 2027",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/j6cQAaNYYeA"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O novo anime da franquia Code Geass, intitulado Code Geass Star Chaser Aspal (Code Geass Hoshi Oi no Aspal), ganhou seu primeiro teaser neste sábado e confirmou a estreia para 2027. O vídeo apresenta as primeiras imagens da produção e reforça a expansão da franquia durante seu projeto de 20º aniversário.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "novo anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " da franquia "
+            },
+            {
+              "text": "Code Geass",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", intitulado "
+            },
+            {
+              "text": "Code Geass Star Chaser Aspal",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (Code Geass Hoshi Oi no Aspal), ganhou seu primeiro teaser neste sábado e confirmou a estreia para 2027. O vídeo apresenta as primeiras imagens da produção e reforça a expansão da franquia durante seu projeto de 20º aniversário."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "The Fake Alchemist revela elenco e equipe em novo vídeo",
+              "runs": [
+                {
+                  "text": "The Fake Alchemist revela elenco e equipe em novo vídeo",
+                  "href": "https://animenew.com.br/the-fake-alchemist-anime-elenco-equipe"
+                }
+              ]
+            },
+            {
+              "text": "Sekiro: No Defeat será lançado como série de 8 episódios",
+              "runs": [
+                {
+                  "text": "Sekiro: No Defeat será lançado como série de 8 episódios",
+                  "href": "https://animenew.com.br/sekiro-no-defeat-serie-8-episodios"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Kazuya Nomura dirige o anime, enquanto Mado Nozaki cuida dos roteiros. Rolua é responsável pelo design dos personagens, e Yoshi. trabalha no design do Agarmatha. Junbun Lin assume os cenários e efeitos especiais, com Ichinogi responsável pelo logotipo.",
+          "runs": [
+            {
+              "text": "Kazuya Nomura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dirige o anime, enquanto "
+            },
+            {
+              "text": "Mado Nozaki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " cuida dos roteiros. Rolua é responsável pelo design dos personagens, e Yoshi. trabalha no design do Agarmatha. Junbun Lin assume os cenários e efeitos especiais, com Ichinogi responsável pelo logotipo."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=j6cQAaNYYeA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/j6cQAaNYYeA"
+        },
+        {
+          "type": "heading",
+          "text": "Novos projetos de Code Geass",
+          "runs": [
+            {
+              "text": "Novos projetos de Code Geass"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "O aniversário de 20 anos também inclui o mangá crossover Mobile Suit Gundam Wing x Code Geass: Minuet Zero, lançado em julho na plataforma KadoComi, da Kadokawa. Kōjirō Taniguchi, da Sunrise, participa do projeto como responsável pelo cenário.",
+          "runs": [
+            {
+              "text": "O aniversário de 20 anos também inclui o "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " crossover "
+            },
+            {
+              "text": "Mobile Suit Gundam Wing x Code Geass: Minuet Zero",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", lançado em julho na plataforma KadoComi, da Kadokawa. Kōjirō Taniguchi, da Sunrise, participa do projeto como responsável pelo cenário."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A programação ainda conta com a peça teatral Code Geass: Lelouch of the Rebellion – A Knight who Follows His Beliefs 2, prevista para Osaka entre 23 e 25 de janeiro e Tóquio de 29 de janeiro a 1º de fevereiro.",
+          "runs": [
+            {
+              "text": "A programação ainda conta com a peça teatral "
+            },
+            {
+              "text": "Code Geass: Lelouch of the Rebellion – A Knight who Follows His Beliefs 2",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", prevista para Osaka entre 23 e 25 de janeiro e Tóquio de 29 de janeiro a 1º de fevereiro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A franquia também terá uma exposição de 20º aniversário em Tóquio, em setembro de 2026, e Osaka, em novembro. Code Geass estreou na televisão em 2006 e ganhou uma segunda temporada em 2008. A franquia também inclui filmes, mangás e produções derivadas, como Code Geass: Rozé of the Recapture, lançado em 2024.",
+          "runs": [
+            {
+              "text": "A franquia também terá uma exposição de 20º aniversário em Tóquio, em setembro de 2026, e Osaka, em novembro. "
+            },
+            {
+              "text": "Code Geass",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " estreou na televisão em 2006 e ganhou uma segunda temporada em 2008. A franquia também inclui filmes, mangás e produções derivadas, como "
+            },
+            {
+              "text": "Code Geass: Rozé of the Recapture",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", lançado em 2024."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://geass.jp/aspal/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Code Geass Star Chaser Aspal ganha teaser e estreia em 2027.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Code Geass Star Chaser Aspal ganha teaser e estreia em 2027",
+              "href": "https://animenew.com.br/code-geass-star-chaser-aspal-teaser-2027/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-28T17:20:39.000Z",
+      "updatedAt": "2026-09-28T17:20:39.000Z",
+      "expiresAt": "2026-10-05T17:20:39.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/code-geass-star-chaser-aspal-teaser-2027",
+          "publishedAt": "2026-09-28T17:20:39.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 271,
+      "qualityScore": 0.973,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-c42ecac9",
+      "slug": "one-piece-anime-encerra-primeira-parte-do-arco-de-elbaph-e-retorna-so-em-2027-jbox-c42ecac9",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "One Piece: Animê encerra primeira parte do arco de Elbaph e retorna só em 2027",
+      "originalTitle": "One Piece: Animê encerra primeira parte do arco de Elbaph e retorna só em 2027",
+      "summary": "A Toei Animation anunciou que o animê de One Piece encerrou a primeira parte do arco de Elbaph, e retorna com episódios inéditos somente em 2027.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "animê de One Piece",
+        "One Piece",
+        "One Piece Elbaf",
+        "One Piece em 2027",
+        "Pausa em One Piece",
+        "Toei Animation"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/28/one-piece-anime-encerra-primeira-parte-do-arco-de-elbaph-e-retorna-so-em-2027",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/28/one-piece-anime-encerra-primeira-parte-do-arco-de-elbaph-e-retorna-so-em-2027",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/one-piece-2027-destacada.jpg",
+      "mediaQuery": "One Piece: Animê encerra primeira parte do arco de Elbaph e retorna só em 2027",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Toei Animation anunciou que o animê de One Piece encerrou a primeira parte do arco de Elbaph, e retorna com episódios inéditos somente em 2027.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Toei Animation",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou que o animê de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " encerrou a primeira parte do arco de"
+            },
+            {
+              "text": " Elbaph",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", e retorna com episódios inéditos somente em 2027."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A informação foi confirmada nas redes sociais da empresa neste domingo (27), após a exibição do capítulo 1.180, intitulado de “Elbaph Imersa em Desespero! Domi Reversi, o Pacto Diabólico”.",
+          "runs": [
+            {
+              "text": "A informação foi confirmada nas redes sociais da empresa neste domingo (27), após a exibição do capítulo 1.180, intitulado de "
+            },
+            {
+              "text": "“Elbaph Imersa em Desespero! Domi Reversi, o Pacto Diabólico”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "View this post on Instagram",
+          "runs": [
+            {
+              "text": " View this post on Instagram ",
+              "href": "https://www.instagram.com/p/DdzB4PkSr-q/?utm_source=ig_embed&utm_campaign=loading"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anúncio segue a nova fase do animê de One Piece, que terá a média de 26 episódios exibidos por ano. Em 2026, a produção retornou no dia 05 de abril, e teve exatamente 25 capítulos da versão regular, e um episódio da animação spin-off Heroines, que chegou ao Brasil por Netflix e Crunchyroll.",
+          "runs": [
+            {
+              "text": "O anúncio segue a nova fase do animê de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que terá a média de 26 episódios exibidos por ano. Em 2026, a produção retornou no dia 05 de abril, e teve exatamente 25 capítulos da versão regular, e um episódio da animação spin-off "
+            },
+            {
+              "text": "Heroines",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", que chegou ao Brasil por Netflix e Crunchyroll."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No mangá, a obra de Eiichiro Oda também está no arco de Elbaph (grafado como Elbaf na tradução oficial) com publicações que variam entre lançamentos semanais e quinzenais. No momento, o capítulo mais recente é o #1.194, com o título de “Todas as Coisas Estão em Constante Mudança”. Já a próxima parte da história vai chegar para os leitores no dia 11 de outubro pelo site MANGA Plus, oficial da Shueisha.",
+          "runs": [
+            {
+              "text": "No mangá, a obra de "
+            },
+            {
+              "text": "Eiichiro Oda",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " também está no arco de "
+            },
+            {
+              "text": "Elbaph ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "(grafado como "
+            },
+            {
+              "text": "Elbaf",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " na tradução oficial) com publicações que variam entre lançamentos semanais e quinzenais. No momento, o capítulo mais recente é o #1.194, com o título de "
+            },
+            {
+              "text": "“Todas as Coisas Estão em Constante Mudança”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Já a próxima parte da história vai chegar para os leitores no dia 11 de outubro pelo site "
+            },
+            {
+              "text": "MANGA Plus",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", oficial da "
+            },
+            {
+              "text": "Shueisha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Enquanto isso, a franquia segue com diversas novidades para os próximos meses e anos. Dois filmes foram anunciados recentemente, com estreias previstas para 2027 e 2029, uma animação temática de LEGO chega à Netflix no próximo dia 29 de setembro, e o remake do animê, feito pelo WIT Studio, estreia em fevereiro do próximo ano.",
+          "runs": [
+            {
+              "text": "Enquanto isso, a franquia segue com diversas novidades para os próximos meses e anos. "
+            },
+            {
+              "text": "Dois filmes foram anunciados recentemente",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/24/one-piece-toei-anuncia-dois-novos-filmes-para-2027-e-2029/"
+            },
+            {
+              "text": ", com estreias previstas para 2027 e 2029, "
+            },
+            {
+              "text": "uma animação temática de LEGO chega à Netflix ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/22/lego-one-piece-tem-novo-trailer-divulgado/"
+            },
+            {
+              "text": "no próximo dia 29 de setembro, e o "
+            },
+            {
+              "text": "remake do animê, feito pelo WIT Studio, estreia em fevereiro do próximo ano",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/04/09/novo-anime-de-one-piece-ganha-previa-com-visual-dos-personagens/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "▶️ Toei anuncia ativação com balões gigantes de ‘One Piece’ na CCXP 2026",
+          "runs": [
+            {
+              "text": "▶️ ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Toei anuncia ativação com balões gigantes de ‘One Piece’ na CCXP 2026",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/17/toei-anuncia-ativacao-com-baloes-gigantes-de-one-piece-na-ccxp-2026/"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Instagram Toei Animation",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Instagram Toei Animation",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.instagram.com/toeianimationbrasil/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-28T16:05:22.000Z",
+      "updatedAt": "2026-09-28T16:06:23.000Z",
+      "expiresAt": "2026-10-05T16:05:22.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/28/one-piece-anime-encerra-primeira-parte-do-arco-de-elbaph-e-retorna-so-em-2027",
+          "publishedAt": "2026-09-28T16:05:22.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 274,
+      "qualityScore": 0.973,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-197c1986",
       "slug": "draw-this-then-die-ganha-2-temporada-animenew-197c1986",
@@ -864,7 +1816,7 @@
       "sourceCount": 1,
       "readingMinutes": 6,
       "wordCount": 1178,
-      "qualityScore": 1,
+      "qualityScore": 0.97,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -4477,223 +5429,6 @@
       }
     },
     {
-      "id": "animenew-485e1d86",
-      "slug": "cyberpunk-edgerunners-2-ganha-previa-de-fuga-da-arasaka-animenew-485e1d86",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Cyberpunk: Edgerunners 2 ganha prévia de fuga da Arasaka",
-      "originalTitle": "Cyberpunk: Edgerunners 2 ganha prévia de fuga da Arasaka",
-      "summary": "A Netflix divulgou uma nova prévia de Cyberpunk: Edgerunners 2, destacando uma sequência de fuga de um prédio da Arasaka. O anime estreia no dia 20 de outubro de 2026, assim o vídeo apresenta um novo trecho da história, que terá 10 episódios e será independente da primeira temporada.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Cyberpunk",
-        "Cyberpunk Edgerunners"
-      ],
-      "url": "https://animenew.com.br/cyberpunk-edgerunners-2-previa-fuga-arasaka",
-      "sourceUrl": "https://animenew.com.br/cyberpunk-edgerunners-2-previa-fuga-arasaka",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Cyberpunk-Edgerunners-2-ganha-previa-de-fuga-da-Arasaka.webp",
-      "mediaQuery": "Cyberpunk: Edgerunners 2 ganha prévia de fuga da Arasaka",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/IDxFrIfaUbE"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A Netflix divulgou uma nova prévia de Cyberpunk: Edgerunners 2, destacando uma sequência de fuga de um prédio da Arasaka. O anime estreia no dia 20 de outubro de 2026, assim o vídeo apresenta um novo trecho da história, que terá 10 episódios e será independente da primeira temporada.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Netflix",
-              "href": "https://animenew.com.br/tag/netflix/"
-            },
-            {
-              "text": " divulgou uma nova prévia de "
-            },
-            {
-              "text": "Cyberpunk: Edgerunners 2",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", destacando uma sequência de fuga de um prédio da Arasaka. O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " estreia no dia 20 de outubro de 2026, assim o vídeo apresenta um novo trecho da história, que terá 10 episódios e será independente da primeira temporada."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "JoJo: Steel Ball Run revela música de abertura",
-              "runs": [
-                {
-                  "text": "JoJo: Steel Ball Run revela música de abertura",
-                  "href": "https://animenew.com.br/jojo-steel-ball-run-abertura-kroi-spin"
-                }
-              ]
-            },
-            {
-              "text": "Daemons of the Shadow Realm terá 2ª temporada",
-              "runs": [
-                {
-                  "text": "Daemons of the Shadow Realm terá 2ª temporada",
-                  "href": "https://animenew.com.br/daemons-of-the-shadow-realm-2-temporada"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama se passa novamente no universo de Cyberpunk 2077 e acompanha uma história de redenção e vingança.",
-          "runs": [
-            {
-              "text": "A trama se passa novamente no universo de Cyberpunk 2077 e acompanha uma história de redenção e vingança."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=IDxFrIfaUbE",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/IDxFrIfaUbE"
-        },
-        {
-          "type": "heading",
-          "text": "Novo elenco e produção",
-          "runs": [
-            {
-              "text": "Novo elenco e produção"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Portanto o elenco japonês conta com Momoka Terasawa como Roman Carax, Akari Kito como Talia Yang, Koki Uchiyama como D e Kentaro Tone como Weak Kingsley.",
-          "runs": [
-            {
-              "text": "Portanto o elenco japonês conta com Momoka Terasawa como Roman Carax, Akari Kito como Talia Yang, Koki Uchiyama como D e Kentaro Tone como Weak Kingsley."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Kai Ikarashi, que trabalhou na primeira temporada como animador, diretor de animação e artista de storyboard, assume a direção em sua estreia no cargo. Bartosz Sztybor retorna como roteirista e produtor, enquanto Ichigo Kanno atua como designer principal de personagens.",
-          "runs": [
-            {
-              "text": "Kai Ikarashi, que trabalhou na primeira temporada como animador, diretor de animação e artista de storyboard, assume a direção em sua estreia no cargo. Bartosz Sztybor retorna como roteirista e produtor, enquanto Ichigo Kanno atua como designer principal de personagens."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A abertura será “10:15 Saturday Night”, do The Cure, enquanto “Watson”, de Petite Meller, ficará responsável pelo encerramento. RICO NASTY também participa com a música “YOU CAN’T RUN FROM ME”.",
-          "runs": [
-            {
-              "text": "A abertura será “10:15 Saturday Night”, do The Cure, enquanto “Watson”, de Petite Meller, ficará responsável pelo encerramento. RICO NASTY também participa com a música “YOU CAN’T RUN FROM ME”."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Cyberpunk: Edgerunners 2 será lançado exclusivamente pela Netflix em 20 de outubro. Ademais a primeira temporada, produzida pelo Studio Trigger, estreou na plataforma em setembro de 2022.",
-          "runs": [
-            {
-              "text": "Cyberpunk: Edgerunners 2",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " será lançado exclusivamente pela Netflix em 20 de outubro. Ademais a primeira temporada, produzida pelo "
-            },
-            {
-              "text": "Studio Trigger",
-              "href": "https://animenew.com.br/studio/803/trigger"
-            },
-            {
-              "text": ", estreou na plataforma em setembro de 2022."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Cyberpunk: Edgerunners 2 ganha prévia de fuga da Arasaka.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Cyberpunk: Edgerunners 2 ganha prévia de fuga da Arasaka",
-              "href": "https://animenew.com.br/cyberpunk-edgerunners-2-previa-fuga-arasaka/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-24T15:12:45.000Z",
-      "updatedAt": "2026-09-24T15:12:45.000Z",
-      "expiresAt": "2026-10-01T15:12:45.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/cyberpunk-edgerunners-2-previa-fuga-arasaka",
-          "publishedAt": "2026-09-24T15:12:45.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 231,
-      "qualityScore": 0.908,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
       "id": "jbox-6d10f68e",
       "slug": "street-fighter-6-ganha-colaboracao-com-star-detective-precure-jbox-6d10f68e",
       "source": "JBox",
@@ -7559,709 +8294,6 @@
         "facts": 0,
         "sections": 0,
         "blocks": 27,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 3,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-25bdf674",
-      "slug": "critica-blue-lock-live-action-jbox-25bdf674",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Crítica | Blue Lock (live-action)",
-      "originalTitle": "Crítica | Blue Lock (live-action)",
-      "summary": "Fazer adaptações nunca é uma tarefa fácil. Há quem reclame quando a obra fica parecida demais com o material de origem, e também muitas críticas quando o lançamento se distancia do que busca adaptar. Porém, vez ou outra, nos deparamos com um bom exemplo de como fazer essa transposição de mídias de forma satisfatória, e este é o caso do live-action de Blue Lock, dirigido por Yusuke Taki e lançado nos cinemas do Brasil em 10 de de setembro deste ano, pela Sato Company.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Cinema",
-        "Live Action",
-        "Mangá",
-        "Resenha",
-        "Blue Lock",
-        "Crítica do filme de Blue Lock",
-        "Crítica do live-action de Blue Lock",
-        "filme de blue lock é bom?",
-        "filme de Blue Lock no Brasil",
-        "Fumiya Takahashi",
-        "Live-action de Blue Lock",
-        "Sato Company"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/21/critica-blue-lock-live-action",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/21/critica-blue-lock-live-action",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/jbox-critica-destacada-bluelock.jpg",
-      "mediaQuery": "Crítica | Blue Lock (live-action)",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Blue-Lock-01.webp",
-          "alt": "Imagem do live-action de Blue Lock",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Blue-Lock-02-scaled.jpg",
-          "alt": "Imagem do live-action de Blue Lock",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Blue-Lock-03.webp",
-          "alt": "Imagem do live-action de Blue Lock",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/rHQgPqrPviw"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Fazer adaptações nunca é uma tarefa fácil. Há quem reclame quando a obra fica parecida demais com o material de origem, e também muitas críticas quando o lançamento se distancia do que busca adaptar. Porém, vez ou outra, nos deparamos com um bom exemplo de como fazer essa transposição de mídias de forma satisfatória, e este é o caso do live-action de Blue Lock, dirigido por Yusuke Taki e lançado nos cinemas do Brasil em 10 de de setembro deste ano, pela Sato Company.",
-          "runs": [
-            {
-              "text": "Fazer adaptações nunca é uma tarefa fácil. Há quem reclame quando a obra fica parecida demais com o material de origem, e também muitas críticas quando o lançamento se distancia do que busca adaptar. Porém, vez ou outra, nos deparamos com um bom exemplo de como fazer essa transposição de mídias de forma satisfatória, e este é o caso do live-action de "
-            },
-            {
-              "text": "Blue Lock",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", dirigido por "
-            },
-            {
-              "text": "Yusuke Taki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e lançado nos cinemas do Brasil em 10 de de setembro deste ano, pela "
-            },
-            {
-              "text": "Sato Company",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama é a mesma do mangá escrito por Muneyuki Kaneshiro e ilustrado por Yusuke Nomura. Após várias eliminações em Copas do Mundo (e a de 2026 ainda nem entrava nesse conta), a Associação de Futebol do Japão decidiu começar a iniciativa Blue Lock, um treinamento intensivo para formar um artilheiro “egoísta”, ou seja, alguém com sede de gols para fazer a seleção do país finalmente deslanchar. Do outro lado dessa história está Yoichi Isagi (interpretado no filme por Fumiya Takahashi), um jovem que ficou frustrado após seu time de futebol da escola perder uma partida no último minuto — em uma jogada que ele iniciou, mas decidiu passar para um colega de equipe marcar.",
-          "runs": [
-            {
-              "text": "A trama é a mesma do mangá escrito por "
-            },
-            {
-              "text": "Muneyuki Kaneshiro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e ilustrado por "
-            },
-            {
-              "text": "Yusuke Nomura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Após várias eliminações em "
-            },
-            {
-              "text": "Copas do Mundo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (e a de 2026 ainda nem entrava nesse conta), a Associação de Futebol do Japão decidiu começar a iniciativa "
-            },
-            {
-              "text": "Blue Lock",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", um treinamento intensivo para formar um artilheiro “egoísta”, ou seja, alguém com sede de gols para fazer a seleção do país finalmente deslanchar. Do outro lado dessa história está "
-            },
-            {
-              "text": "Yoichi Isagi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (interpretado no filme por "
-            },
-            {
-              "text": "Fumiya Takahashi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "), um jovem que ficou frustrado após seu time de futebol da escola perder uma partida no último minuto — em uma jogada que ele iniciou, mas decidiu passar para um colega de equipe marcar."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Sem saber direito no que estava se metendo, Yoichi é convidado pela iniciativa Blue Lock e vai para o centro de treinamento entender sobre suas próprias capacidades e, se possível, se tornar um grande artilheiro.",
-          "runs": [
-            {
-              "text": "Sem saber direito no que estava se metendo, Yoichi é convidado pela iniciativa "
-            },
-            {
-              "text": "Blue Lock",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e vai para o centro de treinamento entender sobre suas próprias capacidades e, se possível, se tornar um grande artilheiro."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Blue-Lock-01.webp",
-          "alt": "Imagem do live-action de Blue Lock"
-        },
-        {
-          "type": "paragraph",
-          "text": "Vale a máxima de que: se todo mundo é atacante, ninguém é atacante? | Sato Company/Divulgação",
-          "runs": [
-            {
-              "text": "Vale a máxima de que: se todo mundo é atacante, ninguém é atacante? | Sato Company/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Tanto no mangá quanto no animê e no live-action, Blue Lock brinca com a percepção de que o futebol jogado pelo Japão é “colaborativo” demais, e esse seria o motivo das inúmeras eliminações precoces. Por conta disso, a história pode parecer meio maluca, em um primeiro momento, especialmente para quem gosta de futebol. Como todos os convocados para o treinamento são atacantes, e o saldo de gols é uma parte importante para seguir em frente na seleção, o que vemos nas primeiras partidas é um aglomerado de moleques ansiosos tentando fazer um gol. Não há técnica, nem posições em campo, e isso é explicado dentro da história, mas é curioso como quem gosta do esporte pode se sentir meio deixado de lado em um primeiro momento.",
-          "runs": [
-            {
-              "text": "Tanto no mangá quanto no animê e no live-action, "
-            },
-            {
-              "text": "Blue Lock",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " brinca com a percepção de que o futebol jogado pelo Japão é"
-            },
-            {
-              "text": " “colaborativo”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " demais, e esse seria o motivo das inúmeras eliminações precoces. Por conta disso, a história pode parecer meio maluca, em um primeiro momento, especialmente para quem gosta de futebol. Como todos os convocados para o treinamento são atacantes, e o saldo de gols é uma parte importante para seguir em frente na seleção, o que vemos nas primeiras partidas é um aglomerado de moleques ansiosos tentando fazer um gol. Não há técnica, nem posições em campo, e isso é explicado dentro da história, mas é curioso como "
-            },
-            {
-              "text": "quem gosta do esporte pode se sentir meio deixado de lado em um primeiro momento",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Felizmente, o live-action entende rapidamente que, apesar de precisar desconstruir o que é futebol, as partidas são importantes para cativar o público, e as disputas mostradas em tela são bem filmadas e coreografadas, de forma até mais satisfatória do que na adaptação em animê. Mesmo quando as jogadas são dinâmicas, o talento de todos fica perceptível, e a produção acerta em um aspecto de difícil equilíbrio: dar o peso e a velocidade necessários para a cena, mas deixá-la clara o suficiente para que todos entendam o que está acontecendo. Sabe aquela sensação de ver vários acontecimentos amontoados em um filme de ação e não conseguir identificar cada movimento dos personagens? Isso não acontece aqui.",
-          "runs": [
-            {
-              "text": "Felizmente, o live-action entende rapidamente que, apesar de precisar desconstruir o que é futebol, as partidas são importantes para cativar o público, e as disputas mostradas em tela são bem filmadas e coreografadas, de forma até mais satisfatória do que na "
-            },
-            {
-              "text": "adaptação em animê",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2022/11/26/blue-lock-resenha/"
-            },
-            {
-              "text": ". Mesmo quando as jogadas são dinâmicas, o talento de todos fica perceptível, e a produção acerta em um aspecto de difícil equilíbrio:"
-            },
-            {
-              "text": " dar o peso e a velocidade necessários para a cena",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", mas deixá-la clara o suficiente para que todos entendam o que está acontecendo. Sabe aquela sensação de ver vários acontecimentos amontoados em um filme de ação e não conseguir identificar cada movimento dos personagens? Isso não acontece aqui."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além de bem filmado, o live-action de Blue Lock também se destaca em outros quesitos técnicos. A fotografia, por exemplo, marca bem as mudanças de ambiente, com cores mais quentes no começo da história do protagonista Yoichi, um tom já esperadamente azulado dentro do centro de treinamento, e até mudanças sutis quando outros personagens aparecem, como a cor branca que acompanha Nagi. Pode parecer algo óbvio fazer tais mudanças no ambiente, mas a verdade é que, quando bem utilizado, o óbvio não incomoda, e sim complementa a narrativa.",
-          "runs": [
-            {
-              "text": "Além de bem filmado, o live-action de "
-            },
-            {
-              "text": "Blue Lock",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " também se destaca em outros quesitos técnicos. A fotografia, por exemplo, marca bem as mudanças de ambiente, com cores mais quentes no começo da história do protagonista Yoichi, um tom já esperadamente azulado dentro do centro de treinamento, e até mudanças sutis quando outros personagens aparecem, como a cor branca que acompanha Nagi. Pode parecer algo óbvio fazer tais mudanças no ambiente, mas a verdade é que, quando bem utilizado, o óbvio não incomoda, e sim complementa a narrativa."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O mesmo pode ser dito da trilha sonora do filme, tanto das músicas incidentais quanto da música-tema, cantada pela Ado. As inserções ajudam a dar o tom das cenas, fazendo com que quem está assistindo se sinta aflito, ou até mesmo empolgado, acompanhando os sentimentos dos personagens em tela.",
-          "runs": [
-            {
-              "text": "O mesmo pode ser dito da trilha sonora do filme, tanto das músicas incidentais quanto da música-tema, cantada pela "
-            },
-            {
-              "text": "Ado",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". As inserções ajudam a dar o tom das cenas, fazendo com que quem está assistindo se sinta aflito, ou até mesmo empolgado, acompanhando os sentimentos dos personagens em tela."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Ser ou não ser um egoísta?",
-          "runs": [
-            {
-              "text": "Ser ou não ser um egoísta?",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Blue-Lock-02-scaled.jpg",
-          "alt": "Imagem do live-action de Blue Lock"
-        },
-        {
-          "type": "paragraph",
-          "text": "O paralelo entre Yoichi e Nagi é um dos destaques da parte final do longa | Sato Company/Divulgação",
-          "runs": [
-            {
-              "text": "O paralelo entre Yoichi e Nagi é um dos destaques da parte final do longa | Sato Company/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Se o clima funciona na maior parte das cenas, é mérito também do elenco que está, em sua maioria, muito bem em seus respectivos papéis. Fumiya Takahashi às vezes parece um pouco velho demais para interpretar um jovem em época de ensino médio, mas compensa essa percepção quando abre um sorriso largo com uma pitada de ingenuidade, que nos faz gostar imediatamente de Yoichi.",
-          "runs": [
-            {
-              "text": "Se o clima funciona na maior parte das cenas, é mérito também do elenco que está, em sua maioria, muito bem em seus respectivos papéis. "
-            },
-            {
-              "text": "Fumiya Takahashi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " às vezes parece um pouco velho demais para interpretar um jovem em época de ensino médio, mas compensa essa percepção quando abre um sorriso largo com uma pitada de ingenuidade, que nos faz gostar imediatamente de Yoichi."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Outro destaque importante é Masataka Kubota no papel de Jinpachi Ego, o técnico responsável pelos treinamentos da iniciativa Blue Lock. Com uma caracterização precisa, mas menos afetado do que na versão animê, o ator confere ao comandante um ar de mais respeito e menos maluquice, deixando que exista uma mística ao redor de seus métodos, sem precisar de exageros para isso. De longe, uma das melhores escalações do filme.",
-          "runs": [
-            {
-              "text": "Outro destaque importante é "
-            },
-            {
-              "text": "Masataka Kubota",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no papel de "
-            },
-            {
-              "text": "Jinpachi Ego",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", o técnico responsável pelos treinamentos da iniciativa "
-            },
-            {
-              "text": "Blue Lock",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Com uma caracterização precisa, mas menos afetado do que na versão animê, o ator confere ao comandante um ar de mais respeito e menos maluquice, deixando que exista uma mística ao redor de seus métodos, sem precisar de exageros para isso. De longe, uma das melhores escalações do filme."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O ponto mais baixo do elenco é para Koga Yudai (também conhecido como K, integrante do grupo &Team) como Nagi. Destaque no terço final do filme por sua grande habilidade com a bola, Nagi soa mais apagado do que deveria — mas vale a colher de chá pela dificuldade de imbuir emoções em um personagem que está constantemente com um ar blasé para tudo o que acontece ao redor.",
-          "runs": [
-            {
-              "text": "O ponto mais baixo do elenco é para "
-            },
-            {
-              "text": "Koga Yudai",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (também conhecido como K, integrante do grupo "
-            },
-            {
-              "text": "&Team",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Nagi. Destaque no terço final do filme por sua grande habilidade com a bola, Nagi soa mais apagado do que deveria — mas vale a colher de chá pela dificuldade de imbuir emoções em um personagem que está constantemente com um ar "
-            },
-            {
-              "text": "blasé",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " para tudo o que acontece ao redor."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além de todos esses elementos, é importante ressaltar que o live-action tem outro grande acerto: é, por si só, um longa interessante de assistir. Para quem conhece a franquia, é a oportunidade de ver uma nova versão da trama, mais direta e menos enrolada do que o começo do animê. E, para quem for direto ao cinema, todos os elementos para entender a narrativa estão lá, e são desenvolvidos de uma forma coesa e instigante. Em poucas cenas, queremos saber o que vai acontecer com os personagens, e o que raios Jinpachi Ego está planejando.",
-          "runs": [
-            {
-              "text": "Além de todos esses elementos, é importante ressaltar que o live-action tem outro grande acerto: é, por si só, um longa interessante de assistir. Para quem conhece a franquia, é a oportunidade de ver uma nova versão da trama, mais direta e menos enrolada do que o começo do animê. E, para quem for direto ao cinema, todos os elementos para entender a narrativa estão lá, e são desenvolvidos de uma forma coesa e instigante. Em poucas cenas, queremos saber o que vai acontecer com os personagens, e o que raios Jinpachi Ego está planejando."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Essa jornada traz, ainda, um dos pontos mais importantes da franquia Blue Lock: como o futebol (tradicional ou recriado) faz com que cada jovem descubra um pouco mais sobre si mesmo. Seja em um momento de tomada de decisão rápida, nas reações à traição de um amigo, ou até ao reconhecimento das próprias fraquezas sobre determinado assunto, Blue Lock insere o futebol como um catalisador da identidade que cada um está construindo em um momento tão importante da vida quanto a juventude.",
-          "runs": [
-            {
-              "text": "Essa jornada traz, ainda, um dos pontos mais importantes da franquia "
-            },
-            {
-              "text": "Blue Lock",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ": como o futebol (tradicional ou recriado) faz com que cada jovem descubra um pouco mais sobre si mesmo. Seja em um momento de tomada de decisão rápida, nas reações à traição de um amigo, ou até ao reconhecimento das próprias fraquezas sobre determinado assunto, "
-            },
-            {
-              "text": "Blue Lock",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " insere o futebol como um catalisador da identidade que cada um está construindo em um momento tão importante da vida quanto a juventude."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Blue-Lock-03.webp",
-          "alt": "Imagem do live-action de Blue Lock"
-        },
-        {
-          "type": "paragraph",
-          "text": "Para além do esporte, Blue Lock também mostra o amadurecimento pessoal dos personagens | Sato Company/Divulgação",
-          "runs": [
-            {
-              "text": "Para além do esporte, Blue Lock também mostra o amadurecimento pessoal dos personagens | Sato Company/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "E assim, mantendo o que precisa ser mantido, mas enxugando certos exageros do material de origem, o live-action de Blue Lock é um dos lançamentos do universo de animês mais interessantes do ano, e que abre caminho para uma possível sequência, ao terminar com um gancho e até cena pós-crédito. Agora é esperar que a produção faça o sucesso necessário para justificar um segundo filme, que mantenha a boa qualidade do primeiro.",
-          "runs": [
-            {
-              "text": "E assim, mantendo o que precisa ser mantido, mas enxugando certos exageros do material de origem, o live-action de "
-            },
-            {
-              "text": "Blue Lock",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é um dos lançamentos do universo de animês mais interessantes do ano, e que abre caminho para uma possível sequência, ao terminar com um gancho e "
-            },
-            {
-              "text": "até cena pós-crédito",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/09/21/critica-blue-lock-live-action/"
-            },
-            {
-              "text": ". Agora é esperar que a produção faça o sucesso necessário para justificar um segundo filme, que mantenha a boa qualidade do primeiro."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=rHQgPqrPviw",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/rHQgPqrPviw"
-        },
-        {
-          "type": "paragraph",
-          "text": "O animê seriado de Blue Lock começou a ser lançado em outubro de 2022, assinado pelo estúdio 8-Bit. No Brasil, as duas temporadas estão nos catálogos da Netflix, HBO Max e Crunchyroll, que também conta com o filme Episódio Nagi. As duas temporadas também são exibidas no canal Adult Swim e o mangá, lançado desde agosto de 2018, chega ao país pela Panini.",
-          "runs": [
-            {
-              "text": "O animê seriado de "
-            },
-            {
-              "text": "Blue Lock",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " começou a ser lançado em outubro de 2022, assinado pelo estúdio "
-            },
-            {
-              "text": "8-Bit",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". No Brasil, as duas temporadas estão nos catálogos da "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "HBO Max",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e"
-            },
-            {
-              "text": " Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que também conta com o filme "
-            },
-            {
-              "text": "Episódio Nagi",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". As duas temporadas também são exibidas no canal "
-            },
-            {
-              "text": "Adult Swim ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "e o mangá, lançado desde agosto de 2018, chega ao país pela "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Vale lembrar que, este ano, a Associação de Futebol do Japão lançou um programa de formação de atletas no mundo real, inspirado na história de Blue Lock.",
-          "runs": [
-            {
-              "text": "Vale lembrar que, este ano, a Associação de Futebol do Japão"
-            },
-            {
-              "text": " ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "lançou um programa de formação de atletas no mundo real, inspirado na história de ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/05/13/associacao-de-futebol-do-japao-lanca-projeto-de-formacao-de-atletas-inspirado-em-blue-lock/"
-            },
-            {
-              "text": "Blue Lock",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/05/13/associacao-de-futebol-do-japao-lanca-projeto-de-formacao-de-atletas-inspirado-em-blue-lock/"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site. A crítica foi feita de forma totalmente independente, em uma exibição comum de cinema, sem envolvimento de cabine de imprensa.",
-          "runs": [
-            {
-              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site. A crítica foi feita de forma totalmente independente, em uma exibição comum de cinema, sem envolvimento de cabine de imprensa.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-21T16:40:55.000Z",
-      "updatedAt": "2026-09-21T17:46:05.000Z",
-      "expiresAt": "2026-09-28T16:40:55.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/21/critica-blue-lock-live-action",
-          "publishedAt": "2026-09-21T16:40:55.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 7,
-      "wordCount": 1262,
-      "qualityScore": 0.97,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 26,
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "contentMode": "full",
