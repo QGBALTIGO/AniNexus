@@ -22,7 +22,7 @@ import { getCommunityOverview } from './lib/community-overview.mjs';
 import { initDb, q, pool, dbReady } from './lib/db.mjs';
 import { initCache, redis, cacheRemember, cacheReady, cacheRunOnce, cacheMetricsSnapshot } from './lib/cache.mjs';
 import { SharedRateLimitStore } from './lib/rate-limit-store.mjs';
-import { AUTHORIZED_ORIGINS, CLERK_ENABLED, hashPassword, verifyPassword, createSession, destroySession, currentUser, requireUser, requireRole, validateOrigin, getClerkClient, syncClerkUser, beginAccountDeletion, cancelAccountDeletion, bootstrapConfiguredAdmins, invalidateUserIdentityCache } from './lib/auth.mjs';
+import { AUTHORIZED_ORIGINS, CLERK_ENABLED, CLERK_INSTANCE_TYPE, hashPassword, verifyPassword, createSession, destroySession, currentUser, requireUser, requireRole, validateOrigin, getClerkClient, syncClerkUser, beginAccountDeletion, cancelAccountDeletion, bootstrapConfiguredAdmins, invalidateUserIdentityCache } from './lib/auth.mjs';
 import { AVATAR_PRESETS, avatarForClerkUser, avatarPresetUrl, resolvedAvatar } from './lib/avatar.mjs';
 import { processClerkWebhook } from './lib/clerk-webhook.mjs';
 import { getCatalog, getReading, getSchedule, getAnime, getAnimeThemes, getMediaSummaries, getMediaByMalIds, getManga, getStudios, getDubbed, prewarm, slugify } from './lib/provider.mjs';
@@ -245,7 +245,7 @@ const roleNotification=role=>role==='moderator'?{title:'Você agora é moderador
 const refreshAchievements=async(userId,source='ACTION')=>{try{return await syncUserAchievements(userId,{source,notify:true})}catch(error){app.log.warn({err:error,userId},'achievement sync failed');return null}};
 const recordContributionAchievement=async(userId,type,row,body)=>{if(String(body||'').trim().length<20)return null;try{await recordContributionHistory(userId,type,row?.id,body,row?.created_at);return await refreshAchievements(userId)}catch(error){app.log.warn({err:error,userId,type,contentId:row?.id},'achievement contribution failed');return null}};
 
-app.get('/health',async()=>({ok:true,uptime:Math.round(process.uptime()),time:new Date().toISOString()}));
+app.get('/health',async()=>({ok:true,uptime:Math.round(process.uptime()),time:new Date().toISOString(),auth:{provider:CLERK_ENABLED?'clerk':'legacy',instance:CLERK_INSTANCE_TYPE}}));
 app.get('/health/ready',async(req,reply)=>{const [db,cache]=await Promise.all([dbReady(),cacheReady()]);const ok=db&&cache;return reply.code(ok?200:503).send({ok,db,cache});});
 app.get('/media/profile/:userId/:file',publicRate,async(req,reply)=>{
   const userId=z.string().uuid().safeParse(req.params.userId),file=String(req.params.file||'');
