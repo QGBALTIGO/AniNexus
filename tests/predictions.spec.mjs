@@ -9,6 +9,23 @@ const base={id:firstId,mediaId:21,mediaType:'ANIME',mediaTitle:'One Piece',type:
 const second={...base,id:secondId,mediaTitle:'The Beginning After the End: uma história com um título muito longo',question:'A nota média de The Beginning After the End terá alcançado o critério publicado na leitura indicada?',yesCount:15,noCount:5,voteCount:20};
 const closed={...base,id:thirdId,mediaTitle:'Frieren',status:'VOID',closesAt:'2020-09-30T12:00:00Z',resolutionDeadline:'2020-10-01T12:00:00Z'};
 
+test('official event card and detail show the official source, criterion and no score language',async({page})=>{
+  const item={...base,type:'OFFICIAL_EVENT',mediaTitle:'Cyberpunk: Edgerunners 2',question:'Cyberpunk: Edgerunners 2 estará disponível na Netflix em 20/10/2030?',
+    criteria:'SIM se o primeiro episódio estiver disponível a assinantes comuns da Netflix em 20/10/2030. Trailer e prévia privada não contam.',
+    source:'Netflix',sourceUrl:'https://www.netflix.com/tudum/articles/cyberpunk-edgerunners-2-release-date-news',yesCount:0,noCount:0,voteCount:0,
+    trend24h:null,closesAt:'2030-10-18T00:00:00Z',resolutionDeadline:'2030-10-22T00:00:00Z',rule:{eventAt:'2030-10-20T00:00:00Z',graceSeconds:172800}};
+  await fixture(page,{items:[item]});
+  const card=page.locator(`[data-prediction="${firstId}"]`);
+  await expect(card).toContainText('Cyberpunk: Edgerunners 2 estará disponível na Netflix');
+  await expect(card).not.toContainText('nota média');
+  await card.getByText('Critérios e fontes',{exact:true}).click();
+  await expect(card.getByRole('link',{name:/Fonte: Netflix/})).toHaveAttribute('rel','noopener noreferrer');
+  await card.getByRole('link',{name:'Ver detalhes'}).click();
+  await expect(page.locator('.nx62-detail-heading h1')).toHaveText(item.question);
+  await expect(page.locator('.nx62-context-section')).toContainText('assinantes comuns da Netflix');
+  await expect(page.locator('.nx62-context-section').getByRole('link',{name:/Abrir fonte oficial/})).toHaveAttribute('href',item.sourceUrl);
+});
+
 async function fixture(page,{theme='dark',signedIn=false,items=[base,second,closed],mine=[],handler,path='/previsoes'}={}){
   const state={items,mine,calls:[],failure:0,voteFailure:0,handler};
   await page.addInitScript(({theme,signedIn})=>{

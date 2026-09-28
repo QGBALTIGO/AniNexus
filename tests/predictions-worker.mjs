@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import {EventEmitter} from 'node:events';
 import {spawnSync} from 'node:child_process';
 import {createPredictionsWorker, nextPredictionDeadline, predictionWeek, eligibleCandidate, retryDelay, SOURCE_URL} from '../lib/predictions-worker.mjs';
-import {evaluatePrediction, generatePredictionCandidate, validatePredictionCandidate} from '../lib/predictions.mjs';
+import {evaluatePrediction, generatePredictionCandidate, generateOfficialEventCandidate, validatePredictionCandidate} from '../lib/predictions.mjs';
+import {OFFICIAL_EVENTS} from '../lib/predictions-official-events.mjs';
 
 const NOW = new Date('2026-10-05T18:05:00.000Z');
 const HOUR = 3_600_000;
@@ -35,6 +36,8 @@ function harness({now = NOW, questions = [], discovery = false, acquired = true,
         if (!sql.includes('DO NOTHING') || !state.jobs.has(values[0])) state.jobs.set(values[0], {next_run_at: values[1], details: JSON.parse(values[2])});
         return {rows: []};
       }
+      if (sql.startsWith("SELECT * FROM prediction_questions WHERE type='OFFICIAL_EVENT'")) return {rows: state.questions.filter(q => q.type === 'OFFICIAL_EVENT'
+        && ['OPEN', 'LOCKED'].includes(q.status) && +new Date(q.resolution_deadline) <= +values[0]).slice(0, 50)};
       if (sql.startsWith('SELECT * FROM prediction_questions')) return {rows: state.questions.filter(q => q.type === 'SCORE_AT_DEADLINE'
         && ['OPEN', 'LOCKED'].includes(q.status) && +new Date(q.resolution_deadline) <= +values[0]).sort((a, b) => +new Date(a.resolution_deadline) - +new Date(b.resolution_deadline)).slice(0, 50)};
       if (sql.startsWith('SELECT media_id,media_type FROM prediction_questions')) return {rows: state.questions.filter(q => +new Date(q.resolution_deadline) >= +values[0] && +new Date(q.resolution_deadline) < +values[1]).slice(0, 11)};
@@ -44,6 +47,7 @@ function harness({now = NOW, questions = [], discovery = false, acquired = true,
   }};
   const core = {
     generatePredictionCandidate,
+    generateOfficialEventCandidate,
     async lockPredictions() { let locked = 0; for (const q of state.questions) if (q.status === 'OPEN' && +new Date(q.closes_at) <= +state.now) {q.status = 'LOCKED'; locked++;} return {locked}; },
     async resolvePrediction(_pool, id, observation = null) {
       state.resolves.push({id, observation});
@@ -66,7 +70,7 @@ function harness({now = NOW, questions = [], discovery = false, acquired = true,
     state.calls.push({url, options}); state.events.push({kind: 'fetch'});
     return fetcher ? fetcher({url, options, state}) : response([media(1, {averageScore: 82})]);
   };
-  const worker = options => createPredictionsWorker({pool, core, fetchImpl, enabled: true, authorized: true, logger: {info() {}, warn() {}}, ...options});
+  const worker = options => createPredictionsWorker({pool, core, fetchImpl, enabled: true, authorized: true, logger: {info() {}, warn() {}}, officialEvents: [], legacyScoreMode: true, ...options});
   return {state, worker, pool};
 }
 
@@ -76,6 +80,17 @@ test('disabled is the default and both flags are required before any connection'
     assert.equal((await worker(options).cycle()).status, 'DISABLED');
     assert.equal(state.clients.length, 0); assert.equal(state.calls.length, 0);
   }
+});
+
+test('production mode publishes only curated official events and never asks for scores',async()=>{
+  const now=new Date('2026-09-28T02:00:00Z');
+  const event=OFFICIAL_EVENTS[0];
+  const {worker,state}=harness({now,fetcher:()=>{throw Error('AniList must not be queried')}});
+  const options={legacyScoreMode:false,officialEvents:[event]};
+  const first=await worker(options).cycle();
+  assert.equal(first.status,'OK');assert.equal(first.published,1);
+  assert.equal(state.published[0].type,'OFFICIAL_EVENT');assert.equal(state.calls.length,0);
+  assert.equal((await worker(options).cycle()).published,0);
 });
 
 test('standalone disabled worker does not import or connect database', () => {

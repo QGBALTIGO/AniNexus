@@ -4,9 +4,10 @@ import fs from 'node:fs/promises';
 import {spawn} from 'node:child_process';
 import pg from 'pg';
 import Fastify from 'fastify';
-import {generatePredictionCandidate,publishPrediction,votePrediction,resolvePrediction,lockPredictions,registerPredictions,predictionStatsSql} from '../lib/predictions.mjs';
+import {generatePredictionCandidate,generateOfficialEventCandidate,publishPrediction,votePrediction,resolvePrediction,lockPredictions,registerPredictions,legacyPredictionStatsSql} from '../lib/predictions.mjs';
 import * as predictionCore from '../lib/predictions.mjs';
 import {createPredictionsWorker,nextPredictionDeadline,predictionWeek} from '../lib/predictions-worker.mjs';
+import {OFFICIAL_EVENTS} from '../lib/predictions-official-events.mjs';
 
 const connectionString=process.env.MEDIA_TEST_DATABASE_URL;
 if(!connectionString)throw new Error('MEDIA_TEST_DATABASE_URL is required; only use an isolated test database');
@@ -62,7 +63,7 @@ try{
   assert.equal((await votePrediction(pool,ready.id,user,'NO')).error,'PREDICTION_CLOSED');check();
   const missing=await fixture();assert.equal((await resolvePrediction(pool,missing.id,null)).status,'PENDING');check();
   const expired=await fixture({deadlineOffset:-3601000,closeOffset:-90001000});await addVote(expired.id);const voided=await resolvePrediction(pool,expired.id,null);assert.equal(voided.status,'VOID');assert.equal(voided.result,null);check();
-  const userStats=(await query(predictionStatsSql,[user])).rows[0];assert.equal(userStats.resolved,1);assert.equal(userStats.correct,1);assert.equal(userStats.voided,1);assert.equal(userStats.reputation_points,50);check();
+  const userStats=(await query(legacyPredictionStatsSql,[user])).rows[0];assert.equal(userStats.resolved,1);assert.equal(userStats.correct,1);assert.equal(userStats.voided,1);assert.equal(userStats.reputation_points,50);check();
   const wrong=await fixture();assert.equal((await resolvePrediction(pool,wrong.id,{...evidence,mediaId:102})).status,'PENDING');check();
   const due=await fixture({status:'OPEN'});const locked=await lockPredictions(pool);assert.ok(locked.locked>=1);assert.equal((await query('SELECT status FROM prediction_questions WHERE id=$1',[due.id])).rows[0].status,'LOCKED');check();
   // Retry retains the original even though this modified retry payload is expired.
@@ -81,7 +82,7 @@ try{
   assert.equal((await resolvePrediction(pool,dated.id,dateEvidence)).result,'YES');const eligibility=(await query('SELECT user_id,eligible FROM prediction_votes WHERE question_id=$1',[dated.id])).rows;
   assert.equal(eligibility.find(v=>v.user_id===user).eligible,false);assert.equal(eligibility.find(v=>v.user_id===other).eligible,true);check();
 
-  registerPredictions(app,{enabled:true,pool,q:query,requireUser:async(req,reply)=>{if(req.headers['x-test-user'])return{id:req.headers['x-test-user']};reply.code(401).send({error:'UNAUTHORIZED'});return null}});
+  registerPredictions(app,{enabled:true,legacyPublicMode:true,pool,q:query,requireUser:async(req,reply)=>{if(req.headers['x-test-user'])return{id:req.headers['x-test-user']};reply.code(401).send({error:'UNAUTHORIZED'});return null}});
   for(const filter of ['hot','new','closing','divided','resolved']){const response=await app.inject({url:`/api/predictions?filter=${filter}`});assert.equal(response.statusCode,200,response.body);assert.ok(Array.isArray(response.json().items));}check();
   let response=await app.inject({url:`/api/me/predictions?ids=${ready.id}`,headers:{'x-test-user':user}});assert.equal(response.statusCode,200,response.body);assert.equal(response.json().items.length,1);assert.equal(response.json().items[0].userVote.choice,'YES');assert.equal(response.headers['cache-control'],'no-store');check();
   await votePrediction(pool,id,user,'YES',75);
@@ -110,7 +111,7 @@ try{
   const feed=Array.from({length:20},(_,index)=>({id:900000+index,type:'ANIME',status:'RELEASING',popularity:12000,averageScore:80,title:{romaji:`Worker Test ${index}`},coverImage:{large:'https://example.test/cover.jpg'}}));
   let fetchCalls=0;
   const sourceFetch=async(_url,options)=>{fetchCalls++;const request=JSON.parse(options.body);return httpResponse(request.variables?.ids?request.variables.ids.map(mediaId=>({id:mediaId,type:'ANIME',averageScore:83})):feed)};
-  const workerOptions={pool,enabled:true,authorized:true,logger:{},fetchImpl:sourceFetch};
+  const workerOptions={pool,enabled:true,authorized:true,logger:{},fetchImpl:sourceFetch,officialEvents:[],legacyScoreMode:true};
   const week=predictionWeek(nextPredictionDeadline(await dbNow()));
   const existingInWeek=Number((await query('SELECT count(*) FROM prediction_questions WHERE resolution_deadline >= $1 AND resolution_deadline < $2',[week.start,week.end])).rows[0].count);
   assert.ok(existingInWeek<10,'Fixture volume must leave space to exercise automatic publication');
@@ -164,7 +165,7 @@ try{
   const workerUrl=new URL('../lib/predictions-worker.mjs',import.meta.url).href;
   const childScript=`import pg from 'pg';import {createPredictionsWorker} from ${JSON.stringify(workerUrl)};
     const pool=new pg.Pool({connectionString:process.env.MEDIA_TEST_DATABASE_URL,options:'-c search_path='+process.env.PREDICTION_TEST_SCHEMA+',public',max:3});
-    let held=false;try{const worker=createPredictionsWorker({pool,enabled:true,authorized:true,logger:{},timeoutMs:30000,fetchImpl:async(_url,options)=>{
+    let held=false;try{const worker=createPredictionsWorker({pool,enabled:true,authorized:true,logger:{},officialEvents:[],legacyScoreMode:true,timeoutMs:30000,fetchImpl:async(_url,options)=>{
       if(!held){held=true;process.send({type:'FETCH_LOCKED'});await new Promise(resolve=>process.once('message',resolve));}
       const ids=JSON.parse(options.body).variables.ids||[];return new Response(JSON.stringify({data:{Page:{media:ids.map(id=>({id,type:'ANIME',averageScore:83}))}}}),{status:200});}});
       const result=await worker.cycle();process.send({type:'DONE',result});}catch(error){process.send({type:'FAILED',code:error.code||'TEST_FAILURE'});process.exitCode=1}finally{await pool.end();process.disconnect()}`;
@@ -182,6 +183,29 @@ try{
     assert.equal((await query('SELECT count(*) FROM prediction_resolutions WHERE question_id=$1',[concurrent.id])).rows[0].count,'1');assert.equal((await query('SELECT count(*) FROM notifications WHERE dedupe_key=$1',[`prediction:${concurrent.id}`])).rows[0].count,'1');check();
   }finally{if(child.exitCode===null){child.kill();await new Promise(resolve=>{if(child.exitCode!==null)return resolve();child.once('exit',resolve)})}}
   const reacquired=await createPredictionsWorker(workerOptions).cycle();assert.equal(reacquired.status,'OK');check();
+  // The new migration retires score/catalog questions without deleting history.
+  const officialMigration=await fs.readFile(new URL('../sql/039_official_event_predictions.sql',import.meta.url),'utf8');
+  await query(officialMigration);check();
+  assert.equal((await query("SELECT count(*)::int count FROM prediction_questions WHERE type<>'OFFICIAL_EVENT' AND status IN ('OPEN','LOCKED')")).rows[0].count,0);check();
+  assert.equal((await query("SELECT count(*)::int count FROM prediction_votes v JOIN prediction_questions p ON p.id=v.question_id WHERE p.type<>'OFFICIAL_EVENT' AND v.eligible")).rows[0].count,0);check();
+  assert.ok(Number((await query("SELECT count(*) FROM notifications WHERE dedupe_key LIKE 'prediction-retired:%'")).rows[0].count)>0);check();
+  const officialNow=await dbNow(),later=days=>new Date(+officialNow+days*86400000).toISOString();
+  const event={...OFFICIAL_EVENTS[0],key:'isolated-official-event',mediaId:195539,verifiedAt:officialNow.toISOString(),closesAt:later(3),eventAt:later(5),resolutionDeadline:later(6)};
+  const official=generateOfficialEventCandidate(event,officialNow);assert.equal(official.ok,true,official.error);check();
+  const eventRow=await publishPrediction(pool,official.candidate);assert.equal(eventRow.created,true);assert.equal(eventRow.item.type,'OFFICIAL_EVENT');check();
+  assert.equal((await votePrediction(pool,eventRow.item.id,user,'YES')).userVote.choice,'YES');check();
+  const liveApp=Fastify();registerPredictions(liveApp,{enabled:true,pool,q:query,requireUser:async(req,reply)=>{if(req.headers['x-test-user'])return{id:req.headers['x-test-user']};reply.code(401).send({error:'UNAUTHORIZED'});return null}});
+  try{
+    const listing=await liveApp.inject({url:'/api/predictions'});assert.equal(listing.statusCode,200);assert.ok(listing.json().items.every(item=>item.type==='OFFICIAL_EVENT'));check();
+    assert.equal((await liveApp.inject({url:`/api/predictions/${id}/detail`})).statusCode,404);check();
+    const detail=await liveApp.inject({url:`/api/predictions/${eventRow.item.id}/detail`});assert.equal(detail.statusCode,200);assert.equal(detail.json().item.source,'Netflix');check();
+    const mine=await liveApp.inject({url:'/api/me/predictions',headers:{'x-test-user':user}});assert.ok(mine.json().items.every(item=>item.type==='OFFICIAL_EVENT'));assert.equal(mine.json().stats.resolved,0);check();
+  }finally{await liveApp.close()}
+  let officialFetches=0;
+  const secondEvent={...event,key:'isolated-worker-event',mediaId:195540};
+  const officialCycle=await createPredictionsWorker({pool,enabled:true,authorized:true,officialEvents:[secondEvent],fetchImpl:async()=>{officialFetches++;throw Error('Official event discovery does not call AniList')},logger:{}}).cycle();
+  assert.equal(officialCycle.status,'OK',JSON.stringify(officialCycle));assert.equal(officialCycle.published,1);assert.equal(officialFetches,0);check();
+  const officialAgain=await createPredictionsWorker({pool,enabled:true,authorized:true,officialEvents:[secondEvent],logger:{}}).cycle();assert.equal(officialAgain.published,0);check();
   console.log(`Predictions database: ${checks} checks passed (real account migrations, transactions, worker restart, snapshots, multiprocess locks, privacy, ranking, API).`);
 }finally{
   await app.close();await pool.end();

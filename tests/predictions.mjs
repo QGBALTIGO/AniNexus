@@ -1,12 +1,40 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import Fastify from 'fastify';
-import {generatePredictionCandidate,validatePredictionCandidate,evaluatePrediction,evidenceHash,wilsonLowerBound,predictionConsensus,publicPrediction,registerPredictions,votePrediction} from '../lib/predictions.mjs';
+import {generatePredictionCandidate,generateOfficialEventCandidate,validatePredictionCandidate,evaluatePrediction,evidenceHash,wilsonLowerBound,predictionConsensus,publicPrediction,registerPredictions,votePrediction} from '../lib/predictions.mjs';
+import {OFFICIAL_EVENTS} from '../lib/predictions-official-events.mjs';
 
 const now=new Date('2026-10-01T12:00:00Z');
 const base=()=>generatePredictionCandidate({mediaId:101,mediaType:'ANIME',title:'Obra de teste',averageScore:80,status:'RELEASING',popularity:12000},{now}).candidate;
 const observed=(candidate,score=83,date=candidate.resolutionDeadline)=>({source:'AniList',mediaId:101,mediaType:'ANIME',observedAt:date,data:{averageScore:score}});
 const iso=value=>new Date(value).toISOString();
+
+test('official event questions use verified announcements, not AniList scores',()=>{
+  const at=new Date('2026-09-28T01:45:00Z');
+  for(const event of OFFICIAL_EVENTS){
+    const result=generateOfficialEventCandidate(event,at);
+    assert.equal(result.ok,true,`${event.key}: ${result.error}`);
+    assert.equal(result.candidate.type,'OFFICIAL_EVENT');
+    assert.doesNotMatch(result.candidate.question,/nota|pontua[cç][aã]o|AniList/i);
+    assert.match(result.candidate.criteria,/(evid[eê]ncia|confirma[cç][aã]o) oficial/i);
+    assert.ok(Date.parse(result.candidate.closesAt)<Date.parse(result.candidate.rule.eventAt));
+  }
+  const valid=generateOfficialEventCandidate(OFFICIAL_EVENTS[0],at).candidate;
+  assert.equal(validatePredictionCandidate({...valid,sourceUrl:'https://netflix.com.evil.test/fake'},at).error,'INVALID_OFFICIAL_EVENT');
+  assert.equal(validatePredictionCandidate({...valid,closesAt:valid.rule.eventAt},at).error,'INVALID_OFFICIAL_EVENT');
+});
+
+test('announcement alone never resolves a future event; only later official proof can',()=>{
+  const at=new Date('2026-09-28T01:45:00Z'),candidate=generateOfficialEventCandidate(OFFICIAL_EVENTS[0],at).candidate;
+  const after=new Date(Date.parse(candidate.rule.eventAt)+3600000);
+  assert.equal(evaluatePrediction(candidate,null,after).status,'PENDING');
+  assert.equal(evaluatePrediction(candidate,candidate.baseline,after).status,'PENDING');
+  const evidence={source:'Netflix',mediaId:candidate.mediaId,mediaType:'ANIME',observedAt:after.toISOString(),proofUrl:'https://www.netflix.com/tudum/articles/verified-premiere-report',occurred:true,summary:'A página oficial confirmou a disponibilidade do episódio ao público.'};
+  assert.deepEqual([evaluatePrediction(candidate,evidence,after).status,evaluatePrediction(candidate,evidence,after).result],['RESOLVED','YES']);
+  assert.equal(evaluatePrediction(candidate,{...evidence,proofUrl:candidate.sourceUrl},after).status,'PENDING');
+  assert.equal(evaluatePrediction(candidate,null,new Date(Date.parse(candidate.resolutionDeadline)+49*3600000)).status,'VOID');
+  assert.equal(evaluatePrediction(candidate,{...evidence,proofUrl:candidate.sourceUrl},new Date(Date.parse(candidate.resolutionDeadline)+49*3600000)).status,'VOID');
+});
 
 test('generator produces explicit catalog criteria, UTC cutoff and seven-day uncertainty',()=>{
   const candidate=base();assert.equal(candidate.rule.threshold,82);assert.equal(candidate.resolutionDeadline,'2026-10-08T12:00:00.000Z');assert.equal(candidate.closesAt,'2026-10-07T12:00:00.000Z');
