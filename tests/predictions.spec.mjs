@@ -170,6 +170,12 @@ test('prediction detail: Prever opens the vote section and saves choice with con
   expect(state.calls.find(call=>call.path==='/api/me/predictions/'+firstId+'/vote').body).toEqual({choice:'YES',confidence:75});
 });
 
+test('prediction detail: structured score headline names the work and keeps the precise deadline',async({page})=>{
+  const item={...base,rule:{threshold:88},resolutionDeadline:'2030-10-01T12:00:00Z'};
+  await fixture(page,{path:'/previsoes?previsao='+firstId,items:[item]});
+  await expect(page.locator('.nx62-detail-heading h1')).toHaveText('One Piece terá nota média de pelo menos 88/100 no AniList na consulta de 01/10/2030, às 09h (Brasília)?');
+});
+
 test('prediction detail: final result explains reputation and cannot be followed anew',async({page})=>{
   const item={...base,status:'RESOLVED',result:'YES',resolvedAt:new Date().toISOString(),evidence:{observation:{observedAt:new Date().toISOString(),data:{averageScore:89}}}};
   await fixture(page,{signedIn:true,path:'/previsoes?previsao='+firstId,items:[item],mine:[{...item,userVote:{choice:'YES',confidence:75,eligible:true}}]});
