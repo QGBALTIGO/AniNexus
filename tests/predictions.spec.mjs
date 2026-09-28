@@ -176,6 +176,32 @@ test('prediction detail: structured score headline names the work and keeps the 
   await expect(page.locator('.nx62-detail-heading h1')).toHaveText('One Piece terá nota média de pelo menos 88/100 no AniList na consulta de 01/10/2030, às 09h (Brasília)?');
 });
 
+test('prediction navigation: Home buttons open details and Prever focuses the form',async({page})=>{
+  await fixture(page);
+  await page.evaluate(()=>window.AniNexusGo('/'));
+  const home=page.locator('.nx35-home .nx61-pred-home');
+  await expect(home).toBeVisible();
+  await home.locator(`[data-prediction="${firstId}"]`).getByRole('link',{name:'Prever'}).click();
+  await expect(page.locator('.nx62-detail-heading h1')).toBeVisible();
+  await expect(page).toHaveURL(new RegExp(`previsao=${firstId}.*foco=prever`));
+  await expect.poll(()=>page.locator('#nx62-prever').evaluate(el=>el.getBoundingClientRect().top)).toBeLessThan(200);
+  await page.locator('.nx62-back').click();
+  await expect(page.locator('.nx61-pred-heading h1')).toHaveText('Previsões');
+  await expect(page.locator('.nx61-pred-back')).toHaveAttribute('href','/');
+  await page.locator(`[data-prediction="${firstId}"]`).getByRole('link',{name:'Fazer previsão'}).click();
+  await expect(page.locator('.nx62-detail-heading h1')).toBeVisible();
+});
+
+test('prediction navigation: list back goes to Community only when entered from Community',async({page})=>{
+  await fixture(page);
+  await page.evaluate(()=>window.AniNexusGo('/comunidade'));
+  await expect(page.locator('.nx40-community')).toBeVisible();
+  await page.evaluate(()=>window.AniNexusGo('/previsoes'));
+  await expect(page.locator('.nx61-pred-back')).toHaveAttribute('href','/comunidade');
+  await page.locator('.nx61-pred-back').click();
+  await expect(page.locator('.nx40-community')).toBeVisible();
+});
+
 test('prediction detail: final result explains reputation and cannot be followed anew',async({page})=>{
   const item={...base,status:'RESOLVED',result:'YES',resolvedAt:new Date().toISOString(),evidence:{observation:{observedAt:new Date().toISOString(),data:{averageScore:89}}}};
   await fixture(page,{signedIn:true,path:'/previsoes?previsao='+firstId,items:[item],mine:[{...item,userVote:{choice:'YES',confidence:75,eligible:true}}]});
