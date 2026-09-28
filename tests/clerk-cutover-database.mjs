@@ -84,4 +84,49 @@ test('verified Production Clerk identity rebind preserves AniNexus UUID and prod
   await pool.query('DELETE FROM users WHERE id=$1',[userId]);
 });
 
+test('verified Production identity repairs a missed Development snapshot once',async()=>{
+  await initDb();
+  const userId=crypto.randomUUID();
+  const suffix=userId.replaceAll('-','').slice(0,12);
+  const email=`clerk-no-ledger-${suffix}@example.invalid`;
+  const legacyClerkId=`user_DEV${suffix}`;
+  const productionClerkId=`user_PROD${suffix}`;
+
+  await pool.query(
+    "INSERT INTO users(id,email,username,password_hash,clerk_user_id,email_verified) VALUES($1,$2,$3,NULL,$4,true)",
+    [userId,email,`no_ledger_${suffix}`,legacyClerkId]
+  );
+
+  const synced=await syncClerkUser({
+    id:productionClerkId,
+    fullName:'Usuário sem ledger',
+    primaryEmailAddressId:'idn_no_ledger',
+    primaryEmailAddress:{emailAddress:email},
+    emailAddresses:[{id:'idn_no_ledger',emailAddress:email,verification:{status:'verified'}}],
+  });
+
+  assert.equal(synced.id,userId);
+  assert.equal(synced.clerk_user_id,productionClerkId);
+  const ledger=(await pool.query(
+    'SELECT legacy_clerk_user_id,production_clerk_user_id,rebound_at FROM clerk_identity_cutovers WHERE user_id=$1',
+    [userId]
+  )).rows[0];
+  assert.equal(ledger.legacy_clerk_user_id,legacyClerkId);
+  assert.equal(ledger.production_clerk_user_id,productionClerkId);
+  assert.ok(ledger.rebound_at);
+
+  await assert.rejects(
+    ()=>syncClerkUser({
+      id:`user_OTHER${suffix}`,
+      fullName:'Outro',
+      primaryEmailAddressId:'idn_no_ledger_2',
+      primaryEmailAddress:{emailAddress:email},
+      emailAddresses:[{id:'idn_no_ledger_2',emailAddress:email,verification:{status:'verified'}}],
+    }),
+    /linked to another identity/
+  );
+
+  await pool.query('DELETE FROM users WHERE id=$1',[userId]);
+});
+
 test.after(async()=>{await pool.end()});

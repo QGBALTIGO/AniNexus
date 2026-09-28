@@ -23,9 +23,11 @@ test('identity cutover is one-time, verified and production-only in the auth imp
   const auth = read('lib/auth.mjs');
   const migration = read('sql/038_clerk_production_identity_cutover.sql');
   assert.match(auth, /CLERK_INSTANCE_KIND === 'production' && emailState\.verified/);
+  assert.match(auth, /c\.user_id IS NULL AND \$7::boolean/);
   assert.match(auth, /c\.production_clerk_user_id IS NULL/);
   assert.match(auth, /c\.legacy_clerk_user_id=u\.clerk_user_id/);
-  assert.match(auth, /production_clerk_user_id=\$2,rebound_at=now\(\)/);
+  assert.match(auth, /INSERT INTO clerk_identity_cutovers/);
+  assert.match(auth, /production_clerk_user_id=EXCLUDED\.production_clerk_user_id/);
   assert.match(migration, /user_id uuid PRIMARY KEY REFERENCES users\(id\) ON DELETE CASCADE/);
   assert.match(migration, /production_clerk_user_id text/);
 });
