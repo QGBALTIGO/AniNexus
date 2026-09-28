@@ -171,10 +171,11 @@ test('prediction detail: Prever opens the vote section and saves choice with con
 });
 
 test('prediction detail: final result explains reputation and cannot be followed anew',async({page})=>{
-  const item={...base,status:'RESOLVED',result:'YES',resolvedAt:new Date().toISOString()};
+  const item={...base,status:'RESOLVED',result:'YES',resolvedAt:new Date().toISOString(),evidence:{observation:{observedAt:new Date().toISOString(),data:{averageScore:89}}}};
   await fixture(page,{signedIn:true,path:'/previsoes?previsao='+firstId,items:[item],mine:[{...item,userVote:{choice:'YES',confidence:75,eligible:true}}]});
   await expect(page.locator('.nx62-result')).toContainText('Resultado confirmado');
   await expect(page.locator('.nx62-reputation-result')).toContainText('+50 pontos reputacionais');
+  await expect(page.locator('.nx62-observation')).toContainText('nota 89/100 observada no AniList');
   await expect(page.locator('[data-pred-follow]')).toHaveCount(0);
   await expect(page.locator('[data-pred-confirm]')).toHaveCount(0);
 });
