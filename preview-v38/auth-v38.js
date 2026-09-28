@@ -33,6 +33,7 @@
     logout:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4H5v16h5M14 8l4 4-4 4M8 12h10"/></svg>',
   })[name] || '';
   const routeUrl = path => IS_PAGES ? `${BASE}/?build=44.60.0&p=${encodeURIComponent(path)}` : path;
+  const absoluteRouteUrl = path => new URL(routeUrl(path), location.origin).href;
   const go = (path, replace = false) => { const target=routeUrl(path); if(!IS_PAGES&&window.AniNexusGo?.(target,{replace}))return; location[replace ? 'replace' : 'assign'](target); };
   const avatarMarkup = (user, options = {}) => window.AniNexusAvatar?.markup(user, options) || `<img src="${BASE}/assets/avatars/mascot-pink.png" alt="">`;
   let clerkPromise = null;
@@ -108,12 +109,19 @@
       if (!window.Clerk || !window.__internal_ClerkUICtor) throw new Error('AUTH_SDK_UNAVAILABLE');
       const localization = await loadLocalization(signal);
       if(signal.aborted)throw Runtime.deadlineError('navigation','Inicialização da conta');
+      const signInUrl = absoluteRouteUrl('/login');
+      const signUpUrl = absoluteRouteUrl('/criar-conta');
+      const accountUrl = absoluteRouteUrl('/minha-conta');
       await window.Clerk.load({
         ui: { ClerkUI: window.__internal_ClerkUICtor },
         localization,
         appearance: clerkAppearance(),
-        signInFallbackRedirectUrl: routeUrl('/minha-conta'),
-        signUpFallbackRedirectUrl: routeUrl('/minha-conta'),
+        signInUrl,
+        signUpUrl,
+        signInFallbackRedirectUrl: accountUrl,
+        signUpFallbackRedirectUrl: accountUrl,
+        signInForceRedirectUrl: accountUrl,
+        signUpForceRedirectUrl: accountUrl,
       });
       if(!clerkListenerInstalled&&typeof window.Clerk.addListener==='function'){
         clerkListenerInstalled=true;
@@ -244,7 +252,9 @@
         button.querySelectorAll('[aria-label]').forEach(child => child.removeAttribute('aria-label'));
       });
       mount.querySelectorAll('.cl-alertText,.cl-formFieldErrorText').forEach(message=>{
-        if(/captcha failed to load|captcha.*unavailable|unsupported browser/i.test(message.textContent||''))message.textContent='A verificação de segurança não carregou. Atualize a página ou tente outro navegador; seus dados preenchidos continuam seguros.';
+        const raw=String(message.textContent||'');
+        if(/captcha failed to load|captcha.*unavailable|unsupported browser/i.test(raw))message.textContent='A verificação de segurança não carregou. Atualize a página ou tente outro navegador; seus dados preenchidos continuam seguros.';
+        else if(/unable to complete action at this time|problem persists please contact support/i.test(raw))message.textContent='Não foi possível concluir esta ação agora. Tente novamente em instantes. Se continuar, volte ao AniNexus e tente outra forma de acesso.';
       });
     };
     const observer = new MutationObserver(update);
@@ -267,7 +277,19 @@
       if(generation!==routeRenderGeneration||currentRoute()!==(mode==='register'?'/criar-conta':'/login'))return;
       if (clerk.user) { go('/minha-conta', true); return; }
       const mount = document.querySelector('#nx38ClerkMount');
-      const props = { routing: 'virtual', fallbackRedirectUrl: routeUrl('/minha-conta'), signUpUrl: routeUrl('/criar-conta'), signInUrl: routeUrl('/login') };
+      const accountUrl = absoluteRouteUrl('/minha-conta');
+      const props = {
+        routing: 'virtual',
+        oauthFlow: 'popup',
+        fallbackRedirectUrl: accountUrl,
+        forceRedirectUrl: accountUrl,
+        signUpUrl: absoluteRouteUrl('/criar-conta'),
+        signInUrl: absoluteRouteUrl('/login'),
+        signUpFallbackRedirectUrl: accountUrl,
+        signInFallbackRedirectUrl: accountUrl,
+        signUpForceRedirectUrl: accountUrl,
+        signInForceRedirectUrl: accountUrl,
+      };
       if (mode === 'register') clerk.mountSignUp(mount, props); else clerk.mountSignIn(mount, props);
       watchClerkUi(mount);
       document.querySelector('#nx38ClerkLoading')?.remove();
