@@ -7,4 +7,7 @@ fdddcb027b998d94dd9f00e9494941528e0bf678:tests/e2e.spec.mjs:generic-api-key:78
 # localStorage key names, used by readJSON/writeJSON in the old public client.
 c99b697bc10fde194bff95c0d5bff202d49128e0:app.js:generic-api-key:13
 c99b697bc10fde194bff95c0d5bff202d49128e0:app.js:generic-api-key:14
+# Stable event identifiers in historical prediction fixtures, not credentials.
+0a87fd727ef0bcb0cb74e5c10065e348a24203e2:lib/predictions-official-events.mjs:generic-api-key:13
+0a87fd727ef0bcb0cb74e5c10065e348a24203e2:lib/predictions-official-events.mjs:generic-api-key:27
 

@@ -65,6 +65,15 @@ test('verified Production Clerk identity rebind preserves AniNexus UUID and prod
   const anime=(await pool.query('SELECT progress FROM user_anime WHERE user_id=$1 AND media_id=$2',[userId,mediaId])).rows[0];
   assert.equal(anime.progress,7);
 
+  const audit=(await pool.query(
+    "SELECT actor_id,target_id,metadata FROM audit_log WHERE actor_id=$1 AND action='AUTH_CLERK_IDENTITY_CUTOVER' ORDER BY created_at DESC LIMIT 1",
+    [userId]
+  )).rows[0];
+  assert.equal(audit.actor_id,userId);
+  assert.equal(audit.target_id,userId);
+  assert.equal(audit.metadata.legacy_clerk_user_id,legacyClerkId);
+  assert.equal(audit.metadata.production_clerk_user_id,productionClerkId);
+
   const ledger=(await pool.query('SELECT legacy_clerk_user_id,production_clerk_user_id,rebound_at FROM clerk_identity_cutovers WHERE user_id=$1',[userId])).rows[0];
   assert.equal(ledger.legacy_clerk_user_id,legacyClerkId);
   assert.equal(ledger.production_clerk_user_id,productionClerkId);
@@ -107,6 +116,14 @@ test('verified Production identity repairs a missed Development snapshot once',a
 
   assert.equal(synced.id,userId);
   assert.equal(synced.clerk_user_id,productionClerkId);
+  const audit=(await pool.query(
+    "SELECT actor_id,target_id,metadata FROM audit_log WHERE actor_id=$1 AND action='AUTH_CLERK_IDENTITY_CUTOVER' ORDER BY created_at DESC LIMIT 1",
+    [userId]
+  )).rows[0];
+  assert.equal(audit.actor_id,userId);
+  assert.equal(audit.target_id,userId);
+  assert.equal(audit.metadata.legacy_clerk_user_id,legacyClerkId);
+  assert.equal(audit.metadata.production_clerk_user_id,productionClerkId);
   const ledger=(await pool.query(
     'SELECT legacy_clerk_user_id,production_clerk_user_id,rebound_at FROM clerk_identity_cutovers WHERE user_id=$1',
     [userId]
