@@ -40,6 +40,7 @@
   let apiUser = null;
   let clerkListenerInstalled = false;
   let routeRenderGeneration = 0;
+  let activeAuthView = null;
   let headerSyncToken = 0;
   let headerRetryTimer = null;
   const fallbackLocalization = {
@@ -234,8 +235,18 @@
     return `<section class="nx38-auth-panel"><div class="nx38-auth-card nx38-clerk-card"><header class="nx38-auth-card-head"><small>${mode === 'register' ? 'CRIAR CONTA' : 'BEM-VINDO DE VOLTA'}</small><h2>${mode === 'register' ? 'Comece no AniNexus' : 'Entre na sua conta'}</h2><p>${mode === 'register' ? 'Salve listas, progresso e favoritos em todos os seus dispositivos.' : 'Retome seus animes, listas e conversas em qualquer dispositivo.'}</p></header><div class="nx38-clerk-loading" id="nx38ClerkLoading" role="status">Preparando acesso seguro…</div><div id="nx38ClerkMount"></div><div class="nx38-auth-error" id="nx38AuthError" role="alert" aria-live="polite"></div><p class="nx38-clerk-switch">${mode === 'register' ? 'Já possui uma conta?' : 'Ainda não tem uma conta?'} <a href="${target}">${mode === 'register' ? 'Entrar' : 'Criar conta'}</a></p></div></section>`;
   }
   function watchClerkUi(mount) {
+    const card = mount.closest('.nx38-clerk-card');
+    const title = card?.querySelector('.nx38-auth-card-head h2');
+    const subtitle = card?.querySelector('.nx38-auth-card-head p');
+    const initialTitle = title?.textContent;
+    const initialSubtitle = subtitle?.textContent;
     const providers = { apple: 'Apple', facebook: 'Facebook', github: 'GitHub', google: 'Google' };
     const update = () => {
+      if (!mount.isConnected) return;
+      if (mount.querySelector('input,button,.cl-alert')) card?.querySelector('#nx38ClerkLoading')?.remove();
+      const verification = Boolean(mount.querySelector('input[autocomplete="one-time-code"],.cl-otpCodeField'));
+      if (title) title.textContent = verification ? 'Verifique seu e-mail' : initialTitle;
+      if (subtitle) subtitle.textContent = verification ? 'Digite o código que enviamos para seu e-mail. Você pode sair para consultar a mensagem e voltar a esta tela.' : initialSubtitle;
       mount.querySelectorAll('button[class*="socialButtons"]').forEach(button => {
         const descriptor = [
           button.id,
@@ -260,9 +271,25 @@
     const observer = new MutationObserver(update);
     observer.observe(mount, { childList: true, subtree: true });
     update();
-    setTimeout(() => { update(); observer.disconnect(); }, 5000);
+    return () => observer.disconnect();
+  }
+  function releaseAuthView() {
+    const view = activeAuthView;
+    activeAuthView = null;
+    if (!view) return;
+    view.cleanup?.();
+    if (view.clerk) {
+      try {
+        if (view.mode === 'register') view.clerk.unmountSignUp(view.mount);
+        else view.clerk.unmountSignIn(view.mount);
+      } catch (error) { console.warn('[AniNexus auth] não foi possível desmontar o formulário anterior.', error); }
+    }
   }
   async function renderAuth(mode) {
+    // Hash navigation and mobile history restoration belong to the mounted
+    // Clerk flow. Replacing its DOM here loses the pending verification step.
+    if (activeAuthView?.mode === mode && activeAuthView.mount.isConnected && !activeAuthView.failed) return;
+    releaseAuthView();
     const generation=++routeRenderGeneration;
     activate();
     document.title = `${mode === 'login' ? 'Entrar' : 'Criar conta'} | AniNexus`;
@@ -272,11 +299,13 @@
       return;
     }
     app.innerHTML = `<main class="nx38-auth-page">${story(mode)}${clerkCard(mode)}</main>`;
+    const mount = app.querySelector('#nx38ClerkMount');
+    const view = { mode, mount, clerk: null, cleanup: null, failed: false };
+    activeAuthView = view;
     try {
       const clerk = await loadClerk();
-      if(generation!==routeRenderGeneration||currentRoute()!==(mode==='register'?'/criar-conta':'/login'))return;
+      if(activeAuthView!==view||!mount.isConnected||generation!==routeRenderGeneration||currentRoute()!==(mode==='register'?'/criar-conta':'/login'))return;
       if (clerk.user) { go('/minha-conta', true); return; }
-      const mount = document.querySelector('#nx38ClerkMount');
       const accountUrl = absoluteRouteUrl('/minha-conta');
       const props = {
         // AniNexus is a client-side routed application. Clerk documents hash
@@ -295,13 +324,21 @@
         signUpForceRedirectUrl: accountUrl,
         signInForceRedirectUrl: accountUrl,
       };
-      if (mode === 'register') clerk.mountSignUp(mount, props); else clerk.mountSignIn(mount, props);
-      watchClerkUi(mount);
-      document.querySelector('#nx38ClerkLoading')?.remove();
-    } catch {
-      if(generation!==routeRenderGeneration)return;
+      view.clerk = clerk;
+      view.cleanup = watchClerkUi(mount);
+      if (mode === 'register') await clerk.mountSignUp(mount, props); else await clerk.mountSignIn(mount, props);
+    } catch (error) {
+      if(activeAuthView!==view||generation!==routeRenderGeneration)return;
+      view.failed = true;
+      console.warn('[AniNexus auth] falha ao abrir formulário.', { mode, code: error?.code || error?.message || 'AUTH_UI_UNAVAILABLE' });
       const message = document.querySelector('#nx38AuthError');
-      if (message) message.textContent = 'Não foi possível abrir o acesso seguro agora. Tente novamente em instantes.';
+      if (message) {
+        message.textContent = 'Não foi possível abrir o acesso seguro agora. ';
+        const retry = document.createElement('button');
+        retry.type = 'button'; retry.textContent = 'Tentar novamente';
+        retry.addEventListener('click', () => renderAuth(mode), { once: true });
+        message.append(retry);
+      }
       document.querySelector('#nx38ClerkLoading')?.remove();
     }
     dispatchEvent(new CustomEvent('aninexus:auth-v38-ready'));
@@ -512,6 +549,7 @@
     const path = currentRoute();
     if (path === '/login') return renderAuth('login');
     if (path === '/criar-conta') return renderAuth('register');
+    releaseAuthView();
     if (path === '/minha-conta') return renderAccount();
     if (path === '/conectar-source') return renderSourceConnect();
     document.body.classList.remove('nx38-auth-active');

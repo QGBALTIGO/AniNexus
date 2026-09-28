@@ -583,6 +583,40 @@ test('route guard replaces unrelated markup with an owned failure instead of rev
   await expect(page.locator('html')).not.toHaveClass(/nx-dedicated-route-boot/);
 });
 
+test('mobile signup preserves the verification form through hash navigation and keyboard resize',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await page.route('**/runtime-config.js*',route=>route.fulfill({contentType:'application/javascript',body:`window.__ANINEXUS_CONFIG__={apiOrigin:'https://api.clerk.test',clerkPublishableKey:['pk','test','dGVzdC5jbGVyay5hY2NvdW50cy5kZXYk'].join('_'),authEnabled:true};`}));
+  await page.route('https://test.clerk.accounts.dev/npm/@clerk/ui@1/dist/ui.browser.js',route=>route.fulfill({contentType:'application/javascript',body:'window.__internal_ClerkUICtor=function(){};'}));
+  await page.route('https://test.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js',route=>route.fulfill({contentType:'application/javascript',body:`
+    window.__authMounts=0; window.__authUnmounts=0;
+    window.Clerk={user:null,load:async()=>{},addListener:()=>{},
+      mountSignUp(mount){window.__authMounts++;mount.innerHTML='<label>E-mail de teste<input aria-label="E-mail de teste"></label><button type="button">Receber código</button>';
+        mount.querySelector('button').onclick=()=>{location.hash='/verify-email-address';setTimeout(()=>{if(mount.isConnected)mount.innerHTML='<div class="cl-otpCodeField"><label>Código de verificação<input aria-label="Código de verificação" autocomplete="one-time-code" inputmode="numeric"></label></div>'},50)};
+      },unmountSignUp(){window.__authUnmounts++},mountSignIn(mount){mount.innerHTML='<input aria-label="Login de teste">'},unmountSignIn(){window.__authUnmounts++}};
+  `}));
+  await page.goto(pageUrl('/criar-conta'),{waitUntil:'domcontentloaded'});
+  await page.getByLabel('E-mail de teste').fill('mobile@example.invalid');
+  await page.getByRole('button',{name:'Receber código'}).click();
+  const code=page.getByLabel('Código de verificação');
+  await expect(code).toBeVisible();
+  await code.fill('123');
+  await expect(page.locator('.nx38-auth-card-head h2')).toHaveText('Verifique seu e-mail');
+  const original=await code.elementHandle();
+  await page.setViewportSize({width:390,height:420});
+  await expect(code).toHaveValue('123');
+  await page.goBack();
+  await page.goForward();
+  await expect(code).toHaveValue('123');
+  expect(await code.evaluate((node,previous)=>node===previous,original)).toBe(true);
+  await expect(page.locator('#nx38ClerkLoading')).toHaveCount(0);
+  expect(await page.evaluate(()=>window.__authMounts)).toBe(1);
+  await page.setViewportSize({width:390,height:844});
+  await noOverflow(page,2);
+  await page.locator('.nx38-clerk-switch a').click();
+  await expect(page.getByLabel('Login de teste')).toBeVisible();
+  expect(await page.evaluate(()=>window.__authUnmounts)).toBe(1);
+});
+
 test('slow authentication keeps a recognizable shell without repainting the whole body black',async({page})=>{
   let releaseSdk;
   const sdkGate=new Promise(resolve=>{releaseSdk=resolve});
