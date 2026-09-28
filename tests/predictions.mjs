@@ -13,7 +13,7 @@ test('official event questions use verified announcements, not AniList scores',(
   const at=new Date('2026-09-28T01:45:00Z');
   for(const event of OFFICIAL_EVENTS){
     const result=generateOfficialEventCandidate(event,at);
-    assert.equal(result.ok,true,`${event.key}: ${result.error}`);
+    assert.equal(result.ok,true,`${event.eventId}: ${result.error}`);
     assert.equal(result.candidate.type,'OFFICIAL_EVENT');
     assert.doesNotMatch(result.candidate.question,/nota|pontua[cç][aã]o|AniList/i);
     assert.match(result.candidate.criteria,/(evid[eê]ncia|confirma[cç][aã]o) oficial/i);

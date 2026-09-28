@@ -190,7 +190,7 @@ try{
   assert.equal((await query("SELECT count(*)::int count FROM prediction_votes v JOIN prediction_questions p ON p.id=v.question_id WHERE p.type<>'OFFICIAL_EVENT' AND v.eligible")).rows[0].count,0);check();
   assert.ok(Number((await query("SELECT count(*) FROM notifications WHERE dedupe_key LIKE 'prediction-retired:%'")).rows[0].count)>0);check();
   const officialNow=await dbNow(),later=days=>new Date(+officialNow+days*86400000).toISOString();
-  const event={...OFFICIAL_EVENTS[0],key:'isolated-official-event',mediaId:195539,verifiedAt:officialNow.toISOString(),closesAt:later(3),eventAt:later(5),resolutionDeadline:later(6)};
+  const event={...OFFICIAL_EVENTS[0],eventId:'isolated-official-event',mediaId:195539,verifiedAt:officialNow.toISOString(),closesAt:later(3),eventAt:later(5),resolutionDeadline:later(6)};
   const official=generateOfficialEventCandidate(event,officialNow);assert.equal(official.ok,true,official.error);check();
   const eventRow=await publishPrediction(pool,official.candidate);assert.equal(eventRow.created,true);assert.equal(eventRow.item.type,'OFFICIAL_EVENT');check();
   assert.equal((await votePrediction(pool,eventRow.item.id,user,'YES')).userVote.choice,'YES');check();
@@ -202,7 +202,7 @@ try{
     const mine=await liveApp.inject({url:'/api/me/predictions',headers:{'x-test-user':user}});assert.ok(mine.json().items.every(item=>item.type==='OFFICIAL_EVENT'));assert.equal(mine.json().stats.resolved,0);check();
   }finally{await liveApp.close()}
   let officialFetches=0;
-  const secondEvent={...event,key:'isolated-worker-event',mediaId:195540};
+  const secondEvent={...event,eventId:'isolated-worker-event',mediaId:195540};
   const officialCycle=await createPredictionsWorker({pool,enabled:true,authorized:true,officialEvents:[secondEvent],fetchImpl:async()=>{officialFetches++;throw Error('Official event discovery does not call AniList')},logger:{}}).cycle();
   assert.equal(officialCycle.status,'OK',JSON.stringify(officialCycle));assert.equal(officialCycle.published,1);assert.equal(officialFetches,0);check();
   const officialAgain=await createPredictionsWorker({pool,enabled:true,authorized:true,officialEvents:[secondEvent],logger:{}}).cycle();assert.equal(officialAgain.published,0);check();
