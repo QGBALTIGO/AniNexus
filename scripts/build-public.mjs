@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {ptBR} from '@clerk/localizations/pt-BR';
+import {clerkFrontendApiOrigin} from '../lib/clerk-config.mjs';
 import {ACTIVE_PREVIEW_DIRS} from './repository-layout.mjs';
 
 const root=process.cwd();
@@ -48,9 +49,10 @@ const publicBasePath=String(process.env.PUBLIC_BASE_PATH||'/').trim();
 if(!/^\/(?:[A-Za-z0-9._~-]+\/)*$/.test(publicBasePath))throw new Error('PUBLIC_BASE_PATH must be an absolute directory path ending in /');
 const publicApiOrigin=String(process.env.PUBLIC_API_ORIGIN||'').replace(/\/+$/,'');
 const clerkPublishableKey=String(process.env.PUBLIC_CLERK_PUBLISHABLE_KEY||process.env.CLERK_PUBLISHABLE_KEY||'');
+const clerkFrontendOrigin=clerkFrontendApiOrigin(clerkPublishableKey);
 const requestedAuth=String(process.env.PUBLIC_AUTH_ENABLED||'').toLowerCase()==='true';
-const authEnabled=requestedAuth&&/^https:\/\//.test(publicApiOrigin)&&/^pk_(?:test|live)_/.test(clerkPublishableKey);
-if(requestedAuth&&!authEnabled)throw new Error('PUBLIC_AUTH_ENABLED requires an HTTPS PUBLIC_API_ORIGIN and a valid public Clerk key');
+const authEnabled=requestedAuth&&/^https:\/\//.test(publicApiOrigin)&&/^pk_(?:test|live)_/.test(clerkPublishableKey)&&Boolean(clerkFrontendOrigin);
+if(requestedAuth&&!authEnabled)throw new Error('PUBLIC_AUTH_ENABLED requires an HTTPS PUBLIC_API_ORIGIN and a valid public Clerk key with a decodable Frontend API origin');
 const runtimeConfig={environment:process.env.NODE_ENV==='production'?'production':'preview',siteOrigin:publicSiteOrigin,apiOrigin:publicApiOrigin,clerkPublishableKey,authEnabled};
 await fs.writeFile(path.join(pub,'runtime-config.js'),`window.__ANINEXUS_CONFIG__ = Object.freeze(${JSON.stringify(runtimeConfig).replace(/</g,'\\u003c')});\n`,'utf8');
 await fs.writeFile(path.join(pub,'clerk-localization-ptbr.json'),`${JSON.stringify(ptBR).replace(/</g,'\\u003c')}\n`,'utf8');
@@ -61,7 +63,12 @@ await fs.writeFile(shellPath,sourceShell.replace('<base href="/AniNexus/">',`<ba
 if (authEnabled) {
   const shell=await fs.readFile(shellPath,'utf8');
   const apiOrigin=new URL(publicApiOrigin).origin;
-  await fs.writeFile(shellPath,shell.replace("connect-src 'self'",`connect-src 'self' ${apiOrigin}`),'utf8');
+  const secured=shell
+    .replace("script-src 'self'",`script-src 'self' ${clerkFrontendOrigin}`)
+    .replace("connect-src 'self'",`connect-src 'self' ${apiOrigin} ${clerkFrontendOrigin}`)
+    .replace("frame-src ",`frame-src ${clerkFrontendOrigin} `)
+    .replace("form-action 'self'",`form-action 'self' ${clerkFrontendOrigin}`);
+  await fs.writeFile(shellPath,secured,'utf8');
 }
 
 // The VPS release is served directly by Nginx, so /public must be self-contained.
