@@ -2,6 +2,7 @@
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
+import { compactHomePayload } from '../lib/home-payload.mjs';
 const root = process.cwd();
 const publicData = process.env.AUDIT_PUBLIC_DATA === '1';
 const mime = { '.html': 'text/html', '.js': 'application/javascript', '.mjs': 'application/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.gif': 'image/gif', '.woff2': 'font/woff2' };
@@ -13,8 +14,10 @@ const server = createServer(async (req, res) => {
     if (pathname.startsWith('/api/') || pathname.startsWith('/media/profile/')) {
       if (!publicData) { res.writeHead(503, { 'Content-Type': 'application/json' }); res.end('{"error":"ISOLATED_PREVIEW"}'); return; }
       const upstream = await fetch(`https://aninexus.com.br${pathname}${url.search}`, { signal: AbortSignal.timeout(15000), redirect: 'error' });
+      let body = Buffer.from(await upstream.arrayBuffer());
+      if (upstream.ok && pathname === '/api/home' && url.searchParams.get('compact') === '1') body = Buffer.from(JSON.stringify(compactHomePayload(JSON.parse(body))));
       res.writeHead(upstream.status, { 'Content-Type': upstream.headers.get('content-type') || 'application/json', 'Cache-Control': 'no-store' });
-      res.end(Buffer.from(await upstream.arrayBuffer())); return;
+      res.end(body); return;
     }
     if (pathname === '/runtime-config.js') {
       res.writeHead(200, { 'Content-Type': 'application/javascript' });
@@ -26,9 +29,9 @@ const server = createServer(async (req, res) => {
     if (/^\/(?:\.git|\.env|node_modules|test-results|audit-artifacts|tests|lib|sql|ops|scripts)(?:[/.]|$)/.test(pathname)) { res.writeHead(404); res.end(); return; }
     const found = await stat(file).catch(() => null);
     if (found?.isFile()) {
-      res.writeHead(200, { 'Content-Type': mime[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-store' });
       let body = await readFile(file);
       if (pathname === '/index.html') body = body.toString().replace('<base href="/AniNexus/">', '<base href="/">');
+      res.writeHead(200, { 'Content-Type': mime[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-store', 'Content-Length': Buffer.byteLength(body) });
       res.end(body); return;
     }
     if (/\.[a-z0-9]+$/i.test(pathname)) { res.writeHead(404); res.end(); return; }

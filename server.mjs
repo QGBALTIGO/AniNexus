@@ -18,6 +18,7 @@ import { registerPersonalHome } from './lib/personal-home.mjs';
 import { registerFranchise } from './lib/franchise.mjs';
 import { registerDiary } from './lib/diary.mjs';
 import { registerPredictions } from './lib/predictions.mjs';
+import { compactHomePayload } from './lib/home-payload.mjs';
 import { getCommunityOverview } from './lib/community-overview.mjs';
 import { initDb, q, pool, dbReady } from './lib/db.mjs';
 import { initCache, redis, cacheRemember, cacheReady, cacheRunOnce, cacheMetricsSnapshot } from './lib/cache.mjs';
@@ -507,7 +508,10 @@ const miniappEnvelope=data=>({ok:true,apiVersion:'1',source:'aninexus',generated
 const miniappPublicRate={config:{rateLimit:{max:180,timeWindow:'1 minute',groupId:'miniapp-public'}}};
 
 app.get('/api/catalog',{...publicRate,config:{rateLimit:{max:100,timeWindow:'1 minute'}}},async req=>getCatalog(req.query||{}));
-app.get('/api/home',publicRate,async req=>getHomePayload(req.query||{}));
+app.get('/api/home',publicRate,async req=>{
+  const home=await getHomePayload(req.query||{});
+  return req.query?.compact==='1'?compactHomePayload(home):home;
+});
 app.get('/api/reading',{...publicRate,config:{rateLimit:{max:100,timeWindow:'1 minute'}}},async req=>getReading(req.query||{}));
 app.get('/api/characters/ranking',publicRate,async()=>getCharacterRanking(10));
 app.get('/api/achievements/catalog',publicRate,async()=>{const items=achievementCatalog();return{total:items.length,items}});

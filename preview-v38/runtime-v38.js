@@ -93,7 +93,7 @@
     const apiJson=async(path,signal)=>{const r=await nativeFetch(path,{signal,credentials:'same-origin',headers:{accept:'application/json',...correlationHeaders()}});if(!r.ok)throw new Error(`AniNexus API ${r.status}`);return r.json()};
     const seasonNow=()=>{const d=new Date(),m=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',month:'numeric'}).format(d)),year=Number(new Intl.DateTimeFormat('en',{timeZone:'America/Sao_Paulo',year:'numeric'}).format(d));return{year,season:m<=3?'WINTER':m<=6?'SPRING':m<=9?'SUMMER':'FALL'}};
     const bridgeHome=async(body,signal)=>{
-      const vars=body.variables||{},s=seasonNow(),season=vars.season||s.season,year=Number(vars.year||s.year),home=await apiJson(`/api/home?season=${encodeURIComponent(season)}&year=${year}`,signal);
+      const vars=body.variables||{},s=seasonNow(),season=vars.season||s.season,year=Number(vars.year||s.year),home=await apiJson(`/api/home?season=${encodeURIComponent(season)}&year=${year}&compact=1`,signal);
       if(!(home.season||[]).length)throw new Error('AniNexus API returned an incomplete Home');
       return jsonResponse({season:{media:(home.season||[]).map(toGraph)},schedule:{airingSchedules:(home.schedule||[]).slice(0,8).map(x=>({airingAt:x.airingAt,episode:x.episode,media:toGraph(x.media)}))},top:{media:(home.top||[]).map(toGraph)},popular:{media:(home.popular||[]).map(toGraph)},soon:{media:(home.soon||[]).map(toGraph)},reading:{media:(home.reading||[]).map(toGraph)},topReading:{media:(home.topReading||[]).map(toGraph)}});
     };
@@ -132,10 +132,6 @@
       return nativeFetch(input,init);
     };
   }
-
-  // Retire the obsolete shell cache so an old UI cannot come back after an update.
-  if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>Promise.allSettled(rs.map(r=>r.unregister()))).catch(()=>{})}
-  if('caches' in window){caches.keys().then(keys=>Promise.allSettled(keys.filter(k=>/^aninexus-shell-/i.test(k)).map(k=>caches.delete(k)))).catch(()=>{})}
 
   // Media fallback only. List/favorite state is owned exclusively by media-state-v2.js.
   const failedMediaHosts=new WeakMap();

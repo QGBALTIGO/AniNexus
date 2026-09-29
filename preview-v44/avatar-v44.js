@@ -25,12 +25,24 @@
     if (/^assets\/avatars\//.test(url)) return `${BASE}/${url}`;
     return /^(?:https:|data:image\/|blob:)/i.test(url) ? url : '';
   }
+  function optimizedClerkImage(src, size = 256) {
+    try {
+      const image = new URL(src);
+      if (image.protocol !== 'https:' || image.hostname !== 'img.clerk.com') return src;
+      const edge = Math.min(512, Math.max(64, Number(size) || 256));
+      image.searchParams.set('width', String(edge));
+      image.searchParams.set('height', String(edge));
+      image.searchParams.set('fit', 'crop');
+      image.searchParams.set('quality', '80');
+      return image.href;
+    } catch { return src; }
+  }
   function url(user, options = {}) {
     const clerkUser = options.clerkUser || (Object.prototype.hasOwnProperty.call(user || {}, 'hasImage') ? user : null);
     const stored = user?.avatarUrl || user?.avatar_url || user?.imageUrl || '';
     const ignoreClerkDefault = clerkUser?.hasImage === false && stored === clerkUser?.imageUrl;
     const normalized = ignoreClerkDefault ? '' : normalize(stored);
-    if (normalized) return normalized;
+    if (normalized) return optimizedClerkImage(normalized, options.size);
     const chosen = user?.avatarPreset || user?.avatar_preset || presetFromUrl(stored);
     return asset(KEYS.has(String(chosen)) ? chosen : presetFor(user?.id || user?.username || user?.email || options.seed));
   }

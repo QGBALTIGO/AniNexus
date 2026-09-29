@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import vm from 'node:vm';
 import { AVATAR_PRESETS, avatarForClerkUser, avatarPresetFor, avatarPresetUrl, resolvedAvatar } from '../lib/avatar.mjs';
 
 const root=process.cwd();
@@ -21,6 +22,12 @@ for(const preset of AVATAR_PRESETS){
 assert.equal(fs.existsSync(path.join(root,'assets','mascot-menu-perch-v44-2.png')),true);
 
 const index=read('index.html'),frontend=read('preview-v44/avatar-v44.js'),auth=read('preview-v38/auth-v38.js'),profile=read('preview-v38/profile-v38.js'),css=read('preview-v44/experience-v44.css'),server=read('server.mjs');
+const browser={window:{},location:{hostname:'aninexus.com.br'},URL};
+vm.runInNewContext(frontend,browser);
+const clerkAvatar=browser.window.AniNexusAvatar.url({avatarUrl:'https://img.clerk.com/example'});
+assert.match(clerkAvatar,/width=256/);
+assert.match(clerkAvatar,/height=256/);
+assert.equal(browser.window.AniNexusAvatar.url({avatarUrl:'https://example.com/avatar.png'}),'https://example.com/avatar.png');
 assert.ok(index.indexOf('avatar-v44.js')<index.indexOf('auth-v38.js'),'avatar resolver must load before auth');
 assert.ok(index.indexOf('drawer-mascot-perch')<index.indexOf('drawer-utilities'),'mascot must sit on the footer divider');
 assert.match(index,/mascot-menu-perch-v44-2\.png/);

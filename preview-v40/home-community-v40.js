@@ -44,7 +44,7 @@
     const person=profile?`<a href="${profile}"><b>${esc(name)}</b></a>`:`<b>${esc(name)}</b>`;
     const kind=x.kind||'state',reading=type(x)==='MANGA',href=x.media_id?mediaUrl(x):pageUrl('/comunidade');
     const work=`<strong><a href="${href}">${esc(x.title)}</a></strong>`;
-    const avatar=window.AniNexusAvatar?.markup(x,{name,decorative:true,loading:'lazy'})||`<img src="${IS_PAGES?'/AniNexus':''}/assets/avatars/mascot-pink.png" alt="">`;
+    const avatar=window.AniNexusAvatar?.markup(x,{name,decorative:true,loading:compact?'eager':'lazy',size:96})||`<img src="${IS_PAGES?'/AniNexus':''}/assets/avatars/mascot-pink.png" alt="">`;
     let st=STATUS[x.status]||{verb:'atualizou',label:'Lista',icon:'list'},phrase='',detail='';
     if(kind==='state'){
       if(reading&&x.status==='CURRENT')st={...st,verb:'está lendo',label:'Lendo'};
