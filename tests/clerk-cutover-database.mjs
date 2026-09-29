@@ -15,6 +15,30 @@ process.env.CLERK_PUBLISHABLE_KEY='pk_live_'+Buffer.from('clerk.example.invalid$
 const {initDb,pool}=await import('../lib/db.mjs');
 const {syncClerkUser,CLERK_INSTANCE_KIND}=await import('../lib/auth.mjs');
 
+test('new Clerk members start with the AniNexus avatar and later Clerk photos cannot replace it',async()=>{
+  await initDb();
+  const suffix=crypto.randomUUID().replaceAll('-','').slice(0,12);
+  const email=`clerk-avatar-${suffix}@example.invalid`;
+  const clerkId=`user_NEW${suffix}`;
+  const clerkUser={
+    id:clerkId,fullName:'Novo membro',hasImage:true,imageUrl:'https://img.clerk.com/google-photo.jpg',
+    primaryEmailAddressId:'idn_avatar',primaryEmailAddress:{emailAddress:email},
+    emailAddresses:[{id:'idn_avatar',emailAddress:email,verification:{status:'verified'}}],
+  };
+  try{
+    const created=await syncClerkUser(clerkUser);
+    assert.equal(created.avatar_url,'/assets/logo.png');
+    assert.equal(created.avatar_source,'custom');
+    const synced=await syncClerkUser({...clerkUser,imageUrl:'https://img.clerk.com/updated-photo.jpg'});
+    assert.equal(synced.avatar_url,'/assets/logo.png');
+    const stored=(await pool.query('SELECT avatar_url,avatar_source FROM users WHERE id=$1',[created.id])).rows[0];
+    assert.equal(stored.avatar_url,'/assets/logo.png');
+    assert.equal(stored.avatar_source,'custom');
+  }finally{
+    await pool.query('DELETE FROM users WHERE clerk_user_id=$1',[clerkId]);
+  }
+});
+
 test('verified Production Clerk identity rebind preserves AniNexus UUID and product data',async()=>{
   await initDb();
   assert.equal(CLERK_INSTANCE_KIND,'production');

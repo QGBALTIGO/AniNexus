@@ -2,19 +2,23 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
-import { AVATAR_PRESETS, avatarForClerkUser, avatarPresetFor, avatarPresetUrl, resolvedAvatar } from '../lib/avatar.mjs';
+import { AVATAR_PRESETS, DEFAULT_AVATAR_URL, avatarForClerkUser, avatarPresetFor, avatarPresetFromUrl, avatarPresetUrl, resolvedAvatar } from '../lib/avatar.mjs';
 
 const root=process.cwd();
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
 
-assert.deepEqual(AVATAR_PRESETS,['blue','mint','pink','gold','violet','teal','red','graphite']);
+assert.deepEqual(AVATAR_PRESETS,['default','blue','mint','pink','gold','violet','teal','red','graphite']);
 assert.equal(avatarPresetFor('kayky'),avatarPresetFor('kayky'));
 assert.match(avatarPresetUrl('violet'),/mascot-violet\.png$/);
-assert.equal(avatarForClerkUser({id:'user_example123',hasImage:false,imageUrl:'https://img.clerk.com/default.png'}).url.startsWith('/assets/avatars/'),true);
+assert.equal(avatarPresetUrl('default'),DEFAULT_AVATAR_URL);
+assert.equal(avatarPresetFromUrl(DEFAULT_AVATAR_URL),'default');
+assert.equal(avatarForClerkUser({id:'user_example123',hasImage:false,imageUrl:'https://img.clerk.com/default.png'}).url,DEFAULT_AVATAR_URL);
 assert.equal(avatarForClerkUser({id:'user_example123',hasImage:true,imageUrl:'https://img.clerk.com/personal.png'}).url,'https://img.clerk.com/personal.png');
 assert.match(resolvedAvatar({username:'novo-membro',avatar_url:null}).url,/^\/assets\/avatars\/mascot-/);
+assert.equal(resolvedAvatar({username:'novo-membro',avatar_url:DEFAULT_AVATAR_URL}).url,DEFAULT_AVATAR_URL);
 
-for(const preset of AVATAR_PRESETS){
+assert.ok(fs.statSync(path.join(root,'assets','logo.png')).size>10_000);
+for(const preset of AVATAR_PRESETS.filter(item=>item!=='default')){
   const file=path.join(root,'assets','avatars',`mascot-${preset}.png`);
   assert.equal(fs.existsSync(file),true,`missing ${file}`);
   assert.ok(fs.statSync(file).size>20_000&&fs.statSync(file).size<120_000,`unexpected avatar size: ${preset}`);
@@ -28,10 +32,14 @@ const clerkAvatar=browser.window.AniNexusAvatar.url({avatarUrl:'https://img.cler
 assert.match(clerkAvatar,/width=256/);
 assert.match(clerkAvatar,/height=256/);
 assert.equal(browser.window.AniNexusAvatar.url({avatarUrl:'https://example.com/avatar.png'}),'https://example.com/avatar.png');
+assert.equal(browser.window.AniNexusAvatar.url({avatarUrl:DEFAULT_AVATAR_URL}),DEFAULT_AVATAR_URL);
+assert.equal(browser.window.AniNexusAvatar.url({id:'user_example123',hasImage:true,imageUrl:'https://img.clerk.com/personal.png'}),DEFAULT_AVATAR_URL);
+assert.equal(browser.window.AniNexusAvatar.asset('default'),DEFAULT_AVATAR_URL);
 assert.ok(index.indexOf('avatar-v44.js')<index.indexOf('auth-v38.js'),'avatar resolver must load before auth');
 assert.ok(index.indexOf('drawer-mascot-perch')<index.indexOf('drawer-utilities'),'mascot must sit on the footer divider');
 assert.match(index,/mascot-menu-perch-v44-2\.png/);
 assert.match(frontend,/clerkUser\?\.hasImage === false/);
+assert.match(read('lib/auth.mjs'),/DEFAULT_AVATAR_URL/);
 assert.match(auth,/await api\('\/api\/me'/);
 assert.match(profile,/name="avatarPreset"/);
 assert.match(profile,/data-media-input=/);
