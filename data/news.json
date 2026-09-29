@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T19:14:37.991Z",
+  "generatedAt": "2026-09-29T22:59:09.364Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 39,
+      "count": 40,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,840 @@
     }
   ],
   "stats": {
-    "collected": 49,
-    "grouped": 22,
-    "published": 22,
-    "newStories": 22,
-    "fullArticles": 22,
+    "collected": 50,
+    "grouped": 23,
+    "published": 23,
+    "newStories": 23,
+    "fullArticles": 23,
     "previewArticles": 0,
-    "avgWords": 427,
-    "withHeroImage": 22,
-    "withOrderedMedia": 20,
+    "avgWords": 433,
+    "withHeroImage": 23,
+    "withOrderedMedia": 21,
     "skippedTranslation": 0,
     "skippedQuality": 26,
-    "durationMs": 10109
+    "durationMs": 2613
   },
   "items": [
+    {
+      "id": "jbox-cf116102",
+      "slug": "kamen-rider-my-th-ganha-manga-na-web-por-ex-assistente-do-criador-da-franquia-jbox-cf116102",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Kamen Rider MY-TH’ ganha mangá na web por ex-assistente do criador da franquia",
+      "originalTitle": "‘Kamen Rider MY-TH’ ganha mangá na web por ex-assistente do criador da franquia",
+      "summary": "A Ishimori Pro publicou em seu site uma história curta em mangá de Kamen Rider MY-TH (2026). A iniciativa, além de expandir o universo da nova produção, resgata a uma tradição das décadas de 1970 e 80, quando os heróis da franquia ganhavam frequentemente versões em quadrinhos paralelas pelas mãos de artistas ligados à Ishimori Pro.",
+      "author": "Matheus Mossmann",
+      "tags": [
+        "Mangá",
+        "Tokusatsu",
+        "ishimori pro",
+        "kamen rider my-th",
+        "Kamen Rider MY-TH mangá",
+        "mangá de kamen rider",
+        "mangá de tokusatsu"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/29/kamen-rider-my-th-ganha-manga-na-web-por-ex-assistente-do-criador-da-franquia",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/29/kamen-rider-my-th-ganha-manga-na-web-por-ex-assistente-do-criador-da-franquia",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/myth_base_manga.png",
+      "mediaQuery": "‘Kamen Rider MY-TH’ ganha mangá na web por ex-assistente do criador da franquia",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/mangamyth1.jpeg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/mangamyth2.jpeg",
+          "alt": "Páginas do webmangá de Kamen Rider MY-TH",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/JSjfJ9yqv1E"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Ishimori Pro publicou em seu site uma história curta em mangá de Kamen Rider MY-TH (2026). A iniciativa, além de expandir o universo da nova produção, resgata a uma tradição das décadas de 1970 e 80, quando os heróis da franquia ganhavam frequentemente versões em quadrinhos paralelas pelas mãos de artistas ligados à Ishimori Pro.",
+          "runs": [
+            {
+              "text": "A Ishimori Pro publicou em seu site uma história curta em mangá de "
+            },
+            {
+              "text": "Kamen Rider MY-TH",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " (2026). A iniciativa, além de expandir o universo da nova produção, resgata a uma tradição das décadas de 1970 e 80, quando os heróis da franquia ganhavam frequentemente versões em quadrinhos paralelas pelas mãos de artistas ligados à Ishimori Pro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Essa história foi desenhada por Masato Hayase, artista veterano da empresa e um dos grandes responsáveis por manter vivo o legado do criador original da franquia, Shotaro Ishinomori. Hayase ingressou na Ishimori Pro em 1989, foi assistente pessoal do mestre nos seus últimos anos de vida e também atuou como designer em produções como Kamen Rider Kuuga, Agito, Hibiki e Kabuto. Em MY-TH, sua arte busca reproduzir com máxima fidelidade o traço característico de Ishinomori.",
+          "runs": [
+            {
+              "text": "Essa história foi desenhada por"
+            },
+            {
+              "text": " Masato Hayase",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", artista veterano da empresa e um dos grandes responsáveis por manter vivo o legado do criador original da franquia, "
+            },
+            {
+              "text": "Shotaro Ishinomori",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Hayase ingressou na Ishimori Pro em 1989, foi assistente pessoal do mestre nos seus últimos anos de vida e também atuou como designer em produções como "
+            },
+            {
+              "text": "Kamen Rider Kuuga",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Agito",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Hibiki",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Kabuto",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Em "
+            },
+            {
+              "text": "MY-TH",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", sua arte busca reproduzir com máxima fidelidade o"
+            },
+            {
+              "text": " traço característico de Ishinomori",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/mangamyth1.jpeg"
+        },
+        {
+          "type": "paragraph",
+          "text": "Páginas do webmangá de Kamen Rider MY-TH. | Imagem: Reprodução/Ishimori Pro",
+          "runs": [
+            {
+              "text": "Páginas do webmangá de Kamen Rider MY-TH. | Imagem: Reprodução/Ishimori Pro"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/mangamyth2.jpeg",
+          "alt": "Páginas do webmangá de Kamen Rider MY-TH"
+        },
+        {
+          "type": "paragraph",
+          "text": "Publicado no formato yomikiri (mangá de história única), o enredo funciona como um complemento à história da TV. A trama traz uma aventura em que os personagens Yuna e Sora, enquanto estão voltando para casa, deparam-se com Tsubasa Fukashigi tentando sequestrar um garoto.",
+          "runs": [
+            {
+              "text": "Publicado no formato "
+            },
+            {
+              "text": "yomikiri",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " (mangá de história única), o enredo funciona como um complemento à história da TV. A trama traz uma aventura em que os personagens Yuna e Sora, enquanto estão voltando para casa, deparam-se com Tsubasa Fukashigi tentando sequestrar um garoto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A leitura do mangá foi disponibilizada de forma gratuita (em japonês) e pode ser acessada no site oficial da Ishimori Pro.",
+          "runs": [
+            {
+              "text": "A leitura do mangá foi disponibilizada de forma gratuita (em japonês) e pode ser acessada no"
+            },
+            {
+              "text": " site oficial da Ishimori Pro",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://ishimoripro.com/manga-myth/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=JSjfJ9yqv1E",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/JSjfJ9yqv1E"
+        },
+        {
+          "type": "paragraph",
+          "text": "No Japão, a série televisiva de Kamen Rider MY-TH estreou oficialmente na primeira semana de setembro nas telas da TV Asahi, assumindo o bloco Super Hero Time. Na história, acompanhamos o protagonista Sora, o mordomo da família Mizuki, que se transforma no herói Kamen Rider MY-TH. O roteiro aborda uma mitologia baseada nos doze animais do zodíaco chinês e na clássica rivalidade entre rato e gato. Enquanto o visual e os poderes do protagonista são inspirados em um rato, seu rival, conhecido como MAOU, é baseado em um gato. Sora luta para derrotar misteriosas criaturas monstruosas conhecidas como Fukashigi, um conflito que ganha novas proporções com o despertar da Aliança do Zodíaco, grupo que ressurge após um sono de cem anos.",
+          "runs": [
+            {
+              "text": "No Japão, a série televisiva de "
+            },
+            {
+              "text": "Kamen Rider MY-TH",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estreou oficialmente na primeira semana de setembro nas telas da TV Asahi, assumindo o bloco "
+            },
+            {
+              "text": "Super Hero Time",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ". Na história, acompanhamos o protagonista Sora, o mordomo da família Mizuki, que se transforma no herói Kamen Rider MY-TH. O roteiro aborda uma mitologia baseada nos doze animais do zodíaco chinês e na clássica rivalidade entre rato e gato. Enquanto o visual e os poderes do protagonista são inspirados em um rato, seu rival, conhecido como MAOU, é baseado em um gato. Sora luta para derrotar misteriosas criaturas monstruosas conhecidas como Fukashigi, um conflito que ganha novas proporções com o despertar da "
+            },
+            {
+              "text": "Aliança do Zodíaco",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", grupo que ressurge após um sono de cem anos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para a alegria do público brasileiro, a Sato Company garantiu a transmissão simultânea da série. Os episódios de Kamen Rider MY-TH estão sendo lançados no Brasil através do canal oficial TokuSATO no YouTube, oferecendo suporte a opções de áudio em português e espanhol.",
+          "runs": [
+            {
+              "text": "Para a alegria do público brasileiro, a "
+            },
+            {
+              "text": "Sato Company",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " garantiu a transmissão simultânea da série. Os episódios de "
+            },
+            {
+              "text": "Kamen Rider MY-TH",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estão sendo lançados no Brasil através do canal oficial "
+            },
+            {
+              "text": "TokuSATO",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.youtube.com/@TokuSatoOficial"
+            },
+            {
+              "text": " no YouTube, oferecendo suporte a opções de áudio em português e espanhol."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Embora tenha sofrido um pequeno adiamento inicial no mês de setembro devido a problemas técnicos da distribuidora, a exibição já está rolando todo sábado a partir das 23h30. Vale ressaltar como funciona o formato de distribuição da Sato: os cinco primeiros episódios da série estarão disponíveis de forma totalmente gratuita. A partir do sexto episódio, o conteúdo ficará restrito aos membros pagos do canal TokuSATO após a janela de transmissão ao vivo de cada final de semana.",
+          "runs": [
+            {
+              "text": "Embora tenha sofrido um pequeno adiamento inicial no mês de setembro devido a problemas técnicos da distribuidora, a exibição já está rolando "
+            },
+            {
+              "text": "todo sábado a partir das 23h30",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Vale ressaltar como funciona o formato de distribuição da Sato: os cinco primeiros episódios da série estarão disponíveis de forma totalmente gratuita. A partir do sexto episódio, o conteúdo ficará restrito aos membros pagos do canal TokuSATO após a janela de transmissão ao vivo de cada final de semana."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Ishimori Pro",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "Ishimori Pro",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://ishimoripro.com/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-29T22:26:53.000Z",
+      "updatedAt": "2026-09-29T22:27:34.000Z",
+      "expiresAt": "2026-10-06T22:26:53.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/29/kamen-rider-my-th-ganha-manga-na-web-por-ex-assistente-do-criador-da-franquia",
+          "publishedAt": "2026-09-29T22:26:53.000Z",
+          "author": "Matheus Mossmann"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 467,
+      "qualityScore": 0.999,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 14,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-b2b2a254",
+      "slug": "crunchyroll-atualiza-animes-classicos-de-digimon-com-imagem-remasterizada-jbox-b2b2a254",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Crunchyroll atualiza animês clássicos de ‘Digimon’ com imagem remasterizada",
+      "originalTitle": "Crunchyroll atualiza animês clássicos de ‘Digimon’ com imagem remasterizada",
+      "summary": "A Crunchyroll atualizou animês clássicos de Digimon, disponibilizando aos assinantes as versões remasterizadas dos episódios em 1080p. Essa troca de imagem começou na madrugada do último dia 24.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Streaming",
+        "amazon prime video",
+        "Crunchyroll",
+        "Digimon",
+        "Digimon Adventure 2 em HD",
+        "Digimon Adventure em HD",
+        "Digimon clássico remasterizado",
+        "Digimon em HD",
+        "Remaster de Digimon"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/29/crunchyroll-atualiza-animes-classicos-de-digimon-com-imagem-remasterizada",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/29/crunchyroll-atualiza-animes-classicos-de-digimon-com-imagem-remasterizada",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/digimon-adventure-destacada.jpg",
+      "mediaQuery": "Crunchyroll atualiza animês clássicos de ‘Digimon’ com imagem remasterizada",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/crunchyroll-digimon2026.jpg",
+          "alt": "imagem: tela da crunchyroll exibindo 1º episódio de Digimon",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Crunchyroll atualizou animês clássicos de Digimon, disponibilizando aos assinantes as versões remasterizadas dos episódios em 1080p. Essa troca de imagem começou na madrugada do último dia 24.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " atualizou animês clássicos de "
+            },
+            {
+              "text": "Digimon",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", disponibilizando aos assinantes as versões remasterizadas dos episódios em 1080p. Essa troca de imagem começou na madrugada do último dia 24."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Até o momento de publicação desta matéria, foram atualizados Digimon Adventure (1999), Digimon Adventure 2 (2000) e Digimon Tamers (2001), e a expectativa é que Digimon Frontier (2002) ganhe também sua nova versão na plataforma nos próximos dias.",
+          "runs": [
+            {
+              "text": "Até o momento de publicação desta matéria, foram atualizados "
+            },
+            {
+              "text": "Digimon Adventure",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " (1999), "
+            },
+            {
+              "text": "Digimon Adventure 2",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "(2000) e "
+            },
+            {
+              "text": "Digimon Tamers",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " (2001), e a expectativa é que "
+            },
+            {
+              "text": "Digimon Frontier",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " (2002) ganhe também sua nova versão na plataforma nos próximos dias."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Curiosamente, embora o remaster seja novidade diretamente na Crunchyroll, ele já estava disponível há bastante tempo para quem assinava o canal do streaming por meio do Amazon Prime Video. A temporada Frontier, por exemplo, está em HD pelo Prime Video.",
+          "runs": [
+            {
+              "text": "Curiosamente, embora o "
+            },
+            {
+              "text": "remaster",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " seja novidade diretamente na Crunchyroll, ele já estava disponível há bastante tempo para quem assinava o canal do streaming por meio do"
+            },
+            {
+              "text": " Amazon Prime Video",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A temporada "
+            },
+            {
+              "text": "Frontier",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", por exemplo, está em HD pelo Prime Video."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Outra novidade é que as duas primeiras temporadas do animê podem ser conferidas com o áudio em japonês com legendas em português — e também seguem disponíveis com a dublagem, para quem preferir essa versão.",
+          "runs": [
+            {
+              "text": "Outra novidade é que as duas primeiras temporadas do animê podem ser conferidas com o"
+            },
+            {
+              "text": " áudio em japonês com legendas em português",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " — e também seguem disponíveis com a dublagem, para quem preferir essa versão."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/crunchyroll-digimon2026.jpg",
+          "alt": "imagem: tela da crunchyroll exibindo 1º episódio de Digimon"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/Crunchyroll",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/Crunchyroll"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nos primeiros dias em que as novas versões foram colocadas no ar, espectadores relataram algumas bagunças, como aberturas tocando em espanhol, e também uma certa confusão na ordem dos episódios ao deixar um passando após o outro. Ajustes foram feitos, mas ainda há algumas falhas de consistência para quem for maratonar neste momento.",
+          "runs": [
+            {
+              "text": "Nos primeiros dias em que as novas versões foram colocadas no ar, espectadores relataram algumas bagunças, como aberturas tocando em espanhol, e também uma certa confusão na ordem dos episódios ao deixar um passando após o outro. Ajustes foram feitos, mas ainda há algumas falhas de consistência para quem for maratonar neste momento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ainda sobre temas musicais, os encerramentos das 3 primeiras séries são exibidos no idioma original em japonês, mesmo no áudio dublado, já que nunca receberam adaptação oficial. A mixagem da dublagem com a imagem em HD também aposentou de vez a famigerada “música da Angélica” da abertura do 1º Digimon, deixando “Butter-fly” tocando em japonês (ou espanhol…). Também foi deixado em japonês o tema de abertura de Digimon 02, já que a versão brasileira existente tem uma duração menor que a do vídeo original.",
+          "runs": [
+            {
+              "text": "Ainda sobre "
+            },
+            {
+              "text": "temas musicais",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", os encerramentos das 3 primeiras séries são exibidos no idioma original em japonês, mesmo no áudio dublado, já que nunca receberam adaptação oficial. A mixagem da dublagem com a imagem em HD também aposentou de vez a famigerada “música da Angélica” da abertura do 1º "
+            },
+            {
+              "text": "Digimon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", deixando"
+            },
+            {
+              "text": " “Butter-fly”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " tocando em japonês (ou espanhol…). Também foi deixado em japonês o tema de abertura de "
+            },
+            {
+              "text": "Digimon 02",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", já que a versão brasileira existente tem uma duração menor que a do vídeo original."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Vale lembrar que, em agosto deste ano, a Toei anunciou o projeto Digimon: Bokura ga Eranda Best Adventure, um compilado de episódios clássicos escolhidos por votação do público, que serão exibidos na TV japonesa como uma das ações de aniversário de 30 anos da franquia. A expectativa é que um lançamento mundial das versões também aconteça, mas o Brasil ainda não foi confirmado no projeto — também não se sabe se haverá alguma diferença de imagem em relação ao que foi adicionado recentemente pela Crunchyroll. Além disso, um novo animê é previsto para 2027, mas mais detalhes não foram divulgados até o momento.",
+          "runs": [
+            {
+              "text": "Vale lembrar que, em agosto deste ano, a "
+            },
+            {
+              "text": "Toei",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "anunciou o projeto ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/05/digimon-tem-novo-anime-anunciado-para-2027/"
+            },
+            {
+              "text": "Digimon: Bokura ga Eranda Best Adventure",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/05/digimon-tem-novo-anime-anunciado-para-2027/"
+            },
+            {
+              "text": ", um compilado de episódios clássicos escolhidos por votação do público, que serão exibidos na TV japonesa como uma das ações de aniversário de 30 anos da franquia. A expectativa é que "
+            },
+            {
+              "text": "um lançamento mundial das versões também aconteça",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/23/digimon-serie-com-episodios-selecionados-tem-lancamento-mundial-anunciado/"
+            },
+            {
+              "text": ", mas o Brasil ainda não foi confirmado no projeto — também não se sabe se haverá alguma diferença de imagem em relação ao que foi adicionado recentemente pela Crunchyroll. Além disso, um novo animê é previsto para 2027, mas mais detalhes não foram divulgados até o momento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já entre as produções atuais, os fãs se despediram no último dia 27 de Digimon Beatbreak, que estava em exibição desde outubro de 2025.",
+          "runs": [
+            {
+              "text": "Já entre as produções atuais, os fãs se despediram no último dia 27 de "
+            },
+            {
+              "text": "Digimon Beatbreak",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", que estava em exibição desde outubro de 2025."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Crunchyroll, Amazon Prime Video",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Crunchyroll, Amazon Prime Video",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-29T20:09:40.000Z",
+      "updatedAt": "2026-09-29T20:10:35.000Z",
+      "expiresAt": "2026-10-06T20:09:40.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/29/crunchyroll-atualiza-animes-classicos-de-digimon-com-imagem-remasterizada",
+          "publishedAt": "2026-09-29T20:09:40.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 429,
+      "qualityScore": 0.994,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-291f48ee",
       "slug": "black-clover-revela-imagem-de-astra-e-a-triade-negra-animenew-291f48ee",
@@ -7713,435 +8533,6 @@
         "facts": 0,
         "sections": 0,
         "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-834c6b18",
-      "slug": "panini-anuncia-versao-remasterizada-de-x-men-o-manga-jbox-834c6b18",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Panini anuncia versão remasterizada de ‘X-Men: O Mangá’",
-      "originalTitle": "Panini anuncia versão remasterizada de ‘X-Men: O Mangá’",
-      "summary": "A Panini vai lançar no Brasil a versão “remasterizada” de X-Men: o Mangá, publicação original da década de 1990.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Mangá",
-        "mangá de x-men",
-        "Panini",
-        "X-Men",
-        "X-Men Manga",
-        "X-Men: o Mangá",
-        "X-Men: O Mangá Remasterizado"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/22/panini-anuncia-versao-remasterizada-de-x-men-o-manga",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/22/panini-anuncia-versao-remasterizada-de-x-men-o-manga",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/xmen-manga-ilustracaojp-destacada.jpg",
-      "mediaQuery": "Panini anuncia versão remasterizada de ‘X-Men: O Mangá’",
-      "mediaType": "manga",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/X-Men-o-manga.png",
-          "alt": "Capa da nova versão de X-Men: O Mangá",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A Panini vai lançar no Brasil a versão “remasterizada” de X-Men: o Mangá, publicação original da década de 1990.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " vai lançar no Brasil a versão “remasterizada” de "
-            },
-            {
-              "text": "X-Men: o Mangá",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", publicação original da década de 1990."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O primeiro volume, com capa cartão e 512 páginas, está em pré-venda no site da editora pelo valor de R$ 99,90, com envio previsto para a segunda quinzena do mês de novembro.",
-          "runs": [
-            {
-              "text": "O primeiro volume, com capa cartão e "
-            },
-            {
-              "text": "512 páginas",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", está em "
-            },
-            {
-              "text": "pré-venda no site da editora",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/links/NCylc8wpltjPGihbHId8Jyv9I9BCeV.k.MZUcKF_BKZoPF3cE22ik_UuLL9J2q8eHw/x-men-o-manga-remasterizado-vol-01/post/"
-            },
-            {
-              "text": " pelo valor de "
-            },
-            {
-              "text": "R$ 99,90",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com envio previsto para a segunda quinzena do mês de novembro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira a capa abaixo:",
-          "runs": [
-            {
-              "text": "Confira a capa abaixo:"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/X-Men-o-manga.png",
-          "alt": "Capa da nova versão de X-Men: O Mangá"
-        },
-        {
-          "type": "paragraph",
-          "text": "Capa da nova versão é a mesma da edição em inglês, e destaca Magneto. | Panini/Divulgação",
-          "runs": [
-            {
-              "text": "Capa da nova versão é a mesma da edição em inglês, e destaca Magneto. | Panini/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Segundo a sinopse do site,",
-          "runs": [
-            {
-              "text": "Segundo a sinopse do site,"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "Jubilation Lee é uma adolescente com um segredo: ela é uma mutante, o próximo nível da evolução humana, e tem poderes fantásticos. Tudo que ela quer é uma vida normal, com suas idas ao shopping para manter distância de seus pais. Mas, quando os robôs caçadores de mutantes chamados Sentinelas vão atrás dela, essa vida normal fica ainda mais longe de seu alcance! Então, Jubileu conhece os X-Men: os heróis mutantes odiados e temidos pelo mundo que juraram proteger… Nesta série, em sua clássica versão mangá!",
-          "runs": [
-            {
-              "text": "Jubilation Lee é uma adolescente com um segredo: ela é uma mutante, o próximo nível da evolução humana, e tem poderes fantásticos. Tudo que ela quer é uma vida normal, com suas idas ao shopping para manter distância de seus pais. Mas, quando os robôs caçadores de mutantes chamados Sentinelas vão atrás dela, essa vida normal fica ainda mais longe de seu alcance! Então, Jubileu conhece os X-Men: os heróis mutantes odiados e temidos pelo mundo que juraram proteger… Nesta série, em sua clássica versão mangá!"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O mangá de X-Men é de autoria de diversos artistas do Japão, como Hirofumi Ichikawa, Hiroshi Higuchi, Koji Yasue, Miyako Kojima, Rei Nakahara e Reiji Hagiwara, e é inspirado na série animada dos personagens da década de 1990 — e que mais recentemente ganhou continuação com a série X-Men ’97.",
-          "runs": [
-            {
-              "text": "O mangá de "
-            },
-            {
-              "text": "X-Men",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é de autoria de diversos artistas do Japão, como "
-            },
-            {
-              "text": "Hirofumi Ichikawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Hiroshi Higuchi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Koji Yasue",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Miyako Kojima",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Rei Nakahara",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Reiji Hagiwara",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e é inspirado na série animada dos personagens da década de 1990 — e que mais recentemente ganhou continuação com a série "
-            },
-            {
-              "text": "X-Men ’97",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "▶️ A tentativa de emplacar o desenho dos ‘X-Men’ no Japão dos anos 1990",
-          "runs": [
-            {
-              "text": "▶️ ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "A tentativa de emplacar o desenho dos ‘X-Men’ no Japão dos anos 1990",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2025/12/10/a-tentativa-de-emplacar-o-desenho-dos-x-men-no-japao-dos-anos-90/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No Brasil, X-Men Mangá chegou a ter dois volumes publicados em meados de 1998, pela Mythos Editora. Já a versão “remasterizada” que chega ao território nacional este ano foi lançada em inglês pela VIZ Media, em novembro de 2024.",
-          "runs": [
-            {
-              "text": "No Brasil, "
-            },
-            {
-              "text": "X-Men Mangá",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " chegou a ter dois volumes publicados em meados de 1998, pela "
-            },
-            {
-              "text": "Mythos Editora",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Já a versão "
-            },
-            {
-              "text": "“remasterizada”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " que chega ao território nacional este ano foi lançada em inglês pela"
-            },
-            {
-              "text": " VIZ Media",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", em novembro de 2024."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Vale lembrar que, antes dos mutantes, a Marvel tentou emplacar outros personagens no Japão com versões em mangá, incluindo os títulos Spider-Man: The Manga e Hulk: The Manga, ambos lançados no país entre 1970 e 1971. No Brasil, a Mythos chegou a publicar edições do mangá do Homem-Aranha, também em 1998.",
-          "runs": [
-            {
-              "text": "Vale lembrar que, antes dos mutantes, a "
-            },
-            {
-              "text": "Marvel",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " tentou emplacar outros personagens no Japão com versões em mangá, incluindo os títulos "
-            },
-            {
-              "text": "Spider-Man: The Manga",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Hulk: The Manga",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", ambos lançados no país entre 1970 e 1971. No Brasil, a Mythos chegou a publicar edições do mangá do Homem-Aranha, também em 1998."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site oficial da Panini",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Site oficial da Panini",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://panini.com.br/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-22T21:24:54.000Z",
-      "updatedAt": "2026-09-22T21:25:20.000Z",
-      "expiresAt": "2026-09-29T21:24:54.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/22/panini-anuncia-versao-remasterizada-de-x-men-o-manga",
-          "publishedAt": "2026-09-22T21:24:54.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 338,
-      "qualityScore": 0.745,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 14,
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "contentMode": "full",
