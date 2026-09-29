@@ -614,7 +614,8 @@ test('mobile signup preserves the verification form through hash navigation and 
   await noOverflow(page,2);
   await page.locator('.nx38-clerk-switch a').click();
   await expect(page.getByLabel('Login de teste')).toBeVisible();
-  expect(await page.evaluate(()=>window.__authUnmounts)).toBe(1);
+  // GitHub Pages uses document navigation; the VPS uses the SPA route and unmounts in place.
+  expect(await page.evaluate(()=>window.__authUnmounts)).toBe(new URL(ORIGIN).hostname.endsWith('github.io')?0:1);
 });
 
 test('slow authentication keeps a recognizable shell without repainting the whole body black',async({page})=>{
