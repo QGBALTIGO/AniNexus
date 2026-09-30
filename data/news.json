@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T14:57:08.379Z",
+  "generatedAt": "2026-09-30T19:54:51.052Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 40,
+      "count": 41,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,1400 @@
     }
   ],
   "stats": {
-    "collected": 50,
-    "grouped": 23,
-    "published": 23,
-    "newStories": 23,
-    "fullArticles": 23,
+    "collected": 51,
+    "grouped": 22,
+    "published": 22,
+    "newStories": 22,
+    "fullArticles": 22,
     "previewArticles": 0,
-    "avgWords": 435,
-    "withHeroImage": 23,
-    "withOrderedMedia": 21,
+    "avgWords": 402,
+    "withHeroImage": 22,
+    "withOrderedMedia": 20,
     "skippedTranslation": 0,
-    "skippedQuality": 26,
-    "durationMs": 2843
+    "skippedQuality": 29,
+    "durationMs": 2548
   },
   "items": [
+    {
+      "id": "animenew-a35287a2",
+      "slug": "witch-on-the-holy-night-revela-trailer-final-do-filme-animenew-a35287a2",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Witch on the Holy Night revela trailer final do filme",
+      "originalTitle": "Witch on the Holy Night revela trailer final do filme",
+      "summary": "O filme de anime Witch on the Holy Night (Mahoutsukai no Yoru) ganhou seu trailer final, que apresenta a música-tema “Yoru to Ao”, da banda supercell, além de confirmar a equipe principal da produção.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Cinema",
+        "Notícias",
+        "Mahoutsukai no Yoru",
+        "Ufotable",
+        "Witch on the Holy Night"
+      ],
+      "url": "https://animenew.com.br/witch-on-the-holy-night-filme-trailer-final",
+      "sourceUrl": "https://animenew.com.br/witch-on-the-holy-night-filme-trailer-final",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Witch-on-the-Holy-Night-revela-trailer-final-do-filme.webp",
+      "mediaQuery": "Witch on the Holy Night revela trailer final do filme",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Mahoutsukai-no-Yoru-filme-scaled.webp",
+          "alt": "Mahoutsukai no Yoru filme",
+          "caption": "©奈須きのこ・TYPE-MOON / アニプレックス・ノーツ・ufotable"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/k1jyM2kSBzA"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O filme de anime Witch on the Holy Night (Mahoutsukai no Yoru) ganhou seu trailer final, que apresenta a música-tema “Yoru to Ao”, da banda supercell, além de confirmar a equipe principal da produção.",
+          "runs": [
+            {
+              "text": "O filme de anime "
+            },
+            {
+              "text": "Witch on the Holy Night",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Mahoutsukai no Yoru",
+              "href": "https://animenew.com.br/anime/143103/mahoutsukai-no-yoru"
+            },
+            {
+              "text": ") ganhou seu trailer final, que apresenta a música-tema “Yoru to Ao”, da banda supercell, além de confirmar a equipe principal da produção."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Final-Boss Prince revela elenco e estreia em 2027",
+              "runs": [
+                {
+                  "text": "Final-Boss Prince revela elenco e estreia em 2027",
+                  "href": "https://animenew.com.br/final-boss-prince-anime-estreia-2027"
+                }
+              ]
+            },
+            {
+              "text": "Full Clearing Another World ganha primeiro vídeo promocional",
+              "runs": [
+                {
+                  "text": "Full Clearing Another World ganha primeiro vídeo promocional",
+                  "href": "https://animenew.com.br/full-clearing-another-world-anime-trailer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A direção está nas mãos de Masashi Takeuchi, com Moe Tsuzuki no design de personagens e Masato Nagamori como diretor-chefe de animação. A ufotable cuida da produção dos roteiros, enquanto Hideyuki Fukasawa compõe a trilha sonora.",
+          "runs": [
+            {
+              "text": "A direção está nas mãos de "
+            },
+            {
+              "text": "Masashi Takeuchi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com Moe Tsuzuki no design de personagens e "
+            },
+            {
+              "text": "Masato Nagamori",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como diretor-chefe de animação. A "
+            },
+            {
+              "text": "ufotable",
+              "href": "https://animenew.com.br/studio/43/ufotable"
+            },
+            {
+              "text": " cuida da produção dos roteiros, enquanto Hideyuki Fukasawa compõe a trilha sonora."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=k1jyM2kSBzA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/k1jyM2kSBzA"
+        },
+        {
+          "type": "paragraph",
+          "text": "O longa também recebeu um novo visual de personagem desenhado por Hirokazu Koyama, responsável pelas artes da visual novel original.",
+          "runs": [
+            {
+              "text": "O longa também recebeu um novo visual de personagem desenhado por Hirokazu Koyama, responsável pelas artes da visual novel original."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Mahoutsukai-no-Yoru-filme-scaled.webp",
+          "alt": "Mahoutsukai no Yoru filme",
+          "caption": "©奈須きのこ・TYPE-MOON / アニプレックス・ノーツ・ufotable"
+        },
+        {
+          "type": "heading",
+          "text": "História Witch on the Holy Night",
+          "runs": [
+            {
+              "text": "História Witch on the Holy Night"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Ambientada no fim dos anos 1980, a trama acompanha Aoko Aozaki, herdeira de uma tradicional família de magos. Apesar de não ter interesse por magia, ela precisa assumir o legado familiar e começa seu treinamento com Alice Kuonji, uma jovem bruxa que vive em uma mansão isolada.",
+          "runs": [
+            {
+              "text": "Ambientada no fim dos anos 1980, a trama acompanha Aoko Aozaki, herdeira de uma tradicional família de magos. Apesar de não ter interesse por magia, ela precisa assumir o legado familiar e começa seu treinamento com Alice Kuonji, uma jovem bruxa que vive em uma mansão isolada.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Durante esse período, Aoko conhece Soujyuro Sizuki, um estudante transferido que pouco conhece o mundo moderno. Ao mesmo tempo, ela precisa lidar com sua irmã mais velha, Toko Aozaki.",
+          "runs": [
+            {
+              "text": "Durante esse período, Aoko conhece Soujyuro Sizuki, um estudante transferido que pouco conhece o mundo moderno. Ao mesmo tempo, ela precisa lidar com sua irmã mais velha, Toko Aozaki.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Haruka Tomatsu, Kana Hanazawa e Yusuke Kobayashi retornam como Aoko, Alice e Soujyuro. O filme estreia no Japão em 20 de novembro. Ademais o filme nos Estados Unidos e Canadá, a exibição acontece em 29 de janeiro de 2027.",
+          "runs": [
+            {
+              "text": "Haruka Tomatsu, Kana Hanazawa e Yusuke Kobayashi retornam como Aoko, Alice e Soujyuro. O filme estreia no Japão em "
+            },
+            {
+              "text": "20 de novembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Ademais o filme nos Estados Unidos e Canadá, a exibição acontece em 29 de janeiro de 2027."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Witch on the Holy Night revela trailer final do filme.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Witch on the Holy Night revela trailer final do filme",
+              "href": "https://animenew.com.br/witch-on-the-holy-night-filme-trailer-final/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-30T18:21:45.000Z",
+      "updatedAt": "2026-09-30T18:21:45.000Z",
+      "expiresAt": "2026-10-07T18:21:45.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/witch-on-the-holy-night-filme-trailer-final",
+          "publishedAt": "2026-09-30T18:21:45.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 252,
+      "qualityScore": 0.972,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-411c5113",
+      "slug": "final-boss-prince-revela-elenco-e-estreia-em-2027-animenew-411c5113",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Final-Boss Prince revela elenco e estreia em 2027",
+      "originalTitle": "Final-Boss Prince revela elenco e estreia em 2027",
+      "summary": "O anime The Final-Boss Prince is Somehow Obsessed with the Chubby Villainess: Reincarnated Me (Odebu Akujo ni Tensei Shitara) ganhou seu primeiro vídeo promocional completo, novo visual e mais nomes do elenco. A estreia está marcada para janeiro de 2027.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Odebu Akujo ni Tensei shitara",
+        "The Final-Boss Prince"
+      ],
+      "url": "https://animenew.com.br/final-boss-prince-anime-estreia-2027",
+      "sourceUrl": "https://animenew.com.br/final-boss-prince-anime-estreia-2027",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Final-Boss-Prince-revela-elenco-e-estreia-em-2027.webp",
+      "mediaQuery": "Final-Boss Prince revela elenco e estreia em 2027",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/260930_1-1.webp",
+          "alt": "The Final-Boss Prince Anime",
+          "caption": "©Minto Studio/weavin/おデブ悪女製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/OL9U8xq13Jo"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime The Final-Boss Prince is Somehow Obsessed with the Chubby Villainess: Reincarnated Me (Odebu Akujo ni Tensei Shitara) ganhou seu primeiro vídeo promocional completo, novo visual e mais nomes do elenco. A estreia está marcada para janeiro de 2027.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "The Final-Boss Prince is Somehow Obsessed with the Chubby Villainess: Reincarnated Me",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Odebu Akujo ni Tensei Shitara",
+              "marks": [
+                "em"
+              ],
+              "href": "https://animenew.com.br/anime/207782/odebu-akujo-ni-tensei-shitara-naze-ka-last-boss-ouji-sama-ni-shuuchaku-sareteimasu"
+            },
+            {
+              "text": ") ganhou seu primeiro vídeo promocional completo, novo visual e mais nomes do elenco. A estreia está marcada para janeiro de 2027."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Naruto ganhará nova série de anime em formato limitado",
+              "runs": [
+                {
+                  "text": "Naruto ganhará nova série de anime em formato limitado",
+                  "href": "https://animenew.com.br/naruto-nova-serie-anime-limitada"
+                }
+              ]
+            },
+            {
+              "text": "Even the Student Council ganha novo trailer nos EUA",
+              "runs": [
+                {
+                  "text": "Even the Student Council ganha novo trailer nos EUA",
+                  "href": "https://animenew.com.br/even-the-student-council-has-its-holes-anime"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre as novidades estão Shunichi Toki, que dará voz a Lewis, príncipe mais velho do reino, e Fuka Izumi como Adele, irmã mais nova de Celine. Haruka Shiraishi interpreta Celine, enquanto Takeo Otsuka dá voz a Wilfred.",
+          "runs": [
+            {
+              "text": "Entre as novidades estão "
+            },
+            {
+              "text": "Shunichi Toki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que dará voz a Lewis, príncipe mais velho do reino, e "
+            },
+            {
+              "text": "Fuka Izumi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Adele, irmã mais nova de Celine. "
+            },
+            {
+              "text": "Haruka Shiraishi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " interpreta Celine, enquanto "
+            },
+            {
+              "text": "Takeo Otsuka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dá voz a Wilfred."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=OL9U8xq13Jo",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/OL9U8xq13Jo"
+        },
+        {
+          "type": "paragraph",
+          "text": "A produção também confirmou novos integrantes da equipe. Nozomi Ikuyama assume o design de personagens, com Yuri Takagi e Keito Watanabe na direção de arte. Tsubasa Ito é responsável pela música.",
+          "runs": [
+            {
+              "text": "A produção também confirmou novos integrantes da equipe. "
+            },
+            {
+              "text": "Nozomi Ikuyama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " assume o design de personagens, com "
+            },
+            {
+              "text": "Yuri Takagi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Keito Watanabe",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na direção de arte. "
+            },
+            {
+              "text": "Tsubasa Ito",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " é responsável pela música."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/260930_1-1.webp",
+          "alt": "The Final-Boss Prince Anime",
+          "caption": "©Minto Studio/weavin/おデブ悪女製作委員会"
+        },
+        {
+          "type": "heading",
+          "text": "História de Final-Boss Prince",
+          "runs": [
+            {
+              "text": "História de Final-Boss Prince"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha uma mulher que morre após uma doença e renasce como Celine, uma duquesa obesa, egoísta e considerada a vilã de um romance que conhecia em sua vida anterior. Sabendo que será morta pelo príncipe Wilfred caso siga o destino original da história, ela decide mudar seu comportamento para evitar a própria morte. Porém, sua tentativa de reforma acaba atraindo a atenção excessiva do príncipe.",
+          "runs": [
+            {
+              "text": "A trama acompanha uma mulher que morre após uma doença e renasce como Celine, uma duquesa obesa, egoísta e considerada a vilã de um romance que conhecia em sua vida anterior.",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Sabendo que será morta pelo príncipe Wilfred caso siga o destino original da história, ela decide mudar seu comportamento para evitar a própria morte. Porém, sua tentativa de reforma acaba atraindo a atenção excessiva do príncipe.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Sendo assim Naoyuki Kuzuya dirige o anime no Studio Lings, com Shusaku Kato como diretor assistente. Mitsutaka Hirota supervisiona os roteiros.",
+          "runs": [
+            {
+              "text": "Sendo assim Naoyuki Kuzuya dirige o anime no "
+            },
+            {
+              "text": "Studio Lings",
+              "href": "https://animenew.com.br/studio/7199/studio-lings"
+            },
+            {
+              "text": ", com Shusaku Kato como diretor assistente. Mitsutaka Hirota supervisiona os roteiros."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim a série estreia nos canais Tokyo MX, BS NTV, AT-X e CBC TV, além do streaming pelo d Anime Store.",
+          "runs": [
+            {
+              "text": "Por fim a série estreia nos canais Tokyo MX, BS NTV, AT-X e CBC TV, além do streaming pelo d Anime Store."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://odebuakujo-anime.com/news/260930_1.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Final-Boss Prince revela elenco e estreia em 2027.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Final-Boss Prince revela elenco e estreia em 2027",
+              "href": "https://animenew.com.br/final-boss-prince-anime-estreia-2027/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-30T16:23:20.000Z",
+      "updatedAt": "2026-09-30T16:23:20.000Z",
+      "expiresAt": "2026-10-07T16:23:20.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/final-boss-prince-anime-estreia-2027",
+          "publishedAt": "2026-09-30T16:23:20.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 265,
+      "qualityScore": 0.974,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-1852602f",
+      "slug": "full-clearing-another-world-ganha-primeiro-video-promocional-animenew-1852602f",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Full Clearing Another World ganha primeiro vídeo promocional",
+      "originalTitle": "Full Clearing Another World ganha primeiro vídeo promocional",
+      "summary": "O anime Full Clearing Another World under a Goddess with Zero Believers (Shinja Zero no Megami-sama to) recebeu seu primeiro vídeo promocional, que também apresenta um trecho da música de abertura “Mirai no Ashiato”, de 310.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Full Clearing Another World",
+        "Shinja Zero no Megami-sama"
+      ],
+      "url": "https://animenew.com.br/full-clearing-another-world-anime-trailer",
+      "sourceUrl": "https://animenew.com.br/full-clearing-another-world-anime-trailer",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Full-Clearing-Another-World-ganha-primeiro-video-promocional.webp",
+      "mediaQuery": "Full Clearing Another World ganha primeiro vídeo promocional",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/qlMB8vSpLzc"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Full Clearing Another World under a Goddess with Zero Believers (Shinja Zero no Megami-sama to) recebeu seu primeiro vídeo promocional, que também apresenta um trecho da música de abertura “Mirai no Ashiato”, de 310.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes/"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Full Clearing Another World under a Goddess with Zero Believers",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Shinja Zero no Megami-sama to",
+              "marks": [
+                "em"
+              ],
+              "href": "https://animenew.com.br/anime/205896/shinja-zero-no-megami-sama-to-hajimeru-isekai-kouryaku"
+            },
+            {
+              "text": ") recebeu seu primeiro vídeo promocional, que também apresenta um trecho da música de abertura “Mirai no Ashiato”, de 310."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "LEGO revela set de Dragon Ball com Shenlong e Goku",
+              "runs": [
+                {
+                  "text": "LEGO revela set de Dragon Ball com Shenlong e Goku",
+                  "href": "https://animenew.com.br/lego-dragon-ball-shenlong-goku"
+                }
+              ]
+            },
+            {
+              "text": "Even the Student Council ganha novo trailer nos EUA",
+              "runs": [
+                {
+                  "text": "Even the Student Council ganha novo trailer nos EUA",
+                  "href": "https://animenew.com.br/even-the-student-council-has-its-holes-anime"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A prévia mostra cenas da adaptação da light novel de Isle Osaki e confirma parte da produção. Riki Fukushima dirige o anime no estúdio HORNETS, enquanto Toko Machida cuida dos roteiros.",
+          "runs": [
+            {
+              "text": "A prévia mostra cenas da adaptação da "
+            },
+            {
+              "text": "light novel",
+              "href": "https://animenew.com.br/light-novel"
+            },
+            {
+              "text": " de Isle Osaki e confirma parte da produção. Riki Fukushima dirige o anime no "
+            },
+            {
+              "text": "estúdio HORNETS",
+              "href": "https://animenew.com.br/studio/6360/hornets"
+            },
+            {
+              "text": ", enquanto "
+            },
+            {
+              "text": "Toko Machida",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " cuida dos roteiros."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=qlMB8vSpLzc",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/qlMB8vSpLzc"
+        },
+        {
+          "type": "paragraph",
+          "text": "No elenco estão Sohei Horikane como Makoto Takatsuki, Ikumi Hasegawa como Noah Titan, Yukina Shutō como Lucy e Hitomi Sekine como Aya Sasaki. A música de encerramento, “Fall in Dream”, será interpretada pelo grupo Suupeas.",
+          "runs": [
+            {
+              "text": "No elenco estão Sohei Horikane como "
+            },
+            {
+              "text": "Makoto Takatsuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Ikumi Hasegawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Noah Titan, Yukina Shutō como Lucy e Hitomi Sekine como Aya Sasaki. A música de encerramento, “Fall in Dream”, será interpretada pelo grupo Suupeas."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de Full Clearing Another World",
+          "runs": [
+            {
+              "text": "História de Full Clearing Another World"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Makoto Takatsuki é um estudante comum e fã de RPGs que acaba transportado para outro mundo junto com sua turma após um acidente de ônibus. Enquanto os colegas recebem habilidades poderosas, ele descobre que possui atributos baixos e apenas dez anos de vida.",
+          "runs": [
+            {
+              "text": "Makoto Takatsuki é um estudante comum e fã de RPGs que acaba transportado para outro mundo junto com sua turma após um acidente de ônibus. Enquanto os colegas recebem habilidades poderosas, ele descobre que possui atributos baixos e apenas dez anos de vida.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A situação muda quando Makoto conhece Noah, uma deusa menor que pede para se tornar sua primeira devota. Contudo suas bênçãos e uma arma divina, ele começa a treinar para resgatá-la da masmorra onde está presa.",
+          "runs": [
+            {
+              "text": "A situação muda quando Makoto conhece Noah, uma deusa menor que pede para se tornar sua primeira devota. Contudo suas bênçãos e uma arma divina, ele começa a treinar para resgatá-la da masmorra onde está presa.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim o anime estreia em 11 de outubro, com transmissão pelo BS Asahi, além de serviços como d Anime Store, U-NEXT e Anime Hōdai.",
+          "runs": [
+            {
+              "text": "Por fim o anime estreia em "
+            },
+            {
+              "text": "11 de outubro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com transmissão pelo BS Asahi, além de serviços como d Anime Store, U-NEXT e Anime Hōdai."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: X (twitter oficial)",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "X",
+              "href": "https://x.com/zero_believers/status/2105130520262869258"
+            },
+            {
+              "text": " (twitter oficial)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Full Clearing Another World ganha primeiro vídeo promocional.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Full Clearing Another World ganha primeiro vídeo promocional",
+              "href": "https://animenew.com.br/full-clearing-another-world-anime-trailer/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-30T16:14:34.000Z",
+      "updatedAt": "2026-09-30T16:14:34.000Z",
+      "expiresAt": "2026-10-07T16:14:34.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/full-clearing-another-world-anime-trailer",
+          "publishedAt": "2026-09-30T16:14:34.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 255,
+      "qualityScore": 0.972,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-21d9f4d4",
+      "slug": "naruto-tera-nova-minisserie-em-anime-detalhes-serao-revelados-na-new-york-comic-con-jbox-21d9f4d4",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Naruto’ terá nova minissérie em animê; detalhes serão revelados na New York Comic Con",
+      "originalTitle": "‘Naruto’ terá nova minissérie em animê; detalhes serão revelados na New York Comic Con",
+      "summary": "A VIZ Media já havia confirmado um painel de Naruto durante a New York Comic Con de 2026, com o anúncio de um novo projeto.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Eventos",
+        "Minissérie de Naruto",
+        "Naruto",
+        "New York Comic-Con",
+        "novo projeto de Naruto",
+        "viz media"
+      ],
+      "url": "https://www.jbox.com.br/2026/09/30/naruto-tera-nova-minisserie-em-anime-detalhes-serao-revelados-na-new-york-comic-con",
+      "sourceUrl": "https://www.jbox.com.br/2026/09/30/naruto-tera-nova-minisserie-em-anime-detalhes-serao-revelados-na-new-york-comic-con",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2025/09/narutoshippuden-destacada.jpg",
+      "mediaQuery": "‘Naruto’ terá nova minissérie em animê; detalhes serão revelados na New York Comic Con",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Novo-anime-de-naruto.png",
+          "alt": "Redes sociais de Naruto",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/G2B8oLsZNeU"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A VIZ Media já havia confirmado um painel de Naruto durante a New York Comic Con de 2026, com o anúncio de um novo projeto.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "VIZ Media",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " já havia "
+            },
+            {
+              "text": "confirmado um painel de ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/20/naruto-tera-novo-projeto-anunciado-na-new-york-comic-con-2026/"
+            },
+            {
+              "text": "Naruto",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/20/naruto-tera-novo-projeto-anunciado-na-new-york-comic-con-2026/"
+            },
+            {
+              "text": " durante a New York Comic Con de 2026",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/20/naruto-tera-novo-projeto-anunciado-na-new-york-comic-con-2026/"
+            },
+            {
+              "text": ", com o anúncio de um novo projeto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Agora, segundo as redes sociais oficiais da franquia, o evento vai divulgar detalhes de uma nova série limitada em animê.",
+          "runs": [
+            {
+              "text": "Agora, segundo as redes sociais oficiais da franquia, o evento vai divulgar detalhes de uma nova série limitada em animê."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Novo-anime-de-naruto.png",
+          "alt": "Redes sociais de Naruto"
+        },
+        {
+          "type": "paragraph",
+          "text": "Com a aproximação do evento, mais detalhes foram divulgados | X/Reprodução",
+          "runs": [
+            {
+              "text": "Com a aproximação do evento, mais detalhes foram divulgados | X/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "“Notícias empolgantes de Naruto estão chegando à New York Comic Con 2026. Detalhes sobre a nova minissérie em animê para a TV serão revelados durante a apresentação especial da franquia. Não consegue ir até o evento? Confira a transmissão mundial no YouTube. Não perca.”",
+          "runs": [
+            {
+              "text": "“Notícias empolgantes de Naruto estão chegando à New York Comic Con 2026. Detalhes sobre a nova minissérie em animê para a TV serão revelados durante a apresentação especial da franquia. Não consegue ir até o evento? Confira a transmissão mundial no YouTube. Não perca.”",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Vale lembrar que, em agosto de 2023, uma minissérie de quatro episódios da franquia foi adiada por tempo indeterminado, para “melhorar a qualidade do material”. No momento, não é possível saber se o novo projeto tem alguma ligação com isso, mas tudo deve ficar claro após a apresentação no evento.",
+          "runs": [
+            {
+              "text": "Vale lembrar que, em agosto de 2023, "
+            },
+            {
+              "text": "uma minissérie de quatro episódios da franquia foi adiada por tempo indeterminado",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2023/08/29/naruto-minisserie-especial-e-adiada-indefinidamente/"
+            },
+            {
+              "text": ", para “melhorar a qualidade do material”. No momento, não é possível saber se o novo projeto tem alguma ligação com isso, mas tudo deve ficar claro após a apresentação no evento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O painel está marcado para acontecer das 17h às 18h do dia 10 de outubro, em horário local, o que corresponde ao período das 18h às 19h no horário de Brasília. Estarão presentes Junko Takeuchi, voz original de Naruto Uzumaki, e Noriaki Sugiyama, voz original de Sasuke Uchiha, e a página da live no YouTube já está disponível:",
+          "runs": [
+            {
+              "text": "O painel está marcado para acontecer das 17h às 18h do dia 10 de outubro, em horário local, "
+            },
+            {
+              "text": "o",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "que corresponde ao período das 18h às 19h no horário de Brasília",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Estarão presentes "
+            },
+            {
+              "text": "Junko Takeuchi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", voz original de Naruto Uzumaki, e"
+            },
+            {
+              "text": " Noriaki Sugiyama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", voz original de Sasuke Uchiha, e a página da live no "
+            },
+            {
+              "text": "YouTube",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " já está disponível:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=G2B8oLsZNeU",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/G2B8oLsZNeU"
+        },
+        {
+          "type": "paragraph",
+          "text": "A VIZ Media segue investindo no universo de Naruto, que a empresa definiu como “o animê mais reconhecível do mundo” em entrevista recente ao JBox. E a franquia deve se expandir ainda mais nos próximos anos, com a confirmação da produção do filme live-action norte-americano.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "VIZ Media",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " segue investindo no universo de "
+            },
+            {
+              "text": "Naruto",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que a empresa definiu como"
+            },
+            {
+              "text": " “o animê mais reconhecível do mundo”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "em entrevista recente ao ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/14/viz-media-fala-sobre-o-mercado-brasileiro-de-consumo-de-animes-e-promete-novidades-para-naruto-entrevista/"
+            },
+            {
+              "text": "JBox",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/14/viz-media-fala-sobre-o-mercado-brasileiro-de-consumo-de-animes-e-promete-novidades-para-naruto-entrevista/"
+            },
+            {
+              "text": ". E a franquia deve se expandir ainda mais nos próximos anos, com a confirmação da produção do "
+            },
+            {
+              "text": "filme live-action norte-americano",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/07/14/filme-live-action-de-naruto-inicia-busca-global-por-trio-de-protagonistas/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história de Naruto foi escrita e ilustrada por Masashi Kishimoto em 72 volumes, lançados entre 1999 e 2014. A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila. Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura.",
+          "runs": [
+            {
+              "text": "A história de"
+            },
+            {
+              "text": " Naruto",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi escrita e ilustrada por "
+            },
+            {
+              "text": "Masashi Kishimoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " em 72 volumes, lançados entre 1999 e 2014. A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila. Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, Naruto Shippuden mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017. Atualmente, Kishimoto assina a publicação de Boruto ao lado de Ukyou Kodachi, contando a história do filho de Naruto.",
+          "runs": [
+            {
+              "text": "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, "
+            },
+            {
+              "text": "Naruto Shippuden",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017. Atualmente, Kishimoto assina a publicação de "
+            },
+            {
+              "text": "Boruto",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ao lado de "
+            },
+            {
+              "text": "Ukyou Kodachi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", contando a história do filho de Naruto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para quem deseja retornar à Vila da Folha antes da chegada do live-action, os episódios de Naruto estão disponíveis em plataformas como Crunchyroll, Netflix, HBO Max, Disney+, Pluto TV e Mercado Play. Já o mangá é publicado no Brasil pela Panini.",
+          "runs": [
+            {
+              "text": "Para quem deseja retornar à Vila da Folha antes da chegada do live-action, os episódios de "
+            },
+            {
+              "text": "Naruto",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estão disponíveis em plataformas como "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "HBO Max, Disney+, Pluto TV",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Mercado Play",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Já o mangá é publicado no Brasil pela"
+            },
+            {
+              "text": " Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fontes: Anime News Network, X de Naruto, Complex",
+          "runs": [
+            {
+              "text": "Fontes:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-09-28/naruto-gets-new-limited-tv-anime-series/.242289"
+            },
+            {
+              "text": ", ",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "X de Naruto",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://x.com/NARUTO_info_en/status/2104770641530679490"
+            },
+            {
+              "text": ", ",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "Complex",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.complex.com/pop-culture/a/treyalston/naruto-new-anime-series-nycc-2026"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-09-30T15:49:49.000Z",
+      "updatedAt": "2026-09-30T15:50:19.000Z",
+      "expiresAt": "2026-10-07T15:49:49.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/09/30/naruto-tera-nova-minisserie-em-anime-detalhes-serao-revelados-na-new-york-comic-con",
+          "publishedAt": "2026-09-30T15:49:49.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 443,
+      "qualityScore": 0.998,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 15,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-254648b4",
       "slug": "lego-revela-set-de-dragon-ball-com-shenlong-e-goku-animenew-254648b4",
@@ -3679,274 +5059,6 @@
       }
     },
     {
-      "id": "animenew-3da458d8",
-      "slug": "code-geass-star-chaser-aspal-ganha-teaser-e-estreia-em-2027-animenew-3da458d8",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Code Geass Star Chaser Aspal ganha teaser e estreia em 2027",
-      "originalTitle": "Code Geass Star Chaser Aspal ganha teaser e estreia em 2027",
-      "summary": "O novo anime da franquia Code Geass, intitulado Code Geass Star Chaser Aspal (Code Geass Hoshi Oi no Aspal), ganhou seu primeiro teaser neste sábado e confirmou a estreia para 2027. O vídeo apresenta as primeiras imagens da produção e reforça a expansão da franquia durante seu projeto de 20º aniversário.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Code Geass",
-        "Code Geass Star Chaser Aspal"
-      ],
-      "url": "https://animenew.com.br/code-geass-star-chaser-aspal-teaser-2027",
-      "sourceUrl": "https://animenew.com.br/code-geass-star-chaser-aspal-teaser-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Code-Geass-Star-Chaser-Aspal-ganha-teaser-e-estreia-em-2027.webp",
-      "mediaQuery": "Code Geass Star Chaser Aspal ganha teaser e estreia em 2027",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/j6cQAaNYYeA"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O novo anime da franquia Code Geass, intitulado Code Geass Star Chaser Aspal (Code Geass Hoshi Oi no Aspal), ganhou seu primeiro teaser neste sábado e confirmou a estreia para 2027. O vídeo apresenta as primeiras imagens da produção e reforça a expansão da franquia durante seu projeto de 20º aniversário.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "novo anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " da franquia "
-            },
-            {
-              "text": "Code Geass",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", intitulado "
-            },
-            {
-              "text": "Code Geass Star Chaser Aspal",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " (Code Geass Hoshi Oi no Aspal), ganhou seu primeiro teaser neste sábado e confirmou a estreia para 2027. O vídeo apresenta as primeiras imagens da produção e reforça a expansão da franquia durante seu projeto de 20º aniversário."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "The Fake Alchemist revela elenco e equipe em novo vídeo",
-              "runs": [
-                {
-                  "text": "The Fake Alchemist revela elenco e equipe em novo vídeo",
-                  "href": "https://animenew.com.br/the-fake-alchemist-anime-elenco-equipe"
-                }
-              ]
-            },
-            {
-              "text": "Sekiro: No Defeat será lançado como série de 8 episódios",
-              "runs": [
-                {
-                  "text": "Sekiro: No Defeat será lançado como série de 8 episódios",
-                  "href": "https://animenew.com.br/sekiro-no-defeat-serie-8-episodios"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Kazuya Nomura dirige o anime, enquanto Mado Nozaki cuida dos roteiros. Rolua é responsável pelo design dos personagens, e Yoshi. trabalha no design do Agarmatha. Junbun Lin assume os cenários e efeitos especiais, com Ichinogi responsável pelo logotipo.",
-          "runs": [
-            {
-              "text": "Kazuya Nomura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " dirige o anime, enquanto "
-            },
-            {
-              "text": "Mado Nozaki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " cuida dos roteiros. Rolua é responsável pelo design dos personagens, e Yoshi. trabalha no design do Agarmatha. Junbun Lin assume os cenários e efeitos especiais, com Ichinogi responsável pelo logotipo."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=j6cQAaNYYeA",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/j6cQAaNYYeA"
-        },
-        {
-          "type": "heading",
-          "text": "Novos projetos de Code Geass",
-          "runs": [
-            {
-              "text": "Novos projetos de Code Geass"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "O aniversário de 20 anos também inclui o mangá crossover Mobile Suit Gundam Wing x Code Geass: Minuet Zero, lançado em julho na plataforma KadoComi, da Kadokawa. Kōjirō Taniguchi, da Sunrise, participa do projeto como responsável pelo cenário.",
-          "runs": [
-            {
-              "text": "O aniversário de 20 anos também inclui o "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " crossover "
-            },
-            {
-              "text": "Mobile Suit Gundam Wing x Code Geass: Minuet Zero",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", lançado em julho na plataforma KadoComi, da Kadokawa. Kōjirō Taniguchi, da Sunrise, participa do projeto como responsável pelo cenário."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A programação ainda conta com a peça teatral Code Geass: Lelouch of the Rebellion – A Knight who Follows His Beliefs 2, prevista para Osaka entre 23 e 25 de janeiro e Tóquio de 29 de janeiro a 1º de fevereiro.",
-          "runs": [
-            {
-              "text": "A programação ainda conta com a peça teatral "
-            },
-            {
-              "text": "Code Geass: Lelouch of the Rebellion – A Knight who Follows His Beliefs 2",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", prevista para Osaka entre 23 e 25 de janeiro e Tóquio de 29 de janeiro a 1º de fevereiro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A franquia também terá uma exposição de 20º aniversário em Tóquio, em setembro de 2026, e Osaka, em novembro. Code Geass estreou na televisão em 2006 e ganhou uma segunda temporada em 2008. A franquia também inclui filmes, mangás e produções derivadas, como Code Geass: Rozé of the Recapture, lançado em 2024.",
-          "runs": [
-            {
-              "text": "A franquia também terá uma exposição de 20º aniversário em Tóquio, em setembro de 2026, e Osaka, em novembro. "
-            },
-            {
-              "text": "Code Geass",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " estreou na televisão em 2006 e ganhou uma segunda temporada em 2008. A franquia também inclui filmes, mangás e produções derivadas, como "
-            },
-            {
-              "text": "Code Geass: Rozé of the Recapture",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", lançado em 2024."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://geass.jp/aspal/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Code Geass Star Chaser Aspal ganha teaser e estreia em 2027.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Code Geass Star Chaser Aspal ganha teaser e estreia em 2027",
-              "href": "https://animenew.com.br/code-geass-star-chaser-aspal-teaser-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-28T17:20:39.000Z",
-      "updatedAt": "2026-09-28T17:20:39.000Z",
-      "expiresAt": "2026-10-05T17:20:39.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/code-geass-star-chaser-aspal-teaser-2027",
-          "publishedAt": "2026-09-28T17:20:39.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 271,
-      "qualityScore": 0.973,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
       "id": "jbox-c42ecac9",
       "slug": "one-piece-anime-encerra-primeira-parte-do-arco-de-elbaph-e-retorna-so-em-2027-jbox-c42ecac9",
       "source": "JBox",
@@ -4289,261 +5401,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-197c1986",
-      "slug": "draw-this-then-die-ganha-2-temporada-animenew-197c1986",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Draw This, Then Die! ganha 2ª temporada",
-      "originalTitle": "Draw This, Then Die! ganha 2ª temporada",
-      "summary": "O anime Draw This, Then Die! (Kore Kaite Shine) terá uma segunda temporada. O anúncio aconteceu neste sábado, após a exibição do 12º e último episódio da primeira fase da adaptação. Com base no mangá de Minoru Toyoda, o anime acompanha Ai Yasumi, uma estudante do primeiro ano do ensino médio que vive na remota ilha de Izu Oshima e é apaixonada por mangás.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Draw This and Die",
-        "Kore Kaite Shine"
-      ],
-      "url": "https://animenew.com.br/draw-this-then-die-ganha-2a-temporada",
-      "sourceUrl": "https://animenew.com.br/draw-this-then-die-ganha-2a-temporada",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Draw-This-Then-Die-ganha-2a-temporada.webp",
-      "mediaQuery": "Draw This, Then Die! ganha 2ª temporada",
-      "mediaType": "manga",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Kore-Kaite-Shine-scaled.webp",
-          "alt": "Kore Kaite Shine",
-          "caption": "© とよ田みのる／小学館／王島南高校漫研"
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Draw This, Then Die! (Kore Kaite Shine) terá uma segunda temporada. O anúncio aconteceu neste sábado, após a exibição do 12º e último episódio da primeira fase da adaptação. Com base no mangá de Minoru Toyoda, o anime acompanha Ai Yasumi, uma estudante do primeiro ano do ensino médio que vive na remota ilha de Izu Oshima e é apaixonada por mangás.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Draw This, Then Die!",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Kore Kaite Shine",
-              "marks": [
-                "em"
-              ],
-              "href": "https://animenew.com.br/anime/188525/kore-kaite-shine"
-            },
-            {
-              "text": ") terá uma segunda temporada. O anúncio aconteceu neste sábado, após a exibição do 12º e último episódio da primeira fase da adaptação. Com base no "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " de "
-            },
-            {
-              "text": "Minoru Toyoda",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", o anime acompanha "
-            },
-            {
-              "text": "Ai Yasumi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", uma estudante do primeiro ano do ensino médio que vive na remota ilha de Izu Oshima e é apaixonada por mangás."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Diários de uma Apotecária revela tema de encerramento",
-              "runs": [
-                {
-                  "text": "Diários de uma Apotecária revela tema de encerramento",
-                  "href": "https://animenew.com.br/diarios-de-uma-apotecaria-3-tema-encerramento"
-                }
-              ]
-            },
-            {
-              "text": "Where is the Elf Teacher’s Toilet? ganha anime",
-              "runs": [
-                {
-                  "text": "Where is the Elf Teacher’s Toilet? ganha anime",
-                  "href": "https://animenew.com.br/where-is-the-elf-teachers-toilet-anime"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Elenco e produção",
-          "runs": [
-            {
-              "text": "Elenco e produção"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Akira Sekine interpreta Ai Yasumi, enquanto Saori Hayami dá voz a Rei Teshima. Saya Hitomi, Kanon Fujimura e Inori Minase também integram o elenco principal.",
-          "runs": [
-            {
-              "text": "Akira Sekine interpreta Ai Yasumi, enquanto Saori Hayami dá voz a Rei Teshima. Saya Hitomi, Kanon Fujimura e Inori Minase também integram o elenco principal."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Kore-Kaite-Shine-scaled.webp",
-          "alt": "Kore Kaite Shine",
-          "caption": "© とよ田みのる／小学館／王島南高校漫研"
-        },
-        {
-          "type": "paragraph",
-          "text": "Hiroaki Akagi dirige Draw This, Then Die no estúdio Shinei Animation. Hiroko Fukuda supervisiona os roteiros, escritos com Aki Itami e Kanichi Kato, enquanto Takekazu Segawa cuida do design dos personagens.",
-          "runs": [
-            {
-              "text": "Hiroaki Akagi dirige Draw This, Then Die no estúdio "
-            },
-            {
-              "text": "Shinei Animation",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://animenew.com.br/studio/247/shin-ei-animation"
-            },
-            {
-              "text": ". Hiroko Fukuda supervisiona os roteiros, escritos com Aki Itami e Kanichi Kato, enquanto Takekazu Segawa cuida do design dos personagens."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A primeira temporada estreou em 3 de julho no bloco Friday Anime Night da NTV e também está disponível pela Crunchyroll.",
-          "runs": [
-            {
-              "text": "A primeira temporada estreou em 3 de julho no bloco Friday Anime Night da NTV e também está disponível pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "href": "https://animenew.com.br/tag/crunchyroll/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim o mangá começou a ser publicado na Monthly Shonen Sunday em novembro de 2021. A obra venceu o Manga Taisho em 2023 e o 70º Shogakukan Manga Award em 2025.",
-          "runs": [
-            {
-              "text": "Por fim o mangá começou a ser publicado na Monthly Shonen Sunday em novembro de 2021. A obra venceu o Manga Taisho em 2023 e o 70º Shogakukan Manga Award em 2025."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://www.vap.co.jp/korekaite-shine/news/article/?id=uhd6ntabjt"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Draw This, Then Die! ganha 2ª temporada.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Draw This, Then Die! ganha 2ª temporada",
-              "href": "https://animenew.com.br/draw-this-then-die-ganha-2a-temporada/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-26T16:41:46.000Z",
-      "updatedAt": "2026-09-26T16:41:46.000Z",
-      "expiresAt": "2026-10-03T16:41:46.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/draw-this-then-die-ganha-2a-temporada",
-          "publishedAt": "2026-09-26T16:41:46.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 216,
-      "qualityScore": 0.907,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
         "embedCount": 0,
         "sourcePagesRead": 0
       }
@@ -7171,1409 +8028,6 @@
         "facts": 0,
         "sections": 0,
         "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-5c7b2435",
-      "slug": "critica-daemons-of-the-shadow-realm-1-temporada-jbox-5c7b2435",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Crítica | Daemons of the Shadow Realm | 1ª temporada",
-      "originalTitle": "Crítica | Daemons of the Shadow Realm | 1ª temporada",
-      "summary": "Não é exagero dizer que vivemos de forma acelerada nos dias atuais, e isso também influencia a forma como consumimos conteúdos. Prova disso é o sucesso de vídeos curtos nas redes sociais e até o fato de um streaming como a Netflix orientar roteiristas para que escrevam textos considerando que o espectador estará distraído com o celular (incluindo, assim, mais explicações e exposição nos diálogos).",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Resenha",
-        "Crítica de Daemons of the Shadow Realm",
-        "Daemons do Reino das Sombras",
-        "Daemons of the Shadow Realm",
-        "fullmetal alchemist",
-        "hiromu arakawa",
-        "mangá de hiromu arakawa",
-        "novo anime da autora de fullmetal",
-        "novo anime de hiromu arakawa",
-        "Yomi no Tsugai"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/23/critica-daemons-of-the-shadow-realm-1a-temporada",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/23/critica-daemons-of-the-shadow-realm-1a-temporada",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/jbox-critica-destacada-daemons-temporada1.jpg",
-      "mediaQuery": "Crítica | Daemons of the Shadow Realm | 1ª temporada",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-06.webp",
-          "alt": "Imagem de Daemons of the Shadow Realm",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-03.webp",
-          "alt": "Imagem de Daemons of the Shadow Realm",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-04.webp",
-          "alt": "Imagem de Daemons of the Shadow Realm",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Não é exagero dizer que vivemos de forma acelerada nos dias atuais, e isso também influencia a forma como consumimos conteúdos. Prova disso é o sucesso de vídeos curtos nas redes sociais e até o fato de um streaming como a Netflix orientar roteiristas para que escrevam textos considerando que o espectador estará distraído com o celular (incluindo, assim, mais explicações e exposição nos diálogos). Dessa forma, não é surpresa que um animê como Daemons of the Shadow Realm (Yomi no Tsugai) desagrade parte do público, justamente por não ter a mínima pressa de contar sua história.",
-          "runs": [
-            {
-              "text": "Não é exagero dizer que vivemos de forma acelerada nos dias atuais, e isso também influencia a forma como consumimos conteúdos. Prova disso é o sucesso de vídeos curtos nas redes sociais e até o fato de um streaming como a Netflix orientar roteiristas para que escrevam textos considerando que o espectador estará distraído com o celular (incluindo, assim, mais explicações e exposição nos diálogos). Dessa forma, não é surpresa que um animê como "
-            },
-            {
-              "text": "Daemons of the Shadow Realm",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Yomi no Tsugai",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") desagrade parte do público, justamente por não ter a mínima pressa de contar sua história."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Inspirada no mangá de Hiromu Arakawa, autora de nada menos do que Fullmetal Alchemist e Silver Spoon, a trama começa focada em um jovem chamado Yuru. Ele vive em uma vila com ares medievais, caçando, convivendo com a comunidade e, principalmente, cuidando da irmã, Asa. O primeiro episódio, especialmente, usa grande parte de seu tempo para apresentar essa atmosfera bucólica. Mas tudo muda (e muito rapidamente), quando Yuru descobre que grande parte do que ele conhecia se trata de uma grande mentira, e agora ele precisa deixar o local em que cresceu para descobrir mistérios envolvendo seus pais e irmã.",
-          "runs": [
-            {
-              "text": "Inspirada no mangá de "
-            },
-            {
-              "text": "Hiromu Arakawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", autora de nada menos do que "
-            },
-            {
-              "text": "Fullmetal Alchemist",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Silver Spoon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", a trama começa focada em um jovem chamado "
-            },
-            {
-              "text": "Yuru",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Ele vive em uma vila com ares medievais, caçando, convivendo com a comunidade e, principalmente, cuidando da irmã,"
-            },
-            {
-              "text": " Asa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". O primeiro episódio, especialmente, usa grande parte de seu tempo para apresentar essa atmosfera bucólica. Mas tudo muda (e muito rapidamente), quando Yuru descobre que grande parte do que ele conhecia se trata de uma grande mentira, e agora ele precisa deixar o local em que cresceu para descobrir mistérios envolvendo seus pais e irmã."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "E, talvez, o grande primeiro erro da história seja justamente começar tão acelerada, para depois colocar o pé no freio. Muitos que assistiram ao episódio 1, “Asa e Yuru”, podem ter pensado que veriam uma trama tão apressada quanto um feed de redes sociais. Mas o que acontece nos 23 capítulos seguintes dos dois cours do animê, disponíveis no Brasil pela Crunchyroll, é exatamente o oposto. E ainda bem.",
-          "runs": [
-            {
-              "text": "E, talvez, o grande primeiro erro da história seja justamente"
-            },
-            {
-              "text": " começar tão acelerada, para depois colocar o pé no freio",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Muitos que assistiram ao episódio 1, "
-            },
-            {
-              "text": "“Asa e Yuru",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "”, podem ter pensado que veriam uma trama tão apressada quanto um feed de redes sociais. Mas o que acontece nos 23 capítulos seguintes dos dois "
-            },
-            {
-              "text": "cours",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " do animê, disponíveis no Brasil pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", é exatamente o oposto. E ainda bem."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Quem, afinal, é Yuru?",
-          "runs": [
-            {
-              "text": "Quem, afinal, é Yuru?"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-06.webp",
-          "alt": "Imagem de Daemons of the Shadow Realm"
-        },
-        {
-          "type": "paragraph",
-          "text": "A narrativa tenta tanto proteger Yuru, que parece até o pessoal de Higashimura. | Imagem: Square Enix/Divulgação",
-          "runs": [
-            {
-              "text": "A narrativa tenta tanto proteger Yuru, que parece até o pessoal de Higashimura. | Imagem: Square Enix/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ao ter sua realidade virada de cabeça para baixo, Yuru inicia uma jornada de descoberta, que serve também como os olhos do público. Ao assistir aos episódios, começamos tão perdidos quanto o personagem e, com as poucas informações que chegam, vamos montando cenários do que poderia ter acontecido na vila Higashimura, e por que os pais de Yuru e Asa estão desaparecidos.",
-          "runs": [
-            {
-              "text": "Ao ter sua realidade virada de cabeça para baixo, Yuru inicia uma jornada de descoberta, que serve também como os olhos do público. Ao assistir aos episódios, começamos tão perdidos quanto o personagem e, com as poucas informações que chegam, vamos montando cenários do que poderia ter acontecido na vila Higashimura, e por que os pais de Yuru e Asa estão desaparecidos."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Nesta jornada, muitos personagens são apresentados, incluindo coadjuvantes humanos e Tsugai, que são os demônios que acompanham alguns personagens. Neste ponto, Daemons of the Shadow Realm comete seu segundo erro, que é abrir tanto o leque de coadjuvantes, que se esquece de desenvolver mais justamente Yuru, que divide o coração da história com Asa.",
-          "runs": [
-            {
-              "text": "Nesta jornada, muitos personagens são apresentados, incluindo coadjuvantes humanos e Tsugai, que são os demônios que acompanham alguns personagens. Neste ponto, "
-            },
-            {
-              "text": "Daemons of the Shadow Realm",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " comete"
-            },
-            {
-              "text": " seu segundo erro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que é abrir tanto o leque de coadjuvantes, que se esquece de desenvolver mais justamente Yuru, que divide o coração da história com Asa."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Embora apareça menos do que o irmão, a personagem tem uma personalidade mais definida ao longo dos episódios, mostrando que possui uma força muito grande, mas que também tem os medos e sonhos comuns para uma garota de sua idade (como ir para a Disney). Já Yuru, embora tenha mais tempo de tela, soa mais fechado, o que dificulta com que o espectador crie uma relação mais profunda com ele.",
-          "runs": [
-            {
-              "text": "Embora apareça menos do que o irmão, a personagem tem uma personalidade mais definida ao longo dos episódios, mostrando que possui uma força muito grande, mas que também tem os medos e sonhos comuns para uma garota de sua idade (como ir para a Disney). Já Yuru, embora tenha mais tempo de tela, soa mais fechado, o que dificulta com que o espectador crie uma relação mais profunda com ele."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Sim, há cenas mais leves com o jovem, momentos de diversão e até de descoberta de um mundo novo. Mas elas são espaçadas demais e com pouco peso para o que um protagonista como Yuru precisa ter para criar um laço mais forte com quem está assistindo. Para quem está acostumado a acompanhar animês e mangás, o motivo para isso é bem claro: a produção tenta, de certa forma, blindar o protagonista para que ele pareça heroico quase o tempo todo. Mas é um equilíbrio muito fácil de se perder entre tornar alguém admirável ou inalcançável.",
-          "runs": [
-            {
-              "text": "Sim, há cenas mais leves com o jovem, momentos de diversão e até de descoberta de um mundo novo. Mas elas são espaçadas demais e com pouco peso para o que um protagonista como Yuru precisa ter para criar um laço mais forte com quem está assistindo. Para quem está acostumado a acompanhar animês e mangás, o motivo para isso é bem claro: a produção tenta, de certa forma, "
-            },
-            {
-              "text": "blindar o protagonista para que ele pareça heroico quase o tempo todo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Mas é um equilíbrio muito fácil de se perder entre tornar alguém admirável ou inalcançável."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-03.webp",
-          "alt": "Imagem de Daemons of the Shadow Realm"
-        },
-        {
-          "type": "paragraph",
-          "text": "Yuru e Asa têm cenas mais leves, mas a personalidade dela tem mais pontos de desenvolvimento | Square Enix/Divulgação",
-          "runs": [
-            {
-              "text": "Yuru e Asa têm cenas mais leves, mas a personalidade dela tem mais pontos de desenvolvimento | Square Enix/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Mas, não me entenda errado, caro leitor. Ainda que o desenvolvimento de Yuru tenha problemas, não há como negar que a primeira temporada de Daemons of the Shadow Realm é extremamente sólida e interessante de acompanhar, incluindo boas cenas de ação, especialmente quando os Tsugai de Yuru, Esquerda e Direita, entram em ação. Para os fãs de uma boa lutinha sem perder a amizade, o animê entrega ótimas sequências, em que as habilidades dos personagens — seja luta corporal, com espadas, ou até arco e flecha — são bem exploradas. Nesse quesito, nada a reclamar.",
-          "runs": [
-            {
-              "text": "Mas, não me entenda errado, caro leitor. Ainda que o desenvolvimento de Yuru tenha problemas, não há como negar que a primeira temporada de "
-            },
-            {
-              "text": "Daemons of the Shadow Realm",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "é extremamente sólida e interessante de acompanhar",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", incluindo boas cenas de ação, especialmente quando os Tsugai de Yuru, Esquerda e Direita, entram em ação. Para os fãs de uma boa lutinha sem perder a amizade, o animê entrega ótimas sequências, em que as habilidades dos personagens — seja luta corporal, com espadas, ou até arco e flecha — são bem exploradas. Nesse quesito, nada a reclamar."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Gêmeos separados pelo dia e pela noite",
-          "runs": [
-            {
-              "text": "Gêmeos separados pelo dia e pela noite"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "Ao deixar Higashimura e iniciar sua jornada, Yuru descobre que ele e a irmã nasceram “separados pelo dia e pela noite”, o que conferiu a eles os poderes de Quebra (para Asa) e Selo (para Yuru). O nascimento dos dois e a aquisição de tais habilidades é algo raro, e é por isso que a família começa a ser perseguida por pessoas que desejam controlar estes poderes.",
-          "runs": [
-            {
-              "text": "Ao deixar Higashimura e iniciar sua jornada, Yuru descobre que ele e a irmã nasceram "
-            },
-            {
-              "text": "“separados pelo dia e pela noite”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", o que conferiu a eles os poderes de Quebra (para Asa) e Selo (para Yuru). O nascimento dos dois e a aquisição de tais habilidades é algo raro, e é por isso que a família começa a ser perseguida por pessoas que desejam controlar estes poderes."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Assim como Yuru, iniciamos a história sem saber exatamente em quem confiar. Pessoas comuns se mostram perigosas, supostos aliados também escondem segredos, e um detalhe em um diálogo pode mudar toda a percepção que temos sobre uma determinada situação.",
-          "runs": [
-            {
-              "text": "Assim como Yuru, iniciamos a história sem saber exatamente em quem confiar. Pessoas comuns se mostram perigosas, supostos aliados também escondem segredos, e um detalhe em um diálogo pode mudar toda a percepção que temos sobre uma determinada situação."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "É aqui que ‘Daemons’ brilha em sua total falta de pressa em explicar tudo. É preciso assistir, prestar atenção e, de fato, se engajar na tarefa de montar o quebra-cabeça de intrigas que envolve os gêmeos e todos que querem se aproximar deles. Quem não for fisgado por essa parte da história, com certeza terá vontade de largar o animê. Porém, aqueles que aceitam a proposta ganham uma narrativa instigante, que em nenhum momento subestima quem está assistindo.",
-          "runs": [
-            {
-              "text": "É aqui que ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "‘Daemons’",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " brilha em sua total falta de pressa em explicar tudo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". É preciso assistir, prestar atenção e, de fato, se engajar na tarefa de montar o quebra-cabeça de intrigas que envolve os gêmeos e todos que querem se aproximar deles. Quem não for fisgado por essa parte da história, com certeza terá vontade de largar o animê. Porém, aqueles que aceitam a proposta ganham uma narrativa instigante, que em nenhum momento subestima quem está assistindo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "E um trunfo importante é que a produção cria todo esse emaranhado de interesses sem se tornar desnecessariamente pesada. Há, sim, momentos mais densos, e até tendendo um pouco para o gore, com sangues jorrando aqui e ali. Por conta disso, os personagens correm riscos reais em diversos momentos, e não seria surpreendente se um coadjuvante importante morresse do nada. O mundo de Daemons of the Shadow Realm é assim mesmo.",
-          "runs": [
-            {
-              "text": "E um trunfo importante é que a produção cria todo esse emaranhado de interesses sem se tornar desnecessariamente pesada. Há, sim, momentos mais densos, e até tendendo um pouco para o "
-            },
-            {
-              "text": "gore",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", com sangues jorrando aqui e ali. Por conta disso, os personagens correm riscos reais em diversos momentos, e não seria surpreendente se um coadjuvante importante morresse do nada. O mundo de "
-            },
-            {
-              "text": "Daemons of the Shadow Realm",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é assim mesmo."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Daemons-of-the-Shadow-Realm-04.webp",
-          "alt": "Imagem de Daemons of the Shadow Realm"
-        },
-        {
-          "type": "paragraph",
-          "text": "O animê tem momentos bem sangrentos (e bem legais). | Square Enix/Divulgação",
-          "runs": [
-            {
-              "text": "O animê tem momentos bem sangrentos (e bem legais). | Square Enix/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Mas tudo isso é intercalado com sequências de ação e momentos de dia a dia, que complementam a narrativa, sem tirar o peso de momentos importantes. Neste ponto, o equilíbrio do animê é preciso, de uma forma até rara de encontrar nos dias atuais.",
-          "runs": [
-            {
-              "text": "Mas tudo isso é intercalado com sequências de ação e momentos de dia a dia, que complementam a narrativa, sem tirar o peso de momentos importantes. Neste ponto, o equilíbrio do animê é preciso, de uma forma até rara de encontrar nos dias atuais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "E é por isso que, mesmo com defeitos aqui e ali, Daemons of the Shadow Realm é uma das produções mais interessantes lançadas recentemente. Com o mangá ainda em andamento, e uma segunda temporada do animê já confirmada, a franquia tem tudo para se tornar ainda mais conhecida nos próximos anos — basta que os espectadores deixem a pressa de lado e aceitem curtir a jornada com menos ansiedade para chegar ao final.",
-          "runs": [
-            {
-              "text": "E é por isso que, mesmo com defeitos aqui e ali,"
-            },
-            {
-              "text": " Daemons of the Shadow Realm",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é uma das produções mais interessantes lançadas recentemente. Com o mangá ainda em andamento, e "
-            },
-            {
-              "text": "uma segunda temporada do animê já confirmada",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/09/21/daemons-of-the-shadow-realm-tem-2a-temporada-confirmada/"
-            },
-            {
-              "text": ", a franquia tem tudo para se tornar ainda mais conhecida nos próximos anos — basta que os espectadores deixem a pressa de lado e aceitem curtir a jornada com menos ansiedade para chegar ao final."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "▶️ Entrevista com os dubladores Pedro Crispim, Natália Alves, Filipe Albuquerque e Jennifer Gouveia, de Daemons of the Shadow Realm",
-          "runs": [
-            {
-              "text": "▶️ ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Entrevista com os dubladores Pedro Crispim, Natália Alves, Filipe Albuquerque e Jennifer Gouveia, de ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/31/dubladores-de-daemons-of-the-shadow-realm-contam-sua-experiencia-com-a-serie-jbox-entrevista/"
-            },
-            {
-              "text": "Daemons of the Shadow Realm",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/31/dubladores-de-daemons-of-the-shadow-realm-contam-sua-experiencia-com-a-serie-jbox-entrevista/"
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
-          "runs": [
-            {
-              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-23T19:43:00.000Z",
-      "updatedAt": "2026-09-23T19:44:28.000Z",
-      "expiresAt": "2026-09-30T19:43:00.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/23/critica-daemons-of-the-shadow-realm-1a-temporada",
-          "publishedAt": "2026-09-23T19:43:00.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 6,
-      "wordCount": 1129,
-      "qualityScore": 0.97,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 26,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 3,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-b65df50a",
-      "slug": "ilustracao-original-de-inuyasha-e-leiloada-para-arrecadar-fundos-para-a-caridade-jbox-b65df50a",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Ilustração original de ‘InuYasha’ é leiloada para arrecadar fundos para a caridade",
-      "originalTitle": "Ilustração original de ‘InuYasha’ é leiloada para arrecadar fundos para a caridade",
-      "summary": "Uma ilustração original de InuYasha, autografada pela autora Rumiko Takahashi, foi leiloada no último dia 30 de agosto, para arrecadar fundos para a caridade.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Cotidiano",
-        "Mangá",
-        "Ilustração de Inuyasha",
-        "Ilustração original de Rumiko Takahashi",
-        "InuYasha",
-        "Leilão de Inuyasha",
-        "Leilão de Inuyasha para a caridade",
-        "rumiko takahashi"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/23/ilustracao-original-de-inuyasha-e-leiloada-para-arrecadar-fundos-para-a-caridade",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/23/ilustracao-original-de-inuyasha-e-leiloada-para-arrecadar-fundos-para-a-caridade",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/InuYasha-manga-destacada.jpg",
-      "mediaQuery": "Ilustração original de ‘InuYasha’ é leiloada para arrecadar fundos para a caridade",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/InuYasha-arte-leiloada.webp",
-          "alt": "Arte leiloada de InuYasha, autografada por Rumiko Takahashi",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Uma ilustração original de InuYasha, autografada pela autora Rumiko Takahashi, foi leiloada no último dia 30 de agosto, para arrecadar fundos para a caridade.",
-          "runs": [
-            {
-              "text": "Uma ilustração original de "
-            },
-            {
-              "text": "InuYasha",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", autografada pela autora "
-            },
-            {
-              "text": "Rumiko Takahashi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", foi leiloada no último dia 30 de agosto, para arrecadar fundos para a caridade."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O leilão foi organizado pela PLAS, organização japonesa sem fins lucrativos, que apoia crianças africanas que se tornaram órfãs por conta da AIDS. A atuação da instituição acontece especialmente em regiões de Quênia e Uganda.",
-          "runs": [
-            {
-              "text": "O leilão foi organizado pela "
-            },
-            {
-              "text": "PLAS",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", organização japonesa sem fins lucrativos, que apoia crianças africanas que se tornaram órfãs por conta da AIDS. A atuação da instituição acontece especialmente em regiões de Quênia e Uganda."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Mostrando o protagonista do mangá, e datada do mês de julho deste ano, a arte foi vendida pelo valor de 1,833,000 de ienes, o que equivale a aproximadamente US$ 11.560,00 e R$ 59.454,00 na cotação atual.",
-          "runs": [
-            {
-              "text": "Mostrando o protagonista do mangá, e datada do mês de julho deste ano, a arte foi vendida pelo valor de 1,833,000 de ienes, o que equivale a aproximadamente US$ 11.560,00 e "
-            },
-            {
-              "text": "R$ 59.454,00 na cotação atual",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/InuYasha-arte-leiloada.webp",
-          "alt": "Arte leiloada de InuYasha, autografada por Rumiko Takahashi"
-        },
-        {
-          "type": "paragraph",
-          "text": "Arte leiloada de InuYasha, autografada por Rumiko Takahashi | Yahoo/Divulgação",
-          "runs": [
-            {
-              "text": "Arte leiloada de InuYasha, autografada por Rumiko Takahashi | Yahoo/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Em um comunicado publicado do site do leilão, Takahashi afirma que “ficarei feliz se puder ajudar as crianças”. Essa não é a primeira vez que a autora ajuda a ONG PLAS. Em 2023, outra arte, também de InuYasha, foi arrematada por cerca de 1.001.000 ienes (em torno de US$ 6.234,oo e R$ 32.556, na cotação atual).",
-          "runs": [
-            {
-              "text": "Em um comunicado publicado do site do leilão, Takahashi afirma que"
-            },
-            {
-              "text": " “ficarei feliz se puder ajudar as crianças”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Essa não é a primeira vez que a autora ajuda a ONG PLAS. Em 2023, outra arte, também de"
-            },
-            {
-              "text": " InuYasha",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", foi arrematada por cerca de 1.001.000 ienes (em torno de US$ 6.234,oo e R$ 32.556, na cotação atual)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história de InuYasha foi escrita e ilustrada por Rumiko Takahashi entre 1996 e 2008, totalizando 56 volumes em tamanho tankobon. No Brasil, o mangá já foi publicado uma vez em sua totalidade pela Editora JBC, e ganha atualmente uma republicação, que já tem 19 dos 30 volumes prometidos para o formato lançados.",
-          "runs": [
-            {
-              "text": "A história de"
-            },
-            {
-              "text": " InuYasha",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " foi escrita e ilustrada por Rumiko Takahashi entre 1996 e 2008, totalizando 56 volumes em tamanho tankobon. No Brasil, o mangá já foi publicado uma vez em sua totalidade pela "
-            },
-            {
-              "text": "Editora JBC",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e ganha atualmente uma republicação, que já tem 19 dos 30 volumes prometidos para o formato lançados."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama é focada em Kagome Higurashi (chamada em algumas dublagens nacionais do animê de Agome, para evitar as piadinhas de duplo sentido), uma jovem que cai em um poço localizado no santuário de sua família, e acaba no Período Sengoku do Japão. Lá ela conhece Inuyasha, um meio-yokai (ou seja, um meio-demônio), que está em busca da lendária Joia de Quatro Almas. Após conhecer Kagome e achá-la muito parecida com sua amada Kagome, eles começam uma jornada juntos para juntar os fragmentos da Joia.",
-          "runs": [
-            {
-              "text": "A trama é focada em "
-            },
-            {
-              "text": "Kagome Higurashi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (chamada em algumas dublagens nacionais do animê de Agome, para evitar as piadinhas de duplo sentido), uma jovem que cai em um poço localizado no santuário de sua família, e acaba no Período Sengoku do Japão. Lá ela conhece Inuyasha, um meio-yokai (ou seja, um meio-demônio), que está em busca da lendária Joia de Quatro Almas. Após conhecer Kagome e achá-la muito parecida com sua amada Kagome, eles começam uma jornada juntos para juntar os fragmentos da Joia."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A primeira animação foi lançada originalmente entre 2000 e 2004, e chegou ao Brasil em canais como Cartoon Network e Rede Globo, que o tornou mais conhecido entre os fãs de animês. Posteriormente, uma versão chamada de The Final Arc foi exibida entre 2009 e 2010, finalizando a história. Já em 2020, foi lançado o animê Hanyou no Yashahime, ou Yashahime: Princess Half-Demon, que conta a história da filha de Kagome e Inuyasha, e das filhas de Sesshomaru.",
-          "runs": [
-            {
-              "text": "A primeira animação foi lançada originalmente entre 2000 e 2004, e chegou ao Brasil em canais como "
-            },
-            {
-              "text": "Cartoon Network",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Rede Globo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que o tornou mais conhecido entre os fãs de animês. Posteriormente, uma versão chamada de "
-            },
-            {
-              "text": "The Final Arc",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " foi exibida entre 2009 e 2010, finalizando a história. Já em 2020, foi lançado o animê "
-            },
-            {
-              "text": "Hanyou no Yashahime",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", ou "
-            },
-            {
-              "text": "Yashahime: Princess Half-Demon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que conta a história da filha de Kagome e Inuyasha, e das filhas de Sesshomaru."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O animê clássico de InuYasha está atualmente no catálogo da Netflix, com seis temporadas, no Mercado Play, com sete temporadas, e na Pluto TV, que também conta com alguns filmes da franquia no catálogo. Já Yashahime também está no Mercado Play, Pluto TV e Crunchyroll.",
-          "runs": [
-            {
-              "text": "O animê clássico de "
-            },
-            {
-              "text": "InuYasha",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " está atualmente no catálogo da "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com seis temporadas, no "
-            },
-            {
-              "text": "Mercado Play",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com sete temporadas, e na "
-            },
-            {
-              "text": "Pluto TV",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que também conta com alguns filmes da franquia no catálogo. Já "
-            },
-            {
-              "text": "Yashahime",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " também está no Mercado Play, Pluto TV e "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Anime News Network",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Anime News Network",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.animenewsnetwork.com/interest/2026-09-02/inuyasha-sketch-auctioned-to-help-african-kids-orphaned-by-aids/.241227"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-23T17:28:51.000Z",
-      "updatedAt": "2026-09-23T17:29:21.000Z",
-      "expiresAt": "2026-09-30T17:28:51.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/23/ilustracao-original-de-inuyasha-e-leiloada-para-arrecadar-fundos-para-a-caridade",
-          "publishedAt": "2026-09-23T17:28:51.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 443,
-      "qualityScore": 0.935,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-e6b1dfd0",
-      "slug": "digimon-serie-com-episodios-selecionados-tem-lancamento-mundial-anunciado-jbox-e6b1dfd0",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Digimon: Série com episódios selecionados tem lançamento mundial anunciado",
-      "originalTitle": "Digimon: Série com episódios selecionados tem lançamento mundial anunciado",
-      "summary": "Foi anunciado pela Toei Animation que Digimon: Bokura ga Eranda Best Adventure vai contar com exibição internacional, mas o Brasil ainda não foi diretamente confirmado como parte do lançamento mundial. O anúncio sobre a exibição por enquanto foi feito apenas pela Toei Animation europeia. O título internacional é Digimon: The World’s Best Picks.",
-      "author": "Teke",
-      "tags": [
-        "Anime",
-        "digimon adventure",
-        "Digimon Adventure 02",
-        "Digimon Frontier",
-        "Digimon Tamers",
-        "Digimon: Bokura ga Eranda Best Adventure",
-        "Digimon: The World’s Best Picks"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/23/digimon-serie-com-episodios-selecionados-tem-lancamento-mundial-anunciado",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/23/digimon-serie-com-episodios-selecionados-tem-lancamento-mundial-anunciado",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/digimon-bokura-ga-eranda-best-adventure-destacada.jpg",
-      "mediaQuery": "Digimon: Série com episódios selecionados tem lançamento mundial anunciado",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/Digimon-Bokura-ga-Eranda-Best-Adventure-poster.jpg",
-          "alt": "imagem: pôster da série de compilação Digimon: Bokura ga Eranda Best Adventure'. A ilustração destaca os protagonistas dos quatro primeiros animês de 'Digimon', cada um ao lado de seu respectivo monstrinho digital.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Foi anunciado pela Toei Animation que Digimon: Bokura ga Eranda Best Adventure vai contar com exibição internacional, mas o Brasil ainda não foi diretamente confirmado como parte do lançamento mundial. O anúncio sobre a exibição por enquanto foi feito apenas pela Toei Animation europeia. O título internacional é Digimon: The World’s Best Picks.",
-          "runs": [
-            {
-              "text": "Foi anunciado pela Toei Animation que "
-            },
-            {
-              "text": "Digimon: Bokura ga Eranda Best Adventure",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "vai contar com exibição internacional",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", mas o Brasil ainda não foi diretamente confirmado como parte do lançamento mundial. O anúncio sobre a exibição por enquanto foi feito apenas pela Toei Animation europeia. O título internacional é "
-            },
-            {
-              "text": "Digimon: The World’s Best Picks",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A produção é um compilado de episódios remasterizados que foram escolhidos como favoritos em votações de fãs. O compilado inclui os primeiros quatro animês de TV de Digimon — Adventure, Adventure 02, Tamers e Frontier.",
-          "runs": [
-            {
-              "text": "A produção é um compilado de episódios remasterizados que foram escolhidos como "
-            },
-            {
-              "text": "favoritos em votações de fãs",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://x.com/Digimon_Anime/status/2083520286721274201"
-            },
-            {
-              "text": ". O compilado inclui os primeiros quatro animês de TV de Digimon — "
-            },
-            {
-              "text": "Adventure",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Adventure 02",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Tamers",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Frontier",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/Digimon-Bokura-ga-Eranda-Best-Adventure-poster.jpg",
-          "alt": "imagem: pôster da série de compilação Digimon: Bokura ga Eranda Best Adventure'. A ilustração destaca os protagonistas dos quatro primeiros animês de 'Digimon', cada um ao lado de seu respectivo monstrinho digital."
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Divulgação/Toei Animation",
-          "runs": [
-            {
-              "text": "Imagem: Divulgação/Toei Animation"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Digimon: Bokura ga Eranda Best Adventure é um lançamento em comemoração aos 30 anos da franquia. O compilado de reprises deve contar com um total de 44 episódios, sendo 11 de cada uma das quatro séries clássicas. As reprises começam no próximo dia 3 de outubro, ocupando o mesmo horário da programação atualmente preenchido por Digmon Beatbreak, que chega ao fim no próximo dia 27. As reprises começam com Adventure e Tamers, seguindo depois para Adventure 02 e Frontier.",
-          "runs": [
-            {
-              "text": "Digimon: Bokura ga Eranda Best Adventure",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é um lançamento em comemoração aos 30 anos da franquia. O compilado de reprises deve contar com um total de"
-            },
-            {
-              "text": " 44 episódios",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", sendo 11 de cada uma das quatro séries clássicas. As reprises começam no próximo dia "
-            },
-            {
-              "text": "3 de outubro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", ocupando o mesmo horário da programação atualmente preenchido por "
-            },
-            {
-              "text": "Digmon Beatbreak",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que chega ao fim no próximo dia 27. As reprises começam com "
-            },
-            {
-              "text": "Adventure",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Tamers",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", seguindo depois para "
-            },
-            {
-              "text": "Adventure 02",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Frontier",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O lançamento remasterizado dos quatro primeiros animês de Digimon não chega a ser inédito. Apesar de não estar disponível em HD nos streamings brasileiros, as produções já contam com versões de alta definição há alguns anos (a 1ª série em Blu-ray chegou ao mercado japonês em 2015).",
-          "runs": [
-            {
-              "text": "O lançamento remasterizado dos quatro primeiros animês de "
-            },
-            {
-              "text": "Digimon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "não chega a ser inédito",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Apesar de não estar disponível em HD nos streamings brasileiros, as produções já contam com versões de alta definição há alguns anos (a 1ª série em Blu-ray chegou ao mercado japonês em 2015)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A série vai contar com um tema de abertura inédito, canção que conta com participação de vários músicos que foram importantes para a franquia. Michihiko Ohta está responsável pela composição e Yamada Hiroshi cuida da letra, papéis que ambos assumiram para vários outros temas de Digimon. Para completar com chave de ouro, Ayumi Miyazaki e Takayoshi Tanimoto cantam a nova música-tema, dois nomes que foram responsáveis por dar voz à várias canções da franquia.",
-          "runs": [
-            {
-              "text": "A série vai contar com um "
-            },
-            {
-              "text": "tema de abertura inédito",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", canção que conta com participação de vários músicos que foram importantes para a franquia. "
-            },
-            {
-              "text": "Michihiko Ohta",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " está responsável pela composição e "
-            },
-            {
-              "text": "Yamada Hiroshi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " cuida da letra, papéis que ambos assumiram para vários outros temas de "
-            },
-            {
-              "text": "Digimon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Para completar com chave de ouro, "
-            },
-            {
-              "text": "Ayumi Miyazaki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Takayoshi Tanimoto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " cantam a nova música-tema, dois nomes que foram responsáveis por dar voz à várias canções da franquia."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Toei Animation (X/Twitter)",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Toei Animation (X/Twitter)",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://x.com/ToeiAnimationEU/status/2100449691406074169"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-23T17:08:23.000Z",
-      "updatedAt": "2026-09-23T17:08:58.000Z",
-      "expiresAt": "2026-09-30T17:08:23.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/23/digimon-serie-com-episodios-selecionados-tem-lancamento-mundial-anunciado",
-          "publishedAt": "2026-09-23T17:08:23.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 312,
-      "qualityScore": 0.917,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "contentMode": "full",
