@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T21:14:03.150Z",
+  "generatedAt": "2026-10-02T00:49:37.126Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 41,
+      "count": 40,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,354 @@
     }
   ],
   "stats": {
-    "collected": 51,
+    "collected": 50,
     "grouped": 21,
     "published": 21,
     "newStories": 21,
     "fullArticles": 21,
     "previewArticles": 0,
-    "avgWords": 413,
+    "avgWords": 405,
     "withHeroImage": 21,
     "withOrderedMedia": 20,
     "skippedTranslation": 0,
-    "skippedQuality": 30,
-    "durationMs": 3171
+    "skippedQuality": 29,
+    "durationMs": 3232
   },
   "items": [
+    {
+      "id": "jbox-2c505854",
+      "slug": "capa-variante-de-amazing-spider-man-1000-faz-homenagem-a-luffy-de-one-piece-jbox-2c505854",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Capa variante de ‘Amazing Spider-Man 1000’ faz homenagem a Luffy, de ‘One Piece’",
+      "originalTitle": "Capa variante de ‘Amazing Spider-Man 1000’ faz homenagem a Luffy, de ‘One Piece’",
+      "summary": "A revista em quadrinhos Amazing Spider-Man, da Marvel Comics, chegou à sua edição 1.000, lançada lá nos Estados Unidos no dia 30 de outubro. Em comemoração, foi reunida uma seleção de artistas que passaram pela trajetória da série ao longo dos anos. Entre as diversas capas variantes produzidas para a edição anunciadas, uma delas chamou a atenção dos fãs de animês e mangás por fazer uma referência ao Monkey D. Luffy, protagonista de One Piece.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "HQs",
+        "Mangá",
+        "Amazing Spider-Man 1000",
+        "Capa do Homem-Aranha com o Luffy",
+        "homenagem a one piece",
+        "One Piece",
+        "one piece e homem-aranha",
+        "paródia de one piece"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/01/capa-variante-de-amazing-spider-man-1000-faz-homenagem-a-luffy-de-one-piece",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/01/capa-variante-de-amazing-spider-man-1000-faz-homenagem-a-luffy-de-one-piece",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/amazing-spider-man-1000th-issue-mico-suayan-variant-cover-with-luffy.jpg",
+      "mediaQuery": "Capa variante de ‘Amazing Spider-Man 1000’ faz homenagem a Luffy, de ‘One Piece’",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/amazing-spider-man-1000th-issue-mico-suayan-variant-cover.jpg",
+          "alt": "Imagem da Capa variante da edição 1000 da revista Amazing Spider-Man com o Homem-Aranha fazendo a pose do Luffy, de One Piece",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A revista em quadrinhos Amazing Spider-Man, da Marvel Comics, chegou à sua edição 1.000, lançada lá nos Estados Unidos no dia 30 de outubro. Em comemoração, foi reunida uma seleção de artistas que passaram pela trajetória da série ao longo dos anos. Entre as diversas capas variantes produzidas para a edição anunciadas, uma delas chamou a atenção dos fãs de animês e mangás por fazer uma referência ao Monkey D. Luffy, protagonista de One Piece.",
+          "runs": [
+            {
+              "text": "A revista em quadrinhos "
+            },
+            {
+              "text": "Amazing Spider-Man",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", da "
+            },
+            {
+              "text": "Marvel Comics",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", chegou à sua edição 1.000, lançada lá nos Estados Unidos no dia"
+            },
+            {
+              "text": " 30 de outubro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Em comemoração, foi reunida uma seleção de artistas que passaram pela trajetória da série ao longo dos anos. Entre as diversas capas variantes produzidas para a edição anunciadas, uma delas chamou a atenção dos fãs de animês e mangás por fazer uma referência ao Monkey D. Luffy, protagonista de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Criada por Mico Suayan como uma edição exclusiva da New York Comic Con, que ocorrerá entre os dias 8 e 11 de outubro, a capa variante de Amazing Spider-Man #1000 mostra o Homem-Aranha sem máscara, agachado e com as duas mãos apoiadas nas pernas. A pose recria de maneira bastante próxima a postura característica de Luffy ao ativar o Gear 2, de One Piece:",
+          "runs": [
+            {
+              "text": "Criada por "
+            },
+            {
+              "text": "Mico Suayan",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como uma edição exclusiva da "
+            },
+            {
+              "text": "New York Comic Con",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", que ocorrerá entre os dias 8 e 11 de outubro, a capa variante de "
+            },
+            {
+              "text": "Amazing Spider-Man",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " #1000 mostra o Homem-Aranha sem máscara, agachado e com as duas mãos apoiadas nas pernas. A pose recria de maneira bastante próxima a postura característica de Luffy ao ativar o "
+            },
+            {
+              "text": "Gear 2",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ":"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/amazing-spider-man-1000th-issue-mico-suayan-variant-cover.jpg",
+          "alt": "Imagem da Capa variante da edição 1000 da revista Amazing Spider-Man com o Homem-Aranha fazendo a pose do Luffy, de One Piece"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Marvel Comics/Reprodução",
+          "runs": [
+            {
+              "text": "Imagem: Marvel Comics/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para celebrar o marco, a Marvel preparou uma grande quantidade de capas alternativas para Amazing Spider-Man #1000. Entre os artistas envolvidos estão John Romita Jr., Pepe Larraz, Alex Ross, Mark Bagley, J. Scott Campbell e Steve Ditko, além de uma variante colaborativa de Peach Momoko e Frank Miller.",
+          "runs": [
+            {
+              "text": "Para celebrar o marco, a Marvel preparou uma grande quantidade de capas alternativas para "
+            },
+            {
+              "text": "Amazing Spider-Man",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " #1000. Entre os artistas envolvidos estão John Romita Jr., Pepe Larraz, Alex Ross, Mark Bagley, J. Scott Campbell e Steve Ditko, além de uma variante colaborativa de Peach Momoko e Frank Miller."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A edição também conta com uma capa dupla que homenageia a série animada de Spider-Man de 1967, uma variante da Marvel Studios relacionada a Spider-Man: Brand New Day e uma capa conectada em quatro partes produzida por Todd Nauck.",
+          "runs": [
+            {
+              "text": "A edição também conta com uma capa dupla que homenageia a série animada de "
+            },
+            {
+              "text": "Spider-Man",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de 1967, uma variante da Marvel Studios relacionada a "
+            },
+            {
+              "text": "Spider-Man: Brand New Day",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e uma capa conectada em quatro partes produzida por Todd Nauck."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história principal é escrita por Joe Kelly e desenhada por Pepe Larraz. Nela, o Homem-Aranha enfrenta Ravage, apresentado como seu novo vilão mais assustador em décadas, enquanto descobre que Tia May foi levada às pressas para o hospital. A edição especial também reúne histórias comemorativas de outros autores, incluindo Noah Hawley, Frank Miller, Dan Slott e Brian Michael Bendis.",
+          "runs": [
+            {
+              "text": "A história principal é escrita por Joe Kelly e desenhada por Pepe Larraz. Nela, o Homem-Aranha enfrenta Ravage, apresentado como seu novo vilão mais assustador em décadas, enquanto descobre que Tia May foi levada às pressas para o hospital. A edição especial também reúne histórias comemorativas de outros autores, incluindo Noah Hawley, Frank Miller, Dan Slott e Brian Michael Bendis."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Brasil, os gibis do Homem-Aranha saem pela editora Panini, mas a edição mencionada nesta notícia corresponde ao lançamento norte-americano.",
+          "runs": [
+            {
+              "text": "No Brasil, os gibis do "
+            },
+            {
+              "text": "Homem-Aranha",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " saem pela editora "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", mas a edição mencionada nesta notícia corresponde ao lançamento norte-americano."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Toy People News",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Toy People News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.toy-people.com/en/?p=114914"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-01T21:54:50.000Z",
+      "updatedAt": "2026-10-01T21:55:25.000Z",
+      "expiresAt": "2026-10-08T21:54:50.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/01/capa-variante-de-amazing-spider-man-1000-faz-homenagem-a-luffy-de-one-piece",
+          "publishedAt": "2026-10-01T21:54:50.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 330,
+      "qualityScore": 0.98,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-dda6b1fc",
       "slug": "netflix-confirma-transmissao-de-dragon-ball-super-beerus-no-brasil-jbox-dda6b1fc",
@@ -5379,7 +5713,7 @@
       "sourceCount": 1,
       "readingMinutes": 6,
       "wordCount": 1240,
-      "qualityScore": 1,
+      "qualityScore": 0.97,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -7576,473 +7910,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-f9931e84",
-      "slug": "site-brasileiro-aniquim-e-lancado-reunindo-catalogo-de-animes-listas-e-mais-jbox-f9931e84",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Site brasileiro ANIQuim é lançado reunindo catálogo de animês, listas e mais",
-      "originalTitle": "Site brasileiro ANIQuim é lançado reunindo catálogo de animês, listas e mais",
-      "summary": "Os fãs brasileiros de animês ganharam um novo lugar para acompanhar lançamentos das temporadas, montar listas do que assistir, organizar títulos mais: trata-se do ANIQuim, plataforma brasileira com ares de My Anime List, pensada para a comunidade nacional. A proposta, inclusive, está no próprio nome, uma mistura de animê + tupiniquim.",
-      "author": "Equipe JBox",
-      "tags": [
-        "Anime",
-        "Streaming",
-        "ANIQuim",
-        "lista de animes no ANIQuim",
-        "My Anime List",
-        "site brasileiro ANIQuim"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/24/site-brasileiro-aniquim-e-lancado-reunindo-catalogo-de-animes-listas-e-mais",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/24/site-brasileiro-aniquim-e-lancado-reunindo-catalogo-de-animes-listas-e-mais",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/site-aniquim-destacada.jpg",
-      "mediaQuery": "Site brasileiro ANIQuim é lançado reunindo catálogo de animês, listas e mais",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/aniquim-home.jpg",
-          "alt": "Imagem do site ANIQuim",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Lista-de-Animes.png",
-          "alt": "Imagem do site ANIQuim",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/aniquim-programacao.jpg",
-          "alt": "Imagem do site ANIQuim",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Os fãs brasileiros de animês ganharam um novo lugar para acompanhar lançamentos das temporadas, montar listas do que assistir, organizar títulos mais: trata-se do ANIQuim, plataforma brasileira com ares de My Anime List, pensada para a comunidade nacional. A proposta, inclusive, está no próprio nome, uma mistura de animê + tupiniquim.",
-          "runs": [
-            {
-              "text": "Os fãs brasileiros de animês ganharam um novo lugar para acompanhar lançamentos das temporadas, montar listas do que assistir, organizar títulos mais: trata-se do "
-            },
-            {
-              "text": "ANIQuim",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.aniquim.com.br/"
-            },
-            {
-              "text": ", plataforma brasileira com ares de "
-            },
-            {
-              "text": "My Anime List",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", pensada para a comunidade nacional. A proposta, inclusive, está no próprio nome, "
-            },
-            {
-              "text": "uma mistura de animê + tupiniquim",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Totalmente em português, o ANIQuim reúne catálogo e descoberta de novos títulos, com um acompanhamento pessoal e construção de comunidade. Na plataforma, é possível encontrar novos títulos, descobrir onde assistir oficialmente no Brasil, acompanhar lançamentos, organizar o que já viu ou pretende assistir e conferir avaliações e opiniões de outros fãs.",
-          "runs": [
-            {
-              "text": "Totalmente em português, o "
-            },
-            {
-              "text": "ANIQuim",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " reúne catálogo e descoberta de novos títulos, com um acompanhamento pessoal e construção de comunidade. Na plataforma, é possível encontrar novos títulos, descobrir onde assistir oficialmente no Brasil, acompanhar lançamentos, organizar o que já viu ou pretende assistir e conferir avaliações e opiniões de outros fãs."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/aniquim-home.jpg",
-          "alt": "Imagem do site ANIQuim"
-        },
-        {
-          "type": "paragraph",
-          "text": "Home do site conta com os animês em alta na semana. | ANIQuim/Reprodução",
-          "runs": [
-            {
-              "text": "Home do site conta com os animês em alta na semana. | ANIQuim/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A ideia surgiu de uma necessidade dos próprios criadores, Ana Lima e Hugo Machado: ter um espaço em que recomendações, discussões e informações sobre animê não estivessem espalhadas por diferentes plataformas.",
-          "runs": [
-            {
-              "text": "A ideia surgiu de uma necessidade dos próprios criadores, "
-            },
-            {
-              "text": "Ana Lima",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Hugo Machado",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": ter um espaço em que recomendações, discussões e informações sobre animê não estivessem espalhadas por diferentes plataformas."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre as principais funcionalidades do site está a lista pessoal, na qual cada animê pode ser classificado entre Quero Ver, Assistindo, Terminei, Pausei e Desisti. Além de acompanhar episódios, dar notas e favoritar produções, os usuários podem adicionar reações como “Bombando”, “Amei”, “Deu sono” e “Lento”, além de publicar Impressões, comentários curtos sobre animês ou episódios com proteção contra spoilers. Essas interações também alimentam os dados da comunidade, incluindo um Top 100 e estatísticas sobre popularidade, avaliações e comportamento dos fãs.",
-          "runs": [
-            {
-              "text": "Entre as principais funcionalidades do site está a "
-            },
-            {
-              "text": "lista pessoal",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", na qual cada animê pode ser classificado entre "
-            },
-            {
-              "text": "Quero Ver",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Assistindo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Terminei",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ","
-            },
-            {
-              "text": " Pausei",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Desisti",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Além de acompanhar episódios, dar notas e favoritar produções, os usuários podem adicionar reações como "
-            },
-            {
-              "text": "“Bombando”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "“Amei”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "“Deu sono”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "“Lento”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", além de publicar "
-            },
-            {
-              "text": "Impressões",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", comentários curtos sobre animês ou episódios com proteção contra spoilers. Essas interações também alimentam os dados da comunidade, incluindo um Top 100 e estatísticas sobre popularidade, avaliações e comportamento dos fãs."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Lista-de-Animes.png",
-          "alt": "Imagem do site ANIQuim"
-        },
-        {
-          "type": "paragraph",
-          "text": "Ao incluir um título, o usuário pode acrescentar diversas reações e uma nota. | ANIQuim/Reprodução",
-          "runs": [
-            {
-              "text": "Ao incluir um título, o usuário pode acrescentar diversas reações e uma nota. | ANIQuim/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para quem acompanha as temporadas em andamento, o site conta ainda com uma programação semanal, indicando quais episódios chegam a cada dia e onde assistir oficialmente no Brasil. O catálogo, atualmente com mais de 8 mil animês, é curado manualmente e reúne sinopses e títulos em português quando disponíveis, trailers, personagens, estúdios, direção e recomendações, além de filtros para ajudar na descoberta de novas produções.",
-          "runs": [
-            {
-              "text": "Para quem acompanha as temporadas em andamento, o site conta ainda com uma programação semanal, indicando quais episódios chegam a cada dia e onde assistir oficialmente no Brasil. O catálogo, atualmente com mais de 8 mil animês, é curado manualmente e reúne sinopses e títulos em português quando disponíveis, trailers, personagens, estúdios, direção e recomendações, além de filtros para ajudar na descoberta de novas produções."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O ANIQuim também busca aproximar os animês do conteúdo produzido pela própria comunidade brasileira. A plataforma já reúne episódios de podcasts nacionais relacionados a cada título, direcionando os usuários para parceiros como o MDA – Mundo dos Animes, e pretende ampliar essa integração para outros formatos e criadores.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "ANIQuim",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " também busca aproximar os animês do conteúdo produzido pela própria comunidade brasileira. A plataforma já reúne episódios de podcasts nacionais relacionados a cada título, direcionando os usuários para parceiros como o "
-            },
-            {
-              "text": "MDA – Mundo dos Animes",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", e pretende ampliar essa integração para outros formatos e criadores."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/aniquim-programacao.jpg",
-          "alt": "Imagem do site ANIQuim"
-        },
-        {
-          "type": "paragraph",
-          "text": "O calendário mostra data e horário de exibição dos animês, e tem um filtro para mostrar somente a lista do usuário. | ANIQuim/Reprodução",
-          "runs": [
-            {
-              "text": "O calendário mostra data e horário de exibição dos animês, e tem um filtro para mostrar somente a lista do usuário. | ANIQuim/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Com algumas semanas no ar, a plataforma contabiliza 6,9 mil usuários ativos/sessões e 61 mil visualizações de páginas. Entre os 8,5 mil animês cadastrados, são mais de 13,6 mil marcações de séries completas, 1,6 mil estão sendo assistidos e outros 2,7 mil entraram nas listas de títulos que os usuários pretendem conferir.",
-          "runs": [
-            {
-              "text": "Com algumas semanas no ar, a plataforma contabiliza 6,9 mil usuários ativos/sessões e 61 mil visualizações de páginas. Entre os 8,5 mil animês cadastrados, são mais de 13,6 mil marcações de séries completas, 1,6 mil estão sendo assistidos e outros 2,7 mil entraram nas listas de títulos que os usuários pretendem conferir."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre os próximos passos estão a expansão contínua do catálogo, novas parcerias com a comunidade e o desenvolvimento de um aplicativo nativo. A equipe também pretende transformar os dados gerados pelos usuários em um termômetro de “o que o Brasil está vendo”, com rankings e curiosidades baseados no comportamento dos fãs brasileiros.",
-          "runs": [
-            {
-              "text": "Entre os próximos passos estão a expansão contínua do catálogo, novas parcerias com a comunidade e o desenvolvimento de um aplicativo nativo. A equipe também pretende transformar os dados gerados pelos usuários em um termômetro de "
-            },
-            {
-              "text": "“o que o Brasil está vendo”",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", com rankings e curiosidades baseados no comportamento dos fãs brasileiros."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O ANIQuim pode ser acessado gratuitamente em aniquim.com.br.",
-          "runs": [
-            {
-              "text": "O ANIQuim pode ser acessado gratuitamente em "
-            },
-            {
-              "text": "aniquim.com.br",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.aniquim.com.br/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Comunicado de imprensa",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Comunicado de imprensa",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-25T00:30:53.000Z",
-      "updatedAt": "2026-09-25T01:40:46.000Z",
-      "expiresAt": "2026-10-02T00:30:53.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/24/site-brasileiro-aniquim-e-lancado-reunindo-catalogo-de-animes-listas-e-mais",
-          "publishedAt": "2026-09-25T00:30:53.000Z",
-          "author": "Equipe JBox"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 511,
-      "qualityScore": 0.949,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 18,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 3,
-        "embedCount": 0,
         "sourcePagesRead": 0
       }
     }
