@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T00:49:37.126Z",
+  "generatedAt": "2026-10-02T06:17:42.695Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,315 @@
   ],
   "stats": {
     "collected": 50,
-    "grouped": 21,
-    "published": 21,
-    "newStories": 21,
-    "fullArticles": 21,
+    "grouped": 20,
+    "published": 20,
+    "newStories": 20,
+    "fullArticles": 20,
     "previewArticles": 0,
-    "avgWords": 405,
-    "withHeroImage": 21,
-    "withOrderedMedia": 20,
+    "avgWords": 398,
+    "withHeroImage": 20,
+    "withOrderedMedia": 19,
     "skippedTranslation": 0,
-    "skippedQuality": 29,
-    "durationMs": 3232
+    "skippedQuality": 30,
+    "durationMs": 3868
   },
   "items": [
+    {
+      "id": "animenew-427e8342",
+      "slug": "black-clover-quando-estreia-o-primeiro-episodio-da-2-temporada-animenew-427e8342",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Black Clover: Quando estreia o primeiro episódio da 2ª temporada?",
+      "originalTitle": "Black Clover: Quando estreia o primeiro episódio da 2ª temporada?",
+      "summary": "O anime de Black Clover finalmente ganhou data para retornar à televisão japonesa. A nova temporada já tem data definida para estreia no mês de outubro de 2026, após mais de cinco anos desde o fim da primeira fase.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Black Clover"
+      ],
+      "url": "https://animenew.com.br/black-clover-estreia-estreia-temporada-2",
+      "sourceUrl": "https://animenew.com.br/black-clover-estreia-estreia-temporada-2",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Black-Clover-Quando-estreia-o-primeiro-episodio-da-2a-temporada.webp",
+      "mediaQuery": "Black Clover: Quando estreia o primeiro episódio da 2ª temporada?",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/O-que-esperar-da-nova-temporada-black-clover.webp",
+          "alt": "O que esperar da nova temporada black clover",
+          "caption": "© 田畠裕基／集英社・テレビ東京・ブラッククローバー製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/4MYo8FfiXMA"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime de Black Clover finalmente ganhou data para retornar à televisão japonesa. A nova temporada já tem data definida para estreia no mês de outubro de 2026, após mais de cinco anos desde o fim da primeira fase.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Black Clover ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "finalmente ganhou data para retornar à televisão japonesa. A nova temporada já tem data definida para estreia no mês de outubro de 2026, após mais de cinco anos desde o fim da primeira fase."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Re:Zero ganha visual de encerramento da 4ª temporada",
+              "runs": [
+                {
+                  "text": "Re:Zero ganha visual de encerramento da 4ª temporada",
+                  "href": "https://animenew.com.br/rezero-4-temporada-visual-final-rem"
+                }
+              ]
+            },
+            {
+              "text": "Seirei Gensouki: Anunciada 3ª temporada do anime",
+              "runs": [
+                {
+                  "text": "Seirei Gensouki: Anunciada 3ª temporada do anime",
+                  "href": "https://animenew.com.br/seirei-gensouki-anunciada-3a-temporada-do-anime"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história continuará diretamente o conflito contra o Reino de Spade e a Tríade Negra. Asta e os Cavaleiros Mágicos terão como objetivo resgatar Yami Sukehiro e William Vangeance, capturados pelos inimigos.",
+          "runs": [
+            {
+              "text": "A história continuará diretamente o conflito contra o "
+            },
+            {
+              "text": "Reino de Spade",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e a Tríade Negra. Asta e os "
+            },
+            {
+              "text": "Cavaleiros Mágicos",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " terão como objetivo resgatar "
+            },
+            {
+              "text": "Yami Sukehiro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "William Vangeance",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", capturados pelos inimigos."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=4MYo8FfiXMA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/4MYo8FfiXMA"
+        },
+        {
+          "type": "heading",
+          "text": "Black Clover volta quando o anime?",
+          "runs": [
+            {
+              "text": "Black Clover volta quando o anime?"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "O episódio 1 da 2ª temporada de Black Clover será exibido pela TV Tokyo e emissoras afiliadas às 23h do Japão. No Brasil, isso corresponde às 11h da manhã do dia 3 de outubro, considerando o horário de Brasília.",
+          "runs": [
+            {
+              "text": "O episódio 1 da 2ª temporada de Black Clover será exibido pela TV Tokyo e emissoras afiliadas às 23h do Japão. No Brasil, isso corresponde às "
+            },
+            {
+              "text": "11h da manhã do dia 3 de outubro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", considerando o horário de Brasília."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "O que esperar da estreia de Black Clover?",
+          "runs": [
+            {
+              "text": "O que esperar da estreia de Black Clover?"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "O retorno também deve explorar a relação entre Asta e Liebe, revelada no episódio 170. Yuno, por sua vez, descobriu ser integrante da família real do Reino de Spade, tornando o confronto ainda mais pessoal.",
+          "runs": [
+            {
+              "text": "O retorno também deve explorar a relação entre Asta e Liebe, revelada no episódio 170. Yuno, por sua vez, descobriu ser integrante da família real do Reino de Spade, tornando o confronto ainda mais pessoal."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/O-que-esperar-da-nova-temporada-black-clover.webp",
+          "alt": "O que esperar da nova temporada black clover",
+          "caption": "© 田畠裕基／集英社・テレビ東京・ブラッククローバー製作委員会"
+        },
+        {
+          "type": "paragraph",
+          "text": "Portanto Nacht também terá participação importante, especialmente diante da ausência de Yami. O personagem deverá assumir mais responsabilidades dentro dos Touros Negros.",
+          "runs": [
+            {
+              "text": "Portanto Nacht também terá participação importante, especialmente diante da ausência de Yami. O personagem deverá assumir mais responsabilidades dentro dos "
+            },
+            {
+              "text": "Touros Negros",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Sendo assim a Studio Pierrot retorna na produção, com Ayataka Tanemura novamente na direção. O primeiro episódio recebeu o título “Opening of Hostilities”.",
+          "runs": [
+            {
+              "text": "Sendo assim a "
+            },
+            {
+              "text": "Studio Pierrot",
+              "href": "https://animenew.com.br/studio/1/studio-pierrot"
+            },
+            {
+              "text": " retorna na produção, com Ayataka Tanemura novamente na direção. O primeiro episódio recebeu o título “Opening of Hostilities”."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A temporada estreia no Japão em 3 de outubro. A Crunchyroll transmitirá o anime internacionalmente, incluindo o Brasil, mas o horário exato do simulcast ainda não foi divulgado. Por fim a quantidade total de episódios também permanece sem confirmação oficial.",
+          "runs": [
+            {
+              "text": "A temporada estreia no Japão em 3 de outubro. A "
+            },
+            {
+              "text": "Crunchyroll",
+              "href": "https://animenew.com.br/tag/crunchyroll/"
+            },
+            {
+              "text": " transmitirá o anime internacionalmente, incluindo o Brasil, mas o horário exato do simulcast ainda não foi divulgado. Por fim a quantidade total de episódios também permanece sem confirmação oficial."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Black Clover: Quando estreia o primeiro episódio da 2ª temporada?.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Black Clover: Quando estreia o primeiro episódio da 2ª temporada?",
+              "href": "https://animenew.com.br/black-clover-estreia-estreia-temporada-2/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-02T01:11:38.000Z",
+      "updatedAt": "2026-10-02T01:11:38.000Z",
+      "expiresAt": "2026-10-09T01:11:38.000Z",
+      "category": "Episódios",
+      "eventType": "EPISODE",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/black-clover-estreia-estreia-temporada-2",
+          "publishedAt": "2026-10-02T01:11:38.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 283,
+      "qualityScore": 0.978,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-2c505854",
       "slug": "capa-variante-de-amazing-spider-man-1000-faz-homenagem-a-luffy-de-one-piece-jbox-2c505854",
@@ -4059,307 +4355,6 @@
       }
     },
     {
-      "id": "animenew-254648b4",
-      "slug": "lego-revela-set-de-dragon-ball-com-shenlong-e-goku-animenew-254648b4",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "LEGO revela set de Dragon Ball com Shenlong e Goku",
-      "originalTitle": "LEGO revela set de Dragon Ball com Shenlong e Goku",
-      "summary": "A LEGO revelou um novo set de Dragon Ball inspirado em Shenlong, que inclui as sete Esferas do Dragão, Goku e uma versão do protagonista criança. O conjunto faz parte da linha LEGO Icons e reúne 1.764 peças. A montagem reproduz Shenlong em uma posição imponente, enquanto Goku aparece sobre a nuvem Kintoun.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Figure",
-        "Notícias",
-        "Dragon Ball",
-        "LEGO"
-      ],
-      "url": "https://animenew.com.br/lego-dragon-ball-shenlong-goku",
-      "sourceUrl": "https://animenew.com.br/lego-dragon-ball-shenlong-goku",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/LEGO-revela-set-de-Dragon-Ball-com-Shenlong-e-Goku.webp",
-      "mediaQuery": "LEGO revela set de Dragon Ball com Shenlong e Goku",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Lancamento-do-lego-Shenlong-em-Dragon-Ball.webp",
-          "alt": "Lançamento do lego Shenlong em Dragon Ball",
-          "caption": "©BIRD STUDIO/SHUEISHA, TOEI ANIMATION ©2026 The Lego Group"
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/LEGO-Shenlong.webp",
-          "alt": "",
-          "caption": "©BIRD STUDIO/SHUEISHA, TOEI ANIMATION ©2026 The Lego Group"
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A LEGO revelou um novo set de Dragon Ball inspirado em Shenlong, que inclui as sete Esferas do Dragão, Goku e uma versão do protagonista criança. O conjunto faz parte da linha LEGO Icons e reúne 1.764 peças. A montagem reproduz Shenlong em uma posição imponente, enquanto Goku aparece sobre a nuvem Kintoun.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "LEGO",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " revelou um novo set de "
-            },
-            {
-              "text": "Dragon Ball",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " inspirado em "
-            },
-            {
-              "text": "Shenlong",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que inclui as sete Esferas do Dragão, Goku e uma versão do protagonista criança. O conjunto faz parte da linha LEGO Icons e reúne "
-            },
-            {
-              "text": "1.764 peças",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A montagem reproduz Shenlong em uma posição imponente, enquanto Goku aparece sobre a nuvem Kintoun."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Naruto ganhará nova série de anime em formato limitado",
-              "runs": [
-                {
-                  "text": "Naruto ganhará nova série de anime em formato limitado",
-                  "href": "https://animenew.com.br/naruto-nova-serie-anime-limitada"
-                }
-              ]
-            },
-            {
-              "text": "Even the Student Council ganha novo trailer nos EUA",
-              "runs": [
-                {
-                  "text": "Even the Student Council ganha novo trailer nos EUA",
-                  "href": "https://animenew.com.br/even-the-student-council-has-its-holes-anime"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O boneco de Goku criança pode ser reposicionado no modelo, permitindo criar diferentes cenas e representar a relação entre o personagem e Shenlong. A própria LEGO Japan usou a clássica frase do dragão: “Faça seu desejo. Concederei apenas um”.",
-          "runs": [
-            {
-              "text": "O boneco de "
-            },
-            {
-              "text": "Goku",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " criança pode ser reposicionado no modelo, permitindo criar diferentes cenas e representar a relação entre o personagem e "
-            },
-            {
-              "text": "Shenlong",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A própria LEGO Japan usou a clássica frase do dragão: “"
-            },
-            {
-              "text": "Faça seu desejo. Concederei apenas um",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "”."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Lançamento do lego Shenlong em Dragon Ball",
-          "runs": [
-            {
-              "text": "Lançamento do lego Shenlong em Dragon Ball"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Lancamento-do-lego-Shenlong-em-Dragon-Ball.webp",
-          "alt": "Lançamento do lego Shenlong em Dragon Ball",
-          "caption": "©BIRD STUDIO/SHUEISHA, TOEI ANIMATION ©2026 The Lego Group"
-        },
-        {
-          "type": "paragraph",
-          "text": "O LEGO Icons Dragon Ball Shenlong & Goku será lançado em 4 de novembro por US$ 179,99 (Cerca de R$ 927,22 na cotação atual). Membros do LEGO Insider terão acesso antecipado a partir de 1º de novembro.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "LEGO Icons Dragon Ball Shenlong & Goku",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " será lançado em 4 de novembro por US$ 179,99 (Cerca de R$ 927,22 na cotação atual). Membros do LEGO Insider terão acesso antecipado a partir de 1º de novembro."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/09/LEGO-Shenlong.webp",
-          "caption": "©BIRD STUDIO/SHUEISHA, TOEI ANIMATION ©2026 The Lego Group"
-        },
-        {
-          "type": "paragraph",
-          "text": "A LEGO já investiu em outras franquias de anime e cultura pop japonesa, incluindo One Piece. Em 2026, a empresa também anunciou um especial animado de LEGO One Piece em parceria com a Netflix.",
-          "runs": [
-            {
-              "text": "A LEGO já investiu em outras franquias de anime e cultura pop japonesa, incluindo "
-            },
-            {
-              "text": "One Piece",
-              "href": "https://animenew.com.br/anime/21/one-piece"
-            },
-            {
-              "text": ". Em 2026, a empresa também anunciou um especial animado de LEGO One Piece em parceria com a "
-            },
-            {
-              "text": "Netflix",
-              "href": "https://animenew.com.br/tag/netflix/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim o mangá Dragon Ball, de Akira Toriyama, estreou entre 1984 e 1995 e continua recebendo novas produções. Ademais Dragon Ball Super: Beerus estreia em 11 de outubro no Japão.",
-          "runs": [
-            {
-              "text": "Por fim o mangá "
-            },
-            {
-              "text": "Dragon Ball",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", de Akira Toriyama, estreou entre 1984 e 1995 e continua recebendo novas produções. Ademais "
-            },
-            {
-              "text": "Dragon Ball Super: Beerus",
-              "href": "https://animenew.com.br/temporadas?q=Dragon+Ball"
-            },
-            {
-              "text": " estreia em 11 de outubro no Japão."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site oficial",
-              "href": "https://www.lego.com/en-us/product/dragon-ball-shenron-goku-11390"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em LEGO revela set de Dragon Ball com Shenlong e Goku.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "LEGO revela set de Dragon Ball com Shenlong e Goku",
-              "href": "https://animenew.com.br/lego-dragon-ball-shenlong-goku/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-30T13:54:49.000Z",
-      "updatedAt": "2026-09-30T13:54:49.000Z",
-      "expiresAt": "2026-10-07T13:54:49.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/lego-dragon-ball-shenlong-goku",
-          "publishedAt": "2026-09-30T13:54:49.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 260,
-      "qualityScore": 0.973,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 2,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
       "id": "jbox-cf116102",
       "slug": "kamen-rider-my-th-ganha-manga-na-web-por-ex-assistente-do-criador-da-franquia-jbox-cf116102",
       "source": "JBox",
@@ -7426,489 +7421,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-b0e3f863",
-      "slug": "jogo-isekai-slow-life-lanca-colaboracao-com-demon-slayer-kimetsu-no-yaiba-por-tempo-limitado-jbox-b0e3f863",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Jogo ‘Isekai: Slow Life’ lança colaboração com ‘Demon Slayer: Kimetsu no Yaiba’ por tempo limitado",
-      "originalTitle": "Jogo ‘Isekai: Slow Life’ lança colaboração com ‘Demon Slayer: Kimetsu no Yaiba’ por tempo limitado",
-      "summary": "O jogo mobile Isekai: Slow Life deu início, no começo deste mês, a uma colaboração com a franquia Demon Slayer: Kimetsu no Yaiba por tempo limitado.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Games",
-        "Mobile",
-        "Collab de Demon Slayer e Isekai: Slow Life",
-        "Demon Slayer",
-        "Demon Slayer: Kimetsu no Yaiba",
-        "Isekai Slow Life e Demon Slayer",
-        "Isekai: Slow Life"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/24/jogo-isekai-slow-life-lanca-colaboracao-com-demon-slayer-kimetsu-no-yaiba-por-tempo-limitado",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/24/jogo-isekai-slow-life-lanca-colaboracao-com-demon-slayer-kimetsu-no-yaiba-por-tempo-limitado",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/isekai-slow-life-demon-slayer-destacada.jpg",
-      "mediaQuery": "Jogo ‘Isekai: Slow Life’ lança colaboração com ‘Demon Slayer: Kimetsu no Yaiba’ por tempo limitado",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Iseaki-Slow-Life-x-Demon-Slayer-Reward-Art.png",
-          "alt": "Isekai Slow Life e Demon Slayer",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/6ZDhXtiQ2sE"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O jogo mobile Isekai: Slow Life deu início, no começo deste mês, a uma colaboração com a franquia Demon Slayer: Kimetsu no Yaiba por tempo limitado.",
-          "runs": [
-            {
-              "text": "O jogo mobile "
-            },
-            {
-              "text": "Isekai: Slow Life",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " deu início, no começo deste mês, a uma colaboração com a franquia "
-            },
-            {
-              "text": "Demon Slayer: Kimetsu no Yaiba",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " por tempo limitado."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "De acordo com a Mars Games, o evento Isekai Demon Hunter Arc fica disponível até o dia 30 de setembro, para smartphones com os sistemas iOS e Android.",
-          "runs": [
-            {
-              "text": "De acordo com a "
-            },
-            {
-              "text": "Mars Games",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", o evento"
-            },
-            {
-              "text": " Isekai Demon Hunter Arc",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " fica disponível "
-            },
-            {
-              "text": "até o dia 30 de setembro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", para smartphones com os sistemas "
-            },
-            {
-              "text": "iOS",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://apps.apple.com/us/app/isekai-slow-life/id6449289088"
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Android",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://play.google.com/store/apps/details?id=com.iskslowtest.mislen&hl=en_US"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=6ZDhXtiQ2sE",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/6ZDhXtiQ2sE"
-        },
-        {
-          "type": "paragraph",
-          "text": "Durante o período, os jogadores terão acesso a seis personagens da franquia. São eles (segundo a descrição oficial):",
-          "runs": [
-            {
-              "text": "Durante o período, os jogadores terão acesso a seis personagens da franquia. São eles (segundo a descrição oficial):"
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Tanjiro Kamado: um gentil garoto que se junta ao Corpo de Exterminadores de Demônios para transformar sua jovem irmã em uma humana. Ele usa a técnica de Respiração da Água, além da Hinokami Kagura. Ele também possui um excelente olfato.",
-              "runs": [
-                {
-                  "text": "Tanjiro Kamado:",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " um gentil garoto que se junta ao Corpo de Exterminadores de Demônios para transformar sua jovem irmã em uma humana. Ele usa a técnica de Respiração da Água, além da Hinokami Kagura. Ele também possui um excelente olfato."
-                }
-              ]
-            },
-            {
-              "text": "Nezuko Kamado: a irmã mais nova de Tanjiro, que foi transformada em um demônio. Graças à sugestão hipnótica de Urokodaki e sua própria força de vontade, ela luta para proteger os humanos. Após conquistar sua fraqueza com a luz solar, ela é capaz de ficar ativa durante o dia.",
-              "runs": [
-                {
-                  "text": "Nezuko Kamado:",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " a irmã mais nova de Tanjiro, que foi transformada em um demônio. Graças à sugestão hipnótica de Urokodaki e sua própria força de vontade, ela luta para proteger os humanos. Após conquistar sua fraqueza com a luz solar, ela é capaz de ficar ativa durante o dia."
-                }
-              ]
-            },
-            {
-              "text": "Zenitsu Agatsuma: um espadachim do Corpo de Exterminadores de Demônios e um dos companheiros de Tanjiro. Usuário da técnica Respiração do Trovão. Normalmente, ele é bastante tímido, mas, quando ele está terrivelmente assustado, ele acaba entrando em um transe, demonstrando sua verdadeira habilidade. Ele tem uma audição apurada e adora garotas.",
-              "runs": [
-                {
-                  "text": "Zenitsu Agatsuma:",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " um espadachim do Corpo de Exterminadores de Demônios e um dos companheiros de Tanjiro. Usuário da técnica Respiração do Trovão. Normalmente, ele é bastante tímido, mas, quando ele está terrivelmente assustado, ele acaba entrando em um transe, demonstrando sua verdadeira habilidade. Ele tem uma audição apurada e adora garotas."
-                }
-              ]
-            },
-            {
-              "text": "Inosuke Hashibira: um espadachim do Corpo de Exterminadores de Demônios e um dos companheiros de Tanjiro. Ele adora batalhas, sempre sendo o primeiro a entrar em combate. Ele utiliza a técnica da Respiração da Besta e está sempre utilizando uma máscara de porco que esconde seu rosto. Por ser criado nas montanhas, ele possui uma intuição afiada e é altamente perspicaz.",
-              "runs": [
-                {
-                  "text": "Inosuke Hashibira:",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " um espadachim do Corpo de Exterminadores de Demônios e um dos companheiros de Tanjiro. Ele adora batalhas, sempre sendo o primeiro a entrar em combate. Ele utiliza a técnica da Respiração da Besta e está sempre utilizando uma máscara de porco que esconde seu rosto. Por ser criado nas montanhas, ele possui uma intuição afiada e é altamente perspicaz."
-                }
-              ]
-            },
-            {
-              "text": "Giyu Tomioka: um dos espadachins de maior ranque do Corpo de Exterminadores de Demônios. O Hashira da Água. Ele não se considerava digno de ser um Hashira, contudo, ele se lembra das esperanças de seu amigo, Sabito, incutidas nele, e está determinado a levá-las adiante.",
-              "runs": [
-                {
-                  "text": "Giyu Tomioka:",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " um dos espadachins de maior ranque do Corpo de Exterminadores de Demônios. O Hashira da Água. Ele não se considerava digno de ser um Hashira, contudo, ele se lembra das esperanças de seu amigo, Sabito, incutidas nele, e está determinado a levá-las adiante."
-                }
-              ]
-            },
-            {
-              "text": "Shinobu Kocho: uma das espadachins de maior ranque do Corpo de Exterminadores de Demônios, o Hashira. O Pilar do Inseto. Ela possui conhecimento excepcional de medicamentos e luta com um veneno especial que pode derrotar demônios.",
-              "runs": [
-                {
-                  "text": "Shinobu Kocho:",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " uma das espadachins de maior ranque do Corpo de Exterminadores de Demônios, o Hashira. O Pilar do Inseto. Ela possui conhecimento excepcional de medicamentos e luta com um veneno especial que pode derrotar demônios."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Iseaki-Slow-Life-x-Demon-Slayer-Reward-Art.png",
-          "alt": "Isekai Slow Life e Demon Slayer"
-        },
-        {
-          "type": "paragraph",
-          "text": "Colaboração também brinca com memes e emojis de Demon Slayer | Mars Games/Divulgação",
-          "runs": [
-            {
-              "text": "Colaboração também brinca com memes e emojis de Demon Slayer | Mars Games/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Os jogadores podem selecionar o estágio, encontrar demônios e batalhar usando o sistema de combate Match-3, e então utilizar as recompensas para melhorar seus personagens e completar estágios ainda mais difíceis, que culminam em uma batalha contra um chefão final. Pelo caminho, também é possível subir o nível dos personagens para receber artes exclusivas, além de avatares dinâmicos, emojis grátis e pagos, novos artefatos e muito mais.",
-          "runs": [
-            {
-              "text": "Os jogadores podem selecionar o estágio, encontrar demônios e batalhar usando o sistema de combate Match-3, e então utilizar as recompensas para melhorar seus personagens e completar estágios ainda mais difíceis, que culminam em uma batalha contra um chefão final. Pelo caminho, também é possível subir o nível dos personagens para receber artes exclusivas, além de avatares dinâmicos, emojis grátis e pagos, novos artefatos e muito mais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Focado na construção de cidades, Isekai: Slow Life é um jogo mobile gratuito para jogar com opções de compras através de uma loja interna, disponível desde agosto de 2023.",
-          "runs": [
-            {
-              "text": "Focado na construção de cidades, "
-            },
-            {
-              "text": "Isekai: Slow Life",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é um jogo mobile gratuito para jogar com opções de compras através de uma loja interna, disponível desde agosto de 2023."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já a franquia Demon Slayer segue em alta, com a chegada do filme Castelo Infinito a diversos streamings no Brasil este mês. Atualmente, o estúdio Ufotable já trabalha em Demon Slayer: Kimetsu no Yaiba Castelo Infinito II, que teve o primeiro logo divulgado, mas segue sem previsão de lançamento.",
-          "runs": [
-            {
-              "text": "Já a franquia "
-            },
-            {
-              "text": "Demon Slayer",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " segue em alta, com "
-            },
-            {
-              "text": "a chegada do filme ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/09/15/demon-slayer-castelo-infinito-estreia-este-mes-na-netflix-e-prime-video/"
-            },
-            {
-              "text": "Castelo Infinito",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/09/15/demon-slayer-castelo-infinito-estreia-este-mes-na-netflix-e-prime-video/"
-            },
-            {
-              "text": " a diversos streamings no Brasil este mês",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/09/15/demon-slayer-castelo-infinito-estreia-este-mes-na-netflix-e-prime-video/"
-            },
-            {
-              "text": ". Atualmente, o estúdio "
-            },
-            {
-              "text": "Ufotable",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " já trabalha em "
-            },
-            {
-              "text": "Demon Slayer: Kimetsu no Yaiba Castelo Infinito II",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que teve o primeiro logo divulgado, mas segue sem previsão de lançamento."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No Brasil, o animê regular de Demon Slayer está disponível na Crunchyroll e Netflix. Já o mangá, finalizado em 2020, foi publicado no país pela Panini.",
-          "runs": [
-            {
-              "text": "No Brasil, o animê regular de "
-            },
-            {
-              "text": "Demon Slayer",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " está disponível na "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e"
-            },
-            {
-              "text": " Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Já o mangá, finalizado em 2020, foi publicado no país pela "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Comunicado de imprensa",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Comunicado de imprensa",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-25T01:30:39.000Z",
-      "updatedAt": "2026-09-25T01:32:25.000Z",
-      "expiresAt": "2026-10-02T01:30:39.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/24/jogo-isekai-slow-life-lanca-colaboracao-com-demon-slayer-kimetsu-no-yaiba-por-tempo-limitado",
-          "publishedAt": "2026-09-25T01:30:39.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 559,
-      "qualityScore": 0.95,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 14,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
