@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T18:03:43.038Z",
+  "generatedAt": "2026-10-02T22:05:50.068Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 41,
+      "count": 40,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,768 @@
     }
   ],
   "stats": {
-    "collected": 51,
-    "grouped": 19,
-    "published": 19,
-    "newStories": 19,
-    "fullArticles": 19,
+    "collected": 50,
+    "grouped": 20,
+    "published": 20,
+    "newStories": 20,
+    "fullArticles": 20,
     "previewArticles": 0,
-    "avgWords": 444,
-    "withHeroImage": 19,
-    "withOrderedMedia": 18,
+    "avgWords": 400,
+    "withHeroImage": 20,
+    "withOrderedMedia": 19,
     "skippedTranslation": 0,
-    "skippedQuality": 31,
-    "durationMs": 8025
+    "skippedQuality": 29,
+    "durationMs": 3113
   },
   "items": [
+    {
+      "id": "jbox-2ecc0c76",
+      "slug": "black-lagoon-manga-volta-a-ser-publicado-no-brasil-diz-autor-jbox-2ecc0c76",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Black Lagoon: Mangá volta a ser publicado no Brasil, diz autor",
+      "originalTitle": "Black Lagoon: Mangá volta a ser publicado no Brasil, diz autor",
+      "summary": "Após anos de espera, os fãs de Black Lagoon podem estar perto de ver uma luz no fim do túnel. Em sua conta no X, o autor Rei Hiroe informou que o mangá voltará a ser publicado no Brasil e fez um apelo aos leitores (segue tradução livre):",
+      "author": "Jean Clemente",
+      "tags": [
+        "Mangá",
+        "Black Lagoon",
+        "black lagoon volume 10",
+        "Panini",
+        "quando sai novo volume de black lagoon"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/02/black-lagoon-manga-volta-a-ser-publicado-no-brasil-diz-autor",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/02/black-lagoon-manga-volta-a-ser-publicado-no-brasil-diz-autor",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/blacklagoonmanga-destacada.jpg",
+      "mediaQuery": "Black Lagoon: Mangá volta a ser publicado no Brasil, diz autor",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/x-blacklagoon.jpg",
+          "alt": "print da fala do autor de Black Lagoon em japonês",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/blacklagoon9-capa.jpg",
+          "alt": "imagem: capa do volume 9 de Black Lagoon",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Após anos de espera, os fãs de Black Lagoon podem estar perto de ver uma luz no fim do túnel. Em sua conta no X, o autor Rei Hiroe informou que o mangá voltará a ser publicado no Brasil e fez um apelo aos leitores (segue tradução livre):",
+          "runs": [
+            {
+              "text": "Após anos de espera, os fãs de "
+            },
+            {
+              "text": "Black Lagoon",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " podem estar perto de ver uma luz no fim do túnel. Em "
+            },
+            {
+              "text": "sua conta no X",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://x.com/hiroerei/status/2103461481300046216"
+            },
+            {
+              "text": ", o autor "
+            },
+            {
+              "text": "Rei Hiroe",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " informou que o mangá voltará a ser publicado no Brasil e fez um apelo aos leitores (segue tradução livre):"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "Pessoal do Brasil, ainda é algo provisório, mas vai sair uma edição brasileira de Black Lagoon, então, por favor, comprem! Se as venda forem baixas, ela será cancelada mais uma vez (ela já havia sido descontinuada anteriormente). Então, por favor, apoiem com todas as suas forças.",
+          "runs": [
+            {
+              "text": "Pessoal do Brasil, ainda é algo provisório, mas vai sair uma edição brasileira de Black Lagoon, então, por favor, comprem! Se as venda forem baixas, ela será cancelada mais uma vez (ela já havia sido descontinuada anteriormente). Então, por favor, apoiem com todas as suas forças.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/x-blacklagoon.jpg",
+          "alt": "print da fala do autor de Black Lagoon em japonês"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/X",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/X"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Até o fechamento deste texto, a editora Panini, que publica o mangá no Brasil, ainda não deu nenhuma declaração sobre o retorno para a continuação do mangá.",
+          "runs": [
+            {
+              "text": "Até o fechamento deste texto, a editora "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que publica o mangá no Brasil, ainda não deu nenhuma declaração sobre o retorno para a continuação do mangá."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Black Lagoon conta a história de um grupo de mercenários que vive nos mares do sudeste asiático, em um submundo violento e sem leis. Um deles, Rock, é um ex-homem de negócios do Japão que resolveu entrar pro grupo depois que sua firma resolveu “apagá-lo”. Em 2006, foi adaptado em uma série de animê de 24 episódios pelo estúdio Madhouse (Death Note), ganhando em 2010 mais uma série de OVAs de 5 episódios — tudo exibido por aqui pela Netflix, mas atualmente fora de catálogo.",
+          "runs": [
+            {
+              "text": "Black Lagoon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " conta a história de um grupo de mercenários que vive nos mares do sudeste asiático, em um submundo violento e sem leis. Um deles, Rock"
+            },
+            {
+              "text": ",",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é um ex-homem de negócios do Japão que resolveu entrar pro grupo depois que sua firma resolveu “apagá-lo”. Em 2006, foi adaptado em uma série de animê de 24 episódios pelo estúdio "
+            },
+            {
+              "text": "Madhouse",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Death Note",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), ganhando em 2010 mais uma série de OVAs de 5 episódios — tudo "
+            },
+            {
+              "text": "exibido por aqui pela Netflix",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2019/09/13/black-lagoon-estreia-na-netflix/"
+            },
+            {
+              "text": ", mas atualmente fora de catálogo."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Black Lagoon no Brasil",
+          "runs": [
+            {
+              "text": "Black Lagoon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " no Brasil"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/blacklagoon9-capa.jpg",
+          "alt": "imagem: capa do volume 9 de Black Lagoon"
+        },
+        {
+          "type": "paragraph",
+          "text": "Capa do 9º volume de Black Lagoon, último publicado no Brasil. | Imagem: Reprodução/Panini",
+          "runs": [
+            {
+              "text": "Capa do 9º volume de Black Lagoon, último publicado no Brasil. | Imagem: Reprodução/Panini"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Black Lagoon começou a ser publicado no Japão em 2002 na revista Sunday Gene-X, da editora Shogakukan, tendo 14 volumes compilados até o momento. Por lá, a série passou por uma série de hiatos, que o autor atribui à sua luta com a depressão e o cuidado em como continuar a história.",
+          "runs": [
+            {
+              "text": "Black Lagoon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " começou a ser publicado no Japão em 2002 na revista "
+            },
+            {
+              "text": "Sunday Gene-X",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da editora "
+            },
+            {
+              "text": "Shogakukan",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", tendo 14 volumes compilados até o momento. Por lá, a série passou por uma série de hiatos, que o autor atribui à sua luta com a depressão e o cuidado em como continuar a história."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em 2008 chega ao Brasil pela Panini, que seguiu com a obra até 2010. Foi nesse ano que a edição brasileira alcançou a nipônica, que se encontrava na época na edição #09 e no primeiro de seus hiatos. A obra voltaria a ganhar novos capítulos em 2013 e um novo volume no ano seguinte, porém os leitores brasileiros ficaram com suas coleções estagnadas.",
+          "runs": [
+            {
+              "text": "Em 2008 chega ao Brasil pela Panini, que seguiu com a obra até 2010. Foi nesse ano que a edição brasileira alcançou a nipônica, que se encontrava na época na edição #09 e no primeiro de seus hiatos. A obra voltaria a ganhar novos capítulos em 2013 e um novo volume no ano seguinte, porém os leitores brasileiros ficaram com suas coleções estagnadas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No início deste ano, a Panini abriu um formulário para saber como deveria se dar a continuidade de Black Lagoon (e de D.Gray-Man). A pesquisa apresentava as opções de continuar de onde pararam no mesmo formato, uma reimpressão com nova qualidade e tradução ou um misto dos dois ao mesmo tempo.",
+          "runs": [
+            {
+              "text": "No início deste ano, a Panini "
+            },
+            {
+              "text": "abriu um formulário",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/02/28/panini-abre-pesquisa-publica-para-situacao-de-black-lagoon-e-d-gray-man/"
+            },
+            {
+              "text": " para saber como deveria se dar a continuidade de "
+            },
+            {
+              "text": "Black Lagoon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (e de "
+            },
+            {
+              "text": "D.Gray-Man",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). A pesquisa apresentava as opções de continuar de onde pararam no mesmo formato, uma reimpressão com nova qualidade e tradução ou um misto dos dois ao mesmo tempo."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Rei Hiroe (X)",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Rei Hiroe (X)",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://x.com/hiroerei/status/2103461481300046216"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-02T20:04:07.000Z",
+      "updatedAt": "2026-10-02T20:37:15.000Z",
+      "expiresAt": "2026-10-09T20:04:07.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/02/black-lagoon-manga-volta-a-ser-publicado-no-brasil-diz-autor",
+          "publishedAt": "2026-10-02T20:04:07.000Z",
+          "author": "Jean Clemente"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 413,
+      "qualityScore": 0.995,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 15,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-db0e0ed4",
+      "slug": "livro-making-of-de-akira-e-publicado-pela-darkside-jbox-db0e0ed4",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Livro making of de ‘Akira’ é publicado pela DarkSide",
+      "originalTitle": "Livro making of de ‘Akira’ é publicado pela DarkSide",
+      "summary": "A editora DarkSide publicou essa semana o livro Akira: Making of da Explosão Criativa. A obra pode ser adquirida no site da editora por R$ 99,90 e vem acompanhada de uma cartela de adesivos. Também está aberta a venda pela Amazon.",
+      "author": "Jean Clemente",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "Livros & Revistas",
+        "akira",
+        "DarkSide",
+        "DarkSide Books",
+        "filme akira",
+        "livro de akira",
+        "livro sobre akira",
+        "making of",
+        "making of de akira"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/02/livro-making-of-de-akira-e-publicado-pela-darkside",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/02/livro-making-of-de-akira-e-publicado-pela-darkside",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/livro-akira-darkside-destacada.jpg",
+      "mediaQuery": "Livro making of de ‘Akira’ é publicado pela DarkSide",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/akira-livro-darkside.jpg",
+          "alt": "imagem: capa do livro Akira: Making of da Explosão Criativa",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/akira-livro-darkside-carteladeadesivos.webp",
+          "alt": "imagem: cartela de adesivos do livro de Akira da darkside",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A editora DarkSide publicou essa semana o livro Akira: Making of da Explosão Criativa. A obra pode ser adquirida no site da editora por R$ 99,90 e vem acompanhada de uma cartela de adesivos. Também está aberta a venda pela Amazon.",
+          "runs": [
+            {
+              "text": "A editora "
+            },
+            {
+              "text": "DarkSide",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " publicou essa semana o livro "
+            },
+            {
+              "text": "Akira: Making of da Explosão Criativa",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". A obra pode ser adquirida no "
+            },
+            {
+              "text": "site da editora",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.darksidebooks.com.br/akira-making-of-da-explosao-criativa/p"
+            },
+            {
+              "text": " por R$ 99,90 e vem acompanhada de uma cartela de adesivos. Também está aberta a "
+            },
+            {
+              "text": "venda pela Amazon",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://link.amazon/B0dUmOXNB"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O livro tem autoria de Colin Odell e Michelle Le Blanc, com apoio do British Film Institute (BFI). Ambos são críticos de cinema com publicações em diferentes gêneros, incluindo o cinema asiático. A dupla anteriormente assinou um livro sobre o Studio Ghibli, além de Tim Burton e David Lynch. Segundo a editora, a publicação é o primeiro passo de uma nova parceria com o BFI, o que indica que podemos ter os demais livros no Brasil.",
+          "runs": [
+            {
+              "text": "O livro tem autoria de "
+            },
+            {
+              "text": "Colin Odell",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Michelle Le Blanc",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com apoio do British Film Institute (BFI). Ambos são críticos de cinema com publicações em diferentes gêneros, incluindo o cinema asiático. A dupla anteriormente assinou um livro sobre o "
+            },
+            {
+              "text": "Studio Ghibli",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", além de "
+            },
+            {
+              "text": "Tim Burton",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "David Lynch",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Segundo a editora, a publicação é o primeiro passo de uma nova parceria com o BFI, o que indica que podemos ter os demais livros no Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Com 240 páginas e capa dura, a obra propõe esmiuçar o clássico de Katsuhiro Otomo, trazendo uma análise de como Akira se tornou esse marco que influencia a cultura pop até os dias de hoje.",
+          "runs": [
+            {
+              "text": "Com "
+            },
+            {
+              "text": "240 páginas",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e capa dura, a obra propõe esmiuçar o clássico de Katsuhiro Otomo, trazendo uma análise de como "
+            },
+            {
+              "text": "Akira",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " se tornou esse marco que influencia a cultura pop até os dias de hoje."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/akira-livro-darkside.jpg",
+          "alt": "imagem: capa do livro Akira: Making of da Explosão Criativa"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/DarkSide",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/DarkSide"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/akira-livro-darkside-carteladeadesivos.webp",
+          "alt": "imagem: cartela de adesivos do livro de Akira da darkside"
+        },
+        {
+          "type": "paragraph",
+          "text": "Demonstração da cartela de adesivos. | Imagem: Divulgação/DarkSide",
+          "runs": [
+            {
+              "text": "Demonstração da cartela de adesivos. | Imagem: Divulgação/DarkSide"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na trama de Akira, trinta anos após uma explosão devastadora desencadear a Terceira Guerra Mundial, Neo-Tóquio tenta reconstruir seu futuro em meio ao caos, à violência e ao autoritarismo. Nesse cenário, o líder de uma gangue de motociclistas, Kaneda, vê a vida de seu amigo Tetsuo mudar drasticamente depois que ele desperta misteriosos poderes psíquicos durante um encontro com uma criança envolvida em experimentos secretos do governo. À medida que Tetsuo perde o controle de suas novas habilidades, a cidade se aproxima de uma catástrofe capaz de repetir os erros do passado.",
+          "runs": [
+            {
+              "text": "Na trama de "
+            },
+            {
+              "text": "Akira",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", trinta anos após uma explosão devastadora desencadear a Terceira Guerra Mundial, Neo-Tóquio tenta reconstruir seu futuro em meio ao caos, à violência e ao autoritarismo. Nesse cenário, o líder de uma gangue de motociclistas, Kaneda, vê a vida de seu amigo Tetsuo mudar drasticamente depois que ele desperta misteriosos poderes psíquicos durante um encontro com uma criança envolvida em experimentos secretos do governo. À medida que Tetsuo perde o controle de suas novas habilidades, a cidade se aproxima de uma catástrofe capaz de repetir os erros do passado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Misturando ficção científica, ação e crítica social, Akira tornou-se em 1988 um dos filmes mais influentes da animação japonesa ao retratar uma sociedade marcada pela desigualdade, pela repressão e pelos perigos do avanço tecnológico sem responsabilidade. Confira nossa resenha aqui no site.",
+          "runs": [
+            {
+              "text": "Misturando ficção científica, ação e crítica social, "
+            },
+            {
+              "text": "Akira",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " tornou-se em 1988 um dos filmes mais influentes da animação japonesa ao retratar uma sociedade marcada pela desigualdade, pela repressão e pelos perigos do avanço tecnológico sem responsabilidade. "
+            },
+            {
+              "text": "Confira nossa resenha aqui no site",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2021/01/11/critica-akira-1988-os-muitos-paralelos-de-um-futuro-pessimista/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Blog BBM e DarkSide",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Blog BBM",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://blogbbm.com/2026/08/26/darkside-books-publicara-livro-sobre-o-filme-de-akira/"
+            },
+            {
+              "text": " e ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "DarkSide",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.darksidebooks.com.br/akira-making-of-da-explosao-criativa/p"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-02T19:26:12.000Z",
+      "updatedAt": "2026-10-02T19:27:41.000Z",
+      "expiresAt": "2026-10-09T19:26:12.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/02/livro-making-of-de-akira-e-publicado-pela-darkside",
+          "publishedAt": "2026-10-02T19:26:12.000Z",
+          "author": "Jean Clemente"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 318,
+      "qualityScore": 0.98,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-84e86744",
       "slug": "critica-one-piece-o-filme-jbox-84e86744",
@@ -5522,7 +6270,7 @@
       "sourceCount": 1,
       "readingMinutes": 3,
       "wordCount": 429,
-      "qualityScore": 0.994,
+      "qualityScore": 0.934,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -6765,561 +7513,6 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-73d1ad05",
-      "slug": "critica-buchigire-reijou-1-temporada-jbox-73d1ad05",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Crítica | Buchigire Reijou | 1ª temporada",
-      "originalTitle": "Crítica | Buchigire Reijou | 1ª temporada",
-      "summary": "Com o passar dos anos e a popularização de discussões online acerca de mídia consideradas canceláveis, uma série de animês politicamente incorretos recentes levantaram reações negativas de parte da audiência, pautando as conversas em seus respectivos períodos de lançamento. Alguns exemplos são The Rising of the Shield Hero, Goblin Slayer, Redo of Healer, Mushoku Tensei e Attack on Titan (por conta da saga final, onde o protagonista vira um vilão genocida).",
-      "author": "Igor Lunei",
-      "tags": [
-        "Anime",
-        "Resenha",
-        "A Livid Lady's Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
-        "A Livid Lady's Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires é bom?",
-        "Buchigire",
-        "Buchigire é bom?",
-        "crítica de A Livid Lady's Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
-        "crítica de Buchigire"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/25/critica-buchigire-reijou-1a-temporada",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/25/critica-buchigire-reijou-1a-temporada",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/jbox-critica-destacada-buchigirereijou.jpg",
-      "mediaQuery": "Crítica | Buchigire Reijou | 1ª temporada",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/buchigire-1.jpg",
-          "alt": "Imagem: protagonista do animê 'Buchigire' sendo imobilizada por um guarda real no meio de um baile.",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/buchigire-2.jpg",
-          "alt": "Imagem: protagonista do animê 'Buchigire' em close-up sorrindo",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/buchigire-3.jpg",
-          "alt": "Imagem: protagonista do animê 'Buchigire' com sangue espirrando",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/sYra4SM3Qms"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Com o passar dos anos e a popularização de discussões online acerca de mídia consideradas canceláveis, uma série de animês politicamente incorretos recentes levantaram reações negativas de parte da audiência, pautando as conversas em seus respectivos períodos de lançamento. Alguns exemplos são The Rising of the Shield Hero, Goblin Slayer, Redo of Healer, Mushoku Tensei e Attack on Titan (por conta da saga final, onde o protagonista vira um vilão genocida).",
-          "runs": [
-            {
-              "text": "Com o passar dos anos e a popularização de discussões online acerca de mídia consideradas canceláveis, uma série de animês politicamente incorretos recentes levantaram reações negativas de parte da audiência, pautando as conversas em seus respectivos períodos de lançamento. Alguns exemplos são "
-            },
-            {
-              "text": "The Rising of the Shield Hero",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Goblin Slayer",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Redo of Healer",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Mushoku Tensei",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Attack on Titan",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2021/04/08/critica-attack-on-titan-shingeki-no-kyojin-temporadas-1-4-parte-1/"
-            },
-            {
-              "text": " (por conta da saga final, onde o protagonista vira um vilão genocida)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Com exceção de Attack on Titan, que é excelente, acredito que os demais da lista devam sim ser cancelados pela opinião pública, mas pelo quão mal feitos eles são, sem cuidado algum com coisas básicas como roteiro e direção, mas não é esse o ponto aqui.",
-          "runs": [
-            {
-              "text": "Com exceção de "
-            },
-            {
-              "text": "Attack on Titan",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que é excelente, acredito que os demais da lista devam sim ser cancelados pela opinião pública, mas pelo quão mal feitos eles são, sem cuidado algum com coisas básicas como roteiro e direção, mas não é esse o ponto aqui."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O ponto é a perigosíssima direção moralista em que a percepção e discussão sobre mídias num geral (não só animês e mangás, mas filmes, séries, livros e por aí vai) tem tomado, como se por autores optarem por dar desenvolvimentos e desfechos polêmicos, degenerados mesmo, as suas obras fossem um atestado de que eles apoiam isso na vida real. Sendo que parte da graça da ficção é poder ir para qualquer lugar, por mais esquisito que ele seja, já que o intuito é desenvolver algo através dela.",
-          "runs": [
-            {
-              "text": "O ponto é a perigosíssima direção moralista em que a percepção e discussão sobre mídias num geral (não só animês e mangás, mas filmes, séries, livros e por aí vai) tem tomado, como se por autores optarem por dar desenvolvimentos e desfechos polêmicos, degenerados mesmo, as suas obras fossem um atestado de que eles apoiam isso na vida real. Sendo que parte da graça da ficção é poder ir para qualquer lugar, por mais esquisito que ele seja, já que o intuito é desenvolver algo através dela."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Então, é bem engraçado assistir hoje a um animê como A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires, ou simplesmente Buchigire Reijou, pois ele é a antítese de todas as reclamações infantis sobre a arte precisar ser moralmente correta que insistem em existir. Ele é tão polêmico, tão controverso e tão agressivo em decepcionar qualquer um que espere alguma moral tirada dele que é simplesmente encantador. E diferentemente do animê do Herói do Escudo e companhia acima, ele é muito bem escrito e dirigido!",
-          "runs": [
-            {
-              "text": "Então, é bem engraçado assistir hoje a um animê como "
-            },
-            {
-              "text": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", ou simplesmente "
-            },
-            {
-              "text": "Buchigire Reijou",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", pois ele é a antítese de todas as reclamações infantis sobre a arte precisar ser moralmente correta que insistem em existir. Ele é tão polêmico, tão controverso e tão agressivo em decepcionar qualquer um que espere alguma moral tirada dele que é simplesmente encantador. E diferentemente do animê do Herói do Escudo e companhia acima, ele é "
-            },
-            {
-              "text": "muito bem escrito e dirigido!",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/buchigire-1.jpg",
-          "alt": "Imagem: protagonista do animê 'Buchigire' sendo imobilizada por um guarda real no meio de um baile."
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Studio Comet/Reprodução",
-          "runs": [
-            {
-              "text": "Imagem: Studio Comet/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na trama, acompanhamos a vigésima nona história a se passar em um mundo medieval de fantasia gamer só neste ano. A protagonista, Elizabeth Leiston, faz parte de uma casa ducal num grande reino e está prometida em casamento para o príncipe, um panaca que absolutamente ninguém respeita, só faz besteira e frequentemente coloca o próprio país em perigo. Elizabeth é extremamente inteligente, prestativa, política e basicamente cuida de todos os afazeres reais do príncipe. Só que o mané, que se sente inferiorizado, acaba trocando ela por outra garota da corte, e eles armam para que Elizabeth seja considerada traidora da Coroa e presa.",
-          "runs": [
-            {
-              "text": "Na trama, acompanhamos a vigésima nona história a se passar em um mundo medieval de fantasia "
-            },
-            {
-              "text": "gamer",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " só neste ano. A protagonista, "
-            },
-            {
-              "text": "Elizabeth Leiston",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", faz parte de uma casa ducal num grande reino e está prometida em casamento para o príncipe, um panaca que absolutamente ninguém respeita, só faz besteira e frequentemente coloca o próprio país em perigo. Elizabeth é extremamente inteligente, prestativa, política e basicamente cuida de todos os afazeres reais do príncipe. Só que o mané, que se sente inferiorizado, acaba trocando ela por outra garota da corte, e eles armam para que Elizabeth seja considerada traidora da Coroa e presa."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Em paralelo, o casal espalha rumores de que ela é uma pessoa terrível, que estava armando planos maquiavélicos, coisas do tipo, de modo que o povo do reino, que sempre a amou, passa a odiá-la, tratá-la como uma bruxa a ser queimada. E quando Elizabeth se dá conta de que nem o rei, nem seu pai (que é o chanceler do reino) farão nada para ajudá-la, ela decide que já está de saco cheio do príncipe e do reino em si, e partirá num plano de vingança que colocará aquele país abaixo.",
-          "runs": [
-            {
-              "text": "Em paralelo, o casal espalha rumores de que ela é uma pessoa terrível, que estava armando planos maquiavélicos, coisas do tipo, de modo que o povo do reino, que sempre a amou, passa a odiá-la, tratá-la como uma bruxa a ser queimada. E quando Elizabeth se dá conta de que nem o rei, nem seu pai (que é o chanceler do reino) farão nada para ajudá-la, ela decide que já está de saco cheio do príncipe e do reino em si, e partirá num plano de vingança que colocará aquele país abaixo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Porque a Elizabeth é uma bruxa, é uma vilã, ela realmente não presta! Diferentemente de outros animês do tipo, que tentam disfarçar os atos mais asquerosos de seus protagonistas em discursos frágeis de “naquele mundo, isso é normal” ou “é um anti-herói que foi jogado nessa posição”, Buchigire Reijou arranca o cano de esgoto e inunda tudo em imundice, assumindo que a protagonista é a vilã. Ela é ruim, fria, perversa, sádica, escrota, nefasta, calculista. E a cada episódio vamos mais a fundo no inferno que ela causa.",
-          "runs": [
-            {
-              "text": "Porque a Elizabeth é uma bruxa, é uma vilã, ela realmente não presta! Diferentemente de outros animês do tipo, que tentam disfarçar os atos mais asquerosos de seus protagonistas em discursos frágeis de “naquele mundo, isso é normal” ou “é um anti-herói que foi jogado nessa posição”, "
-            },
-            {
-              "text": "Buchigire Reijou",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " arranca o cano de esgoto e inunda tudo em imundice,"
-            },
-            {
-              "text": " assumindo que a protagonista é a vilã",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Ela é ruim, fria, perversa, sádica, escrota, nefasta, calculista. E a cada episódio vamos mais a fundo no inferno que ela causa."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/buchigire-2.jpg",
-          "alt": "Imagem: protagonista do animê 'Buchigire' em close-up sorrindo"
-        },
-        {
-          "type": "paragraph",
-          "text": "E quando digo que ela é uma bruxa, não é uma figura de linguagem. Ocorre que, nesse mundo, algumas pessoas possuem artefatos poderosíssimos que os colocam em vantagem perante outros. Elizabeth, secretamente, carrega um dos mais poderosos: um conjunto de sete grimórios, cada um representando um pecado capital, que permitem que ela execute feitiços extraordinários. E ela os usa para moldar toda a política internacional daquele local. E também para levar o mal a seus inimigos.",
-          "runs": [
-            {
-              "text": "E quando digo que ela é uma bruxa, não é uma figura de linguagem. Ocorre que, nesse mundo, algumas pessoas possuem artefatos poderosíssimos que os colocam em vantagem perante outros. Elizabeth, secretamente, carrega um dos mais poderosos: "
-            },
-            {
-              "text": "um conjunto de sete grimórios",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", cada um representando um pecado capital, que permitem que ela execute feitiços extraordinários. E ela os usa para moldar toda a política internacional daquele local. E também para levar o mal a seus inimigos."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Há uma passagem tão grotesca que chega a ser poética. Quando ela encontra o cavaleiro braço direito do príncipe, que a prendeu e tratou como indigente, em uma guerra (causada pelo próprio príncipe depois de servir de chacota num treino de espada, longa história), ela o ajuda para que aquele combate acabe e promete levar ele e seu exército de volta para o reino em segurança. Contudo, no meio do caminho, Elizabeth usa um de seus feitiços para invocar uma besta slime primordial demoníaca, que devora a horda de cavaleiros lentamente, reservando a eles uma morte agoniante, apenas para que o cavaleiro que a fez mal observe sem poder fazer nada.",
-          "runs": [
-            {
-              "text": "Há uma passagem tão grotesca que chega a ser poética.",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " Quando ela encontra o cavaleiro braço direito do príncipe, que a prendeu e tratou como indigente, em uma guerra (causada pelo próprio príncipe depois de servir de chacota num treino de espada, longa história), ela o ajuda para que aquele combate acabe e promete levar ele e seu exército de volta para o reino em segurança. Contudo, no meio do caminho, Elizabeth usa um de seus feitiços para invocar uma besta "
-            },
-            {
-              "text": "slime",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " primordial demoníaca, que devora a horda de cavaleiros lentamente, reservando a eles uma morte agoniante, apenas para que o cavaleiro que a fez mal observe sem poder fazer nada."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Quem prendeu e humilhou ela foi o braço direito do príncipe, não aqueles jovens do exército. Mas ela é má! Ela quis descontar neles! Pois ela é uma vilã! E vilões fazem maldades!",
-          "runs": [
-            {
-              "text": "Quem prendeu e humilhou ela foi o braço direito do príncipe, não aqueles jovens do exército. Mas ela é má! Ela quis descontar neles! Pois ela é uma vilã! E vilões fazem maldades!"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/buchigire-3.jpg",
-          "alt": "Imagem: protagonista do animê 'Buchigire' com sangue espirrando"
-        },
-        {
-          "type": "paragraph",
-          "text": "Rola também outra passagem que ilustra bem o que o animê parece querer passar com essa personagem. Em dado momento, enquanto Elizabeth, sua maid e uma menininha que as acompanha estão montando uma companhia de cosméticos (de novo, longa história) numa nova cidade, as duas adultas chegam casualmente à conclusão de que vão precisar comprar uma escrava para ajudar nos serviços. A menininha, que não tem muito conhecimento de como é o mundo, fica chocada com aquilo, de modo que a Elizabeth diz que não irá pedir para ela achar aquilo correto, mas que era algo que faziam e ponto.",
-          "runs": [
-            {
-              "text": "Rola também outra passagem que ilustra bem o que o animê parece querer passar com essa personagem. Em dado momento, enquanto Elizabeth, sua "
-            },
-            {
-              "text": "maid",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e uma menininha que as acompanha estão montando uma companhia de cosméticos (de novo, longa história) numa nova cidade, as duas adultas chegam casualmente à conclusão de que vão precisar comprar uma escrava para ajudar nos serviços. A menininha, que não tem muito conhecimento de como é o mundo, fica chocada com aquilo, de modo que a Elizabeth diz que não irá pedir para ela achar aquilo correto, mas que era algo que faziam e ponto."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Mesmo com o animê mostrando que há senhores de escravos que tratam os escravizados melhor do que outros, inclusive com um local que dá estudos de diferentes tipos para eles e treinamento de combate, é pontuado ali mesmo que isso é feito visando o lucro, que escravos mais bem tratados e melhor capacitados podem ser vendidos por um preço maior. Não há disfarce. No subtexto e no texto, o animê mostra que escravidão é algo horrível e que todos os envolvidos com isso são pessoas terríveis, incluindo a protagonista.",
-          "runs": [
-            {
-              "text": "Mesmo com o animê mostrando que há senhores de escravos que tratam os escravizados melhor do que outros, inclusive com um local que dá estudos de diferentes tipos para eles e treinamento de combate, é pontuado ali mesmo que isso é feito visando o lucro, que escravos mais bem tratados e melhor capacitados podem ser vendidos por um preço maior. "
-            },
-            {
-              "text": "Não há disfarce.",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " No subtexto e no texto, o animê mostra que escravidão é algo horrível e que todos os envolvidos com isso são pessoas terríveis, incluindo a protagonista."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Nessa, Buchigire Reijou vai nos levando por uma trama de vingança totalmente torta, em que temos total noção de que a protagonista nela, embora tenha seus motivos para executar isso, o faz da maneira mais assumidamente escrota, corrompida, depravada, pervertida e degradada possível. E por isso mesmo é um dos negócios mais hipnotizantes deste ano. Que bom que é ficção e não realidade, embora muitos hoje confundam essa fronteira.",
-          "runs": [
-            {
-              "text": "Nessa, "
-            },
-            {
-              "text": "Buchigire Reijou",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " vai nos levando por uma trama de vingança totalmente torta, em que temos total noção de que a protagonista nela, embora tenha seus motivos para executar isso, o faz da maneira mais assumidamente escrota, corrompida, depravada, pervertida e degradada possível. E por isso mesmo é um dos negócios mais hipnotizantes deste ano. Que bom que é ficção e não realidade, embora muitos hoje confundam essa fronteira."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=sYra4SM3Qms",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/sYra4SM3Qms"
-        },
-        {
-          "type": "paragraph",
-          "text": "Exibido por aqui pela Crunchyroll, o animê de A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires (Buchigire Reijou wa Houfuku o Chikachimashita: Madousho no Chikara de Sokoku o Tatakitsubushimasu) é produzido pelo Studio Comet, com direção de Naoyuki Kuzuya e roteiro de Mitsutaka Hirota. Ele adapta a novel escrita por Metabo Hagure, que tem também adaptações em light novel e mangá publicadas pela Hobby Japan, ainda em andamento, que ainda não foram publicados no Brasil.",
-          "runs": [
-            {
-              "text": "Exibido por aqui pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", o animê de "
-            },
-            {
-              "text": "A Livid Lady’s Guide to Getting Even: How I Crushed My Homeland with My Mighty Grimoires",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Buchigire Reijou wa Houfuku o Chikachimashita: Madousho no Chikara de Sokoku o Tatakitsubushimasu",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") é produzido pelo "
-            },
-            {
-              "text": "Studio Comet",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com direção de "
-            },
-            {
-              "text": "Naoyuki Kuzuya",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e roteiro de "
-            },
-            {
-              "text": "Mitsutaka Hirota",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Ele adapta a novel escrita por "
-            },
-            {
-              "text": "Metabo Hagure",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que tem também adaptações em "
-            },
-            {
-              "text": "light novel",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e mangá publicadas pela "
-            },
-            {
-              "text": "Hobby Japan",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", ainda em andamento, que ainda não foram publicados no Brasil."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
-          "runs": [
-            {
-              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-25T18:06:07.000Z",
-      "updatedAt": "2026-09-25T18:06:41.000Z",
-      "expiresAt": "2026-10-02T18:06:07.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/25/critica-buchigire-reijou-1a-temporada",
-          "publishedAt": "2026-09-25T18:06:07.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 6,
-      "wordCount": 1178,
-      "qualityScore": 0.97,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 22,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 3,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     }
