@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T12:42:35.169Z",
+  "generatedAt": "2026-10-02T18:03:43.038Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 40,
+      "count": 41,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,716 @@
     }
   ],
   "stats": {
-    "collected": 50,
-    "grouped": 20,
-    "published": 20,
-    "newStories": 20,
-    "fullArticles": 20,
+    "collected": 51,
+    "grouped": 19,
+    "published": 19,
+    "newStories": 19,
+    "fullArticles": 19,
     "previewArticles": 0,
-    "avgWords": 398,
-    "withHeroImage": 20,
-    "withOrderedMedia": 19,
+    "avgWords": 444,
+    "withHeroImage": 19,
+    "withOrderedMedia": 18,
     "skippedTranslation": 0,
-    "skippedQuality": 30,
-    "durationMs": 2083
+    "skippedQuality": 31,
+    "durationMs": 8025
   },
   "items": [
+    {
+      "id": "jbox-84e86744",
+      "slug": "critica-one-piece-o-filme-jbox-84e86744",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Crítica | One Piece – O Filme",
+      "originalTitle": "Crítica | One Piece – O Filme",
+      "summary": "Ver animês no cinema não é necessariamente uma novidade. Entre o final dos anos 1990 e começo dos anos 2000, por exemplo, os fãs brasileiros já acompanhavam franquias como Os Cavaleiros do Zodíaco, Dragon Ball e Pokémon e em salas pelo país. O que acontece atualmente é, na verdade, um resgate de lançamentos, aproveitando a alta mundial do interesse em produções feitas no Japão.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "Resenha",
+        "filme de one piece no brasil",
+        "Filme de One Piece nos cinemas",
+        "filme do one piece é bom?",
+        "One Piece",
+        "One Piece: O Filme",
+        "Paris Filmes",
+        "Primeiro filme de One Piece",
+        "Toei Animation"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/02/critica-one-piece-o-filme",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/02/critica-one-piece-o-filme",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/jbox-critica-destacada-onepieceofilme.jpg",
+      "mediaQuery": "Crítica | One Piece – O Filme",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/One-Piece-o-filme-01.jpg",
+          "alt": "Imagem de One Piece - o Filme",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/One-Piece-o-filme.webp",
+          "alt": "Imagem de One Piece - o Filme",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/ZdiDlKshthw"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Ver animês no cinema não é necessariamente uma novidade. Entre o final dos anos 1990 e começo dos anos 2000, por exemplo, os fãs brasileiros já acompanhavam franquias como Os Cavaleiros do Zodíaco, Dragon Ball e Pokémon e em salas pelo país. O que acontece atualmente é, na verdade, um resgate de lançamentos, aproveitando a alta mundial do interesse em produções feitas no Japão. E é seguindo essa tendência que a Paris Filmes lança este ano três filmes clássicos de One Piece nas telonas, começando por One Piece: O Filme.",
+          "runs": [
+            {
+              "text": "Ver animês no cinema não é necessariamente uma novidade. Entre o final dos anos 1990 e começo dos anos 2000, por exemplo, os fãs brasileiros já acompanhavam franquias como "
+            },
+            {
+              "text": "Os Cavaleiros do Zodíaco",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Dragon Ball",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e em salas pelo país. O que acontece atualmente é, na verdade, um resgate de lançamentos, aproveitando a alta mundial do interesse em produções feitas no Japão. E é seguindo essa tendência que a "
+            },
+            {
+              "text": "Paris Filmes",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " lança este ano três filmes clássicos de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " nas telonas, começando por "
+            },
+            {
+              "text": "One Piece: O Filme",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Lançada originalmente em 2000 e dirigida por Junji Shimizu (também de Yu-Gi-Oh! O Filme), a produção era inédita no Brasil até então e pode ser considerada um média-metragem pelos padrões nacionais, já que conta com aproximadamente 50 minutos de projeção. E, para quem estiver disposto a ir ao cinema, a experiência é um misto de nostalgia de diversas coisas e também uma jornada divertida, especialmente na versão dublada.",
+          "runs": [
+            {
+              "text": "Lançada originalmente em 2000 e dirigida por "
+            },
+            {
+              "text": "Junji Shimizu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (também de "
+            },
+            {
+              "text": "Yu-Gi-Oh! O Filme",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), a produção era inédita no Brasil até então e pode ser considerada um média-metragem pelos padrões nacionais, já que conta com aproximadamente 50 minutos de projeção. E, para quem estiver disposto a ir ao cinema, a experiência é um misto de nostalgia de diversas coisas e também uma jornada divertida, especialmente na versão dublada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama em si não tem nenhum grande diferencial. Aqui, Luffy e os demais companheiros de começo de jornada — leia-se apenas Zoro, Usopp e Nami — estão passando alguns perrengues financeiros e descobrem que um pirata chamado Woonan pode ter deixado uma grande riqueza escondida. Então, eles chegam junto ao Going Merry em uma ilha e, na maior energia de Sessão da Tarde, “enfrentam altas confusões”.",
+          "runs": [
+            {
+              "text": "A trama em si não tem nenhum grande diferencial. Aqui, "
+            },
+            {
+              "text": "Luffy",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e os demais companheiros de começo de jornada — leia-se apenas "
+            },
+            {
+              "text": "Zoro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Usopp",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Nami",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " — estão passando alguns perrengues financeiros e descobrem que um pirata chamado Woonan pode ter deixado uma grande riqueza escondida. Então, eles chegam junto ao Going Merry em uma ilha e, na maior energia de "
+            },
+            {
+              "text": "Sessão da Tarde",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "“enfrentam altas confusões”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/One-Piece-o-filme-01.jpg",
+          "alt": "Imagem de One Piece - o Filme"
+        },
+        {
+          "type": "paragraph",
+          "text": "Chore se você chorou pela nostalgia de rever um barco | Paris Filmes/Reprodução",
+          "runs": [
+            {
+              "text": "Chore se você chorou pela nostalgia de rever um barco | Paris Filmes/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O atrativo de One Piece: O Filme é muito menos narrativo e muito mais pelo clima que ele carrega consigo. Para começar, antes da projeção principal, a experiência conta com o curta-metragem O Carnaval de Dança do Jango (este já situado em outro momento da história e com a participação de Sanji), sobre uma ilha meio maluca e pessoas dançarinas. Em um primeiro momento, isso pode soar estranho, já que o curta começa acelerado para contar uma mini-história em poucos minutos, mas a verdade é que essa projeção conjunta de animês era mais comum no passado. E já que estamos falando de um filme de 2000, nada mais justo que ele traga consigo esse elemento — embora, é importante ressaltar, este curta em si não acompanhou a estreia original desta produção, e sim do segundo filme da franquia. No Japão, o 1º filme foi exibido junto ao 2º filme de Digimon (que serviu de montagem para nosso Digimon: O Filme).",
+          "runs": [
+            {
+              "text": "O atrativo de "
+            },
+            {
+              "text": "One Piece: O Filme",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é muito menos narrativo e muito mais pelo clima que ele carrega consigo. Para começar, antes da projeção principal, a experiência conta com o curta-metragem "
+            },
+            {
+              "text": "O Carnaval de Dança do Jango",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " (este já situado em outro momento da história e com a participação de "
+            },
+            {
+              "text": "Sanji",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "), sobre uma ilha meio maluca e pessoas dançarinas. Em um primeiro momento, isso pode soar estranho, já que o curta começa acelerado para contar uma mini-história em poucos minutos, mas a verdade é que essa projeção conjunta de animês era mais comum no passado. E já que estamos falando de um filme de 2000, nada mais justo que ele traga consigo esse elemento — embora, é importante ressaltar, este curta em si não acompanhou a estreia original desta produção, e sim do segundo filme da franquia. No Japão, o 1º filme foi exibido junto ao 2º filme de"
+            },
+            {
+              "text": " Digimon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (que serviu de montagem para nosso "
+            },
+            {
+              "text": "Digimon: O Filme",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ")."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Talvez seja uma pitada de saudosismo de quem vos escreve, mas é curioso como esses detalhes não deixam o filme necessariamente datado de forma chata. Quem vai assistir sabe que está vendo uma produção antiga, então a sensação é quase de estar contemplando algo raro, conservado como num museu, e que agora os fãs brasileiros podem assistir.",
+          "runs": [
+            {
+              "text": "Talvez seja uma pitada de saudosismo de quem vos escreve, mas é curioso como esses detalhes "
+            },
+            {
+              "text": "não deixam o filme necessariamente datado de forma chata",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Quem vai assistir sabe que está vendo uma produção antiga, então a sensação é quase de estar contemplando algo raro, conservado como num museu, e que agora os fãs brasileiros podem assistir."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "E esse misto de nostalgia vai além do formato e também aparece na história. Ver o One Piece dos anos 2000 é acompanhar uma fase totalmente diferente do animê, em que as aventuras de Luffy e companhia tinham certo peso, mas com certeza menor do que nos dias atuais. Assim, é muito divertido ver Zoro sendo meio bobo e rindo aqui e ali, Usopp fazendo (ainda mais) caras e bocas, e Nami constantemente brigando com todos e emprestando dinheiro a juros. Sem contar todas as palhaçadas feitas por Luffy — embora ele seja o personagem que menos mudou nas últimas duas décadas e meia.",
+          "runs": [
+            {
+              "text": "E esse misto de nostalgia vai além do formato e também aparece na história. Ver o "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " dos anos 2000 é acompanhar uma fase totalmente diferente do animê, em que as aventuras de Luffy e companhia tinham certo peso, mas com certeza menor do que nos dias atuais. Assim, é muito divertido ver Zoro sendo meio bobo e rindo aqui e ali, Usopp fazendo (ainda mais) caras e bocas, e Nami constantemente brigando com todos e emprestando dinheiro a juros. Sem contar todas as palhaçadas feitas por Luffy — embora ele seja o personagem que menos mudou nas últimas duas décadas e meia."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Testemunhar os Chapéus de Palha nesta configuração é nostálgico também de formas diferentes. Para quem é fã de longa data e passou uma boa parte da vida assistindo One Piece, o sentimento de coração quentinho é de ver na tela grande o resgate de um período mais simples e leve — e que vai direto nos sentimentos quando a primeira abertura e o primeiro encerramento são exibidos. Já para os fãs mais novos, é uma viagem no tempo dentro da narrativa, mostrando como a obra de Eiichiro Oda se tornou tão longeva justamente por ter aprendido a se adaptar e trazer coisas novas a seu público — ainda que, neste caso, a coisa nova seja uma obra antiga.",
+          "runs": [
+            {
+              "text": "Testemunhar os Chapéus de Palha nesta configuração é nostálgico também de formas diferentes. Para quem é fã de longa data e passou uma boa parte da vida assistindo "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o sentimento de coração quentinho é de ver na tela grande o resgate de um período mais simples e leve — e que vai direto nos sentimentos quando a primeira abertura e o primeiro encerramento são exibidos. Já para os fãs mais novos, é uma viagem no tempo dentro da narrativa, mostrando como a obra de "
+            },
+            {
+              "text": "Eiichiro Oda",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " se tornou tão longeva justamente por ter aprendido a se adaptar e trazer coisas novas a seu público — ainda que, neste caso, a coisa nova seja uma obra antiga."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/One-Piece-o-filme.webp",
+          "alt": "Imagem de One Piece - o Filme"
+        },
+        {
+          "type": "paragraph",
+          "text": "Filme é um prato cheio (com o perdão do trocadilho) das bobeiras de Luffy e Zoro juntos | Paris Filmes/Reprodução",
+          "runs": [
+            {
+              "text": "Filme é um prato cheio (com o perdão do trocadilho) das bobeiras de Luffy e Zoro juntos | Paris Filmes/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Também é preciso destacar a dublagem brasileira. Seguindo o tom mais cômico da obra, as vozes nacionais estão inspiradíssimas, entregando brigas homéricas entre os Chapéus de Palha (que esquecem de tudo logo em seguida), vilões fortes, mas meio bobocas, e até alguns acenos aqui e ali para os fãs brasileiros, como quando um personagem solta um “o que é que foi, o que é que foi, o que é que há?” do mais absoluto nada. Essa é uma característica presente na dublagem do animê seriado que segue na nova produção — e, embora possa agradar ou desagradar parte dos fãs, não há como negar que o trabalho de localização para falas brasileiras é muito bem feito pelos responsáveis.",
+          "runs": [
+            {
+              "text": "Também é preciso destacar "
+            },
+            {
+              "text": "a dublagem brasileira",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Seguindo o tom mais cômico da obra, as vozes nacionais estão inspiradíssimas, entregando brigas homéricas entre os Chapéus de Palha (que esquecem de tudo logo em seguida), vilões fortes, mas meio bobocas, e até alguns acenos aqui e ali para os fãs brasileiros, como quando um personagem solta um "
+            },
+            {
+              "text": "“o que é que foi, o que é que foi, o que é que há?”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " do mais absoluto nada. Essa é uma característica presente na dublagem do animê seriado que segue na nova produção — e, embora possa agradar ou desagradar parte dos fãs, não há como negar que o trabalho de localização para falas brasileiras é muito bem feito pelos responsáveis."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim, há ainda uma característica marcante na chegada de One Piece: O Filme aos cinemas nacionais: ele é uma ótima porta de entrada, especialmente para as crianças conhecerem a franquia. O necessário é minimamente explicado (como o fato do Luffy ser um “homem-borracha” e querer ser o Rei dos Piratas), e o resto funciona de forma orgânica e rápida o suficiente para prender a atenção dos pequenos. Talvez alguns possam reclamar da qualidade mais baixa e das barras pretas nas laterais do vídeo, mas a primeira piadoca tem o dom de deixar tudo isso de lado e fazer todo mundo na sala de cinema dar uma boa risada.",
+          "runs": [
+            {
+              "text": "Por fim, há ainda uma característica marcante na chegada de "
+            },
+            {
+              "text": "One Piece: O Filme",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " aos cinemas nacionais: ele é uma "
+            },
+            {
+              "text": "ótima porta de entrada",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", especialmente para as crianças conhecerem a franquia. O necessário é minimamente explicado (como o fato do Luffy ser um “homem-borracha” e querer ser o Rei dos Piratas), e o resto funciona de forma orgânica e rápida o suficiente para prender a atenção dos pequenos. Talvez alguns possam reclamar da qualidade mais baixa e das barras pretas nas laterais do vídeo, mas a primeira piadoca tem o dom de deixar tudo isso de lado e fazer todo mundo na sala de cinema dar uma boa risada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Dessa forma, mesmo que chegue um tanto deslocado em relação à linha do tempo do animê na fase atual, One Piece: O Filme é uma experiência leve na medida em que precisa ser leve, mas também muito divertida e satisfatória ao final da sessão. Agora é aguardar as já marcadas estreias de One Piece: Aventura na Ilha Espiral (2001) e One Piece: O Reino de Chopper na Ilha dos Animais Estranhos (2002) nos próximos meses. Mal posso esperar.",
+          "runs": [
+            {
+              "text": "Dessa forma, mesmo que chegue um tanto deslocado em relação à linha do tempo do animê na fase atual, "
+            },
+            {
+              "text": "One Piece: O Filme",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é uma experiência leve na medida em que precisa ser leve, mas também muito divertida e satisfatória ao final da sessão. Agora é aguardar "
+            },
+            {
+              "text": "as já marcadas estreias",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/07/28/one-piece-1o-filme-vai-ser-exibido-dublado-nos-cinemas/"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "One Piece: Aventura na Ilha Espiral",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (2001) e "
+            },
+            {
+              "text": "One Piece: O Reino de Chopper na Ilha dos Animais Estranhos",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (2002) nos próximos meses. Mal posso esperar."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=ZdiDlKshthw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/ZdiDlKshthw"
+        },
+        {
+          "type": "paragraph",
+          "text": "One Piece: O Filme estreou nos cinemas brasileiros em 24 de setembro, com distribuição da Paris Filmes.",
+          "runs": [
+            {
+              "text": "One Piece: O Filme",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estreou nos cinemas brasileiros em "
+            },
+            {
+              "text": "24 de setembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com distribuição da "
+            },
+            {
+              "text": "Paris Filmes",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Brasil, o animê regular de One Piece pode ser conferido em streamings como Crunchyroll, Netflix, HBO Max e Pluto TV, além do canal Adult Swim. O mangá é publicado pela Panini.",
+          "runs": [
+            {
+              "text": "No Brasil, o animê regular de"
+            },
+            {
+              "text": " One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " pode ser conferido em streamings como "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ","
+            },
+            {
+              "text": " Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "HBO Max",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Pluto TV",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", além do canal "
+            },
+            {
+              "text": "Adult Swim",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O mangá é publicado pela "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A franquia também segue com diversas novidades confirmadas para os próximos meses e anos. Dois filmes foram anunciados recentemente, com estreias previstas para 2027 e 2029, uma animação temática de LEGO chegou recentemente à Netflix , e o remake do animê, feito pelo WIT Studio, estreia em fevereiro de 2027.",
+          "runs": [
+            {
+              "text": "A franquia também segue com diversas novidades confirmadas para os próximos meses e anos. "
+            },
+            {
+              "text": "Dois filmes foram anunciados recentemente",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/24/one-piece-toei-anuncia-dois-novos-filmes-para-2027-e-2029/"
+            },
+            {
+              "text": ", com estreias previstas para 2027 e 2029, "
+            },
+            {
+              "text": "uma animação temática de LEGO chegou recentemente à Netflix ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/22/lego-one-piece-tem-novo-trailer-divulgado/"
+            },
+            {
+              "text": ", e o "
+            },
+            {
+              "text": "remake do animê, feito pelo WIT Studio, estreia em fevereiro de 2027",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/04/09/novo-anime-de-one-piece-ganha-previa-com-visual-dos-personagens/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site. A crítica foi feita de forma totalmente independente, em uma exibição comum de cinema, sem envolvimento de cabine de imprensa.",
+          "runs": [
+            {
+              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site. A crítica foi feita de forma totalmente independente, em uma exibição comum de cinema, sem envolvimento de cabine de imprensa.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-02T15:52:13.000Z",
+      "updatedAt": "2026-10-02T16:02:33.000Z",
+      "expiresAt": "2026-10-09T15:52:13.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/02/critica-one-piece-o-filme",
+          "publishedAt": "2026-10-02T15:52:13.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 6,
+      "wordCount": 1155,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 21,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-427e8342",
       "slug": "black-clover-quando-estreia-o-primeiro-episodio-da-2-temporada-animenew-427e8342",
@@ -361,340 +1057,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-2c505854",
-      "slug": "capa-variante-de-amazing-spider-man-1000-faz-homenagem-a-luffy-de-one-piece-jbox-2c505854",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Capa variante de ‘Amazing Spider-Man 1000’ faz homenagem a Luffy, de ‘One Piece’",
-      "originalTitle": "Capa variante de ‘Amazing Spider-Man 1000’ faz homenagem a Luffy, de ‘One Piece’",
-      "summary": "A revista em quadrinhos Amazing Spider-Man, da Marvel Comics, chegou à sua edição 1.000, lançada lá nos Estados Unidos no dia 30 de outubro. Em comemoração, foi reunida uma seleção de artistas que passaram pela trajetória da série ao longo dos anos. Entre as diversas capas variantes produzidas para a edição anunciadas, uma delas chamou a atenção dos fãs de animês e mangás por fazer uma referência ao Monkey D. Luffy, protagonista de One Piece.",
-      "author": "Igor Lunei",
-      "tags": [
-        "Anime",
-        "HQs",
-        "Mangá",
-        "Amazing Spider-Man 1000",
-        "Capa do Homem-Aranha com o Luffy",
-        "homenagem a one piece",
-        "One Piece",
-        "one piece e homem-aranha",
-        "paródia de one piece"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/01/capa-variante-de-amazing-spider-man-1000-faz-homenagem-a-luffy-de-one-piece",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/01/capa-variante-de-amazing-spider-man-1000-faz-homenagem-a-luffy-de-one-piece",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/amazing-spider-man-1000th-issue-mico-suayan-variant-cover-with-luffy.jpg",
-      "mediaQuery": "Capa variante de ‘Amazing Spider-Man 1000’ faz homenagem a Luffy, de ‘One Piece’",
-      "mediaType": "manga",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/amazing-spider-man-1000th-issue-mico-suayan-variant-cover.jpg",
-          "alt": "Imagem da Capa variante da edição 1000 da revista Amazing Spider-Man com o Homem-Aranha fazendo a pose do Luffy, de One Piece",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A revista em quadrinhos Amazing Spider-Man, da Marvel Comics, chegou à sua edição 1.000, lançada lá nos Estados Unidos no dia 30 de outubro. Em comemoração, foi reunida uma seleção de artistas que passaram pela trajetória da série ao longo dos anos. Entre as diversas capas variantes produzidas para a edição anunciadas, uma delas chamou a atenção dos fãs de animês e mangás por fazer uma referência ao Monkey D. Luffy, protagonista de One Piece.",
-          "runs": [
-            {
-              "text": "A revista em quadrinhos "
-            },
-            {
-              "text": "Amazing Spider-Man",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", da "
-            },
-            {
-              "text": "Marvel Comics",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", chegou à sua edição 1.000, lançada lá nos Estados Unidos no dia"
-            },
-            {
-              "text": " 30 de outubro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Em comemoração, foi reunida uma seleção de artistas que passaram pela trajetória da série ao longo dos anos. Entre as diversas capas variantes produzidas para a edição anunciadas, uma delas chamou a atenção dos fãs de animês e mangás por fazer uma referência ao Monkey D. Luffy, protagonista de "
-            },
-            {
-              "text": "One Piece",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Criada por Mico Suayan como uma edição exclusiva da New York Comic Con, que ocorrerá entre os dias 8 e 11 de outubro, a capa variante de Amazing Spider-Man #1000 mostra o Homem-Aranha sem máscara, agachado e com as duas mãos apoiadas nas pernas. A pose recria de maneira bastante próxima a postura característica de Luffy ao ativar o Gear 2, de One Piece:",
-          "runs": [
-            {
-              "text": "Criada por "
-            },
-            {
-              "text": "Mico Suayan",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " como uma edição exclusiva da "
-            },
-            {
-              "text": "New York Comic Con",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", que ocorrerá entre os dias 8 e 11 de outubro, a capa variante de "
-            },
-            {
-              "text": "Amazing Spider-Man",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " #1000 mostra o Homem-Aranha sem máscara, agachado e com as duas mãos apoiadas nas pernas. A pose recria de maneira bastante próxima a postura característica de Luffy ao ativar o "
-            },
-            {
-              "text": "Gear 2",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", de "
-            },
-            {
-              "text": "One Piece",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ":"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/amazing-spider-man-1000th-issue-mico-suayan-variant-cover.jpg",
-          "alt": "Imagem da Capa variante da edição 1000 da revista Amazing Spider-Man com o Homem-Aranha fazendo a pose do Luffy, de One Piece"
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Marvel Comics/Reprodução",
-          "runs": [
-            {
-              "text": "Imagem: Marvel Comics/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para celebrar o marco, a Marvel preparou uma grande quantidade de capas alternativas para Amazing Spider-Man #1000. Entre os artistas envolvidos estão John Romita Jr., Pepe Larraz, Alex Ross, Mark Bagley, J. Scott Campbell e Steve Ditko, além de uma variante colaborativa de Peach Momoko e Frank Miller.",
-          "runs": [
-            {
-              "text": "Para celebrar o marco, a Marvel preparou uma grande quantidade de capas alternativas para "
-            },
-            {
-              "text": "Amazing Spider-Man",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " #1000. Entre os artistas envolvidos estão John Romita Jr., Pepe Larraz, Alex Ross, Mark Bagley, J. Scott Campbell e Steve Ditko, além de uma variante colaborativa de Peach Momoko e Frank Miller."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A edição também conta com uma capa dupla que homenageia a série animada de Spider-Man de 1967, uma variante da Marvel Studios relacionada a Spider-Man: Brand New Day e uma capa conectada em quatro partes produzida por Todd Nauck.",
-          "runs": [
-            {
-              "text": "A edição também conta com uma capa dupla que homenageia a série animada de "
-            },
-            {
-              "text": "Spider-Man",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " de 1967, uma variante da Marvel Studios relacionada a "
-            },
-            {
-              "text": "Spider-Man: Brand New Day",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e uma capa conectada em quatro partes produzida por Todd Nauck."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história principal é escrita por Joe Kelly e desenhada por Pepe Larraz. Nela, o Homem-Aranha enfrenta Ravage, apresentado como seu novo vilão mais assustador em décadas, enquanto descobre que Tia May foi levada às pressas para o hospital. A edição especial também reúne histórias comemorativas de outros autores, incluindo Noah Hawley, Frank Miller, Dan Slott e Brian Michael Bendis.",
-          "runs": [
-            {
-              "text": "A história principal é escrita por Joe Kelly e desenhada por Pepe Larraz. Nela, o Homem-Aranha enfrenta Ravage, apresentado como seu novo vilão mais assustador em décadas, enquanto descobre que Tia May foi levada às pressas para o hospital. A edição especial também reúne histórias comemorativas de outros autores, incluindo Noah Hawley, Frank Miller, Dan Slott e Brian Michael Bendis."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No Brasil, os gibis do Homem-Aranha saem pela editora Panini, mas a edição mencionada nesta notícia corresponde ao lançamento norte-americano.",
-          "runs": [
-            {
-              "text": "No Brasil, os gibis do "
-            },
-            {
-              "text": "Homem-Aranha",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " saem pela editora "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", mas a edição mencionada nesta notícia corresponde ao lançamento norte-americano."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Toy People News",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Toy People News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.toy-people.com/en/?p=114914"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-01T21:54:50.000Z",
-      "updatedAt": "2026-10-01T21:55:25.000Z",
-      "expiresAt": "2026-10-08T21:54:50.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/01/capa-variante-de-amazing-spider-man-1000-faz-homenagem-a-luffy-de-one-piece",
-          "publishedAt": "2026-10-01T21:54:50.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 330,
-      "qualityScore": 0.98,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
         "sourcePagesRead": 0
       }
     },
@@ -6957,470 +7319,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 3,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-16ff2c45",
-      "slug": "diarios-de-uma-apotecaria-3-temporada-ganha-trailer-cheio-de-intrigas-e-com-a-musica-de-encerramento-jbox-16ff2c45",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Diários de uma Apotecária: 3ª temporada ganha trailer cheio de intrigas e com a música de encerramento",
-      "originalTitle": "Diários de uma Apotecária: 3ª temporada ganha trailer cheio de intrigas e com a música de encerramento",
-      "summary": "A 3ª temporada de Diários de uma Apotecária ganhou um novo trailer, que mostra mais intrigas envolvendo Jinshi e também a música de encerramento dos novos episódios.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Música",
-        "3ª temporada",
-        "Diários de uma Apotecária",
-        "Kusuriya no Hitorigoto",
-        "season 3",
-        "Terceira temporada de Diários de uma Apotecária",
-        "The Apothecary Diaries"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/25/diarios-de-uma-apotecaria-3a-temporada-ganha-trailer-cheio-de-intrigas-e-com-a-musica-de-encerramento",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/25/diarios-de-uma-apotecaria-3a-temporada-ganha-trailer-cheio-de-intrigas-e-com-a-musica-de-encerramento",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/diarios-de-uma-apotecaria-terceira-temporada-destacada.jpg",
-      "mediaQuery": "Diários de uma Apotecária: 3ª temporada ganha trailer cheio de intrigas e com a música de encerramento",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/YvNvvUeCztE"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A 3ª temporada de Diários de uma Apotecária ganhou um novo trailer, que mostra mais intrigas envolvendo Jinshi e também a música de encerramento dos novos episódios.",
-          "runs": [
-            {
-              "text": "A 3ª temporada de "
-            },
-            {
-              "text": "Diários de uma Apotecária",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ganhou um novo trailer, que mostra mais intrigas envolvendo Jinshi e também a música de encerramento dos novos episódios."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A novidade foi publicada no canal oficial da TOHO Animation, revelando também a chegada de novos (e importantes) personagens. O final de cada capítulo será embalado pela canção “AIYOU”, de Eve, e a estreia dos episódios está marcada para o dia 02 de outubro, com transmissão no Brasil pela Crunchyroll.",
-          "runs": [
-            {
-              "text": "A novidade foi publicada no canal oficial da"
-            },
-            {
-              "text": " TOHO Animation",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", revelando também a chegada de novos (e importantes) personagens. O final de cada capítulo será embalado pela canção "
-            },
-            {
-              "text": "“AIYOU”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", de "
-            },
-            {
-              "text": "Eve",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e a estreia dos episódios está marcada para o dia "
-            },
-            {
-              "text": "02 de outubro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com transmissão no Brasil pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=YvNvvUeCztE",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/YvNvvUeCztE"
-        },
-        {
-          "type": "paragraph",
-          "text": "A história de Diários de uma Apotecária se passa em uma corte imperial fictícia da China Antiga, e foca em Maomao, uma jovem de 17 anos que foi raptada e forçada a trabalhar como uma serviçal de baixo escalão no palácio imperial. Um dia, ela descobre que dois filhos do imperador estão doentes, e começa a utilizar seus conhecimentos farmacêuticos, e logo chama a atenção de pessoas influentes.",
-          "runs": [
-            {
-              "text": "A história de "
-            },
-            {
-              "text": "Diários de uma Apotecária",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " se passa em uma corte imperial fictícia da China Antiga, e foca em Maomao, uma jovem de 17 anos que foi raptada e forçada a trabalhar como uma serviçal de baixo escalão no palácio imperial. Um dia, ela descobre que dois filhos do imperador estão doentes, e começa a utilizar seus conhecimentos farmacêuticos, e logo chama a atenção de pessoas influentes."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "As light novels originais com autoria de Hyuganatsu são seriadas desde 2011 de forma online e independente pelo site Shosetsuka ni Naro. A trama rendeu um volume compilado pela editora Shufunotomo, com ilustração de Megumi Matsuda, em 2012. Depois disso, em 2014, a Shufunotomo começou a publicá-la como uma série de livros, agora ilustrada por Touko Shino, já rendendo 17 volumes, sendo essa a versão que estreou no Brasil recentemente pela editora Alt.",
-          "runs": [
-            {
-              "text": "As "
-            },
-            {
-              "text": "light novels",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " originais com autoria de "
-            },
-            {
-              "text": "Hyuganatsu",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " são seriadas desde 2011 de forma online e independente pelo site "
-            },
-            {
-              "text": "Shosetsuka ni Naro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A trama rendeu um volume compilado pela editora "
-            },
-            {
-              "text": "Shufunotomo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com ilustração de "
-            },
-            {
-              "text": "Megumi Matsuda",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", em 2012. Depois disso, em 2014, a Shufunotomo começou a publicá-la como uma série de livros, agora ilustrada por "
-            },
-            {
-              "text": "Touko Shino",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", já rendendo 17 volumes, sendo essa "
-            },
-            {
-              "text": "a versão que estreou no Brasil recentemente pela editora",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/29/diarios-de-uma-apotecaria-aparece-no-topo-de-lista-de-livros-mais-vendidos-no-brasil/"
-            },
-            {
-              "text": " ",
-              "href": "https://www.jbox.com.br/2026/07/29/diarios-de-uma-apotecaria-aparece-no-topo-de-lista-de-livros-mais-vendidos-no-brasil/"
-            },
-            {
-              "text": "Alt",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/29/diarios-de-uma-apotecaria-aparece-no-topo-de-lista-de-livros-mais-vendidos-no-brasil/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Uma versão em mangá, adaptada por Itsuki Nanao (coordenação do enredo) e Nekokurage (arte), é publicada no Brasil pela editora Panini. A obra ainda conta com outra adaptação para mangá, feita por Minoji Kurata, essa inédita por aqui.",
-          "runs": [
-            {
-              "text": "Uma versão em mangá, adaptada por "
-            },
-            {
-              "text": "Itsuki Nanao",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (coordenação do enredo) e "
-            },
-            {
-              "text": "Nekokurage",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (arte), é publicada no Brasil pela editora "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A obra ainda conta com outra adaptação para mangá, feita por "
-            },
-            {
-              "text": "Minoji Kurata",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", essa inédita por aqui."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Dirigida e roteirizada por Norihiro Naganuma (The Ancient Magus’ Bride), a adaptação para animê é uma produção da TOHO junto ao estúdio OLM (Pokémon). A série já conta com duas temporadas lançadas e, além do terceiro ano, terá um longa-metragem lançado em dezembro.",
-          "runs": [
-            {
-              "text": "Dirigida e roteirizada por"
-            },
-            {
-              "text": " Norihiro Naganuma",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "The Ancient Magus’ Bride",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "), a adaptação para animê é uma produção da "
-            },
-            {
-              "text": "TOHO",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " junto ao estúdio "
-            },
-            {
-              "text": "OLM",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Pokémon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "). A série já conta com duas temporadas lançadas e, além do terceiro ano, "
-            },
-            {
-              "text": "terá um longa-metragem lançado em dezembro",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/03/diarios-de-uma-apotecaria-filme-ganha-trailer-e-data-de-estreia/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A Netflix e a HBO Max contam com a primeira temporada da série, enquanto a Crunchyroll conta com as duas fases, todas com dublagem em português.",
-          "runs": [
-            {
-              "text": "A"
-            },
-            {
-              "text": " Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e a "
-            },
-            {
-              "text": "HBO Max",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " contam com a primeira temporada da série, enquanto a "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " conta com as duas fases, todas com dublagem em português."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fontes: Anime News Network",
-          "runs": [
-            {
-              "text": "Fontes: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Anime News Network",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.animenewsnetwork.com/news/2026-09-25/the-apothecary-diaries-season-3-anime-2nd-trailer-reveals-eve-ending-theme/.242175"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-25T15:30:45.000Z",
-      "updatedAt": "2026-09-25T15:31:31.000Z",
-      "expiresAt": "2026-10-02T15:30:45.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/25/diarios-de-uma-apotecaria-3a-temporada-ganha-trailer-cheio-de-intrigas-e-com-a-musica-de-encerramento",
-          "publishedAt": "2026-09-25T15:30:45.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 346,
-      "qualityScore": 0.922,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
