@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T22:05:50.068Z",
+  "generatedAt": "2026-10-03T01:05:16.223Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,919 @@
   ],
   "stats": {
     "collected": 50,
-    "grouped": 20,
-    "published": 20,
-    "newStories": 20,
-    "fullArticles": 20,
+    "grouped": 22,
+    "published": 22,
+    "newStories": 22,
+    "fullArticles": 22,
     "previewArticles": 0,
-    "avgWords": 400,
-    "withHeroImage": 20,
-    "withOrderedMedia": 19,
+    "avgWords": 419,
+    "withHeroImage": 22,
+    "withOrderedMedia": 21,
     "skippedTranslation": 0,
-    "skippedQuality": 29,
-    "durationMs": 3113
+    "skippedQuality": 27,
+    "durationMs": 5953
   },
   "items": [
+    {
+      "id": "jbox-3095f5e4",
+      "slug": "umamusume-filme-teve-publico-acima-da-media-de-ocupacao-nos-cinemas-brasileiros-jbox-3095f5e4",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Umamusume: Filme teve público acima da média de ocupação nos cinemas brasileiros",
+      "originalTitle": "Umamusume: Filme teve público acima da média de ocupação nos cinemas brasileiros",
+      "summary": "Segundo dados da Ancine e do Filme B, podemos considerar que o filme Umamusume — Pretty Derby – O Início de uma Nova Era superou as expectativas de público dos cinemas brasileiros na semana em que esteve em cartaz. Ao todo, 2.922 pessoas foram ao cinema assistir ao longa.",
+      "author": "Jean Clemente",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "Bilheteria",
+        "bilheteria brasil",
+        "cinemark",
+        "filme de umamusume",
+        "filme de umamusume no brasil",
+        "umamusume"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/02/umamusume-filme-teve-publico-acima-da-media-de-ocupacao-nos-cinemas-brasileiros",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/02/umamusume-filme-teve-publico-acima-da-media-de-ocupacao-nos-cinemas-brasileiros",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2024/03/umamusume-filme-nova-destacada.jpg",
+      "mediaQuery": "Umamusume: Filme teve público acima da média de ocupação nos cinemas brasileiros",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/zgupmgLe5No"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Segundo dados da Ancine e do Filme B, podemos considerar que o filme Umamusume — Pretty Derby – O Início de uma Nova Era superou as expectativas de público dos cinemas brasileiros na semana em que esteve em cartaz. Ao todo, 2.922 pessoas foram ao cinema assistir ao longa.",
+          "runs": [
+            {
+              "text": "Segundo dados da Ancine e do Filme B, podemos considerar que o filme "
+            },
+            {
+              "text": "Umamusume — Pretty Derby – O Início de uma Nova Era",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " superou as expectativas de público dos cinemas brasileiros na semana em que esteve em cartaz. Ao todo,"
+            },
+            {
+              "text": " 2.922 pessoas",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " foram ao cinema assistir ao longa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Mesmo com um lançamento limitado, que abrangeu apenas cinco estados e o Distrito Federal, as salas da rede Cinemark apresentaram uma média de público de 42 espectadores por sessão nos primeiros 4 dias, e 39 considerando todo o período em cartaz. Esse é um número que deixa o animê acima da média de ocupação nacional, que costuma ficar na casa de 25 pessoas por projeção. Em relação à receita, a produção arrecadou R$ 67.109,42 em 69 sessões divididas em 10 salas por dia.",
+          "runs": [
+            {
+              "text": "Mesmo com um lançamento limitado",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/14/umamusume-filme-estreia-na-rede-cinemark-esta-semana/"
+            },
+            {
+              "text": ", que abrangeu apenas cinco estados e o Distrito Federal, as salas da rede "
+            },
+            {
+              "text": "Cinemark",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " apresentaram uma "
+            },
+            {
+              "text": "média de público de 42 espectadores por sessão nos primeiros 4 dias",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e 39 considerando todo o período em cartaz. Esse é um número que deixa o animê acima da média de ocupação nacional, que costuma ficar na casa de 25 pessoas por projeção. Em relação à receita, a produção arrecadou "
+            },
+            {
+              "text": "R$ 67.109,42",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " em 69 sessões divididas em 10 salas por dia."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O pico das ocupações aparentemente foi no sábado do dia 19, onde pudemos conferir salas praticamente com a lotação máxima em sessões de São Paulo, Brasília e Curitiba. Para efeito de comparação de sucesso dentro do mesmo nicho, a média de ocupação Umamusume foi maior que a de Demon Slayer: Castelo Infinito (37,7, segundos dados da Ancine) e do relançamento em 4k de Akira (31,5 por sessão).",
+          "runs": [
+            {
+              "text": "O pico das ocupações aparentemente foi no sábado do dia 19, onde pudemos conferir salas praticamente com a lotação máxima em sessões de São Paulo, Brasília e Curitiba. Para efeito de comparação de sucesso dentro do mesmo nicho, a média de ocupação "
+            },
+            {
+              "text": "Umamusume",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi maior que a de "
+            },
+            {
+              "text": "Demon Slayer: Castelo Infinito",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " (37,7, segundos dados da Ancine) e do relançamento em 4k de "
+            },
+            {
+              "text": "Akira",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " (31,5 por sessão)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Comparando com outra título do mesmo período, One Piece: O Filme, que estrearia junto de Umamusume e acabou sendo adiado, teve em seu fim de semana de estreia uma média de público de apenas 4 pessoas por sessão. Essa discrepância se dá pelo número muito maior de sessões para este filme: foram 1.480 sessões. Ao todo, no período de 4 dias de sua chegada às salas, arrecadou R$ 132.844, com um público total foi de 6.086 espectadores.",
+          "runs": [
+            {
+              "text": "Comparando com outra título do mesmo período, "
+            },
+            {
+              "text": "One Piece: O Filme",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/02/critica-one-piece-o-filme/"
+            },
+            {
+              "text": ", que estrearia junto de "
+            },
+            {
+              "text": "Umamusume",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e acabou sendo adiado, teve em seu fim de semana de estreia uma média de público de apenas "
+            },
+            {
+              "text": "4 pessoas por sessão",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Essa discrepância se dá pelo número muito maior de sessões para este filme: foram 1.480 sessões. Ao todo, no período de 4 dias de sua chegada às salas, arrecadou R$ 132.844, com um público total foi de "
+            },
+            {
+              "text": "6.086 espectadores",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Destacamos, claro, que One Piece é uma marca muito mais consolidada mundialmente e com um público muito maior até entre os que não acompanham com afinco animês, e que esse comparativo serve mais para apontar o feito das meninas-cavalo do que para demérito do pirata que estica.",
+          "runs": [
+            {
+              "text": "Destacamos, claro, que "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é uma marca muito mais consolidada mundialmente e com um público muito maior até entre os que não acompanham com afinco animês, e que esse comparativo serve mais para apontar o feito das meninas-cavalo do que para demérito do pirata que estica."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ainda assim, o aparente êxito não foi o suficiente para dar uma boa sobrevida ao filme em nossos cinemas. Após a 1ª semana, Umamusume ficou em cartaz por mais um tempo apenas em São Paulo, sem migrar para outros estados.",
+          "runs": [
+            {
+              "text": "Ainda assim, o aparente êxito não foi o suficiente para dar uma boa sobrevida ao filme em nossos cinemas. Após a 1ª semana, "
+            },
+            {
+              "text": "Umamusume",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ficou em cartaz por mais um tempo apenas em São Paulo, sem migrar para outros estados."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=zgupmgLe5No",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/zgupmgLe5No"
+        },
+        {
+          "type": "paragraph",
+          "text": "Umamusume – Pretty Derby – O Início de uma Nova Era é um filme de 2024, trazendo uma história independente em relação à série de TV ‘Pretty Derby’. Foi produzido pelo estúdio CygamesPictures, com direção de Ken Yamamoto e roteiro de Kiyoko Yoshimura.",
+          "runs": [
+            {
+              "text": "Umamusume – Pretty Derby – O Início de uma Nova Era",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é um filme de 2024, trazendo uma história independente em relação à série de TV"
+            },
+            {
+              "text": " ‘Pretty Derby’",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Foi produzido pelo estúdio "
+            },
+            {
+              "text": "CygamesPictures",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com direção de "
+            },
+            {
+              "text": "Ken Yamamoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e roteiro de "
+            },
+            {
+              "text": "Kiyoko Yoshimura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na trama, o sonho de consumo de qualquer garota-cavalo é chegar ao topo da Twinkle Series. Para Jungle Pocket, que só corria de brincadeira, essa ficha só cai de verdade após presenciar um show inesquecível de Fuji Kiseki nas pistas. Esbanjando moral e determinação, ela logo emplaca vitórias que a levam aos torneios de elite.",
+          "runs": [
+            {
+              "text": "Na trama, o sonho de consumo de qualquer garota-cavalo é chegar ao topo da Twinkle Series. Para Jungle Pocket, que só corria de brincadeira, essa ficha só cai de verdade após presenciar um show inesquecível de Fuji Kiseki nas pistas. Esbanjando moral e determinação, ela logo emplaca vitórias que a levam aos torneios de elite."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Só que a coisa fica séria quando ela divide a pista na sua primeira prova de nível G1 com Agnes Tachyon, uma prodígio genial e excêntrica. Ao sentir o peso do talento da rival, Jungle Pocket não se abala: transforma o choque em obsessão e jura dar o troco vencendo a lendária Tríplice Coroa. Nem mesmo a imprevisibilidade do esporte vai impedir seu objetivo de desbancar Tachyon e fazer história.",
+          "runs": [
+            {
+              "text": "Só que a coisa fica séria quando ela divide a pista na sua primeira prova de nível G1 com Agnes Tachyon, uma prodígio genial e excêntrica. Ao sentir o peso do talento da rival, Jungle Pocket não se abala: transforma o choque em obsessão e jura dar o troco vencendo a lendária Tríplice Coroa. Nem mesmo a imprevisibilidade do esporte vai impedir seu objetivo de desbancar Tachyon e fazer história."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Umamusume é uma franquia multimídia da Cygames, já possuindo vários mangás e temporadas de animê — a série ‘Pretty Derby’ está completa na Crunchyroll, enquanto o spin-off ‘Cinderella Gray’ está pelo Prime Video e gratuitamente pelo Bandplay e YouTube.",
+          "runs": [
+            {
+              "text": "Umamusume",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é uma franquia multimídia da Cygames, já possuindo vários mangás e temporadas de animê — a série"
+            },
+            {
+              "text": " ‘Pretty Derby’",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " está completa na Crunchyroll, enquanto o spin-off "
+            },
+            {
+              "text": "‘Cinderella Gray’",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " está pelo Prime Video e gratuitamente pelo Bandplay e "
+            },
+            {
+              "text": "YouTube",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.youtube.com/watch?v=LKjvc3p2lgg&list=PLhGamQZtJ7K9aElhFk89DyndS6JDvLh7z"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Veja mais:",
+          "runs": [
+            {
+              "text": "Veja mais:",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            }
+          ],
+          "level": 4
+        },
+        {
+          "type": "paragraph",
+          "text": "⇒ Umamusume, a série que não recebeu nenhum material pornográfico na Comiket | Artigo",
+          "runs": [
+            {
+              "text": "⇒ ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
+            },
+            {
+              "text": "Umamusume",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
+            },
+            {
+              "text": ", a série que não recebeu nenhum material pornográfico na Comiket | Artigo",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Ancine, Filme B, com colaboração de Arara",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Ancine, Filme B, com colaboração de ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "Arara",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://filmesanime.arara.me/#"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-02T23:26:23.000Z",
+      "updatedAt": "2026-10-02T23:41:11.000Z",
+      "expiresAt": "2026-10-09T23:26:23.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/02/umamusume-filme-teve-publico-acima-da-media-de-ocupacao-nos-cinemas-brasileiros",
+          "publishedAt": "2026-10-02T23:26:23.000Z",
+          "author": "Jean Clemente"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 611,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 16,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-8d919456",
+      "slug": "primeiras-impressoes-de-cyberpunk-mercenarios-2-jbox-8d919456",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Primeiras impressões de ‘Cyberpunk: Mercenários 2’",
+      "originalTitle": "Primeiras impressões de ‘Cyberpunk: Mercenários 2’",
+      "summary": "Chegando com os dois pés na porta e sem pedir licença, a segunda temporada de Cyberpunk: Mercenários tem um episódio de estreia frenético, colorido e visceral.",
+      "author": "Pri Ganiko",
+      "tags": [
+        "Anime",
+        "Resenha",
+        "cd projekt red",
+        "cyberpunk 2",
+        "cyberpunk 2ª temporada",
+        "cyberpunk anime",
+        "Cyberpunk: Mercenários",
+        "quando lança cyberpunk mercenarios 2?",
+        "resenha de cyberpunk mercenarios 2"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/02/primeiras-impressoes-de-cyberpunk-mercenarios-2",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/02/primeiras-impressoes-de-cyberpunk-mercenarios-2",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/jbox-critica-destacada-cyberpunk2-primeiras.jpg",
+      "mediaQuery": "Primeiras impressões de ‘Cyberpunk: Mercenários 2’",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/cyberpunkmercenarios2-cenaroman.jpg",
+          "alt": "imagem: cena de Cyberpunk: Mercenários com o personagem Roman em destaque em meio à cidade",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/cyberpunkmercenarios2-cena1.jpg",
+          "alt": "imagem: cena de Cyberpunk: Mercenários com o personagem sendo atacado por um helicóptero.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/QBlPg818lGI"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Chegando com os dois pés na porta e sem pedir licença, a segunda temporada de Cyberpunk: Mercenários tem um episódio de estreia frenético, colorido e visceral.",
+          "runs": [
+            {
+              "text": "Chegando com os dois pés na porta e sem pedir licença, a segunda temporada de"
+            },
+            {
+              "text": " Cyberpunk: Mercenários",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " tem um episódio de estreia frenético, colorido e visceral."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A convite da CD Projekt Red, desenvolvedora de Cyberpunk 2077, tivemos a oportunidade de assistir ao primeiro episódio antes de sua estreia na Netflix, que acontecerá no dia 20 de outubro.",
+          "runs": [
+            {
+              "text": "A convite da CD Projekt Red, desenvolvedora de "
+            },
+            {
+              "text": "Cyberpunk 2077",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", tivemos a oportunidade de assistir ao primeiro episódio antes de sua estreia na "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que acontecerá no dia "
+            },
+            {
+              "text": "20 de outubro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Retornamos à Night City, a mesma cidade onde se passa a primeira temporada, mas que agora conta com um elenco inédito. Ainda que nos sejam estranhos, basta alguns segundos de tempo de tela para que os personagens capturem a atenção dos espectadores, com carisma e, por vezes, até estranheza.",
+          "runs": [
+            {
+              "text": "Retornamos à Night City, a mesma cidade onde se passa a "
+            },
+            {
+              "text": "primeira temporada",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2022/10/23/critica-cyberpunk-mercenarios-netflix/"
+            },
+            {
+              "text": ", mas que agora conta com um elenco inédito. Ainda que nos sejam estranhos, basta alguns segundos de tempo de tela para que os personagens capturem a atenção dos espectadores, com carisma e, por vezes, até estranheza."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em menos de 30 minutos, a trama de Bartosz Sztybor, que retorna como escritor do animê, estabelece relações com maestria e nos apresenta o principal dilema de alguns dos personagens principais.",
+          "runs": [
+            {
+              "text": "Em menos de 30 minutos, a trama de "
+            },
+            {
+              "text": "Bartosz Sztybor",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que retorna como escritor do animê, estabelece relações com maestria e nos apresenta o principal dilema de alguns dos personagens principais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "É muito difícil não se deixar cativar por Roman, o garoto de cabelo loiro que tem um amor por filmes que não cabe dentro de si. Ele circula pelo ambiente com uma câmera nas mãos, registrando momentos da vida em Night City, sejam eles ultraviolentos ou cotidianos.",
+          "runs": [
+            {
+              "text": "É muito difícil não se deixar cativar por Roman, o garoto de cabelo loiro que tem um amor por filmes que não cabe dentro de si. Ele circula pelo ambiente com uma câmera nas mãos, registrando momentos da vida em Night City, sejam eles ultraviolentos ou cotidianos."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/cyberpunkmercenarios2-cenaroman.jpg",
+          "alt": "imagem: cena de Cyberpunk: Mercenários com o personagem Roman em destaque em meio à cidade"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A presença de Roman torna tudo muito mais tenso, porque queremos torcer por ele em um mundo que está sempre jogando contra e sabemos, pelos acontecimentos da temporada anterior, que é extremamente cruel.",
+          "runs": [
+            {
+              "text": "A presença de Roman torna tudo muito mais tenso, porque queremos torcer por ele em um mundo que está sempre jogando contra e sabemos, pelos acontecimentos da temporada anterior, que é extremamente cruel."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em contrapartida à pequena figura de Roman, temos o Rei: um brutamontes completamente tunado de cromo que parece indestrutível, mas que nos primeiros momentos do episódio já nos mostra seu maior ponto fraco.",
+          "runs": [
+            {
+              "text": "Em contrapartida à pequena figura de Roman, temos o "
+            },
+            {
+              "text": "Rei",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": um brutamontes completamente tunado de cromo que parece indestrutível, mas que nos primeiros momentos do episódio já nos mostra seu maior ponto fraco."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Também vale a pena falar de Talia, uma moça que parece ter saído diretamente de Guerreiras Mágicas de Rayearth, com seu penteado característico dos anos 1990 (mas cheia de implantes que a distanciam muito das heroínas da Clamp). E, claro, o rapaz misterioso de cabelos pretos e aparência séria, que traz mais perguntas que respostas para os espectadores.",
+          "runs": [
+            {
+              "text": "Também vale a pena falar de "
+            },
+            {
+              "text": "Talia",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", uma moça que parece ter saído diretamente de "
+            },
+            {
+              "text": "Guerreiras Mágicas de Rayearth",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", com seu penteado característico dos anos 1990 (mas cheia de implantes que a distanciam muito das heroínas da Clamp). E, claro, o rapaz misterioso de cabelos pretos e aparência séria, que traz mais perguntas que respostas para os espectadores."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/cyberpunkmercenarios2-cena1.jpg",
+          "alt": "imagem: cena de Cyberpunk: Mercenários com o personagem sendo atacado por um helicóptero."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ângulos inusitados, sequências frenéticas e brutais, feições caricatas, cores saturadas: a assinatura do Studio Trigger está por toda parte. O estúdio de animação, que também foi responsável por títulos como Kill la Kill, Little Witch Academia, Promare e a primeira temporada de Cyberpunk: Mercenários, entrega ação visceral e tripas para todo lado enquanto trabalha os traumas dos personagens (e causa alguns em quem está assistindo).",
+          "runs": [
+            {
+              "text": "Ângulos inusitados, sequências frenéticas e brutais, feições caricatas, cores saturadas:"
+            },
+            {
+              "text": " a assinatura do Studio Trigger está por toda parte.",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " O estúdio de animação, que também foi responsável por títulos como "
+            },
+            {
+              "text": "Kill la Kill",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Little Witch Academia",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2020/12/26/critica-little-witch-academia-2017/"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Promare",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e a primeira temporada de "
+            },
+            {
+              "text": "Cyberpunk: Mercenários",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", entrega ação visceral e tripas para todo lado enquanto trabalha os traumas dos personagens (e causa alguns em quem está assistindo)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além de Talia, há outros elementos que evocam uma nostalgia dos anos 90, como o fato de que as filmagens de Roman são mostradas em 4:3 e com as imagens granuladas, até mesmo a animação que imita aquele “protetor de tela” tão comum em DVDs na época, onde o logo ficava se movendo de forma aleatória pela tela até bater em um canto e mudar de direção. Apesar dessa viagem no tempo, os temas tratados são bem atuais, dando uma cutucada nada sutil em conteúdo gerado por IA, por exemplo.",
+          "runs": [
+            {
+              "text": "Além de Talia, há outros elementos que evocam uma nostalgia dos anos 90, como o fato de que as filmagens de Roman são mostradas em 4:3 e com as imagens granuladas, até mesmo a animação que imita aquele “protetor de tela” tão comum em DVDs na época, onde o logo ficava se movendo de forma aleatória pela tela até bater em um canto e mudar de direção. Apesar dessa viagem no tempo, "
+            },
+            {
+              "text": "os temas tratados são bem atuais",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", dando uma cutucada nada sutil em conteúdo gerado por IA, por exemplo."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=QBlPg818lGI",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/QBlPg818lGI"
+        },
+        {
+          "type": "paragraph",
+          "text": "A abertura é um espetáculo à parte. Embalada pela canção “10:15 Saturday Night”, da banda The Cure, a animação remete à Cowboy Bebop, usando silhuetas e cores marcantes para causar impacto logo de cara. Já o encerramento do primeiro episódio é bem mais leve, mas também conta com uma boa dose de melancolia, adotando tons pastéis e um visual mais amigável para mostrar a trajetória do jovem Roman.",
+          "runs": [
+            {
+              "text": "A abertura é um espetáculo à parte. Embalada pela canção "
+            },
+            {
+              "text": "“10:15 Saturday Night”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", da banda "
+            },
+            {
+              "text": "The Cure",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", a animação remete à "
+            },
+            {
+              "text": "Cowboy Bebop",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2021/11/27/os-10-melhores-episodios-de-cowboy-bebop-lista/"
+            },
+            {
+              "text": ", usando silhuetas e cores marcantes para causar impacto logo de cara. Já o encerramento do primeiro episódio é bem mais leve, mas também conta com uma boa dose de melancolia, adotando tons pastéis e um visual mais amigável para mostrar a trajetória do jovem Roman."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para quem já é fã do animê, Cyberpunk: Mercenários 2 promete entregar um espetáculo no mesmo nível da primeira temporada: violento, gráfico e de partir o coração. Para quem ainda não conhece, vale a pena assistir aos 10 episódios que estão na Netflix enquanto aguarda a estreia da segunda temporada, que chega na íntegra no próximo dia 20.",
+          "runs": [
+            {
+              "text": "Para quem já é fã do animê, "
+            },
+            {
+              "text": "Cyberpunk: Mercenários 2",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " promete entregar um espetáculo no mesmo nível da primeira temporada: violento, gráfico e de partir o coração. Para quem ainda não conhece, vale a pena assistir aos 10 episódios que estão na Netflix enquanto aguarda a estreia da segunda temporada, que chega na íntegra no próximo dia 20."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site.",
+          "runs": [
+            {
+              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-02T22:15:47.000Z",
+      "updatedAt": "2026-10-02T22:34:31.000Z",
+      "expiresAt": "2026-10-09T22:15:47.000Z",
+      "category": "Episódios",
+      "eventType": "EPISODE",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/02/primeiras-impressoes-de-cyberpunk-mercenarios-2",
+          "publishedAt": "2026-10-02T22:15:47.000Z",
+          "author": "Pri Ganiko"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 608,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 18,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-2ecc0c76",
       "slug": "black-lagoon-manga-volta-a-ser-publicado-no-brasil-diz-autor-jbox-2ecc0c76",
@@ -5860,7 +6760,7 @@
       "sourceCount": 1,
       "readingMinutes": 3,
       "wordCount": 467,
-      "qualityScore": 0.999,
+      "qualityScore": 0.939,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
