@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T16:04:19.639Z",
+  "generatedAt": "2026-10-03T19:10:11.355Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 40,
+      "count": 39,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,653 @@
     }
   ],
   "stats": {
-    "collected": 50,
-    "grouped": 22,
-    "published": 22,
-    "newStories": 22,
-    "fullArticles": 22,
+    "collected": 49,
+    "grouped": 23,
+    "published": 23,
+    "newStories": 23,
+    "fullArticles": 23,
     "previewArticles": 0,
-    "avgWords": 419,
-    "withHeroImage": 22,
-    "withOrderedMedia": 21,
+    "avgWords": 420,
+    "withHeroImage": 23,
+    "withOrderedMedia": 22,
     "skippedTranslation": 0,
-    "skippedQuality": 27,
-    "durationMs": 2490
+    "skippedQuality": 25,
+    "durationMs": 5572
   },
   "items": [
+    {
+      "id": "jbox-0161dac3",
+      "slug": "4-parte-de-ascendance-of-a-bookworm-tem-anime-confirmado-jbox-0161dac3",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "4ª parte de ‘Ascendance of a Bookworm’ tem animê confirmado",
+      "originalTitle": "4ª parte de ‘Ascendance of a Bookworm’ tem animê confirmado",
+      "summary": "A equipe responsável pelo animê de Ascendance of a Bookworm anunciou neste sábado (3) que a parte 4 das novels de Miya Kazuki, intitulada em inglês como Founder of the Royal Academy’s So-Called Library Committee, ganhará uma adaptação. A nova temporada segue produzida pelo Wit Studio.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "Light Novel",
+        "ascendance of a bookworm",
+        "ascendance of a bookworm parte 4",
+        "Honzuki no Gekokujō",
+        "Honzuki no Gekokujou",
+        "nova temporada"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/03/4a-parte-de-ascendance-of-a-bookworm-tem-anime-confirmado",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/03/4a-parte-de-ascendance-of-a-bookworm-tem-anime-confirmado",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/ascendance-of-a-bookwork-parte-4-destacada.jpg",
+      "mediaQuery": "4ª parte de ‘Ascendance of a Bookworm’ tem animê confirmado",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/ascendance-of-a-bookwork-parte-4-1.jpg",
+          "alt": "Imagem: pôster anunciando a adaptação da quarta parte da novel 'Ascendance of a Bookworm' para animê.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/hn68MZAP3a0"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A equipe responsável pelo animê de Ascendance of a Bookworm anunciou neste sábado (3) que a parte 4 das novels de Miya Kazuki, intitulada em inglês como Founder of the Royal Academy’s So-Called Library Committee, ganhará uma adaptação. A nova temporada segue produzida pelo Wit Studio.",
+          "runs": [
+            {
+              "text": "A equipe responsável pelo animê de "
+            },
+            {
+              "text": "Ascendance of a Bookworm",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " anunciou neste sábado (3) que a parte 4 das "
+            },
+            {
+              "text": "novels",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Miya Kazuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", intitulada em inglês como "
+            },
+            {
+              "text": "Founder of the Royal Academy’s So-Called Library Committee",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", ganhará uma adaptação. A nova temporada segue produzida pelo "
+            },
+            {
+              "text": "Wit Studio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A terceira parte do animê, chamada Adopted Daughter of an Archduke, estreou em 4 de abril nos canais Yomiuri TV e NTV, no Japão, e chegou ao fim também neste sábado. A temporada foi exibida em dois cours consecutivos, totalizando seis meses de transmissão. No Brasil, o animê é exibido pela Crunchyroll apenas com legendas em português (há dublagem em inglês e outros idiomas).",
+          "runs": [
+            {
+              "text": "A terceira parte do animê, chamada "
+            },
+            {
+              "text": "Adopted Daughter of an Archduke",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", estreou em 4 de abril nos canais Yomiuri TV e NTV, no Japão, e chegou ao fim também neste sábado. A temporada foi exibida em dois "
+            },
+            {
+              "text": "cours",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " consecutivos, totalizando seis meses de transmissão. No Brasil, o animê é exibido pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " apenas com legendas em português (há dublagem em inglês e outros idiomas)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na trama, uma universitária reencarna como a filha de um soldado em um mundo fantástico de baixa alfabetização e com poucos livros. Ela gosta muito de ler, mas as opções são escassas. Sua solução foi virar uma bibliotecária, assim pode viver rodeada de livros e, futuramente, criar seus os seus próprios.",
+          "runs": [
+            {
+              "text": "Na trama, uma universitária reencarna como a filha de um soldado em um mundo fantástico de baixa alfabetização e com poucos livros. Ela gosta muito de ler, mas as opções são escassas. Sua solução foi virar uma bibliotecária, assim pode viver rodeada de livros e, futuramente, criar seus os seus próprios."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/ascendance-of-a-bookwork-parte-4-1.jpg",
+          "alt": "Imagem: pôster anunciando a adaptação da quarta parte da novel 'Ascendance of a Bookworm' para animê."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na terceira parte, Yuka Iguchi e Show Hayami retornaram nos papéis de Rozemyne, anteriormente conhecida como Myne, e Ferdinand. O elenco também contou com Yukari Tamura como Georgine, Mami Koyama como Veronica, Minami Takayama como Florencia, Kazuhiro Yamaji como Bonifatius, Nao Touyama como Angelica, Asami Seto como Brigitte e Katsumi Fukuhara como Zack.",
+          "runs": [
+            {
+              "text": "Na terceira parte, "
+            },
+            {
+              "text": "Yuka Iguchi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Show Hayami",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " retornaram nos papéis de "
+            },
+            {
+              "text": "Rozemyne",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", anteriormente conhecida como "
+            },
+            {
+              "text": "Myne",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e "
+            },
+            {
+              "text": "Ferdinand",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O elenco também contou com "
+            },
+            {
+              "text": "Yukari Tamura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como "
+            },
+            {
+              "text": "Georgine",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ","
+            },
+            {
+              "text": " Mami Koyama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como "
+            },
+            {
+              "text": "Veronica",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Minami Takayama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como "
+            },
+            {
+              "text": "Florencia",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Kazuhiro Yamaji",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como "
+            },
+            {
+              "text": "Bonifatius",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Nao Touyama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como "
+            },
+            {
+              "text": "Angelica",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Asami Seto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como "
+            },
+            {
+              "text": "Brigitte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Katsumi Fukuhara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como "
+            },
+            {
+              "text": "Zack",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A direção da sequência ficou por Yoshiaki Iwasaki, de Kowloon Generic Romance, Hayate the Combat Butler e We Never Learn: BOKUBEN, que substituiu o diretor anterior da franquia, Mitsuru Hongou. Mariko Kunisawa seguiu como responsável pelos roteiros da série, enquanto Aiko Minowa, de After the Rain e The Ancient Magus’ Bride, assumiu o design dos personagens. MICHIRU também voltou para compor a trilha sonora.",
+          "runs": [
+            {
+              "text": "A direção da sequência ficou por "
+            },
+            {
+              "text": "Yoshiaki Iwasaki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", de "
+            },
+            {
+              "text": "Kowloon Generic Romance",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Hayate the Combat Butler",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "We Never Learn: BOKUBEN",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que substituiu o diretor anterior da franquia, "
+            },
+            {
+              "text": "Mitsuru Hongou",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". "
+            },
+            {
+              "text": "Mariko",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Kunisawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " seguiu como responsável pelos roteiros da série, enquanto "
+            },
+            {
+              "text": "Aiko Minowa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", de "
+            },
+            {
+              "text": "After the Rain",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "The Ancient Magus’ Bride",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", assumiu o design dos personagens. "
+            },
+            {
+              "text": "MICHIRU",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " também voltou para compor a trilha sonora."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=hn68MZAP3a0",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/hn68MZAP3a0"
+        },
+        {
+          "type": "paragraph",
+          "text": "A primeira temporada do animê estreou em outubro de 2019 e terminou em dezembro do mesmo ano, com 14 episódios. A segunda temporada chegou ao Japão em abril de 2020, enquanto a terceira estreou em abril de 2022. A Crunchyroll exibiu as três temporadas conforme foram ao ar.",
+          "runs": [
+            {
+              "text": "A primeira temporada do animê estreou em outubro de 2019 e terminou em dezembro do mesmo ano, com 14 episódios. A segunda temporada chegou ao Japão em abril de 2020, enquanto a terceira estreou em abril de 2022. A Crunchyroll exibiu as três temporadas conforme foram ao ar."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Kazuki começou a publicar as novels originais no site Shousetsuka ni Narou em 2013 e encerrou esse formato em 2017. You Shiina é responsável pelas ilustrações da edição impressa, que teve início em 2015 e foi concluída em 33 volumes, correspondente ao 12º volume da parte 5, em dezembro de 2023. Atualmente, a franquia soma mais de 13 milhões de cópias em circulação, incluindo versões digitais.",
+          "runs": [
+            {
+              "text": "Kazuki começou a publicar as "
+            },
+            {
+              "text": "novels",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " originais no site "
+            },
+            {
+              "text": "Shousetsuka ni Narou",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " em 2013 e encerrou esse formato em 2017. You Shiina é responsável pelas ilustrações da edição impressa, que teve início em 2015 e foi concluída em 33 volumes, correspondente ao 12º volume da parte 5, em"
+            },
+            {
+              "text": " dezembro de 2023",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2022/12/16/ascendance-of-a-bookworm-novel-pode-chegar-ao-fim-em-2023/"
+            },
+            {
+              "text": ". Atualmente, a franquia soma mais de 13 milhões de cópias em circulação, incluindo versões digitais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Aqui no Brasil, as novels ainda não foram publicadas. Porém, a adaptação em mangá, intitulada Sonho de uma Apaixonada por Livros, sai pela editora NewPOP.",
+          "runs": [
+            {
+              "text": "Aqui no Brasil, as "
+            },
+            {
+              "text": "novels",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ainda não foram publicadas. Porém, a adaptação em mangá, intitulada "
+            },
+            {
+              "text": "Sonho de uma Apaixonada por Livros",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", sai pela editora "
+            },
+            {
+              "text": "NewPOP",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site oficial de Ascendance of a Bookworm",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Site oficial de Ascendance of a Bookworm",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://booklove-anime.jp/news/contents/article_qk1xesez9hf0kano.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-03T18:15:47.000Z",
+      "updatedAt": "2026-10-03T18:19:19.000Z",
+      "expiresAt": "2026-10-10T18:15:47.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/03/4a-parte-de-ascendance-of-a-bookworm-tem-anime-confirmado",
+          "publishedAt": "2026-10-03T18:15:47.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 444,
+      "qualityScore": 0.997,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 14,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-3095f5e4",
       "slug": "umamusume-filme-teve-publico-acima-da-media-de-ocupacao-nos-cinemas-brasileiros-jbox-3095f5e4",
@@ -5222,7 +5855,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 252,
-      "qualityScore": 0.972,
+      "qualityScore": 0.912,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -5546,7 +6179,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 265,
-      "qualityScore": 0.974,
+      "qualityScore": 0.914,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -5825,7 +6458,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 255,
-      "qualityScore": 0.972,
+      "qualityScore": 0.912,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
