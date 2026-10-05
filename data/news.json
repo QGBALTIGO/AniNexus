@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T16:24:37.098Z",
+  "generatedAt": "2026-10-05T22:52:06.305Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,1841 @@
   ],
   "stats": {
     "collected": 49,
-    "grouped": 24,
-    "published": 24,
-    "newStories": 24,
-    "fullArticles": 24,
+    "grouped": 25,
+    "published": 25,
+    "newStories": 25,
+    "fullArticles": 25,
     "previewArticles": 0,
-    "avgWords": 426,
-    "withHeroImage": 24,
-    "withOrderedMedia": 24,
+    "avgWords": 420,
+    "withHeroImage": 25,
+    "withOrderedMedia": 25,
     "skippedTranslation": 0,
-    "skippedQuality": 24,
-    "durationMs": 3012
+    "skippedQuality": 23,
+    "durationMs": 3689
   },
   "items": [
+    {
+      "id": "animenew-9a5297fb",
+      "slug": "aniquim-reune-catalogo-e-comunidade-para-fas-de-anime-animenew-9a5297fb",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "ANIQuim reúne catálogo e comunidade para fãs de anime",
+      "originalTitle": "ANIQuim reúne catálogo e comunidade para fãs de anime",
+      "summary": "O ANIQuim é uma nova plataforma brasileira que reúne catálogo, listas pessoais, calendário de lançamentos e recursos de comunidade voltados para fãs de anime.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Notícias",
+        "Otaku",
+        "ANIQuim"
+      ],
+      "url": "https://animenew.com.br/aniquim-plataforma-animes-brasileira",
+      "sourceUrl": "https://animenew.com.br/aniquim-plataforma-animes-brasileira",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/ANIQuim-reune-catalogo-e-comunidade-para-fas-de-anime.webp",
+      "mediaQuery": "ANIQuim reúne catálogo e comunidade para fãs de anime",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/aniquim-1.webp",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/aniquim-2.webp",
+          "alt": "",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O ANIQuim é uma nova plataforma brasileira que reúne catálogo, listas pessoais, calendário de lançamentos e recursos de comunidade voltados para fãs de anime.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "ANIQuim",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " é uma nova plataforma brasileira que reúne catálogo, listas pessoais, calendário de lançamentos e recursos de comunidade voltados para "
+            },
+            {
+              "text": "fãs de anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Black Clover: Quando estreia o primeiro episódio da 2ª temporada?",
+              "runs": [
+                {
+                  "text": "Black Clover: Quando estreia o primeiro episódio da 2ª temporada?",
+                  "href": "https://animenew.com.br/black-clover-estreia-estreia-temporada-2"
+                }
+              ]
+            },
+            {
+              "text": "Anime Glasses With a Chance of Delinquent estreia em 2027",
+              "runs": [
+                {
+                  "text": "Anime Glasses With a Chance of Delinquent estreia em 2027",
+                  "href": "https://animenew.com.br/glasses-with-a-chance-of-delinquent-anime"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Criado por Ana Lima e Hugo Machado, o site nasceu com a proposta de concentrar em português recursos que normalmente ficam espalhados por diferentes serviços. A plataforma permite descobrir novos títulos, verificar onde assistir oficialmente no Brasil e acompanhar os episódios das temporadas atuais.",
+          "runs": [
+            {
+              "text": "Criado por "
+            },
+            {
+              "text": "Ana Lima",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Hugo Machado",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o site nasceu com a proposta de concentrar em português recursos que normalmente ficam espalhados por diferentes serviços. A plataforma permite descobrir novos títulos, verificar onde assistir oficialmente no Brasil e acompanhar os episódios das temporadas atuais."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/aniquim-1.webp"
+        },
+        {
+          "type": "heading",
+          "text": "Listas e interação no ANIQuim",
+          "runs": [
+            {
+              "text": "Listas e interação no "
+            },
+            {
+              "text": "ANIQuim",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre os recursos está uma lista pessoal com categorias como Quero Ver, Assistindo, Terminei, Pausei e Desisti. Também é possível avaliar produções, favoritar títulos e registrar reações, além de publicar Impressões sobre animes e episódios com proteção contra spoilers.",
+          "runs": [
+            {
+              "text": "Entre os recursos está uma lista pessoal com categorias como "
+            },
+            {
+              "text": "Quero Ver",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Assistindo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Terminei",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Pausei",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Desisti",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Também é possível avaliar produções, favoritar títulos e registrar reações, além de publicar Impressões sobre animes e episódios com proteção contra spoilers."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "As interações ajudam a formar rankings e estatísticas da comunidade. O site também permite importar a lista do MyAnimeList.",
+          "runs": [
+            {
+              "text": "As interações ajudam a formar rankings e estatísticas da comunidade. O site também permite importar a lista do "
+            },
+            {
+              "text": "MyAnimeList",
+              "href": "https://animenew.com.br/tag/myanimelist/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/aniquim-2.webp"
+        },
+        {
+          "type": "paragraph",
+          "text": "O catálogo já ultrapassa 8,5 mil animes, com sinopses, trailers, personagens, estúdios, direção e recomendações. O calendário semanal mostra os episódios previstos e suas plataformas oficiais de exibição no Brasil.",
+          "runs": [
+            {
+              "text": "O catálogo já ultrapassa 8,5 mil animes, com sinopses, trailers, personagens, estúdios, direção e recomendações. O calendário semanal mostra os episódios previstos e suas plataformas oficiais de exibição no Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Segundo os criadores, o ANIQuim já registra 10 mil usuários ativos ou sessões e 114 mil visualizações de páginas. Sendo assim a plataforma também contabiliza mais de 100 mil marcações de séries concluídas.",
+          "runs": [
+            {
+              "text": "Segundo os criadores, o ANIQuim já registra 10 mil usuários ativos ou sessões e 114 mil visualizações de páginas. Sendo assim a plataforma também contabiliza mais de "
+            },
+            {
+              "text": "100 mil marcações de séries concluídas",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre os próximos planos estão novas parcerias e o desenvolvimento de um aplicativo nativo. Atualmente, o site pode ser instalado como aplicativo pelo endereço aniquim.com.br/app.",
+          "runs": [
+            {
+              "text": "Entre os próximos planos estão novas parcerias e o desenvolvimento de um aplicativo nativo. Atualmente, o site pode ser instalado como aplicativo pelo endereço aniquim.com.br/app."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim o ANIQuim está disponível gratuitamente em aniquim.com.br.",
+          "runs": [
+            {
+              "text": "Por fim o ANIQuim está disponível gratuitamente em "
+            },
+            {
+              "text": "aniquim.com.br",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Assessoria de imprensa",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Assessoria de imprensa",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em ANIQuim reúne catálogo e comunidade para fãs de anime.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "ANIQuim reúne catálogo e comunidade para fãs de anime",
+              "href": "https://animenew.com.br/aniquim-plataforma-animes-brasileira/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-05T21:06:23.000Z",
+      "updatedAt": "2026-10-05T21:06:23.000Z",
+      "expiresAt": "2026-10-12T21:06:23.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/aniquim-plataforma-animes-brasileira",
+          "publishedAt": "2026-10-05T21:06:23.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 273,
+      "qualityScore": 0.978,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 14,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-fb40b93f",
+      "slug": "crunchyroll-oficializa-transmissao-simultanea-de-dragon-ball-super-beerus-no-brasil-jbox-fb40b93f",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Crunchyroll oficializa transmissão simultânea de ‘Dragon Ball Super: Beerus’ no Brasil",
+      "originalTitle": "Crunchyroll oficializa transmissão simultânea de ‘Dragon Ball Super: Beerus’ no Brasil",
+      "summary": "Após alguns rumores aqui e ali, a Crunchyroll oficializou a transmissão de Dragon Ball Super: Beerus no Brasil.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Streaming",
+        "Crunchyroll",
+        "dragon ball super",
+        "Dragon Ball Super: Beerus",
+        "Dragon Ball Super: Beerus na Crunchyroll",
+        "Onde assistir Dragon Ball Super: Beerus no Brasil",
+        "remake de Dragon Ball Super",
+        "remake do Freeza dourado"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/05/crunchyroll-oficializa-transmissao-simultanea-de-dragon-ball-super-beerus-no-brasil",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/05/crunchyroll-oficializa-transmissao-simultanea-de-dragon-ball-super-beerus-no-brasil",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Dragon-Ball-Super-Beerus-destacada.jpg",
+      "mediaQuery": "Crunchyroll oficializa transmissão simultânea de ‘Dragon Ball Super: Beerus’ no Brasil",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/4GYtota67go"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Após alguns rumores aqui e ali, a Crunchyroll oficializou a transmissão de Dragon Ball Super: Beerus no Brasil.",
+          "runs": [
+            {
+              "text": "Após alguns rumores aqui e ali, a "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " oficializou a transmissão de"
+            },
+            {
+              "text": " Dragon Ball Super: Beerus",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " no Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nas redes sociais, a plataforma divulgou um trailer legendado da produção, e cravou a data de estreia para 11 de outubro, mesmo dia do lançamento no Japão.",
+          "runs": [
+            {
+              "text": "Nas redes sociais, a plataforma divulgou um trailer legendado da produção, e cravou a data de estreia para "
+            },
+            {
+              "text": "11 de outubro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", mesmo dia do lançamento no Japão."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=4GYtota67go",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/4GYtota67go"
+        },
+        {
+          "type": "paragraph",
+          "text": "Há alguns dias, a Netflix também já havia confirmado que exibirá o novo animê, mas com praticamente uma semana de diferença (como foi com Dragon Ball Daima). Vale destacar que os dois streamings divulgaram trailers legendados, o que indica que a dublagem em português, se houver, pode demorar um pouco para chegar (como também costuma acontecer com produções da Toei Animation).",
+          "runs": [
+            {
+              "text": "Há alguns dias, "
+            },
+            {
+              "text": "a Netflix também já havia confirmado que exibirá o novo animê",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/01/netflix-confirma-transmissao-de-dragon-ball-super-beerus-no-brasil/"
+            },
+            {
+              "text": ", mas com praticamente uma semana de diferença (como foi com "
+            },
+            {
+              "text": "Dragon Ball Daima",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). Vale destacar que os dois streamings divulgaram trailers legendados, o que indica que a dublagem em português, se houver, pode demorar um pouco para chegar (como também costuma acontecer com produções da Toei Animation)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Outro detalhe é que, como divulgado pelo o perfil Sugoi LITE no X, há um rumor de que o animê terá 19 episódios no total, e que cobriria 3 arcos da história: Beerus, Renascimento de Freeza e Universo 6. Esses detalhes, no entanto, ainda não foram oficializados por nenhuma das plataformas, tampouco por sua produtora.",
+          "runs": [
+            {
+              "text": "Outro detalhe é que, como divulgado pelo o perfil "
+            },
+            {
+              "text": "Sugoi LITE",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no X, há um rumor de que o animê terá "
+            },
+            {
+              "text": "19 episódios no total",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e que cobriria 3 arcos da história: "
+            },
+            {
+              "text": "Beerus",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Renascimento de Freeza",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Universo 6",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Esses detalhes, no entanto, ainda não foram oficializados por nenhuma das plataformas, tampouco por sua produtora."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Dragon Ball Super: Beerus é o título da nova versão de TV do primeiro arco de Dragon Ball Super, que por si só já é uma versão adaptada do filme Dragon Ball Z: A Batalha dos Deuses. A produção conta não apenas com cenas refeitas, mas também com trechos inéditos e uma história reconstruída de forma que se aproxime mais da ideia original de Akira Toriyama para o arco. O elenco original de Dragon Ball também regravou suas vozes para o novo animê, que conta ainda com aprimoramentos gerais de áudio, incluindo novas trilhas e melhoria dos efeitos sonoros.",
+          "runs": [
+            {
+              "text": "Dragon Ball Super: Beerus",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é o título da nova versão de TV do primeiro arco de "
+            },
+            {
+              "text": "Dragon Ball Super",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que por si só já é uma versão adaptada do filme "
+            },
+            {
+              "text": "Dragon Ball Z: A Batalha dos Deuses",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". A produção conta não apenas com cenas refeitas, mas também com trechos inéditos e uma "
+            },
+            {
+              "text": "história reconstruída de forma que se aproxime mais da ideia original de Akira Toriyama para o arco",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O elenco original de "
+            },
+            {
+              "text": "Dragon Ball",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " também regravou suas vozes para o novo animê, que conta ainda com aprimoramentos gerais de áudio, incluindo novas trilhas e melhoria dos efeitos sonoros."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além do lançamento aprimorado, uma continuação também já está confirmada, adaptando a saga Prisioneiro da Patrulha Galáctica, o arco do Moro.",
+          "runs": [
+            {
+              "text": "Além do lançamento aprimorado, "
+            },
+            {
+              "text": "uma continuação também já está confirmada",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/01/24/toei-confirma-sequencia-de-dragon-ball-super/"
+            },
+            {
+              "text": ", adaptando a saga "
+            },
+            {
+              "text": "Prisioneiro da Patrulha Galáctica",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o arco do Moro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Brasil, os animês Dragon Ball, Dragon Ball Z, Dragon Ball GT, Dragon Ball Super, Dragon Ball Z Kai e Dragon Ball Daima estão no catálogo da Crunchyroll, que também conta com vários filmes da franquia. Já a HBO Max tem em seu catálogo a temporada única de Daima, além de Dragon Ball Z Kai e Dragon Ball Z Kai: The Final Chapters. A Netflix, por sua vez, conta com os episódios de Daima e o filme A Batalha dos Deuses, de 2013. Também há itens da franquia nos catálogos de Disney+ e Claro TV+.",
+          "runs": [
+            {
+              "text": "No Brasil, os animês "
+            },
+            {
+              "text": "Dragon Ball",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Dragon Ball Z",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Dragon Ball GT",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Dragon Ball Super",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Dragon Ball Z Kai",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Dragon Ball Daima",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estão no catálogo da "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que também conta com vários filmes da franquia. Já a "
+            },
+            {
+              "text": "HBO Max",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " tem em seu catálogo a temporada única de "
+            },
+            {
+              "text": "Daima",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", além de "
+            },
+            {
+              "text": "Dragon Ball Z Kai",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Dragon Ball Z Kai: The Final Chapters",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". A "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", por sua vez, conta com os episódios de "
+            },
+            {
+              "text": "Daima",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e o filme "
+            },
+            {
+              "text": "A Batalha dos Deuses",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", de 2013. Também há itens da franquia nos catálogos de "
+            },
+            {
+              "text": "Disney+",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Claro TV+",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já o mangá da franquia está atualmente na fase Dragon Ball Super, que segue em hiato desde a morte do autor Akira Toriyama. O último capítulo da obra foi publicado na V-Jump em março de 2024, mês de falecimento do mangaká. Em fevereiro de 2025, a obra ganhou um one-shot. Desde então, ela segue parada.",
+          "runs": [
+            {
+              "text": "Já o mangá da franquia está atualmente na fase "
+            },
+            {
+              "text": "Dragon Ball Super",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que segue em hiato desde a morte do autor Akira Toriyama. O último capítulo da obra foi publicado na "
+            },
+            {
+              "text": "V-Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " em março de 2024, mês de falecimento do mangaká. Em fevereiro de 2025, a obra ganhou um "
+            },
+            {
+              "text": "one-shot",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Desde então, ela segue parada."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Instagram Crunchyroll Brasil, X/Twitter Sugoi LITE",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Instagram Crunchyroll Brasil, ",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "X/Twitter Sugoi LITE",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://x.com/SugoiLITE/status/2104473137668645264"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-05T20:31:40.000Z",
+      "updatedAt": "2026-10-05T20:32:13.000Z",
+      "expiresAt": "2026-10-12T20:31:40.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/05/crunchyroll-oficializa-transmissao-simultanea-de-dragon-ball-super-beerus-no-brasil",
+          "publishedAt": "2026-10-05T20:31:40.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 455,
+      "qualityScore": 0.816,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-1eac21f2",
+      "slug": "critica-the-world-is-dancing-jbox-1eac21f2",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Crítica | The World Is Dancing",
+      "originalTitle": "Crítica | The World Is Dancing",
+      "summary": "Um dos animês visualmente mais bonitos deste ano talvez passe despercebido pelo público brasileiro, já que não ganhou distribuição oficial em português em nenhuma plataforma daqui. Trata-se de The World Is Dancing, drama histórico cujo roteiro em si não é lá essas coisas, mas o esforço colocado na produção técnica, principalmente na parte visual, torna a obra obrigatória para fãs de animação.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "Resenha",
+        "crítica de the world is dancing",
+        "resenha de the world is dancing",
+        "review de the world is dancing",
+        "The World Is Dancing",
+        "the world is dancing é bom?"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/05/critica-the-world-is-dancing",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/05/critica-the-world-is-dancing",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/jbox-critica-destacada-theworlddancing.jpg",
+      "mediaQuery": "Crítica | The World Is Dancing",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/the-world-is-dancing-1.jpg",
+          "alt": "Imagem do animê The World Is Dancing com o protagonista, um menino com as sobrancelhas raspadas e usando trajes do Japão Imperial, olhando de maneira chocada para cima",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/the-world-is-dancing-2.png",
+          "alt": "Imagem do animê The World Is Dancing com o protagonista, um menino com as sobrancelhas raspadas e usando trajes do Japão Imperial, olhando de maneira surpreendente para uma mão estendida para ele",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/Zu45LJG7Chs"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Um dos animês visualmente mais bonitos deste ano talvez passe despercebido pelo público brasileiro, já que não ganhou distribuição oficial em português em nenhuma plataforma daqui. Trata-se de The World Is Dancing, drama histórico cujo roteiro em si não é lá essas coisas, mas o esforço colocado na produção técnica, principalmente na parte visual, torna a obra obrigatória para fãs de animação.",
+          "runs": [
+            {
+              "text": "Um dos animês visualmente mais bonitos deste ano talvez passe despercebido pelo público brasileiro, já que não ganhou distribuição oficial em português em nenhuma plataforma daqui. Trata-se de "
+            },
+            {
+              "text": "The World Is Dancing",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", drama histórico cujo roteiro em si não é lá essas coisas, mas o esforço colocado na produção técnica, principalmente na parte visual, torna a obra obrigatória para fãs de animação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história se passa no Japão do período Nanboku-chou, no século XIV, quando a nação era dividida entre duas cortes imperiais rivais, uma no norte e outra no sul. A trama acompanha parte da infância e da adolescência de Oniyasha, ator e dançarino que mais tarde ficaria conhecido como Zeami Motokiyo, um dos maiores nomes, se não o maior, do teatro Noh.",
+          "runs": [
+            {
+              "text": "A história se passa no Japão do período "
+            },
+            {
+              "text": "Nanboku-chou",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", no século XIV, quando a nação era dividida entre duas cortes imperiais rivais, uma no norte e outra no sul. A trama acompanha parte da infância e da adolescência de "
+            },
+            {
+              "text": "Oniyasha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", ator e dançarino que mais tarde ficaria conhecido como "
+            },
+            {
+              "text": "Zeami Motokiyo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", um dos maiores nomes, se não o maior, do teatro "
+            },
+            {
+              "text": "Noh",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Oniyasha faz parte de uma trupe teatral liderada por seu pai. Por ser extremamente talentoso no Sarugaku, tipo de performance teatral que mais tarde daria origem ao Noh, o garoto chama a atenção do xogum da corte do norte, Ashikaga Takauji, fã das artes em geral, que o apadrinha, leva-o para viver em sua residência e possibilita que ele se apresente para grandes públicos e se torne famoso naquele lugar.",
+          "runs": [
+            {
+              "text": "Oniyasha faz parte de uma trupe teatral liderada por seu pai. Por ser extremamente talentoso no "
+            },
+            {
+              "text": "Sarugaku",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", tipo de performance teatral que mais tarde daria origem ao "
+            },
+            {
+              "text": "Noh",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o garoto chama a atenção do xogum da corte do norte, "
+            },
+            {
+              "text": "Ashikaga Takauji",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", fã das artes em geral, que o apadrinha, leva-o para viver em sua residência e possibilita que ele se apresente para grandes públicos e se torne famoso naquele lugar."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Partindo dessa premissa biográfica, The World Is Dancing coloca em discussão algumas questões: o Japão nessa época estava bem ruim das pernas. Conflitos civis, doenças, fome, miséria e morte faziam parte do dia a dia da maior parte da população. Qual é a serventia da arte nesse contexto? Para além disso, é justo que apenas uma minoria abastada possa estudar e exercer seus ofícios artísticos enquanto todo o resto ao redor precisa se preocupar se vai comer e sobreviver até o fim do dia? São interrogações que rolam até hoje.",
+          "runs": [
+            {
+              "text": "Partindo dessa premissa biográfica, "
+            },
+            {
+              "text": "The World Is Dancing",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " coloca em discussão algumas questões: o Japão nessa época estava bem ruim das pernas. Conflitos civis, doenças, fome, miséria e morte faziam parte do dia a dia da maior parte da população. Qual é a serventia da arte nesse contexto? Para além disso, é justo que apenas uma minoria abastada possa estudar e exercer seus ofícios artísticos enquanto todo o resto ao redor precisa se preocupar se vai comer e sobreviver até o fim do dia? "
+            },
+            {
+              "text": "São interrogações que rolam até hoje.",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O animê não chega a responder de verdade, mas ilustra essas contradições sociais em diferentes passagens. Mais para o começo da trama, os personagens, ainda crianças, se deparam com uma mulher que vive em uma cabana mais isolada. Ela está desnutrida, visivelmente debilitada e precisa se prostituir em troca de alimentos. Contudo, é talentosíssima dançando, de modo que Oniyasha, inclusive, pensa que ela é algum tipo de figura sobrenatural. A mulher ajuda o moleque a melhorar sua dança e o pai de Oniyasha, posteriormente, a paga por isso. Mas o menino, em um tipo de surto descolado da realidade, tem um ataque de fúria, pois acredita que a arte não deveria ser feita visando ao lucro.",
+          "runs": [
+            {
+              "text": "O animê não chega a responder de verdade, mas ilustra essas contradições sociais em diferentes passagens. Mais para o começo da trama, os personagens, ainda crianças, se deparam com uma mulher que vive em uma cabana mais isolada. Ela está desnutrida, visivelmente debilitada e precisa se prostituir em troca de alimentos. Contudo, é talentosíssima dançando, de modo que Oniyasha, inclusive, pensa que ela é algum tipo de figura sobrenatural. A mulher ajuda o moleque a melhorar sua dança e o pai de Oniyasha, posteriormente, a paga por isso. Mas o menino, em um tipo de surto descolado da realidade, tem um ataque de fúria, pois acredita que a arte não deveria ser feita visando ao lucro."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/the-world-is-dancing-1.jpg",
+          "alt": "Imagem do animê The World Is Dancing com o protagonista, um menino com as sobrancelhas raspadas e usando trajes do Japão Imperial, olhando de maneira chocada para cima"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Estúdio Cynic/Reprodução",
+          "runs": [
+            {
+              "text": "Imagem: Estúdio Cynic/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Mais para frente na história, quando os personagens já estão na pré-adolescência e Oniyasha está sob as asas do xogum do norte, um amigo de infância dele ressurge, mas agora em situação periclitante, vivendo como mendigo ao lado de outras pessoas que não têm um lar. Parte dessas pessoas é vista como indigente, já que fazia parte do lado sul do conflito no Japão, sendo tratada como potencialmente criminosa aos olhos da corte do norte.",
+          "runs": [
+            {
+              "text": "Mais para frente na história",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", quando os personagens já estão na pré-adolescência e Oniyasha está sob as asas do xogum do norte, um amigo de infância dele ressurge, mas agora em situação periclitante, vivendo como mendigo ao lado de outras pessoas que não têm um lar. Parte dessas pessoas é vista como indigente, já que fazia parte do lado sul do conflito no Japão, sendo tratada como potencialmente criminosa aos olhos da corte do norte."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No animê, um confronto de apresentações para o xogum, que termina com os dois lados se juntando para executar uma única performance, serve para Oniyasha mostrar à corte que é possível haver perdão e união em prol de um bem maior. Ainda assim, o resultado é catastrófico para alguns dos envolvidos.",
+          "runs": [
+            {
+              "text": "No animê, um confronto de apresentações para o xogum, que termina com os dois lados se juntando para executar uma única performance, serve para Oniyasha mostrar à corte que é possível haver perdão e união em prol de um bem maior. Ainda assim, "
+            },
+            {
+              "text": "o resultado é catastrófico para alguns dos envolvidos",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Posto isso, o grande triunfo de The World Is Dancing é o quão bonito esse animê é. Mesmo as cenas mais estáticas são de encher os olhos, com frames e mais frames lindíssimos, cores que emocionam, jogos de luz e sombra, foque e desfoque, uma fluidez fantástica nas cenas de dança, traços que passeiam por diferentes estilos e uma trilha sonora que pontua as sensações buscadas de maneira impecável. Lembra mais uma produção cinematográfica do que as séries habituais de TV. Independentemente da qualidade do roteiro, este é um desenho animado que merece ser visto pelo quão longe vai para nos impressionar visual e sonoramente.",
+          "runs": [
+            {
+              "text": "Posto isso, o grande triunfo de "
+            },
+            {
+              "text": "The World Is Dancing",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é o quão bonito esse animê é. Mesmo as cenas mais estáticas são de encher os olhos, com frames e mais frames lindíssimos, cores que emocionam, jogos de luz e sombra, foque e desfoque, uma fluidez fantástica nas cenas de dança, traços que passeiam por diferentes estilos e uma trilha sonora que pontua as sensações buscadas de maneira impecável. "
+            },
+            {
+              "text": "Lembra mais uma produção cinematográfica",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " do que as séries habituais de TV. Independentemente da qualidade do roteiro, este é um desenho animado que merece ser visto pelo quão longe vai para nos impressionar visual e sonoramente."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Porque, em questão de história, história mesmo, fica bem chato de acompanhar. Particularmente, acho a maneira como o protagonista, Oniyasha, foi desenvolvido meio irritante de assistir. Ele parece ser, para nós, espectadores, o avatar do que há de errado com aquela sociedade. É um menino que não tem tantas dificuldades, que claramente nasceu com um dom e tem uma facilidade maior que a média para ser um artista. Figuras assim podem ser interessantíssimas quando bem desenvolvidas, pois escancaram as contradições de seus ambientes.",
+          "runs": [
+            {
+              "text": "Porque, em questão de história, "
+            },
+            {
+              "text": "história",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " mesmo, fica bem chato de acompanhar. Particularmente, acho a maneira como o protagonista, Oniyasha, foi desenvolvido meio irritante de assistir. Ele parece ser, para nós, espectadores, o avatar do que há de errado com aquela sociedade. É um menino que não tem tantas dificuldades, que claramente nasceu com um dom e tem uma facilidade maior que a média para ser um artista. Figuras assim podem ser interessantíssimas quando bem desenvolvidas, pois escancaram as contradições de seus ambientes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Só que os conflitos colocados diante dele são quase bobos, de modo que passamos a maior parte da série na companhia de um artista hesitante, mas sem grandes motivações para essa hesitação, que é adorado e reverenciado por quase todos ao redor e tem êxito toda vez que se propõe de verdade a fazer alguma coisa. Depois de um tempo, isso fica meio desagradável de acompanhar e a simpatia pelo protagonista se perde.",
+          "runs": [
+            {
+              "text": "Só que os conflitos colocados diante dele são quase bobos, de modo que passamos a maior parte da série na companhia de um artista hesitante, mas sem grandes motivações para essa hesitação, que é adorado e reverenciado por quase todos ao redor e tem êxito toda vez que se propõe de verdade a fazer alguma coisa. Depois de um tempo, isso fica meio desagradável de acompanhar e a simpatia pelo protagonista se perde."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/the-world-is-dancing-2.png",
+          "alt": "Imagem do animê The World Is Dancing com o protagonista, um menino com as sobrancelhas raspadas e usando trajes do Japão Imperial, olhando de maneira surpreendente para uma mão estendida para ele"
+        },
+        {
+          "type": "paragraph",
+          "text": "Há uma menção a uma tensão entre ele e o pai, líder da trupe teatral, que nunca vai muito a fundo. Outra, entre ele e o amiguinho de infância que virou mendigo, poderia exigir que ele exercitasse músculos morais capazes de transformá-lo dali em diante, mas o arco termina, o tempo passa e ele segue basicamente o mesmo.",
+          "runs": [
+            {
+              "text": "Há uma menção a uma tensão entre ele e o pai, líder da trupe teatral, que"
+            },
+            {
+              "text": " nunca vai muito a fundo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Outra, entre ele e o amiguinho de infância que virou mendigo, poderia exigir que ele exercitasse músculos morais capazes de transformá-lo dali em diante, mas o arco termina, o tempo passa e ele segue basicamente o mesmo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Oniyasha tem ainda um fã ricaço mais maduro que o trata praticamente como um idol dos dias de hoje, enche-o de presentes e o venera, mas essa devoção quase sexual de um homem bem mais velho aparentemente não causa efeito nenhum no menino. Ele não parece se sentir desconfortável, traumatizado ou, indo para o lado oposto, disposto a se aproveitar dessa situação para alguma coisa.",
+          "runs": [
+            {
+              "text": "Oniyasha tem ainda um fã ricaço mais maduro que o trata praticamente como um "
+            },
+            {
+              "text": "idol",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " dos dias de hoje, enche-o de presentes e o venera, mas essa devoção quase sexual de um homem bem mais velho aparentemente não causa efeito nenhum no menino. Ele não parece se sentir desconfortável, traumatizado ou, indo para o lado oposto, disposto a se aproveitar dessa situação para alguma coisa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "As coisas parecem acontecer porque têm que acontecer, como se fossem relatos cotidianos documentais, sem grandes desenvolvimentos de personagem. Para uma série de animê, falta substância, falta aquela faísca de apelo que faz com que a gente se importe com o que está assistindo na tela.",
+          "runs": [
+            {
+              "text": "As coisas parecem acontecer porque "
+            },
+            {
+              "text": "têm que acontecer",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", como se fossem relatos cotidianos documentais, sem grandes desenvolvimentos de personagem. Para uma série de animê, falta substância, falta aquela faísca de apelo que faz com que a gente se importe com o que está assistindo na tela."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fazendo uma comparação futebolística, é tipo assistir ao PSG no campeonato francês. O time é grande, é bom, e os outros da Ligue 1 são bem mais fracos em comparação. Sabemos que o elenco vai mandar bem em todas as aparições e, eventualmente, vencer a coisa toda. Mônaco, Marseille, Lyon e os outros não têm qualquer chance. The World Is Dancing tem uma animação extraordinária, que é como assistir ao PSG em campo, mas seu roteiro é fraco, com uma trama que traz tanta tensão ou surpresa quanto a Ligue 1 com os demais times nela.",
+          "runs": [
+            {
+              "text": "Fazendo uma comparação futebolística, é tipo assistir ao PSG no campeonato francês. O time é grande, é bom, e os outros da "
+            },
+            {
+              "text": "Ligue 1",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " são bem mais fracos em comparação. Sabemos que o elenco vai mandar bem em todas as aparições e, eventualmente, vencer a coisa toda. Mônaco, Marseille, Lyon e os outros não têm qualquer chance. "
+            },
+            {
+              "text": "The World Is Dancing",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " tem uma animação extraordinária, que é como assistir ao PSG em campo, mas seu roteiro é fraco, com uma trama que traz tanta tensão ou surpresa quanto a "
+            },
+            {
+              "text": "Ligue 1",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " com os demais times nela."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Eu gosto de assistir ao PSG.",
+          "runs": [
+            {
+              "text": "Eu gosto de assistir ao PSG."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=Zu45LJG7Chs",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Zu45LJG7Chs"
+        },
+        {
+          "type": "paragraph",
+          "text": "The World Is Dancing é um animê de 13 episódios produzido pelo estúdio Cypic, com direção de Toshimasa Kuroyanagi e roteiro de Sawako Kawamitsu. Ele adapta o mangá homônimo escrito por Kazuto Mihara, publicado na revista Morning entre março de 2021 e outubro de 2022, com 6 volumes encadernados.",
+          "runs": [
+            {
+              "text": "The World Is Dancing",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "é um animê de 13 episódios produzido pelo estúdio "
+            },
+            {
+              "text": "Cypic",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com direção de "
+            },
+            {
+              "text": "Toshimasa Kuroyanagi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e roteiro de "
+            },
+            {
+              "text": "Sawako Kawamitsu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Ele adapta o mangá homônimo escrito por "
+            },
+            {
+              "text": "Kazuto Mihara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", publicado na revista "
+            },
+            {
+              "text": "Morning",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " entre março de 2021 e outubro de 2022, com 6 volumes encadernados."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Aqui no Brasil, a série não foi lançada oficialmente em nenhuma plataforma, mas pode ser assistida através da HIDIVE com legendas em inglês.",
+          "runs": [
+            {
+              "text": "Aqui no Brasil, a série não foi lançada oficialmente em nenhuma plataforma, mas pode ser assistida através da HIDIVE com legendas em inglês."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+          "runs": [
+            {
+              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-05T19:35:02.000Z",
+      "updatedAt": "2026-10-05T19:36:07.000Z",
+      "expiresAt": "2026-10-12T19:35:02.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/05/critica-the-world-is-dancing",
+          "publishedAt": "2026-10-05T19:35:02.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 6,
+      "wordCount": 1168,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 24,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-2e107f0f",
+      "slug": "black-clover-invade-fortnite-durante-evento-de-halloween-jbox-2e107f0f",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Black Clover’ invade ‘Fortnite’ durante evento de Halloween",
+      "originalTitle": "‘Black Clover’ invade ‘Fortnite’ durante evento de Halloween",
+      "summary": "Fãs do Asta, se preparem! A Epic Games anunciou no sábado (3) que o animê Black Clover está chegando ao Fortnite Battle Royale como parte do Fortnitemares, evento anual de halloween do jogo. O anúncio apresenta Asta, Yuno e Noelle como skins cosméticas para os jogadores, acompanhado da frase: “Não perca a esperança no pesadelo”.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "Games",
+        "black clover",
+        "black clover no fortnite",
+        "crossover black clover fortnite",
+        "fortnite",
+        "jogo de black clover"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/05/black-clover-invade-fortnite-durante-evento-de-halloween",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/05/black-clover-invade-fortnite-durante-evento-de-halloween",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/black-clover-fortnite-destacada.jpg",
+      "mediaQuery": "‘Black Clover’ invade ‘Fortnite’ durante evento de Halloween",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/fIbPHjCGJno"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/5lddZVFmxaw"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Fãs do Asta, se preparem! A Epic Games anunciou no sábado (3) que o animê Black Clover está chegando ao Fortnite Battle Royale como parte do Fortnitemares, evento anual de halloween do jogo. O anúncio apresenta Asta, Yuno e Noelle como skins cosméticas para os jogadores, acompanhado da frase: “Não perca a esperança no pesadelo”.",
+          "runs": [
+            {
+              "text": "Fãs do Asta, se preparem! A "
+            },
+            {
+              "text": "Epic Games",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou no sábado (3) que o animê "
+            },
+            {
+              "text": "Black Clover",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "está chegando ao "
+            },
+            {
+              "text": "Fortnite Battle Royale",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " como parte do "
+            },
+            {
+              "text": "Fortnitemares",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", evento anual de halloween do jogo. O anúncio apresenta Asta, Yuno e Noelle como "
+            },
+            {
+              "text": "skins",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " cosméticas para os jogadores, acompanhado da frase: "
+            },
+            {
+              "text": "“Não perca a esperança no pesadelo”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Os três já estão disponíveis na loja do Fortnite, que convida os jogadores a enfrentarem as maldições da Ilha com a ajuda e a magia dos seus amigos.",
+          "runs": [
+            {
+              "text": "Os três já estão disponíveis na loja do "
+            },
+            {
+              "text": "Fortnite",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que convida os jogadores a enfrentarem as maldições da Ilha com a ajuda e a magia dos seus amigos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira o trailer:",
+          "runs": [
+            {
+              "text": "Confira o trailer:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=fIbPHjCGJno",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/fIbPHjCGJno"
+        },
+        {
+          "type": "paragraph",
+          "text": "A Epic Games já tinha dado uma prévia da colaboração com Black Clover no trailer de Fortnitemares lançado em 29 de setembro. O vídeo mostra rapidamente a skin de Asta em sua forma demoníaca:",
+          "runs": [
+            {
+              "text": "A Epic Games já tinha dado uma prévia da colaboração com "
+            },
+            {
+              "text": "Black Clover",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " no "
+            },
+            {
+              "text": "trailer",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Fortnitemares",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " lançado em 29 de setembro. O vídeo mostra rapidamente a "
+            },
+            {
+              "text": "skin",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de Asta em sua forma demoníaca:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=5lddZVFmxaw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/5lddZVFmxaw"
+        },
+        {
+          "type": "paragraph",
+          "text": "Os itens de Black Clover disponíveis no Fortnite Battle Royale incluem as skins de Asta, Yuno e Noelle, os acessórios para as costas Grimoire do Asta, Asas do Demônio do Asta, Grimoire do Yuno e Grimoire da Noelle, as picaretas Espada Matadora de Demônios do Asta, Espírito de Boreas e Varinha da Noelle, e o revestimento de arma Anti-Magia.",
+          "runs": [
+            {
+              "text": "Os itens de "
+            },
+            {
+              "text": "Black Clover",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " disponíveis no "
+            },
+            {
+              "text": "Fortnite Battle Royale",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " incluem as "
+            },
+            {
+              "text": "skins",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de Asta, Yuno e Noelle, os acessórios para as costas Grimoire do Asta, Asas do Demônio do Asta, Grimoire do Yuno e Grimoire da Noelle, as picaretas Espada Matadora de Demônios do Asta, Espírito de Boreas e Varinha da Noelle, e o revestimento de arma Anti-Magia."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Os jogadores também podem comprar uma carroceria Nissan GT-R Nismo + Black Clover e dois pneus Anti-Magia.",
+          "runs": [
+            {
+              "text": "Os jogadores também podem comprar uma carroceria Nissan GT-R Nismo + "
+            },
+            {
+              "text": "Black Clover",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e dois pneus Anti-Magia."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Canal do Fortnite no YouTube (1/2)",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Canal do Fortnite no YouTube (",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "1",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://youtu.be/5lddZVFmxaw?si=wmUwb8gt3A3ekjmn"
+            },
+            {
+              "text": "/",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "2",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://youtu.be/fIbPHjCGJno?si=AaCnevzu4BlfI6bm"
+            },
+            {
+              "text": ")",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-05T16:47:28.000Z",
+      "updatedAt": "2026-10-05T16:49:45.000Z",
+      "expiresAt": "2026-10-12T16:47:28.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/05/black-clover-invade-fortnite-durante-evento-de-halloween",
+          "publishedAt": "2026-10-05T16:47:28.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 220,
+      "qualityScore": 0.968,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 2,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-f7c3054d",
       "slug": "os-cavaleiros-do-zodiaco-filme-live-action-sera-exibido-na-tv-aberta-enquanto-serie-classica-sai-do-adult-sw-jbox-f7c3054d",
@@ -2587,7 +4409,7 @@
       "sourceCount": 1,
       "readingMinutes": 3,
       "wordCount": 608,
-      "qualityScore": 1,
+      "qualityScore": 0.96,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -2966,7 +4788,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 413,
-      "qualityScore": 0.995,
+      "qualityScore": 0.935,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3335,7 +5157,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 318,
-      "qualityScore": 0.98,
+      "qualityScore": 0.92,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -7194,285 +9016,6 @@
       }
     },
     {
-      "id": "animenew-1852602f",
-      "slug": "full-clearing-another-world-ganha-primeiro-video-promocional-animenew-1852602f",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Full Clearing Another World ganha primeiro vídeo promocional",
-      "originalTitle": "Full Clearing Another World ganha primeiro vídeo promocional",
-      "summary": "O anime Full Clearing Another World under a Goddess with Zero Believers (Shinja Zero no Megami-sama to) recebeu seu primeiro vídeo promocional, que também apresenta um trecho da música de abertura “Mirai no Ashiato”, de 310.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Full Clearing Another World",
-        "Shinja Zero no Megami-sama"
-      ],
-      "url": "https://animenew.com.br/full-clearing-another-world-anime-trailer",
-      "sourceUrl": "https://animenew.com.br/full-clearing-another-world-anime-trailer",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/09/Full-Clearing-Another-World-ganha-primeiro-video-promocional.webp",
-      "mediaQuery": "Full Clearing Another World ganha primeiro vídeo promocional",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/qlMB8vSpLzc"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Full Clearing Another World under a Goddess with Zero Believers (Shinja Zero no Megami-sama to) recebeu seu primeiro vídeo promocional, que também apresenta um trecho da música de abertura “Mirai no Ashiato”, de 310.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes/"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Full Clearing Another World under a Goddess with Zero Believers",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Shinja Zero no Megami-sama to",
-              "marks": [
-                "em"
-              ],
-              "href": "https://animenew.com.br/anime/205896/shinja-zero-no-megami-sama-to-hajimeru-isekai-kouryaku"
-            },
-            {
-              "text": ") recebeu seu primeiro vídeo promocional, que também apresenta um trecho da música de abertura “Mirai no Ashiato”, de 310."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "LEGO revela set de Dragon Ball com Shenlong e Goku",
-              "runs": [
-                {
-                  "text": "LEGO revela set de Dragon Ball com Shenlong e Goku",
-                  "href": "https://animenew.com.br/lego-dragon-ball-shenlong-goku"
-                }
-              ]
-            },
-            {
-              "text": "Even the Student Council ganha novo trailer nos EUA",
-              "runs": [
-                {
-                  "text": "Even the Student Council ganha novo trailer nos EUA",
-                  "href": "https://animenew.com.br/even-the-student-council-has-its-holes-anime"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A prévia mostra cenas da adaptação da light novel de Isle Osaki e confirma parte da produção. Riki Fukushima dirige o anime no estúdio HORNETS, enquanto Toko Machida cuida dos roteiros.",
-          "runs": [
-            {
-              "text": "A prévia mostra cenas da adaptação da "
-            },
-            {
-              "text": "light novel",
-              "href": "https://animenew.com.br/light-novel"
-            },
-            {
-              "text": " de Isle Osaki e confirma parte da produção. Riki Fukushima dirige o anime no "
-            },
-            {
-              "text": "estúdio HORNETS",
-              "href": "https://animenew.com.br/studio/6360/hornets"
-            },
-            {
-              "text": ", enquanto "
-            },
-            {
-              "text": "Toko Machida",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " cuida dos roteiros."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=qlMB8vSpLzc",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/qlMB8vSpLzc"
-        },
-        {
-          "type": "paragraph",
-          "text": "No elenco estão Sohei Horikane como Makoto Takatsuki, Ikumi Hasegawa como Noah Titan, Yukina Shutō como Lucy e Hitomi Sekine como Aya Sasaki. A música de encerramento, “Fall in Dream”, será interpretada pelo grupo Suupeas.",
-          "runs": [
-            {
-              "text": "No elenco estão Sohei Horikane como "
-            },
-            {
-              "text": "Makoto Takatsuki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Ikumi Hasegawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " como Noah Titan, Yukina Shutō como Lucy e Hitomi Sekine como Aya Sasaki. A música de encerramento, “Fall in Dream”, será interpretada pelo grupo Suupeas."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "História de Full Clearing Another World",
-          "runs": [
-            {
-              "text": "História de Full Clearing Another World"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Makoto Takatsuki é um estudante comum e fã de RPGs que acaba transportado para outro mundo junto com sua turma após um acidente de ônibus. Enquanto os colegas recebem habilidades poderosas, ele descobre que possui atributos baixos e apenas dez anos de vida.",
-          "runs": [
-            {
-              "text": "Makoto Takatsuki é um estudante comum e fã de RPGs que acaba transportado para outro mundo junto com sua turma após um acidente de ônibus. Enquanto os colegas recebem habilidades poderosas, ele descobre que possui atributos baixos e apenas dez anos de vida.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A situação muda quando Makoto conhece Noah, uma deusa menor que pede para se tornar sua primeira devota. Contudo suas bênçãos e uma arma divina, ele começa a treinar para resgatá-la da masmorra onde está presa.",
-          "runs": [
-            {
-              "text": "A situação muda quando Makoto conhece Noah, uma deusa menor que pede para se tornar sua primeira devota. Contudo suas bênçãos e uma arma divina, ele começa a treinar para resgatá-la da masmorra onde está presa.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim o anime estreia em 11 de outubro, com transmissão pelo BS Asahi, além de serviços como d Anime Store, U-NEXT e Anime Hōdai.",
-          "runs": [
-            {
-              "text": "Por fim o anime estreia em "
-            },
-            {
-              "text": "11 de outubro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com transmissão pelo BS Asahi, além de serviços como d Anime Store, U-NEXT e Anime Hōdai."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: X (twitter oficial)",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "X",
-              "href": "https://x.com/zero_believers/status/2105130520262869258"
-            },
-            {
-              "text": " (twitter oficial)"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Full Clearing Another World ganha primeiro vídeo promocional.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Full Clearing Another World ganha primeiro vídeo promocional",
-              "href": "https://animenew.com.br/full-clearing-another-world-anime-trailer/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-30T16:14:34.000Z",
-      "updatedAt": "2026-09-30T16:14:34.000Z",
-      "expiresAt": "2026-10-07T16:14:34.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/full-clearing-another-world-anime-trailer",
-          "publishedAt": "2026-09-30T16:14:34.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 255,
-      "qualityScore": 0.912,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
       "id": "jbox-21d9f4d4",
       "slug": "naruto-tera-nova-minisserie-em-anime-detalhes-serao-revelados-na-new-york-comic-con-jbox-21d9f4d4",
       "source": "JBox",
@@ -8813,891 +10356,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-684c4379",
-      "slug": "critica-kaiju-girl-caramelise-1-temporada-jbox-684c4379",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Crítica | Kaiju Girl Caramelise | 1ª temporada",
-      "originalTitle": "Crítica | Kaiju Girl Caramelise | 1ª temporada",
-      "summary": "Se apaixonar é coisa de louco! Do nada você vê uma pessoa e passa a enxergar ela de um jeito diferente. Parece que está brilhando, irradiando. É como se começasse a tocar alguma música empolgante toda vez em que ela passa. A imagem dela fica na sua cabeça o dia todo. Tu dorme e acorda pensando nela. Parece que os dias ficam mais bonitos, que o sol fica mais quente, que a chuva fica menos incômoda, que as músicas ficam mais emocionantes. Os outros te olham e perguntam o porquê daquele sorriso bobo o dia todo.",
-      "author": "Igor Lunei",
-      "tags": [
-        "Anime",
-        "Resenha",
-        "crítica de kaiju girl caramelise",
-        "KAIJU GIRL CARAMELISE",
-        "kaiju girl caramelise é bom?",
-        "resenha de kaiju girl caramelise"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/28/critica-kaiju-girl-caramelise-1a-temporada",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/28/critica-kaiju-girl-caramelise-1a-temporada",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/jbox-critica-destacada-kaijugirlcaramelise.jpg",
-      "mediaQuery": "Crítica | Kaiju Girl Caramelise | 1ª temporada",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/kaiju-girl-caramelise-1.jpg",
-          "alt": "Imagem do animê Kaiju Girl Caramelise com uma menina e um menino um ao lado do outro com várias cerejeiras floridas ao fundo",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/kaiju-girl-caramelise-4.jpg",
-          "alt": "Imagem do animê Kaiju Girl Caramelise com um kaiju lagarto gigante no meio da cidade de noite",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/BWiFenBMIfI"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Se apaixonar é coisa de louco! Do nada você vê uma pessoa e passa a enxergar ela de um jeito diferente. Parece que está brilhando, irradiando. É como se começasse a tocar alguma música empolgante toda vez em que ela passa. A imagem dela fica na sua cabeça o dia todo. Tu dorme e acorda pensando nela. Parece que os dias ficam mais bonitos, que o sol fica mais quente, que a chuva fica menos incômoda, que as músicas ficam mais emocionantes. Os outros te olham e perguntam o porquê daquele sorriso bobo o dia todo.",
-          "runs": [
-            {
-              "text": "Se apaixonar é coisa de louco! Do nada você vê uma pessoa e passa a enxergar ela de um jeito diferente. Parece que está brilhando, irradiando. É como se começasse a tocar alguma música empolgante toda vez em que ela passa. A imagem dela fica na sua cabeça o dia todo. Tu dorme e acorda pensando nela. Parece que os dias ficam mais bonitos, que o sol fica mais quente, que a chuva fica menos incômoda, que as músicas ficam mais emocionantes. Os outros te olham e perguntam o porquê daquele sorriso bobo o dia todo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "E quando essa paixão é correspondida? Aí é bizarro! Começam a aparecer escamas pelo corpo. As unhas viram garras. Os dentes viram presas. Uma cauda espinhenta brota da sua coluna vertebral. Surge uma vontade louca de urrar com força, expelindo uma rajada de energia nuclear destrutiva. Você perde o controle, cresce dezenas de metros de altura e se transforma em um lagartão gigante com a capacidade de destruir cidades!",
-          "runs": [
-            {
-              "text": "E quando essa paixão é correspondida? Aí é bizarro! Começam a aparecer escamas pelo corpo. As unhas viram garras. Os dentes viram presas. Uma cauda espinhenta brota da sua coluna vertebral. Surge uma vontade louca de urrar com força, expelindo uma rajada de energia nuclear destrutiva. Você perde o controle, cresce dezenas de metros de altura e se transforma em um lagartão gigante com a capacidade de destruir cidades!"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Okay, não é o caso de todo mundo. Na real, é só o da Kuroe Akaishi, a fofíssima protagonista de Kaiju Girl Caramelise, um dos animês mais doces, empolgantes, engraçados e cativantes desta Temporada de Verão. A trama é bem simples. Uma estudante do Ensino Médio nasceu com uma condição fantástica: toda vez em que seus sentimentos são extrapolados, partes de seu corpo se transformam em algo mais reptiliano. Então, ela cresceu reprimindo as próprias emoções e escondendo-se por baixo de camadas de roupas para não assustar os outros nem ser ostracizada por causa disso.",
-          "runs": [
-            {
-              "text": "Okay, não é o caso de todo mundo. Na real, é só o da "
-            },
-            {
-              "text": "Kuroe Akaishi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", a fofíssima protagonista de "
-            },
-            {
-              "text": "Kaiju Girl Caramelise",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", um dos animês mais doces, empolgantes, engraçados e cativantes desta "
-            },
-            {
-              "text": "Temporada de Verão",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". A trama é bem simples. Uma estudante do Ensino Médio nasceu com uma condição fantástica: toda vez em que seus sentimentos são extrapolados, partes de seu corpo se transformam em algo mais reptiliano. Então, ela cresceu reprimindo as próprias emoções e escondendo-se por baixo de camadas de roupas para não assustar os outros nem ser ostracizada por causa disso."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Só que aí chegou a adolescência e ela conheceu um moleque bem gatinho do colégio, o Arata Minami. Ele gosta dela, ela gosta dele, eles começam a sair e… bom, qual cenário melhor para uma ebulição de sentimentos do que um primeiro amor correspondido na adolescência? O resultado é que Kuroe fica tão excitada que se transforma no colossal kaiju Harugon, um monstrão assustador que toca o terror por onde passa.",
-          "runs": [
-            {
-              "text": "Só que aí chegou a adolescência e ela conheceu um moleque bem gatinho do colégio, o "
-            },
-            {
-              "text": "Arata Minami",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Ele gosta dela, ela gosta dele, eles começam a sair e… bom, qual cenário melhor para uma ebulição de sentimentos do que um primeiro amor correspondido na adolescência? O resultado é que Kuroe fica tão excitada que se transforma no colossal "
-            },
-            {
-              "text": "kaiju",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Harugon",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", um monstrão assustador que toca o terror por onde passa."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Há mais por trás disso, é claro. É mostrado então que a mãe de Kuroe, Rinko Akaishi, é, na verdade, uma exploradora paleontóloga que viajou por vários locais até chegar a uma ilha misteriosa, onde encontrou uma ninhada com ovos de aparência esquisita. Um deles ela levou para casa. Quando o ovo chocou, nasceu Kuroe, que Rinko criou como uma criança normal. Mas ela é bem diferente. Beeeeem diferente.",
-          "runs": [
-            {
-              "text": "Há mais por trás disso, é claro. É mostrado então que a mãe de Kuroe, "
-            },
-            {
-              "text": "Rinko Akaishi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", é, na verdade, uma exploradora paleontóloga que viajou por vários locais até chegar a uma ilha misteriosa, onde encontrou uma ninhada com ovos de aparência esquisita. Um deles ela levou para casa. Quando o ovo chocou, nasceu Kuroe, que Rinko criou como uma criança normal. Mas ela é bem diferente. "
-            },
-            {
-              "text": "Beeeeem",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " diferente."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/kaiju-girl-caramelise-1.jpg",
-          "alt": "Imagem do animê Kaiju Girl Caramelise com uma menina e um menino um ao lado do outro com várias cerejeiras floridas ao fundo"
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: LIDENFILMS/Reprodução",
-          "runs": [
-            {
-              "text": "Imagem: LIDENFILMS/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Kaiju Girl Caramelise é daqueles casos em que um animê é tão rico que permite várias interpretações. A mais fácil de seguir é a de que ele funciona como uma parábola para o despertar sexual feminino. Para aquele período de fim da infância e início do que será uma vida adulta. Kuroe está experimentando tantas sensações novas que, literalmente, vira um monstro por causa disso. Em várias passagens do animê, são mostrados momentos em que ela se sente desconfortável com o próprio corpo, pois não consegue controlar as mudanças que acontecem nele.",
-          "runs": [
-            {
-              "text": "Kaiju Girl Caramelise",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é daqueles casos em que um animê é"
-            },
-            {
-              "text": " tão rico que permite várias interpretações",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A mais fácil de seguir é a de que ele funciona como uma parábola para o despertar sexual feminino. Para aquele período de fim da infância e início do que será uma vida adulta. Kuroe está experimentando tantas sensações novas que, literalmente, vira um monstro por causa disso. Em várias passagens do animê, são mostrados momentos em que ela se sente desconfortável com o próprio corpo, pois não consegue controlar as mudanças que acontecem nele."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Aí, ela prefere esconder, se cobrir, se reprimir para passar despercebida dos olhares julgadores. Só que isso não funciona. Vai naquilo de que, quanto mais esforço você faz para segurar, com mais força vai sair. De modo que ela, aparentemente, só consegue se controlar mesmo mais para o fim da temporada, quando resolve abraçar seu lado kaiju monstruoso e aceitar quem é, com a certeza de que os outros também a aceitarão.",
-          "runs": [
-            {
-              "text": "Aí, ela prefere esconder, se cobrir, se reprimir para passar despercebida dos olhares julgadores. Só que isso não funciona. Vai naquilo de que, quanto mais esforço você faz para segurar, com mais força vai sair. De modo que ela, aparentemente, só consegue se controlar mesmo mais para o fim da temporada, quando resolve abraçar seu lado "
-            },
-            {
-              "text": "kaiju",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " monstruoso e aceitar quem é, com a certeza de que os outros também a aceitarão."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "E esse receio de ser rejeitado por ser diferente pode servir como uma segunda interpretação da história. Não de uma maneira óbvia, mas jogando elementos através do subtexto que podem ser entendidos assim. Não é o caso da protagonista, mas dá para traçar um paralelo com as experiências de várias pessoas LGBTQ+ deste lado da tela, que precisam reprimir quem são de verdade, se disfarçar para passar ilesas, para sobreviver até mesmo em sociedades homofóbicas e transfóbicas. Kuroe literalmente vira um monstro por conta de seus sentimentos, e é dessa forma que muitas pessoas enxergam outras simplesmente por serem quem são, quem nasceram para ser. É uma metáfora fofa do animê, mas que reverbera em muita coisa quando colocada em discussão.",
-          "runs": [
-            {
-              "text": "E esse receio de ser rejeitado por ser diferente pode servir como uma segunda interpretação da história. Não de uma maneira óbvia, mas jogando elementos através do subtexto que podem ser entendidos assim. Não é o caso da protagonista, mas dá para traçar um paralelo com as experiências de várias pessoas LGBTQ+ deste lado da tela, que precisam reprimir quem são de verdade, se disfarçar para passar ilesas, para sobreviver até mesmo em sociedades homofóbicas e transfóbicas. "
-            },
-            {
-              "text": "Kuroe literalmente vira um monstro por conta de seus sentimentos",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e é dessa forma que muitas pessoas enxergam outras simplesmente por serem quem são, quem nasceram para ser. É uma metáfora fofa do animê, mas que reverbera em muita coisa quando colocada em discussão."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Isso se estende para algumas das personagens coadjuvantes de alívio cômico. Por exemplo, a gyaru Raimu Kouno carrega uma história triste. Desde criança, as pessoas apontam que ela tem um rosto descrito no animê como “de gorila”, esteticamente parecido com o de neandertais, que assusta os outros. Até a voz dela tem um tom mais grave. Quando mais nova, ela se apaixonou por um menino, mas foi rejeitada (e rechaçada) por sua aparência. Depois disso, descobriu como usar maquiagens, que funcionam nela de maneira mágica, mudando totalmente o formato de seu rosto e, inclusive, elevando o tom de sua voz e deixando-a mais feminina. Deu para pescar, né?",
-          "runs": [
-            {
-              "text": "Isso se estende para algumas das personagens coadjuvantes de alívio cômico. Por exemplo, a "
-            },
-            {
-              "text": "gyaru",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Raimu Kouno",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " carrega uma história triste. Desde criança, as pessoas apontam que ela tem um rosto descrito no animê como “de gorila”, esteticamente parecido com o de neandertais, que assusta os outros. Até a voz dela tem um tom mais grave. Quando mais nova, ela se apaixonou por um menino, mas foi rejeitada (e rechaçada) por sua aparência. Depois disso, descobriu como usar maquiagens, que funcionam nela de maneira mágica, mudando totalmente o formato de seu rosto e, inclusive, elevando o tom de sua voz e deixando-a mais feminina. Deu para pescar, né?"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/kaiju-girl-caramelise-4.jpg",
-          "alt": "Imagem do animê Kaiju Girl Caramelise com um kaiju lagarto gigante no meio da cidade de noite"
-        },
-        {
-          "type": "paragraph",
-          "text": "Outra personagem, a maravilhosa Manatsu Tomosato, é uma ricaça fora da casinha. Ela cresceu com um gosto diferente do de outras crianças, adorando filmes de kaiju. Sempre sonhou em estar rodeada por vários deles. Então, quando Harugon surge pela primeira vez, ela percebe que está apaixonada pelo monstrão! E passa a fazer de tudo para ser notada pelo lagartão, que ela declara aos quatro ventos ser o amor de sua vida, rendendo cenas hilárias envolvendo helicópteros, rituais de invocação, cosplays, chantagens e tramoias ao lado de seus dois assistentes gêmeos, carecas e sarados. É um tipo de amor que ninguém espera e que é visto como bizarro por muitos ao redor. Deu pra pescar essa também, né?",
-          "runs": [
-            {
-              "text": "Outra personagem, a maravilhosa "
-            },
-            {
-              "text": "Manatsu Tomosato",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", é uma ricaça fora da casinha. Ela cresceu com um gosto diferente do de outras crianças, adorando filmes de "
-            },
-            {
-              "text": "kaiju",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Sempre sonhou em estar rodeada por vários deles. Então, quando Harugon surge pela primeira vez, ela percebe que está apaixonada pelo monstrão! E passa a fazer de tudo para ser notada pelo lagartão, que ela declara aos quatro ventos ser o amor de sua vida, rendendo cenas hilárias envolvendo helicópteros, rituais de invocação, cosplays, chantagens e tramoias ao lado de seus dois assistentes gêmeos, carecas e sarados. É um tipo de amor que ninguém espera e que é visto como bizarro por muitos ao redor. Deu pra pescar essa também, né?"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "E tudo isso é mostrado de um jeito bem leve, com a comédia e o romance em primeiro plano, sendo aquele tipo de animê colorido que a gente assiste para se divertir com as situações e se impressionar com o esmero extra colocado na animação nos momentos em que Harugon está em tela. Mais para o fim da temporada, há uma cena de batalha entre ele e mais um kaiju que é tão empolgante quanto as batalhas de filmes mais recentes desse tipo.",
-          "runs": [
-            {
-              "text": "E tudo isso é "
-            },
-            {
-              "text": "mostrado de um jeito bem leve, com a comédia e o romance em primeiro plano",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", sendo aquele tipo de animê colorido que a gente assiste para se divertir com as situações e se impressionar com o esmero extra colocado na animação nos momentos em que Harugon está em tela. Mais para o fim da temporada, há uma cena de batalha entre ele e mais um "
-            },
-            {
-              "text": "kaiju",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " que é tão empolgante quanto as batalhas de filmes mais recentes desse tipo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Kaiju Girl Caramelise pega aquela fase absolutamente caótica em que a gente começa a descobrir o próprio corpo, os próprios desejos e a forma como o mundo nos enxerga e transforma tudo em uma adolescente que vira um lagarto gigante quando fica apaixonada. É uma ideia divertida e esperta, porque por baixo de toda a fofura, das piadas e dos cenários destruídos, existe uma personagem tentando entender quem é e como pode existir sem precisar se esconder.",
-          "runs": [
-            {
-              "text": "Kaiju Girl Caramelise",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " pega aquela fase absolutamente caótica em que a gente começa a descobrir o próprio corpo, os próprios desejos e a forma como o mundo nos enxerga e transforma tudo em uma adolescente que vira um lagarto gigante quando fica apaixonada. É uma ideia divertida e esperta, porque por baixo de toda a fofura, das piadas e dos cenários destruídos, existe uma personagem tentando entender quem é e como pode existir sem precisar se esconder."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ele fala sobre vergonha, desejo, rejeição, aceitação e a vontade de ser amado, algo que conversa com diferentes pessoas de diferentes públicos. A melhor maneira de falar sobre essas coisas é colocar uma garota metaleira apaixonada numa escala que pode destruir uma cidade inteira? Aparentemente, sim.",
-          "runs": [
-            {
-              "text": "Ele fala sobre vergonha, desejo, rejeição, aceitação e a vontade de ser amado, algo que conversa com diferentes pessoas de diferentes públicos. A melhor maneira de falar sobre essas coisas é colocar uma garota metaleira apaixonada numa escala que pode destruir uma cidade inteira? Aparentemente, sim."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Destrua os data centers de LLM, Harugon! Salve o mundo das IAs generativas pelo poder do amor! <3",
-          "runs": [
-            {
-              "text": "Destrua os data centers de LLM, Harugon! Salve o mundo das IAs generativas pelo poder do amor! <3",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=BWiFenBMIfI",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/BWiFenBMIfI"
-        },
-        {
-          "type": "paragraph",
-          "text": "Kaiju Girl Caramelise é um animê produzido pelo estúdio LIDENFILMS, com 12 episódios, direção de Teruyuki Oomine e roteiro de Yuniko Ayana. Ele adapta o mangá escrito por Spica Aoki, publicado na revista Monthly Comic Alive desde 2018, ainda em andamento, já com 10 volumes fechados.",
-          "runs": [
-            {
-              "text": "Kaiju Girl Caramelise",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é um animê produzido pelo estúdio "
-            },
-            {
-              "text": "LIDENFILMS",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com 12 episódios, direção de "
-            },
-            {
-              "text": "Teruyuki Oomine",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e roteiro de "
-            },
-            {
-              "text": "Yuniko Ayana",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Ele adapta o mangá escrito por "
-            },
-            {
-              "text": "Spica Aoki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", publicado na revista "
-            },
-            {
-              "text": "Monthly Comic Alive",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " desde 2018, ainda em andamento, já com 10 volumes fechados."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O desenho está disponível aqui no Brasil através da Crunchyroll, com opção legendada e a dublada feita pelo estúdio Som de Vera Cruz.",
-          "runs": [
-            {
-              "text": "O desenho está disponível aqui no Brasil através da "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com opção legendada e a dublada feita pelo estúdio "
-            },
-            {
-              "text": "Som de Vera Cruz",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
-          "runs": [
-            {
-              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-28T22:43:39.000Z",
-      "updatedAt": "2026-09-28T22:44:11.000Z",
-      "expiresAt": "2026-10-05T22:43:39.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/28/critica-kaiju-girl-caramelise-1a-temporada",
-          "publishedAt": "2026-09-28T22:43:39.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 6,
-      "wordCount": 1240,
-      "qualityScore": 0.97,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 23,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 2,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-35ec4240",
-      "slug": "universo-dos-livros-abre-pre-venda-do-1-volume-de-e-se-eu-disser-que-te-amo-jbox-35ec4240",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Universo dos Livros abre pré-venda do 1° volume de ‘E Se Eu Disser que Te Amo?’",
-      "originalTitle": "Universo dos Livros abre pré-venda do 1° volume de ‘E Se Eu Disser que Te Amo?’",
-      "summary": "O mangá E se eu disser que te amo?, de Kumosoku, entrou recentemente em pré-venda no Brasil pelo selo Hoo da editora Universo dos Livros. A obra é do gênero boys’ love, ou seja, que tem com foco em relacionamentos afetivos entre personagens masculinos.",
-      "author": "João Guilherme Lopes",
-      "tags": [
-        "Mangá",
-        "e se eu disser que te amo?",
-        "manga bl",
-        "mangá boys love",
-        "Ore ga Sukitte Ittara Dou Suru",
-        "selo hoo",
-        "Universo dos livros"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/28/universo-dos-livros-abre-pre-venda-do-1-volume-de-e-se-eu-disser-que-te-amo",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/28/universo-dos-livros-abre-pre-venda-do-1-volume-de-e-se-eu-disser-que-te-amo",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/eseeudisserqueteamo-destacada.jpg",
-      "mediaQuery": "Universo dos Livros abre pré-venda do 1° volume de ‘E Se Eu Disser que Te Amo?’",
-      "mediaType": "manga",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Eseeudisserqueteamo_vol1_Capaebrinde.jpg",
-          "alt": "imagem: ilustração demostrando um volume do mangá E se eu disser que te amo? ao lado da ilustração do cartão postal",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Eseeudisserqueteamo_vol1_paginas.jpg",
-          "alt": "imagem: ilustração demostrando páginas internas do volume 1 do mangá E se eu disser que te amo?",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O mangá E se eu disser que te amo?, de Kumosoku, entrou recentemente em pré-venda no Brasil pelo selo Hoo da editora Universo dos Livros. A obra é do gênero boys’ love, ou seja, que tem com foco em relacionamentos afetivos entre personagens masculinos.",
-          "runs": [
-            {
-              "text": "O mangá "
-            },
-            {
-              "text": "E se eu disser que te amo?",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", de"
-            },
-            {
-              "text": " Kumosoku",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", entrou recentemente em pré-venda no Brasil pelo selo "
-            },
-            {
-              "text": "Hoo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " da editora "
-            },
-            {
-              "text": "Universo dos Livros",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A obra é do gênero "
-            },
-            {
-              "text": "boys’ love",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", ou seja, que tem com foco em relacionamentos afetivos entre personagens masculinos."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Com 176 páginas e tradução de Lucas Cabral, a edição pode ser reservada por R$ 49,90 no site da Amazon ou no da livraria Martins Fontes. Os envios estão com previsão para começar no próximo dia 20 de novembro (uma sexta-feira).",
-          "runs": [
-            {
-              "text": "Com 176 páginas e tradução de Lucas Cabral, a edição pode ser reservada por "
-            },
-            {
-              "text": "R$ 49,90",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no "
-            },
-            {
-              "text": "site da Amazon",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://link.amazon/B02ovpXLO"
-            },
-            {
-              "text": " ou no da "
-            },
-            {
-              "text": "livraria Martins Fontes",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.martinsfontespaulista.com.br/e-se-eu-disser-que-te-amo--volume-1-1223657/p?srsltid=AU7gw4WO_wHXBQ7R80WdWLxgTMlPFmgdsG-LeCiwVjje6UdbzGe_-qiR"
-            },
-            {
-              "text": ". Os envios estão com previsão para começar no próximo dia "
-            },
-            {
-              "text": "20 de novembro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (uma sexta-feira)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Também acompanha um card de brinde.",
-          "runs": [
-            {
-              "text": "Também acompanha um"
-            },
-            {
-              "text": " card de brinde",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Eseeudisserqueteamo_vol1_Capaebrinde.jpg",
-          "alt": "imagem: ilustração demostrando um volume do mangá E se eu disser que te amo? ao lado da ilustração do cartão postal"
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Divulgação/Universo dos Livros",
-          "runs": [
-            {
-              "text": "Imagem: Divulgação/Universo dos Livros"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história acompanha dois amigos de infância que se distanciaram na adolescência por conta de sentimentos reprimidos e do medo de arriscar a amizade pelo primeiro amor.",
-          "runs": [
-            {
-              "text": "A história acompanha dois amigos de infância que se distanciaram na adolescência por conta de sentimentos reprimidos e do medo de arriscar a amizade pelo primeiro amor."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No Japão, o título original Ore ga Sukitte Ittara Dou Suru? começou a ser publicado em 2024 pela editora Kodansha, e já conta com 4 volumes lançados, o mais recente publicado em abril deste ano.",
-          "runs": [
-            {
-              "text": "No Japão, o título original "
-            },
-            {
-              "text": "Ore ga Sukitte Ittara Dou Suru?",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " começou a ser publicado em 2024 pela editora Kodansha, e já conta com 4 volumes lançados, o mais recente publicado em abril deste ano."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Eseeudisserqueteamo_vol1_paginas.jpg",
-          "alt": "imagem: ilustração demostrando páginas internas do volume 1 do mangá E se eu disser que te amo?"
-        },
-        {
-          "type": "paragraph",
-          "text": "Sinopse oficial:",
-          "runs": [
-            {
-              "text": "Sinopse oficial:"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "“Quando você fizer essas coisas, quero que seja pelo mesmo motivo que eu.” Kazuho e Tokio, dois alunos do ensino médio, são amigos desde o primário. Na infância, eles eram próximos a ponto de um carregar o outro no colo, mas essa relação acabou esfriando com o tempo. Isso porque Kazuho se viu obrigado a esconder o que sentia por Tokio… Mas, certo dia, quando Kazuho acaba pegando no sono durante a aula, Tokio faz algo que traz todos esses sentimentos à tona, e com força total. Kazuho e Tokio, dois alunos do ensino médio, são amigos desde o primário. Na infância, eles eram próximos a ponto de um carregar o outro no colo, mas essa relação acabou esfriando com o tempo. Isso porque Kazuho se viu obrigado a esconder o que sentia por Tokio… Mas, certo dia, quando Kazuho acaba pegando no sono durante a aula, Tokio faz algo que traz todos esses sentimentos à tona, e com força total.",
-          "runs": [
-            {
-              "text": "“Quando você fizer essas coisas, quero que seja pelo mesmo motivo que eu.”",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " Kazuho e Tokio, dois alunos do ensino médio, são amigos desde o primário. Na infância, eles eram próximos a ponto de um carregar o outro no colo, mas essa relação acabou esfriando com o tempo. Isso porque Kazuho se viu obrigado a esconder o que sentia por Tokio… Mas, certo dia, quando Kazuho acaba pegando no sono durante a aula, Tokio faz algo que traz todos esses sentimentos à tona, e com força total. Kazuho e Tokio, dois alunos do ensino médio, são amigos desde o primário. Na infância, eles eram próximos a ponto de um carregar o outro no colo, mas essa relação acabou esfriando com o tempo. Isso porque Kazuho se viu obrigado a esconder o que sentia por Tokio… Mas, certo dia, quando Kazuho acaba pegando no sono durante a aula, Tokio faz algo que traz todos esses sentimentos à tona, e com força total."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Comunicado de imprensa",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Comunicado de imprensa",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-28T20:55:59.000Z",
-      "updatedAt": "2026-09-28T20:57:17.000Z",
-      "expiresAt": "2026-10-05T20:55:59.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/28/universo-dos-livros-abre-pre-venda-do-1-volume-de-e-se-eu-disser-que-te-amo",
-          "publishedAt": "2026-09-28T20:55:59.000Z",
-          "author": "João Guilherme Lopes"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 341,
-      "qualityScore": 0.924,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 2,
         "embedCount": 0,
         "sourcePagesRead": 0
       }
