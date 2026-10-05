@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "findings": ["ANX-01", "ANX-02"],
+  "migration": "040_user_session_version.sql",
+  "rollback": "Use a release containing this authorization floor. Do not restore the production database to reverse an application release."
+}

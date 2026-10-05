@@ -43,6 +43,12 @@ compose(){ docker compose -p "$COMPOSE_PROJECT" --env-file "$ENV_FILE" -f "$1/do
 cleanup(){ rm -f -- "$archive" "$temporary_link"; [[ ! -d "$staging_dir" ]] || rm -rf -- "$staging_dir"; }
 rollback(){
   [[ "$activated" -eq 1 && "$verified" -eq 0 ]] || return 0
+  # The additive session-version migration makes the older legacy handler
+  # executable. Never automatically reintroduce that authorization boundary.
+  if [[ -f "${release_dir}/ops/security-floor-v1.json" && ! -f "${previous_release}/ops/security-floor-v1.json" ]]; then
+    echo 'Rollback anterior ao piso de autorização recusado; preservar a release e recuperar com código seguro.' >&2
+    return 1
+  fi
   echo 'A API nova falhou; restaurando a anterior.' >&2
   if [[ -n "$previous_release" && -d "$previous_release" ]]; then
     ln -s "$previous_release" "$temporary_link"
@@ -130,4 +136,3 @@ for ((index=5; index<${#releases[@]}; index++)); do
 done
 
 echo "API implantada: ${release_id} (${expected_commit})"
-
