@@ -187,3 +187,5 @@ html[data-theme=light] .nx47-studio-head h2{color:#302229}html[data-theme=light]
 }
 @media(max-width:370px){.nx47-title-row h1{font-size:23px}.nx47-content>.shell{width:calc(100% - 16px)}.nx47-media-grid{gap:20px 8px}.nx47-provider-card{padding-inline:10px}.nx47-provider-copy strong{font-size:11.8px}.nx47-studio-rail{grid-auto-columns:48%}}
 @media(prefers-reduced-motion:reduce){.nx47-island,.nx47-island-head,.nx47-island-panel,.nx47-island-arrow svg,.nx47-provider-card,.nx47-skeleton i,.nx47-studio-rail{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+.nx47-coverage-note{max-width:80ch;margin:0 0 20px;font-size:14px;line-height:1.6;color:var(--nx47-muted,var(--muted,#aaa))}

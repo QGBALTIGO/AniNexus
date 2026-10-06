@@ -6,12 +6,12 @@
   const IS_PAGES=location.hostname.endsWith('github.io');
   const BASE=IS_PAGES?'/AniNexus':'';
   const ROUTE='/animes/programacao';
-  const TZ='America/Sao_Paulo';
+  const TZ=Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Sao_Paulo';
   const API='https://graphql.anilist.co';
   const CACHE_FRESH=4*60*1000;
   const CACHE_STALE=12*60*60*1000;
   const MAX_PAGES=4;
-  const STATUS_KEY='aninexus:mediaState:v1';
+  const STATUS_KEY='aninexus:mediaState:v2';
 
   let items=[];
   let days=[];
@@ -21,6 +21,7 @@
   let sectionObserver=null;
   let activeDay='';
   let myOnly=false;
+  let personalOwner='',showAdult=false,loadWarning='';
   let selectedProviders=new Set();
   let mounted=false;
   let lastScrollY=Math.max(0,scrollY);
@@ -81,17 +82,24 @@
   }
 
   function dateKey(d){return new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(d)}
-  function todayNoon(){const k=dateKey(new Date());return new Date(`${k}T12:00:00-03:00`)}
+  function localDate(key,hour=0){
+    const [year,month,day]=key.split('-').map(Number),target=Date.UTC(year,month-1,day,hour);let value=target;
+    const fmt=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'});
+    for(let i=0;i<3;i++){const p=Object.fromEntries(fmt.formatToParts(new Date(value)).map(x=>[x.type,x.value]));const offset=Date.UTC(Number(p.year),Number(p.month)-1,Number(p.day),Number(p.hour),Number(p.minute),Number(p.second))-value;value=target-offset;}
+    return new Date(value);
+  }
+  const advanceDate=(key,days)=>{const [y,m,d]=key.split('-').map(Number);return new Date(Date.UTC(y,m-1,d+days,12)).toISOString().slice(0,10)};
+  function todayNoon(){return localDate(dateKey(new Date()),12)}
   function buildDays(){
     const base=todayNoon();
     return Array.from({length:7},(_,i)=>{
-      const d=new Date(base.getTime()+i*864e5);
+      const d=localDate(advanceDate(dateKey(base),i),12);
       const dow=new Intl.DateTimeFormat('pt-BR',{timeZone:TZ,weekday:'short'}).format(d).replace('.','').toUpperCase();
       const fullRaw=new Intl.DateTimeFormat('pt-BR',{timeZone:TZ,weekday:'long'}).format(d);
       return {key:dateKey(d),day:new Intl.DateTimeFormat('pt-BR',{timeZone:TZ,day:'2-digit'}).format(d),dow,full:fullRaw.charAt(0).toUpperCase()+fullRaw.slice(1)};
     });
   }
-  function range(){const k=dateKey(new Date());const s=new Date(`${k}T00:00:00-03:00`);return{key:k,start:Math.floor(s.getTime()/1000),end:Math.floor((s.getTime()+7*864e5)/1000)}}
+  function range(){const k=dateKey(new Date());return{key:k,start:Math.floor(localDate(k).getTime()/1000),end:Math.floor(localDate(advanceDate(k,7)).getTime()/1000)}}
   function fmtTime(ts){return new Intl.DateTimeFormat('pt-BR',{timeZone:TZ,hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(ts*1000))}
   function airLabel(ts){
     const k=dateKey(new Date(ts*1000));
@@ -102,10 +110,11 @@
 
   function readJSON(k,f){try{const v=JSON.parse(localStorage.getItem(k)||'null');return v??f}catch{return f}}
   function writeJSON(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}
-  function readSet(k){return new Set((readJSON(k,[])||[]).map(Number))}
+  function readSet(k){if(window.AniNexusAuth?.enabled&&['aninexus:favorites','aninexus:list'].includes(k)&&(!personalOwner||readJSON('aninexus:mediaOwner','')!==personalOwner))return new Set();return new Set((readJSON(k,[])||[]).map(Number))}
   function writeSet(k,s){writeJSON(k,[...s])}
-  function allStates(){const v=readJSON(STATUS_KEY,{});return v&&typeof v==='object'?v:{}}
+  function allStates(){if(window.AniNexusAuth?.enabled&&(!personalOwner||readJSON('aninexus:mediaOwner','')!==personalOwner))return{};const v=readJSON(STATUS_KEY,{});return v&&typeof v==='object'?v:{}}
   function stateFor(id){
+    if(window.AniNexusAuth?.enabled&&(!personalOwner||readJSON('aninexus:mediaOwner','')!==personalOwner))return{status:'',progress:0,reaction:'',score:null,updatedAt:0};
     const all=allStates();if(all[id])return all[id];
     const legacy=readJSON('aninexus:listStatus',{}),listed=readSet('aninexus:list');
     if(legacy[id]||listed.has(Number(id)))return{status:legacy[id]||'PLANNING',progress:0,reaction:'',score:null,updatedAt:0};
@@ -120,17 +129,18 @@
     writeJSON('aninexus:listStatus',legacy);writeSet('aninexus:list',listed);
   }
   function myAnimeIds(){
+    if(!personalOwner||readJSON('aninexus:mediaOwner','')!==personalOwner)return new Set();
     const out=new Set([...readSet('aninexus:favorites'),...readSet('aninexus:list')]);
     Object.entries(allStates()).forEach(([id,s])=>{if(s?.status)out.add(Number(id))});
     return out;
   }
 
-  function cacheKey(){return`nx:v18:schedule:${range().key}`}
+  function cacheKey(){return`nx:v18:schedule:v2:${TZ}:${range().key}`}
   function readCache(){const v=readJSON(cacheKey(),null);if(!v||!Array.isArray(v.items)||Date.now()-v.savedAt>CACHE_STALE)return null;return v}
   function writeCache(data){writeJSON(cacheKey(),{savedAt:Date.now(),items:data})}
   function merge(a,b){return[...new Map([...a,...b].filter(x=>x?.media?.id&&x?.airingAt).map(x=>[`${x.media.id}:${x.episode}:${x.airingAt}`,x])).values()].sort((x,y)=>x.airingAt-y.airingAt)}
 
-  const FIELDS=`id title{romaji english native userPreferred} coverImage{extraLarge large} genres episodes format seasonYear externalLinks{site url type icon color}`;
+  const FIELDS=`id isAdult title{romaji english native userPreferred} coverImage{extraLarge large} genres episodes format seasonYear externalLinks{site url type icon color}`;
   async function fetchPage(page,start,end,signal){
     const query=`query($page:Int,$start:Int,$end:Int){Page(page:$page,perPage:50){pageInfo{hasNextPage}airingSchedules(airingAt_greater:$start,airingAt_lesser:$end,sort:TIME){airingAt episode media{${FIELDS}}}}}`;
     const {response:r,body:j}=await window.AniNexusRuntime.jsonRequest(API,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables:{page,start,end}}),signal},{timeout:8000});
@@ -191,7 +201,7 @@
     return `<button class="nx18-pill ${myOnly?'active':''}" type="button" data-nx18-my>${SVG.heart}<span>Meus animes</span></button><button class="nx18-pill ${selectedProviders.size?'active':''}" type="button" data-nx18-stream>${SVG.tv}<span>Onde assistir</span></button>`;
   }
   function shell(){
-    return `<main class="nx18-schedule"><section class="nx18-hero" id="nx18Hero"><div class="nx18-shell"><div class="nx18-title"><span class="nx18-title-icon">${SVG.calendar}</span><div class="nx18-title-copy"><h1><em>Calendário</em> de Animes <span class="nx18-title-period">da Semana</span></h1><small class="nx18-kicker">PROGRAMAÇÃO DE ANIMES</small></div></div><p>Acompanhe os dias e horários de lançamento dos episódios, no horário de Brasília.</p><div class="nx18-days">${dayButtons()}</div><div class="nx18-actions">${actionButtons()}</div></div></section><section class="nx18-body"><div class="nx18-shell" id="nx18Root"><div class="nx18-loading">${Array.from({length:6},()=>'<div class="nx18-skeleton"></div>').join('')}</div></div></section></main>`;
+    return `<main class="nx18-schedule"><section class="nx18-hero" id="nx18Hero"><div class="nx18-shell"><div class="nx18-title"><span class="nx18-title-icon">${SVG.calendar}</span><div class="nx18-title-copy"><h1><em>Calendário</em> de Animes <span class="nx18-title-period">da Semana</span></h1><small class="nx18-kicker">PROGRAMAÇÃO DE ANIMES</small></div></div><p>Acompanhe os dias e horários de lançamento dos episódios, no seu fuso (${esc(TZ)}).</p><div class="nx18-days">${dayButtons()}</div><div class="nx18-actions">${actionButtons()}<label class="nx18-pill"><input type="checkbox" data-nx18-adult>Mostrar conteúdo adulto</label></div><p id="nx18PersonalFeedback" role="status"></p></div></section><section class="nx18-body"><div class="nx18-shell" id="nx18Root"><div class="nx18-loading">${Array.from({length:6},()=>'<div class="nx18-skeleton"></div>').join('')}</div></div></section></main>`;
   }
   function islandMarkup(){
     return `<section class="nx18-island" id="nx18Island" aria-label="Atalhos da programação" aria-hidden="true" inert><button type="button" class="nx18-island-head" data-nx18-island-toggle aria-expanded="false"><span class="nx18-island-icon">${SVG.calendar}</span><span class="nx18-island-copy"><strong>Calendário de Animes</strong><small>${days.find(d=>d.key===activeDay)?.full||'Programação da semana'}</small></span><span class="nx18-island-chevron">${SVG.down}</span></button><div class="nx18-island-panel" aria-hidden="true" inert><div><div class="nx18-island-inner"><div class="nx18-days">${dayButtons('data-nx18-idday')}</div><div class="nx18-actions">${actionButtons()}</div></div></div></div></section>`;
@@ -207,6 +217,7 @@
     for(const x of items){const k=dateKey(new Date(x.airingAt*1000));if(map.has(k))map.get(k).items.push(x)}
     const mine=myAnimeIds();
     return[...map.values()].map(g=>({...g,items:g.items.filter(x=>{
+      if(!showAdult&&(x.media?.isAdult===true||(x.media?.genres||[]).some(g=>String(g).toLowerCase()==='hentai')))return false;
       if(myOnly&&!mine.has(Number(x.media?.id)))return false;
       if(selectedProviders.size){const ks=new Set(streamLinks(x.media).map(providerKey));if(![...selectedProviders].some(k=>ks.has(k)))return false}
       return true;
@@ -217,7 +228,8 @@
     const gs=grouped();
     const content=gs.map(g=>g.items.length?`<section class="nx18-day-section" id="nx18-day-${g.key}" data-nx18-section="${g.key}"><div class="nx18-day-title"><h2>${g.full}</h2></div><div class="nx18-grid">${g.items.map(card).join('')}</div></section>`:'').join('')||`<div class="nx18-empty">Nenhum episódio corresponde aos filtros selecionados.</div>`;
     const credit=items.some(item=>item.contentProvider==='animeschedule'||item.media?.contentProvider==='animeschedule')?'<a class="nx18-provider-credit" href="https://animeschedule.net/" target="_blank" rel="noopener noreferrer">Horários complementares por AnimeSchedule.net</a>':'';
-    root.innerHTML=content+credit;
+    root.innerHTML=(loadWarning?`<div class="nx18-empty" role="status"><p>${esc(loadWarning)}</p><button type="button" data-schedule-retry>Tentar novamente</button></div>`:'')+content+credit;
+    root.querySelector('[data-schedule-retry]')?.addEventListener('click',()=>load(true),{once:true});
     bindCards();observeSections();updateCountdowns();syncControls();
   }
 
@@ -315,7 +327,21 @@
   function bindControls(root=document){
     root.querySelectorAll('[data-nx18-day]').forEach(b=>b.onclick=()=>goDay(b.dataset.nx18Day));
     root.querySelectorAll('[data-nx18-idday]').forEach(b=>b.onclick=()=>goDay(b.dataset.nx18Idday));
-    root.querySelectorAll('[data-nx18-my]').forEach(b=>b.onclick=()=>{myOnly=!myOnly;renderData()});
+    root.querySelectorAll('[data-nx18-my]').forEach(b=>b.onclick=async()=>{
+      if(myOnly){myOnly=false;renderData();return;}
+      const feedback=document.querySelector('#nx18PersonalFeedback');b.disabled=true;
+      try{
+        const auth=window.AniNexusAuth,user=await auth?.getUser?.();
+        if(!mounted)return;
+        if(!user){if(feedback)feedback.innerHTML=`Entre para filtrar os animes da sua biblioteca. <a href="${BASE}/login">Entrar</a>`;return;}
+        const identity=await auth.api('/api/me');if(!mounted)return;
+        const owner=String(identity?.user?.id||'');
+        if(!owner||readJSON('aninexus:mediaOwner','')!==owner){if(feedback)feedback.textContent='Sua biblioteca ainda está sincronizando. Tente o filtro novamente em instantes.';dispatchEvent(new Event('aninexus:media-sync-retry'));return;}
+        personalOwner=owner;myOnly=true;if(feedback)feedback.textContent='';renderData();
+      }catch{if(feedback)feedback.textContent='Não foi possível confirmar sua biblioteca agora. Tente o filtro novamente.';}
+      finally{if(b.isConnected)b.disabled=false;}
+    });
+    root.querySelectorAll('[data-nx18-adult]').forEach(b=>b.onchange=()=>{showAdult=b.checked;renderData()});
     root.querySelectorAll('[data-nx18-stream]').forEach(b=>b.onclick=providerModal);
   }
 
@@ -349,16 +375,17 @@
   }
   function onScroll(){if(!scrollRaf)scrollRaf=requestAnimationFrame(scrollUpdate)}
 
-  async function load(){
-    controller?.abort();controller=new AbortController();const r=range(),cached=readCache();
-    if(cached){items=cached.items;renderData();startTimer();if(Date.now()-cached.savedAt<CACHE_FRESH)return}
+  async function load(force=false){
+    controller?.abort();controller=new AbortController();const currentController=controller,owned=()=>mounted&&controller===currentController&&!currentController.signal.aborted;
+    const r=range(),cached=readCache();loadWarning='';
+    if(cached){items=cached.items;renderData();startTimer();if(!force&&Date.now()-cached.savedAt<CACHE_FRESH)return}
     try{
-      const server=await fetchServer(r.start,r.end,controller.signal);
-      if(server?.length){items=merge([],server);writeCache(items);renderData();startTimer();rebuildIsland();return}
-      const first=await fetchPage(1,r.start,r.end,controller.signal);items=merge(cached?.items||[],first.items);writeCache(items);renderData();startTimer();rebuildIsland();
+      const server=await fetchServer(r.start,r.end,currentController.signal);if(!owned())return;
+      if(Array.isArray(server)){items=merge([],server);writeCache(items);renderData();startTimer();rebuildIsland();return}
+      const first=await fetchPage(1,r.start,r.end,currentController.signal);if(!owned())return;items=merge([],first.items);writeCache(items);renderData();startTimer();rebuildIsland();
       let page=2,next=first.next;
-      while(next&&page<=MAX_PAGES){const d=await fetchPage(page,r.start,r.end,controller.signal);items=merge(items,d.items);writeCache(items);renderData();next=d.next;page++}
-    }catch(err){if(err?.name==='AbortError')return;if(!items.length){const root=document.querySelector('#nx18Root');if(root){root.innerHTML='<div class="nx18-empty"><p>Não foi possível carregar a programação agora.</p><button type="button" data-schedule-retry>Tentar novamente</button></div>';root.querySelector('[data-schedule-retry]')?.addEventListener('click',()=>{root.innerHTML='<div class="nx18-empty" role="status">Carregando programação…</div>';load()},{once:true})}}}
+      while(next&&page<=MAX_PAGES){const d=await fetchPage(page,r.start,r.end,currentController.signal);if(!owned())return;items=merge(items,d.items);writeCache(items);renderData();next=d.next;page++}
+    }catch(err){if(err?.name==='AbortError'||!owned())return;loadWarning=items.length?'Não foi possível atualizar os horários. Exibindo a programação salva anteriormente.':'Não foi possível carregar a programação agora.';renderData();}
   }
 
   function cleanup(){
@@ -376,5 +403,8 @@
   document.addEventListener('click',e=>{const a=e.target.closest('a[data-link],a[data-nx-inst],a[data-nx-legal]');if(a&&mounted&&!String(a.getAttribute('href')||'').includes('/animes/programacao'))cleanup()},true);
   addEventListener('popstate',()=>{if(requestedRoute()===ROUTE){cleanup();mount()}else cleanup()});
   addEventListener('resize',()=>{if(!mounted)return;ensureIsland();onScroll()}, {passive:true});
+  addEventListener('aninexus:account-identity-changed',event=>{const next=event.detail?.confirmed===true?String(event.detail.user?.id||''):'';if(next!==personalOwner){myOnly=false;showAdult=false;document.querySelectorAll('[data-nx18-adult]').forEach(x=>x.checked=false)}personalOwner=next;if(mounted)renderData()});
+  document.addEventListener('aninexus:media-sync-read-identity',event=>{if(event.detail?.suspended){personalOwner='';myOnly=false;if(mounted)renderData()}});
+  document.addEventListener('aninexus:media-sync-read-status',event=>{if(mounted&&event.detail?.mediaType==='ANIME')renderData()});
   mount();
 })();

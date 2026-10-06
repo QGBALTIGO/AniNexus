@@ -151,7 +151,7 @@
   }
 
   function kindCopy(kind) {
-    if (kind === 'watch') return { icon: ICON.play, title: '<em>Onde assistir</em> animes', kicker: 'STREAMING OFICIAL NO BRASIL', description: 'Escolha uma plataforma oficial e encontre os animes disponíveis nela.', context: 'ESCOLHA UMA PLATAFORMA' };
+    if (kind === 'watch') return { icon: ICON.play, title: '<em>Onde assistir</em> animes', kicker: 'DESCUBRA PLATAFORMAS OFICIAIS', description: 'Explore os links de streaming identificados para cada obra e confira a disponibilidade no serviço.', context: 'ESCOLHA UMA PLATAFORMA' };
     if (kind === 'dubbed') return { icon: ICON.voice, title: 'Animes <em>dublados</em>', kicker: 'ÁUDIO EM PORTUGUÊS', description: 'Explore séries e filmes com dublagem em português.', context: 'CATÁLOGO EM PORTUGUÊS' };
     return { icon: ICON.studio, title: '<em>Estúdios</em> de anime', kicker: 'POR TRÁS DAS OBRAS', description: 'Conheça as casas de animação e explore as produções de cada estúdio.', context: 'EXPLORE POR ESTÚDIO' };
   }
@@ -434,6 +434,7 @@
       </section>
       <section class="nx47-catalog-section" id="nx47WatchCatalog" aria-labelledby="nx47WatchTitle">
         <header class="nx47-results-head"><div><small>CATÁLOGO POR SERVIÇO</small><h2 id="nx47WatchTitle">Animes na Crunchyroll</h2><p id="nx47WatchCount">Consultando disponibilidade</p></div><a id="nx47WatchOfficial" href="https://www.crunchyroll.com/pt-br/" target="_blank" rel="nofollow noopener noreferrer">Abrir Crunchyroll ${ICON.arrow}</a></header>
+        <p class="nx47-coverage-note" data-nx47-coverage-note>Esta seleção usa links informados nas fichas das obras e uma amostra do catálogo. Não é uma lista completa do serviço. Região, idioma, assinatura e disponibilidade podem variar; confirme na plataforma oficial.</p>
         <div id="nx47WatchResults" aria-live="polite" aria-busy="true">${skeletons(10)}</div>
       </section>
     </div></div>`;

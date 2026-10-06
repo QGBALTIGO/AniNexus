@@ -435,3 +435,5 @@ body.nx22-detail-active .nx22-chips>.nx22-status,body.nx22-detail-active .nx22-c
   .nx22-overview-schedule .nx22-airing{flex-wrap:wrap;gap:12px}
 }
 .nx22-metric-context{margin:10px 0 0;font-size:12px;line-height:1.6;color:var(--muted,#a9a3b7);max-width:58ch}
+
+.nx22-akira-note{display:block;margin-top:8px;font-size:12px;line-height:1.5;color:var(--muted,#a9a3b7);font-style:normal}

@@ -10,7 +10,7 @@
     '/': ['Início', 'Descubra temporadas, acompanhe episódios, organize sua lista e participe da comunidade anime brasileira.'],
     '/animes/catalogo': ['Catálogo de animes', 'Pesquise e filtre animes por gênero, formato, status, temporada e avaliação.'],
     '/animes/temporadas': ['Animes da temporada', 'Estreias e continuações organizadas por estação e ano.'],
-    '/animes/programacao': ['Programação de animes', 'Calendário semanal de episódios no horário de Brasília.'],
+    '/animes/programacao': ['Programação de animes', 'Calendário semanal de episódios organizado no seu fuso horário.'],
     '/anime-awards': ['Anime Awards', 'Categorias, vencedores e destaques das principais premiações de anime.'],
     '/minha-biblioteca': ['Minha Biblioteca', 'Seus animes, mangás, favoritos, notas e progresso no AniNexus.'],
     '/meus-animes': ['Minha Biblioteca', 'Seus animes, mangás, favoritos, notas e progresso no AniNexus.'],

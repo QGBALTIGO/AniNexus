@@ -8,6 +8,16 @@ const thirdId='33333333-3333-4333-8333-333333333333';
 const base={id:firstId,mediaId:21,mediaType:'ANIME',mediaTitle:'One Piece',type:'SCORE_AT_DEADLINE',question:'One Piece terá nota média de pelo menos 88/100 no AniList na próxima leitura?',criteria:'SIM se a primeira leitura válida da nota média no AniList for maior ou igual a 88/100. Sem leitura válida, a previsão será anulada.',source:'AniList',sourceUrl:'https://anilist.co/anime/21',status:'OPEN',opensAt:'2030-09-01T12:00:00Z',closesAt:'2030-09-30T12:00:00Z',resolutionDeadline:'2030-10-01T12:00:00Z',yesCount:1,noCount:0,voteCount:1,trend24h:{yesDelta:0,noDelta:0,since:'2030-09-27T12:00:00Z',completeWindow:false}};
 const second={...base,id:secondId,mediaTitle:'The Beginning After the End: uma história com um título muito longo',question:'A nota média de The Beginning After the End terá alcançado o critério publicado na leitura indicada?',yesCount:15,noCount:5,voteCount:20};
 const closed={...base,id:thirdId,mediaTitle:'Frieren',status:'VOID',closesAt:'2020-09-30T12:00:00Z',resolutionDeadline:'2020-10-01T12:00:00Z'};
+test('closed prediction actions distinguish pending assessment, a confirmed result and annulment',async({page})=>{
+  const waiting={...base,status:'LOCKED',closesAt:'2020-09-30T12:00:00Z'},resolved={...base,id:secondId,status:'RESOLVED',result:'YES'};
+  const state=await fixture(page,{items:[waiting,resolved,closed]});
+  await expect(page.locator(`[data-prediction="${firstId}"]`).getByRole('link',{name:'Acompanhar apuração'})).toBeVisible();
+  await expect(page.locator(`[data-prediction="${secondId}"]`).getByRole('link',{name:'Ver resultado'})).toBeVisible();
+  await expect(page.locator(`[data-prediction="${thirdId}"]`).getByRole('link',{name:'Ver anulação'})).toBeVisible();
+  await page.locator(`[data-prediction="${firstId}"]`).getByRole('link',{name:'Acompanhar apuração'}).click();
+  await expect(page.locator('.nx62-detail-heading')).toBeVisible();await expect(page.locator('.nx62-result')).toHaveCount(0);
+  expect(state.calls.filter(x=>x.method!=='GET')).toHaveLength(0);
+});
 
 test('official event card and detail show the official source, criterion and no score language',async({page})=>{
   const item={...base,type:'OFFICIAL_EVENT',mediaTitle:'Cyberpunk: Edgerunners 2',question:'Cyberpunk: Edgerunners 2 estará disponível na Netflix em 20/10/2030?',

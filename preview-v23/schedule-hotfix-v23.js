@@ -1,8 +1,7 @@
 'use strict';
 (() => {
-  const TZ='America/Sao_Paulo';
   function fullDay(key){
-    try{const d=new Date(`${key}T12:00:00-03:00`),x=new Intl.DateTimeFormat('pt-BR',{timeZone:TZ,weekday:'long'}).format(d);return x.charAt(0).toUpperCase()+x.slice(1)}catch{return'Dia'}
+    try{const d=new Date(`${key}T12:00:00Z`),x=new Intl.DateTimeFormat('pt-BR',{timeZone:'UTC',weekday:'long'}).format(d);return x.charAt(0).toUpperCase()+x.slice(1)}catch{return'Dia'}
   }
   function ensureSection(key){
     let el=document.querySelector(`#nx18-day-${CSS.escape(key)}`);if(el)return el;

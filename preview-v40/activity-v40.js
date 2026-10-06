@@ -36,7 +36,7 @@
   const scopedKey=()=>owner?`${KEY}:owner:${encodeURIComponent(owner)}`:'';
   function notify(){dispatchEvent(new CustomEvent('aninexus:community-activity-changed',{detail:{items:local()}}))}
   function confirm(user,confirmed=true){
-    const next=confirmed?ownerId(user):'';
+    const next=confirmed?(ownerId(user)||(window.AniNexusAuth?.enabled!==true?'anonymous':'')):'';
     const changed=!identityKnown||owner!==next;
     if(changed||!confirmed)identityEpoch++;
     identityKnown=confirmed;identityBlocked=!confirmed;identityUser=confirmed&&next?user:null;owner=next;identityPromise=null;

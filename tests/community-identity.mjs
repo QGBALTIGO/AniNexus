@@ -57,6 +57,15 @@ test('logout and uncertain identity immediately hide cached local history', asyn
   h.confirm(null); assert.deepEqual(plain(h.api.local()), []); assert.equal(h.record(202), null);
 });
 
+test('an anonymous identity refresh preserves preview activity without adopting it into a member account', async () => {
+  const h = fixture({enabled:false}); await h.boot(); h.record(101);
+  h.confirm(null); assert.equal(h.api.local().length,1);
+  assert.equal(h.api.local()[0].owner_id,'anonymous');
+  h.window.AniNexusAuth.enabled=true;h.confirm(A);
+  assert.deepEqual(plain(h.api.local()),[]);
+  assert.equal(h.api.key,`${legacyKey}:owner:${A.id}`);
+});
+
 test('a late identity read cannot revive A after B is confirmed', async () => {
   const old = deferred(); const h = fixture({account: () => old.promise});
   const identity = h.api.identity(); h.confirm(B); old.resolve(A); await identity; await settle();

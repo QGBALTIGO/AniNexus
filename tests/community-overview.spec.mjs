@@ -67,7 +67,10 @@ test('Local reading activity preserves volumes and multiple reactions independen
   await setup(page);await page.goto(url('/'));
   await expect(page.locator('#nx35CommunityHero .nx35-community-card')).toHaveCount(1);
   const result=await page.evaluate(()=>{
-    window.AniNexusAccountData=async()=>({username:'reader-a',displayName:'Leitor A'});
+    const user={id:'reader-owner',username:'reader-a',displayName:'Leitor A'};
+    window.AniNexusAccountData=async()=>user;
+    localStorage.setItem('aninexus:mediaOwner',JSON.stringify(user.id));localStorage.setItem('aninexus:mangaOwner',JSON.stringify(user.id));
+    dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user,confirmed:true}}));
     const state={status:'CURRENT',progress:5,volumeProgress:2,reactions:['Amei','Que arte!'],updatedAt:Date.now()};
     document.dispatchEvent(new CustomEvent('aninexus:manga-media-state-changed',{detail:{id:101,state}}));
     document.dispatchEvent(new CustomEvent('aninexus:media-state-changed',{detail:{id:101,state:{...state,volumeProgress:0}}}));
