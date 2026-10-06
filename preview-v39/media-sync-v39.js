@@ -7,15 +7,30 @@
   let identityController=new AbortController(),userPromise=null,favoritesPromise=null,cyclePromise=null,cycleEpoch=0;
   const syncs=[];
 
+  function readStatus(mediaType,resource,ok,version=epoch){
+    if(version!==epoch||identitySuspended)return;
+    document.dispatchEvent(new CustomEvent('aninexus:media-sync-read-status',{detail:{mediaType,resource,ok,owner:identityUser?.id||null,epoch}}));
+  }
+  function readIdentity(reset=false){
+    document.dispatchEvent(new CustomEvent('aninexus:media-sync-read-identity',{detail:{suspended:identitySuspended,reset}}));
+  }
+  function validItems(data,listType=''){
+    return Array.isArray(data?.items)&&data.items.every(row=>{
+      if(!row||typeof row!=='object'||Array.isArray(row)||!Number.isSafeInteger(Number(row.media_id))||Number(row.media_id)<=0)return false;
+      const type=String(row.media_type||'').toUpperCase();
+      return (!type||['ANIME','MANGA'].includes(type)&&(!listType||type===listType))&&(!listType||['PLANNING','CURRENT','COMPLETED','PAUSED','DROPPED'].includes(row.status));
+    });
+  }
+
   async function request(path,options={}){
     const signal=options.signal||identityController.signal;
     if(signal.aborted)return null;
     if(remoteAuth()){
-      try{return await remoteAuth().api(path,{...options,signal})}catch(error){if(error?.status===401)return null;throw error}
+      try{return await remoteAuth().api(path,{...options,signal})}catch(error){if(error?.status===401)return path==='/api/me'?{user:null}:null;throw error}
     }
     if(IS_PAGES)return null;
     const response=await fetch(path,{credentials:'same-origin',cache:'no-store',...options,signal,headers:{accept:'application/json',...(options.body?{'content-type':'application/json'}:{}),...(options.headers||{})}});
-    if(response.status===401)return null;
+    if(response.status===401)return path==='/api/me'?{user:null}:null;
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
     if(response.status===204)return{};
     return response.json().catch(()=>({}));
@@ -23,17 +38,21 @@
   function confirmIdentity(user,{lookup=false}={}){
     const next=user?.id?user:null;
     if(identityKnown&&!identitySuspended&&(identityUser?.id||null)===(next?.id||null)){
-      identityUser=next;userPromise=Promise.resolve(next);return false;
+      identityUser=next;userPromise=Promise.resolve(next);readStatus('ACCOUNT','identity',true);return false;
     }
+    const previous=identityUser?.id||null;
     epoch++;identityController.abort('identity-changed');identityController=new AbortController();
     identityKnown=true;identitySuspended=false;identityUser=next;userPromise=Promise.resolve(next);favoritesPromise=null;
     if(lookup)cycleEpoch=epoch;else cyclePromise=null;
     for(const sync of syncs)sync.identity(next);
+    readIdentity(previous!==(next?.id||null));
+    readStatus('ACCOUNT','identity',true);
     return true;
   }
   function suspendIdentity(){
     epoch++;identityController.abort('identity-unconfirmed');identityController=new AbortController();
     identitySuspended=true;userPromise=null;favoritesPromise=null;cyclePromise=null;
+    readIdentity();
   }
   async function user(allowLookup=false){
     if(identitySuspended&&!allowLookup)return null;
@@ -41,8 +60,11 @@
       const version=epoch;
       const promise=request('/api/me').then(data=>{
         if(version!==epoch)return null;
+        const profile=data?.user;
+        const validProfile=profile===null||(profile&&typeof profile==='object'&&!Array.isArray(profile)&&(typeof profile.id==='string'&&profile.id.trim()||Number.isSafeInteger(profile.id)&&profile.id>0));
+        if(!data||typeof data!=='object'||!Object.prototype.hasOwnProperty.call(data,'user')||!validProfile)throw new Error('Invalid identity response');
         const value=data?.user?.id?data.user:null;confirmIdentity(value,{lookup:true});return value;
-      }).catch(()=>{if(userPromise===promise)userPromise=null;return null});
+      }).catch(()=>{if(userPromise===promise){userPromise=null;readStatus('ACCOUNT','identity',false,version)}return null});
       userPromise=promise;
     }
     return userPromise;
@@ -133,8 +155,8 @@
 
   async function hydrateFavorites(){
     const version=epoch,revision=favoriteRevision;
-    const data=await favorites().catch(()=>null);if(!data)return;
-    if(version!==epoch)return;
+    const data=await favorites().catch(()=>null);if(version!==epoch)return;
+    if(!validItems(data)){readStatus(mediaType,'favorites',false,version);return}
     const remote=ids((data.items||[]).filter(x=>String(x.media_type||'ANIME').toUpperCase()===mediaType).map(x=>x.media_id));
     const desired=new Set(remote),changes=pending(FAV_PENDING);
     for(const [raw,value] of Object.entries(changes)){const id=Number(raw);if(!Number.isSafeInteger(id)||id<=0)continue;value?desired.add(id):desired.delete(id)}
@@ -144,11 +166,13 @@
     for(const id of desired)if(!remote.has(id))queueFavorite(id,true);
     for(const id of remote)if(!desired.has(id))queueFavorite(id,false);
     for(const [raw,value] of Object.entries(changes)){const id=Number(raw);if(Number.isSafeInteger(id)&&id>0)queueFavorite(id,!!value)}
+    readStatus(mediaType,'favorites',true,version);
   }
 
   async function hydrateStates(){
     const version=epoch,revision=stateRevision;
-    const data=await request(listPath).catch(()=>null);if(!data||version!==epoch)return;
+    const data=await request(listPath).catch(()=>null);if(version!==epoch)return;
+    if(!validItems(data,mediaType)){readStatus(mediaType,'list',false,version);return}
     const next={},remote=new Map();
     for(const row of data.items||[]){const id=Number(row.media_id);if(!Number.isSafeInteger(id)||id<=0)continue;const state=rowState(row);remote.set(id,state);next[id]=state}
     const changes=pending(STATE_PENDING);
@@ -161,6 +185,7 @@
     stateApi()?.sync();
     for(const [raw,state] of Object.entries(next)){const id=Number(raw),server=remote.get(id);if(!server||Number(state.updatedAt||0)>Number(server.updatedAt||0))queueState(id,state)}
     for(const [raw,state] of Object.entries(changes)){const id=Number(raw);if(Number.isSafeInteger(id)&&id>0)queueState(id,state)}
+    readStatus(mediaType,'list',true,version);
   }
 
   async function hydrate(version){if(version!==epoch)return;await Promise.allSettled([hydrateFavorites(),hydrateStates()])}

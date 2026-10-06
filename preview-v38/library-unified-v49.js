@@ -388,7 +388,8 @@
     if (state.view === 'IMPRESSIONS') {
       root.innerHTML = impressionsMarkup();
       const counter = document.querySelector('[data-nx49-result-count]');
-      if (counter) counter.textContent = `${combinedImpressions().length} impressões`;
+      const count = combinedImpressions().length;
+      if (counter) counter.textContent = `${count} ${count === 1 ? 'impressão' : 'impressões'}`;
       wireOpenCards();
       root.querySelector('[data-nx49-retry]')?.addEventListener('click', mountLibrary, {once: true});
       return;

@@ -101,11 +101,37 @@
   document.addEventListener('aninexus:favorite-changed',()=>syncBurst());
   document.addEventListener('aninexus:manga-media-state-changed',()=>syncBurst());
   document.addEventListener('aninexus:manga-favorite-changed',()=>syncBurst());
-  let noticeTimer;
-  document.addEventListener('aninexus:media-sync-pending',()=>{
+  let noticeTimer,writePending=false,readSuspended=false;
+  const readFailures=new Set();
+  function renderSyncNotice(){
     let notice=document.querySelector('.nx-media-sync-notice');
-    if(!notice){notice=document.createElement('div');notice.className='nx-media-sync-notice';notice.setAttribute('role','status');notice.innerHTML='<span>Salvo neste navegador. Sincronização com a conta pendente.</span><button type="button">Tentar novamente</button>';document.body.append(notice);notice.querySelector('button').onclick=()=>{dispatchEvent(new CustomEvent('aninexus:media-sync-retry'));notice.remove()}}
-    clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>notice.remove(),9000);
+    if(readSuspended||!writePending&&!readFailures.size){notice?.remove();return}
+    if(!notice){
+      notice=document.createElement('div');notice.className='nx-media-sync-notice';notice.setAttribute('role','status');
+      notice.innerHTML='<span></span><button type="button">Tentar novamente</button>';document.body.append(notice);
+      notice.querySelector('button').onclick=()=>{dispatchEvent(new CustomEvent('aninexus:media-sync-retry'));if(!readFailures.size){writePending=false;renderSyncNotice()}};
+    }
+    const messages=[];
+    if(writePending)messages.push('Salvo neste navegador. Sincronização com a conta pendente.');
+    if(readFailures.has('ACCOUNT:identity'))messages.push('Não foi possível confirmar a conta para a atualização automática de listas e favoritos. Tente novamente.');
+    if([...readFailures].some(key=>key!=='ACCOUNT:identity'))messages.push('A atualização automática de listas ou favoritos não foi concluída. Tente novamente.');
+    notice.querySelector('span').textContent=messages.join(' ');
+  }
+  document.addEventListener('aninexus:media-sync-read-status',event=>{
+    const detail=event.detail;
+    if(!['ANIME','MANGA','ACCOUNT'].includes(detail?.mediaType)||!['favorites','list','identity'].includes(detail?.resource))return;
+    const key=`${detail.mediaType}:${detail.resource}`;
+    if(detail.ok===true)readFailures.delete(key);else if(detail.ok===false)readFailures.add(key);else return;
+    renderSyncNotice();
+  });
+  document.addEventListener('aninexus:media-sync-read-identity',event=>{
+    readSuspended=event.detail?.suspended===true;
+    if(event.detail?.reset===true){readFailures.clear();writePending=false;clearTimeout(noticeTimer)}
+    renderSyncNotice();
+  });
+  document.addEventListener('aninexus:media-sync-pending',()=>{
+    writePending=true;renderSyncNotice();
+    clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>{writePending=false;renderSyncNotice()},9000);
   });
 
   const observer=new MutationObserver(records=>{
