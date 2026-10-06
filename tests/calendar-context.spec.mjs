@@ -24,12 +24,12 @@ async function fixture(page,{empty=false,signed=false,stale=false}={}){
   if(stale)state.fail=true;
   await page.addScriptTag({content:code});return {calls,state};
 }
-test('calendar uses local midnight and hides known adult works until explicitly enabled',async({page})=>{
+test('calendar uses local midnight and keeps the public filter without an adult-content control',async({page})=>{
   const {calls}=await fixture(page);await expect(page.locator('#nx18Root')).toContainText('Obra pública fixture');await expect(page.locator('#nx18Root')).not.toContainText('Obra adulta fixture');
   await expect(page.locator('#nx18Hero')).toContainText('America/Cuiaba');
   expect(Number(calls[0].searchParams.get('start'))).toBe(Date.parse('2026-10-06T04:00:00Z')/1000);
   expect(Number(calls[0].searchParams.get('end'))).toBe(Date.parse('2026-10-13T04:00:00Z')/1000);
-  await page.getByLabel('Mostrar conteúdo adulto').check();await expect(page.locator('#nx18Root')).toContainText('Obra adulta fixture');
+  await expect(page.getByLabel('Mostrar conteúdo adulto')).toHaveCount(0);
 });
 test('empty successful schedule stays empty without querying a second provider',async({page})=>{
   const {calls}=await fixture(page,{empty:true});await expect(page.locator('#nx18Root')).toContainText('Nenhum episódio');expect(calls).toHaveLength(1);
@@ -38,7 +38,7 @@ test('personal calendar requires login and confirmed ownership',async({page})=>{
   await fixture(page);await page.getByRole('button',{name:'Meus animes',exact:true}).first().click();await expect(page.locator('#nx18PersonalFeedback')).toContainText('Entre para filtrar');await expect(page.locator('#nx18PersonalFeedback').getByRole('link',{name:'Entrar'})).toHaveAttribute('href','/login');
 });
 test('personal filter survives the same owner and resets when identity becomes uncertain',async({page})=>{
-  await fixture(page,{signed:true});await page.getByLabel('Mostrar conteúdo adulto').check();
+  await fixture(page,{signed:true});
   await page.getByRole('button',{name:'Meus animes',exact:true}).first().click();await expect(page.getByRole('button',{name:'Meus animes',exact:true}).first()).toHaveClass(/active/);
   await expect(page.locator('#nx18Root')).not.toContainText('Obra adulta fixture');
   await page.evaluate(()=>dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{confirmed:true,user:{id:'owner-fixture'}}})));

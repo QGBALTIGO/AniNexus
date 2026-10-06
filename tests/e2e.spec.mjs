@@ -2530,20 +2530,20 @@ test('Animes dublados has usable search filters pagination data and standard act
   }
 });
 
-test('Home exposes discovery actions while preserving the established continuation shelf',async({page})=>{
+test('Home restores the opening layout without discovery buttons and preserves the continuation shelf',async({page})=>{
   await mockHeaderIdentity(page,r=>r.fulfill({json:{user:{id:'continuation-member',username:'continuation_member'}}}));
   await page.route('https://api.clerk.com/api/me/home?**',r=>r.fulfill({json:{continue:[{id:101,mediaType:'ANIME',title:'Retomar anime',progress:3,next:4},{id:202,mediaType:'MANGA',title:'Retomar mangá',progress:5,next:6}]}}));
   for(const width of [1440,390,320]){
     await page.setViewportSize({width,height:900});await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
-    const actions=page.getByRole('navigation',{name:'Comece sua jornada'});
-    await expect.poll(async()=>{const url=new URL(await actions.getByRole('link',{name:'Explorar catálogo'}).getAttribute('href'),ORIGIN);return url.searchParams.get('p')||url.pathname}).toBe('/animes/catalogo');
-    await expect.poll(async()=>{const url=new URL(await actions.getByRole('link',{name:'Minha biblioteca'}).getAttribute('href'),ORIGIN);return url.searchParams.get('p')||url.pathname}).toBe('/minha-biblioteca');
+    await expect(page.locator('.nx35-hero')).toBeVisible();
+    await expect(page.locator('.nx35-discovery-actions')).toHaveCount(0);
+    await expect(page.locator('.nx35-hero').getByRole('link',{name:'Explorar catálogo'})).toHaveCount(0);
+    await expect(page.locator('.nx35-hero').getByRole('link',{name:'Minha biblioteca'})).toHaveCount(0);
+    await expect(page.locator('.nx44-radio--inline')).toBeVisible();
+    await expect(page.locator('.nx35-live')).toBeVisible();
     await expect(page.locator('.nx61-personal-home')).toBeVisible();
     await expect(page.locator('.nx61-personal-home')).toContainText('Episódio 3');
     await expect(page.locator('.nx61-personal-home')).toContainText('Capítulo 5');
-    const dimensions=await actions.locator('a').evaluateAll(links=>links.map(a=>({height:a.getBoundingClientRect().height,font:parseFloat(getComputedStyle(a).fontSize)})));
-    expect(dimensions.every(x=>x.height>=44&&x.font>=14)).toBe(true);await noOverflow(page,2);
+    await noOverflow(page,2);
   }
-  await page.getByRole('navigation',{name:'Comece sua jornada'}).getByRole('link',{name:'Explorar catálogo'}).click();
-  await expect(page.locator('.nx21-catalog-page')).toBeVisible({timeout:30000});
 });

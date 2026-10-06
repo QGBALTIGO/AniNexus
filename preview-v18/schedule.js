@@ -21,7 +21,7 @@
   let sectionObserver=null;
   let activeDay='';
   let myOnly=false;
-  let personalOwner='',showAdult=false,loadWarning='';
+  let personalOwner='',loadWarning='';
   let selectedProviders=new Set();
   let mounted=false;
   let lastScrollY=Math.max(0,scrollY);
@@ -201,7 +201,7 @@
     return `<button class="nx18-pill ${myOnly?'active':''}" type="button" data-nx18-my>${SVG.heart}<span>Meus animes</span></button><button class="nx18-pill ${selectedProviders.size?'active':''}" type="button" data-nx18-stream>${SVG.tv}<span>Onde assistir</span></button>`;
   }
   function shell(){
-    return `<main class="nx18-schedule"><section class="nx18-hero" id="nx18Hero"><div class="nx18-shell"><div class="nx18-title"><span class="nx18-title-icon">${SVG.calendar}</span><div class="nx18-title-copy"><h1><em>Calendário</em> de Animes <span class="nx18-title-period">da Semana</span></h1><small class="nx18-kicker">PROGRAMAÇÃO DE ANIMES</small></div></div><p>Acompanhe os dias e horários de lançamento dos episódios, no seu fuso (${esc(TZ)}).</p><div class="nx18-days">${dayButtons()}</div><div class="nx18-actions">${actionButtons()}<label class="nx18-pill"><input type="checkbox" data-nx18-adult>Mostrar conteúdo adulto</label></div><p id="nx18PersonalFeedback" role="status"></p></div></section><section class="nx18-body"><div class="nx18-shell" id="nx18Root"><div class="nx18-loading">${Array.from({length:6},()=>'<div class="nx18-skeleton"></div>').join('')}</div></div></section></main>`;
+    return `<main class="nx18-schedule"><section class="nx18-hero" id="nx18Hero"><div class="nx18-shell"><div class="nx18-title"><span class="nx18-title-icon">${SVG.calendar}</span><div class="nx18-title-copy"><h1><em>Calendário</em> de Animes <span class="nx18-title-period">da Semana</span></h1><small class="nx18-kicker">PROGRAMAÇÃO DE ANIMES</small></div></div><p>Acompanhe os dias e horários de lançamento dos episódios, no seu fuso (${esc(TZ)}).</p><div class="nx18-days">${dayButtons()}</div><div class="nx18-actions">${actionButtons()}</div><p id="nx18PersonalFeedback" role="status"></p></div></section><section class="nx18-body"><div class="nx18-shell" id="nx18Root"><div class="nx18-loading">${Array.from({length:6},()=>'<div class="nx18-skeleton"></div>').join('')}</div></div></section></main>`;
   }
   function islandMarkup(){
     return `<section class="nx18-island" id="nx18Island" aria-label="Atalhos da programação" aria-hidden="true" inert><button type="button" class="nx18-island-head" data-nx18-island-toggle aria-expanded="false"><span class="nx18-island-icon">${SVG.calendar}</span><span class="nx18-island-copy"><strong>Calendário de Animes</strong><small>${days.find(d=>d.key===activeDay)?.full||'Programação da semana'}</small></span><span class="nx18-island-chevron">${SVG.down}</span></button><div class="nx18-island-panel" aria-hidden="true" inert><div><div class="nx18-island-inner"><div class="nx18-days">${dayButtons('data-nx18-idday')}</div><div class="nx18-actions">${actionButtons()}</div></div></div></div></section>`;
@@ -217,7 +217,7 @@
     for(const x of items){const k=dateKey(new Date(x.airingAt*1000));if(map.has(k))map.get(k).items.push(x)}
     const mine=myAnimeIds();
     return[...map.values()].map(g=>({...g,items:g.items.filter(x=>{
-      if(!showAdult&&(x.media?.isAdult===true||(x.media?.genres||[]).some(g=>String(g).toLowerCase()==='hentai')))return false;
+      if(x.media?.isAdult===true||(x.media?.genres||[]).some(g=>String(g).toLowerCase()==='hentai'))return false;
       if(myOnly&&!mine.has(Number(x.media?.id)))return false;
       if(selectedProviders.size){const ks=new Set(streamLinks(x.media).map(providerKey));if(![...selectedProviders].some(k=>ks.has(k)))return false}
       return true;
@@ -341,7 +341,7 @@
       }catch{if(feedback)feedback.textContent='Não foi possível confirmar sua biblioteca agora. Tente o filtro novamente.';}
       finally{if(b.isConnected)b.disabled=false;}
     });
-    root.querySelectorAll('[data-nx18-adult]').forEach(b=>b.onchange=()=>{showAdult=b.checked;renderData()});
+
     root.querySelectorAll('[data-nx18-stream]').forEach(b=>b.onclick=providerModal);
   }
 
@@ -403,7 +403,7 @@
   document.addEventListener('click',e=>{const a=e.target.closest('a[data-link],a[data-nx-inst],a[data-nx-legal]');if(a&&mounted&&!String(a.getAttribute('href')||'').includes('/animes/programacao'))cleanup()},true);
   addEventListener('popstate',()=>{if(requestedRoute()===ROUTE){cleanup();mount()}else cleanup()});
   addEventListener('resize',()=>{if(!mounted)return;ensureIsland();onScroll()}, {passive:true});
-  addEventListener('aninexus:account-identity-changed',event=>{const next=event.detail?.confirmed===true?String(event.detail.user?.id||''):'';if(next!==personalOwner){myOnly=false;showAdult=false;document.querySelectorAll('[data-nx18-adult]').forEach(x=>x.checked=false)}personalOwner=next;if(mounted)renderData()});
+  addEventListener('aninexus:account-identity-changed',event=>{const next=event.detail?.confirmed===true?String(event.detail.user?.id||''):'';if(next!==personalOwner){myOnly=false}personalOwner=next;if(mounted)renderData()});
   document.addEventListener('aninexus:media-sync-read-identity',event=>{if(event.detail?.suspended){personalOwner='';myOnly=false;if(mounted)renderData()}});
   document.addEventListener('aninexus:media-sync-read-status',event=>{if(mounted&&event.detail?.mediaType==='ANIME')renderData()});
   mount();
