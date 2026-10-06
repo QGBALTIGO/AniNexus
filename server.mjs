@@ -77,7 +77,7 @@ app.addHook('onSend',async(req,reply,payload)=>{
   reply.header('X-Content-Type-Options','nosniff');
   reply.header('X-Permitted-Cross-Domain-Policies','none');
   const url=String(req.url||'').split('?')[0];
-  if(url.startsWith('/api/auth/')||url.startsWith('/api/me')||url==='/api/achievements/feed'||url.endsWith('/comments/spoiler-check'))reply.header('Cache-Control','private, no-store');
+  if(/^\/api\/(?:auth|me|admin|moderation)(?:\/|$)/.test(url)||url==='/api/achievements/feed'||url.endsWith('/comments/spoiler-check'))reply.header('Cache-Control','private, no-store');
   else if(req.method==='GET'&&/^\/api\/(home|catalog|reading|trailers|characters\/ranking|achievements\/catalog|schedule|anime\/\d+|manga\/\d+|impressions\/|feed\/|synopsis\/(?:anime|manga)\/\d+|media\/summaries|studios|dublados|lists|list\/|users\/|news(?:\/|$)|community\/(?:impressions|activity|threads))/.test(url))reply.header('Cache-Control','public, max-age=20, stale-while-revalidate=180, stale-if-error=600');
   else if(req.method==='GET'&&(url==='/'||reply.getHeader('content-type')?.toString().includes('text/html')))reply.header('Cache-Control','no-cache, max-age=0, must-revalidate');
   if(process.env.PUBLIC_ORIGIN?.startsWith('https://'))reply.header('Strict-Transport-Security','max-age=31536000; includeSubDomains; preload');
