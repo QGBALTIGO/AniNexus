@@ -509,8 +509,8 @@
       const clerkUser = await getUser();
       if(syncToken!==headerSyncToken||!actions.isConnected)return;
       if (clerkUser) {
-        let user=clerkUser, profileUnavailable=false;
-        try{user=(await api('/api/me',{timeout:8_000}))?.user||clerkUser}catch{profileUnavailable=true}
+        let user=clerkUser, profileUnavailable=false, confirmed=false;
+        try{const profile=(await api('/api/me',{timeout:8_000}))?.user;if(profile?.id){user=profile;confirmed=true}else profileUnavailable=true}catch{profileUnavailable=true}
         // A Clerk event can arrive while /api/me is pending (logout/account switch).
         if(syncToken!==headerSyncToken||!actions.isConnected||window.Clerk?.user?.id!==clerkUser.id)return;
         if(profileUnavailable&&retry<2)headerRetryTimer=setTimeout(()=>syncHeader(retry+1),retry?4000:1500);
@@ -520,12 +520,12 @@
         const name=String(user.displayName||user.display_name||user.firstName||user.username||'Minha conta');
         const button = document.createElement('button'); button.className = 'nx38-account-chip'; button.type = 'button'; button.setAttribute('aria-label', 'Abrir minha conta'); button.innerHTML = `<i>${avatarMarkup(user,{name,clerkUser})}</i><span>${esc(name)}</span>`; button.onclick = () => go('/minha-conta'); actions.insertBefore(button, actions.querySelector('.menu-btn') || null);
         syncDrawerIdentity(user);
-        dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user}}));
+        dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user,confirmed}}));
       } else {
         setAnonymous();
-        dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:null}}));
+        dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:null,confirmed:true}}));
       }
-    } catch (error) { if(syncToken!==headerSyncToken)return;console.warn('[AniNexus auth] não foi possível confirmar a sessão no cabeçalho.',error); setAnonymous();dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:null}})); }
+    } catch (error) { if(syncToken!==headerSyncToken)return;console.warn('[AniNexus auth] não foi possível confirmar a sessão no cabeçalho.',error); setAnonymous();dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:null,confirmed:false}})); }
   }
   window.AniNexusAuthV38 = { renderAuth, renderAccount, syncHeader, syncDrawerIdentity, getUser, api };
   function currentRoute() {

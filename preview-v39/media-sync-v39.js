@@ -2,8 +2,71 @@
 (() => {
   if(window.__NX39_MEDIA_SYNC__)return;window.__NX39_MEDIA_SYNC__=true;
   const IS_PAGES=location.hostname.endsWith('github.io');
-  function createSync(reading=false){
   const remoteAuth=()=>window.AniNexusAuth?.enabled===true?window.AniNexusAuth:null;
+  let epoch=0,identityKnown=false,identityUser=null,identitySuspended=false;
+  let identityController=new AbortController(),userPromise=null,favoritesPromise=null,cyclePromise=null,cycleEpoch=0;
+  const syncs=[];
+
+  async function request(path,options={}){
+    const signal=options.signal||identityController.signal;
+    if(signal.aborted)return null;
+    if(remoteAuth()){
+      try{return await remoteAuth().api(path,{...options,signal})}catch(error){if(error?.status===401)return null;throw error}
+    }
+    if(IS_PAGES)return null;
+    const response=await fetch(path,{credentials:'same-origin',cache:'no-store',...options,signal,headers:{accept:'application/json',...(options.body?{'content-type':'application/json'}:{}),...(options.headers||{})}});
+    if(response.status===401)return null;
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    if(response.status===204)return{};
+    return response.json().catch(()=>({}));
+  }
+  function confirmIdentity(user,{lookup=false}={}){
+    const next=user?.id?user:null;
+    if(identityKnown&&!identitySuspended&&(identityUser?.id||null)===(next?.id||null)){
+      identityUser=next;userPromise=Promise.resolve(next);return false;
+    }
+    epoch++;identityController.abort('identity-changed');identityController=new AbortController();
+    identityKnown=true;identitySuspended=false;identityUser=next;userPromise=Promise.resolve(next);favoritesPromise=null;
+    if(lookup)cycleEpoch=epoch;else cyclePromise=null;
+    for(const sync of syncs)sync.identity(next);
+    return true;
+  }
+  function suspendIdentity(){
+    epoch++;identityController.abort('identity-unconfirmed');identityController=new AbortController();
+    identitySuspended=true;userPromise=null;favoritesPromise=null;cyclePromise=null;
+  }
+  async function user(allowLookup=false){
+    if(identitySuspended&&!allowLookup)return null;
+    if(!userPromise){
+      const version=epoch;
+      const promise=request('/api/me').then(data=>{
+        if(version!==epoch)return null;
+        const value=data?.user?.id?data.user:null;confirmIdentity(value,{lookup:true});return value;
+      }).catch(()=>{if(userPromise===promise)userPromise=null;return null});
+      userPromise=promise;
+    }
+    return userPromise;
+  }
+  function favorites(){
+    if(!favoritesPromise){
+      const promise=request('/api/me/favorites').finally(()=>{if(favoritesPromise===promise)favoritesPromise=null});
+      favoritesPromise=promise;
+    }
+    return favoritesPromise;
+  }
+  function hydrateAll(force=false){
+    if(cyclePromise&&cycleEpoch===epoch)return cyclePromise;
+    if(force)userPromise=null;
+    cycleEpoch=epoch;
+    const promise=(async()=>{
+      const current=await user(force);if(!current||identitySuspended||current.id!==identityUser?.id||cyclePromise!==promise)return;
+      const version=epoch;
+      await Promise.allSettled(syncs.map(sync=>sync.hydrate(version)));
+    })().finally(()=>{if(cyclePromise===promise)cyclePromise=null});
+    cyclePromise=promise;
+    return promise;
+  }
+  function createSync(reading=false){
 
   const FAV_KEY=reading?'aninexus:mangaFavorites':'aninexus:favorites';
   const STATE_KEY=reading?'aninexus:mangaState:v2':'aninexus:mediaState:v2';
@@ -14,9 +77,8 @@
   const mediaType=reading?'MANGA':'ANIME';
   const stateApi=()=>reading?window.AniNexusMangaState:window.AniNexusMediaState;
   const eventName=name=>`aninexus:${reading?'manga-':''}${name}`;
-  let epoch=0,favoriteRevision=0,stateRevision=0;
+  let favoriteRevision=0,stateRevision=0;
   const favoriteEdits=new Map(),stateEdits=new Map();
-  let userPromise=null;
   const favDesired=new Map(),favRunning=new Set();
   const stateDesired=new Map(),stateRunning=new Set();
 
@@ -26,18 +88,6 @@
   const num=v=>{const n=Number(v);return Number.isFinite(n)?n:null};
   const same=(a,b)=>JSON.stringify(a??null)===JSON.stringify(b??null);
 
-  async function request(path,options={}){
-    if(remoteAuth()){
-      try{return await remoteAuth().api(path,options)}catch(error){if(error?.status===401)return null;throw error}
-    }
-    if(IS_PAGES)return null;
-    const response=await fetch(path,{credentials:'same-origin',cache:'no-store',...options,headers:{accept:'application/json',...(options.body?{'content-type':'application/json'}:{}),...(options.headers||{})}});
-    if(response.status===401)return null;
-    if(!response.ok)throw new Error(`HTTP ${response.status}`);
-    if(response.status===204)return{};
-    return response.json().catch(()=>({}));
-  }
-  async function user(force=false){if(force)userPromise=null;if(!userPromise)userPromise=request('/api/me').then(x=>x?.user||null).catch(()=>null);return userPromise}
   function pending(key){const value=read(key,{});return value&&typeof value==='object'?value:{}}
   function setPending(key,id,value){const p=pending(key);p[id]=value;write(key,p)}
   function clearPendingIf(key,id,value){const p=pending(key);if(same(p[id],value)){delete p[id];write(key,p)}}
@@ -54,7 +104,7 @@
       while(favDesired.has(id)){
         const wanted=!!favDesired.get(id);favDesired.delete(id);
         const version=epoch;
-        try{if(await writeFavorite(id,wanted)){if(version===epoch){favoriteEdits.set(id,++favoriteRevision);clearPendingIf(FAV_PENDING,id,wanted)}}else notifyPending()}catch{notifyPending()}
+        try{if(await writeFavorite(id,wanted)){if(version===epoch){favoriteEdits.set(id,++favoriteRevision);clearPendingIf(FAV_PENDING,id,wanted)}}else if(version===epoch)notifyPending()}catch{if(version===epoch)notifyPending()}
       }
     }finally{favRunning.delete(id);if(favDesired.has(id))queueFavorite(id,favDesired.get(id))}
   }
@@ -73,7 +123,7 @@
       while(stateDesired.has(id)){
         const wanted=stateDesired.get(id);stateDesired.delete(id);
         const version=epoch;
-        try{if(await writeState(id,wanted)){if(version===epoch){stateEdits.set(id,++stateRevision);clearPendingIf(STATE_PENDING,id,wanted)}}else notifyPending()}catch{notifyPending()}
+        try{if(await writeState(id,wanted)){if(version===epoch){stateEdits.set(id,++stateRevision);clearPendingIf(STATE_PENDING,id,wanted)}}else if(version===epoch)notifyPending()}catch{if(version===epoch)notifyPending()}
       }
     }finally{stateRunning.delete(id);if(stateDesired.has(id))queueState(id,stateDesired.get(id))}
   }
@@ -83,7 +133,7 @@
 
   async function hydrateFavorites(){
     const version=epoch,revision=favoriteRevision;
-    const data=await request('/api/me/favorites').catch(()=>null);if(!data)return;
+    const data=await favorites().catch(()=>null);if(!data)return;
     if(version!==epoch)return;
     const remote=ids((data.items||[]).filter(x=>String(x.media_type||'ANIME').toUpperCase()===mediaType).map(x=>x.media_id));
     const desired=new Set(remote),changes=pending(FAV_PENDING);
@@ -113,7 +163,7 @@
     for(const [raw,state] of Object.entries(changes)){const id=Number(raw);if(Number.isSafeInteger(id)&&id>0)queueState(id,state)}
   }
 
-  async function hydrate(){const version=epoch,u=await user();if(!u||version!==epoch)return;await Promise.allSettled([hydrateFavorites(),hydrateStates()])}
+  async function hydrate(version){if(version!==epoch)return;await Promise.allSettled([hydrateFavorites(),hydrateStates()])}
 
   document.addEventListener(eventName('favorite-changed'),event=>{
     const id=Number(event.detail?.id),on=!!event.detail?.favorite;if(!Number.isSafeInteger(id)||id<=0)return;
@@ -127,19 +177,25 @@
     setPending(STATE_PENDING,id,snapshot);queueState(id,snapshot);
   });
 
-  addEventListener('online',()=>{user(true);hydrate()});
   function notifyPending(){document.dispatchEvent(new CustomEvent('aninexus:media-sync-pending',{detail:{mediaType}}))}
-  addEventListener('aninexus:account-identity-changed',event=>{
-    const previous=read(ownerKey,null),next=event.detail?.user?.id||null;
+  function identity(user){
+    const previous=read(ownerKey,null),next=user?.id||null;
     if(previous&&previous!==next){
-      epoch++;favDesired.clear();stateDesired.clear();favoriteEdits.clear();stateEdits.clear();userPromise=null;
+      favDesired.clear();stateDesired.clear();favoriteEdits.clear();stateEdits.clear();
       for(const key of [FAV_KEY,STATE_KEY,FAV_PENDING,STATE_PENDING,reading?'aninexus:mangaState:v1':'aninexus:mediaState:v1',reading?'aninexus:mangaList':'aninexus:list',reading?'aninexus:mangaListStatus':'aninexus:listStatus']){try{localStorage.removeItem(key)}catch{}}
       stateApi()?.close();stateApi()?.sync();
     }
-    write(ownerKey,next);userPromise=null;if(next)void hydrate();
-  });
-  addEventListener('aninexus:media-sync-retry',()=>{userPromise=null;void hydrate()});
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',hydrate,{once:true});else hydrate();
+    write(ownerKey,next);
   }
-  createSync();createSync(true);
+  return {hydrate,identity};
+  }
+  syncs.push(createSync(),createSync(true));
+  addEventListener('aninexus:account-identity-changed',event=>{
+    if(!event.detail||!Object.prototype.hasOwnProperty.call(event.detail,'user'))return;
+    if(event.detail.confirmed===false){suspendIdentity();return}
+    if(confirmIdentity(event.detail.user)&&identityUser)void hydrateAll();
+  });
+  addEventListener('online',()=>{void hydrateAll(true)});
+  addEventListener('aninexus:media-sync-retry',()=>{void hydrateAll(true)});
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>hydrateAll(),{once:true});else void hydrateAll();
 })();

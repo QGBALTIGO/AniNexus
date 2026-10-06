@@ -64,7 +64,7 @@
           if(generation!==accountGeneration)return accountValue;
           accountValue = user;
           accountResolved = true;
-          dispatchEvent(new CustomEvent('aninexus:account-identity-changed', { detail: { user } }));
+          dispatchEvent(new CustomEvent('aninexus:account-identity-changed', { detail: { user, confirmed: true } }));
           return user;
         }).catch(() => {
           if(generation!==accountGeneration)return accountValue;
@@ -78,6 +78,10 @@
   addEventListener('aninexus:account-identity-changed', event => {
     if (!event.detail || !Object.prototype.hasOwnProperty.call(event.detail, 'user')) return;
     accountGeneration += 1;
+    if (event.detail.confirmed === false) {
+      accountValue = null; accountResolved = false; accountPromise = null;
+      return;
+    }
     accountValue = event.detail.user || null;
     accountResolved = true;
     accountPromise = Promise.resolve(accountValue);

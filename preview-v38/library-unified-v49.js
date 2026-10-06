@@ -59,6 +59,8 @@
 
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[char]));
   const read = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key) || 'null') ?? fallback; } catch { return fallback; } };
+  let libraryOwner = read('aninexus:mediaOwner', undefined) ?? read('aninexus:mangaOwner', undefined);
+  let librarySuspended = false, suspensionNotice = null, suspensionView = null, suspendedRoute = '';
   const slug = value => String(value || 'obra').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 90) || 'obra';
   const usableTitle = value => { const title = String(value || '').trim(); return title && !/^(?:anime|mang[áa])\s*\d+$/i.test(title) ? title : ''; };
 
@@ -280,15 +282,18 @@
       ${reactions.length ? `<div class="nx49-activity-reactions">${reactions.map(([label, count]) => { const meta = reactionInfo.get(label) || {}; const percentage = Math.round((count / reactionTotal) * 100); return `<span title="${esc(label)}"><b>${esc(meta.emoji || '•')}</b>${esc(label)} <small>${percentage}%</small></span>`; }).join('')}</div>` : ''}
     </section>`;
   }
-  function profileMarkup() {
-    const info = counts(state.media), manga = state.media === 'MANGA';
-    const user = state.anime?.user || state.manga?.user || {};
+  function profileIdentityMarkup(user = {}) {
     const displayName = user.display_name || user.displayName || user.name || user.username || 'Minha conta';
     const username = user.username ? `@${String(user.username).replace(/^@/, '')}` : 'Conta AniNexus';
     const avatar = user.avatar_url || user.avatarUrl || user.picture || `${BASE}/assets/avatars/mascot-pink.png`;
+    return `<img src="${esc(avatar)}" alt=""><span><strong>${esc(displayName)}</strong><small>${esc(username)}</small></span>`;
+  }
+  function profileMarkup() {
+    const info = counts(state.media), manga = state.media === 'MANGA';
+    const user = state.anime?.user || state.manga?.user || {};
     const completed = info.list ? Math.round((info.completed / info.list) * 100) : 0;
     return `<aside class="nx49-profile" aria-label="Resumo da biblioteca">
-      <div class="nx49-profile-identity"><img src="${esc(avatar)}" alt=""><span><strong>${esc(displayName)}</strong><small>${esc(username)}</small></span></div>
+      <div class="nx49-profile-identity">${profileIdentityMarkup(user)}</div>
       <div class="nx49-profile-stats">
         <span><strong>${info.current}</strong><small>${manga ? 'Lendo' : 'Assistindo'}</small></span>
         <span><strong>${info.favorites}</strong><small>Favoritos</small></span>
@@ -496,6 +501,7 @@
     document.querySelector('[data-nx49-island-toggle]')?.addEventListener('click', toggleIsland);
   }
   function closeOnEscape(event) {
+    if (librarySuspended) return;
     const layer=document.querySelector('[data-nx49-filter-layer]');
     if(layer&&!layer.hidden&&event.key==='Tab'){
       const controls=[...layer.querySelectorAll('.nx49-filter-dialog button,.nx49-filter-dialog input')].filter(el=>!el.disabled&&el.getClientRects().length),first=controls[0],last=controls.at(-1),active=document.activeElement;
@@ -543,6 +549,8 @@
     state.scrollFrame = requestAnimationFrame(scrollUpdate);
   }
   function cleanup() {
+    suspendedRoute = '';
+    restoreSuspensionView();
     state.controller?.abort('route-change');
     state.controller = null;
     state.token++;
@@ -554,8 +562,33 @@
     document.querySelector('[data-nx49-filter-layer]')?.remove();
   }
 
-  async function mountLibrary() {
+  function showSuspensionView() {
+    if (!onLibrary() || suspensionNotice) return;
+    suspensionView = {hidden: app.hidden, inert: app.inert, display: app.style.getPropertyValue('display'), priority: app.style.getPropertyPriority('display')};
+    app.hidden = true; app.inert = true; app.style.setProperty('display', 'none', 'important');
+    suspensionNotice = document.createElement('section');
+    suspensionNotice.className = 'nx49-empty nx49-identity-pending';
+    suspensionNotice.setAttribute('role', 'status');
+    suspensionNotice.setAttribute('aria-live', 'polite');
+    suspensionNotice.innerHTML = '<strong>Confirmando sua conta…</strong><p>Sua biblioteca volta assim que a sessão for confirmada.</p>';
+    app.before(suspensionNotice);
+  }
+  function restoreSuspensionView() {
+    if (!suspensionView) return;
+    app.hidden = suspensionView.hidden; app.inert = suspensionView.inert;
+    if (suspensionView.display) app.style.setProperty('display', suspensionView.display, suspensionView.priority);
+    else app.style.removeProperty('display');
+    suspensionNotice?.remove(); suspensionNotice = null; suspensionView = null;
+  }
+  function suspendLibrary() {
+    if (!librarySuspended) suspendedRoute = location.href;
+    librarySuspended = true;
+    state.controller?.abort('identity-unconfirmed'); state.controller = null; state.token++;
+    showSuspensionView();
+  }
+  async function mountLibrary({preserve = false} = {}) {
     if (!onLibrary()) { cleanup(); return; }
+    if (librarySuspended) { showSuspensionView(); return; }
     if (routeInfo().search.get('view') === 'diary' && window.AniNexusDiary) {
       cleanup();
       return window.AniNexusDiary.mount(app);
@@ -564,25 +597,38 @@
     state.controller = new AbortController();
     const signal = state.controller.signal;
     const token = ++state.token;
-    state.media = initialMedia();
-    state.view = 'MEDIA';
-    state.filter = 'ALL';
-    state.search = '';
-    state.anime = null;
-    state.manga = null;
-    state.errors = {ANIME: null, MANGA: null};
-    state.loading = {ANIME: true, MANGA: true};
-    state.lastScrollY = Math.max(0, scrollY);
-    loadingShell();
+    const expectedOwner = libraryOwner;
+    if (!preserve) {
+      state.media = initialMedia();
+      state.view = 'MEDIA';
+      state.filter = 'ALL';
+      state.search = '';
+      state.anime = null;
+      state.manga = null;
+      state.errors = {ANIME: null, MANGA: null};
+      state.loading = {ANIME: true, MANGA: true};
+      state.lastScrollY = Math.max(0, scrollY);
+      loadingShell();
+    }
     const primaryType = state.media;
     const secondaryType = primaryType === 'ANIME' ? 'MANGA' : 'ANIME';
     const assignDataset = (mediaType, value, error = null) => {
       if (token !== state.token || !onLibrary()) return false;
+      const owner = value?.user?.id ?? (value?.unauth ? null : undefined);
+      if (owner !== undefined) {
+        if (libraryOwner !== undefined && owner !== libraryOwner) {
+          // The first identity may arrive after these aggregate requests started.
+          if (expectedOwner === undefined) { void mountLibrary(); return false; }
+          value = null;
+          error = new Error('ACCOUNT_CHANGED');
+        } else libraryOwner = owner;
+      }
       state.loading[mediaType] = false;
       state.errors[mediaType] = error;
       state[mediaType.toLowerCase()] = value;
       return true;
     };
+    if (state.loading[secondaryType]) {
     const secondary = loadDataset(secondaryType, signal).then(value => {
       if (!assignDataset(secondaryType, value)) return;
       if (state.media === secondaryType || state.view === 'IMPRESSIONS') shell();
@@ -590,6 +636,9 @@
       if (error?.name === 'AbortError' || !assignDataset(secondaryType, null, error)) return;
       if (state.media === secondaryType || state.view === 'IMPRESSIONS') shell();
     });
+    void secondary;
+    }
+    if (!state.loading[primaryType]) return;
     try {
       const primary = await loadDataset(primaryType, signal);
       if (!assignDataset(primaryType, primary)) return;
@@ -600,7 +649,6 @@
       assignDataset(primaryType, null, error);
       shell();
     }
-    void secondary;
   }
 
   function updateDataset(mediaType, kind, detail) {
@@ -623,7 +671,7 @@
       data.favorites = data.favorites.filter(item => item.id !== id);
       if (detail.favorite) data.favorites.unshift({id, mediaType, createdAt: Date.now(), media: previous?.media || data.list.find(item => item.id === id)?.media || mediaOf(null, id, mediaType)});
     }
-    if (state.view === 'MEDIA' && state.media === mediaType) shell();
+    if (!librarySuspended && state.view === 'MEDIA' && state.media === mediaType) shell();
   }
 
   document.addEventListener('aninexus:media-state-changed', event => updateDataset('ANIME', 'state', event.detail));
@@ -634,7 +682,28 @@
   addEventListener('scroll', onScroll, {passive: true});
   addEventListener('resize', onScroll, {passive: true});
   addEventListener('popstate', () => setTimeout(mountLibrary, 0));
-  addEventListener('aninexus:account-identity-changed', () => { state.anime = null; state.manga = null; if (onLibrary()) void mountLibrary(); });
+  addEventListener('aninexus:account-identity-changed', event => {
+    if (!event.detail || !Object.prototype.hasOwnProperty.call(event.detail, 'user')) return;
+    if (event.detail.confirmed === false) { suspendLibrary(); return; }
+    const next = event.detail.user?.id || null;
+    const previous = libraryOwner;
+    const resuming = librarySuspended;
+    librarySuspended = false;
+    libraryOwner = next;
+    if (previous === next || (previous === undefined && next)) {
+      for (const data of [state.anime, state.manga]) if (data?.user?.id === next) data.user = {...data.user, ...event.detail.user};
+      const profile = document.querySelector('.nx49-profile-identity');
+      if (state.mounted && onLibrary() && profile && activeData()?.user?.id === next) profile.innerHTML = profileIdentityMarkup(state.anime?.user || state.manga?.user);
+      if (resuming && state.mounted && onLibrary() && activeData()?.user?.id === next) paintContent();
+      if (resuming && onLibrary()) void mountLibrary({preserve: suspendedRoute === location.href});
+      restoreSuspensionView();
+      return;
+    }
+    closeFilters();
+    state.anime = null; state.manga = null;
+    if (onLibrary()) void mountLibrary(); else cleanup();
+    restoreSuspensionView();
+  });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountLibrary, {once: true});
   else void mountLibrary();
 })();
