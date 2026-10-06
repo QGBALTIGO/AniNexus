@@ -105,17 +105,24 @@
   const readFailures=new Set();
   function renderSyncNotice(){
     let notice=document.querySelector('.nx-media-sync-notice');
-    if(readSuspended||!writePending&&!readFailures.size){notice?.remove();return}
+    const libraryRoute=['/minha-biblioteca','/meus-animes','/meus-mangas'].includes(routeFrom());
+    const showReads=libraryRoute&&readFailures.size>0;
+    const host=libraryRoute?document.querySelector('.nx49-workspace,.nx49-library .nx49-shell'):null;
+    if(readSuspended||!writePending&&(!showReads||!host)){notice?.remove();return}
     if(!notice){
       notice=document.createElement('div');notice.className='nx-media-sync-notice';notice.setAttribute('role','status');
-      notice.innerHTML='<span></span><button type="button">Tentar novamente</button>';document.body.append(notice);
+      notice.innerHTML='<span></span><button type="button"></button>';
       notice.querySelector('button').onclick=()=>{dispatchEvent(new CustomEvent('aninexus:media-sync-retry'));if(!readFailures.size){writePending=false;renderSyncNotice()}};
     }
+    notice.classList.toggle('nx-media-sync-notice-inline',!!host);
+    const parent=host||document.body;
+    if(notice.parentElement!==parent){if(host)host.prepend(notice);else parent.append(notice)}
+    notice.querySelector('button').textContent=showReads?'Sincronizar novamente':'Tentar novamente';
     const messages=[];
     if(writePending)messages.push('Salvo neste navegador. Sincronização com a conta pendente.');
-    if(readFailures.has('ACCOUNT:identity'))messages.push('Não foi possível confirmar a conta para a atualização automática de listas e favoritos. Tente novamente.');
-    if([...readFailures].some(key=>key!=='ACCOUNT:identity'))messages.push('A atualização automática de listas ou favoritos não foi concluída. Tente novamente.');
-    notice.querySelector('span').textContent=messages.join(' ');
+    if(showReads&&readFailures.has('ACCOUNT:identity'))messages.push('Não foi possível confirmar a conta para a atualização automática de listas e favoritos. Tente novamente.');
+    if(showReads&&[...readFailures].some(key=>key!=='ACCOUNT:identity'))messages.push('A atualização automática de listas ou favoritos não foi concluída. Tente novamente.');
+    const message=messages.join(' ');if(notice.querySelector('span').textContent!==message)notice.querySelector('span').textContent=message;
   }
   document.addEventListener('aninexus:media-sync-read-status',event=>{
     const detail=event.detail;
@@ -133,11 +140,13 @@
     writePending=true;renderSyncNotice();
     clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>{writePending=false;renderSyncNotice()},9000);
   });
+  for(const name of ['popstate','aninexus:route-changed'])addEventListener(name,()=>queueMicrotask(renderSyncNotice));
 
   const observer=new MutationObserver(records=>{
     let touched=false;
     for(const r of records)for(const n of r.addedNodes){
       if(n.nodeType!==1)continue;
+      if(n.matches?.('.nx49-library,.nx49-workspace')||n.querySelector?.('.nx49-library,.nx49-workspace'))queueMicrotask(renderSyncNotice);
       if(listOpening&&(n.matches?.('.nx20-media-layer')||n.querySelector?.('.nx20-media-layer')))releaseList();
       if(n.matches?.(ACTION)||n.querySelector?.(ACTION)){neutralize(n);touched=true}
     }

@@ -27,15 +27,17 @@ function target() {
 function node() {
   const children = new Map(), styles = new Map(), classes = new Set();
   return Object.assign(target(), {innerHTML:'',textContent:'',value:'',hidden:false,isConnected:true,dataset:{},childNodes:[],nodeType:1,
-    classList:{add(...items) {items.forEach(item => classes.add(item));},remove(...items) {items.forEach(item => classes.delete(item));},contains:item => classes.has(item),toggle() {}},
+    classList:{add(...items) {items.forEach(item => classes.add(item));},remove(...items) {items.forEach(item => classes.delete(item));},contains:item => classes.has(item),toggle(item,force) {if(force)classes.add(item);else classes.delete(item);}},
     style:{getPropertyValue:name => styles.get(name)?.value || '',getPropertyPriority:name => styles.get(name)?.priority || '',setProperty(name,value,priority = '') {styles.set(name,{value,priority});},removeProperty:name => styles.delete(name)},
     setAttribute() {},removeAttribute() {},remove() {this.isConnected = false;},focus() {},append() {},matches:() => false,
     getBoundingClientRect:() => ({bottom:100}),getClientRects:() => [1],
     querySelector(selector) {if (!children.has(selector)) children.set(selector,node()); return children.get(selector);},querySelectorAll:() => []});
 }
-function browser({api,stored = {},library = false} = {}) {
+function browser({api,stored = {},library = false,path = '/minha-biblioteca'} = {}) {
   const values = new Map(Object.entries(stored).map(([key,value]) => [key,JSON.stringify(value)])), requests = [], notices = [], controls = new Map(), timers = new Map();
   const app = node(); let markup = '', timerId = 0;
+  const location={hostname:'fixture.test',origin:'https://fixture.test',href:`https://fixture.test${path}`,pathname:path};
+  const noticeHost=node();noticeHost.prepend=item=>{item.parentElement=noticeHost;if(!notices.includes(item))notices.push(item)};
   app.before = item => notices.push(item);
   Object.defineProperty(app,'innerHTML',{get:() => markup,set(value) {markup = value; controls.clear();}});
   function control(selector) {
@@ -45,17 +47,17 @@ function browser({api,stored = {},library = false} = {}) {
     return controls.get(selector);
   }
   const document = Object.assign(target(), {readyState:'loading',body:node(),head:node(),documentElement:node(),
-    querySelector(selector) {if (selector === '#app') return app; if (selector === '.nx-media-sync-notice') return notices.find(item => item.isConnected && item.className === 'nx-media-sync-notice') || null; return control(selector);},
+    querySelector(selector) {if (selector === '#app') return app; if(selector==='.nx49-workspace,.nx49-library .nx49-shell')return ['/minha-biblioteca','/meus-animes','/meus-mangas'].includes(location.pathname)?noticeHost:null;if (selector === '.nx-media-sync-notice') return notices.find(item => item.isConnected && item.className === 'nx-media-sync-notice') || null; return control(selector);},
     querySelectorAll(selector) {
       if (selector === '[data-nx49-media]') return ['ANIME','MANGA'].map(type => {const item = control(`[data-nx49-media="${type}"]`); if (item) item.dataset.nx49Media = type; return item;}).filter(Boolean);
       if (selector === '[data-nx49-view="IMPRESSIONS"]') return [control(selector)].filter(Boolean);
       if (selector === '[data-nx49-status]') return ['ALL','CURRENT','COMPLETED'].map(status => {const item = control(`[data-nx49-status="${status}"]`); if (item) item.dataset.nx49Status = status; return item;}).filter(Boolean);
       return [];
     },createElement:node});
-  document.body.append = item => notices.push(item);
+  document.body.append = item => {item.parentElement=document.body;if(!notices.includes(item))notices.push(item)};
   const localStorage = {getItem:key => values.get(key) ?? null,setItem:(key,value) => values.set(key,value),removeItem:key => values.delete(key)};
   const window = target();
-  const h = {window,document,app,requests,controls,owner:A,statuses:[]};
+  const h = {window,document,app,requests,controls,location,noticeHost,owner:A,statuses:[]};
   document.addEventListener('aninexus:media-sync-read-status',event => h.statuses.push(event.detail));
   window.AniNexusAuth = {enabled:true,async api(path,options = {}) {
     const request = {path,method:options.method || 'GET',owner:h.owner,options}; requests.push(request);
@@ -69,7 +71,7 @@ function browser({api,stored = {},library = false} = {}) {
   }};
   for (const name of ['AniNexusMediaState','AniNexusMangaState']) window[name] = {sync() {},close() {}};
   window.AniNexusRuntime = {withDeadline:(fn,options = {}) => fn(options.signal || new AbortController().signal),deadlineError:() => Object.assign(new Error('fixture aborted'),{name:'AbortError'})};
-  const context = vm.createContext({window,document,localStorage,location:{hostname:'fixture.test',origin:'https://fixture.test',href:'https://fixture.test/minha-biblioteca',pathname:'/minha-biblioteca'},
+  const context = vm.createContext({window,document,localStorage,location,
     history:{replaceState() {}},URL,URLSearchParams,AbortController,performance:{now:() => 1},Node:{TEXT_NODE:3},
     CustomEvent:class {constructor(type,options = {}) {this.type = type; this.detail = options.detail;}},
     addEventListener:window.addEventListener.bind(window),dispatchEvent:window.dispatchEvent.bind(window),queueMicrotask,
@@ -96,6 +98,18 @@ test('background list failure is visible while independent V49 aggregates are fr
   assert.match(h.text(),/atualização automática/i);
   assert.doesNotMatch(h.text(),/salvo neste navegador|cache|desatualizad/i,'read warning does not claim local fallback or stale aggregates');
   await h.expireTimers(); assert.ok(h.notice(),'read failure remains visible until recovery');
+});
+
+test('read recovery stays in library flow and never overlays unrelated routes or menus',async()=>{
+  const h=browser({path:'/anime/fixture-101',api:({path})=>path==='/api/me/list'?unavailable(503):undefined});
+  await h.boot();assert.equal(h.notice(),null,'background read failure does not cover detail actions');
+  h.location.pathname='/minha-biblioteca';h.location.href='https://fixture.test/minha-biblioteca';h.window.emit('popstate');await settle();
+  assert.ok(h.notice());assert.equal(h.notice().parentElement,h.noticeHost);assert.ok(h.notice().classList.contains('nx-media-sync-notice-inline'));
+  assert.equal(h.notice().querySelector('button').textContent,'Sincronizar novamente');
+  h.location.pathname='/animes/catalogo';h.location.href='https://fixture.test/animes/catalogo';h.window.emit('aninexus:route-changed');await settle();
+  assert.equal(h.notice(),null,'leaving library removes the read notice while keeping failure available on return');
+  h.document.emit('aninexus:media-sync-pending');assert.match(h.text(),/Salvo neste navegador/,'pending writes still have global feedback');
+  assert.doesNotMatch(h.text(),/atualização automática/);assert.equal(h.notice().querySelector('button').textContent,'Tentar novamente');
 });
 
 test('one failed shared favorites read preserves both typed local favorites',async () => {
