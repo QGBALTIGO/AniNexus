@@ -87,3 +87,15 @@ test('API compares applied SQL bytes inside the built image before activation',(
   assert.match(script,/createHash\('sha256'\)\.update\(bytes\)/);
 });
 
+test('frontend traversal and the actual shell reader are checked before API activation',()=>{
+  const api=read('ops/deploy-api-vps.sh'),frontend=read('ops/deploy-vps.sh'),quality=read('.github/workflows/quality.yml');
+  const permission=api.indexOf('chmod o+x -- "$public_dir"');
+  const check=api.indexOf('await readShell();');
+  const activate=api.indexOf('mv "$staging_dir" "$release_dir"');
+  assert.ok(permission>=0&&check>permission&&activate>check);
+  assert.match(api,/createPublicShellReader\(\{file:process\.env\.PUBLIC_SHELL_PATH/);
+  assert.match(frontend,/chmod o\+x -- "\$APP_ROOT" "\$RELEASE_ROOT"/);
+  assert.match(quality,/\[ "\$BLOCKED" = 42 \]/);
+  assert.match(quality,/--network none.*\/var\/www\/aninexus:ro/);
+});
+

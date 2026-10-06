@@ -86,13 +86,22 @@ printf '%s\n' "$expected_commit" > "${staging_dir}/.deploy-commit"
 
 compose "$staging_dir" config --quiet
 compose "$staging_dir" build --pull
+# The API runs as node and reads the public frontend through a read-only bind.
+# Preserve ownership and listing permissions; grant traversal of public paths.
+for public_dir in /var/www/aninexus /var/www/aninexus/releases; do
+  [[ ! -d "$public_dir" ]] || chmod o+x -- "$public_dir"
+done
 # Validate immutable migration bytes inside the built image before replacing any
 # running service. Packaging/EOL errors must fail while the old release is live.
 compose "$staging_dir" run --rm --no-deps -T app node --input-type=module <<'NODE'
 import {pool} from './lib/db.mjs';
 import fs from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {createPublicShellReader} from './lib/public-document.mjs';
 try {
+  const readShell=createPublicShellReader({file:process.env.PUBLIC_SHELL_PATH||'/app/public/index.html',fallback:'/app/public/index.html'});
+  await readShell();
+  console.log('Public shell image preflight passed as the production container user');
   const exists=await pool.query("SELECT to_regclass('public.aninexus_schema_migrations') AS name");
   const rows=exists.rows[0]?.name?(await pool.query('SELECT name,checksum FROM aninexus_schema_migrations')).rows:[];
   for(const row of rows){

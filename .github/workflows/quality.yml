@@ -125,6 +125,25 @@ jobs:
           done
       - name: Build real production image
         run: docker build --pull -t aninexus-ci:${{ github.sha }} .
+      - name: Verify public shell bind as the non-root production user
+        run: |
+          FIXTURE=$(mktemp -d)
+          trap 'sudo chown "$(id -u):$(id -g)" "$FIXTURE/public" 2>/dev/null || true; rm -rf "$FIXTURE"' EXIT
+          mkdir -p "$FIXTURE/public/releases/fixture"
+          printf '<!doctype html><html><head><title>Public shell fixture</title></head><body></body></html>' > "$FIXTURE/public/releases/fixture/index.html"
+          ln -s /var/www/aninexus/releases/fixture "$FIXTURE/public/current"
+          chmod 750 "$FIXTURE/public"
+          chmod 755 "$FIXTURE/public/releases" "$FIXTURE/public/releases/fixture"
+          chmod 644 "$FIXTURE/public/releases/fixture/index.html"
+          sudo chown root:root "$FIXTURE/public"
+          PROBE="import {createPublicShellReader} from './lib/public-document.mjs'; try { const html=await createPublicShellReader({file:'/var/www/aninexus/current/index.html'})(); if(!html.includes('Public shell fixture'))process.exit(2); } catch(error) { if(error.code==='EACCES')process.exit(42); throw error; }"
+          set +e
+          docker run --rm --network none -v "$FIXTURE/public:/var/www/aninexus:ro" "aninexus-ci:${{ github.sha }}" node --input-type=module -e "$PROBE"
+          BLOCKED=$?
+          set -e
+          [ "$BLOCKED" = 42 ] || { echo 'Unreadable frontend was not rejected by the production user'; exit 1; }
+          sudo chmod o+x "$FIXTURE/public"
+          docker run --rm --network none -v "$FIXTURE/public:/var/www/aninexus:ro" "aninexus-ci:${{ github.sha }}" node --input-type=module -e "$PROBE"
       - name: Verify V44 shell, radio, navigation, profiles, administration, media and Community inside production image
         run: |
           CID=$(docker create aninexus-ci:${{ github.sha }})

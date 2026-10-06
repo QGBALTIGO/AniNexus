@@ -22,6 +22,9 @@ if [[ ! "$expected_commit" =~ ^[0-9a-f]{40}$ ]] || [[ ! "$expected_archive_sha" 
 fi
 
 mkdir -p "$RELEASE_ROOT" "$INCOMING_ROOT"
+# Public files are also read by the non-root API through a read-only bind.
+# Do not change owner/group or grant directory listing access.
+chmod o+x -- "$APP_ROOT" "$RELEASE_ROOT"
 exec 9>"${APP_ROOT}/.deploy.lock"
 flock -w 180 9 || { echo 'Outro deploy ainda está em execução.' >&2; exit 3; }
 
