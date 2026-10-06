@@ -2536,8 +2536,8 @@ test('Home exposes discovery actions while preserving the established continuati
   for(const width of [1440,390,320]){
     await page.setViewportSize({width,height:900});await page.goto(pageUrl('/'),{waitUntil:'domcontentloaded'});
     const actions=page.getByRole('navigation',{name:'Comece sua jornada'});
-    await expect(actions.getByRole('link',{name:'Explorar catálogo'})).toHaveAttribute('href','/animes/catalogo');
-    await expect(actions.getByRole('link',{name:'Minha biblioteca'})).toHaveAttribute('href','/minha-biblioteca');
+    await expect.poll(async()=>{const url=new URL(await actions.getByRole('link',{name:'Explorar catálogo'}).getAttribute('href'),ORIGIN);return url.searchParams.get('p')||url.pathname}).toBe('/animes/catalogo');
+    await expect.poll(async()=>{const url=new URL(await actions.getByRole('link',{name:'Minha biblioteca'}).getAttribute('href'),ORIGIN);return url.searchParams.get('p')||url.pathname}).toBe('/minha-biblioteca');
     await expect(page.locator('.nx61-personal-home')).toBeVisible();
     await expect(page.locator('.nx61-personal-home')).toContainText('Episódio 3');
     await expect(page.locator('.nx61-personal-home')).toContainText('Capítulo 5');
