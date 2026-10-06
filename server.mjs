@@ -8,6 +8,7 @@ import rawBody from 'fastify-raw-body';
 import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { Readable } from 'node:stream';
 import { fileURLToPath } from 'node:url';
 import { monitorEventLoopDelay } from 'node:perf_hooks';
 import { z } from 'zod';
@@ -909,7 +910,9 @@ async function servePublicDocument(req,reply){
   if(!publicDocumentRoute(req.url))return reply.code(404).send({error:'NOT_FOUND'});
   const document=await publicDocument(req.url);
   reply.code(document.status).type('text/html; charset=utf-8').header('Cache-Control',document.private?'private, no-store':'no-cache, max-age=0, must-revalidate');
-  if(req.method==='HEAD')return reply.header('Content-Length',Buffer.byteLength(document.html)).send();
+  // Fastify's generated HEAD hook resets an undefined payload's length to zero.
+  // An empty stream keeps the GET representation length without sending a body.
+  if(req.method==='HEAD')return reply.header('Content-Length',Buffer.byteLength(document.html)).send(Readable.from([]));
   return reply.send(document.html);
 }
 app.get('/*',async(req,reply)=>{if(/^\/(?:api(?:\/|$)|health)/.test(req.url))return reply.code(404).send({error:'NOT_FOUND'});return servePublicDocument(req,reply)});

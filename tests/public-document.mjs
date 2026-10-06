@@ -6,6 +6,7 @@ import path from 'node:path';
 import Fastify from 'fastify';
 import staticPlugin from '@fastify/static';
 import vm from 'node:vm';
+import {Readable} from 'node:stream';
 import {createPublicDocumentRenderer,createPublicShellReader,publicDocumentRoute} from '../lib/public-document.mjs';
 
 const shell=await fs.readFile(new URL('../index.html',import.meta.url),'utf8');
@@ -88,7 +89,7 @@ test('actual public document handler wins over static index, serves HEAD and kee
   const dir=await fs.mkdtemp(path.join(os.tmpdir(),'aninexus-static-document-')),app=Fastify();
   const f=fixture();
   const start=serverSource.indexOf('async function servePublicDocument('),end=serverSource.indexOf("\napp.get('/*'",start);
-  const serve=vm.runInNewContext('('+serverSource.slice(start,end).trim()+')',{publicDocument:f.render,publicDocumentRoute,Buffer});
+  const serve=vm.runInNewContext('('+serverSource.slice(start,end).trim()+')',{publicDocument:f.render,publicDocumentRoute,Buffer,Readable});
   try{
     await fs.writeFile(path.join(dir,'index.html'),'<head><title>Generic static title</title></head>');
     app.addHook('onRequest',async(req,reply)=>{if(['GET','HEAD'].includes(req.method)&&new URL(req.url,'https://aninexus.com.br').pathname==='/')return serve(req,reply)});
@@ -99,7 +100,11 @@ test('actual public document handler wins over static index, serves HEAD and kee
       if(url==='/admin')assert.equal(result.headers['cache-control'],'private, no-store');
       if(url.includes('fixture'))assert.match(result.body,/(?:ANIME|MANGA) fixture 101/);
     }
-    const head=await app.inject({method:'HEAD',url:'/?p=%2Fanime%2Ffixture-101'});assert.equal(head.statusCode,200);assert.equal(head.body,'');assert.match(head.headers['content-type'],/text\/html/);
+    for(const url of ['/?p=%2Fanime%2Ffixture-101','/anime/fixture-101']){
+      const get=await app.inject({url}),head=await app.inject({method:'HEAD',url});
+      assert.equal(head.statusCode,200);assert.equal(head.body,'');assert.match(head.headers['content-type'],/text\/html/);
+      assert.equal(Number(head.headers['content-length']),Buffer.byteLength(get.body),'HEAD describes the corresponding GET representation');
+    }
     assert.equal((await app.inject({url:'/api/not-a-route'})).statusCode,404);
     assert.equal((await app.inject({url:'/unknown-document'})).statusCode,404);
   }finally{await app.close();await fs.unlink(path.join(dir,'index.html'));await fs.rmdir(dir)}
