@@ -33,16 +33,37 @@ function discoveryCatalog(){
   });
 }
 function graphData(query='',variables={}){
-  const ids=Array.isArray(variables.ids)&&variables.ids.length?variables.ids:[101,102,103,104],media=ids.map(Number).filter(Boolean).map(anime),airingAt=Number(variables.start)||Math.floor(Date.now()/1000)+3600;
-  const Page={pageInfo:{total:media.length,currentPage:1,lastPage:1,hasNextPage:false},media,airingSchedules:media.map((item,i)=>({airingAt:airingAt+3600*(i+1),episode:i+1,media:item}))};
+  const ids=Array.isArray(variables.ids)&&variables.ids.length?variables.ids:[101,102,103,104],airingAt=Number(variables.start)||Math.floor(Date.now()/1000)+3600;
+  const requestedType=['ANIME','MANGA'].includes(variables.type)?variables.type:query.match(/\b(?:media|Media)\s*\([^)]*\btype\s*:\s*(ANIME|MANGA)\b/)?.[1]||'ANIME';
+  const makeMedia=(id,type=requestedType)=>({...anime(id),type});
+  const makePage=type=>{const media=ids.map(Number).filter(Boolean).map(id=>makeMedia(id,type));return{pageInfo:{total:media.length,currentPage:1,lastPage:1,hasNextPage:false},media,airingSchedules:media.map((item,i)=>({airingAt:airingAt+3600*(i+1),episode:i+1,media:item}))}};
+  const Page=makePage(requestedType),media=Page.media;
   if(/studios\s*\(\s*sort\s*:/.test(query))return{Page:{...Page,studios:[{id:1,name:'Estúdio Teste',isAnimationStudio:true,favourites:1000,media:{nodes:media}}]}};
-  if(/\bseason:Page/.test(query))return{season:Page,schedule:Page,top:Page,popular:Page,soon:Page,reading:Page};
-  const aliases=[...query.matchAll(/\b(a\d+):Media/g)].map(x=>x[1]);if(aliases.length)return Object.fromEntries(aliases.map((key,i)=>[key,anime(201+i)]));
-  const pageAliases=[...query.matchAll(/\b(a\d+):Page/g)].map(x=>x[1]);if(pageAliases.length)return Object.fromEntries(pageAliases.map((key,i)=>[key,{media:[anime(201+i)]}]));
-  if(/\bMedia\s*\(\s*id\s*:\s*\$id/.test(query))return{Media:anime(Number(variables.id)||101)};
-  if(/\bMedia\s*\(/.test(query)&&!/\bmedia\s*\(/.test(query))return{Media:anime(Number(variables.id)||101)};
+  if(/\bseason:Page/.test(query)){const animePage=makePage('ANIME');return{season:animePage,schedule:animePage,top:animePage,popular:animePage,soon:animePage,reading:makePage('MANGA')}};
+  const aliases=[...query.matchAll(/\b(a\d+):Media/g)].map(x=>x[1]);if(aliases.length)return Object.fromEntries(aliases.map((key,i)=>[key,makeMedia(201+i)]));
+  const pageAliases=[...query.matchAll(/\b(a\d+):Page/g)].map(x=>x[1]);if(pageAliases.length)return Object.fromEntries(pageAliases.map((key,i)=>[key,{media:[makeMedia(201+i)]}]));
+  if(/\bMedia\s*\(\s*id\s*:\s*\$id/.test(query))return{Media:makeMedia(Number(variables.id)||101)};
+  if(/\bMedia\s*\(/.test(query)&&!/\bmedia\s*\(/.test(query))return{Media:makeMedia(Number(variables.id)||101)};
   return{Page};
 }
+test('GraphQL media fixtures preserve requested anime and manga types',()=>{
+  for(const mediaType of ['ANIME','MANGA']){
+    for(const [query,variables] of [
+      [`query($ids:[Int]){Page{media(id_in:$ids,type:${mediaType}){id type}}}`,{ids:[101,202]}],
+      ['query($ids:[Int],$type:MediaType){Page{media(id_in:$ids,type:$type){id type}}}',{ids:[101,202],type:mediaType}],
+    ]){
+      const items=graphData(query,variables).Page.media;
+      expect(items.map(item=>item.id)).toEqual([101,202]);
+      expect(items.map(item=>item.type)).toEqual([mediaType,mediaType]);
+    }
+    expect(graphData(`query($id:Int){Media(id:$id,type:${mediaType}){id type}}`,{id:303}).Media.type).toBe(mediaType);
+    expect(graphData(`query{a0:Media(id:201,type:${mediaType}){id type}}`).a0.type).toBe(mediaType);
+    expect(graphData(`query{a0:Page{media(type:${mediaType}){id type}}}`).a0.media[0].type).toBe(mediaType);
+  }
+  const home=graphData('query{season:Page{media(type:ANIME){id type}} reading:Page{media(type:MANGA){id type}}}');
+  expect(home.season.media.every(item=>item.type==='ANIME')).toBe(true);
+  expect(home.reading.media.every(item=>item.type==='MANGA')).toBe(true);
+});
 function rankedMedia(id,type='ANIME'){
   const manga=type==='MANGA',title=manga?`Mangá AniNexus ${id}`:`Anime AniNexus ${id}`,score=Math.max(7.8,9.9-(id%10)*.2);
   return{id,title,titleRomaji:title,titleNative:'',cover:portrait,banner:portrait,score,meanScore:score-.1,metricsSource:'aninexus',ratingCount:80-(id%10)*5,listCount:140-(id%10)*8,popularity:220-(id%10)*10,favourites:60-(id%10)*3,genres:manga?['Drama','Fantasy']:['Action','Adventure'],format:manga?'MANGA':'TV',status:manga?'RELEASING':'FINISHED',seasonYear:2026,startDate:{year:2026,month:1,day:1},episodes:manga?null:12,chapters:manga?48:null,volumes:manga?8:null,streaming:[]};
