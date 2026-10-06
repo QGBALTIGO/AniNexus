@@ -43,7 +43,7 @@ function browser({api,stored = {},library = false,path = '/minha-biblioteca'} = 
   function control(selector) {
     const attr = selector.match(/^\[([^=\]]+)/)?.[1] || (selector.startsWith('.') ? selector.slice(1) : null);
     if (!attr || !markup.includes(attr)) return null;
-    if (!controls.has(selector)) {const item = node(); item.querySelector = () => null; if (selector === '[data-nx49-filter-layer]') item.hidden = true; controls.set(selector,item);}
+    if (!controls.has(selector)) {const item = node(); const badge=node(); item.querySelector = child => child === 'b' ? badge : null; if (selector === '[data-nx49-filter-layer]') item.hidden = true; controls.set(selector,item);}
     return controls.get(selector);
   }
   const document = Object.assign(target(), {readyState:'loading',body:node(),head:node(),documentElement:node(),
@@ -221,6 +221,18 @@ test('suspension hides recovery notice and same-owner confirmation preserves pen
   h.identity({id:'fixture-clerk-a'},{confirmed:false}); await settle(); assert.equal(h.notice(),null); assert.equal(h.read('aninexus:mediaState:pending:v1')[901].progress,4);
   h.identity(A,{confirmed:true}); await settle(); assert.match(h.text(),/atualização automática/i); assert.equal(h.read('aninexus:mediaState:pending:v1')[901].progress,4);
   assert.equal(h.document.querySelector('[data-nx49-search]'),search); assert.equal(h.document.querySelector('[data-nx49-filter-layer]'),filter); assert.equal(filter.hidden,false);
+});
+
+test('late secondary library updates counts without replacing the current search or filter',async () => {
+  const delayed=deferred();
+  const h=browser({library:true,api:({path})=>path==='/api/me/manga-library'?delayed.promise:undefined});
+  await h.boot();
+  const search=h.document.querySelector('[data-nx49-search]'),filter=h.document.querySelector('[data-nx49-filter-layer]');
+  search.value='context preserved';filter.hidden=false;
+  delayed.resolve({user:A,list:[row(101,'MANGA')],favorites:[],impressions:[]});await settle();
+  assert.equal(h.document.querySelector('[data-nx49-media="MANGA"]').querySelector('b').textContent,'1');
+  assert.equal(h.document.querySelector('[data-nx49-search]'),search);
+  assert.equal(search.value,'context preserved');assert.equal(filter.hidden,false);
 });
 
 for (const type of ['ANIME','MANGA']) for (const count of [0,1,2]) test(`V49 impression result grammar is correct for ${count} ${type} rows`,async () => {

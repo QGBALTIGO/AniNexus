@@ -25,6 +25,20 @@ async function openFixture(page,body=fixtures){
 }
 const inject=(page,file)=>page.addScriptTag({content:source(file)});
 
+test('account menu survives same-owner confirmation but closes on uncertainty or owner change',async({page})=>{
+  await openFixture(page,'');
+  await page.evaluate(()=>{window.AniNexusAccountData=async()=>({id:'fixture-a',username:'fixture_a'});});
+  await inject(page,'preview-v42/product-v42.js');
+  const chip=page.locator('.nx38-account-chip'),menu=page.locator('.nx42-account-menu');
+  await chip.click();await expect(menu).toBeVisible();
+  await page.evaluate(()=>dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:{id:'fixture-a',username:'fixture_a'},confirmed:true}})));
+  await expect(menu).toBeVisible();await expect(menu.getByRole('button',{name:'Conta e configurações'})).toBeVisible();
+  await page.evaluate(()=>dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:{id:'fixture-a'},confirmed:false}})));
+  await expect(menu).toBeHidden();await chip.click();await expect(menu).toBeVisible();
+  await page.evaluate(()=>dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:{id:'fixture-b'},confirmed:true}})));
+  await expect(menu).toBeHidden();
+});
+
 test('full media refresh collects controls once per type and preserves typed duplicate actions',async({page})=>{
   await openFixture(page);await inject(page,'preview-v19/media-state-v2.js');
   await expect(page.locator('[data-list="1"]')).toHaveAttribute('aria-label','Assistindo. Clique para alterar');

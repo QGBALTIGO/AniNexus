@@ -288,6 +288,16 @@
     const avatar = user.avatar_url || user.avatarUrl || user.picture || `${BASE}/assets/avatars/mascot-pink.png`;
     return `<img src="${esc(avatar)}" alt=""><span><strong>${esc(displayName)}</strong><small>${esc(username)}</small></span>`;
   }
+  function refreshPrimaryCounts() {
+    document.querySelectorAll('[data-nx49-media]').forEach(button => {
+      const badge = button.querySelector('b');
+      if (badge) badge.textContent = String(counts(button.dataset.nx49Media).total);
+    });
+    document.querySelectorAll('[data-nx49-view="IMPRESSIONS"]').forEach(button => {
+      const badge = button.querySelector('b');
+      if (badge) badge.textContent = String(combinedImpressions().length);
+    });
+  }
   function profileMarkup() {
     const info = counts(state.media), manga = state.media === 'MANGA';
     const user = state.anime?.user || state.manga?.user || {};
@@ -633,6 +643,7 @@
     const secondary = loadDataset(secondaryType, signal).then(value => {
       if (!assignDataset(secondaryType, value)) return;
       if (state.media === secondaryType || state.view === 'IMPRESSIONS') shell();
+      else refreshPrimaryCounts();
     }, error => {
       if (error?.name === 'AbortError' || !assignDataset(secondaryType, null, error)) return;
       if (state.media === secondaryType || state.view === 'IMPRESSIONS') shell();

@@ -17,7 +17,7 @@
   matchMedia('(prefers-color-scheme:light)').addEventListener?.('change',()=>{if(themeChoice()==='system')applyTheme('system')});
 
   let account=null,menu=null,accountGeneration=0;
-  addEventListener('aninexus:account-identity-changed',event=>{if(event.detail&&Object.prototype.hasOwnProperty.call(event.detail,'user')){accountGeneration+=1;account=event.detail.user||null;closeAccount();document.querySelectorAll('.nx42-impressions').forEach(section=>section.dispatchEvent(new Event('nx42:identity')))}});
+  addEventListener('aninexus:account-identity-changed',event=>{if(event.detail&&Object.prototype.hasOwnProperty.call(event.detail,'user')){const next=event.detail.user||null,sameOwner=event.detail.confirmed!==false&&account?.id&&account.id===next?.id;accountGeneration+=1;account=next;if(!sameOwner)closeAccount();document.querySelectorAll('.nx42-impressions').forEach(section=>section.dispatchEvent(new Event('nx42:identity')))}});
   async function accountData(){if(account)return account;const generation=accountGeneration;try{const user=window.AniNexusAccountData?await window.AniNexusAccountData():(await window.AniNexusAuth?.api?.('/api/me'))?.user||null;if(generation===accountGeneration)account=user}catch{}return account}
   function closeAccount(){menu?.remove();menu=null;document.removeEventListener('pointerdown',outsideAccount,true)}
   function outsideAccount(event){if(menu&&!menu.contains(event.target)&&!event.target.closest('.nx38-account-chip'))closeAccount()}
