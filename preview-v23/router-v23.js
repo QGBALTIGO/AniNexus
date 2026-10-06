@@ -53,7 +53,7 @@
     if(softNavigate())return;
     assign(path);
   }
-  const isLocalAnchor=a=>String(a?.getAttribute('href')||'').startsWith('#');
+  const isLocalAnchor=a=>a?.hasAttribute('data-route-fragment')||String(a?.getAttribute('href')||'').startsWith('#');
   function rewrite(root=document){root.querySelectorAll?.('a[href]').forEach(a=>{if(a.target==='_blank'||isLocalAnchor(a))return;const p=cleanPathFromUrl(a.href);if(!isDedicated(p))return;a.dataset.nx23Dedicated=p;if(IS_PAGES)a.href=pagesUrl(p)})}
   rewrite();addEventListener('DOMContentLoaded',()=>rewrite(),{once:true});new MutationObserver(rs=>{for(const r of rs)for(const n of r.addedNodes)if(n.nodeType===1)rewrite(n)}).observe(document.documentElement,{subtree:true,childList:true});
   addEventListener('pointerdown',e=>{if(e.button===0&&e.target.closest?.(ACTION_SELECTOR))actionGuardUntil=Date.now()+300},true);

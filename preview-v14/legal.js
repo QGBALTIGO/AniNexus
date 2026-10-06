@@ -8,12 +8,21 @@
   const LEGAL=new Set(['/termos-de-uso','/politica-de-privacidade','/dmca']);
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const href=p=>`${BASE}${p}`;
-  function route(){let p=location.pathname;if(IS_PAGES)p=p.replace(/^\/AniNexus/,'')||'/';const q=new URLSearchParams(location.search).get('p');if(q)p=q.split('?')[0];return p.replace(/\/+$/,'')||'/'}
+  let renderedPath=null;
+  function route(){let p=location.pathname;if(IS_PAGES)p=p.replace(/^\/AniNexus/,'')||'/';const q=new URLSearchParams(location.search).get('p');if(q){try{p=new URL(q,location.origin).pathname}catch{p=q.split(/[?#]/)[0]}}return p.replace(/\/+$/,'')||'/'}
+  function fragmentHref(id){const target=new URL(location.href);target.hash=id;return target.href}
+  function focusFragment(hash=location.hash){
+    if(!LEGAL.has(route()))return false;
+    if(!hash){const restored=new URLSearchParams(location.search).get('p');if(restored)hash=new URL(restored,location.origin).hash}
+    let id;try{id=decodeURIComponent(hash.replace(/^#/,''))}catch{return false}
+    const target=document.getElementById(id);if(!id||!target||!app.contains(target))return false;
+    const heading=target.querySelector('h2,h3')||target;heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});target.scrollIntoView({block:'start'});return true;
+  }
   function tabs(active){return `<nav class="nx-legal-tabs" aria-label="Documentos legais"><a href="${href('/termos-de-uso')}" data-nx-legal="/termos-de-uso" class="${active==='/termos-de-uso'?'active':''}">Termos de Serviço</a><a href="${href('/politica-de-privacidade')}" data-nx-legal="/politica-de-privacidade" class="${active==='/politica-de-privacidade'?'active':''}">Política de Privacidade</a><a href="${href('/dmca')}" data-nx-legal="/dmca" class="${active==='/dmca'?'active':''}">DMCA</a></nav>`}
   function head(path,title,overline){return `<header class="nx-legal-head"><div class="nx-legal-shell"><div class="nx-legal-overline">${overline}</div><h1>${title}</h1><div class="nx-legal-updated">Última atualização: ${UPDATED}</div>${tabs(path)}</div></header>`}
   const sec=(id,num,title,body)=>`<section class="nx-legal-section" id="${id}"><h2><span class="num">${num}</span>${title}</h2>${body}</section>`;
   const p=t=>`<p>${t}</p>`;
-  function shell(path,title,overline,intro,sections,toc,after=''){return `<div class="nx-legal">${head(path,title,overline)}<div class="nx-legal-shell nx-legal-layout"><main class="nx-legal-main">${intro}${sections}${after}</main><aside class="nx-legal-side"><strong>Neste documento</strong>${toc.map(([id,label])=>`<a href="#${id}">${label}</a>`).join('')}<div class="minor"><a href="mailto:${CONTACT}">${CONTACT}</a></div></aside></div></div>`}
+  function shell(path,title,overline,intro,sections,toc,after=''){return `<div class="nx-legal">${head(path,title,overline)}<div class="nx-legal-shell nx-legal-layout"><main class="nx-legal-main">${intro}${sections}${after}</main><aside class="nx-legal-side"><strong>Neste documento</strong>${toc.map(([id,label])=>`<a href="${esc(fragmentHref(id))}" data-route-fragment="${id}">${label}</a>`).join('')}<div class="minor"><a href="mailto:${CONTACT}">${CONTACT}</a></div></aside></div></div>`}
 
   function terms(){
     const intro=`<p class="nx-legal-intro"><strong>Estes Termos de Serviço regulam o acesso e o uso do AniNexus.</strong> Ao criar uma conta, publicar conteúdo, utilizar listas pessoais ou continuar navegando pela plataforma, você declara ter lido e aceitado estas condições.</p><p class="nx-legal-intro">O AniNexus é um serviço de catálogo, descoberta, acompanhamento e comunidade voltado a animes, mangás e light novels. A plataforma não se apresenta como serviço de streaming e não hospeda episódios ou filmes protegidos.</p><div class="nx-legal-note"><span></span><div><strong>Leitura importante</strong><span>Se você não concordar com estes Termos, não utilize recursos que dependam de conta ou publicação de conteúdo. Alguns recursos poderão ter regras adicionais exibidas no momento do uso.</span></div></div>`;
@@ -71,7 +80,8 @@
   }
 
   function render(path=route()){
-    if(!LEGAL.has(path)){document.body.classList.remove('nx-legal-active');return false}
+    if(!LEGAL.has(path)){renderedPath=null;document.body.classList.remove('nx-legal-active');return false}
+    if(renderedPath===path&&app.querySelector('.nx-legal')){focusFragment();return true}
     document.body.classList.remove('nx-season-active','nx-detail-active','nx-dmca-active');document.body.classList.add('nx-legal-active');
     app.innerHTML=path==='/termos-de-uso'?terms():path==='/politica-de-privacidade'?privacy():dmca();
     const root=app.querySelector(':scope>.nx-legal');
@@ -88,7 +98,7 @@
     if(formIntro)formIntro.textContent='Identifique a obra, informe a página do AniNexus e descreva a solicitação. Nossa equipe analisará as informações enviadas.';
     const mailNotice=app.querySelector('.nx-legal-preview');
     if(mailNotice)mailNotice.textContent='O botão prepara a notificação no seu aplicativo de e-mail. Revise os dados e confirme o envio por lá.';
-    bindDmca(); window.scrollTo({top:0,behavior:'instant'}); return true;
+    renderedPath=path;bindDmca();if(!focusFragment())window.scrollTo({top:0,behavior:'instant'});return true;
   }
   function mailBody(d){return `DMCA - AniNexus\n\nNome: ${d.requesterName}\nE-mail: ${d.requesterEmail}\nTitular dos direitos: ${d.rightsHolder}\nURL: ${d.contentUrl}\nAssinatura: ${d.signature}\n\nDescrição:\n${d.description}\n\nBoa-fé: SIM\nVeracidade e autorização: SIM`}
   function bindDmca(){
@@ -114,7 +124,8 @@
     });
   }
 
-  document.addEventListener('click',e=>{const a=e.target.closest('a[data-nx-legal]');if(!a)return;e.preventDefault();e.stopImmediatePropagation();const p=a.dataset.nxLegal;if(!LEGAL.has(p))return;const target=BASE+p;if(!window.AniNexusGo?.(target,{popstate:false}))location.assign(target)},true);
+  document.addEventListener('click',e=>{if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const fragment=e.target.closest('.nx-legal a[data-route-fragment]');if(fragment){requestAnimationFrame(()=>focusFragment(new URL(fragment.href).hash));return}const a=e.target.closest('a[data-nx-legal]');if(!a||a.target==='_blank'||a.hasAttribute('download'))return;e.preventDefault();e.stopImmediatePropagation();const p=a.dataset.nxLegal;if(!LEGAL.has(p))return;const target=BASE+p;if(!window.AniNexusGo?.(target,{popstate:false}))location.assign(target)},true);
   addEventListener('aninexus:route-changed',()=>queueMicrotask(()=>render(route())));
+  addEventListener('hashchange',()=>focusFragment());
   setTimeout(()=>render(route()),0);
 })();

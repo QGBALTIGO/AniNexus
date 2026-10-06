@@ -1,4 +1,5 @@
 /* AniNexus V14.0.1 — restrained institutional/legal layout */
+.nx-legal :is(.nx-legal-section,.nx-legal-form,.nx-legal-english){scroll-margin-top:calc(var(--nx43-header-height,66px) + 20px)}
 html[data-theme=light] .nx-legal :is(.nx-legal-intro strong,.nx-legal-note strong){color:#30232d}
 html[data-theme=light] .nx-legal :is(.nx-legal-updated,.nx-legal-tabs a,.nx-legal-note,.nx-legal-note>div>span,.nx-legal-side a){color:#66566c}
 html[data-theme=light] .nx-legal :is(.nx-legal-intro a,.nx-legal-section a,.nx-legal-contact a){color:#a51b42;border-bottom-color:#c7899b}
