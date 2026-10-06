@@ -59,6 +59,18 @@ test('diary: recoverable read failure and honest empty state',async({page})=>{
 test('diary: guest and late response after logout do not reveal entries',async({page})=>{
   const state=await setup(page,{late:true});await expect(page.getByRole('heading',{name:'Meu diário',exact:true})).toBeVisible();await page.evaluate(()=>{window.__signedIn=false;dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:null}}));});state.release();await expect(page.locator('.nx61-diary-entry')).toHaveCount(0);await expect(page.locator('.nx61-diary')).not.toContainText('Uma fantasia marcante.');
 });
+
+test('diary: repeated confirmation preserves reading and an unsaved note, while changed authority hides both',async({page})=>{
+  await setup(page);await expect(page.locator('.nx61-diary-entry')).toHaveCount(1);
+  await page.getByRole('button',{name:'Novo registro',exact:true}).click();
+  await page.getByRole('dialog').getByLabel('Anotação',{exact:true}).fill('Rascunho privado preservado.');
+  await page.evaluate(()=>dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:{id:'fixture'},confirmed:true}})));
+  await expect(page.getByRole('dialog').getByLabel('Anotação',{exact:true})).toHaveValue('Rascunho privado preservado.');
+  await expect(page.locator('.nx61-diary-entry')).toHaveCount(1);
+  await page.evaluate(()=>{window.__signedIn=false;dispatchEvent(new CustomEvent('aninexus:account-identity-changed',{detail:{user:null,confirmed:true}}));});
+  await expect(page.getByRole('dialog')).toHaveCount(0);await expect(page.locator('.nx61-diary-entry')).toHaveCount(0);
+  await expect(page.locator('.nx61-diary')).not.toContainText('Frieren');
+});
 test('diary: library navigation and browser history preserve the dedicated screen',async({page})=>{
   await setup(page);await page.getByRole('link',{name:'Voltar à biblioteca',exact:true}).click();await expect(page.locator('.nx49-library')).toBeVisible();
   await page.locator('.nx49-library').getByRole('link',{name:'Meu diário',exact:true}).first().click();await expect(page.getByRole('heading',{name:'Meu diário',exact:true})).toBeVisible();

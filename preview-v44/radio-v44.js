@@ -120,6 +120,7 @@
   let socketAttempt = 0;
   let audioRetry = 0;
   let audioAttempt = 0;
+  let playbackEpoch = 0;
   let mountTimer = 0;
   let layoutFrame = 0;
   let volumePanelOpen = false;
@@ -150,6 +151,7 @@
   }
 
   function pauseForAnotherTab() {
+    playbackEpoch += 1;
     playIntent = false;
     setPlaybackResume(false);
     clearTimeout(audioRetry);
@@ -192,7 +194,7 @@
     const playing = state === 'playing' || state === 'loading';
     if (play) {
       play.innerHTML = playing ? svg.pause : svg.play;
-      const action = playing ? 'Pausar rádio' : 'Ouvir rádio';
+      const action = state === 'error' ? 'Tentar rádio novamente' : playing ? 'Pausar rádio' : 'Ouvir rádio';
       play.setAttribute('aria-label', ui.classList.contains('nx44-radio--float') ? `${action}: ${track.title}` : action);
       play.title = ui.classList.contains('nx44-radio--float') ? `${action} · ${track.title}` : action;
     }
@@ -216,6 +218,12 @@
     }
     if (title) title.textContent = track.title;
     if (artist) artist.textContent = state === 'error' ? 'Rádio indisponível agora. Toque para tentar novamente.' : track.artist;
+    const status = ui.querySelector('[data-nx44-status]');
+    if (status) {
+      status.hidden = state !== 'error';
+      const message = state === 'error' ? 'Rádio indisponível. Toque no botão para tentar novamente.' : '';
+      if (status.textContent !== message) status.textContent = message;
+    }
     ui.setAttribute('aria-busy', state === 'loading' ? 'true' : 'false');
     setMediaSession();
     scheduleFloatingLayout();
@@ -255,7 +263,7 @@
     section.setAttribute('role', 'region');
     section.setAttribute('aria-label', 'Rádio de música japonesa ao vivo');
     section.innerHTML = mode === 'float'
-      ? `<button class="nx44-radio-control nx44-radio-play nx44-radio-float-button" type="button" data-nx44-play></button>`
+      ? `<button class="nx44-radio-control nx44-radio-play nx44-radio-float-button" type="button" data-nx44-play></button><p class="nx44-radio-status" data-nx44-status role="status" aria-live="polite" aria-atomic="true" hidden></p>`
       : `<button class="nx44-radio-control nx44-radio-play" type="button" data-nx44-play></button><div class="nx44-radio-copy"><span><i aria-hidden="true"></i>RÁDIO AO VIVO</span><strong data-nx44-title></strong><small data-nx44-artist></small></div><div class="nx44-radio-volume-wrap"><button class="nx44-radio-control nx44-radio-volume" type="button" data-nx44-volume aria-expanded="false" aria-controls="nx44RadioVolumePanel"></button><div class="nx44-radio-volume-panel" id="nx44RadioVolumePanel" data-nx44-volume-panel hidden><span data-nx44-volume-value>72%</span><input type="range" min="0" max="100" step="1" value="72" data-nx44-volume-range aria-label="Volume da rádio"></div></div>`;
     bindImmediateControl(section.querySelector('[data-nx44-play]'), togglePlayback);
     const volumeButton = section.querySelector('[data-nx44-volume]');
@@ -293,6 +301,7 @@
   }
 
   async function startPlayback({ reset = false } = {}) {
+    const version = ++playbackEpoch;
     if (!activated) {
       activated = true;
       try { sessionStorage.setItem(RADIO_ACTIVATED_STORAGE, '1'); } catch {}
@@ -311,9 +320,11 @@
     }
     try {
       await audio.play();
+      if (version !== playbackEpoch || !playIntent) return;
       audioAttempt = 0;
       announcePlayback();
     } catch (error) {
+      if (version !== playbackEpoch || !playIntent) return;
       if (error?.name === 'NotAllowedError' || error?.name === 'AbortError') {
         playIntent = false;
         setPlaybackResume(false);
@@ -326,6 +337,7 @@
   }
 
   function stopPlayback() {
+    playbackEpoch += 1;
     playIntent = false;
     setPlaybackResume(false);
     clearTimeout(audioRetry);

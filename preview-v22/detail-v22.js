@@ -15,6 +15,8 @@
   let claiming=false;
   let lastId=0;
   let observerRaf=0;
+  let cleanupDetail=null;
+  let syncDetailSection=null;
 
   const SVG={
     back:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>',
@@ -82,7 +84,7 @@
     root.dataset.nx22DetailType=type;
     document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===(type==='MANGA'?'manga':'anime')));
   }
-  function deactivate(){document.body.classList.remove('nx22-detail-active');delete root.dataset.nx22DetailId;delete root.dataset.nx22DetailType}
+  function deactivate(){cleanupDetail?.();cleanupDetail=null;syncDetailSection=null;document.body.classList.remove('nx22-detail-active');delete root.dataset.nx22DetailId;delete root.dataset.nx22DetailType}
 
   function dateParts(d){if(!d)return null;const y=Number(d.year),m=Number(d.month),day=Number(d.day);if(!y)return null;return new Date(Date.UTC(y,(m||1)-1,day||1,12))}
   function fmtDate(d,fallback='—'){const x=dateParts(d);return x?new Intl.DateTimeFormat('pt-BR',{day:d?.day?'2-digit':undefined,month:d?.month?'long':undefined,year:'numeric',timeZone:'UTC'}).format(x):fallback}
@@ -347,6 +349,7 @@
 
   function paint(m){
     const media=mediaRoute();if(media?.id!==m.id)return;
+    cleanupDetail?.();cleanupDetail=null;syncDetailSection=null;
     activate();lastId=m.id;root.dataset.nx22DetailId=String(m.id);
     const reading=media.type==='MANGA',stateApi=reading?window.AniNexusMangaState:window.AniNexusMediaState;
     const chars=m.characters?.edges||[],staff=m.staff?.edges||[],rels=m.relations?.edges||[],recs=(m.recommendations?.nodes||[]).filter(x=>x.mediaRecommendation),streams=uniqueLinks(m),tid=trailerId(m),ts=tags(m),alts=altTitles(m),j=m.jikan||{},characterState={favorites:new Set(),pending:new Set(),loaded:false,loading:null};
@@ -355,14 +358,14 @@
     const heroTags=ts.map(value=>({value,label:tagPT(value)})).filter(item=>item.label&&!(m.genres||[]).some(genre=>(GENRE[genre]||genre)===item.label)).slice(0,8),meta=[m.title?.native,m.seasonYear,FORMAT[m.format]||m.format].filter(Boolean),heroBanner=banner(m),heroCover=cover(m),heroArt=heroBanner||heroCover;
     const nextDate=m.nextAiringEpisode?new Date(m.nextAiringEpisode.airingAt*1000):null,nextIso=nextDate?.toISOString()||'',nextDay=nextDate?new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short',timeZone:'America/Sao_Paulo'}).format(nextDate):'',nextTime=nextDate?new Intl.DateTimeFormat('pt-BR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'}).format(nextDate):'';
     const overviewSchedule=reading?(m.chapters||m.volumes?`<section class="nx22-overview-schedule" aria-label="Publicação"><div class="nx22-airing nx22-publication"><span class="nx22-airing-icon">${SVG.calendar}</span><div class="nx22-airing-copy"><small>PUBLICAÇÃO</small><strong>Detalhes da leitura</strong></div><div class="nx22-airing-fact"><small>CAPÍTULOS</small><strong>${esc(m.chapters||'—')}</strong></div><div class="nx22-airing-fact"><small>VOLUMES</small><strong>${esc(m.volumes||'—')}</strong></div><em>${esc(STATUS[m.status]||'Publicação')}</em></div></section>`:''):(m.nextAiringEpisode?`<section class="nx22-overview-schedule" aria-label="Próximo episódio"><div class="nx22-airing"><span class="nx22-airing-icon">${SVG.calendar}</span><div class="nx22-airing-copy"><small>PRÓXIMO EPISÓDIO</small><strong>Episódio ${m.nextAiringEpisode.episode}</strong><time datetime="${nextIso}"><span>${esc(nextDay)}</span><b>${esc(nextTime)}</b></time></div><div class="nx22-airing-countdown"><small>ESTREIA EM</small><strong>${esc(fmtUntil(m.nextAiringEpisode.airingAt))}</strong></div></div></section>`:'');
-    root.innerHTML=`<article class="nx22-detail" data-nx22-id="${m.id}" data-nx22-type="${media.type}">
+    root.innerHTML=`<main class="nx22-detail" aria-labelledby="nx22Title" data-nx22-id="${m.id}" data-nx22-type="${media.type}">
       <header class="nx22-hero">
         <div class="nx22-hero-bg${heroBanner?'':' is-cover-fallback'}">${heroArt?`<img src="${esc(heroArt)}" alt="" data-nx22-banner data-nx22-fallback="${heroBanner&&heroCover&&heroCover!==heroBanner?esc(heroCover):''}" decoding="async" fetchpriority="high">`:''}</div><div class="nx22-hero-shade"></div>
         <div class="nx22-shell nx22-hero-content">
           <button type="button" class="nx22-back" data-nx22-back aria-label="Voltar">${SVG.back}<span>Voltar</span></button>
           <div class="nx22-hero-grid">
             <div class="nx22-cover">${cover(m)?`<img src="${esc(cover(m))}" alt="Capa de ${esc(title(m))}">`:''}</div>
-            <div class="nx22-headcopy"><span class="nx22-eyebrow">${esc(m.title?.romaji||m.title?.native||(reading?'Mangá':'Anime'))}</span><h1>${esc(title(m))}</h1>
+            <div class="nx22-headcopy"><span class="nx22-eyebrow">${esc(m.title?.romaji||m.title?.native||(reading?'Mangá':'Anime'))}</span><h1 id="nx22Title">${esc(title(m))}</h1>
               ${meta.length?`<div class="nx22-meta">${meta.map(value=>`<span>${esc(value)}</span>`).join('')}</div>`:''}
               <div class="nx22-chips"><span class="nx22-status">${esc(STATUS[m.status]||(reading?'Mangá':'Anime'))}</span>${(m.genres||[]).slice(0,5).map(g=>`<a class="genre" href="${catalogPath}" data-nx22-genre="${esc(g)}">${esc(GENRE[g]||g)}</a>`).join('')}${heroTags.map(tag=>`<a href="${catalogPath}" data-nx22-tag="${esc(tag.value)}">${esc(tag.label)}</a>`).join('')}</div>
               <div class="nx22-actions detail-actions"><button type="button" class="nx22-fav" ${favAttr}="${m.id}" aria-label="Favoritar">${SVG.heart}</button><button type="button" class="nx22-list" ${listAttr}="${m.id}" aria-label="Adicionar à lista">${SVG.plus}<span>${current.status?(stateApi?.statuses?.[current.status]?.label||'Meu status'):'Adicionar à lista'}</span></button><button type="button" class="nx22-share" data-nx22-share aria-label="Compartilhar">${SVG.share}<span>Compartilhar</span></button></div>
@@ -373,11 +376,11 @@
       </header>
       <nav class="nx22-tabs" aria-label="Seções da obra">
         <div class="nx22-shell nx22-tabs-row"><button type="button" class="nx22-tabs-toggle" data-nx22-tabs-toggle aria-expanded="false" aria-label="Abrir menu de seções">${SVG.menu}</button><div class="nx22-tab-list" role="tablist"><button class="active" role="tab" aria-selected="true" data-nx22-tab="geral">Geral</button><button role="tab" aria-selected="false" data-nx22-tab="impressoes">Impressões</button>${reading?'':`<button role="tab" aria-selected="false" data-nx22-tab="aberturas">Aberturas & encerramentos</button>`}<button role="tab" aria-selected="false" data-nx22-tab="elenco">Personagens & equipe</button><button role="tab" aria-selected="false" data-nx22-tab="franquia">Franquia</button><button role="tab" aria-selected="false" data-nx22-tab="recomendacoes">Recomendações</button></div></div>
-        <button type="button" class="nx22-tabs-backdrop" data-nx22-tabs-close aria-label="Fechar menu de seções"></button>
-        <section class="nx22-tabs-sheet" aria-label="Menu de seções"><header><strong>Menu</strong><button type="button" data-nx22-tabs-close aria-label="Fechar menu">×</button></header><div class="nx22-tabs-sheet-list"><button class="active" type="button" data-nx22-sheet-tab="geral">Geral</button><button type="button" data-nx22-sheet-tab="impressoes">Impressões</button>${reading?'':`<button type="button" data-nx22-sheet-tab="aberturas">Aberturas & encerramentos</button>`}<button type="button" data-nx22-sheet-tab="elenco">Personagens & equipe</button><button type="button" data-nx22-sheet-tab="franquia">Franquia</button><button type="button" data-nx22-sheet-tab="recomendacoes">Recomendações</button></div></section>
+        <button type="button" class="nx22-tabs-backdrop" data-nx22-tabs-close aria-label="Fechar menu de seções" tabindex="-1" hidden></button>
+        <section class="nx22-tabs-sheet" id="nx22Sections" role="dialog" aria-modal="true" aria-label="Menu de seções" hidden><header><strong>Menu</strong><button type="button" data-nx22-tabs-close aria-label="Fechar menu">×</button></header><div class="nx22-tabs-sheet-list"><button class="active" type="button" data-nx22-sheet-tab="geral">Geral</button><button type="button" data-nx22-sheet-tab="impressoes">Impressões</button>${reading?'':`<button type="button" data-nx22-sheet-tab="aberturas">Aberturas & encerramentos</button>`}<button type="button" data-nx22-sheet-tab="elenco">Personagens & equipe</button><button type="button" data-nx22-sheet-tab="franquia">Franquia</button><button type="button" data-nx22-sheet-tab="recomendacoes">Recomendações</button></div></section>
       </nav>
-      <div class="nx22-shell nx22-content" id="nx22Panel"></div>
-    </article>`;
+      <div class="nx22-shell nx22-content" id="nx22Panel" role="tabpanel" tabindex="0"></div>
+    </main>`;
 
     wireHeroBanner();
     const trailer=tid?`<section class="nx22-section"><div class="nx22-section-head"><div><small>VÍDEO</small><h2>Trailer oficial</h2></div><span>Reproduza sem sair do AniNexus</span></div><div class="nx22-video"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(tid)}?rel=0&modestbranding=1" title="Trailer de ${esc(title(m))}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></section>`:'';
@@ -390,38 +393,68 @@
     const recommendations=()=>`<section class="nx22-full"><div class="nx22-section-head"><div><small>PARA VER DEPOIS</small><h2>Você também pode gostar</h2></div></div>${recs.length?`<div class="nx22-rec-grid">${recs.map(recommendationCard).join('')}</div>`:detailEmpty('Ainda não há recomendações','Quando houver sugestões relacionadas a esta obra, elas aparecerão aqui. Você pode continuar explorando pelo catálogo.','relations')}</section>`;
     const impressions=()=>'<section class="nx22-full nx50-social-host" id="nx22Impressions"><div class="nx22-panel-loading"><i></i><i></i><span>Carregando impressões…</span></div></section>';
     const activity=()=>'<section class="nx22-full nx22-activity-card nx49-activity" aria-labelledby="nx22ActivityTitle"><header><h3 id="nx22ActivityTitle">Atividade</h3></header><div id="nx22Activity" class="nx22-activity-body" data-state="loading"><div class="nx22-panel-loading"><i></i><i></i><span>Carregando atividade…</span></div></div></section>';
-    const general=()=>{const preview=synopsisPreview(m);return `${overviewSchedule}<div class="nx22-layout"><main><section class="nx22-section"><div class="nx22-section-head"><div><small>HISTÓRIA</small><h2>Sinopse</h2></div>${preview.pending?'<span class="nx22-translation-note" id="nx22SynopsisNote">Traduzindo…</span>':''}</div><p class="nx22-synopsis" id="nx22Synopsis">${esc(preview.text)}</p></section>${akira}${trailer}${watch}${chars.length?`<section class="nx22-section nx22-detail-rail-section"><div class="nx22-section-head"><div><small>ELENCO</small><h2>Personagens principais</h2></div></div><div class="nx44-rail-frame"><div class="nx22-people" data-nx22-rail>${chars.slice(0,10).map(edge=>personCard(edge,characterState)).join('')}</div></div></section>`:''}</main><aside><section><h3>Ficha técnica</h3><div class="nx22-info-card">${infoRows(m)}</div></section><section><h3>Outros títulos</h3>${altsHtml}</section></aside></div>${activity()}`};
+    let synopsisExpanded=false,synopsisText=synopsisPreview(m).text,franchiseMode='sequence';
+    const general=()=>{const preview=synopsisPreview(m);return `${overviewSchedule}<div class="nx22-layout"><div class="nx22-body"><section class="nx22-section"><div class="nx22-section-head"><div><small>HISTÓRIA</small><h2>Sinopse</h2></div>${preview.pending?'<span class="nx22-translation-note" id="nx22SynopsisNote">Traduzindo…</span>':''}</div><p class="nx22-synopsis" id="nx22Synopsis" data-expanded="${synopsisExpanded}">${esc(synopsisText)}</p><button type="button" class="nx22-synopsis-toggle" data-nx22-synopsis-toggle aria-controls="nx22Synopsis" aria-expanded="${synopsisExpanded}"${synopsisText.length<=650?' hidden':''}>${synopsisExpanded?'Recolher sinopse':'Expandir sinopse'}</button></section>${akira}${trailer}${watch}${chars.length?`<section class="nx22-section nx22-detail-rail-section"><div class="nx22-section-head"><div><small>ELENCO</small><h2>Personagens principais</h2></div></div><div class="nx44-rail-frame"><div class="nx22-people" data-nx22-rail>${chars.slice(0,10).map(edge=>personCard(edge,characterState)).join('')}</div></div></section>`:''}</div><aside><section><h3>Ficha técnica</h3><div class="nx22-info-card">${infoRows(m)}</div></section><section><h3>Outros títulos</h3>${altsHtml}</section></aside></div>${activity()}`};
     const panels={geral:general,impressoes:impressions,aberturas:openings,elenco:cast,franquia:franchise,recomendacoes:recommendations};
-    let panelReady=false;
-    function closeTabs(){const nav=root.querySelector('.nx22-tabs'),toggle=root.querySelector('[data-nx22-tabs-toggle]');nav?.classList.remove('is-open');document.body.classList.remove('nx22-tabs-open');toggle?.setAttribute('aria-expanded','false')}
-    function show(k){const panel=root.querySelector('#nx22Panel');if(!panel)return;let activeButton=null;root.querySelectorAll('[data-nx22-tab]').forEach(b=>{const active=b.dataset.nx22Tab===k;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));if(active)activeButton=b});root.querySelectorAll('[data-nx22-sheet-tab]').forEach(b=>b.classList.toggle('active',b.dataset.nx22SheetTab===k));panel.innerHTML=(panels[k]||general)();panel.classList.remove('is-entering');if(panelReady)requestAnimationFrame(()=>panel.classList.add('is-entering'));else panelReady=true;wirePanel(k);closeTabs();activeButton?.scrollIntoView?.({behavior:'smooth',block:'nearest',inline:'center'});dispatchEvent(new CustomEvent('aninexus:detail-panel',{detail:{key:k,type:media.type,id:m.id,host:panel}}));}
+    const panel=root.querySelector('#nx22Panel'),tabs=[...root.querySelectorAll('[data-nx22-tab]')],available=new Set(tabs.map(button=>button.dataset.nx22Tab));
+    const tabList=root.querySelector('.nx22-tab-list'),tabRow=root.querySelector('.nx22-tabs-row'),nav=root.querySelector('.nx22-tabs'),sheet=root.querySelector('.nx22-tabs-sheet'),toggle=root.querySelector('[data-nx22-tabs-toggle]'),backdrop=root.querySelector('.nx22-tabs-backdrop');
+    tabList?.setAttribute('aria-label','Seções da obra');tabList?.setAttribute('aria-orientation','horizontal');toggle?.setAttribute('aria-controls',sheet.id);toggle?.setAttribute('aria-haspopup','dialog');
+    tabs.forEach(button=>{button.type='button';button.id=`nx22Tab-${button.dataset.nx22Tab}`;button.setAttribute('aria-controls',panel.id);button.tabIndex=button.dataset.nx22Tab==='geral'?0:-1});
+    const sectionTrail=`${media.type}:${m.id}:${performance.timeOrigin}:${Date.now()}`;
+    let panelReady=false,activeKey='',releaseTabs=null;
+    function closeTabs({restore=true}={}){nav?.classList.remove('is-open');document.body.classList.remove('nx22-tabs-open');toggle?.setAttribute('aria-expanded','false');sheet.hidden=true;backdrop.hidden=true;const release=releaseTabs;releaseTabs=null;release?.({restore});}
+    cleanupDetail=()=>closeTabs({restore:false});
+    function show(key,{push=false}={}){
+      const k=available.has(key)?key:'geral';if(!panel?.isConnected)return;
+      if(push&&location.hash!=='#'+k){const url=new URL(location.href);url.hash=k;const saved=history.state?.nx22DetailSection,step=saved?.trail===sectionTrail?Number(saved.step)+1:1,state=history.state&&typeof history.state==='object'&&!Array.isArray(history.state)?{...history.state,nx22DetailSection:{trail:sectionTrail,step,hash:url.hash}}:history.state;history.pushState(state,'',url.pathname+url.search+url.hash)}
+      let activeButton=null;tabs.forEach(button=>{const active=button.dataset.nx22Tab===k;button.classList.toggle('active',active);button.setAttribute('aria-selected',String(active));button.tabIndex=active?0:-1;if(active)activeButton=button});
+      root.querySelectorAll('[data-nx22-sheet-tab]').forEach(button=>{const active=button.dataset.nx22SheetTab===k;button.classList.toggle('active',active);button.toggleAttribute('aria-current',active)});
+      panel.setAttribute('aria-labelledby',activeButton.id);closeTabs();
+      if(activeKey===k)return;
+      if(activeKey==='franquia')franchiseMode=root.querySelector('[data-franchise-mode]')?.value||franchiseMode;
+      activeKey=k;panel.innerHTML=panels[k]();panel.classList.remove('is-entering');if(panelReady)requestAnimationFrame(()=>{if(panel.isConnected&&activeKey===k)panel.classList.add('is-entering')});else panelReady=true;
+      wirePanel(k);activeButton?.scrollIntoView?.({behavior:'smooth',block:'nearest',inline:'center'});dispatchEvent(new CustomEvent('aninexus:detail-panel',{detail:{key:k,type:media.type,id:m.id,host:panel}}));
+    }
+    syncDetailSection=()=>{const currentRoute=mediaRoute();if(currentRoute?.id===m.id&&currentRoute?.type===media.type&&isOwned())show(location.hash.slice(1))};
     function wirePanel(k){
       root.querySelector('[data-nx22-jump="elenco"]')?.addEventListener('click',()=>show('elenco'));
-      if(k==='geral'){synopsisPT(m).then(text=>{if(mediaId()===m.id){const el=root.querySelector('#nx22Synopsis'),note=root.querySelector('#nx22SynopsisNote');if(el)el.textContent=text;note?.remove()}});hydrateMediaActivity(media.type,m.id)}
+      if(k==='geral'){
+        const synopsisButton=root.querySelector('[data-nx22-synopsis-toggle]');
+        synopsisButton?.addEventListener('click',()=>{synopsisExpanded=!synopsisExpanded;root.querySelector('#nx22Synopsis')?.setAttribute('data-expanded',String(synopsisExpanded));synopsisButton.setAttribute('aria-expanded',String(synopsisExpanded));synopsisButton.textContent=synopsisExpanded?'Recolher sinopse':'Expandir sinopse'});
+        synopsisPT(m).then(text=>{if(mediaRoute()?.id!==m.id||mediaRoute()?.type!==media.type||!isOwned())return;synopsisText=text;const el=root.querySelector('#nx22Synopsis'),note=root.querySelector('#nx22SynopsisNote'),button=root.querySelector('[data-nx22-synopsis-toggle]');if(el)el.textContent=text;if(button)button.hidden=text.length<=650;note?.remove()});hydrateMediaActivity(media.type,m.id);
+      }
       if(k==='aberturas'&&!reading)hydrateThemes(m);
       root.querySelectorAll('[data-nx22-open]').forEach(el=>{const open=()=>openMedia(Number(el.dataset.nx22Open),el.querySelector('strong')?.textContent||(reading?'manga':'anime'),el.dataset.nx22MediaType||media.type);el.addEventListener('click',e=>{if(e.target.closest('button,a'))return;open()});el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
       root.querySelectorAll('[data-nx22-search-title]').forEach(el=>{const open=()=>{const type=el.dataset.nx22MediaType==='MANGA'?'MANGA':'ANIME';openCatalogFilter(type==='MANGA'?'/mangas':'/animes/catalogo',{search:el.dataset.nx22SearchTitle||''})};el.addEventListener('click',open);el.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open()}})});
       bindCharacterFavorites();window.AniNexusRails?.refresh?.();
-      if(k==='franquia')window.AniNexusFranchise?.mount?.(root.querySelector('#nx22Panel'),media.type,m.id);
+      if(k==='franquia')Promise.resolve(window.AniNexusFranchise?.mount?.(panel,media.type,m.id)).then(()=>{if(activeKey!=='franquia'||!panel.isConnected)return;const select=panel.querySelector('[data-franchise-mode]');if(select&&[...select.querySelectorAll('option')].some(option=>option.getAttribute('value')===franchiseMode)){select.value=franchiseMode;select.dispatchEvent(new Event('change',{bubbles:true}))}});
     }
     function syncCharacterButtons(){root.querySelectorAll('[data-nx22-character-favorite]').forEach(button=>{const id=Number(button.dataset.nx22CharacterFavorite),favorite=characterState.favorites.has(id),busy=characterState.pending.has(id),name=chars.find(edge=>Number(edge?.node?.id)===id)?.node?.name?.full||'personagem';button.classList.toggle('active',favorite);button.disabled=busy;button.toggleAttribute('aria-busy',busy);button.setAttribute('aria-pressed',String(favorite));button.setAttribute('title',favorite?'Remover dos favoritos':'Favoritar personagem');button.setAttribute('aria-label',`${favorite?'Remover':'Adicionar'} ${name} ${favorite?'dos':'aos'} personagens favoritos`)})}
     async function hydrateCharacterFavorites(){if(characterState.loaded)return syncCharacterButtons();if(characterState.loading)return characterState.loading;characterState.loading=privateJson('/api/me/character-favorites').then(data=>{characterState.favorites=new Set((data?.items||[]).map(item=>Number(item.characterId)).filter(Boolean));characterState.loaded=true},()=>{}).finally(()=>{characterState.loading=null;syncCharacterButtons()});return characterState.loading}
     async function saveCharacterFavorite(id,favorite,node){const options={method:favorite?'PUT':'DELETE',body:favorite?JSON.stringify({name:node.name?.full||'',nativeName:node.name?.native||'',image:personImage(node.image?.large||node.image?.medium),work:title(m),mediaId:m.id,mediaType:media.type}):undefined};let error=null;for(let attempt=0;attempt<2;attempt++){try{return await privateJson(`/api/me/character-favorites/${id}`,options)}catch(cause){error=cause;if(attempt===0&&![400,403,404].includes(Number(cause?.status)))await new Promise(resolve=>setTimeout(resolve,280));else break}}throw error}
     function bindCharacterFavorites(){root.querySelectorAll('[data-nx22-character-favorite]').forEach(button=>button.addEventListener('click',async()=>{const id=Number(button.dataset.nx22CharacterFavorite),edge=chars.find(item=>Number(item?.node?.id)===id);if(!edge||characterState.pending.has(id))return;if(!await requireAccount())return;if(characterState.pending.has(id)||!button.isConnected)return;const previous=characterState.favorites.has(id),favorite=!previous;favorite?characterState.favorites.add(id):characterState.favorites.delete(id);characterState.pending.add(id);syncCharacterButtons();try{const result=await saveCharacterFavorite(id,favorite,edge.node),saved=result?.favorite!==false;characterState.favorites[saved?'add':'delete'](id);dispatchEvent(new CustomEvent('aninexus:character-favorites-changed',{detail:{characterId:id,favorite:saved}}))}catch{previous?characterState.favorites.add(id):characterState.favorites.delete(id);toast('Não foi possível atualizar o personagem agora')}finally{characterState.pending.delete(id);syncCharacterButtons()}}));hydrateCharacterFavorites()}
-    root.querySelectorAll('[data-nx22-tab]').forEach(b=>b.onclick=()=>show(b.dataset.nx22Tab));
-    root.querySelectorAll('[data-nx22-sheet-tab]').forEach(b=>b.onclick=()=>show(b.dataset.nx22SheetTab));
-    const tabList=root.querySelector('.nx22-tab-list'),tabRow=root.querySelector('.nx22-tabs-row');
+    tabs.forEach(button=>{
+      button.onclick=()=>show(button.dataset.nx22Tab,{push:true});
+      button.addEventListener('keydown',event=>{
+        if(event.altKey||event.ctrlKey||event.metaKey||event.shiftKey)return;
+        const index=tabs.indexOf(button);let next=null;
+        if(event.key==='ArrowRight')next=tabs[(index+1)%tabs.length];else if(event.key==='ArrowLeft')next=tabs[(index+tabs.length-1)%tabs.length];else if(event.key==='Home')next=tabs[0];else if(event.key==='End')next=tabs.at(-1);
+        if(next){event.preventDefault();tabs.forEach(tab=>tab.tabIndex=tab===next?0:-1);next.focus({preventScroll:true});next.scrollIntoView?.({block:'nearest',inline:'nearest'});return}
+        if(event.key==='Enter'||event.key===' '){event.preventDefault();show(button.dataset.nx22Tab,{push:true})}
+      });
+    });
+    root.querySelectorAll('[data-nx22-sheet-tab]').forEach(button=>button.onclick=()=>show(button.dataset.nx22SheetTab,{push:true}));
     const updateTabEdges=()=>{if(!tabList||!tabRow)return;const max=Math.max(0,tabList.scrollWidth-tabList.clientWidth);tabRow.dataset.nx22Left=tabList.scrollLeft>2?'1':'0';tabRow.dataset.nx22Right=tabList.scrollLeft<max-2?'1':'0'};
     tabList?.addEventListener('scroll',updateTabEdges,{passive:true});
     if(tabList&&typeof ResizeObserver==='function')new ResizeObserver(updateTabEdges).observe(tabList);
     requestAnimationFrame(updateTabEdges);
-    root.querySelector('[data-nx22-tabs-toggle]')?.addEventListener('click',()=>{const nav=root.querySelector('.nx22-tabs'),open=!nav?.classList.contains('is-open');nav?.classList.toggle('is-open',open);document.body.classList.toggle('nx22-tabs-open',open);root.querySelector('[data-nx22-tabs-toggle]')?.setAttribute('aria-expanded',String(open))});
-    root.querySelectorAll('[data-nx22-tabs-close]').forEach(button=>button.addEventListener('click',closeTabs));
+    toggle?.addEventListener('click',()=>{if(nav.classList.contains('is-open')){closeTabs();return}sheet.hidden=false;backdrop.hidden=false;nav.classList.add('is-open');document.body.classList.add('nx22-tabs-open');toggle.setAttribute('aria-expanded','true');releaseTabs=window.AniNexusRuntime?.containFocus?.(sheet,{owner:sheet,initialFocus:sheet.querySelector('[data-nx22-tabs-close]'),returnFocus:toggle,onEscape:closeTabs,isActive:()=>nav.isConnected&&nav.classList.contains('is-open'),onRelease:()=>{nav.classList.remove('is-open');document.body.classList.remove('nx22-tabs-open');sheet.hidden=true;backdrop.hidden=true;toggle.setAttribute('aria-expanded','false')}})});
+    root.querySelectorAll('[data-nx22-tabs-close]').forEach(button=>button.addEventListener('click',()=>closeTabs()));
     root.querySelector('.nx22-tabs')?.addEventListener('keydown',event=>{if(event.key==='Escape')closeTabs()});
-    root.querySelector('[data-nx22-back]')?.addEventListener('click',()=>{let previous='',sameDocument=false;try{const raw=sessionStorage.getItem('nx22:previous-path')||'',saved=JSON.parse(raw);previous=String(saved?.path||'');sameDocument=Math.abs(Number(saved?.document)-performance.timeOrigin)<1}catch{}if(previous&&previous!==routePath()&&sameDocument&&history.length>1){history.back();return}openPath(previous&&previous!==routePath()?previous:catalogPath)});
+    root.querySelector('[data-nx22-back]')?.addEventListener('click',()=>{let previous='',sameDocument=false;try{const raw=sessionStorage.getItem('nx22:previous-path')||'',saved=JSON.parse(raw);previous=String(saved?.path||'');sameDocument=Math.abs(Number(saved?.document)-performance.timeOrigin)<1}catch{}if(previous&&previous!==routePath()&&sameDocument&&history.length>1){const saved=history.state?.nx22DetailSection;if(saved?.trail===sectionTrail&&saved.hash===location.hash&&Number.isSafeInteger(saved.step)&&saved.step>0&&typeof history.go==='function'){history.go(-saved.step-1);return}if(!saved){history.back();return}}openPath(previous&&previous!==routePath()?previous:catalogPath)});
     const shareMedia=async()=>{const data={title:title(m),text:`${title(m)} no AniNexus`,url:location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);toast('Link copiado')}}catch{}};
     root.querySelector('[data-nx22-share]')?.addEventListener('click',shareMedia);
-    show('geral');
+    show(location.hash.slice(1));
     stateApi?.sync?.(m.id);
     document.title=`${title(m)} | AniNexus`;
   }
@@ -478,6 +511,7 @@
   const mo=new MutationObserver(()=>{if(observerRaf)return;observerRaf=requestAnimationFrame(()=>{observerRaf=0;const id=mediaId();if(id&&!isOwned())claim()})});
   mo.observe(root,{childList:true});
   addEventListener('popstate',()=>setTimeout(claim,0));
+  for(const event of ['hashchange','popstate'])addEventListener(event,()=>syncDetailSection?.());
   document.addEventListener('aninexus:routechange',()=>setTimeout(claim,0));
   window.__NX_V22_DETAIL_READY__=true;
   dispatchEvent(new CustomEvent('aninexus:detail-runtime-ready'));

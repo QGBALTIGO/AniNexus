@@ -81,7 +81,7 @@
   const state = {
     mode: 'ALL', page: 1, search: '', filters: emptyFilters(), draft: emptyFilters(),
     controller: null, token: 0, mounted: false, filtersOpen: false, menuOpen: false, items: new Map(),
-    searchTimer: 0, previousFocus: null, menuFocus: null, revealObserver: null, catalog: null,
+    searchTimer: 0, previousFocus: null, menuFocus: null, revealObserver: null, catalog: null, urlExplicit: false,
     scrollFrame: 0, lastScrollY: 0, scrollDirection: 0, scrollTravel: 0, scrollLockUntil: 0
   };
   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
@@ -94,6 +94,43 @@
   const sleep = (ms, signal) => Runtime.abortableDelay(ms, signal);
   const SECTION_MODES = Object.freeze({ todos: 'ALL', breve: 'SOON', temporada: 'SEASON', ranking: 'TOP', populares: 'POPULAR', membros: 'MEMBERS', busca: 'SEARCH', mangas: 'MANGA', 'one-shots': 'ONE_SHOT', 'light-novels': 'NOVEL' });
   const MODE_SECTIONS = Object.freeze(Object.fromEntries(Object.entries(SECTION_MODES).map(([section, mode]) => [mode, section])));
+  const URL_FILTER_KEYS = ['q', 'genre', 'tag', 'format', 'year', 'season', 'status', 'sort', 'direction', 'secao', 'page'];
+  let normalizingUrl = false;
+
+  function catalogUrl() {
+    const url = new URL(location.href), restored = url.searchParams.get('p');
+    if (!restored) return url;
+    const source = new URL(restored, location.origin);
+    for (const key of URL_FILTER_KEYS) if (!source.searchParams.has(key) && url.searchParams.has(key)) source.searchParams.set(key, url.searchParams.get(key));
+    return source;
+  }
+  function normalizedFilters(value = {}) {
+    const reading = currentCatalog().mediaType === 'MANGA', result = emptyFilters();
+    const choice = (key, options) => {
+      const text = String(value[key] ?? '').toUpperCase();
+      if (options.some(item => item[0] === text)) result[key] = text;
+    };
+    choice('format', reading ? READING_FORMATS : ANIME_FORMATS);
+    choice('status', reading ? READING_STATUSES : ANIME_STATUSES);
+    if (!reading) choice('season', SEASONS);
+    choice('sort', SORTS);
+    if (['ASC', 'DESC'].includes(String(value.direction).toUpperCase())) result.direction = String(value.direction).toUpperCase();
+    const year = Number(value.year);
+    if (Number.isSafeInteger(year) && year >= 1940 && year <= new Date().getFullYear() + 2) result.year = String(year);
+    for (const key of ['genre', 'tag']) result[key] = String(value[key] ?? '').trim().slice(0, 120);
+    return result;
+  }
+  function restoreUrl() {
+    const params = catalogUrl().searchParams;
+    if (!URL_FILTER_KEYS.some(key => params.has(key))) return false;
+    const selected = requestedMode(), filtered = URL_FILTER_KEYS.some(key => !['secao', 'page'].includes(key) && params.has(key));
+    state.mode = selected || (filtered ? 'SEARCH' : 'ALL');
+    state.search = String(params.get('q') || '').slice(0, 120);
+    state.filters = normalizedFilters(Object.fromEntries(params));
+    const page = Number(params.get('page'));
+    state.page = state.mode !== 'TOP' && Number.isSafeInteger(page) && page > 0 ? Math.min(page, MAX_PUBLIC_PAGE) : 1;
+    return true;
+  }
 
   function route() {
     const url = new URL(location.href);
@@ -113,10 +150,7 @@
   function requestedMode() {
     let section = String(window.__NX_CATALOG_BOOT_SECTION__ || '').toLowerCase();
     if (!section) {
-      const url = new URL(location.href);
-      const restored = url.searchParams.get('p');
-      const source = restored ? new URL(restored, location.origin) : url;
-      section = String(source.searchParams.get('secao') || '').toLowerCase();
+      section = String(catalogUrl().searchParams.get('secao') || '').toLowerCase();
     }
     const mode = SECTION_MODES[section];
     return currentModes().some(item => item[0] === mode) ? mode : '';
@@ -137,7 +171,7 @@
       if (!saved || !currentModes().some(item => item[0] === saved.mode)) return;
       state.mode = saved.mode;
       state.search = String(saved.search || '').slice(0, 120);
-      state.filters = { ...emptyFilters(), ...(saved.filters || {}) };
+      state.filters = normalizedFilters(saved.filters);
     } catch {}
   }
   function persist() {
@@ -571,11 +605,12 @@
   }
 
   function applyFilters() {
-    state.filters = { ...state.draft };
+    clearTimeout(state.searchTimer);
+    state.filters = normalizedFilters(state.draft);
     state.mode = 'SEARCH';
     state.page = 1;
     persist();
-    normalizeUrl();
+    normalizeUrl('push');
     closeFilters();
     updateChrome();
     load();
@@ -586,10 +621,11 @@
     const changed = state.mode !== mode;
     closeMobileMenu(false);
     if (!changed) return;
+    clearTimeout(state.searchTimer);
     state.mode = mode;
     state.page = 1;
     persist();
-    normalizeUrl();
+    normalizeUrl('push');
     closeFilters(false);
     updateChrome();
     scrollCatalogTop();
@@ -606,20 +642,36 @@
     else if (!window.AniNexusGo?.(path)) location.assign(path);
   }
 
-  function normalizeUrl() {
+  function normalizeUrl(action = 'replace') {
     if (!state.catalog) return;
-    const section = MODE_SECTIONS[state.mode];
-    const route = `${currentCatalog().target}${state.mode !== 'ALL' && section ? `?secao=${section}` : ''}`;
+    if (action === 'push') state.urlExplicit = true;
+    const source = catalogUrl();
+    source.pathname = currentCatalog().target;
+    for (const key of URL_FILTER_KEYS) source.searchParams.delete(key);
+    source.searchParams.set('secao', MODE_SECTIONS[state.mode] || 'todos');
+    if (state.mode === 'SEARCH') {
+      if (state.search) source.searchParams.set('q', state.search);
+      for (const [key, value] of Object.entries(state.filters)) {
+        if (value && !(key === 'sort' && value === 'DISCOVER') && !(key === 'direction' && value === 'DESC')) source.searchParams.set(key, value);
+      }
+    }
+    if (state.page > 1) source.searchParams.set('page', String(state.page));
+    const url = new URL(location.href);
     if (IS_PAGES) {
-      const url = new URL(location.href);
       url.pathname = `${BASE}/`;
-      url.search = '';
-      url.searchParams.set('build', BUILD);
-      url.searchParams.set('p', route);
-      history.replaceState({}, '', url.pathname + url.search);
-    } else history.replaceState({}, '', route);
+      for (const key of URL_FILTER_KEYS) url.searchParams.delete(key);
+      if (!url.searchParams.has('build')) url.searchParams.set('build', BUILD);
+      url.searchParams.set('p', source.pathname + source.search);
+    } else {
+      url.pathname = source.pathname;
+      url.search = source.search;
+    }
     window.__NX_CATALOG_BOOT__ = false;
     window.__NX_CATALOG_BOOT_SECTION__ = '';
+    if (url.href === location.href) return;
+    normalizingUrl = true;
+    try { history[action === 'push' ? 'pushState' : 'replaceState'](history.state, '', url.pathname + url.search + url.hash); }
+    finally { normalizingUrl = false; }
   }
 
   function scrollCatalogTop() {
@@ -720,16 +772,19 @@
     if (state.mounted) resetScrollState();
   }
 
-  function applyIncoming(filters = {}) {
+  function applyIncoming(filters = {}, { legacy = false } = {}) {
+    if (!onCatalog()) return;
+    if (legacy && state.urlExplicit) return;
     const allowed = ['format', 'status', 'season', 'year', 'genre', 'tag', 'sort', 'direction'];
     const next = { ...state.filters };
     allowed.forEach(key => {
-      if (filters[key] != null && String(filters[key]) !== '') next[key] = String(filters[key]);
+      if (filters[key] != null) next[key] = String(filters[key]);
     });
     if (filters.search != null) state.search = String(filters.search).slice(0, 120);
-    state.filters = next;
+    state.filters = normalizedFilters(next);
     state.mode = 'SEARCH';
     state.page = 1;
+    state.urlExplicit = true;
     persist();
     normalizeUrl();
     if (state.mounted) {
@@ -739,6 +794,8 @@
   }
 
   function cleanup() {
+    clearTimeout(state.searchTimer);
+    state.searchTimer = 0;
     state.controller?.abort('route-change');
     state.controller = null;
     state.revealObserver?.disconnect();
@@ -764,10 +821,13 @@
     state.search = '';
     state.filters = emptyFilters();
     state.draft = emptyFilters();
-    restore();
-    state.mode = requestedMode() || state.mode;
-    normalizeUrl();
     state.page = 1;
+    state.urlExplicit = restoreUrl();
+    if (!state.urlExplicit) {
+      restore();
+      state.mode = requestedMode() || state.mode;
+    }
+    normalizeUrl();
     state.mounted = true;
     window.__NX_ROUTE_OWNER__ = 'catalog';
     window.__NX_DEDICATED_BOOT_PATH__ = catalog.target;
@@ -813,9 +873,11 @@
     if (mode) { event.preventDefault(); setMode(mode.dataset.nx21Mode); return; }
     if (event.target.closest('[data-nx21-filters]')) { event.preventDefault(); openFilters(); return; }
     if (event.target.closest('[data-nx21-search-clear]')) {
+      clearTimeout(state.searchTimer);
       state.search = '';
       state.page = 1;
       persist();
+      normalizeUrl('push');
       updateChrome();
       load();
       requestAnimationFrame(() => (document.querySelector('.nx21-island.show [data-nx21-search]') || document.querySelector('[data-nx21-search]'))?.focus());
@@ -824,6 +886,8 @@
     const pageButton = event.target.closest('[data-nx21-page]');
     if (pageButton && !pageButton.disabled) {
       state.page = Number(pageButton.dataset.nx21Page) || 1;
+      clearTimeout(state.searchTimer);
+      normalizeUrl('push');
       load();
       scrollCatalogTop();
       return;
@@ -843,7 +907,7 @@
     document.querySelectorAll('[data-nx21-search]').forEach(input => { if (input !== event.target) input.value = state.search; });
     document.querySelectorAll('[data-nx21-search-clear]').forEach(clear => { clear.hidden = !state.search; });
     clearTimeout(state.searchTimer);
-    state.searchTimer = setTimeout(load, 320);
+    state.searchTimer = setTimeout(() => { normalizeUrl('push'); load(); }, 320);
   });
 
   document.addEventListener('change', event => {
@@ -884,7 +948,7 @@
 
   addEventListener('scroll', handleScroll, { passive: true });
   addEventListener('resize', handleResize, { passive: true });
-  addEventListener('aninexus:route-changed', () => { if (onCatalog()) mount(); else cleanup(); });
+  addEventListener('aninexus:route-changed', () => { if (normalizingUrl) return; if (onCatalog()) mount(); else cleanup(); });
   addEventListener('aninexus:catalog-filter', event => applyIncoming(event.detail || {}));
   window.AniNexusCatalog = Object.freeze({ applyFilters: applyIncoming, reload: load });
   if (onCatalog()) mount();

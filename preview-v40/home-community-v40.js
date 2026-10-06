@@ -5,7 +5,7 @@
   const REMOTE=window.AniNexusAuth?.enabled===true;
   const STATUS={PLANNING:{verb:'quer ver',label:'Quero ver',icon:'clock'},CURRENT:{verb:'está assistindo',label:'Assistindo',icon:'play'},COMPLETED:{verb:'terminou',label:'Concluído',icon:'check'},PAUSED:{verb:'pausou',label:'Pausado',icon:'pause'},DROPPED:{verb:'desistiu de',label:'Interrompido',icon:'x'}};
   const mediaCache=new Map();
-  let token=0,timer=0;
+  let token=0,timer=0,paintedOwner='';
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const title=m=>typeof m?.title==='string'?m.title:(m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||'');
   const cover=m=>m?.cover||m?.coverImage?.extraLarge||m?.coverImage?.large||'';
@@ -56,7 +56,7 @@
     const statusIcon=kind==='state'?(reading?window.AniNexusMangaState:window.AniNexusMediaState)?.statuses?.[x.status]?.icon:'';
     const art=artworkUrl(x.banner);
     const actorAvatar=profile?`<a class="nx35-community-avatar" href="${profile}" aria-label="Ver perfil de ${esc(name)}">${avatar}</a>`:`<span class="nx35-community-avatar" aria-hidden="true">${avatar}</span>`;
-    return `<article class="nx35-community-card${compact?' compact':''}" data-community-kind="${esc(kind)}" data-media-id="${Number(x.media_id)||''}" data-media-type="${type(x)}" data-status="${esc(x.status||kind)}">${art?`<img class="nx35-community-art" data-src="${esc(art)}" alt="" aria-hidden="true" loading="lazy" decoding="async">`:''}<div class="nx35-community-cover"><a href="${href}" aria-label="${esc(x.title)}">${x.cover?`<img src="${esc(x.cover)}" alt="" loading="lazy" decoding="async">`:'<span data-icon="chat" aria-hidden="true"></span>'}</a>${actorAvatar}</div><div class="nx35-community-copy"><p>${phrase}</p><div class="nx35-community-meta"><span class="nx35-community-status">${statusIcon||`<span data-icon="chat" aria-hidden="true"></span>`}${esc(st.label)}</span>${detail?`<span class="nx35-community-detail">${esc(detail)}</span>`:''}</div><small>${reactionMarks(x)}<time datetime="${esc(x.created_at)}">${esc(relative(x.created_at))}</time></small></div></article>`;
+    return `<article class="nx35-community-card${compact?' compact':''}"${x.local?' data-community-local="true"':''} data-community-kind="${esc(kind)}" data-media-id="${Number(x.media_id)||''}" data-media-type="${type(x)}" data-status="${esc(x.status||kind)}">${art?`<img class="nx35-community-art" data-src="${esc(art)}" alt="" aria-hidden="true" loading="lazy" decoding="async">`:''}<div class="nx35-community-cover"><a href="${href}" aria-label="${esc(x.title)}">${x.cover?`<img src="${esc(x.cover)}" alt="" loading="lazy" decoding="async">`:'<span data-icon="chat" aria-hidden="true"></span>'}</a>${actorAvatar}</div><div class="nx35-community-copy"><p>${phrase}</p><div class="nx35-community-meta"><span class="nx35-community-status">${statusIcon||`<span data-icon="chat" aria-hidden="true"></span>`}${esc(st.label)}</span>${detail?`<span class="nx35-community-detail">${esc(detail)}</span>`:''}</div><small>${reactionMarks(x)}<time datetime="${esc(x.created_at)}">${esc(relative(x.created_at))}</time></small></div></article>`;
   }
   async function load(){
     const shared=window.AniNexusCommunityActivity;
@@ -66,17 +66,35 @@
     const raw=[...activity.map(x=>({...x,kind:'state',created_at:x.created_at||x.updated_at})),...local.filter(x=>x.kind!=='thread'),...impressions.map(x=>({...x,kind:'impression'}))];
     const enriched=shared?.enrich?await shared.enrich(raw):raw,identified=enriched.filter(x=>!x.local||handle(x)),rows=shared?.merge?shared.merge(identified):identified;
     await resolveMedia(rows.filter(x=>x.media_id&&(!usableTitle(x.title)&&!usableTitle(title(x.media))||!x.cover&&!cover(x.media))));
-    return rows.map(x=>{const fetched=mediaCache.get(mediaKey(x));return {...x,title:usableTitle(x.title)||usableTitle(title(x.media))||usableTitle(title(fetched)),cover:x.cover||cover(x.media)||cover(fetched),banner:x.banner||banner(x.media)||banner(fetched),created_at:x.created_at||x.updated_at||''}}).filter(x=>!!x.media_id&&!!x.title).slice(0,12);
+    const currentLocal=new Set((shared?.local?.(40)||[]).map(x=>`${x.owner_id}:${x.id}`));
+    return rows.filter(x=>!x.local||currentLocal.has(`${x.owner_id}:${x.id}`)).map(x=>{const fetched=mediaCache.get(mediaKey(x));return {...x,title:usableTitle(x.title)||usableTitle(title(x.media))||usableTitle(title(fetched)),cover:x.cover||cover(x.media)||cover(fetched),banner:x.banner||banner(x.media)||banner(fetched),created_at:x.created_at||x.updated_at||''}}).filter(x=>!!x.media_id&&!!x.title).slice(0,12);
   }
   async function paint(){
     const home=document.querySelector('.nx35-home'),hero=document.querySelector('#nx35CommunityHero'),grid=document.querySelector('#nx35Community');
     if(!home||(!hero&&!grid))return;
     const my=++token,list=await load();if(my!==token||!home.isConnected)return;
+    paintedOwner=window.AniNexusCommunityActivity?.key||'';
     const empty='<p class="nx35-community-empty">Nenhuma atividade recente.</p>';
     for(const [root,count,compact] of [[hero,3,true],[grid,6,false]])if(root?.isConnected){root.dataset.nxCommunityOwner='shared';root.innerHTML=list.length?list.slice(0,count).map(x=>card(x,compact)).join(''):empty;root.querySelectorAll('.nx35-community-art').forEach(img=>{const src=img.dataset.src,discard=()=>img.remove(),reveal=()=>img.classList.add('is-loaded');img.addEventListener('load',reveal,{once:true});img.addEventListener('error',discard,{once:true});delete img.dataset.src;img.src=src;setTimeout(()=>{if(img.complete)(img.naturalWidth?reveal():discard())},1000)});window.injectIcons?.(root)}
   }
   function schedule(){clearTimeout(timer);timer=setTimeout(paint,60)}
-  for(const event of ['aninexus:home-v34-ready','aninexus:community-activity-changed','aninexus:account-identity-changed'])addEventListener(event,schedule);
+  function identityChanged(event){
+    const owner=window.AniNexusCommunityActivity?.key||'';
+    if(owner&&owner===paintedOwner&&event.detail?.confirmed!==false){schedule();return}
+    ++token;
+    for(const root of [document.querySelector('#nx35CommunityHero'),document.querySelector('#nx35Community')]){
+      if(!root)continue;
+      root.querySelectorAll('[data-community-local]').forEach(node=>node.remove());
+      if(!root.querySelector('.nx35-community-card'))root.innerHTML='<p class="nx35-community-empty">Nenhuma atividade recente.</p>';
+    }
+    schedule();
+  }
+  addEventListener('aninexus:home-v34-ready',schedule);
+  addEventListener('aninexus:community-activity-changed',event=>{
+    if((window.AniNexusCommunityActivity?.key||'')!==paintedOwner)identityChanged(event);
+    else schedule();
+  });
+  addEventListener('aninexus:account-identity-changed',identityChanged);
   for(const event of ['aninexus:media-state-changed','aninexus:manga-media-state-changed'])document.addEventListener(event,schedule);
   addEventListener('storage',e=>{if(/community:activity|mediaState|mangaState/.test(e.key||''))schedule()});
   new MutationObserver(rs=>{for(const r of rs)for(const n of r.addedNodes)if(n.nodeType===1&&(n.matches?.('.nx35-home')||n.querySelector?.('.nx35-home'))){schedule();return}}).observe(document.documentElement,{subtree:true,childList:true});

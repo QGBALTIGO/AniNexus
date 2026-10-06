@@ -132,6 +132,8 @@ body:not(.nx35-home-active) #app>main:first-child{padding-top:var(--nx43-header-
 .nx44-radio--float .nx44-radio-float-button{width:58px;height:58px;min-height:58px;border:1px solid rgba(255,115,143,.52);background:radial-gradient(circle at 34% 27%,#f55878 0,#d8254d 38%,#7b142c 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 0 22px rgba(222,38,78,.28);color:#fff}
 .nx44-radio--float .nx44-radio-float-button:hover{transform:translateY(-2px) scale(1.02);background:radial-gradient(circle at 34% 27%,#ff6987 0,#e42e56 42%,#871832 100%)}
 .nx44-radio--float[data-state=playing]:before{animation:nx44RadioPulse 2s ease-out infinite}
+.nx44-radio-status{position:absolute;right:0;bottom:calc(100% + 12px);width:min(270px,calc(100vw - 40px));margin:0;padding:12px 14px;border:1px solid rgba(229,189,95,.55);border-radius:12px;background:#181017;color:#f7e8ed;font:600 14px/1.5 'Manrope',sans-serif;box-shadow:0 10px 28px rgba(0,0,0,.4)}
+.nx44-radio-status[hidden]{display:none!important}
 @keyframes nx44RadioPulse{0%{transform:scale(1);opacity:.85}70%,100%{transform:scale(1.22);opacity:0}}
 
 @media(max-width:720px){

@@ -44,8 +44,8 @@
     const sequence=++navigationSequence;
     // Dismiss the source interaction before waiting for a lazy detail runtime.
     const search=document.querySelector('#searchOverlay');if(search){search.hidden=true;search.setAttribute('aria-hidden','true')}
-    const current=cleanPathFromUrl(location.href).split('?')[0];
-    if(DETAIL_ROUTE.test(String(path||'').split(/[?#]/)[0])&&current&&!DETAIL_ROUTE.test(current)){try{sessionStorage.setItem('nx22:previous-path',JSON.stringify({path:current,document:performance.timeOrigin}))}catch{}}
+    const currentRoute=cleanPathFromUrl(location.href),current=currentRoute.split('?')[0];
+    if(DETAIL_ROUTE.test(String(path||'').split(/[?#]/)[0])&&current&&!DETAIL_ROUTE.test(current)){try{sessionStorage.setItem('nx22:previous-path',JSON.stringify({path:['/animes/catalogo','/mangas'].includes(current)?currentRoute:current,document:performance.timeOrigin}))}catch{}}
     document.body?.classList.remove('modal-open');const drawer=document.querySelector('#drawer');if(drawer){drawer.hidden=true;drawer.setAttribute('aria-hidden','true')}
     document.querySelectorAll('[data-action="drawer-open"]').forEach(button=>button.setAttribute('aria-expanded','false'));
     const softNavigate=()=>{markRouteOwner(path);return !IS_PAGES&&window.AniNexusGo?.(path)===true};

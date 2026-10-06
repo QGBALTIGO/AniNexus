@@ -61,6 +61,7 @@ services:
       NEWS_RETENTION_DAYS: ${NEWS_RETENTION_DAYS:-7}
       NEWS_STALE_GRACE_DAYS: ${NEWS_STALE_GRACE_DAYS:-14}
       PROFILE_MEDIA_DIR: /app/profile-media
+      PUBLIC_SHELL_PATH: /var/www/aninexus/current/index.html
     depends_on:
       postgres:
         condition: service_healthy
@@ -71,6 +72,8 @@ services:
     read_only: true
     volumes:
       - profile_media:/app/profile-media
+      # Keep the current symlink visible after an atomic frontend activation.
+      - /var/www/aninexus:/var/www/aninexus:ro
     tmpfs:
       - /tmp
     cap_drop:

@@ -101,6 +101,23 @@ function browser({stored = {}, route = '/', api} = {}) {
   return h;
 }
 const owners = user => ({'aninexus:mediaOwner': user.id, 'aninexus:mangaOwner': user.id});
+const activitySource=fs.readFileSync(new URL('../preview-v40/activity-v40.js',import.meta.url),'utf8');
+
+for(const type of ['ANIME','MANGA'])for(const trigger of ['bootstrap','event'])test(`unowned ${type} state cannot be stamped as first account activity (${trigger})`,async()=>{
+  const manga=type==='MANGA',stateKey=manga?'aninexus:mangaState:v2':'aninexus:mediaState:v2';
+  const pendingKey=manga?'aninexus:mangaState:pending:v1':'aninexus:mediaState:pending:v1';
+  const state={status:'CURRENT',progress:7,updatedAt:Date.now()},waiting=deferred();
+  const h=browser({stored:{[stateKey]:{909:state},[pendingKey]:{909:state}},api:({path})=>path.endsWith('/list')||path.endsWith('/manga-list')?waiting.promise:undefined});
+  h.owner=B;h.window.AniNexusAccountData=()=>Promise.resolve(h.owner);
+  h.run(syncSource);h.run(activitySource);
+  if(trigger==='bootstrap')await h.boot();else{h.identity(B,{confirmed:true});await settle()}
+  assert.deepEqual(JSON.parse(JSON.stringify(h.window.AniNexusCommunityActivity.local())),[]);
+  assert.equal(h.requests.filter(x=>x.method!=='GET').length,0,'unowned pending edits are never sent to the new account');
+  assert.equal(h.read(stateKey),null);
+  const archived=h.read(stateKey+':unowned:v1');assert.equal(archived[909].progress,7,'legacy data is preserved in inactive local storage');
+  assert.equal(h.read(pendingKey+':unowned:v1')[909].progress,7);
+  waiting.resolve({items:[]});await settle();assert.deepEqual(JSON.parse(JSON.stringify(h.window.AniNexusCommunityActivity.local())),[]);
+});
 const row = (id, title, status = 'CURRENT') => ({media_id: id, status, updated_at: '2026-01-01T00:00:00Z', media: {id, title}});
 function headerBrowser() {
   const h = browser(), actions = node(), baseQuery = h.document.querySelector;

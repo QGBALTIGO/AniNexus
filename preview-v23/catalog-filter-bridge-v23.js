@@ -18,7 +18,7 @@
     if (!filters || !window.AniNexusCatalog?.applyFilters) return;
     applied = true;
     try { sessionStorage.removeItem(KEY); } catch {}
-    window.AniNexusCatalog.applyFilters(filters);
+    window.AniNexusCatalog.applyFilters(filters, { legacy: true });
   }
   addEventListener('DOMContentLoaded', apply, { once: true });
   const observer = new MutationObserver(apply);

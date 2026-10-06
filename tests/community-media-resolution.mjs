@@ -61,12 +61,17 @@ test('API failures do not retry internal IDs on a provider',async()=>{
 });
 
 test('actions without DOM metadata enrich through summaries, including normalized string titles',async()=>{
-  const {api,requests}=runtime({auth:true,items:[{id:internal,mediaType:'MANGA',title:'Título importado',cover:'https://example.invalid/cover.jpg'}]});
-  api.record(internal,{status:'CURRENT',progress:3},Date.now(),false,'MANGA');
+  // This action belongs to a confirmed internal account, as in the live guard.
+  // Metadata resolution remains independent from the identity transport.
+  const user={id:'fixture-internal-member',username:'fixture_member'};
+  const identityRuntime=runtime({auth:true,items:[{id:internal,mediaType:'MANGA',title:'Título importado',cover:'https://example.invalid/cover.jpg'}]});
+  identityRuntime.window.AniNexusAccountData=async()=>user;
+  await identityRuntime.api.identity();
+  identityRuntime.api.record(internal,{status:'CURRENT',progress:3},Date.now(),false,'MANGA');
   await new Promise(resolve=>setImmediate(resolve));
-  assert.equal(requests.length,1);assert.match(requests[0].url,/^\/api\/media\/summaries/);
-  assert.equal(api.local()[0].title,'Título importado');
-  assert.equal(api.local()[0].media_id,internal);
+  assert.equal(identityRuntime.requests.length,1);assert.match(identityRuntime.requests[0].url,/^\/api\/media\/summaries/);
+  assert.equal(identityRuntime.api.local()[0].title,'Título importado');
+  assert.equal(identityRuntime.api.local()[0].media_id,internal);
 });
 
 test('Home uses shared summaries and retains a known title with a missing cover',async()=>{

@@ -251,13 +251,34 @@
     },0);
   },true);
 
+  const syncSkipLink=()=>{
+    const link=document.querySelector('.nx-skip-link');if(!link)return;
+    const target=new URL(location.href);
+    // Existing hashes may identify a prediction or a section. Keep that context
+    // for native modified activation; ordinary activation focuses #app directly.
+    if(!target.hash)target.hash='app';
+    link.setAttribute('data-route-fragment','app');
+    link.setAttribute('href',target.pathname+target.search+target.hash);
+  };
+  addEventListener('click',event=>{
+    if(!event.target.closest?.('.nx-skip-link'))return;
+    syncSkipLink();
+    if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+    const main=document.querySelector('#app');if(!main)return;
+    event.preventDefault();main.focus({preventScroll:true});main.scrollIntoView({behavior:'auto',block:'start'});
+  },true);
+  addEventListener('pointerdown',event=>{if(event.target.closest?.('.nx-skip-link'))syncSkipLink()},true);
+  document.addEventListener('focusin',event=>{if(event.target.closest?.('.nx-skip-link'))syncSkipLink()});
+  for(const name of ['aninexus:route-changed','popstate','hashchange'])addEventListener(name,syncSkipLink);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',syncSkipLink,{once:true});else syncSkipLink();
+
   const tune=root=>{
     if(root instanceof HTMLImageElement){if(!root.hasAttribute('decoding'))root.decoding='async';if(!root.hasAttribute('loading')&&!root.closest('.hero,.nx35-article-hero,.nx24-hero,.aqx-hero,.nx22-hero'))root.loading='lazy'}
     root.querySelectorAll?.('img').forEach(img=>{if(!img.hasAttribute('decoding'))img.decoding='async';if(!img.hasAttribute('loading')&&!img.closest('.hero,.nx35-article-hero,.nx24-hero,.aqx-hero,.nx22-hero'))img.loading='lazy'});
     root.querySelectorAll?.('a[target="_blank"]').forEach(a=>{const rel=new Set(String(a.rel||'').split(/\s+/).filter(Boolean));rel.add('noopener');rel.add('noreferrer');a.rel=[...rel].join(' ')})
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>tune(document),{once:true});else tune(document);
-  new MutationObserver(rs=>{for(const r of rs)for(const n of r.addedNodes)if(n.nodeType===1)tune(n)}).observe(document.documentElement,{subtree:true,childList:true});
+  new MutationObserver(rs=>{for(const r of rs)for(const n of r.addedNodes)if(n.nodeType===1)tune(n);syncSkipLink()}).observe(document.documentElement,{subtree:true,childList:true});
 
   const setOnline=()=>document.documentElement.classList.toggle('nx38-offline',!navigator.onLine);
   addEventListener('online',setOnline);addEventListener('offline',setOnline);setOnline();

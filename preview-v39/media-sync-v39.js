@@ -205,9 +205,18 @@
   function notifyPending(){document.dispatchEvent(new CustomEvent('aninexus:media-sync-pending',{detail:{mediaType}}))}
   function identity(user){
     const previous=read(ownerKey,null),next=user?.id||null;
-    if(previous&&previous!==next){
+    const keys=[FAV_KEY,STATE_KEY,FAV_PENDING,STATE_PENDING,reading?'aninexus:mangaState:v1':'aninexus:mediaState:v1',reading?'aninexus:mangaList':'aninexus:list',reading?'aninexus:mangaListStatus':'aninexus:listStatus'];
+    const unowned=[];
+    if(!previous&&next){
+      // A later sign-in cannot prove ownership of legacy browser state. Retain it
+      // separately, without exposing it as this account's history or queued writes.
+      for(const key of keys){try{const raw=localStorage.getItem(key);if(raw!==null)unowned.push([key,raw])}catch{}}
+    }
+    if(previous!==next){
       favDesired.clear();stateDesired.clear();favoriteEdits.clear();stateEdits.clear();
-      for(const key of [FAV_KEY,STATE_KEY,FAV_PENDING,STATE_PENDING,reading?'aninexus:mangaState:v1':'aninexus:mediaState:v1',reading?'aninexus:mangaList':'aninexus:list',reading?'aninexus:mangaListStatus':'aninexus:listStatus']){try{localStorage.removeItem(key)}catch{}}
+      for(const key of keys){try{localStorage.removeItem(key)}catch{}}
+      // Remove active copies first so quarantine does not duplicate their quota.
+      for(const [key,raw] of unowned){try{localStorage.setItem(key+':unowned:v1',raw)}catch{}}
       stateApi()?.close();stateApi()?.sync();
     }
     write(ownerKey,next);

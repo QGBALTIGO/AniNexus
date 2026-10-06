@@ -39,17 +39,24 @@ import { registerSocialRoutes } from './lib/social-routes.mjs';
 import { socialBodyPayload } from './lib/social.mjs';
 import { buildAniListImportXml, fetchAniListEntries, usernameModerationReason } from './lib/profile-settings.mjs';
 import { registerListImportRoutes, importListRows as importAniListRows } from './lib/list-import-routes.mjs';
+import { createPublicShellReader, createPublicDocumentRenderer, publicDocumentRoute } from './lib/public-document.mjs';
+import { createPublicDocumentData } from './lib/public-document-data.mjs';
 import { consumeSourceLink, fetchSourceProfile, revokeSourceLink, sealSourceRevokeToken, openSourceRevokeToken, publicSourceProfile, SourceIntegrationError } from './lib/source-integration.mjs';
 
 const __dirname=path.dirname(fileURLToPath(import.meta.url));
 const PROFILE_MEDIA_DIR=path.resolve(process.env.PROFILE_MEDIA_DIR||path.join(__dirname,'profile-media'));
 const PUBLIC_ORIGIN=/^https:\/\//.test(String(process.env.PUBLIC_ORIGIN||''))?String(process.env.PUBLIC_ORIGIN).replace(/\/+$/,''):'https://aninexus.com.br';
+const publicDocumentData=createPublicDocumentData(process.env.DATABASE_URL||'postgres://aninexus:aninexus@postgres:5432/aninexus');
+const publicDocument=createPublicDocumentRenderer({query:publicDocumentData.query,origin:PUBLIC_ORIGIN,
+  staleGraceDays:Math.max(7,Math.min(21,Number(process.env.NEWS_STALE_GRACE_DAYS||14))),
+  readShell:createPublicShellReader({file:process.env.PUBLIC_SHELL_PATH||path.join(__dirname,'public/index.html'),fallback:path.join(__dirname,'public/index.html')})});
 const trustProxy=['127.0.0.1','::1','10.0.0.0/8','172.16.0.0/12','192.168.0.0/16'];
 const app=Fastify({logger:true,trustProxy,bodyLimit:1_000_000,requestTimeout:15_000,connectionTimeout:10_000,keepAliveTimeout:72_000,genReqId:()=>crypto.randomUUID()});
 app.addContentTypeParser(/^image\/(?:jpeg|png|webp)$/i,{parseAs:'buffer'},(_request,body,done)=>done(null,body));
 const eventLoopDelay=monitorEventLoopDelay({resolution:20});
 let operationalMetricsTimer=null;
 app.addHook('onClose',async()=>{if(operationalMetricsTimer)clearInterval(operationalMetricsTimer);eventLoopDelay.disable()});
+app.addHook('onClose',()=>publicDocumentData.close());
 await app.register(cookie);
 await app.register(cors,{origin:(origin,callback)=>{if(!origin||AUTHORIZED_ORIGINS.includes(origin))return callback(null,true);return callback(null,false)},methods:['GET','HEAD','POST','PUT','PATCH','DELETE','OPTIONS'],allowedHeaders:['accept','authorization','content-type','x-aninexus-navigation-id','x-aninexus-client-release'],exposedHeaders:['retry-after','x-request-id','server-timing'],credentials:false,maxAge:600,strictPreflight:true});
 await app.register(rawBody,{field:'rawBody',global:false,encoding:false,runFirst:true,routes:['/api/webhooks/clerk']});
@@ -70,6 +77,7 @@ app.addHook('onRequest',async(req,reply)=>{
   req.aninexusClientRelease=/^[A-Za-z0-9._-]{1,80}$/.test(clientRelease)?clientRelease:'';
   reply.header('X-Request-Id',req.id);
   if(!validateOrigin(req,reply))return reply;
+  if(['GET','HEAD'].includes(req.method)&&new URL(req.url,PUBLIC_ORIGIN).pathname==='/')return servePublicDocument(req,reply);
 });
 app.addHook('onSend',async(req,reply,payload)=>{
   reply.header('Permissions-Policy','camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=()');
@@ -79,7 +87,7 @@ app.addHook('onSend',async(req,reply,payload)=>{
   const url=String(req.url||'').split('?')[0];
   if(/^\/api\/(?:auth|me|admin|moderation)(?:\/|$)/.test(url)||url==='/api/achievements/feed'||url.endsWith('/comments/spoiler-check'))reply.header('Cache-Control','private, no-store');
   else if(req.method==='GET'&&/^\/api\/(home|catalog|reading|trailers|characters\/ranking|achievements\/catalog|schedule|anime\/\d+|manga\/\d+|impressions\/|feed\/|synopsis\/(?:anime|manga)\/\d+|media\/summaries|studios|dublados|lists|list\/|users\/|news(?:\/|$)|community\/(?:impressions|activity|threads))/.test(url))reply.header('Cache-Control','public, max-age=20, stale-while-revalidate=180, stale-if-error=600');
-  else if(req.method==='GET'&&(url==='/'||reply.getHeader('content-type')?.toString().includes('text/html')))reply.header('Cache-Control','no-cache, max-age=0, must-revalidate');
+  else if(req.method==='GET'&&reply.getHeader('cache-control')!=='private, no-store'&&(url==='/'||reply.getHeader('content-type')?.toString().includes('text/html')))reply.header('Cache-Control','no-cache, max-age=0, must-revalidate');
   if(process.env.PUBLIC_ORIGIN?.startsWith('https://'))reply.header('Strict-Transport-Security','max-age=31536000; includeSubDomains; preload');
   reply.header('Server-Timing',`app;dur=${Math.max(0,performance.now()-req.aninexusStartedAt).toFixed(1)}`);
   return payload;
@@ -897,7 +905,14 @@ app.post('/api/community/topics/:id/posts',rateForUser(10,'5 minutes','topic-pos
 
 app.post('/api/events',{config:{rateLimit:{max:60,timeWindow:'1 minute'}}},async(req,reply)=>{const event=String(req.body?.event||'').slice(0,50),pagePath=String(req.body?.path||'').slice(0,200),mediaId=req.body?.mediaId?safeInt(req.body.mediaId):null;if(!/^(page_view|search|media_open|list_update|favorite|login|register)$/.test(event)||!safePath(pagePath))return reply.code(400).send({error:'INVALID_EVENT'});const user=await currentUser(req).catch(()=>null);enqueueAnalytics({event,userId:user?.id,sessionHash:crypto.createHash('sha256').update(`${req.cookies?.anx_session||''}:${process.env.SESSION_SECRET||''}`).digest('hex').slice(0,32),path:pagePath,mediaId,referrer:String(req.headers.referer||'').slice(0,500),userAgent:String(req.headers['user-agent']||'').slice(0,500),ipHash:crypto.createHash('sha256').update(`${req.ip}:${process.env.SESSION_SECRET||''}`).digest('hex').slice(0,32)});return reply.code(202).send({ok:true})});
 
-app.get('/*',async(req,reply)=>{if(req.url.startsWith('/api/')||req.url.startsWith('/health'))return reply.code(404).send({error:'NOT_FOUND'});return reply.sendFile('index.html')});
+async function servePublicDocument(req,reply){
+  if(!publicDocumentRoute(req.url))return reply.code(404).send({error:'NOT_FOUND'});
+  const document=await publicDocument(req.url);
+  reply.code(document.status).type('text/html; charset=utf-8').header('Cache-Control',document.private?'private, no-store':'no-cache, max-age=0, must-revalidate');
+  if(req.method==='HEAD')return reply.header('Content-Length',Buffer.byteLength(document.html)).send();
+  return reply.send(document.html);
+}
+app.get('/*',async(req,reply)=>{if(/^\/(?:api(?:\/|$)|health)/.test(req.url))return reply.code(404).send({error:'NOT_FOUND'});return servePublicDocument(req,reply)});
 
 let shuttingDown=false;
 const shutdown=async signal=>{if(shuttingDown)return;shuttingDown=true;app.log.info({signal},'shutdown started');const force=setTimeout(()=>process.exit(1),15_000);force.unref();try{await app.close();await flushAnalytics();await Promise.allSettled([redis.quit(),pool.end()]);clearTimeout(force);process.exit(0)}catch(error){app.log.error({err:error},'shutdown failed');process.exit(1)}};

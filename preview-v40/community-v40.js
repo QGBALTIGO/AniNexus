@@ -7,6 +7,7 @@
   const BASE=IS_PAGES?'/AniNexus':'';
   const BUILD='44.24.4';
   let items=[],topics=[],mounted=false,overview=null,overviewState='loading',selectedReaction='Chorei',reactionChosen=false,memberDays=7,loadEpoch=0,overviewEpoch=0,visibleActivity=6,visibleImpressions=3;
+  let feedPromise=null,overviewPromise=null,routeReady=false;
 
   const STATUS={
     PLANNING:{label:'Quero Ver',verb:'quer ver',emoji:'👀'},
@@ -40,7 +41,12 @@
   }
 
   function localActivity(){return window.AniNexusCommunityActivity?.local?.(50)||[]}
-  async function load(){
+  function load(){
+    if(feedPromise)return feedPromise;
+    const pending=loadFeed().finally(()=>{if(feedPromise===pending)feedPromise=null});
+    feedPromise=pending;return pending;
+  }
+  async function loadFeed(){
     const epoch=++loadEpoch;
     const localRows=localActivity(),local=window.AniNexusCommunityActivity?.enrich?await window.AniNexusCommunityActivity.enrich(localRows):localRows;
     let activity=[],impressions=[],communityTopics=[];
@@ -54,7 +60,9 @@
     const missing=enriched.filter(x=>x.media_id&&(!usableTitle(x.title)&&!usableTitle(mediaTitle(x.media))||!x.cover&&!mediaCover(x.media)));
     const [anime,manga]=await Promise.all(['ANIME','MANGA'].map(type=>mediaByIds(missing.filter(x=>(x.media_type==='MANGA'?'MANGA':'ANIME')===type).map(x=>x.media_id),type)));
     if(epoch!==loadEpoch||!owns()||!app.querySelector('.nx40-community'))return;
-    const merged=window.AniNexusCommunityActivity?.merge?.(enriched)||enriched;topics=communityTopics;items=merged.map(x=>{
+    const currentLocal=new Set(localActivity().map(x=>`${x.owner_id}:${x.id}`));
+    const visible=enriched.filter(x=>!x.local||currentLocal.has(`${x.owner_id}:${x.id}`));
+    const merged=window.AniNexusCommunityActivity?.merge?.(visible)||visible;topics=communityTopics;items=merged.map(x=>{
       const fetched=(x.media_type==='MANGA'?manga:anime).get(Number(x.media_id)),m=x.media||fetched||null;
       const id=x.id||`${x.kind}:${x.media_type||'ANIME'}:${x.media_id||'none'}:${x.created_at||''}:${x.username||''}:${x.status||''}`;
       return{...x,id,media:m,title:usableTitle(x.title)||usableTitle(mediaTitle(m))||usableTitle(mediaTitle(fetched)),cover:x.cover||mediaCover(m)||mediaCover(fetched),banner:x.banner||mediaBanner(m),created_at:x.created_at||x.updated_at||new Date().toISOString()}
@@ -92,7 +100,12 @@
   const mediaImage=m=>imageUrl(m.cover)?`<img src="${imageUrl(m.cover)}" alt="" loading="lazy" decoding="async">`:'<span class="nx40-cover-empty" aria-hidden="true"></span>';
   function poster(m,index,ranked=false){return `<article class="nx40-poster-card${ranked?' nx40-ranked':''}"><div class="nx40-poster"><a href="${href(m)}" aria-label="${esc(m.title||'Ver obra')}">${mediaImage(m)}</a>${ranked?`<span class="nx40-place">${index+1}</span>`:''}<div class="nx40-poster-actions"><button type="button" ${m.mediaType==='MANGA'?'data-manga-list':'data-nx-list'}="${Number(m.id)}" aria-label="Adicionar à lista"></button><button type="button" ${m.mediaType==='MANGA'?'data-manga-fav':'data-nx-fav'}="${Number(m.id)}" aria-label="Favoritar"></button></div></div><a class="nx40-poster-title" href="${href(m)}">${esc(m.title||'Título indisponível')}</a>${ranked?`<span class="nx40-place-label">${index+1}º lugar</span>`:''}</article>`}
   function miniMedia(m,index,max=0){return `<a class="nx40-mini-media" href="${href(m)}"><span class="nx40-mini-rank">${index+1}</span>${mediaImage(m)}<div><strong>${esc(m.title||'Título indisponível')}</strong>${max?`<span class="nx40-meter"><i style="width:${Math.min(100,100*Number(m.count)/max)}%"></i></span>`:''}</div><small>${number(m.count)}</small></a>`}
-  async function loadOverview(){
+  function loadOverview(){
+    if(overviewPromise)return overviewPromise;
+    const pending=loadOverviewData().finally(()=>{if(overviewPromise===pending)overviewPromise=null});
+    overviewPromise=pending;return pending;
+  }
+  async function loadOverviewData(){
     const epoch=++overviewEpoch;
     try{
       let data;
@@ -206,12 +219,20 @@
     app.querySelector('[data-nx40-guide]').onclick=e=>{const button=e.currentTarget,expanded=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(expanded));app.querySelector('#nx40GuideLinks').hidden=!expanded};
   }
   async function mount(){
-    if(!owns()){++loadEpoch;++overviewEpoch;mounted=false;document.body.classList.remove('nx40-community-active','nx40-scrolled','nx40-scroll-down');document.documentElement.classList.remove('nx40-community-boot','nx40-community-ready');return}
-    if(!app.querySelector('.nx40-community')){mounted=false;visibleActivity=6;visibleImpressions=3;lastScroll=scrollY;shell();renderOverview();loadOverview()}
-    await load();
+    if(!owns()){++loadEpoch;++overviewEpoch;feedPromise=null;overviewPromise=null;routeReady=false;clearTimeout(refreshTimer);mounted=false;document.body.classList.remove('nx40-community-active','nx40-scrolled','nx40-scroll-down');document.documentElement.classList.remove('nx40-community-boot','nx40-community-ready');return}
+    if(!app.querySelector('.nx40-community')){++loadEpoch;++overviewEpoch;feedPromise=null;overviewPromise=null;routeReady=false;mounted=false;visibleActivity=6;visibleImpressions=3;lastScroll=scrollY;shell();renderOverview()}
+    if(routeReady)return feedPromise;
+    routeReady=true;mounted=true;loadOverview();return load();
   }
   let refreshTimer;
-  const refresh=()=>{if(!owns())return;clearTimeout(refreshTimer);refreshTimer=setTimeout(()=>{load();loadOverview()},350)};
+  const refresh=()=>{
+    if(!owns())return;
+    // Revoke already painted private snapshots before any asynchronous reads.
+    const visible=new Set(localActivity().map(x=>`${x.owner_id}:${x.id}`));
+    const next=items.filter(x=>!x.local||visible.has(`${x.owner_id}:${x.id}`));
+    if(next.length!==items.length){++loadEpoch;feedPromise=null;items=next;render()}
+    clearTimeout(refreshTimer);refreshTimer=setTimeout(()=>{if(owns()){load();loadOverview()}},350);
+  };
   addEventListener('aninexus:community-activity-changed',refresh);
   addEventListener('aninexus:manga-media-state-changed',refresh);
   addEventListener('popstate',mount);addEventListener('aninexus:navigate',mount);addEventListener('aninexus:route-changed',mount);

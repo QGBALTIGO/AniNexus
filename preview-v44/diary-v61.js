@@ -57,13 +57,20 @@
     document.documentElement.classList.remove('nx38-library-boot');
     current?.controller.abort();closeDialog();const state={host:app,controller:new AbortController(),version:0,items:[],start:today().slice(0,7)+'-01',end:today()};current=state;
     document.body.classList.add('nx38-library-active','nx49-library-active');document.title='Meu diário | AniNexus';app.innerHTML='<main class="nx61-diary nx49-shell"><p role="status">Carregando seu diário...</p></main>';
-    try{const user=await window.AniNexusAuth?.getUser?.();if(!active(state))return;if(!user){app.innerHTML='<main class="nx61-diary nx49-shell"><h1>Seu diário começa aqui.</h1><p>Entre para registrar o que assistiu ou leu, com suas notas e datas.</p><a href="/login">Entrar</a></main>';return;}
+    try{const user=await window.AniNexusAuth?.getUser?.();if(!active(state))return;if(!user){app.innerHTML='<main class="nx61-diary nx49-shell"><h1>Seu diário começa aqui.</h1><p>Entre para registrar o que assistiu ou leu, com suas notas e datas.</p><a href="/login">Entrar</a></main>';return;}state.providerOwner=String(user.id);
       app.innerHTML=`<main class="nx61-diary nx49-shell"><header class="nx61-diary-head"><div><a class="nx61-diary-back" href="${pageUrl('/minha-biblioteca')}" aria-label="Voltar à biblioteca"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></a><h1>Meu diário</h1><p>O que você viu, leu e sentiu. Guardado na data certa.</p></div><button type="button" data-diary-new>Novo registro</button></header><form class="nx61-diary-period"><label>De<input type="date" name="start" value="${state.start}" min="1900-01-01" max="${today()}" required></label><label>Até<input type="date" name="end" value="${state.end}" min="1900-01-01" max="${today()}" required></label><button type="submit">Ver período</button><div>${[['week','Esta semana'],['month','Este mês'],['year','Este ano']].map(([key,label])=>`<button type="button" data-period="${key}">${label}</button>`).join('')}</div></form><section data-diary-recap aria-label="Resumo do período"></section><p class="nx61-diary-muted">A retrospectiva considera apenas os registros datados do diário. As notas históricas não mudam quando você altera sua avaliação atual.</p><p data-diary-feedback role="status"></p><section data-diary-entries aria-label="Registros do diário"></section><button type="button" data-diary-more hidden>Carregar mais registros</button></main>`;
       const form=app.querySelector('.nx61-diary-period');form.onsubmit=event=>{event.preventDefault();state.start=form.elements.start.value;state.end=form.elements.end.value;load(state);};app.querySelector('[data-diary-new]').onclick=event=>entryForm(state,null,event.currentTarget);app.querySelector('[data-diary-more]').onclick=()=>load(state,true);
       form.querySelectorAll('[data-period]').forEach(button=>button.onclick=()=>{const end=today();let start=end.slice(0,7)+'-01';if(button.dataset.period==='year')start=end.slice(0,4)+'-01-01';if(button.dataset.period==='week'){const d=new Date(end+'T12:00:00Z');d.setUTCDate(d.getUTCDate()-(d.getUTCDay()+6)%7);start=d.toISOString().slice(0,10);}form.elements.start.value=start;form.elements.end.value=end;form.requestSubmit();});load(state);
     }catch{if(active(state))app.innerHTML='<main class="nx61-diary nx49-shell"><h1>O diário não carregou agora.</h1><p>Tente abrir novamente pela biblioteca.</p><a href="/minha-biblioteca">Voltar à biblioteca</a></main>';}
   }
   addEventListener('popstate',()=>{current?.controller.abort();current=null;closeDialog();});
-  addEventListener('aninexus:account-identity-changed',()=>{current?.controller.abort();current=null;closeDialog();});
+  addEventListener('aninexus:account-identity-changed',event=>{
+    if(!current)return;
+    const next=event.detail?.user;
+    const provider=window.Clerk?.user?.id;
+    if(event.detail?.confirmed===true&&next?.id&&provider&&String(provider)===current.providerOwner&&(!current.owner||current.owner===String(next.id))){current.owner=String(next.id);return;}
+    const host=current.host;current.controller.abort();current=null;closeDialog();
+    if(host.isConnected&&host.querySelector('.nx61-diary'))host.innerHTML='<main class="nx61-diary nx49-shell"><h1>Confirme sua conta para abrir o diário.</h1><p>Os registros foram ocultados enquanto sua identidade é verificada.</p><a href="'+pageUrl('/minha-biblioteca?view=diary')+'">Abrir meu diário novamente</a></main>';
+  });
   window.AniNexusDiary={mount};
 })();

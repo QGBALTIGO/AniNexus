@@ -140,10 +140,10 @@
     }else button.innerHTML=markup;
   }
 
-  function syncStatus(id){
+  function syncStatus(id,buttons,currentState){
     const n=validId(id);if(!n)return;
-    const state=get(n),has=!!state.status,meta=STATUS[state.status],label=meta?.label||'Adicionar à lista';
-    document.querySelectorAll(statusSelector(n)).forEach(button=>{
+    const state=currentState||get(n),has=!!state.status,meta=STATUS[state.status],label=meta?.label||'Adicionar à lista';
+    (buttons||document.querySelectorAll(statusSelector(n))).forEach(button=>{
       button.classList.toggle('active',has);
       for(const key of Object.keys(STATUS))button.classList.toggle(`status-${key.toLowerCase()}`,state.status===key);
       button.dataset.nxUnifiedStatus=state.status||'';
@@ -154,10 +154,10 @@
     });
   }
 
-  function syncFav(id){
+  function syncFav(id,buttons,currentFavorite){
     const n=validId(id);if(!n)return;
-    const on=isFavorite(n);
-    document.querySelectorAll(favSelector(n)).forEach(button=>{
+    const on=typeof currentFavorite==='boolean'?currentFavorite:isFavorite(n);
+    (buttons||document.querySelectorAll(favSelector(n))).forEach(button=>{
       button.classList.toggle('active',on);
       button.dataset.nxFavorite=on?'1':'0';
       button.setAttribute('aria-pressed',String(on));
@@ -170,11 +170,17 @@
   function syncUI(id){
     const n=validId(id);
     if(n){syncStatus(n);syncFav(n);return}
-    const ids=new Set();
+    const statuses=new Map(),favorites=new Map();
     document.querySelectorAll(selector).forEach(el=>{
-      const a=idStatus(el),b=idFav(el);if(a)ids.add(a);if(b)ids.add(b);
+      const a=idStatus(el),b=idFav(el);
+      if(a){if(!statuses.has(a))statuses.set(a,[]);statuses.get(a).push(el)}
+      if(b){if(!favorites.has(b))favorites.set(b,[]);favorites.get(b).push(el)}
     });
-    ids.forEach(x=>{syncStatus(x);syncFav(x)});
+    // A full refresh shares one storage snapshot and one DOM collection. The
+    // targeted path above still refreshes every occurrence after a user action.
+    const current=all(),legacy=read(LEGACY_KEY,{}),savedStatuses=read(LEGACY_STATUS,{}),listed=setOf(LIST_KEY),savedFavorites=setOf(FAV_KEY);
+    statuses.forEach((buttons,id)=>syncStatus(id,buttons,normalize(current[id]||legacy?.[id]||{status:savedStatuses?.[id]||(listed.has(id)?'PLANNING':'')})));
+    favorites.forEach((buttons,id)=>syncFav(id,buttons,savedFavorites.has(id)));
   }
 
   function seedFromDom(id){
