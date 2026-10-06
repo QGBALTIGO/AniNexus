@@ -30,28 +30,50 @@ jobs:
     env:
       DEPLOY_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
     steps:
+      - name: Conferir SHA atual antes de preparar publicação
+        id: source_guard
+        uses: actions/github-script@v8
+        with:
+          script: |
+            if (context.eventName === 'workflow_dispatch') {
+              core.setOutput('allowed', 'true');
+              core.info('Publicação manual: preservando o SHA selecionado.');
+              return;
+            }
+            core.setOutput('allowed', 'false');
+            const { data } = await github.rest.git.getRef({ ...context.repo, ref: 'heads/main' });
+            const currentSha = data.object?.sha;
+            if (!/^[0-9a-f]{40}$/.test(currentSha ?? '')) throw new Error('Invalid main SHA returned by GitHub API');
+            const allowed = currentSha === process.env.DEPLOY_SHA;
+            core.setOutput('allowed', String(allowed));
+            if (!allowed) core.notice(`Publicação obsoleta ignorada: ${process.env.DEPLOY_SHA}; main atual: ${currentSha}.`);
+
       - uses: actions/checkout@v6
+        if: steps.source_guard.outputs.allowed == 'true'
         with:
           ref: ${{ env.DEPLOY_SHA }}
 
       - uses: pnpm/action-setup@v4
+        if: steps.source_guard.outputs.allowed == 'true'
         with:
           version: 11.19.0
 
       - uses: actions/setup-node@v4
+        if: steps.source_guard.outputs.allowed == 'true'
         with:
           node-version: 22
           cache: pnpm
 
       - name: Instalar dependências
+        if: steps.source_guard.outputs.allowed == 'true'
         run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Validar código e contratos
-        if: github.event_name != 'workflow_dispatch' || inputs.frontend_only != true
+        if: steps.source_guard.outputs.allowed == 'true' && (github.event_name != 'workflow_dispatch' || inputs.frontend_only != true)
         run: pnpm run check
 
       - name: Validar frontend isoladamente
-        if: github.event_name == 'workflow_dispatch' && inputs.frontend_only == true
+        if: steps.source_guard.outputs.allowed == 'true' && github.event_name == 'workflow_dispatch' && inputs.frontend_only == true
         run: |
           pnpm run check:layout
           node scripts/validate-source.mjs
@@ -59,6 +81,7 @@ jobs:
           node tests/news-system.mjs
 
       - name: Montar e validar publicação estática
+        if: steps.source_guard.outputs.allowed == 'true'
         env:
           PUBLIC_SITE_ORIGIN: https://aninexus.com.br
           PUBLIC_BASE_PATH: /
@@ -71,6 +94,7 @@ jobs:
 
       - name: Criar release versionada
         id: release
+        if: steps.source_guard.outputs.allowed == 'true'
         shell: bash
         run: |
           RELEASE_ID="$(date -u +%Y%m%dT%H%M%SZ)-${DEPLOY_SHA:0:12}"
@@ -86,7 +110,27 @@ jobs:
           echo "api_archive=aninexus-api-${RELEASE_ID}.tar.gz" >> "$GITHUB_OUTPUT"
           echo "api_sha256=${API_ARCHIVE_SHA256}" >> "$GITHUB_OUTPUT"
 
+      - name: Conferir SHA atual antes de enviar pacotes
+        id: upload_guard
+        if: steps.source_guard.outputs.allowed == 'true'
+        uses: actions/github-script@v8
+        with:
+          script: |
+            if (context.eventName === 'workflow_dispatch') {
+              core.setOutput('allowed', 'true');
+              core.info('Publicação manual: preservando o SHA selecionado.');
+              return;
+            }
+            core.setOutput('allowed', 'false');
+            const { data } = await github.rest.git.getRef({ ...context.repo, ref: 'heads/main' });
+            const currentSha = data.object?.sha;
+            if (!/^[0-9a-f]{40}$/.test(currentSha ?? '')) throw new Error('Invalid main SHA returned by GitHub API');
+            const allowed = currentSha === process.env.DEPLOY_SHA;
+            core.setOutput('allowed', String(allowed));
+            if (!allowed) core.notice(`Publicação obsoleta ignorada: ${process.env.DEPLOY_SHA}; main atual: ${currentSha}.`);
+
       - name: Conferir configuração SSH
+        if: steps.upload_guard.outputs.allowed == 'true'
         shell: bash
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
@@ -102,6 +146,7 @@ jobs:
           [ "$missing" -eq 0 ]
 
       - name: Preparar conexão SSH com host fixado
+        if: steps.upload_guard.outputs.allowed == 'true'
         shell: bash
         env:
           VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
@@ -114,6 +159,7 @@ jobs:
           chmod 600 "$HOME/.ssh/known_hosts"
 
       - name: Enviar pacote para a VPS
+        if: steps.upload_guard.outputs.allowed == 'true'
         shell: bash
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
@@ -148,8 +194,29 @@ jobs:
               "$API_ARCHIVE" "${VPS_USER}@${VPS_HOST}:/opt/aninexus/incoming/${RELEASE_ID}.tar.gz"
           fi
 
+      - name: Conferir SHA atual antes de iniciar ativação
+        id: activation_guard
+        if: steps.upload_guard.outputs.allowed == 'true'
+        uses: actions/github-script@v8
+        with:
+          script: |
+            if (context.eventName === 'workflow_dispatch') {
+              core.setOutput('allowed', 'true');
+              core.info('Publicação manual: preservando o SHA selecionado.');
+              return;
+            }
+            core.setOutput('allowed', 'false');
+            const { data } = await github.rest.git.getRef({ ...context.repo, ref: 'heads/main' });
+            const currentSha = data.object?.sha;
+            if (!/^[0-9a-f]{40}$/.test(currentSha ?? '')) throw new Error('Invalid main SHA returned by GitHub API');
+            const allowed = currentSha === process.env.DEPLOY_SHA;
+            core.setOutput('allowed', String(allowed));
+            if (!allowed) core.notice(`Publicação obsoleta ignorada: ${process.env.DEPLOY_SHA}; main atual: ${currentSha}.`);
+
+      # Once activation starts, finish this API/frontend pair even if main advances.
+      # The API lookup is a point-in-time check, not a lock against later pushes.
       - name: Ativar API com rollback automático
-        if: github.event_name != 'workflow_dispatch' || inputs.frontend_only != true
+        if: steps.activation_guard.outputs.allowed == 'true' && (github.event_name != 'workflow_dispatch' || inputs.frontend_only != true)
         shell: bash
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
@@ -164,6 +231,7 @@ jobs:
             < ops/deploy-api-vps.sh
 
       - name: Ativar release com rollback automático
+        if: steps.activation_guard.outputs.allowed == 'true'
         shell: bash
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
@@ -178,6 +246,7 @@ jobs:
             < ops/deploy-vps.sh
 
       - name: Atualizar Nginx com validação e rollback
+        if: steps.activation_guard.outputs.allowed == 'true'
         shell: bash
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
@@ -206,6 +275,7 @@ jobs:
           REMOTE
 
       - name: Health check externo
+        if: steps.activation_guard.outputs.allowed == 'true'
         shell: bash
         env:
           VPS_HEALTH_ORIGIN: ${{ vars.VPS_HEALTH_ORIGIN || 'https://aninexus.com.br' }}
@@ -228,5 +298,5 @@ jobs:
           exit 1
 
       - name: Remover chave temporária do runner
-        if: always()
+        if: always() && steps.upload_guard.outputs.allowed == 'true'
         run: rm -f "$HOME/.ssh/aninexus"
