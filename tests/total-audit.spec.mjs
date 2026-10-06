@@ -393,8 +393,8 @@ test('search can retry a provider error without deleting the query', async ({ pa
 });
 
 for(const [alias,target] of [
-  ['/animes','/animes/catalogo'],['/catalogo','/animes/catalogo'],['/programacao','/animes/programacao'],
-  ['/temporadas','/animes/temporadas'],['/news','/noticias'],['/community','/comunidade'],['/manga','/mangas'],
+  ['/animes','/animes/catalogo?secao=todos'],['/catalogo','/animes/catalogo?secao=todos'],['/programacao','/animes/programacao'],
+  ['/temporadas','/animes/temporadas'],['/news','/noticias'],['/community','/comunidade'],['/manga','/mangas?secao=todos'],
   ['/entrar','/login'],['/cadastro','/criar-conta'],['/conta','/minha-conta'],
   ['/light-novels','/mangas?secao=light-novels'],['/descubra','/animes-em-alta'],
 ])test(`direct alias ${alias} resolves before rendering instead of showing an old page or 404`,async({page})=>{
