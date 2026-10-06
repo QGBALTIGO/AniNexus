@@ -46,7 +46,92 @@
       return{response,body};
     },{...options,signal:options.signal||init.signal});
   }
-  window.AniNexusRuntime=Object.freeze({withDeadline,jsonRequest,abortableDelay,deadlineError,navigationId,renewNavigationId,correlationHeaders});
+  const focusScopes=[];
+  let focusObserver=null,redirectingFocus=false;
+  const focusVisible=node=>!!(node?.isConnected&&!node.closest('[hidden],[inert],[aria-hidden="true"]')&&node.getClientRects().length&&!['hidden','collapse'].includes(getComputedStyle(node).visibility));
+  const focusEnabled=node=>focusVisible(node)&&!node.matches(':disabled')&&node.getAttribute('type')!=='hidden';
+  const focusControls=root=>[...root.querySelectorAll('a[href],area[href],button,input,select,textarea,iframe,object,embed,[contenteditable="true"],[tabindex]')]
+    .filter(node=>focusEnabled(node)&&node.tabIndex>=0)
+    .sort((a,b)=>(a.tabIndex>0?a.tabIndex:Infinity)-(b.tabIndex>0?b.tabIndex:Infinity));
+  function focusTarget(scope,backwards=false){
+    const requested=typeof scope.initialFocus==='function'?scope.initialFocus():scope.initialFocus;
+    const controls=focusControls(scope.root);
+    if(backwards)return controls.at(-1)||scope.root;
+    return [scope.lastFocus,requested,...controls].find(node=>scope.root.contains(node)&&focusEnabled(node))||scope.root;
+  }
+  function moveFocus(scope,target=focusTarget(scope)){
+    if(!target||redirectingFocus)return;
+    if(target===scope.root&&!target.hasAttribute('tabindex')){target.tabIndex=-1;scope.addedTabIndex=true;}
+    redirectingFocus=true;
+    try{target.focus({preventScroll:true});}finally{redirectingFocus=false;}
+    scope.lastFocus=document.activeElement;
+  }
+  function currentFocusScope(){
+    for(const scope of [...focusScopes]){
+      const active=scope.isActive();
+      if(!active||!focusVisible(scope.root))scope.release({restore:active,reason:'inactive'});
+      if(scope.foreign&&!focusVisible(scope.foreign))scope.foreign=null;
+    }
+    return focusScopes.at(-1);
+  }
+  function foreignFocus(scope,target){
+    if(scope.foreign&&focusVisible(scope.foreign))return true;
+    if(scope.root.contains(target))return false;
+    const modal=target?.closest?.('[aria-modal="true"],dialog[open]');
+    if(modal&&!scope.root.contains(modal)&&!modal.contains(scope.root)&&focusVisible(modal)){scope.foreign=modal;return true;}
+    return false;
+  }
+  function onContainedFocus(event){
+    if(redirectingFocus)return;
+    const scope=currentFocusScope();if(!scope||foreignFocus(scope,event.target))return;
+    if(scope.root.contains(event.target)){scope.lastFocus=event.target;return;}
+    moveFocus(scope);
+  }
+  function onContainedKey(event){
+    const scope=currentFocusScope();if(!scope||foreignFocus(scope,event.target))return;
+    if(event.key==='Escape'&&scope.onEscape){event.preventDefault();event.stopPropagation();scope.onEscape();return;}
+    if(event.key!=='Tab'||event.defaultPrevented)return;
+    const controls=focusControls(scope.root),index=controls.indexOf(document.activeElement);
+    if(!controls.length||index<0||(!event.shiftKey&&index===controls.length-1)||(event.shiftKey&&index===0)){
+      event.preventDefault();moveFocus(scope,event.shiftKey?controls.at(-1)||scope.root:controls[0]||scope.root);
+    }
+  }
+  function reconcileFocus(){
+    const scope=currentFocusScope();
+    if(scope&&!foreignFocus(scope,document.activeElement)&&(!scope.root.contains(document.activeElement)||!focusEnabled(document.activeElement)))moveFocus(scope);
+  }
+  function containFocus(root,{owner=root,initialFocus,returnFocus=document.activeElement,onEscape,onRelease,isActive=()=>true}={}){
+    for(const scope of [...focusScopes])if(scope.owner===owner)scope.release({restore:false,reason:'superseded'});
+    const scope={root,owner,initialFocus,returnFocus,onEscape,isActive,lastFocus:null,foreign:null,addedTabIndex:false,released:false};
+    scope.release=({restore=true,reason='closed'}={})=>{
+      if(scope.released)return;scope.released=true;
+      const top=focusScopes.at(-1)===scope;
+      focusScopes.splice(focusScopes.indexOf(scope),1);
+      if(scope.addedTabIndex&&root.getAttribute('tabindex')==='-1')root.removeAttribute('tabindex');
+      if(!focusScopes.length){
+        document.removeEventListener('keydown',onContainedKey,true);document.removeEventListener('focusin',onContainedFocus,true);
+        for(const name of ['popstate','aninexus:route-changed','resize'])removeEventListener(name,reconcileFocus);
+        focusObserver?.disconnect();focusObserver=null;
+      }
+      onRelease?.(reason);
+      if(restore&&top){
+        const next=focusScopes.at(-1);
+        if(focusEnabled(returnFocus)&&(!next||next.root.contains(returnFocus)))returnFocus.focus({preventScroll:true});
+        else if(next)moveFocus(next);
+      }
+    };
+    if(!focusScopes.length){
+      document.addEventListener('keydown',onContainedKey,true);document.addEventListener('focusin',onContainedFocus,true);
+      for(const name of ['popstate','aninexus:route-changed','resize'])addEventListener(name,reconcileFocus);
+      focusObserver=new MutationObserver(reconcileFocus);
+      focusObserver.observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:['hidden','inert','aria-hidden','style','class','disabled','tabindex']});
+    }
+    focusScopes.push(scope);
+    if(!isActive()||!focusVisible(root))scope.release({restore:false,reason:'inactive'});
+    else moveFocus(scope);
+    return scope.release;
+  }
+  window.AniNexusRuntime=Object.freeze({withDeadline,jsonRequest,abortableDelay,deadlineError,navigationId,renewNavigationId,correlationHeaders,containFocus});
   // One semantic icon vocabulary for both notification surfaces. Never insert
   // server-provided markup: the returned SVG is selected from this fixed map.
   const uiPaths={

@@ -305,7 +305,9 @@
     }
   }
 
+  let closeDecision = null;
   function decisionDialog(options) {
+    closeDecision?.(null);
     const title = options.title, text = options.text, confirm = options.confirm || 'Confirmar';
     const returnFocus = document.activeElement;
     return new Promise(resolve => {
@@ -317,12 +319,18 @@
       document.body.append(layer);
       document.body.classList.add('nx54-dialog-open');
       const form = layer.querySelector('form');
+      let settled = false, releaseFocus = null;
       const close = value => {
+        if (settled) return;
+        settled = true;
+        if (closeDecision === close) closeDecision = null;
         document.body.classList.remove('nx54-dialog-open');
         layer.remove();
-        if (returnFocus instanceof HTMLElement && returnFocus.isConnected) returnFocus.focus();
+        if (releaseFocus) releaseFocus();
+        else if (returnFocus instanceof HTMLElement && returnFocus.isConnected) returnFocus.focus();
         resolve(value);
       };
+      closeDecision = close;
       layer.querySelectorAll('[data-dialog-cancel]').forEach(button => button.onclick = () => close(null));
       layer.addEventListener('keydown', event => { if (event.key === 'Escape') close(null); });
       form.onsubmit = event => {
@@ -334,7 +342,8 @@
         }
         close({ reason, role: form.elements.role?.value, hours: Number(form.elements.duration?.value || 0) });
       };
-      form.elements.reason.focus();
+      releaseFocus = window.AniNexusRuntime?.containFocus?.(form, {owner: 'admin-decision', initialFocus: form.elements.reason, returnFocus, onEscape: () => close(null), onRelease: () => close(null), isActive: () => route() === '/admin'});
+      if (!releaseFocus) form.elements.reason.focus();
     });
   }
 
