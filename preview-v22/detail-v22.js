@@ -63,8 +63,10 @@
   const cover=m=>m?.coverImage?.extraLarge||m?.coverImage?.large||m?.jikan?.images?.jpg?.large_image_url||m?.jikan?.images?.jpg?.image_url||'';
   const banner=m=>m?.bannerImage||'';
   const compact=n=>n?new Intl.NumberFormat('pt-BR',{notation:'compact',maximumFractionDigits:1}).format(Number(n)): '—';
-  const score=m=>m?.metricsSource==='aninexus'&&m?.averageScore?String((m.averageScore/10).toFixed(1)).replace('.0',''):'—';
-  const scoreFixed=m=>m?.metricsSource==='aninexus'&&m?.averageScore?(Number(m.averageScore)/10).toFixed(2):'—';
+  const ratingValue=m=>m?.metricsSource==='aninexus'&&Number(m?.ratingCount)>0&&m?.averageScore!==null&&m?.averageScore!==undefined&&Number.isFinite(Number(m.averageScore))&&Number(m.averageScore)>=0&&Number(m.averageScore)<=100?Number(m.averageScore)/10:null;
+  const score=m=>ratingValue(m)!==null?String(ratingValue(m).toFixed(1)).replace('.0',''):'—';
+  const scoreFixed=m=>ratingValue(m)!==null?ratingValue(m).toFixed(2):'—';
+  const ratingContext=m=>m?.metricsSource!=='aninexus'?'Métricas da comunidade AniNexus ainda indisponíveis para esta obra.':Number(m.ratingCount)>0?`${Number(m.ratingCount)} ${Number(m.ratingCount)===1?'avaliação':'avaliações'} no AniNexus.${Number(m.ratingCount)<5?' Amostra pequena; a média ainda pode variar bastante.':''}`:'Nenhuma avaliação no AniNexus ainda.';
   const tagPT=value=>TAG_PT[String(value||'').trim()]||'';
 
   function routePath(){
@@ -125,7 +127,7 @@
     const q=`query($id:Int){Media(id:$id,type:${type}){${DETAIL_FIELDS} characters(perPage:18,sort:[ROLE,RELEVANCE]){edges{role voiceActors(language:JAPANESE,sort:[RELEVANCE]){id name{full} image{large}} node{id name{full native} image{large medium}}}} staff(perPage:16,sort:[RELEVANCE]){edges{role node{id name{full native} image{large medium}}}} relations{edges{relationType node{${DETAIL_FIELDS}}}} recommendations(perPage:12,sort:RATING_DESC){nodes{rating mediaRecommendation{${DETAIL_FIELDS}}}}}}}`;
     const d=await gql(q,{id:Number(id)},signal);if(!d?.Media||Number(d.Media.id)!==Number(id)||(d.Media.type&&d.Media.type!==type))throw new Error(type==='MANGA'?'Mangá não encontrado':'Anime não encontrado');
     const ratingCount=(d.Media.stats?.scoreDistribution||[]).reduce((sum,item)=>sum+(Number(item?.amount)||0),0),listCount=(d.Media.stats?.statusDistribution||[]).reduce((sum,item)=>sum+(Number(item?.amount)||0),0);
-    Object.assign(d.Media,{mediaType:type,metricsSource:'aninexus',ratingCount,listCount});
+    Object.assign(d.Media,{mediaType:type,metricsSource:'anilist',ratingCount,listCount});
     return d.Media;
   }
 
@@ -137,7 +139,7 @@
       id:Number(m.id),idMal:m.idMal||null,mediaType:String(m.mediaType||m.type||'ANIME').toUpperCase(),siteUrl:m.siteUrl||`https://anilist.co/${String(m.mediaType||m.type).toUpperCase()==='MANGA'?'manga':'anime'}/${Number(m.id)}`,
       title:{english:m.title||m.titleRomaji||'',romaji:m.titleRomaji||m.title||'',native:m.titleNative||'',userPreferred:m.title||m.titleRomaji||''},
       synonyms:m.synonyms||[],coverImage:{extraLarge:m.cover||'',large:m.cover||'',color:m.coverColor||''},bannerImage:m.banner||'',description:m.description||'',
-      genres:m.genres||[],tags:tagDetails,averageScore:internal?(Number(m.score||0)*10||null):null,meanScore:internal?(Number(m.meanScore||0)*10||null):null,popularity:internal?Number(m.popularity||0):0,favourites:internal?Number(m.favourites||0):0,ratingCount:internal?Number(m.ratingCount||0):0,listCount:internal?Number(m.listCount||0):0,metricsSource:internal?'aninexus':'',
+      genres:m.genres||[],tags:tagDetails,averageScore:internal&&Number(m.ratingCount)>0&&Number.isFinite(Number(m.score))?Number(m.score)*10:null,meanScore:internal?(Number(m.meanScore||0)*10||null):null,popularity:internal?Number(m.popularity||0):0,favourites:internal?Number(m.favourites||0):0,ratingCount:internal?Number(m.ratingCount||0):0,listCount:internal?Number(m.listCount||0):0,metricsSource:internal?'aninexus':'',
       episodes:m.episodes||null,chapters:m.chapters||null,volumes:m.volumes||null,duration:m.duration||null,format:m.format||null,status:m.status||null,season:m.season||null,seasonYear:m.seasonYear||null,
       countryOfOrigin:m.country||null,source:m.source||null,startDate:m.startDate||null,endDate:m.endDate||null,
       studios:{nodes:m.studios||[]},nextAiringEpisode:m.nextAiringEpisode||null,trailer:m.trailer||null,
@@ -247,7 +249,20 @@
   }
   function fallbackSynopsis(){return 'A sinopse desta obra ainda não está disponível em português. Os demais dados disponíveis podem ser consultados abaixo.'}
 
-  function trailerId(m){if(m?.trailer?.id&&String(m.trailer.site||'').toLowerCase()==='youtube')return String(m.trailer.id);const u=String(m?.jikan?.trailer?.youtube_id||'');return u||''}
+  function youtubeTrailerId(value){
+    const raw=String(value||'').trim();if(/^[A-Za-z0-9_-]{11}$/.test(raw))return raw;
+    if(/[\x00-\x20\x7f]/.test(raw))return '';
+    try{const url=new URL(raw);if(url.protocol!=='https:'||url.username||url.password||url.port)return '';
+      const host=url.hostname.toLowerCase();let id='';
+      if(host==='youtu.be')id=url.pathname.slice(1);
+      else if(['youtube.com','www.youtube.com','m.youtube.com','youtube-nocookie.com','www.youtube-nocookie.com'].includes(host)){
+        if(url.pathname==='/watch')id=url.searchParams.get('v')||'';
+        else id=url.pathname.match(/^\/(?:embed|shorts)\/([^/]+)$/)?.[1]||'';
+      }
+      return /^[A-Za-z0-9_-]{11}$/.test(id)?id:'';
+    }catch{return ''}
+  }
+  function trailerId(m){const primary=String(m?.trailer?.site||'').toLowerCase()==='youtube'?youtubeTrailerId(m.trailer.id):'';return primary||youtubeTrailerId(m?.jikan?.trailer?.youtube_id)||youtubeTrailerId(m?.jikan?.trailer?.url)}
   function uniqueLinks(m){
     const out=[];const seen=new Set();
     for(const x of m.externalLinks||[]){if(String(x.type||'').toUpperCase()!=='STREAMING'||!x.url)continue;const k=String(x.site||x.url).toLowerCase();if(seen.has(k))continue;seen.add(k);out.push({site:x.site||'Streaming',url:x.url,icon:x.icon||''})}
@@ -369,7 +384,7 @@
               ${meta.length?`<div class="nx22-meta">${meta.map(value=>`<span>${esc(value)}</span>`).join('')}</div>`:''}
               <div class="nx22-chips"><span class="nx22-status">${esc(STATUS[m.status]||(reading?'Mangá':'Anime'))}</span>${(m.genres||[]).slice(0,5).map(g=>`<a class="genre" href="${catalogPath}" data-nx22-genre="${esc(g)}">${esc(GENRE[g]||g)}</a>`).join('')}${heroTags.map(tag=>`<a href="${catalogPath}" data-nx22-tag="${esc(tag.value)}">${esc(tag.label)}</a>`).join('')}</div>
               <div class="nx22-actions detail-actions"><button type="button" class="nx22-fav" ${favAttr}="${m.id}" aria-label="Favoritar">${SVG.heart}</button><button type="button" class="nx22-list" ${listAttr}="${m.id}" aria-label="Adicionar à lista">${SVG.plus}<span>${current.status?(stateApi?.statuses?.[current.status]?.label||'Meu status'):'Adicionar à lista'}</span></button><button type="button" class="nx22-share" data-nx22-share aria-label="Compartilhar">${SVG.share}<span>Compartilhar</span></button></div>
-              <div class="nx22-community-summary"><div class="nx22-stats"><div class="nx22-average-stat"><div class="nx22-average-value"><strong>${scoreFixed(m)}</strong><i class="nx22-average-stars" aria-hidden="true">${averageStars(internal?Number(m.averageScore||0)/10:0)}</i></div><span>NOTA MÉDIA</span></div><div><strong>${compact(popularity)}</strong><span>POPULARIDADE</span></div><div><strong>${compact(listCount)}</strong><span>MEMBROS</span></div></div></div>
+              <div class="nx22-community-summary"><div class="nx22-stats"><div class="nx22-average-stat"><div class="nx22-average-value"><strong>${scoreFixed(m)}</strong><i class="nx22-average-stars" aria-hidden="true">${averageStars(internal?Number(m.averageScore||0)/10:0)}</i></div><span>NOTA MÉDIA</span></div><div><strong>${compact(popularity)}</strong><span>POPULARIDADE</span></div><div><strong>${compact(listCount)}</strong><span>MEMBROS</span></div></div><p class="nx22-metric-context" data-nx22-rating-context>${esc(ratingContext(m))}</p></div>
             </div>
           </div>
         </div>

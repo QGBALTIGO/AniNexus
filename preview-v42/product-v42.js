@@ -58,10 +58,12 @@
     const stats=document.querySelector('.nx22-stats');
     if(stats&&!stats.dataset.community){
       stats.dataset.community='loading';
+      const requestedRoute=route();
       fetch(`/api/${match[1]}/${Number(match[2])}/rating`,{headers:{accept:'application/json'}}).then(response=>response.ok?response.json():null).then(data=>{
-        const cell=stats.firstElementChild;if(!cell||!data?.votes)return;
+        const cell=stats.firstElementChild;if(!stats.isConnected||route()!==requestedRoute||!cell||!Number.isSafeInteger(Number(data?.votes))||Number(data.votes)<=0)return;
         const score=Number(data.score);if(!Number.isFinite(score))return;
         cell.querySelector('strong').textContent=score.toFixed(2);
+        const context=stats.parentElement?.querySelector('[data-nx22-rating-context]');if(context)context.textContent=`${data.votes} ${Number(data.votes)===1?'avaliação':'avaliações'} no AniNexus.${Number(data.votes)<5?' Amostra pequena; a média ainda pode variar bastante.':''}`;
         cell.querySelectorAll('.nx22-average-star').forEach((star,index)=>star.style.setProperty('--nx22-star-fill',`${Math.max(0,Math.min(100,(score-index*2)*50))}%`));
       }).catch(()=>{}).finally(()=>stats.dataset.community='ready');
     }
