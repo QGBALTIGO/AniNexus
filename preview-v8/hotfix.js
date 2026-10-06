@@ -15,6 +15,7 @@
   cleanupYears();
 
   document.addEventListener('click',e=>{
+    if(e.target.closest('a[data-native-media-link]')&&(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey))return;
     if(e.target.closest('[data-nx-menu="year"],[data-v12-menu="year"]'))setTimeout(()=>cleanupYears(document.querySelector('.nx-popover-layer')||document),20);
     const generic=e.target.closest('[data-open]');
     if(generic&&!e.target.closest('[data-list],[data-fav]')){

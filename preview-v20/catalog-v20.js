@@ -359,6 +359,11 @@
     return `<div class="nx21-filter-layer" role="presentation"><button type="button" class="nx21-filter-backdrop" data-nx21-filter-close aria-label="Fechar filtros"></button><section class="nx21-filter-dialog" role="dialog" aria-modal="true" aria-labelledby="nx21FilterTitle" tabindex="-1"><header><h2 id="nx21FilterTitle">Filtros</h2><button type="button" class="nx21-filter-close" data-nx21-filter-close aria-label="Fechar filtros">${ICON.close}</button></header><div class="nx21-filter-scroll"><fieldset><legend>Formato</legend><div class="nx21-filter-choices">${choiceButtons('format', formats)}</div></fieldset><fieldset><legend>Status</legend><div class="nx21-filter-choices">${choiceButtons('status', statuses)}</div></fieldset>${season}<div class="nx21-filter-selects"><label><span>Ano</span><select id="nx21Year">${selectOptions(years().map(year => [year, year]), state.draft.year, 'Todos os anos')}</select></label><label><span>Gênero</span><select id="nx21Genre">${selectOptions(GENRES, state.draft.genre, 'Todos os gêneros')}</select></label><label><span>Tag</span><select id="nx21Tag">${selectOptions(TAGS, state.draft.tag, 'Todas as tags')}</select></label></div><fieldset><legend>Ordenar por</legend><div class="nx21-filter-choices nx21-sort-choices">${choiceButtons('sort', SORTS)}</div></fieldset><fieldset><legend>Direção</legend><div class="nx21-direction"><button type="button" data-nx21-direction="ASC" aria-pressed="${state.draft.direction === 'ASC'}" title="Ordem crescente">${ICON.asc}<span>Crescente</span></button><button type="button" data-nx21-direction="DESC" aria-pressed="${state.draft.direction === 'DESC'}" title="Ordem decrescente">${ICON.desc}<span>Decrescente</span></button></div></fieldset></div><footer><button type="button" class="nx21-clear-filters" data-nx21-filter-clear${changed ? '' : ' disabled'}>Limpar</button><button type="button" class="nx21-apply-filters" data-nx21-filter-apply>Aplicar${activeFilterCount(state.draft) ? ` <b>${activeFilterCount(state.draft)}</b>` : ''}</button></footer></section></div>`;
   }
 
+  function mediaHref(media) {
+    const path = `/${currentCatalog().mediaType === 'MANGA' ? 'manga' : 'anime'}/${slug(titleOf(media))}-${media.id}`;
+    return IS_PAGES ? `${BASE}/?build=${BUILD}&p=${encodeURIComponent(path)}` : path;
+  }
+
   function cardMarkup(media, index) {
     const title = titleOf(media);
     const score = scoreOf(media);
@@ -370,7 +375,7 @@
     const favoriteAction = reading ? `data-manga-fav="${media.id}" data-nx-action-kind="compact"` : `data-fav="${media.id}"`;
     const listLabel = reading ? `Adicionar ${esc(title)} à lista de leitura` : `Adicionar ${esc(title)} à lista`;
     state.items.set(Number(media.id), media);
-    return `<article class="nx21-card nx21-reveal${rankMode ? ' nx21-ranked' : ''}" data-nx21-open="${media.id}" data-nx-media="${media.id}" ${openAttributes} tabindex="0" aria-label="Abrir ${esc(title)}"><div class="nx21-poster"><img src="${esc(imageOf(media))}" loading="lazy" decoding="async" alt="${esc(title)}"><div class="nx21-shade"></div>${score && !rankMode ? `<span class="nx21-score">${ICON.star}<b>${score}</b></span>` : ''}${rankMode ? `<span class="nx21-rank" aria-hidden="true">${rank}</span>` : ''}<div class="nx21-actions"><button type="button" ${listAction} aria-label="${listLabel}">${ICON.plus}</button><button type="button" ${favoriteAction} aria-label="Favoritar ${esc(title)}">${ICON.heart}</button></div></div><h3>${esc(title)}</h3></article>`;
+    return `<article class="nx21-card nx21-reveal${rankMode ? ' nx21-ranked' : ''}" data-nx21-open="${media.id}" data-nx-media="${media.id}" ${openAttributes}><a class="nx21-media-link" data-native-media-link href="${esc(mediaHref(media))}" aria-label="Abrir ${esc(title)}"></a><div class="nx21-poster"><img src="${esc(imageOf(media))}" loading="lazy" decoding="async" alt="${esc(title)}"><div class="nx21-shade"></div>${score && !rankMode ? `<span class="nx21-score">${ICON.star}<b>${score}</b></span>` : ''}${rankMode ? `<span class="nx21-rank" aria-hidden="true">${rank}</span>` : ''}<div class="nx21-actions"><button type="button" ${listAction} aria-label="${listLabel}">${ICON.plus}</button><button type="button" ${favoriteAction} aria-label="Favoritar ${esc(title)}">${ICON.heart}</button></div></div><h3>${esc(title)}</h3></article>`;
   }
 
   function paginationMarkup(info) {
@@ -825,6 +830,7 @@
     }
     if (event.target.closest('[data-nx21-retry]')) { load(); return; }
     if (event.target.closest('[data-list],[data-fav],[data-manga-list],[data-manga-fav]')) return;
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.target.closest('a[href]')) return;
     const card = event.target.closest('[data-nx21-open]');
     if (card) openMedia(card.dataset.nx21Open);
   }, true);
@@ -871,7 +877,7 @@
     }
     if (event.key !== 'Enter' && event.key !== ' ') return;
     const card = event.target.closest('[data-nx21-open]');
-    if (!card || event.target.closest('button')) return;
+    if (!card || event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.target.closest('button,a[href]')) return;
     event.preventDefault();
     openMedia(card.dataset.nx21Open);
   });

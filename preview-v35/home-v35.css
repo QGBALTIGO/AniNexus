@@ -18,3 +18,12 @@ body.nx35-home-active .nx35-home .nx35-reading h3{min-height:0}
  .nx35-home .nx35-hero-actions a{font-size:13px;padding:11px 14px}
 }
 
+
+/* The opening link owns native activation; quick actions remain separate controls. */
+.nx35-home .nx35-media-card{position:relative}
+.nx35-home .nx35-media-link{position:absolute;inset:0;z-index:0;border-radius:inherit}
+.nx35-home .nx35-media-link~*{pointer-events:none}
+.nx35-home .nx35-media-card button,.nx35-home .nx35-media-card a:not(.nx35-media-link){pointer-events:auto}
+.nx35-home .nx35-media-card:has(>.nx35-media-link:focus-visible){outline:2px solid var(--rank-accent,#ed6582);outline-offset:4px;border-radius:8px}
+.nx35-home .nx46-home-award-feature:has(>.nx35-media-link:focus-visible){outline-color:#e7bd5e;outline-offset:-4px}
+.nx35-home .nx35-anime:has(>.nx35-media-link:focus-visible) .nx35-cover{transform:translateY(-3px);border-color:rgba(227,38,79,.18);box-shadow:0 16px 34px rgba(0,0,0,.3)}

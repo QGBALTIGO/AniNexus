@@ -328,3 +328,10 @@ html[data-theme="light"] .nx21-island-chevron{border-color:rgba(58,31,43,.13);ba
   .nx21-chrome,.nx21-search-tools,.nx21-tabbar,.nx21-tab:after,.nx21-poster,.nx21-poster>img,.nx21-card.nx21-reveal,.nx21-filter-dialog,.nx21-mobile-menu,.nx21-island,.nx21-island-head,.nx21-island-panel,.nx21-island-chevron svg{transition:none!important;animation:none!important}
   .nx21-card.nx21-reveal{visibility:visible;transform:none}.nx21-skeleton i:after,.nx21-load-line.loading i{animation:none}
 }
+
+/* One native detail link per card, with list/favorite buttons as siblings. */
+.nx21-media-link{position:absolute;inset:0;z-index:0;border-radius:7px}
+.nx21-media-link~*{pointer-events:none}
+.nx21-card button{pointer-events:auto}
+.nx21-card:has(>.nx21-media-link:focus-visible){outline:2px solid #ed6582;outline-offset:4px;border-radius:7px}
+.nx21-card:has(>.nx21-media-link:focus-visible) .nx21-poster{transform:translateY(-3px);border-color:rgba(236,54,91,.48);box-shadow:0 18px 36px rgba(0,0,0,.34)}
