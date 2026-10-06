@@ -9,8 +9,8 @@
   const read=(k,f)=>{try{return JSON.parse(localStorage.getItem(k)||'null')??f}catch{return f}};
   const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
   const validId=v=>{const n=Number(v);return Number.isSafeInteger(n)&&n>0?n:0};
-  const titleFrom=m=>m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||'';
-  const coverFrom=m=>m?.coverImage?.extraLarge||m?.coverImage?.large||'';
+  const titleFrom=m=>typeof m?.title==='string'?m.title:m?.title?.english||m?.title?.userPreferred||m?.title?.romaji||m?.title?.native||'';
+  const coverFrom=m=>m?.cover||m?.coverImage?.extraLarge||m?.coverImage?.large||'';
   const placeholder=value=>/^(?:voc[eê]|you)$/i.test(String(value||'').trim());
   const mediaType=x=>String(x?.media_type||x?.mediaType||'').toUpperCase()==='MANGA'?'MANGA':'ANIME';
   const stamp=x=>Date.parse(x.created_at||x.updated_at||'')||0;
@@ -55,8 +55,42 @@
     const img=root.querySelector('.nx35-community-cover>a>img,img');
     return{title:root.dataset?.title||root.querySelector('h3,h2,strong')?.textContent?.trim()||'',cover:img?.currentSrc||img?.src||''};
   }
+  async function mediaSummaries(values,type='ANIME'){
+    const ids=[...new Set((Array.isArray(values)?values:[]).map(validId).filter(Boolean))].slice(0,60);
+    if(!ids.length)return[];
+    type=mediaType({media_type:type});
+    try{
+      let items=[];
+      const auth=window.AniNexusAuth;
+      if(auth?.enabled===true||!location.hostname.endsWith('github.io')){
+        const path=`/api/media/summaries?ids=${encodeURIComponent(ids.join(','))}&mediaType=${type}`;
+        if(auth?.enabled===true)items=(await auth.publicApi(path))?.items||[];
+        else{
+          const response=await fetch(path,{credentials:'same-origin',cache:'no-store',signal:AbortSignal.timeout(8000),headers:{accept:'application/json'}});
+          if(!response.ok)return[];
+          items=(await response.json())?.items||[];
+        }
+      }else{
+        // A static Pages preview has no internal catalog. Only direct provider
+        // identifiers fit GraphQL Int; internal identities stay unresolved.
+        const externalIds=ids.filter(id=>id<=2147483647);
+        if(!externalIds.length)return[];
+        const query=`query($ids:[Int]){Page(page:1,perPage:60){media(id_in:$ids,type:${type},isAdult:false){id type title{romaji english native userPreferred}coverImage{extraLarge large}bannerImage}}}`;
+        const response=await fetch(API,{method:'POST',signal:AbortSignal.timeout(8000),headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables:{ids:externalIds}})});
+        if(!response.ok)return[];
+        items=(await response.json())?.data?.Page?.media||[];
+      }
+      const requested=new Set(ids),found=new Map();
+      for(const item of Array.isArray(items)?items:[]){
+        const id=validId(item?.id),declared=String(item?.mediaType||item?.type||'').toUpperCase();
+        if(requested.has(id)&&declared===type)found.set(id,item);
+      }
+      return ids.map(id=>found.get(id)).filter(Boolean);
+    }catch{return[]}
+  }
   async function anilistMeta(id,type){
-    try{const query=`query($id:Int){Media(id:$id,type:${type}){id title{romaji english native userPreferred}coverImage{extraLarge large}bannerImage}}`,r=await fetch(API,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables:{id}})});if(!r.ok)return{};const m=(await r.json())?.data?.Media;return m?{title:titleFrom(m),cover:coverFrom(m),banner:m.bannerImage||''}:{}}catch{return{}}
+    const [m]=await mediaSummaries([id],type);
+    return m?{title:titleFrom(m),cover:coverFrom(m),banner:m.banner||m.bannerImage||''}:{};
   }
   function updateMeta(activityId,meta){if(!meta?.title&&!meta?.cover&&!meta?.banner)return;const list=rows(),i=list.findIndex(x=>x.id===activityId);if(i<0)return;list[i]={...list[i],title:list[i].title||meta.title||'',cover:list[i].cover||meta.cover||'',banner:list[i].banner||meta.banner||''};save(list)}
 
@@ -101,5 +135,5 @@
   addEventListener('storage',e=>{if(e.key===KEY)dispatchEvent(new CustomEvent('aninexus:community-activity-changed',{detail:{items:local()}}))});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',seed,{once:true});else seed();
 
-  window.AniNexusCommunityActivity={local,record,seed,identity,enrich,merge,key:KEY};
+  window.AniNexusCommunityActivity={local,record,seed,identity,enrich,merge,mediaSummaries,key:KEY};
 })();

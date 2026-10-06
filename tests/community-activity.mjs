@@ -6,7 +6,7 @@ import {runInNewContext} from 'node:vm';
 const source=readFileSync(new URL('../preview-v40/activity-v40.js',import.meta.url),'utf8');
 function activity(){
   const storage=new Map(),window={},listeners=new Map(),calls={fetch:0,events:0,writes:0};
-  runInNewContext(source,{window,localStorage:{getItem:key=>storage.get(key),setItem:(key,value)=>{calls.writes++;storage.set(key,value)}},document:{readyState:'loading',querySelector:()=>null,addEventListener:(name,fn)=>listeners.set(name,fn)},addEventListener:()=>{},dispatchEvent:()=>{calls.events++},CustomEvent:class{},fetch:async()=>{calls.fetch++;return{ok:false}}});
+  runInNewContext(source,{window,location:{hostname:'aninexus.com.br'},AbortSignal,localStorage:{getItem:key=>storage.get(key),setItem:(key,value)=>{calls.writes++;storage.set(key,value)}},document:{readyState:'loading',querySelector:()=>null,addEventListener:(name,fn)=>listeners.set(name,fn)},addEventListener:()=>{},dispatchEvent:()=>{calls.events++},CustomEvent:class{},fetch:async()=>{calls.fetch++;return{ok:false}}});
   const api=window.AniNexusCommunityActivity;
   return{api,listeners,storage,calls,plain:rows=>JSON.parse(JSON.stringify(rows))};
 }

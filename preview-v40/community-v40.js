@@ -6,7 +6,6 @@
   const REMOTE=window.AniNexusAuth?.enabled===true;
   const BASE=IS_PAGES?'/AniNexus':'';
   const BUILD='44.24.4';
-  const API='https://graphql.anilist.co';
   let items=[],topics=[],mounted=false,overview=null,overviewState='loading',selectedReaction='Chorei',reactionChosen=false,memberDays=7,loadEpoch=0,overviewEpoch=0,visibleActivity=6,visibleImpressions=3;
 
   const STATUS={
@@ -33,13 +32,10 @@
   const actorHandle=x=>/^(?:voc[eê]|you)$/i.test(String(x?.username||'').trim())?'':String(x?.username||'').trim();
   async function json(path){try{if(REMOTE){const j=await window.AniNexusAuth.publicApi(path);return Array.isArray(j)?j:j?.items||[]}const {response:r,body:j}=await window.AniNexusRuntime.jsonRequest(path,{credentials:'same-origin',cache:'no-store',headers:{accept:'application/json'}},{timeout:8000});if(!r.ok)throw new Error(`HTTP ${r.status}`);return Array.isArray(j)?j:j?.items||[]}catch(error){console.warn('[AniNexus comunidade] fonte indisponível.',{path,error});return[]}}
   async function mediaByIds(ids,type='ANIME'){
-    ids=[...new Set(ids.map(Number).filter(Boolean))].slice(0,35);if(!ids.length)return new Map();
+    ids=[...new Set(ids.map(Number).filter(id=>Number.isSafeInteger(id)&&id>0))].slice(0,35);if(!ids.length)return new Map();
     try{
-      if(REMOTE&&type==='ANIME'){const data=await window.AniNexusAuth.publicApi(`/api/media/summaries?ids=${encodeURIComponent(ids.join(','))}`);return new Map((data?.items||[]).map(m=>[Number(m.id),m]))}
-      const query=`query($ids:[Int]){Page(page:1,perPage:35){media(id_in:$ids,type:${type}){id title{romaji english native userPreferred}coverImage{extraLarge large}}}}`;
-      const response=await fetch(API,{method:'POST',signal:AbortSignal.timeout(8000),headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables:{ids}})});
-      if(!response.ok)throw Error(`HTTP ${response.status}`);
-      return new Map(((await response.json())?.data?.Page?.media||[]).map(m=>[Number(m.id),m]));
+      const items=await window.AniNexusCommunityActivity?.mediaSummaries?.(ids,type)||[];
+      return new Map(items.map(m=>[Number(m.id),m]));
     }catch{return new Map()}
   }
 
@@ -62,7 +58,7 @@
       const fetched=(x.media_type==='MANGA'?manga:anime).get(Number(x.media_id)),m=x.media||fetched||null;
       const id=x.id||`${x.kind}:${x.media_type||'ANIME'}:${x.media_id||'none'}:${x.created_at||''}:${x.username||''}:${x.status||''}`;
       return{...x,id,media:m,title:usableTitle(x.title)||usableTitle(mediaTitle(m))||usableTitle(mediaTitle(fetched)),cover:x.cover||mediaCover(m)||mediaCover(fetched),banner:x.banner||mediaBanner(m),created_at:x.created_at||x.updated_at||new Date().toISOString()}
-    }).filter(x=>x.media_id&&x.title&&x.cover).sort((a,b)=>Date.parse(b.created_at||0)-Date.parse(a.created_at||0));
+    }).filter(x=>x.media_id&&x.title).sort((a,b)=>Date.parse(b.created_at||0)-Date.parse(a.created_at||0));
     render();
   }
 

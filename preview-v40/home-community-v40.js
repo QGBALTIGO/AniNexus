@@ -3,7 +3,6 @@
   if(window.__NX40_HOME_COMMUNITY__)return;window.__NX40_HOME_COMMUNITY__=true;
   const IS_PAGES=location.hostname.endsWith('github.io');
   const REMOTE=window.AniNexusAuth?.enabled===true;
-  const API='https://graphql.anilist.co';
   const STATUS={PLANNING:{verb:'quer ver',label:'Quero ver',icon:'clock'},CURRENT:{verb:'está assistindo',label:'Assistindo',icon:'play'},COMPLETED:{verb:'terminou',label:'Concluído',icon:'check'},PAUSED:{verb:'pausou',label:'Pausado',icon:'pause'},DROPPED:{verb:'desistiu de',label:'Interrompido',icon:'x'}};
   const mediaCache=new Map();
   let token=0,timer=0;
@@ -25,12 +24,11 @@
   async function json(path){try{if(REMOTE){const j=await window.AniNexusAuth.publicApi(path);return j?.items||[]}const r=await fetch(path,{credentials:'same-origin',cache:'no-store',headers:{accept:'application/json'}});if(!r.ok)return[];const j=await r.json();return j?.items||[]}catch{return[]}}
   async function resolveMedia(rows){
     for(const mediaType of ['ANIME','MANGA']){
-      const ids=[...new Set(rows.filter(x=>type(x)===mediaType&&!mediaCache.has(mediaKey(x))).map(x=>Number(x.media_id)).filter(Boolean))].slice(0,20);
+      const ids=[...new Set(rows.filter(x=>{const cached=mediaCache.get(mediaKey(x));return type(x)===mediaType&&(!usableTitle(title(cached))||!cover(cached))}).map(x=>Number(x.media_id)).filter(id=>Number.isSafeInteger(id)&&id>0))].slice(0,20);
       if(!ids.length)continue;
       try{
-        const query=`query($ids:[Int]){Page(page:1,perPage:20){media(id_in:$ids,type:${mediaType}){id title{romaji english native userPreferred}coverImage{extraLarge large}}}}`;
-        const r=await fetch(API,{method:'POST',headers:{'content-type':'application/json','accept':'application/json'},body:JSON.stringify({query,variables:{ids}})});
-        if(r.ok)for(const m of (await r.json())?.data?.Page?.media||[])mediaCache.set(`${mediaType}:${Number(m.id)}`,m);
+        const items=await window.AniNexusCommunityActivity?.mediaSummaries?.(ids,mediaType)||[];
+        for(const m of items)mediaCache.set(`${mediaType}:${Number(m.id)}`,m);
       }catch{}
     }
   }
@@ -68,7 +66,7 @@
     const raw=[...activity.map(x=>({...x,kind:'state',created_at:x.created_at||x.updated_at})),...local.filter(x=>x.kind!=='thread'),...impressions.map(x=>({...x,kind:'impression'}))];
     const enriched=shared?.enrich?await shared.enrich(raw):raw,identified=enriched.filter(x=>!x.local||handle(x)),rows=shared?.merge?shared.merge(identified):identified;
     await resolveMedia(rows.filter(x=>x.media_id&&(!usableTitle(x.title)&&!usableTitle(title(x.media))||!x.cover&&!cover(x.media))));
-    return rows.map(x=>{const fetched=mediaCache.get(mediaKey(x));return {...x,title:usableTitle(x.title)||usableTitle(title(x.media))||usableTitle(title(fetched)),cover:x.cover||cover(x.media)||cover(fetched),banner:x.banner||banner(x.media)||banner(fetched),created_at:x.created_at||x.updated_at||''}}).filter(x=>!!x.media_id&&!!x.title&&!!x.cover).slice(0,12);
+    return rows.map(x=>{const fetched=mediaCache.get(mediaKey(x));return {...x,title:usableTitle(x.title)||usableTitle(title(x.media))||usableTitle(title(fetched)),cover:x.cover||cover(x.media)||cover(fetched),banner:x.banner||banner(x.media)||banner(fetched),created_at:x.created_at||x.updated_at||''}}).filter(x=>!!x.media_id&&!!x.title).slice(0,12);
   }
   async function paint(){
     const home=document.querySelector('.nx35-home'),hero=document.querySelector('#nx35CommunityHero'),grid=document.querySelector('#nx35Community');
