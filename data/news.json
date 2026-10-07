@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T13:36:32.490Z",
+  "generatedAt": "2026-10-07T19:29:38.543Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -60,14 +60,555 @@
     "newStories": 25,
     "fullArticles": 25,
     "previewArticles": 0,
-    "avgWords": 408,
+    "avgWords": 410,
     "withHeroImage": 25,
-    "withOrderedMedia": 24,
+    "withOrderedMedia": 23,
     "skippedTranslation": 0,
     "skippedQuality": 23,
-    "durationMs": 4777
+    "durationMs": 3623
   },
   "items": [
+    {
+      "id": "jbox-e798bd86",
+      "slug": "com-digimon-e-dragon-ball-z-tv-globinho-ganha-edicao-especial-neste-sabado-jbox-e798bd86",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Com ‘Digimon’ e ‘Dragon Ball Z’, TV Globinho ganha edição especial neste sábado",
+      "originalTitle": "Com ‘Digimon’ e ‘Dragon Ball Z’, TV Globinho ganha edição especial neste sábado",
+      "summary": "Como parte da programação especial do Criança Esperança deste ano, a Rede Globo preparou uma atração para as crianças que já cresceram. Após 11 anos do fim do matinal TV Globinho, a emissora programou o retorno especial por um dia para os viúvos matarem as saudades.",
+      "author": "Jean Clemente",
+      "tags": [
+        "Anime",
+        "Programação",
+        "TV",
+        "criança esperança",
+        "Digimon",
+        "Dragon Ball",
+        "globo",
+        "O que via passar na tv globinho?",
+        "quando é a tv globinho?",
+        "Tv Globinho",
+        "TV GLOBINHO ESPECIAL"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/07/com-digimon-e-dragon-ball-z-tv-globinho-ganha-exibicao-especial-neste-sabado",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/07/com-digimon-e-dragon-ball-z-tv-globinho-ganha-exibicao-especial-neste-sabado",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/tvglobinhoespecial-destacada.jpg",
+      "mediaQuery": "Com ‘Digimon’ e ‘Dragon Ball Z’, TV Globinho ganha edição especial neste sábado",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Como parte da programação especial do Criança Esperança deste ano, a Rede Globo preparou uma atração para as crianças que já cresceram. Após 11 anos do fim do matinal TV Globinho, a emissora programou o retorno especial por um dia para os viúvos matarem as saudades.",
+          "runs": [
+            {
+              "text": "Como parte da programação especial do "
+            },
+            {
+              "text": "Criança Esperança",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " deste ano, a "
+            },
+            {
+              "text": "Rede Globo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " preparou uma atração para as crianças que já cresceram. Após 11 anos do fim do matinal "
+            },
+            {
+              "text": "TV Globinho",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", a emissora programou o retorno especial por um dia para os viúvos matarem as saudades."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Tendo apresentação de Geovanna Tominaga, Ícaro Silva, Letícia Colin e Paulo Mathias Jr., o programa vai ao ar no sábado (10), às 9h (horário de Brasília). Além dos veteranos, Tia Milena (ex-participante do BBB) foi escalada como repórter para buscar a nostalgia de outros artistas da emissora que cresceram com o programa.",
+          "runs": [
+            {
+              "text": "Tendo apresentação de "
+            },
+            {
+              "text": "Geovanna Tominaga",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Ícaro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Silva",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Letícia Colin",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Paulo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Mathias Jr.",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o programa vai ao ar no "
+            },
+            {
+              "text": "sábado",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (10), às"
+            },
+            {
+              "text": " 9h",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (horário de Brasília). Além dos veteranos,"
+            },
+            {
+              "text": " Tia Milena",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (ex-participante do BBB) foi escalada como repórter para buscar a nostalgia de outros artistas da emissora que cresceram com o programa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre as animações que marcaram época, três foram escolhidas para voltarem à TV aberta na manhã deste sábado: Digimon, Dragon Ball Z e Três Espiãs Demais.",
+          "runs": [
+            {
+              "text": "Entre as animações que marcaram época, três foram escolhidas para voltarem à TV aberta na manhã deste sábado: "
+            },
+            {
+              "text": "Digimon",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Dragon Ball Z",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Três Espiãs",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Demais.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "View this post on Instagram",
+          "runs": [
+            {
+              "text": " View this post on Instagram ",
+              "href": "https://www.instagram.com/reel/DeK4dKCxz31/?utm_source=ig_embed&utm_campaign=loading"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Digimon estreou no canal em julho de 2000 dentro do Férias Animadas, um bloco improvisado de transição para o novo programa da Angélica, o Bambuluá, que chegou só em 9 de outubro. A TV Globinho nasceu como um quadro dentro do Bambuluá, que manteve a exibição de Digimon, e tornou-se atração independente em janeiro de 2002.",
+          "runs": [
+            {
+              "text": "Digimon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estreou no canal em julho de 2000 dentro do"
+            },
+            {
+              "text": " Férias Animadas",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", um bloco improvisado de transição para o novo programa da Angélica, o "
+            },
+            {
+              "text": "Bambuluá",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", que chegou só em 9 de outubro. A "
+            },
+            {
+              "text": "TV Globinho",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " nasceu como um quadro dentro do"
+            },
+            {
+              "text": " Bambuluá",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que manteve a exibição de "
+            },
+            {
+              "text": "Digimon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", e tornou-se atração independente em janeiro de 2002."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Vênus Platinada ainda levou ao bloco ao longo dos anos as séries seguintes, Digimon 02, Digimon Tamers, Digimon 4 (chamado apenas de Digimon nas chamadas da época) e Digimon Data Squad. As duas primeiras séries ainda ganhariam tiveram uma passagem mais recente no streaming Globoplay.",
+          "runs": [
+            {
+              "text": "A Vênus Platinada ainda levou ao bloco ao longo dos anos as séries seguintes, "
+            },
+            {
+              "text": "Digimon 02",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Digimon Tamers",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Digimon 4",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (chamado apenas de "
+            },
+            {
+              "text": "Digimon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " nas chamadas da época) e "
+            },
+            {
+              "text": "Digimon Data Squad",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". As duas primeiras séries ainda ganhariam tiveram uma passagem mais recente no streaming "
+            },
+            {
+              "text": "Globoplay.",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já Dragon Ball Z chegou em julho de 2001 à TV Globinho diretamente com a fase Majin Boo, tornando-se um clássico da programação. Nessa época, os direitos dos primeiros episódios ainda estavam com a Band. Foi também nesse mesmo ano que a série foi alvo de uma lenda urbana, que dizia que estava sendo exibida no momento em que a programação foi interrompida para cobrir os atentados ao World Trade Center em 11 de setembro. A lenda já foi desmitificada várias vezes (até pela própria emissora), provando que nem a transformação de Goku em SSJ3 ou qualquer outro episódio era exibido no momento.",
+          "runs": [
+            {
+              "text": "Já "
+            },
+            {
+              "text": "Dragon Ball Z",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " chegou em julho de 2001 à"
+            },
+            {
+              "text": " TV Globinho",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " diretamente com a fase Majin Boo, tornando-se um clássico da programação. Nessa época, os direitos dos primeiros episódios ainda estavam com a "
+            },
+            {
+              "text": "Band",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Foi também nesse mesmo ano que a série foi alvo de uma lenda urbana, que dizia que estava sendo exibida no momento em que a programação foi interrompida para cobrir os atentados ao World Trade Center em 11 de setembro. A lenda já foi desmitificada várias vezes (até pela própria emissora), provando que nem a transformação de Goku em SSJ3 ou qualquer outro episódio era exibido no momento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em 2002 foi a vez da 1ª série de Goku chegar à emissora. Exibida anteriormente pelo SBT, foi graças ao sucesso de Dragon Ball Z que o Goku criança ganhou uma nova chance pela TV Globinho. Com uma redublagem que cobriu todos os episódios — ao contrário dos apenas 60 iniciais no canal de Silvio Santos –, o animê chegou para continuar o sucesso da série por aqui. No ano seguinte, foi a vez de Dragon Ball GT, trazendo outra versão de Goku criança, e a melhor abertura de toda a série (nota: o editor discorda).",
+          "runs": [
+            {
+              "text": "Em 2002 foi a vez da 1ª série de Goku chegar à emissora. Exibida anteriormente pelo SBT, foi graças ao sucesso de "
+            },
+            {
+              "text": "Dragon Ball Z",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " que o Goku criança ganhou uma nova chance pela "
+            },
+            {
+              "text": "TV Globinho",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Com uma redublagem que cobriu todos os episódios — ao contrário dos apenas 60 iniciais no canal de Silvio Santos –, o animê chegou para continuar o sucesso da série por aqui. No ano seguinte, foi a vez de "
+            },
+            {
+              "text": "Dragon Ball GT",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", trazendo outra versão de Goku criança, e a melhor abertura de toda a série (nota: o editor discorda)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ao todo, ao menos 27 animês passaram pela programação da TV Globinho. Para saber mais, basta clicar aqui ou no post abaixo e conferir a linha do tempo que preparamos para relembrar todos eles.",
+          "runs": [
+            {
+              "text": "Ao todo, ao menos 27 animês passaram pela programação da "
+            },
+            {
+              "text": "TV Globinho",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Para saber mais, basta "
+            },
+            {
+              "text": "clicar aqui",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.instagram.com/p/DeLBgP8FdXw/?img_index=3&stkn=Mml4dHpwNWhtdXh1"
+            },
+            {
+              "text": " ou no post abaixo e conferir a linha do tempo que preparamos para relembrar todos eles."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: TV Globo",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "TV Globo",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.instagram.com/tvglobo/reel/DeK4dKCxz31/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-07T14:18:46.000Z",
+      "updatedAt": "2026-10-07T14:20:58.000Z",
+      "expiresAt": "2026-10-14T14:18:46.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/07/com-digimon-e-dragon-ball-z-tv-globinho-ganha-exibicao-especial-neste-sabado",
+          "publishedAt": "2026-10-07T14:18:46.000Z",
+          "author": "Jean Clemente"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 484,
+      "qualityScore": 0.999,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-a3603a43",
       "slug": "the-fledgling-demon-lord-s-starter-shop-ganha-teaser-animenew-a3603a43",
@@ -9391,531 +9932,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 2,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-21d9f4d4",
-      "slug": "naruto-tera-nova-minisserie-em-anime-detalhes-serao-revelados-na-new-york-comic-con-jbox-21d9f4d4",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Naruto’ terá nova minissérie em animê; detalhes serão revelados na New York Comic Con",
-      "originalTitle": "‘Naruto’ terá nova minissérie em animê; detalhes serão revelados na New York Comic Con",
-      "summary": "A VIZ Media já havia confirmado um painel de Naruto durante a New York Comic Con de 2026, com o anúncio de um novo projeto.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Eventos",
-        "Minissérie de Naruto",
-        "Naruto",
-        "New York Comic-Con",
-        "novo projeto de Naruto",
-        "viz media"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/30/naruto-tera-nova-minisserie-em-anime-detalhes-serao-revelados-na-new-york-comic-con",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/30/naruto-tera-nova-minisserie-em-anime-detalhes-serao-revelados-na-new-york-comic-con",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2025/09/narutoshippuden-destacada.jpg",
-      "mediaQuery": "‘Naruto’ terá nova minissérie em animê; detalhes serão revelados na New York Comic Con",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Novo-anime-de-naruto.png",
-          "alt": "Redes sociais de Naruto",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/G2B8oLsZNeU"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A VIZ Media já havia confirmado um painel de Naruto durante a New York Comic Con de 2026, com o anúncio de um novo projeto.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "VIZ Media",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " já havia "
-            },
-            {
-              "text": "confirmado um painel de ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/20/naruto-tera-novo-projeto-anunciado-na-new-york-comic-con-2026/"
-            },
-            {
-              "text": "Naruto",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/20/naruto-tera-novo-projeto-anunciado-na-new-york-comic-con-2026/"
-            },
-            {
-              "text": " durante a New York Comic Con de 2026",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/20/naruto-tera-novo-projeto-anunciado-na-new-york-comic-con-2026/"
-            },
-            {
-              "text": ", com o anúncio de um novo projeto."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Agora, segundo as redes sociais oficiais da franquia, o evento vai divulgar detalhes de uma nova série limitada em animê.",
-          "runs": [
-            {
-              "text": "Agora, segundo as redes sociais oficiais da franquia, o evento vai divulgar detalhes de uma nova série limitada em animê."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/Novo-anime-de-naruto.png",
-          "alt": "Redes sociais de Naruto"
-        },
-        {
-          "type": "paragraph",
-          "text": "Com a aproximação do evento, mais detalhes foram divulgados | X/Reprodução",
-          "runs": [
-            {
-              "text": "Com a aproximação do evento, mais detalhes foram divulgados | X/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "“Notícias empolgantes de Naruto estão chegando à New York Comic Con 2026. Detalhes sobre a nova minissérie em animê para a TV serão revelados durante a apresentação especial da franquia. Não consegue ir até o evento? Confira a transmissão mundial no YouTube. Não perca.”",
-          "runs": [
-            {
-              "text": "“Notícias empolgantes de Naruto estão chegando à New York Comic Con 2026. Detalhes sobre a nova minissérie em animê para a TV serão revelados durante a apresentação especial da franquia. Não consegue ir até o evento? Confira a transmissão mundial no YouTube. Não perca.”",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Vale lembrar que, em agosto de 2023, uma minissérie de quatro episódios da franquia foi adiada por tempo indeterminado, para “melhorar a qualidade do material”. No momento, não é possível saber se o novo projeto tem alguma ligação com isso, mas tudo deve ficar claro após a apresentação no evento.",
-          "runs": [
-            {
-              "text": "Vale lembrar que, em agosto de 2023, "
-            },
-            {
-              "text": "uma minissérie de quatro episódios da franquia foi adiada por tempo indeterminado",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2023/08/29/naruto-minisserie-especial-e-adiada-indefinidamente/"
-            },
-            {
-              "text": ", para “melhorar a qualidade do material”. No momento, não é possível saber se o novo projeto tem alguma ligação com isso, mas tudo deve ficar claro após a apresentação no evento."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O painel está marcado para acontecer das 17h às 18h do dia 10 de outubro, em horário local, o que corresponde ao período das 18h às 19h no horário de Brasília. Estarão presentes Junko Takeuchi, voz original de Naruto Uzumaki, e Noriaki Sugiyama, voz original de Sasuke Uchiha, e a página da live no YouTube já está disponível:",
-          "runs": [
-            {
-              "text": "O painel está marcado para acontecer das 17h às 18h do dia 10 de outubro, em horário local, "
-            },
-            {
-              "text": "o",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "que corresponde ao período das 18h às 19h no horário de Brasília",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Estarão presentes "
-            },
-            {
-              "text": "Junko Takeuchi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", voz original de Naruto Uzumaki, e"
-            },
-            {
-              "text": " Noriaki Sugiyama",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", voz original de Sasuke Uchiha, e a página da live no "
-            },
-            {
-              "text": "YouTube",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " já está disponível:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=G2B8oLsZNeU",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/G2B8oLsZNeU"
-        },
-        {
-          "type": "paragraph",
-          "text": "A VIZ Media segue investindo no universo de Naruto, que a empresa definiu como “o animê mais reconhecível do mundo” em entrevista recente ao JBox. E a franquia deve se expandir ainda mais nos próximos anos, com a confirmação da produção do filme live-action norte-americano.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "VIZ Media",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " segue investindo no universo de "
-            },
-            {
-              "text": "Naruto",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que a empresa definiu como"
-            },
-            {
-              "text": " “o animê mais reconhecível do mundo”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "em entrevista recente ao ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/14/viz-media-fala-sobre-o-mercado-brasileiro-de-consumo-de-animes-e-promete-novidades-para-naruto-entrevista/"
-            },
-            {
-              "text": "JBox",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/14/viz-media-fala-sobre-o-mercado-brasileiro-de-consumo-de-animes-e-promete-novidades-para-naruto-entrevista/"
-            },
-            {
-              "text": ". E a franquia deve se expandir ainda mais nos próximos anos, com a confirmação da produção do "
-            },
-            {
-              "text": "filme live-action norte-americano",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/14/filme-live-action-de-naruto-inicia-busca-global-por-trio-de-protagonistas/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história de Naruto foi escrita e ilustrada por Masashi Kishimoto em 72 volumes, lançados entre 1999 e 2014. A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila. Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura.",
-          "runs": [
-            {
-              "text": "A história de"
-            },
-            {
-              "text": " Naruto",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " foi escrita e ilustrada por "
-            },
-            {
-              "text": "Masashi Kishimoto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " em 72 volumes, lançados entre 1999 e 2014. A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila. Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, Naruto Shippuden mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017. Atualmente, Kishimoto assina a publicação de Boruto ao lado de Ukyou Kodachi, contando a história do filho de Naruto.",
-          "runs": [
-            {
-              "text": "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, "
-            },
-            {
-              "text": "Naruto Shippuden",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017. Atualmente, Kishimoto assina a publicação de "
-            },
-            {
-              "text": "Boruto",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ao lado de "
-            },
-            {
-              "text": "Ukyou Kodachi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", contando a história do filho de Naruto."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para quem deseja retornar à Vila da Folha antes da chegada do live-action, os episódios de Naruto estão disponíveis em plataformas como Crunchyroll, Netflix, HBO Max, Disney+, Pluto TV e Mercado Play. Já o mangá é publicado no Brasil pela Panini.",
-          "runs": [
-            {
-              "text": "Para quem deseja retornar à Vila da Folha antes da chegada do live-action, os episódios de "
-            },
-            {
-              "text": "Naruto",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " estão disponíveis em plataformas como "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "HBO Max, Disney+, Pluto TV",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Mercado Play",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Já o mangá é publicado no Brasil pela"
-            },
-            {
-              "text": " Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fontes: Anime News Network, X de Naruto, Complex",
-          "runs": [
-            {
-              "text": "Fontes:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Anime News Network",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.animenewsnetwork.com/news/2026-09-28/naruto-gets-new-limited-tv-anime-series/.242289"
-            },
-            {
-              "text": ", ",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": "X de Naruto",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://x.com/NARUTO_info_en/status/2104770641530679490"
-            },
-            {
-              "text": ", ",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": "Complex",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.complex.com/pop-culture/a/treyalston/naruto-new-anime-series-nycc-2026"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-30T15:49:49.000Z",
-      "updatedAt": "2026-09-30T15:50:19.000Z",
-      "expiresAt": "2026-10-07T15:49:49.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/30/naruto-tera-nova-minisserie-em-anime-detalhes-serao-revelados-na-new-york-comic-con",
-          "publishedAt": "2026-09-30T15:49:49.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 443,
-      "qualityScore": 0.938,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 15,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
