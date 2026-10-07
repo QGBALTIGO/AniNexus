@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T20:52:57.054Z",
+  "generatedAt": "2026-10-07T00:32:06.580Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,543 @@
   ],
   "stats": {
     "collected": 49,
-    "grouped": 26,
-    "published": 26,
-    "newStories": 26,
-    "fullArticles": 26,
+    "grouped": 25,
+    "published": 25,
+    "newStories": 25,
+    "fullArticles": 25,
     "previewArticles": 0,
-    "avgWords": 412,
-    "withHeroImage": 26,
-    "withOrderedMedia": 25,
+    "avgWords": 408,
+    "withHeroImage": 25,
+    "withOrderedMedia": 24,
     "skippedTranslation": 0,
-    "skippedQuality": 22,
-    "durationMs": 3023
+    "skippedQuality": 23,
+    "durationMs": 2828
   },
   "items": [
+    {
+      "id": "animenew-a3603a43",
+      "slug": "the-fledgling-demon-lord-s-starter-shop-ganha-teaser-animenew-a3603a43",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "The Fledgling Demon Lord’s Starter Shop ganha teaser",
+      "originalTitle": "The Fledgling Demon Lord’s Starter Shop ganha teaser",
+      "summary": "O anime The Fledgling Demon Lord’s Starter Shop (Sudachi no Maōjō) revelou um novo teaser, personagens do elenco e confirmou sua estreia para janeiro de 2027 na televisão japonesa. A produção é baseada no mangá de Makoto Morishita e terá exibição nos canais Tokyo MX, MBS e BS11, além de outras emissoras.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Sudachi no Maōjō",
+        "The Fledgling Demon Lord's Starter Shop"
+      ],
+      "url": "https://animenew.com.br/the-fledgling-demon-lords-starter-shop-anime",
+      "sourceUrl": "https://animenew.com.br/the-fledgling-demon-lords-starter-shop-anime",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/The-Fledgling-Demon-Lords-Starter-Shop-ganha-teaser.webp",
+      "mediaQuery": "The Fledgling Demon Lord’s Starter Shop ganha teaser",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/The-Fledgling-Demon-Lords-Starter-Shop.webp",
+          "alt": "The Fledgling Demon Lord's Starter Shop",
+          "caption": "©森下真・講談社／「すだちの魔王城」製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/BXcu-Z3SEYo"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime The Fledgling Demon Lord’s Starter Shop (Sudachi no Maōjō) revelou um novo teaser, personagens do elenco e confirmou sua estreia para janeiro de 2027 na televisão japonesa. A produção é baseada no mangá de Makoto Morishita e terá exibição nos canais Tokyo MX, MBS e BS11, além de outras emissoras.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "The Fledgling Demon Lord’s Starter Shop",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Sudachi no Maōjō",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") revelou um novo teaser, personagens do elenco e confirmou sua estreia para janeiro de 2027 na televisão japonesa. A produção é baseada no "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Makoto Morishita",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e terá exibição nos canais Tokyo MX, MBS e BS11, além de outras emissoras."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "The Science Notes by Delta e Gamma ganhará anime",
+              "runs": [
+                {
+                  "text": "The Science Notes by Delta e Gamma ganhará anime",
+                  "href": "https://animenew.com.br/the-science-notes-by-delta-e-gamma-anime"
+                }
+              ]
+            },
+            {
+              "text": "The Otome Heroine ganha anime em julho de 2027",
+              "runs": [
+                {
+                  "text": "The Otome Heroine ganha anime em julho de 2027",
+                  "href": "https://animenew.com.br/the-otome-heroines-fight-for-survival-anime-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=BXcu-Z3SEYo",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/BXcu-Z3SEYo"
+        },
+        {
+          "type": "paragraph",
+          "text": "O novo material apresenta Ash, herói que derrotou o antigo rei demônio e salvou o mundo. Yōhei Azakami dará voz ao personagem. O visual também reúne Murabito, interpretado por Reiji Kawashima, e Mao, vivida por Rumi Ōkubo.",
+          "runs": [
+            {
+              "text": "O novo material apresenta Ash, herói que derrotou o antigo rei demônio e salvou o mundo. Yōhei Azakami dará voz ao personagem. O visual também reúne Murabito, interpretado por Reiji Kawashima, e Mao, vivida por Rumi Ōkubo."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/The-Fledgling-Demon-Lords-Starter-Shop.webp",
+          "alt": "The Fledgling Demon Lord's Starter Shop",
+          "caption": "©森下真・講談社／「すだちの魔王城」製作委員会"
+        },
+        {
+          "type": "heading",
+          "text": "História The Fledgling Demon Lord",
+          "runs": [
+            {
+              "text": "História "
+            },
+            {
+              "text": "The Fledgling Demon Lord",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Após a derrota do rei demônio, o mundo finalmente entra em paz. Para o jovem Villager, porém, isso traz um problema. Sem monstros para enfrentar, as pessoas deixaram de comprar poções e itens, fazendo sua loja, The Nest, ficar vazia. Quando Villager pensa em fechar o estabelecimento, uma garota misteriosa aparece e muda completamente a situação.",
+          "runs": [
+            {
+              "text": "Após a derrota do rei demônio, o mundo finalmente entra em paz. Para o jovem Villager, porém, isso traz um problema. Sem monstros para enfrentar, as pessoas deixaram de comprar poções e itens, fazendo sua loja, The Nest, ficar vazia.",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Quando Villager pensa em fechar o estabelecimento, uma garota misteriosa aparece e muda completamente a situação.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Jun Taira dirige o anime no estúdio project No.9, com Keiichirō Ōchi responsável pelos roteiros. Katsuyuki Sato cuida do design dos personagens.",
+          "runs": [
+            {
+              "text": "Jun Taira dirige o anime no estúdio "
+            },
+            {
+              "text": "project No.9",
+              "href": "https://animenew.com.br/studio/4399/project-no9"
+            },
+            {
+              "text": ", com Keiichirō Ōchi responsável pelos roteiros. Katsuyuki Sato cuida do design dos personagens."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Morishita publica o mangá na Monthly Shonen Magazine desde outubro de 2021. O 14º volume chega ao Japão em 16 de outubro.",
+          "runs": [
+            {
+              "text": "Morishita publica o mangá na "
+            },
+            {
+              "text": "Monthly Shonen Magazine",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " desde outubro de 2021. O 14º volume chega ao Japão em 16 de outubro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site oficial",
+              "href": "https://www.sudachi-anime.com/news/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em The Fledgling Demon Lord’s Starter Shop ganha teaser.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "The Fledgling Demon Lord’s Starter Shop ganha teaser",
+              "href": "https://animenew.com.br/the-fledgling-demon-lords-starter-shop-anime/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-06T22:12:17.000Z",
+      "updatedAt": "2026-10-06T22:12:17.000Z",
+      "expiresAt": "2026-10-13T22:12:17.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/the-fledgling-demon-lords-starter-shop-anime",
+          "publishedAt": "2026-10-06T22:12:17.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 236,
+      "qualityScore": 0.97,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-1004b28e",
+      "slug": "the-science-notes-by-delta-e-gamma-ganhara-anime-animenew-1004b28e",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "The Science Notes by Delta e Gamma ganhará anime",
+      "originalTitle": "The Science Notes by Delta e Gamma ganhará anime",
+      "summary": "A light novel The Science Notes by Delta and Gamma (Delta to Gamma no Rigakubu Note), de Takuma Sakai, receberá uma adaptação para anime. O anúncio ocorreu durante o evento Dengeki Bunko Fall Festival Online 2026. Kanna Nakamura dará voz a Rio Iwama no vídeo de anúncio, que também apresenta artes de Asagi Tōsaka, ilustradora da obra.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Delta to Gamma no Rigakubu Note",
+        "The Science Notes by Delta and Gamma"
+      ],
+      "url": "https://animenew.com.br/the-science-notes-by-delta-e-gamma-anime",
+      "sourceUrl": "https://animenew.com.br/the-science-notes-by-delta-e-gamma-anime",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/The-Science-Notes-by-Delta-e-Gamma-ganhara-anime.webp",
+      "mediaQuery": "The Science Notes by Delta e Gamma ganhará anime",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Delta-to-Gamma-no-Rigakubu-Note.webp",
+          "alt": "Delta to Gamma no Rigakubu Note anime",
+          "caption": "© Takuma Sakai, Asagi Tо̄saka, Kadokawa"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/u2Ro35DnBc0"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A light novel The Science Notes by Delta and Gamma (Delta to Gamma no Rigakubu Note), de Takuma Sakai, receberá uma adaptação para anime. O anúncio ocorreu durante o evento Dengeki Bunko Fall Festival Online 2026. Kanna Nakamura dará voz a Rio Iwama no vídeo de anúncio, que também apresenta artes de Asagi Tōsaka, ilustradora da obra.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "light novel",
+              "href": "https://animenew.com.br/light-novel"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "The Science Notes by Delta and Gamma",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Delta to Gamma no Rigakubu Note), de Takuma Sakai, receberá uma adaptação para "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": ". O anúncio ocorreu durante o evento "
+            },
+            {
+              "text": "Dengeki Bunko Fall Festival Online 2026",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". "
+            },
+            {
+              "text": "Kanna Nakamura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dará voz a "
+            },
+            {
+              "text": "Rio Iwama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no vídeo de anúncio, que também apresenta artes de Asagi Tōsaka, ilustradora da obra."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "The Otome Heroine ganha anime em julho de 2027",
+              "runs": [
+                {
+                  "text": "The Otome Heroine ganha anime em julho de 2027",
+                  "href": "https://animenew.com.br/the-otome-heroines-fight-for-survival-anime-2027"
+                }
+              ]
+            },
+            {
+              "text": "The Record of a Fallen Vampire recebe adaptação para anime",
+              "runs": [
+                {
+                  "text": "The Record of a Fallen Vampire recebe adaptação para anime",
+                  "href": "https://animenew.com.br/the-record-of-a-fallen-vampire-anime-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história acompanha o clube de ciências da Tsunagai High School, cujos integrantes tentam solucionar os mistérios presentes em seu cotidiano. A trama também aborda uma história de primeiro amor.",
+          "runs": [
+            {
+              "text": "A história acompanha o clube de ciências da Tsunagai High School, cujos integrantes tentam solucionar os mistérios presentes em seu cotidiano. A trama também aborda uma história de primeiro amor."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=u2Ro35DnBc0",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/u2Ro35DnBc0"
+        },
+        {
+          "type": "heading",
+          "text": "Light novel também tem mangá",
+          "runs": [
+            {
+              "text": "Light novel também tem mangá"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A Kadokawa publicou o primeiro volume da série em novembro de 2024, com ilustrações de Tōsaka. O quarto volume está previsto para chegar às lojas em 9 de outubro. Lap Tsutsumi iniciou a adaptação em mangá na revista Comic Dengeki DaiohG, da Kadokawa, em 27 de abril.",
+          "runs": [
+            {
+              "text": "A Kadokawa publicou o primeiro volume da série em novembro de 2024, com ilustrações de Tōsaka. O quarto volume está previsto para chegar às lojas em 9 de outubro. Lap Tsutsumi iniciou a adaptação em mangá na revista "
+            },
+            {
+              "text": "Comic Dengeki DaiohG",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da "
+            },
+            {
+              "text": "Kadokawa",
+              "href": "https://animenew.com.br/tag/kadokawa/"
+            },
+            {
+              "text": ", em 27 de abril."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Delta-to-Gamma-no-Rigakubu-Note.webp",
+          "alt": "Delta to Gamma no Rigakubu Note anime",
+          "caption": "© Takuma Sakai, Asagi Tо̄saka, Kadokawa"
+        },
+        {
+          "type": "paragraph",
+          "text": "Takuma Sakai também é conhecido por Butareba: The Story of a Man Turned into a Pig, light novel que ganhou anime em outubro de 2023. O autor iniciou a série em 2020 após conquistar o prêmio de ouro no 26º Dengeki Novel Prize.",
+          "runs": [
+            {
+              "text": "Takuma Sakai também é conhecido por "
+            },
+            {
+              "text": "Butareba: The Story of a Man Turned into a Pig",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", light novel que ganhou anime em outubro de 2023. O autor iniciou a série em 2020 após conquistar o prêmio de ouro no 26º Dengeki Novel Prize."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em The Science Notes by Delta e Gamma ganhará anime.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "The Science Notes by Delta e Gamma ganhará anime",
+              "href": "https://animenew.com.br/the-science-notes-by-delta-e-gamma-anime/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-06T22:03:09.000Z",
+      "updatedAt": "2026-10-06T22:03:09.000Z",
+      "expiresAt": "2026-10-13T22:03:09.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/the-science-notes-by-delta-e-gamma-anime",
+          "publishedAt": "2026-10-06T22:03:09.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 228,
+      "qualityScore": 0.967,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-9a149370",
       "slug": "criador-de-supercampeoes-yoichi-takahashi-visita-o-barcelona-jbox-9a149370",
@@ -2843,597 +3367,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-3936bf46",
-      "slug": "because-i-the-true-saint-ganha-estreia-em-2027-animenew-3936bf46",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Because I, the True Saint ganha estreia em 2027",
-      "originalTitle": "Because I, the True Saint ganha estreia em 2027",
-      "summary": "O anime Because I, the True Saint, was Banished, that Country is Done For! (Shin no Seijo de Aru Watashi wa Tsuihō Saremashita) teve sua estreia confirmada para janeiro de 2027. A produção também revelou novos detalhes. O anúncio veio acompanhado de um teaser promocional divulgado pela Bandai Namco Filmworks.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Because I the True Saint was Banished",
-        "Shin no Seijo de Aru Watashi wa Tsuihō Saremashita"
-      ],
-      "url": "https://animenew.com.br/because-i-the-true-saint-anime-2027-2",
-      "sourceUrl": "https://animenew.com.br/because-i-the-true-saint-anime-2027-2",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Because-I-the-True-Saint-ganha-estreia-em-2027.webp",
-      "mediaQuery": "Because I, the True Saint ganha estreia em 2027",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/AgwEj6-rVdw"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Because I, the True Saint, was Banished, that Country is Done For! (Shin no Seijo de Aru Watashi wa Tsuihō Saremashita) teve sua estreia confirmada para janeiro de 2027. A produção também revelou novos detalhes. O anúncio veio acompanhado de um teaser promocional divulgado pela Bandai Namco Filmworks.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Because I, the True Saint, was Banished, that Country is Done For!",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Shin no Seijo de Aru Watashi wa Tsuihō Saremashita",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") teve sua estreia confirmada para janeiro de 2027. A produção também revelou novos detalhes. O anúncio veio acompanhado de um teaser promocional divulgado pela "
-            },
-            {
-              "text": "Bandai Namco Filmworks",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Super Psychic Policeman revela música de abertura",
-              "runs": [
-                {
-                  "text": "Super Psychic Policeman revela música de abertura",
-                  "href": "https://animenew.com.br/super-psychic-policeman-chojo-anime"
-                }
-              ]
-            },
-            {
-              "text": "Looks like a Job for a Maid! ganhará anime",
-              "runs": [
-                {
-                  "text": "Looks like a Job for a Maid! ganhará anime",
-                  "href": "https://animenew.com.br/looks-like-a-job-for-a-maid-anime"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O vídeo confirma ainda que Kanako Hara será responsável pela composição musical da série. Masumi Tazawa dará voz a Elian, enquanto Taku Yashiro interpretará Nigel.",
-          "runs": [
-            {
-              "text": "O vídeo confirma ainda que "
-            },
-            {
-              "text": "Kanako Hara",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " será responsável pela composição musical da série. "
-            },
-            {
-              "text": "Masumi Tazawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " dará voz a Elian, enquanto "
-            },
-            {
-              "text": "Taku Yashiro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " interpretará Nigel."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=AgwEj6-rVdw",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/AgwEj6-rVdw"
-        },
-        {
-          "type": "heading",
-          "text": "Produção do anime",
-          "runs": [
-            {
-              "text": "Produção do anime"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Tsukasa Sakurai dirige a adaptação do anime Because I the True Saint no Tsumugi Akita Anime Lab. Naoki Tozuka cuida dos roteiros da série, enquanto Naru Nishikōri é responsável pelo design dos personagens.",
-          "runs": [
-            {
-              "text": "Tsukasa Sakurai dirige a adaptação do anime Because I the True Saint no "
-            },
-            {
-              "text": "Tsumugi Akita Anime Lab",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Naoki Tozuka cuida dos roteiros da série, enquanto Naru Nishikōri é responsável pelo design dos personagens."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "História de Because I, the True Saint",
-          "runs": [
-            {
-              "text": "História de "
-            },
-            {
-              "text": "Because I, the True Saint",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A história acompanha Eliane, considerada desde criança a santa responsável por proteger o Reino de Belkheim. Seus poderes ajudam a afastar monstros e garantir boas colheitas, mas sua vida muda quando uma falsa santa convence o príncipe, seu noivo, de que ela é uma impostora. Expulsa do reino e sem dinheiro, Eliane decide seguir para um país vizinho e tentar viver como uma pessoa comum. No entanto, um encontro durante a viagem altera completamente seus planos.",
-          "runs": [
-            {
-              "text": "A história acompanha Eliane, considerada desde criança a santa responsável por proteger o Reino de Belkheim. Seus poderes ajudam a afastar monstros e garantir boas colheitas, mas sua vida muda quando uma falsa santa convence o príncipe, seu noivo, de que ela é uma impostora.",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Expulsa do reino e sem dinheiro, Eliane decide seguir para um país vizinho e tentar viver como uma pessoa comum. No entanto, um encontro durante a viagem altera completamente seus planos.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim a obra começou como uma light novel publicada por Shikiso Utsuzawa em 2020. A adaptação em mangá estreou em 2021 pela Kodansha.",
-          "runs": [
-            {
-              "text": "Por fim a obra começou como uma "
-            },
-            {
-              "text": "light novel",
-              "href": "https://animenew.com.br/light-novel"
-            },
-            {
-              "text": " publicada por "
-            },
-            {
-              "text": "Shikiso Utsuzawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " em 2020. A adaptação em mangá estreou em 2021 pela "
-            },
-            {
-              "text": "Kodansha",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://www.shinnoseijo-anime.com/news/detail.php?id=25837"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Because I, the True Saint ganha estreia em 2027.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Because I, the True Saint ganha estreia em 2027",
-              "href": "https://animenew.com.br/because-i-the-true-saint-anime-2027-2/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-06T00:55:02.000Z",
-      "updatedAt": "2026-10-06T00:55:02.000Z",
-      "expiresAt": "2026-10-13T00:55:02.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/because-i-the-true-saint-anime-2027-2",
-          "publishedAt": "2026-10-06T00:55:02.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 258,
-      "qualityScore": 0.972,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-25615d4d",
-      "slug": "the-kept-man-of-the-princess-knight-ganha-novo-trailer-animenew-25615d4d",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "The Kept Man of the Princess Knight ganha novo trailer",
-      "originalTitle": "The Kept Man of the Princess Knight ganha novo trailer",
-      "summary": "O anime The Kept Man of the Princess Knight (Himekishi-sama no Himo) revelou seu primeiro trailer completo, além da música de abertura interpretada pelo MYTH & ROID e novos nomes no elenco. O vídeo foi apresentado pela Kadokawa durante o evento online Dengeki Bunko Aki no Saiten Online 2026.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Himekishi-sama no Himo",
-        "The Kept Man of the Princess Knight"
-      ],
-      "url": "https://animenew.com.br/the-kept-man-of-the-princess-knight-trailer",
-      "sourceUrl": "https://animenew.com.br/the-kept-man-of-the-princess-knight-trailer",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/The-Kept-Man-of-the-Princess-Knight-ganha-novo-trailer.webp",
-      "mediaQuery": "The Kept Man of the Princess Knight ganha novo trailer",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/The-Kept-Man-of-the-Princess-Knight.webp",
-          "alt": "The Kept Man of the Princess Knight",
-          "caption": "©白金透/KADOKAWA/姫騎士様のヒモ製作委員会"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/yavypPvVcnw"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime The Kept Man of the Princess Knight (Himekishi-sama no Himo) revelou seu primeiro trailer completo, além da música de abertura interpretada pelo MYTH & ROID e novos nomes no elenco. O vídeo foi apresentado pela Kadokawa durante o evento online Dengeki Bunko Aki no Saiten Online 2026.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "The Kept Man of the Princess Knight",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Himekishi-sama no Himo) revelou seu primeiro trailer completo, além da música de abertura interpretada pelo MYTH & ROID e novos nomes no elenco. O vídeo foi apresentado pela "
-            },
-            {
-              "text": "Kadokawa",
-              "href": "https://animenew.com.br/tag/kadokawa/"
-            },
-            {
-              "text": " durante o evento online "
-            },
-            {
-              "text": "Dengeki Bunko Aki",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " no "
-            },
-            {
-              "text": "Saiten Online 2026",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "ANIQuim reúne catálogo e comunidade para fãs de anime",
-              "runs": [
-                {
-                  "text": "ANIQuim reúne catálogo e comunidade para fãs de anime",
-                  "href": "https://animenew.com.br/aniquim-plataforma-animes-brasileira"
-                }
-              ]
-            },
-            {
-              "text": "Black Clover: Quando estreia o primeiro episódio da 2ª temporada?",
-              "runs": [
-                {
-                  "text": "Black Clover: Quando estreia o primeiro episódio da 2ª temporada?",
-                  "href": "https://animenew.com.br/black-clover-estreia-estreia-temporada-2"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Portanto a prévia também apresenta a música “True-Taboo”, nova abertura do grupo MYTH & ROID.",
-          "runs": [
-            {
-              "text": "Portanto a prévia também apresenta a música “True-Taboo”, nova abertura do grupo MYTH & ROID."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=yavypPvVcnw",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/yavypPvVcnw"
-        },
-        {
-          "type": "paragraph",
-          "text": "Já o encerramento ficará por conta de sajou no hana, que cantará “Gika”. A produção também ganhou uma nova arte promocional e confirmou três integrantes do elenco: Rie Takahashi como Vanessa, Tetsu Inada como Dezu e Rika Nagae como April.",
-          "runs": [
-            {
-              "text": "Já o encerramento ficará por conta de sajou no hana, que cantará “Gika”. A produção também ganhou uma nova arte promocional e confirmou três integrantes do elenco: Rie Takahashi como Vanessa, Tetsu Inada como Dezu e Rika Nagae como April."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/The-Kept-Man-of-the-Princess-Knight.webp",
-          "alt": "The Kept Man of the Princess Knight",
-          "caption": "©白金透/KADOKAWA/姫騎士様のヒモ製作委員会"
-        },
-        {
-          "type": "heading",
-          "text": "Produção e elenco The Kept Man of the Princess Knight",
-          "runs": [
-            {
-              "text": "Produção e elenco "
-            },
-            {
-              "text": "The Kept Man of the Princess Knight",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Junichi Suwabe interpreta Matthew, enquanto Mikako Komatsu dá voz a Arwin. Chihiro Kumano dirige a animação no estúdio BLADE, com Hisao Ishii no design de personagens e Deko Akao responsável pelos roteiros.",
-          "runs": [
-            {
-              "text": "Junichi Suwabe interpreta Matthew, enquanto Mikako Komatsu dá voz a Arwin. Chihiro Kumano dirige a animação no "
-            },
-            {
-              "text": "estúdio BLADE",
-              "href": "https://animenew.com.br/studio/6138/blade"
-            },
-            {
-              "text": ", com Hisao Ishii no design de personagens e Deko Akao responsável pelos roteiros."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "História de",
-          "runs": [
-            {
-              "text": "História de"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A história acompanha Arwin, uma cavaleira conhecida como Princesa Carmesim, que explora uma masmorra em busca de um tesouro capaz de reconstruir seu reino. Ao lado dela está Matthew, um homem considerado covarde e inútil pelos moradores da cidade, embora ninguém conheça suas verdadeiras habilidades.",
-          "runs": [
-            {
-              "text": "A história acompanha Arwin, uma cavaleira conhecida como Princesa Carmesim, que explora uma masmorra em busca de um tesouro capaz de reconstruir seu reino. Ao lado dela está Matthew, um homem considerado covarde e inútil pelos moradores da cidade, embora ninguém conheça suas verdadeiras habilidades.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim o novo anime estreia em janeiro de 2027.",
-          "runs": [
-            {
-              "text": "Por fim o novo anime estreia em "
-            },
-            {
-              "text": "janeiro de 2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://himehimo.jp/news/index00110000.html"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em The Kept Man of the Princess Knight ganha novo trailer.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "The Kept Man of the Princess Knight ganha novo trailer",
-              "href": "https://animenew.com.br/the-kept-man-of-the-princess-knight-trailer/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-06T00:47:44.000Z",
-      "updatedAt": "2026-10-06T00:47:44.000Z",
-      "expiresAt": "2026-10-13T00:47:44.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/the-kept-man-of-the-princess-knight-trailer",
-          "publishedAt": "2026-10-06T00:47:44.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 248,
-      "qualityScore": 0.974,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     },
@@ -9983,416 +9916,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-cf116102",
-      "slug": "kamen-rider-my-th-ganha-manga-na-web-por-ex-assistente-do-criador-da-franquia-jbox-cf116102",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Kamen Rider MY-TH’ ganha mangá na web por ex-assistente do criador da franquia",
-      "originalTitle": "‘Kamen Rider MY-TH’ ganha mangá na web por ex-assistente do criador da franquia",
-      "summary": "A Ishimori Pro publicou em seu site uma história curta em mangá de Kamen Rider MY-TH (2026). A iniciativa, além de expandir o universo da nova produção, resgata a uma tradição das décadas de 1970 e 80, quando os heróis da franquia ganhavam frequentemente versões em quadrinhos paralelas pelas mãos de artistas ligados à Ishimori Pro.",
-      "author": "Matheus Mossmann",
-      "tags": [
-        "Mangá",
-        "Tokusatsu",
-        "ishimori pro",
-        "kamen rider my-th",
-        "Kamen Rider MY-TH mangá",
-        "mangá de kamen rider",
-        "mangá de tokusatsu"
-      ],
-      "url": "https://www.jbox.com.br/2026/09/29/kamen-rider-my-th-ganha-manga-na-web-por-ex-assistente-do-criador-da-franquia",
-      "sourceUrl": "https://www.jbox.com.br/2026/09/29/kamen-rider-my-th-ganha-manga-na-web-por-ex-assistente-do-criador-da-franquia",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/myth_base_manga.png",
-      "mediaQuery": "‘Kamen Rider MY-TH’ ganha mangá na web por ex-assistente do criador da franquia",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/mangamyth1.jpeg",
-          "alt": "",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/mangamyth2.jpeg",
-          "alt": "Páginas do webmangá de Kamen Rider MY-TH",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/JSjfJ9yqv1E"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A Ishimori Pro publicou em seu site uma história curta em mangá de Kamen Rider MY-TH (2026). A iniciativa, além de expandir o universo da nova produção, resgata a uma tradição das décadas de 1970 e 80, quando os heróis da franquia ganhavam frequentemente versões em quadrinhos paralelas pelas mãos de artistas ligados à Ishimori Pro.",
-          "runs": [
-            {
-              "text": "A Ishimori Pro publicou em seu site uma história curta em mangá de "
-            },
-            {
-              "text": "Kamen Rider MY-TH",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " (2026). A iniciativa, além de expandir o universo da nova produção, resgata a uma tradição das décadas de 1970 e 80, quando os heróis da franquia ganhavam frequentemente versões em quadrinhos paralelas pelas mãos de artistas ligados à Ishimori Pro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Essa história foi desenhada por Masato Hayase, artista veterano da empresa e um dos grandes responsáveis por manter vivo o legado do criador original da franquia, Shotaro Ishinomori. Hayase ingressou na Ishimori Pro em 1989, foi assistente pessoal do mestre nos seus últimos anos de vida e também atuou como designer em produções como Kamen Rider Kuuga, Agito, Hibiki e Kabuto. Em MY-TH, sua arte busca reproduzir com máxima fidelidade o traço característico de Ishinomori.",
-          "runs": [
-            {
-              "text": "Essa história foi desenhada por"
-            },
-            {
-              "text": " Masato Hayase",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", artista veterano da empresa e um dos grandes responsáveis por manter vivo o legado do criador original da franquia, "
-            },
-            {
-              "text": "Shotaro Ishinomori",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Hayase ingressou na Ishimori Pro em 1989, foi assistente pessoal do mestre nos seus últimos anos de vida e também atuou como designer em produções como "
-            },
-            {
-              "text": "Kamen Rider Kuuga",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Agito",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Hibiki",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Kabuto",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Em "
-            },
-            {
-              "text": "MY-TH",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", sua arte busca reproduzir com máxima fidelidade o"
-            },
-            {
-              "text": " traço característico de Ishinomori",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/mangamyth1.jpeg"
-        },
-        {
-          "type": "paragraph",
-          "text": "Páginas do webmangá de Kamen Rider MY-TH. | Imagem: Reprodução/Ishimori Pro",
-          "runs": [
-            {
-              "text": "Páginas do webmangá de Kamen Rider MY-TH. | Imagem: Reprodução/Ishimori Pro"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/mangamyth2.jpeg",
-          "alt": "Páginas do webmangá de Kamen Rider MY-TH"
-        },
-        {
-          "type": "paragraph",
-          "text": "Publicado no formato yomikiri (mangá de história única), o enredo funciona como um complemento à história da TV. A trama traz uma aventura em que os personagens Yuna e Sora, enquanto estão voltando para casa, deparam-se com Tsubasa Fukashigi tentando sequestrar um garoto.",
-          "runs": [
-            {
-              "text": "Publicado no formato "
-            },
-            {
-              "text": "yomikiri",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " (mangá de história única), o enredo funciona como um complemento à história da TV. A trama traz uma aventura em que os personagens Yuna e Sora, enquanto estão voltando para casa, deparam-se com Tsubasa Fukashigi tentando sequestrar um garoto."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A leitura do mangá foi disponibilizada de forma gratuita (em japonês) e pode ser acessada no site oficial da Ishimori Pro.",
-          "runs": [
-            {
-              "text": "A leitura do mangá foi disponibilizada de forma gratuita (em japonês) e pode ser acessada no"
-            },
-            {
-              "text": " site oficial da Ishimori Pro",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://ishimoripro.com/manga-myth/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=JSjfJ9yqv1E",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/JSjfJ9yqv1E"
-        },
-        {
-          "type": "paragraph",
-          "text": "No Japão, a série televisiva de Kamen Rider MY-TH estreou oficialmente na primeira semana de setembro nas telas da TV Asahi, assumindo o bloco Super Hero Time. Na história, acompanhamos o protagonista Sora, o mordomo da família Mizuki, que se transforma no herói Kamen Rider MY-TH. O roteiro aborda uma mitologia baseada nos doze animais do zodíaco chinês e na clássica rivalidade entre rato e gato. Enquanto o visual e os poderes do protagonista são inspirados em um rato, seu rival, conhecido como MAOU, é baseado em um gato. Sora luta para derrotar misteriosas criaturas monstruosas conhecidas como Fukashigi, um conflito que ganha novas proporções com o despertar da Aliança do Zodíaco, grupo que ressurge após um sono de cem anos.",
-          "runs": [
-            {
-              "text": "No Japão, a série televisiva de "
-            },
-            {
-              "text": "Kamen Rider MY-TH",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " estreou oficialmente na primeira semana de setembro nas telas da TV Asahi, assumindo o bloco "
-            },
-            {
-              "text": "Super Hero Time",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ". Na história, acompanhamos o protagonista Sora, o mordomo da família Mizuki, que se transforma no herói Kamen Rider MY-TH. O roteiro aborda uma mitologia baseada nos doze animais do zodíaco chinês e na clássica rivalidade entre rato e gato. Enquanto o visual e os poderes do protagonista são inspirados em um rato, seu rival, conhecido como MAOU, é baseado em um gato. Sora luta para derrotar misteriosas criaturas monstruosas conhecidas como Fukashigi, um conflito que ganha novas proporções com o despertar da "
-            },
-            {
-              "text": "Aliança do Zodíaco",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", grupo que ressurge após um sono de cem anos."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para a alegria do público brasileiro, a Sato Company garantiu a transmissão simultânea da série. Os episódios de Kamen Rider MY-TH estão sendo lançados no Brasil através do canal oficial TokuSATO no YouTube, oferecendo suporte a opções de áudio em português e espanhol.",
-          "runs": [
-            {
-              "text": "Para a alegria do público brasileiro, a "
-            },
-            {
-              "text": "Sato Company",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " garantiu a transmissão simultânea da série. Os episódios de "
-            },
-            {
-              "text": "Kamen Rider MY-TH",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " estão sendo lançados no Brasil através do canal oficial "
-            },
-            {
-              "text": "TokuSATO",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.youtube.com/@TokuSatoOficial"
-            },
-            {
-              "text": " no YouTube, oferecendo suporte a opções de áudio em português e espanhol."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Embora tenha sofrido um pequeno adiamento inicial no mês de setembro devido a problemas técnicos da distribuidora, a exibição já está rolando todo sábado a partir das 23h30. Vale ressaltar como funciona o formato de distribuição da Sato: os cinco primeiros episódios da série estarão disponíveis de forma totalmente gratuita. A partir do sexto episódio, o conteúdo ficará restrito aos membros pagos do canal TokuSATO após a janela de transmissão ao vivo de cada final de semana.",
-          "runs": [
-            {
-              "text": "Embora tenha sofrido um pequeno adiamento inicial no mês de setembro devido a problemas técnicos da distribuidora, a exibição já está rolando "
-            },
-            {
-              "text": "todo sábado a partir das 23h30",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Vale ressaltar como funciona o formato de distribuição da Sato: os cinco primeiros episódios da série estarão disponíveis de forma totalmente gratuita. A partir do sexto episódio, o conteúdo ficará restrito aos membros pagos do canal TokuSATO após a janela de transmissão ao vivo de cada final de semana."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Ishimori Pro",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "Ishimori Pro",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://ishimoripro.com/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-09-29T22:26:53.000Z",
-      "updatedAt": "2026-09-29T22:27:34.000Z",
-      "expiresAt": "2026-10-06T22:26:53.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/09/29/kamen-rider-my-th-ganha-manga-na-web-por-ex-assistente-do-criador-da-franquia",
-          "publishedAt": "2026-09-29T22:26:53.000Z",
-          "author": "Matheus Mossmann"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 467,
-      "qualityScore": 0.939,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 14,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 2,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
