@@ -167,7 +167,7 @@ test('detail back controls stay circular unobscured and tappable across viewport
       const geometry=await back.evaluate(el=>{const r=el.getBoundingClientRect(),header=document.querySelector('#topbar').getBoundingClientRect(),style=getComputedStyle(el);return{width:r.width,height:r.height,top:r.top,headerBottom:header.bottom,radius:style.borderRadius,hit:el.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2))}});
       expect(Math.abs(geometry.width-geometry.height)).toBeLessThanOrEqual(1);
       expect(geometry.width).toBeGreaterThanOrEqual(44);expect(geometry.radius).toBe('50%');
-      expect(geometry.top).toBeGreaterThanOrEqual(geometry.headerBottom+8);expect(geometry.hit).toBe(true);
+      expect(geometry.top).toBeGreaterThanOrEqual(geometry.headerBottom+8);expect(geometry.top).toBeLessThanOrEqual(geometry.headerBottom+20);expect(geometry.hit).toBe(true);
       await noOverflow(page,2);
       if(width===390)await page.screenshot({path:testInfo.outputPath(`${kind}-detail-mobile.png`)});
     }
@@ -1174,7 +1174,7 @@ for(const item of [{kind:'anime',route:'/anime/anime-teste-101',id:101,catalog:'
     await page.setViewportSize({width:390,height:844});
     await page.goto(pageUrl(item.route),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx22-detail:not(.nx22-fail)')).toBeVisible({timeout:30000});await allowAccountActions(page);
     const title=page.locator('.nx22-headcopy h1'),list=page.locator('.nx22-list'),favorite=page.locator('.nx22-fav'),averageStars=page.locator('.nx22-average-star');
-    expect(parseFloat(await title.evaluate(element=>getComputedStyle(element).fontSize))).toBeLessThanOrEqual(30);await expect(list).toHaveCSS('height','32px');await expect(favorite).toHaveCSS('width','32px');await expect(averageStars).toHaveCount(5);
+    expect(parseFloat(await title.evaluate(element=>getComputedStyle(element).fontSize))).toBeLessThanOrEqual(30);await expect(list).toHaveCSS('height','44px');await expect(favorite).toHaveCSS('width','44px');await expect(averageStars).toHaveCount(5);
     await expect(page.locator('[data-nx22-back]')).toBeVisible();await expect(page.locator('[data-nx22-rating],[data-nx22-rating-star]')).toHaveCount(0);await expect(page.getByRole('tab',{name:'Impressões'})).toBeVisible();await expect(page.getByRole('tab',{name:'Comentários'})).toHaveCount(0);
     expect((await page.locator('[data-nx22-back]').boundingBox()).y).toBeGreaterThanOrEqual(54);await expect(favorite).toHaveCSS('background-image','none');await expect(favorite).toHaveAttribute('aria-pressed','false');await expect(list).toHaveCSS('background-image',/linear-gradient/);
     await expect(page.locator('.nx22-stats').first()).toContainText('NOTA MÉDIA');await expect(page.locator('.nx22-stats').first()).toContainText('POPULARIDADE');await expect(page.locator('.nx22-stats').first()).toContainText('MEMBROS');
@@ -1202,10 +1202,34 @@ for(const type of ['ANIME','MANGA'])test(`${type} compact detail reflows without
     await expect(page.locator('[data-nx22-rating-context]')).toHaveCount(0);
     await expect(main).not.toContainText('Nenhuma avaliação no AniNexus ainda.');
     await expect(page.locator('.nx22-stats strong')).toHaveText(['—','—','—']);
-    await expect(page.locator('.nx22-list')).toHaveCSS('height','32px');
-    await expect(page.locator('.nx22-fav')).toHaveCSS('width','32px');
+    const actionSize=width<721?44:46;
+    await expect(page.locator('.nx22-list')).toHaveCSS('height',`${actionSize}px`);
+    await expect(page.locator('.nx22-fav')).toHaveCSS('width',`${actionSize}px`);
     await expect(page.locator('.nx22-tab-list>button').first()).toHaveCSS('height','32px');
     await expect(page.locator('.nx22-synopsis')).toHaveCSS('font-size','14px');
+    const actions=await page.locator('.nx22-actions').evaluate(element=>{
+      const box=node=>{const{left,right,top,bottom,width,height}=node.getBoundingClientRect();return{left,right,top,bottom,width,height}};
+      return{row:box(element),favorite:box(element.querySelector('.nx22-fav')),list:box(element.querySelector('.nx22-list')),share:box(element.querySelector('.nx22-share'))};
+    });
+    const actionButtons=[actions.favorite,actions.list,actions.share];
+    for(const button of actionButtons){
+      expect(Math.abs(button.height-actionSize)).toBeLessThanOrEqual(1);
+      expect(Math.abs(button.top-actions.favorite.top)).toBeLessThanOrEqual(1);
+      expect(Math.abs(button.bottom-actions.favorite.bottom)).toBeLessThanOrEqual(1);
+      expect(button.left).toBeGreaterThanOrEqual(actions.row.left-1);
+      expect(button.right).toBeLessThanOrEqual(actions.row.right+1);
+    }
+    expect(Math.abs(actions.favorite.width-actions.favorite.height)).toBeLessThanOrEqual(1);
+    expect(Math.abs(actions.share.width-actions.share.height)).toBeLessThanOrEqual(1);
+    expect(Math.abs(actions.favorite.width-actions.share.width)).toBeLessThanOrEqual(1);
+    expect(actions.favorite.right).toBeLessThanOrEqual(actions.list.left+1);
+    expect(actions.list.right).toBeLessThanOrEqual(actions.share.left+1);
+    expect(actions.row.height).toBeLessThanOrEqual(actionSize+1);
+    if(width<721){
+      expect(Math.abs(actions.favorite.left-actions.row.left)).toBeLessThanOrEqual(1);
+      expect(Math.abs(actions.share.right-actions.row.right)).toBeLessThanOrEqual(1);
+      expect(actions.list.width).toBeGreaterThan(actions.row.width/2);
+    }
     const geometry=await main.evaluate(element=>{
       const style=node=>getComputedStyle(node),box=node=>node.getBoundingClientRect(),cover=box(element.querySelector('.nx22-cover')),card=element.querySelector('.nx22-info-card'),cardBox=box(card);
       return{coverWidth:cover.width,coverTop:cover.top,chipSizes:[...element.querySelectorAll('.nx22-chips>a,.nx22-chips>.nx22-status')].map(node=>({height:box(node).height,fontSize:style(node).fontSize})),rows:[...card.children].map(row=>({height:box(row).height,left:box(row).left,right:box(row).right,labelSize:style(row.querySelector('span')).fontSize,valueSize:style(row.querySelector('strong')).fontSize})),cardLeft:cardBox.left,cardRight:cardBox.right,infoValues:[...element.querySelectorAll('.nx22-info-card strong')].map(node=>({left:box(node).left,right:box(node).right,cardLeft:box(node.closest('.nx22-info-card')).left,cardRight:box(node.closest('.nx22-info-card')).right}))};

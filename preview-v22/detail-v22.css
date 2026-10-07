@@ -148,7 +148,7 @@ body.nx22-detail-active .menu-btn{width:38px!important;height:38px!important}
 /* AniNexus V44.36 — ações e indicadores alinhados ao detalhe do AniQuim. */
 .nx22-hero-bg img{object-fit:cover;object-position:center center;transform:none}
 .nx22-headcopy h1{overflow-wrap:anywhere;word-break:normal}
-.nx22-back{z-index:5;top:calc(var(--nx43-header-height,66px) + 14px);box-sizing:border-box;width:44px;height:44px;min-width:44px;min-height:44px;max-width:44px;max-height:44px;aspect-ratio:1;flex:none;padding:0;justify-content:center;border:1px solid rgba(255,255,255,.14);border-radius:50%;background:rgba(8,6,8,.76);color:#fff;box-shadow:0 7px 24px rgba(0,0,0,.25)}
+.nx22-back{z-index:5;top:14px;box-sizing:border-box;width:44px;height:44px;min-width:44px;min-height:44px;max-width:44px;max-height:44px;aspect-ratio:1;flex:none;padding:0;justify-content:center;border:1px solid rgba(255,255,255,.14);border-radius:50%;background:rgba(8,6,8,.76);color:#fff;box-shadow:0 7px 24px rgba(0,0,0,.25)}
 .nx22-back span{display:none}
 .nx22-back svg{width:22px;height:22px}
 .nx22-actions{gap:9px;margin-top:17px}
@@ -406,12 +406,8 @@ html[data-theme=light] .nx22-detail-rail-section .nx44-rail-frame{--nx44-rail-su
 .nx22-synopsis-toggle{min-height:32px;margin-top:8px;padding:5px 10px;border:1px solid var(--d-line);border-radius:6px;background:var(--d-panel);color:inherit;font-size:12px!important;font-weight:800;cursor:pointer}
 .nx22-synopsis-toggle[hidden]{display:none}
 .nx22-synopsis-toggle:focus-visible{outline:2px solid #ef5270;outline-offset:3px}
-.nx22-actions{gap:8px;margin-top:14px}
-.nx22-actions button{font-size:14px;height:32px;min-height:32px;border-radius:5px}
-.nx22-fav,.nx22-share{width:32px!important;height:32px!important;min-width:32px!important;min-height:32px!important;max-width:32px!important;max-height:32px!important}
-body.nx22-detail-active button.nx22-list[data-nx-action-owner="global"]{font-size:14px!important;height:32px!important;min-height:32px!important;padding-inline:12px!important;min-width:164px!important;flex:0 1 auto}
-body.nx22-detail-active button.nx22-fav[data-nx-action-owner="global"],body.nx22-detail-active button.nx22-share[data-nx-action-owner="global"]{width:32px!important;height:32px!important;min-width:32px!important;min-height:32px!important;max-width:32px!important;max-height:32px!important}
-.nx22-actions svg{width:17px;height:17px}
+.nx22-actions button{font-size:14px}
+body.nx22-detail-active button.nx22-list[data-nx-action-owner="global"]{font-size:14px!important}
 .nx22-meta,.nx22-eyebrow,.nx22-chips span,.nx22-chips a,
 body.nx22-detail-active .nx22-chips>.nx22-status,body.nx22-detail-active .nx22-chips>a{font-size:10px;line-height:1.4;min-height:24px;padding-inline:7px}
 .nx22-meta,.nx22-eyebrow{font-size:12px}

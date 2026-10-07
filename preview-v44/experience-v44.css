@@ -2014,7 +2014,7 @@ html[data-theme=light] .search-result:hover{background:#faf1f4}
 @media(max-width:720px){
   body.nx22-detail-active .nx22-hero-bg{height:340px}
   body.nx22-detail-active .nx22-hero-shade{height:455px}
-  body.nx22-detail-active .nx22-back{top:calc(var(--nx43-header-height,54px) + 14px);left:0}
+  body.nx22-detail-active .nx22-back{top:14px;left:0}
   body.nx22-detail-active .nx22-hero-grid{padding-top:12px!important}
   body.nx22-detail-active .nx22-cover{width:min(179px,48vw)!important}
 }
