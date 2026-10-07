@@ -1168,16 +1168,18 @@ test('mobile detail navigation opens as an AniQuim-style bottom sheet',async({pa
 for(const item of [{kind:'anime',route:'/anime/anime-teste-101',id:101,catalog:'/animes/catalogo',filterSelector:'[data-nx22-genre]',filterKey:'genre',filterValue:'Action',catalogState:'nx:v46:anime-catalog-state'},{kind:'mangá',route:'/manga/manga-teste-202',id:202,catalog:'/mangas',filterSelector:'[data-nx22-genre]',filterKey:'genre',filterValue:'Action',catalogState:'nx:v46:reading-catalog-state'}]){
   test(`${item.kind} detail uses AniQuim-sized controls, stable clicks and filtered genres`,async({page})=>{
     await page.addInitScript(()=>{const now=Date.now(),state={status:'CURRENT',progress:2,score:null,reaction:'',updatedAt:now};localStorage.setItem('aninexus:mediaState:v2',JSON.stringify({101:state}));localStorage.setItem('aninexus:mangaState:v2',JSON.stringify({202:{...state,volumeProgress:1}}))});
+    const type=item.route.startsWith('/manga/')?'MANGA':'ANIME',kind=type==='MANGA'?'manga':'anime';
+    await page.route(`**/api/${kind}/${item.id}`,route=>route.fulfill({json:{...rankedMedia(item.id,type),mediaType:type,genres:['Action'],description:'Uma história de teste.',characters:[],staff:[],relations:[],recommendations:[]}}));
     await page.route('**/api/**/rating',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({score:8.5,votes:24})}));
     await page.setViewportSize({width:390,height:844});
     await page.goto(pageUrl(item.route),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx22-detail:not(.nx22-fail)')).toBeVisible({timeout:30000});await allowAccountActions(page);
     const title=page.locator('.nx22-headcopy h1'),list=page.locator('.nx22-list'),favorite=page.locator('.nx22-fav'),averageStars=page.locator('.nx22-average-star');
-    expect(parseFloat(await title.evaluate(element=>getComputedStyle(element).fontSize))).toBeLessThanOrEqual(30);expect(parseFloat(await list.evaluate(element=>getComputedStyle(element).height))).toBeGreaterThanOrEqual(42);expect(parseFloat(await favorite.evaluate(element=>getComputedStyle(element).width))).toBeGreaterThanOrEqual(42);await expect(averageStars).toHaveCount(5);
+    expect(parseFloat(await title.evaluate(element=>getComputedStyle(element).fontSize))).toBeLessThanOrEqual(30);await expect(list).toHaveCSS('height','32px');await expect(favorite).toHaveCSS('width','32px');await expect(averageStars).toHaveCount(5);
     await expect(page.locator('[data-nx22-back]')).toBeVisible();await expect(page.locator('[data-nx22-rating],[data-nx22-rating-star]')).toHaveCount(0);await expect(page.getByRole('tab',{name:'Impressões'})).toBeVisible();await expect(page.getByRole('tab',{name:'Comentários'})).toHaveCount(0);
     expect((await page.locator('[data-nx22-back]').boundingBox()).y).toBeGreaterThanOrEqual(54);await expect(favorite).toHaveCSS('background-image','none');await expect(favorite).toHaveAttribute('aria-pressed','false');await expect(list).toHaveCSS('background-image',/linear-gradient/);
     await expect(page.locator('.nx22-stats').first()).toContainText('NOTA MÉDIA');await expect(page.locator('.nx22-stats').first()).toContainText('POPULARIDADE');await expect(page.locator('.nx22-stats').first()).toContainText('MEMBROS');
     await expect(page.locator('.nx22-hero-bg img')).toHaveCSS('object-fit','cover');await expect(page.locator('.nx22-cover')).toHaveCSS('aspect-ratio','2 / 3');
-    const aligned=await page.locator('.nx22-stats>div').evaluateAll(cells=>cells.map(cell=>{const strong=cell.querySelector('strong').getBoundingClientRect(),label=cell.querySelector(':scope>span').getBoundingClientRect();return Math.abs((strong.left+strong.width/2)-(label.left+label.width/2))}));expect(aligned.every(delta=>delta<=1)).toBe(true);
+    const aligned=await page.locator('.nx22-stats>div').evaluateAll(cells=>cells.map(cell=>{const value=(cell.querySelector('.nx22-average-value')||cell.querySelector('strong')).getBoundingClientRect(),label=cell.querySelector(':scope>span').getBoundingClientRect();return Math.abs((value.left+value.width/2)-(label.left+label.width/2))}));expect(aligned.every(delta=>delta<=1)).toBe(true);
     const averageGap=await page.locator('.nx22-average-value').evaluate(element=>{const score=element.querySelector('strong').getBoundingClientRect(),stars=element.querySelector('.nx22-average-stars').getBoundingClientRect();return stars.left-score.right});expect(averageGap).toBeLessThanOrEqual(6);
     await page.evaluate(()=>window.__nxStableDocument={created:Date.now()});await favorite.click();await expect(favorite).toHaveAttribute('aria-pressed','true');await expect(favorite).toHaveCSS('background-image',/linear-gradient/);expect(await page.evaluate(()=>Boolean(window.__nxStableDocument))).toBe(true);
     await page.locator('[data-nx22-tabs-toggle]').click();await expect(page.locator('.nx22-tabs-sheet')).toBeVisible();await page.locator('[data-nx22-sheet-tab="elenco"]').click();expect(await page.evaluate(()=>Boolean(window.__nxStableDocument))).toBe(true);
@@ -1187,6 +1189,50 @@ for(const item of [{kind:'anime',route:'/anime/anime-teste-101',id:101,catalog:'
     const path=await page.evaluate(()=>{const url=new URL(location.href),restored=url.searchParams.get('p');return(restored||url.pathname).split('?')[0].replace(/^\/AniNexus/,'')});expect(path).toBe(item.catalog);await noOverflow(page,2);
   });
 }
+
+for(const type of ['ANIME','MANGA'])test(`${type} compact detail reflows without empty rating notices and retains keyboard navigation`,async({page},testInfo)=>{
+  const kind=type==='MANGA'?'manga':'anime',media={...rankedMedia(101,type),mediaType:type,title:'Uma obra com um título comprido para verificar a apresentação compacta',titleRomaji:'Obra de teste',titleNative:'Um título original alternativo muito comprido para verificar a quebra de linha',synonyms:['Outro nome bastante comprido que deve continuar dentro da ficha da obra'],cover:portrait,banner:portrait,description:'Uma história que permite testar a leitura sem ocupar espaço excessivo.',status:'NOT_YET_RELEASED',metricsSource:'aninexus',score:null,averageScore:null,ratingCount:0,listCount:0,popularity:0,tags:['Coming of Age','Family Life','Espionage'],duration:24,characters:[],staff:[],relations:[],recommendations:[]};
+  await page.route(`**/api/${kind}/101`,route=>route.fulfill({json:media}));
+  await page.route(`**/api/${kind}/101/impressions**`,route=>route.fulfill({json:{items:[]}}));
+  await page.addInitScript(()=>localStorage.setItem('aninexus:privacy:v1',JSON.stringify({analytics:false,at:Date.now()})));
+  for(const width of [320,390,1440]){
+    await page.setViewportSize({width,height:900});
+    await page.goto(firstVisitUrl(`/${kind}/obra-compacta-101`),{waitUntil:'domcontentloaded'});
+    const main=page.locator('.nx22-detail:not(.nx22-fail):not(.nx22-loading)');await expect(main).toBeVisible({timeout:30000});
+    await expect(page.locator('[data-nx22-rating-context]')).toHaveCount(0);
+    await expect(main).not.toContainText('Nenhuma avaliação no AniNexus ainda.');
+    await expect(page.locator('.nx22-stats strong')).toHaveText(['—','—','—']);
+    await expect(page.locator('.nx22-list')).toHaveCSS('height','32px');
+    await expect(page.locator('.nx22-fav')).toHaveCSS('width','32px');
+    await expect(page.locator('.nx22-tab-list>button').first()).toHaveCSS('height','32px');
+    await expect(page.locator('.nx22-synopsis')).toHaveCSS('font-size','14px');
+    const geometry=await main.evaluate(element=>{
+      const style=node=>getComputedStyle(node),box=node=>node.getBoundingClientRect(),cover=box(element.querySelector('.nx22-cover')),card=element.querySelector('.nx22-info-card'),cardBox=box(card);
+      return{coverWidth:cover.width,coverTop:cover.top,chipSizes:[...element.querySelectorAll('.nx22-chips>a,.nx22-chips>.nx22-status')].map(node=>({height:box(node).height,fontSize:style(node).fontSize})),rows:[...card.children].map(row=>({height:box(row).height,left:box(row).left,right:box(row).right,labelSize:style(row.querySelector('span')).fontSize,valueSize:style(row.querySelector('strong')).fontSize})),cardLeft:cardBox.left,cardRight:cardBox.right,infoValues:[...element.querySelectorAll('.nx22-info-card strong')].map(node=>({left:box(node).left,right:box(node).right,cardLeft:box(node.closest('.nx22-info-card')).left,cardRight:box(node.closest('.nx22-info-card')).right}))};
+    });
+    expect(geometry.chipSizes.every(chip=>chip.height<=25&&chip.fontSize==='10px')).toBe(true);
+    expect(geometry.rows.every(row=>row.height<=35&&row.labelSize==='11px'&&row.valueSize==='12px')).toBe(true);
+    expect(geometry.infoValues.every(value=>value.left>=value.cardLeft&&value.right<=value.cardRight)).toBe(true);
+    if(width<721){expect(geometry.coverWidth).toBeLessThanOrEqual(179);expect(geometry.coverWidth).toBeGreaterThanOrEqual(150);expect(geometry.coverTop).toBeLessThanOrEqual(100)}
+    await noOverflow(page,2);
+    await page.locator('.nx22-info-card').last().screenshot({path:testInfo.outputPath(`compact-${kind}-fields-${width}.png`)});
+    const general=page.getByRole('tab',{name:'Geral',exact:true}),impressions=page.getByRole('tab',{name:'Impressões',exact:true}),toggle=page.locator('[data-nx22-tabs-toggle]');
+    await general.focus();await general.press('ArrowRight');await expect(impressions).toBeFocused();await expect(general).toHaveAttribute('aria-selected','true');await impressions.press('Enter');await expect(impressions).toHaveAttribute('aria-selected','true');await expect(page.locator('main')).toHaveCount(1);
+    await toggle.focus();await toggle.press('Enter');const sheet=page.getByRole('dialog',{name:'Menu de seções'});await expect(sheet).toBeVisible();await sheet.locator('button').last().focus();await page.keyboard.press('Tab');await expect(sheet.getByRole('button',{name:'Fechar menu',exact:true})).toBeFocused();await page.keyboard.press('Escape');await expect(sheet).toBeHidden();await expect(toggle).toBeFocused();await noOverflow(page,2);
+  }
+});
+
+for(const type of ['ANIME','MANGA'])test(`${type} compact rating groups keep zero and full scores inside their mobile column`,async({page})=>{
+  const kind=type==='MANGA'?'manga':'anime';await page.setViewportSize({width:320,height:900});
+  for(const[index,score]of [0,9.5,10].entries()){
+    const id=110+index,media={...rankedMedia(id,type),mediaType:type,score,ratingCount:1,description:'Uma história.',cover:portrait,banner:portrait,characters:[],staff:[],relations:[],recommendations:[]};
+    await page.route(`**/api/${kind}/${id}`,route=>route.fulfill({json:media}));
+    await page.goto(firstVisitUrl(`/${kind}/nota-compacta-${id}`),{waitUntil:'domcontentloaded'});await expect(page.locator('.nx22-detail:not(.nx22-fail)')).toBeVisible({timeout:30000});
+    await expect(page.locator('.nx22-average-value>strong')).toHaveText(score.toFixed(2));await expect(page.locator('[data-nx22-rating-context]')).toHaveText('1 avaliação no AniNexus · amostra pequena');
+    const geometry=await page.locator('.nx22-average-stat').evaluate(cell=>{const box=cell.getBoundingClientRect(),value=cell.querySelector('.nx22-average-value').getBoundingClientRect(),score=cell.querySelector('strong').getBoundingClientRect(),stars=cell.querySelector('.nx22-average-stars').getBoundingClientRect(),label=cell.querySelector(':scope>span').getBoundingClientRect();return{left:box.left,right:box.right,scoreLeft:score.left,starsRight:stars.right,gap:stars.left-score.right,centerDifference:Math.abs((value.left+value.right)/2-(label.left+label.right)/2)}});
+    expect(geometry.scoreLeft).toBeGreaterThanOrEqual(geometry.left-1);expect(geometry.starsRight).toBeLessThanOrEqual(geometry.right+1);expect(geometry.gap).toBeGreaterThanOrEqual(3);expect(geometry.gap).toBeLessThanOrEqual(6);expect(geometry.centerDifference).toBeLessThanOrEqual(1);await noOverflow(page,2);
+  }
+});
 
 test('radio-preserving manga navigation reuses the eager shared detail renderer',async({page})=>{
   const item={...rankedMedia(6201,'MANGA'),mediaType:'MANGA',description:'Uma história de leitura para validar a navegação contínua.',tags:['Adventure'],tagDetails:[{name:'Adventure',rank:90,isMediaSpoiler:false}],characters:[],staff:[],relations:[],recommendations:[]};

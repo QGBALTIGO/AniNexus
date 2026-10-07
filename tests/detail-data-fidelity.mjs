@@ -18,12 +18,15 @@ test('trailer normalizes only strict YouTube identifiers and supported HTTPS URL
   assert.equal(h.trailerId({trailer:{site:'dailymotion',id}}),'');
 });
 test('upstream AniList distributions retain their actual source',async()=>{
-  const h=harness(),media=await h.loadAni(101,'ANIME');assert.equal(media.metricsSource,'anilist');assert.equal(media.ratingCount,10);assert.equal(media.listCount,20);assert.equal(h.scoreFixed(media),'—');assert.match(h.ratingContext(media),/indisponíveis/);
+  const h=harness(),media=await h.loadAni(101,'ANIME');assert.equal(media.metricsSource,'anilist');assert.equal(media.ratingCount,10);assert.equal(media.listCount,20);assert.equal(h.scoreFixed(media),'—');assert.equal(h.ratingContext(media),'');
 });
-test('community ratings preserve zero and disclose source sample size',()=>{
+test('community ratings preserve zero and retain a concise positive sample count',()=>{
   const h=harness();for(const [count,average,expected] of [[1,0,'0.00'],[4,95,'9.50'],[5,82,'8.20']]){
-    const media={metricsSource:'aninexus',ratingCount:count,averageScore:average};assert.equal(h.scoreFixed(media),expected);assert.match(h.ratingContext(media),/no AniNexus/);assert.equal(h.ratingContext(media).includes('Amostra pequena'),count<5);
+    const media={metricsSource:'aninexus',ratingCount:count,averageScore:average};assert.equal(h.scoreFixed(media),expected);assert.equal(h.ratingContext(media),`${count} ${count===1?'avaliação':'avaliações'} no AniNexus${count<5?' · amostra pequena':''}`);
   }
   for(const averageScore of [-1,101,NaN,null,undefined])assert.equal(h.scoreFixed({metricsSource:'aninexus',ratingCount:1,averageScore}),'—');
   assert.equal(h.scoreFixed({metricsSource:'aninexus',ratingCount:0,averageScore:90}),'—');
+});
+test('missing or foreign ratings do not create an empty assessment notice',()=>{
+  const h=harness();for(const media of [{metricsSource:'aninexus',ratingCount:0,averageScore:90},{metricsSource:'aninexus',ratingCount:null},{metricsSource:'aninexus'},{metricsSource:'anilist',ratingCount:80,averageScore:90},null])assert.equal(h.ratingContext(media),'');
 });
