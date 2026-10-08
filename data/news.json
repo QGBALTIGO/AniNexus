@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T10:18:57.766Z",
+  "generatedAt": "2026-10-08T17:25:32.957Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -60,14 +60,305 @@
     "newStories": 27,
     "fullArticles": 27,
     "previewArticles": 0,
-    "avgWords": 476,
+    "avgWords": 468,
     "withHeroImage": 27,
-    "withOrderedMedia": 24,
+    "withOrderedMedia": 23,
     "skippedTranslation": 0,
     "skippedQuality": 21,
-    "durationMs": 2510
+    "durationMs": 3255
   },
   "items": [
+    {
+      "id": "jbox-c3d13b1e",
+      "slug": "crunchyroll-lanca-divisao-focada-na-producao-de-animes-e-live-actions-jbox-c3d13b1e",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Crunchyroll lança divisão focada na produção de animês e live-actions",
+      "originalTitle": "Crunchyroll lança divisão focada na produção de animês e live-actions",
+      "summary": "A Crunchyroll, que faz parte do grupo Sony, anunciou a criação da Crunchyroll Storyworks, divisão focada na produção de animês e live-actions em parceria com criadores do Japão.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Live Action",
+        "Negócios",
+        "Streaming",
+        "Crunchyroll",
+        "Crunchyroll Storyworks",
+        "Homem-Aranha no Aranhaverso",
+        "Nova divisão da Cruchyroll",
+        "Sony",
+        "Tohru Iokibe"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/08/crunchyroll-lanca-divisao-focada-na-producao-de-animes-e-live-actions",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/08/crunchyroll-lanca-divisao-focada-na-producao-de-animes-e-live-actions",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/crunchyroll-destacada.jpg",
+      "mediaQuery": "Crunchyroll lança divisão focada na produção de animês e live-actions",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Crunchyroll, que faz parte do grupo Sony, anunciou a criação da Crunchyroll Storyworks, divisão focada na produção de animês e live-actions em parceria com criadores do Japão.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que faz parte do grupo "
+            },
+            {
+              "text": "Sony",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", anunciou a criação da"
+            },
+            {
+              "text": " Crunchyroll Storyworks",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", divisão focada na produção de animês e live-actions em parceria com criadores do Japão."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Segundo a Variety, a nova área da empresa será chefiada pelo executivo Tohru Iokibe, que já trabalhou com a Sony Pictures e PlayStation Productions, e a ideia é reunir parceiros criativos da Crunchyroll no Japão, a Aniplex (também parte da Sony), e a Sony Pictures, responsável por Homem-Aranha no Aranhaverso, para desenvolver histórias focadas no público mundial.",
+          "runs": [
+            {
+              "text": "Segundo a "
+            },
+            {
+              "text": "Variety",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", a nova área da empresa será chefiada pelo executivo "
+            },
+            {
+              "text": "Tohru Iokibe",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que já trabalhou com a "
+            },
+            {
+              "text": "Sony Pictures",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "PlayStation Productions",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e a ideia é reunir parceiros criativos da Crunchyroll no Japão, a "
+            },
+            {
+              "text": "Aniplex",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (também parte da Sony), e a Sony Pictures, responsável por "
+            },
+            {
+              "text": "Homem-Aranha no Aranhaverso",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", para desenvolver histórias focadas no público mundial."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Neste sentido, o comunicado oficial afirma que a divisão almeja “adaptar histórias globais para animê”, ao mesmo tempo em que buscará fazer o caminho contrário e transformar animês em live-action, segundo eles, “em estreita colaboração com os criadores japoneses para priorizar e preservar a visão criativa original”.",
+          "runs": [
+            {
+              "text": "Neste sentido, o comunicado oficial afirma que a divisão almeja "
+            },
+            {
+              "text": "“adaptar histórias globais para animê”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", ao mesmo tempo em que buscará fazer o caminho contrário e transformar animês em live-action, segundo eles, "
+            },
+            {
+              "text": "“em estreita colaboração com os criadores japoneses para priorizar e preservar a visão criativa original”.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ravi Ahuja, CEO da Sony Pictures Entertainment, afirmou:",
+          "runs": [
+            {
+              "text": "Ravi Ahuja",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", CEO da Sony Pictures Entertainment, afirmou:"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "“O animê se tornou uma força cultural global porque foi moldado ao longo de décadas pelos criadores, estúdios e editoras que cultivaram e desenvolveram uma narrativa singular e personagens inesquecíveis. À medida em que o animê cresce, temos a responsabilidade de proteger e amplificar o que o torna especial, mantendo sempre a visão dos criadores no centro. Esse é o objetivo da Storyworks.”",
+          "runs": [
+            {
+              "text": "“O animê se tornou uma força cultural global porque foi moldado ao longo de décadas pelos criadores, estúdios e editoras que cultivaram e desenvolveram uma narrativa singular e personagens inesquecíveis. À medida em que o animê cresce, temos a responsabilidade de proteger e amplificar o que o torna especial, mantendo sempre a visão dos criadores no centro. Esse é o objetivo da Storyworks.”"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por enquanto, nenhum projeto foi anunciado dentro da nova divisão, mas a expectativa é que Crunchyroll divulgue mais novidades nos próximos meses.",
+          "runs": [
+            {
+              "text": "Por enquanto, nenhum projeto foi anunciado dentro da nova divisão, mas a expectativa é que Crunchyroll divulgue mais novidades nos próximos meses."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Variety",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Variety",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://variety.com/2026/tv/news/crunchyroll-storyworks-anime-live-action-projects-1236904447/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-08T15:25:10.000Z",
+      "updatedAt": "2026-10-08T15:26:32.000Z",
+      "expiresAt": "2026-10-15T15:25:10.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/08/crunchyroll-lanca-divisao-focada-na-producao-de-animes-e-live-actions",
+          "publishedAt": "2026-10-08T15:25:10.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 244,
+      "qualityScore": 0.968,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-eee09c64",
       "slug": "marca-brasileira-fandom-box-anuncia-bonecos-de-os-cavaleiros-do-zodiaco-jbox-eee09c64",
@@ -6462,7 +6753,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 220,
-      "qualityScore": 0.968,
+      "qualityScore": 0.908,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -7016,7 +7307,7 @@
       "sourceCount": 1,
       "readingMinutes": 3,
       "wordCount": 462,
-      "qualityScore": 0.821,
+      "qualityScore": 0.761,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -7462,7 +7753,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 385,
-      "qualityScore": 0.992,
+      "qualityScore": 0.932,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -10445,565 +10736,6 @@
         "facts": 0,
         "sections": 0,
         "blocks": 21,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 2,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-dda6b1fc",
-      "slug": "netflix-confirma-transmissao-de-dragon-ball-super-beerus-no-brasil-jbox-dda6b1fc",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Netflix confirma transmissão de ‘Dragon Ball Super: Beerus’ no Brasil",
-      "originalTitle": "Netflix confirma transmissão de ‘Dragon Ball Super: Beerus’ no Brasil",
-      "summary": "A Netflix confirmou que fará a transmissão de Dragon Ball Super: Beerus em diversos territórios, incluindo o Brasil.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Streaming",
-        "dragon ball super",
-        "Dragon Ball Super: Beerus",
-        "Dragon Ball Super: Beerus na Netflix",
-        "Dragon Ball Super: Beerus na Netflix Brasil",
-        "netflix",
-        "Onde assistir Dragon Ball Super: Beerus no Brasil",
-        "remake de Dragon Ball Super",
-        "remake do Freeza dourado"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/01/netflix-confirma-transmissao-de-dragon-ball-super-beerus-no-brasil",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/01/netflix-confirma-transmissao-de-dragon-ball-super-beerus-no-brasil",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Dragon-Ball-Super-Beerus-destacada.jpg",
-      "mediaQuery": "Netflix confirma transmissão de ‘Dragon Ball Super: Beerus’ no Brasil",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Dragon-Ball-Super-Beerus-Netflix.png",
-          "alt": "Dragon Ball Super Beerus na Netflix",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Dragon-Ball-Super-Beerus-Netflix-01.png",
-          "alt": "Dragon Ball Super Beerus na Netflix",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/i2iicVzWa5A"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A Netflix confirmou que fará a transmissão de Dragon Ball Super: Beerus em diversos territórios, incluindo o Brasil.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " confirmou que fará a transmissão de "
-            },
-            {
-              "text": "Dragon Ball Super: Beerus",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " em diversos territórios, incluindo o Brasil."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Segundo o X oficial da plataforma, a estreia nos EUA está marcada para o dia 17 de outubro, quase uma semana após o lançamento no Japão, marcado para o dia 11 do mesmo mês.",
-          "runs": [
-            {
-              "text": "Segundo o "
-            },
-            {
-              "text": "X",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " oficial da plataforma, a estreia nos EUA está marcada para o dia "
-            },
-            {
-              "text": "17 de outubro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", quase uma semana após o lançamento no Japão, marcado para o dia 11 do mesmo mês."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Dragon-Ball-Super-Beerus-Netflix.png",
-          "alt": "Dragon Ball Super Beerus na Netflix"
-        },
-        {
-          "type": "paragraph",
-          "text": "Exibição nos EUA será quase uma semana após o lançamento no Japão | X/Reprodução",
-          "runs": [
-            {
-              "text": "Exibição nos EUA será quase uma semana após o lançamento no Japão | X/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já no Brasil, embora a transmissão esteja confirmada, a página oficial da produção ainda não informa uma data de veiculação. No momento, é possível apenas acionar um lembrete dentro da plataforma.",
-          "runs": [
-            {
-              "text": "Já no Brasil, embora a transmissão esteja confirmada, a página oficial da produção ainda não informa uma data de veiculação. No momento, é possível apenas acionar um lembrete dentro da plataforma."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Dragon-Ball-Super-Beerus-Netflix-01.png",
-          "alt": "Dragon Ball Super Beerus na Netflix"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fãs brasileiros já podem ativar o lembrete dentro da plataforma | Netflix/Reprodução",
-          "runs": [
-            {
-              "text": "Fãs brasileiros já podem ativar o lembrete dentro da plataforma | Netflix/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para marcar a confirmação de exibição em diversos territórios, a plataforma divulgou o trailer da produção com legendas fixas em inglês — mas você pode escolher a legenda oficial em português nas configurações do YouTube, ou então acessar a versão disponível no X.",
-          "runs": [
-            {
-              "text": "Para marcar a confirmação de exibição em diversos territórios, a plataforma divulgou o trailer da produção com legendas fixas em inglês — mas você pode escolher a legenda oficial em português nas configurações do YouTube, ou então acessar a "
-            },
-            {
-              "text": "versão disponível no X",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://x.com/NetflixBrasil/status/2105629362749935835"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=i2iicVzWa5A",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/i2iicVzWa5A"
-        },
-        {
-          "type": "paragraph",
-          "text": "Dragon Ball Super: Beerus é o título da nova versão de TV do primeiro arco de Dragon Ball Super, que por si só já é uma versão adaptada do filme Dragon Ball Z: A Batalha dos Deuses. A produção conta não apenas com cenas refeitas, mas também com trechos inéditos e uma história reconstruída de forma que se aproxime mais da ideia original de Akira Toriyama para o arco. O elenco original de Dragon Ball também regravou suas vozes para o novo animê, que conta ainda com aprimoramentos gerais de áudio, incluindo novas trilhas e melhoria dos efeitos sonoros.",
-          "runs": [
-            {
-              "text": "Dragon Ball Super: Beerus",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é o título da nova versão de TV do primeiro arco de "
-            },
-            {
-              "text": "Dragon Ball Super",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que por si só já é uma versão adaptada do filme "
-            },
-            {
-              "text": "Dragon Ball Z: A Batalha dos Deuses",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". A produção conta não apenas com cenas refeitas, mas também com trechos inéditos e uma "
-            },
-            {
-              "text": "história reconstruída de forma que se aproxime mais da ideia original de Akira Toriyama para o arco",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". O elenco original de "
-            },
-            {
-              "text": "Dragon Ball",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " também regravou suas vozes para o novo animê, que conta ainda com aprimoramentos gerais de áudio, incluindo novas trilhas e melhoria dos efeitos sonoros."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Até então, apenas o primeiro arco de Super tem remake confirmado de forma oficial, mas, com a inclusão de Freeza nas prévias, é provável que a nova versão se estenda por mais episódios. Além do lançamento aprimorado, uma continuação também já está confirmada, adaptando a saga Prisioneiro da Patrulha Galáctica, o arco do Moro.",
-          "runs": [
-            {
-              "text": "Até então, apenas o primeiro arco de "
-            },
-            {
-              "text": "Super",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " tem remake confirmado de forma oficial, mas, com a inclusão de Freeza nas prévias, é provável que a nova versão se estenda por mais episódios. Além do lançamento aprimorado, "
-            },
-            {
-              "text": "uma continuação também já está confirmada",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/01/24/toei-confirma-sequencia-de-dragon-ball-super/"
-            },
-            {
-              "text": ", adaptando a saga "
-            },
-            {
-              "text": "Prisioneiro da Patrulha Galáctica",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", o arco do Moro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No Brasil, os animês Dragon Ball, Dragon Ball Z, Dragon Ball GT, Dragon Ball Super, Dragon Ball Z Kai e Dragon Ball Daima estão no catálogo da Crunchyroll, que também conta com vários filmes da franquia. Já a HBO Max tem em seu catálogo a temporada única de Daima, além de Dragon Ball Z Kai e Dragon Ball Z Kai: The Final Chapters. A Netflix, por sua vez, conta com os episódios de Daima e o filme A Batalha dos Deuses, de 2013. Também há itens da franquia nos catálogos de Disney+ e Claro TV+.",
-          "runs": [
-            {
-              "text": "No Brasil, os animês "
-            },
-            {
-              "text": "Dragon Ball",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Dragon Ball Z",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Dragon Ball GT",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Dragon Ball Super",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Dragon Ball Z Kai",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Dragon Ball Daima",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " estão no catálogo da "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que também conta com vários filmes da franquia. Já a "
-            },
-            {
-              "text": "HBO Max",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " tem em seu catálogo a temporada única de "
-            },
-            {
-              "text": "Daima",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", além de "
-            },
-            {
-              "text": "Dragon Ball Z Kai",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Dragon Ball Z Kai: The Final Chapters",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". A "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", por sua vez, conta com os episódios de "
-            },
-            {
-              "text": "Daima",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e o filme "
-            },
-            {
-              "text": "A Batalha dos Deuses",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", de 2013. Também há itens da franquia nos catálogos de "
-            },
-            {
-              "text": "Disney+",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Claro TV+",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já o mangá da franquia está atualmente na fase Dragon Ball Super, que segue em hiato desde a morte do autor Akira Toriyama. O último capítulo da obra foi publicado na V-Jump em março de 2024, mês de falecimento do mangaká. Em fevereiro de 2025, a obra ganhou um one-shot. Desde então, ela segue parada.",
-          "runs": [
-            {
-              "text": "Já o mangá da franquia está atualmente na fase "
-            },
-            {
-              "text": "Dragon Ball Super",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que segue em hiato desde a morte do autor Akira Toriyama. O último capítulo da obra foi publicado na "
-            },
-            {
-              "text": "V-Jump",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " em março de 2024, mês de falecimento do mangaká. Em fevereiro de 2025, a obra ganhou um "
-            },
-            {
-              "text": "one-shot",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Desde então, ela segue parada."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Anime News Network, Netflix Brasil",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Anime News Network",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.animenewsnetwork.com/news/2026-10-01/netflix-to-stream-dragon-ball-super-beerus-anime/.242369"
-            },
-            {
-              "text": ", ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Netflix Brasil",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.netflix.com/search?q=beerus&jbv=83189604"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-01T16:43:02.000Z",
-      "updatedAt": "2026-10-01T17:16:19.000Z",
-      "expiresAt": "2026-10-08T16:43:02.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/01/netflix-confirma-transmissao-de-dragon-ball-super-beerus-no-brasil",
-          "publishedAt": "2026-10-01T16:43:02.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 478,
-      "qualityScore": 0.763,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 16,
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "contentMode": "full",
