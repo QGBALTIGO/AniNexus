@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T17:25:32.957Z",
+  "generatedAt": "2026-10-08T22:20:26.113Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 39,
+      "count": 40,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,591 @@
     }
   ],
   "stats": {
-    "collected": 49,
-    "grouped": 27,
-    "published": 27,
-    "newStories": 27,
-    "fullArticles": 27,
+    "collected": 50,
+    "grouped": 28,
+    "published": 28,
+    "newStories": 28,
+    "fullArticles": 28,
     "previewArticles": 0,
-    "avgWords": 468,
-    "withHeroImage": 27,
-    "withOrderedMedia": 23,
+    "avgWords": 488,
+    "withHeroImage": 28,
+    "withOrderedMedia": 24,
     "skippedTranslation": 0,
-    "skippedQuality": 21,
-    "durationMs": 3255
+    "skippedQuality": 22,
+    "durationMs": 3588
   },
   "items": [
+    {
+      "id": "jbox-8e6ba03c",
+      "slug": "critica-a-bela-adormecida-as-avessas-universo-das-letras-jbox-8e6ba03c",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Crítica | A Bela Adormecida às Avessas | Universo das Letras",
+      "originalTitle": "Crítica | A Bela Adormecida às Avessas | Universo das Letras",
+      "summary": "A Disney investe incessantemente na manutenção de suas principais propriedades intelectuais. Quando falamos dos filmes de contos de fadas (que construíram a fama da marca), a empresa tem focado não apenas na produção de remakes live-action, mas também em jogos, card games, livros e, claro, mangás.",
+      "author": "Pedro Vieira",
+      "tags": [
+        "Mangá",
+        "Resenha",
+        "A Bela Adormecida às Avessas",
+        "A Bela Adormecida às Avessas review",
+        "a bela adormecida mangá",
+        "mangá disney",
+        "RESENHA DE A Bela Adormecida às Avessas",
+        "Universo dos livros",
+        "universo geek"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/08/critica-a-bela-adormecida-as-avessas-universo-das-letras",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/08/critica-a-bela-adormecida-as-avessas-universo-das-letras",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/jbox-critica-destacada-belaadormecida.jpg",
+      "mediaQuery": "Crítica | A Bela Adormecida às Avessas | Universo das Letras",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/abelaadormecida-pag1.jpg",
+          "alt": "imagem: ilustração de A Bela Adormecida às Avessas",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/abelaadormecida-pag2.jpg",
+          "alt": "imagem: ilustração de A Bela Adormecida às Avessas",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/abelaadormecida-pag3.jpg",
+          "alt": "imagem: ilustração de A Bela Adormecida às Avessas",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/abelaadormecida-pag4.jpg",
+          "alt": "imagem: ilustração de A Bela Adormecida às Avessas",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/abelaadormecidacapa1-1.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/abelaadormecidacapa2.jpg",
+          "alt": "",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Disney investe incessantemente na manutenção de suas principais propriedades intelectuais. Quando falamos dos filmes de contos de fadas (que construíram a fama da marca), a empresa tem focado não apenas na produção de remakes live-action, mas também em jogos, card games, livros e, claro, mangás.",
+          "runs": [
+            {
+              "text": "A Disney investe incessantemente na manutenção de suas principais propriedades intelectuais. Quando falamos dos filmes de contos de fadas (que construíram a fama da marca), a empresa tem focado não apenas na produção de remakes live-action, mas também em jogos, card games, livros e, claro, mangás."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "É dessa última investida que surge A Bela Adormecida às Avessas, coletânea de dois volumes publicada aqui pela Universo das Letras (sob o selo Universo Geek), uma adaptação do livro Once Upon a Dream: A Twisted Tale (2016), inspirado no filme da Disney de 1959.",
+          "runs": [
+            {
+              "text": "É dessa última investida que surge "
+            },
+            {
+              "text": "A Bela Adormecida às Avessas",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", coletânea de dois volumes publicada aqui pela "
+            },
+            {
+              "text": "Universo das Letras",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (sob o selo Universo Geek), uma adaptação do livro "
+            },
+            {
+              "text": "Once Upon a Dream: A Twisted Tale",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (2016), inspirado no filme da Disney de 1959."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/abelaadormecida-pag1.jpg",
+          "alt": "imagem: ilustração de A Bela Adormecida às Avessas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama se inicia no que seriam os momentos finais da animação: o príncipe Phillip, após derrotar o dragão/Malévola, beija a princesa Aurora na esperança de acordá-la de sua maldição. Entretanto, ela não acorda e o príncipe acaba dormindo. Agora cabe à Aurora, em seu próprio sonho composto de pesadelos, descobrir uma forma de acordar.",
+          "runs": [
+            {
+              "text": "A trama se inicia no que seriam os momentos finais da animação: o príncipe Phillip, após derrotar o dragão/Malévola, beija a princesa Aurora na esperança de acordá-la de sua maldição. Entretanto, ela não acorda e o príncipe acaba dormindo. Agora cabe à Aurora, em seu próprio sonho composto de pesadelos, descobrir uma forma de acordar."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para cumprir sua missão, Aurora não apenas vai contar com a ajuda do príncipe , mas também das suas fadas, de uma gata encantada e de cartas mágicas, cada uma dotada de uma habilidade especial que ela pode invocar (tal qual uma cardcaptor). Além disso, Aurora descobre que ela própria tem outros poderes mágicos para se defender.",
+          "runs": [
+            {
+              "text": "Para cumprir sua missão, Aurora não apenas vai contar com a ajuda do príncipe , mas também das suas fadas, de uma gata encantada e de cartas mágicas, cada uma dotada de uma habilidade especial que ela pode invocar (tal qual uma "
+            },
+            {
+              "text": "cardcaptor",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). Além disso, Aurora descobre que ela própria tem outros poderes mágicos para se defender."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Trata-se assim de uma premissa que transforma uma personagem inicialmente passiva como Aurora, em uma espécie de garota mágica do universo dos contos de fadas. A considerar pela época de publicação do livro no qual se baseia, o mangá se alinha bem às expectativas da Disney do final dos anos 2010 de dar mais protagonismo às suas princesas (Aurora em específico nem é a protagonista de seu filme, embora seja a personagem título), transformando a Bela Adormecida em uma heroína independente e, por que não dizer, empoderada (há de fato uma carta chamada “empoderamento” no baralho da personagem deste mangá).",
+          "runs": [
+            {
+              "text": "Trata-se assim de uma premissa que "
+            },
+            {
+              "text": "transforma uma personagem inicialmente passiva como Aurora, em uma espécie de garota mágica do universo dos contos de fadas.",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " A considerar pela época de publicação do livro no qual se baseia, o mangá se alinha bem às expectativas da Disney do final dos anos 2010 de dar mais protagonismo às suas princesas (Aurora em específico nem é a protagonista de seu filme, embora seja a personagem título), transformando a Bela Adormecida em uma heroína independente e, por que não dizer, empoderada (há de fato uma carta chamada “empoderamento” no baralho da personagem deste mangá)."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/abelaadormecida-pag2.jpg",
+          "alt": "imagem: ilustração de A Bela Adormecida às Avessas"
+        },
+        {
+          "type": "paragraph",
+          "text": "A obra faz isso deixando de lado o aspecto infantil e alegre do filme original, para apostar em um tom mais sério e sombrio como o dos live-actions recentes. O objetivo é simples: atrair um público que prefere histórias mais sisudas como os fãs de mangás. A estratégia, porém, é uma das principais fragilidades da obra.",
+          "runs": [
+            {
+              "text": "A obra faz isso deixando de lado o aspecto infantil e alegre do filme original, para apostar em um"
+            },
+            {
+              "text": " tom mais sério e sombrio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como o dos live-actions recentes. O objetivo é simples: atrair um público que prefere histórias mais sisudas como os fãs de mangás. A estratégia, porém, é uma das principais fragilidades da obra."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Perde-se todo o encantamento e doçura que tornavam o filme de 1959 tão atraente em sua simplicidade narrativa, para dar destaque a uma história na qual a tristeza e o trauma são pontos focais. A trama recebe um aspecto altamente adulto que parece não condizer com esse universo, trazendo pouco espaço para momentos mais relaxantes.",
+          "runs": [
+            {
+              "text": "Perde-se todo o encantamento e doçura que tornavam o filme de 1959 tão atraente em sua simplicidade narrativa, para dar destaque a uma história na qual a tristeza e o trauma são pontos focais. A trama recebe um aspecto altamente adulto que parece não condizer com esse universo, trazendo pouco espaço para momentos mais relaxantes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "De fato, as raras cenas cômicas parecem mais um esforço da desenhista Rossela Gentile de trazer alguma leveza à obra, sem que isso se encaixe necessariamente com o roteiro mais sério elaborado por Ivana Murianni. Com isso, ler o mangá se torna algo pesado, quase enfadonho, e bastante estranho.",
+          "runs": [
+            {
+              "text": "De fato, as "
+            },
+            {
+              "text": "raras cenas cômicas",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " parecem mais um esforço da desenhista "
+            },
+            {
+              "text": "Rossela Gentile",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " de trazer alguma leveza à obra, sem que isso se encaixe necessariamente com o roteiro mais sério elaborado por"
+            },
+            {
+              "text": " Ivana Murianni",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Com isso, ler o mangá se torna algo pesado, quase enfadonho, e bastante estranho."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/abelaadormecida-pag3.jpg",
+          "alt": "imagem: ilustração de A Bela Adormecida às Avessas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Não ajuda ainda o fato do início da obra ser um tanto quanto “lento” para fazer a aventura da protagonista começar a correr. Aurora passa longos capítulos perdida em seu sonho, sem saber o que está acontecendo entre ela e sua captora Malévola, até ser obrigada pelas consequências a tomar uma atitude real em torno da situação que se encontra.",
+          "runs": [
+            {
+              "text": "Não ajuda ainda o fato do início da obra ser um tanto quanto “lento” para fazer a aventura da protagonista começar a correr. Aurora passa longos capítulos perdida em seu sonho, sem saber o que está acontecendo entre ela e sua captora Malévola, até ser obrigada pelas consequências a tomar uma atitude real em torno da situação que se encontra."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por se tratar de um mangá que presume que o leitor já tenha visto o filme de 1959, esse começo é cansativo, já que todas as respostas para as perguntas de Aurora já estão nas mãos do público, e o roteiro não consegue construir um suspense realmente impressionante para reverter essa questão a ponto de fisgar a curiosidade do leitor.",
+          "runs": [
+            {
+              "text": "Por se tratar de um mangá que presume que o leitor já tenha visto o filme de 1959, esse começo é cansativo, já que todas as respostas para as perguntas de Aurora já estão nas mãos do público, e o roteiro não consegue construir um suspense realmente impressionante para reverter essa questão a ponto de fisgar a curiosidade do leitor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O desenrolar não é menos massante: mesmo com bons momentos de ação, o que vemos é a protagonista caindo em armadilhas repetitivas, já que o objetivo primário dos inimigos é minar a confiança de Aurora. Aqui vale uma reflexão sobre a forma limitada como a Disney enxerga a ideia de “empoderamento” da princesa, que se pauta nessa estrutura única de trabalhar a determinação de Aurora, enquanto qualquer outro ponto de desenvolvimento fica em segundo plano.",
+          "runs": [
+            {
+              "text": "O desenrolar não é menos massante: mesmo com bons momentos de ação, o que vemos é a protagonista "
+            },
+            {
+              "text": "caindo em armadilhas repetitivas",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", já que o objetivo primário dos inimigos é minar a confiança de Aurora. Aqui vale uma reflexão sobre a forma limitada como a Disney enxerga a ideia de “empoderamento” da princesa, que se pauta nessa estrutura única de trabalhar a determinação de Aurora, enquanto qualquer outro ponto de desenvolvimento fica em segundo plano."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/abelaadormecida-pag4.jpg",
+          "alt": "imagem: ilustração de A Bela Adormecida às Avessas"
+        },
+        {
+          "type": "paragraph",
+          "text": "A arte de Gentile para a obra tem seus atrativos, principalmente quando envolve desenhar cenas com a vilã Malévola, mas não tem a identidade encantadora do filme de 1959. Entretanto, justiça seja feita: A Bela Adormecida é provavelmente o longa-metragem 2D visualmente mais lindo da Disney, e somente um artista de talento ímpar conseguiria alcançar tal patamar.",
+          "runs": [
+            {
+              "text": "A arte de Gentile para a obra tem seus atrativos",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", principalmente quando envolve desenhar cenas com a vilã Malévola, mas não tem a identidade encantadora do filme de 1959. Entretanto, justiça seja feita: "
+            },
+            {
+              "text": "A Bela Adormecida",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é provavelmente o longa-metragem 2D visualmente mais lindo da Disney, e somente um artista de talento ímpar conseguiria alcançar tal patamar."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O principal ponto positivo deste A Bela Adormecida às Avessas é a edição que a Universo dos Livros disponibiliza ao Brasil. Com páginas coloridas em seu início e um acabamento espetacular na capa e 4ª capa, a editora mostra um cuidado excepcional, trazendo toda a história em um papel de boa espessura que prioriza os desenhos de cada página.",
+          "runs": [
+            {
+              "text": "O principal ponto positivo deste "
+            },
+            {
+              "text": "A Bela Adormecida às Avessas",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é a edição que a Universo dos Livros disponibiliza ao Brasil. Com"
+            },
+            {
+              "text": " páginas coloridas",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " em seu início e um acabamento espetacular na capa e 4ª capa, a editora mostra um cuidado excepcional, trazendo toda a história em um papel de boa espessura que prioriza os desenhos de cada página."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por mais que atualizações sejam bem-vindas, faltam atrativos para que este A Bela Adormecida às Avessas conquiste novos públicos. É o tipo de obra que ganha o rótulo de “feito para fãs”, uma vez que no fim será esse nicho que vai buscar saber o porquê de Aurora não ter acordado pelo beijo de seu príncipe encantado. Para o leitor comum de mangás, essa acaba sendo mais uma história que causa sono (sem referência) e não desperta interesse.",
+          "runs": [
+            {
+              "text": "Por mais que atualizações sejam bem-vindas, faltam atrativos para que este "
+            },
+            {
+              "text": "A Bela Adormecida às Avessas",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " conquiste novos públicos. É o tipo de obra que ganha o rótulo de"
+            },
+            {
+              "text": " “feito para fãs”",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", uma vez que no fim será esse nicho que vai buscar saber o porquê de Aurora não ter acordado pelo beijo de seu príncipe encantado. Para o leitor comum de mangás, essa acaba sendo mais uma história que causa sono (sem referência) e não desperta interesse."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Nota: Embora tenha todos os elementos característicos de um mangá, inclusive com leitura da direita para a esquerda e onomatopeias em japonês, A Bela Adormecida é uma obra feita fora do Japão, por autoras também de outra nacionalidade.",
+          "runs": [
+            {
+              "text": "Nota: ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Embora tenha todos os elementos característicos de um mangá, inclusive com leitura da direita para a esquerda e onomatopeias em japonês, A Bela Adormecida é uma obra feita fora do Japão, por autoras também de outra nacionalidade.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Galeria de fotos",
+          "runs": [
+            {
+              "text": "Galeria de fotos",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira nos álbuns abaixo alguns registros da edição nacional de A Bela Adormecida às Avessas pela Universo Geek:",
+          "runs": [
+            {
+              "text": "Confira nos álbuns abaixo alguns registros da edição nacional de "
+            },
+            {
+              "text": "A Bela Adormecida às Avessas ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "pela Universo Geek:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Volume 1",
+          "runs": [
+            {
+              "text": "Volume 1",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Volume 2",
+          "runs": [
+            {
+              "text": "Volume 2",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Se interessou? Compre pelos nossos links*:",
+          "runs": [
+            {
+              "text": "Se interessou? Compre pelos nossos links*:",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/abelaadormecidacapa1-1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/abelaadormecidacapa2.jpg"
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Essa resenha foi feita com base na edição cedida como material de divulgação para a imprensa pela editora Universo dos Livros, que disponibilizou a obra completa ao JBox.",
+          "runs": [
+            {
+              "text": "Essa resenha foi feita com base na edição cedida como material de divulgação para a imprensa pela editora Universo dos Livros, que disponibilizou a obra completa ao JBox.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+          "runs": [
+            {
+              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "*O JBox participa do programa de associados da Amazon, podendo ganhar um valor em cima das compras realizadas a partir dos links do site. Contudo, o JBox não tem responsabilidade sobre possíveis erros presentes em recursos integrados ao site, mas produzidos por terceiros.",
+          "runs": [
+            {
+              "text": "*O JBox participa do programa de associados da Amazon, podendo ganhar um valor em cima das compras realizadas a partir dos links do site. Contudo, o JBox não tem responsabilidade sobre possíveis erros presentes em recursos integrados ao site, mas produzidos por terceiros.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-08T19:37:29.000Z",
+      "updatedAt": "2026-10-08T19:38:11.000Z",
+      "expiresAt": "2026-10-15T19:37:29.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/08/critica-a-bela-adormecida-as-avessas-universo-das-letras",
+          "publishedAt": "2026-10-08T19:37:29.000Z",
+          "author": "Pedro Vieira"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 5,
+      "wordCount": 1029,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 32,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 6,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-c3d13b1e",
       "slug": "crunchyroll-lanca-divisao-focada-na-producao-de-animes-e-live-actions-jbox-c3d13b1e",
@@ -5815,7 +6386,7 @@
       "sourceCount": 1,
       "readingMinutes": 3,
       "wordCount": 455,
-      "qualityScore": 0.816,
+      "qualityScore": 0.756,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -6378,7 +6949,7 @@
       "sourceCount": 1,
       "readingMinutes": 6,
       "wordCount": 1168,
-      "qualityScore": 1,
+      "qualityScore": 0.97,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
