@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T20:56:51.598Z",
+  "generatedAt": "2026-10-10T00:40:00.735Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 40,
+      "count": 41,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,462 @@
     }
   ],
   "stats": {
-    "collected": 50,
-    "grouped": 28,
-    "published": 28,
-    "newStories": 28,
-    "fullArticles": 28,
+    "collected": 51,
+    "grouped": 27,
+    "published": 27,
+    "newStories": 27,
+    "fullArticles": 27,
     "previewArticles": 0,
-    "avgWords": 454,
-    "withHeroImage": 28,
-    "withOrderedMedia": 24,
+    "avgWords": 443,
+    "withHeroImage": 27,
+    "withOrderedMedia": 23,
     "skippedTranslation": 0,
-    "skippedQuality": 22,
-    "durationMs": 3554
+    "skippedQuality": 24,
+    "durationMs": 2816
   },
   "items": [
+    {
+      "id": "jbox-9f788d35",
+      "slug": "netflix-anuncia-evento-de-jojo-s-bizarre-adventure-steel-ball-run-em-sp-jbox-9f788d35",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Netflix anuncia evento de ‘JoJo’s Bizarre Adventure: Steel Ball Run’ em SP",
+      "originalTitle": "Netflix anuncia evento de ‘JoJo’s Bizarre Adventure: Steel Ball Run’ em SP",
+      "summary": "A Netflix anunciou (um tanto de surpresa) um evento inspirado em JoJo’s Bizarre Adventure: Steel Ball Run neste final de semana, no bairro da Liberdade, em São Paulo.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Eventos",
+        "Evento de Steel Ball Run na Liberdade",
+        "jojo part 7",
+        "Jojo's Bizarre Adventure",
+        "netflix",
+        "novos episodios de steel ball run",
+        "steel ball run",
+        "steel ball run pv",
+        "trailer de steel ball run"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/09/netflix-anuncia-evento-de-jojos-bizarre-adventure-steel-ball-run-em-sp",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/09/netflix-anuncia-evento-de-jojos-bizarre-adventure-steel-ball-run-em-sp",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2025/09/jojosteelballrunpv-destacada.jpg",
+      "mediaQuery": "Netflix anuncia evento de ‘JoJo’s Bizarre Adventure: Steel Ball Run’ em SP",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Steel-Ball-Run-evento-Netflix.jpg",
+          "alt": "Evento de JoJo’s Bizarre Adventure: Steel Ball Run",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Netflix anunciou (um tanto de surpresa) um evento inspirado em JoJo’s Bizarre Adventure: Steel Ball Run neste final de semana, no bairro da Liberdade, em São Paulo.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou (um tanto de surpresa) um evento inspirado em "
+            },
+            {
+              "text": "JoJo’s Bizarre Adventure: Steel Ball Run",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " neste final de semana, no bairro da Liberdade, em São Paulo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Segundo post nas redes sociais, a ativação acontecerá nos dias 10 e 11 de outubro, das 10h às 17h, na Praça da Liberdade, e será possível tirar fotos com Johnny Joestar, com o cavalo Slow Dancer e com Gyro Zeppeli, celebrando a volta dos episódios do animê no streaming.",
+          "runs": [
+            {
+              "text": "Segundo post nas redes sociais, a ativação acontecerá nos dias "
+            },
+            {
+              "text": "10 e 11 de outubro, das 10h às 17h, na Praça da Liberdade",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e será possível tirar fotos com Johnny Joestar, com o cavalo Slow Dancer e com Gyro Zeppeli, celebrando a volta dos episódios do animê no streaming."
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "View this post on Instagram",
+          "runs": [
+            {
+              "text": " View this post on Instagram ",
+              "href": "https://www.instagram.com/p/DeRtlVtnG7e/?utm_source=ig_embed&utm_campaign=loading"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Steel-Ball-Run-evento-Netflix.jpg",
+          "alt": "Evento de JoJo’s Bizarre Adventure: Steel Ball Run"
+        },
+        {
+          "type": "paragraph",
+          "text": "Quem estiver pelo bairro da Liberdade, terá a oportunidade de encontrar os personagens. | Divulgação/Netflix",
+          "runs": [
+            {
+              "text": "Quem estiver pelo bairro da Liberdade, terá a oportunidade de encontrar os personagens. | Divulgação/Netflix"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "De acordo com o post, o evento é gratuito e não necessita de cadastro prévio — basta chegar e entrar na fila para participar (sujeito à lotação). Curiosamente, a Netflix não divulgou imagens de como os personagens serão representados na ativação, então fica a dúvida se os fãs vão encontrar estátuas, tótens ou até pessoas vestidas como Johnny e Gyro.",
+          "runs": [
+            {
+              "text": "De acordo com o post, o evento é gratuito e não necessita de cadastro prévio — basta chegar e entrar na fila para participar (sujeito à lotação). Curiosamente, a Netflix "
+            },
+            {
+              "text": "não divulgou imagens",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " de como os personagens serão representados na ativação, então fica a dúvida se os fãs vão encontrar estátuas, tótens ou até pessoas vestidas como Johnny e Gyro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O arco Steel Ball Run é situado na América, em meados de 1890. Nesse contexto, Johnny Joestar é um jóquei genial, que ficou paralisado da cintura para baixo após um acidente. Ele entra em uma corrida pelo continente, para perseguir o fora da lei Gyro Zeppeli, que carrega um mistério que pode ajudá-lo. A 2ª etapa de episódios, atualmente em transmissão semanal na plataforma, mostra os competidores da Steel Ball Run em um percurso de 1.200km, para encontrar uma força ameaçadora que se esconde no deserto da Palma do Diabo.",
+          "runs": [
+            {
+              "text": "O arco "
+            },
+            {
+              "text": "Steel Ball Run",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é situado na América, em meados de 1890. Nesse contexto, "
+            },
+            {
+              "text": "Johnny Joestar",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " é um jóquei genial, que ficou paralisado da cintura para baixo após um acidente. Ele entra em uma corrida pelo continente, para perseguir o fora da lei "
+            },
+            {
+              "text": "Gyro Zeppeli",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que carrega um mistério que pode ajudá-lo. A 2ª etapa de episódios, atualmente em transmissão semanal na plataforma, mostra os competidores da Steel Ball Run em um percurso de 1.200km, para encontrar uma força ameaçadora que se esconde no deserto da Palma do Diabo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Steel Ball Run começou a ser seriado em 2004 na Shonen Jump, da editora Shueisha, sendo a última parte de JoJo a ser publicada em sua revista de origem. No fim do mesmo ano passou a ser publicado na Ultra Jump, até chegar ao fim em 2011 e dar início à oitava parte da saga (conhecida como JoJolion). Ao todo, rendeu 24 volumes encadernados, sendo que, no Brasil, a editora Panini começou a publicá-lo em 2025, na chamada “edição bunko”, que diminuiu o número de volumes para 15.",
+          "runs": [
+            {
+              "text": "Steel Ball Run",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " começou a ser seriado em 2004 na "
+            },
+            {
+              "text": "Shonen Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da editora "
+            },
+            {
+              "text": "Shueisha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", sendo a última parte de"
+            },
+            {
+              "text": " JoJo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " a ser publicada em sua revista de origem. No fim do mesmo ano passou a ser publicado na "
+            },
+            {
+              "text": "Ultra Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", até chegar ao fim em 2011 e dar início à oitava parte da saga (conhecida como "
+            },
+            {
+              "text": "JoJolion",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). Ao todo, rendeu 24 volumes encadernados, sendo que, no Brasil, a editora "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " começou a publicá-lo em 2025, na chamada “edição bunko”, que diminuiu o número de volumes para 15."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A série animada de JoJo’s Bizarre Adventure, produzida pelo estúdio david production (Captain Tsubasa — 2018), teve início em 2012, adaptando o mangá criado em 1987 por Hirohiko Araki (e ainda em publicação). A história acompanha, a cada arco, os descendentes da família Joestar, que trazem consigo a herança de ter que enfrentar inimigos sobrenaturais diversos, com muitas poses e estilo.",
+          "runs": [
+            {
+              "text": "A série animada de "
+            },
+            {
+              "text": "JoJo’s Bizarre Adventure",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", produzida pelo estúdio "
+            },
+            {
+              "text": "david production",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Captain Tsubasa",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " — 2018), teve início em 2012, adaptando o mangá criado em 1987 por "
+            },
+            {
+              "text": "Hirohiko Araki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (e ainda em publicação). A história acompanha, a cada arco, os descendentes da família Joestar, que trazem consigo a herança de ter que enfrentar inimigos sobrenaturais diversos, com muitas poses e estilo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No streaming, JoJo’s Bizarre Adventure vai ao ar atualmente pela Netflix, Pluto TV, HBO Max e Crunchyroll — essa última exibe apenas com legendas. A Pluto TV também mantém um canal 24h somente com o animê. Na TV por assinatura, os episódios são exibidos sem censuras no Adult Swim (a mesma versão do HBO Max).",
+          "runs": [
+            {
+              "text": "No streaming, "
+            },
+            {
+              "text": "JoJo’s Bizarre Adventure",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " vai ao ar atualmente pela "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Pluto TV",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "HBO Max",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " — essa última exibe apenas com legendas. A Pluto TV também mantém um canal 24h somente com o animê. Na TV por assinatura, os episódios são exibidos sem censuras no "
+            },
+            {
+              "text": "Adult Swim",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (a mesma versão do HBO Max)."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Instagram Netflix",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Instagram Netflix",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-09T21:56:31.000Z",
+      "updatedAt": "2026-10-09T21:57:02.000Z",
+      "expiresAt": "2026-10-16T21:56:31.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/09/netflix-anuncia-evento-de-jojos-bizarre-adventure-steel-ball-run-em-sp",
+          "publishedAt": "2026-10-09T21:56:31.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 471,
+      "qualityScore": 0.999,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-ced3a0eb",
       "slug": "nova-previa-de-o-cara-que-estou-a-fim-nao-e-um-cara-detalha-elenco-de-voz-original-jbox-ced3a0eb",
@@ -5072,7 +5514,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 236,
-      "qualityScore": 0.97,
+      "qualityScore": 0.91,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -5323,7 +5765,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 228,
-      "qualityScore": 0.967,
+      "qualityScore": 0.907,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -10173,906 +10615,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-3095f5e4",
-      "slug": "umamusume-filme-teve-publico-acima-da-media-de-ocupacao-nos-cinemas-brasileiros-jbox-3095f5e4",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Umamusume: Filme teve público acima da média de ocupação nos cinemas brasileiros",
-      "originalTitle": "Umamusume: Filme teve público acima da média de ocupação nos cinemas brasileiros",
-      "summary": "Segundo dados da Ancine e do Filme B, podemos considerar que o filme Umamusume — Pretty Derby – O Início de uma Nova Era superou as expectativas de público dos cinemas brasileiros na semana em que esteve em cartaz. Ao todo, 2.922 pessoas foram ao cinema assistir ao longa.",
-      "author": "Jean Clemente",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "Bilheteria",
-        "bilheteria brasil",
-        "cinemark",
-        "filme de umamusume",
-        "filme de umamusume no brasil",
-        "umamusume"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/02/umamusume-filme-teve-publico-acima-da-media-de-ocupacao-nos-cinemas-brasileiros",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/02/umamusume-filme-teve-publico-acima-da-media-de-ocupacao-nos-cinemas-brasileiros",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2024/03/umamusume-filme-nova-destacada.jpg",
-      "mediaQuery": "Umamusume: Filme teve público acima da média de ocupação nos cinemas brasileiros",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/zgupmgLe5No"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Segundo dados da Ancine e do Filme B, podemos considerar que o filme Umamusume — Pretty Derby – O Início de uma Nova Era superou as expectativas de público dos cinemas brasileiros na semana em que esteve em cartaz. Ao todo, 2.922 pessoas foram ao cinema assistir ao longa.",
-          "runs": [
-            {
-              "text": "Segundo dados da Ancine e do Filme B, podemos considerar que o filme "
-            },
-            {
-              "text": "Umamusume — Pretty Derby – O Início de uma Nova Era",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " superou as expectativas de público dos cinemas brasileiros na semana em que esteve em cartaz. Ao todo,"
-            },
-            {
-              "text": " 2.922 pessoas",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " foram ao cinema assistir ao longa."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Mesmo com um lançamento limitado, que abrangeu apenas cinco estados e o Distrito Federal, as salas da rede Cinemark apresentaram uma média de público de 42 espectadores por sessão nos primeiros 4 dias, e 39 considerando todo o período em cartaz. Esse é um número que deixa o animê acima da média de ocupação nacional, que costuma ficar na casa de 25 pessoas por projeção. Em relação à receita, a produção arrecadou R$ 67.109,42 em 69 sessões divididas em 10 salas por dia.",
-          "runs": [
-            {
-              "text": "Mesmo com um lançamento limitado",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/09/14/umamusume-filme-estreia-na-rede-cinemark-esta-semana/"
-            },
-            {
-              "text": ", que abrangeu apenas cinco estados e o Distrito Federal, as salas da rede "
-            },
-            {
-              "text": "Cinemark",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " apresentaram uma "
-            },
-            {
-              "text": "média de público de 42 espectadores por sessão nos primeiros 4 dias",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e 39 considerando todo o período em cartaz. Esse é um número que deixa o animê acima da média de ocupação nacional, que costuma ficar na casa de 25 pessoas por projeção. Em relação à receita, a produção arrecadou "
-            },
-            {
-              "text": "R$ 67.109,42",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " em 69 sessões divididas em 10 salas por dia."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O pico das ocupações aparentemente foi no sábado do dia 19, onde pudemos conferir salas praticamente com a lotação máxima em sessões de São Paulo, Brasília e Curitiba. Para efeito de comparação de sucesso dentro do mesmo nicho, a média de ocupação Umamusume foi maior que a de Demon Slayer: Castelo Infinito (37,7, segundos dados da Ancine) e do relançamento em 4k de Akira (31,5 por sessão).",
-          "runs": [
-            {
-              "text": "O pico das ocupações aparentemente foi no sábado do dia 19, onde pudemos conferir salas praticamente com a lotação máxima em sessões de São Paulo, Brasília e Curitiba. Para efeito de comparação de sucesso dentro do mesmo nicho, a média de ocupação "
-            },
-            {
-              "text": "Umamusume",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " foi maior que a de "
-            },
-            {
-              "text": "Demon Slayer: Castelo Infinito",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " (37,7, segundos dados da Ancine) e do relançamento em 4k de "
-            },
-            {
-              "text": "Akira",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " (31,5 por sessão)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Comparando com outra título do mesmo período, One Piece: O Filme, que estrearia junto de Umamusume e acabou sendo adiado, teve em seu fim de semana de estreia uma média de público de apenas 4 pessoas por sessão. Essa discrepância se dá pelo número muito maior de sessões para este filme: foram 1.480 sessões. Ao todo, no período de 4 dias de sua chegada às salas, arrecadou R$ 132.844, com um público total foi de 6.086 espectadores.",
-          "runs": [
-            {
-              "text": "Comparando com outra título do mesmo período, "
-            },
-            {
-              "text": "One Piece: O Filme",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/10/02/critica-one-piece-o-filme/"
-            },
-            {
-              "text": ", que estrearia junto de "
-            },
-            {
-              "text": "Umamusume",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e acabou sendo adiado, teve em seu fim de semana de estreia uma média de público de apenas "
-            },
-            {
-              "text": "4 pessoas por sessão",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Essa discrepância se dá pelo número muito maior de sessões para este filme: foram 1.480 sessões. Ao todo, no período de 4 dias de sua chegada às salas, arrecadou R$ 132.844, com um público total foi de "
-            },
-            {
-              "text": "6.086 espectadores",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Destacamos, claro, que One Piece é uma marca muito mais consolidada mundialmente e com um público muito maior até entre os que não acompanham com afinco animês, e que esse comparativo serve mais para apontar o feito das meninas-cavalo do que para demérito do pirata que estica.",
-          "runs": [
-            {
-              "text": "Destacamos, claro, que "
-            },
-            {
-              "text": "One Piece",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é uma marca muito mais consolidada mundialmente e com um público muito maior até entre os que não acompanham com afinco animês, e que esse comparativo serve mais para apontar o feito das meninas-cavalo do que para demérito do pirata que estica."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ainda assim, o aparente êxito não foi o suficiente para dar uma boa sobrevida ao filme em nossos cinemas. Após a 1ª semana, Umamusume ficou em cartaz por mais um tempo apenas em São Paulo, sem migrar para outros estados.",
-          "runs": [
-            {
-              "text": "Ainda assim, o aparente êxito não foi o suficiente para dar uma boa sobrevida ao filme em nossos cinemas. Após a 1ª semana, "
-            },
-            {
-              "text": "Umamusume",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ficou em cartaz por mais um tempo apenas em São Paulo, sem migrar para outros estados."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=zgupmgLe5No",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/zgupmgLe5No"
-        },
-        {
-          "type": "paragraph",
-          "text": "Umamusume – Pretty Derby – O Início de uma Nova Era é um filme de 2024, trazendo uma história independente em relação à série de TV ‘Pretty Derby’. Foi produzido pelo estúdio CygamesPictures, com direção de Ken Yamamoto e roteiro de Kiyoko Yoshimura.",
-          "runs": [
-            {
-              "text": "Umamusume – Pretty Derby – O Início de uma Nova Era",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é um filme de 2024, trazendo uma história independente em relação à série de TV"
-            },
-            {
-              "text": " ‘Pretty Derby’",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Foi produzido pelo estúdio "
-            },
-            {
-              "text": "CygamesPictures",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com direção de "
-            },
-            {
-              "text": "Ken Yamamoto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e roteiro de "
-            },
-            {
-              "text": "Kiyoko Yoshimura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na trama, o sonho de consumo de qualquer garota-cavalo é chegar ao topo da Twinkle Series. Para Jungle Pocket, que só corria de brincadeira, essa ficha só cai de verdade após presenciar um show inesquecível de Fuji Kiseki nas pistas. Esbanjando moral e determinação, ela logo emplaca vitórias que a levam aos torneios de elite.",
-          "runs": [
-            {
-              "text": "Na trama, o sonho de consumo de qualquer garota-cavalo é chegar ao topo da Twinkle Series. Para Jungle Pocket, que só corria de brincadeira, essa ficha só cai de verdade após presenciar um show inesquecível de Fuji Kiseki nas pistas. Esbanjando moral e determinação, ela logo emplaca vitórias que a levam aos torneios de elite."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Só que a coisa fica séria quando ela divide a pista na sua primeira prova de nível G1 com Agnes Tachyon, uma prodígio genial e excêntrica. Ao sentir o peso do talento da rival, Jungle Pocket não se abala: transforma o choque em obsessão e jura dar o troco vencendo a lendária Tríplice Coroa. Nem mesmo a imprevisibilidade do esporte vai impedir seu objetivo de desbancar Tachyon e fazer história.",
-          "runs": [
-            {
-              "text": "Só que a coisa fica séria quando ela divide a pista na sua primeira prova de nível G1 com Agnes Tachyon, uma prodígio genial e excêntrica. Ao sentir o peso do talento da rival, Jungle Pocket não se abala: transforma o choque em obsessão e jura dar o troco vencendo a lendária Tríplice Coroa. Nem mesmo a imprevisibilidade do esporte vai impedir seu objetivo de desbancar Tachyon e fazer história."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Umamusume é uma franquia multimídia da Cygames, já possuindo vários mangás e temporadas de animê — a série ‘Pretty Derby’ está completa na Crunchyroll, enquanto o spin-off ‘Cinderella Gray’ está pelo Prime Video e gratuitamente pelo Bandplay e YouTube.",
-          "runs": [
-            {
-              "text": "Umamusume",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é uma franquia multimídia da Cygames, já possuindo vários mangás e temporadas de animê — a série"
-            },
-            {
-              "text": " ‘Pretty Derby’",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " está completa na Crunchyroll, enquanto o spin-off "
-            },
-            {
-              "text": "‘Cinderella Gray’",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " está pelo Prime Video e gratuitamente pelo Bandplay e "
-            },
-            {
-              "text": "YouTube",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.youtube.com/watch?v=LKjvc3p2lgg&list=PLhGamQZtJ7K9aElhFk89DyndS6JDvLh7z"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Veja mais:",
-          "runs": [
-            {
-              "text": "Veja mais:",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            }
-          ],
-          "level": 4
-        },
-        {
-          "type": "paragraph",
-          "text": "⇒ Umamusume, a série que não recebeu nenhum material pornográfico na Comiket | Artigo",
-          "runs": [
-            {
-              "text": "⇒ ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
-            },
-            {
-              "text": "Umamusume",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
-            },
-            {
-              "text": ", a série que não recebeu nenhum material pornográfico na Comiket | Artigo",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2023/08/15/umamusume-a-serie-que-nao-recebeu-nenhum-material-pornografico-na-comiket-artigo/"
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Ancine, Filme B, com colaboração de Arara",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Ancine, Filme B, com colaboração de ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "Arara",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://filmesanime.arara.me/#"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-02T23:26:23.000Z",
-      "updatedAt": "2026-10-02T23:41:11.000Z",
-      "expiresAt": "2026-10-09T23:26:23.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/02/umamusume-filme-teve-publico-acima-da-media-de-ocupacao-nos-cinemas-brasileiros",
-          "publishedAt": "2026-10-02T23:26:23.000Z",
-          "author": "Jean Clemente"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 611,
-      "qualityScore": 0.958,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 16,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-8d919456",
-      "slug": "primeiras-impressoes-de-cyberpunk-mercenarios-2-jbox-8d919456",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Primeiras impressões de ‘Cyberpunk: Mercenários 2’",
-      "originalTitle": "Primeiras impressões de ‘Cyberpunk: Mercenários 2’",
-      "summary": "Chegando com os dois pés na porta e sem pedir licença, a segunda temporada de Cyberpunk: Mercenários tem um episódio de estreia frenético, colorido e visceral.",
-      "author": "Pri Ganiko",
-      "tags": [
-        "Anime",
-        "Resenha",
-        "cd projekt red",
-        "cyberpunk 2",
-        "cyberpunk 2ª temporada",
-        "cyberpunk anime",
-        "Cyberpunk: Mercenários",
-        "quando lança cyberpunk mercenarios 2?",
-        "resenha de cyberpunk mercenarios 2"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/02/primeiras-impressoes-de-cyberpunk-mercenarios-2",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/02/primeiras-impressoes-de-cyberpunk-mercenarios-2",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/jbox-critica-destacada-cyberpunk2-primeiras.jpg",
-      "mediaQuery": "Primeiras impressões de ‘Cyberpunk: Mercenários 2’",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/cyberpunkmercenarios2-cenaroman.jpg",
-          "alt": "imagem: cena de Cyberpunk: Mercenários com o personagem Roman em destaque em meio à cidade",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/cyberpunkmercenarios2-cena1.jpg",
-          "alt": "imagem: cena de Cyberpunk: Mercenários com o personagem sendo atacado por um helicóptero.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/QBlPg818lGI"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Chegando com os dois pés na porta e sem pedir licença, a segunda temporada de Cyberpunk: Mercenários tem um episódio de estreia frenético, colorido e visceral.",
-          "runs": [
-            {
-              "text": "Chegando com os dois pés na porta e sem pedir licença, a segunda temporada de"
-            },
-            {
-              "text": " Cyberpunk: Mercenários",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " tem um episódio de estreia frenético, colorido e visceral."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A convite da CD Projekt Red, desenvolvedora de Cyberpunk 2077, tivemos a oportunidade de assistir ao primeiro episódio antes de sua estreia na Netflix, que acontecerá no dia 20 de outubro.",
-          "runs": [
-            {
-              "text": "A convite da CD Projekt Red, desenvolvedora de "
-            },
-            {
-              "text": "Cyberpunk 2077",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", tivemos a oportunidade de assistir ao primeiro episódio antes de sua estreia na "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que acontecerá no dia "
-            },
-            {
-              "text": "20 de outubro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Retornamos à Night City, a mesma cidade onde se passa a primeira temporada, mas que agora conta com um elenco inédito. Ainda que nos sejam estranhos, basta alguns segundos de tempo de tela para que os personagens capturem a atenção dos espectadores, com carisma e, por vezes, até estranheza.",
-          "runs": [
-            {
-              "text": "Retornamos à Night City, a mesma cidade onde se passa a "
-            },
-            {
-              "text": "primeira temporada",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2022/10/23/critica-cyberpunk-mercenarios-netflix/"
-            },
-            {
-              "text": ", mas que agora conta com um elenco inédito. Ainda que nos sejam estranhos, basta alguns segundos de tempo de tela para que os personagens capturem a atenção dos espectadores, com carisma e, por vezes, até estranheza."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Em menos de 30 minutos, a trama de Bartosz Sztybor, que retorna como escritor do animê, estabelece relações com maestria e nos apresenta o principal dilema de alguns dos personagens principais.",
-          "runs": [
-            {
-              "text": "Em menos de 30 minutos, a trama de "
-            },
-            {
-              "text": "Bartosz Sztybor",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que retorna como escritor do animê, estabelece relações com maestria e nos apresenta o principal dilema de alguns dos personagens principais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "É muito difícil não se deixar cativar por Roman, o garoto de cabelo loiro que tem um amor por filmes que não cabe dentro de si. Ele circula pelo ambiente com uma câmera nas mãos, registrando momentos da vida em Night City, sejam eles ultraviolentos ou cotidianos.",
-          "runs": [
-            {
-              "text": "É muito difícil não se deixar cativar por Roman, o garoto de cabelo loiro que tem um amor por filmes que não cabe dentro de si. Ele circula pelo ambiente com uma câmera nas mãos, registrando momentos da vida em Night City, sejam eles ultraviolentos ou cotidianos."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/cyberpunkmercenarios2-cenaroman.jpg",
-          "alt": "imagem: cena de Cyberpunk: Mercenários com o personagem Roman em destaque em meio à cidade"
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Reprodução",
-          "runs": [
-            {
-              "text": "Imagem: Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A presença de Roman torna tudo muito mais tenso, porque queremos torcer por ele em um mundo que está sempre jogando contra e sabemos, pelos acontecimentos da temporada anterior, que é extremamente cruel.",
-          "runs": [
-            {
-              "text": "A presença de Roman torna tudo muito mais tenso, porque queremos torcer por ele em um mundo que está sempre jogando contra e sabemos, pelos acontecimentos da temporada anterior, que é extremamente cruel."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Em contrapartida à pequena figura de Roman, temos o Rei: um brutamontes completamente tunado de cromo que parece indestrutível, mas que nos primeiros momentos do episódio já nos mostra seu maior ponto fraco.",
-          "runs": [
-            {
-              "text": "Em contrapartida à pequena figura de Roman, temos o "
-            },
-            {
-              "text": "Rei",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": um brutamontes completamente tunado de cromo que parece indestrutível, mas que nos primeiros momentos do episódio já nos mostra seu maior ponto fraco."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Também vale a pena falar de Talia, uma moça que parece ter saído diretamente de Guerreiras Mágicas de Rayearth, com seu penteado característico dos anos 1990 (mas cheia de implantes que a distanciam muito das heroínas da Clamp). E, claro, o rapaz misterioso de cabelos pretos e aparência séria, que traz mais perguntas que respostas para os espectadores.",
-          "runs": [
-            {
-              "text": "Também vale a pena falar de "
-            },
-            {
-              "text": "Talia",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", uma moça que parece ter saído diretamente de "
-            },
-            {
-              "text": "Guerreiras Mágicas de Rayearth",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", com seu penteado característico dos anos 1990 (mas cheia de implantes que a distanciam muito das heroínas da Clamp). E, claro, o rapaz misterioso de cabelos pretos e aparência séria, que traz mais perguntas que respostas para os espectadores."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/cyberpunkmercenarios2-cena1.jpg",
-          "alt": "imagem: cena de Cyberpunk: Mercenários com o personagem sendo atacado por um helicóptero."
-        },
-        {
-          "type": "paragraph",
-          "text": "Ângulos inusitados, sequências frenéticas e brutais, feições caricatas, cores saturadas: a assinatura do Studio Trigger está por toda parte. O estúdio de animação, que também foi responsável por títulos como Kill la Kill, Little Witch Academia, Promare e a primeira temporada de Cyberpunk: Mercenários, entrega ação visceral e tripas para todo lado enquanto trabalha os traumas dos personagens (e causa alguns em quem está assistindo).",
-          "runs": [
-            {
-              "text": "Ângulos inusitados, sequências frenéticas e brutais, feições caricatas, cores saturadas:"
-            },
-            {
-              "text": " a assinatura do Studio Trigger está por toda parte.",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " O estúdio de animação, que também foi responsável por títulos como "
-            },
-            {
-              "text": "Kill la Kill",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Little Witch Academia",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2020/12/26/critica-little-witch-academia-2017/"
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Promare",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e a primeira temporada de "
-            },
-            {
-              "text": "Cyberpunk: Mercenários",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", entrega ação visceral e tripas para todo lado enquanto trabalha os traumas dos personagens (e causa alguns em quem está assistindo)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além de Talia, há outros elementos que evocam uma nostalgia dos anos 90, como o fato de que as filmagens de Roman são mostradas em 4:3 e com as imagens granuladas, até mesmo a animação que imita aquele “protetor de tela” tão comum em DVDs na época, onde o logo ficava se movendo de forma aleatória pela tela até bater em um canto e mudar de direção. Apesar dessa viagem no tempo, os temas tratados são bem atuais, dando uma cutucada nada sutil em conteúdo gerado por IA, por exemplo.",
-          "runs": [
-            {
-              "text": "Além de Talia, há outros elementos que evocam uma nostalgia dos anos 90, como o fato de que as filmagens de Roman são mostradas em 4:3 e com as imagens granuladas, até mesmo a animação que imita aquele “protetor de tela” tão comum em DVDs na época, onde o logo ficava se movendo de forma aleatória pela tela até bater em um canto e mudar de direção. Apesar dessa viagem no tempo, "
-            },
-            {
-              "text": "os temas tratados são bem atuais",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", dando uma cutucada nada sutil em conteúdo gerado por IA, por exemplo."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=QBlPg818lGI",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/QBlPg818lGI"
-        },
-        {
-          "type": "paragraph",
-          "text": "A abertura é um espetáculo à parte. Embalada pela canção “10:15 Saturday Night”, da banda The Cure, a animação remete à Cowboy Bebop, usando silhuetas e cores marcantes para causar impacto logo de cara. Já o encerramento do primeiro episódio é bem mais leve, mas também conta com uma boa dose de melancolia, adotando tons pastéis e um visual mais amigável para mostrar a trajetória do jovem Roman.",
-          "runs": [
-            {
-              "text": "A abertura é um espetáculo à parte. Embalada pela canção "
-            },
-            {
-              "text": "“10:15 Saturday Night”",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", da banda "
-            },
-            {
-              "text": "The Cure",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", a animação remete à "
-            },
-            {
-              "text": "Cowboy Bebop",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2021/11/27/os-10-melhores-episodios-de-cowboy-bebop-lista/"
-            },
-            {
-              "text": ", usando silhuetas e cores marcantes para causar impacto logo de cara. Já o encerramento do primeiro episódio é bem mais leve, mas também conta com uma boa dose de melancolia, adotando tons pastéis e um visual mais amigável para mostrar a trajetória do jovem Roman."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para quem já é fã do animê, Cyberpunk: Mercenários 2 promete entregar um espetáculo no mesmo nível da primeira temporada: violento, gráfico e de partir o coração. Para quem ainda não conhece, vale a pena assistir aos 10 episódios que estão na Netflix enquanto aguarda a estreia da segunda temporada, que chega na íntegra no próximo dia 20.",
-          "runs": [
-            {
-              "text": "Para quem já é fã do animê, "
-            },
-            {
-              "text": "Cyberpunk: Mercenários 2",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " promete entregar um espetáculo no mesmo nível da primeira temporada: violento, gráfico e de partir o coração. Para quem ainda não conhece, vale a pena assistir aos 10 episódios que estão na Netflix enquanto aguarda a estreia da segunda temporada, que chega na íntegra no próximo dia 20."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site.",
-          "runs": [
-            {
-              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-02T22:15:47.000Z",
-      "updatedAt": "2026-10-02T22:34:31.000Z",
-      "expiresAt": "2026-10-09T22:15:47.000Z",
-      "category": "Episódios",
-      "eventType": "EPISODE",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/02/primeiras-impressoes-de-cyberpunk-mercenarios-2",
-          "publishedAt": "2026-10-02T22:15:47.000Z",
-          "author": "Pri Ganiko"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 608,
-      "qualityScore": 0.96,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 18,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 2,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
