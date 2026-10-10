@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T12:57:24.213Z",
+  "generatedAt": "2026-10-10T17:44:03.781Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -60,12 +60,12 @@
     "newStories": 27,
     "fullArticles": 27,
     "previewArticles": 0,
-    "avgWords": 443,
+    "avgWords": 445,
     "withHeroImage": 27,
     "withOrderedMedia": 22,
     "skippedTranslation": 0,
     "skippedQuality": 24,
-    "durationMs": 5206
+    "durationMs": 4385
   },
   "items": [
     {
@@ -1336,13 +1336,13 @@
     },
     {
       "id": "jbox-9f788d35",
-      "slug": "netflix-anuncia-evento-de-jojo-s-bizarre-adventure-steel-ball-run-em-sp-jbox-9f788d35",
+      "slug": "netflix-anuncia-evento-de-jojo-s-bizarre-adventure-steel-ball-run-em-sp-at-jbox-9f788d35",
       "source": "JBox",
       "sourceType": "JBOX",
       "sourceLanguage": "pt-BR",
       "language": "pt-BR",
-      "title": "Netflix anuncia evento de ‘JoJo’s Bizarre Adventure: Steel Ball Run’ em SP",
-      "originalTitle": "Netflix anuncia evento de ‘JoJo’s Bizarre Adventure: Steel Ball Run’ em SP",
+      "title": "Netflix anuncia evento de ‘JoJo’s Bizarre Adventure: Steel Ball Run’ em SP (AT)",
+      "originalTitle": "Netflix anuncia evento de ‘JoJo’s Bizarre Adventure: Steel Ball Run’ em SP (AT)",
       "summary": "A Netflix anunciou (um tanto de surpresa) um evento inspirado em JoJo’s Bizarre Adventure: Steel Ball Run neste final de semana, no bairro da Liberdade, em São Paulo.",
       "author": "Cakes Sousa",
       "tags": [
@@ -1360,7 +1360,7 @@
       "url": "https://www.jbox.com.br/2026/10/09/netflix-anuncia-evento-de-jojos-bizarre-adventure-steel-ball-run-em-sp",
       "sourceUrl": "https://www.jbox.com.br/2026/10/09/netflix-anuncia-evento-de-jojos-bizarre-adventure-steel-ball-run-em-sp",
       "image": "https://www.jbox.com.br/wp/wp-content/uploads/2025/09/jojosteelballrunpv-destacada.jpg",
-      "mediaQuery": "Netflix anuncia evento de ‘JoJo’s Bizarre Adventure: Steel Ball Run’ em SP",
+      "mediaQuery": "Netflix anuncia evento de ‘JoJo’s Bizarre Adventure: Steel Ball Run’ em SP (AT)",
       "mediaType": "anime",
       "mediaGallery": [
         {
@@ -1457,6 +1457,38 @@
             },
             {
               "text": " de como os personagens serão representados na ativação, então fica a dúvida se os fãs vão encontrar estátuas, tótens ou até pessoas vestidas como Johnny e Gyro."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Atualização 10/10",
+          "runs": [
+            {
+              "text": "Atualização 10/10",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            }
+          ],
+          "level": 4
+        },
+        {
+          "type": "paragraph",
+          "text": "O perfil do Instagram Liberdade Sampa divulgou um vídeo com o começo da ativação. Nele, é possível ver que o cavalo Slow Dancer é uma estátua, enquanto os personagens Johnny e Gyro são tótens, tudo isso em um fundo com tema de faroeste, com os logos do animê e da Netflix:",
+          "runs": [
+            {
+              "text": "O perfil do "
+            },
+            {
+              "text": "Instagram Liberdade Sampa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " divulgou um vídeo com o começo da ativação. Nele, é possível ver que o cavalo Slow Dancer é uma estátua, enquanto os personagens Johnny e Gyro são tótens, tudo isso em um fundo com tema de faroeste, com os logos do animê e da Netflix:"
             }
           ]
         },
@@ -1745,7 +1777,7 @@
       ],
       "contentMode": "full",
       "publishedAt": "2026-10-09T21:56:31.000Z",
-      "updatedAt": "2026-10-09T21:57:02.000Z",
+      "updatedAt": "2026-10-10T16:38:33.000Z",
       "expiresAt": "2026-10-16T21:56:31.000Z",
       "category": "Notícias",
       "eventType": "OTHER",
@@ -1761,13 +1793,13 @@
       ],
       "sourceCount": 1,
       "readingMinutes": 3,
-      "wordCount": 471,
-      "qualityScore": 0.999,
+      "wordCount": 524,
+      "qualityScore": 1,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
         "sections": 0,
-        "blocks": 13,
+        "blocks": 15,
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "contentMode": "full",
@@ -6507,7 +6539,7 @@
       "sourceCount": 1,
       "readingMinutes": 3,
       "wordCount": 484,
-      "qualityScore": 0.999,
+      "qualityScore": 0.939,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
