@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T11:27:10.562Z",
+  "generatedAt": "2026-10-11T16:43:58.969Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,288 @@
   ],
   "stats": {
     "collected": 51,
-    "grouped": 28,
-    "published": 28,
-    "newStories": 28,
-    "fullArticles": 28,
+    "grouped": 27,
+    "published": 27,
+    "newStories": 27,
+    "fullArticles": 27,
     "previewArticles": 0,
-    "avgWords": 466,
-    "withHeroImage": 28,
-    "withOrderedMedia": 22,
+    "avgWords": 474,
+    "withHeroImage": 27,
+    "withOrderedMedia": 21,
     "skippedTranslation": 0,
     "skippedQuality": 23,
-    "durationMs": 3294
+    "durationMs": 3344
   },
   "items": [
+    {
+      "id": "animenew-dd62c1b6",
+      "slug": "naruto-anuncia-anime-crossover-com-ninku-animenew-dd62c1b6",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Naruto anuncia anime crossover com Ninku",
+      "originalTitle": "Naruto anuncia anime crossover com Ninku",
+      "summary": "O anime Naruto ganhará um crossover com Ninku, obra que serviu de inspiração para Masashi Kishimoto criar o famoso ninja da Vila da Folha. O projeto ganhou anúncio durante a New York Comic Con, em 10 de outubro de 2026.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Naruto",
+        "Ninku"
+      ],
+      "url": "https://animenew.com.br/naruto-anuncia-anime-crossover-com-ninku",
+      "sourceUrl": "https://animenew.com.br/naruto-anuncia-anime-crossover-com-ninku",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Naruto-anuncia-anime-crossover-com-Ninku.webp",
+      "mediaQuery": "Naruto anuncia anime crossover com Ninku",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Naruto-Crossover-Ninku.webp",
+          "alt": "Naruto Crossover Ninku",
+          "caption": "© Masashi Kishimoto Scott,Koji Kiriyama/SHUEISHA TV TOKYO PIERROT"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/hCZi_R0MnvE"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Naruto ganhará um crossover com Ninku, obra que serviu de inspiração para Masashi Kishimoto criar o famoso ninja da Vila da Folha. O projeto ganhou anúncio durante a New York Comic Con, em 10 de outubro de 2026.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Naruto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ganhará um crossover com "
+            },
+            {
+              "text": "Ninku",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", obra que serviu de inspiração para Masashi Kishimoto criar o famoso ninja da Vila da Folha. O projeto ganhou anúncio durante a "
+            },
+            {
+              "text": "New York Comic Con",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", em 10 de outubro de 2026."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Crunchyroll adquire filme de The Apothecary Diaries",
+              "runs": [
+                {
+                  "text": "Crunchyroll adquire filme de The Apothecary Diaries",
+                  "href": "https://animenew.com.br/filme-the-apothecary-diaries-crunchyroll"
+                }
+              ]
+            },
+            {
+              "text": "The Vermilion Mask anuncia 2ª parte para abril de 2027",
+              "runs": [
+                {
+                  "text": "The Vermilion Mask anuncia 2ª parte para abril de 2027",
+                  "href": "https://animenew.com.br/the-vermilion-mask-segunda-parte-abril-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Intitulado NARUTO×NINKŪ, o novo anime terá uma história original supervisionada por Kishimoto e Koji Kiriyama, autor de Ninku. A trama acompanha Naruto como capitão interino do Time 7, já que Kakashi não poderá participar da missão. Durante a jornada, Naruto, Sasuke e Sakura acabam entrando acidentalmente no mundo de Ninku.",
+          "runs": [
+            {
+              "text": "Intitulado "
+            },
+            {
+              "text": "NARUTO×NINKŪ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o novo anime terá uma história original supervisionada por Kishimoto e Koji Kiriyama, autor de Ninku. A trama acompanha Naruto como capitão interino do Time 7, já que Kakashi não poderá participar da missão. Durante a jornada, Naruto, Sasuke e Sakura acabam entrando acidentalmente no mundo de Ninku."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=hCZi_R0MnvE",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/hCZi_R0MnvE"
+        },
+        {
+          "type": "heading",
+          "text": "Equipe de produção",
+          "runs": [
+            {
+              "text": "Equipe de produção"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Noriyuki Abe, diretor de Boruto: Naruto Next Generations e da adaptação animada de Ninku, comandará o crossover. Assim Tetsuya Nishio será responsável pelo design dos personagens e pela direção-chefe de animação, reunindo sua experiência nas duas franquias.",
+          "runs": [
+            {
+              "text": "Noriyuki Abe, diretor de "
+            },
+            {
+              "text": "Boruto: Naruto Next Generations",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e da adaptação animada de Ninku, comandará o crossover. Assim Tetsuya Nishio será responsável pelo design dos personagens e pela direção-chefe de animação, reunindo sua experiência nas duas franquias."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Naruto-Crossover-Ninku.webp",
+          "alt": "Naruto Crossover Ninku",
+          "caption": "© Masashi Kishimoto Scott,Koji Kiriyama/SHUEISHA TV TOKYO PIERROT"
+        },
+        {
+          "type": "paragraph",
+          "text": "Durante o evento, também foram divulgadas uma ilustração especial da colaboração e artes comemorativas dos dois criadores. Os dubladores Junko Takeuchi, voz de Naruto, e Noriaki Sugiyama, intérprete de Sasuke, participaram do painel.",
+          "runs": [
+            {
+              "text": "Durante o evento, também foram divulgadas uma ilustração especial da colaboração e artes comemorativas dos dois criadores. Os dubladores Junko Takeuchi, voz de Naruto, e Noriaki Sugiyama, intérprete de Sasuke, participaram do painel."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Ninku ganha episódios gratuitos",
+          "runs": [
+            {
+              "text": "Ninku ganha episódios gratuitos"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Contudo antes da estreia do novo projeto, o Studio Pierrot disponibilizou gratuitamente os cinco primeiros episódios de Ninku em seu canal no YouTube.",
+          "runs": [
+            {
+              "text": "Contudo antes da estreia do novo projeto, o Studio Pierrot disponibilizou gratuitamente os cinco primeiros episódios de Ninku em seu canal no YouTube."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim também não está claro se a produção tem relação com os quatro episódios inéditos de Naruto anunciados em 2023 e posteriormente adiados.",
+          "runs": [
+            {
+              "text": "Por fim também não está claro se a produção tem relação com os quatro episódios inéditos de Naruto anunciados em 2023 e posteriormente adiados."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: ANN",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "ANN",
+              "href": "https://www.animenewsnetwork.com/news/2026-10-10/naruto-gets-crossover-anime-with-ninku-franchise/.242693"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Naruto anuncia anime crossover com Ninku.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Naruto anuncia anime crossover com Ninku",
+              "href": "https://animenew.com.br/naruto-anuncia-anime-crossover-com-ninku/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-11T12:58:51.000Z",
+      "updatedAt": "2026-10-11T12:58:51.000Z",
+      "expiresAt": "2026-10-18T12:58:51.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/naruto-anuncia-anime-crossover-com-ninku",
+          "publishedAt": "2026-10-11T12:58:51.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 259,
+      "qualityScore": 0.975,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-bcd4b1b7",
       "slug": "anison-lab-live-experience-apresenta-espetaculo-de-animesongs-em-sao-paulo-este-mes-jbox-bcd4b1b7",
@@ -1825,265 +2094,6 @@
         "facts": 0,
         "sections": 0,
         "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-eaa0c7a8",
-      "slug": "go-with-the-clouds-ganha-trailer-com-lancamento-para-2027-animenew-eaa0c7a8",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Go with the Clouds ganha trailer com lançamento para 2027",
-      "originalTitle": "Go with the Clouds ganha trailer com lançamento para 2027",
-      "summary": "O anime Go with the Clouds, North by Northwest (Hokuhokusei ni Kumo to Yuke) revelou seu primeiro vídeo promocional, confirmando a estreia em 2027. Assim a animação será exibida na TBS e terá distribuição mundial exclusiva pela Netflix.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Go with the Clouds",
-        "Hokuhokusei ni Kumo to Yuke"
-      ],
-      "url": "https://animenew.com.br/go-with-the-clouds-anime-trailer-estreia-2027",
-      "sourceUrl": "https://animenew.com.br/go-with-the-clouds-anime-trailer-estreia-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Go-with-the-Clouds-ganha-trailer-com-lancamento-para-2027.webp",
-      "mediaQuery": "Go with the Clouds ganha trailer com lançamento para 2027",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Go-with-the-Clouds-anime.webp",
-          "alt": "Go with the Clouds anime",
-          "caption": "© 入江亜季/北北西に曇と往け製作委員会"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/-5XmjMak5es"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Go with the Clouds, North by Northwest (Hokuhokusei ni Kumo to Yuke) revelou seu primeiro vídeo promocional, confirmando a estreia em 2027. Assim a animação será exibida na TBS e terá distribuição mundial exclusiva pela Netflix.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Go with the Clouds, North by Northwest",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Hokuhokusei ni Kumo to Yuke",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") revelou seu primeiro vídeo promocional, confirmando a estreia em 2027. Assim a animação será exibida na TBS e terá distribuição mundial exclusiva pela "
-            },
-            {
-              "text": "Netflix",
-              "href": "https://animenew.com.br/tag/netflix/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Bless anuncia Yoshiki Nakajima no elenco do anime",
-              "runs": [
-                {
-                  "text": "Bless anuncia Yoshiki Nakajima no elenco do anime",
-                  "href": "https://animenew.com.br/bless-anime-yoshiki-nakajima-elenco"
-                }
-              ]
-            },
-            {
-              "text": "Anime Skull Dragon’s Precious Daughter ganha trailer e elenco",
-              "runs": [
-                {
-                  "text": "Anime Skull Dragon’s Precious Daughter ganha trailer e elenco",
-                  "href": "https://animenew.com.br/skull-dragons-precious-daughter-anime-trailer"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O trailer também confirmou Tomohiro Ōno como o responsável pela voz de Kei Miyama, protagonista da adaptação do mangá de Aki Irie. Contudo além do vídeo, a produção divulgou uma nova arte promocional.",
-          "runs": [
-            {
-              "text": "O trailer também confirmou Tomohiro Ōno como o responsável pela voz de Kei Miyama, protagonista da adaptação do mangá de Aki Irie. Contudo além do vídeo, a produção divulgou uma nova arte promocional."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=-5XmjMak5es",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/-5XmjMak5es"
-        },
-        {
-          "type": "heading",
-          "text": "História acompanha detetive na Islândia",
-          "runs": [
-            {
-              "text": "História acompanha detetive na Islândia"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama se passa na Islândia e acompanha Kei Miyama, um jovem de 17 anos que trabalha como detetive particular. Sendo assim ele possui três características incomuns: consegue conversar com carros, tem dificuldade para lidar com garotas bonitas e investiga casos de diferentes naturezas.",
-          "runs": [
-            {
-              "text": "A trama se passa na Islândia e acompanha Kei Miyama, um jovem de 17 anos que trabalha como detetive particular. Sendo assim ele possui três características incomuns: consegue conversar com carros, tem dificuldade para lidar com garotas bonitas e investiga casos de diferentes naturezas.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Go-with-the-Clouds-anime.webp",
-          "alt": "Go with the Clouds anime",
-          "caption": "© 入江亜季/北北西に曇と往け製作委員会"
-        },
-        {
-          "type": "heading",
-          "text": "Mangá segue sob nova editora",
-          "runs": [
-            {
-              "text": "Mangá segue sob nova editora"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Aki Irie iniciou a publicação do mangá em 2016, na revista Harta. Após a mudança para a Aokishi e o encerramento da serialização nessa revista em fevereiro de 2025, a editora Yukiwariso anunciou a continuidade da obra em outubro do mesmo ano.",
-          "runs": [
-            {
-              "text": "Aki Irie iniciou a publicação do "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " em 2016, na revista "
-            },
-            {
-              "text": "Harta",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Após a mudança para a Aokishi e o encerramento da serialização nessa revista em fevereiro de 2025, a editora Yukiwariso anunciou a continuidade da obra em outubro do mesmo ano."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ademais o novo anime tem estreia prevista para 2027, com exibição na televisão japonesa e lançamento mundial pela Netflix.",
-          "runs": [
-            {
-              "text": "Ademais o novo anime tem estreia prevista para 2027, com exibição na televisão japonesa e lançamento mundial pela Netflix."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://hokuhokusei-pr.com/123/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Go with the Clouds ganha trailer com lançamento para 2027.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Go with the Clouds ganha trailer com lançamento para 2027",
-              "href": "https://animenew.com.br/go-with-the-clouds-anime-trailer-estreia-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-10T11:19:16.000Z",
-      "updatedAt": "2026-10-10T11:19:16.000Z",
-      "expiresAt": "2026-10-17T11:19:16.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/go-with-the-clouds-anime-trailer-estreia-2027",
-          "publishedAt": "2026-10-10T11:19:16.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 230,
-      "qualityScore": 0.971,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
         "sourceCount": 1,
         "ingestMode": "rss-full",
         "contentMode": "full",
@@ -3995,6 +4005,458 @@
       }
     },
     {
+      "id": "animenew-1b99beb7",
+      "slug": "the-remarried-empress-ganha-anime-com-estreia-para-2027-animenew-1b99beb7",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "The Remarried Empress ganha anime com estreia para 2027",
+      "originalTitle": "The Remarried Empress ganha anime com estreia para 2027",
+      "summary": "A Crunchyroll anunciou a adaptação em anime de The Remarried Empress durante a New York Comic Con. A produção ganhou animação do estúdio TROYCA, com estreia prevista para 2027.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Notícias"
+      ],
+      "url": "https://animenew.com.br/the-remarried-empress-ganha-anime-com-estreia-para-2027",
+      "sourceUrl": "https://animenew.com.br/the-remarried-empress-ganha-anime-com-estreia-para-2027",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/The-Remarried-Empress-ganha-anime-com-estreia-para-2027.webp",
+      "mediaQuery": "The Remarried Empress ganha anime com estreia para 2027",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/The-Remarried-Empress-anime.webp",
+          "alt": "The Remarried Empress anime",
+          "caption": "© Alphatart, SUMPUL, HereLee, MSTORYHUB/LDF, The Remarried Empress Animation Project"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/PC0Lt_4naHs"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Crunchyroll anunciou a adaptação em anime de The Remarried Empress durante a New York Comic Con. A produção ganhou animação do estúdio TROYCA, com estreia prevista para 2027.",
+          "runs": [
+            {
+              "text": "A Crunchyroll anunciou a adaptação em "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "The Remarried Empress",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " durante a "
+            },
+            {
+              "text": "New York Comic Con",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". A produção ganhou animação do estúdio TROYCA, com estreia prevista para 2027."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Anime The Guy She Was Interested In ganha data de lançamento",
+              "runs": [
+                {
+                  "text": "Anime The Guy She Was Interested In ganha data de lançamento",
+                  "href": "https://animenew.com.br/the-guy-she-was-interested-in-estreia-janeiro"
+                }
+              ]
+            },
+            {
+              "text": "Gundam Seed Freedom Zero estreia em janeiro de 2027",
+              "runs": [
+                {
+                  "text": "Gundam Seed Freedom Zero estreia em janeiro de 2027",
+                  "href": "https://animenew.com.br/gundam-seed-freedom-zero-estreia-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A obra é baseada no webtoon de Alphatart, HereLee e SUMPUL, que conquistou popularidade internacional com sua mistura de romance, fantasia e intrigas políticas.",
+          "runs": [
+            {
+              "text": "A obra é baseada no webtoon de Alphatart, HereLee e SUMPUL, que conquistou popularidade internacional com sua mistura de romance, fantasia e intrigas políticas."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=PC0Lt_4naHs",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/PC0Lt_4naHs"
+        },
+        {
+          "type": "paragraph",
+          "text": "Yōko Hikasa dará voz à protagonista Navier, enquanto Ryōhei Kimura interpretará Heinrey. Tomoaki Maeno será Sovieshu, e Reina Ueda ficará responsável pela personagem Rashta.",
+          "runs": [
+            {
+              "text": "Yōko Hikasa dará voz à protagonista Navier, enquanto Ryōhei Kimura interpretará Heinrey. Tomoaki Maeno será Sovieshu, e Reina Ueda ficará responsável pela personagem Rashta."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/The-Remarried-Empress-anime.webp",
+          "alt": "The Remarried Empress anime",
+          "caption": "© Alphatart, SUMPUL, HereLee, MSTORYHUB/LDF, The Remarried Empress Animation Project"
+        },
+        {
+          "type": "heading",
+          "text": "Equipe de produção",
+          "runs": [
+            {
+              "text": "Equipe de produção"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Tetsuya Yanagisawa, conhecido por Berserk of Gluttony e High School DxD, dirigirá a animação no estúdio TROYCA. Akiko Inoue cuidará da supervisão e dos roteiros, enquanto Jun Nakai será responsável pelo design de personagens. A trilha sonora ficará a cargo de Yūki Fukazawa.",
+          "runs": [
+            {
+              "text": "Tetsuya Yanagisawa, conhecido por "
+            },
+            {
+              "text": "Berserk of Gluttony",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "High School DxD",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", dirigirá a animação no estúdio TROYCA. Akiko Inoue cuidará da supervisão e dos roteiros, enquanto Jun Nakai será responsável pelo design de personagens. A trilha sonora ficará a cargo de Yūki Fukazawa."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de The Remarried Empress",
+          "runs": [
+            {
+              "text": "História de The Remarried Empress"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Navier, a imperatriz do Império Oriental, que decide se divorciar após descobrir que seu marido, o imperador Sovieshu, pretende substituí-la por sua amante. Determinada a recuperar sua posição, ela decide se tornar imperatriz de outro reino.",
+          "runs": [
+            {
+              "text": "A trama acompanha Navier, a imperatriz do Império Oriental, que decide se divorciar após descobrir que seu marido, o imperador Sovieshu, pretende substituí-la por sua amante. Determinada a recuperar sua posição, ela decide se tornar imperatriz de outro reino.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O webtoon ultrapassou 2,97 bilhões de visualizações globais e foi traduzido para dez idiomas. A versão em inglês está disponível no WEBTOON, enquanto a Ize Press publica a edição impressa.",
+          "runs": [
+            {
+              "text": "O webtoon ultrapassou 2,97 bilhões de visualizações globais e foi traduzido para dez idiomas. A versão em inglês está disponível no WEBTOON, enquanto a Ize Press publica a edição impressa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ademais além do anime, a franquia também ganhará uma adaptação em live-action, com estreia marcada para 4 de novembro no Disney+ e no Hulu.",
+          "runs": [
+            {
+              "text": "Ademais além do anime, a franquia também ganhará uma adaptação em live-action, com estreia marcada para 4 de novembro no Disney+ e no Hulu."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://saikon-anime.com/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em The Remarried Empress ganha anime com estreia para 2027.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "The Remarried Empress ganha anime com estreia para 2027",
+              "href": "https://animenew.com.br/the-remarried-empress-ganha-anime-com-estreia-para-2027/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-09T11:30:27.000Z",
+      "updatedAt": "2026-10-09T11:30:27.000Z",
+      "expiresAt": "2026-10-16T11:30:27.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/the-remarried-empress-ganha-anime-com-estreia-para-2027",
+          "publishedAt": "2026-10-09T11:30:27.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 275,
+      "qualityScore": 0.978,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 14,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-ea103886",
+      "slug": "teenage-mercenary-ganha-anime-pelo-estudio-j-c-staff-animenew-ea103886",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Teenage Mercenary ganha anime pelo estúdio J.C. Staff",
+      "originalTitle": "Teenage Mercenary ganha anime pelo estúdio J.C. Staff",
+      "summary": "O webtoon Teenage Mercenary (Nyūgaku Yōhei) ganhará uma adaptação em anime, previsto para 2027. O anúncio aconteceu através da Crunchyroll durante a New York Comic Con, com a confirmação do estúdio responsável e dos principais nomes da equipe de produção.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Teenage Mercenary"
+      ],
+      "url": "https://animenew.com.br/teenage-mercenary-anime-2027",
+      "sourceUrl": "https://animenew.com.br/teenage-mercenary-anime-2027",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Teenage-Mercenary-ganha-anime-pelo-estudio-J.C.-Staff.webp",
+      "mediaQuery": "Teenage Mercenary ganha anime pelo estúdio J.C. Staff",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/FB0yqIHGWSs"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O webtoon Teenage Mercenary (Nyūgaku Yōhei) ganhará uma adaptação em anime, previsto para 2027. O anúncio aconteceu através da Crunchyroll durante a New York Comic Con, com a confirmação do estúdio responsável e dos principais nomes da equipe de produção.",
+          "runs": [
+            {
+              "text": "O webtoon Teenage Mercenary (Nyūgaku Yōhei) ganhará uma adaptação em anime, previsto para 2027. O anúncio aconteceu através da Crunchyroll durante a "
+            },
+            {
+              "text": "New York Comic Con",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", com a confirmação do estúdio responsável e dos principais nomes da equipe de produção."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Gundam Seed Freedom Zero estreia em janeiro de 2027",
+              "runs": [
+                {
+                  "text": "Gundam Seed Freedom Zero estreia em janeiro de 2027",
+                  "href": "https://animenew.com.br/gundam-seed-freedom-zero-estreia-2027"
+                }
+              ]
+            },
+            {
+              "text": "Crunchyroll adquire filme de The Apothecary Diaries",
+              "runs": [
+                {
+                  "text": "Crunchyroll adquire filme de The Apothecary Diaries",
+                  "href": "https://animenew.com.br/filme-the-apothecary-diaries-crunchyroll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A animação ficará a cargo do J.C. Staff, conhecido por trabalhos em diferentes gêneros. Manabu Ono será o diretor e também supervisionará os roteiros, enquanto Koji Haneda cuidará do design dos personagens. A trilha sonora será composta por Hiroyuki Sawano, responsável por músicas de Attack on Titan e Kingdom. A produção ficará sob responsabilidade da HAYATE.",
+          "runs": [
+            {
+              "text": "A animação ficará a cargo do "
+            },
+            {
+              "text": "J.C. Staff",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", conhecido por trabalhos em diferentes gêneros. Manabu Ono será o diretor e também supervisionará os roteiros, enquanto Koji Haneda cuidará do design dos personagens. A trilha sonora será composta por Hiroyuki Sawano, responsável por músicas de Attack on Titan e Kingdom. A produção ficará sob responsabilidade da HAYATE."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=FB0yqIHGWSs",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/FB0yqIHGWSs"
+        },
+        {
+          "type": "heading",
+          "text": "História de Teenage Mercenary",
+          "runs": [
+            {
+              "text": "História de Teenage Mercenary"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Yu Ijin, um garoto que perdeu os pais em um acidente de avião aos oito anos e precisou se tornar mercenário para sobreviver em território estrangeiro. Assim Dez anos depois, ele retorna à Coreia do Sul para reencontrar a família e tentar levar uma vida normal.",
+          "runs": [
+            {
+              "text": "A trama acompanha Yu Ijin, um garoto que perdeu os pais em um acidente de avião aos oito anos e precisou se tornar mercenário para sobreviver em território estrangeiro. Assim Dez anos depois, ele retorna à Coreia do Sul para reencontrar a família e tentar levar uma vida normal.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Publicado originalmente na plataforma Naver Webtoon em novembro de 2020, o título foi lançado em inglês pela WEBTOON em junho de 2021. Por fim até setembro de 2026, a obra acumulava mais de 2,84 bilhões de visualizações em todo o mundo, distribuída em dez idiomas.",
+          "runs": [
+            {
+              "text": "Publicado originalmente na plataforma Naver Webtoon em novembro de 2020, o título foi lançado em inglês pela WEBTOON em junho de 2021. Por fim até setembro de 2026, a obra acumulava mais de 2,84 bilhões de visualizações em todo o mundo, distribuída em dez idiomas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Teenage Mercenary ganha anime pelo estúdio J.C. Staff.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Teenage Mercenary ganha anime pelo estúdio J.C. Staff",
+              "href": "https://animenew.com.br/teenage-mercenary-anime-2027/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-09T11:16:27.000Z",
+      "updatedAt": "2026-10-09T11:16:27.000Z",
+      "expiresAt": "2026-10-16T11:16:27.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/teenage-mercenary-anime-2027",
+          "publishedAt": "2026-10-09T11:16:27.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 230,
+      "qualityScore": 0.966,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 8,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
       "id": "animenew-27e11c06",
       "slug": "the-boxer-ganhara-anime-produzido-por-dois-estudios-animenew-27e11c06",
       "source": "AnimeNew",
@@ -4233,528 +4695,6 @@
       "readingMinutes": 2,
       "wordCount": 245,
       "qualityScore": 0.972,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-ed3a8fce",
-      "slug": "anime-skull-dragon-s-precious-daughter-ganha-trailer-e-elenco-animenew-ed3a8fce",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Anime Skull Dragon’s Precious Daughter ganha trailer e elenco",
-      "originalTitle": "Anime Skull Dragon’s Precious Daughter ganha trailer e elenco",
-      "summary": "O anime Skull Dragon’s Precious Daughter (Hone Dragon no Mana musume)revelou seu primeiro vídeo promocional, visual oficial e os dubladores principais. A adaptação do mangá de Ichi Yukishiro tem estreia prevista para 2027.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Hone Dragon no Mana Musume",
-        "The Skull Dragon's Precious Daughter"
-      ],
-      "url": "https://animenew.com.br/skull-dragons-precious-daughter-anime-trailer",
-      "sourceUrl": "https://animenew.com.br/skull-dragons-precious-daughter-anime-trailer",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Anime-Skull-Dragons-Precious-Daughter-ganha-trailer-e-elenco.webp",
-      "mediaQuery": "Anime Skull Dragon’s Precious Daughter ganha trailer e elenco",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Anime-Skull-Dragons-Precious-Daughter-scaled.webp",
-          "alt": "Anime Skull Dragon's Precious Daughter",
-          "caption": "©雪白いち・マッグガーデン／「骨ドラゴンのマナ娘」製作委員会"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/9ZWHPzgpLSY"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Skull Dragon’s Precious Daughter (Hone Dragon no Mana musume)revelou seu primeiro vídeo promocional, visual oficial e os dubladores principais. A adaptação do mangá de Ichi Yukishiro tem estreia prevista para 2027.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Skull Dragon’s Precious Daughter",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Hone Dragon no Mana musume",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ")revelou seu primeiro vídeo promocional, visual oficial e os dubladores principais. A adaptação do mangá de Ichi Yukishiro tem estreia prevista para 2027."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "The Science Notes by Delta e Gamma ganhará anime",
-              "runs": [
-                {
-                  "text": "The Science Notes by Delta e Gamma ganhará anime",
-                  "href": "https://animenew.com.br/the-science-notes-by-delta-e-gamma-anime"
-                }
-              ]
-            },
-            {
-              "text": "Red Riding Hood: A Detective Story ganha trailer",
-              "runs": [
-                {
-                  "text": "Red Riding Hood: A Detective Story ganha trailer",
-                  "href": "https://animenew.com.br/red-riding-hood-a-detective-story-anime"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=9ZWHPzgpLSY",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/9ZWHPzgpLSY"
-        },
-        {
-          "type": "paragraph",
-          "text": "Anunciado pela Kadokawa nesta quinta-feira (8), o projeto confirmou Kana Hanazawa como Eve, uma menina abandonada na Floresta dos Descartes, e Kazuhiko Inoue como Nemu, o dragão esquelético que a cria como filha.",
-          "runs": [
-            {
-              "text": "Anunciado pela "
-            },
-            {
-              "text": "Kadokawa",
-              "href": "https://animenew.com.br/tag/kadokawa/"
-            },
-            {
-              "text": " nesta quinta-feira (8), o projeto confirmou Kana Hanazawa como Eve, uma menina abandonada na Floresta dos Descartes, e Kazuhiko Inoue como Nemu, o dragão esquelético que a cria como filha."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Anime-Skull-Dragons-Precious-Daughter-scaled.webp",
-          "alt": "Anime Skull Dragon's Precious Daughter",
-          "caption": "©雪白いち・マッグガーデン／「骨ドラゴンのマナ娘」製作委員会"
-        },
-        {
-          "type": "heading",
-          "text": "Equipe de produção",
-          "runs": [
-            {
-              "text": "Equipe de produção"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A direção está nas mãos de Kuniyasu Nishina, conhecido por seu trabalho em episódios de Oshi no Ko e Blue Period, no estúdio Doga Kobo. Yuka Yamada cuida dos roteiros da série, enquanto Tomoya Atsumi assina o design de personagens.",
-          "runs": [
-            {
-              "text": "A direção está nas mãos de Kuniyasu Nishina, conhecido por seu trabalho em episódios de "
-            },
-            {
-              "text": "Oshi no Ko",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Blue Period",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", no estúdio Doga Kobo. Yuka Yamada cuida dos roteiros da série, enquanto Tomoya Atsumi assina o design de personagens."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Portanto a arte de fundo fica sob responsabilidade de Daiki Kuribayashi e Yuki Hatakeyama.",
-          "runs": [
-            {
-              "text": "Portanto a arte de fundo fica sob responsabilidade de Daiki Kuribayashi e Yuki Hatakeyama."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "História do anime",
-          "runs": [
-            {
-              "text": "História do anime"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama acompanha Eve, que sobrevive aos perigos de uma floresta onde todo tipo de coisa é descartado. Contudo aos cinco anos, ela é acolhida por Nemu, um dragão idoso que está próximo da morte. Após perder seu pai adotivo, a garota descobre que o vínculo entre os dois pode ir além da morte. Com o corpo ressuscitado perdendo suas forças, Nemu parte em uma aventura ao lado de Eve para ajudá-la a controlar seus poderes mágicos.",
-          "runs": [
-            {
-              "text": "A trama acompanha Eve, que sobrevive aos perigos de uma floresta onde todo tipo de coisa é descartado. Contudo aos cinco anos, ela é acolhida por Nemu, um dragão idoso que está próximo da morte.",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Após perder seu pai adotivo, a garota descobre que o vínculo entre os dois pode ir além da morte. Com o corpo ressuscitado perdendo suas forças, Nemu parte em uma aventura ao lado de Eve para ajudá-la a controlar seus poderes mágicos.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Sendo assim o mangá estreou em 2020 no site Mag Comi, da Mag Garden. Ademais a obra entrou em hiato em julho de 2026, com retorno previsto para a primavera de 2027.",
-          "runs": [
-            {
-              "text": "Sendo assim o mangá estreou em 2020 no site Mag Comi, da Mag Garden. Ademais a obra entrou em hiato em julho de 2026, com retorno previsto para a primavera de 2027."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Anime Skull Dragon’s Precious Daughter ganha trailer e elenco.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Anime Skull Dragon’s Precious Daughter ganha trailer e elenco",
-              "href": "https://animenew.com.br/skull-dragons-precious-daughter-anime-trailer/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-09T00:19:33.000Z",
-      "updatedAt": "2026-10-09T00:19:33.000Z",
-      "expiresAt": "2026-10-16T00:19:33.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/skull-dragons-precious-daughter-anime-trailer",
-          "publishedAt": "2026-10-09T00:19:33.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 274,
-      "qualityScore": 0.975,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-4c159411",
-      "slug": "the-moon-on-a-rainy-night-anime-revela-elenco-em-novo-video-animenew-4c159411",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "The Moon on a Rainy Night: Anime revela elenco em novo vídeo",
-      "originalTitle": "The Moon on a Rainy Night: Anime revela elenco em novo vídeo",
-      "summary": "O anime The Moon on a Rainy Night (Amayo no Tsuki) divulgou seu primeiro vídeo promocional completo, apresentando as dubladoras das protagonistas e novos integrantes da equipe de produção. A estreia da série está prevista para 2027.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Amayo no Tsuki",
-        "The Moon on a Rainy Night"
-      ],
-      "url": "https://animenew.com.br/the-moon-on-a-rainy-night-anime-elenco",
-      "sourceUrl": "https://animenew.com.br/the-moon-on-a-rainy-night-anime-elenco",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/The-Moon-on-a-Rainy-Night-Anime-revela-elenco-em-novo-video.webp",
-      "mediaQuery": "The Moon on a Rainy Night: Anime revela elenco em novo vídeo",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/Q-W1E8Y9Jv0"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime The Moon on a Rainy Night (Amayo no Tsuki) divulgou seu primeiro vídeo promocional completo, apresentando as dubladoras das protagonistas e novos integrantes da equipe de produção. A estreia da série está prevista para 2027.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "The Moon on a Rainy Night",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Amayo no Tsuki",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") divulgou seu primeiro vídeo promocional completo, apresentando as dubladoras das protagonistas e novos integrantes da equipe de produção. A estreia da série está prevista para 2027."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "The Fledgling Demon Lord’s Starter Shop ganha teaser",
-              "runs": [
-                {
-                  "text": "The Fledgling Demon Lord’s Starter Shop ganha teaser",
-                  "href": "https://animenew.com.br/the-fledgling-demon-lords-starter-shop-anime"
-                }
-              ]
-            },
-            {
-              "text": "The Science Notes by Delta e Gamma ganhará anime",
-              "runs": [
-                {
-                  "text": "The Science Notes by Delta e Gamma ganhará anime",
-                  "href": "https://animenew.com.br/the-science-notes-by-delta-e-gamma-anime"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Iori Saeki dará voz a Saki Kindaichi, enquanto Sora Amamiya interpretará Kanon Oikawa. A adaptação é baseada no mangá de Kuzushiro, publicado pela Kodansha.",
-          "runs": [
-            {
-              "text": "Iori Saeki dará voz a "
-            },
-            {
-              "text": "Saki Kindaichi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", enquanto Sora Amamiya interpretará "
-            },
-            {
-              "text": "Kanon Oikawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A adaptação é baseada no "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " de Kuzushiro, publicado pela Kodansha."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=Q-W1E8Y9Jv0",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/Q-W1E8Y9Jv0"
-        },
-        {
-          "type": "heading",
-          "text": "Equipe de produção",
-          "runs": [
-            {
-              "text": "Equipe de produção"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Tomoe Makino dirige o anime no estúdio CompTown, com Shogo Yasukawa responsável pela composição da série e pelos roteiros. Ayumi Nishibata assina o design dos personagens.",
-          "runs": [
-            {
-              "text": "Tomoe Makino dirige o anime no estúdio CompTown, com Shogo Yasukawa responsável pela composição da série e pelos roteiros. Ayumi Nishibata assina o design dos personagens."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A equipe também conta com Seung Deok Kim e Tsutomu Tomoyuki como diretores assistentes. Haruko Nobori cuida das cores, Mai Ichioka assume a direção de arte e Atsushi Sato trabalha na fotografia. Assim a trilha sonora ficará a cargo do grupo jizue.",
-          "runs": [
-            {
-              "text": "A equipe também conta com Seung Deok Kim e Tsutomu Tomoyuki como diretores assistentes. Haruko Nobori cuida das cores, Mai Ichioka assume a direção de arte e Atsushi Sato trabalha na fotografia. Assim a trilha sonora ficará a cargo do grupo jizue."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "História do anime",
-          "runs": [
-            {
-              "text": "História do anime"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama acompanha Saki, uma estudante que conhece Kanon após um encontro inesperado em uma noite chuvosa. No dia seguinte, as duas descobrem que são colegas de classe. Kanon tem deficiência auditiva e costuma manter distância das pessoas, mas Saki tenta se aproximar dela, dando início a uma relação que transforma a vida das duas.",
-          "runs": [
-            {
-              "text": "A trama acompanha Saki, uma estudante que conhece Kanon após um encontro inesperado em uma noite chuvosa. No dia seguinte, as duas descobrem que são colegas de classe. Kanon tem deficiência auditiva e costuma manter distância das pessoas, mas Saki tenta se aproximar dela, dando início a uma relação que transforma a vida das duas.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Contudo o mangá teve início no site Comic Days, da Kodansha, em junho de 2021. Ademais a obra já conta com 12 volumes lançados no Japão.",
-          "runs": [
-            {
-              "text": "Contudo o mangá teve início no site Comic Days, da Kodansha, em junho de 2021. Ademais a obra já conta com 12 volumes lançados no Japão."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://amayonotsuki.jp/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em The Moon on a Rainy Night: Anime revela elenco em novo vídeo.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "The Moon on a Rainy Night: Anime revela elenco em novo vídeo",
-              "href": "https://animenew.com.br/the-moon-on-a-rainy-night-anime-elenco/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-09T00:06:17.000Z",
-      "updatedAt": "2026-10-09T00:06:17.000Z",
-      "expiresAt": "2026-10-16T00:06:17.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/the-moon-on-a-rainy-night-anime-elenco",
-          "publishedAt": "2026-10-09T00:06:17.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 260,
-      "qualityScore": 0.974,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -5104,241 +5044,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-423cad5a",
-      "slug": "anime-walking-home-with-you-estreia-em-abril-de-2027-animenew-423cad5a",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Anime Walking Home with You estreia em abril de 2027",
-      "originalTitle": "Anime Walking Home with You estreia em abril de 2027",
-      "summary": "O anime Walking Home with You (Hōkago Kitaku Biyori), adaptação do mangá de Mai Matsuda, teve sua estreia na televisão confirmada para abril de 2027. Sendo assim a produção também revelou um primeiro visual promocional. A página oficial da série apresenta a imagem promocional e confirmando a exibição pelo canal japonês NTV.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Hōkago Kitaku Biyori",
-        "Walking Home with You"
-      ],
-      "url": "https://animenew.com.br/anime-walking-home-with-you-estreia-em-abril-de-2027",
-      "sourceUrl": "https://animenew.com.br/anime-walking-home-with-you-estreia-em-abril-de-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Anime-Walking-Home-with-You-estreia-em-abril-de-2027.webp",
-      "mediaQuery": "Anime Walking Home with You estreia em abril de 2027",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Walking-Home-with-You-anime.webp",
-          "alt": "Walking Home with You anime",
-          "caption": "©松田舞／双葉社・ハイパー帰宅部"
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Walking Home with You (Hōkago Kitaku Biyori), adaptação do mangá de Mai Matsuda, teve sua estreia na televisão confirmada para abril de 2027. Sendo assim a produção também revelou um primeiro visual promocional. A página oficial da série apresenta a imagem promocional e confirmando a exibição pelo canal japonês NTV.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Walking Home with You",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Hōkago Kitaku Biyori",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "), adaptação do "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " de Mai Matsuda, teve sua estreia na televisão confirmada para abril de 2027. Sendo assim a produção também revelou um primeiro visual promocional. A página oficial da série apresenta a imagem promocional e confirmando a exibição pelo canal japonês NTV."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "The Fledgling Demon Lord’s Starter Shop ganha teaser",
-              "runs": [
-                {
-                  "text": "The Fledgling Demon Lord’s Starter Shop ganha teaser",
-                  "href": "https://animenew.com.br/the-fledgling-demon-lords-starter-shop-anime"
-                }
-              ]
-            },
-            {
-              "text": "The Science Notes by Delta e Gamma ganhará anime",
-              "runs": [
-                {
-                  "text": "The Science Notes by Delta e Gamma ganhará anime",
-                  "href": "https://animenew.com.br/the-science-notes-by-delta-e-gamma-anime"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A ilustração traz a frase: “O requisito para entrar no clube é voltar para casa comigo”.",
-          "runs": [
-            {
-              "text": "A ilustração traz a frase: “O requisito para entrar no clube é voltar para casa comigo”."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Walking-Home-with-You-anime.webp",
-          "alt": "Walking Home with You anime",
-          "caption": "©松田舞／双葉社・ハイパー帰宅部"
-        },
-        {
-          "type": "heading",
-          "text": "História acompanha clube escolar inusitado",
-          "runs": [
-            {
-              "text": "História acompanha clube escolar inusitado"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama acompanha Shun, um estudante que abandonou o sonho de jogar futebol após sofrer uma lesão. Sem encontrar uma nova paixão no ensino médio, ele conhece Naoki, uma veterana excêntrica que o convida para participar de seu clube informal.",
-          "runs": [
-            {
-              "text": "A trama acompanha Shun, um estudante que abandonou o sonho de jogar futebol após sofrer uma lesão. Sem encontrar uma nova paixão no ensino médio, ele conhece Naoki, uma veterana excêntrica que o convida para participar de seu clube informal.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Chamado de Hyper-Epic Heading Home Club, o grupo tem apenas uma integrante e transforma o caminho de volta para casa em pequenas aventuras. Ao acompanhar Naoki em desvios inesperados e descobertas curiosas, Shun começa a enxergar sua rotina de outra maneira.",
-          "runs": [
-            {
-              "text": "Chamado de Hyper-Epic Heading Home Club, o grupo tem apenas uma integrante e transforma o caminho de volta para casa em pequenas aventuras. Ao acompanhar Naoki em desvios inesperados e descobertas curiosas, Shun começa a enxergar sua rotina de outra maneira.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Mangá ganha novo volume",
-          "runs": [
-            {
-              "text": "Mangá ganha novo volume"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Mai Matsuda iniciou o mangá, intitulado originalmente Hōkago Kitaku Biyori, na revista Manga Action, da Futabasha, em agosto de 2023. Por fim o sétimo volume será publicado no dia 8 de outubro de 2026. Ademais a adaptação para anime ganhou anúncio inicialmente em março de 2025.",
-          "runs": [
-            {
-              "text": "Mai Matsuda iniciou o mangá, intitulado originalmente Hōkago Kitaku Biyori, na revista Manga Action, da Futabasha, em agosto de 2023. Por fim o sétimo volume será publicado no dia 8 de outubro de 2026. Ademais a adaptação para anime ganhou anúncio inicialmente em março de 2025."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://hokabiyo.com/news/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Anime Walking Home with You estreia em abril de 2027.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Anime Walking Home with You estreia em abril de 2027",
-              "href": "https://animenew.com.br/anime-walking-home-with-you-estreia-em-abril-de-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-08T23:39:15.000Z",
-      "updatedAt": "2026-10-08T23:39:15.000Z",
-      "expiresAt": "2026-10-15T23:39:15.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/anime-walking-home-with-you-estreia-em-abril-de-2027",
-          "publishedAt": "2026-10-08T23:39:15.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 247,
-      "qualityScore": 0.971,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
         "embedCount": 0,
         "sourcePagesRead": 0
       }
@@ -6191,7 +5896,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 244,
-      "qualityScore": 0.968,
+      "qualityScore": 0.908,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
