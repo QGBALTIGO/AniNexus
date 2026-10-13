@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T09:45:33.545Z",
+  "generatedAt": "2026-10-13T17:09:00.024Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 40,
+      "count": 39,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,280 @@
     }
   ],
   "stats": {
-    "collected": 50,
+    "collected": 49,
     "grouped": 24,
     "published": 24,
     "newStories": 24,
     "fullArticles": 24,
     "previewArticles": 0,
-    "avgWords": 477,
+    "avgWords": 469,
     "withHeroImage": 24,
     "withOrderedMedia": 18,
     "skippedTranslation": 0,
-    "skippedQuality": 23,
-    "durationMs": 3622
+    "skippedQuality": 22,
+    "durationMs": 5948
   },
   "items": [
+    {
+      "id": "jbox-d4109b42",
+      "slug": "dr-stone-tem-novo-anime-anunciado-jbox-d4109b42",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Dr. STONE’ tem novo animê anunciado",
+      "originalTitle": "‘Dr. STONE’ tem novo animê anunciado",
+      "summary": "Foi anunciado durante o evento Stone Fes. 2026, no último dia 10, que Dr. STONE vai ganhar uma nova adaptação animada, chamada Dr. STONE: Terraforming.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "dr. stone",
+        "Dr. STONE: Terraforming",
+        "novo anime de dr. stone",
+        "terraforming"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/13/dr-stone-tem-novo-anime-anunciado",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/13/dr-stone-tem-novo-anime-anunciado",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2025/06/drstone4pt2-destacada.jpg",
+      "mediaQuery": "‘Dr. STONE’ tem novo animê anunciado",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/-Vk8vSnnmnY"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado durante o evento Stone Fes. 2026, no último dia 10, que Dr. STONE vai ganhar uma nova adaptação animada, chamada Dr. STONE: Terraforming.",
+          "runs": [
+            {
+              "text": "Foi anunciado durante o evento Stone Fes. 2026, no último dia 10, que "
+            },
+            {
+              "text": "Dr. STONE",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " vai ganhar uma nova adaptação animada, chamada "
+            },
+            {
+              "text": "Dr. STONE: Terraforming",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira o vídeo com o anúncio abaixo:",
+          "runs": [
+            {
+              "text": "Confira o vídeo com o anúncio abaixo:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=-Vk8vSnnmnY",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/-Vk8vSnnmnY"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dr. STONE: Terraforming é uma adaptação do capítulo especial Terraforming, do último volume do mangá. A história se passa após o fim do roteiro principal da obra. Mais detalhes sobre a adaptação ainda não foram divulgados, incluindo formato da produção.",
+          "runs": [
+            {
+              "text": "Dr. STONE: Terraforming",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é uma adaptação do capítulo especial "
+            },
+            {
+              "text": "Terraforming",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", do último volume do mangá. A história se passa após o fim do roteiro principal da obra. Mais detalhes sobre a adaptação ainda não foram divulgados, incluindo formato da produção."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na história de Terraforming, Senku acorda sozinho no meio do oceano, sem ter ideia de como foi parar ali ou onde encontrar terra firme. Aos poucos ele começa a encontrar pistas do que poderia estar fazendo ali, como o fato de seu corpo estar coberto de óleo para prevenir hipotermia, além de perceber que está com o líquido que cura a petrificação e também com o rádio de galena que fez anos atrás.",
+          "runs": [
+            {
+              "text": "Na história de "
+            },
+            {
+              "text": "Terraforming",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", Senku acorda sozinho no meio do oceano, sem ter ideia de como foi parar ali ou onde encontrar terra firme. Aos poucos ele começa a encontrar pistas do que poderia estar fazendo ali, como o fato de seu corpo estar coberto de óleo para prevenir hipotermia, além de perceber que está com o líquido que cura a petrificação e também com o rádio de galena que fez anos atrás."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A última temporada de Dr. STONE foi Science Future, que teve sua terceira e última parte exibida entre abril e junho deste ano. Os animês da franquia são de produção do estúdio TMS Entertainment.",
+          "runs": [
+            {
+              "text": "A última temporada de "
+            },
+            {
+              "text": "Dr. STONE",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi "
+            },
+            {
+              "text": "Science Future",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que teve sua terceira e última parte exibida entre abril e junho deste ano. Os animês da franquia são de produção do estúdio "
+            },
+            {
+              "text": "TMS Entertainment",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Anime News Network",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-10-10/dr-stone-tv-anime-gets-terraforming-sequel/.242690"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-13T13:42:38.000Z",
+      "updatedAt": "2026-10-13T13:43:10.000Z",
+      "expiresAt": "2026-10-20T13:42:38.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/13/dr-stone-tem-novo-anime-anunciado",
+          "publishedAt": "2026-10-13T13:42:38.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 200,
+      "qualityScore": 0.963,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-7b5d9710",
       "slug": "anime-de-kagurabachi-tem-turne-confirmada-no-brasil-durante-a-ccxp-2026-jbox-7b5d9710",
@@ -2955,7 +3215,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 276,
-      "qualityScore": 0.976,
+      "qualityScore": 0.916,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3212,7 +3472,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 265,
-      "qualityScore": 0.976,
+      "qualityScore": 0.916,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3479,7 +3739,7 @@
       "sourceCount": 1,
       "readingMinutes": 1,
       "wordCount": 203,
-      "qualityScore": 0.965,
+      "qualityScore": 0.905,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3706,7 +3966,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 224,
-      "qualityScore": 0.967,
+      "qualityScore": 0.907,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -9289,375 +9549,6 @@
         "facts": 0,
         "sections": 0,
         "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-97674edb",
-      "slug": "yoshihiro-togashi-de-hunter-x-hunter-revela-mudancas-no-ritmo-de-trabalho-para-cuidar-da-saude-jbox-97674edb",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Yoshihiro Togashi, de ‘Hunter x Hunter’, revela mudanças no ritmo de trabalho para cuidar da saúde",
-      "originalTitle": "Yoshihiro Togashi, de ‘Hunter x Hunter’, revela mudanças no ritmo de trabalho para cuidar da saúde",
-      "summary": "Yoshihiro Togashi, conhecido especialmente por obras como Yu Yu Hakusho e Hunter x Hunter (ainda não finalizada), usou as redes sociais para falar de mudanças no ritmo de trabalho por conta da saúde.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Cotidiano",
-        "Mangá",
-        "Hunter x Hunter",
-        "Mangá de Hunter x Hunter",
-        "twitter do togashi",
-        "volta de hunter x hunter",
-        "Yoshihiro Togashi"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/06/yoshihiro-togashi-de-hunter-x-hunter-revela-mudancas-no-ritmo-de-trabalho-para-cuidar-da-saude",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/06/yoshihiro-togashi-de-hunter-x-hunter-revela-mudancas-no-ritmo-de-trabalho-para-cuidar-da-saude",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2024/10/yoshihirotogashi-destacada.jpg",
-      "mediaQuery": "Yoshihiro Togashi, de ‘Hunter x Hunter’, revela mudanças no ritmo de trabalho para cuidar da saúde",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Twitter-Yoshihiro-Togashi-02.png",
-          "alt": "Declaração de Togashi no X/Twitter",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Yoshihiro Togashi, conhecido especialmente por obras como Yu Yu Hakusho e Hunter x Hunter (ainda não finalizada), usou as redes sociais para falar de mudanças no ritmo de trabalho por conta da saúde.",
-          "runs": [
-            {
-              "text": "Yoshihiro Togashi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", conhecido especialmente por obras como "
-            },
-            {
-              "text": "Yu Yu Hakusho",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Hunter x Hunter",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "(ainda não finalizada), usou as redes sociais para falar de mudanças no ritmo de trabalho por conta da saúde."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Em seu perfil no X, Togashi afirmou (em tradução livre): “Devido a uma série de problemas com minha saúde física e mental, decidi que, após concluir o último trabalho que aceitei, passarei a recusar todos os trabalhos com prazo de entrega e priorizarei a produção dos meus próprios manuscritos. Quando eu retomar a produção dos manuscritos, farei um novo anúncio por aqui.”",
-          "runs": [
-            {
-              "text": "Em seu perfil no X, Togashi afirmou (em tradução livre): "
-            },
-            {
-              "text": "“Devido a uma série de problemas com minha saúde física e mental, decidi que, após concluir o último trabalho que aceitei, passarei a recusar todos os trabalhos com prazo de entrega e priorizarei a produção dos meus próprios manuscritos. Quando eu retomar a produção dos manuscritos, farei um novo anúncio por aqui.”",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Twitter-Yoshihiro-Togashi-02.png",
-          "alt": "Declaração de Togashi no X/Twitter"
-        },
-        {
-          "type": "paragraph",
-          "text": "Declaração de Togashi no X, no idioma original. | Imagem: Reprodução/X",
-          "runs": [
-            {
-              "text": "Declaração de Togashi no X, no idioma original. | Imagem: Reprodução/X"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A informação chega em um momento de pausa dos capítulos inéditos de Hunter x Hunter, algo que já aconteceu em outras ocasiões. Atualmente, Togashi lança uma média de 10 capítulos da história por vez, e faz pausas por conta de questões de saúde. Com o anúncio, o mangaká indica que vai focar em trabalhos próprios que não tenham prazos definidos, para conseguir descansar melhor entre cada entrega.",
-          "runs": [
-            {
-              "text": "A informação chega em um momento de pausa dos capítulos inéditos de "
-            },
-            {
-              "text": "Hunter x Hunter",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", algo que já aconteceu em outras ocasiões. Atualmente, Togashi lança uma média de 10 capítulos da história por vez, e faz pausas por conta de questões de saúde. Com o anúncio, o mangaká indica que vai focar em trabalhos próprios que não tenham prazos definidos, para conseguir descansar melhor entre cada entrega."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Togashi sofre há anos com fortes dores nas costas, que chegam a picos que o impossibilitam de fazer coisas comuns do cotidiano, como ir ao banheiro ou mesmo levantar de sua cama. Em 2016, ele deixou comentários bem claros na Shonen Jump, demonstrando a gravidade de sua situação de saúde, e as dificuldades de sua rotina diária, necessitando de ajuda para tudo.",
-          "runs": [
-            {
-              "text": "Togashi sofre há anos com fortes dores nas costas, que chegam a picos que o impossibilitam de fazer coisas comuns do cotidiano, como ir ao banheiro ou mesmo levantar de sua cama. Em 2016, ele deixou"
-            },
-            {
-              "text": " ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "comentários bem claros na ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2020/08/19/fas-revivem-supostos-comentarios-de-yoshihiro-togashi-sobre-o-seu-estado-de-saude/"
-            },
-            {
-              "text": "Shonen Jump",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2020/08/19/fas-revivem-supostos-comentarios-de-yoshihiro-togashi-sobre-o-seu-estado-de-saude/"
-            },
-            {
-              "text": ", demonstrando a gravidade de sua situação de saúde, e as dificuldades de sua rotina diária, necessitando de ajuda para tudo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por conta disso, Hunter x Hunter, obra iniciada em 1998, conta com irregularidade em sua publicação, que chega a somar intervalos de anos sem um novo capítulo. A rotina extremamente exaustiva da profissão é exposta em diversos casos de dores crônicas, comuns entre desenhistas do meio.",
-          "runs": [
-            {
-              "text": "Por conta disso, "
-            },
-            {
-              "text": "Hunter x Hunter",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", obra iniciada em 1998, conta com irregularidade em sua publicação, que chega a somar intervalos de anos sem um novo capítulo. A rotina extremamente exaustiva da profissão é exposta em diversos casos de dores crônicas, comuns entre desenhistas do meio."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O autor retomou a publicação dos capítulos de Hunter x Hunter em outubro de 2024, seguindo até o 410, lançado em dezembro do mesmo ano. O lançamento mais recente da história ocorreu este ano, contemplando até o capítulo 420. Em março, Togashi fez uma rara aparição pública ao lado da esposa, o que também indicou uma melhora em seu estado de saúde.",
-          "runs": [
-            {
-              "text": "O autor retomou a publicação dos capítulos de "
-            },
-            {
-              "text": "Hunter x Hunter",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " em outubro de 2024, seguindo até o 410, lançado em dezembro do mesmo ano. O lançamento mais recente da história ocorreu este ano, contemplando até o capítulo 420. Em março, Togashi "
-            },
-            {
-              "text": "fez uma rara aparição pública ao lado da esposa",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/03/21/ao-lado-da-esposa-naoko-takeuchi-yoshihiro-togashi-faz-rarissima-aparicao-publica/"
-            },
-            {
-              "text": ", o que também indicou uma "
-            },
-            {
-              "text": "melhora em seu estado de saúde",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No Brasil, o mangá de Hunter x Hunter é publicado pela JBC, e está atualmente no volume 38. Já o animê de 2014 está no catálogo da Netflix, da Pluto TV e do aplicativo móvel MovieArk.",
-          "runs": [
-            {
-              "text": "No Brasil, o mangá de "
-            },
-            {
-              "text": "Hunter x Hunter",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é publicado pela "
-            },
-            {
-              "text": "JBC",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e está atualmente no volume 38. Já o animê de 2014 está no catálogo da "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", da "
-            },
-            {
-              "text": "Pluto TV",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e do aplicativo móvel"
-            },
-            {
-              "text": " MovieArk",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Yoshihiro Togashi (X)",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Yoshihiro Togashi (X)",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://x.com/Un4v5s8bgsVk9Xp"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-06T15:50:32.000Z",
-      "updatedAt": "2026-10-06T15:51:01.000Z",
-      "expiresAt": "2026-10-13T15:50:32.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/06/yoshihiro-togashi-de-hunter-x-hunter-revela-mudancas-no-ritmo-de-trabalho-para-cuidar-da-saude",
-          "publishedAt": "2026-10-06T15:50:32.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 400,
-      "qualityScore": 0.929,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
         "sourceCount": 1,
         "ingestMode": "wp-rest",
         "contentMode": "full",
