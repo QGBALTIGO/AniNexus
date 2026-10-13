@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T17:09:00.024Z",
+  "generatedAt": "2026-10-13T21:52:11.231Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 39,
+      "count": 38,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,18 +54,18 @@
     }
   ],
   "stats": {
-    "collected": 49,
-    "grouped": 24,
-    "published": 24,
-    "newStories": 24,
-    "fullArticles": 24,
+    "collected": 48,
+    "grouped": 23,
+    "published": 23,
+    "newStories": 23,
+    "fullArticles": 23,
     "previewArticles": 0,
-    "avgWords": 469,
-    "withHeroImage": 24,
-    "withOrderedMedia": 18,
+    "avgWords": 478,
+    "withHeroImage": 23,
+    "withOrderedMedia": 17,
     "skippedTranslation": 0,
     "skippedQuality": 22,
-    "durationMs": 5948
+    "durationMs": 10582
   },
   "items": [
     {
@@ -2459,7 +2459,7 @@
       "sourceCount": 1,
       "readingMinutes": 3,
       "wordCount": 452,
-      "qualityScore": 0.998,
+      "qualityScore": 0.938,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -2959,7 +2959,7 @@
       "sourceCount": 1,
       "readingMinutes": 5,
       "wordCount": 963,
-      "qualityScore": 1,
+      "qualityScore": 0.97,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -9249,310 +9249,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-9a149370",
-      "slug": "criador-de-supercampeoes-yoichi-takahashi-visita-o-barcelona-jbox-9a149370",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Criador de ‘SuperCampeões’, Yoichi Takahashi visita o Barcelona",
-      "originalTitle": "Criador de ‘SuperCampeões’, Yoichi Takahashi visita o Barcelona",
-      "summary": "Yoichi Takahashi, autor de SuperCampeões (Captain Tsubasa), visitou o Barcelona nesta segunda-feira (5). O mangaká foi recebido por uma delegação do clube liderada por Joan Soler, vice-presidente da área comercial do time.",
-      "author": "Igor Lunei",
-      "tags": [
-        "Cotidiano",
-        "Mangá",
-        "Barcelona",
-        "captain tsubasa",
-        "super campeões",
-        "Yoichi Takahashi",
-        "Yoichi Takahashi no Barcelona"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/06/criador-de-supercampeoes-yoichi-takahashi-visita-o-barcelona",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/06/criador-de-supercampeoes-yoichi-takahashi-visita-o-barcelona",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/yoichi-takahashi-barcelona-destacada.jpg",
-      "mediaQuery": "Criador de ‘SuperCampeões’, Yoichi Takahashi visita o Barcelona",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/ilustracao-barcelona-yoichi-takahashi.jpg",
-          "alt": "Ilustração de cinco jogadores do Barcelona: Leonel Messi, Neymar Jr., Gerard Piqué, Andrés Iniesta e Luis Alberto Suárez, produzidas por conta do Mundial de Clubes em 2015.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Yoichi Takahashi, autor de SuperCampeões (Captain Tsubasa), visitou o Barcelona nesta segunda-feira (5). O mangaká foi recebido por uma delegação do clube liderada por Joan Soler, vice-presidente da área comercial do time.",
-          "runs": [
-            {
-              "text": "Yoichi Takahashi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", autor de "
-            },
-            {
-              "text": "SuperCampeões",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Captain Tsubasa",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "), visitou o Barcelona nesta segunda-feira (5). O mangaká foi recebido por uma delegação do clube liderada por "
-            },
-            {
-              "text": "Joan Soler",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", vice-presidente da área comercial do time."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Durante a recepção, realizada na sala comercial dos escritórios do Barcelona, Takahashi presenteou o clube com uma camisa do Nankatsu SC, equipe que saiu da ficção do mangá para a vida real e atualmente disputa a quinta divisão japonesa. Em troca, o clube presenteou o ilustrador com uma camisa personalizada com seu nome.",
-          "runs": [
-            {
-              "text": "Durante a recepção, realizada na sala comercial dos escritórios do Barcelona, Takahashi presenteou o clube com uma camisa do "
-            },
-            {
-              "text": "Nankatsu SC",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", equipe que saiu da ficção do mangá para a vida real e atualmente disputa a quinta divisão japonesa. Em troca, o clube presenteou o ilustrador com uma camisa personalizada com seu nome."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Após a troca de presentes, Takahashi visitou o Museu do Barcelona e o Spotify Camp Nou, estádio do time. Durante a passagem pelo estádio, o artista japonês desenhou em seu estilo de traço o ponta-direita Lamine Yamal.",
-          "runs": [
-            {
-              "text": "Após a troca de presentes, Takahashi visitou o "
-            },
-            {
-              "text": "Museu do Barcelona",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e o "
-            },
-            {
-              "text": "Spotify Camp Nou",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", estádio do time. Durante a passagem pelo estádio, o artista japonês desenhou em seu estilo de traço o ponta-direita "
-            },
-            {
-              "text": "Lamine Yamal",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "View this post on Instagram",
-          "runs": [
-            {
-              "text": " View this post on Instagram ",
-              "href": "https://www.instagram.com/reel/DeJUCPzuNEx/?utm_source=ig_embed&utm_campaign=loading"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A relação entre o Takahashi e o Barcelona não é recente. Seus desenhos contribuíram para a popularidade do clube na Japão, já que o Oliver/Tsubasa Ozora, dentro de SuperCampeões, acaba jogando por uma equipe catalã inspirada no Barcelona.",
-          "runs": [
-            {
-              "text": "A relação entre o Takahashi e o Barcelona não é recente. Seus desenhos contribuíram para a popularidade do clube na Japão, já que o Oliver/Tsubasa Ozora, dentro de "
-            },
-            {
-              "text": "SuperCampeões",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", acaba jogando por uma equipe catalã inspirada no Barcelona."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além disso, o artista japonês foi responsável pela ilustração de cinco jogadores do Barcelona: Leonel Messi, Neymar Jr., Gerard Piqué, Andrés Iniesta e Luis Alberto Suárez, produzidas por conta do Mundial de Clubes (torneio hoje renomeado como Copa Intercontinental da FIFA) disputado pelo time em 2015, no Japão. Posteriormente, em 2016, Takahashi foi convidado pelo Barcelona para assistir a uma partida no estádio.",
-          "runs": [
-            {
-              "text": "Além disso, o artista japonês foi responsável pela ilustração de cinco jogadores do Barcelona: Leonel Messi, Neymar Jr., Gerard Piqué, Andrés Iniesta e Luis Alberto Suárez, produzidas por conta do Mundial de Clubes (torneio hoje renomeado como Copa Intercontinental da FIFA) disputado pelo time em 2015, no Japão. Posteriormente, em 2016, Takahashi foi convidado pelo Barcelona para assistir a uma partida no estádio."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/ilustracao-barcelona-yoichi-takahashi.jpg",
-          "alt": "Ilustração de cinco jogadores do Barcelona: Leonel Messi, Neymar Jr., Gerard Piqué, Andrés Iniesta e Luis Alberto Suárez, produzidas por conta do Mundial de Clubes em 2015."
-        },
-        {
-          "type": "paragraph",
-          "text": "Yoichi Takahashi para o Barcelona/Reprodução",
-          "runs": [
-            {
-              "text": "Yoichi Takahashi para o Barcelona/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fontes: Site oficial do Barcelona e @fcbarcelona no Instagram",
-          "runs": [
-            {
-              "text": "Fontes:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Site oficial do Barcelona ",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.fcbarcelona.es/es/club/noticias/4586855/el-creador-de-oliver-y-benji-visita-el-fc-barcelona"
-            },
-            {
-              "text": "e ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "@fcbarcelona no Instagram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.instagram.com/p/DeJUCPzuNEx/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-06T18:35:09.000Z",
-      "updatedAt": "2026-10-06T18:35:41.000Z",
-      "expiresAt": "2026-10-13T18:35:09.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/06/criador-de-supercampeoes-yoichi-takahashi-visita-o-barcelona",
-          "publishedAt": "2026-10-06T18:35:09.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 259,
-      "qualityScore": 0.913,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
         "embedCount": 0,
         "sourcePagesRead": 0
       }
