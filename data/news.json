@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T10:30:18.090Z",
+  "generatedAt": "2026-10-14T15:23:14.039Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,281 @@
   ],
   "stats": {
     "collected": 48,
-    "grouped": 23,
-    "published": 23,
-    "newStories": 23,
-    "fullArticles": 23,
+    "grouped": 22,
+    "published": 22,
+    "newStories": 22,
+    "fullArticles": 22,
     "previewArticles": 0,
-    "avgWords": 478,
-    "withHeroImage": 23,
+    "avgWords": 479,
+    "withHeroImage": 22,
     "withOrderedMedia": 18,
     "skippedTranslation": 0,
-    "skippedQuality": 22,
-    "durationMs": 5075
+    "skippedQuality": 23,
+    "durationMs": 3948
   },
   "items": [
+    {
+      "id": "animenew-9310d061",
+      "slug": "yumene-connect-manga-de-comedia-ganha-anime-animenew-9310d061",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Yumene Connect: Mangá de comédia ganha anime",
+      "originalTitle": "Yumene Connect: Mangá de comédia ganha anime",
+      "summary": "A editora Shochiku anunciou nesta quarta-feira, 14 de outubro, que o mangá Yumene Connect, de Kou Sawada, ganhará uma adaptação em anime para televisão. Portanto a produção também revelou os primeiros nomes do elenco e da equipe.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Yumene Connect"
+      ],
+      "url": "https://animenew.com.br/yumeneconnect-anime-anunciado",
+      "sourceUrl": "https://animenew.com.br/yumeneconnect-anime-anunciado",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Yumene-Connect-Manga-de-comedia-ganha-anime.webp",
+      "mediaQuery": "Yumene Connect: Mangá de comédia ganha anime",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Yumeneconnect-Anime.webp",
+          "alt": "Yumeneconnect Anime",
+          "caption": "©澤田コウ・講談社／「ゆめねこねくと」製作委員会"
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A editora Shochiku anunciou nesta quarta-feira, 14 de outubro, que o mangá Yumene Connect, de Kou Sawada, ganhará uma adaptação em anime para televisão. Portanto a produção também revelou os primeiros nomes do elenco e da equipe.",
+          "runs": [
+            {
+              "text": "A editora "
+            },
+            {
+              "text": "Shochiku",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou nesta quarta-feira, 14 de outubro, que o "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Yumene Connect",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", de Kou Sawada, ganhará uma adaptação em "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " para televisão. Portanto a produção também revelou os primeiros nomes do elenco e da equipe."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Nue’s Exorcist: Mangá ganhará adaptação para anime",
+              "runs": [
+                {
+                  "text": "Nue’s Exorcist: Mangá ganhará adaptação para anime",
+                  "href": "https://animenew.com.br/nues-exorcist-anime-estreia-verao-2027"
+                }
+              ]
+            },
+            {
+              "text": "Noa Is My Senior, and My Friend revela elenco e estreia em 2027",
+              "runs": [
+                {
+                  "text": "Noa Is My Senior, and My Friend revela elenco e estreia em 2027",
+                  "href": "https://animenew.com.br/noa-is-my-senior-anime-elenco-estreia-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A dublagem terá Yūsuke Kobayashi como Yūhi Takamiya e Yū Sasahara como Nano. A direção ficará nas mãos de Sōta Yokote, conhecido por seu trabalho na terceira temporada de To Your Eternity, no estúdio Studio Massket.",
+          "runs": [
+            {
+              "text": "A dublagem terá Yūsuke Kobayashi como Yūhi Takamiya e Yū Sasahara como Nano. A direção ficará nas mãos de Sōta Yokote, conhecido por seu trabalho na terceira temporada de To Your Eternity, no estúdio "
+            },
+            {
+              "text": "Studio Massket",
+              "href": "https://animenew.com.br/studio/6524/studio-massket"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Yumeneconnect-Anime.webp",
+          "alt": "Yumeneconnect Anime",
+          "caption": "©澤田コウ・講談社／「ゆめねこねくと」製作委員会"
+        },
+        {
+          "type": "paragraph",
+          "text": "Gigaemon Echikawa será responsável pela composição e supervisão dos roteiros. Já Yoshihiro Watanabe cuidará do design de personagens, enquanto Hayato Matsumura comporá a trilha sonora. Assim a produção musical ficará com a Lantis.",
+          "runs": [
+            {
+              "text": "Gigaemon Echikawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " será responsável pela composição e supervisão dos roteiros. Já Yoshihiro Watanabe cuidará do design de personagens, enquanto Hayato Matsumura comporá a trilha sonora. Assim a produção musical ficará com a Lantis."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de Yumene Connect",
+          "runs": [
+            {
+              "text": "História de Yumene Connect"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Yūhi Takamiya, um garoto doente que não frequenta a escola desde o primeiro dia do ensino médio. Solitário, ele acaba gritando que deseja fazer amigos dentro do próprio quarto.",
+          "runs": [
+            {
+              "text": "A trama acompanha Yūhi Takamiya, um garoto doente que não frequenta a escola desde o primeiro dia do ensino médio. Solitário, ele acaba gritando que deseja fazer amigos dentro do próprio quarto.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O pedido parece ser atendido quando Nano, uma alienígena do planeta Pokotsun, aparece diante dele. Portanto a visitante passa a oferecer produtos absurdos, incluindo uma criatura considerada a forma de vida mais perigosa da galáxia.",
+          "runs": [
+            {
+              "text": "O pedido parece ser atendido quando Nano, uma alienígena do planeta Pokotsun, aparece diante dele. Portanto a visitante passa a oferecer produtos absurdos, incluindo uma criatura considerada a forma de vida mais perigosa da galáxia.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Kou Sawada iniciou o mangá na revista Weekly Shonen Magazine, da Kodansha, em setembro de 2024. Por fim o décimo volume compilado será lançado no Japão em 16 de outubro de 2026.",
+          "runs": [
+            {
+              "text": "Kou Sawada iniciou o mangá na revista "
+            },
+            {
+              "text": "Weekly Shonen Magazine",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da "
+            },
+            {
+              "text": "Kodansha",
+              "href": "https://animenew.com.br/tag/kodansha/"
+            },
+            {
+              "text": ", em setembro de 2024. Por fim o décimo volume compilado será lançado no Japão em 16 de outubro de 2026."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://sh-anime.shochiku.co.jp/yumeconne-anime/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Yumene Connect: Mangá de comédia ganha anime.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Yumene Connect: Mangá de comédia ganha anime",
+              "href": "https://animenew.com.br/yumeneconnect-anime-anunciado/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-14T14:56:59.000Z",
+      "updatedAt": "2026-10-14T14:56:59.000Z",
+      "expiresAt": "2026-10-21T14:56:59.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/yumeneconnect-anime-anunciado",
+          "publishedAt": "2026-10-14T14:56:59.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 252,
+      "qualityScore": 0.972,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-2d73de72",
       "slug": "nue-s-exorcist-manga-ganhara-adaptacao-para-anime-animenew-2d73de72",
@@ -4763,265 +5025,6 @@
       }
     },
     {
-      "id": "animenew-eaa0c7a8",
-      "slug": "go-with-the-clouds-ganha-trailer-com-lancamento-para-2027-animenew-eaa0c7a8",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Go with the Clouds ganha trailer com lançamento para 2027",
-      "originalTitle": "Go with the Clouds ganha trailer com lançamento para 2027",
-      "summary": "O anime Go with the Clouds, North by Northwest (Hokuhokusei ni Kumo to Yuke) revelou seu primeiro vídeo promocional, confirmando a estreia em 2027. Assim a animação será exibida na TBS e terá distribuição mundial exclusiva pela Netflix.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Go with the Clouds",
-        "Hokuhokusei ni Kumo to Yuke"
-      ],
-      "url": "https://animenew.com.br/go-with-the-clouds-anime-trailer-estreia-2027",
-      "sourceUrl": "https://animenew.com.br/go-with-the-clouds-anime-trailer-estreia-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Go-with-the-Clouds-ganha-trailer-com-lancamento-para-2027.webp",
-      "mediaQuery": "Go with the Clouds ganha trailer com lançamento para 2027",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Go-with-the-Clouds-anime.webp",
-          "alt": "Go with the Clouds anime",
-          "caption": "© 入江亜季/北北西に曇と往け製作委員会"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/-5XmjMak5es"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Go with the Clouds, North by Northwest (Hokuhokusei ni Kumo to Yuke) revelou seu primeiro vídeo promocional, confirmando a estreia em 2027. Assim a animação será exibida na TBS e terá distribuição mundial exclusiva pela Netflix.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Go with the Clouds, North by Northwest",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Hokuhokusei ni Kumo to Yuke",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") revelou seu primeiro vídeo promocional, confirmando a estreia em 2027. Assim a animação será exibida na TBS e terá distribuição mundial exclusiva pela "
-            },
-            {
-              "text": "Netflix",
-              "href": "https://animenew.com.br/tag/netflix/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Bless anuncia Yoshiki Nakajima no elenco do anime",
-              "runs": [
-                {
-                  "text": "Bless anuncia Yoshiki Nakajima no elenco do anime",
-                  "href": "https://animenew.com.br/bless-anime-yoshiki-nakajima-elenco"
-                }
-              ]
-            },
-            {
-              "text": "Anime Skull Dragon’s Precious Daughter ganha trailer e elenco",
-              "runs": [
-                {
-                  "text": "Anime Skull Dragon’s Precious Daughter ganha trailer e elenco",
-                  "href": "https://animenew.com.br/skull-dragons-precious-daughter-anime-trailer"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O trailer também confirmou Tomohiro Ōno como o responsável pela voz de Kei Miyama, protagonista da adaptação do mangá de Aki Irie. Contudo além do vídeo, a produção divulgou uma nova arte promocional.",
-          "runs": [
-            {
-              "text": "O trailer também confirmou Tomohiro Ōno como o responsável pela voz de Kei Miyama, protagonista da adaptação do mangá de Aki Irie. Contudo além do vídeo, a produção divulgou uma nova arte promocional."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=-5XmjMak5es",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/-5XmjMak5es"
-        },
-        {
-          "type": "heading",
-          "text": "História acompanha detetive na Islândia",
-          "runs": [
-            {
-              "text": "História acompanha detetive na Islândia"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama se passa na Islândia e acompanha Kei Miyama, um jovem de 17 anos que trabalha como detetive particular. Sendo assim ele possui três características incomuns: consegue conversar com carros, tem dificuldade para lidar com garotas bonitas e investiga casos de diferentes naturezas.",
-          "runs": [
-            {
-              "text": "A trama se passa na Islândia e acompanha Kei Miyama, um jovem de 17 anos que trabalha como detetive particular. Sendo assim ele possui três características incomuns: consegue conversar com carros, tem dificuldade para lidar com garotas bonitas e investiga casos de diferentes naturezas.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Go-with-the-Clouds-anime.webp",
-          "alt": "Go with the Clouds anime",
-          "caption": "© 入江亜季/北北西に曇と往け製作委員会"
-        },
-        {
-          "type": "heading",
-          "text": "Mangá segue sob nova editora",
-          "runs": [
-            {
-              "text": "Mangá segue sob nova editora"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Aki Irie iniciou a publicação do mangá em 2016, na revista Harta. Após a mudança para a Aokishi e o encerramento da serialização nessa revista em fevereiro de 2025, a editora Yukiwariso anunciou a continuidade da obra em outubro do mesmo ano.",
-          "runs": [
-            {
-              "text": "Aki Irie iniciou a publicação do "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " em 2016, na revista "
-            },
-            {
-              "text": "Harta",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Após a mudança para a Aokishi e o encerramento da serialização nessa revista em fevereiro de 2025, a editora Yukiwariso anunciou a continuidade da obra em outubro do mesmo ano."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ademais o novo anime tem estreia prevista para 2027, com exibição na televisão japonesa e lançamento mundial pela Netflix.",
-          "runs": [
-            {
-              "text": "Ademais o novo anime tem estreia prevista para 2027, com exibição na televisão japonesa e lançamento mundial pela Netflix."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://hokuhokusei-pr.com/123/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Go with the Clouds ganha trailer com lançamento para 2027.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Go with the Clouds ganha trailer com lançamento para 2027",
-              "href": "https://animenew.com.br/go-with-the-clouds-anime-trailer-estreia-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-10T11:19:16.000Z",
-      "updatedAt": "2026-10-10T11:19:16.000Z",
-      "expiresAt": "2026-10-17T11:19:16.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/go-with-the-clouds-anime-trailer-estreia-2027",
-          "publishedAt": "2026-10-10T11:19:16.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 230,
-      "qualityScore": 0.911,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
       "id": "jbox-9f788d35",
       "slug": "netflix-anuncia-evento-de-jojo-s-bizarre-adventure-steel-ball-run-em-sp-at-jbox-9f788d35",
       "source": "JBox",
@@ -8768,547 +8771,6 @@
         "contentMode": "full",
         "mediaCount": 6,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-e798bd86",
-      "slug": "com-digimon-e-dragon-ball-z-tv-globinho-ganha-edicao-especial-neste-sabado-jbox-e798bd86",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Com ‘Digimon’ e ‘Dragon Ball Z’, TV Globinho ganha edição especial neste sábado",
-      "originalTitle": "Com ‘Digimon’ e ‘Dragon Ball Z’, TV Globinho ganha edição especial neste sábado",
-      "summary": "Como parte da programação especial do Criança Esperança deste ano, a Rede Globo preparou uma atração para as crianças que já cresceram. Após 11 anos do fim do matinal TV Globinho, a emissora programou o retorno especial por um dia para os viúvos matarem as saudades.",
-      "author": "Jean Clemente",
-      "tags": [
-        "Anime",
-        "Programação",
-        "TV",
-        "criança esperança",
-        "Digimon",
-        "Dragon Ball",
-        "globo",
-        "O que via passar na tv globinho?",
-        "quando é a tv globinho?",
-        "Tv Globinho",
-        "TV GLOBINHO ESPECIAL"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/07/com-digimon-e-dragon-ball-z-tv-globinho-ganha-exibicao-especial-neste-sabado",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/07/com-digimon-e-dragon-ball-z-tv-globinho-ganha-exibicao-especial-neste-sabado",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/tvglobinhoespecial-destacada.jpg",
-      "mediaQuery": "Com ‘Digimon’ e ‘Dragon Ball Z’, TV Globinho ganha edição especial neste sábado",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Como parte da programação especial do Criança Esperança deste ano, a Rede Globo preparou uma atração para as crianças que já cresceram. Após 11 anos do fim do matinal TV Globinho, a emissora programou o retorno especial por um dia para os viúvos matarem as saudades.",
-          "runs": [
-            {
-              "text": "Como parte da programação especial do "
-            },
-            {
-              "text": "Criança Esperança",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " deste ano, a "
-            },
-            {
-              "text": "Rede Globo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " preparou uma atração para as crianças que já cresceram. Após 11 anos do fim do matinal "
-            },
-            {
-              "text": "TV Globinho",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", a emissora programou o retorno especial por um dia para os viúvos matarem as saudades."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Tendo apresentação de Geovanna Tominaga, Ícaro Silva, Letícia Colin e Paulo Mathias Jr., o programa vai ao ar no sábado (10), às 9h (horário de Brasília). Além dos veteranos, Tia Milena (ex-participante do BBB) foi escalada como repórter para buscar a nostalgia de outros artistas da emissora que cresceram com o programa.",
-          "runs": [
-            {
-              "text": "Tendo apresentação de "
-            },
-            {
-              "text": "Geovanna Tominaga",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Ícaro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Silva",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Letícia Colin",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Paulo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Mathias Jr.",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", o programa vai ao ar no "
-            },
-            {
-              "text": "sábado",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (10), às"
-            },
-            {
-              "text": " 9h",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (horário de Brasília). Além dos veteranos,"
-            },
-            {
-              "text": " Tia Milena",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (ex-participante do BBB) foi escalada como repórter para buscar a nostalgia de outros artistas da emissora que cresceram com o programa."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre as animações que marcaram época, três foram escolhidas para voltarem à TV aberta na manhã deste sábado: Digimon, Dragon Ball Z e Três Espiãs Demais.",
-          "runs": [
-            {
-              "text": "Entre as animações que marcaram época, três foram escolhidas para voltarem à TV aberta na manhã deste sábado: "
-            },
-            {
-              "text": "Digimon",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Dragon Ball Z",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Três Espiãs",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Demais.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "View this post on Instagram",
-          "runs": [
-            {
-              "text": " View this post on Instagram ",
-              "href": "https://www.instagram.com/reel/DeK4dKCxz31/?utm_source=ig_embed&utm_campaign=loading"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Digimon estreou no canal em julho de 2000 dentro do Férias Animadas, um bloco improvisado de transição para o novo programa da Angélica, o Bambuluá, que chegou só em 9 de outubro. A TV Globinho nasceu como um quadro dentro do Bambuluá, que manteve a exibição de Digimon, e tornou-se atração independente em janeiro de 2002.",
-          "runs": [
-            {
-              "text": "Digimon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " estreou no canal em julho de 2000 dentro do"
-            },
-            {
-              "text": " Férias Animadas",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", um bloco improvisado de transição para o novo programa da Angélica, o "
-            },
-            {
-              "text": "Bambuluá",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", que chegou só em 9 de outubro. A "
-            },
-            {
-              "text": "TV Globinho",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " nasceu como um quadro dentro do"
-            },
-            {
-              "text": " Bambuluá",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que manteve a exibição de "
-            },
-            {
-              "text": "Digimon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", e tornou-se atração independente em janeiro de 2002."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A Vênus Platinada ainda levou ao bloco ao longo dos anos as séries seguintes, Digimon 02, Digimon Tamers, Digimon 4 (chamado apenas de Digimon nas chamadas da época) e Digimon Data Squad. As duas primeiras séries ainda ganhariam tiveram uma passagem mais recente no streaming Globoplay.",
-          "runs": [
-            {
-              "text": "A Vênus Platinada ainda levou ao bloco ao longo dos anos as séries seguintes, "
-            },
-            {
-              "text": "Digimon 02",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Digimon Tamers",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Digimon 4",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " (chamado apenas de "
-            },
-            {
-              "text": "Digimon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " nas chamadas da época) e "
-            },
-            {
-              "text": "Digimon Data Squad",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". As duas primeiras séries ainda ganhariam tiveram uma passagem mais recente no streaming "
-            },
-            {
-              "text": "Globoplay.",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já Dragon Ball Z chegou em julho de 2001 à TV Globinho diretamente com a fase Majin Boo, tornando-se um clássico da programação. Nessa época, os direitos dos primeiros episódios ainda estavam com a Band. Foi também nesse mesmo ano que a série foi alvo de uma lenda urbana, que dizia que estava sendo exibida no momento em que a programação foi interrompida para cobrir os atentados ao World Trade Center em 11 de setembro. A lenda já foi desmitificada várias vezes (até pela própria emissora), provando que nem a transformação de Goku em SSJ3 ou qualquer outro episódio era exibido no momento.",
-          "runs": [
-            {
-              "text": "Já "
-            },
-            {
-              "text": "Dragon Ball Z",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " chegou em julho de 2001 à"
-            },
-            {
-              "text": " TV Globinho",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " diretamente com a fase Majin Boo, tornando-se um clássico da programação. Nessa época, os direitos dos primeiros episódios ainda estavam com a "
-            },
-            {
-              "text": "Band",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Foi também nesse mesmo ano que a série foi alvo de uma lenda urbana, que dizia que estava sendo exibida no momento em que a programação foi interrompida para cobrir os atentados ao World Trade Center em 11 de setembro. A lenda já foi desmitificada várias vezes (até pela própria emissora), provando que nem a transformação de Goku em SSJ3 ou qualquer outro episódio era exibido no momento."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Em 2002 foi a vez da 1ª série de Goku chegar à emissora. Exibida anteriormente pelo SBT, foi graças ao sucesso de Dragon Ball Z que o Goku criança ganhou uma nova chance pela TV Globinho. Com uma redublagem que cobriu todos os episódios — ao contrário dos apenas 60 iniciais no canal de Silvio Santos –, o animê chegou para continuar o sucesso da série por aqui. No ano seguinte, foi a vez de Dragon Ball GT, trazendo outra versão de Goku criança, e a melhor abertura de toda a série (nota: o editor discorda).",
-          "runs": [
-            {
-              "text": "Em 2002 foi a vez da 1ª série de Goku chegar à emissora. Exibida anteriormente pelo SBT, foi graças ao sucesso de "
-            },
-            {
-              "text": "Dragon Ball Z",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " que o Goku criança ganhou uma nova chance pela "
-            },
-            {
-              "text": "TV Globinho",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Com uma redublagem que cobriu todos os episódios — ao contrário dos apenas 60 iniciais no canal de Silvio Santos –, o animê chegou para continuar o sucesso da série por aqui. No ano seguinte, foi a vez de "
-            },
-            {
-              "text": "Dragon Ball GT",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", trazendo outra versão de Goku criança, e a melhor abertura de toda a série (nota: o editor discorda)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ao todo, ao menos 27 animês passaram pela programação da TV Globinho. Para saber mais, basta clicar aqui ou no post abaixo e conferir a linha do tempo que preparamos para relembrar todos eles.",
-          "runs": [
-            {
-              "text": "Ao todo, ao menos 27 animês passaram pela programação da "
-            },
-            {
-              "text": "TV Globinho",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Para saber mais, basta "
-            },
-            {
-              "text": "clicar aqui",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.instagram.com/p/DeLBgP8FdXw/?img_index=3&stkn=Mml4dHpwNWhtdXh1"
-            },
-            {
-              "text": " ou no post abaixo e conferir a linha do tempo que preparamos para relembrar todos eles."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: TV Globo",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "TV Globo",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.instagram.com/tvglobo/reel/DeK4dKCxz31/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-07T14:18:46.000Z",
-      "updatedAt": "2026-10-07T14:20:58.000Z",
-      "expiresAt": "2026-10-14T14:18:46.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/07/com-digimon-e-dragon-ball-z-tv-globinho-ganha-exibicao-especial-neste-sabado",
-          "publishedAt": "2026-10-07T14:18:46.000Z",
-          "author": "Jean Clemente"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 484,
-      "qualityScore": 0.939,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 0,
         "sourcePagesRead": 0
       }
     }
