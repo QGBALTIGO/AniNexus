@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T15:06:58.212Z",
+  "generatedAt": "2026-10-15T19:04:00.455Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 35,
+      "count": 33,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,918 @@
     }
   ],
   "stats": {
-    "collected": 45,
+    "collected": 43,
     "grouped": 22,
     "published": 22,
     "newStories": 22,
     "fullArticles": 22,
     "previewArticles": 0,
-    "avgWords": 433,
+    "avgWords": 456,
     "withHeroImage": 22,
-    "withOrderedMedia": 19,
+    "withOrderedMedia": 20,
     "skippedTranslation": 0,
-    "skippedQuality": 20,
-    "durationMs": 3832
+    "skippedQuality": 19,
+    "durationMs": 3237
   },
   "items": [
+    {
+      "id": "animenew-36df0211",
+      "slug": "i-got-a-cheat-skill-ganha-trailer-da-2-temporada-animenew-36df0211",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "I Got a Cheat Skill ganha trailer da 2ª temporada",
+      "originalTitle": "I Got a Cheat Skill ganha trailer da 2ª temporada",
+      "summary": "A segunda temporada de I Got a Cheat Skill in Another World ganhou seu primeiro vídeo promocional nesta quinta-feira (15). A nova fase do anime estreia em janeiro de 2027 e também revelou novos integrantes do elenco e da equipe de produção.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "I Got a Cheat Skill in Another World",
+        "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World Too"
+      ],
+      "url": "https://animenew.com.br/i-got-a-cheat-skill-temporada-2",
+      "sourceUrl": "https://animenew.com.br/i-got-a-cheat-skill-temporada-2",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/I-Got-a-Cheat-Skill-ganha-trailer-da-2a-temporada.webp",
+      "mediaQuery": "I Got a Cheat Skill ganha trailer da 2ª temporada",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/twGVFfRI-7s"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A segunda temporada de I Got a Cheat Skill in Another World ganhou seu primeiro vídeo promocional nesta quinta-feira (15). A nova fase do anime estreia em janeiro de 2027 e também revelou novos integrantes do elenco e da equipe de produção.",
+          "runs": [
+            {
+              "text": "A segunda temporada de "
+            },
+            {
+              "text": "I Got a Cheat Skill in Another World",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ganhou seu primeiro vídeo promocional nesta quinta-feira (15). A nova fase do "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " estreia em janeiro de 2027 e também revelou novos integrantes do elenco e da equipe de produção."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Yumene Connect: Mangá de comédia ganha anime",
+              "runs": [
+                {
+                  "text": "Yumene Connect: Mangá de comédia ganha anime",
+                  "href": "https://animenew.com.br/yumeneconnect-anime-anunciado"
+                }
+              ]
+            },
+            {
+              "text": "Nue’s Exorcist: Mangá ganhará adaptação para anime",
+              "runs": [
+                {
+                  "text": "Nue’s Exorcist: Mangá ganhará adaptação para anime",
+                  "href": "https://animenew.com.br/nues-exorcist-anime-estreia-verao-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=twGVFfRI-7s",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/twGVFfRI-7s"
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre as novidades, Ikumi Hasegawa dará voz à personagem Iris Knowblade, enquanto Sora Amamiya interpretará Mai Kagurazaka. O elenco original também retorna, incluindo Yoshitsugu Matsuoka como Yuuya Tenjou, Akari Kito como Kaori Hojo e Kaori Maeda como Lexia von Arcelia.",
+          "runs": [
+            {
+              "text": "Entre as novidades, Ikumi Hasegawa dará voz à personagem Iris Knowblade, enquanto Sora Amamiya interpretará Mai Kagurazaka. O elenco original também retorna, incluindo Yoshitsugu Matsuoka como Yuuya Tenjou, Akari Kito como Kaori Hojo e Kaori Maeda como Lexia von Arcelia."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Produção do anime I Got a Cheat Skill",
+          "runs": [
+            {
+              "text": "Produção do anime I Got a Cheat Skill"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Shin Itagaki retorna à direção da segunda temporada no estúdio Millepensee. Hiromi Kimura também continua responsável pelo design de personagens, enquanto a UNLIMITED PRODUCE by TMS permanece encarregada do planejamento e da produção.",
+          "runs": [
+            {
+              "text": "Shin Itagaki retorna à direção da segunda temporada no "
+            },
+            {
+              "text": "estúdio Millepensee",
+              "href": "https://animenew.com.br/studio/6073/millepensee"
+            },
+            {
+              "text": ". Hiromi Kimura também continua responsável pelo design de personagens, enquanto a UNLIMITED PRODUCE by TMS permanece encarregada do planejamento e da produção."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A série adapta a light novel escrita por Miku e ilustrada por Rein Kuwashima. A história acompanha Yuuya Tenjou, um jovem que sofre bullying e encontra uma porta para outro mundo, onde adquire habilidades especiais que também podem transformar sua vida na realidade.",
+          "runs": [
+            {
+              "text": "A série adapta a "
+            },
+            {
+              "text": "light novel",
+              "href": "https://animenew.com.br/light-novel"
+            },
+            {
+              "text": " escrita por Miku e ilustrada por Rein Kuwashima. A história acompanha Yuuya Tenjou, um jovem que sofre bullying e encontra uma porta para outro mundo, onde adquire habilidades especiais que também podem transformar sua vida na realidade."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A primeira temporada estreou em abril de 2023 e contou com 13 episódios. A franquia também recebeu um especial televisivo em março de 2025. Por fim a nova temporada chega em janeiro de 2027, mas ainda não teve uma data exata de estreia divulgada.",
+          "runs": [
+            {
+              "text": "A primeira temporada estreou em abril de 2023 e contou com 13 episódios. A franquia também recebeu um especial televisivo em março de 2025. Por fim a nova temporada chega em janeiro de 2027, mas ainda não teve uma data exata de estreia divulgada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em I Got a Cheat Skill ganha trailer da 2ª temporada.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "I Got a Cheat Skill ganha trailer da 2ª temporada",
+              "href": "https://animenew.com.br/i-got-a-cheat-skill-temporada-2/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-15T17:35:12.000Z",
+      "updatedAt": "2026-10-15T17:35:12.000Z",
+      "expiresAt": "2026-10-22T17:35:12.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/i-got-a-cheat-skill-temporada-2",
+          "publishedAt": "2026-10-15T17:35:12.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 246,
+      "qualityScore": 0.969,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-48ec717c",
+      "slug": "blox-fruits-como-one-piece-criou-o-maior-fenomeno-de-anime-dentro-do-roblox-animenew-48ec717c",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Blox Fruits: como One Piece criou o maior fenômeno de anime dentro do Roblox",
+      "originalTitle": "Blox Fruits: como One Piece criou o maior fenômeno de anime dentro do Roblox",
+      "summary": "Existe uma geração de fãs brasileiros que conheceu One Piece por um jogo de Roblox. Não pelo anime nem pelo mangá. Blox Fruits acumula bilhões de visitas e mantém centenas de milhares de jogadores simultâneos há anos. A estrutura copia quase tudo da obra de Eiichiro Oda, sem nunca ter tido uma licença oficial.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Games",
+        "Notícias",
+        "Blox Fruits",
+        "One Piece",
+        "Roblox"
+      ],
+      "url": "https://animenew.com.br/blox-fruits-one-piece-fenomeno-de-anime-roblox",
+      "sourceUrl": "https://animenew.com.br/blox-fruits-one-piece-fenomeno-de-anime-roblox",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Blox-Fruits-one-piece.webp",
+      "mediaQuery": "Blox Fruits: como One Piece criou o maior fenômeno de anime dentro do Roblox",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Blox-Fruits-one-piece-jogar.webp",
+          "alt": "",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Existe uma geração de fãs brasileiros que conheceu One Piece por um jogo de Roblox. Não pelo anime nem pelo mangá. Blox Fruits acumula bilhões de visitas e mantém centenas de milhares de jogadores simultâneos há anos. A estrutura copia quase tudo da obra de Eiichiro Oda, sem nunca ter tido uma licença oficial.",
+          "runs": [
+            {
+              "text": "Existe uma geração de fãs brasileiros que conheceu "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " por um jogo de "
+            },
+            {
+              "text": "Roblox",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Não pelo anime nem pelo mangá. Blox Fruits acumula bilhões de visitas e mantém centenas de milhares de jogadores simultâneos há anos. A estrutura copia quase tudo da obra de Eiichiro Oda, sem nunca ter tido uma licença oficial."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "One Piece anuncia filme GOD VALLEY para 2027",
+              "runs": [
+                {
+                  "text": "One Piece anuncia filme GOD VALLEY para 2027",
+                  "href": "https://animenew.com.br/one-piece-god-valley-baad-filmes-2027-2029"
+                }
+              ]
+            },
+            {
+              "text": "Remake de One Piece revela trailer com voz clássica de Luffy",
+              "runs": [
+                {
+                  "text": "Remake de One Piece revela trailer com voz clássica de Luffy",
+                  "href": "https://animenew.com.br/remake-one-piece-retorno-mayumi-tanaka-luffy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O resultado é um caso curioso de influência cultural. Plataformas de troca como a Eldorado já trabalham com itens do jogo, algo que normalmente acontece só com MMORPGs tradicionais.",
+          "runs": [
+            {
+              "text": "O resultado é um caso curioso de influência cultural. Plataformas de troca como a Eldorado já trabalham com itens do jogo, algo que normalmente acontece só com MMORPGs tradicionais."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Um Grand Line feito de ilhas e níveis",
+          "runs": [
+            {
+              "text": "Um Grand Line feito de ilhas e níveis",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A estrutura é reconhecível para qualquer leitor do mangá. Você começa fraco em uma ilha pequena e enfrenta inimigos com níveis crescentes.",
+          "runs": [
+            {
+              "text": "A estrutura é reconhecível para qualquer leitor do mangá. Você começa fraco em uma ilha pequena e enfrenta inimigos com níveis crescentes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Depois atravessa mares que funcionam como atos narrativos. Os chefes remetem diretamente aos arcos originais. As frutas do diabo são o centro de tudo. Cada uma concede um conjunto de habilidades, e as mais raras aparecem com probabilidade baixíssima na loja rotativa ou em spawns aleatórios.",
+          "runs": [
+            {
+              "text": "Depois atravessa mares que funcionam como atos narrativos. Os chefes remetem diretamente aos arcos originais. As frutas do diabo são o centro de tudo. Cada uma concede um conjunto de habilidades, e as mais raras aparecem com probabilidade baixíssima na loja rotativa ou em spawns aleatórios."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Blox-Fruits-one-piece-jogar.webp"
+        },
+        {
+          "type": "paragraph",
+          "text": "Dragon, Leopard, Kitsune e Yeti são as mais disputadas. A maioria dos jogadores nunca consegue nenhuma delas por conta própria.",
+          "runs": [
+            {
+              "text": "Dragon, Leopard, Kitsune e Yeti são as mais disputadas. A maioria dos jogadores nunca consegue nenhuma delas por conta própria."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Essa escassez não é acidente. É o motor que mantém o jogo vivo, porque transforma cada fruta em um bem com valor reconhecido pela comunidade.",
+          "runs": [
+            {
+              "text": "Essa escassez não é acidente. É o motor que mantém o jogo vivo, porque transforma cada fruta em um bem com valor reconhecido pela comunidade."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "A economia de trocas vale mais que o combate",
+          "runs": [
+            {
+              "text": "A economia de trocas vale mais que o combate",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Quem observa um servidor de Discord de Blox Fruits percebe rápido. Os canais de troca são mais movimentados que os de raid. Existem listas de valores mantidas pela própria comunidade, atualizadas a cada mudança de equilíbrio. Uma fruta permanente pode valer uma fortuna antes de um rebalanceamento e muito menos depois.",
+          "runs": [
+            {
+              "text": "Quem observa um servidor de Discord de Blox Fruits percebe rápido. Os canais de troca são mais movimentados que os de raid. Existem listas de valores mantidas pela própria comunidade, atualizadas a cada mudança de equilíbrio. Uma fruta permanente pode valer uma fortuna antes de um rebalanceamento e muito menos depois."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Jogadores experientes guardam frutas que não pretendem usar. Trocam quando o valor sobe, exatamente como investidores guardam ativos.",
+          "runs": [
+            {
+              "text": "Jogadores experientes guardam frutas que não pretendem usar. Trocam quando o valor sobe, exatamente como investidores guardam ativos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "É nesse contexto que surgem as ofertas para comprar itens blox fruits fora do jogo. A procura vem de quem quer uma fruta específica sem depender de sorte na loja rotativa, que troca o estoque a cada quatro horas.",
+          "runs": [
+            {
+              "text": "É nesse contexto que surgem as ofertas para "
+            },
+            {
+              "text": "comprar itens blox fruits",
+              "href": "https://www.eldorado.gg/br/blox-fruits-shop/i/202-2-0"
+            },
+            {
+              "text": " fora do jogo. A procura vem de quem quer uma fruta específica sem depender de sorte na loja rotativa, que troca o estoque a cada quatro horas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A prática é comum. Vale lembrar, porém, que o Roblox não dá suporte a negociações feitas fora da plataforma, e qualquer coisa que envolva acesso à conta carrega risco real.",
+          "runs": [
+            {
+              "text": "A prática é comum. Vale lembrar, porém, que o Roblox não dá suporte a negociações feitas fora da plataforma, e qualquer coisa que envolva acesso à conta carrega risco real."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Por que One Piece funciona tão bem nesse formato",
+          "runs": [
+            {
+              "text": "Por que One Piece funciona tão bem nesse formato",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A obra de Oda tem uma característica que poucos mangás longos compartilham. O sistema de poderes é bem definido e fácil de traduzir em mecânica de jogo.",
+          "runs": [
+            {
+              "text": "A obra de Oda tem uma característica que poucos mangás longos compartilham. O sistema de poderes é bem definido e fácil de traduzir em mecânica de jogo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Cada fruta tem regras claras, limites conhecidos e fraquezas específicas. Isso torna a adaptação quase natural.",
+          "runs": [
+            {
+              "text": "Cada fruta tem regras claras, limites conhecidos e fraquezas específicas. Isso torna a adaptação quase natural."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Jogos licenciados de One Piece costumam apostar em luta um contra um. Blox Fruits entendeu que o apelo real está na progressão, na sensação de sair de um personagem comum e virar alguém temido no servidor.",
+          "runs": [
+            {
+              "text": "Jogos licenciados de One Piece costumam apostar em luta um contra um. Blox Fruits entendeu que o apelo real está na progressão, na sensação de sair de um personagem comum e virar alguém temido no servidor."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "O que o fenômeno diz sobre o público brasileiro",
+          "runs": [
+            {
+              "text": "O que o fenômeno diz sobre o público brasileiro",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "O Brasil é um dos mercados mais fortes do jogo, e isso tem explicação. One Piece tem presença consolidada por aqui desde a exibição na televisão aberta.",
+          "runs": [
+            {
+              "text": "O Brasil é um dos mercados mais fortes do jogo, e isso tem explicação. One Piece tem presença consolidada por aqui desde a exibição na televisão aberta."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além disso, o Roblox é gratuito e roda em aparelhos modestos. Boa parte do público joga com amigos em servidores improvisados.",
+          "runs": [
+            {
+              "text": "Além disso, o Roblox é gratuito e roda em aparelhos modestos. Boa parte do público joga com amigos em servidores improvisados."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Também existe um ecossistema de criadores de conteúdo em português que sustenta o interesse. Vídeos sobre valores de frutas, atualizações e métodos de farm somam milhões de visualizações, e funcionam como porta de entrada para quem nunca viu o anime.",
+          "runs": [
+            {
+              "text": "Também existe um ecossistema de criadores de conteúdo em português que sustenta o interesse. Vídeos sobre valores de frutas, atualizações e métodos de farm somam milhões de visualizações, e funcionam como porta de entrada para quem nunca viu o anime."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "O problema da licença que nunca existiu",
+          "runs": [
+            {
+              "text": "O problema da licença que nunca existiu",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Há um detalhe que incomoda parte dos fãs, e é legítimo mencioná-lo. Nada disso é oficial.",
+          "runs": [
+            {
+              "text": "Há um detalhe que incomoda parte dos fãs, e é legítimo mencioná-lo. Nada disso é oficial."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Toei e a Shueisha nunca autorizaram o jogo, e os nomes foram alterados o suficiente para evitar conflito direto. Frutas, ilhas e personagens são variações reconhecíveis, não cópias literais.",
+          "runs": [
+            {
+              "text": "A Toei e a Shueisha nunca autorizaram o jogo, e os nomes foram alterados o suficiente para evitar conflito direto. Frutas, ilhas e personagens são variações reconhecíveis, não cópias literais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Esse limite jurídico explica algumas escolhas estranhas de design. Também significa que o jogo depende de uma tolerância que pode mudar a qualquer momento.",
+          "runs": [
+            {
+              "text": "Esse limite jurídico explica algumas escolhas estranhas de design. Também significa que o jogo depende de uma tolerância que pode mudar a qualquer momento."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Um caminho de entrada inesperado",
+          "runs": [
+            {
+              "text": "Um caminho de entrada inesperado",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "O detalhe mais interessante é a direção do fluxo. Normalmente uma obra gera adaptações, e as adaptações atraem público para a obra original.",
+          "runs": [
+            {
+              "text": "O detalhe mais interessante é a direção do fluxo. Normalmente uma obra gera adaptações, e as adaptações atraem público para a obra original."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Aqui aconteceu o contrário em muitos casos. Adolescentes chegaram ao mangá depois de passar centenas de horas em uma imitação não oficial.",
+          "runs": [
+            {
+              "text": "Aqui aconteceu o contrário em muitos casos. Adolescentes chegaram ao mangá depois de passar centenas de horas em uma imitação não oficial."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para quem acompanha anime há tempo isso pode soar estranho, mas o efeito é positivo. A obra ganha leitores, e o jogo ganha jogadores que entendem de onde vem cada referência.",
+          "runs": [
+            {
+              "text": "Para quem acompanha anime há tempo isso pode soar estranho, mas o efeito é positivo. A obra ganha leitores, e o jogo ganha jogadores que entendem de onde vem cada referência."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Vale observar que o mesmo padrão já apareceu com outras franquias no Roblox. Naruto, Demon Slayer e Jujutsu Kaisen têm versões comunitárias com públicos consideráveis. Nenhuma, porém, chegou perto da escala que Blox Fruits alcançou.",
+          "runs": [
+            {
+              "text": "Vale observar que o mesmo padrão já apareceu com outras franquias no Roblox. Naruto, Demon Slayer e Jujutsu Kaisen têm versões comunitárias com públicos consideráveis. Nenhuma, porém, chegou perto da escala que Blox Fruits alcançou."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Blox Fruits: como One Piece criou o maior fenômeno de anime dentro do Roblox.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Blox Fruits: como One Piece criou o maior fenômeno de anime dentro do Roblox",
+              "href": "https://animenew.com.br/blox-fruits-one-piece-fenomeno-de-anime-roblox/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-15T17:11:23.000Z",
+      "updatedAt": "2026-10-15T17:11:23.000Z",
+      "expiresAt": "2026-10-22T17:11:23.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/blox-fruits-one-piece-fenomeno-de-anime-roblox",
+          "publishedAt": "2026-10-15T17:11:23.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 4,
+      "wordCount": 774,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 32,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-97ff3630",
+      "slug": "i-lost-my-adventurer-s-license-ganha-trailer-e-estreia-em-2027-animenew-97ff3630",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "I Lost My Adventurer’s License ganha trailer e estreia em 2027",
+      "originalTitle": "I Lost My Adventurer’s License ganha trailer e estreia em 2027",
+      "summary": "O anime I Lost My Adventurer’s License (Bōkensha License o Hakudatsusareta Ossan Dakedo) divulgou seu primeiro vídeo promocional nesta quinta-feira (15), revelando o elenco principal, a equipe de produção e a estreia prevista para janeiro de 2027.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Bōkensha License o Hakudatsusareta Ossan Dakedo",
+        "I Lost My Adventurer’s License"
+      ],
+      "url": "https://animenew.com.br/i-lost-my-adventurers-license-anime-2027",
+      "sourceUrl": "https://animenew.com.br/i-lost-my-adventurers-license-anime-2027",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/I-Lost-My-Adventurers-License-ganha-trailer-e-estreia-em-2027.webp",
+      "mediaQuery": "I Lost My Adventurer’s License ganha trailer e estreia em 2027",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/I-Lost-My-Adventurers-License-anime-scaled.webp",
+          "alt": "I Lost My Adventurer's License anime",
+          "caption": "©斧名田マニマニ・SBクリエイティブ/冒険者ライセンスを剥奪された製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/inKTTHeuzds"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime I Lost My Adventurer’s License (Bōkensha License o Hakudatsusareta Ossan Dakedo) divulgou seu primeiro vídeo promocional nesta quinta-feira (15), revelando o elenco principal, a equipe de produção e a estreia prevista para janeiro de 2027.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "I Lost My Adventurer’s License",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Bōkensha License o Hakudatsusareta Ossan Dakedo) divulgou seu primeiro vídeo promocional nesta quinta-feira (15), revelando o elenco principal, a equipe de produção e a estreia prevista para janeiro de 2027."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Yumene Connect: Mangá de comédia ganha anime",
+              "runs": [
+                {
+                  "text": "Yumene Connect: Mangá de comédia ganha anime",
+                  "href": "https://animenew.com.br/yumeneconnect-anime-anunciado"
+                }
+              ]
+            },
+            {
+              "text": "Nue’s Exorcist: Mangá ganhará adaptação para anime",
+              "runs": [
+                {
+                  "text": "Nue’s Exorcist: Mangá ganhará adaptação para anime",
+                  "href": "https://animenew.com.br/nues-exorcist-anime-estreia-verao-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Portanto a adaptação da light novel de Manimani Ononata será produzida pelo Studio Palette. Assim o trailer também foi acompanhado por uma nova imagem promocional da série.",
+          "runs": [
+            {
+              "text": "Portanto a adaptação da "
+            },
+            {
+              "text": "light novel",
+              "href": "https://animenew.com.br/light-novel"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Manimani Ononata",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " será produzida pelo Studio Palette. Assim o trailer também foi acompanhado por uma nova imagem promocional da série."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=inKTTHeuzds",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/inKTTHeuzds"
+        },
+        {
+          "type": "heading",
+          "text": "Elenco e equipe de produção",
+          "runs": [
+            {
+              "text": "Elenco e equipe de produção"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Hiroki Yasumoto dará voz a Douglas, enquanto Yuka Iguchi interpretará Rabi, os dois personagens centrais da história.",
+          "runs": [
+            {
+              "text": "Hiroki Yasumoto dará voz a Douglas, enquanto Yuka Iguchi interpretará Rabi, os dois personagens centrais da história."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/I-Lost-My-Adventurers-License-anime-scaled.webp",
+          "alt": "I Lost My Adventurer's License anime",
+          "caption": "©斧名田マニマニ・SBクリエイティブ/冒険者ライセンスを剥奪された製作委員会"
+        },
+        {
+          "type": "paragraph",
+          "text": "Yuki Inaba dirige o anime e também supervisiona os roteiros. Kaori Yoshikawa é responsável pelo design dos personagens e atua como diretora-chefe de animação. A trilha sonora ficará a cargo de Ohshu e Daiki Okuno, com produção musical da SPACE SHOWER MUSIC.",
+          "runs": [
+            {
+              "text": "Yuki Inaba dirige o anime e também supervisiona os roteiros. Kaori Yoshikawa é responsável pelo design dos personagens e atua como diretora-chefe de animação. A trilha sonora ficará a cargo de Ohshu e Daiki Okuno, com produção musical da SPACE SHOWER MUSIC."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História acompanha aventureiro desacreditado",
+          "runs": [
+            {
+              "text": "História acompanha aventureiro desacreditado"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama segue Douglas, um antigo especialista em magias de fortalecimento que perdeu sua reputação, foi expulso do grupo de heróis e teve sua licença de aventureiro revogada. Sem rumo, ele passa a vagar pelo mundo até conhecer Rabi, uma garota amaldiçoada. O encontro dá início a uma nova aventura para o protagonista.",
+          "runs": [
+            {
+              "text": "A trama segue Douglas, um antigo especialista em magias de fortalecimento que perdeu sua reputação, foi expulso do grupo de heróis e teve sua licença de aventureiro revogada. Sem rumo, ele passa a vagar pelo mundo até conhecer Rabi, uma garota amaldiçoada. O encontro dá início a uma nova aventura para o protagonista.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Manimani Ononata publicou a história originalmente no site Shosetsuka ni Narou, em 2017. A SB Creative começou a lançar a light novel em agosto de 2018, com ilustrações de Fuzichoco. Contudo a adaptação em mangá, ilustrada por Fumi Tadaura, começou em novembro do mesmo ano.",
+          "runs": [
+            {
+              "text": "Manimani Ononata publicou a história originalmente no site Shosetsuka ni Narou, em 2017. A SB Creative começou a lançar a light novel em agosto de 2018, com ilustrações de Fuzichoco. Contudo a adaptação em "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": ", ilustrada por Fumi Tadaura, começou em novembro do mesmo ano."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ademais o anime I Lost My Adventurer’s License tem estreia programada para janeiro de 2027.",
+          "runs": [
+            {
+              "text": "Ademais o anime I Lost My Adventurer’s License tem estreia programada para janeiro de 2027."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://boukensha-license-anime.com/news/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em I Lost My Adventurer’s License ganha trailer e estreia em 2027.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "I Lost My Adventurer’s License ganha trailer e estreia em 2027",
+              "href": "https://animenew.com.br/i-lost-my-adventurers-license-anime-2027/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-15T17:02:48.000Z",
+      "updatedAt": "2026-10-15T17:02:48.000Z",
+      "expiresAt": "2026-10-22T17:02:48.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/i-lost-my-adventurers-license-anime-2027",
+          "publishedAt": "2026-10-15T17:02:48.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 286,
+      "qualityScore": 0.979,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 14,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-81b3948e",
       "slug": "zelda-ocarina-of-time-revela-novidades-no-switch-2-animenew-81b3948e",
@@ -3583,7 +4481,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 277,
-      "qualityScore": 0.975,
+      "qualityScore": 0.915,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -5385,519 +6283,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 3,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-2bdd3672",
-      "slug": "anime-the-guy-she-was-interested-in-ganha-data-de-lancamento-animenew-2bdd3672",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Anime The Guy She Was Interested In ganha data de lançamento",
-      "originalTitle": "Anime The Guy She Was Interested In ganha data de lançamento",
-      "summary": "O anime The Guy She Was Interested In Wasn’t a Guy at All (Ki ni Natteru Hito ga Otoko Janakatta) revelou seu primeiro trailer promocional, novos integrantes do elenco e da equipe técnica. A estreia no Japão está marcada para 8 de janeiro de 2027.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Crunchyroll",
-        "Ki ni Natteru Hito ga Otoko Janakatta",
-        "The Guy She Was Interested In Wasn’t a Guy at All"
-      ],
-      "url": "https://animenew.com.br/the-guy-she-was-interested-in-estreia-janeiro",
-      "sourceUrl": "https://animenew.com.br/the-guy-she-was-interested-in-estreia-janeiro",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Anime-The-Guy-She-Was-Interested-In-ganha-data-de-lancamento.webp",
-      "mediaQuery": "Anime The Guy She Was Interested In ganha data de lançamento",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/kLO7KyjhGR0"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime The Guy She Was Interested In Wasn’t a Guy at All (Ki ni Natteru Hito ga Otoko Janakatta) revelou seu primeiro trailer promocional, novos integrantes do elenco e da equipe técnica. A estreia no Japão está marcada para 8 de janeiro de 2027.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "The Guy She Was Interested In Wasn’t a Guy at All",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Ki ni Natteru Hito ga Otoko Janakatta",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") revelou seu primeiro trailer promocional, novos integrantes do elenco e da equipe técnica. A estreia no Japão está marcada para 8 de janeiro de 2027."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Gundam Seed Freedom Zero estreia em janeiro de 2027",
-              "runs": [
-                {
-                  "text": "Gundam Seed Freedom Zero estreia em janeiro de 2027",
-                  "href": "https://animenew.com.br/gundam-seed-freedom-zero-estreia-2027"
-                }
-              ]
-            },
-            {
-              "text": "Crunchyroll adquire filme de The Apothecary Diaries",
-              "runs": [
-                {
-                  "text": "Crunchyroll adquire filme de The Apothecary Diaries",
-                  "href": "https://animenew.com.br/filme-the-apothecary-diaries-crunchyroll"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Portanto a série será exibida às 23h, no horário japonês, dentro do bloco FuraAni, da NTV. A Crunchyroll também confirmou a transmissão simultânea do anime.",
-          "runs": [
-            {
-              "text": "Portanto a série será exibida às 23h, no horário japonês, dentro do bloco FuraAni, da "
-            },
-            {
-              "text": "NTV",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A "
-            },
-            {
-              "text": "Crunchyroll",
-              "href": "https://animenew.com.br/tag/crunchyroll/"
-            },
-            {
-              "text": " também confirmou a transmissão simultânea do anime."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=kLO7KyjhGR0",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/kLO7KyjhGR0"
-        },
-        {
-          "type": "heading",
-          "text": "Elenco e equipe de produção",
-          "runs": [
-            {
-              "text": "Elenco e equipe de produção"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre as novas vozes anunciadas estão Kenjirō Tsuda como Jō, Tasuku Hatanaka como Narita, Yurina Amami como Chizuru, Fairouz Ai como Mao e Maiko Nomura como Kanna. Tsuda e Hatanaka retomam os papéis que interpretaram anteriormente no drama de áudio da obra.",
-          "runs": [
-            {
-              "text": "Entre as novas vozes anunciadas estão Kenjirō Tsuda como Jō, Tasuku Hatanaka como Narita, Yurina Amami como Chizuru, Fairouz Ai como Mao e Maiko Nomura como Kanna. Tsuda e Hatanaka retomam os papéis que interpretaram anteriormente no drama de áudio da obra."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A direção ficará a cargo de Masashi Ishihama, conhecido por Horimiya, com animação do estúdio CloverWorks. Rino Yamazaki cuidará da composição da série, enquanto Kanna Hirayama será responsável pelo design dos personagens. Kōsuke Noma e Takayuki Sasaki compoe a trilha sonora será .",
-          "runs": [
-            {
-              "text": "A direção ficará a cargo de Masashi Ishihama, conhecido por Horimiya, com animação do estúdio "
-            },
-            {
-              "text": "CloverWorks",
-              "href": "https://animenew.com.br/studio/6222/cloverworks"
-            },
-            {
-              "text": ". Rino Yamazaki cuidará da composição da série, enquanto Kanna Hirayama será responsável pelo design dos personagens. Kōsuke Noma e Takayuki Sasaki compoe a trilha sonora será ."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "História do mangá",
-          "runs": [
-            {
-              "text": "História do mangá"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A história acompanha Aya Osawa, uma estudante que se apaixona por um funcionário misterioso de uma loja de CDs. Ela não sabe que a pessoa por quem está interessada é Mitsuki Koga, sua colega de classe.",
-          "runs": [
-            {
-              "text": "A história acompanha Aya Osawa, uma estudante que se apaixona por um funcionário misterioso de uma loja de CDs. Ela não sabe que a pessoa por quem está interessada é Mitsuki Koga, sua colega de classe.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A obra estreou nas redes sociais em abril de 2022 e ganhou serialização no Pixiv Comic em 2023. Ademais o anime terá como tema de abertura a música “Breed”, da banda Nirvana, lançada originalmente em 1991.",
-          "runs": [
-            {
-              "text": "A obra estreou nas redes sociais em abril de 2022 e ganhou serialização no Pixiv Comic em 2023. Ademais o anime terá como tema de abertura a música “Breed”, da banda Nirvana, lançada originalmente em 1991."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: ANN",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "ANN",
-              "href": "https://www.animenewsnetwork.com/news/2026-10-08/the-guy-she-was-interested-in-wasnt-a-guy-at-all-anime-1st-promo-video-reveals-more-cast-staff-/.242641"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Anime The Guy She Was Interested In ganha data de lançamento.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Anime The Guy She Was Interested In ganha data de lançamento",
-              "href": "https://animenew.com.br/the-guy-she-was-interested-in-estreia-janeiro/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-10T11:49:01.000Z",
-      "updatedAt": "2026-10-10T11:49:01.000Z",
-      "expiresAt": "2026-10-17T11:49:01.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/the-guy-she-was-interested-in-estreia-janeiro",
-          "publishedAt": "2026-10-10T11:49:01.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 276,
-      "qualityScore": 0.916,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-8639edbf",
-      "slug": "gundam-seed-freedom-zero-estreia-em-janeiro-de-2027-animenew-8639edbf",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Gundam Seed Freedom Zero estreia em janeiro de 2027",
-      "originalTitle": "Gundam Seed Freedom Zero estreia em janeiro de 2027",
-      "summary": "O filme Mobile Suit Gundam Seed FREEDOM ZERO, prelúdio de Gundam Seed FREEDOM, ganhou um novo trailer e confirmou sua estreia nos cinemas japoneses para 15 de janeiro de 2027. Assim na América do Norte, o lançamento ocorrerá em fevereiro do mesmo ano.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Cinema",
-        "Notícias",
-        "Gundam",
-        "Mobile Suit Gundam Seed FREEDOM"
-      ],
-      "url": "https://animenew.com.br/gundam-seed-freedom-zero-estreia-2027",
-      "sourceUrl": "https://animenew.com.br/gundam-seed-freedom-zero-estreia-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Gundam-Seed-Freedom-Zero-estreia-em-janeiro-de-2027.webp",
-      "mediaQuery": "Gundam Seed Freedom Zero estreia em janeiro de 2027",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Mobile-Suit-Gundam-Seed-FREEDOM-ZERO-scaled.webp",
-          "alt": "Mobile Suit Gundam Seed FREEDOM ZERO",
-          "caption": "© Sunrise / Gundam Seed Freedom Zero"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/_PTSJJdqLB8"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O filme Mobile Suit Gundam Seed FREEDOM ZERO, prelúdio de Gundam Seed FREEDOM, ganhou um novo trailer e confirmou sua estreia nos cinemas japoneses para 15 de janeiro de 2027. Assim na América do Norte, o lançamento ocorrerá em fevereiro do mesmo ano.",
-          "runs": [
-            {
-              "text": "O filme "
-            },
-            {
-              "text": "Mobile Suit Gundam Seed FREEDOM ZERO",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", prelúdio de "
-            },
-            {
-              "text": "Gundam Seed FREEDOM",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", ganhou um novo trailer e confirmou sua estreia nos "
-            },
-            {
-              "text": "cinemas japoneses",
-              "href": "https://animenew.com.br/cinema"
-            },
-            {
-              "text": " para 15 de janeiro de 2027. Assim na América do Norte, o lançamento ocorrerá em fevereiro do mesmo ano."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Go with the Clouds ganha trailer com lançamento para 2027",
-              "runs": [
-                {
-                  "text": "Go with the Clouds ganha trailer com lançamento para 2027",
-                  "href": "https://animenew.com.br/go-with-the-clouds-anime-trailer-estreia-2027"
-                }
-              ]
-            },
-            {
-              "text": "The Vermilion Mask anuncia 2ª parte para abril de 2027",
-              "runs": [
-                {
-                  "text": "The Vermilion Mask anuncia 2ª parte para abril de 2027",
-                  "href": "https://animenew.com.br/the-vermilion-mask-segunda-parte-abril-2027"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=_PTSJJdqLB8",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/_PTSJJdqLB8"
-        },
-        {
-          "type": "paragraph",
-          "text": "Portanto a divulgação aconteceu durante uma transmissão ao vivo realizada na sexta-feira, que apresentou novidades sobre o longa e confirmou o lançamento internacional.",
-          "runs": [
-            {
-              "text": "Portanto a divulgação aconteceu durante uma transmissão ao vivo realizada na sexta-feira, que apresentou novidades sobre o longa e confirmou o lançamento internacional."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Mobile-Suit-Gundam-Seed-FREEDOM-ZERO-scaled.webp",
-          "alt": "Mobile Suit Gundam Seed FREEDOM ZERO",
-          "caption": "© Sunrise / Gundam Seed Freedom Zero"
-        },
-        {
-          "type": "heading",
-          "text": "Elenco e produção",
-          "runs": [
-            {
-              "text": "Elenco e produção"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A produção contará com o retorno de diversos dubladores da franquia. Entre eles estão Sōichirō Hoshi como Kira Yamato, Rie Tanaka como Lacus Clyne, Akira Ishida como Athrun Zala e Kenichi Suzumura como Shinn Asuka.",
-          "runs": [
-            {
-              "text": "A produção contará com o retorno de diversos dubladores da franquia. Entre eles estão Sōichirō Hoshi como Kira Yamato, Rie Tanaka como Lacus Clyne, Akira Ishida como Athrun Zala e Kenichi Suzumura como Shinn Asuka."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Mitsuo Fukuda dirige o projeto, com produção da SUNRISE e da Bandai Namco Filmworks. O roteiro tem participação de Shigeru Morita, Chiaki Morosawa e Fukuda, enquanto Hisashi Hirai cuida do design de personagens.",
-          "runs": [
-            {
-              "text": "Mitsuo Fukuda dirige o projeto, com produção da "
-            },
-            {
-              "text": "SUNRISE",
-              "href": "https://animenew.com.br/studio/14/sunrise"
-            },
-            {
-              "text": " e da "
-            },
-            {
-              "text": "Bandai Namco Filmworks",
-              "href": "https://animenew.com.br/studio/7137/bandai-namco-filmworks"
-            },
-            {
-              "text": ". O roteiro tem participação de Shigeru Morita, Chiaki Morosawa e Fukuda, enquanto Hisashi Hirai cuida do design de personagens."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Projeto planejado há 20 anos",
-          "runs": [
-            {
-              "text": "Projeto planejado há 20 anos"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "O prelúdio ganhou an originalmente em novembro de 2024, durante exibições especiais de Gundam Seed FREEDOM no Japão. Segundo Fukuda, o roteiro já estava concluído havia duas décadas, e o projeto foi inicialmente planejado como um anime original em vídeo, conhecido como OVA.",
-          "runs": [
-            {
-              "text": "O prelúdio ganhou an originalmente em novembro de 2024, durante exibições especiais de Gundam Seed FREEDOM no Japão. Segundo Fukuda, o roteiro já estava concluído havia duas décadas, e o projeto foi inicialmente planejado como um anime original em vídeo, conhecido como OVA."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ademais o filme dará continuidade à expansão da franquia, que teve um dos maiores lançamentos de bilheteria da história de Gundam com Gundam Seed FREEDOM, lançado em janeiro de 2024.",
-          "runs": [
-            {
-              "text": "Ademais o filme dará continuidade à expansão da franquia, que teve um dos maiores lançamentos de bilheteria da história de Gundam com Gundam Seed FREEDOM, lançado em janeiro de 2024."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: ANN",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "ANN",
-              "href": "https://www.animenewsnetwork.com/news/2026-10-08/gundam-seed-freedom-zero-prequel-anime-trailer-reveals-theatrical-release-in-japan-on-january-15-n-/.242644"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Gundam Seed Freedom Zero estreia em janeiro de 2027.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Gundam Seed Freedom Zero estreia em janeiro de 2027",
-              "href": "https://animenew.com.br/gundam-seed-freedom-zero-estreia-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-10T11:41:29.000Z",
-      "updatedAt": "2026-10-10T11:41:29.000Z",
-      "expiresAt": "2026-10-17T11:41:29.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/gundam-seed-freedom-zero-estreia-2027",
-          "publishedAt": "2026-10-10T11:41:29.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 265,
-      "qualityScore": 0.916,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
@@ -8281,297 +8666,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 6,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-c3d13b1e",
-      "slug": "crunchyroll-lanca-divisao-focada-na-producao-de-animes-e-live-actions-jbox-c3d13b1e",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Crunchyroll lança divisão focada na produção de animês e live-actions",
-      "originalTitle": "Crunchyroll lança divisão focada na produção de animês e live-actions",
-      "summary": "A Crunchyroll, que faz parte do grupo Sony, anunciou a criação da Crunchyroll Storyworks, divisão focada na produção de animês e live-actions em parceria com criadores do Japão.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Live Action",
-        "Negócios",
-        "Streaming",
-        "Crunchyroll",
-        "Crunchyroll Storyworks",
-        "Homem-Aranha no Aranhaverso",
-        "Nova divisão da Cruchyroll",
-        "Sony",
-        "Tohru Iokibe"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/08/crunchyroll-lanca-divisao-focada-na-producao-de-animes-e-live-actions",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/08/crunchyroll-lanca-divisao-focada-na-producao-de-animes-e-live-actions",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/crunchyroll-destacada.jpg",
-      "mediaQuery": "Crunchyroll lança divisão focada na produção de animês e live-actions",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A Crunchyroll, que faz parte do grupo Sony, anunciou a criação da Crunchyroll Storyworks, divisão focada na produção de animês e live-actions em parceria com criadores do Japão.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que faz parte do grupo "
-            },
-            {
-              "text": "Sony",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", anunciou a criação da"
-            },
-            {
-              "text": " Crunchyroll Storyworks",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", divisão focada na produção de animês e live-actions em parceria com criadores do Japão."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Segundo a Variety, a nova área da empresa será chefiada pelo executivo Tohru Iokibe, que já trabalhou com a Sony Pictures e PlayStation Productions, e a ideia é reunir parceiros criativos da Crunchyroll no Japão, a Aniplex (também parte da Sony), e a Sony Pictures, responsável por Homem-Aranha no Aranhaverso, para desenvolver histórias focadas no público mundial.",
-          "runs": [
-            {
-              "text": "Segundo a "
-            },
-            {
-              "text": "Variety",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", a nova área da empresa será chefiada pelo executivo "
-            },
-            {
-              "text": "Tohru Iokibe",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que já trabalhou com a "
-            },
-            {
-              "text": "Sony Pictures",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "PlayStation Productions",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e a ideia é reunir parceiros criativos da Crunchyroll no Japão, a "
-            },
-            {
-              "text": "Aniplex",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (também parte da Sony), e a Sony Pictures, responsável por "
-            },
-            {
-              "text": "Homem-Aranha no Aranhaverso",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", para desenvolver histórias focadas no público mundial."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Neste sentido, o comunicado oficial afirma que a divisão almeja “adaptar histórias globais para animê”, ao mesmo tempo em que buscará fazer o caminho contrário e transformar animês em live-action, segundo eles, “em estreita colaboração com os criadores japoneses para priorizar e preservar a visão criativa original”.",
-          "runs": [
-            {
-              "text": "Neste sentido, o comunicado oficial afirma que a divisão almeja "
-            },
-            {
-              "text": "“adaptar histórias globais para animê”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", ao mesmo tempo em que buscará fazer o caminho contrário e transformar animês em live-action, segundo eles, "
-            },
-            {
-              "text": "“em estreita colaboração com os criadores japoneses para priorizar e preservar a visão criativa original”.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ravi Ahuja, CEO da Sony Pictures Entertainment, afirmou:",
-          "runs": [
-            {
-              "text": "Ravi Ahuja",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", CEO da Sony Pictures Entertainment, afirmou:"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "“O animê se tornou uma força cultural global porque foi moldado ao longo de décadas pelos criadores, estúdios e editoras que cultivaram e desenvolveram uma narrativa singular e personagens inesquecíveis. À medida em que o animê cresce, temos a responsabilidade de proteger e amplificar o que o torna especial, mantendo sempre a visão dos criadores no centro. Esse é o objetivo da Storyworks.”",
-          "runs": [
-            {
-              "text": "“O animê se tornou uma força cultural global porque foi moldado ao longo de décadas pelos criadores, estúdios e editoras que cultivaram e desenvolveram uma narrativa singular e personagens inesquecíveis. À medida em que o animê cresce, temos a responsabilidade de proteger e amplificar o que o torna especial, mantendo sempre a visão dos criadores no centro. Esse é o objetivo da Storyworks.”"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por enquanto, nenhum projeto foi anunciado dentro da nova divisão, mas a expectativa é que Crunchyroll divulgue mais novidades nos próximos meses.",
-          "runs": [
-            {
-              "text": "Por enquanto, nenhum projeto foi anunciado dentro da nova divisão, mas a expectativa é que Crunchyroll divulgue mais novidades nos próximos meses."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Variety",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Variety",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://variety.com/2026/tv/news/crunchyroll-storyworks-anime-live-action-projects-1236904447/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-08T15:25:10.000Z",
-      "updatedAt": "2026-10-08T15:26:32.000Z",
-      "expiresAt": "2026-10-15T15:25:10.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/08/crunchyroll-lanca-divisao-focada-na-producao-de-animes-e-live-actions",
-          "publishedAt": "2026-10-08T15:25:10.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 244,
-      "qualityScore": 0.908,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 9,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
         "embedCount": 0,
         "sourcePagesRead": 0
       }
