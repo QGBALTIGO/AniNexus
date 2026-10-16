@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T18:05:43.821Z",
+  "generatedAt": "2026-10-16T20:57:36.887Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 33,
+      "count": 34,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,1527 @@
     }
   ],
   "stats": {
-    "collected": 43,
+    "collected": 44,
     "grouped": 20,
     "published": 20,
     "newStories": 20,
     "fullArticles": 20,
     "previewArticles": 0,
-    "avgWords": 438,
+    "avgWords": 485,
     "withHeroImage": 20,
     "withOrderedMedia": 19,
     "skippedTranslation": 0,
-    "skippedQuality": 21,
-    "durationMs": 11139
+    "skippedQuality": 22,
+    "durationMs": 3747
   },
   "items": [
+    {
+      "id": "jbox-676d9512",
+      "slug": "diretor-de-rematch-da-detalhes-sobre-a-uniao-do-jogo-com-blue-lock-entrevista-jbox-676d9512",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Diretor de ‘REMATCH’ dá detalhes sobre a união do jogo com ‘Blue Lock’ | Entrevista",
+      "originalTitle": "Diretor de ‘REMATCH’ dá detalhes sobre a união do jogo com ‘Blue Lock’ | Entrevista",
+      "summary": "Atendendo a pedidos fervorosos dos fãs, o jogo REMATCH lançou no último dia 24 de setembro uma colaboração com a franquia Blue Lock, trazendo skins dos personagens Yoichi Isagi, Meguru Bachira, Seishiro Nagi e Rin Itoshi, além de outros itens cosméticos temáticos e um modo de tempo limitado inspirado no mangá. Alguns modos e itens podem ser obtidos gratuitamente por quem já tem o jogo, mas as skins temáticas precisam ser compradas à parte.",
+      "author": "Equipe JBox",
+      "tags": [
+        "Anime",
+        "Entrevista",
+        "Games",
+        "Blue Lock",
+        "entrevista com pierre tarno",
+        "ENTREVISTA SOBRE REMATCH",
+        "pierre tarno",
+        "REMATCH"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/16/diretor-de-rematch-da-detalhes-sobre-a-uniao-do-jogo-com-blue-lock-entrevista",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/16/diretor-de-rematch-da-detalhes-sobre-a-uniao-do-jogo-com-blue-lock-entrevista",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/jbox-entrevista-destacada-rewatchbluelock.jpg",
+      "mediaQuery": "Diretor de ‘REMATCH’ dá detalhes sobre a união do jogo com ‘Blue Lock’ | Entrevista",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Rematch-bluelock2.jpg",
+          "alt": "imagem: ilustração com tela dividida em 4 com rostos dos personagens de Blue Lock",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Rematch-bluelock3.jpg",
+          "alt": "imagem: ilustração com 4 personagens de Blue Lock",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/MLDGArmX0Tw"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Atendendo a pedidos fervorosos dos fãs, o jogo REMATCH lançou no último dia 24 de setembro uma colaboração com a franquia Blue Lock, trazendo skins dos personagens Yoichi Isagi, Meguru Bachira, Seishiro Nagi e Rin Itoshi, além de outros itens cosméticos temáticos e um modo de tempo limitado inspirado no mangá. Alguns modos e itens podem ser obtidos gratuitamente por quem já tem o jogo, mas as skins temáticas precisam ser compradas à parte.",
+          "runs": [
+            {
+              "text": "Atendendo a pedidos fervorosos dos fãs, o jogo "
+            },
+            {
+              "text": "REMATCH",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " lançou no último dia 24 de setembro uma colaboração com a franquia"
+            },
+            {
+              "text": " Blue Lock",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", trazendo skins dos personagens Yoichi Isagi, "
+            },
+            {
+              "text": "Meguru Bachira",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Seishiro Nagi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Rin Itoshi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", além de outros itens cosméticos temáticos e um modo de tempo limitado inspirado no mangá. Alguns modos e itens podem ser obtidos gratuitamente por quem já tem o jogo, mas as skins temáticas precisam ser compradas à parte."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "REMATCH é um jogo de futebol que permite partidas de até 5 contra 5, tendo sido lançado em junho do ano passado pela Sloclap em parceria com a Kepler Interactive. O game até então só tinha contado com colaborações com marcas e estrelas reais do futebol, agora abrindo espaço para uma possível nova linha de parcerias.",
+          "runs": [
+            {
+              "text": "REMATCH",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é um jogo de futebol que permite partidas de até 5 contra 5, tendo sido lançado em junho do ano passado pela Sloclap em parceria com a Kepler Interactive. O game até então só tinha contado com colaborações com marcas e estrelas reais do futebol, agora abrindo espaço para uma possível nova linha de parcerias."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para saber mais detalhes sobre a colaboração, conversamos com Pierre Tarno, diretor criativo de REMATCH e CEO da Sloclap. Confira a entrevista na íntegra logo abaixo.",
+          "runs": [
+            {
+              "text": "Para saber mais detalhes sobre a colaboração, conversamos com"
+            },
+            {
+              "text": " Pierre Tarno",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", diretor criativo de"
+            },
+            {
+              "text": " REMATCH",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e CEO da Sloclap. Confira a entrevista na íntegra logo abaixo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/©MK,YN,K/BLP",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/©MK,YN,K/BLP"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Como foi trabalhar com uma franquia tão amada pelos fãs de REMATCH como Blue Lock?",
+          "runs": [
+            {
+              "text": "Como foi trabalhar com uma franquia tão amada pelos fãs de ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "REMATCH",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " como",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Blue Lock",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "?",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Pierre: Desde o momento em que revelamos Rematch pela primeira vez, Blue Lock foi uma das colaborações mais pedidas pela nossa comunidade. Nós mesmos também somos grandes fãs da série, então juntar esses dois mundos foi algo que nos deixou realmente empolgados.",
+          "runs": [
+            {
+              "text": "Pierre:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Desde o momento em que revelamos "
+            },
+            {
+              "text": "Rematch",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " pela primeira vez, "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi uma das colaborações mais pedidas pela nossa comunidade. Nós mesmos também somos grandes fãs da série, então juntar esses dois mundos foi algo que nos deixou realmente empolgados."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O que torna essa colaboração particularmente interessante é que, enquanto Blue Lock e Rematch abordam o futebol de ângulos diferentes, eles compartilham uma fantasia semelhante: se expressar em campo, desenvolver seu próprio estilo de jogo e criar aqueles momentos espetaculares e decisivos.",
+          "runs": [
+            {
+              "text": "O que torna essa colaboração particularmente interessante é que, enquanto"
+            },
+            {
+              "text": " Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Rematch",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " abordam o futebol de ângulos diferentes, eles "
+            },
+            {
+              "text": "compartilham uma fantasia semelhante",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": se expressar em campo, desenvolver seu próprio estilo de jogo e criar aqueles momentos espetaculares e decisivos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Claro, Blue Lock é mais sobre ego, enquanto Rematch coloca o trabalho em equipe no centro da experiência. Mas até os maiores egoístas precisam de colegas de equipe para ter sucesso, e achamos que esse contraste tornou a colaboração ainda mais interessante.",
+          "runs": [
+            {
+              "text": "Claro, "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é mais sobre ego, enquanto "
+            },
+            {
+              "text": "Rematch",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " coloca o trabalho em equipe no centro da experiência. Mas até os maiores egoístas precisam de colegas de equipe para ter sucesso, e achamos que esse contraste tornou a colaboração ainda mais interessante."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Assim como Blue Lock, REMATCH também é cheio de jogadas dinâmicas absurdas. O animê e o mangá chegaram a ser uma inspiração para o desenvolvimento do jogo antes da colaboração? Além do próprio futebol, quais foram as inspirações para a criação do jogo?",
+          "runs": [
+            {
+              "text": "Assim como ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "REMATCH",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " também é cheio de jogadas dinâmicas absurdas. O animê e o mangá chegaram a ser uma inspiração para o desenvolvimento do jogo antes da colaboração? Além do próprio futebol, quais foram as inspirações para a criação do jogo?",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "P: Nossa principal inspiração foi o próprio futebol e, mais especificamente, a sensação de realmente estar em campo, em vez de controlar o time inteiro de cima. Com Rematch, queríamos criar algo que capturasse a intensidade, criatividade e espontaneidade do futebol, onde cada jogador controla um único personagem e cada ação importa.",
+          "runs": [
+            {
+              "text": "P: Nossa principal inspiração foi o próprio futebol e, mais especificamente, a sensação de realmente estar em campo, em vez de controlar o time inteiro de cima. Com "
+            },
+            {
+              "text": "Rematch",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", queríamos criar algo que capturasse a intensidade, criatividade e espontaneidade do futebol, onde cada jogador controla um único personagem e cada ação importa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Também nos baseamos muito na nossa experiência desenvolvendo Absolver e Sifu. Ambos os jogos são construídos em torno de movimento, timing e domínio de um conjunto de mecânicas, e queríamos trazer essa mesma filosofia para um esporte coletivo.",
+          "runs": [
+            {
+              "text": "Também nos baseamos muito na nossa experiência desenvolvendo "
+            },
+            {
+              "text": "Absolver",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Sifu",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". Ambos os jogos são construídos em torno de movimento, timing e domínio de um conjunto de mecânicas, e queríamos trazer essa mesma filosofia para um esporte coletivo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Quanto a Blue Lock, há definitivamente semelhanças em como retratamos o futebol, especialmente nas jogadas espetaculares e naqueles momentos em que um jogador pode fazer toda a diferença. Isso faz parte do que tornou a colaboração tão natural.",
+          "runs": [
+            {
+              "text": "Quanto a "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", há definitivamente semelhanças em como retratamos o futebol, especialmente nas jogadas espetaculares e naqueles momentos em que um jogador pode fazer toda a diferença. Isso faz parte do que tornou a colaboração tão natural."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Quais foram os critérios para a escolha dos personagens que inspiraram as skins e outros itens cosméticos baseados em Blue Lock?",
+          "runs": [
+            {
+              "text": "Quais foram os critérios para a escolha dos personagens que inspiraram as ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "skins",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " e outros itens cosméticos baseados em ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "?",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "P: Escolhemos Isagi, Bachira, Nagi e Rin, quatro personagens icônicos que têm personalidades e abordagens para o futebol muito distintas.",
+          "runs": [
+            {
+              "text": "P: Escolhemos Isagi, Bachira, Nagi e Rin, quatro personagens icônicos que têm personalidades e abordagens para o futebol muito distintas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Isso é algo que combina particularmente bem com Rematch, onde incentivamos os jogadores a desenvolverem sua própria identidade em campo. Seja através da criatividade, da maestria técnica ou da leitura do jogo, cada um desses personagens representa uma forma diferente de se expressar como jogador.",
+          "runs": [
+            {
+              "text": "Isso é algo que combina particularmente bem com "
+            },
+            {
+              "text": "Rematch",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", onde incentivamos os jogadores a desenvolverem sua própria identidade em campo. Seja através da criatividade, da maestria técnica ou da leitura do jogo, cada um desses personagens representa uma forma diferente de se expressar como jogador."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Queríamos celebrar essas identidades por meio de cosméticos, comemorações de gols únicas e cards de jogadores, mantendo ao mesmo tempo a jogabilidade central de Rematch justa e equilibrada para todos.",
+          "runs": [
+            {
+              "text": "Queríamos celebrar essas identidades por meio de cosméticos, comemorações de gols únicas e cards de jogadores, mantendo ao mesmo tempo a jogabilidade central de"
+            },
+            {
+              "text": " Rematch",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " justa e equilibrada para todos."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Rematch-bluelock2.jpg",
+          "alt": "imagem: ilustração com tela dividida em 4 com rostos dos personagens de Blue Lock"
+        },
+        {
+          "type": "heading",
+          "text": "As comemorações de gol inclusas nos pacotes de personagens foram inspiradas por cenas da obra original. Houve alguma colaboração com a equipe do animê ou com os autores do mangá para a criação dessas animações?",
+          "runs": [
+            {
+              "text": "As comemorações de gol inclusas nos pacotes de personagens foram inspiradas por cenas da obra original. Houve alguma colaboração com a equipe do animê ou com os autores do mangá para a criação dessas animações?",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "P: Trabalhamos de perto com a Kodansha, a produtora por trás do animê Blue Lock, durante toda a colaboração para garantir que permanecêssemos fiéis ao espírito da série, respeitando a identidade tanto de Blue Lock quanto de Rematch. Queríamos que o resultado soasse autêntico para os fãs do animê, especialmente nas comemorações de gol.",
+          "runs": [
+            {
+              "text": "P: Trabalhamos de perto com a "
+            },
+            {
+              "text": "Kodansha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", a produtora por trás do animê "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", durante toda a colaboração para garantir que permanecêssemos "
+            },
+            {
+              "text": "fiéis ao espírito da série",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", respeitando a identidade tanto de "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " quanto de "
+            },
+            {
+              "text": "Rematch",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Queríamos que o resultado soasse autêntico para os fãs do animê, especialmente nas comemorações de gol."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Cada personagem tem uma personalidade tão distinta e momentos tão memoráveis que nos inspiramos nessas cenas icônicas e as adaptamos ao estilo de Rematch de uma forma que os fãs reconheçam imediatamente.",
+          "runs": [
+            {
+              "text": "Cada personagem tem uma personalidade tão distinta e momentos tão memoráveis que nos inspiramos nessas cenas icônicas e as adaptamos ao estilo de "
+            },
+            {
+              "text": "Rematch",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de uma forma que os fãs reconheçam imediatamente."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Houve algum contato direto com os autores do mangá para apresentar o jogo a eles?",
+          "runs": [
+            {
+              "text": "Houve algum contato direto com os autores do mangá para apresentar o jogo a eles?",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "P: Trabalhamos diretamente no lado do animê da colaboração, em vez de com os próprios criadores do mangá. Nossas trocas se concentraram em garantir que representássemos o universo de Blue Lock de forma fiel, enquanto encontrávamos maneiras de trazê-lo para Rematch de um jeito que fosse natural tanto para fãs de jogos quanto de animê.",
+          "runs": [
+            {
+              "text": "P: Trabalhamos diretamente no lado do animê da colaboração, em vez de com os próprios criadores do mangá. Nossas trocas se concentraram em garantir que representássemos o universo de "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de forma fiel, enquanto encontrávamos maneiras de trazê-lo para"
+            },
+            {
+              "text": " Rematch",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de um jeito que fosse natural tanto para fãs de jogos quanto de animê."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "O modo de jogo Aura Striker tenta adaptar o tema de egoísmo de Blue Lock para Rematch. Como foi essa adaptação para criar o modo? Existem planos de torná-lo permanente no futuro?",
+          "runs": [
+            {
+              "text": "O modo de jogo ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Aura Striker",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " tenta adaptar o tema de egoísmo de ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " para ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Rematch",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". Como foi essa adaptação para criar o modo? Existem planos de torná-lo permanente no futuro?",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "P: Com o Aura Striker, queríamos dar aos jogadores a oportunidade de viver aquela fantasia de Blue Lock de superar seus limites e se tornar o jogador decisivo em campo.",
+          "runs": [
+            {
+              "text": "P: Com o "
+            },
+            {
+              "text": "Aura Striker",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", queríamos dar aos jogadores a oportunidade de viver aquela fantasia de "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de superar seus limites e se tornar o jogador decisivo em campo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Criamos um modo especial de 3v3 onde os jogadores vão acumulando sua Aura durante a partida e podem ativá-la para ganhar boosts temporários de velocidade e poder de chute. Também introduzimos goleiros controlados por IA para que todos possam focar em atacar e criar aqueles momentos espetaculares.",
+          "runs": [
+            {
+              "text": "Criamos um "
+            },
+            {
+              "text": "modo especial de 3v3",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " onde os jogadores vão acumulando sua Aura durante a partida e podem ativá-la para ganhar boosts temporários de velocidade e poder de chute. Também introduzimos goleiros controlados por IA para que todos possam focar em atacar e criar aqueles momentos espetaculares."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "É uma versão mais intensa e exagerada da jogabilidade de Rematch, inspirada na energia de Blue Lock, mas o trabalho em equipe continua sendo importante. Mesmo quando você está buscando seu próprio momento de glória, ainda precisa colaborar com seus companheiros.",
+          "runs": [
+            {
+              "text": "É uma versão mais intensa e exagerada da jogabilidade de"
+            },
+            {
+              "text": " Rematch",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", inspirada na energia de "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", mas o trabalho em equipe continua sendo importante. Mesmo quando você está buscando seu próprio momento de glória, ainda precisa colaborar com seus companheiros."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O Aura Striker foi inicialmente criado como um modo por tempo limitado, e já estamos planejando trazê-lo de volta em dezembro. Além disso, veremos como os jogadores interagem com ele e se faz sentido mantê-lo de forma permanente. No fim das contas, queremos que o Rematch evolua de maneiras que façam sentido para nossa comunidade e para a forma como eles curtem jogar.",
+          "runs": [
+            {
+              "text": "O"
+            },
+            {
+              "text": " Aura Striker",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi inicialmente criado como um modo por tempo limitado, e já estamos planejando trazê-lo de volta em dezembro. Além disso, veremos como os jogadores interagem com ele e se faz sentido mantê-lo de forma permanente. No fim das contas, queremos que o Rematch evolua de maneiras que façam sentido para nossa comunidade e para a forma como eles curtem jogar."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Rematch-bluelock3.jpg",
+          "alt": "imagem: ilustração com 4 personagens de Blue Lock"
+        },
+        {
+          "type": "heading",
+          "text": "Existem planos para mais skins baseadas em outros personagens de Blue Lock futuramente?",
+          "runs": [
+            {
+              "text": "Existem planos para mais skins baseadas em outros personagens de ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " futuramente?",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "P: Sabemos que há muitos outros personagens de Blue Lock que os fãs adorariam ver em Rematch, e tem sido ótimo ver o entusiasmo da comunidade pela colaboração. Por enquanto, não temos nada mais para anunciar, mas estamos sempre ouvindo o que nossos jogadores gostariam de ver a seguir.",
+          "runs": [
+            {
+              "text": "P: Sabemos que há muitos outros personagens de"
+            },
+            {
+              "text": " Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " que os fãs adorariam ver em "
+            },
+            {
+              "text": "Rematch",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", e tem sido ótimo ver o entusiasmo da comunidade pela colaboração. Por enquanto, não temos nada mais para anunciar, mas estamos sempre ouvindo o que nossos jogadores gostariam de ver a seguir."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Podemos esperar parcerias de REMATCH com outras franquias de animê e mangá como Captain Tsubasa ou com jogos como Inazuma Eleven? Ou até mesmo parcerias com franquias sem relação com futebol?",
+          "runs": [
+            {
+              "text": "Podemos esperar parcerias de ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "REMATCH",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " com outras franquias de animê e mangá como ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Captain Tsubasa",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ou com jogos como ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Inazuma Eleven",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "? Ou até mesmo parcerias com franquias sem relação com futebol?",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Hoje não temos nenhuma colaboração específica para anunciar, mas com certeza estamos abertos a oportunidades futuras. O Japão é uma fonte incrível de criatividade e inspiração, e existem tantas franquias que ressoam com a nossa comunidade. Blue Lock foi um encaixe particularmente natural por causa da paixão compartilhada pelo futebol, mas isso não significa necessariamente que estamos nos limitando a propriedades relacionadas ao futebol.",
+          "runs": [
+            {
+              "text": "Hoje não temos nenhuma colaboração específica para anunciar, mas com certeza estamos abertos a oportunidades futuras. O Japão é uma fonte incrível de criatividade e inspiração, e existem tantas franquias que ressoam com a nossa comunidade. "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi um encaixe particularmente natural por causa da paixão compartilhada pelo futebol, mas isso não significa necessariamente que estamos nos limitando a propriedades relacionadas ao futebol."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O importante para nós é que uma colaboração faça sentido para o Rematch e traga algo interessante para a experiência do jogador, em vez de simplesmente adicionar itens cosméticos.",
+          "runs": [
+            {
+              "text": "O importante para nós é que uma colaboração faça sentido para o "
+            },
+            {
+              "text": "Rematch",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e traga algo interessante para a experiência do jogador, em vez de simplesmente adicionar itens cosméticos."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=MLDGArmX0Tw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/MLDGArmX0Tw"
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "Reportagem: Talles Queiroz (Teke) | Tradução: Equipe Theogames | Edição final: Rafael Jiback | O JBox agradece à equipe da Kepler Interactive e da Theogames pelo convite e a Pierre Tarno pela disponibilidade em responder nossas perguntas.",
+          "runs": [
+            {
+              "text": "Reportagem: Talles Queiroz (Teke) | Tradução: Equipe Theogames | Edição final: Rafael Jiback | O "
+            },
+            {
+              "text": "JBox",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " agradece à equipe da Kepler Interactive e da Theogames pelo convite e a Pierre Tarno pela disponibilidade em responder nossas perguntas."
+            }
+          ],
+          "level": 4
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-16T20:05:39.000Z",
+      "updatedAt": "2026-10-16T20:07:18.000Z",
+      "expiresAt": "2026-10-23T20:05:39.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/16/diretor-de-rematch-da-detalhes-sobre-a-uniao-do-jogo-com-blue-lock-entrevista",
+          "publishedAt": "2026-10-16T20:05:39.000Z",
+          "author": "Equipe JBox"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 6,
+      "wordCount": 1230,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 37,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-ec372359",
+      "slug": "pokemon-pode-voltar-a-programacao-do-cartoon-network-na-america-latina-em-novembro-jbox-ec372359",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Pokémon’ pode voltar à programação do Cartoon Network na América Latina em novembro",
+      "originalTitle": "‘Pokémon’ pode voltar à programação do Cartoon Network na América Latina em novembro",
+      "summary": "Atenção, treinadores! O animê de Pokémon pode retornar à grade do canal Cartoon Network na América Latina a partir de novembro.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "TV",
+        "jornadas pokemon",
+        "Pokemon",
+        "POKEMON JORNADAS",
+        "Pokémon Journeys",
+        "pokemon no cartoon network"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/16/pokemon-pode-voltar-a-programacao-do-cartoon-network-na-america-latina-em-novembro",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/16/pokemon-pode-voltar-a-programacao-do-cartoon-network-na-america-latina-em-novembro",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/01/POKEMONJORNADAS-DESTACADA.jpg",
+      "mediaQuery": "‘Pokémon’ pode voltar à programação do Cartoon Network na América Latina em novembro",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-01.png",
+          "alt": "Pokémon Jornadas no Cartoon",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-02.png",
+          "alt": "Pokémon Jornadas na Netflix",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-03.png",
+          "alt": "Pokémon Jornadas no Prime Video",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-04.png",
+          "alt": "Pokémon Jornadas no Prime Video",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Atenção, treinadores! O animê de Pokémon pode retornar à grade do canal Cartoon Network na América Latina a partir de novembro.",
+          "runs": [
+            {
+              "text": "Atenção, treinadores! O animê de "
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " pode retornar à grade do canal "
+            },
+            {
+              "text": "Cartoon Network",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na América Latina a partir de novembro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A notícia foi publicada pelo site TVLaint, focado em novidades de entretenimento e programação no continente. Segundo eles, o nome “Pokémon Journeys” aparece na grade do canal a partir de 23 de novembro, em pelo menos três faixas de horários, uma pela manhã (08h11 às 08h45), outra à tarde (16h11 às 16h45) e à noite (20h40 às 21h45).",
+          "runs": [
+            {
+              "text": "A notícia foi publicada pelo site "
+            },
+            {
+              "text": "TVLaint",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", focado em novidades de entretenimento e programação no continente. Segundo eles, o nome "
+            },
+            {
+              "text": "“Pokémon Journeys”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " aparece na grade do canal a partir de "
+            },
+            {
+              "text": "23 de novembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", em pelo menos três faixas de horários, uma pela manhã (08h11 às 08h45), outra à tarde (16h11 às 16h45) e à noite (20h40 às 21h45)."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-01.png",
+          "alt": "Pokémon Jornadas no Cartoon"
+        },
+        {
+          "type": "paragraph",
+          "text": "Grade com possível retorno de Pokémon ao Cartoon | Reprodução",
+          "runs": [
+            {
+              "text": "Grade com possível retorno de Pokémon ao Cartoon | Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O site ressalta que a descrição Journeys pode se referir ao animê Jornadas Pokémon, exibido originalmente entre 2019 e 2023. Essa série já foi transmitida pelo Cartoon no Brasil anteriormente, em meados de 2020, e também já esteve no país em streamings como Netflix e Prime Video. Atualmente, a produção conta com páginas nas duas plataformas, mas sem episódios. No caso da Netflix há, inclusive, um botão de “lembrar”, indicando que a produção pode voltar em breve ao catálogo:",
+          "runs": [
+            {
+              "text": "O site ressalta que a descrição "
+            },
+            {
+              "text": "Journeys",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " pode se referir ao animê "
+            },
+            {
+              "text": "Jornadas Pokémon",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", exibido originalmente entre 2019 e 2023. Essa série já foi transmitida pelo Cartoon no Brasil anteriormente, em meados de 2020, e também já esteve no país em streamings como "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Prime Video",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Atualmente, a produção conta com páginas nas duas plataformas, mas sem episódios. No caso da Netflix há, inclusive, um botão de “lembrar”, indicando que a produção pode voltar em breve ao catálogo:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-02.png",
+          "alt": "Pokémon Jornadas na Netflix"
+        },
+        {
+          "type": "paragraph",
+          "text": "Animê segue listado na Netflix, mas com botão de “lembrar”. | Reprodução",
+          "runs": [
+            {
+              "text": "Animê segue listado na Netflix, mas com botão de “lembrar”. | Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-03.png",
+          "alt": "Pokémon Jornadas no Prime Video"
+        },
+        {
+          "type": "paragraph",
+          "text": "O mesmo acontece com o Prime Video. O animê está no catálogo… | Reprodução",
+          "runs": [
+            {
+              "text": "O mesmo acontece com o Prime Video. O animê está no catálogo… | Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-04.png",
+          "alt": "Pokémon Jornadas no Prime Video"
+        },
+        {
+          "type": "paragraph",
+          "text": "Mas sem a listagem de episódios. | Reprodução",
+          "runs": [
+            {
+              "text": "Mas sem a listagem de episódios. | Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em janeiro deste ano, Pokémon Jornadas chegou a ser anunciado para o catálogo do +SBT, streaming do canal que lançou à época o SBT Kids, com programação específica para o público infantil. Até o momento de publicação deste texto, no entanto, não temos nenhum registro de que o animê tenha sido transmitido.",
+          "runs": [
+            {
+              "text": "Em janeiro deste ano, "
+            },
+            {
+              "text": "Pokémon Jornadas",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/01/05/sbt-kids-tera-pokemon-jornadas-em-sua-programacao/"
+            },
+            {
+              "text": " chegou a ser anunciado para o catálogo do +SBT",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/01/05/sbt-kids-tera-pokemon-jornadas-em-sua-programacao/"
+            },
+            {
+              "text": ", streaming do canal que lançou à época o SBT Kids, com programação específica para o público infantil. Até o momento de publicação deste texto, no entanto, não temos nenhum registro de que o animê tenha sido transmitido."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Outro detalhe que o TVLaint aponta é que o Cartoon pode exibir outras fases de Pokémon além de Jornadas, incluindo até episódios lançados após a saída da franquia do canal, em setembro de 2021.",
+          "runs": [
+            {
+              "text": "Outro detalhe que o"
+            },
+            {
+              "text": " TVLaint",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " aponta é que o Cartoon pode exibir outras fases de "
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " além de "
+            },
+            {
+              "text": "Jornadas",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", incluindo até episódios lançados após a saída da franquia do canal, em setembro de 2021."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Brasil, os horários do Cartoon Network nos canais oficiais e em outros sites de programação ainda não chega até o dia 23 de novembro, então o público vai precisar esperar alguns dias para saber se haverá a transmissão no país e como ela vai acontecer.",
+          "runs": [
+            {
+              "text": "No Brasil, os horários do Cartoon Network nos canais oficiais e em outros sites de programação ainda não chega até o dia 23 de novembro, então o público vai precisar esperar alguns dias para saber se haverá a transmissão no país e como ela vai acontecer."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por enquanto, é possível assistir animês novos e clássicos de Pokémon em vários streamings como Netflix, Globoplay, Prime Video, Samsung TV Plus e Pluto TV. Além disso, o próprio canal do YouTube da franquia possui episódios de temporadas como Ventos de Paldea e Evoluções. Há ainda o canal Pokémon TV, que quase diariamente adiciona episódios da série em ordem cronológica.",
+          "runs": [
+            {
+              "text": "Por enquanto, é possível assistir animês novos e clássicos de "
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " em vários streamings como "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Globoplay",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Prime Video",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Samsung TV Plus",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Pluto TV",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Além disso, o próprio"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "canal do YouTube da franquia",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.youtube.com/playlist?list=PLx_bKsaA4ZQR_FDl-EA_u2RmN4cYl_IvE"
+            },
+            {
+              "text": " possui episódios de temporadas como"
+            },
+            {
+              "text": " Ventos de Paldea",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Evoluções",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Há ainda o canal "
+            },
+            {
+              "text": "Pokémon TV",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.youtube.com/@OfficialPoke%CC%81monTV"
+            },
+            {
+              "text": ", que quase diariamente adiciona episódios da série em ordem cronológica."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: TVLaint",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "TVLaint",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.tvlaint.com/2026/10/pokemon-podria-regresar-cartoon-network.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-16T19:24:22.000Z",
+      "updatedAt": "2026-10-16T19:25:28.000Z",
+      "expiresAt": "2026-10-23T19:24:22.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/16/pokemon-pode-voltar-a-programacao-do-cartoon-network-na-america-latina-em-novembro",
+          "publishedAt": "2026-10-16T19:24:22.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 413,
+      "qualityScore": 0.998,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 18,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 4,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-36df0211",
       "slug": "i-got-a-cheat-skill-ganha-trailer-da-2-temporada-animenew-36df0211",
@@ -6758,1004 +8265,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-ced3a0eb",
-      "slug": "nova-previa-de-o-cara-que-estou-a-fim-nao-e-um-cara-detalha-elenco-de-voz-original-jbox-ced3a0eb",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Nova prévia de ‘O Cara que Estou a Fim Não é um Cara?!’ detalha elenco de voz original",
-      "originalTitle": "Nova prévia de ‘O Cara que Estou a Fim Não é um Cara?!’ detalha elenco de voz original",
-      "summary": "A Aniplex divulgou uma nova prévia de O Cara que Estou a Fim Não é um Cara?!, animê que adapta o mangá de Sumiko Arai, conhecido carinhosamente pelos fãs como “Yuri Verde”.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Ki ni Natteru Hito ga Otoko Janakatta",
-        "Kinioto",
-        "O Cara Que Estou a Fim Não É um Cara?",
-        "Sumiko Arai",
-        "The Guy She Was Interested in Wasn't a Guy at All",
-        "yuri verde"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/09/nova-previa-de-o-cara-que-estou-a-fim-nao-e-um-cara-detalha-elenco-de-voz-original",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/09/nova-previa-de-o-cara-que-estou-a-fim-nao-e-um-cara-detalha-elenco-de-voz-original",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/O-Cara-que-Estou-a-Fim-Nao-e-um-Cara-destacada.jpg",
-      "mediaQuery": "Nova prévia de ‘O Cara que Estou a Fim Não é um Cara?!’ detalha elenco de voz original",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/kLO7KyjhGR0"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A Aniplex divulgou uma nova prévia de O Cara que Estou a Fim Não é um Cara?!, animê que adapta o mangá de Sumiko Arai, conhecido carinhosamente pelos fãs como “Yuri Verde”.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Aniplex",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " divulgou uma nova prévia de "
-            },
-            {
-              "text": "O Cara que Estou a Fim Não é um Cara?!",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", animê que adapta o mangá de "
-            },
-            {
-              "text": "Sumiko Arai",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", conhecido carinhosamente pelos fãs como "
-            },
-            {
-              "text": "“Yuri Verde”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além de mais cenas dos primeiros episódios da produção, o vídeo destaca as vozes originais de Akari Kitou (Suzune em Classroom of the Elite) como Aya Osawa e Mariya Ise (Himeno em Chainsaw Man) como Mitsuki Koga.",
-          "runs": [
-            {
-              "text": "Além de mais cenas dos primeiros episódios da produção, o vídeo destaca as vozes originais de "
-            },
-            {
-              "text": "Akari Kitou",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Suzune em "
-            },
-            {
-              "text": "Classroom of the Elite",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Aya Osawa e"
-            },
-            {
-              "text": " Mariya Ise",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Himeno em "
-            },
-            {
-              "text": "Chainsaw Man",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Mitsuki Koga."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=kLO7KyjhGR0",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/kLO7KyjhGR0"
-        },
-        {
-          "type": "paragraph",
-          "text": "Também foram anunciados mais nomes no elenco de voz, incluindo Kenjirou Tsuda (Joker em Fire Force) como Jo, Tasuku Hatanaka (Fabio em Clevatess) como Narita, Yurina Amami (Mikoto em Chainsmoker Cat) como Chizuru, Fairouz Ai (Kikoru em Kaiju Nº8) como Mao e Maiko Nomura (Lisa em Beastars) como Kanna.",
-          "runs": [
-            {
-              "text": "Também foram anunciados mais nomes no elenco de voz, incluindo "
-            },
-            {
-              "text": "Kenjirou Tsuda",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Joker em "
-            },
-            {
-              "text": "Fire Force",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Jo, "
-            },
-            {
-              "text": "Tasuku Hatanaka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Fabio em "
-            },
-            {
-              "text": "Clevatess",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Narita, "
-            },
-            {
-              "text": "Yurina Amami",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Mikoto em "
-            },
-            {
-              "text": "Chainsmoker Cat",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Chizuru, "
-            },
-            {
-              "text": "Fairouz Ai",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Kikoru em"
-            },
-            {
-              "text": " Kaiju Nº8",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Mao e "
-            },
-            {
-              "text": "Maiko Nomura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Lisa em"
-            },
-            {
-              "text": " Beastars",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como Kanna."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira imagens abaixo de cada um, com os respectivos personagens:",
-          "runs": [
-            {
-              "text": "Confira imagens abaixo de cada um, com os respectivos personagens:"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Masashi Ishihama (Horimiya) é o diretor da série, com Rino Yamazaki (A Nobreza das Flores) na coordenação do roteiro e Kanna Hirayama (Oshi no Ko) no design de personagens. Kousuke Noma (Sword Art Online II) e Takayuki Sasaki (Ao Ashi) assinam as músicas. A produção da animação é pelo estúdio CloverWorks.",
-          "runs": [
-            {
-              "text": "Masashi Ishihama",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Horimiya",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2021/04/19/critica-horimiya-o-lado-bom-da-adolescencia-e-so-ele-mesmo/"
-            },
-            {
-              "text": ") é o diretor da série, com "
-            },
-            {
-              "text": "Rino Yamazaki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "A Nobreza das Flores",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") na coordenação do roteiro e "
-            },
-            {
-              "text": "Kanna Hirayama",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Oshi no Ko",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2023/06/30/critica-oshi-no-ko-anime/"
-            },
-            {
-              "text": ") no design de personagens. "
-            },
-            {
-              "text": "Kousuke Noma",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Sword Art Online II",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") e"
-            },
-            {
-              "text": " Takayuki Sasaki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Ao Ashi",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") assinam as músicas. A produção da animação é pelo estúdio "
-            },
-            {
-              "text": "CloverWorks",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O Cara que Estou a Fim Não é um Cara?! (Ki ni Natteru Hito ga Otoko Janakatta) é uma obra de Sumiko Arai, que começou como uma historieta no Twitter em 2021 — em abril de 2023 começou a ser seriado na Pixiv Comic, plataforma online, e tem publicação compilada pela Kadokawa, com 4 volumes até o momento. Por aqui, a editora NewPOP publica a obra desde junho de 2024.",
-          "runs": [
-            {
-              "text": "O Cara que Estou a Fim Não é um Cara?!",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Ki ni Natteru Hito ga Otoko Janakatta",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") é uma obra de "
-            },
-            {
-              "text": "Sumiko Arai",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que começou como uma historieta no Twitter em 2021 — em abril de 2023 começou a ser seriado na"
-            },
-            {
-              "text": " Pixiv Comic",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", plataforma online, e tem publicação compilada pela "
-            },
-            {
-              "text": "Kadokawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com 4 volumes até o momento. Por aqui, a editora"
-            },
-            {
-              "text": " NewPOP",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " publica a obra desde junho de 2024."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na história, Aya acaba se apaixonando por um funcionário de uma loja de música, mas mal sabe ela que, na verdade, não só Mitsuki é uma garota, como também senta ao lado de Aya todos os dias na escola. Sabendo da paixonite da colega, Mitsuki decide guardar o segredo para si, mas começa a se abrir mais para Aya na escola.",
-          "runs": [
-            {
-              "text": "Na história, Aya acaba se apaixonando por um funcionário de uma loja de música, mas mal sabe ela que, na verdade, não só Mitsuki é uma garota, como também senta ao lado de Aya todos os dias na escola. Sabendo da paixonite da colega, Mitsuki decide guardar o segredo para si, mas começa a se abrir mais para Aya na escola."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já o termo “Yuri Verde”, pelo qual a história é conhecida, existe pela palavra “Yuri” significar romances entre garotas (Girls’ Love) no universo de animês e mangás, e pela identidade visual da obra, sempre destacando a cor verde.",
-          "runs": [
-            {
-              "text": "Já o termo “Yuri Verde”, pelo qual a história é conhecida, existe pela palavra “Yuri” significar romances entre garotas (Girls’ Love) no universo de animês e mangás, e pela identidade visual da obra, sempre destacando a cor verde."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O animê estreia oficialmente em 8 de janeiro de 2027, com transmissão pela Crunchyroll.",
-          "runs": [
-            {
-              "text": "O animê estreia oficialmente em "
-            },
-            {
-              "text": "8 de janeiro de 2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com transmissão pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Anime News Network",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Anime News Network",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.animenewsnetwork.com/news/2026-10-08/the-guy-she-was-interested-in-wasnt-a-guy-at-all-anime-1st-promo-video-reveals-more-cast-staff-/.242641"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-09T18:50:20.000Z",
-      "updatedAt": "2026-10-09T18:50:55.000Z",
-      "expiresAt": "2026-10-16T18:50:20.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/09/nova-previa-de-o-cara-que-estou-a-fim-nao-e-um-cara-detalha-elenco-de-voz-original",
-          "publishedAt": "2026-10-09T18:50:20.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 383,
-      "qualityScore": 0.929,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-ba6f978a",
-      "slug": "filme-de-diarios-de-uma-apotecaria-e-confirmado-nos-cinemas-internacionais-at-jbox-ba6f978a",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Filme de ‘Diários de uma Apotecária’ é confirmado nos cinemas internacionais (AT)",
-      "originalTitle": "Filme de ‘Diários de uma Apotecária’ é confirmado nos cinemas internacionais (AT)",
-      "summary": "Foi anunciado pela Crunchyroll que o filme Diários de uma Apotecária: The Late Lady’s Treasure (Kusuriya no Hitorigoto: Bouhi no Hihou) vai ser lançado nos cinemas internacionais, o que deve incluir passagem pelo Brasil. Nenhuma data para esse lançamento internacional foi divulgada até então — no Japão, a estreia é no dia 11 de dezembro deste ano.",
-      "author": "Teke",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "Diários de uma Apotecária: The Late Lady’s Treasure",
-        "filme de Diários de uma Apotecária",
-        "Kusuriya no Hitorigoto: Bouhi no Hihou"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/09/filme-de-diarios-de-uma-apotecaria-e-confirmado-nos-cinemas-internacionais",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/09/filme-de-diarios-de-uma-apotecaria-e-confirmado-nos-cinemas-internacionais",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/07/diarios-de-uma-apotecaria-filme-destacada.jpg",
-      "mediaQuery": "Filme de ‘Diários de uma Apotecária’ é confirmado nos cinemas internacionais (AT)",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/HP5wg0kTh54"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Foi anunciado pela Crunchyroll que o filme Diários de uma Apotecária: The Late Lady’s Treasure (Kusuriya no Hitorigoto: Bouhi no Hihou) vai ser lançado nos cinemas internacionais, o que deve incluir passagem pelo Brasil. Nenhuma data para esse lançamento internacional foi divulgada até então — no Japão, a estreia é no dia 11 de dezembro deste ano.",
-          "runs": [
-            {
-              "text": "Foi anunciado pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " que o filme "
-            },
-            {
-              "text": "Diários de uma Apotecária: The Late Lady’s Treasure",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Kusuriya no Hitorigoto: Bouhi no Hihou",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") vai ser lançado nos cinemas internacionais, o que deve incluir passagem pelo Brasil. Nenhuma data para esse lançamento internacional foi divulgada até então — no Japão, a estreia é no dia "
-            },
-            {
-              "text": "11 de dezembro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " deste ano."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=HP5wg0kTh54",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/HP5wg0kTh54"
-        },
-        {
-          "type": "paragraph",
-          "text": "A produção tem história escrita por Natsu Hyuga, responsável também pela série de light novels original. Nela, Maomao e Jinshi viajam para a cidade de uma concubina que morreu há cinco anos com o objetivo de devolver seus restos mortais à sua terra natal. No entanto, a jornada começa a ficar cada vez mais convoluta, com a presença de piratas, tesouros, além de mistérios sobre a imperatriz falecida.",
-          "runs": [
-            {
-              "text": "A produção tem história escrita por "
-            },
-            {
-              "text": "Natsu Hyuga",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", responsável também pela série de light novels original. Nela, Maomao e Jinshi viajam para a cidade de uma concubina que morreu há cinco anos com o objetivo de devolver seus restos mortais à sua terra natal. No entanto, a jornada começa a ficar cada vez mais convoluta, com a presença de piratas, tesouros, além de mistérios sobre a imperatriz falecida."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O filme conta com um personagem original chamado Mu Qing, que é interpretado por Mariya Ise (Killua em Hunter x Hunter). Aoi Yuuki e Takeo Ohtsuka retornam para seus papéis como Maomao e Jinshi.",
-          "runs": [
-            {
-              "text": "O filme conta com um personagem original chamado Mu Qing, que é interpretado por "
-            },
-            {
-              "text": "Mariya Ise",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Killua em "
-            },
-            {
-              "text": "Hunter x Hunter",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "). "
-            },
-            {
-              "text": "Aoi Yuuki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Takeo Ohtsuka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " retornam para seus papéis como Maomao e Jinshi."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Diários de uma Apotecária teve início com uma série de livros em 2011, que começou a ser publicada recentemente no Brasil pela editora Alt. Uma versão em mangá é publicada no Brasil pela editora Panini. Já a adaptação em animê pela TOHO junto ao estúdio OLM (Pokémon) está atualmente em sua terceira temporada, em exibição desde o início deste mês de outubro pela Crunchyroll.",
-          "runs": [
-            {
-              "text": "Diários de uma Apotecária",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " teve início com uma série de livros em 2011, que começou a ser publicada recentemente no Brasil pela editora "
-            },
-            {
-              "text": "Alt",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Uma versão em mangá é publicada no Brasil pela editora"
-            },
-            {
-              "text": " Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Já a adaptação em animê pela "
-            },
-            {
-              "text": "TOHO",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " junto ao estúdio "
-            },
-            {
-              "text": "OLM ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "("
-            },
-            {
-              "text": "Pokémon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") está"
-            },
-            {
-              "text": " atualmente em sua terceira temporada",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", em exibição desde o início deste mês de outubro pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A Netflix e a HBO Max contam com a primeira temporada da série, que tem passagem também pelo canal Adult Swim.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e a "
-            },
-            {
-              "text": "HBO Max",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " contam com a primeira temporada da série, que tem passagem também pelo canal "
-            },
-            {
-              "text": "Adult Swim",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Crunchyroll",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.crunchyroll.com/pt-br/news/announcements/2026/10/8/filme-the-apothecary-diaries-the-late-ladys-treasure-crunchyroll-dsitribuicao-internacional-cinemas"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "ATUALIZAÇÃO (12/10, às 14h26):",
-          "runs": [
-            {
-              "text": "ATUALIZAÇÃO",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (12/10, às 14h26):"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A Crunchyroll Brasil divulgou junto à Sony Pictures Brasil o lançamento do filme de Diários de uma Apotecária, o que indica que os cinemas brasileiros realmente devem contar com a exibição do longa. No entanto, detalhes específicos continuam sem ter sido divulgados pelas empresas.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Crunchyroll Brasil",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " divulgou junto à "
-            },
-            {
-              "text": "Sony Pictures Brasil",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " o lançamento do filme de "
-            },
-            {
-              "text": "Diários de uma Apotecária",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", o que indica que os cinemas brasileiros realmente devem contar com a exibição do longa. No entanto, detalhes específicos continuam sem ter sido divulgados pelas empresas."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Crunchyroll Brasil e Sony Pictures Brasil no Instagram",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Crunchyroll Brasil e Sony Pictures Brasil no Instagram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.instagram.com/p/DeO_bCGjLK-/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-09T18:19:54.000Z",
-      "updatedAt": "2026-10-12T17:34:32.000Z",
-      "expiresAt": "2026-10-16T18:19:54.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/09/filme-de-diarios-de-uma-apotecaria-e-confirmado-nos-cinemas-internacionais",
-          "publishedAt": "2026-10-09T18:19:54.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 320,
-      "qualityScore": 0.921,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     }
