@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T14:32:09.662Z",
+  "generatedAt": "2026-10-19T20:07:33.089Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -60,14 +60,771 @@
     "newStories": 17,
     "fullArticles": 17,
     "previewArticles": 0,
-    "avgWords": 455,
+    "avgWords": 416,
     "withHeroImage": 17,
     "withOrderedMedia": 17,
     "skippedTranslation": 0,
-    "skippedQuality": 26,
-    "durationMs": 2638
+    "skippedQuality": 27,
+    "durationMs": 4159
   },
   "items": [
+    {
+      "id": "jbox-8ff8d961",
+      "slug": "mika-kobayashi-conhecida-por-musicas-de-attack-on-titan-e-mais-animes-fara-dois-shows-no-brasil-em-2027-jbox-8ff8d961",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Mika Kobayashi, conhecida por músicas de ‘Attack on Titan’ e mais animês, fará dois shows no Brasil em 2027",
+      "originalTitle": "Mika Kobayashi, conhecida por músicas de ‘Attack on Titan’ e mais animês, fará dois shows no Brasil em 2027",
+      "summary": "A cantora Mika Kobayashi anunciou sua quarta passagem pelo Brasil, com dois shows marcados para 2027: um em São Paulo e outro em Curitiba.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Eventos",
+        "Música",
+        "Mika Kobayashi",
+        "Mika Kobayashi no Brasil 2027",
+        "Show de Mika Kobayashi em Curitiba",
+        "Show de Mika Kobayashi em São Paulo",
+        "Shows de Mika Kobayashi",
+        "Shows de Mika Kobayashi no Brasil"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/19/mika-kobayashi-conhecida-por-musicas-de-attack-on-titan-e-mais-animes-fara-dois-shows-no-brasil-em-2027",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/19/mika-kobayashi-conhecida-por-musicas-de-attack-on-titan-e-mais-animes-fara-dois-shows-no-brasil-em-2027",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/mika-kobayashi-destacada-01.jpg",
+      "mediaQuery": "Mika Kobayashi, conhecida por músicas de ‘Attack on Titan’ e mais animês, fará dois shows no Brasil em 2027",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/5bxkMmksvVw"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A cantora Mika Kobayashi anunciou sua quarta passagem pelo Brasil, com dois shows marcados para 2027: um em São Paulo e outro em Curitiba.",
+          "runs": [
+            {
+              "text": "A cantora "
+            },
+            {
+              "text": "Mika Kobayashi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou sua quarta passagem pelo Brasil, com dois shows marcados para 2027: um em São Paulo e outro em Curitiba."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A primeira vinda da artista ao país foi em 2019, no Anime Friends (SP), a segunda foi em 2024, no Anime Summit (DF) e a terceira foi este ano, novamente no Anime Summit, no mês de maio.",
+          "runs": [
+            {
+              "text": "A primeira vinda da artista ao país foi em 2019, no Anime Friends (SP), a segunda foi em 2024, no Anime Summit (DF) e a terceira foi este ano, novamente no Anime Summit, no mês de maio."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em 2027, a apresentação em Curitiba será na casa de shows Stage Garden, no dia 11 de abril. Os ingressos já estão à venda pelo site Articket, com valores entre R$ 260 + taxas (pista meia solidária) e R$ 920 + taxas (mezanino inteira). Há ainda a opção de meet and greet por R$ 350 + taxas (sem incluir o valor do ingresso principal).",
+          "runs": [
+            {
+              "text": "Em 2027, "
+            },
+            {
+              "text": "a apresentação em Curitiba será na casa de shows Stage Garden, no dia 11 de abril",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Os ingressos já estão à venda pelo site "
+            },
+            {
+              "text": "Articket",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://articket.com.br/e/7061/mika-kobayashi"
+            },
+            {
+              "text": ", com valores entre R$ 260 + taxas (pista meia solidária) e R$ 920 + taxas (mezanino inteira). Há ainda a opção de "
+            },
+            {
+              "text": "meet and greet",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " por R$ 350 + taxas (sem incluir o valor do ingresso principal)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já em São Paulo, a apresentação será no dia 13 de abril, no Manifesto Bar. As entradas para este show estão disponíveis pelo Clube do Ingresso, com valores entre R$ 290 + taxas (pista meia-entrada) e R$ 960 + taxas (pista vip inteira). Na cidade, também há a opção de comprar o meet and greet, por R$ 360 + taxas (sem incluir o ingresso principal).",
+          "runs": [
+            {
+              "text": "Já "
+            },
+            {
+              "text": "em São Paulo, a apresentação será no dia 13 de abril, no Manifesto Bar",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". As entradas para este show estão disponíveis pelo "
+            },
+            {
+              "text": "Clube do Ingresso",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.clubedoingresso.com/evento/mikakobayashi"
+            },
+            {
+              "text": ", com valores entre R$ 290 + taxas (pista meia-entrada) e R$ 960 + taxas (pista vip inteira). Na cidade, também há a opção de comprar o meet and greet, por R$ 360 + taxas (sem incluir o ingresso principal)."
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "View this post on Instagram",
+          "runs": [
+            {
+              "text": " View this post on Instagram ",
+              "href": "https://www.instagram.com/p/DdZ8tHBRmxd/?utm_source=ig_embed&utm_campaign=loading"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Cantora profissional desde 2005, quando lançou seu 1º álbum, Tsukio no Kakeochi, Kobayashi se destacou ao longo da carreira emprestando sua voz a vários temas de animês de sucesso, especialmente em parcerias com o compositor Hiroyuki Sawano.",
+          "runs": [
+            {
+              "text": "Cantora profissional desde 2005, quando lançou seu 1º álbum, "
+            },
+            {
+              "text": "Tsukio no Kakeochi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", Kobayashi se destacou ao longo da carreira emprestando sua voz a vários temas de animês de sucesso, especialmente em parcerias com o compositor "
+            },
+            {
+              "text": "Hiroyuki Sawano.",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre alguns exemplos, temos participações em Attack on Titan, Blue Exorcist, Kill la Kill e The Promised Neverland. Ainda participou da trilha de alguns jogos, como Final Fantasy XI e Xenoblade Chronicles X.",
+          "runs": [
+            {
+              "text": "Entre alguns exemplos, temos participações em "
+            },
+            {
+              "text": "Attack on Titan",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Blue Exorcist",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Kill la Kill",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "The Promised Neverland",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ". Ainda participou da trilha de alguns jogos, como "
+            },
+            {
+              "text": "Final Fantasy XI",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " e"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "Xenoblade Chronicles X.",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=5bxkMmksvVw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/5bxkMmksvVw"
+        },
+        {
+          "type": "heading",
+          "text": "Serviço",
+          "runs": [
+            {
+              "text": "Serviço"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Mika Kobayashi no Brasil 2027",
+          "runs": [
+            {
+              "text": "Mika Kobayashi no Brasil 2027",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Curitiba, 11/04/2027 Local: Stage Garden, Av. Mal. Floriano Peixoto, 4142 – Prado Velho, Curitiba – PR Ingressos pela Articket",
+          "runs": [
+            {
+              "text": "Curitiba, 11/04/2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "  "
+            },
+            {
+              "text": "Local:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Stage Garden, Av. Mal. Floriano Peixoto, 4142 – Prado Velho, Curitiba – PR  "
+            },
+            {
+              "text": "Ingressos pela Articket",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://articket.com.br/e/7061/mika-kobayashi"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "São Paulo, 13/04/2027 Local: Manifesto Bar, Rua Ramos Batista, 207 – Vila Olímpia – São Paulo, SP Ingressos pelo Clube do Ingresso",
+          "runs": [
+            {
+              "text": "São Paulo, 13/04/2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "  "
+            },
+            {
+              "text": "Local:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Manifesto Bar, Rua Ramos Batista, 207 – Vila Olímpia – São Paulo, SP  "
+            },
+            {
+              "text": "Ingressos pelo Clube do Ingresso",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.clubedoingresso.com/evento/mikakobayashi"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Instagram Mika Kobayashi",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Instagram Mika Kobayashi",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.instagram.com/p/Dc4KS-PCLAs/?img_index=1"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-19T19:06:28.000Z",
+      "updatedAt": "2026-10-19T19:07:19.000Z",
+      "expiresAt": "2026-10-26T19:06:28.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/19/mika-kobayashi-conhecida-por-musicas-de-attack-on-titan-e-mais-animes-fara-dois-shows-no-brasil-em-2027",
+          "publishedAt": "2026-10-19T19:06:28.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 333,
+      "qualityScore": 0.986,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 15,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-2d2355d1",
+      "slug": "jun-maeda-escritor-e-compositor-descobre-cancer-na-faringe-jbox-2d2355d1",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Jun Maeda: Escritor e compositor descobre câncer na faringe",
+      "originalTitle": "Jun Maeda: Escritor e compositor descobre câncer na faringe",
+      "summary": "Foi anunciado pela Visual Arts que Jun Maeda, escritor e compositor da Key, descobriu um câncer na faringe. Depois de levar em consideração o estado de saúde e as possibilidades de tratamento, o artista decidiu manter um tratamento paliativo ao invés de um mais ativo contra a doença, para que assim, segundo o que foi divulgado, consiga continuar na produção criativa até o fim. Ele está atualmente hospitalizado.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "Cotidiano",
+        "Games",
+        "Música",
+        "AIR",
+        "Angel Bearts",
+        "Clannad",
+        "Heaven Burns Red",
+        "Jun Maeda",
+        "Kanon",
+        "key",
+        "Visual Arts"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/19/jun-maeda-escritor-e-compositor-descobre-cancer-na-faringe",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/19/jun-maeda-escritor-e-compositor-descobre-cancer-na-faringe",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/jun-maeda-destacada.jpg",
+      "mediaQuery": "Jun Maeda: Escritor e compositor descobre câncer na faringe",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/Gjg5g-POljY"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado pela Visual Arts que Jun Maeda, escritor e compositor da Key, descobriu um câncer na faringe. Depois de levar em consideração o estado de saúde e as possibilidades de tratamento, o artista decidiu manter um tratamento paliativo ao invés de um mais ativo contra a doença, para que assim, segundo o que foi divulgado, consiga continuar na produção criativa até o fim. Ele está atualmente hospitalizado.",
+          "runs": [
+            {
+              "text": "Foi anunciado pela Visual Arts que "
+            },
+            {
+              "text": "Jun Maeda",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", escritor e compositor da "
+            },
+            {
+              "text": "Key",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", descobriu um "
+            },
+            {
+              "text": "câncer na faringe",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Depois de levar em consideração o estado de saúde e as possibilidades de tratamento, o artista "
+            },
+            {
+              "text": "decidiu manter um tratamento paliativo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ao invés de um mais ativo contra a doença, para que assim, segundo o que foi divulgado, consiga continuar na produção criativa até o fim. Ele está atualmente hospitalizado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Jun Maeda vem sofrendo com a doença desde o primeiro semestre deste ano, tendo sentido as dores na garganta se aprofundando por volta do meio do ano e eventualmente descobrindo que se trata de um câncer. O criador está atualmente com 51 anos de idade.",
+          "runs": [
+            {
+              "text": "Jun Maeda vem sofrendo com a doença desde o primeiro semestre deste ano, tendo sentido as dores na garganta se aprofundando por volta do meio do ano e eventualmente descobrindo que se trata de um câncer. O criador está atualmente com 51 anos de idade."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=Gjg5g-POljY",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Gjg5g-POljY"
+        },
+        {
+          "type": "paragraph",
+          "text": "O autor começou sua carreira nos anos 1990 trabalhando em visual novels da Nexton, saindo da desenvolvedora junto de outros criadores para fundar a Key. Ele é conhecido pelo trabalho para produções com Kanon, Clannad, Air, Angel Beats, Little Busters, entre outros, atuando tanto como escritor quanto compositor.",
+          "runs": [
+            {
+              "text": "O autor começou sua carreira nos anos 1990 trabalhando em"
+            },
+            {
+              "text": " visual novels",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " da Nexton, saindo da desenvolvedora junto de outros criadores para fundar a Key. Ele é conhecido pelo trabalho para produções com "
+            },
+            {
+              "text": "Kanon",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Clannad",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Air",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Angel Beats",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Little Busters",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", entre outros, atuando tanto como escritor quanto compositor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Atualmente, o artista está responsável por parte da história de Heaven Burns Red, jogo para celulares lançado em 2022. No pronunciamento da Visual Arts, foi esclarecido que o Maeda completou seu trabalho para o jogo até o capítulo 6, incluindo trechos da história e composição de músicas. No entanto, foi reforçado que, dependendo da progressão da doença, fica incerto se ele vai poder continuar participando da produção.",
+          "runs": [
+            {
+              "text": "Atualmente, o artista está responsável por parte da história de "
+            },
+            {
+              "text": "Heaven Burns Red",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", jogo para celulares lançado em 2022. No pronunciamento da Visual Arts, foi esclarecido que o Maeda "
+            },
+            {
+              "text": "completou seu trabalho para o jogo até o capítulo 6",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", incluindo trechos da história e composição de músicas. No entanto, foi reforçado que, dependendo da progressão da doença, fica incerto se ele vai poder continuar participando da produção."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Maeda também tem um novo projeto musical em processo de criação. Ele planejava inicialmente criar várias composições antes de lançar o projeto, mas decidiu focar em terminar as músicas em que já estava trabalhando o mais rápido possível devido às complicações do câncer. Por pedido do criador, a Visual Arts vai lançar as composições sequencialmente no YouTube.",
+          "runs": [
+            {
+              "text": "Maeda também tem um "
+            },
+            {
+              "text": "novo projeto musical ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "em processo de criação. Ele planejava inicialmente criar várias composições antes de lançar o projeto, mas decidiu focar em terminar as músicas em que já estava trabalhando o mais rápido possível devido às complicações do câncer. Por pedido do criador, a Visual Arts vai lançar as composições sequencialmente no YouTube."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Visual Arts está aceitando mensagens e cartas para Jun Maeda (e-mails podem ser enviados pelo maedajun_message@visual-arts.jp).",
+          "runs": [
+            {
+              "text": "A Visual Arts está aceitando mensagens e cartas para Jun Maeda (e-mails podem ser enviados pelo maedajun_message@visual-arts.jp)."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Visual Arts (X/Twitter)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Visual Arts (X/Twitter)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://x.com/VisualArtsUSA/status/2112076543250124825"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-19T18:08:20.000Z",
+      "updatedAt": "2026-10-19T18:09:06.000Z",
+      "expiresAt": "2026-10-26T18:08:20.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/19/jun-maeda-escritor-e-compositor-descobre-cancer-na-faringe",
+          "publishedAt": "2026-10-19T18:08:20.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 323,
+      "qualityScore": 0.978,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-0658d19c",
       "slug": "bleach-thousand-year-blood-war-divulga-video-com-cenas-dos-ultimos-episodios-animenew-0658d19c",
@@ -1266,7 +2023,7 @@
       ],
       "contentMode": "full",
       "publishedAt": "2026-10-16T20:05:39.000Z",
-      "updatedAt": "2026-10-16T20:07:18.000Z",
+      "updatedAt": "2026-10-19T19:28:31.000Z",
       "expiresAt": "2026-10-23T20:05:39.000Z",
       "category": "Notícias",
       "eventType": "OTHER",
@@ -1283,7 +2040,7 @@
       "sourceCount": 1,
       "readingMinutes": 6,
       "wordCount": 1230,
-      "qualityScore": 1,
+      "qualityScore": 0.97,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -1786,7 +2543,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 413,
-      "qualityScore": 0.998,
+      "qualityScore": 0.938,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -4626,6 +5383,273 @@
       }
     },
     {
+      "id": "animenew-5429fd4a",
+      "slug": "masashi-kishimoto-anuncia-novo-manga-de-naruto-animenew-5429fd4a",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Masashi Kishimoto anuncia novo mangá de Naruto",
+      "originalTitle": "Masashi Kishimoto anuncia novo mangá de Naruto",
+      "summary": "Masashi Kishimoto anunciou um novo mangá da franquia Naruto durante a New York Comic Con 2026. Intitulada Naruto Shadow Rising, a obra terá mais detalhes revelados na Jump Festa 2027.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Mangás",
+        "Notícias",
+        "Masashi Kishimoto",
+        "Naruto"
+      ],
+      "url": "https://animenew.com.br/naruto-shadow-rising-novo-manga-kishimoto",
+      "sourceUrl": "https://animenew.com.br/naruto-shadow-rising-novo-manga-kishimoto",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Masashi-Kishimoto-anuncia-novo-manga-Naruto-Shadow-Rising.webp",
+      "mediaQuery": "Masashi Kishimoto anuncia novo mangá de Naruto",
+      "mediaType": "manga",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/B5QJZFYQ2Qs"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Masashi Kishimoto anunciou um novo mangá da franquia Naruto durante a New York Comic Con 2026. Intitulada Naruto Shadow Rising, a obra terá mais detalhes revelados na Jump Festa 2027.",
+          "runs": [
+            {
+              "text": "Masashi Kishimoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou um novo "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " da franquia Naruto durante a "
+            },
+            {
+              "text": "New York Comic Con 2026",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Intitulada "
+            },
+            {
+              "text": "Naruto Shadow Rising",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", a obra terá mais detalhes revelados na Jump Festa 2027."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Criador de Hunter x Hunter limitará trabalhos devido à saúde",
+              "runs": [
+                {
+                  "text": "Criador de Hunter x Hunter limitará trabalhos devido à saúde",
+                  "href": "https://animenew.com.br/yoshihiro-togashi-hunter-x-hunter-limita-trabalhos"
+                }
+              ]
+            },
+            {
+              "text": "Chained Soldier entra em pausa devido à saúde do autor",
+              "runs": [
+                {
+                  "text": "Chained Soldier entra em pausa devido à saúde do autor",
+                  "href": "https://animenew.com.br/chained-soldier-manga-hiato"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anúncio aconteceu no painel “NARUTO: What’s Next?”, realizado no sábado, 10 de outubro. Um vídeo promocional apresentou o título do novo projeto, posteriormente confirmado pela conta oficial japonesa da franquia nas redes sociais.",
+          "runs": [
+            {
+              "text": "O anúncio aconteceu no painel “"
+            },
+            {
+              "text": "NARUTO: What’s Next?",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "”, realizado no sábado, 10 de outubro. Um vídeo promocional apresentou o título do novo projeto, posteriormente confirmado pela conta oficial japonesa da franquia nas redes sociais."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=B5QJZFYQ2Qs",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/B5QJZFYQ2Qs"
+        },
+        {
+          "type": "paragraph",
+          "text": "A próxima divulgação está marcada para os dias 19 e 20 de dezembro, durante a Jump Festa 2027. Até o momento, não foram reveladas informações sobre a história, os personagens ou a previsão de lançamento do mangá.",
+          "runs": [
+            {
+              "text": "A próxima divulgação está marcada para os dias 19 e 20 de dezembro, durante a "
+            },
+            {
+              "text": "Jump Festa 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Até o momento, não foram reveladas informações sobre a história, os personagens ou a previsão de lançamento do mangá."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Retorno ao universo ninja",
+          "runs": [
+            {
+              "text": "Retorno ao universo ninja"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Publicado pela Shueisha na revista Weekly Shonen Jump a partir de 1999, o mangá original de Naruto chegou ao fim em novembro de 2014. A obra deu origem a duas séries principais de anime, filmes, jogos e diversas histórias derivadas.",
+          "runs": [
+            {
+              "text": "Publicado pela "
+            },
+            {
+              "text": "Shueisha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na revista "
+            },
+            {
+              "text": "Weekly Shonen Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " a partir de 1999, o mangá original de Naruto chegou ao fim em novembro de 2014. A obra deu origem a duas séries principais de anime, filmes, jogos e diversas histórias derivadas."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Como ficou Boruto?",
+          "runs": [
+            {
+              "text": "Como ficou Boruto?"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre elas está Boruto, sequência lançada em 2016 com roteiro de Ukyō Kodachi e ilustrações de Mikio Ikemoto. Kishimoto assumiu a escrita da série em novembro de 2020.",
+          "runs": [
+            {
+              "text": "Entre elas está "
+            },
+            {
+              "text": "Boruto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", sequência lançada em 2016 com roteiro de Ukyō Kodachi e ilustrações de Mikio Ikemoto. Kishimoto assumiu a escrita da série em novembro de 2020."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Atualmente, a continuação segue em publicação com o título Boruto: Two Blue Vortex. Ainda não está claro se Naruto Shadow Rising terá ligação direta com essa história ou apresentará uma nova fase da franquia.",
+          "runs": [
+            {
+              "text": "Atualmente, a continuação segue em publicação com o título Boruto: Two Blue Vortex. Ainda não está claro se Naruto Shadow Rising terá ligação direta com essa história ou apresentará uma nova fase da franquia."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Masashi Kishimoto anuncia novo mangá de Naruto.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Masashi Kishimoto anuncia novo mangá de Naruto",
+              "href": "https://animenew.com.br/naruto-shadow-rising-novo-manga-kishimoto/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-14T00:30:56.000Z",
+      "updatedAt": "2026-10-14T00:30:56.000Z",
+      "expiresAt": "2026-10-21T00:30:56.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/naruto-shadow-rising-novo-manga-kishimoto",
+          "publishedAt": "2026-10-14T00:30:56.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 249,
+      "qualityScore": 0.911,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
       "id": "animenew-e16ea872",
       "slug": "anime-de-zumbis-revela-trailer-e-musicas-tema-para-2027-animenew-e16ea872",
       "source": "AnimeNew",
@@ -5136,1666 +6160,6 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-7b5d9710",
-      "slug": "anime-de-kagurabachi-tem-turne-confirmada-no-brasil-durante-a-ccxp-2026-jbox-7b5d9710",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Animê de ‘Kagurabachi’ tem turnê confirmada no Brasil durante a CCXP 2026",
-      "originalTitle": "Animê de ‘Kagurabachi’ tem turnê confirmada no Brasil durante a CCXP 2026",
-      "summary": "A CyberAgent confirmou que a turnê de lançamento do animê Kagurabachi vai passar pelo Brasil em dezembro deste ano, dentro da CCXP. A possibilidade já havia sido ventilada ao JBox durante entrevista com representantes da empresa na LicensingCon Latam 2026, e agora anunciada oficialmente.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Eventos",
-        "animê de Kagurabachi",
-        "animê de Kagurabachi no Brasil",
-        "Chihiro Rokuhira",
-        "kagurabachi",
-        "Kagurabachi na CCXP",
-        "Kagurabachi na CCXP 2026",
-        "Kagurabachi na Crunchyroll",
-        "Turnê de Kagurabachi no Brasil"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/12/anime-de-kagurabachi-tem-turne-confirmada-no-brasil-durante-a-ccxp-2026",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/12/anime-de-kagurabachi-tem-turne-confirmada-no-brasil-durante-a-ccxp-2026",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/06/Kagurabachi-destacada.jpg",
-      "mediaQuery": "Animê de ‘Kagurabachi’ tem turnê confirmada no Brasil durante a CCXP 2026",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Kagurabachi.webp",
-          "alt": "Arte de Kagurabachi",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A CyberAgent confirmou que a turnê de lançamento do animê Kagurabachi vai passar pelo Brasil em dezembro deste ano, dentro da CCXP. A possibilidade já havia sido ventilada ao JBox durante entrevista com representantes da empresa na LicensingCon Latam 2026, e agora anunciada oficialmente.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "CyberAgent",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " confirmou que a turnê de lançamento do animê "
-            },
-            {
-              "text": "Kagurabachi",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " vai passar pelo Brasil em dezembro deste ano, dentro da "
-            },
-            {
-              "text": "CCXP",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A possibilidade "
-            },
-            {
-              "text": "já havia sido ventilada ao ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/18/licensingcon-latam-2026-mostra-interesse-das-marcas-em-animes-e-planos-de-longo-prazo/"
-            },
-            {
-              "text": "JBox",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/18/licensingcon-latam-2026-mostra-interesse-das-marcas-em-animes-e-planos-de-longo-prazo/"
-            },
-            {
-              "text": " durante entrevista com representantes da empresa na "
-            },
-            {
-              "text": "LicensingCon Latam 2026",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e agora anunciada oficialmente."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Segundo o Anitrendz, o comunicado oficial diz que a turnê passará por Singapura, Seul (na Coreia do Sul) e São Paulo, exibindo os primeiros 20 minutos da estreia do animê (o que corresponde a quase um episódio completo).",
-          "runs": [
-            {
-              "text": "Segundo o "
-            },
-            {
-              "text": "Anitrendz",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", o comunicado oficial diz que a turnê passará por Singapura, Seul (na Coreia do Sul) e São Paulo, exibindo os primeiros 20 minutos da estreia do animê (o que corresponde a quase um episódio completo)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O evento em Singapura acontece no dia 29 de novembro, e terá ainda as presenças de Taihi Kimura, voz original de Chihiro Rokuhira, e de Kan Mizoguchi, produtor de animação do projeto. Detalhes sobre o painel na CCXP não foram divulgados, mas uma das possibilidades é que ele aconteça no dia 6 de dezembro, último dia do evento nerd em São Paulo.",
-          "runs": [
-            {
-              "text": "O evento em Singapura acontece no dia 29 de novembro, e terá ainda as presenças de "
-            },
-            {
-              "text": "Taihi Kimura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", voz original de Chihiro Rokuhira, e de "
-            },
-            {
-              "text": "Kan Mizoguchi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", produtor de animação do projeto. Detalhes sobre o painel na"
-            },
-            {
-              "text": " CCXP",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " não foram divulgados, mas uma das possibilidades é que ele aconteça no dia "
-            },
-            {
-              "text": "6 de dezembro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", último dia do evento nerd em São Paulo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O encerramento da turnê será em Tóquio, no dia 27 de março de 2027, com a exibição dos dois primeiros episódios do animê, que também passarão nos cinemas japoneses.",
-          "runs": [
-            {
-              "text": "O encerramento da turnê será em Tóquio, no dia 27 de março de 2027, com a exibição dos dois primeiros episódios do animê, que também passarão nos cinemas japoneses."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Outra novidade é que Tetsuya Takeuchi, diretor do animê, fez uma arte celebrando o terceiro aniversário da obra criada por Takeru Hokazono:",
-          "runs": [
-            {
-              "text": "Outra novidade é que "
-            },
-            {
-              "text": "Tetsuya Takeuchi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", diretor do animê, fez uma arte celebrando o terceiro aniversário da obra criada por "
-            },
-            {
-              "text": "Takeru Hokazono",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ":"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Kagurabachi.webp",
-          "alt": "Arte de Kagurabachi"
-        },
-        {
-          "type": "paragraph",
-          "text": "Nova arte destaca o protagonista Chihiro | Divulgação",
-          "runs": [
-            {
-              "text": "Nova arte destaca o protagonista Chihiro | Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na história de Kagurabachi, Chihiro é um garoto que sonhava em ser um ferreiro tão renomado quanto seu pai, responsável por forjar seis espadas encantadas. No entanto, sua vida feliz é interrompida por uma tragédia, o que faz com que o rapaz parta em uma jornada em busca de vingança com a ajuda do poder de uma sétima lâmina encantada, que até então era secreta.",
-          "runs": [
-            {
-              "text": "Na história de "
-            },
-            {
-              "text": "Kagurabachi",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", Chihiro é um garoto que sonhava em ser um ferreiro tão renomado quanto seu pai, responsável por forjar seis espadas encantadas. No entanto, sua vida feliz é interrompida por uma tragédia, o que faz com que o rapaz parta em uma jornada em busca de vingança com a ajuda do poder de uma sétima lâmina encantada, que até então era secreta."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além de Takeuchi (From Bureaucrat to Villainess) na direção, o animê tem design de personagens de Keigo Sasaki (Blue Exorcist). A produção da animação é pelo estúdio CyPic, nova nomenclatura adotada pelo CygamesPictures (O Verão em que Hikaru Morreu).",
-          "runs": [
-            {
-              "text": "Além de Takeuchi ("
-            },
-            {
-              "text": "From Bureaucrat to Villainess",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") na direção, o animê tem design de personagens de "
-            },
-            {
-              "text": "Keigo Sasaki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Blue Exorcist",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "). A produção da animação é pelo estúdio "
-            },
-            {
-              "text": "CyPic",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", nova nomenclatura adotada pelo "
-            },
-            {
-              "text": "CygamesPictures",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "O Verão em que Hikaru Morreu",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ")."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O mangá, que fez bastante sucesso no lançamento e gerou grandes expectativas para o animê, é escrito e ilustrado por Takeru Hokazono, e seriado na Shonen Jump desde setembro de 2023, com 10 volumes encadernados disponíveis no Japão até o momento. Capítulos recentes podem ser lidos gratuitamente na MANGA Plus, contando com tradução para português. A versão encadernada sai no Brasil pela Panini.",
-          "runs": [
-            {
-              "text": "O mangá, que fez bastante sucesso no lançamento e gerou grandes expectativas para o animê, é  escrito e ilustrado por "
-            },
-            {
-              "text": "Takeru Hokazono",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e seriado na "
-            },
-            {
-              "text": "Shonen Jump",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " desde setembro de 2023, com 10 volumes encadernados disponíveis no Japão até o momento. Capítulos recentes podem ser lidos gratuitamente na "
-            },
-            {
-              "text": "MANGA Plus",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://mangaplus.shueisha.co.jp/titles/500007"
-            },
-            {
-              "text": ", contando com tradução para português. A versão encadernada sai no Brasil pela "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Kagurabachi estreia em abril de 2027, com transmissão pela Crunchyroll. Já a CCXP 2026 acontece entre os dias 3 a 6 de dezembro de 2026 no São Paulo Expo, na capital paulista.",
-          "runs": [
-            {
-              "text": "Kagurabachi",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " estreia em abril de 2027, com transmissão pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Já a "
-            },
-            {
-              "text": "CCXP 2026",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " acontece entre os dias "
-            },
-            {
-              "text": "3 a 6 de dezembro de 2026",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no "
-            },
-            {
-              "text": "São Paulo Expo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", na capital paulista."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Anitrendz",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Anitrendz",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://anitrendz.net/news/2026/10/12/kagurabachi-anime-world-tour-coming-to-singapore-south-korea-brazil-before-japan-finish/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-12T19:54:50.000Z",
-      "updatedAt": "2026-10-12T19:55:20.000Z",
-      "expiresAt": "2026-10-19T19:54:50.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/12/anime-de-kagurabachi-tem-turne-confirmada-no-brasil-durante-a-ccxp-2026",
-          "publishedAt": "2026-10-12T19:54:50.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 421,
-      "qualityScore": 0.934,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 14,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-e886464c",
-      "slug": "bug-ego-panini-deve-publicar-manga-do-autor-de-one-punch-man-jbox-e886464c",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Bug Ego: Panini deve publicar mangá do autor de ‘One-Punch Man’",
-      "originalTitle": "Bug Ego: Panini deve publicar mangá do autor de ‘One-Punch Man’",
-      "summary": "Segundo registro feito no ISBN, a Panini deve publicar no Brasil o mangá Bug Ego, obra escrita por ONE, autor conhecido por One-Punch Man e Mob Psycho 100. A editora não fez nenhum anúncio oficial até o momento da postagem desta notícia.",
-      "author": "Teke",
-      "tags": [
-        "Mangá",
-        "Bug Ego",
-        "hideo yamamoto",
-        "homunculus",
-        "Kiyoto Shitara",
-        "mangá do autor de one punch man",
-        "one",
-        "Panini"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/12/bug-ego-panini-deve-publicar-manga-do-autor-de-one-punch-man",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/12/bug-ego-panini-deve-publicar-manga-do-autor-de-one-punch-man",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/bug-ego-destacada.jpg",
-      "mediaQuery": "Bug Ego: Panini deve publicar mangá do autor de ‘One-Punch Man’",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/bug-ego-volume-1.jpg",
-          "alt": "imagem: capa do volume 1 de 'Bug Ego'. Na ilustração, o personagem Kokudou aparece em uma realidade paralela, segurando uma vara de pesca translúcida.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Segundo registro feito no ISBN, a Panini deve publicar no Brasil o mangá Bug Ego, obra escrita por ONE, autor conhecido por One-Punch Man e Mob Psycho 100. A editora não fez nenhum anúncio oficial até o momento da postagem desta notícia.",
-          "runs": [
-            {
-              "text": "Segundo registro feito no ISBN, a "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " deve publicar no Brasil o mangá "
-            },
-            {
-              "text": "Bug Ego",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", obra escrita por "
-            },
-            {
-              "text": "ONE",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", autor conhecido por "
-            },
-            {
-              "text": "One-Punch Man",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Mob Psycho 100",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". A editora não fez nenhum anúncio oficial até o momento da postagem desta notícia."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/bug-ego-volume-1.jpg",
-          "alt": "imagem: capa do volume 1 de 'Bug Ego'. Na ilustração, o personagem Kokudou aparece em uma realidade paralela, segurando uma vara de pesca translúcida."
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Divulgação/Shueisha.",
-          "runs": [
-            {
-              "text": "Imagem: Divulgação/Shueisha."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Bug Ego é ilustrado por Kiyoto Shitara. O mangá é publicado desde 2023, tendo sido iniciado na Young Jump Dai Ichiwa e posteriormente ganhando lançamento regular na Ultra Jump. A série conta até então com 4 volumes encadernados pela Shueisha.",
-          "runs": [
-            {
-              "text": "Bug Ego",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é ilustrado por "
-            },
-            {
-              "text": "Kiyoto Shitara",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". O mangá é publicado desde 2023, tendo sido iniciado na "
-            },
-            {
-              "text": "Young Jump Dai Ichiwa",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e posteriormente ganhando lançamento regular na "
-            },
-            {
-              "text": "Ultra Jump",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". A série conta até então com 4 volumes encadernados pela Shueisha."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história acompanha Hitsujiya, um rapaz muito gentil que tenta ajudar Kokudou, seu colega solitário, a lidar com a vida escolar para torná-la mais agradável. No entanto, o que parece apenas uma relação bonita entre dois amigos pode acabar se complicando quando Kokudou revela sua capacidade de hackear a própria realidade.",
-          "runs": [
-            {
-              "text": "A história acompanha Hitsujiya, um rapaz muito gentil que tenta ajudar Kokudou, seu colega solitário, a lidar com a vida escolar para torná-la mais agradável. No entanto, o que parece apenas uma relação bonita entre dois amigos pode acabar se complicando quando Kokudou revela sua capacidade de hackear a própria realidade."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Outra novidade também apareceu no ISBN",
-          "runs": [
-            {
-              "text": "Outra novidade também apareceu no ISBN",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "Além de Bug Ego, a Panini também registrou um novo lançamento de Homunculus na plataforma, registrado como “Homunculus – Jacket“, título marcado como provisório. O registro não dá mais detalhes do que se trata, mas o que especula-se é um possível relançamento ou reimpressão do mangá. No início deste ano, Thiago Ferreira, da editora Comix Zone, comentou que novidades sobre o mangá no Brasil poderiam surgir em breve, mas não pela Comix Zone.",
-          "runs": [
-            {
-              "text": "Além de "
-            },
-            {
-              "text": "Bug Ego",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", a Panini também registrou um novo lançamento de "
-            },
-            {
-              "text": "Homunculus",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "na plataforma, registrado como “"
-            },
-            {
-              "text": "Homunculus – Jacket",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "“, título marcado como provisório. O registro não dá mais detalhes do que se trata, mas o que especula-se é um possível relançamento ou reimpressão do mangá. No início deste ano, Thiago Ferreira, da editora Comix Zone, "
-            },
-            {
-              "text": "comentou que novidades sobre o mangá no Brasil poderiam surgir em breve, mas não pela Comix Zone",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://x.com/BBMangas/status/2031531725281501203"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Homunculus foi publicado pela Panini entre 2008 e 2014, tendo tido um processo conturbado para o lançamento do volume final, que chegou ao Brasil apenas três anos depois da penúltima edição. No Japão, a obra de Hideo Yamamoto foi publicada entre 2003 e 2011.",
-          "runs": [
-            {
-              "text": "Homunculus",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " foi publicado pela Panini entre 2008 e 2014, tendo tido um processo conturbado para o lançamento do volume final, que chegou ao Brasil apenas três anos depois da penúltima edição. No Japão, a obra de "
-            },
-            {
-              "text": "Hideo Yamamoto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " foi publicada entre 2003 e 2011."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: ISBN",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "ISBN",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.cblservicos.org.br/isbn/pesquisa/?page=1&q=bug%20ego&filtrar_por%5B0%5D=todos&ord%5B0%5D=relevancia&dir%5B0%5D=asc"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-12T15:35:36.000Z",
-      "updatedAt": "2026-10-12T16:36:27.000Z",
-      "expiresAt": "2026-10-19T15:35:36.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/12/bug-ego-panini-deve-publicar-manga-do-autor-de-one-punch-man",
-          "publishedAt": "2026-10-12T15:35:36.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 277,
-      "qualityScore": 0.915,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-0fd8ca8d",
-      "slug": "naruto-ganha-anime-crossover-com-ninku-manga-que-inspirou-masashi-kishimoto-jbox-0fd8ca8d",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Naruto’ ganha animê crossover com ‘Ninku’, mangá que inspirou Masashi Kishimoto",
-      "originalTitle": "‘Naruto’ ganha animê crossover com ‘Ninku’, mangá que inspirou Masashi Kishimoto",
-      "summary": "O universo de Naruto vai se encontrar com o de Ninku em um novo animê crossover. O anúncio foi feito no sábado (10), durante o painel NARUTO: What’s Next?, na New York Comic Con, que revelou mais detalhes sobre a nova série anunciada em setembro. Intitulada NARUTO×NINKŪ, a produção vai reunir personagens da obra de Masashi Kishimoto e do mangá de ninjas criado por Koji Kiriyama.",
-      "author": "Igor Lunei",
-      "tags": [
-        "Anime",
-        "Crossover entre Naruto e Ninku",
-        "Naruto",
-        "Ninku",
-        "novo anime de naruto",
-        "o que é ninku?"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/12/naruto-ganha-anime-crossover-com-ninku-manga-que-inspirou-masashi-kishimoto",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/12/naruto-ganha-anime-crossover-com-ninku-manga-que-inspirou-masashi-kishimoto",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/naruto-ninku-destacada.jpg",
-      "mediaQuery": "‘Naruto’ ganha animê crossover com ‘Ninku’, mangá que inspirou Masashi Kishimoto",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/naruto-ninku-visual.jfif_.jpg",
-          "alt": "Imagem: Personagens dos animês Naruto e Ninku lado a lado em um banner de anúncio.",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/07/Naruto-01.webp",
-          "alt": "Imagem do animê de Naruto",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/hCZi_R0MnvE"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/videoseries"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O universo de Naruto vai se encontrar com o de Ninku em um novo animê crossover. O anúncio foi feito no sábado (10), durante o painel NARUTO: What’s Next?, na New York Comic Con, que revelou mais detalhes sobre a nova série anunciada em setembro. Intitulada NARUTO×NINKŪ, a produção vai reunir personagens da obra de Masashi Kishimoto e do mangá de ninjas criado por Koji Kiriyama.",
-          "runs": [
-            {
-              "text": "O universo de "
-            },
-            {
-              "text": "Naruto",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " vai se encontrar com o de "
-            },
-            {
-              "text": "Ninku",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " em um novo animê "
-            },
-            {
-              "text": "crossover",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". O anúncio foi feito no sábado (10), durante o painel"
-            },
-            {
-              "text": " NARUTO: What’s Next?",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", na New York Comic Con, que revelou mais detalhes sobre a nova série anunciada em setembro. Intitulada "
-            },
-            {
-              "text": "NARUTO×NINKŪ",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", a produção vai reunir personagens da obra de "
-            },
-            {
-              "text": "Masashi Kishimoto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e do mangá de ninjas criado por "
-            },
-            {
-              "text": "Koji Kiriyama",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Durante o evento, foi explicado que Ninku serviu de inspiração para Kishimoto criar Naruto. Um vídeo promocional divulgado na ocasião traz uma declaração do autor:",
-          "runs": [
-            {
-              "text": "Durante o evento, foi explicado que "
-            },
-            {
-              "text": "Ninku",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " serviu de inspiração para Kishimoto criar "
-            },
-            {
-              "text": "Naruto",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Um vídeo promocional divulgado na ocasião traz uma declaração do autor:"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "Sem Ninku, não existiria Naruto. Eu queria ler mais de Ninku, então comecei a desenhar Naruto.",
-          "runs": [
-            {
-              "text": "Sem "
-            },
-            {
-              "text": "Ninku",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", não existiria "
-            },
-            {
-              "text": "Naruto",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Eu queria ler mais de "
-            },
-            {
-              "text": "Ninku",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", então comecei a desenhar "
-            },
-            {
-              "text": "Naruto",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=hCZi_R0MnvE",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/hCZi_R0MnvE"
-        },
-        {
-          "type": "paragraph",
-          "text": "Kishimoto e Kiriyama vão supervisionar a história original do crossover. Na trama, Naruto assume temporariamente a liderança do Time 7, já que Kakashi não pode acompanhá-los em uma missão. Durante a jornada, Naruto, Sasuke e Sakura acabam entrando por acidente no mundo de Ninku.",
-          "runs": [
-            {
-              "text": "Kishimoto e Kiriyama vão supervisionar a história original do "
-            },
-            {
-              "text": "crossover",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Na trama, Naruto assume temporariamente a liderança do Time 7, já que Kakashi não pode acompanhá-los em uma missão. Durante a jornada, Naruto, Sasuke e Sakura acabam entrando por acidente no mundo de "
-            },
-            {
-              "text": "Ninku",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Noriyuki Abe, diretor-chefe de Boruto: Naruto Next Generations e diretor do animê de Ninku, ficará responsável pela direção da nova produção. Tetsuya Nishio, que trabalhou nas adaptações animadas de Naruto e Ninku, será o designer de personagens e diretor-chefe de animação.",
-          "runs": [
-            {
-              "text": "Noriyuki Abe",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", diretor-chefe de"
-            },
-            {
-              "text": " ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Boruto: Naruto Next Generations",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " e diretor do animê de "
-            },
-            {
-              "text": "Ninku",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", ficará responsável pela direção da nova produção. "
-            },
-            {
-              "text": "Tetsuya Nishio",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que trabalhou nas adaptações animadas de "
-            },
-            {
-              "text": "Naruto",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Ninku",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", será o "
-            },
-            {
-              "text": "designer",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " de personagens e diretor-chefe de animação."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O painel também apresentou uma ilustração promocional da colaboração e desenhos comemorativos feitos pelos dois criadores dos mangás:",
-          "runs": [
-            {
-              "text": "O painel também apresentou uma ilustração promocional da colaboração e desenhos comemorativos feitos pelos dois criadores dos mangás:"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/naruto-ninku-visual.jfif_.jpg",
-          "alt": "Imagem: Personagens dos animês Naruto e Ninku lado a lado em um banner de anúncio."
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Estúdio Pierrot/Divulgação",
-          "runs": [
-            {
-              "text": "Imagem: Estúdio Pierrot/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Mas o que diabos é Ninku?",
-          "runs": [
-            {
-              "text": "Mas o que diabos é Ninku?"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "Ninku é um mangá escrito por Koji Kiriyama e publicado pela Weekly Shonen Jump, da Shueisha, entre 1993 e 1995, compilado em nove volumes. A história acompanha Fuusuke, um garoto de 12 anos que domina o estilo de luta Ninku, uma arte marcial que mistura ninjutsu e kung-fu. Após uma grande guerra, ele parte em uma jornada por um mundo conturbado em busca de sua mãe, que foi sequestrada. Pelo caminho, também tenta reunir os antigos capitães do Corpo Ninku para enfrentar um império tirânico que persegue os praticantes dessa arte marcial.",
-          "runs": [
-            {
-              "text": "Ninku",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é um mangá escrito por Koji Kiriyama e publicado pela "
-            },
-            {
-              "text": "Weekly Shonen Jump",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", da Shueisha, entre 1993 e 1995, compilado em nove volumes. A história acompanha Fuusuke, um garoto de 12 anos que domina o estilo de luta Ninku, uma arte marcial que mistura ninjutsu e kung-fu. Após uma grande guerra, ele parte em uma jornada por um mundo conturbado em busca de sua mãe, que foi sequestrada. Pelo caminho, também tenta reunir os antigos capitães do Corpo Ninku para enfrentar um império tirânico que persegue os praticantes dessa arte marcial."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Em 1994, a obra ganhou uma adaptação animada de média-metragem, com 34 minutos de duração, produzida pelo estúdio Pierrot e intitulada Ninku: Tomb of Knives. A direção ficou a cargo de Noriyuki Abe, que, como dito, foi o mesmo que comandou o animê de Boruto, o filho do Naruto! No ano seguinte, o Pierrot lançou uma série de televisão também dirigida por Abe, que teve 55 episódios. 1995 ainda marcou a estreia de outro filme animado da franquia, dessa vez com 26 minutos de duração. Uma sequência em mangá, Ninku Second Stage: Eto Nin-Hen, começou a ser publicada na revista Ultra Jump, da Shueisha, em 2005, e terminou em 2011, totalizando 12 volumes.",
-          "runs": [
-            {
-              "text": "Em 1994, a obra ganhou uma adaptação animada de média-metragem, com 34 minutos de duração, produzida pelo estúdio Pierrot e intitulada "
-            },
-            {
-              "text": "Ninku: Tomb of Knives",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". A direção ficou a cargo de Noriyuki Abe, que, como dito, foi o mesmo que comandou o animê de "
-            },
-            {
-              "text": "Boruto",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", o filho do Naruto! No ano seguinte, o Pierrot lançou uma série de televisão também dirigida por Abe, que teve 55 episódios. 1995 ainda marcou a estreia de outro filme animado da franquia, dessa vez com 26 minutos de duração. Uma sequência em mangá, "
-            },
-            {
-              "text": "Ninku Second Stage: Eto Nin-Hen",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", começou a ser publicada na revista "
-            },
-            {
-              "text": "Ultra Jump",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", da Shueisha, em 2005, e terminou em 2011, totalizando 12 volumes."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Como preparação para a estreia do crossover, o estúdio Pierrot está disponibilizando gratuitamente os cinco primeiros episódios do animê de Ninku em seu canal no YouTube (com áudio original em japonês e opções de legenda em inglês, espanhol, francês e chinês tradicional):",
-          "runs": [
-            {
-              "text": "Como preparação para a estreia do "
-            },
-            {
-              "text": "crossover",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", o estúdio Pierrot está disponibilizando gratuitamente os "
-            },
-            {
-              "text": "cinco primeiros episódios",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " do animê de "
-            },
-            {
-              "text": "Ninku",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " em seu canal no YouTube (com áudio original em japonês e opções de legenda em inglês, espanhol, francês e chinês tradicional):"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=videoseries",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/videoseries"
-        },
-        {
-          "type": "paragraph",
-          "text": "Vale lembrar que, em 2023, o animê de Naruto anunciou quatro episódios inéditos para comemorar seu 20º aniversário, com previsão de exibição semanal a partir de setembro daquele ano. No entanto, uma semana antes da estreia planejada, os episódios foram adiados para que a equipe pudesse melhorar sua qualidade. Desde agosto de 2023, não houve novas informações sobre o projeto, e ainda não está claro se esse crossover tem alguma relação com esses episódios adiados.",
-          "runs": [
-            {
-              "text": "Vale lembrar que, em 2023, o animê de "
-            },
-            {
-              "text": "Naruto",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " anunciou quatro episódios inéditos para comemorar seu 20º aniversário, com previsão de exibição semanal a partir de setembro daquele ano. No entanto, uma semana antes da estreia planejada, os episódios foram adiados para que a equipe pudesse melhorar sua qualidade. Desde agosto de 2023, não houve novas informações sobre o projeto, e ainda não está claro se esse "
-            },
-            {
-              "text": "crossover",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " tem alguma relação com esses episódios adiados."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A Lionsgate também está produzindo uma adaptação hollywoodiana em live-action do mangá. Em julho, o site oficial da franquia anunciou que a produção do filme havia iniciado uma busca global por atores para interpretar os protagonistas Naruto, Sasuke e Sakura, enquanto a seleção do elenco para os demais personagens será realizada posteriormente. Charles Melton, conhecido por Riverdale e Beef, estaria em negociações finais para interpretar o Kakashi-sensei.",
-          "runs": [
-            {
-              "text": "A Lionsgate também está produzindo uma adaptação hollywoodiana em live-action do mangá. Em julho, o site oficial da franquia anunciou que a produção do filme"
-            },
-            {
-              "text": " havia iniciado uma busca global por atores para interpretar os protagonistas Naruto, Sasuke e Sakura",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/14/filme-live-action-de-naruto-inicia-busca-global-por-trio-de-protagonistas/"
-            },
-            {
-              "text": ", enquanto a seleção do elenco para os demais personagens será realizada posteriormente. "
-            },
-            {
-              "text": "Charles Melton, conhecido por",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/22/charles-melton-e-cotado-para-interpretar-kakashi-no-live-action-de-naruto/"
-            },
-            {
-              "text": " Riverdale",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/22/charles-melton-e-cotado-para-interpretar-kakashi-no-live-action-de-naruto/"
-            },
-            {
-              "text": " e ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/22/charles-melton-e-cotado-para-interpretar-kakashi-no-live-action-de-naruto/"
-            },
-            {
-              "text": "Beef",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/22/charles-melton-e-cotado-para-interpretar-kakashi-no-live-action-de-naruto/"
-            },
-            {
-              "text": ", estaria em negociações finais para interpretar o Kakashi-sensei."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Destin Daniel Cretton, diretor de Shang-Chi e a Lenda dos Dez Anéis e Homem-Aranha: Um Novo Dia, comandará o filme e também atuará como produtor por meio de sua empresa, Hisako, ao lado de Jeyun Munford. Avi Arad, Ari Arad e Emmy Yu, da Arad Productions, além de Jeremy Latcham, também estão creditados como produtores.",
-          "runs": [
-            {
-              "text": "Destin Daniel Cretton",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", diretor de "
-            },
-            {
-              "text": "Shang-Chi e a Lenda dos Dez Anéis",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Homem-Aranha: Um Novo Dia",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", comandará o filme e também atuará como produtor por meio de sua empresa, Hisako, ao lado de Jeyun Munford. Avi Arad, Ari Arad e Emmy Yu, da Arad Productions, além de Jeremy Latcham, também estão creditados como produtores."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/07/Naruto-01.webp",
-          "alt": "Imagem do animê de Naruto"
-        },
-        {
-          "type": "paragraph",
-          "text": "Estão preparados para ver o Time 7 em live-action? | Divulgação",
-          "runs": [
-            {
-              "text": "Estão preparados para ver o Time 7 em live-action? | Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história de Naruto foi escrita e ilustrada por Masashi Kishimoto em 72 volumes, lançados entre 1999 e 2014. A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila. Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura.",
-          "runs": [
-            {
-              "text": "A história de"
-            },
-            {
-              "text": " Naruto",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " foi escrita e ilustrada por "
-            },
-            {
-              "text": "Masashi Kishimoto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " em 72 volumes, lançados entre 1999 e 2014. A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila. Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, Naruto Shippuden mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017. Atualmente, Kishimoto assina a publicação de Boruto ao lado de Ukyou Kodachi, contando a história do filho de Naruto.",
-          "runs": [
-            {
-              "text": "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, "
-            },
-            {
-              "text": "Naruto Shippuden",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017. Atualmente, Kishimoto assina a publicação de "
-            },
-            {
-              "text": "Boruto",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ao lado de "
-            },
-            {
-              "text": "Ukyou Kodachi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", contando a história do filho de Naruto."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para quem deseja retornar à Vila da Folha antes da chegada do live-action, os episódios de Naruto estão disponíveis em plataformas como Crunchyroll, Netflix, HBO Max, Disney+, Pluto TV e Mercado Play. Já o mangá é publicado no Brasil pela Panini.",
-          "runs": [
-            {
-              "text": "Para quem deseja retornar à Vila da Folha antes da chegada do live-action, os episódios de "
-            },
-            {
-              "text": "Naruto",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " estão disponíveis em plataformas como "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "HBO Max, Disney+, Pluto TV",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Mercado Play",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Já o mangá é publicado no Brasil pela"
-            },
-            {
-              "text": " Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Painel NARUTO: What’s Next?",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Painel NARUTO: What’s Next?",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.youtube.com/watch?v=G2B8oLsZNeU"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-12T14:39:11.000Z",
-      "updatedAt": "2026-10-12T14:41:20.000Z",
-      "expiresAt": "2026-10-19T14:39:11.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/12/naruto-ganha-anime-crossover-com-ninku-manga-que-inspirou-masashi-kishimoto",
-          "publishedAt": "2026-10-12T14:39:11.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 5,
-      "wordCount": 861,
-      "qualityScore": 0.97,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 25,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 2,
-        "embedCount": 2,
         "sourcePagesRead": 0
       }
     }
