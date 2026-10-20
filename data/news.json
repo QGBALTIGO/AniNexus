@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T13:01:57.681Z",
+  "generatedAt": "2026-10-20T17:52:25.595Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,998 @@
   ],
   "stats": {
     "collected": 44,
-    "grouped": 18,
-    "published": 18,
-    "newStories": 18,
-    "fullArticles": 18,
+    "grouped": 19,
+    "published": 19,
+    "newStories": 19,
+    "fullArticles": 19,
     "previewArticles": 0,
-    "avgWords": 447,
-    "withHeroImage": 18,
-    "withOrderedMedia": 18,
+    "avgWords": 453,
+    "withHeroImage": 19,
+    "withOrderedMedia": 19,
     "skippedTranslation": 0,
-    "skippedQuality": 26,
-    "durationMs": 3444
+    "skippedQuality": 25,
+    "durationMs": 4312
   },
   "items": [
+    {
+      "id": "jbox-41293e5f",
+      "slug": "an-cafe-anuncia-show-no-brasil-em-2027-dentro-do-anime-summit-jbox-41293e5f",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "An Cafe anuncia show no Brasil em 2027, dentro do Anime Summit",
+      "originalTitle": "An Cafe anuncia show no Brasil em 2027, dentro do Anime Summit",
+      "summary": "A agência RIT anunciou que a banda An Cafe fará uma turnê de reencontro pela América Latina em 2027, incluindo uma apresentação no Brasil, dentro do evento Anime Summit, realizado em Brasília.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Eventos",
+        "Música",
+        "an cafe",
+        "An Cafe no Anime Summit Brasil",
+        "an cafe no brasil",
+        "An Cafe no Brasil 2027",
+        "Anime Summit Brasil",
+        "Anime Summit Brasil 2027",
+        "Show do An Cafe no Brasil em 2027",
+        "volta do an cafe"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/20/an-cafe-anuncia-show-no-brasil-em-2027-dentro-do-anime-summit",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/20/an-cafe-anuncia-show-no-brasil-em-2027-dentro-do-anime-summit",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/ancafe-destacada.jpg",
+      "mediaQuery": "An Cafe anuncia show no Brasil em 2027, dentro do Anime Summit",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/Seg7sO46x6w"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A agência RIT anunciou que a banda An Cafe fará uma turnê de reencontro pela América Latina em 2027, incluindo uma apresentação no Brasil, dentro do evento Anime Summit, realizado em Brasília.",
+          "runs": [
+            {
+              "text": "A agência "
+            },
+            {
+              "text": "RIT",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou que a banda "
+            },
+            {
+              "text": "An Cafe",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " fará uma turnê de reencontro pela América Latina em 2027, incluindo uma apresentação no Brasil, dentro do evento "
+            },
+            {
+              "text": "Anime Summit",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", realizado em Brasília."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O show no país está marcado para o dia 16 de maio de 2027, data que encerra o primeiro final de semana do Anime Summit Brasil 2027.",
+          "runs": [
+            {
+              "text": "O show no país está marcado para o dia "
+            },
+            {
+              "text": "16 de maio de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", data que encerra o primeiro final de semana do Anime Summit Brasil 2027."
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "View this post on Instagram",
+          "runs": [
+            {
+              "text": " View this post on Instagram ",
+              "href": "https://www.instagram.com/reel/DekkB36N-aQ/?utm_source=ig_embed&utm_campaign=loading"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além do Brasil, a turnê do grupo pela América Latina também vai passar pela Cidade do México (em 12 de maio) e Santiago (em 14 de maio). Os ingressos para estas apresentações começam a ser vendidos no dia 24 de outubro. Já as entradas no Brasil deem ter detalhes divulgados futuramente, pela organização do Anime Summit Brasil.",
+          "runs": [
+            {
+              "text": "Além do Brasil, a turnê do grupo pela América Latina também vai passar pela Cidade do México (em 12 de maio) e Santiago (em 14 de maio). Os ingressos para estas apresentações começam a ser vendidos no dia 24 de outubro. Já as entradas no Brasil deem ter detalhes divulgados futuramente, pela organização do Anime Summit Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Criado em 2003, o An Cafe (ou Antic Cafe) é conhecido por ser uma das principais bandas representantes do oshare kei, uma variação do visual kei mais moderna, misturando estilos com cores brilhantes e menos maquiagem.",
+          "runs": [
+            {
+              "text": "Criado em 2003, o An Cafe (ou Antic Cafe) é conhecido por ser uma das principais bandas representantes do "
+            },
+            {
+              "text": "oshare kei",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", uma variação do visual kei mais moderna, misturando estilos com cores brilhantes e menos maquiagem."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ao longo da carreira, que passou por algumas pausas, a banda lançou seis álbuns de estúdio, e teve algumas canções em animês pouco conhecidos por aqui: Darker than Black (2007; com o tema da 2ª abertura) e Duel Masters VS R (2015; com o 3º encerramento). A música “Ryuusei Rocket” foi tema do live-action de Fuuma no Kojiro, adaptação do mangá de Masami Kurumada, o criador de Os Cavaleiros do Zodíaco.",
+          "runs": [
+            {
+              "text": "Ao longo da carreira, que passou por algumas pausas, a banda lançou seis álbuns de estúdio, e teve algumas canções em animês pouco conhecidos por aqui: "
+            },
+            {
+              "text": "Darker than Black",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (2007; com o tema da 2ª abertura) e "
+            },
+            {
+              "text": "Duel Masters VS R",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (2015; com o 3º encerramento). A música "
+            },
+            {
+              "text": "“Ryuusei Rocket”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi tema do live-action de "
+            },
+            {
+              "text": "Fuuma no Kojiro",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", adaptação do mangá de "
+            },
+            {
+              "text": "Masami Kurumada",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o criador de "
+            },
+            {
+              "text": "Os Cavaleiros do Zodíaco",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=Seg7sO46x6w",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Seg7sO46x6w"
+        },
+        {
+          "type": "paragraph",
+          "text": "Em 2018, a pausa mais drástica do An Cafe envolveu a saída de quase todos os integrantes, restando apenas o vocalista Miku, que se apresentou no Brasil este ano.",
+          "runs": [
+            {
+              "text": "Em 2018, a pausa mais drástica do An Cafe envolveu a saída de quase todos os integrantes, restando apenas o vocalista "
+            },
+            {
+              "text": "Miku",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "que se apresentou no Brasil este ano",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2025/08/12/vocalista-do-an-cafe-miku-traz-nova-turne-ao-brasil-em-2026/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Eles voltaram a se reunir para apresentações pontuais em 2023 e 2024 (com exceção da guitarrista Bou), e contam com agenda especial marcada este ano para celebrar os aniversários do baterista Teruki (dezembro), de Miku (janeiro) e do guitarrista Takuya (fevereiro). Essa é a formação que virá ao país em 2027.",
+          "runs": [
+            {
+              "text": "Eles voltaram a se reunir para apresentações pontuais em 2023 e 2024 (com exceção da guitarrista "
+            },
+            {
+              "text": "Bou",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "), e contam com agenda especial marcada este ano para celebrar os aniversários do baterista"
+            },
+            {
+              "text": " Teruki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (dezembro), de Miku (janeiro) e do guitarrista "
+            },
+            {
+              "text": "Takuya",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (fevereiro). Essa é a formação que virá ao país em 2027."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Brasil, o An Cafe já fez um show em 2014 como parte do elenco do evento Anime Friends. Já Miku, além do show deste ano, também se apresentou solo aqui em 2025, em São Paulo, com a turnê NYAPPY PARTY. O repertório dos shows se concentra no material da banda que o consagrou.",
+          "runs": [
+            {
+              "text": "No Brasil, o An Cafe já fez um show em 2014 como parte do elenco do evento Anime Friends. Já Miku, além do show deste ano, também se apresentou solo aqui em 2025, em São Paulo, com a turnê"
+            },
+            {
+              "text": " NYAPPY PARTY",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". O repertório dos shows se concentra no material da banda que o consagrou."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Serviço",
+          "runs": [
+            {
+              "text": "Serviço"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "An Cafe Latan Tour 2027",
+          "runs": [
+            {
+              "text": "An Cafe Latan Tour 2027",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Cidade do México, 12/05/2027 Local: El Foro 1869, Cidade do México, México Ingressos em breve",
+          "runs": [
+            {
+              "text": "Cidade do México, 12/05/2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "  "
+            },
+            {
+              "text": "Local:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " El Foro 1869, Cidade do México, México  "
+            },
+            {
+              "text": "Ingressos em breve",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Santiago, 14/05/2027 Local: Teatro Cariola, Santiago, Chile Ingressos em breve",
+          "runs": [
+            {
+              "text": "Santiago, 14/05/2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "  "
+            },
+            {
+              "text": "Local:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Teatro Cariola, Santiago, Chile  "
+            },
+            {
+              "text": "Ingressos em breve",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Brasília, 16/05/2027 Local: Brasília, DF (detalhes a confirmar) Ingressos em breve",
+          "runs": [
+            {
+              "text": "Brasília, 16/05/2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "  "
+            },
+            {
+              "text": "Local:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Brasília, DF (detalhes a confirmar)  "
+            },
+            {
+              "text": "Ingressos em breve",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Anime Summit Brasil 2027 Datas: 14 a 16 e 21 a 23 de maio de 2027 Local: Brasília, DF (detalhes a confirmar)",
+          "runs": [
+            {
+              "text": "Anime Summit Brasil 2027 Datas: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "14 a 16 e 21 a 23 de maio de 2027  "
+            },
+            {
+              "text": "Local:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Brasília, DF (detalhes a confirmar)"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Instagram RIT Agency",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Instagram RIT Agency",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.instagram.com/ritagency?g=5"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-20T16:54:47.000Z",
+      "updatedAt": "2026-10-20T16:55:13.000Z",
+      "expiresAt": "2026-10-27T16:54:47.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/20/an-cafe-anuncia-show-no-brasil-em-2027-dentro-do-anime-summit",
+          "publishedAt": "2026-10-20T16:54:47.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 447,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 19,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-cf12c08d",
+      "slug": "one-piece-2-e-3-filmes-tem-estreia-adiada-nos-cinemas-brasileiros-jbox-cf12c08d",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "One Piece: 2º e 3º filmes têm estreia adiada nos cinemas brasileiros",
+      "originalTitle": "One Piece: 2º e 3º filmes têm estreia adiada nos cinemas brasileiros",
+      "summary": "Foi anunciado pela Paris Filmes que o segundo e o terceiro filmes de One Piece tiveram estreia nos cinemas brasileiros adiada. One Piece: Aventura na Ilha Espiral, anteriormente previsto para o dia 22 de outubro, agora chega apenas no dia 3 de dezembro. Já One Piece: O reino de Chopper na ilha dos animais estranhos, que chegaria justamente no novo dia de estreia do segundo, agora está previsto para o dia 10 de dezembro.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "filmes de One Piece",
+        "Mire! O Rei do Beisebol Pirata",
+        "One Piece: Aventura na Ilha Espiral",
+        "One Piece: O Reino de Chopper na Ilha dos Animais Estranhos",
+        "Paris Filmes",
+        "Rei do Futebol dos Sonhos"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/20/one-piece-2o-e-3o-filmes-tem-estreia-adiada-nos-cinemas-brasileiros",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/20/one-piece-2o-e-3o-filmes-tem-estreia-adiada-nos-cinemas-brasileiros",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/one-piece-aventura-na-ilha-espiral-destacada.jpg",
+      "mediaQuery": "One Piece: 2º e 3º filmes têm estreia adiada nos cinemas brasileiros",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/B7oNbjQyjDE"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado pela Paris Filmes que o segundo e o terceiro filmes de One Piece tiveram estreia nos cinemas brasileiros adiada. One Piece: Aventura na Ilha Espiral, anteriormente previsto para o dia 22 de outubro, agora chega apenas no dia 3 de dezembro. Já One Piece: O reino de Chopper na ilha dos animais estranhos, que chegaria justamente no novo dia de estreia do segundo, agora está previsto para o dia 10 de dezembro.",
+          "runs": [
+            {
+              "text": "Foi anunciado pela "
+            },
+            {
+              "text": "Paris Filmes",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " que o segundo e o terceiro "
+            },
+            {
+              "text": "filmes de ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " tiveram estreia nos cinemas brasileiros adiada",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". "
+            },
+            {
+              "text": "One Piece: Aventura na Ilha Espiral",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", anteriormente previsto para o dia 22 de outubro, agora chega apenas no dia "
+            },
+            {
+              "text": "3 de dezembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Já "
+            },
+            {
+              "text": "One Piece: O reino de Chopper na ilha dos animais estranhos",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que chegaria justamente no novo dia de estreia do segundo, agora está previsto para o dia "
+            },
+            {
+              "text": "10 de dezembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O primeiro filme também chegou a passar por adiamento antes de ser exibido, porém com diferença de apenas uma semana, mudando do dia 17 para o dia 24 de setembro.",
+          "runs": [
+            {
+              "text": "O primeiro filme também "
+            },
+            {
+              "text": "chegou a passar por adiamento antes de ser exibido",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/16/one-piece-exibicao-de-filme-nos-cinemas-brasileiros-e-adiada/"
+            },
+            {
+              "text": ", porém com diferença de apenas uma semana, mudando do dia 17 para o dia 24 de setembro."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=B7oNbjQyjDE",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/B7oNbjQyjDE"
+        },
+        {
+          "type": "paragraph",
+          "text": "Assim como aconteceu com o primeiro longa-metragem, os outros dois filmes de One Piece que chegam aos cinemas este ano também contam com exibições dubladas nas telonas. Os dois lançamentos também chegam acompanhados de especiais da franquia, com Aventura na Ilha Espiral chegando junto à Mire! O Rei do Beisebol Pirata e O reino de Chopper na ilha dos animais estranhos junto de Rei do Futebol dos Sonhos.",
+          "runs": [
+            {
+              "text": "Assim como aconteceu com o primeiro longa-metragem, os outros dois filmes de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " que chegam aos cinemas este ano também contam com "
+            },
+            {
+              "text": "exibições dubladas nas telonas",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Os dois lançamentos também chegam acompanhados de especiais da franquia, com "
+            },
+            {
+              "text": "Aventura na Ilha Espiral",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " chegando junto à "
+            },
+            {
+              "text": "Mire! O Rei do Beisebol Pirata",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "O reino de Chopper na ilha dos animais estranhos",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " junto de "
+            },
+            {
+              "text": "Rei do Futebol dos Sonhos",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Os filmes são de produção do estúdio Toei Animation, tendo direção e composição de enredo por Junji Shimizu. Aventura na Ilha Espiral estreou no Japão em 2001 e O reino de Chopper na ilha dos animais estranhos chegou no ano seguinte, ano de estreia também de Rei do Futebol dos Sonhos. Já o especial O Rei do Beisebol Pirata estreou no Japão em 2004, tendo sido exibido originalmente nos cinemas japoneses junto ao quinto filme de One Piece.",
+          "runs": [
+            {
+              "text": "Os filmes são de produção do estúdio "
+            },
+            {
+              "text": "Toei Animation",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", tendo direção e composição de enredo por "
+            },
+            {
+              "text": "Junji Shimizu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". "
+            },
+            {
+              "text": "Aventura na Ilha Espiral",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estreou no Japão em 2001 e "
+            },
+            {
+              "text": "O reino de Chopper na ilha dos animais estranhos",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " chegou no ano seguinte, ano de estreia também de "
+            },
+            {
+              "text": "Rei do Futebol dos Sonhos",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Já o especial "
+            },
+            {
+              "text": "O Rei do Beisebol Pirata",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estreou no Japão em 2004, tendo sido exibido originalmente nos cinemas japoneses junto ao quinto filme de "
+            },
+            {
+              "text": "One Piece",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Antes desses novos lançamentos, One Piece: RED tinha sido o único longa do pirata que estica que tinha chegado aos cinemas brasileiros. Alguns outros filmes da franquia já chegaram dublados via streaming, como One Piece: Strong World e One Piece: Gold — esse tendo sido o primeiro longa-metragem da série a receber dublagem em português.",
+          "runs": [
+            {
+              "text": "Antes desses novos lançamentos, "
+            },
+            {
+              "text": "One Piece: RED",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2022/11/02/critica-one-piece-film-red-shounen-de-musiquinha/"
+            },
+            {
+              "text": " tinha sido o único longa do pirata que estica que tinha chegado aos cinemas brasileiros. Alguns outros filmes da franquia já chegaram dublados via streaming, como "
+            },
+            {
+              "text": "One Piece: Strong World",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "One Piece: Gold",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " — esse tendo sido o primeiro longa-metragem da série a receber dublagem em português."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Paris Filmes, FilmeB (1, 2)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Paris Filmes",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.parisfilmes.com.br/one-piece-aventura-na-ilha-espiral/"
+            },
+            {
+              "text": ", FilmeB (",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "1",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.filmeb.com.br/calendario-de-estreias/one-piece-aventura-na-ilha-espiral"
+            },
+            {
+              "text": ", ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "2",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.filmeb.com.br/calendario-de-estreias/one-piece-o-reino-de-chopper-na-ilha-dos-animais-estranhos"
+            },
+            {
+              "text": ")",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-20T15:44:28.000Z",
+      "updatedAt": "2026-10-20T15:45:15.000Z",
+      "expiresAt": "2026-10-27T15:44:28.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/20/one-piece-2o-e-3o-filmes-tem-estreia-adiada-nos-cinemas-brasileiros",
+          "publishedAt": "2026-10-20T15:44:28.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 328,
+      "qualityScore": 0.978,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-c8eacf12",
       "slug": "kaiju-decode-ganha-teaser-e-estreia-em-2027-animenew-c8eacf12",
@@ -6548,266 +7527,6 @@
         "blocks": 11,
         "sourceCount": 1,
         "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-d4109b42",
-      "slug": "dr-stone-tem-novo-anime-anunciado-jbox-d4109b42",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Dr. STONE’ tem novo animê anunciado",
-      "originalTitle": "‘Dr. STONE’ tem novo animê anunciado",
-      "summary": "Foi anunciado durante o evento Stone Fes. 2026, no último dia 10, que Dr. STONE vai ganhar uma nova adaptação animada, chamada Dr. STONE: Terraforming.",
-      "author": "Teke",
-      "tags": [
-        "Anime",
-        "dr. stone",
-        "Dr. STONE: Terraforming",
-        "novo anime de dr. stone",
-        "terraforming"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/13/dr-stone-tem-novo-anime-anunciado",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/13/dr-stone-tem-novo-anime-anunciado",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2025/06/drstone4pt2-destacada.jpg",
-      "mediaQuery": "‘Dr. STONE’ tem novo animê anunciado",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/-Vk8vSnnmnY"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Foi anunciado durante o evento Stone Fes. 2026, no último dia 10, que Dr. STONE vai ganhar uma nova adaptação animada, chamada Dr. STONE: Terraforming.",
-          "runs": [
-            {
-              "text": "Foi anunciado durante o evento Stone Fes. 2026, no último dia 10, que "
-            },
-            {
-              "text": "Dr. STONE",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " vai ganhar uma nova adaptação animada, chamada "
-            },
-            {
-              "text": "Dr. STONE: Terraforming",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira o vídeo com o anúncio abaixo:",
-          "runs": [
-            {
-              "text": "Confira o vídeo com o anúncio abaixo:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=-Vk8vSnnmnY",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/-Vk8vSnnmnY"
-        },
-        {
-          "type": "paragraph",
-          "text": "Dr. STONE: Terraforming é uma adaptação do capítulo especial Terraforming, do último volume do mangá. A história se passa após o fim do roteiro principal da obra. Mais detalhes sobre a adaptação ainda não foram divulgados, incluindo formato da produção.",
-          "runs": [
-            {
-              "text": "Dr. STONE: Terraforming",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é uma adaptação do capítulo especial "
-            },
-            {
-              "text": "Terraforming",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", do último volume do mangá. A história se passa após o fim do roteiro principal da obra. Mais detalhes sobre a adaptação ainda não foram divulgados, incluindo formato da produção."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na história de Terraforming, Senku acorda sozinho no meio do oceano, sem ter ideia de como foi parar ali ou onde encontrar terra firme. Aos poucos ele começa a encontrar pistas do que poderia estar fazendo ali, como o fato de seu corpo estar coberto de óleo para prevenir hipotermia, além de perceber que está com o líquido que cura a petrificação e também com o rádio de galena que fez anos atrás.",
-          "runs": [
-            {
-              "text": "Na história de "
-            },
-            {
-              "text": "Terraforming",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", Senku acorda sozinho no meio do oceano, sem ter ideia de como foi parar ali ou onde encontrar terra firme. Aos poucos ele começa a encontrar pistas do que poderia estar fazendo ali, como o fato de seu corpo estar coberto de óleo para prevenir hipotermia, além de perceber que está com o líquido que cura a petrificação e também com o rádio de galena que fez anos atrás."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A última temporada de Dr. STONE foi Science Future, que teve sua terceira e última parte exibida entre abril e junho deste ano. Os animês da franquia são de produção do estúdio TMS Entertainment.",
-          "runs": [
-            {
-              "text": "A última temporada de "
-            },
-            {
-              "text": "Dr. STONE",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " foi "
-            },
-            {
-              "text": "Science Future",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que teve sua terceira e última parte exibida entre abril e junho deste ano. Os animês da franquia são de produção do estúdio "
-            },
-            {
-              "text": "TMS Entertainment",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Anime News Network",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Anime News Network",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.animenewsnetwork.com/news/2026-10-10/dr-stone-tv-anime-gets-terraforming-sequel/.242690"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-13T13:42:38.000Z",
-      "updatedAt": "2026-10-13T13:43:10.000Z",
-      "expiresAt": "2026-10-20T13:42:38.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/13/dr-stone-tem-novo-anime-anunciado",
-          "publishedAt": "2026-10-13T13:42:38.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 1,
-      "wordCount": 200,
-      "qualityScore": 0.903,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 9,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 1,
