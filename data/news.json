@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T19:15:12.006Z",
+  "generatedAt": "2026-10-22T22:21:58.371Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 33,
+      "count": 32,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,1322 @@
     }
   ],
   "stats": {
-    "collected": 43,
-    "grouped": 12,
-    "published": 12,
-    "newStories": 12,
-    "fullArticles": 12,
+    "collected": 42,
+    "grouped": 15,
+    "published": 15,
+    "newStories": 15,
+    "fullArticles": 15,
     "previewArticles": 0,
-    "avgWords": 450,
-    "withHeroImage": 12,
-    "withOrderedMedia": 11,
+    "avgWords": 444,
+    "withHeroImage": 15,
+    "withOrderedMedia": 14,
     "skippedTranslation": 0,
-    "skippedQuality": 31,
-    "durationMs": 5883
+    "skippedQuality": 26,
+    "durationMs": 4646
   },
   "items": [
+    {
+      "id": "jbox-ca9a97e1",
+      "slug": "go-go-loser-ranger-entra-novamente-em-hiato-jbox-ca9a97e1",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Go! Go! Loser Ranger!’ entra novamente em hiato",
+      "originalTitle": "‘Go! Go! Loser Ranger!’ entra novamente em hiato",
+      "summary": "Foi anunciado na edição mais recente da revista Shonen Magazine que o mangá Go! Go! Loser Ranger! vai entrar mais uma vez em hiato. A obra retornou da última pausa no dia 23 de setembro deste ano, depois de mais de dois meses de paralisação. Foram publicados 3 capítulos, sendo o último o 224, que saiu no dia 7 de outubro.",
+      "author": "Teke",
+      "tags": [
+        "Mangá",
+        "Go! Go! Loser Ranger",
+        "hiato de Go! Go! Loser Ranger",
+        "Negi Haruba",
+        "Sentai Daishikkaku"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/22/go-go-loser-ranger-entra-novamente-em-hiato",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/22/go-go-loser-ranger-entra-novamente-em-hiato",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/09/gogoloserranger-manga-destacada.jpg",
+      "mediaQuery": "‘Go! Go! Loser Ranger!’ entra novamente em hiato",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/02/go-go-loser-ranger-volume-1.jpg",
+          "alt": "imagem: capa japonesa do volume 1 de 'Go! Go! Loser Ranger'. Na ilustração, o ranger vermelho aparece sorrindo na capa do mangá.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado na edição mais recente da revista Shonen Magazine que o mangá Go! Go! Loser Ranger! vai entrar mais uma vez em hiato. A obra retornou da última pausa no dia 23 de setembro deste ano, depois de mais de dois meses de paralisação. Foram publicados 3 capítulos, sendo o último o 224, que saiu no dia 7 de outubro.",
+          "runs": [
+            {
+              "text": "Foi anunciado na edição mais recente da revista"
+            },
+            {
+              "text": " Shonen Magazine",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " que o mangá "
+            },
+            {
+              "text": "Go! Go! Loser Ranger!",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " vai entrar mais uma vez em hiato",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A obra retornou da última pausa no dia"
+            },
+            {
+              "text": " 23 de setembro deste ano",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/24/manga-go-go-loser-ranger-retorna-do-hiato-apos-dois-meses/"
+            },
+            {
+              "text": ", depois de mais de dois meses de paralisação. Foram publicados 3 capítulos, sendo o último o 224, que saiu no dia 7 de outubro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Essa é a terceira pausa estendida do mangá em 2026, sendo a segunda por questões de saúde do autor Negi Haruba (As Quíntuplas) — motivo também do hiato entre julho e setembro. Ano passado, a obra também foi interrompida por questões de saúde.",
+          "runs": [
+            {
+              "text": "Essa é a terceira pausa estendida do mangá em 2026, sendo "
+            },
+            {
+              "text": "a segunda por questões de saúde do autor Negi Haruba",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "As Quíntuplas",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") — motivo também do hiato entre julho e setembro. Ano passado, a obra também foi interrompida por questões de saúde."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/02/go-go-loser-ranger-volume-1.jpg",
+          "alt": "imagem: capa japonesa do volume 1 de 'Go! Go! Loser Ranger'. Na ilustração, o ranger vermelho aparece sorrindo na capa do mangá."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Kodansha",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Kodansha"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Go! Go! Loser Ranger! (Sentai Daishikkaku) é publicado desde 2021 na edição semanal da Shonen Magazine, reunindo 22 volumes encadernados pela Kodansha até o momento. Este ano, a obra entrou em sua reta final. Uma adaptação animada pelo Yostar Pictures foi ao ar entre 2024 e 2025, com 2 temporadas que somaram 24 episódios. A série pode ser assistida com opção de dublagem no Disney+, enquanto o mangá segue inédito por aqui.",
+          "runs": [
+            {
+              "text": "Go! Go! Loser Ranger!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Sentai Daishikkaku",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") é publicado desde 2021 na edição semanal da "
+            },
+            {
+              "text": "Shonen Magazine",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", reunindo 22 volumes encadernados pela "
+            },
+            {
+              "text": "Kodansha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " até o momento. Este ano, a obra "
+            },
+            {
+              "text": "entrou em sua reta final",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/02/19/go-go-loser-ranger-manga-esta-chegando-a-reta-final/"
+            },
+            {
+              "text": ". Uma adaptação animada pelo Yostar Pictures foi ao ar entre 2024 e 2025, com 2 temporadas que somaram 24 episódios. A série pode ser assistida com opção de dublagem no "
+            },
+            {
+              "text": "Disney+",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", enquanto o mangá segue inédito por aqui."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Inspirada nos Super Sentai, a trama da série mostra uma organização maligna que tentou invadir a Terra e foi derrotada por um esquadrão de heróis conhecido como Guardiões do Dragão. Desde então, os “bucha de canhão” da organização precisam reencenar a derrota em frente a uma multidão todos os domingos. Cansado disso, um desses soldados, o Lutador D, decide que vai derrotar os Guardiões, se infiltrando na fortaleza da equipe.",
+          "runs": [
+            {
+              "text": "Inspirada nos "
+            },
+            {
+              "text": "Super Sentai",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", a trama da série mostra uma organização maligna que tentou invadir a Terra e foi derrotada por um esquadrão de heróis conhecido como Guardiões do Dragão. Desde então, os “bucha de canhão” da organização precisam reencenar a derrota em frente a uma multidão todos os domingos. Cansado disso, um desses soldados, o Lutador D, decide que vai derrotar os Guardiões, se infiltrando na fortaleza da equipe."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Anime News Network, Shonen Magazine",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-10-21/go-go-loser-ranger-manga-goes-on-hiatus-again-due-to-creator-health/.243058"
+            },
+            {
+              "text": ",",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Shonen Magazine",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://shonenmagazine.com/smaga/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-22T20:45:07.000Z",
+      "updatedAt": "2026-10-22T20:50:27.000Z",
+      "expiresAt": "2026-10-29T20:45:07.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/22/go-go-loser-ranger-entra-novamente-em-hiato",
+          "publishedAt": "2026-10-22T20:45:07.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 271,
+      "qualityScore": 0.971,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-88049cd7",
+      "slug": "anime-original-de-madoka-magica-entra-no-catalogo-da-crunchyroll-brasil-jbox-88049cd7",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Animê original de ‘Madoka Magica’ entra no catálogo da Crunchyroll Brasil",
+      "originalTitle": "Animê original de ‘Madoka Magica’ entra no catálogo da Crunchyroll Brasil",
+      "summary": "Sem quase nenhum alarde, o animê clássico de Madoka Magica foi incluído no catálogo nacional da Crunchyroll. Agora, ao pesquisar o nome da franquia, a produção aparece ao lado do derivado, Magia Record.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Streaming",
+        "animê de Madoka Magica",
+        "Animê de Madoka Magica na Crunchyroll",
+        "Crunchyroll",
+        "Dublagem de Madoka Magica",
+        "Madoka Magica",
+        "Madoka Magica no Brasil"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/22/anime-original-de-madoka-magica-entra-no-catalogo-da-crunchyroll-brasil",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/22/anime-original-de-madoka-magica-entra-no-catalogo-da-crunchyroll-brasil",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Madoka-Magica-destacada.jpg",
+      "mediaQuery": "Animê original de ‘Madoka Magica’ entra no catálogo da Crunchyroll Brasil",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/001-1.png",
+          "alt": "Madoka Magica na Crunchyroll Brasil",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/002-1.png",
+          "alt": "Madoka Magica na Crunchyroll Brasil",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Madoka-Magica-3.png",
+          "alt": "Madoka Magica na Netflix",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/Se4Iej_z_NI"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Sem quase nenhum alarde, o animê clássico de Madoka Magica foi incluído no catálogo nacional da Crunchyroll. Agora, ao pesquisar o nome da franquia, a produção aparece ao lado do derivado, Magia Record.",
+          "runs": [
+            {
+              "text": "Sem quase nenhum alarde, "
+            },
+            {
+              "text": "o animê clássico de ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.crunchyroll.com/pt-br/series/GRDQK39GY/puella-magi-madoka-magica"
+            },
+            {
+              "text": "Madoka Magica",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.crunchyroll.com/pt-br/series/GRDQK39GY/puella-magi-madoka-magica"
+            },
+            {
+              "text": " foi incluído no catálogo nacional da "
+            },
+            {
+              "text": "Crunchyroll. ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Agora, ao pesquisar o nome da franquia, a produção aparece ao lado do derivado, "
+            },
+            {
+              "text": "Magia Record.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No momento de publicação desta matéria, o animê está disponível com os áudios somente em inglês e japonês, com as legendas em português.",
+          "runs": [
+            {
+              "text": "No momento de publicação desta matéria, o animê está disponível com os áudios somente em inglês e japonês, com as legendas em português."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A inclusão na plataforma em si é uma novidade, mas ela já podia ser assistida na Crunchyroll de outra forma há mais tempo: por algum motivo, apenas quem assinava o canal da Crunchyroll pelo Amazon Prime Video tinha acesso à série (não conseguimos precisar a data, mas ao menos desde o início de setembro já estava lá). Caso semelhante aconteceu com a versão remasterizada de Digimon Adevnture, disponível há meses dessa forma antes de aparecer para assinantes diretos da Crunchyroll.",
+          "runs": [
+            {
+              "text": "A inclusão na plataforma em si é uma novidade, mas ela"
+            },
+            {
+              "text": " já podia ser assistida na Crunchyroll de outra forma há mais tempo:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " por algum motivo, apenas quem assinava o canal da Crunchyroll pelo"
+            },
+            {
+              "text": " Amazon Prime Video",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " tinha acesso à série (não conseguimos precisar a data, mas ao menos desde o início de setembro já estava lá). Caso semelhante aconteceu com a"
+            },
+            {
+              "text": " versão remasterizada de",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/29/crunchyroll-atualiza-animes-classicos-de-digimon-com-imagem-remasterizada/"
+            },
+            {
+              "text": " Digimon Adevnture",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/29/crunchyroll-atualiza-animes-classicos-de-digimon-com-imagem-remasterizada/"
+            },
+            {
+              "text": ", disponível há meses dessa forma antes de aparecer para assinantes diretos da Crunchyroll."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/001-1.png",
+          "alt": "Madoka Magica na Crunchyroll Brasil"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ao pesquisar Madoka Magica, o animê clássico apareceu no catálogo. | Imagem: Reprodução/Crunchyroll",
+          "runs": [
+            {
+              "text": "Ao pesquisar Madoka Magica, o animê clássico apareceu no catálogo. | Imagem: Reprodução/Crunchyroll"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/002-1.png",
+          "alt": "Madoka Magica na Crunchyroll Brasil"
+        },
+        {
+          "type": "paragraph",
+          "text": "Os episódios estão disponíveis com o áudio original e em inglês, e com legendas em português, inglês e espanhol. | Imagem: Reprodução/Crunchyroll",
+          "runs": [
+            {
+              "text": "Os episódios estão disponíveis com o áudio original e em inglês, e com legendas em português, inglês e espanhol. | Imagem: Reprodução/Crunchyroll"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A volta do animê oficialmente ao Brasil acontece em meio à confirmação de que os filmes Beginnings, Eternal e Rebellion chegarão dublados ao país em novembro, pela própria Crunchyroll, e em janeiro de 2027 pela Netflix.",
+          "runs": [
+            {
+              "text": "A volta do animê oficialmente ao Brasil acontece em meio "
+            },
+            {
+              "text": "à confirmação de que os filmes ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/08/madoka-magica-ganha-dublagem-em-portugues-em-novembro/"
+            },
+            {
+              "text": "Beginnings",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/08/madoka-magica-ganha-dublagem-em-portugues-em-novembro/"
+            },
+            {
+              "text": ", ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/08/madoka-magica-ganha-dublagem-em-portugues-em-novembro/"
+            },
+            {
+              "text": "Eternal",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/08/madoka-magica-ganha-dublagem-em-portugues-em-novembro/"
+            },
+            {
+              "text": " e ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/08/madoka-magica-ganha-dublagem-em-portugues-em-novembro/"
+            },
+            {
+              "text": "Rebellion",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/08/madoka-magica-ganha-dublagem-em-portugues-em-novembro/"
+            },
+            {
+              "text": " chegarão dublados ao país em novembro",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/08/madoka-magica-ganha-dublagem-em-portugues-em-novembro/"
+            },
+            {
+              "text": ", pela própria Crunchyroll, e em janeiro de 2027 pela "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na época, não foi detalhado se o animê seriado também seria lançado no Brasil, mas a expectativa é que isso poderia acontecer junto com os filmes — levando em consideração, ainda, que os dois primeiros longas são um compilado da série. Na Netflix, no momento, a produção aparece no catálogo com o botão de lembrete, indicando que também deve ser incluído na plataforma futuramente (ela já esteve disponível legendada por lá no passado):",
+          "runs": [
+            {
+              "text": "Na época, não foi detalhado se o animê seriado também seria lançado no Brasil, mas a expectativa é que isso poderia acontecer junto com os filmes — levando em consideração, ainda, que os dois primeiros longas são um compilado da série. Na Netflix, no momento, "
+            },
+            {
+              "text": "a produção aparece no catálogo",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.netflix.com/title/70302572"
+            },
+            {
+              "text": " com o botão de lembrete, indicando que também deve ser incluído na plataforma futuramente (ela já esteve disponível legendada por lá no passado):"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Madoka-Magica-3.png",
+          "alt": "Madoka Magica na Netflix"
+        },
+        {
+          "type": "paragraph",
+          "text": "Quem assina Netflix também deve ter acesso ao animê em breve (embora uma data não tenha sido oficializada) | Netflix/Reprodução",
+          "runs": [
+            {
+              "text": "Quem assina Netflix também deve ter acesso ao animê em breve (embora uma data não tenha sido oficializada) | Netflix/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Com a confirmação de que o animê está no catálogo nacional do streaming laranja, a expectativa agora é que a dublagem seja incluída assim que os filmes forem lançados.",
+          "runs": [
+            {
+              "text": "Com a confirmação de que o animê está no catálogo nacional do streaming laranja, a expectativa agora é que a dublagem seja incluída assim que os filmes forem lançados."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "É importante relembrar ainda que o filme Puella Magi Madoka Magica the Movie -Walpurgisnacht: Rising-, a produção mais recente da franquia, segue sem novidades sobre a distribuição nacional. Em agosto, o JBox apurou que o filme será exibido no Brasil, mas ainda é incerto qual a distribuidora — a Sato Company demonstrou interesse.",
+          "runs": [
+            {
+              "text": "É importante relembrar ainda que o filme "
+            },
+            {
+              "text": "Puella Magi Madoka Magica the Movie -Walpurgisnacht: Rising-",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", a produção mais recente da franquia, segue sem novidades sobre a distribuição nacional. Em agosto, o "
+            },
+            {
+              "text": "JBox",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " apurou que "
+            },
+            {
+              "text": "o filme será exibido no Brasil",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/12/exclusivo-novo-filme-de-madoka-magica-sera-lancado-no-brasil/"
+            },
+            {
+              "text": ", mas ainda é incerto qual a distribuidora — a "
+            },
+            {
+              "text": "Sato Company demonstrou interesse",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/14/sato-company-confirma-reunioes-para-trazer-novo-filme-de-madoka-magica-ao-brasil-mas-pede-cautela-aos-fas/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Apesar de ser a primeira vez que a história original chegará dublada, as personagens já foram dubladas em Magia Record. No entanto, não sabemos se as vozes serão as mesmas (na época de Magia Record, sequer foram divulgados oficialmente os nomes das dubladoras das personagens). Lembrando também que em maio do ano passado, a Aniplex já havia indicado uma dublagem latina para a série.",
+          "runs": [
+            {
+              "text": "Apesar de ser a primeira vez que a história original chegará dublada, "
+            },
+            {
+              "text": "as personagens já foram dubladas em",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2022/03/29/madoka-magica-a-um-passo-da-dublagem-brasileira-cafe-matcha-18/"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Magia Record",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". No entanto, não sabemos se as vozes serão as mesmas (na época de "
+            },
+            {
+              "text": "Magia Record",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", sequer foram divulgados oficialmente os nomes das dubladoras das personagens). Lembrando também que em "
+            },
+            {
+              "text": "maio do ano passado",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2025/05/31/madoka-gurren-lagann-e-mais-animes-da-aniplex-devem-ganhar-dublagem/"
+            },
+            {
+              "text": ", a "
+            },
+            {
+              "text": "Aniplex",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " já havia indicado uma dublagem latina para a série."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Lançada originalmente em 2011 como uma história inédita nos animês, Madoka Magica segue a trama de garotas do ensino médio que aceitam o convite de uma criatura chamada Kyubey e se tornam garotas mágicas. Após selar o pacto, elas precisam derrotar seres denominados como “bruxas” e, em troca, cada uma pode realizar um desejo. Com o tempo, no entanto, elas descobrem todos os desafios que envolvem se tornar uma garota mágica e que há mais por trás disso do que elas imaginavam.",
+          "runs": [
+            {
+              "text": "Lançada originalmente em 2011 como uma história inédita nos animês, "
+            },
+            {
+              "text": "Madoka Magica",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " segue a trama de garotas do ensino médio que aceitam o convite de uma criatura chamada Kyubey e se tornam garotas mágicas. Após selar o pacto, elas precisam derrotar seres denominados como “bruxas” e, em troca, cada uma pode realizar um desejo. Com o tempo, no entanto, elas descobrem todos os desafios que envolvem se tornar uma garota mágica e que há mais por trás disso do que elas imaginavam."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Garotas mágicas em 2026",
+          "runs": [
+            {
+              "text": "Garotas mágicas em 2026",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Madoka Magica fez parte da lista de um vídeo em nosso canal no YouTube, em que listamos os lançamentos de animês de garotas mágicas que chegam este ano. Confira pelo link abaixo:",
+          "runs": [
+            {
+              "text": "Madoka Magica",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " fez parte da lista de um vídeo em nosso canal no YouTube, em que listamos os lançamentos de animês de garotas mágicas que chegam este ano. Confira pelo link abaixo:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=Se4Iej_z_NI",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Se4Iej_z_NI"
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Crunchyroll Brasil, Netflix Brasil",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Crunchyroll Brasil, Netflix Brasil",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-22T20:16:57.000Z",
+      "updatedAt": "2026-10-22T20:18:48.000Z",
+      "expiresAt": "2026-10-29T20:16:57.000Z",
+      "category": "Em alta",
+      "eventType": "TRENDING",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/22/anime-original-de-madoka-magica-entra-no-catalogo-da-crunchyroll-brasil",
+          "publishedAt": "2026-10-22T20:16:57.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 586,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 21,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 3,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-8813c824",
+      "slug": "star-detective-precure-tera-crossover-de-halloween-com-ojamajo-doremi-jbox-8813c824",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Star Detective Precure!’ terá crossover de Halloween com ‘Ojamajo Doremi’",
+      "originalTitle": "‘Star Detective Precure!’ terá crossover de Halloween com ‘Ojamajo Doremi’",
+      "summary": "Star Detective Precure! terá um crossover com Ojamajo Doremi no episódio 39, que será exibido em 25 de outubro de 2026, próximo domingo. A colaboração reúne essas duas séries de animê que estrearam em 1999, ano para o qual a protagonista Anna Akechi viaja no tempo na história da nova temporada de Precure.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "crossover entre precure e ojamajo doremi",
+        "ojamajo doremi",
+        "precure",
+        "Star Detective Precure"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/22/star-detective-precure-tera-crossover-de-halloween-com-ojamajo-doremi",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/22/star-detective-precure-tera-crossover-de-halloween-com-ojamajo-doremi",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/super-detective-precure-ojamajo-doremi-crossover-destacada.jpg",
+      "mediaQuery": "‘Star Detective Precure!’ terá crossover de Halloween com ‘Ojamajo Doremi’",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/super-detective-precure-ojamajo-doremi-2.jpg",
+          "alt": "Imagem: ilustração com as personagens do crossover dos animês 'Star Detective Precure!' e 'Ojamajo Doremi'.",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/super-detective-precure-ojamajo-doremi-1.jpg",
+          "alt": "Imagem: ilustração com as personagens do crossover dos animês 'Star Detective Precure!' e 'Ojamajo Doremi'.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/I8M_oNJ_0g8"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Star Detective Precure! terá um crossover com Ojamajo Doremi no episódio 39, que será exibido em 25 de outubro de 2026, próximo domingo. A colaboração reúne essas duas séries de animê que estrearam em 1999, ano para o qual a protagonista Anna Akechi viaja no tempo na história da nova temporada de Precure.",
+          "runs": [
+            {
+              "text": "Star Detective Precure!",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " terá um "
+            },
+            {
+              "text": "crossover",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " com "
+            },
+            {
+              "text": "Ojamajo Doremi",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " no episódio "
+            },
+            {
+              "text": "39",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que será exibido em "
+            },
+            {
+              "text": "25 de outubro de 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", próximo domingo. A colaboração reúne essas duas séries de animê que estrearam em 1999, ano para o qual a protagonista Anna Akechi viaja no tempo na história da nova temporada de "
+            },
+            {
+              "text": "Precure",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ojamajo Doremi é um animê de garotas mágicas da Toei Animation lançado, como dito, em 1999. Na trama, acompanhamos Doremi Harukaze e suas amigas de Ensino Fundamental se tornando aprendizes de feiticeiras e precisando viver essa vida dupla em segredo. A série chegou a ser negociada para exibição no Brasil nos anos 2000, porém nenhuma emissora quis fechar acordo de exibição.",
+          "runs": [
+            {
+              "text": "Ojamajo Doremi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é um animê de garotas mágicas da "
+            },
+            {
+              "text": "Toei Animation",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " lançado, como dito, em 1999. Na trama, acompanhamos Doremi Harukaze e suas amigas de Ensino Fundamental se tornando aprendizes de feiticeiras e precisando viver essa vida dupla em segredo. A série chegou a ser negociada para exibição no Brasil nos anos 2000, porém nenhuma emissora quis fechar acordo de exibição."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=I8M_oNJ_0g8",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/I8M_oNJ_0g8"
+        },
+        {
+          "type": "paragraph",
+          "text": "Já na trama do episódio das Precure, o Ojamajo Doremi também é um animê de grande popularidade na cidade fictícia de Makoto Mirai. Para celebrar o Halloween, Anna, Mikuru, Crea e Ruruka vão se fantasiar como as aprendizes de bruxa dele. Enquanto organizam o primeiro evento de Halloween da rua comercial da cidade, que fica cheia de pessoas fantasiadas recebendo doces, elas encontram Hinano, uma menina que se perdeu da mãe. Ao saberem que a mulher está ocupada cuidando do irmão mais novo da garota, as quatro decidem percorrer a região e acompanhar Hinano até sua casa.",
+          "runs": [
+            {
+              "text": "Já na trama do episódio das "
+            },
+            {
+              "text": "Precure",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o "
+            },
+            {
+              "text": "Ojamajo Doremi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " também é um animê de grande popularidade na cidade fictícia de Makoto Mirai. Para celebrar o Halloween, Anna, Mikuru, Crea e Ruruka vão se fantasiar como as aprendizes de bruxa dele. Enquanto organizam o primeiro evento de Halloween da rua comercial da cidade, que fica cheia de pessoas fantasiadas recebendo doces, elas encontram Hinano, uma menina que se perdeu da mãe. Ao saberem que a mulher está ocupada cuidando do irmão mais novo da garota, as quatro decidem percorrer a região e acompanhar Hinano até sua casa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Porém, enquanto conversam sobre a fantasia da menina, a vilã Agesene aparece disfarçada de bruxa e rouba uma vassoura importante de Hinano, que contém um Makoto Jewel. Anna e as amigas deixam a menina aos cuidados de Jet-senpai e perseguem a vilã, mas as pegadas da bruxa desaparecem no meio do caminho. Elas deduzem que Agesene trocou de fantasia durante a fuga e decidem mudar seus próprios disfarces para não serem reconhecidas.",
+          "runs": [
+            {
+              "text": "Porém, enquanto conversam sobre a fantasia da menina, a vilã Agesene aparece disfarçada de bruxa e rouba uma vassoura importante de Hinano, que contém um Makoto Jewel. Anna e as amigas deixam a menina aos cuidados de Jet-senpai e perseguem a vilã, mas as pegadas da bruxa desaparecem no meio do caminho. Elas deduzem que Agesene trocou de fantasia durante a fuga e decidem mudar seus próprios disfarces para não serem reconhecidas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Yoshihiko Umakoshi, responsável pelo design de personagens de Ojamajo Doremi, desenhou uma ilustração especial para o crossover. Nela, é mostrado um encontro entre Cure Answer e Doremi. Também foram divulgadas ilustrações com os visuais das quatro protagonistas fantasiadas, e diversos produtos com a arte especial serão lançados.",
+          "runs": [
+            {
+              "text": "Yoshihiko Umakoshi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", responsável pelo "
+            },
+            {
+              "text": "design",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de personagens de "
+            },
+            {
+              "text": "Ojamajo Doremi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", desenhou uma ilustração especial para o "
+            },
+            {
+              "text": "crossover",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Nela, é mostrado um encontro entre Cure Answer e Doremi. Também foram divulgadas ilustrações com os visuais das quatro protagonistas fantasiadas, e diversos produtos com a arte especial serão lançados."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/super-detective-precure-ojamajo-doremi-2.jpg",
+          "alt": "Imagem: ilustração com as personagens do crossover dos animês 'Star Detective Precure!' e 'Ojamajo Doremi'."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/Famitsu/Toei Animation",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/Famitsu/Toei Animation"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/super-detective-precure-ojamajo-doremi-1.jpg",
+          "alt": "Imagem: ilustração com as personagens do crossover dos animês 'Star Detective Precure!' e 'Ojamajo Doremi'."
+        },
+        {
+          "type": "paragraph",
+          "text": "No Brasil, Star Detective Precure! tem os episódios inéditos lançados aos domingos, na Crunchyroll, com legenda em português. Entre maio e junho desse ano, houve também um crossover das personagens com Detective Conan em ambos os animês. Em 2024, a temporada Wonderful Pretty Cure! se uniu com Crayon Shin-chan.",
+          "runs": [
+            {
+              "text": "No Brasil, "
+            },
+            {
+              "text": "Star Detective Precure!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " tem os episódios inéditos lançados aos domingos, na "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com legenda em português. Entre maio e junho desse ano, houve também "
+            },
+            {
+              "text": "um ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/27/detective-conan-e-star-detective-precure-farao-crossover-entre-maio-e-junho/"
+            },
+            {
+              "text": "crossover",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/27/detective-conan-e-star-detective-precure-farao-crossover-entre-maio-e-junho/"
+            },
+            {
+              "text": " das personagens com ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/27/detective-conan-e-star-detective-precure-farao-crossover-entre-maio-e-junho/"
+            },
+            {
+              "text": "Detective Conan",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/27/detective-conan-e-star-detective-precure-farao-crossover-entre-maio-e-junho/"
+            },
+            {
+              "text": " em ambos os animês",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/27/detective-conan-e-star-detective-precure-farao-crossover-entre-maio-e-junho/"
+            },
+            {
+              "text": ". Em 2024, a temporada"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2024/05/11/shin-chan-e-precure-farao-crossover-inedito-na-proxima-semana/"
+            },
+            {
+              "text": "Wonderful Pretty Cure!",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2024/05/11/shin-chan-e-precure-farao-crossover-inedito-na-proxima-semana/"
+            },
+            {
+              "text": " se uniu com ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2024/05/11/shin-chan-e-precure-farao-crossover-inedito-na-proxima-semana/"
+            },
+            {
+              "text": "Crayon Shin-chan",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2024/05/11/shin-chan-e-precure-farao-crossover-inedito-na-proxima-semana/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Famitsu",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Famitsu",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.famitsu.com/article/202610/91124"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-22T19:41:24.000Z",
+      "updatedAt": "2026-10-22T19:44:48.000Z",
+      "expiresAt": "2026-10-29T19:41:24.000Z",
+      "category": "Episódios",
+      "eventType": "EPISODE",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/22/star-detective-precure-tera-crossover-de-halloween-com-ojamajo-doremi",
+          "publishedAt": "2026-10-22T19:41:24.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 401,
+      "qualityScore": 0.991,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-caf28c0b",
       "slug": "jogo-de-diarios-de-uma-apotecaria-ganha-trailer-de-gameplay-e-data-de-lancamento-jbox-caf28c0b",
@@ -2406,7 +3708,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 241,
-      "qualityScore": 0.973,
+      "qualityScore": 0.913,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3035,7 +4337,7 @@
       "sourceCount": 1,
       "readingMinutes": 5,
       "wordCount": 976,
-      "qualityScore": 1,
+      "qualityScore": 0.97,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
