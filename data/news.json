@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T00:33:17.400Z",
+  "generatedAt": "2026-10-22T05:15:50.720Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -60,12 +60,12 @@
     "newStories": 13,
     "fullArticles": 13,
     "previewArticles": 0,
-    "avgWords": 465,
+    "avgWords": 467,
     "withHeroImage": 13,
     "withOrderedMedia": 12,
     "skippedTranslation": 0,
     "skippedQuality": 30,
-    "durationMs": 6731
+    "durationMs": 3304
   },
   "items": [
     {
@@ -138,7 +138,7 @@
         },
         {
           "type": "paragraph",
-          "text": "O Gundam Info é o portal responsável por cuidar da série fora do Japão, incluindo a divulgação de produções como animações, jogos e mangás, de produtos da franquia incluindo os famosos model kits e cartas colecionáveis, além de organização de eventos relacionados a Gundam.",
+          "text": "O Gundam Info é o portal responsável por cuidar da série fora do Japão, incluindo a divulgação de produções como animações, jogos e mangás, de produtos da franquia incluindo os famosos model kits e cartas colecionáveis, além de organização de eventos relacionados a Gundam — o Brasil já recebeu alguns eventos oficiais do jogo de cartas, que são lançadas por aqui pela Coqui Hobby Brasil, conhecida também como Cartinha.",
           "runs": [
             {
               "text": "O "
@@ -162,13 +162,23 @@
               "text": " e cartas colecionáveis, além de organização de eventos relacionados a "
             },
             {
-              "text": "Gundam",
+              "text": "Gundam ",
               "marks": [
                 "em"
               ]
             },
             {
-              "text": "."
+              "text": "— o Brasil já recebeu alguns eventos oficiais do jogo de cartas, que são "
+            },
+            {
+              "text": "lançadas por aqui pela Coqui Hobby Brasil,",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://cartinha.com.br/card-games/gundam-card-game/"
+            },
+            {
+              "text": " conhecida também como Cartinha."
             }
           ]
         },
@@ -390,7 +400,7 @@
       ],
       "contentMode": "full",
       "publishedAt": "2026-10-21T22:44:52.000Z",
-      "updatedAt": "2026-10-21T22:46:52.000Z",
+      "updatedAt": "2026-10-22T00:52:59.000Z",
       "expiresAt": "2026-10-28T22:44:52.000Z",
       "category": "Notícias",
       "eventType": "OTHER",
@@ -406,8 +416,8 @@
       ],
       "sourceCount": 1,
       "readingMinutes": 2,
-      "wordCount": 212,
-      "qualityScore": 0.965,
+      "wordCount": 237,
+      "qualityScore": 0.968,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3273,7 +3283,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 237,
-      "qualityScore": 0.97,
+      "qualityScore": 0.91,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
