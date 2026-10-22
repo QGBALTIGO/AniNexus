@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T15:19:21.486Z",
+  "generatedAt": "2026-10-22T19:15:12.006Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,753 @@
   ],
   "stats": {
     "collected": 43,
-    "grouped": 13,
-    "published": 13,
-    "newStories": 13,
-    "fullArticles": 13,
+    "grouped": 12,
+    "published": 12,
+    "newStories": 12,
+    "fullArticles": 12,
     "previewArticles": 0,
-    "avgWords": 467,
-    "withHeroImage": 13,
-    "withOrderedMedia": 12,
+    "avgWords": 450,
+    "withHeroImage": 12,
+    "withOrderedMedia": 11,
     "skippedTranslation": 0,
-    "skippedQuality": 30,
-    "durationMs": 3549
+    "skippedQuality": 31,
+    "durationMs": 5883
   },
   "items": [
+    {
+      "id": "jbox-caf28c0b",
+      "slug": "jogo-de-diarios-de-uma-apotecaria-ganha-trailer-de-gameplay-e-data-de-lancamento-jbox-caf28c0b",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Jogo de ‘Diários de uma Apotecária’ ganha trailer de gameplay e data de lançamento",
+      "originalTitle": "Jogo de ‘Diários de uma Apotecária’ ganha trailer de gameplay e data de lançamento",
+      "summary": "A Koei Tecmo divulgou um trailer de gameplay de The Apothecary Diaries: The False Imperial Brother, primeiro jogo inspirado no universo de Diários de uma Apotecária.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Games",
+        "Light Novel",
+        "apotecaria nintendo switch",
+        "Diários de uma Apotecária",
+        "jogo de Diários de uma Apotecária",
+        "The Apothecary Diaries: The False Imperial Brother"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/22/jogo-de-diarios-de-uma-apotecaria-ganha-trailer-de-gameplay-e-data-de-lancamento",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/22/jogo-de-diarios-de-uma-apotecaria-ganha-trailer-de-gameplay-e-data-de-lancamento",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/The-Apothecary-Diaries-The-False-Imperial-Brother-destacada.jpg",
+      "mediaQuery": "Jogo de ‘Diários de uma Apotecária’ ganha trailer de gameplay e data de lançamento",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/UB9PxFw_ESk"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Koei Tecmo divulgou um trailer de gameplay de The Apothecary Diaries: The False Imperial Brother, primeiro jogo inspirado no universo de Diários de uma Apotecária.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Koei Tecmo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " divulgou um trailer de gameplay de "
+            },
+            {
+              "text": "The Apothecary Diaries: The False Imperial Brother",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", primeiro jogo inspirado no universo de "
+            },
+            {
+              "text": "Diários de uma Apotecária",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Com quase três minutos de duração, a prévia revela que o jogo terá cinco mistérios para resolver e alguns novos personagens. Entre as atividades como Maomao, o jogador poderá coletar pistas, criar antídotos e remédios, investigar incidentes e, finalmente, resolver o mistério.",
+          "runs": [
+            {
+              "text": "Com quase três minutos de duração, a prévia revela que o jogo terá cinco mistérios para resolver e alguns novos personagens. Entre as atividades como Maomao, o jogador poderá coletar pistas, criar antídotos e remédios, investigar incidentes e, finalmente, resolver o mistério."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além disso, será possível jogar como o Mestre Jinshi e como a gatinha Maomao para revelar mistérios por trás de alguns incidentes, e coletar selos para desbloquear ilustrações especiais. A prévia também confirma a data de lançamento para o dia 18 de março de 2027, para Nintendo Switch 2, Nintendo Switch, PlayStation 5 e PC via Steam.",
+          "runs": [
+            {
+              "text": "Além disso, "
+            },
+            {
+              "text": "será possível jogar como o Mestre Jinshi e como a gatinha Maomao",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " para revelar mistérios por trás de alguns incidentes, e coletar selos para desbloquear ilustrações especiais. A prévia também confirma a data de lançamento para o dia"
+            },
+            {
+              "text": " 18 de março de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", para "
+            },
+            {
+              "text": "Nintendo Switch 2",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Nintendo Switch",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "PlayStation 5",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "PC",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " via "
+            },
+            {
+              "text": "Steam",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=UB9PxFw_ESk",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/UB9PxFw_ESk"
+        },
+        {
+          "type": "paragraph",
+          "text": "De acordo com a descrição oficial, uma série de fenômenos estranhos e conspirações começa a causar problemas em diferentes pontos da capital, incluindo o palácio interno, o distrito da luz vermelha e as ruas da cidade. Cabe a Maomao usar seus conhecimentos e sua inteligência para investigar os acontecimentos e descobrir a verdade por trás do chamado “Falso Irmão Imperial” antes que os acontecimentos levem o caos à corte imperial. Essa é uma história inédita, pensada especialmente para o jogo por Hyuganatsu, criadora da obra.",
+          "runs": [
+            {
+              "text": "De acordo com a descrição oficial, uma série de fenômenos estranhos e conspirações começa a causar problemas em diferentes pontos da capital, incluindo o palácio interno, o distrito da luz vermelha e as ruas da cidade. Cabe a Maomao usar seus conhecimentos e sua inteligência para investigar os acontecimentos e descobrir a verdade por trás do chamado “Falso Irmão Imperial” antes que os acontecimentos levem o caos à corte imperial. Essa é uma história inédita, pensada especialmente para o jogo por "
+            },
+            {
+              "text": "Hyuganatsu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", criadora da obra."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Lembrando que, em maio deste ano, também foi anunciado o jogo de simulação The Apothecary Diaries Palace Chronicles, desenvolvido pela produtora G123.",
+          "runs": [
+            {
+              "text": "Lembrando que, em maio deste ano, também foi anunciado o jogo de simulação "
+            },
+            {
+              "text": "The Apothecary Diaries Palace Chronicles",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/27/diarios-de-uma-apotecaria-jogo-tem-trailer-divulgado/"
+            },
+            {
+              "text": ", desenvolvido pela produtora G123."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Diários de uma Apotecária teve início com uma série de livros em 2011, que começou a ser publicada recentemente no Brasil pela editora Alt. Uma versão em mangá é publicada no Brasil pela editora Panini. Já a adaptação em animê pela TOHO junto ao estúdio OLM (Pokémon) está atualmente em sua terceira temporada, em exibição desde o início deste mês de outubro pela Crunchyroll. Um longa-metragem será lançado em dezembro, com distribuição confirmada no Brasil.",
+          "runs": [
+            {
+              "text": "Diários de uma Apotecária",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " teve início com uma série de livros em 2011, que começou a ser publicada recentemente no Brasil pela editora "
+            },
+            {
+              "text": "Alt",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Uma versão em mangá é publicada no Brasil pela editora"
+            },
+            {
+              "text": " Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Já a adaptação em animê pela "
+            },
+            {
+              "text": "TOHO",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " junto ao estúdio "
+            },
+            {
+              "text": "OLM ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "("
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") está"
+            },
+            {
+              "text": " atualmente em sua terceira temporada",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", em exibição desde o início deste mês de outubro pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Um longa-metragem será lançado em dezembro, "
+            },
+            {
+              "text": "com distribuição confirmada no Brasil",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/09/filme-de-diarios-de-uma-apotecaria-e-confirmado-nos-cinemas-internacionais/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Netflix e a HBO Max contam com a primeira temporada da série, que tem passagem também pelo canal Adult Swim.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e a "
+            },
+            {
+              "text": "HBO Max",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " contam com a primeira temporada da série, que tem passagem também pelo canal "
+            },
+            {
+              "text": "Adult Swim",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Koei Tecmo America no YouTube",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Koei Tecmo America no YouTube",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.youtube.com/@KOEITECMOAMERICA"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-22T18:21:38.000Z",
+      "updatedAt": "2026-10-22T18:23:48.000Z",
+      "expiresAt": "2026-10-29T18:21:38.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/22/jogo-de-diarios-de-uma-apotecaria-ganha-trailer-de-gameplay-e-data-de-lancamento",
+          "publishedAt": "2026-10-22T18:21:38.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 351,
+      "qualityScore": 0.983,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-47ce6941",
+      "slug": "2026-bate-recorde-como-o-ano-com-mais-volumes-de-mangas-publicados-no-brasil-jbox-47ce6941",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "2026 bate recorde como o ano com mais volumes de mangás publicados no Brasil",
+      "originalTitle": "2026 bate recorde como o ano com mais volumes de mangás publicados no Brasil",
+      "summary": "Um recorde foi quebrado: 2026 já é o ano com mais volumes de mangás publicados aqui no Brasil em todos os tempos. E ainda estamos em outubro! De acordo com levantamento feito pelo site Biblioteca Brasileira de Mangás, com os lançamentos dessa última semana, já são 677 volumes de gibis japoneses colocados para venda ao longo do ano. A estimativa é que, ao final de dezembro, esse número ultrapasse 800.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Mangá",
+        "2026 é o ano com mais mangás publicados no Brasil",
+        "mangá vende bem no brasil?",
+        "mangás no brasil em 2026",
+        "número de mangás no brasil em 2026",
+        "venda de mangás no brasil"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/22/2026-bate-recorde-como-o-ano-com-mais-volumes-de-mangas-publicados-no-brasil",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/22/2026-bate-recorde-como-o-ano-com-mais-volumes-de-mangas-publicados-no-brasil",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/mangas2026-destacada.jpg",
+      "mediaQuery": "2026 bate recorde como o ano com mais volumes de mangás publicados no Brasil",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Volumes-de-Mangas-Publicados-no-Brasil-2015-a-17_10_2026.jpg",
+          "alt": "Imagem: Gráfico contendo o a quantidade de mangás lançados no Brasil entre os anos de 2015 e 2026.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Um recorde foi quebrado: 2026 já é o ano com mais volumes de mangás publicados aqui no Brasil em todos os tempos. E ainda estamos em outubro! De acordo com levantamento feito pelo site Biblioteca Brasileira de Mangás, com os lançamentos dessa última semana, já são 677 volumes de gibis japoneses colocados para venda ao longo do ano. A estimativa é que, ao final de dezembro, esse número ultrapasse 800.",
+          "runs": [
+            {
+              "text": "Um recorde foi quebrado: 2026 já é o ano com mais volumes de mangás publicados aqui no Brasil em todos os tempos. E ainda estamos em outubro! De acordo com levantamento feito pelo site "
+            },
+            {
+              "text": "Biblioteca Brasileira de Mangás",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", com os lançamentos dessa última semana, já são "
+            },
+            {
+              "text": "677 volumes",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " de gibis japoneses colocados para venda ao longo do ano. A estimativa é que, ao final de dezembro, esse número ultrapasse 800."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O recorde não é inédito, já que nos últimos seis anos essa marca foi superada cinco vezes. A exceção foi no ano de 2024, em que rolaram 656 obras, uma a menos em comparação com 2023, com 657. Esses números não incluem reimpressões, mangás digitais, databooks, artbooks, light novels e nem mangás de outras nacionalidades. O levantamento incluiu apenas quadrinhos japoneses mesmo.",
+          "runs": [
+            {
+              "text": "O recorde não é inédito, já que nos últimos seis anos essa marca foi superada cinco vezes. A exceção foi no ano de 2024, em que rolaram 656 obras, uma a menos em comparação com 2023, com 657. Esses números não incluem reimpressões, mangás digitais, "
+            },
+            {
+              "text": "databooks",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "artbooks",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "light novels",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e nem mangás de outras nacionalidades. O levantamento incluiu apenas quadrinhos japoneses mesmo."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Volumes-de-Mangas-Publicados-no-Brasil-2015-a-17_10_2026.jpg",
+          "alt": "Imagem: Gráfico contendo o a quantidade de mangás lançados no Brasil entre os anos de 2015 e 2026."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: blogbbm.com",
+          "runs": [
+            {
+              "text": "Imagem: blogbbm.com"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Segundo o Biblioteca Brasileira de Mangás, o aumento de 2025 para 2026 se deve a uma maior constância em lançamentos da editora JBC, que já está quase superando o número de obras do ano passado; ao fim dos atrasos da editora Panini, que também está para superar a quantidade de mangás de 2025; a um aumento da produção da editora MPEG; e às várias editoras que passaram a também publicar mangás, como a Baú, a Taverna do Rei e a Universo dos Livros. Ao todo, 19 editoras esse ano publicaram ao menos um mangá no Brasil até esse momento.",
+          "runs": [
+            {
+              "text": "Segundo o "
+            },
+            {
+              "text": "Biblioteca Brasileira de Mangás",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o aumento de 2025 para 2026 se deve a uma maior constância em lançamentos da editora "
+            },
+            {
+              "text": "JBC",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que já está quase superando o número de obras do ano passado; ao fim dos atrasos da editora "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que também está para superar a quantidade de mangás de 2025; a um aumento da produção da editora "
+            },
+            {
+              "text": "MPEG",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "; e às várias editoras que passaram a também publicar mangás, como a "
+            },
+            {
+              "text": "Baú",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", a "
+            },
+            {
+              "text": "Taverna do Rei",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e a "
+            },
+            {
+              "text": "Universo dos Livros",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Ao todo, 19 editoras esse ano publicaram ao menos um mangá no Brasil até esse momento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O site disponibilizou também uma tabela com TODOS os lançamentos de mangás de 2026 até então. Caso tenha curiosidade, é só dar uma olhada cclicando aqui.",
+          "runs": [
+            {
+              "text": "O site disponibilizou também uma tabela com TODOS os lançamentos de mangás de 2026 até então. Caso tenha curiosidade, é só dar uma olhada c"
+            },
+            {
+              "text": "clicando aqui",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://blogbbm.com/2026/10/18/2026-ja-e-o-ano-com-mais-volumes-de-mangas-publicados-na-historia-do-brasil/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Biblioteca Brasileira de Mangás",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Biblioteca Brasileira de Mangás",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://blogbbm.com/2026/10/18/2026-ja-e-o-ano-com-mais-volumes-de-mangas-publicados-na-historia-do-brasil/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-22T16:57:53.000Z",
+      "updatedAt": "2026-10-22T17:00:15.000Z",
+      "expiresAt": "2026-10-29T16:57:53.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/22/2026-bate-recorde-como-o-ano-com-mais-volumes-de-mangas-publicados-no-brasil",
+          "publishedAt": "2026-10-22T16:57:53.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 281,
+      "qualityScore": 0.972,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-aedfe5d9",
       "slug": "gundam-franquia-ganha-perfil-oficial-brasileiro-no-instagram-jbox-aedfe5d9",
@@ -138,7 +872,7 @@
         },
         {
           "type": "paragraph",
-          "text": "O Gundam Info é o portal responsável por cuidar da série fora do Japão, incluindo a divulgação de produções como animações, jogos e mangás, de produtos da franquia incluindo os famosos model kits e cartas colecionáveis, além de organização de eventos relacionados a Gundam — o Brasil já recebeu alguns eventos oficiais do jogo de cartas, que são lançadas por aqui pela Coqui Hobby Brasil, conhecida também como Cartinha.",
+          "text": "O Gundam Info é o portal responsável por cuidar da série fora do Japão, incluindo a divulgação de produções como animações, jogos e mangás, de produtos da franquia incluindo os famosos model kits e cartas colecionáveis, além de organização de eventos relacionados a Gundam — o Brasil já recebeu alguns eventos oficiais do jogo de cartas, que é distribuído por aqui pela Coqui Hobby Brasil, conhecida também como Cartinha.",
           "runs": [
             {
               "text": "O "
@@ -168,10 +902,10 @@
               ]
             },
             {
-              "text": "— o Brasil já recebeu alguns eventos oficiais do jogo de cartas, que são "
+              "text": "— o Brasil já recebeu alguns eventos oficiais do jogo de cartas, que é "
             },
             {
-              "text": "lançadas por aqui pela Coqui Hobby Brasil,",
+              "text": "distribuído por aqui pela Coqui Hobby Brasil,",
               "marks": [
                 "strong"
               ],
@@ -400,7 +1134,7 @@
       ],
       "contentMode": "full",
       "publishedAt": "2026-10-21T22:44:52.000Z",
-      "updatedAt": "2026-10-22T00:52:59.000Z",
+      "updatedAt": "2026-10-22T16:00:54.000Z",
       "expiresAt": "2026-10-28T22:44:52.000Z",
       "category": "Notícias",
       "eventType": "OTHER",
@@ -2730,7 +3464,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 333,
-      "qualityScore": 0.986,
+      "qualityScore": 0.926,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3058,7 +3792,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 323,
-      "qualityScore": 0.978,
+      "qualityScore": 0.918,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -4801,904 +5535,6 @@
         "contentMode": "full",
         "mediaCount": 4,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-36df0211",
-      "slug": "i-got-a-cheat-skill-ganha-trailer-da-2-temporada-animenew-36df0211",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "I Got a Cheat Skill ganha trailer da 2ª temporada",
-      "originalTitle": "I Got a Cheat Skill ganha trailer da 2ª temporada",
-      "summary": "A segunda temporada de I Got a Cheat Skill in Another World ganhou seu primeiro vídeo promocional nesta quinta-feira (15). A nova fase do anime estreia em janeiro de 2027 e também revelou novos integrantes do elenco e da equipe de produção.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "I Got a Cheat Skill in Another World",
-        "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World Too"
-      ],
-      "url": "https://animenew.com.br/i-got-a-cheat-skill-temporada-2",
-      "sourceUrl": "https://animenew.com.br/i-got-a-cheat-skill-temporada-2",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/I-Got-a-Cheat-Skill-ganha-trailer-da-2a-temporada.webp",
-      "mediaQuery": "I Got a Cheat Skill ganha trailer da 2ª temporada",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/twGVFfRI-7s"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A segunda temporada de I Got a Cheat Skill in Another World ganhou seu primeiro vídeo promocional nesta quinta-feira (15). A nova fase do anime estreia em janeiro de 2027 e também revelou novos integrantes do elenco e da equipe de produção.",
-          "runs": [
-            {
-              "text": "A segunda temporada de "
-            },
-            {
-              "text": "I Got a Cheat Skill in Another World",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ganhou seu primeiro vídeo promocional nesta quinta-feira (15). A nova fase do "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " estreia em janeiro de 2027 e também revelou novos integrantes do elenco e da equipe de produção."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Yumene Connect: Mangá de comédia ganha anime",
-              "runs": [
-                {
-                  "text": "Yumene Connect: Mangá de comédia ganha anime",
-                  "href": "https://animenew.com.br/yumeneconnect-anime-anunciado"
-                }
-              ]
-            },
-            {
-              "text": "Nue’s Exorcist: Mangá ganhará adaptação para anime",
-              "runs": [
-                {
-                  "text": "Nue’s Exorcist: Mangá ganhará adaptação para anime",
-                  "href": "https://animenew.com.br/nues-exorcist-anime-estreia-verao-2027"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=twGVFfRI-7s",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/twGVFfRI-7s"
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre as novidades, Ikumi Hasegawa dará voz à personagem Iris Knowblade, enquanto Sora Amamiya interpretará Mai Kagurazaka. O elenco original também retorna, incluindo Yoshitsugu Matsuoka como Yuuya Tenjou, Akari Kito como Kaori Hojo e Kaori Maeda como Lexia von Arcelia.",
-          "runs": [
-            {
-              "text": "Entre as novidades, Ikumi Hasegawa dará voz à personagem Iris Knowblade, enquanto Sora Amamiya interpretará Mai Kagurazaka. O elenco original também retorna, incluindo Yoshitsugu Matsuoka como Yuuya Tenjou, Akari Kito como Kaori Hojo e Kaori Maeda como Lexia von Arcelia."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Produção do anime I Got a Cheat Skill",
-          "runs": [
-            {
-              "text": "Produção do anime I Got a Cheat Skill"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Shin Itagaki retorna à direção da segunda temporada no estúdio Millepensee. Hiromi Kimura também continua responsável pelo design de personagens, enquanto a UNLIMITED PRODUCE by TMS permanece encarregada do planejamento e da produção.",
-          "runs": [
-            {
-              "text": "Shin Itagaki retorna à direção da segunda temporada no "
-            },
-            {
-              "text": "estúdio Millepensee",
-              "href": "https://animenew.com.br/studio/6073/millepensee"
-            },
-            {
-              "text": ". Hiromi Kimura também continua responsável pelo design de personagens, enquanto a UNLIMITED PRODUCE by TMS permanece encarregada do planejamento e da produção."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A série adapta a light novel escrita por Miku e ilustrada por Rein Kuwashima. A história acompanha Yuuya Tenjou, um jovem que sofre bullying e encontra uma porta para outro mundo, onde adquire habilidades especiais que também podem transformar sua vida na realidade.",
-          "runs": [
-            {
-              "text": "A série adapta a "
-            },
-            {
-              "text": "light novel",
-              "href": "https://animenew.com.br/light-novel"
-            },
-            {
-              "text": " escrita por Miku e ilustrada por Rein Kuwashima. A história acompanha Yuuya Tenjou, um jovem que sofre bullying e encontra uma porta para outro mundo, onde adquire habilidades especiais que também podem transformar sua vida na realidade."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A primeira temporada estreou em abril de 2023 e contou com 13 episódios. A franquia também recebeu um especial televisivo em março de 2025. Por fim a nova temporada chega em janeiro de 2027, mas ainda não teve uma data exata de estreia divulgada.",
-          "runs": [
-            {
-              "text": "A primeira temporada estreou em abril de 2023 e contou com 13 episódios. A franquia também recebeu um especial televisivo em março de 2025. Por fim a nova temporada chega em janeiro de 2027, mas ainda não teve uma data exata de estreia divulgada."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em I Got a Cheat Skill ganha trailer da 2ª temporada.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "I Got a Cheat Skill ganha trailer da 2ª temporada",
-              "href": "https://animenew.com.br/i-got-a-cheat-skill-temporada-2/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-15T17:35:12.000Z",
-      "updatedAt": "2026-10-15T17:35:12.000Z",
-      "expiresAt": "2026-10-22T17:35:12.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/i-got-a-cheat-skill-temporada-2",
-          "publishedAt": "2026-10-15T17:35:12.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 246,
-      "qualityScore": 0.909,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 9,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-48ec717c",
-      "slug": "blox-fruits-como-one-piece-criou-o-maior-fenomeno-de-anime-dentro-do-roblox-animenew-48ec717c",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Blox Fruits: como One Piece criou o maior fenômeno de anime dentro do Roblox",
-      "originalTitle": "Blox Fruits: como One Piece criou o maior fenômeno de anime dentro do Roblox",
-      "summary": "Existe uma geração de fãs brasileiros que conheceu One Piece por um jogo de Roblox. Não pelo anime nem pelo mangá. Blox Fruits acumula bilhões de visitas e mantém centenas de milhares de jogadores simultâneos há anos. A estrutura copia quase tudo da obra de Eiichiro Oda, sem nunca ter tido uma licença oficial.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Games",
-        "Notícias",
-        "Blox Fruits",
-        "One Piece",
-        "Roblox"
-      ],
-      "url": "https://animenew.com.br/blox-fruits-one-piece-fenomeno-de-anime-roblox",
-      "sourceUrl": "https://animenew.com.br/blox-fruits-one-piece-fenomeno-de-anime-roblox",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Blox-Fruits-one-piece.webp",
-      "mediaQuery": "Blox Fruits: como One Piece criou o maior fenômeno de anime dentro do Roblox",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Blox-Fruits-one-piece-jogar.webp",
-          "alt": "",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Existe uma geração de fãs brasileiros que conheceu One Piece por um jogo de Roblox. Não pelo anime nem pelo mangá. Blox Fruits acumula bilhões de visitas e mantém centenas de milhares de jogadores simultâneos há anos. A estrutura copia quase tudo da obra de Eiichiro Oda, sem nunca ter tido uma licença oficial.",
-          "runs": [
-            {
-              "text": "Existe uma geração de fãs brasileiros que conheceu "
-            },
-            {
-              "text": "One Piece",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " por um jogo de "
-            },
-            {
-              "text": "Roblox",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Não pelo anime nem pelo mangá. Blox Fruits acumula bilhões de visitas e mantém centenas de milhares de jogadores simultâneos há anos. A estrutura copia quase tudo da obra de Eiichiro Oda, sem nunca ter tido uma licença oficial."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "One Piece anuncia filme GOD VALLEY para 2027",
-              "runs": [
-                {
-                  "text": "One Piece anuncia filme GOD VALLEY para 2027",
-                  "href": "https://animenew.com.br/one-piece-god-valley-baad-filmes-2027-2029"
-                }
-              ]
-            },
-            {
-              "text": "Remake de One Piece revela trailer com voz clássica de Luffy",
-              "runs": [
-                {
-                  "text": "Remake de One Piece revela trailer com voz clássica de Luffy",
-                  "href": "https://animenew.com.br/remake-one-piece-retorno-mayumi-tanaka-luffy"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O resultado é um caso curioso de influência cultural. Plataformas de troca como a Eldorado já trabalham com itens do jogo, algo que normalmente acontece só com MMORPGs tradicionais.",
-          "runs": [
-            {
-              "text": "O resultado é um caso curioso de influência cultural. Plataformas de troca como a Eldorado já trabalham com itens do jogo, algo que normalmente acontece só com MMORPGs tradicionais."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Um Grand Line feito de ilhas e níveis",
-          "runs": [
-            {
-              "text": "Um Grand Line feito de ilhas e níveis",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "A estrutura é reconhecível para qualquer leitor do mangá. Você começa fraco em uma ilha pequena e enfrenta inimigos com níveis crescentes.",
-          "runs": [
-            {
-              "text": "A estrutura é reconhecível para qualquer leitor do mangá. Você começa fraco em uma ilha pequena e enfrenta inimigos com níveis crescentes."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Depois atravessa mares que funcionam como atos narrativos. Os chefes remetem diretamente aos arcos originais. As frutas do diabo são o centro de tudo. Cada uma concede um conjunto de habilidades, e as mais raras aparecem com probabilidade baixíssima na loja rotativa ou em spawns aleatórios.",
-          "runs": [
-            {
-              "text": "Depois atravessa mares que funcionam como atos narrativos. Os chefes remetem diretamente aos arcos originais. As frutas do diabo são o centro de tudo. Cada uma concede um conjunto de habilidades, e as mais raras aparecem com probabilidade baixíssima na loja rotativa ou em spawns aleatórios."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Blox-Fruits-one-piece-jogar.webp"
-        },
-        {
-          "type": "paragraph",
-          "text": "Dragon, Leopard, Kitsune e Yeti são as mais disputadas. A maioria dos jogadores nunca consegue nenhuma delas por conta própria.",
-          "runs": [
-            {
-              "text": "Dragon, Leopard, Kitsune e Yeti são as mais disputadas. A maioria dos jogadores nunca consegue nenhuma delas por conta própria."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Essa escassez não é acidente. É o motor que mantém o jogo vivo, porque transforma cada fruta em um bem com valor reconhecido pela comunidade.",
-          "runs": [
-            {
-              "text": "Essa escassez não é acidente. É o motor que mantém o jogo vivo, porque transforma cada fruta em um bem com valor reconhecido pela comunidade."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "A economia de trocas vale mais que o combate",
-          "runs": [
-            {
-              "text": "A economia de trocas vale mais que o combate",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "Quem observa um servidor de Discord de Blox Fruits percebe rápido. Os canais de troca são mais movimentados que os de raid. Existem listas de valores mantidas pela própria comunidade, atualizadas a cada mudança de equilíbrio. Uma fruta permanente pode valer uma fortuna antes de um rebalanceamento e muito menos depois.",
-          "runs": [
-            {
-              "text": "Quem observa um servidor de Discord de Blox Fruits percebe rápido. Os canais de troca são mais movimentados que os de raid. Existem listas de valores mantidas pela própria comunidade, atualizadas a cada mudança de equilíbrio. Uma fruta permanente pode valer uma fortuna antes de um rebalanceamento e muito menos depois."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Jogadores experientes guardam frutas que não pretendem usar. Trocam quando o valor sobe, exatamente como investidores guardam ativos.",
-          "runs": [
-            {
-              "text": "Jogadores experientes guardam frutas que não pretendem usar. Trocam quando o valor sobe, exatamente como investidores guardam ativos."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "É nesse contexto que surgem as ofertas para comprar itens blox fruits fora do jogo. A procura vem de quem quer uma fruta específica sem depender de sorte na loja rotativa, que troca o estoque a cada quatro horas.",
-          "runs": [
-            {
-              "text": "É nesse contexto que surgem as ofertas para "
-            },
-            {
-              "text": "comprar itens blox fruits",
-              "href": "https://www.eldorado.gg/br/blox-fruits-shop/i/202-2-0"
-            },
-            {
-              "text": " fora do jogo. A procura vem de quem quer uma fruta específica sem depender de sorte na loja rotativa, que troca o estoque a cada quatro horas."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A prática é comum. Vale lembrar, porém, que o Roblox não dá suporte a negociações feitas fora da plataforma, e qualquer coisa que envolva acesso à conta carrega risco real.",
-          "runs": [
-            {
-              "text": "A prática é comum. Vale lembrar, porém, que o Roblox não dá suporte a negociações feitas fora da plataforma, e qualquer coisa que envolva acesso à conta carrega risco real."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Por que One Piece funciona tão bem nesse formato",
-          "runs": [
-            {
-              "text": "Por que One Piece funciona tão bem nesse formato",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "A obra de Oda tem uma característica que poucos mangás longos compartilham. O sistema de poderes é bem definido e fácil de traduzir em mecânica de jogo.",
-          "runs": [
-            {
-              "text": "A obra de Oda tem uma característica que poucos mangás longos compartilham. O sistema de poderes é bem definido e fácil de traduzir em mecânica de jogo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Cada fruta tem regras claras, limites conhecidos e fraquezas específicas. Isso torna a adaptação quase natural.",
-          "runs": [
-            {
-              "text": "Cada fruta tem regras claras, limites conhecidos e fraquezas específicas. Isso torna a adaptação quase natural."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Jogos licenciados de One Piece costumam apostar em luta um contra um. Blox Fruits entendeu que o apelo real está na progressão, na sensação de sair de um personagem comum e virar alguém temido no servidor.",
-          "runs": [
-            {
-              "text": "Jogos licenciados de One Piece costumam apostar em luta um contra um. Blox Fruits entendeu que o apelo real está na progressão, na sensação de sair de um personagem comum e virar alguém temido no servidor."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "O que o fenômeno diz sobre o público brasileiro",
-          "runs": [
-            {
-              "text": "O que o fenômeno diz sobre o público brasileiro",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "O Brasil é um dos mercados mais fortes do jogo, e isso tem explicação. One Piece tem presença consolidada por aqui desde a exibição na televisão aberta.",
-          "runs": [
-            {
-              "text": "O Brasil é um dos mercados mais fortes do jogo, e isso tem explicação. One Piece tem presença consolidada por aqui desde a exibição na televisão aberta."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além disso, o Roblox é gratuito e roda em aparelhos modestos. Boa parte do público joga com amigos em servidores improvisados.",
-          "runs": [
-            {
-              "text": "Além disso, o Roblox é gratuito e roda em aparelhos modestos. Boa parte do público joga com amigos em servidores improvisados."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Também existe um ecossistema de criadores de conteúdo em português que sustenta o interesse. Vídeos sobre valores de frutas, atualizações e métodos de farm somam milhões de visualizações, e funcionam como porta de entrada para quem nunca viu o anime.",
-          "runs": [
-            {
-              "text": "Também existe um ecossistema de criadores de conteúdo em português que sustenta o interesse. Vídeos sobre valores de frutas, atualizações e métodos de farm somam milhões de visualizações, e funcionam como porta de entrada para quem nunca viu o anime."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "O problema da licença que nunca existiu",
-          "runs": [
-            {
-              "text": "O problema da licença que nunca existiu",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "Há um detalhe que incomoda parte dos fãs, e é legítimo mencioná-lo. Nada disso é oficial.",
-          "runs": [
-            {
-              "text": "Há um detalhe que incomoda parte dos fãs, e é legítimo mencioná-lo. Nada disso é oficial."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A Toei e a Shueisha nunca autorizaram o jogo, e os nomes foram alterados o suficiente para evitar conflito direto. Frutas, ilhas e personagens são variações reconhecíveis, não cópias literais.",
-          "runs": [
-            {
-              "text": "A Toei e a Shueisha nunca autorizaram o jogo, e os nomes foram alterados o suficiente para evitar conflito direto. Frutas, ilhas e personagens são variações reconhecíveis, não cópias literais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Esse limite jurídico explica algumas escolhas estranhas de design. Também significa que o jogo depende de uma tolerância que pode mudar a qualquer momento.",
-          "runs": [
-            {
-              "text": "Esse limite jurídico explica algumas escolhas estranhas de design. Também significa que o jogo depende de uma tolerância que pode mudar a qualquer momento."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Um caminho de entrada inesperado",
-          "runs": [
-            {
-              "text": "Um caminho de entrada inesperado",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "O detalhe mais interessante é a direção do fluxo. Normalmente uma obra gera adaptações, e as adaptações atraem público para a obra original.",
-          "runs": [
-            {
-              "text": "O detalhe mais interessante é a direção do fluxo. Normalmente uma obra gera adaptações, e as adaptações atraem público para a obra original."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Aqui aconteceu o contrário em muitos casos. Adolescentes chegaram ao mangá depois de passar centenas de horas em uma imitação não oficial.",
-          "runs": [
-            {
-              "text": "Aqui aconteceu o contrário em muitos casos. Adolescentes chegaram ao mangá depois de passar centenas de horas em uma imitação não oficial."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para quem acompanha anime há tempo isso pode soar estranho, mas o efeito é positivo. A obra ganha leitores, e o jogo ganha jogadores que entendem de onde vem cada referência.",
-          "runs": [
-            {
-              "text": "Para quem acompanha anime há tempo isso pode soar estranho, mas o efeito é positivo. A obra ganha leitores, e o jogo ganha jogadores que entendem de onde vem cada referência."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Vale observar que o mesmo padrão já apareceu com outras franquias no Roblox. Naruto, Demon Slayer e Jujutsu Kaisen têm versões comunitárias com públicos consideráveis. Nenhuma, porém, chegou perto da escala que Blox Fruits alcançou.",
-          "runs": [
-            {
-              "text": "Vale observar que o mesmo padrão já apareceu com outras franquias no Roblox. Naruto, Demon Slayer e Jujutsu Kaisen têm versões comunitárias com públicos consideráveis. Nenhuma, porém, chegou perto da escala que Blox Fruits alcançou."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Blox Fruits: como One Piece criou o maior fenômeno de anime dentro do Roblox.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Blox Fruits: como One Piece criou o maior fenômeno de anime dentro do Roblox",
-              "href": "https://animenew.com.br/blox-fruits-one-piece-fenomeno-de-anime-roblox/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-15T17:11:23.000Z",
-      "updatedAt": "2026-10-15T17:11:23.000Z",
-      "expiresAt": "2026-10-22T17:11:23.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/blox-fruits-one-piece-fenomeno-de-anime-roblox",
-          "publishedAt": "2026-10-15T17:11:23.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 4,
-      "wordCount": 774,
-      "qualityScore": 0.97,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 32,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-97ff3630",
-      "slug": "i-lost-my-adventurer-s-license-ganha-trailer-e-estreia-em-2027-animenew-97ff3630",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "I Lost My Adventurer’s License ganha trailer e estreia em 2027",
-      "originalTitle": "I Lost My Adventurer’s License ganha trailer e estreia em 2027",
-      "summary": "O anime I Lost My Adventurer’s License (Bōkensha License o Hakudatsusareta Ossan Dakedo) divulgou seu primeiro vídeo promocional nesta quinta-feira (15), revelando o elenco principal, a equipe de produção e a estreia prevista para janeiro de 2027.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Bōkensha License o Hakudatsusareta Ossan Dakedo",
-        "I Lost My Adventurer’s License"
-      ],
-      "url": "https://animenew.com.br/i-lost-my-adventurers-license-anime-2027",
-      "sourceUrl": "https://animenew.com.br/i-lost-my-adventurers-license-anime-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/I-Lost-My-Adventurers-License-ganha-trailer-e-estreia-em-2027.webp",
-      "mediaQuery": "I Lost My Adventurer’s License ganha trailer e estreia em 2027",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/I-Lost-My-Adventurers-License-anime-scaled.webp",
-          "alt": "I Lost My Adventurer's License anime",
-          "caption": "©斧名田マニマニ・SBクリエイティブ/冒険者ライセンスを剥奪された製作委員会"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/inKTTHeuzds"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime I Lost My Adventurer’s License (Bōkensha License o Hakudatsusareta Ossan Dakedo) divulgou seu primeiro vídeo promocional nesta quinta-feira (15), revelando o elenco principal, a equipe de produção e a estreia prevista para janeiro de 2027.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "I Lost My Adventurer’s License",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Bōkensha License o Hakudatsusareta Ossan Dakedo) divulgou seu primeiro vídeo promocional nesta quinta-feira (15), revelando o elenco principal, a equipe de produção e a estreia prevista para janeiro de 2027."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Yumene Connect: Mangá de comédia ganha anime",
-              "runs": [
-                {
-                  "text": "Yumene Connect: Mangá de comédia ganha anime",
-                  "href": "https://animenew.com.br/yumeneconnect-anime-anunciado"
-                }
-              ]
-            },
-            {
-              "text": "Nue’s Exorcist: Mangá ganhará adaptação para anime",
-              "runs": [
-                {
-                  "text": "Nue’s Exorcist: Mangá ganhará adaptação para anime",
-                  "href": "https://animenew.com.br/nues-exorcist-anime-estreia-verao-2027"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Portanto a adaptação da light novel de Manimani Ononata será produzida pelo Studio Palette. Assim o trailer também foi acompanhado por uma nova imagem promocional da série.",
-          "runs": [
-            {
-              "text": "Portanto a adaptação da "
-            },
-            {
-              "text": "light novel",
-              "href": "https://animenew.com.br/light-novel"
-            },
-            {
-              "text": " de "
-            },
-            {
-              "text": "Manimani Ononata",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " será produzida pelo Studio Palette. Assim o trailer também foi acompanhado por uma nova imagem promocional da série."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=inKTTHeuzds",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/inKTTHeuzds"
-        },
-        {
-          "type": "heading",
-          "text": "Elenco e equipe de produção",
-          "runs": [
-            {
-              "text": "Elenco e equipe de produção"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "Hiroki Yasumoto dará voz a Douglas, enquanto Yuka Iguchi interpretará Rabi, os dois personagens centrais da história.",
-          "runs": [
-            {
-              "text": "Hiroki Yasumoto dará voz a Douglas, enquanto Yuka Iguchi interpretará Rabi, os dois personagens centrais da história."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/I-Lost-My-Adventurers-License-anime-scaled.webp",
-          "alt": "I Lost My Adventurer's License anime",
-          "caption": "©斧名田マニマニ・SBクリエイティブ/冒険者ライセンスを剥奪された製作委員会"
-        },
-        {
-          "type": "paragraph",
-          "text": "Yuki Inaba dirige o anime e também supervisiona os roteiros. Kaori Yoshikawa é responsável pelo design dos personagens e atua como diretora-chefe de animação. A trilha sonora ficará a cargo de Ohshu e Daiki Okuno, com produção musical da SPACE SHOWER MUSIC.",
-          "runs": [
-            {
-              "text": "Yuki Inaba dirige o anime e também supervisiona os roteiros. Kaori Yoshikawa é responsável pelo design dos personagens e atua como diretora-chefe de animação. A trilha sonora ficará a cargo de Ohshu e Daiki Okuno, com produção musical da SPACE SHOWER MUSIC."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "História acompanha aventureiro desacreditado",
-          "runs": [
-            {
-              "text": "História acompanha aventureiro desacreditado"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama segue Douglas, um antigo especialista em magias de fortalecimento que perdeu sua reputação, foi expulso do grupo de heróis e teve sua licença de aventureiro revogada. Sem rumo, ele passa a vagar pelo mundo até conhecer Rabi, uma garota amaldiçoada. O encontro dá início a uma nova aventura para o protagonista.",
-          "runs": [
-            {
-              "text": "A trama segue Douglas, um antigo especialista em magias de fortalecimento que perdeu sua reputação, foi expulso do grupo de heróis e teve sua licença de aventureiro revogada. Sem rumo, ele passa a vagar pelo mundo até conhecer Rabi, uma garota amaldiçoada. O encontro dá início a uma nova aventura para o protagonista.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Manimani Ononata publicou a história originalmente no site Shosetsuka ni Narou, em 2017. A SB Creative começou a lançar a light novel em agosto de 2018, com ilustrações de Fuzichoco. Contudo a adaptação em mangá, ilustrada por Fumi Tadaura, começou em novembro do mesmo ano.",
-          "runs": [
-            {
-              "text": "Manimani Ononata publicou a história originalmente no site Shosetsuka ni Narou, em 2017. A SB Creative começou a lançar a light novel em agosto de 2018, com ilustrações de Fuzichoco. Contudo a adaptação em "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": ", ilustrada por Fumi Tadaura, começou em novembro do mesmo ano."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ademais o anime I Lost My Adventurer’s License tem estreia programada para janeiro de 2027.",
-          "runs": [
-            {
-              "text": "Ademais o anime I Lost My Adventurer’s License tem estreia programada para janeiro de 2027."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://boukensha-license-anime.com/news/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em I Lost My Adventurer’s License ganha trailer e estreia em 2027.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "I Lost My Adventurer’s License ganha trailer e estreia em 2027",
-              "href": "https://animenew.com.br/i-lost-my-adventurers-license-anime-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-15T17:02:48.000Z",
-      "updatedAt": "2026-10-15T17:02:48.000Z",
-      "expiresAt": "2026-10-22T17:02:48.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/i-lost-my-adventurers-license-anime-2027",
-          "publishedAt": "2026-10-15T17:02:48.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 286,
-      "qualityScore": 0.919,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 14,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     }
