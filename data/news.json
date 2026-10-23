@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-23T05:25:43.617Z",
+  "generatedAt": "2026-10-23T10:25:50.762Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
   "editorialMode": "source-fidelity",
   "collectorVersion": 40,
-  "feedStatus": "degraded",
+  "feedStatus": "fresh",
   "collectorError": null,
   "sources": [
     "JBox WordPress",
@@ -17,13 +17,11 @@
     {
       "key": "JBOX",
       "name": "JBox",
-      "ok": false,
+      "ok": true,
       "enabled": true,
-      "count": 0,
-      "mode": "failed",
-      "errors": [
-        "This operation was aborted"
-      ]
+      "count": 32,
+      "mode": "wp-rest",
+      "errors": []
     },
     {
       "key": "ANMTV",
@@ -56,18 +54,18 @@
     }
   ],
   "stats": {
-    "collected": 10,
-    "grouped": 2,
+    "collected": 42,
+    "grouped": 15,
     "published": 15,
-    "newStories": 2,
+    "newStories": 15,
     "fullArticles": 15,
     "previewArticles": 0,
     "avgWords": 444,
     "withHeroImage": 15,
     "withOrderedMedia": 14,
     "skippedTranslation": 0,
-    "skippedQuality": 8,
-    "durationMs": 18061
+    "skippedQuality": 26,
+    "durationMs": 6097
   },
   "items": [
     {
