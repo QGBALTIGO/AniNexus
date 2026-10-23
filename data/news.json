@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T15:23:37.684Z",
+  "generatedAt": "2026-10-23T19:29:41.211Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 32,
+      "count": 33,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,1840 @@
     }
   ],
   "stats": {
-    "collected": 42,
-    "grouped": 15,
-    "published": 15,
-    "newStories": 15,
-    "fullArticles": 15,
+    "collected": 43,
+    "grouped": 19,
+    "published": 19,
+    "newStories": 19,
+    "fullArticles": 19,
     "previewArticles": 0,
-    "avgWords": 444,
-    "withHeroImage": 15,
-    "withOrderedMedia": 14,
+    "avgWords": 409,
+    "withHeroImage": 19,
+    "withOrderedMedia": 18,
     "skippedTranslation": 0,
-    "skippedQuality": 26,
-    "durationMs": 4460
+    "skippedQuality": 23,
+    "durationMs": 8947
   },
   "items": [
+    {
+      "id": "jbox-cb00707d",
+      "slug": "2-parte-de-though-i-am-an-inept-villainess-ganha-trailer-jbox-cb00707d",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "2ª parte de ‘Though I am an Inept Villainess’ ganha trailer",
+      "originalTitle": "2ª parte de ‘Though I am an Inept Villainess’ ganha trailer",
+      "summary": "Foi divulgado pela Toho um trailer para a segunda parte do animê Though I am an Inept Villainess (Futsutsuka na Akujo de wa Gozaimasu ga). O vídeo dá uma prévia dos primeiros acontecimentos da nova fase da história.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "2ª parte de Though I am an Inept Villainess",
+        "Futsutsuka na Akujo de wa Gozaimasu ga",
+        "Though I Am an Inept Villainess"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/23/2a-parte-de-though-i-am-an-inept-villainess-ganha-trailer",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/23/2a-parte-de-though-i-am-an-inept-villainess-ganha-trailer",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Though-I-am-an-Inept-Villainess-destacada.jpg",
+      "mediaQuery": "2ª parte de ‘Though I am an Inept Villainess’ ganha trailer",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Though-I-am-an-Inept-Villainess-poster-parte-2.jpg",
+          "alt": "imagem: pôster da 2ª parte de 'Though I am an Inept Villainess'. As protagonistas Keigetsu e Reirin aparecem em destaque, com os corpos trocados. Cenas com outros personagens também aparecem na ilustração.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/jJKK3qoVlCI"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi divulgado pela Toho um trailer para a segunda parte do animê Though I am an Inept Villainess (Futsutsuka na Akujo de wa Gozaimasu ga). O vídeo dá uma prévia dos primeiros acontecimentos da nova fase da história.",
+          "runs": [
+            {
+              "text": "Foi divulgado pela Toho um trailer para a segunda parte do animê "
+            },
+            {
+              "text": "Though I am an Inept Villainess",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Futsutsuka na Akujo de wa Gozaimasu ga",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). O vídeo dá uma prévia dos primeiros acontecimentos da nova fase da história."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A continuação estreia em janeiro de 2027. Confira o novo vídeo:",
+          "runs": [
+            {
+              "text": "A continuação estreia em "
+            },
+            {
+              "text": "janeiro de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Confira o novo vídeo:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=jJKK3qoVlCI",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/jJKK3qoVlCI"
+        },
+        {
+          "type": "paragraph",
+          "text": "A primeira temporada de Though I am an Inept Villainess foi exibida entre julho e setembro deste ano, sendo uma produção do estúdio Doga Kobo. A série está disponível na Crunchyroll com legendas e dublagem em português.",
+          "runs": [
+            {
+              "text": "A primeira temporada de "
+            },
+            {
+              "text": "Though I am an Inept Villainess",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi exibida entre julho e setembro deste ano, sendo uma produção do estúdio "
+            },
+            {
+              "text": "Doga Kobo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A série está "
+            },
+            {
+              "text": "disponível na ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.crunchyroll.com/pt-br/series/GT00371881/though-i-am-an-inept-villainess"
+            },
+            {
+              "text": " com legendas e dublagem em português",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A segunda parte retorna com a mesma equipe de produção, contando com Mitsue Yamazaki (Monthly Girls’ Nozaki-kun) na direção, Yoshiko Nakamura (Sasaki and Miyano) nos roteiros, Ai Kikuchi (New Game!) no design de personagens e Yukari Hashimoto (Sarazanmai) na trilha sonora.",
+          "runs": [
+            {
+              "text": "A segunda parte retorna com a mesma equipe de produção, contando com "
+            },
+            {
+              "text": "Mitsue Yamazaki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Monthly Girls’ Nozaki-kun",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") na direção,"
+            },
+            {
+              "text": " Yoshiko Nakamura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Sasaki and Miyano",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") nos roteiros, "
+            },
+            {
+              "text": "Ai Kikuchi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "New Game!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") no design de personagens e "
+            },
+            {
+              "text": "Yukari Hashimoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Sarazanmai",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2019/07/24/critica-sarazanmai/"
+            },
+            {
+              "text": ") na trilha sonora."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história apresenta um reino fictício inspirado na China, onde Reirin está sendo favorecida pelo príncipe devido a sua beleza, inteligência e delicadeza. No entanto, Keigetsu, uma consorte rival, decide usar uma magia para trocar de corpo com Reirin, mas agora precisa lidar com o corpo frágil da garota. Enquanto isso, Reirin agora tem um corpo saudável como Keigetsu, porém sofre com os crimes da vilã enquanto acaba, junto de Keigetsu, se envolvendo numa conspiração interna na corte.",
+          "runs": [
+            {
+              "text": "A história apresenta um reino fictício inspirado na China, onde Reirin está sendo favorecida pelo príncipe devido a sua beleza, inteligência e delicadeza. No entanto, Keigetsu, uma consorte rival, decide usar uma magia para trocar de corpo com Reirin, mas agora precisa lidar com o corpo frágil da garota. Enquanto isso, Reirin agora tem um corpo saudável como Keigetsu, porém sofre com os crimes da vilã enquanto acaba, junto de Keigetsu, se envolvendo numa conspiração interna na corte."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Though-I-am-an-Inept-Villainess-poster-parte-2.jpg",
+          "alt": "imagem: pôster da 2ª parte de 'Though I am an Inept Villainess'. As protagonistas Keigetsu e Reirin aparecem em destaque, com os corpos trocados. Cenas com outros personagens também aparecem na ilustração."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Toho",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Toho"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A obra é originalmente uma série de light novels escrita por Satsuki Nakamura e ilustrada por Kana Yuki. Desde o início em 2020, 13 volumes já foram publicados pela Ichijinsha. Também existe uma adaptação para mangá, sob responsabilidade de Ei Ohitsuji. O mangá já tem 11 volumes publicados e tem lançamento no Brasil confirmado pela editora Taverna do Rei.",
+          "runs": [
+            {
+              "text": "A obra é originalmente uma série de "
+            },
+            {
+              "text": "light novels",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " escrita por "
+            },
+            {
+              "text": "Satsuki Nakamura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e ilustrada por "
+            },
+            {
+              "text": "Kana Yuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Desde o início em 2020, 13 volumes já foram publicados pela Ichijinsha. Também existe uma adaptação para mangá, sob responsabilidade de Ei Ohitsuji. O mangá já tem 11 volumes publicados e tem "
+            },
+            {
+              "text": "lançamento no Brasil confirmado pela editora Taverna do Rei",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Toho (YouTube)",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Toho (YouTube)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://youtu.be/jJKK3qoVlCI"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-23T19:29:27.000Z",
+      "updatedAt": "2026-10-23T19:29:27.000Z",
+      "expiresAt": "2026-10-30T19:29:27.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/23/2a-parte-de-though-i-am-an-inept-villainess-ganha-trailer",
+          "publishedAt": "2026-10-23T19:29:27.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 286,
+      "qualityScore": 0.977,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-d1418f8e",
+      "slug": "pokemon-se-junta-a-hatsune-miku-em-clipe-que-celebra-os-30-anos-da-franquia-jbox-d1418f8e",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Pokémon se junta a Hatsune Miku em clipe que celebra os 30 anos da franquia",
+      "originalTitle": "Pokémon se junta a Hatsune Miku em clipe que celebra os 30 anos da franquia",
+      "summary": "O projeto musical Pokémon feat. Hatsune Miku ProjectVOLTAGE lançou nesta sexta-feira (23) um novo videoclipe animado em comemoração aos 30 anos da franquia de jogos Pokémon.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Games",
+        "Música",
+        "Hatsune Miku",
+        "Pokemon",
+        "Pokémon feat. Hatsune Miku ProjectVOLTAGE",
+        "Supercell"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/23/pokemon-se-junta-a-hatsune-miku-em-clipe-que-celebra-os-30-anos-da-franquia",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/23/pokemon-se-junta-a-hatsune-miku-em-clipe-que-celebra-os-30-anos-da-franquia",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/pokemon-hatsune-miku-1996-clipe-destacada.jpg",
+      "mediaQuery": "Pokémon se junta a Hatsune Miku em clipe que celebra os 30 anos da franquia",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/It-5v1kgaak"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/qY8dRDuM0AU"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O projeto musical Pokémon feat. Hatsune Miku ProjectVOLTAGE lançou nesta sexta-feira (23) um novo videoclipe animado em comemoração aos 30 anos da franquia de jogos Pokémon.",
+          "runs": [
+            {
+              "text": "O projeto musical "
+            },
+            {
+              "text": "Pokémon feat. Hatsune Miku ProjectVOLTAGE",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " lançou nesta sexta-feira (23) um novo videoclipe animado em comemoração aos 30 anos da franquia de jogos "
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A música se chama “1996” e o vídeo acompanha duas crianças em seu primeiro contato com os jogos naquele ano. Vemos pokémon da primeira geração e consoles da época, incluindo um Super Nintendo com o acessório Super Game Boy, usado para jogar as versões originais de Pokémon Red e Green, além de um Game Boy tradicional.",
+          "runs": [
+            {
+              "text": "A música se chama "
+            },
+            {
+              "text": "“1996”",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " e o vídeo acompanha duas crianças em seu primeiro contato com os jogos naquele ano. Vemos pokémon da primeira geração e consoles da época, incluindo um Super Nintendo com o acessório Super Game Boy, usado para jogar as versões originais de "
+            },
+            {
+              "text": "Pokémon Red",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Green",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", além de um Game Boy tradicional."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira:",
+          "runs": [
+            {
+              "text": "Confira:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=It-5v1kgaak",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/It-5v1kgaak"
+        },
+        {
+          "type": "paragraph",
+          "text": "A música tem letra, composição e arranjos de Ryo, músico e compositor da banda supercell, que também desenvolveu o conceito da história do videoclipe ao lado de Machigerita. Shunsuke Takarai dirigiu a animação no Studio Hare e ficou responsável pelo design dos personagens, pelos storyboards e pela direção técnica. Akiko Saito trabalhou na definição das cores, enquanto Lee Jooyuong ficou responsável pela direção de arte. O videoclipe foi produzido pela BLUE RIGHTS, com Makoto Kimura como produtor.",
+          "runs": [
+            {
+              "text": "A música tem letra, composição e arranjos de "
+            },
+            {
+              "text": "Ryo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", músico e compositor da banda "
+            },
+            {
+              "text": "supercell",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que também desenvolveu o conceito da história do videoclipe ao lado de "
+            },
+            {
+              "text": "Machigerita",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". "
+            },
+            {
+              "text": "Shunsuke Takarai",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dirigiu a animação no "
+            },
+            {
+              "text": "Studio Hare",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e ficou responsável pelo "
+            },
+            {
+              "text": "design",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " dos personagens, pelos "
+            },
+            {
+              "text": "storyboards",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e pela direção técnica. "
+            },
+            {
+              "text": "Akiko Saito",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " trabalhou na definição das cores, enquanto "
+            },
+            {
+              "text": "Lee Jooyuong",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ficou responsável pela direção de arte. O videoclipe foi produzido pela "
+            },
+            {
+              "text": "BLUE RIGHTS",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com "
+            },
+            {
+              "text": "Makoto Kimura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como produtor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Outro clipe do ProjectVOLTAGE, para a nova música “Legends”, foi publicado na quinta-feira no canal de YouTube de Ryo. O vídeo mostra a Hatsune Miku e vários pokémon apresentando a canção em um estúdio:",
+          "runs": [
+            {
+              "text": "Outro clipe do ProjectVOLTAGE, para a nova música "
+            },
+            {
+              "text": "“Legends”",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", foi publicado na quinta-feira no canal de YouTube de Ryo. O vídeo mostra a Hatsune Miku e vários pokémon apresentando a canção em um estúdio:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=qY8dRDuM0AU",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/qY8dRDuM0AU"
+        },
+        {
+          "type": "paragraph",
+          "text": "O Pokémon feat. Hatsune Miku ProjectVOLTAGE começou em setembro de 2023. Em janeiro de 2026, o projeto foi ampliado com o lançamento de uma linha de produtos licenciados.",
+          "runs": [
+            {
+              "text": "O Pokémon feat. Hatsune Miku ProjectVOLTAGE começou em setembro de 2023. Em janeiro de 2026, o projeto foi ampliado com o lançamento de uma linha de produtos licenciados."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Canal do Ryo (Supercell) no YouTube",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Canal do Ryo (Supercell) no YouTube",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.youtube.com/channel/UCy9UVm-UjHqcktvxg-sS4qQ"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-23T17:46:19.000Z",
+      "updatedAt": "2026-10-23T17:47:09.000Z",
+      "expiresAt": "2026-10-30T17:46:19.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/23/pokemon-se-junta-a-hatsune-miku-em-clipe-que-celebra-os-30-anos-da-franquia",
+          "publishedAt": "2026-10-23T17:46:19.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 246,
+      "qualityScore": 0.971,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 2,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-8174055a",
+      "slug": "inio-asano-autor-de-boa-noite-punpun-e-solanin-vem-ao-brasil-para-a-ccxp26-jbox-8174055a",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Inio Asano, autor de ‘Boa Noite Punpun’ e ‘Solanin’, vem ao Brasil para a CCXP26",
+      "originalTitle": "Inio Asano, autor de ‘Boa Noite Punpun’ e ‘Solanin’, vem ao Brasil para a CCXP26",
+      "summary": "Um dos grandes nomes do mangá contemporâneo, Inio Asano fará sua primeira visita ao Brasil como convidado da CCXP26. O autor de Boa Noite Punpun foi anunciado nesta sexta-feira (23) como uma das atrações do evento, que acontece entre 3 e 6 de dezembro, no São Paulo Expo, em São Paulo.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Eventos",
+        "Mangá",
+        "CCXP",
+        "CCXP26",
+        "Inio Asano",
+        "Inio Asano na CCXP",
+        "inio asano no brasil",
+        "Mujina into the Deep"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/23/inio-asano-autor-de-boa-noite-punpun-e-solanin-vem-ao-brasil-para-a-ccxp26",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/23/inio-asano-autor-de-boa-noite-punpun-e-solanin-vem-ao-brasil-para-a-ccxp26",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/inio-asano-na-ccxp26-destacada.jpg",
+      "mediaQuery": "Inio Asano, autor de ‘Boa Noite Punpun’ e ‘Solanin’, vem ao Brasil para a CCXP26",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/mujina-into-the-deep-volume-1.jpg",
+          "alt": "imagem: capa do volume 1 de 'Mujina Into the Deep'.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Um dos grandes nomes do mangá contemporâneo, Inio Asano fará sua primeira visita ao Brasil como convidado da CCXP26. O autor de Boa Noite Punpun foi anunciado nesta sexta-feira (23) como uma das atrações do evento, que acontece entre 3 e 6 de dezembro, no São Paulo Expo, em São Paulo.",
+          "runs": [
+            {
+              "text": "Um dos grandes nomes do mangá contemporâneo, "
+            },
+            {
+              "text": "Inio Asano",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " fará sua primeira visita ao Brasil como convidado da "
+            },
+            {
+              "text": "CCXP26",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O autor de "
+            },
+            {
+              "text": "Boa Noite Punpun",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " foi anunciado nesta sexta-feira (23) como uma das atrações do evento, que acontece entre "
+            },
+            {
+              "text": "3 e 6 de dezembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", no São Paulo Expo, em São Paulo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A visita é uma parceria entre a organização da CCXP e a editora JBC, responsável pelo lançamento de Mujina Into the Deep, mangá inédito no Brasil que será apresentado pelo autor durante o evento. A programação completa e os detalhes sobre sua participação serão divulgados em breve.",
+          "runs": [
+            {
+              "text": "A visita é uma parceria entre a organização da CCXP e a editora "
+            },
+            {
+              "text": "JBC",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", responsável pelo lançamento de "
+            },
+            {
+              "text": "Mujina Into the Deep",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/19/mujina-into-the-deep-deve-ser-publicado-pela-jbc/"
+            },
+            {
+              "text": ", mangá inédito no Brasil que será apresentado pelo autor durante o evento. A programação completa e os detalhes sobre sua participação serão divulgados em breve."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/mujina-into-the-deep-volume-1.jpg",
+          "alt": "imagem: capa do volume 1 de 'Mujina Into the Deep'."
+        },
+        {
+          "type": "paragraph",
+          "text": "Capa japonesa de Mujina Ino the Deep. | Imagem: Reprodução/Shogakukan",
+          "runs": [
+            {
+              "text": "Capa japonesa de Mujina Ino the Deep. | Imagem: Reprodução/Shogakukan"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nascido em 1980, na província de Ibaraki, no Japão, Asano é conhecido por retratar os dilemas da juventude e o cotidiano com realismo, além de um estilo visual detalhado que combina ilustração e fotografia. Ao longo da carreira, recebeu prêmios como o Shogakukan Manga Award e o Daruma Awards. Em Boa Noite Punpun, uma de suas obras mais conhecidas, acompanhamos um garoto comum que decide se tornar cientista espacial depois de se apaixonar por uma menina que o alerta sobre a possibilidade de a Terra se tornar um planeta inabitável. A série conta com sete volumes publicados no Brasil.",
+          "runs": [
+            {
+              "text": "Nascido em 1980, na província de Ibaraki, no Japão, Asano é conhecido por retratar os dilemas da juventude e o cotidiano com realismo, além de um estilo visual detalhado que combina ilustração e fotografia. Ao longo da carreira, recebeu prêmios como o "
+            },
+            {
+              "text": "Shogakukan Manga Award",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e o "
+            },
+            {
+              "text": "Daruma Awards",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Em "
+            },
+            {
+              "text": "Boa Noite Punpun",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", uma de suas obras mais conhecidas, acompanhamos um garoto comum que decide se tornar cientista espacial depois de se apaixonar por uma menina que o alerta sobre a possibilidade de a Terra se tornar um planeta inabitável. A série conta com sete volumes publicados no Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Capa nacional do vol.1 de ‘Boa Noite Punpun’. | Imagem: Diuvlgação/JBC",
+          "runs": [
+            {
+              "text": "Capa nacional do vol.1 de ‘Boa Noite Punpun’. | Imagem: Diuvlgação/JBC"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A trajetória de Asano no mercado brasileiro começou em 2011, com Solanin, lançado em dois volumes pela L&PM Editores e republicado pela mesma editora em uma edição especial de volume único em 2023. Desde então, seus mangás também chegaram ao país por outras editoras. A JBC publicou o já mencionado Boa Noite Punpun, Nijigahara Holograph, Garota à Beira-Mar, Dead Dead Demon’s Dededede Destruction, What a Wonderful World!, Decadência e Heroes, enquanto A Cidade da Luz saiu pela Panini. Mujina Into the Deep será o décimo (!) mangá do autor publicado no Brasil.",
+          "runs": [
+            {
+              "text": "A trajetória de Asano no mercado brasileiro começou em 2011, com "
+            },
+            {
+              "text": "Solanin",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", lançado em dois volumes pela "
+            },
+            {
+              "text": "L&PM Editores",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e republicado pela mesma editora em uma edição especial de volume único em 2023. Desde então, seus mangás também chegaram ao país por outras editoras. A JBC publicou o já mencionado "
+            },
+            {
+              "text": "Boa Noite Punpun",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Nijigahara Holograph",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Garota à Beira-Mar",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/02/10/critica-garota-a-beira-mar-o-lado-complexo-e-obscuro-da-adolescencia-pelos-olhos-de-inio-asano/"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Dead Dead Demon’s Dededede Destruction",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "What a Wonderful World!",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Decadência",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Heroes",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2024/07/06/critica-heroes-editora-jbc/"
+            },
+            {
+              "text": ", enquanto "
+            },
+            {
+              "text": "A Cidade da Luz",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " saiu pela "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". "
+            },
+            {
+              "text": "Mujina Into the Deep",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " será o décimo (!) mangá do autor publicado no Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Iniciada em 2023, Mujina Into the Deep é uma série seinen ambientada em um futuro próximo e distópico, no qual os direitos humanos deixam de ser garantidos e passam a ser comercializados. As pessoas que abrem mão desses direitos são chamadas de mujina e vivem à margem da sociedade tradicional. A protagonista é Ubume, uma mujina que trabalha como assassina.",
+          "runs": [
+            {
+              "text": "Iniciada em 2023, "
+            },
+            {
+              "text": "Mujina Into the Deep",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é uma série "
+            },
+            {
+              "text": "seinen",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ambientada em um futuro próximo e distópico, no qual os direitos humanos deixam de ser garantidos e passam a ser comercializados. As pessoas que abrem mão desses direitos são chamadas de "
+            },
+            {
+              "text": "mujina",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e vivem à margem da sociedade tradicional. A protagonista é Ubume, uma "
+            },
+            {
+              "text": "mujina",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " que trabalha como assassina."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além de Inio Asano, a CCXP26 também terá a participação do mangaká Shintaro Kago, conhecido por seu trabalho com o estilo ero guro.",
+          "runs": [
+            {
+              "text": "Além de Inio Asano, a CCXP26 "
+            },
+            {
+              "text": "também terá a participação do mangaká Shintaro Kago",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/06/02/shintaro-kago-mestre-do-ero-guro-e-confirmado-na-ccxp26/"
+            },
+            {
+              "text": ", conhecido por seu trabalho com o estilo "
+            },
+            {
+              "text": "ero guro.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Babel, no Estadão",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Babel, no ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.estadao.com.br/cultura/babel/inio-asano-autor-do-manga-boa-noite-punpun-vira-ao-brasil-para-a-ccxp26/?srsltid=AYCX9vKqDw_g3qcj5ESuN4cL5qskaChHixbIN1wiYUpAHV5BMeK-kFzD"
+            },
+            {
+              "text": "Estadão",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.estadao.com.br/cultura/babel/inio-asano-autor-do-manga-boa-noite-punpun-vira-ao-brasil-para-a-ccxp26/?srsltid=AYCX9vKqDw_g3qcj5ESuN4cL5qskaChHixbIN1wiYUpAHV5BMeK-kFzD"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-23T16:50:38.000Z",
+      "updatedAt": "2026-10-23T16:51:49.000Z",
+      "expiresAt": "2026-10-30T16:50:38.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/23/inio-asano-autor-de-boa-noite-punpun-e-solanin-vem-ao-brasil-para-a-ccxp26",
+          "publishedAt": "2026-10-23T16:50:38.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 414,
+      "qualityScore": 0.991,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-54e81f84",
+      "slug": "sessao-da-tarde-exibe-power-rangers-e-bunny-drop-na-proxima-semana-jbox-54e81f84",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Sessão da Tarde exibe ‘Power Rangers’ e ‘Bunny Drop’ na próxima semana",
+      "originalTitle": "Sessão da Tarde exibe ‘Power Rangers’ e ‘Bunny Drop’ na próxima semana",
+      "summary": "A TV Globo exibe na próxima segunda-feira (26), na Sessão da Tarde, o filme Power Rangers (2017). A transmissão acontecerá na esteira da recente exibição da TV Globinho especial no dia 10 de outubro, que relembrou clássicos da programação infantil da emissora, onde os heróis coloridos brilhavam nas manhãs durante os anos 2000.",
+      "author": "Matheus Mossmann",
+      "tags": [
+        "Cinema",
+        "Mangá",
+        "Tokusatsu",
+        "TV",
+        "bunny drop filme",
+        "filme dos power rangers",
+        "power rangers 2017",
+        "power rangers sessao da tarde",
+        "usagi drop filme",
+        "usagi drop sessão da tarde"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/23/sessao-da-tarde-exibe-power-rangers-e-bunny-drop-na-proxima-semana",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/23/sessao-da-tarde-exibe-power-rangers-e-bunny-drop-na-proxima-semana",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/powerangersdrop.png",
+      "mediaQuery": "Sessão da Tarde exibe ‘Power Rangers’ e ‘Bunny Drop’ na próxima semana",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/PkjKyh92fEk"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/99niv1tb8dY"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A TV Globo exibe na próxima segunda-feira (26), na Sessão da Tarde, o filme Power Rangers (2017). A transmissão acontecerá na esteira da recente exibição da TV Globinho especial no dia 10 de outubro, que relembrou clássicos da programação infantil da emissora, onde os heróis coloridos brilhavam nas manhãs durante os anos 2000.",
+          "runs": [
+            {
+              "text": "A TV Globo exibe na próxima segunda-feira (26), na "
+            },
+            {
+              "text": "Sessão da Tarde",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o filme "
+            },
+            {
+              "text": "Power Rangers",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " (2017). A transmissão acontecerá na esteira da "
+            },
+            {
+              "text": "recente exibição da ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/07/com-digimon-e-dragon-ball-z-tv-globinho-ganha-exibicao-especial-neste-sabado/"
+            },
+            {
+              "text": "TV Globinho",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/07/com-digimon-e-dragon-ball-z-tv-globinho-ganha-exibicao-especial-neste-sabado/"
+            },
+            {
+              "text": " especial no dia 10 de outubro, que relembrou clássicos da programação infantil da emissora, onde os heróis coloridos brilhavam nas manhãs durante os anos 2000."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Dirigido por Dean Israelite, o longa de 2017 tentou revitalizar a franquia para o cinema com uma abordagem mais madura. Na trama, cinco adolescentes são transformados nos Power Rangers e, orientados por Zordon, precisam deter Rita Repulsa, uma Ranger desertora que deseja destruir o mundo. Apesar dessa ambição, a produção foi um fracasso comercial de bilheteria, o que interrompeu os planos de sequências.",
+          "runs": [
+            {
+              "text": "Dirigido por Dean Israelite, o longa de 2017 tentou revitalizar a franquia para o cinema com uma abordagem mais madura. Na trama, cinco adolescentes são transformados nos Power Rangers e, orientados por Zordon, precisam deter Rita Repulsa, uma Ranger desertora que deseja destruir o mundo. Apesar dessa ambição, a produção foi um fracasso comercial de bilheteria, o que interrompeu os planos de sequências."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O elenco original conta com Bryan Cranston, Elizabeth Banks, Bill Hader, Becky G, RJ Cyler, Dacre Montgomery, Naomi Scott e Ludi Lin. A versão brasileira tem no time de dubladores Cadu Paschoal, Pamella Rodrigues, Philippe Maia, Bruna Laynes, Fabrício Vila Verde, Luiz Carlos Persy, Charles Emmanuel e Miriam Ficher.",
+          "runs": [
+            {
+              "text": "O elenco original conta com Bryan Cranston, Elizabeth Banks, Bill Hader, Becky G, RJ Cyler, Dacre Montgomery, Naomi Scott e Ludi Lin. A versão brasileira tem no time de dubladores Cadu Paschoal, Pamella Rodrigues, Philippe Maia, Bruna Laynes, Fabrício Vila Verde, Luiz Carlos Persy, Charles Emmanuel e Miriam Ficher."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=PkjKyh92fEk",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/PkjKyh92fEk"
+        },
+        {
+          "type": "heading",
+          "text": "Filme japonês na quinta-Feira",
+          "runs": [
+            {
+              "text": "Filme japonês na quinta-Feira",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A semana da Sessão da Tarde também reserva uma surpresa para os fãs de produções asiáticas. Na quinta-feira (29), às 15h30, a Globo exibirá o live-action japonês Bunny Drop: Surpresas da Vida. Distribuído no Brasil pela Sato Company, o longa conta com versão brasileira dublada em estúdios de Campinas.",
+          "runs": [
+            {
+              "text": "A semana da "
+            },
+            {
+              "text": "Sessão da Tarde",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " também reserva uma surpresa para os fãs de produções asiáticas. Na quinta-feira (29), às 15h30, a Globo exibirá o live-action japonês "
+            },
+            {
+              "text": "Bunny Drop: Surpresas da Vida",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". Distribuído no Brasil pela Sato Company, o longa conta com versão brasileira dublada em estúdios de Campinas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O enredo acompanha Daikichi (Ken’ichi Matsuyama), um jovem solteiro de 27 anos que retorna para a casa de sua família para o funeral de seu avô. Lá, ele descobre que o homem teve uma filha fora do casamento, uma garota de seis anos. Enquanto o resto de sua família vê a menina como um problema e pensa em enviá-la para adoção, Daikichi decide assumir a responsabilidade de criá-la. A jovem Rin é interpretada pela atriz mirim Mana Ashida.",
+          "runs": [
+            {
+              "text": "O enredo acompanha Daikichi (Ken’ichi Matsuyama), um jovem solteiro de 27 anos que retorna para a casa de sua família para o funeral de seu avô. Lá, ele descobre que o homem teve uma filha fora do casamento, uma garota de seis anos. Enquanto o resto de sua família vê a menina como um problema e pensa em enviá-la para adoção, Daikichi decide assumir a responsabilidade de criá-la. A jovem Rin é interpretada pela atriz mirim Mana Ashida."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A produção é baseada no mangá Usagi Drop, de Yumi Unita, que chegou a ser publicado no Brasil em 10 volumes pela editora NewPOP. A obra original carrega certa notoriedade por ter um final bastante polêmico nos quadrinhos, apresentando um salto temporal onde a dinâmica de pai e filha adotivos evolui para um controverso envolvimento romântico. Para quem busca uma história mais leve e “familiar” na TV aberta, o live-action adapta apenas a primeira fase da obra, focando nos desafios da paternidade inesperada e da relação pura durante a infância da menina.",
+          "runs": [
+            {
+              "text": "A produção é baseada no mangá "
+            },
+            {
+              "text": "Usagi Drop",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", de Yumi Unita, que chegou a ser publicado no Brasil em 10 volumes pela editora NewPOP. A obra original carrega certa notoriedade por ter um final bastante polêmico nos quadrinhos, apresentando um salto temporal onde a dinâmica de pai e filha adotivos evolui para um controverso envolvimento romântico. Para quem busca uma história mais leve e “familiar” na TV aberta, o live-action adapta apenas a primeira fase da obra, focando nos desafios da paternidade inesperada e da relação pura durante a infância da menina."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=99niv1tb8dY",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/99niv1tb8dY"
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: TV Globo",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "TV Globo",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://redeglobo.globo.com/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-23T16:37:50.000Z",
+      "updatedAt": "2026-10-23T16:38:29.000Z",
+      "expiresAt": "2026-10-30T16:37:50.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/23/sessao-da-tarde-exibe-power-rangers-e-bunny-drop-na-proxima-semana",
+          "publishedAt": "2026-10-23T16:37:50.000Z",
+          "author": "Matheus Mossmann"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 408,
+      "qualityScore": 0.99,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 2,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-45ae8297",
+      "slug": "the-ghost-in-the-shell-estudio-science-saru-confirma-novo-anime-jbox-45ae8297",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "The Ghost in the Shell: Estúdio Science SARU confirma novo animê",
+      "originalTitle": "The Ghost in the Shell: Estúdio Science SARU confirma novo animê",
+      "summary": "Dando sequência à adaptação do mangá original, o estúdio Science SARU anunciou a produção de mais um animê de The Ghost in the Shell. Por enquanto não foram divulgados detalhes sobre a nova produção.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "2ª temporada de Ghost in the Shell",
+        "continuação de ghost in the shell",
+        "Ghost in the Shell",
+        "Koukaku Kidoutai",
+        "science saru"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/23/the-ghost-in-the-shell-estudio-science-saru-confirma-novo-anime",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/23/the-ghost-in-the-shell-estudio-science-saru-confirma-novo-anime",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/06/ghost-in-the-shell-novo-anime-destacada-motoko.jpg",
+      "mediaQuery": "The Ghost in the Shell: Estúdio Science SARU confirma novo animê",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/ghost-in-the-shell-novo-anime-continuacao.jpg",
+          "alt": "imagem: pôster do novo animê de 'Ghost in the Shell'.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/yedJOylFOtg"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Dando sequência à adaptação do mangá original, o estúdio Science SARU anunciou a produção de mais um animê de The Ghost in the Shell. Por enquanto não foram divulgados detalhes sobre a nova produção.",
+          "runs": [
+            {
+              "text": "Dando sequência à adaptação do mangá original, o estúdio "
+            },
+            {
+              "text": "Science SARU",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou a produção de mais um animê de "
+            },
+            {
+              "text": "The Ghost in the Shell",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ". Por enquanto não foram divulgados detalhes sobre a nova produção."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira o primeiro pôster:",
+          "runs": [
+            {
+              "text": "Confira o primeiro pôster:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/ghost-in-the-shell-novo-anime-continuacao.jpg",
+          "alt": "imagem: pôster do novo animê de 'Ghost in the Shell'."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A nova adaptação de Ghost in the Shell estreou no último dia 7 de julho. Mokochan, assistente de direção de Dan Da Dan, fez sua estreia no cargo de diretora principal no animê e Toh Enjou (mais reconhecido no Japão como romancista de ficção científica) assina o roteiro. A série fez uma adaptação completa do mangá original, que é de volume único, porém o título conta com continuações, que devem servir de referência para a nova produção.",
+          "runs": [
+            {
+              "text": "A nova adaptação de "
+            },
+            {
+              "text": "Ghost in the Shell",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estreou no último dia 7 de julho. "
+            },
+            {
+              "text": "Mokochan",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", assistente de direção de "
+            },
+            {
+              "text": "Dan Da Dan",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", fez sua estreia no cargo de diretora principal no animê e "
+            },
+            {
+              "text": "Toh Enjou",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (mais reconhecido no Japão como romancista de ficção científica) assina o roteiro. A série fez uma adaptação completa do mangá original, que é de volume único, porém o título conta com continuações, que devem servir de referência para a nova produção."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A primeira temporada contou ao todo com 10 episódios, disponíveis com dublagem e legendas em português no Prime Video, serviço de streaming de vídeos da Amazon.",
+          "runs": [
+            {
+              "text": "A primeira temporada contou ao todo com 10 episódios, disponíveis com "
+            },
+            {
+              "text": "dublagem e legendas em português no ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Prime Video",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.primevideo.com/-/pt/detail/0MRWXUDE3L303XFEJRNWB20S3O"
+            },
+            {
+              "text": ", serviço de streaming de vídeos da Amazon."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "▶️ Clique aqui e confira a nossa crítica.",
+          "runs": [
+            {
+              "text": "▶️ Clique aqui e confira a nossa crítica.",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/22/critica-the-ghost-in-the-shell-2026/"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=yedJOylFOtg",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/yedJOylFOtg"
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Science SARU (X/Twitter)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Science SARU (X/Twitter)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://x.com/sciencesaru/status/2113586733204054339"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-23T16:06:41.000Z",
+      "updatedAt": "2026-10-23T16:09:07.000Z",
+      "expiresAt": "2026-10-30T16:06:41.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/23/the-ghost-in-the-shell-estudio-science-saru-confirma-novo-anime",
+          "publishedAt": "2026-10-23T16:06:41.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 172,
+      "qualityScore": 0.963,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-ca9a97e1",
       "slug": "go-go-loser-ranger-entra-novamente-em-hiato-jbox-ca9a97e1",
@@ -2976,7 +4796,7 @@
       "sourceCount": 1,
       "readingMinutes": 3,
       "wordCount": 447,
-      "qualityScore": 1,
+      "qualityScore": 0.943,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3432,7 +5252,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 328,
-      "qualityScore": 0.978,
+      "qualityScore": 0.918,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -6334,509 +8154,6 @@
         "contentMode": "full",
         "mediaCount": 2,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-ec372359",
-      "slug": "pokemon-pode-voltar-a-programacao-do-cartoon-network-na-america-latina-em-novembro-jbox-ec372359",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Pokémon’ pode voltar à programação do Cartoon Network na América Latina em novembro",
-      "originalTitle": "‘Pokémon’ pode voltar à programação do Cartoon Network na América Latina em novembro",
-      "summary": "Atenção, treinadores! O animê de Pokémon pode retornar à grade do canal Cartoon Network na América Latina a partir de novembro.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "TV",
-        "jornadas pokemon",
-        "Pokemon",
-        "POKEMON JORNADAS",
-        "Pokémon Journeys",
-        "pokemon no cartoon network"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/16/pokemon-pode-voltar-a-programacao-do-cartoon-network-na-america-latina-em-novembro",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/16/pokemon-pode-voltar-a-programacao-do-cartoon-network-na-america-latina-em-novembro",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/01/POKEMONJORNADAS-DESTACADA.jpg",
-      "mediaQuery": "‘Pokémon’ pode voltar à programação do Cartoon Network na América Latina em novembro",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-01.png",
-          "alt": "Pokémon Jornadas no Cartoon",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-02.png",
-          "alt": "Pokémon Jornadas na Netflix",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-03.png",
-          "alt": "Pokémon Jornadas no Prime Video",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-04.png",
-          "alt": "Pokémon Jornadas no Prime Video",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Atenção, treinadores! O animê de Pokémon pode retornar à grade do canal Cartoon Network na América Latina a partir de novembro.",
-          "runs": [
-            {
-              "text": "Atenção, treinadores! O animê de "
-            },
-            {
-              "text": "Pokémon",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " pode retornar à grade do canal "
-            },
-            {
-              "text": "Cartoon Network",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " na América Latina a partir de novembro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A notícia foi publicada pelo site TVLaint, focado em novidades de entretenimento e programação no continente. Segundo eles, o nome “Pokémon Journeys” aparece na grade do canal a partir de 23 de novembro, em pelo menos três faixas de horários, uma pela manhã (08h11 às 08h45), outra à tarde (16h11 às 16h45) e à noite (20h40 às 21h45).",
-          "runs": [
-            {
-              "text": "A notícia foi publicada pelo site "
-            },
-            {
-              "text": "TVLaint",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", focado em novidades de entretenimento e programação no continente. Segundo eles, o nome "
-            },
-            {
-              "text": "“Pokémon Journeys”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " aparece na grade do canal a partir de "
-            },
-            {
-              "text": "23 de novembro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", em pelo menos três faixas de horários, uma pela manhã (08h11 às 08h45), outra à tarde (16h11 às 16h45) e à noite (20h40 às 21h45)."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-01.png",
-          "alt": "Pokémon Jornadas no Cartoon"
-        },
-        {
-          "type": "paragraph",
-          "text": "Grade com possível retorno de Pokémon ao Cartoon | Reprodução",
-          "runs": [
-            {
-              "text": "Grade com possível retorno de Pokémon ao Cartoon | Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O site ressalta que a descrição Journeys pode se referir ao animê Jornadas Pokémon, exibido originalmente entre 2019 e 2023. Essa série já foi transmitida pelo Cartoon no Brasil anteriormente, em meados de 2020, e também já esteve no país em streamings como Netflix e Prime Video. Atualmente, a produção conta com páginas nas duas plataformas, mas sem episódios. No caso da Netflix há, inclusive, um botão de “lembrar”, indicando que a produção pode voltar em breve ao catálogo:",
-          "runs": [
-            {
-              "text": "O site ressalta que a descrição "
-            },
-            {
-              "text": "Journeys",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " pode se referir ao animê "
-            },
-            {
-              "text": "Jornadas Pokémon",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", exibido originalmente entre 2019 e 2023. Essa série já foi transmitida pelo Cartoon no Brasil anteriormente, em meados de 2020, e também já esteve no país em streamings como "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Prime Video",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Atualmente, a produção conta com páginas nas duas plataformas, mas sem episódios. No caso da Netflix há, inclusive, um botão de “lembrar”, indicando que a produção pode voltar em breve ao catálogo:"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-02.png",
-          "alt": "Pokémon Jornadas na Netflix"
-        },
-        {
-          "type": "paragraph",
-          "text": "Animê segue listado na Netflix, mas com botão de “lembrar”. | Reprodução",
-          "runs": [
-            {
-              "text": "Animê segue listado na Netflix, mas com botão de “lembrar”. | Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-03.png",
-          "alt": "Pokémon Jornadas no Prime Video"
-        },
-        {
-          "type": "paragraph",
-          "text": "O mesmo acontece com o Prime Video. O animê está no catálogo… | Reprodução",
-          "runs": [
-            {
-              "text": "O mesmo acontece com o Prime Video. O animê está no catálogo… | Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Pokemon-Jornadas-04.png",
-          "alt": "Pokémon Jornadas no Prime Video"
-        },
-        {
-          "type": "paragraph",
-          "text": "Mas sem a listagem de episódios. | Reprodução",
-          "runs": [
-            {
-              "text": "Mas sem a listagem de episódios. | Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Em janeiro deste ano, Pokémon Jornadas chegou a ser anunciado para o catálogo do +SBT, streaming do canal que lançou à época o SBT Kids, com programação específica para o público infantil. Até o momento de publicação deste texto, no entanto, não temos nenhum registro de que o animê tenha sido transmitido.",
-          "runs": [
-            {
-              "text": "Em janeiro deste ano, "
-            },
-            {
-              "text": "Pokémon Jornadas",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/01/05/sbt-kids-tera-pokemon-jornadas-em-sua-programacao/"
-            },
-            {
-              "text": " chegou a ser anunciado para o catálogo do +SBT",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/01/05/sbt-kids-tera-pokemon-jornadas-em-sua-programacao/"
-            },
-            {
-              "text": ", streaming do canal que lançou à época o SBT Kids, com programação específica para o público infantil. Até o momento de publicação deste texto, no entanto, não temos nenhum registro de que o animê tenha sido transmitido."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Outro detalhe que o TVLaint aponta é que o Cartoon pode exibir outras fases de Pokémon além de Jornadas, incluindo até episódios lançados após a saída da franquia do canal, em setembro de 2021.",
-          "runs": [
-            {
-              "text": "Outro detalhe que o"
-            },
-            {
-              "text": " TVLaint",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " aponta é que o Cartoon pode exibir outras fases de "
-            },
-            {
-              "text": "Pokémon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " além de "
-            },
-            {
-              "text": "Jornadas",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", incluindo até episódios lançados após a saída da franquia do canal, em setembro de 2021."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No Brasil, os horários do Cartoon Network nos canais oficiais e em outros sites de programação ainda não chega até o dia 23 de novembro, então o público vai precisar esperar alguns dias para saber se haverá a transmissão no país e como ela vai acontecer.",
-          "runs": [
-            {
-              "text": "No Brasil, os horários do Cartoon Network nos canais oficiais e em outros sites de programação ainda não chega até o dia 23 de novembro, então o público vai precisar esperar alguns dias para saber se haverá a transmissão no país e como ela vai acontecer."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por enquanto, é possível assistir animês novos e clássicos de Pokémon em vários streamings como Netflix, Globoplay, Prime Video, Samsung TV Plus e Pluto TV. Além disso, o próprio canal do YouTube da franquia possui episódios de temporadas como Ventos de Paldea e Evoluções. Há ainda o canal Pokémon TV, que quase diariamente adiciona episódios da série em ordem cronológica.",
-          "runs": [
-            {
-              "text": "Por enquanto, é possível assistir animês novos e clássicos de "
-            },
-            {
-              "text": "Pokémon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " em vários streamings como "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Globoplay",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Prime Video",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Samsung TV Plus",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Pluto TV",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Além disso, o próprio"
-            },
-            {
-              "text": " ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "canal do YouTube da franquia",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.youtube.com/playlist?list=PLx_bKsaA4ZQR_FDl-EA_u2RmN4cYl_IvE"
-            },
-            {
-              "text": " possui episódios de temporadas como"
-            },
-            {
-              "text": " Ventos de Paldea",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Evoluções",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Há ainda o canal "
-            },
-            {
-              "text": "Pokémon TV",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.youtube.com/@OfficialPoke%CC%81monTV"
-            },
-            {
-              "text": ", que quase diariamente adiciona episódios da série em ordem cronológica."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: TVLaint",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "TVLaint",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.tvlaint.com/2026/10/pokemon-podria-regresar-cartoon-network.html"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-16T19:24:22.000Z",
-      "updatedAt": "2026-10-16T19:25:28.000Z",
-      "expiresAt": "2026-10-23T19:24:22.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/16/pokemon-pode-voltar-a-programacao-do-cartoon-network-na-america-latina-em-novembro",
-          "publishedAt": "2026-10-16T19:24:22.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 413,
-      "qualityScore": 0.938,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 18,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 4,
-        "embedCount": 0,
         "sourcePagesRead": 0
       }
     }
