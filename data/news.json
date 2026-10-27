@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T19:26:57.946Z",
+  "generatedAt": "2026-10-27T23:05:00.306Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,1275 @@
   ],
   "stats": {
     "collected": 42,
-    "grouped": 25,
-    "published": 25,
-    "newStories": 25,
-    "fullArticles": 25,
+    "grouped": 26,
+    "published": 26,
+    "newStories": 26,
+    "fullArticles": 26,
     "previewArticles": 0,
-    "avgWords": 305,
-    "withHeroImage": 25,
-    "withOrderedMedia": 24,
+    "avgWords": 347,
+    "withHeroImage": 26,
+    "withOrderedMedia": 25,
     "skippedTranslation": 0,
-    "skippedQuality": 15,
-    "durationMs": 3439
+    "skippedQuality": 14,
+    "durationMs": 4184
   },
   "items": [
+    {
+      "id": "animenew-4cc977e7",
+      "slug": "bleach-mirrors-high-ganha-trailer-de-abertura-e-musica-tema-animenew-4cc977e7",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Bleach Mirrors High ganha trailer de abertura e música tema",
+      "originalTitle": "Bleach Mirrors High ganha trailer de abertura e música tema",
+      "summary": "O jogo mobile Bleach Mirrors High divulgou seu trailer de abertura nesta terça-feira (27), revelando a música tema “CRITICAL”, interpretada por suisoh. Sendo assim o lançamento acontece em 28 de outubro para iOS e Android.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Games",
+        "Notícias",
+        "Bleach Mirrors High"
+      ],
+      "url": "https://animenew.com.br/bleach-mirrors-high-trailer-lancamento",
+      "sourceUrl": "https://animenew.com.br/bleach-mirrors-high-trailer-lancamento",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Bleach-Mirrors-High-ganha-trailer-de-abertura-e-musica-tema.webp",
+      "mediaQuery": "Bleach Mirrors High ganha trailer de abertura e música tema",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Bleach-Mirrors-High-Mobile-Game.webp",
+          "alt": "Bleach Mirrors High Mobile Game",
+          "caption": "© K/STDP ©BNEI"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/Ev0FRl7IRkU"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O jogo mobile Bleach Mirrors High divulgou seu trailer de abertura nesta terça-feira (27), revelando a música tema “CRITICAL”, interpretada por suisoh. Sendo assim o lançamento acontece em 28 de outubro para iOS e Android.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "jogo mobile",
+              "href": "https://animenew.com.br/games"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Bleach Mirrors High",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " divulgou seu trailer de abertura nesta terça-feira (27), revelando a música tema “CRITICAL”, interpretada por suisoh. Sendo assim o lançamento acontece em 28 de outubro para iOS e Android."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "DanMachi anuncia novo jogo para PC e mobile",
+              "runs": [
+                {
+                  "text": "DanMachi anuncia novo jogo para PC e mobile",
+                  "href": "https://animenew.com.br/danmachi-frontier-zero-jogo-2027"
+                }
+              ]
+            },
+            {
+              "text": "Zelda: Ocarina of Time revela novidades no Switch 2",
+              "runs": [
+                {
+                  "text": "Zelda: Ocarina of Time revela novidades no Switch 2",
+                  "href": "https://animenew.com.br/zelda-ocarina-of-time-revela-novidades-no-switch-2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A animação de abertura ganhou produção pelo Studio Pierrot Films, equipe ligada ao anime Bleach: Thousand-Year Blood War. O vídeo apresenta cenas da nova aventura baseada na obra de Tite Kubo.",
+          "runs": [
+            {
+              "text": "A animação de abertura ganhou produção pelo "
+            },
+            {
+              "text": "Studio Pierrot Films",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", equipe ligada ao anime "
+            },
+            {
+              "text": "Bleach: Thousand-Year Blood War",
+              "href": "https://animenew.com.br/anime/185874/bleach-sennen-kessen-hen-kashin-tan"
+            },
+            {
+              "text": ". O vídeo apresenta cenas da nova aventura baseada na obra de Tite Kubo."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=Ev0FRl7IRkU",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Ev0FRl7IRkU"
+        },
+        {
+          "type": "heading",
+          "text": "Novos personagens em Bleach Mirrors High",
+          "runs": [
+            {
+              "text": "Novos personagens em Bleach Mirrors High"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Assim o game também contará com personagens inéditos desenhados pelo criador do mangá, incluindo Hachirota Rohbe, Tasuku Nimura, Kuon Hoshimura, Ibuki Kajimaru e Mizuki Gandera, além de outros novos Shinigamis.",
+          "runs": [
+            {
+              "text": "Assim o game também contará com personagens inéditos desenhados pelo criador do mangá, incluindo Hachirota Rohbe, Tasuku Nimura, Kuon Hoshimura, Ibuki Kajimaru e Mizuki Gandera, além de outros novos Shinigamis."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Bleach-Mirrors-High-Mobile-Game.webp",
+          "alt": "Bleach Mirrors High Mobile Game",
+          "caption": "© K/STDP ©BNEI"
+        },
+        {
+          "type": "heading",
+          "text": "História de Mirrors High",
+          "runs": [
+            {
+              "text": "História de Mirrors High"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A história se passa após a Guerra Sangrenta dos Mil Anos e acompanha uma alma recém-despertada em Karakura Town. Os jogadores poderão criar seu próprio personagem, personalizar sua aparência e desenvolver uma Zanpakuto exclusiva.",
+          "runs": [
+            {
+              "text": "A história se passa após a Guerra Sangrenta dos Mil Anos e acompanha uma alma recém-despertada em Karakura Town. Os jogadores poderão criar seu próprio personagem, personalizar sua aparência e desenvolver uma Zanpakuto exclusiva.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O sistema de combate permite formar equipes de três integrantes e combinar ataques baseados em cartas, golpes especiais e a técnica Soul Drive, que ativa ataques conjuntos.",
+          "runs": [
+            {
+              "text": "O sistema de combate permite formar equipes de três integrantes e combinar ataques baseados em cartas, golpes especiais e a técnica "
+            },
+            {
+              "text": "Soul Drive",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que ativa ataques conjuntos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Portanto o elenco de vozes inclui Yū Sasahara como Maiko Tokishima, Shōgo Batori como Giro Hando e Fūka Izumi como Naru Jurinna. Ademais o jogo realizou um teste beta fechado entre 22 e 29 de julho.",
+          "runs": [
+            {
+              "text": "Portanto o elenco de vozes inclui Yū Sasahara como Maiko Tokishima, Shōgo Batori como Giro Hando e Fūka Izumi como Naru Jurinna. Ademais o jogo realizou um teste beta fechado entre 22 e 29 de julho."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://bleach-mh.bn-ent.net/en/news/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Bleach Mirrors High ganha trailer de abertura e música tema.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Bleach Mirrors High ganha trailer de abertura e música tema",
+              "href": "https://animenew.com.br/bleach-mirrors-high-trailer-lancamento/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-27T22:36:36.000Z",
+      "updatedAt": "2026-10-27T22:36:36.000Z",
+      "expiresAt": "2026-11-03T22:36:36.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/bleach-mirrors-high-trailer-lancamento",
+          "publishedAt": "2026-10-27T22:36:36.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 248,
+      "qualityScore": 0.974,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-2bc604ea",
+      "slug": "precure-anuncia-anime-derivado-com-heroinas-vilas-animenew-2bc604ea",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Precure anuncia anime derivado com heroínas vilãs",
+      "originalTitle": "Precure anuncia anime derivado com heroínas vilãs",
+      "summary": "A franquia Precure ganhará um novo anime de TV intitulado Dual Shadow ~Precure Villain Heroines~, com estreia prevista para 2027. A produção terá história e personagens originais apresentados.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Dual Shadow ~Precure Villain Heroines~",
+        "Precure"
+      ],
+      "url": "https://animenew.com.br/dual-shadow-precure-villain-heroines-anime",
+      "sourceUrl": "https://animenew.com.br/dual-shadow-precure-villain-heroines-anime",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Precure-anuncia-anime-derivado-com-heroinas-vilas.webp",
+      "mediaQuery": "Precure anuncia anime derivado com heroínas vilãs",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/4H3qrB9yaJA"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A franquia Precure ganhará um novo anime de TV intitulado Dual Shadow ~Precure Villain Heroines~, com estreia prevista para 2027. A produção terá história e personagens originais apresentados.",
+          "runs": [
+            {
+              "text": "A franquia "
+            },
+            {
+              "text": "Precure",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ganhará um "
+            },
+            {
+              "text": "novo anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " de TV intitulado "
+            },
+            {
+              "text": "Dual Shadow ~Precure Villain Heroines~",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com estreia prevista para 2027. A produção terá história e personagens originais apresentados."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Black Clover bate record com retorno da 2ª temporada",
+              "runs": [
+                {
+                  "text": "Black Clover bate record com retorno da 2ª temporada",
+                  "href": "https://animenew.com.br/black-clover-bate-record-com-retorno-da-2a-temporada"
+                }
+              ]
+            },
+            {
+              "text": "Dragon Ball Super: Beerus recebe críticas por mudanças no episódio 3",
+              "runs": [
+                {
+                  "text": "Dragon Ball Super: Beerus recebe críticas por mudanças no episódio 3",
+                  "href": "https://animenew.com.br/dragon-ball-super-beerus-mudancas-vegeta"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anúncio aconteceu através da Toei Animation no dia 27 de outubro. Sendo assim diferentemente de outros projetos derivados da franquia, a nova série apresentará uma narrativa inédita, centrada em personagens ligadas ao lado das vilãs.",
+          "runs": [
+            {
+              "text": "O anúncio aconteceu através da "
+            },
+            {
+              "text": "Toei Animation",
+              "href": "https://animenew.com.br/studio/18/toei-animation"
+            },
+            {
+              "text": " no dia 27 de outubro. Sendo assim diferentemente de outros projetos derivados da franquia, a nova série apresentará uma narrativa inédita, centrada em personagens ligadas ao lado das vilãs."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=4H3qrB9yaJA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/4H3qrB9yaJA"
+        },
+        {
+          "type": "paragraph",
+          "text": "A novidade também retoma uma característica conhecida da franquia: personagens que começam como antagonistas e acabam se tornando heroínas. Contudo um exemplo é Setsuna Higashi, que apareceu como Eas em Fresh Precure! (2009) antes de assumir a identidade de Cure Passion.",
+          "runs": [
+            {
+              "text": "A novidade também retoma uma característica conhecida da franquia: personagens que começam como antagonistas e acabam se tornando heroínas. Contudo um exemplo é "
+            },
+            {
+              "text": "Setsuna Higashi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que apareceu como Eas em "
+            },
+            {
+              "text": "Fresh Precure! (2009)",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " antes de assumir a identidade de "
+            },
+            {
+              "text": "Cure Passion",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Outros projetos de Precure",
+          "runs": [
+            {
+              "text": "Outros projetos de Precure"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Atualmente, a franquia conta com Star Detective Precure!, sua 23ª série principal de televisão, lançada em 1º de fevereiro de 2026. A produção também recebeu um filme, que estreou nos cinemas japoneses em 18 de setembro e vendeu 358 mil ingressos nos primeiros três dias.",
+          "runs": [
+            {
+              "text": "Atualmente, a franquia conta com "
+            },
+            {
+              "text": "Star Detective Precure!",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", sua 23ª série principal de televisão, lançada em 1º de fevereiro de 2026. A produção também recebeu um filme, que estreou nos cinemas japoneses em 18 de setembro e vendeu 358 mil ingressos nos primeiros três dias."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nos últimos anos, a Toei Animation também investiu em projetos voltados ao público adulto para celebrar os 20 anos da franquia, incluindo Power of Hope: Precure Full Bloom, lançado em 2023, e Mahou Tsukai Precure!!: MIRAI DAYS, que estreou em janeiro de 2025.",
+          "runs": [
+            {
+              "text": "Nos últimos anos, a Toei Animation também investiu em projetos voltados ao público adulto para celebrar os 20 anos da franquia, incluindo Power of Hope: Precure Full Bloom, lançado em 2023, e "
+            },
+            {
+              "text": "Mahou Tsukai Precure!!: MIRAI DAYS",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que estreou em janeiro de 2025."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim mais detalhes sobre a equipe de produção, o elenco e a data exata de estreia de Dual Shadow ~Precure Villain Heroines~ ainda não foram divulgados.",
+          "runs": [
+            {
+              "text": "Por fim mais detalhes sobre a equipe de produção, o elenco e a data exata de estreia de Dual Shadow ~Precure Villain Heroines~ ainda não foram divulgados."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://www.toei-anim.co.jp/tv/dualshadow/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Precure anuncia anime derivado com heroínas vilãs.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Precure anuncia anime derivado com heroínas vilãs",
+              "href": "https://animenew.com.br/dual-shadow-precure-villain-heroines-anime/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-27T22:29:03.000Z",
+      "updatedAt": "2026-10-27T22:29:03.000Z",
+      "expiresAt": "2026-11-03T22:29:03.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/dual-shadow-precure-villain-heroines-anime",
+          "publishedAt": "2026-10-27T22:29:03.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 266,
+      "qualityScore": 0.973,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-88801e78",
+      "slug": "critica-digimon-beatbreak-jbox-88801e78",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Crítica | Digimon Beatbreak",
+      "originalTitle": "Crítica | Digimon Beatbreak",
+      "summary": "Entre defeitos e qualidades, é possível dizer que os dois animês anteriores de Digimon miraram em maneiras específicas de desenvolvimento. O péssimo Digimon Adventure: atendeu ao desejo de uma parcela dos fãs de ver mais dos digimons como criaturas, de suas lores, das interações entre si e com o Digimundo. Nessa, os personagens humanos praticamente foram deixados de lado, e o resultado desastroso foi um imenso fanservice que ninguém se importou em assistir.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "Resenha",
+        "crítica de digimon beatbreak",
+        "Digimon",
+        "digimon beatbreak",
+        "digimon beatbreak é bom?",
+        "resenha de digimon beatbreak"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/27/critica-digimon-beatbreak",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/27/critica-digimon-beatbreak",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/jbox-critica-destacada-digimonbeatbreak.jpg",
+      "mediaQuery": "Crítica | Digimon Beatbreak",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/digimon-beatbreak-2.jpg",
+          "alt": "Imagem: Protagonista do animê 'Digimon Beatbreak', um menino de óculos, cabelo roxo e com uma mecha loira, com seu digimon no ombro, um camaleão verde com a lingua de fora",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/digimon-beatbreak-1.jpg",
+          "alt": "Imagem: dois personagens do anime 'Digimon Beatbreak', uma menina de casaco vermelho e um menino de roupa branca",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/naNctHU5MQE"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Entre defeitos e qualidades, é possível dizer que os dois animês anteriores de Digimon miraram em maneiras específicas de desenvolvimento. O péssimo Digimon Adventure: atendeu ao desejo de uma parcela dos fãs de ver mais dos digimons como criaturas, de suas lores, das interações entre si e com o Digimundo. Nessa, os personagens humanos praticamente foram deixados de lado, e o resultado desastroso foi um imenso fanservice que ninguém se importou em assistir. Já o divertidinho Digimon Ghost Game voltou mais os olhos aos personagens humanos, fazendo de seus dramas o norte da série animada na maior parte do tempo.",
+          "runs": [
+            {
+              "text": "Entre defeitos e qualidades, é possível dizer que os dois animês anteriores de "
+            },
+            {
+              "text": "Digimon",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " miraram em maneiras específicas de desenvolvimento. O péssimo "
+            },
+            {
+              "text": "Digimon Adventure:",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2020/11/16/digimon-adventure-bem-pouco-acontece-no-digimundo-bem-pouco-mesmo-episodios-20-ao-24/"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2020/11/16/digimon-adventure-bem-pouco-acontece-no-digimundo-bem-pouco-mesmo-episodios-20-ao-24/"
+            },
+            {
+              "text": "atendeu ao desejo de uma parcela dos fãs de ver mais dos digimons como criaturas, de suas "
+            },
+            {
+              "text": "lores",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", das interações entre si e com o Digimundo. Nessa, os personagens humanos praticamente foram deixados de lado, e o resultado desastroso foi um imenso "
+            },
+            {
+              "text": "fanservice",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " que ninguém se importou em assistir. Já o divertidinho "
+            },
+            {
+              "text": "Digimon Ghost Game",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2021/12/05/critica-digimon-ghost-game-episodios-01-08/"
+            },
+            {
+              "text": " voltou mais os olhos aos personagens humanos, fazendo de seus dramas o norte da série animada na maior parte do tempo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ao terminar de assistir a Digimon Beatbreak, fiquei com a impressão de que a animação teve como ordem inicial retomar o equilíbrio entre personagens humanos e digimons, algo em que a franquia era especialista nos primeiros anos, mas vinha deixando a desejar havia mais de uma década. A série consegue dar espaço aos dois lados da relação sem transformar os monstrinhos em meros acessórios fofinhos dos protagonistas nem reduzir os humanos a figurantes de luxo para as evoluções dos seus parceiros.",
+          "runs": [
+            {
+              "text": "Ao terminar de assistir a "
+            },
+            {
+              "text": "Digimon Beatbreak",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", fiquei com a impressão de que a animação teve como ordem inicial retomar o equilíbrio entre personagens humanos e digimons, algo em que a franquia era especialista nos primeiros anos, mas vinha deixando a desejar havia mais de uma década. A série consegue dar espaço aos dois lados da relação sem transformar os monstrinhos em meros acessórios fofinhos dos protagonistas nem reduzir os humanos a figurantes de luxo para as evoluções dos seus parceiros."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama se passa num mundo futurista onde as pessoas portam um aparelho em formato de ovo chamado sapotama, equipado com uma inteligência artificial que funciona como assistente pessoal e cuida de boa parte da vida dos usuários. O problema é que esses aparelhos são alimentados pelo e-pulse, uma energia vital transmitida por meio de um chip que todos carregam na mão. E, de maneira misteriosa, criaturas chamadas digimons começaram a chocar das sapotamas. Alguns deles são perigosos para a sociedade, já que também se alimentam de e-pulse, fazendo suas vítimas entrarem em cold heart, um estado catatônico em que ficam completamente congeladas.",
+          "runs": [
+            {
+              "text": "A trama se passa num mundo futurista onde as pessoas portam um aparelho em formato de ovo chamado "
+            },
+            {
+              "text": "sapotama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", equipado com uma inteligência artificial que funciona como assistente pessoal e cuida de boa parte da vida dos usuários. O problema é que esses aparelhos são alimentados pelo "
+            },
+            {
+              "text": "e-pulse",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", uma energia vital transmitida por meio de um chip que todos carregam na mão. E, de maneira misteriosa, criaturas chamadas digimons começaram a chocar das sapotamas. Alguns deles são perigosos para a sociedade, já que também se alimentam de "
+            },
+            {
+              "text": "e-pulse",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", fazendo suas vítimas entrarem em "
+            },
+            {
+              "text": "cold heart",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", um estado catatônico em que ficam completamente congeladas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O protagonista, Tomorou Tenma, é atacado por dois desses digimons, atraídos pela batida diferente de seu e-pulse, mais extensa, intensa e, consequentemente, saborosa para os monstrinhos. O moleque é salvo pelo irmão, Asuka Tenma, que acaba entrando em cold heart e tendo seu e-pulse roubado por um misterioso digimon com aparência de macaco. Nesse processo, a sapotama de Tomorou eclode e dela surge o fofíssimo Gekkoumou, um digimon camaleão tão divertido quanto atrapalhado, que se torna seu parceiro dali em diante.",
+          "runs": [
+            {
+              "text": "O protagonista, "
+            },
+            {
+              "text": "Tomorou Tenma",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", é atacado por dois desses digimons, atraídos pela batida diferente de seu "
+            },
+            {
+              "text": "e-pulse",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", mais extensa, intensa e, consequentemente, saborosa para os monstrinhos. O moleque é salvo pelo irmão, "
+            },
+            {
+              "text": "Asuka Tenma",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que acaba entrando em "
+            },
+            {
+              "text": "cold heart",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e tendo seu "
+            },
+            {
+              "text": "e-pulse",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " roubado por um misterioso digimon com aparência de macaco. Nesse processo, a sapotama de Tomorou eclode e dela surge o fofíssimo "
+            },
+            {
+              "text": "Gekkoumou",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", um digimon camaleão tão divertido quanto atrapalhado, que se torna seu parceiro dali em diante."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Tomorou acaba acolhido pela Glowing Dawn, uma equipe de outros “digiescolhidos” que trabalha como cleaners, limpadores de digimons perigosos. A existência dessas criaturas é escondida da população, mas há todo um sistema governamental e privado dedicado à caça e à derrota delas em troca de recompensas, com direito a cleaners famosos e tudo. E como toda sociedade aparentemente muito organizada e utópica, essa também tem seus esqueletos no armário. Mais pra frente, descobrimos submundos ilegais envolvendo leilões de digimons, casas de apostas em batalhas, escravidão e instituições paramilitares especializadas em assassinatos internacionais.",
+          "runs": [
+            {
+              "text": "Tomorou acaba acolhido pela "
+            },
+            {
+              "text": "Glowing Dawn",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", uma equipe de outros “digiescolhidos” que trabalha como "
+            },
+            {
+              "text": "cleaners",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", limpadores de digimons perigosos. A existência dessas criaturas é escondida da população, mas há todo um sistema governamental e privado dedicado à caça e à derrota delas em troca de recompensas, com direito a "
+            },
+            {
+              "text": "cleaners",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " famosos e tudo. E como toda sociedade aparentemente muito organizada e utópica, essa também tem seus esqueletos no armário. Mais pra frente, descobrimos submundos ilegais envolvendo leilões de digimons, casas de apostas em batalhas, escravidão e instituições paramilitares especializadas em assassinatos internacionais."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/digimon-beatbreak-2.jpg",
+          "alt": "Imagem: Protagonista do animê 'Digimon Beatbreak', um menino de óculos, cabelo roxo e com uma mecha loira, com seu digimon no ombro, um camaleão verde com a lingua de fora"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Toei Animation/Reprodução",
+          "runs": [
+            {
+              "text": "Imagem: Toei Animation/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A partir daí, Tomorou e os demais integrantes da equipe vivem aventuras enfrentando os digimons da semana, novos inimigos e ameaças que vão escalando até consequências mundiais e, eventualmente, interdimensionais. É uma estrutura bastante familiar para quem acompanha Digimon, mas o que realmente faz Beatbreak funcionar é a maneira como trata a relação entre os parceiros. Os digimons não são apenas armas que os protagonistas tiram do bolso quando a situação aperta. Como nas melhores temporadas de Digimon, suas evoluções acompanham o desenvolvimento dos vínculos com os humanos, de modo que o crescimento de um acaba refletindo o do outro.",
+          "runs": [
+            {
+              "text": "A partir daí, Tomorou e os demais integrantes da equipe vivem aventuras enfrentando os digimons da semana, novos inimigos e ameaças que vão escalando até consequências mundiais e, eventualmente, interdimensionais. É uma estrutura bastante familiar para quem acompanha "
+            },
+            {
+              "text": "Digimon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", mas o que realmente faz "
+            },
+            {
+              "text": "Beatbreak",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " funcionar é"
+            },
+            {
+              "text": " a maneira como trata a relação entre os parceiros",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Os digimons não são apenas armas que os protagonistas tiram do bolso quando a situação aperta. Como nas melhores temporadas de "
+            },
+            {
+              "text": "Digimon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", suas evoluções acompanham o desenvolvimento dos vínculos com os humanos, de modo que o crescimento de um acaba refletindo o do outro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Há algo… interessante em Beatbreak. O roteiro, pela primeira vez, explora terrenos mais agressivos dentro de uma série infantil. A história passeia por lugares bastante pesados, com personagens matando outros, traumas físicos e psicológicos que deixam marcas reais (literalmente um dos protagonistas tem um braço amputado e anda com marcas de queimadura). Há tramas envolvendo tráfico internacional, escravidão e militarização. Tem personagem cujo intuito de vida é se colocar para morrer como escudo. Uma das vilãs da semana usa seu digimon como um serial killer. Outro dos vilões é ele mesmo um psicopata que usa digimons que ele captura para assassinar outras pessoas. Em outro momento, quase ocorre um genocídio dentro de uma cidade. O lado edgy simplesmente vai e vai.",
+          "runs": [
+            {
+              "text": "Há algo… interessante em "
+            },
+            {
+              "text": "Beatbreak",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". O roteiro, pela primeira vez, "
+            },
+            {
+              "text": "explora terrenos mais agressivos",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dentro de uma série infantil. A história passeia por lugares bastante pesados, com personagens matando outros, traumas físicos e psicológicos que deixam marcas reais (literalmente um dos protagonistas tem um braço amputado e anda com marcas de queimadura). Há tramas envolvendo tráfico internacional, escravidão e militarização. Tem personagem cujo intuito de vida é se colocar para morrer como escudo. Uma das vilãs da semana usa seu digimon como um "
+            },
+            {
+              "text": "serial killer",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Outro dos vilões é ele mesmo um psicopata que usa digimons que ele captura para assassinar outras pessoas. Em outro momento, quase ocorre um genocídio dentro de uma cidade. O lado "
+            },
+            {
+              "text": "edgy",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " simplesmente vai e vai."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Não é que Digimon nunca tenha flertado com assuntos sombrios, mas Beatbreak parece particularmente disposta a lembrar que, quando você constrói um mundo em que criaturas podem ser capturadas, comercializadas, exploradas e usadas como ferramentas de combate, as consequências éticas dessa situação são um tanto mais complicadas do que a fantasia de ter um amiguinho virtual para viver aventuras divertidas. Remonta ao conflito moral do péssimo filme Digimon Adventure 02: O Início, de 2023, naquilo de “e se todos do mundo tiverem um Digimon, mesmo os psicopatas?”, mas aqui colocado em prática.",
+          "runs": [
+            {
+              "text": "Não é que "
+            },
+            {
+              "text": "Digimon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " nunca tenha flertado com assuntos sombrios, mas "
+            },
+            {
+              "text": "Beatbreak",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " parece particularmente disposta a lembrar que, quando você constrói um mundo em que criaturas podem ser capturadas, comercializadas, exploradas e usadas como ferramentas de combate, as consequências éticas dessa situação são um tanto mais complicadas do que a fantasia de ter um amiguinho virtual para viver aventuras divertidas. Remonta ao conflito moral do péssimo filme "
+            },
+            {
+              "text": "Digimon Adventure 02: O Início",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2023/12/04/critica-digimon-adventure-02-o-inicio-vai-surrar-suas-memorias-com-um-taco-de-beisebol/"
+            },
+            {
+              "text": ", de 2023, naquilo de “e se todos do mundo tiverem um Digimon, mesmo os psicopatas?”, mas aqui colocado em prática."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Enxergo dois problemas nessa abordagem do animê. O primeiro é que, como ele apresenta personagens extrapolando tanto os limites da agressividade em termos sociais, fica difícil não esperar que as consequências desses atos não sejam letais, o que é uma expectativa esquisitíssima para um desenho infantil. Já o segundo é que o animê fica quase depressivo diante de tantos eventos pesados.",
+          "runs": [
+            {
+              "text": "Enxergo "
+            },
+            {
+              "text": "dois problemas nessa abordagem do animê",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O primeiro é que, como ele apresenta personagens extrapolando tanto os limites da agressividade em termos sociais, fica difícil não esperar que as consequências desses atos não sejam letais, o que é uma expectativa esquisitíssima para um desenho infantil. Já o segundo é que o animê fica quase depressivo diante de tantos eventos pesados."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/digimon-beatbreak-1.jpg",
+          "alt": "Imagem: dois personagens do anime 'Digimon Beatbreak', uma menina de casaco vermelho e um menino de roupa branca"
+        },
+        {
+          "type": "paragraph",
+          "text": "Quem acompanha a franquia há algum tempo também ganha seus biscoitinhos. Beatbreak sabe brincar com a memória afetiva dos fãs ao trazer digimons clássicos, inclusive criaturas associadas a linhas evolutivas de vilões conhecidos, como Myotismon, Piedmon e Diaboromon. Essas aparições ajudam a conectar a série à mitologia mais ampla da franquia sem depender exclusivamente da nostalgia para justificar sua existência. Mesmo a piada da fanbase de sempre um “Leomon” morrer é referenciada aqui.",
+          "runs": [
+            {
+              "text": "Quem acompanha a franquia há algum tempo também ganha seus biscoitinhos. "
+            },
+            {
+              "text": "Beatbreak",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " sabe brincar com a memória afetiva dos fãs ao trazer digimons clássicos, inclusive criaturas associadas a linhas evolutivas de vilões conhecidos, como Myotismon, Piedmon e Diaboromon. Essas aparições ajudam a conectar a série à mitologia mais ampla da franquia sem depender exclusivamente da nostalgia para justificar sua existência. Mesmo a piada da "
+            },
+            {
+              "text": "fanbase",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de sempre um “Leomon” morrer é referenciada aqui."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já visualmente, a série merece todos os créditos. A animação é animal, especialmente quando a narrativa atravessa para a versão deles de Digimundo e a direção de arte começa a brincar com as cores dos traços, como se fosse uma viagem ácida da estética vibrante da internet na virada do milênio, referenciado aqui ao filme Bokura no War Game!, de 2000. Esse trabalho visual ajuda a vender a dimensão fantástico-digital da história e demonstra que ainda existe espaço para brincar com a linguagem da animação dentro de uma franquia tão estabelecida.",
+          "runs": [
+            {
+              "text": "Já visualmente, a série merece todos os créditos.",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " A animação é animal, especialmente quando a narrativa atravessa para a versão deles de Digimundo e a direção de arte começa a brincar com as cores dos traços, como se fosse uma viagem ácida da estética vibrante da internet na virada do milênio, referenciado aqui ao filme "
+            },
+            {
+              "text": "Bokura no War Game!",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", de 2000. Esse trabalho visual ajuda a vender a dimensão fantástico-digital da história e demonstra que ainda existe espaço para brincar com a linguagem da animação dentro de uma franquia tão estabelecida."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Mas por mais que Beatbreak acerte na relação entre humanos e digimons, na construção do universo, na escalada dos conflitos, e até tente algo novo nessa abordagem soturna e edgy, existe uma questão fundamental que insiste em me incomodar: a série é meio chatona quando fica presa à trama urbana. Boa parte do tempo é gasta nesse esquema de investigar incidentes, caçar digimons perigosos e lidar com as consequências deles no mundo humano. Só que fica repetitivo bem rápido. A estrutura de missões e ameaças crescentes acaba deixando o animê com uma cara de série de ação urbana “CSI” genérica com uma skin de Digimon, enquanto o elemento mais interessante da franquia, o Digimundo, fica escanteado na maior parte da história.",
+          "runs": [
+            {
+              "text": "Mas por mais que "
+            },
+            {
+              "text": "Beatbreak",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " acerte na relação entre humanos e digimons, na construção do universo, na escalada dos conflitos, e até tente algo novo nessa abordagem soturna e "
+            },
+            {
+              "text": "edgy",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", existe uma questão fundamental que insiste em me incomodar: a série é meio chatona "
+            },
+            {
+              "text": "quando fica presa à trama urbana",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Boa parte do tempo é gasta nesse esquema de investigar incidentes, caçar digimons perigosos e lidar com as consequências deles no mundo humano. Só que fica repetitivo bem rápido. A estrutura de missões e ameaças crescentes acaba deixando o animê com uma cara de série de ação urbana “CSI” genérica com uma "
+            },
+            {
+              "text": "skin",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Digimon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", enquanto o elemento mais interessante da franquia, o Digimundo, fica escanteado na maior parte da história."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Aí que entra uma implicância bem particular. Pra mim, Digimon funciona melhor quando abraça a aventura isekai, com os protagonistas perdidos em um lugar desconhecido, descobrindo suas regras, encontrando criaturas estranhas e precisando aprender a sobreviver enquanto seus próprios vínculos são colocados à prova. Pode chamar de nostalgia, mas existe algo na estrutura de uma viagem para outro mundo que combina muito mais com a proposta da franquia do que ficar resolvendo problemas em ruas, prédios futuristas e escolas. Quando os personagens estão no Digimundo, a sensação de descoberta cresce, o visual ganha outra força e a relação com os parceiros parece ocupar o espaço que merece.",
+          "runs": [
+            {
+              "text": "Aí que entra uma implicância bem particular. Pra mim, "
+            },
+            {
+              "text": "Digimon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " funciona melhor quando abraça a aventura "
+            },
+            {
+              "text": "isekai",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", com os protagonistas perdidos em um lugar desconhecido, descobrindo suas regras, encontrando criaturas estranhas e precisando aprender a sobreviver enquanto seus próprios vínculos são colocados à prova. Pode chamar de nostalgia, mas existe algo na estrutura de uma viagem para outro mundo que combina muito mais com a proposta da franquia do que ficar resolvendo problemas em ruas, prédios futuristas e escolas. Quando os personagens estão no Digimundo, a sensação de descoberta cresce, o visual ganha outra força e a relação com os parceiros parece ocupar o espaço que merece."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Digimon Beatbreak parece entender algo que a franquia passou anos tentando equilibrar. Os digimons precisam ser personagens, e não apenas bichinhos de estimação ou máquinas de combate, enquanto os humanos precisam ter histórias próprias que justifiquem a importância dessa parceria. A série acerta ao fazer o básico de as evoluções acompanharem o desenvolvimento dos relacionamentos, ao caprichar na apresentação visual, e desperta curiosidade ao expandir seu universo para territórios moralmente mais sombrios. Não é uma curiosidade BOA, mas ao menos é uma tentativa de algo diferente. Porém, aargh, Toei, na próxima, joguem as crianças digiescolhidas dentro do Digimundo, não aguento mais esses “e se tivessem digimons na nossa realidade?”, desde o Adventure Tri é a mesma coisa.",
+          "runs": [
+            {
+              "text": "Digimon Beatbreak",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " parece entender algo que a franquia passou anos tentando equilibrar. Os digimons precisam ser personagens, e não apenas bichinhos de estimação ou máquinas de combate, enquanto os humanos precisam ter histórias próprias que justifiquem a importância dessa parceria. A série acerta ao fazer o básico de as evoluções acompanharem o desenvolvimento dos relacionamentos, ao caprichar na apresentação visual, e desperta curiosidade ao expandir seu universo para territórios moralmente mais sombrios. Não é uma curiosidade BOA, mas ao menos é uma tentativa de algo diferente. Porém, aargh, Toei, na próxima, joguem as crianças digiescolhidas dentro do Digimundo, não aguento mais esses “e se tivessem digimons na nossa realidade?”, desde o "
+            },
+            {
+              "text": "Adventure Tri",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2015/11/21/review-digimon-adventure-tri-reuniao/"
+            },
+            {
+              "text": " é a mesma coisa."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=naNctHU5MQE",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/naNctHU5MQE"
+        },
+        {
+          "type": "paragraph",
+          "text": "Digimon Beatbreak foi exibido aqui no Brasil via streaming através da Crunchyroll com legendas em português.",
+          "runs": [
+            {
+              "text": "Digimon Beatbreak",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi exibido aqui no Brasil via streaming através da "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " com legendas em português."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+          "runs": [
+            {
+              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-27T20:16:12.000Z",
+      "updatedAt": "2026-10-27T20:19:00.000Z",
+      "expiresAt": "2026-11-03T20:16:12.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/27/critica-digimon-beatbreak",
+          "publishedAt": "2026-10-27T20:16:12.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 7,
+      "wordCount": 1394,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 22,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-9cb3c941",
       "slug": "black-clover-bate-record-com-retorno-da-2-temporada-animenew-9cb3c941",
@@ -4049,554 +5305,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-4cd966dd",
-      "slug": "gyakusatsu-kigen-ganha-video-promocional-animado-animenew-4cd966dd",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Gyakusatsu Kigen ganha vídeo promocional animado",
-      "originalTitle": "Gyakusatsu Kigen ganha vídeo promocional animado",
-      "summary": "O mangá Gyakusatsu Kigen (Genocide Origin) ganhou um vídeo promocional animado para celebrar o lançamento de seu primeiro volume. A prévia conta com narração de Soma Saito e direção de storyboard de Takehiro Kubota.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Mangás",
-        "Notícias",
-        "Genocide Origin",
-        "Gyakusatsu Kigen"
-      ],
-      "url": "https://animenew.com.br/gyakusatsu-kigen-video-promocional-animado",
-      "sourceUrl": "https://animenew.com.br/gyakusatsu-kigen-video-promocional-animado",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Gyakusatsu-Kigen-ganha-video-promocional-animado.webp",
-      "mediaQuery": "Gyakusatsu Kigen ganha vídeo promocional animado",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/w6jfHtx0d6I"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O mangá Gyakusatsu Kigen (Genocide Origin) ganhou um vídeo promocional animado para celebrar o lançamento de seu primeiro volume. A prévia conta com narração de Soma Saito e direção de storyboard de Takehiro Kubota.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Gyakusatsu Kigen",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Genocide Origin",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") ganhou um vídeo promocional animado para celebrar o lançamento de seu primeiro volume. A prévia conta com narração de "
-            },
-            {
-              "text": "Soma Saito",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e direção de storyboard de "
-            },
-            {
-              "text": "Takehiro Kubota",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Masashi Kishimoto anuncia novo mangá de Naruto",
-              "runs": [
-                {
-                  "text": "Masashi Kishimoto anuncia novo mangá de Naruto",
-                  "href": "https://animenew.com.br/naruto-shadow-rising-novo-manga-kishimoto"
-                }
-              ]
-            },
-            {
-              "text": "Criador de Hunter x Hunter limitará trabalhos devido à saúde",
-              "runs": [
-                {
-                  "text": "Criador de Hunter x Hunter limitará trabalhos devido à saúde",
-                  "href": "https://animenew.com.br/yoshihiro-togashi-hunter-x-hunter-limita-trabalhos"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Portanto o vídeo ganhou publicação pelo canal oficial da revista Afternoon, da editora Kodansha. O primeiro volume compilado da obra chegou às lojas japonesas no dia seguinte.",
-          "runs": [
-            {
-              "text": "Portanto o vídeo ganhou publicação pelo canal oficial da revista Afternoon, da editora "
-            },
-            {
-              "text": "Kodansha",
-              "href": "https://animenew.com.br/tag/kodansha/"
-            },
-            {
-              "text": ". O primeiro volume compilado da obra chegou às lojas japonesas no dia seguinte."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=w6jfHtx0d6I",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/w6jfHtx0d6I"
-        },
-        {
-          "type": "paragraph",
-          "text": "A produção do material contou com Atsushi Ikariya e Keita Shimizu na animação-chave. Masakazu Miyake e Taichi Maezuka ficaram responsáveis pelos cenários, enquanto Tetsuya Tatamitani trabalhou na edição e na composição fotográfica.",
-          "runs": [
-            {
-              "text": "A produção do material contou com Atsushi Ikariya e Keita Shimizu na animação-chave. Masakazu Miyake e Taichi Maezuka ficaram responsáveis pelos cenários, enquanto Tetsuya Tatamitani trabalhou na edição e na composição fotográfica."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "História de Gyakusatsu Kigen",
-          "runs": [
-            {
-              "text": "História de Gyakusatsu Kigen"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Escrito por Shiwasu Hoshikawa e Yuichiro Momose, o mangá se passa em um Japão marcado por notícias frequentes de crimes brutais.",
-          "runs": [
-            {
-              "text": "Escrito por Shiwasu Hoshikawa e Yuichiro Momose, o mangá se passa em um Japão marcado por notícias frequentes de crimes brutais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama acompanha Rakki, um estudante do ensino médio que é salvo de uma briga com um colega por um delinquente conhecido como A. A situação muda quando dois assassinos, identificados apenas como K e D, aparecem diante deles. Em meio aos acontecimentos, Rakki descobre que seus colegas de classe foram assassinados.",
-          "runs": [
-            {
-              "text": "A trama acompanha Rakki, um estudante do ensino médio que é salvo de uma briga com um colega por um delinquente conhecido como A. A situação muda quando dois assassinos, identificados apenas como K e D, aparecem diante deles. Em meio aos acontecimentos, Rakki descobre que seus colegas de classe foram assassinados."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A obra estreou na revista Afternoon em 25 de maio de 2026. Ademais Hoshikawa também é conhecido pela adaptação em mangá de Bungo Stray Dogs STORM BRINGER, enquanto Momose atua como roteirista principal do projeto Hypnosis Mic.",
-          "runs": [
-            {
-              "text": "A obra estreou na revista Afternoon em 25 de maio de 2026. Ademais Hoshikawa também é conhecido pela adaptação em mangá de "
-            },
-            {
-              "text": "Bungo Stray Dogs STORM BRINGER",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", enquanto Momose atua como roteirista principal do projeto "
-            },
-            {
-              "text": "Hypnosis Mic",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Comic Natalie",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Comic Natalie",
-              "marks": [
-                "em"
-              ],
-              "href": "https://natalie.mu/comic/news/694617"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Gyakusatsu Kigen ganha vídeo promocional animado.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Gyakusatsu Kigen ganha vídeo promocional animado",
-              "href": "https://animenew.com.br/gyakusatsu-kigen-video-promocional-animado/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-24T14:28:53.000Z",
-      "updatedAt": "2026-10-24T14:28:53.000Z",
-      "expiresAt": "2026-10-31T14:28:53.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/gyakusatsu-kigen-video-promocional-animado",
-          "publishedAt": "2026-10-24T14:28:53.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 245,
-      "qualityScore": 0.911,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-4339e203",
-      "slug": "danmachi-anuncia-novo-jogo-para-pc-e-mobile-animenew-4339e203",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "DanMachi anuncia novo jogo para PC e mobile",
-      "originalTitle": "DanMachi anuncia novo jogo para PC e mobile",
-      "summary": "A franquia DanMachi ganhará um novo jogo em 2027. Intitulado Is It Wrong to Try to Pick Up Girls in a Dungeon? Familia Myth: Frontier Zero (Dungeon ni Deai o Motomeru no wa Machigatteiru Darō ka), o projeto terá lançamento para PC, iOS e Android, com distribuição prevista dentro e fora do Japão.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Games",
-        "Notícias",
-        "danmachi",
-        "Is It Wrong to Try to Pick Up Girls in a Dungeon?"
-      ],
-      "url": "https://animenew.com.br/danmachi-frontier-zero-jogo-2027",
-      "sourceUrl": "https://animenew.com.br/danmachi-frontier-zero-jogo-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/DanMachi-anuncia-novo-jogo-para-PC-e-mobile.webp",
-      "mediaQuery": "DanMachi anuncia novo jogo para PC e mobile",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Dungeon-Familia-Myth-Frontier-Zero.webp",
-          "alt": "Dungeon? Familia Myth: Frontier Zero",
-          "caption": "大森藤ノ・SBクリエイティブ/ダンまち6製作委員会"
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A franquia DanMachi ganhará um novo jogo em 2027. Intitulado Is It Wrong to Try to Pick Up Girls in a Dungeon? Familia Myth: Frontier Zero (Dungeon ni Deai o Motomeru no wa Machigatteiru Darō ka), o projeto terá lançamento para PC, iOS e Android, com distribuição prevista dentro e fora do Japão.",
-          "runs": [
-            {
-              "text": "A franquia "
-            },
-            {
-              "text": "DanMachi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ganhará um novo "
-            },
-            {
-              "text": "jogo",
-              "href": "https://animenew.com.br/games"
-            },
-            {
-              "text": " em 2027. Intitulado "
-            },
-            {
-              "text": "Is It Wrong to Try to Pick Up Girls in a Dungeon? Familia Myth: Frontier Zero",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Dungeon ni Deai o Motomeru no wa Machigatteiru Darō ka",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "), o projeto terá lançamento para PC, iOS e Android, com distribuição prevista dentro e fora do Japão."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Blox Fruits: como One Piece criou o maior fenômeno de anime dentro do Roblox",
-              "runs": [
-                {
-                  "text": "Blox Fruits: como One Piece criou o maior fenômeno de anime dentro do Roblox",
-                  "href": "https://animenew.com.br/blox-fruits-one-piece-fenomeno-de-anime-roblox"
-                }
-              ]
-            },
-            {
-              "text": "Zelda: Ocarina of Time revela novidades no Switch 2",
-              "runs": [
-                {
-                  "text": "Zelda: Ocarina of Time revela novidades no Switch 2",
-                  "href": "https://animenew.com.br/zelda-ocarina-of-time-revela-novidades-no-switch-2"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O anúncio aconteceu pela desenvolvedora enish em 22 de outubro. O jogo contará com uma história original desenvolvida em colaboração com Fujino Omori, autor das light novels que deram origem à franquia.",
-          "runs": [
-            {
-              "text": "O anúncio aconteceu pela desenvolvedora enish em 22 de outubro. O jogo contará com uma história original desenvolvida em colaboração com Fujino Omori, autor das light novels que deram origem à franquia."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Dungeon-Familia-Myth-Frontier-Zero.webp",
-          "alt": "Dungeon? Familia Myth: Frontier Zero",
-          "caption": "大森藤ノ・SBクリエイティブ/ダンまち6製作委員会"
-        },
-        {
-          "type": "heading",
-          "text": "Franquia ultrapassa 20 milhões de cópias",
-          "runs": [
-            {
-              "text": "Franquia ultrapassa 20 milhões de cópias"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A série de light novels possui 21 volumes publicados, enquanto o spin-off Sword Oratoria conta com 16 volumes. Juntas, as obras ajudaram a consolidar a franquia, que ultrapassou 20 milhões de cópias em circulação.",
-          "runs": [
-            {
-              "text": "A série de light novels possui 21 volumes publicados, enquanto o spin-off "
-            },
-            {
-              "text": "Sword Oratoria",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " conta com 16 volumes. Juntas, as obras ajudaram a consolidar a franquia, que ultrapassou 20 milhões de cópias em circulação."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na televisão, a quinta temporada do anime estreou em outubro de 2024. Assim a produção também já tem uma sexta temporada confirmada.",
-          "runs": [
-            {
-              "text": "Na televisão, a quinta temporada do anime estreou em outubro de 2024. Assim a produção também já tem uma sexta temporada confirmada."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Outros jogos da franquia",
-          "runs": [
-            {
-              "text": "Outros jogos da franquia"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "DanMachi já recebeu outros títulos, incluindo Battle Chronicle, lançado em 2023 para PC e dispositivos móveis, e Fulland of Water and Light, disponibilizado em março de 2025 para Nintendo Switch e PC.",
-          "runs": [
-            {
-              "text": "DanMachi já recebeu outros títulos, incluindo "
-            },
-            {
-              "text": "Battle Chronicle",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", lançado em 2023 para PC e dispositivos móveis, e "
-            },
-            {
-              "text": "Fulland of Water and Light",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", disponibilizado em março de 2025 para "
-            },
-            {
-              "text": "Nintendo Switch",
-              "href": "https://animenew.com.br/tag/nintendo-switch/"
-            },
-            {
-              "text": " e PC."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por enquanto, a enish não divulgou uma data específica para o lançamento de Frontier Zero, nem detalhes sobre a jogabilidade. Por fim novas informações sobre o projeto devem esclarecer esses aspectos futuramente.",
-          "runs": [
-            {
-              "text": "Por enquanto, a enish não divulgou uma data específica para o lançamento de "
-            },
-            {
-              "text": "Frontier Zero",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", nem detalhes sobre a jogabilidade. Por fim novas informações sobre o projeto devem esclarecer esses aspectos futuramente."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://www.enish.jp/news/2026/30479"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em DanMachi anuncia novo jogo para PC e mobile.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "DanMachi anuncia novo jogo para PC e mobile",
-              "href": "https://animenew.com.br/danmachi-frontier-zero-jogo-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-24T14:23:03.000Z",
-      "updatedAt": "2026-10-24T14:23:03.000Z",
-      "expiresAt": "2026-10-31T14:23:03.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/danmachi-frontier-zero-jogo-2027",
-          "publishedAt": "2026-10-24T14:23:03.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 262,
-      "qualityScore": 0.914,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
         "sourcePagesRead": 0
       }
     },
