@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T11:41:16.649Z",
+  "generatedAt": "2026-10-29T17:34:38.018Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 31,
+      "count": 32,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,790 @@
     }
   ],
   "stats": {
-    "collected": 41,
-    "grouped": 26,
-    "published": 26,
-    "newStories": 26,
-    "fullArticles": 26,
+    "collected": 42,
+    "grouped": 27,
+    "published": 27,
+    "newStories": 27,
+    "fullArticles": 27,
     "previewArticles": 0,
-    "avgWords": 367,
-    "withHeroImage": 26,
-    "withOrderedMedia": 26,
+    "avgWords": 369,
+    "withHeroImage": 27,
+    "withOrderedMedia": 27,
     "skippedTranslation": 0,
     "skippedQuality": 11,
-    "durationMs": 4122
+    "durationMs": 5529
   },
   "items": [
+    {
+      "id": "jbox-b71fd59f",
+      "slug": "exposicao-de-yoshitaka-amano-chega-ao-fim-em-brasilia-com-programacao-especial-jbox-b71fd59f",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Exposição de Yoshitaka Amano chega ao fim em Brasília com programação especial",
+      "originalTitle": "Exposição de Yoshitaka Amano chega ao fim em Brasília com programação especial",
+      "summary": "A exposição gratuita Yoshitaka Amano – Além da Fantasia, dentro do Centro Cultural Banco do Brasil em Brasília, chega ao fim na próxima segunda (02) após 4 meses. E para marcar a despedida da mostra na capital federal, uma programação especial foi preparada.",
+      "author": "Jean Clemente",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "Exposição",
+        "Games",
+        "Angel's Egg",
+        "ccbb",
+        "ccbb brasília",
+        "exposição",
+        "Exposição de Yoshitaka Amano em Brasília",
+        "Final Fantasy",
+        "final fantasy xiii",
+        "mostra",
+        "Mostra Yoshitaka Amano",
+        "Yoshitaka Amano"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/29/exposicao-de-yoshitaka-amano-chega-ao-fim-em-brasilia-com-programacao-especial",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/29/exposicao-de-yoshitaka-amano-chega-ao-fim-em-brasilia-com-programacao-especial",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2024/05/angels-egg-destacada.jpg",
+      "mediaQuery": "Exposição de Yoshitaka Amano chega ao fim em Brasília com programação especial",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/4X9LM3aTiyY"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A exposição gratuita Yoshitaka Amano – Além da Fantasia, dentro do Centro Cultural Banco do Brasil em Brasília, chega ao fim na próxima segunda (02) após 4 meses. E para marcar a despedida da mostra na capital federal, uma programação especial foi preparada.",
+          "runs": [
+            {
+              "text": "A exposição gratuita "
+            },
+            {
+              "text": "Yoshitaka Amano – Além da Fantasia",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", dentro do "
+            },
+            {
+              "text": "Centro Cultural Banco do Brasil ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "em Brasília, chega ao fim na próxima segunda (02) após 4 meses. E para marcar a despedida da mostra na capital federal, uma programação especial foi preparada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No sábado (31) e no domingo (01), das 14h às 19h, os fãs poderão se encontrar com as cosplayers Rach Asakawa e Rayara Eckhardt. Elas estarão dando vida às personagens Fang e Lightining, de Final Fantasy XIII e Final Fantasy XIII-2, além de conversar e tirar fotos com os presentes.",
+          "runs": [
+            {
+              "text": "No sábado (31) e no domingo (01), das 14h às 19h, os fãs poderão se encontrar com as cosplayers "
+            },
+            {
+              "text": "Rach Asakawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Rayara Eckhardt",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Elas estarão dando vida às personagens"
+            },
+            {
+              "text": " Fang",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Lightining",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", de "
+            },
+            {
+              "text": "Final Fantasy XIII ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "e"
+            },
+            {
+              "text": " Final Fantasy XIII-2",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", além de conversar e tirar fotos com os presentes."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=4X9LM3aTiyY",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/4X9LM3aTiyY"
+        },
+        {
+          "type": "paragraph",
+          "text": "Já na segunda (02), será exibido o filme Angel’s Egg, às 16h. A projeção acontece em caráter especial durante o feriado, com ingressos gratuitos podendo ser retirados na bilheteria ou no site do CCBB.",
+          "runs": [
+            {
+              "text": "Já na segunda (02), será exibido o filme "
+            },
+            {
+              "text": "Angel’s Egg",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", às 16h. A projeção acontece em caráter especial durante o feriado, com ingressos gratuitos podendo ser retirados na bilheteria ou no site do CCBB."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Angel’s Egg (Tenshi no Tamago, no original) foi lançado em 1985 no formato OVA (animação direto para home-video), sendo uma produção experimental de Mamoru Oshii (que 10 anos depois dirigiu e se consagrou com Ghost in the Shell) pelo Studio DEEN. Contou ainda com a colaboração do artista Yoshitaka Amano.",
+          "runs": [
+            {
+              "text": "Angel’s Egg",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Tenshi no Tamago",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", no original) foi lançado em 1985 no formato OVA (animação direto para home-video), sendo uma produção experimental de "
+            },
+            {
+              "text": "Mamoru Oshii",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (que 10 anos depois dirigiu e se consagrou com "
+            },
+            {
+              "text": "Ghost in the Shell",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") pelo"
+            },
+            {
+              "text": " Studio DEEN",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Contou ainda com a colaboração do artista "
+            },
+            {
+              "text": "Yoshitaka Amano.",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O filme contém poucos diálogos e traz um roteiro aberto a variadas interpretações, girando em torno de dois personagens sem nome: uma garota que protege um ovo e um jovem que sonha com um pássaro.",
+          "runs": [
+            {
+              "text": "O filme contém poucos diálogos e traz um roteiro aberto a variadas interpretações, girando em torno de dois personagens sem nome: uma garota que protege um ovo e um jovem que sonha com um pássaro."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Sobre a exposição",
+          "runs": [
+            {
+              "text": "Sobre a exposição"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Reunindo 218 criações originais vindas diretamente do Japão, além de uma experiência imersiva desenvolvida especialmente para a mostra, a exposição apresenta um amplo panorama da produção de um artista que ajudou a redefinir a estética da fantasia contemporânea. Entre pinturas, ilustrações, objetos e trabalhos inéditos, o público é convidado a mergulhar em um universo onde tradição e inovação, espiritualidade e cultura pop, delicadeza e potência convivem em permanente transformação.",
+          "runs": [
+            {
+              "text": "Reunindo 218 criações originais vindas diretamente do Japão, além de uma experiência imersiva desenvolvida especialmente para a mostra, a exposição apresenta um amplo panorama da produção de um artista que ajudou a redefinir a estética da fantasia contemporânea. Entre pinturas, ilustrações, objetos e trabalhos inéditos, o público é convidado a mergulhar em um universo onde tradição e inovação, espiritualidade e cultura pop, delicadeza e potência convivem em permanente transformação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nascido em 1952, na província japonesa de Shizuoka, aos pés do Monte Fuji, Amano se tornou especialmente conhecido entre os fãs de entretenimento ao contribuir para a criação da identidade visual da franquia Final Fantasy, além de participar de projetos como os livros de Vampire Hunter D, o filme Angel’s Egg, e fazer colaborações com a DC Comics e Magic: The Gathering.",
+          "runs": [
+            {
+              "text": "Nascido em 1952, na província japonesa de Shizuoka, aos pés do Monte Fuji, Amano se tornou especialmente conhecido entre os fãs de entretenimento ao contribuir para a criação da identidade visual da franquia "
+            },
+            {
+              "text": "Final Fantasy",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", além de participar de projetos como os livros de "
+            },
+            {
+              "text": "Vampire Hunter D",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", o filme "
+            },
+            {
+              "text": "Angel’s Egg",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", e fazer colaborações com a "
+            },
+            {
+              "text": "DC Comics",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Magic: The Gathering",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Antes de chegar à Brasília, a exposição passou por Belo Horizonte, São Paulo e Rio de Janeiro (onde o JBox teve a oportunidade de visitar).",
+          "runs": [
+            {
+              "text": "Antes de chegar à Brasília, a exposição passou por Belo Horizonte, São Paulo e Rio de Janeiro ("
+            },
+            {
+              "text": "onde o ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/08/um-passeio-por-alem-da-fantasia-a-exposicao-de-yoshitaka-amano/"
+            },
+            {
+              "text": "JBox",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/08/um-passeio-por-alem-da-fantasia-a-exposicao-de-yoshitaka-amano/"
+            },
+            {
+              "text": " teve a oportunidade de visitar",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/05/08/um-passeio-por-alem-da-fantasia-a-exposicao-de-yoshitaka-amano/"
+            },
+            {
+              "text": ")."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Correio Braziliense",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Correio Braziliense",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.correiobraziliense.com.br/diversao-e-arte/2026/10/7529434-ccbb-encerra-exibicao-de-yoshitaka-amano-com-programacao-especial.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-29T17:21:42.000Z",
+      "updatedAt": "2026-10-29T17:23:48.000Z",
+      "expiresAt": "2026-11-05T17:21:42.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/29/exposicao-de-yoshitaka-amano-chega-ao-fim-em-brasilia-com-programacao-especial",
+          "publishedAt": "2026-10-29T17:21:42.000Z",
+          "author": "Jean Clemente"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 391,
+      "qualityScore": 0.99,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-b6d4aac9",
+      "slug": "3-temporada-de-mashle-magia-e-musculos-estreia-em-janeiro-de-2027-jbox-b6d4aac9",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "3ª temporada de ‘Mashle: Magia e Músculos’ estreia em janeiro de 2027",
+      "originalTitle": "3ª temporada de ‘Mashle: Magia e Músculos’ estreia em janeiro de 2027",
+      "summary": "Alô, alô, marombas fãs de magia e comedores de choux cream: a terceira temporada do animê Mashle: Magia e Músculos, intitulada Tri-Magicathalon Divine Visionary Final Exam Arc, estreia nessa próxima Temporada de Inverno, em janeiro, com transmissão pela Crunchyroll já confirmada no Brasil.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "3ª temporada de mashle",
+        "mashle 3",
+        "Mashle: Magia e Músculos",
+        "novos episódios de mashle"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/29/3a-temporada-de-mashle-magia-e-musculos-estreia-em-janeiro-de-2027",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/29/3a-temporada-de-mashle-magia-e-musculos-estreia-em-janeiro-de-2027",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/3a-temporada-de-mashle-magia-e-musculos-destacada.jpg",
+      "mediaQuery": "3ª temporada de ‘Mashle: Magia e Músculos’ estreia em janeiro de 2027",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/RBZQCHzX2wY"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Alô, alô, marombas fãs de magia e comedores de choux cream: a terceira temporada do animê Mashle: Magia e Músculos, intitulada Tri-Magicathalon Divine Visionary Final Exam Arc, estreia nessa próxima Temporada de Inverno, em janeiro, com transmissão pela Crunchyroll já confirmada no Brasil.",
+          "runs": [
+            {
+              "text": "Alô, alô, marombas fãs de magia e comedores de "
+            },
+            {
+              "text": "choux cream",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ": a terceira temporada do animê "
+            },
+            {
+              "text": "Mashle: Magia e Músculos",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", intitulada "
+            },
+            {
+              "text": "Tri-Magicathalon Divine Visionary Final Exam Arc",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", estreia nessa próxima "
+            },
+            {
+              "text": "Temporada de Inverno",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", em janeiro, com transmissão pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " já confirmada no Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anúncio foi feito pela plataforma nesta quarta-feira (28). Confira o trailer:",
+          "runs": [
+            {
+              "text": "O anúncio foi feito pela plataforma nesta quarta-feira (28). Confira o "
+            },
+            {
+              "text": "trailer",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ":"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=RBZQCHzX2wY",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/RBZQCHzX2wY"
+        },
+        {
+          "type": "paragraph",
+          "text": "Na trama, em um mundo onde a magia determina o lugar de cada pessoa na sociedade, Mash é um jovem fortão que vive isolado com seu pai adotivo e não possui nenhum poder mágico. Apaixonado por choux cream, um doce popular no Japão, ele acaba descoberto pelas autoridades e precisa entrar em uma renomada escola de magia para se tornar um Visionário, posição que lhe permitiria mudar as regras desse mundo e proteger aqueles que, como ele, nasceram sem magia. Para alcançar seu objetivo, Mash contará com sua força física absurda para enfrentar os desafios de um universo em que todos esperam que ele use magia.",
+          "runs": [
+            {
+              "text": "Na trama, em um mundo onde a magia determina o lugar de cada pessoa na sociedade, Mash é um jovem fortão que vive isolado com seu pai adotivo e não possui nenhum poder mágico. Apaixonado por "
+            },
+            {
+              "text": "choux cream",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", um doce popular no Japão, ele acaba descoberto pelas autoridades e precisa entrar em uma renomada escola de magia para se tornar um Visionário, posição que lhe permitiria mudar as regras desse mundo e proteger aqueles que, como ele, nasceram sem magia. Para alcançar seu objetivo, Mash contará com sua força física absurda para enfrentar os desafios de um universo em que todos esperam que ele use magia."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A primeira temporada do animê estreou em abril de 2023 e teve 12 episódios. A segunda em janeiro de 2024, igualmente com 12 episódios. Ambas foram exibidas simultaneamente por aqui à época, de maneira legendada e com dublagem em português na Crunchyroll. Posteriormente, as duas temporadas entraram no catálogo da Netflix. A produção da terceira temporada segue no estúdio A-1 Pictures, com direção de Tomoya Tanaka, roteiro de Yosuke Kuroda, trilha sonora de Masaru Yokoyama e Chiaki Furuzumi estreando no design de personagens.",
+          "runs": [
+            {
+              "text": "A primeira temporada do animê estreou em abril de 2023 e teve 12 episódios. A segunda em janeiro de 2024, igualmente com 12 episódios. Ambas foram exibidas simultaneamente por aqui à época, de maneira legendada e com dublagem em português na Crunchyroll. Posteriormente, as duas temporadas entraram no catálogo da Netflix. A produção da terceira temporada segue no estúdio "
+            },
+            {
+              "text": "A-1 Pictures",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com direção de "
+            },
+            {
+              "text": "Tomoya Tanaka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", roteiro de "
+            },
+            {
+              "text": "Yosuke Kuroda",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", trilha sonora de "
+            },
+            {
+              "text": "Masaru Yokoyama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Chiaki Furuzumi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " estreando no design de personagens."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Escrito por Hajimo Komoto, o mangá Mashle: Magia e Músculos foi lançado na revista Weekly Shonen Jump, da editora Shueisha, no Japão, entre janeiro de 2020 e julho de 2023, com 18 volumes compilados. Por aqui, a obra saiu pela editora Panini.",
+          "runs": [
+            {
+              "text": "Escrito por "
+            },
+            {
+              "text": "Hajimo Komoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o mangá "
+            },
+            {
+              "text": "Mashle: Magia e Músculos",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi lançado na revista "
+            },
+            {
+              "text": "Weekly Shonen Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da editora Shueisha, no Japão, entre janeiro de 2020 e julho de 2023, com 18 volumes compilados. Por aqui, a obra saiu pela editora Panini."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "▶️ Crítica | Mashle – Volume 1",
+          "runs": [
+            {
+              "text": "▶️ Crítica | Mashle – Volume 1",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2022/06/11/mashle-volume-um-panini/"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Canal da Crunchyroll no YouTube",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Canal da Crunchyroll no YouTube",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://youtu.be/RBZQCHzX2wY?si=zyJXmkXA0lv4ykou"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-29T15:40:13.000Z",
+      "updatedAt": "2026-10-29T15:42:04.000Z",
+      "expiresAt": "2026-11-05T15:40:13.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/29/3a-temporada-de-mashle-magia-e-musculos-estreia-em-janeiro-de-2027",
+          "publishedAt": "2026-10-29T15:40:13.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 316,
+      "qualityScore": 0.978,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-480fb8c1",
       "slug": "precure-tera-anime-spin-off-sombrio-com-heroinas-vilas-em-2027-jbox-480fb8c1",
@@ -4511,7 +5281,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 220,
-      "qualityScore": 0.966,
+      "qualityScore": 0.906,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -4821,7 +5591,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 217,
-      "qualityScore": 0.968,
+      "qualityScore": 0.908,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -9534,316 +10304,6 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-47ce6941",
-      "slug": "2026-bate-recorde-como-o-ano-com-mais-volumes-de-mangas-publicados-no-brasil-jbox-47ce6941",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "2026 bate recorde como o ano com mais volumes de mangás publicados no Brasil",
-      "originalTitle": "2026 bate recorde como o ano com mais volumes de mangás publicados no Brasil",
-      "summary": "Um recorde foi quebrado: 2026 já é o ano com mais volumes de mangás publicados aqui no Brasil em todos os tempos. E ainda estamos em outubro! De acordo com levantamento feito pelo site Biblioteca Brasileira de Mangás, com os lançamentos dessa última semana, já são 677 volumes de gibis japoneses colocados para venda ao longo do ano. A estimativa é que, ao final de dezembro, esse número ultrapasse 800.",
-      "author": "Igor Lunei",
-      "tags": [
-        "Mangá",
-        "2026 é o ano com mais mangás publicados no Brasil",
-        "mangá vende bem no brasil?",
-        "mangás no brasil em 2026",
-        "número de mangás no brasil em 2026",
-        "venda de mangás no brasil"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/22/2026-bate-recorde-como-o-ano-com-mais-volumes-de-mangas-publicados-no-brasil",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/22/2026-bate-recorde-como-o-ano-com-mais-volumes-de-mangas-publicados-no-brasil",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/mangas2026-destacada.jpg",
-      "mediaQuery": "2026 bate recorde como o ano com mais volumes de mangás publicados no Brasil",
-      "mediaType": "manga",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Volumes-de-Mangas-Publicados-no-Brasil-2015-a-17_10_2026.jpg",
-          "alt": "Imagem: Gráfico contendo o a quantidade de mangás lançados no Brasil entre os anos de 2015 e 2026.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Um recorde foi quebrado: 2026 já é o ano com mais volumes de mangás publicados aqui no Brasil em todos os tempos. E ainda estamos em outubro! De acordo com levantamento feito pelo site Biblioteca Brasileira de Mangás, com os lançamentos dessa última semana, já são 677 volumes de gibis japoneses colocados para venda ao longo do ano. A estimativa é que, ao final de dezembro, esse número ultrapasse 800.",
-          "runs": [
-            {
-              "text": "Um recorde foi quebrado: 2026 já é o ano com mais volumes de mangás publicados aqui no Brasil em todos os tempos. E ainda estamos em outubro! De acordo com levantamento feito pelo site "
-            },
-            {
-              "text": "Biblioteca Brasileira de Mangás",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", com os lançamentos dessa última semana, já são "
-            },
-            {
-              "text": "677 volumes",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " de gibis japoneses colocados para venda ao longo do ano. A estimativa é que, ao final de dezembro, esse número ultrapasse 800."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O recorde não é inédito, já que nos últimos seis anos essa marca foi superada cinco vezes. A exceção foi no ano de 2024, em que rolaram 656 obras, uma a menos em comparação com 2023, com 657. Esses números não incluem reimpressões, mangás digitais, databooks, artbooks, light novels e nem mangás de outras nacionalidades. O levantamento incluiu apenas quadrinhos japoneses mesmo.",
-          "runs": [
-            {
-              "text": "O recorde não é inédito, já que nos últimos seis anos essa marca foi superada cinco vezes. A exceção foi no ano de 2024, em que rolaram 656 obras, uma a menos em comparação com 2023, com 657. Esses números não incluem reimpressões, mangás digitais, "
-            },
-            {
-              "text": "databooks",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "artbooks",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "light novels",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e nem mangás de outras nacionalidades. O levantamento incluiu apenas quadrinhos japoneses mesmo."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Volumes-de-Mangas-Publicados-no-Brasil-2015-a-17_10_2026.jpg",
-          "alt": "Imagem: Gráfico contendo o a quantidade de mangás lançados no Brasil entre os anos de 2015 e 2026."
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: blogbbm.com",
-          "runs": [
-            {
-              "text": "Imagem: blogbbm.com"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Segundo o Biblioteca Brasileira de Mangás, o aumento de 2025 para 2026 se deve a uma maior constância em lançamentos da editora JBC, que já está quase superando o número de obras do ano passado; ao fim dos atrasos da editora Panini, que também está para superar a quantidade de mangás de 2025; a um aumento da produção da editora MPEG; e às várias editoras que passaram a também publicar mangás, como a Baú, a Taverna do Rei e a Universo dos Livros. Ao todo, 19 editoras esse ano publicaram ao menos um mangá no Brasil até esse momento.",
-          "runs": [
-            {
-              "text": "Segundo o "
-            },
-            {
-              "text": "Biblioteca Brasileira de Mangás",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", o aumento de 2025 para 2026 se deve a uma maior constância em lançamentos da editora "
-            },
-            {
-              "text": "JBC",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que já está quase superando o número de obras do ano passado; ao fim dos atrasos da editora "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que também está para superar a quantidade de mangás de 2025; a um aumento da produção da editora "
-            },
-            {
-              "text": "MPEG",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "; e às várias editoras que passaram a também publicar mangás, como a "
-            },
-            {
-              "text": "Baú",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", a "
-            },
-            {
-              "text": "Taverna do Rei",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e a "
-            },
-            {
-              "text": "Universo dos Livros",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Ao todo, 19 editoras esse ano publicaram ao menos um mangá no Brasil até esse momento."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O site disponibilizou também uma tabela com TODOS os lançamentos de mangás de 2026 até então. Caso tenha curiosidade, é só dar uma olhada cclicando aqui.",
-          "runs": [
-            {
-              "text": "O site disponibilizou também uma tabela com TODOS os lançamentos de mangás de 2026 até então. Caso tenha curiosidade, é só dar uma olhada c"
-            },
-            {
-              "text": "clicando aqui",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://blogbbm.com/2026/10/18/2026-ja-e-o-ano-com-mais-volumes-de-mangas-publicados-na-historia-do-brasil/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Biblioteca Brasileira de Mangás",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Biblioteca Brasileira de Mangás",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://blogbbm.com/2026/10/18/2026-ja-e-o-ano-com-mais-volumes-de-mangas-publicados-na-historia-do-brasil/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-22T16:57:53.000Z",
-      "updatedAt": "2026-10-22T17:00:15.000Z",
-      "expiresAt": "2026-10-29T16:57:53.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/22/2026-bate-recorde-como-o-ano-com-mais-volumes-de-mangas-publicados-no-brasil",
-          "publishedAt": "2026-10-22T16:57:53.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 281,
-      "qualityScore": 0.912,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 9,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
         "sourcePagesRead": 0
       }
     }
