@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T14:32:29.345Z",
+  "generatedAt": "2026-10-30T19:37:19.574Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 33,
+      "count": 36,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,2346 @@
     }
   ],
   "stats": {
-    "collected": 43,
-    "grouped": 27,
-    "published": 27,
-    "newStories": 27,
-    "fullArticles": 27,
+    "collected": 46,
+    "grouped": 25,
+    "published": 25,
+    "newStories": 25,
+    "fullArticles": 25,
     "previewArticles": 0,
-    "avgWords": 360,
-    "withHeroImage": 27,
-    "withOrderedMedia": 27,
+    "avgWords": 362,
+    "withHeroImage": 25,
+    "withOrderedMedia": 25,
     "skippedTranslation": 0,
-    "skippedQuality": 14,
-    "durationMs": 2908
+    "skippedQuality": 19,
+    "durationMs": 2456
   },
   "items": [
+    {
+      "id": "animenew-0d25de36",
+      "slug": "mercedes-and-the-waning-moon-revela-novos-dubladores-animenew-0d25de36",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Mercedes and the Waning Moon revela novos dubladores",
+      "originalTitle": "Mercedes and the Waning Moon revela novos dubladores",
+      "summary": "O anime Mercedes and the Waning Moon (Kaketa Tsuki no Mercedes) divulgou seu segundo vídeo promocional nesta sexta-feira (30), apresentando quatro novos integrantes do elenco. A série baseada na light novel de Firehead estreia em janeiro de 2027.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Kaketa Tsuki no Mercedes",
+        "Mercedes and the Waning Moon"
+      ],
+      "url": "https://animenew.com.br/mercedes-waning-moon-anime-novos-dubladores",
+      "sourceUrl": "https://animenew.com.br/mercedes-waning-moon-anime-novos-dubladores",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Mercedes-and-the-Waning-Moon-revela-novos-dubladores.webp",
+      "mediaQuery": "Mercedes and the Waning Moon revela novos dubladores",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/BeBqd3yuV9U"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Mercedes and the Waning Moon (Kaketa Tsuki no Mercedes) divulgou seu segundo vídeo promocional nesta sexta-feira (30), apresentando quatro novos integrantes do elenco. A série baseada na light novel de Firehead estreia em janeiro de 2027.",
+          "runs": [
+            {
+              "text": "O anime "
+            },
+            {
+              "text": "Mercedes and the Waning Moon",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Kaketa Tsuki no Mercedes",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") divulgou seu segundo vídeo promocional nesta sexta-feira (30), apresentando quatro novos integrantes do elenco. A série baseada na "
+            },
+            {
+              "text": "light novel",
+              "href": "https://animenew.com.br/light-novel"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Firehead",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " estreia em janeiro de 2027."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Death Stranding Isolations ganha trailer e novos detalhes",
+              "runs": [
+                {
+                  "text": "Death Stranding Isolations ganha trailer e novos detalhes",
+                  "href": "https://animenew.com.br/death-stranding-isolations-trailer-anime"
+                }
+              ]
+            },
+            {
+              "text": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
+              "runs": [
+                {
+                  "text": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
+                  "href": "https://animenew.com.br/jujutsu-kaisen-trailer-sombrio-4-temporada"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Os novos nomes confirmados são Kenta Miyake como Benkei, Ryūnosuke Watanuki como Kuro, Junichi Suwabe como Florian e Ai Kayano como Ryudia. Portanto o elenco principal conta com Anna Nagase no papel de Mercedes Grunewald.",
+          "runs": [
+            {
+              "text": "Os novos nomes confirmados são "
+            },
+            {
+              "text": "Kenta Miyake",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Benkei, Ryūnosuke Watanuki como Kuro, Junichi Suwabe como Florian e Ai Kayano como Ryudia. Portanto o elenco principal conta com Anna Nagase no papel de Mercedes Grunewald."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=BeBqd3yuV9U",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/BeBqd3yuV9U"
+        },
+        {
+          "type": "heading",
+          "text": "Equipe de produção",
+          "runs": [
+            {
+              "text": "Equipe de produção"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A direção está nas mãos de Kunihisa Sugishima, no estúdio Teddy. Jun Kumagai cuida da composição dos roteiros, enquanto Nami Shōyama é responsável pelo design dos personagens. R.O.N e Shūhei Mutsuki compõe a trilha sonora.",
+          "runs": [
+            {
+              "text": "A direção está nas mãos de Kunihisa Sugishima, no estúdio Teddy. Jun Kumagai cuida da composição dos roteiros, enquanto Nami Shōyama é responsável pelo design dos personagens. R.O.N e Shūhei Mutsuki compõe a trilha sonora."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de Mercedes and the Waning Moon",
+          "runs": [
+            {
+              "text": "História de Mercedes and the Waning Moon"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Mercedes Grunewald, uma garota reencarnada como vampira em uma família nobre. Assim filha de uma concubina rejeitada, ela sabe que seu pai poderá escolher outro herdeiro, deixando sua família sem proteção financeira.",
+          "runs": [
+            {
+              "text": "A trama acompanha Mercedes Grunewald, uma garota reencarnada como vampira em uma família nobre. Assim filha de uma concubina rejeitada, ela sabe que seu pai poderá escolher outro herdeiro, deixando sua família sem proteção financeira.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A obra original de Firehead começou a ser publicada na internet em 2018. A editora TO Books lançou os romances impressos a partir de 2021, com ilustrações de KeG. Ademais a adaptação em mangá, ilustrada por Pochi Edoya, começou no mesmo ano.",
+          "runs": [
+            {
+              "text": "A obra original de Firehead começou a ser publicada na internet em 2018. A editora TO Books lançou os romances impressos a partir de 2021, com ilustrações de KeG. Ademais a adaptação em mangá, ilustrada por Pochi Edoya, começou no mesmo ano."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Mercedes and the Waning Moon revela novos dubladores.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Mercedes and the Waning Moon revela novos dubladores",
+              "href": "https://animenew.com.br/mercedes-waning-moon-anime-novos-dubladores/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-30T19:02:41.000Z",
+      "updatedAt": "2026-10-30T19:02:41.000Z",
+      "expiresAt": "2026-11-06T19:02:41.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/mercedes-waning-moon-anime-novos-dubladores",
+          "publishedAt": "2026-10-30T19:02:41.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 232,
+      "qualityScore": 0.968,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-51104c02",
+      "slug": "akira-toriyama-antiga-casa-e-estudio-do-autor-entra-em-processo-de-demolicao-jbox-51104c02",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Akira Toriyama: Antiga casa e estúdio do autor entra em processo de demolição",
+      "originalTitle": "Akira Toriyama: Antiga casa e estúdio do autor entra em processo de demolição",
+      "summary": "Através de fotos divulgadas ontem, dia 29, foi descoberto que a casa de Akira Toriyama está em processo de demolição. O local é também onde fica o Bird Studio, responsável pela produção e administração das obras do autor.",
+      "author": "Teke",
+      "tags": [
+        "Cotidiano",
+        "Mangá",
+        "akira toriyama",
+        "Bird Studio",
+        "bird studio demolido",
+        "Dragon Ball",
+        "estúdio de akira toriyama"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/30/akira-toriyama-antiga-casa-e-estudio-do-autor-entra-em-processo-de-demolicao",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/30/akira-toriyama-antiga-casa-e-estudio-do-autor-entra-em-processo-de-demolicao",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/07/akiratoriyama-destacada.jpg",
+      "mediaQuery": "Akira Toriyama: Antiga casa e estúdio do autor entra em processo de demolição",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/comentariotorishima.jpg",
+          "alt": "imagem: comentário de Torishima no X",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/akira-toriyama-casa-bird-studio-demolicao.jpg",
+          "alt": "imagem: foto da estrutura da casa de Akira Toriyama sendo preparada para demolição.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Através de fotos divulgadas ontem, dia 29, foi descoberto que a casa de Akira Toriyama está em processo de demolição. O local é também onde fica o Bird Studio, responsável pela produção e administração das obras do autor.",
+          "runs": [
+            {
+              "text": "Através de "
+            },
+            {
+              "text": "fotos divulgadas ontem",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.threads.com/@mr.gentleman1966/post/DfFHyPhGRXC"
+            },
+            {
+              "text": ", dia 29, foi descoberto que "
+            },
+            {
+              "text": "a casa de Akira Toriyama está em processo de demolição",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O local é também onde fica o "
+            },
+            {
+              "text": "Bird Studio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", responsável pela produção e administração das obras do autor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Após as fotos circularem pelas redes, também começou a correr um comunicado extraoficial sobre a demolição. O comunicado pede para que os fãs não se aproximem do local pelo menos até a conclusão da demolição, para evitar perturbação da vizinhança e também para não causar estresse para a família de Toriyama. No X/Twitter, o comunicado chegou a ser repostado por Kazuhiko Torishima, editor que trabalhou ao lado de Toriyama em Dr. Slump e Dragon Ball, que lamentou a demolição.",
+          "runs": [
+            {
+              "text": "Após as fotos circularem pelas redes, também começou a correr um "
+            },
+            {
+              "text": "comunicado extraoficial sobre a demolição",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://x.com/pekindaq/status/2116092783144710343"
+            },
+            {
+              "text": ". O comunicado pede para que os fãs não se aproximem do local pelo menos até a conclusão da demolição, para evitar perturbação da vizinhança e também para não causar estresse para a família de Toriyama. No X/Twitter, o comunicado chegou a ser "
+            },
+            {
+              "text": "repostado por Kazuhiko Torishima",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://x.com/botsu250522/status/2116121805828342226"
+            },
+            {
+              "text": ", editor que trabalhou ao lado de Toriyama em "
+            },
+            {
+              "text": "Dr. Slump",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Dragon Ball",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", que lamentou a demolição."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/comentariotorishima.jpg",
+          "alt": "imagem: comentário de Torishima no X"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/X",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/X"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "“O lugar que eu frequentava uma vez por mês. O lugar onde tantos personagens e obras nasceram, vai desaparecer. Ele [Toriyama] realmente se foi, né?”",
+          "runs": [
+            {
+              "text": "“O lugar que eu frequentava uma vez por mês. O lugar onde tantos personagens e obras nasceram, vai desaparecer. Ele [Toriyama] realmente se foi, né?”"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/akira-toriyama-casa-bird-studio-demolicao.jpg",
+          "alt": "imagem: foto da estrutura da casa de Akira Toriyama sendo preparada para demolição."
+        },
+        {
+          "type": "paragraph",
+          "text": "Foto: Kazuo Tagawa (@mr.gentleman1966) no Threads.",
+          "runs": [
+            {
+              "text": "Foto: Kazuo Tagawa (@mr.gentleman1966) no Threads."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Detalhes sobre os motivos da demolição não foram divulgados. Especula-se que a ação tenha relação com os impostos aplicados na herança, que precisariam ser pagos por todos os herdeiros envolvidos. Apontamentos também indicam que transformar o local em ponto turístico poderia causar comoção desnecessária na região, principalmente porque os locais próximos são residenciais, o que também pode ser considerado motivo para a demolição.",
+          "runs": [
+            {
+              "text": "Detalhes sobre os motivos da demolição não foram divulgados. Especula-se que a ação tenha relação com os "
+            },
+            {
+              "text": "impostos aplicados na herança",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que precisariam ser pagos por todos os herdeiros envolvidos. Apontamentos também indicam que transformar o local em ponto turístico poderia causar comoção desnecessária na região, principalmente porque os locais próximos são residenciais, o que também pode ser considerado motivo para a demolição."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Segundo o Company Database, site usado para registrar informações de empresas japonesas, o Bird Studio já foi transferido para um novo local, o distrito de Minami-Aoyama, em Tóquio. O local original que está sendo demolido é em Kiyosu, na província de Aichi. Esse novo espaço continua em nome da esposa de Toriyama, com uma equipe de quatro diretores responsáveis pela empresa, incluindo Sasuke Toriyama, filho de Akira, e Akio Iyoku, produtor da franquia Dragon Ball como um todo e presidente da Capsule Corporation Tokyo, uma das empresas que administra as obras do autor.",
+          "runs": [
+            {
+              "text": "Segundo o "
+            },
+            {
+              "text": "Company Database",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://companydata.tsujigawa.com/company/2180001090327/#"
+            },
+            {
+              "text": ", site usado para registrar informações de empresas japonesas, o "
+            },
+            {
+              "text": "Bird Studio já foi transferido para um novo local",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o distrito de Minami-Aoyama, em Tóquio. O local original que está sendo demolido é em Kiyosu, na província de Aichi. Esse novo espaço continua em nome da esposa de Toriyama, com uma equipe de quatro diretores responsáveis pela empresa, incluindo "
+            },
+            {
+              "text": "Sasuke Toriyama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", filho de Akira, e "
+            },
+            {
+              "text": "Akio Iyoku",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", produtor da franquia "
+            },
+            {
+              "text": "Dragon Ball",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " como um todo e presidente da "
+            },
+            {
+              "text": "Capsule Corporation Tokyo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", uma das empresas que administra as obras do autor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O Bird Studio foi fundado em 1982 por Akira Toriyama e, além de ter sido o estúdio de produção de obras do mangaká, também se tornou uma das empresas que administra o trabalho do autor em mangás e também em produções como jogos da franquia Dragon Quest.",
+          "runs": [
+            {
+              "text": "O Bird Studio foi fundado em 1982 por Akira Toriyama e, além de ter sido o estúdio de produção de obras do mangaká, também se tornou uma das empresas que administra o trabalho do autor em mangás e também em produções como jogos da franquia "
+            },
+            {
+              "text": "Dragon Quest",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Akira Toriyama começou sua carreira em 1978, com a publicação do one-shot Wonder Island (compilado anos depois em Manga Theater junto a outras histórias curtas). Sua primeira série surgiu nas páginas da Shonen Jump em 1980, com a comédia Dr. Slump, sucesso no Japão. Mundialmente, tornou-se conhecido com o fenômeno Dragon Ball (1984-1995), adaptado em animê com diversas sequências e derivados. Antes de seu falecimento precoce, em 2024, aos 68 anos, ainda participava de produções da franquia, contribuindo com o animê Dragon Ball DAIMA e jogos.",
+          "runs": [
+            {
+              "text": "Akira Toriyama começou sua carreira em 1978, com a publicação do one-shot "
+            },
+            {
+              "text": "Wonder Island",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (compilado anos depois em"
+            },
+            {
+              "text": " Manga Theater",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " junto a outras histórias curtas). Sua primeira série surgiu nas páginas da "
+            },
+            {
+              "text": "Shonen Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " em 1980, com a comédia "
+            },
+            {
+              "text": "Dr. Slump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", sucesso no Japão. Mundialmente, tornou-se conhecido com o fenômeno"
+            },
+            {
+              "text": " Dragon Ball",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (1984-1995), adaptado em animê com diversas sequências e derivados. Antes de seu "
+            },
+            {
+              "text": "falecimento precoce",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2024/03/08/akira-toriyama-autor-de-dragon-ball-morre-aos-68-anos/"
+            },
+            {
+              "text": ", em 2024, aos 68 anos, ainda participava de produções da franquia, contribuindo com o animê "
+            },
+            {
+              "text": "Dragon Ball DAIMA ",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2025/03/07/critica-dragon-ball-daima-episodios-1-ao-20/"
+            },
+            {
+              "text": "e jogos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Após sua morte, Toriyama foi incluído nos halls da fama do Harvey Awards e também do Eisner Awards.",
+          "runs": [
+            {
+              "text": "Após sua morte, Toriyama foi incluído nos halls da fama do "
+            },
+            {
+              "text": "Harvey Awards",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2024/10/15/akira-toriyama-entra-para-o-hall-da-fama-do-harvey-awards/"
+            },
+            {
+              "text": " e também do "
+            },
+            {
+              "text": "Eisner Awards",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/07/29/akira-toriyama-entra-para-o-hall-da-fama-do-premio-eisner/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Naz Chris (X/Twitter), Kazuo Tagawa (Threads)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Naz Chris (X/Twitter)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://x.com/NazChris_dj/status/2116092866292552027"
+            },
+            {
+              "text": ", ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Kazuo Tagawa (Threads)",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.threads.com/@mr.gentleman1966/post/DfFHyPhGRXC"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-30T18:58:31.000Z",
+      "updatedAt": "2026-10-30T19:31:49.000Z",
+      "expiresAt": "2026-11-06T18:58:31.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/30/akira-toriyama-antiga-casa-e-estudio-do-autor-entra-em-processo-de-demolicao",
+          "publishedAt": "2026-10-30T18:58:31.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 481,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 15,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-d4912852",
+      "slug": "lustful-domination-ganhara-anime-pelo-animefesta-animenew-d4912852",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Lustful Domination ganhará anime pelo AnimeFesta",
+      "originalTitle": "Lustful Domination ganhará anime pelo AnimeFesta",
+      "summary": "A novel e o mangá Lustful Domination: My Magic and Virility Are So Strong, I Can Go At It 24/7 ganharão uma adaptação em anime pelo AnimeFesta, conforme anunciado pela editora Suiseisha em 29 de outubro de 2026.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Lustful Domination: My Magic and Virility Are So Strong"
+      ],
+      "url": "https://animenew.com.br/lustful-domination-anime-animefesta",
+      "sourceUrl": "https://animenew.com.br/lustful-domination-anime-animefesta",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Lustful-Domination-ganhara-anime-pelo-AnimeFesta.webp",
+      "mediaQuery": "Lustful Domination ganhará anime pelo AnimeFesta",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Lustful-Domination.webp",
+          "alt": "Lustful Domination",
+          "caption": "© 嶋野 磯太郎／ミギ／Suiseisha Inc."
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A novel e o mangá Lustful Domination: My Magic and Virility Are So Strong, I Can Go At It 24/7 ganharão uma adaptação em anime pelo AnimeFesta, conforme anunciado pela editora Suiseisha em 29 de outubro de 2026.",
+          "runs": [
+            {
+              "text": "A novel e o "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Lustful Domination: My Magic and Virility Are So Strong, I Can Go At It 24/7",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ganharão uma adaptação em "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " pelo "
+            },
+            {
+              "text": "AnimeFesta",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", conforme anunciado pela editora Suiseisha em 29 de outubro de 2026."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Death Stranding Isolations ganha trailer e novos detalhes",
+              "runs": [
+                {
+                  "text": "Death Stranding Isolations ganha trailer e novos detalhes",
+                  "href": "https://animenew.com.br/death-stranding-isolations-trailer-anime"
+                }
+              ]
+            },
+            {
+              "text": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
+              "runs": [
+                {
+                  "text": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
+                  "href": "https://animenew.com.br/jujutsu-kaisen-trailer-sombrio-4-temporada"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A obra é escrita por Isotaro Shimano e ilustrada por Migi. A novel original estreou na plataforma Nocturne em junho de 2025, enquanto a adaptação em mangá começou a ser publicada em 2026. O primeiro volume compilado do mangá tem lançamento previsto para 18 de novembro.",
+          "runs": [
+            {
+              "text": "A obra é escrita por "
+            },
+            {
+              "text": "Isotaro Shimano",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e ilustrada por "
+            },
+            {
+              "text": "Migi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A novel original estreou na plataforma Nocturne em junho de 2025, enquanto a adaptação em mangá começou a ser publicada em 2026. O primeiro volume compilado do mangá tem lançamento previsto para 18 de novembro."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Lustful-Domination.webp",
+          "alt": "Lustful Domination",
+          "caption": "© 嶋野 磯太郎／ミギ／Suiseisha Inc."
+        },
+        {
+          "type": "heading",
+          "text": "História de Lustful Domination",
+          "runs": [
+            {
+              "text": "História de Lustful Domination"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha um nobre reencarnado em um mundo de fantasia, onde homens com grande poder mágico são conhecidos por não terem desejo sexual. No entanto, o protagonista possui uma libido intensa, além de habilidades mágicas extraordinárias.",
+          "runs": [
+            {
+              "text": "A trama acompanha um nobre reencarnado em um mundo de fantasia, onde homens com grande poder mágico são conhecidos por não terem desejo sexual. No entanto, o protagonista possui uma libido intensa, além de habilidades mágicas extraordinárias.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para evitar ser expulso e separado de sua empregada pessoal, Liese, ele tenta esconder sua verdadeira natureza. A situação muda quando recebe uma obrigação oficial que envolve ter filhos com mulheres.",
+          "runs": [
+            {
+              "text": "Para evitar ser expulso e separado de sua empregada pessoal, Liese, ele tenta esconder sua verdadeira natureza. A situação muda quando recebe uma obrigação oficial que envolve ter filhos com mulheres.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "AnimeFesta e suas adaptações",
+          "runs": [
+            {
+              "text": "AnimeFesta e suas adaptações"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "O AnimeFesta é conhecido por adaptar mangás com conteúdo adulto ou sensual em séries curtas. Muitas produções recebem versões censuradas para a televisão e edições sem censura distribuídas pela internet.",
+          "runs": [
+            {
+              "text": "O AnimeFesta é conhecido por adaptar mangás com conteúdo adulto ou sensual em séries curtas. Muitas produções recebem versões censuradas para a televisão e edições sem censura distribuídas pela internet."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim a Coolmic, da WWWave Corporation publica o o mangá no idioma inglês.",
+          "runs": [
+            {
+              "text": "Por fim a Coolmic, da WWWave Corporation publica o o mangá no idioma inglês."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: X (@suiseisha)",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "X",
+              "href": "https://x.com/suiseisha/status/2115718784652812673"
+            },
+            {
+              "text": " (@suiseisha)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Lustful Domination ganhará anime pelo AnimeFesta.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Lustful Domination ganhará anime pelo AnimeFesta",
+              "href": "https://animenew.com.br/lustful-domination-anime-animefesta/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-30T18:57:49.000Z",
+      "updatedAt": "2026-10-30T18:57:49.000Z",
+      "expiresAt": "2026-11-06T18:57:49.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/lustful-domination-anime-animefesta",
+          "publishedAt": "2026-10-30T18:57:49.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 246,
+      "qualityScore": 0.972,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-bd098909",
+      "slug": "death-stranding-isolations-ganha-trailer-e-novos-detalhes-animenew-bd098909",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Death Stranding Isolations ganha trailer e novos detalhes",
+      "originalTitle": "Death Stranding Isolations ganha trailer e novos detalhes",
+      "summary": "O anime Death Stranding Isolations, ambientado no universo criado por Hideo Kojima, ganhou um novo trailer e informações sobre sua equipe de produção nesta sexta-feira, 30 de outubro.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Death Stranding Isolations",
+        "Hideo Kojima",
+        "Kojima Productions"
+      ],
+      "url": "https://animenew.com.br/death-stranding-isolations-trailer-anime",
+      "sourceUrl": "https://animenew.com.br/death-stranding-isolations-trailer-anime",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Death-Stranding-Isolations-ganha-trailer-e-novos-detalhes.webp",
+      "mediaQuery": "Death Stranding Isolations ganha trailer e novos detalhes",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Death-Stranding-Isolations-anime.webp",
+          "alt": "Death Stranding Isolations",
+          "caption": "©2026 KOJIMA PRODUCTIONS Co., Ltd. / HIDEO KOJIMA."
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/ruIT6Xez6tw"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Death Stranding Isolations, ambientado no universo criado por Hideo Kojima, ganhou um novo trailer e informações sobre sua equipe de produção nesta sexta-feira, 30 de outubro.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Death Stranding Isolations",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", ambientado no universo criado por "
+            },
+            {
+              "text": "Hideo Kojima",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", ganhou um novo trailer e informações sobre sua equipe de produção nesta sexta-feira, 30 de outubro."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
+              "runs": [
+                {
+                  "text": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
+                  "href": "https://animenew.com.br/jujutsu-kaisen-trailer-sombrio-4-temporada"
+                }
+              ]
+            },
+            {
+              "text": "Dragon Ball Super: Beerus sugere Ultra Ego de Vegeta",
+              "runs": [
+                {
+                  "text": "Dragon Ball Super: Beerus sugere Ultra Ego de Vegeta",
+                  "href": "https://animenew.com.br/dragon-ball-super-beerus-ultra-ego-vegeta"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Kojima Productions divulgou o vídeo promocional, uma nova imagem e detalhes adicionais da série, que tem estreia prevista para 2027 no Disney+.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Kojima Productions",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " divulgou o vídeo promocional, uma nova imagem e detalhes adicionais da série, que tem estreia prevista para 2027 no Disney+."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=ruIT6Xez6tw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/ruIT6Xez6tw"
+        },
+        {
+          "type": "paragraph",
+          "text": "O roteirista Tow Ubukata, conhecido por trabalhos em Ghost in the Shell Arise e Psycho-Pass 2, será responsável pelos roteiros da produção. A direção ficará a cargo de Takayuki Sano, no estúdio E&H production, enquanto Hideo Kojima atua como produtor executivo.",
+          "runs": [
+            {
+              "text": "O roteirista "
+            },
+            {
+              "text": "Tow Ubukata",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", conhecido por trabalhos em "
+            },
+            {
+              "text": "Ghost in the Shell Arise",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Psycho-Pass 2",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", será responsável pelos roteiros da produção. A direção ficará a cargo de "
+            },
+            {
+              "text": "Takayuki Sano",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", no "
+            },
+            {
+              "text": "estúdio E&H production",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", enquanto "
+            },
+            {
+              "text": "Hideo Kojima",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " atua como produtor executivo."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Death-Stranding-Isolations-anime.webp",
+          "alt": "Death Stranding Isolations",
+          "caption": "©2026 KOJIMA PRODUCTIONS Co., Ltd. / HIDEO KOJIMA."
+        },
+        {
+          "type": "heading",
+          "text": "História explora um mundo isolado",
+          "runs": [
+            {
+              "text": "História explora um mundo isolado"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama se passa na América do Norte após Sam concluir a conexão do continente por meio da Rede Quiral. Apesar da reconstrução, o mundo enfrenta novas consequências provocadas pela retomada das conexões humanas.",
+          "runs": [
+            {
+              "text": "A trama se passa na América do Norte após Sam concluir a conexão do continente por meio da Rede Quiral. Apesar da reconstrução, o mundo enfrenta novas consequências provocadas pela retomada das conexões humanas.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história acompanha uma jovem que escolheu viver isolada após perder a mãe durante o fenômeno conhecido como Death Stranding. Entretanto, encontros inesperados acabam mudando seu destino.",
+          "runs": [
+            {
+              "text": "A história acompanha uma jovem que escolheu viver isolada após perder a mãe durante o fenômeno conhecido como Death Stranding.",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Entretanto, encontros inesperados acabam mudando seu destino."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Equipe do anime Death Stranding",
+          "runs": [
+            {
+              "text": "Equipe do anime Death Stranding"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A equipe também inclui Sayaka Koiso no design de personagens, Yann Le Gall na direção de arte e Ami Kutsuna no design de cores. Sendo assim a série animada terá uma história própria dentro do universo do jogo.",
+          "runs": [
+            {
+              "text": "A equipe também inclui Sayaka Koiso no design de personagens, "
+            },
+            {
+              "text": "Yann Le Gall",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na direção de arte e "
+            },
+            {
+              "text": "Ami Kutsuna",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no design de cores. Sendo assim a série animada terá uma história própria dentro do universo do "
+            },
+            {
+              "text": "jogo",
+              "href": "https://animenew.com.br/games"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim a franquia ganhará o filme de animação DEATH STRANDING MOSQUITO, que também contará uma narrativa original.",
+          "runs": [
+            {
+              "text": "Por fim a franquia ganhará o filme de animação "
+            },
+            {
+              "text": "DEATH STRANDING MOSQUITO",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que também contará uma narrativa original."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Death Stranding Isolations ganha trailer e novos detalhes.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Death Stranding Isolations ganha trailer e novos detalhes",
+              "href": "https://animenew.com.br/death-stranding-isolations-trailer-anime/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-30T18:40:13.000Z",
+      "updatedAt": "2026-10-30T18:40:13.000Z",
+      "expiresAt": "2026-11-06T18:40:13.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/death-stranding-isolations-trailer-anime",
+          "publishedAt": "2026-10-30T18:40:13.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 265,
+      "qualityScore": 0.976,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-4ca3a8fe",
+      "slug": "jujutsu-kaisen-ganha-trailer-com-spoilers-da-4-temporada-animenew-4ca3a8fe",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
+      "originalTitle": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
+      "summary": "A Shonen Jump divulgou um trailer macabro de Jujutsu Kaisen que reúne momentos importantes do mangá de Gege Akutami e antecipa cenas que devem aparecer nos próximos episódios do anime.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Gege Akutami",
+        "Jujutsu Kaisen"
+      ],
+      "url": "https://animenew.com.br/jujutsu-kaisen-trailer-sombrio-4-temporada",
+      "sourceUrl": "https://animenew.com.br/jujutsu-kaisen-trailer-sombrio-4-temporada",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Jujutsu-Kaisen-ganha-trailer-com-spoilers-da-4a-temporada.webp",
+      "mediaQuery": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/YbGIhA9A_3U"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Shonen Jump divulgou um trailer macabro de Jujutsu Kaisen que reúne momentos importantes do mangá de Gege Akutami e antecipa cenas que devem aparecer nos próximos episódios do anime.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Shonen Jump",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " divulgou um trailer macabro de "
+            },
+            {
+              "text": "Jujutsu Kaisen",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " que reúne momentos importantes do "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Gege Akutami",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e antecipa cenas que devem aparecer nos próximos episódios do "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Black Clover bate record com retorno da 2ª temporada",
+              "runs": [
+                {
+                  "text": "Black Clover bate record com retorno da 2ª temporada",
+                  "href": "https://animenew.com.br/black-clover-bate-record-com-retorno-da-2a-temporada"
+                }
+              ]
+            },
+            {
+              "text": "Precure anuncia anime derivado com heroínas vilãs",
+              "runs": [
+                {
+                  "text": "Precure anuncia anime derivado com heroínas vilãs",
+                  "href": "https://animenew.com.br/dual-shadow-precure-villain-heroines-anime"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O vídeo promocional apresenta uma montagem sombria com painéis da obra original, destacando acontecimentos que ainda serão adaptados para a animação. A prévia também serve como divulgação de uma exposição especial dedicada ao encerramento do mangá.",
+          "runs": [
+            {
+              "text": "O vídeo promocional apresenta uma montagem sombria com painéis da obra original, destacando acontecimentos que ainda serão adaptados para a animação. A prévia também serve como divulgação de uma exposição especial dedicada ao encerramento do mangá."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=YbGIhA9A_3U",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/YbGIhA9A_3U"
+        },
+        {
+          "type": "heading",
+          "text": "Exposição de Jujutsu Kaisen",
+          "runs": [
+            {
+              "text": "Exposição de Jujutsu Kaisen"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Intitulada Jujutsu Kaisen Final Exhibition, a mostra será realizada em Shinjuku, no Japão, entre 25 de dezembro de 2026 e 25 de janeiro de 2027. O evento reunirá materiais relacionados ao passado e ao futuro da franquia.",
+          "runs": [
+            {
+              "text": "Intitulada "
+            },
+            {
+              "text": "Jujutsu Kaisen Final Exhibition",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", a mostra será realizada em Shinjuku, no Japão, entre 25 de dezembro de 2026 e 25 de janeiro de 2027. O evento reunirá materiais relacionados ao passado e ao futuro da franquia."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Enquanto isso, a adaptação em anime segue em desenvolvimento, sendo assim a quarta temporada de Jujutsu Kaisen já está em produção e tem estreia prevista para o início de 2027.",
+          "runs": [
+            {
+              "text": "Enquanto isso, a adaptação em anime segue em desenvolvimento, sendo assim a quarta temporada de "
+            },
+            {
+              "text": "Jujutsu Kaisen",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " já está em produção e tem estreia prevista para o início de 2027."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim o trailer funciona como uma prévia de momentos importantes da história, mas também pode revelar acontecimentos significativos para quem acompanha apenas o anime.",
+          "runs": [
+            {
+              "text": "Por fim o trailer funciona como uma prévia de momentos importantes da história, mas também pode revelar acontecimentos significativos para quem acompanha apenas o anime."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
+              "href": "https://animenew.com.br/jujutsu-kaisen-trailer-sombrio-4-temporada/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-30T18:32:49.000Z",
+      "updatedAt": "2026-10-30T18:32:49.000Z",
+      "expiresAt": "2026-11-06T18:32:49.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/jujutsu-kaisen-trailer-sombrio-4-temporada",
+          "publishedAt": "2026-10-30T18:32:49.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 199,
+      "qualityScore": 0.963,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-82ca06e9",
+      "slug": "filme-live-action-de-sakamoto-days-estreia-no-catalogo-do-prime-video-jbox-82ca06e9",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Filme live-action de ‘Sakamoto Days’ estreia no catálogo do Prime Video",
+      "originalTitle": "Filme live-action de ‘Sakamoto Days’ estreia no catálogo do Prime Video",
+      "summary": "O filme live-action de Sakamoto Days chegou hoje (30) ao catálogo do Amazon Prime Video Brasil, conforme já havia sido anunciado pela plataforma. Ele está disponível somente com áudio original em japonês e legendas em português e outros idiomas.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Cinema",
+        "Live Action",
+        "Mangá",
+        "Streaming",
+        "amazon prime video",
+        "filme de sakamoto days",
+        "live-action de sakamoto days",
+        "prime video",
+        "ren meguro",
+        "Sakamoto Days"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/30/filme-live-action-de-sakamoto-days-estreia-no-catalogo-do-prime-video",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/30/filme-live-action-de-sakamoto-days-estreia-no-catalogo-do-prime-video",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/03/Sakamoto-Days-Destacada.jpg",
+      "mediaQuery": "Filme live-action de ‘Sakamoto Days’ estreia no catálogo do Prime Video",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/primevideo-sakamotodays.jpg",
+          "alt": "imagem: tela de Sakamoto Days no prime video",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/R0DRk9B4khg"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O filme live-action de Sakamoto Days chegou hoje (30) ao catálogo do Amazon Prime Video Brasil, conforme já havia sido anunciado pela plataforma. Ele está disponível somente com áudio original em japonês e legendas em português e outros idiomas.",
+          "runs": [
+            {
+              "text": "O filme live-action de "
+            },
+            {
+              "text": "Sakamoto Days",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " chegou hoje (30) ao "
+            },
+            {
+              "text": "catálogo do Amazon Prime Video Brasil",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.primevideo.com/detail/0O5MGV0TL85AMB7YGEPJ81O6VT"
+            },
+            {
+              "text": ", conforme já havia sido anunciado pela plataforma. Ele está disponível somente com áudio original em japonês e legendas em português e outros idiomas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Japão, o filme chegou aos cinemas em abril deste ano, mas não teve distribuição no circuito brasileiro, chegando direto no digital.",
+          "runs": [
+            {
+              "text": "No Japão, o filme chegou aos cinemas em abril deste ano, mas não teve distribuição no circuito brasileiro, chegando direto no digital."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/primevideo-sakamotodays.jpg",
+          "alt": "imagem: tela de Sakamoto Days no prime video"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/Amazon",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/Amazon"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "▶ Clique aqui e acesse a página do filme no Prime Video",
+          "runs": [
+            {
+              "text": "▶ Clique aqui e acesse a página do filme no Prime Video",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.primevideo.com/region/na/detail/0O5MGV0TL85AMB7YGEPJ81O6VT"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Escrita e dirigida por Yuuichi Fukuda (live-action de Gintama), a produção conta a mesma história do mangá de Yuto Suzuki e do animê: Taro Sakamoto (Ren Meguro) é conhecido como um dos mais letais assassinos que o mundo já viu. Porém, após conhecer o amor verdadeiro, ele tem uma filha, se aposenta e deixa as missões no passado. Tudo muda, é claro, quando velhos inimigos voltam em busca de vingança.",
+          "runs": [
+            {
+              "text": "Escrita e dirigida por "
+            },
+            {
+              "text": "Yuuichi Fukuda",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (live-action de "
+            },
+            {
+              "text": "Gintama",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), a produção conta a mesma história do mangá de "
+            },
+            {
+              "text": "Yuto Suzuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e do animê: Taro Sakamoto ("
+            },
+            {
+              "text": "Ren Meguro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ") é conhecido como um dos mais letais assassinos que o mundo já viu. Porém, após conhecer o amor verdadeiro, ele tem uma filha, se aposenta e deixa as missões no passado. Tudo muda, é claro, quando velhos inimigos voltam em busca de vingança."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Completam o elenco do filme Fumiya Takahashi (Blue Period) como Shin Asakura, Aya Ueto (The Silent Service) como Aoi Sakamoto, esposa do protagonista, Mayuu Yokota (Até Que as Cores Acabem) como a jovem Lu Shaotang, entre outros.",
+          "runs": [
+            {
+              "text": "Completam o elenco do filme"
+            },
+            {
+              "text": " Fumiya Takahashi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Blue Period",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como Shin Asakura,"
+            },
+            {
+              "text": " Aya Ueto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "The Silent Service",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como "
+            },
+            {
+              "text": "Aoi Sakamoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", esposa do protagonista, "
+            },
+            {
+              "text": "Mayuu Yokota",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Até Que as Cores Acabem",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como a jovem Lu Shaotang, entre outros."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por aqui, os fãs podem assistir à primeira temporada do animê, dividida em duas partes, na Netflix. Já o mangá é publicado no país pela Panini.",
+          "runs": [
+            {
+              "text": "Por aqui, os fãs podem assistir à primeira temporada do animê, dividida em duas partes, na "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Já o mangá é publicado no país pela "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=R0DRk9B4khg",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/R0DRk9B4khg"
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Amazon Prime Video",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Amazon Prime Video",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-30T18:06:53.000Z",
+      "updatedAt": "2026-10-30T18:12:17.000Z",
+      "expiresAt": "2026-11-06T18:06:53.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/30/filme-live-action-de-sakamoto-days-estreia-no-catalogo-do-prime-video",
+          "publishedAt": "2026-10-30T18:06:53.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 229,
+      "qualityScore": 0.97,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-6bd70dbb",
+      "slug": "hideaki-anno-vai-codirigir-filme-cosmoship-yamato-2199-ao-lado-de-yutaka-izubuchi-jbox-6bd70dbb",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Hideaki Anno vai codirigir filme ‘Cosmoship Yamato √2199’ ao lado de Yutaka Izubuchi",
+      "originalTitle": "Hideaki Anno vai codirigir filme ‘Cosmoship Yamato √2199’ ao lado de Yutaka Izubuchi",
+      "summary": "Hideaki Anno, conhecido especialmente pela direção na franquia Neon Genesis Evangelion, será um dos diretores de Cosmoship Yamato √2199, novo filme da série Patrulha Estelar Yamato (Uchuu Senkan Yamato). Ele vai dividir a cadeira com Yutaka Izubuchi, que trabalhou no departamento de arte do Rebuild of Evangelion e no roteiro de vários remakes de Yamato (além de ser o designer mecânico de Patlabor e desenhar para Changeman, Flashman, RahXephon, Eureka Seven, entre muitos outros).",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "Cosmoship Yamato √2199",
+        "hideaki anno",
+        "Novo animê de Patrula Estelar Yamato",
+        "Novo filme de Yamato",
+        "patrulha estelar yamato",
+        "yutaka izubuchi"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/30/hideaki-anno-vai-codirigir-filme-cosmoship-yamato-%e2%88%9a2199-ao-lado-de-yutaka-izubuchi",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/30/hideaki-anno-vai-codirigir-filme-cosmoship-yamato-%e2%88%9a2199-ao-lado-de-yutaka-izubuchi",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Cosmoship-Yamato-2199-destacada.jpg",
+      "mediaQuery": "Hideaki Anno vai codirigir filme ‘Cosmoship Yamato √2199’ ao lado de Yutaka Izubuchi",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Cosmoship-Yamato-2199-01.jpg",
+          "alt": "Pôster de Cosmoship Yamato √2199",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Hideaki Anno, conhecido especialmente pela direção na franquia Neon Genesis Evangelion, será um dos diretores de Cosmoship Yamato √2199, novo filme da série Patrulha Estelar Yamato (Uchuu Senkan Yamato). Ele vai dividir a cadeira com Yutaka Izubuchi, que trabalhou no departamento de arte do Rebuild of Evangelion e no roteiro de vários remakes de Yamato (além de ser o designer mecânico de Patlabor e desenhar para Changeman, Flashman, RahXephon, Eureka Seven, entre muitos outros).",
+          "runs": [
+            {
+              "text": "Hideaki Anno",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", conhecido especialmente pela direção na franquia "
+            },
+            {
+              "text": "Neon Genesis Evangelion",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", será um dos diretores de "
+            },
+            {
+              "text": "Cosmoship Yamato √2199",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", novo filme da série "
+            },
+            {
+              "text": "Patrulha Estelar Yamato",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Uchuu Senkan Yamato",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). Ele vai dividir a cadeira com "
+            },
+            {
+              "text": "Yutaka Izubuchi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que trabalhou no departamento de arte do "
+            },
+            {
+              "text": "Rebuild of Evangelion",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e no roteiro de vários remakes de "
+            },
+            {
+              "text": "Yamato",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (além de ser o designer mecânico de "
+            },
+            {
+              "text": "Patlabor",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e desenhar para"
+            },
+            {
+              "text": " Changeman",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/j-pedia/materias/changeman/"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Flashman",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/j-pedia/materias/flashman/"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "RahXephon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ","
+            },
+            {
+              "text": " Eureka Seven",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", entre muitos outros)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A novidade foi confirmada com o lançamento de um site oficial e pôster do projeto, que segue sem data de lançamento.",
+          "runs": [
+            {
+              "text": "A novidade foi confirmada com o lançamento de "
+            },
+            {
+              "text": "um site oficial",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://yamato-r2199.jp/"
+            },
+            {
+              "text": " e pôster do projeto, que segue sem data de lançamento."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Cosmoship-Yamato-2199-01.jpg",
+          "alt": "Pôster de Cosmoship Yamato √2199"
+        },
+        {
+          "type": "paragraph",
+          "text": "Primeiro teaser pôster destaca Yamato prestes a levantar voo | Divulgação",
+          "runs": [
+            {
+              "text": "Primeiro teaser pôster destaca Yamato prestes a levantar voo | Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O primeiro envolvimento de Hideaki Anno com a franquia foi anunciado em 2024. Na época, ele cuidou de um projeto celebrando 50 anos da série, iniciada em 1974, com exposições e exibições comemorativas. O cineasta também é conhecido por ser um grande fã da série desde a época da escola.",
+          "runs": [
+            {
+              "text": "O primeiro envolvimento de Hideaki Anno com a franquia foi anunciado em 2024. Na época, "
+            },
+            {
+              "text": "ele cuidou de um projeto celebrando 50 anos da série",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2024/03/30/hideaki-anno-esta-envolvido-em-projeto-de-patrulha-estelar-yamato/"
+            },
+            {
+              "text": ", iniciada em 1974, com exposições e exibições comemorativas. O cineasta também é conhecido por ser um grande fã da série desde a época da escola."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além de assinar a codireção, Anno é creditado na produção executiva do projeto, que terá a Production I.G. e o Studio Khara, fundado por ele, cuidando da animação.",
+          "runs": [
+            {
+              "text": "Além de assinar a codireção, Anno é creditado na produção executiva do projeto, que terá a "
+            },
+            {
+              "text": "Production I.G.",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e o "
+            },
+            {
+              "text": "Studio Khara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", fundado por ele, cuidando da animação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Criada inicialmente por Yoshinobu Nishizaki e ganhando vida na direção de Leiji Matsumoto, a franquia Yamato mostra as aventuras dos tripulantes do Encouraçado Espacial Yamato no ano de 2199. Na trama, o veículo, inspirado em um navio de guerra utilizado durante a Segunda Guerra Mundial, é a última esperança da humanidade após um ataque da raça alienígena Gamelons.",
+          "runs": [
+            {
+              "text": "Criada inicialmente por "
+            },
+            {
+              "text": "Yoshinobu Nishizaki ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "e ganhando vida na direção de"
+            },
+            {
+              "text": " Leiji Matsumoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", a franquia "
+            },
+            {
+              "text": "Yamato",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " mostra as aventuras dos tripulantes do Encouraçado Espacial Yamato no ano de 2199. Na trama, o veículo, inspirado em um navio de guerra utilizado durante a Segunda Guerra Mundial, é a última esperança da humanidade após um ataque da raça alienígena Gamelons."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ao longo das décadas, essa história deu origem a diversos filmes em animê, derivados, OVAs, um live-action em 2010, e várias séries em mangá — a primeira delas publicada no Brasil pela editora NewPOP.",
+          "runs": [
+            {
+              "text": "Ao longo das décadas, essa história deu origem a diversos filmes em animê, derivados, OVAs, um live-action em 2010, e várias séries em mangá — a primeira delas publicada no Brasil pela editora "
+            },
+            {
+              "text": "NewPOP",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Anime News Network",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-10-05/hideaki-anno-yutaka-izubuchi-co-direct-yamato-2199-film-at-i.g-khara/.242524"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-30T16:13:48.000Z",
+      "updatedAt": "2026-10-30T16:14:18.000Z",
+      "expiresAt": "2026-11-06T16:13:48.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/30/hideaki-anno-vai-codirigir-filme-cosmoship-yamato-%e2%88%9a2199-ao-lado-de-yutaka-izubuchi",
+          "publishedAt": "2026-10-30T16:13:48.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 297,
+      "qualityScore": 0.977,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-ac867611",
       "slug": "expelled-from-paradise-revela-video-com-novidades-do-game-animenew-ac867611",
@@ -5043,7 +7369,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 295,
-      "qualityScore": 0.982,
+      "qualityScore": 0.922,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -5364,1026 +7690,6 @@
       }
     },
     {
-      "id": "animenew-ae036735",
-      "slug": "as-a-reincarnated-aristocrat-anuncia-novo-arco-na-3-temporada-animenew-ae036735",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "As a Reincarnated Aristocrat anuncia novo arco na 3ª temporada",
-      "originalTitle": "As a Reincarnated Aristocrat anuncia novo arco na 3ª temporada",
-      "summary": "O anime As a Reincarnated Aristocrat, I’ll Use My Appraisal Skill (Tensei Kizoku Kantei Sukiru de Nariagaru) divulgou seu terceiro vídeo promocional, um novo visual e mais integrantes do elenco para a terceira temporada, que apresentará o arco da Família Fujimiya em 1º de novembro.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "As a Reincarnated Aristocrat",
-        "Tensei Kizoku Kantei Skill de Nariagaru"
-      ],
-      "url": "https://animenew.com.br/reincarnated-aristocrat-3-temporada-arco-fujimiya",
-      "sourceUrl": "https://animenew.com.br/reincarnated-aristocrat-3-temporada-arco-fujimiya",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/As-a-Reincarnated-Aristocrat-anuncia-novo-arco-na-3a-temporada.webp",
-      "mediaQuery": "As a Reincarnated Aristocrat anuncia novo arco na 3ª temporada",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/As-a-Reincarnated-Aristocrat.webp",
-          "alt": "As a Reincarnated Aristocrat",
-          "caption": "©未来人A・講談社／鑑定スキルで成り上がる製作委員会"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/-T0umnrZA4s"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime As a Reincarnated Aristocrat, I’ll Use My Appraisal Skill (Tensei Kizoku Kantei Sukiru de Nariagaru) divulgou seu terceiro vídeo promocional, um novo visual e mais integrantes do elenco para a terceira temporada, que apresentará o arco da Família Fujimiya em 1º de novembro.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "As a Reincarnated Aristocrat, I’ll Use My Appraisal Skill",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Tensei Kizoku Kantei Sukiru de Nariagaru",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") divulgou seu terceiro vídeo promocional, um novo visual e mais integrantes do elenco para a terceira temporada, que apresentará o arco da Família Fujimiya em 1º de novembro."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "King’s Proposal ganha anime com estreia para 2027",
-              "runs": [
-                {
-                  "text": "King’s Proposal ganha anime com estreia para 2027",
-                  "href": "https://animenew.com.br/kings-proposal-anime-estreia-2027"
-                }
-              ]
-            },
-            {
-              "text": "Date A Live F Last Date estreia em março de 2027",
-              "runs": [
-                {
-                  "text": "Date A Live F Last Date estreia em março de 2027",
-                  "href": "https://animenew.com.br/date-a-live-f-last-date-estreia-2027"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A nova fase começa no sexto episódio da temporada, conforme anunciado nesta segunda-feira, 26 de outubro, pelo site oficial da produção.",
-          "runs": [
-            {
-              "text": "A nova fase começa no sexto episódio da temporada, conforme anunciado nesta segunda-feira, 26 de outubro, pelo site oficial da produção."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=-T0umnrZA4s",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/-T0umnrZA4s"
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre as novidades do elenco estão Toshiya Miyata como Rikuya Fujimiya, Mariya Ise como Maika Fujimiya e Takaki Otomari como Takao Fujimiya.",
-          "runs": [
-            {
-              "text": "Entre as novidades do elenco estão Toshiya Miyata como Rikuya Fujimiya, Mariya Ise como Maika Fujimiya e Takaki Otomari como Takao Fujimiya."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/As-a-Reincarnated-Aristocrat.webp",
-          "alt": "As a Reincarnated Aristocrat",
-          "caption": "©未来人A・講談社／鑑定スキルで成り上がる製作委員会"
-        },
-        {
-          "type": "heading",
-          "text": "Produção da terceira temporada",
-          "runs": [
-            {
-              "text": "Produção da terceira temporada"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "Takao Kato retorna à direção, agora pelo estúdio GeyeG Pictures. Daisuke Ohigashi assume a supervisão dos roteiros, substituindo Yasuhiro Nakanishi. Yuko Yahiro continua responsável pelo design dos personagens, enquanto Kujira Yumemi retorna para compor a trilha sonora.",
-          "runs": [
-            {
-              "text": "Takao Kato retorna à direção, agora pelo estúdio "
-            },
-            {
-              "text": "GeyeG Pictures",
-              "href": "https://animenew.com.br/studio/7857/geyeg-pictures"
-            },
-            {
-              "text": ". Daisuke Ohigashi assume a supervisão dos roteiros, substituindo Yasuhiro Nakanishi. Yuko Yahiro continua responsável pelo design dos personagens, enquanto Kujira Yumemi retorna para compor a trilha sonora."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A música de abertura, intitulada Still Water, é interpretada por Rico Sasaki. Já o tema de encerramento, Hibi o Koete, fica a cargo de Akuruyo no Hitsuji.",
-          "runs": [
-            {
-              "text": "A música de abertura, intitulada Still Water, é interpretada por Rico Sasaki. Já o tema de encerramento, Hibi o Koete, fica a cargo de Akuruyo no Hitsuji."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A terceira temporada estreou no Japão em 27 de setembro de 2026 e está disponível internacionalmente pela Crunchyroll, que transmite os episódios durante a exibição japonesa.",
-          "runs": [
-            {
-              "text": "A terceira temporada estreou no Japão em 27 de setembro de 2026 e está disponível internacionalmente pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "href": "https://animenew.com.br/tag/crunchyroll/"
-            },
-            {
-              "text": ", que transmite os episódios durante a exibição japonesa."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história acompanha Ars Louvent, um homem que renasce em outro mundo como um aristocrata. Por fim com sua habilidade de Avaliação, ele identifica talentos e reúne pessoas capazes de fortalecer seu território.",
-          "runs": [
-            {
-              "text": "A história acompanha Ars Louvent, um homem que renasce em outro mundo como um aristocrata. Por fim com sua habilidade de Avaliação, ele identifica talentos e reúne pessoas capazes de fortalecer seu território."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://kanteiskill.com/news/2383"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em As a Reincarnated Aristocrat anuncia novo arco na 3ª temporada.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "As a Reincarnated Aristocrat anuncia novo arco na 3ª temporada",
-              "href": "https://animenew.com.br/reincarnated-aristocrat-3-temporada-arco-fujimiya/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-27T01:45:19.000Z",
-      "updatedAt": "2026-10-27T01:45:19.000Z",
-      "expiresAt": "2026-11-03T01:45:19.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/reincarnated-aristocrat-3-temporada-arco-fujimiya",
-          "publishedAt": "2026-10-27T01:45:19.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 260,
-      "qualityScore": 0.915,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-38106802",
-      "slug": "king-s-proposal-ganha-anime-com-estreia-para-2027-animenew-38106802",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "King’s Proposal ganha anime com estreia para 2027",
-      "originalTitle": "King’s Proposal ganha anime com estreia para 2027",
-      "summary": "O anime King’s Proposal (Ōsama no Propose), baseado na light novel de Koushi Tachibana e Tsunako, teve sua estreia confirmada para 2027. A Aniplex também revelou a primeira imagem promocional e anunciou Rie Takahashi no elenco principal.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "King's Proposal",
-        "Ōsama no Propose"
-      ],
-      "url": "https://animenew.com.br/kings-proposal-anime-estreia-2027",
-      "sourceUrl": "https://animenew.com.br/kings-proposal-anime-estreia-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Kings-Proposal-ganha-anime-com-estreia-para-2027.webp",
-      "mediaQuery": "King’s Proposal ganha anime com estreia para 2027",
-      "mediaType": "manga",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/anime-Osama-no-Propose.webp",
-          "alt": "anime Ōsama no Propose",
-          "caption": "© Koushi Tachibana, Tsunako/KADOKAWA/King’s Proposal Project"
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime King’s Proposal (Ōsama no Propose), baseado na light novel de Koushi Tachibana e Tsunako, teve sua estreia confirmada para 2027. A Aniplex também revelou a primeira imagem promocional e anunciou Rie Takahashi no elenco principal.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "King’s Proposal",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Ōsama no Propose",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "), baseado na "
-            },
-            {
-              "text": "light novel",
-              "href": "https://animenew.com.br/light-novel"
-            },
-            {
-              "text": " de Koushi Tachibana e Tsunako, teve sua estreia confirmada para 2027. A "
-            },
-            {
-              "text": "Aniplex",
-              "href": "https://animenew.com.br/tag/aniplex/"
-            },
-            {
-              "text": " também revelou a primeira imagem promocional e anunciou Rie Takahashi no elenco principal."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Though I Am an Inept Villainess ganha teaser da 2ª parte",
-              "runs": [
-                {
-                  "text": "Though I Am an Inept Villainess ganha teaser da 2ª parte",
-                  "href": "https://animenew.com.br/though-i-am-an-inept-villainess-segunda-parte"
-                }
-              ]
-            },
-            {
-              "text": "Takopi’s Original Sin divulga música de filme compilatório",
-              "runs": [
-                {
-                  "text": "Takopi’s Original Sin divulga música de filme compilatório",
-                  "href": "https://animenew.com.br/takopis-original-sin-filme-musica-trailer"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A dubladora dará voz a Saika Kuozaki, considerada a maga mais poderosa do mundo. A obra reúne os criadores de Date A Live, franquia que também inspirou diversas adaptações para anime e jogos.",
-          "runs": [
-            {
-              "text": "A dubladora dará voz a "
-            },
-            {
-              "text": "Saika Kuozaki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", considerada a maga mais poderosa do mundo. A obra reúne os criadores de "
-            },
-            {
-              "text": "Date A Live",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", franquia que também inspirou diversas adaptações para anime e "
-            },
-            {
-              "text": "jogos",
-              "href": "https://animenew.com.br/games"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/anime-Osama-no-Propose.webp",
-          "alt": "anime Ōsama no Propose",
-          "caption": "© Koushi Tachibana, Tsunako/KADOKAWA/King’s Proposal Project"
-        },
-        {
-          "type": "heading",
-          "text": "História de King’s Proposal",
-          "runs": [
-            {
-              "text": "História de King’s Proposal"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Na trama, Saika é uma bruxa poderosa que precisa enfrentar entidades misteriosas que ameaçam destruir o mundo a cada 300 horas. Assim após sofrer um ferimento mortal, ela transfere seus poderes e seu corpo para Mushiki Kuga, um estudante comum do ensino médio.",
-          "runs": [
-            {
-              "text": "Na trama, Saika é uma bruxa poderosa que precisa enfrentar entidades misteriosas que ameaçam destruir o mundo a cada 300 horas. Assim após sofrer um ferimento mortal, ela transfere seus poderes e seu corpo para Mushiki Kuga, um estudante comum do ensino médio.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para impedir a destruição do mundo, o rapaz precisa aprender a controlar as novas habilidades. Ele também terá que frequentar uma academia de magia assumindo a identidade de Saika, enquanto esconde quem realmente é.",
-          "runs": [
-            {
-              "text": "Para impedir a destruição do mundo, o rapaz precisa aprender a controlar as novas habilidades. Ele também terá que frequentar uma academia de magia assumindo a identidade de Saika, enquanto esconde quem realmente é.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Koushi Tachibana iniciou a publicação das light novels em 2021, com ilustrações de Tsunako. A editora Kadokawa lançou o oitavo volume no Japão em agosto de 2025, enquanto o nono está previsto para 18 de dezembro.",
-          "runs": [
-            {
-              "text": "Koushi Tachibana iniciou a publicação das light novels em 2021, com ilustrações de Tsunako. A editora Kadokawa lançou o oitavo volume no Japão em agosto de 2025, enquanto o nono está previsto para 18 de dezembro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A obra também ganhou uma adaptação em mangá ilustrada por Nemo Kurio, encerrada em março de 2025, com seis volumes publicados pela Square Enix. Por fim, até o momento, a data exata de estreia do anime não foi divulgada.",
-          "runs": [
-            {
-              "text": "A obra também ganhou uma adaptação em "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " ilustrada por Nemo Kurio, encerrada em março de 2025, com seis volumes publicados pela "
-            },
-            {
-              "text": "Square Enix",
-              "href": "https://animenew.com.br/tag/square-enix/"
-            },
-            {
-              "text": ". Por fim, até o momento, a data exata de estreia do anime não foi divulgada."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: ANN",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "ANN",
-              "href": "https://www.animenewsnetwork.com/news/2026-10-25/king-proposal-anime-unveils-2027-debut-lead-cast-teaser-visual/.243165"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em King’s Proposal ganha anime com estreia para 2027.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "King’s Proposal ganha anime com estreia para 2027",
-              "href": "https://animenew.com.br/kings-proposal-anime-estreia-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-27T01:38:33.000Z",
-      "updatedAt": "2026-10-27T01:38:33.000Z",
-      "expiresAt": "2026-11-03T01:38:33.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/kings-proposal-anime-estreia-2027",
-          "publishedAt": "2026-10-27T01:38:33.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 273,
-      "qualityScore": 0.914,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-80012fd1",
-      "slug": "date-a-live-f-last-date-estreia-em-marco-de-2027-animenew-80012fd1",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Date A Live F Last Date estreia em março de 2027",
-      "originalTitle": "Date A Live F Last Date estreia em março de 2027",
-      "summary": "O anime Date A Live F Last Date teve seu formato de filme e data de estreia revelados neste domingo (25). A produção chegará aos cinemas japoneses em 26 de março de 2027.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Date A Live F Last Date"
-      ],
-      "url": "https://animenew.com.br/date-a-live-f-last-date-estreia-2027",
-      "sourceUrl": "https://animenew.com.br/date-a-live-f-last-date-estreia-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Date-A-Live-F-Last-Date-estreia-em-marco-de-2027.webp",
-      "mediaQuery": "Date A Live F Last Date estreia em março de 2027",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Date-A-Live-F-Last.webp",
-          "alt": "Date A Live F Last",
-          "caption": "©2026 橘公司・つなこ/KADOKAWA/「デート・ア・ライブF」製作委員会"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/h5Uvpe3z-VI"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Date A Live F Last Date teve seu formato de filme e data de estreia revelados neste domingo (25). A produção chegará aos cinemas japoneses em 26 de março de 2027.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Date A Live F Last Date",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " teve seu formato de filme e data de estreia revelados neste domingo (25). A produção chegará aos cinemas japoneses em 26 de março de 2027."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Though I Am an Inept Villainess ganha teaser da 2ª parte",
-              "runs": [
-                {
-                  "text": "Though I Am an Inept Villainess ganha teaser da 2ª parte",
-                  "href": "https://animenew.com.br/though-i-am-an-inept-villainess-segunda-parte"
-                }
-              ]
-            },
-            {
-              "text": "Takopi’s Original Sin divulga música de filme compilatório",
-              "runs": [
-                {
-                  "text": "Takopi’s Original Sin divulga música de filme compilatório",
-                  "href": "https://animenew.com.br/takopis-original-sin-filme-musica-trailer"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Date-A-Live-F-Last.webp",
-          "alt": "Date A Live F Last",
-          "caption": "©2026 橘公司・つなこ/KADOKAWA/「デート・ア・ライブF」製作委員会"
-        },
-        {
-          "type": "paragraph",
-          "text": "O anúncio aconteceu durante o evento Fantasia Bunko Grand Thanksgiving Festival 2026 Online, que também apresentou um novo teaser e uma segunda imagem promocional. Segundo a divulgação, o longa adaptará o arco final da série animada.",
-          "runs": [
-            {
-              "text": "O anúncio aconteceu durante o evento "
-            },
-            {
-              "text": "Fantasia Bunko Grand Thanksgiving",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " Festival 2026 Online, que também apresentou um novo teaser e uma segunda imagem promocional. Segundo a divulgação, o longa adaptará o arco final da série animada."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=h5Uvpe3z-VI",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/h5Uvpe3z-VI"
-        },
-        {
-          "type": "heading",
-          "text": "Equipe e elenco retornam",
-          "runs": [
-            {
-              "text": "Equipe e elenco retornam"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Junji Nishimura (Vladlove) dirige o projeto no estúdio Fugaku. O roteiro ficará novamente sob responsabilidade de Fumihiko Shimo, enquanto Naoto Nakamura retorna ao design de personagens. Ambos trabalharam nas temporadas anteriores.",
-          "runs": [
-            {
-              "text": "Junji Nishimura (Vladlove) dirige o projeto no estúdio Fugaku. O roteiro ficará novamente sob responsabilidade de Fumihiko Shimo, enquanto Naoto Nakamura retorna ao design de personagens. Ambos trabalharam nas temporadas anteriores."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O elenco também contará com diversos dubladores conhecidos da franquia, incluindo Nobunaga Shimazaki, Marina Inoue, Ayana Taketatsu, Iori Nomizu e Asami Sanada. A distribuição do filme ficará a cargo da ANIMEC.",
-          "runs": [
-            {
-              "text": "O elenco também contará com diversos dubladores conhecidos da franquia, incluindo Nobunaga Shimazaki, Marina Inoue, Ayana Taketatsu, Iori Nomizu e Asami Sanada. A distribuição do filme ficará a cargo da ANIMEC."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "História da franquia",
-          "runs": [
-            {
-              "text": "História da franquia"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A adaptação em anime começou em 2013 e chegou à quinta temporada em abril de 2024. A obra original é uma série de light novels escrita por Koushi Tachibana e ilustrada por Tsunako, publicada pela Kadokawa sob o selo Fantasia Bunko.",
-          "runs": [
-            {
-              "text": "A adaptação em anime começou em 2013 e chegou à quinta temporada em abril de 2024. A obra original é uma série de "
-            },
-            {
-              "text": "light novels",
-              "href": "https://animenew.com.br/light-novel"
-            },
-            {
-              "text": " escrita por Koushi Tachibana e ilustrada por Tsunako, publicada pela Kadokawa sob o selo Fantasia Bunko."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A série literária foi concluída em março de 2020, com o lançamento do 22º volume. Por fim o novo filme dará continuidade à adaptação animada, com a proposta de encerrar a história principal da franquia.",
-          "runs": [
-            {
-              "text": "A série literária foi concluída em março de 2020, com o lançamento do 22º volume. Por fim o novo filme dará continuidade à adaptação animada, com a proposta de encerrar a história principal da franquia."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://date-a-live5th-anime.com/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Date A Live F Last Date estreia em março de 2027.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Date A Live F Last Date estreia em março de 2027",
-              "href": "https://animenew.com.br/date-a-live-f-last-date-estreia-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-27T01:31:30.000Z",
-      "updatedAt": "2026-10-27T01:31:30.000Z",
-      "expiresAt": "2026-11-03T01:31:30.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/date-a-live-f-last-date-estreia-2027",
-          "publishedAt": "2026-10-27T01:31:30.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 261,
-      "qualityScore": 0.915,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-2b6cf690",
-      "slug": "our-last-crusade-anuncia-3-temporada-do-anime-animenew-2b6cf690",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Our Last Crusade anuncia 3ª temporada do anime",
-      "originalTitle": "Our Last Crusade anuncia 3ª temporada do anime",
-      "summary": "O anime Our Last Crusade or the Rise of a New World (Kimi to Boku no Saigo no Senjō) terá uma terceira temporada. O anúncio foi feito em 25 de outubro, durante o evento Fantasia Bunko Grand Thanksgiving Festival 2026 Online, que também revelou uma ilustração inédita e o retorno de integrantes do elenco e da equipe.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Kimi to Boku no Saigo no Senjou",
-        "Our Last Crusade or the Rise of a New World"
-      ],
-      "url": "https://animenew.com.br/our-last-crusade-3-temporada-anime",
-      "sourceUrl": "https://animenew.com.br/our-last-crusade-3-temporada-anime",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Our-Last-Crusade-anuncia-3a-temporada-do-anime.webp",
-      "mediaQuery": "Our Last Crusade anuncia 3ª temporada do anime",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Our-Last-Crusade-or-the-Rise-of-a-New-World.webp",
-          "alt": "Our Last Crusade or the Rise of a New World",
-          "caption": "©細音啓・猫鍋蒼/KADOKAWA/キミ戦3製作委員会"
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Our Last Crusade or the Rise of a New World (Kimi to Boku no Saigo no Senjō) terá uma terceira temporada. O anúncio foi feito em 25 de outubro, durante o evento Fantasia Bunko Grand Thanksgiving Festival 2026 Online, que também revelou uma ilustração inédita e o retorno de integrantes do elenco e da equipe.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Our Last Crusade or the Rise of a New World",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Kimi to Boku no Saigo no Senjō",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") terá uma terceira temporada. O anúncio foi feito em 25 de outubro, durante o evento "
-            },
-            {
-              "text": "Fantasia Bunko Grand Thanksgiving Festival 2026 Online",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que também revelou uma "
-            },
-            {
-              "text": "ilustração inédita",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e o retorno de integrantes do elenco e da equipe."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Though I Am an Inept Villainess ganha teaser da 2ª parte",
-              "runs": [
-                {
-                  "text": "Though I Am an Inept Villainess ganha teaser da 2ª parte",
-                  "href": "https://animenew.com.br/though-i-am-an-inept-villainess-segunda-parte"
-                }
-              ]
-            },
-            {
-              "text": "Takopi’s Original Sin divulga música de filme compilatório",
-              "runs": [
-                {
-                  "text": "Takopi’s Original Sin divulga música de filme compilatório",
-                  "href": "https://animenew.com.br/takopis-original-sin-filme-musica-trailer"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A nova temporada contará novamente com Yuki Inaba na direção, trabalhando nos estúdios Studio Palette e SILVER LINK. Contudo o profissional também ficará responsável pela composição da série. Já Kaori Yoshikawa retorna ao projeto como designer de personagens.",
-          "runs": [
-            {
-              "text": "A nova temporada contará novamente com Yuki Inaba na direção, trabalhando nos estúdios Studio Palette e "
-            },
-            {
-              "text": "SILVER LINK",
-              "href": "https://animenew.com.br/studio/300/silver-link"
-            },
-            {
-              "text": ". Contudo o profissional também ficará responsável pela composição da série. Já Kaori Yoshikawa retorna ao projeto como designer de personagens."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Our-Last-Crusade-or-the-Rise-of-a-New-World.webp",
-          "alt": "Our Last Crusade or the Rise of a New World",
-          "caption": "©細音啓・猫鍋蒼/KADOKAWA/キミ戦3製作委員会"
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre os dubladores confirmados estão Yusuke Kobayashi, como Iska, e Sora Amamiya, como Aliceliese Lou Nebulis IX. Também retornam Nao Shiraki (Mismis Klass), Kaori Ishihara (Nene Alkastone), Shunichi Toki (Jhin Syulargun), Yumiri Hanamori (Rin Vispose) e Azumi Waki (Sisbell Lou Nebulis IX).",
-          "runs": [
-            {
-              "text": "Entre os dubladores confirmados estão Yusuke Kobayashi, como Iska, e Sora Amamiya, como Aliceliese Lou Nebulis IX. Também retornam Nao Shiraki (Mismis Klass), Kaori Ishihara (Nene Alkastone), Shunichi Toki (Jhin Syulargun), Yumiri Hanamori (Rin Vispose) e Azumi Waki (Sisbell Lou Nebulis IX)."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Sobre a história",
-          "runs": [
-            {
-              "text": "Sobre a história"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama acompanha Iska, um jovem cavaleiro do Império, e Aliceliese, princesa da nação Nebulis. Apesar de pertencerem a lados opostos de uma guerra entre tecnologia e magia, os dois desenvolvem uma ligação que desafia o conflito entre seus povos.",
-          "runs": [
-            {
-              "text": "A trama acompanha Iska, um jovem cavaleiro do Império, e Aliceliese, princesa da nação Nebulis. Apesar de pertencerem a lados opostos de uma guerra entre tecnologia e magia, os dois desenvolvem uma ligação que desafia o conflito entre seus povos."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A primeira temporada estreou em outubro de 2020. Já a segunda começou em julho de 2024, mas teve sua exibição interrompida após quatro episódios, retomando a transmissão em abril de 2025. Por fim a data de estreia da terceira temporada ainda não foi divulgada.",
-          "runs": [
-            {
-              "text": "A primeira temporada estreou em outubro de 2020. Já a segunda começou em julho de 2024, mas teve sua exibição interrompida após quatro episódios, retomando a transmissão em abril de 2025. Por fim a data de estreia da terceira temporada ainda não foi divulgada."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://kimisentv.com/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Our Last Crusade anuncia 3ª temporada do anime.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Our Last Crusade anuncia 3ª temporada do anime",
-              "href": "https://animenew.com.br/our-last-crusade-3-temporada-anime/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-27T01:26:37.000Z",
-      "updatedAt": "2026-10-27T01:26:37.000Z",
-      "expiresAt": "2026-11-03T01:26:37.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/our-last-crusade-3-temporada-anime",
-          "publishedAt": "2026-10-27T01:26:37.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 267,
-      "qualityScore": 0.912,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
       "id": "jbox-992679a0",
       "slug": "2-temporada-de-akane-banashi-ganha-novo-teaser-poster-e-nomes-do-elenco-jbox-992679a0",
       "source": "JBox",
@@ -6593,7 +7899,8 @@
               "text": "Anna Nagase",
               "marks": [
                 "strong"
-              ]
+              ],
+              "href": "https://www.jbox.com.br/j-pedia/perfis/anna-nagase/"
             },
             {
               "text": "), uma jovem que sempre admirou as performances de Rakugo feitas por seu pai, Shinta Arakawa (voz original de "
@@ -6756,7 +8063,7 @@
       ],
       "contentMode": "full",
       "publishedAt": "2026-10-26T19:14:52.000Z",
-      "updatedAt": "2026-10-28T16:12:00.000Z",
+      "updatedAt": "2026-10-30T16:27:48.000Z",
       "expiresAt": "2026-11-02T19:14:52.000Z",
       "category": "Trailers",
       "eventType": "TRAILER",
@@ -8498,1865 +9805,6 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 5,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-cb00707d",
-      "slug": "2-parte-de-though-i-am-an-inept-villainess-ganha-trailer-jbox-cb00707d",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "2ª parte de ‘Though I am an Inept Villainess’ ganha trailer",
-      "originalTitle": "2ª parte de ‘Though I am an Inept Villainess’ ganha trailer",
-      "summary": "Foi divulgado pela Toho um trailer para a segunda parte do animê Though I am an Inept Villainess (Futsutsuka na Akujo de wa Gozaimasu ga). O vídeo dá uma prévia dos primeiros acontecimentos da nova fase da história.",
-      "author": "Teke",
-      "tags": [
-        "Anime",
-        "2ª parte de Though I am an Inept Villainess",
-        "Futsutsuka na Akujo de wa Gozaimasu ga",
-        "Though I Am an Inept Villainess"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/23/2a-parte-de-though-i-am-an-inept-villainess-ganha-trailer",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/23/2a-parte-de-though-i-am-an-inept-villainess-ganha-trailer",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Though-I-am-an-Inept-Villainess-destacada.jpg",
-      "mediaQuery": "2ª parte de ‘Though I am an Inept Villainess’ ganha trailer",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Though-I-am-an-Inept-Villainess-poster-parte-2.jpg",
-          "alt": "imagem: pôster da 2ª parte de 'Though I am an Inept Villainess'. As protagonistas Keigetsu e Reirin aparecem em destaque, com os corpos trocados. Cenas com outros personagens também aparecem na ilustração.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/jJKK3qoVlCI"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Foi divulgado pela Toho um trailer para a segunda parte do animê Though I am an Inept Villainess (Futsutsuka na Akujo de wa Gozaimasu ga). O vídeo dá uma prévia dos primeiros acontecimentos da nova fase da história.",
-          "runs": [
-            {
-              "text": "Foi divulgado pela Toho um trailer para a segunda parte do animê "
-            },
-            {
-              "text": "Though I am an Inept Villainess",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Futsutsuka na Akujo de wa Gozaimasu ga",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "). O vídeo dá uma prévia dos primeiros acontecimentos da nova fase da história."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A continuação estreia em janeiro de 2027. Confira o novo vídeo:",
-          "runs": [
-            {
-              "text": "A continuação estreia em "
-            },
-            {
-              "text": "janeiro de 2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Confira o novo vídeo:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=jJKK3qoVlCI",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/jJKK3qoVlCI"
-        },
-        {
-          "type": "paragraph",
-          "text": "A primeira temporada de Though I am an Inept Villainess foi exibida entre julho e setembro deste ano, sendo uma produção do estúdio Doga Kobo. A série está disponível na Crunchyroll com legendas e dublagem em português.",
-          "runs": [
-            {
-              "text": "A primeira temporada de "
-            },
-            {
-              "text": "Though I am an Inept Villainess",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " foi exibida entre julho e setembro deste ano, sendo uma produção do estúdio "
-            },
-            {
-              "text": "Doga Kobo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A série está "
-            },
-            {
-              "text": "disponível na ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.crunchyroll.com/pt-br/series/GT00371881/though-i-am-an-inept-villainess"
-            },
-            {
-              "text": " com legendas e dublagem em português",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A segunda parte retorna com a mesma equipe de produção, contando com Mitsue Yamazaki (Monthly Girls’ Nozaki-kun) na direção, Yoshiko Nakamura (Sasaki and Miyano) nos roteiros, Ai Kikuchi (New Game!) no design de personagens e Yukari Hashimoto (Sarazanmai) na trilha sonora.",
-          "runs": [
-            {
-              "text": "A segunda parte retorna com a mesma equipe de produção, contando com "
-            },
-            {
-              "text": "Mitsue Yamazaki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Monthly Girls’ Nozaki-kun",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") na direção,"
-            },
-            {
-              "text": " Yoshiko Nakamura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Sasaki and Miyano",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") nos roteiros, "
-            },
-            {
-              "text": "Ai Kikuchi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "New Game!",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") no design de personagens e "
-            },
-            {
-              "text": "Yukari Hashimoto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Sarazanmai",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2019/07/24/critica-sarazanmai/"
-            },
-            {
-              "text": ") na trilha sonora."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história apresenta um reino fictício inspirado na China, onde Reirin está sendo favorecida pelo príncipe devido a sua beleza, inteligência e delicadeza. No entanto, Keigetsu, uma consorte rival, decide usar uma magia para trocar de corpo com Reirin, mas agora precisa lidar com o corpo frágil da garota. Enquanto isso, Reirin agora tem um corpo saudável como Keigetsu, porém sofre com os crimes da vilã enquanto acaba, junto de Keigetsu, se envolvendo numa conspiração interna na corte.",
-          "runs": [
-            {
-              "text": "A história apresenta um reino fictício inspirado na China, onde Reirin está sendo favorecida pelo príncipe devido a sua beleza, inteligência e delicadeza. No entanto, Keigetsu, uma consorte rival, decide usar uma magia para trocar de corpo com Reirin, mas agora precisa lidar com o corpo frágil da garota. Enquanto isso, Reirin agora tem um corpo saudável como Keigetsu, porém sofre com os crimes da vilã enquanto acaba, junto de Keigetsu, se envolvendo numa conspiração interna na corte."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Though-I-am-an-Inept-Villainess-poster-parte-2.jpg",
-          "alt": "imagem: pôster da 2ª parte de 'Though I am an Inept Villainess'. As protagonistas Keigetsu e Reirin aparecem em destaque, com os corpos trocados. Cenas com outros personagens também aparecem na ilustração."
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Divulgação/Toho",
-          "runs": [
-            {
-              "text": "Imagem: Divulgação/Toho"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A obra é originalmente uma série de light novels escrita por Satsuki Nakamura e ilustrada por Kana Yuki. Desde o início em 2020, 13 volumes já foram publicados pela Ichijinsha. Também existe uma adaptação para mangá, sob responsabilidade de Ei Ohitsuji. O mangá já tem 11 volumes publicados e tem lançamento no Brasil confirmado pela editora Taverna do Rei.",
-          "runs": [
-            {
-              "text": "A obra é originalmente uma série de "
-            },
-            {
-              "text": "light novels",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " escrita por "
-            },
-            {
-              "text": "Satsuki Nakamura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e ilustrada por "
-            },
-            {
-              "text": "Kana Yuki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Desde o início em 2020, 13 volumes já foram publicados pela Ichijinsha. Também existe uma adaptação para mangá, sob responsabilidade de Ei Ohitsuji. O mangá já tem 11 volumes publicados e tem "
-            },
-            {
-              "text": "lançamento no Brasil confirmado pela editora Taverna do Rei",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Toho (YouTube)",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Toho (YouTube)",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://youtu.be/jJKK3qoVlCI"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-23T19:29:27.000Z",
-      "updatedAt": "2026-10-23T19:30:21.000Z",
-      "expiresAt": "2026-10-30T19:29:27.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/23/2a-parte-de-though-i-am-an-inept-villainess-ganha-trailer",
-          "publishedAt": "2026-10-23T19:29:27.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 286,
-      "qualityScore": 0.917,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-d1418f8e",
-      "slug": "pokemon-se-junta-a-hatsune-miku-em-clipe-que-celebra-os-30-anos-da-franquia-jbox-d1418f8e",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Pokémon se junta a Hatsune Miku em clipe que celebra os 30 anos da franquia",
-      "originalTitle": "Pokémon se junta a Hatsune Miku em clipe que celebra os 30 anos da franquia",
-      "summary": "O projeto musical Pokémon feat. Hatsune Miku ProjectVOLTAGE lançou nesta sexta-feira (23) um novo videoclipe animado em comemoração aos 30 anos da franquia de jogos Pokémon.",
-      "author": "Igor Lunei",
-      "tags": [
-        "Games",
-        "Música",
-        "Hatsune Miku",
-        "Pokemon",
-        "Pokémon feat. Hatsune Miku ProjectVOLTAGE",
-        "Supercell"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/23/pokemon-se-junta-a-hatsune-miku-em-clipe-que-celebra-os-30-anos-da-franquia",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/23/pokemon-se-junta-a-hatsune-miku-em-clipe-que-celebra-os-30-anos-da-franquia",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/pokemon-hatsune-miku-1996-clipe-destacada.jpg",
-      "mediaQuery": "Pokémon se junta a Hatsune Miku em clipe que celebra os 30 anos da franquia",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/It-5v1kgaak"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/qY8dRDuM0AU"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O projeto musical Pokémon feat. Hatsune Miku ProjectVOLTAGE lançou nesta sexta-feira (23) um novo videoclipe animado em comemoração aos 30 anos da franquia de jogos Pokémon.",
-          "runs": [
-            {
-              "text": "O projeto musical "
-            },
-            {
-              "text": "Pokémon feat. Hatsune Miku ProjectVOLTAGE",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " lançou nesta sexta-feira (23) um novo videoclipe animado em comemoração aos 30 anos da franquia de jogos "
-            },
-            {
-              "text": "Pokémon",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A música se chama “1996” e o vídeo acompanha duas crianças em seu primeiro contato com os jogos naquele ano. Vemos pokémon da primeira geração e consoles da época, incluindo um Super Nintendo com o acessório Super Game Boy, usado para jogar as versões originais de Pokémon Red e Green, além de um Game Boy tradicional.",
-          "runs": [
-            {
-              "text": "A música se chama "
-            },
-            {
-              "text": "“1996”",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " e o vídeo acompanha duas crianças em seu primeiro contato com os jogos naquele ano. Vemos pokémon da primeira geração e consoles da época, incluindo um Super Nintendo com o acessório Super Game Boy, usado para jogar as versões originais de "
-            },
-            {
-              "text": "Pokémon Red",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Green",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", além de um Game Boy tradicional."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira:",
-          "runs": [
-            {
-              "text": "Confira:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=It-5v1kgaak",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/It-5v1kgaak"
-        },
-        {
-          "type": "paragraph",
-          "text": "A música tem letra, composição e arranjos de Ryo, músico e compositor da banda supercell, que também desenvolveu o conceito da história do videoclipe ao lado de Machigerita. Shunsuke Takarai dirigiu a animação no Studio Hare e ficou responsável pelo design dos personagens, pelos storyboards e pela direção técnica. Akiko Saito trabalhou na definição das cores, enquanto Lee Jooyuong ficou responsável pela direção de arte. O videoclipe foi produzido pela BLUE RIGHTS, com Makoto Kimura como produtor.",
-          "runs": [
-            {
-              "text": "A música tem letra, composição e arranjos de "
-            },
-            {
-              "text": "Ryo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", músico e compositor da banda "
-            },
-            {
-              "text": "supercell",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que também desenvolveu o conceito da história do videoclipe ao lado de "
-            },
-            {
-              "text": "Machigerita",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". "
-            },
-            {
-              "text": "Shunsuke Takarai",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " dirigiu a animação no "
-            },
-            {
-              "text": "Studio Hare",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e ficou responsável pelo "
-            },
-            {
-              "text": "design",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " dos personagens, pelos "
-            },
-            {
-              "text": "storyboards",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e pela direção técnica. "
-            },
-            {
-              "text": "Akiko Saito",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " trabalhou na definição das cores, enquanto "
-            },
-            {
-              "text": "Lee Jooyuong",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ficou responsável pela direção de arte. O videoclipe foi produzido pela "
-            },
-            {
-              "text": "BLUE RIGHTS",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com "
-            },
-            {
-              "text": "Makoto Kimura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " como produtor."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Outro clipe do ProjectVOLTAGE, para a nova música “Legends”, foi publicado na quinta-feira no canal de YouTube de Ryo. O vídeo mostra a Hatsune Miku e vários pokémon apresentando a canção em um estúdio:",
-          "runs": [
-            {
-              "text": "Outro clipe do ProjectVOLTAGE, para a nova música "
-            },
-            {
-              "text": "“Legends”",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", foi publicado na quinta-feira no canal de YouTube de Ryo. O vídeo mostra a Hatsune Miku e vários pokémon apresentando a canção em um estúdio:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=qY8dRDuM0AU",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/qY8dRDuM0AU"
-        },
-        {
-          "type": "paragraph",
-          "text": "O Pokémon feat. Hatsune Miku ProjectVOLTAGE começou em setembro de 2023. Em janeiro de 2026, o projeto foi ampliado com o lançamento de uma linha de produtos licenciados.",
-          "runs": [
-            {
-              "text": "O Pokémon feat. Hatsune Miku ProjectVOLTAGE começou em setembro de 2023. Em janeiro de 2026, o projeto foi ampliado com o lançamento de uma linha de produtos licenciados."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Canal do Ryo (Supercell) no YouTube",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Canal do Ryo (Supercell) no YouTube",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.youtube.com/channel/UCy9UVm-UjHqcktvxg-sS4qQ"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-23T17:46:19.000Z",
-      "updatedAt": "2026-10-23T17:47:09.000Z",
-      "expiresAt": "2026-10-30T17:46:19.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/23/pokemon-se-junta-a-hatsune-miku-em-clipe-que-celebra-os-30-anos-da-franquia",
-          "publishedAt": "2026-10-23T17:46:19.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 246,
-      "qualityScore": 0.911,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 2,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-8174055a",
-      "slug": "inio-asano-autor-de-boa-noite-punpun-e-solanin-vem-ao-brasil-para-a-ccxp26-jbox-8174055a",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Inio Asano, autor de ‘Boa Noite Punpun’ e ‘Solanin’, vem ao Brasil para a CCXP26",
-      "originalTitle": "Inio Asano, autor de ‘Boa Noite Punpun’ e ‘Solanin’, vem ao Brasil para a CCXP26",
-      "summary": "Um dos grandes nomes do mangá contemporâneo, Inio Asano fará sua primeira visita ao Brasil como convidado da CCXP26. O autor de Boa Noite Punpun foi anunciado nesta sexta-feira (23) como uma das atrações do evento, que acontece entre 3 e 6 de dezembro, no São Paulo Expo, em São Paulo.",
-      "author": "Igor Lunei",
-      "tags": [
-        "Eventos",
-        "Mangá",
-        "CCXP",
-        "CCXP26",
-        "Inio Asano",
-        "Inio Asano na CCXP",
-        "inio asano no brasil",
-        "Mujina into the Deep"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/23/inio-asano-autor-de-boa-noite-punpun-e-solanin-vem-ao-brasil-para-a-ccxp26",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/23/inio-asano-autor-de-boa-noite-punpun-e-solanin-vem-ao-brasil-para-a-ccxp26",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/inio-asano-na-ccxp26-destacada.jpg",
-      "mediaQuery": "Inio Asano, autor de ‘Boa Noite Punpun’ e ‘Solanin’, vem ao Brasil para a CCXP26",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/mujina-into-the-deep-volume-1.jpg",
-          "alt": "imagem: capa do volume 1 de 'Mujina Into the Deep'.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Um dos grandes nomes do mangá contemporâneo, Inio Asano fará sua primeira visita ao Brasil como convidado da CCXP26. O autor de Boa Noite Punpun foi anunciado nesta sexta-feira (23) como uma das atrações do evento, que acontece entre 3 e 6 de dezembro, no São Paulo Expo, em São Paulo.",
-          "runs": [
-            {
-              "text": "Um dos grandes nomes do mangá contemporâneo, "
-            },
-            {
-              "text": "Inio Asano",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " fará sua primeira visita ao Brasil como convidado da "
-            },
-            {
-              "text": "CCXP26",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". O autor de "
-            },
-            {
-              "text": "Boa Noite Punpun",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " foi anunciado nesta sexta-feira (23) como uma das atrações do evento, que acontece entre "
-            },
-            {
-              "text": "3 e 6 de dezembro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", no São Paulo Expo, em São Paulo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A visita é uma parceria entre a organização da CCXP e a editora JBC, responsável pelo lançamento de Mujina Into the Deep, mangá inédito no Brasil que será apresentado pelo autor durante o evento. A programação completa e os detalhes sobre sua participação serão divulgados em breve.",
-          "runs": [
-            {
-              "text": "A visita é uma parceria entre a organização da CCXP e a editora "
-            },
-            {
-              "text": "JBC",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", responsável pelo lançamento de "
-            },
-            {
-              "text": "Mujina Into the Deep",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/19/mujina-into-the-deep-deve-ser-publicado-pela-jbc/"
-            },
-            {
-              "text": ", mangá inédito no Brasil que será apresentado pelo autor durante o evento. A programação completa e os detalhes sobre sua participação serão divulgados em breve."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/08/mujina-into-the-deep-volume-1.jpg",
-          "alt": "imagem: capa do volume 1 de 'Mujina Into the Deep'."
-        },
-        {
-          "type": "paragraph",
-          "text": "Capa japonesa de Mujina Ino the Deep. | Imagem: Reprodução/Shogakukan",
-          "runs": [
-            {
-              "text": "Capa japonesa de Mujina Ino the Deep. | Imagem: Reprodução/Shogakukan"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Nascido em 1980, na província de Ibaraki, no Japão, Asano é conhecido por retratar os dilemas da juventude e o cotidiano com realismo, além de um estilo visual detalhado que combina ilustração e fotografia. Ao longo da carreira, recebeu prêmios como o Shogakukan Manga Award e o Daruma Awards. Em Boa Noite Punpun, uma de suas obras mais conhecidas, acompanhamos um garoto comum que decide se tornar cientista espacial depois de se apaixonar por uma menina que o alerta sobre a possibilidade de a Terra se tornar um planeta inabitável. A série conta com sete volumes publicados no Brasil.",
-          "runs": [
-            {
-              "text": "Nascido em 1980, na província de Ibaraki, no Japão, Asano é conhecido por retratar os dilemas da juventude e o cotidiano com realismo, além de um estilo visual detalhado que combina ilustração e fotografia. Ao longo da carreira, recebeu prêmios como o "
-            },
-            {
-              "text": "Shogakukan Manga Award",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e o "
-            },
-            {
-              "text": "Daruma Awards",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Em "
-            },
-            {
-              "text": "Boa Noite Punpun",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", uma de suas obras mais conhecidas, acompanhamos um garoto comum que decide se tornar cientista espacial depois de se apaixonar por uma menina que o alerta sobre a possibilidade de a Terra se tornar um planeta inabitável. A série conta com sete volumes publicados no Brasil."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Capa nacional do vol.1 de ‘Boa Noite Punpun’. | Imagem: Diuvlgação/JBC",
-          "runs": [
-            {
-              "text": "Capa nacional do vol.1 de ‘Boa Noite Punpun’. | Imagem: Diuvlgação/JBC"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A trajetória de Asano no mercado brasileiro começou em 2011, com Solanin, lançado em dois volumes pela L&PM Editores e republicado pela mesma editora em uma edição especial de volume único em 2023. Desde então, seus mangás também chegaram ao país por outras editoras. A JBC publicou o já mencionado Boa Noite Punpun, Nijigahara Holograph, Garota à Beira-Mar, Dead Dead Demon’s Dededede Destruction, What a Wonderful World!, Decadência e Heroes, enquanto A Cidade da Luz saiu pela Panini. Mujina Into the Deep será o décimo (!) mangá do autor publicado no Brasil.",
-          "runs": [
-            {
-              "text": "A trajetória de Asano no mercado brasileiro começou em 2011, com "
-            },
-            {
-              "text": "Solanin",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", lançado em dois volumes pela "
-            },
-            {
-              "text": "L&PM Editores",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e republicado pela mesma editora em uma edição especial de volume único em 2023. Desde então, seus mangás também chegaram ao país por outras editoras. A JBC publicou o já mencionado "
-            },
-            {
-              "text": "Boa Noite Punpun",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Nijigahara Holograph",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Garota à Beira-Mar",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/02/10/critica-garota-a-beira-mar-o-lado-complexo-e-obscuro-da-adolescencia-pelos-olhos-de-inio-asano/"
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Dead Dead Demon’s Dededede Destruction",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "What a Wonderful World!",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Decadência",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Heroes",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2024/07/06/critica-heroes-editora-jbc/"
-            },
-            {
-              "text": ", enquanto "
-            },
-            {
-              "text": "A Cidade da Luz",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " saiu pela "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". "
-            },
-            {
-              "text": "Mujina Into the Deep",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " será o décimo (!) mangá do autor publicado no Brasil."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Iniciada em 2023, Mujina Into the Deep é uma série seinen ambientada em um futuro próximo e distópico, no qual os direitos humanos deixam de ser garantidos e passam a ser comercializados. As pessoas que abrem mão desses direitos são chamadas de mujina e vivem à margem da sociedade tradicional. A protagonista é Ubume, uma mujina que trabalha como assassina.",
-          "runs": [
-            {
-              "text": "Iniciada em 2023, "
-            },
-            {
-              "text": "Mujina Into the Deep",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é uma série "
-            },
-            {
-              "text": "seinen",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ambientada em um futuro próximo e distópico, no qual os direitos humanos deixam de ser garantidos e passam a ser comercializados. As pessoas que abrem mão desses direitos são chamadas de "
-            },
-            {
-              "text": "mujina",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e vivem à margem da sociedade tradicional. A protagonista é Ubume, uma "
-            },
-            {
-              "text": "mujina",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " que trabalha como assassina."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além de Inio Asano, a CCXP26 também terá a participação do mangaká Shintaro Kago, conhecido por seu trabalho com o estilo ero guro.",
-          "runs": [
-            {
-              "text": "Além de Inio Asano, a CCXP26 "
-            },
-            {
-              "text": "também terá a participação do mangaká Shintaro Kago",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/06/02/shintaro-kago-mestre-do-ero-guro-e-confirmado-na-ccxp26/"
-            },
-            {
-              "text": ", conhecido por seu trabalho com o estilo "
-            },
-            {
-              "text": "ero guro.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Babel, no Estadão",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Babel, no ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.estadao.com.br/cultura/babel/inio-asano-autor-do-manga-boa-noite-punpun-vira-ao-brasil-para-a-ccxp26/?srsltid=AYCX9vKqDw_g3qcj5ESuN4cL5qskaChHixbIN1wiYUpAHV5BMeK-kFzD"
-            },
-            {
-              "text": "Estadão",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.estadao.com.br/cultura/babel/inio-asano-autor-do-manga-boa-noite-punpun-vira-ao-brasil-para-a-ccxp26/?srsltid=AYCX9vKqDw_g3qcj5ESuN4cL5qskaChHixbIN1wiYUpAHV5BMeK-kFzD"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-23T16:50:38.000Z",
-      "updatedAt": "2026-10-23T16:51:49.000Z",
-      "expiresAt": "2026-10-30T16:50:38.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/23/inio-asano-autor-de-boa-noite-punpun-e-solanin-vem-ao-brasil-para-a-ccxp26",
-          "publishedAt": "2026-10-23T16:50:38.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 414,
-      "qualityScore": 0.931,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-54e81f84",
-      "slug": "sessao-da-tarde-exibe-power-rangers-e-bunny-drop-na-proxima-semana-at-jbox-54e81f84",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Sessão da Tarde exibe ‘Power Rangers’ e ‘Bunny Drop’ na próxima semana (AT)",
-      "originalTitle": "Sessão da Tarde exibe ‘Power Rangers’ e ‘Bunny Drop’ na próxima semana (AT)",
-      "summary": "A TV Globo reexibe na próxima quinta-feira (29), na Sessão da Tarde, o filme Power Rangers (2017). A transmissão acontecerá na esteira da recente exibição da TV Globinho especial no dia 10 de outubro, que relembrou clássicos da programação infantil da emissora, onde os heróis coloridos brilhavam nas manhãs durante os anos 2000.",
-      "author": "Matheus Mossmann",
-      "tags": [
-        "Cinema",
-        "Mangá",
-        "Tokusatsu",
-        "TV",
-        "bunny drop filme",
-        "filme dos power rangers",
-        "power rangers 2017",
-        "power rangers sessao da tarde",
-        "usagi drop filme",
-        "usagi drop sessão da tarde"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/23/sessao-da-tarde-exibe-power-rangers-e-bunny-drop-na-proxima-semana",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/23/sessao-da-tarde-exibe-power-rangers-e-bunny-drop-na-proxima-semana",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/powerangersdrop.png",
-      "mediaQuery": "Sessão da Tarde exibe ‘Power Rangers’ e ‘Bunny Drop’ na próxima semana (AT)",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/PkjKyh92fEk"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/99niv1tb8dY"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "heading",
-          "text": "Atualização (26/10): A programação anunciada na matéria original indicava Power Rangers no dia 26 e Bunny Drop no dia 29. Porém, a Globo alterou a grade posteriormente, invertendo as datas. A matéria abaixo foi alterada com as novas datas.",
-          "runs": [
-            {
-              "text": "Atualização (26/10): A programação anunciada na matéria original indicava ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Power Rangers",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " no dia 26 e ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Bunny Drop",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " no dia 29. Porém, a Globo alterou a grade posteriormente, invertendo as datas. A matéria abaixo foi alterada com as novas datas.",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 4
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "A TV Globo reexibe na próxima quinta-feira (29), na Sessão da Tarde, o filme Power Rangers (2017). A transmissão acontecerá na esteira da recente exibição da TV Globinho especial no dia 10 de outubro, que relembrou clássicos da programação infantil da emissora, onde os heróis coloridos brilhavam nas manhãs durante os anos 2000.",
-          "runs": [
-            {
-              "text": "A TV Globo reexibe na próxima quinta-feira (29), na "
-            },
-            {
-              "text": "Sessão da Tarde",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", o filme "
-            },
-            {
-              "text": "Power Rangers",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " (2017). A transmissão acontecerá na esteira da "
-            },
-            {
-              "text": "recente exibição da ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/10/07/com-digimon-e-dragon-ball-z-tv-globinho-ganha-exibicao-especial-neste-sabado/"
-            },
-            {
-              "text": "TV Globinho",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/10/07/com-digimon-e-dragon-ball-z-tv-globinho-ganha-exibicao-especial-neste-sabado/"
-            },
-            {
-              "text": " especial no dia 10 de outubro, que relembrou clássicos da programação infantil da emissora, onde os heróis coloridos brilhavam nas manhãs durante os anos 2000."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Dirigido por Dean Israelite, o longa de 2017 tentou revitalizar a franquia para o cinema com uma abordagem mais madura. Na trama, cinco adolescentes são transformados nos Power Rangers e, orientados por Zordon, precisam deter Rita Repulsa, uma Ranger desertora que deseja destruir o mundo. Apesar dessa ambição, a produção foi um fracasso comercial de bilheteria, o que interrompeu os planos de sequências.",
-          "runs": [
-            {
-              "text": "Dirigido por Dean Israelite, o longa de 2017 tentou revitalizar a franquia para o cinema com uma abordagem mais madura. Na trama, cinco adolescentes são transformados nos Power Rangers e, orientados por Zordon, precisam deter Rita Repulsa, uma Ranger desertora que deseja destruir o mundo. Apesar dessa ambição, a produção foi um fracasso comercial de bilheteria, o que interrompeu os planos de sequências."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O elenco original conta com Bryan Cranston, Elizabeth Banks, Bill Hader, Becky G, RJ Cyler, Dacre Montgomery, Naomi Scott e Ludi Lin. A versão brasileira tem no time de dubladores Cadu Paschoal, Pamella Rodrigues, Philippe Maia, Bruna Laynes, Fabrício Vila Verde, Luiz Carlos Persy, Charles Emmanuel e Miriam Ficher.",
-          "runs": [
-            {
-              "text": "O elenco original conta com Bryan Cranston, Elizabeth Banks, Bill Hader, Becky G, RJ Cyler, Dacre Montgomery, Naomi Scott e Ludi Lin. A versão brasileira tem no time de dubladores Cadu Paschoal, Pamella Rodrigues, Philippe Maia, Bruna Laynes, Fabrício Vila Verde, Luiz Carlos Persy, Charles Emmanuel e Miriam Ficher."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=PkjKyh92fEk",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/PkjKyh92fEk"
-        },
-        {
-          "type": "heading",
-          "text": "Filme japonês na segunda-feira",
-          "runs": [
-            {
-              "text": "Filme japonês na segunda-feira",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "A semana da Sessão da Tarde também reserva uma surpresa para os fãs de produções asiáticas. Na segunda-feira (26), às 15h30, a Globo exibirá o live-action japonês Bunny Drop: Surpresas da Vida. Distribuído no Brasil pela Sato Company, o longa conta com versão brasileira dublada em estúdios de Campinas.",
-          "runs": [
-            {
-              "text": "A semana da "
-            },
-            {
-              "text": "Sessão da Tarde",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " também reserva uma surpresa para os fãs de produções asiáticas. Na segunda-feira (26), às 15h30, a Globo exibirá o live-action japonês "
-            },
-            {
-              "text": "Bunny Drop: Surpresas da Vida",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ". Distribuído no Brasil pela Sato Company, o longa conta com versão brasileira dublada em estúdios de Campinas."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O enredo acompanha Daikichi (Ken’ichi Matsuyama), um jovem solteiro de 27 anos que retorna para a casa de sua família para o funeral de seu avô. Lá, ele descobre que o homem teve uma filha fora do casamento, uma garota de seis anos. Enquanto o resto de sua família vê a menina como um problema e pensa em enviá-la para adoção, Daikichi decide assumir a responsabilidade de criá-la. A jovem Rin é interpretada pela atriz mirim Mana Ashida.",
-          "runs": [
-            {
-              "text": "O enredo acompanha Daikichi (Ken’ichi Matsuyama), um jovem solteiro de 27 anos que retorna para a casa de sua família para o funeral de seu avô. Lá, ele descobre que o homem teve uma filha fora do casamento, uma garota de seis anos. Enquanto o resto de sua família vê a menina como um problema e pensa em enviá-la para adoção, Daikichi decide assumir a responsabilidade de criá-la. A jovem Rin é interpretada pela atriz mirim Mana Ashida."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A produção é baseada no mangá Usagi Drop, de Yumi Unita, que chegou a ser publicado no Brasil em 10 volumes pela editora NewPOP. A obra original carrega certa notoriedade por ter um final bastante polêmico nos quadrinhos, apresentando um salto temporal onde a dinâmica de pai e filha adotivos evolui para um controverso envolvimento romântico. Para quem busca uma história mais leve e “familiar” na TV aberta, o live-action adapta apenas a primeira fase da obra, focando nos desafios da paternidade inesperada e da relação pura durante a infância da menina.",
-          "runs": [
-            {
-              "text": "A produção é baseada no mangá "
-            },
-            {
-              "text": "Usagi Drop",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", de Yumi Unita, que chegou a ser publicado no Brasil em 10 volumes pela editora NewPOP. A obra original carrega certa notoriedade por ter um final bastante polêmico nos quadrinhos, apresentando um salto temporal onde a dinâmica de pai e filha adotivos evolui para um controverso envolvimento romântico. Para quem busca uma história mais leve e “familiar” na TV aberta, o live-action adapta apenas a primeira fase da obra, focando nos desafios da paternidade inesperada e da relação pura durante a infância da menina."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=99niv1tb8dY",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/99niv1tb8dY"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: TV Globo",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "TV Globo",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://redeglobo.globo.com/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-23T16:37:50.000Z",
-      "updatedAt": "2026-10-26T19:00:58.000Z",
-      "expiresAt": "2026-10-30T16:37:50.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/23/sessao-da-tarde-exibe-power-rangers-e-bunny-drop-na-proxima-semana",
-          "publishedAt": "2026-10-23T16:37:50.000Z",
-          "author": "Matheus Mossmann"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 447,
-      "qualityScore": 0.936,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 2,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-45ae8297",
-      "slug": "the-ghost-in-the-shell-estudio-science-saru-confirma-novo-anime-jbox-45ae8297",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "The Ghost in the Shell: Estúdio Science SARU confirma novo animê",
-      "originalTitle": "The Ghost in the Shell: Estúdio Science SARU confirma novo animê",
-      "summary": "Dando sequência à adaptação do mangá original, o estúdio Science SARU anunciou a produção de mais um animê de The Ghost in the Shell. Por enquanto não foram divulgados detalhes sobre a nova produção.",
-      "author": "Teke",
-      "tags": [
-        "Anime",
-        "2ª temporada de Ghost in the Shell",
-        "continuação de ghost in the shell",
-        "Ghost in the Shell",
-        "Koukaku Kidoutai",
-        "science saru"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/23/the-ghost-in-the-shell-estudio-science-saru-confirma-novo-anime",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/23/the-ghost-in-the-shell-estudio-science-saru-confirma-novo-anime",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/06/ghost-in-the-shell-novo-anime-destacada-motoko.jpg",
-      "mediaQuery": "The Ghost in the Shell: Estúdio Science SARU confirma novo animê",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/ghost-in-the-shell-novo-anime-continuacao.jpg",
-          "alt": "imagem: pôster do novo animê de 'Ghost in the Shell'.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/yedJOylFOtg"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Dando sequência à adaptação do mangá original, o estúdio Science SARU anunciou a produção de mais um animê de The Ghost in the Shell. Por enquanto não foram divulgados detalhes sobre a nova produção.",
-          "runs": [
-            {
-              "text": "Dando sequência à adaptação do mangá original, o estúdio "
-            },
-            {
-              "text": "Science SARU",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " anunciou a produção de mais um animê de "
-            },
-            {
-              "text": "The Ghost in the Shell",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ". Por enquanto não foram divulgados detalhes sobre a nova produção."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira o primeiro pôster:",
-          "runs": [
-            {
-              "text": "Confira o primeiro pôster:"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/ghost-in-the-shell-novo-anime-continuacao.jpg",
-          "alt": "imagem: pôster do novo animê de 'Ghost in the Shell'."
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Divulgação",
-          "runs": [
-            {
-              "text": "Imagem: Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A nova adaptação de Ghost in the Shell estreou no último dia 7 de julho. Mokochan, assistente de direção de Dan Da Dan, fez sua estreia no cargo de diretora principal no animê e Toh Enjou (mais reconhecido no Japão como romancista de ficção científica) assina o roteiro. A série fez uma adaptação completa do mangá original, que é de volume único, porém o título conta com continuações, que devem servir de referência para a nova produção.",
-          "runs": [
-            {
-              "text": "A nova adaptação de "
-            },
-            {
-              "text": "Ghost in the Shell",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " estreou no último dia 7 de julho. "
-            },
-            {
-              "text": "Mokochan",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", assistente de direção de "
-            },
-            {
-              "text": "Dan Da Dan",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", fez sua estreia no cargo de diretora principal no animê e "
-            },
-            {
-              "text": "Toh Enjou",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (mais reconhecido no Japão como romancista de ficção científica) assina o roteiro. A série fez uma adaptação completa do mangá original, que é de volume único, porém o título conta com continuações, que devem servir de referência para a nova produção."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A primeira temporada contou ao todo com 10 episódios, disponíveis com dublagem e legendas em português no Prime Video, serviço de streaming de vídeos da Amazon.",
-          "runs": [
-            {
-              "text": "A primeira temporada contou ao todo com 10 episódios, disponíveis com "
-            },
-            {
-              "text": "dublagem e legendas em português no ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Prime Video",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.primevideo.com/-/pt/detail/0MRWXUDE3L303XFEJRNWB20S3O"
-            },
-            {
-              "text": ", serviço de streaming de vídeos da Amazon."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "▶️ Clique aqui e confira a nossa crítica.",
-          "runs": [
-            {
-              "text": "▶️ Clique aqui e confira a nossa crítica.",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/09/22/critica-the-ghost-in-the-shell-2026/"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=yedJOylFOtg",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/yedJOylFOtg"
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Science SARU (X/Twitter)",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Science SARU (X/Twitter)",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://x.com/sciencesaru/status/2113586733204054339"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-23T16:06:41.000Z",
-      "updatedAt": "2026-10-23T16:09:07.000Z",
-      "expiresAt": "2026-10-30T16:06:41.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/23/the-ghost-in-the-shell-estudio-science-saru-confirma-novo-anime",
-          "publishedAt": "2026-10-23T16:06:41.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 1,
-      "wordCount": 172,
-      "qualityScore": 0.903,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     }
