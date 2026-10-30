@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T19:37:19.574Z",
+  "generatedAt": "2026-10-30T23:30:44.863Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 36,
+      "count": 38,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,1117 @@
     }
   ],
   "stats": {
-    "collected": 46,
-    "grouped": 25,
-    "published": 25,
-    "newStories": 25,
-    "fullArticles": 25,
+    "collected": 48,
+    "grouped": 26,
+    "published": 26,
+    "newStories": 26,
+    "fullArticles": 26,
     "previewArticles": 0,
-    "avgWords": 362,
-    "withHeroImage": 25,
-    "withOrderedMedia": 25,
+    "avgWords": 404,
+    "withHeroImage": 26,
+    "withOrderedMedia": 26,
     "skippedTranslation": 0,
     "skippedQuality": 19,
-    "durationMs": 2456
+    "durationMs": 3018
   },
   "items": [
+    {
+      "id": "jbox-f048fff2",
+      "slug": "critica-o-11-tripulante-editora-jbc-jbox-f048fff2",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Crítica | O 11º Tripulante | Editora JBC",
+      "originalTitle": "Crítica | O 11º Tripulante | Editora JBC",
+      "summary": "Publicado pela primeira vez em 1975, O 11º Tripulante! (Juuichinin Iru!) narra a história de 10 cadetes de diferentes espécies da galáxia que estão prestando sua prova final para se tornarem alunos da Universidade Espacial. O teste é ocupar uma nave espacial desativada e sobreviver o maior tempo possível com os recursos da própria nave. Contudo, quando as escotilhas se fecham, os 10 cadetes percebem que há um 11º tripulante.",
+      "author": "Andreza Silva",
+      "tags": [
+        "Mangá",
+        "Resenha",
+        "11º tripulante é bom?",
+        "Juuichinin Iru!",
+        "mangas jbc",
+        "moto hagio",
+        "O 11º Tripulante"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/30/critica-o-11o-tripulante-editora-jbc",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/30/critica-o-11o-tripulante-editora-jbc",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/jbox-critica-destacada-11tripulante.jpg",
+      "mediaQuery": "Crítica | O 11º Tripulante | Editora JBC",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/11tripulante-ilustracao.jpg",
+          "alt": "imagem: ilustração de 11º tripulante",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/11tripulante-cena1.jpg",
+          "alt": "imagem: cena do mangá o 11º tripulante",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/11tripulante-cena2.jpg",
+          "alt": "imagem: cena do mangá o 11º tripulante",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/11tripulante-cena3.jpg",
+          "alt": "imagem: cena do mangá o 11º tripulante",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/o11tripulantecapa.jpg",
+          "alt": "",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Publicado pela primeira vez em 1975, O 11º Tripulante! (Juuichinin Iru!) narra a história de 10 cadetes de diferentes espécies da galáxia que estão prestando sua prova final para se tornarem alunos da Universidade Espacial. O teste é ocupar uma nave espacial desativada e sobreviver o maior tempo possível com os recursos da própria nave. Contudo, quando as escotilhas se fecham, os 10 cadetes percebem que há um 11º tripulante. Daí em diante, eles precisam não apenas sobreviver na nave à deriva, mas também descobrir quem é o passageiro e quais seus planos para os demais tripulantes.",
+          "runs": [
+            {
+              "text": "Publicado pela primeira vez em 1975, "
+            },
+            {
+              "text": "O 11º Tripulante! ",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "("
+            },
+            {
+              "text": "Juuichinin Iru!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") narra a história de 10 cadetes de diferentes espécies da galáxia que estão prestando sua prova final para se tornarem alunos da Universidade Espacial. O teste é ocupar uma nave espacial desativada e sobreviver o maior tempo possível com os recursos da própria nave. Contudo, quando as escotilhas se fecham, os 10 cadetes percebem que há um 11º tripulante. Daí em diante, eles precisam não apenas sobreviver na nave à deriva, mas também descobrir quem é o passageiro e quais seus planos para os demais tripulantes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Conhecido como um clássico da ficção científica, O 11º Tripulante! é uma obra de Moto Hagio, considerada uma pioneira dos mangás shoujo. No Brasil o quadrinho foi publicado pela JBC em um volume único contendo tanto a primeira história, “O 11º Tripulante”, quanto uma continuação intitulada “Horizonte do Leste, Eternidade do Oeste”. A edição brasileira conta com algumas páginas coloridas e também um minipôster. No que diz respeito aos aspectos editoriais, não podemos negar que se trata de uma bonita edição.",
+          "runs": [
+            {
+              "text": "Conhecido como um clássico da ficção científica, "
+            },
+            {
+              "text": "O 11º Tripulante!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é uma obra de "
+            },
+            {
+              "text": "Moto Hagio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", considerada uma"
+            },
+            {
+              "text": " pioneira dos mangás ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "shoujo",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". No Brasil o quadrinho foi publicado pela JBC em um volume único contendo tanto a primeira história,"
+            },
+            {
+              "text": " “O 11º Tripulante”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", quanto uma continuação intitulada"
+            },
+            {
+              "text": " “Horizonte do Leste, Eternidade do Oeste”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". A edição brasileira conta com algumas páginas coloridas e também um minipôster. No que diz respeito aos aspectos editoriais, não podemos negar que se trata de uma bonita edição."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/11tripulante-ilustracao.jpg",
+          "alt": "imagem: ilustração de 11º tripulante"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/Moto Hagio",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/Moto Hagio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama espacial de Moto Hagio é recheada de suspense e mistério — afinal, existe uma pessoa extra dentro da nave espacial e há toda uma movimentação das personagens para descobrir quem é essa 11ª pessoa e por que ela se infiltrou na prova da Universidade Espacial —, mas talvez os aspectos mais interessantes do mangá sejam as discussões sobre gênero, classe e humanidade.",
+          "runs": [
+            {
+              "text": "A trama espacial de Moto Hagio é recheada de suspense e mistério — afinal, existe uma pessoa extra dentro da nave espacial e há toda uma movimentação das personagens para descobrir quem é essa 11ª pessoa e por que ela se infiltrou na prova da Universidade Espacial —, mas talvez os aspectos mais interessantes do mangá sejam as "
+            },
+            {
+              "text": "discussões sobre gênero, classe e humanidade",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Dentro do espaço da nave à deriva são apresentadas 11 personagens de diferentes planetas, por vezes situados em galáxias distintas, com histórias e culturas que diferem umas das outras. Existem planetas mais centrais e planetas mais periféricos, e fica nítido muito rapidamente que o olhar dos habitantes dos planetas centrais para os habitantes de planetas periféricos está carregado de pressupostos e até mesmo de preconceito.",
+          "runs": [
+            {
+              "text": "Dentro do espaço da nave à deriva são apresentadas 11 personagens de diferentes planetas, por vezes situados em galáxias distintas, com histórias e culturas que diferem umas das outras. Existem planetas mais centrais e planetas mais periféricos, e fica nítido muito rapidamente que o olhar dos habitantes dos planetas centrais para os habitantes de planetas periféricos está carregado de pressupostos e até mesmo de preconceito."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Enquanto as personagens tentam descobrir quem é a pessoa extra, ao mesmo tempo em que resolvem as questões que surgem dentro da nave, são formadas relações de maior ou menor proximidade, de amizade e de inimizade, que às vezes culminam em discussões sobre algum tema específico. Quando essas discussões são feitas, as personagens vão dizendo como certa questão é vista ou como lidam com ela em seu planeta e nessas horas são tratados o modo de organização social dessas sociedades, as questões econômicas, a equidade de gênero etc. Há uma tentativa notável de tratar de diversidade cultural nessa história, é um aspecto bastante interessante da construção de mundo feita pela Hagio.",
+          "runs": [
+            {
+              "text": "Enquanto as personagens tentam descobrir quem é a pessoa extra, ao mesmo tempo em que resolvem as questões que surgem dentro da nave, são formadas relações de maior ou menor proximidade, de amizade e de inimizade, que às vezes culminam em discussões sobre algum tema específico. Quando essas discussões são feitas, as personagens vão dizendo como certa questão é vista ou como lidam com ela em seu planeta e nessas horas são tratados o modo de organização social dessas sociedades, as questões econômicas, a equidade de gênero etc. Há uma tentativa notável de tratar de diversidade cultural nessa história, é um aspecto bastante interessante da construção de mundo feita pela Hagio."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/11tripulante-cena1.jpg",
+          "alt": "imagem: cena do mangá o 11º tripulante"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/Moto Hagio/JBC",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/Moto Hagio/JBC"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entretanto, de todos os temas que perpassam O 11º Tripulante!, o que é debatido de forma mais potente é a questão de gênero. A princípio, talvez pareça que a Moto Hagio trata nessa história de papéis de gênero, mas, na verdade, ela dá um passo além.",
+          "runs": [
+            {
+              "text": "Entretanto, de todos os temas que perpassam "
+            },
+            {
+              "text": "O 11º Tripulante!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o que é debatido de forma mais potente é"
+            },
+            {
+              "text": " a questão de gênero",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A princípio, talvez pareça que a Moto Hagio trata nessa história de papéis de gênero, mas, na verdade, ela dá um passo além."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em O 11º Tripulante! há várias personagens interessantes, mas por hora vamos tratar de apenas duas: Frolbericheri Frol e Tadathos Lane. O primeiro, um exemplar de garoto feminino; o segundo, o protagonista do mangá. Frol e Tada desenvolvem uma relação bastante interessante ao longo da narrativa, mas antes de falar dela, o mais importante é investigar de que modo ela se constrói.",
+          "runs": [
+            {
+              "text": "Em "
+            },
+            {
+              "text": "O 11º Tripulante!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " há várias personagens interessantes, mas por hora vamos tratar de apenas duas:"
+            },
+            {
+              "text": " Frolbericheri Frol",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e"
+            },
+            {
+              "text": " Tadathos Lane",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O primeiro, um exemplar de garoto feminino; o segundo, o protagonista do mangá. Frol e Tada desenvolvem uma relação bastante interessante ao longo da narrativa, mas antes de falar dela, o mais importante é investigar de que modo ela se constrói."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Desde o primeiro momento em que aparece, Frol é comparado a uma mulher. Afirmam que ele é uma mulher, depois perguntam se ele é uma mulher, frequentemente dizem a ele que ele parece uma mulher. Frol responde a todos esses comentários com uma fúria imensa, afirmando categoricamente que ele é um homem. Independentemente de seu rosto delicado, seu corpo magro e esguio, sua pouca massa muscular e até seu aspecto “frágil”, ele continua se ofendendo cada vez que o comparam a uma garota.",
+          "runs": [
+            {
+              "text": "Desde o primeiro momento em que aparece, Frol é comparado a uma mulher. Afirmam que ele é uma mulher, depois perguntam se ele é uma mulher, frequentemente dizem a ele que ele parece uma mulher. Frol responde a todos esses comentários com uma fúria imensa, afirmando categoricamente que ele é um homem. Independentemente de seu rosto delicado, seu corpo magro e esguio, sua pouca massa muscular e até seu aspecto “frágil”, ele continua se ofendendo cada vez que o comparam a uma garota."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em contrapartida, no início da história Frol faz vários comentários sobre o corpo de Tadathos em comparação ao dele: a altura, os músculos, como se tentasse entender por que o corpo de Tada é tão mais masculino do que o dele. Em meio a toda essa interação, as duas personagens criam uma amizade que vai se aprofundando lentamente.",
+          "runs": [
+            {
+              "text": "Em contrapartida, no início da história Frol faz vários comentários sobre o corpo de Tadathos em comparação ao dele: a altura, os músculos, como se tentasse entender por que o corpo de Tada é tão mais masculino do que o dele. Em meio a toda essa interação, as duas personagens criam uma amizade que vai se aprofundando lentamente."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/11tripulante-cena2.jpg",
+          "alt": "imagem: cena do mangá o 11º tripulante"
+        },
+        {
+          "type": "paragraph",
+          "text": "Em meio aos acontecimentos do enredo principal — a descoberta de um vírus que pode levar todos os tripulantes à morte, por exemplo — vêm à tona o fato de que Frol não é um homem, mas tampouco é uma mulher. Nesse momento, ele explica seu desejo de virar homem e dentre todas as coisas que ele diz sobre a dinâmica de homens e mulheres em seu planeta, uma delas soa como uma pedra arremessada contra vidro: “Mulheres são bonitas em aparência… mas é só isso.”",
+          "runs": [
+            {
+              "text": "Em meio aos acontecimentos do enredo principal — a descoberta de um vírus que pode levar todos os tripulantes à morte, por exemplo — vêm à tona o fato de que Frol não é um homem, mas tampouco é uma mulher. Nesse momento, ele explica seu desejo de virar homem e dentre todas as coisas que ele diz sobre a dinâmica de homens e mulheres em seu planeta, uma delas soa como uma pedra arremessada contra vidro: "
+            },
+            {
+              "text": "“Mulheres são bonitas em aparência… mas é só isso.”",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No planeta de Frol, mulheres são destinadas ao casamento, ao cuidado dos filhos e à beleza… e é só isso. O respeito, as bajulações, as tomadas de decisões são destinados apenas aos homens. Soa bastante familiar… E quando o mangá saiu, com certeza soava bem familiar para um Japão pós-guerra que no passado havia investido muito em propaganda para disseminar por todo país os papéis destinados a homens e mulheres na criação de uma grande nação.",
+          "runs": [
+            {
+              "text": "No planeta de Frol, mulheres são destinadas ao casamento, ao cuidado dos filhos e à beleza… e é só isso. O respeito, as bajulações, as tomadas de decisões são destinados apenas aos homens. Soa bastante familiar… E quando o mangá saiu, com certeza soava bem familiar para um Japão pós-guerra que no passado havia investido muito em propaganda para disseminar por todo país os papéis destinados a homens e mulheres na criação de uma grande nação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entretanto, o caso específico de Frol coloca outra camada na discussão. Frol não é uma mulher indignada com o lugar das mulheres em seu planeta, ele é uma existência que teme se tornar mulher, que rejeita sua possível transformação em mulher. Ele está numa posição de algo que antecede o próprio gênero, alguém que por um período de sua vida está livre da generificação e que sabendo que em algum momento essa generificação vai acontecer, opta pelo destino que lhe parece mais valoroso e admirável. Frol não é nem mesmo um intersexo, ele é a ausência física do próprio gênero, mas que almeja o masculino.",
+          "runs": [
+            {
+              "text": "Entretanto, o caso específico de Frol coloca outra camada na discussão. Frol não é uma mulher indignada com o lugar das mulheres em seu planeta, ele é uma existência que teme se tornar mulher, que rejeita sua possível transformação em mulher. Ele está numa posição de algo que antecede o próprio gênero, alguém que por um período de sua vida está livre da generificação e que sabendo que em algum momento essa generificação vai acontecer, opta pelo destino que lhe parece mais valoroso e admirável. Frol não é nem mesmo um intersexo, ele é a ausência física do próprio gênero, mas que almeja o masculino."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ao se definir como homem, Frol acaba sendo tratado como homem, pelo menos em alguns momentos. E é nessa parte que a relação dele e de Tada se torna interessante. Os dois acabam desenvolvendo um relacionamento amoroso e, embora inicialmente o romance comece com Frol decidindo se tornar mulher, o envolvimento continua mesmo após ele mudar de ideia. O noivado dos dois não é o foco da narrativa, mas não se pode negar que Hagio fez uma escolha corajosa ao criar não apenas o relacionamento, mas toda própria existência de Frol.",
+          "runs": [
+            {
+              "text": "Ao se definir como homem, Frol acaba sendo tratado como homem, pelo menos em alguns momentos. E é nessa parte que a relação dele e de Tada se torna interessante. Os dois acabam desenvolvendo um relacionamento amoroso e, embora inicialmente o romance comece com Frol decidindo se tornar mulher, o envolvimento continua mesmo após ele mudar de ideia. O noivado dos dois não é o foco da narrativa, mas não se pode negar que Hagio fez uma escolha corajosa ao criar não apenas o relacionamento, mas toda própria existência de Frol."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/11tripulante-cena3.jpg",
+          "alt": "imagem: cena do mangá o 11º tripulante"
+        },
+        {
+          "type": "paragraph",
+          "text": "Por esse motivo, não é exagero dizer que O 11º Tripulante! se tornou um clássico não apenas pela trama central de ficção científica, mas também pelos temperos adicionados por Moto Hagio.",
+          "runs": [
+            {
+              "text": "Por esse motivo, não é exagero dizer que O 11º Tripulante! se tornou um clássico não apenas pela trama central de ficção científica, mas também pelos temperos adicionados por Moto Hagio."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já a continuação do mangá, Horizonte do Leste, Eternidade do Oeste, trata-se de uma trama política envolvendo um conflito entre dois planetas irmãos. Com direito a golpe de estado, fake news, manipulação da opinião pública, conspiração e interferência de grandes corporações, o mangá desvela por meio de uma história de aventura a como os jogos de poder e a interferência de grandes potências econômicas podem fabricar narrativas, aumentando pequenos conflitos à máxima potência e desgraçando a vida de muita gente no processo.",
+          "runs": [
+            {
+              "text": "Já a continuação do mangá, "
+            },
+            {
+              "text": "Horizonte do Leste, Eternidade do Oeste",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", trata-se de uma trama política envolvendo um conflito entre dois planetas irmãos. Com direito a golpe de estado, "
+            },
+            {
+              "text": "fake news",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", manipulação da opinião pública, conspiração e interferência de grandes corporações, o mangá desvela por meio de uma história de aventura a como os jogos de poder e a interferência de grandes potências econômicas podem fabricar narrativas, aumentando pequenos conflitos à máxima potência e desgraçando a vida de muita gente no processo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Assim, O 11º Tripulante! se mostra não só uma instigante trama de ficção científica e mistério, mas também um terreno fértil para se inserir discussões sobre diferentes aspectos sociais como classe, gênero, diferenças culturais etc. As narrativas contidas no volume único brasileiro entregam tramas que instigam o leitor, sem deixar de tocar em temas relevantes tanto no período em que o mangá foi publicado inicialmente quanto na contemporaneidade. Desse modo, percebe-se que Moto Hagio se tornou um importante nome do mangá não somente por “fazer algo primeiro”, mas pela ousadia e delicadeza de usar suas histórias para ir além do entretenimento e ter discussões que, mesmo hoje, nem todos os autores estão dispostos a tocar.",
+          "runs": [
+            {
+              "text": "Assim, "
+            },
+            {
+              "text": "O 11º Tripulante!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " se mostra não só uma instigante trama de ficção científica e mistério, mas também um terreno fértil para se inserir discussões sobre diferentes aspectos sociais como classe, gênero, diferenças culturais etc. As narrativas contidas no volume único brasileiro entregam tramas que instigam o leitor, sem deixar de tocar em temas relevantes tanto no período em que o mangá foi publicado inicialmente quanto na contemporaneidade. Desse modo, percebe-se que Moto Hagio se tornou um importante nome do mangá não somente por “fazer algo primeiro”, mas pela ousadia e delicadeza de usar suas histórias para ir além do entretenimento e ter discussões que, mesmo hoje, nem todos os autores estão dispostos a tocar."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "Galeria de fotos",
+          "runs": [
+            {
+              "text": "Galeria de fotos",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira no álbum abaixo alguns registros da edição nacional de O 11º Tripulante! pela Editora JBC:",
+          "runs": [
+            {
+              "text": "Confira no álbum abaixo alguns registros da edição nacional de"
+            },
+            {
+              "text": " O 11º Tripulante!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " pela Editora JBC:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Se interessou? Compre pelos nossos links*:",
+          "runs": [
+            {
+              "text": "Se interessou? ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "Compre pelos nossos links*:",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/o11tripulantecapa.jpg"
+        },
+        {
+          "type": "paragraph",
+          "text": "Volume único",
+          "runs": [
+            {
+              "text": "Volume único",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://link.amazon/B0d9M8rNN"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Essa resenha foi feita com base na edição cedida como material de divulgação para a imprensa pela editora JBC, que disponibilizou o volume ao JBox.",
+          "runs": [
+            {
+              "text": "Essa resenha foi feita com base na edição cedida como material de divulgação para a imprensa pela editora JBC, que disponibilizou o volume ao JBox.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+          "runs": [
+            {
+              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "*O JBox participa do programa de parceria da Amazon, podendo ganhar um valor em cima das compras realizadas a partir dos links do site. Contudo, o JBox não tem responsabilidade sobre possíveis erros presentes em recursos integrados ao site,",
+          "runs": [
+            {
+              "text": "*O JBox participa do programa de parceria da Amazon, podendo ganhar um valor em cima das compras realizadas a partir dos links do site. Contudo, o JBox não tem responsabilidade sobre possíveis erros presentes em recursos integrados ao site,",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-30T20:53:47.000Z",
+      "updatedAt": "2026-10-30T20:54:18.000Z",
+      "expiresAt": "2026-11-06T20:53:47.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/30/critica-o-11o-tripulante-editora-jbc",
+          "publishedAt": "2026-10-30T20:53:47.000Z",
+          "author": "Andreza Silva"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 7,
+      "wordCount": 1385,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 32,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 5,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-57ff16ed",
+      "slug": "death-stranding-anime-ganha-primeiro-trailer-jbox-57ff16ed",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Death Stranding: Animê ganha primeiro trailer",
+      "originalTitle": "Death Stranding: Animê ganha primeiro trailer",
+      "summary": "Foi divulgado pela Kojima Productions um trailer de prévia de Death Stranding Isolations, animê inspirado na série de jogos do estúdio. Junto ao vídeo foram divulgadas também novas informações sobre a série. Isolations estreia em 2027, tendo exibição pelo Disney+.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "Games",
+        "death stranding",
+        "Death Stranding Isolations",
+        "Disney",
+        "hideo kojima",
+        "kojima productions"
+      ],
+      "url": "https://www.jbox.com.br/2026/10/30/death-stranding-anime-ganha-primeiro-trailer",
+      "sourceUrl": "https://www.jbox.com.br/2026/10/30/death-stranding-anime-ganha-primeiro-trailer",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/death-stranding-isolations-destacada.jpg",
+      "mediaQuery": "Death Stranding: Animê ganha primeiro trailer",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/death-stranding-isolations-poster.jpg",
+          "alt": "imagem: a protagonista de 'Death Stranding Isolations' ao lado de um robô em pôster do animê. Ao fundo é possível ver uma cratera. Uma fala do pôster se traduz como: \"minha mãe virou uma cratera\".",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/ruIT6Xez6tw"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi divulgado pela Kojima Productions um trailer de prévia de Death Stranding Isolations, animê inspirado na série de jogos do estúdio. Junto ao vídeo foram divulgadas também novas informações sobre a série. Isolations estreia em 2027, tendo exibição pelo Disney+.",
+          "runs": [
+            {
+              "text": "Foi divulgado pela "
+            },
+            {
+              "text": "Kojima Productions",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " um trailer de prévia de "
+            },
+            {
+              "text": "Death Stranding Isolations",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", animê inspirado na série de jogos do estúdio. Junto ao vídeo foram divulgadas também novas informações sobre a série. "
+            },
+            {
+              "text": "Isolations",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "estreia em 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", tendo exibição pelo "
+            },
+            {
+              "text": "Disney+",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira o vídeo e também o pôster divulgado:",
+          "runs": [
+            {
+              "text": "Confira o vídeo e também o pôster divulgado:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=ruIT6Xez6tw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/ruIT6Xez6tw"
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/death-stranding-isolations-poster.jpg",
+          "alt": "imagem: a protagonista de 'Death Stranding Isolations' ao lado de um robô em pôster do animê. Ao fundo é possível ver uma cratera. Uma fala do pôster se traduz como: \"minha mãe virou uma cratera\"."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Kojima Productions",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Kojima Productions"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Death Stranding Isolations tem direção de Takayuki Sano (direção de animação em episódios de Attack on Titan) e roteiros por Tow Ubukata (Psycho-Pass 2 e 3). O design original dos personagens é por Ilya Kuvshinov (Ghost in the Shell: SAC_2045), sendo adaptado para animação por Sayaka Koiso (Jujutsu Kaisen). O estúdio responsável é o E&H production. Hideo Kojima, responsável pelos jogos de Death Stranding, é o produtor executivo do animê.",
+          "runs": [
+            {
+              "text": "Death Stranding Isolations",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " tem direção de "
+            },
+            {
+              "text": "Takayuki Sano",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (direção de animação em episódios de "
+            },
+            {
+              "text": "Attack on Titan",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") e roteiros por "
+            },
+            {
+              "text": "Tow Ubukata",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Psycho-Pass 2",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "3",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). O design original dos personagens é por "
+            },
+            {
+              "text": "Ilya Kuvshinov",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Ghost in the Shell: SAC_2045",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), sendo adaptado para animação por "
+            },
+            {
+              "text": "Sayaka Koiso ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "("
+            },
+            {
+              "text": "Jujutsu Kaisen",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). O estúdio responsável é o "
+            },
+            {
+              "text": "E&H production",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Hideo Kojima, responsável pelos jogos de "
+            },
+            {
+              "text": "Death Stranding",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", é o produtor executivo do animê."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história se passa imediatamente depois que Sam, protagonista do primeiro jogo, reconecta a América do Norte através da Rede Quiral. No entanto, as conexões começam a trazer consequências inesperadas. O roteiro acompanha personagens não conectados diretamente com Sam e a Bridges, sendo protagonizado por uma garota que decidiu cortar seus laços com o mundo lá fora, porém acaba sendo forçada a mergulhar de cabeça nesse local agora desconhecido.",
+          "runs": [
+            {
+              "text": "A história se passa imediatamente depois que Sam, protagonista do primeiro jogo, reconecta a América do Norte através da Rede Quiral. No entanto, as conexões começam a trazer consequências inesperadas. O roteiro acompanha personagens não conectados diretamente com Sam e a Bridges, sendo protagonizado por uma garota que decidiu cortar seus laços com o mundo lá fora, porém acaba sendo forçada a mergulhar de cabeça nesse local agora desconhecido."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Dirigido por Hideo Kojima (Metal Gear) em sua Kojima Productions, o jogo original de Death Stranding traz Sam Bridges em uma jornada para reconstruir um mundo destruído pelo tal “Death Stranding”. O enredo é inspirado em um conto do escritor japonês Kobo Abe para o desenvolvimento dos temas e jogabilidade do título. O primeiro Death Stranding saiu em 2019 para PS4, ganhando uma versão na Steam em 2020 (e posteriormente um Director’s Cut).",
+          "runs": [
+            {
+              "text": "Dirigido por"
+            },
+            {
+              "text": " Hideo Kojima",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Metal Gear",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") em sua Kojima Productions, o jogo original de "
+            },
+            {
+              "text": "Death Stranding",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " traz Sam Bridges em uma jornada para reconstruir um mundo destruído pelo tal “Death Stranding”. O enredo é inspirado em um conto do escritor japonês "
+            },
+            {
+              "text": "Kobo Abe",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " para o desenvolvimento dos temas e jogabilidade do título. O primeiro "
+            },
+            {
+              "text": "Death Stranding",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " saiu em 2019 "
+            },
+            {
+              "text": "para PS4",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2019/05/29/death-stranding-novo-jogo-de-hideo-kojima-ganha-data-de-lancamento/"
+            },
+            {
+              "text": ", ganhando uma versão na Steam em 2020 (e posteriormente um"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Director’s Cut",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2022/01/06/death-stranding-directors-cut-chega-ao-pc-em-2022/"
+            },
+            {
+              "text": ")."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O segundo jogo, Death Stranding 2: On the Beach, foi lançado para o PS5 em junho do ano passado, com direito a uma turnê mundial que passou pelo Brasil. A editora Belas Letras lançou no Brasil artbooks dos dois jogos.",
+          "runs": [
+            {
+              "text": "O segundo jogo, "
+            },
+            {
+              "text": "Death Stranding 2: On the Beach",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", foi lançado para o PS5 em junho do ano passado, com direito a uma turnê mundial "
+            },
+            {
+              "text": "que passou pelo Brasil",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.kojimaproductions.jp/en/death-stranding-world-strand-tour-2"
+            },
+            {
+              "text": ". A editora "
+            },
+            {
+              "text": "Belas Letras",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2025/11/27/artbooks-oficiais-de-death-stranding-devem-ser-lancados-no-brasil/"
+            },
+            {
+              "text": " lançou no Brasil artbooks dos dois jogos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além de Isolations, os jogos tem outras duas adaptações relacionadas em desenvolvimento: um filme animado chamado Death Stranding MOSQUITO, pelo estúdio ABC Animation, e o um filme live-action em parceria com a A24.",
+          "runs": [
+            {
+              "text": "Além de "
+            },
+            {
+              "text": "Isolations",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", os jogos tem outras duas adaptações relacionadas em desenvolvimento: um filme animado chamado "
+            },
+            {
+              "text": "Death Stranding MOSQUITO",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", pelo estúdio ABC Animation, e o um "
+            },
+            {
+              "text": "filme live-action em parceria com a A24",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Kojima Productions (X/Twitter)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Kojima Productions (X/Twitter)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://x.com/KojiPro2015_EN/status/2115979499103780914"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-30T20:26:45.000Z",
+      "updatedAt": "2026-10-30T20:27:17.000Z",
+      "expiresAt": "2026-11-06T20:26:45.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/10/30/death-stranding-anime-ganha-primeiro-trailer",
+          "publishedAt": "2026-10-30T20:26:45.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 357,
+      "qualityScore": 0.986,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-0d25de36",
       "slug": "mercedes-and-the-waning-moon-revela-novos-dubladores-animenew-0d25de36",
@@ -1046,351 +2143,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-bd098909",
-      "slug": "death-stranding-isolations-ganha-trailer-e-novos-detalhes-animenew-bd098909",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Death Stranding Isolations ganha trailer e novos detalhes",
-      "originalTitle": "Death Stranding Isolations ganha trailer e novos detalhes",
-      "summary": "O anime Death Stranding Isolations, ambientado no universo criado por Hideo Kojima, ganhou um novo trailer e informações sobre sua equipe de produção nesta sexta-feira, 30 de outubro.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Death Stranding Isolations",
-        "Hideo Kojima",
-        "Kojima Productions"
-      ],
-      "url": "https://animenew.com.br/death-stranding-isolations-trailer-anime",
-      "sourceUrl": "https://animenew.com.br/death-stranding-isolations-trailer-anime",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Death-Stranding-Isolations-ganha-trailer-e-novos-detalhes.webp",
-      "mediaQuery": "Death Stranding Isolations ganha trailer e novos detalhes",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Death-Stranding-Isolations-anime.webp",
-          "alt": "Death Stranding Isolations",
-          "caption": "©2026 KOJIMA PRODUCTIONS Co., Ltd. / HIDEO KOJIMA."
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/ruIT6Xez6tw"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Death Stranding Isolations, ambientado no universo criado por Hideo Kojima, ganhou um novo trailer e informações sobre sua equipe de produção nesta sexta-feira, 30 de outubro.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Death Stranding Isolations",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", ambientado no universo criado por "
-            },
-            {
-              "text": "Hideo Kojima",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", ganhou um novo trailer e informações sobre sua equipe de produção nesta sexta-feira, 30 de outubro."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
-              "runs": [
-                {
-                  "text": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
-                  "href": "https://animenew.com.br/jujutsu-kaisen-trailer-sombrio-4-temporada"
-                }
-              ]
-            },
-            {
-              "text": "Dragon Ball Super: Beerus sugere Ultra Ego de Vegeta",
-              "runs": [
-                {
-                  "text": "Dragon Ball Super: Beerus sugere Ultra Ego de Vegeta",
-                  "href": "https://animenew.com.br/dragon-ball-super-beerus-ultra-ego-vegeta"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A Kojima Productions divulgou o vídeo promocional, uma nova imagem e detalhes adicionais da série, que tem estreia prevista para 2027 no Disney+.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Kojima Productions",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " divulgou o vídeo promocional, uma nova imagem e detalhes adicionais da série, que tem estreia prevista para 2027 no Disney+."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=ruIT6Xez6tw",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/ruIT6Xez6tw"
-        },
-        {
-          "type": "paragraph",
-          "text": "O roteirista Tow Ubukata, conhecido por trabalhos em Ghost in the Shell Arise e Psycho-Pass 2, será responsável pelos roteiros da produção. A direção ficará a cargo de Takayuki Sano, no estúdio E&H production, enquanto Hideo Kojima atua como produtor executivo.",
-          "runs": [
-            {
-              "text": "O roteirista "
-            },
-            {
-              "text": "Tow Ubukata",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", conhecido por trabalhos em "
-            },
-            {
-              "text": "Ghost in the Shell Arise",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Psycho-Pass 2",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", será responsável pelos roteiros da produção. A direção ficará a cargo de "
-            },
-            {
-              "text": "Takayuki Sano",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", no "
-            },
-            {
-              "text": "estúdio E&H production",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", enquanto "
-            },
-            {
-              "text": "Hideo Kojima",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " atua como produtor executivo."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Death-Stranding-Isolations-anime.webp",
-          "alt": "Death Stranding Isolations",
-          "caption": "©2026 KOJIMA PRODUCTIONS Co., Ltd. / HIDEO KOJIMA."
-        },
-        {
-          "type": "heading",
-          "text": "História explora um mundo isolado",
-          "runs": [
-            {
-              "text": "História explora um mundo isolado"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama se passa na América do Norte após Sam concluir a conexão do continente por meio da Rede Quiral. Apesar da reconstrução, o mundo enfrenta novas consequências provocadas pela retomada das conexões humanas.",
-          "runs": [
-            {
-              "text": "A trama se passa na América do Norte após Sam concluir a conexão do continente por meio da Rede Quiral. Apesar da reconstrução, o mundo enfrenta novas consequências provocadas pela retomada das conexões humanas.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história acompanha uma jovem que escolheu viver isolada após perder a mãe durante o fenômeno conhecido como Death Stranding. Entretanto, encontros inesperados acabam mudando seu destino.",
-          "runs": [
-            {
-              "text": "A história acompanha uma jovem que escolheu viver isolada após perder a mãe durante o fenômeno conhecido como Death Stranding.",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " Entretanto, encontros inesperados acabam mudando seu destino."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Equipe do anime Death Stranding",
-          "runs": [
-            {
-              "text": "Equipe do anime Death Stranding"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A equipe também inclui Sayaka Koiso no design de personagens, Yann Le Gall na direção de arte e Ami Kutsuna no design de cores. Sendo assim a série animada terá uma história própria dentro do universo do jogo.",
-          "runs": [
-            {
-              "text": "A equipe também inclui Sayaka Koiso no design de personagens, "
-            },
-            {
-              "text": "Yann Le Gall",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " na direção de arte e "
-            },
-            {
-              "text": "Ami Kutsuna",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no design de cores. Sendo assim a série animada terá uma história própria dentro do universo do "
-            },
-            {
-              "text": "jogo",
-              "href": "https://animenew.com.br/games"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim a franquia ganhará o filme de animação DEATH STRANDING MOSQUITO, que também contará uma narrativa original.",
-          "runs": [
-            {
-              "text": "Por fim a franquia ganhará o filme de animação "
-            },
-            {
-              "text": "DEATH STRANDING MOSQUITO",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que também contará uma narrativa original."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Death Stranding Isolations ganha trailer e novos detalhes.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Death Stranding Isolations ganha trailer e novos detalhes",
-              "href": "https://animenew.com.br/death-stranding-isolations-trailer-anime/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-30T18:40:13.000Z",
-      "updatedAt": "2026-10-30T18:40:13.000Z",
-      "expiresAt": "2026-11-06T18:40:13.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/death-stranding-isolations-trailer-anime",
-          "publishedAt": "2026-10-30T18:40:13.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 265,
-      "qualityScore": 0.976,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     },
@@ -6335,7 +7087,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 248,
-      "qualityScore": 0.974,
+      "qualityScore": 0.914,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -7060,7 +7812,7 @@
       "sourceCount": 1,
       "readingMinutes": 7,
       "wordCount": 1394,
-      "qualityScore": 1,
+      "qualityScore": 0.97,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
