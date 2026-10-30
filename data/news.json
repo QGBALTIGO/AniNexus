@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T07:44:18.696Z",
+  "generatedAt": "2026-10-30T14:32:29.345Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,281 @@
   ],
   "stats": {
     "collected": 43,
-    "grouped": 26,
-    "published": 26,
-    "newStories": 26,
-    "fullArticles": 26,
+    "grouped": 27,
+    "published": 27,
+    "newStories": 27,
+    "fullArticles": 27,
     "previewArticles": 0,
-    "avgWords": 364,
-    "withHeroImage": 26,
-    "withOrderedMedia": 26,
+    "avgWords": 360,
+    "withHeroImage": 27,
+    "withOrderedMedia": 27,
     "skippedTranslation": 0,
     "skippedQuality": 14,
-    "durationMs": 2844
+    "durationMs": 2908
   },
   "items": [
+    {
+      "id": "animenew-ac867611",
+      "slug": "expelled-from-paradise-revela-video-com-novidades-do-game-animenew-ac867611",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Expelled from Paradise revela vídeo com novidades do game",
+      "originalTitle": "Expelled from Paradise revela vídeo com novidades do game",
+      "summary": "O jogo visual novel Expelled from Paradise -The Stellar Angel- ganhou um novo vídeo promocional em 29 de outubro, apresentando detalhes da história, sistemas de escolhas e duas personagens inéditas. O lançamento ocidental está marcado para novembro.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Games",
+        "Notícias",
+        "Expelled From Paradise"
+      ],
+      "url": "https://animenew.com.br/expelled-from-paradise-the-stellar-angel-video",
+      "sourceUrl": "https://animenew.com.br/expelled-from-paradise-the-stellar-angel-video",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Expelled-from-Paradise-revela-video-com-novidades-do-game.webp",
+      "mediaQuery": "Expelled from Paradise revela vídeo com novidades do game",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/HVtODO6aoAAg_K1.webp",
+          "alt": "Expelled from Paradise",
+          "caption": "© 東映アニメーション・ニトロプラス/楽園追放ソサイエティ２"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/pabXOS3j-eM"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O jogo visual novel Expelled from Paradise -The Stellar Angel- ganhou um novo vídeo promocional em 29 de outubro, apresentando detalhes da história, sistemas de escolhas e duas personagens inéditas. O lançamento ocidental está marcado para novembro.",
+          "runs": [
+            {
+              "text": "O jogo visual novel "
+            },
+            {
+              "text": "Expelled from Paradise -The Stellar Angel-",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ganhou um novo vídeo promocional em 29 de outubro, apresentando detalhes da história, sistemas de escolhas e duas personagens inéditas. O lançamento ocidental está marcado para novembro."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Bleach Mirrors High ganha trailer de abertura e música tema",
+              "runs": [
+                {
+                  "text": "Bleach Mirrors High ganha trailer de abertura e música tema",
+                  "href": "https://animenew.com.br/bleach-mirrors-high-trailer-lancamento"
+                }
+              ]
+            },
+            {
+              "text": "DanMachi anuncia novo jogo para PC e mobile",
+              "runs": [
+                {
+                  "text": "DanMachi anuncia novo jogo para PC e mobile",
+                  "href": "https://animenew.com.br/danmachi-frontier-zero-jogo-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=pabXOS3j-eM",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/pabXOS3j-eM"
+        },
+        {
+          "type": "paragraph",
+          "text": "O título chegará ao Nintendo Switch e PC, por meio da Steam, em 26 de novembro de 2026, com suporte aos idiomas inglês e japonês. Desenvolvido pelo Studio51, o projeto conta com roteiro de Shotaro Teshirogi, responsável pelo romance prelúdio Expelled from Paradise: mission.0.",
+          "runs": [
+            {
+              "text": "O título chegará ao "
+            },
+            {
+              "text": "Nintendo Switch",
+              "href": "https://animenew.com.br/tag/nintendo-switch/"
+            },
+            {
+              "text": " e PC, por meio da Steam, em "
+            },
+            {
+              "text": "26 de novembro de 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com suporte aos idiomas inglês e japonês. Desenvolvido pelo Studio51, o projeto conta com roteiro de Shotaro Teshirogi, responsável pelo romance prelúdio "
+            },
+            {
+              "text": "Expelled from Paradise: mission.0",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/HVtODO6aoAAg_K1.webp",
+          "alt": "Expelled from Paradise",
+          "caption": "© 東映アニメーション・ニトロプラス/楽園追放ソサイエティ２"
+        },
+        {
+          "type": "heading",
+          "text": "História e sistema de escolhas",
+          "runs": [
+            {
+              "text": "História e sistema de escolhas"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama se passa no ano 2400, após o desastre conhecido como Nano Hazard. A maior parte da humanidade abandonou a Terra devastada para viver no mundo virtual DEVA. Entretanto, uma nova forma de vida chamada Paraflora começa a se espalhar pela superfície, enquanto criaturas gigantes atacam pessoas nas proximidades da cidade desértica de Svarga.",
+          "runs": [
+            {
+              "text": "A trama se passa no ano 2400, após o desastre conhecido como Nano Hazard. A maior parte da humanidade abandonou a Terra devastada para viver no mundo virtual DEVA. Entretanto, uma nova forma de vida chamada Paraflora começa a se espalhar pela superfície, enquanto criaturas gigantes atacam pessoas nas proximidades da cidade desértica de Svarga.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Sistema K2-System no jogo Expelled from Paradise",
+          "runs": [
+            {
+              "text": "Sistema "
+            },
+            {
+              "text": "K2-System",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no jogo Expelled from Paradise"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "O jogo utiliza o sistema K2-System, que divide as decisões entre Kizuna, voltadas aos laços de Angela, e Kakugo, relacionadas à determinação da personagem. Contudo as escolhas alteram os caminhos da narrativa e podem levar a finais ruins.",
+          "runs": [
+            {
+              "text": "O jogo utiliza o sistema "
+            },
+            {
+              "text": "K2-System",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que divide as decisões entre Kizuna, voltadas aos laços de Angela, e Kakugo, relacionadas à determinação da personagem. Contudo as escolhas alteram os caminhos da narrativa e podem levar a finais ruins."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim o vídeo também apresenta Naamah e Aradia, duas novas personagens da visual novel.",
+          "runs": [
+            {
+              "text": "Por fim o vídeo também apresenta Naamah e Aradia, duas novas personagens da visual novel."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site oficial",
+              "href": "https://game.rakuen-tsuiho.com/en/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Expelled from Paradise revela vídeo com novidades do game.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Expelled from Paradise revela vídeo com novidades do game",
+              "href": "https://animenew.com.br/expelled-from-paradise-the-stellar-angel-video/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-30T14:01:44.000Z",
+      "updatedAt": "2026-10-30T14:01:44.000Z",
+      "expiresAt": "2026-11-06T14:01:44.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/expelled-from-paradise-the-stellar-angel-video",
+          "publishedAt": "2026-10-30T14:01:44.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 245,
+      "qualityScore": 0.972,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-06d1a6c6",
       "slug": "twisted-wonderland-2-temporada-ganha-data-de-estreia-jbox-06d1a6c6",
