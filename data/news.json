@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T14:47:26.121Z",
+  "generatedAt": "2026-10-31T18:49:11.927Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,351 @@
   ],
   "stats": {
     "collected": 48,
-    "grouped": 27,
-    "published": 27,
-    "newStories": 27,
-    "fullArticles": 27,
+    "grouped": 26,
+    "published": 26,
+    "newStories": 26,
+    "fullArticles": 26,
     "previewArticles": 0,
-    "avgWords": 396,
-    "withHeroImage": 27,
-    "withOrderedMedia": 27,
+    "avgWords": 389,
+    "withHeroImage": 26,
+    "withOrderedMedia": 26,
     "skippedTranslation": 0,
-    "skippedQuality": 19,
-    "durationMs": 2745
+    "skippedQuality": 21,
+    "durationMs": 3254
   },
   "items": [
+    {
+      "id": "animenew-86f38c14",
+      "slug": "enako-canta-abertura-e-entra-no-elenco-de-isshiki-san-animenew-86f38c14",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Enako canta abertura e entra no elenco de Isshiki-san",
+      "originalTitle": "Enako canta abertura e entra no elenco de Isshiki-san",
+      "summary": "A cosplayer Enako participará do anime Isshiki-san Wants to Know About Love (Isshiki-san wa Koi o Shiritai) como dubladora e intérprete da música de abertura. A Kadokawa divulgou o vídeo promocional completo da série neste sábado (31).",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Isshiki-san wa Koi o Shiritai",
+        "Isshiki-san Wants to Know About Love"
+      ],
+      "url": "https://animenew.com.br/isshiki-san-wants-to-know-about-love-enako",
+      "sourceUrl": "https://animenew.com.br/isshiki-san-wants-to-know-about-love-enako",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Enako-canta-abertura-e-entra-no-elenco-de-Isshiki-san.webp",
+      "mediaQuery": "Enako canta abertura e entra no elenco de Isshiki-san",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Isshiki-san-Wants.webp",
+          "alt": "",
+          "caption": "©あららぎあゆね/KADOKAWA /一式さん製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/A86REZ-veV8"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A cosplayer Enako participará do anime Isshiki-san Wants to Know About Love (Isshiki-san wa Koi o Shiritai) como dubladora e intérprete da música de abertura. A Kadokawa divulgou o vídeo promocional completo da série neste sábado (31).",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "cosplayer Enako",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " participará do "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Isshiki-san Wants to Know About Love",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Isshiki-san wa Koi o Shiritai",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") como dubladora e intérprete da música de abertura. A "
+            },
+            {
+              "text": "Kadokawa",
+              "href": "https://animenew.com.br/tag/kadokawa/"
+            },
+            {
+              "text": " divulgou o vídeo promocional completo da série neste sábado (31)."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Hiragi-san’s House of Vampires ganhará anime",
+              "runs": [
+                {
+                  "text": "Hiragi-san’s House of Vampires ganhará anime",
+                  "href": "https://animenew.com.br/hiragi-san-house-of-vampires-anime"
+                }
+              ]
+            },
+            {
+              "text": "Destiny Unchain Online revela elenco e estreia em 2027",
+              "runs": [
+                {
+                  "text": "Destiny Unchain Online revela elenco e estreia em 2027",
+                  "href": "https://animenew.com.br/destiny-unchain-online-anime-estreia-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=A86REZ-veV8",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/A86REZ-veV8"
+        },
+        {
+          "type": "paragraph",
+          "text": "No trailer, Enako apresenta a canção-tema de abertura, intitulada “Gō Yoku Koi o Seisu!?”, e confirma sua participação como Nene Haneshita, uma enfermeira da história.",
+          "runs": [
+            {
+              "text": "No trailer, Enako apresenta a canção-tema de abertura, intitulada “Gō Yoku Koi o Seisu!?”, e confirma sua participação como "
+            },
+            {
+              "text": "Nene Haneshita",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", uma enfermeira da história."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Isshiki-san-Wants.webp",
+          "caption": "©あららぎあゆね/KADOKAWA /一式さん製作委員会"
+        },
+        {
+          "type": "paragraph",
+          "text": "A adaptação estreia em janeiro de 2027 e será exibida pelos canais japoneses AT-X, Kansai TV e Tokyo MX. Uma sessão antecipada com os dois primeiros episódios também acontecerá em Tóquio, no dia 13 de dezembro.",
+          "runs": [
+            {
+              "text": "A adaptação estreia em janeiro de 2027 e será exibida pelos canais japoneses AT-X, Kansai TV e Tokyo MX. Uma sessão antecipada com os dois primeiros episódios também acontecerá em Tóquio, no dia 13 de dezembro."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Romance entre dois policiais",
+          "runs": [
+            {
+              "text": "Romance entre dois policiais"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Rinna Milford Isshiki, uma policial exemplar que ingressou na corporação aos 17 anos, mas nunca experimentou o amor romântico. Ela conhece Meishi Rokutanda, um detetive gentil, porém desajeitado e pouco competente. Sem experiência em relacionamentos, os dois começam a se aproximar enquanto tentam compreender os sentimentos um pelo outro.",
+          "runs": [
+            {
+              "text": "A trama acompanha Rinna Milford Isshiki, uma policial exemplar que ingressou na corporação aos 17 anos, mas nunca experimentou o amor romântico. Ela conhece Meishi Rokutanda, um detetive gentil, porém desajeitado e pouco competente. Sem experiência em relacionamentos, os dois começam a se aproximar enquanto tentam compreender os sentimentos um pelo outro.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Riko Akechi interpreta Rinna, enquanto Shūichirō Umeda dá voz a Meishi. A direção está nas mãos de Kazuya Komai, no estúdio Sakura Create, com Deko Akao responsável pela composição dos roteiros e Shōhei Hamaguchi pelo design dos personagens.",
+          "runs": [
+            {
+              "text": "Riko Akechi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " interpreta Rinna, enquanto "
+            },
+            {
+              "text": "Shūichirō Umeda",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dá voz a Meishi. A direção está nas mãos de "
+            },
+            {
+              "text": "Kazuya Komai",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", no estúdio "
+            },
+            {
+              "text": "Sakura Create",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com "
+            },
+            {
+              "text": "Deko Akao",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " responsável pela composição dos roteiros e "
+            },
+            {
+              "text": "Shōhei Hamaguchi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " pelo design dos personagens."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ayune Araragi lançou o mangá na revista Monthly Shonen Ace, da Kadokawa, em junho de 2020. Por fim a obra já conta com dez volumes publicados até o momento.",
+          "runs": [
+            {
+              "text": "Ayune Araragi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " lançou o "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " na revista "
+            },
+            {
+              "text": "Monthly Shonen Ace",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da Kadokawa, em junho de 2020. Por fim a obra já conta com dez volumes publicados até o momento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://isshikisan-anime.com/chara/haneshita.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Enako canta abertura e entra no elenco de Isshiki-san.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Enako canta abertura e entra no elenco de Isshiki-san",
+              "href": "https://animenew.com.br/isshiki-san-wants-to-know-about-love-enako/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-10-31T15:17:07.000Z",
+      "updatedAt": "2026-10-31T15:17:07.000Z",
+      "expiresAt": "2026-11-07T15:17:07.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/isshiki-san-wants-to-know-about-love-enako",
+          "publishedAt": "2026-10-31T15:17:07.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 262,
+      "qualityScore": 0.974,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-f1f80b53",
       "slug": "hiragi-san-s-house-of-vampires-ganhara-anime-animenew-f1f80b53",
@@ -9740,1123 +10072,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-f5244b4e",
-      "slug": "cardcaptor-sakura-ganha-photocards-oficiais-pela-super-fan-brasil-jbox-f5244b4e",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Cardcaptor Sakura’ ganha photocards oficiais pela Super Fan Brasil",
-      "originalTitle": "‘Cardcaptor Sakura’ ganha photocards oficiais pela Super Fan Brasil",
-      "summary": "A loja Super Fan Brasil segue trazendo produtos oficiais de Cardcaptor Sakura ao Brasil, e o anúncio mais recente são os photocards de acrílico inspirados na franquia.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Produtos",
-        "Cardcaptor Sakura",
-        "Clamp",
-        "Photocard Cardcaptor Sakura",
-        "produtos de Sakura",
-        "sakura",
-        "Sakura Kinomoto",
-        "Super Fan Brasil"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/24/cardcaptor-sakura-ganha-photocards-oficiais-pela-super-fan-brasil",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/24/cardcaptor-sakura-ganha-photocards-oficiais-pela-super-fan-brasil",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Photocards-Cardcaptor-Sakura-destacada.jpg",
-      "mediaQuery": "‘Cardcaptor Sakura’ ganha photocards oficiais pela Super Fan Brasil",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Photocards-Cardcaptor-Sakura.png",
-          "alt": "Photocards oficiais de Cardcaptor Sakura",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A loja Super Fan Brasil segue trazendo produtos oficiais de Cardcaptor Sakura ao Brasil, e o anúncio mais recente são os photocards de acrílico inspirados na franquia.",
-          "runs": [
-            {
-              "text": "A loja "
-            },
-            {
-              "text": "Super Fan Brasil",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " segue trazendo produtos oficiais de "
-            },
-            {
-              "text": "Cardcaptor Sakura",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ao Brasil, e o anúncio mais recente são os photocards de acrílico inspirados na franquia."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ao todo são 8 modelos, que representam os personagens em posts das redes sociais. Com o efeito transparente do acrílico, a ideia é que os fãs possam brincar com os itens, mostrando Sakura, Tomoyo, Yukito e outros personagens em diversas situações e locais.",
-          "runs": [
-            {
-              "text": "Ao todo são 8 modelos, que representam os personagens em posts das redes sociais. Com o efeito transparente do acrílico, a ideia é que os fãs possam brincar com os itens, mostrando "
-            },
-            {
-              "text": "Sakura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Tomoyo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Yukito",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e outros personagens em diversas situações e locais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Cada item tem a dimensão de 10,5 cm por 7,5 cm, com produção 100% nacional e aprovação da equipe responsável pela franquia. A pré-venda já está aberta no site da Super Fan Brasil, com o valor de R$ 54,90 para cada photocard, e envio previsto para janeiro de 2027.",
-          "runs": [
-            {
-              "text": "Cada item tem a dimensão de 10,5 cm por 7,5 cm, com produção 100% nacional e aprovação da equipe responsável pela franquia. "
-            },
-            {
-              "text": "A pré-venda já está aberta no site da ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://mysuperfan.com.br/animes/cardcaptor-sakura-clear-card/?mc_cid=b1893a1de8&mc_eid=227675bdc7"
-            },
-            {
-              "text": "Super Fan Brasil",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://mysuperfan.com.br/animes/cardcaptor-sakura-clear-card/?mc_cid=b1893a1de8&mc_eid=227675bdc7"
-            },
-            {
-              "text": ", com o valor de "
-            },
-            {
-              "text": "R$ 54,90",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " para cada photocard, e envio previsto para janeiro de 2027."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Photocards-Cardcaptor-Sakura.png",
-          "alt": "Photocards oficiais de Cardcaptor Sakura"
-        },
-        {
-          "type": "paragraph",
-          "text": "Photocards oficiais de Cardcaptor Sakura | Divulgação",
-          "runs": [
-            {
-              "text": "Photocards oficiais de Cardcaptor Sakura | Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "View this post on Instagram",
-          "runs": [
-            {
-              "text": " View this post on Instagram ",
-              "href": "https://www.instagram.com/reel/De16ZtnyOjn/?utm_source=ig_embed&utm_campaign=loading"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O lançamento de produtos oficiais de Cardcaptor Sakura segue a onda de anúncios sobre a franquia para os fãs brasileiros nos últimos. Em 2025, a NAISU/Artworks lançou os episódios da série clássica no YouTube (atualmente não estão disponíveis), um café temático foi inaugurado em São Paulo, em parceria com a loja Akiba Station, e o animê também foi exibido na TV aberta pela TV Cultura, com o encerramento da transmissão em abril deste ano.",
-          "runs": [
-            {
-              "text": "O lançamento de produtos oficiais de "
-            },
-            {
-              "text": "Cardcaptor Sakura",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " segue a onda de anúncios sobre a franquia para os fãs brasileiros nos últimos. Em 2025, a "
-            },
-            {
-              "text": "NAISU/Artworks ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "lançou os episódios da série clássica no "
-            },
-            {
-              "text": "YouTube",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (atualmente não estão disponíveis), um café temático foi inaugurado em São Paulo, em parceria com a loja "
-            },
-            {
-              "text": "Akiba Station",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e o animê também foi exibido na TV aberta pela "
-            },
-            {
-              "text": "TV Cultura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com o encerramento da transmissão em abril deste ano."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Atualmente, o primeiro animê da personagem está disponível no país pelo Koiplay, canal adicional dentro do Amazon Prime Video. O catálogo reúne o acervo da distribuidora Artworks com o da REMOW (títulos da Anime Onegai).",
-          "runs": [
-            {
-              "text": "Atualmente, o primeiro"
-            },
-            {
-              "text": " ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "animê da personagem está disponível no país pelo Koiplay",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2025/12/06/koiplay-novo-canal-na-prime-video-estreia-com-ranma-%c2%bd-classico-sakura-fairy-tail-e-varios-animes/"
-            },
-            {
-              "text": ", canal adicional dentro do "
-            },
-            {
-              "text": "Amazon Prime Video",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". O catálogo reúne o acervo da distribuidora "
-            },
-            {
-              "text": "Artworks",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " com o da"
-            },
-            {
-              "text": " REMOW",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (títulos da "
-            },
-            {
-              "text": "Anime Onegai",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ")."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já Cardcaptor Sakura: Clear Card, continuação lançada em 2018 pela CLAMP, tem a primeira temporada disponível na Crunchyroll. A sequência conta com 22 episódios regulares e um “capítulo zero”, chamado de Sakura e os Dois Ursos, que dá o pontapé para a nova história. A publicação nacional do mangá é da JBC.",
-          "runs": [
-            {
-              "text": "Já "
-            },
-            {
-              "text": "Cardcaptor Sakura: Clear Card",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", continuação lançada em 2018 pela CLAMP, tem a primeira temporada disponível na "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A sequência conta com 22 episódios regulares e um “capítulo zero”, chamado de "
-            },
-            {
-              "text": "Sakura e os Dois Ursos",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que dá o pontapé para a nova história. A publicação nacional do mangá é da "
-            },
-            {
-              "text": "JBC",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Comunicado de imprensa",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Comunicado de imprensa",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-24T15:48:39.000Z",
-      "updatedAt": "2026-10-24T15:49:09.000Z",
-      "expiresAt": "2026-10-31T15:48:39.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/24/cardcaptor-sakura-ganha-photocards-oficiais-pela-super-fan-brasil",
-          "publishedAt": "2026-10-24T15:48:39.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 313,
-      "qualityScore": 0.92,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-6f75b018",
-      "slug": "mostra-terrivel-5-exibe-o-grito-vampire-hunter-d-bloodlust-e-mais-no-rj-jbox-6f75b018",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Mostra Terrível 5’ exibe ‘O Grito’, ‘Vampire Hunter D: Bloodlust’ e mais no RJ",
-      "originalTitle": "‘Mostra Terrível 5’ exibe ‘O Grito’, ‘Vampire Hunter D: Bloodlust’ e mais no RJ",
-      "summary": "Os cinemas do circuito Estação no Rio de Janeiro começaram a exibir na última quarta (21) a Mostra Terrível 5. Com filmes que dialogam com a temática de Halloween, a exibição contará com alguns longas nipônicos divididos nas unidades dos bairros Botafogo e Gávea. O calendário completo inclui 30 filmes até o dia 4 de novembro.",
-      "author": "Jean Clemente",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "964 pinocchio",
-        "cinema no rio de janeiro",
-        "crimes obscuros",
-        "estação claro gávea",
-        "estação claro rio",
-        "filmes de halloween",
-        "mostra de terror",
-        "o grito",
-        "o Império da paixão",
-        "Rio de Janeiro",
-        "vampire hunter d",
-        "vampire hunter d bloodlust"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/24/mostra-terrivel-5-exibe-o-grito-vampire-hunter-d-bloodlust-e-mais-no-rj",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/24/mostra-terrivel-5-exibe-o-grito-vampire-hunter-d-bloodlust-e-mais-no-rj",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/mostraterrivel5-destacada.jpg",
-      "mediaQuery": "‘Mostra Terrível 5’ exibe ‘O Grito’, ‘Vampire Hunter D: Bloodlust’ e mais no RJ",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/hT94oqC8Jx8"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/qrBrZrQEfTQ"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/l9VIpl575ts"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/BxbBdEA7ZCQ"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/44xT9LSrgJ4"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Os cinemas do circuito Estação no Rio de Janeiro começaram a exibir na última quarta (21) a Mostra Terrível 5. Com filmes que dialogam com a temática de Halloween, a exibição contará com alguns longas nipônicos divididos nas unidades dos bairros Botafogo e Gávea. O calendário completo inclui 30 filmes até o dia 4 de novembro.",
-          "runs": [
-            {
-              "text": "Os cinemas do circuito "
-            },
-            {
-              "text": "Estação",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no Rio de Janeiro começaram a exibir na última quarta (21) a "
-            },
-            {
-              "text": "Mostra Terrível 5",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ". Com filmes que dialogam com a temática de Halloween, a exibição contará com alguns longas nipônicos divididos nas unidades dos bairros Botafogo e Gávea. O "
-            },
-            {
-              "text": "calendário completo",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://grupoestacao.com.br/experimente/mostra-terrivel-5/"
-            },
-            {
-              "text": " inclui 30 filmes "
-            },
-            {
-              "text": "até o dia 4 de novembro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira a lista das próximas sessões de filmes japoneses:",
-          "runs": [
-            {
-              "text": "Confira a lista das próximas sessões de filmes japoneses:"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "964 Pinocchio",
-          "runs": [
-            {
-              "text": "964 Pinocchio",
-              "marks": [
-                "em"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=hT94oqC8Jx8",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/hT94oqC8Jx8"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "01/11 às 13h | Estação Claro Rio",
-              "runs": [
-                {
-                  "text": "01/11 às 13h | Estação Claro Rio",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "03/11 às 19h05 | Estação Claro Rio",
-              "runs": [
-                {
-                  "text": "03/11 às 19h05 | Estação Claro Rio",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Lançado em 1991, o filme dirigido por Shozin Fukui usou tática de guerrilhas para filmar no meio das ruas de Tóquio. Por conta de sua temática e do seu visual, acabou se tornando famoso por suas cenas grotescas.",
-          "runs": [
-            {
-              "text": "Lançado em 1991, o filme dirigido por "
-            },
-            {
-              "text": "Shozin Fukui",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " usou tática de guerrilhas para filmar no meio das ruas de Tóquio. Por conta de sua temática e do seu visual, acabou se tornando famoso por suas cenas grotescas."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história segue um androide escravo sexual que é jogado fora por seus donos. Agora, ele fica à solta nas ruas japonesas, onde encontra uma menina com ideias criminosas e foge dos seus manufatores.",
-          "runs": [
-            {
-              "text": "A história segue um androide escravo sexual que é jogado fora por seus donos. Agora, ele fica à solta nas ruas japonesas, onde encontra uma menina com ideias criminosas e foge dos seus manufatores."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Crimes Obscuros",
-          "runs": [
-            {
-              "text": "Crimes Obscuros",
-              "marks": [
-                "em"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=qrBrZrQEfTQ",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/qrBrZrQEfTQ"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "27/10 às 18h55 | Estação Claro Rio",
-              "runs": [
-                {
-                  "text": "27/10 às 18h55 | Estação Claro Rio",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "29/10 às 16h | Estação Claro Rio",
-              "runs": [
-                {
-                  "text": "29/10 às 16h | Estação Claro Rio",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "30/10 às 20h45 | Estação Claro Gávea",
-              "runs": [
-                {
-                  "text": "30/10 às 20h45 | Estação Claro Gávea",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "31/10 às 11h | Estação Claro Rio",
-              "runs": [
-                {
-                  "text": "31/10 às 11h | Estação Claro Rio",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O filme de 2006 de Kyioshi Kurosawa (sem qualquer ligação com Akira Kurosawa) acompanha um detetive que procura solucionar um assassinato. Durante a investigação, ele conhece uma mulher de vermelho que o arrasta para a escuridão.",
-          "runs": [
-            {
-              "text": "O filme de 2006 de "
-            },
-            {
-              "text": "Kyioshi Kurosawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (sem qualquer ligação com Akira Kurosawa) acompanha um detetive que procura solucionar um assassinato. Durante a investigação, ele conhece uma mulher de vermelho que o arrasta para a escuridão."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "O Império da Paixão",
-          "runs": [
-            {
-              "text": "O Império da Paixão",
-              "marks": [
-                "em"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=l9VIpl575ts",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/l9VIpl575ts"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "27/10 às 16h10 | Estação Claro Gávea",
-              "runs": [
-                {
-                  "text": "27/10 às 16h10 | Estação Claro Gávea",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "02/11 às 21h | Estação Claro Rio",
-              "runs": [
-                {
-                  "text": "02/11 às 21h | Estação Claro Rio",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A produção de 1978 conta com direção de Nagisa Oshima, que também assina o roteiro junto a Itoko Nakamura. Oshima ganhou o prêmio de Melhor Diretor pelo filme no Festival de Cannes.",
-          "runs": [
-            {
-              "text": "A produção de 1978 conta com direção de "
-            },
-            {
-              "text": "Nagisa Oshima",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que também assina o roteiro junto a "
-            },
-            {
-              "text": "Itoko Nakamura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Oshima ganhou o prêmio de Melhor Diretor pelo filme no Festival de Cannes."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história se passa em 1895 e gira em torno de Seki, uma mulher casada com um puxador de riquixá. Enquanto seu marido está fora, ela passa a ter um caso com seu vizinho Seki. Os dois se juntam para matar o marido e esconder seu corpo. Após três anos de affair, a comunidade em volta passa a desconfiar que algo está acontecendo entre os dois.",
-          "runs": [
-            {
-              "text": "A história se passa em 1895 e gira em torno de Seki, uma mulher casada com um puxador de riquixá. Enquanto seu marido está fora, ela passa a ter um caso com seu vizinho Seki. Os dois se juntam para matar o marido e esconder seu corpo. Após três anos de "
-            },
-            {
-              "text": "affair",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", a comunidade em volta passa a desconfiar que algo está acontecendo entre os dois."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Ju-On: O Grito",
-          "runs": [
-            {
-              "text": "Ju-On: O ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "Grito",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=BxbBdEA7ZCQ",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/BxbBdEA7ZCQ"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "24/10 às 16h40 | Estação Claro Rio",
-              "runs": [
-                {
-                  "text": "24/10 às 16h40 | Estação Claro Rio",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "26/10 às 19h10 | Estação Claro Rio",
-              "runs": [
-                {
-                  "text": "26/10 às 19h10 | Estação Claro Rio",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "30/10 às 23h59 | Estação Claro Rio",
-              "runs": [
-                {
-                  "text": "30/10 às 23h59 | Estação Claro Rio",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "01/11 às 20h45 | Estação Claro Gávea",
-              "runs": [
-                {
-                  "text": "01/11 às 20h45 | Estação Claro Gávea",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O terceiro da franquia O Grito, sendo o primeiro a chegar aos cinemas, o filme de 2002 tem direção de Takashi Shimizu. Acabou rendendo um remake estadunidense em 2004.",
-          "runs": [
-            {
-              "text": "O terceiro da franquia "
-            },
-            {
-              "text": "O Grito",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", sendo o primeiro a chegar aos cinemas, o filme de 2002 tem direção de"
-            },
-            {
-              "text": " Takashi Shimizu",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Acabou rendendo um remake estadunidense em 2004."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história acompanha uma pacata família que vive numa fazenda. Mas tudo muda ao descobrirem em suas plantações sinais estranhos marcados.",
-          "runs": [
-            {
-              "text": "A história acompanha uma pacata família que vive numa fazenda. Mas tudo muda ao descobrirem em suas plantações sinais estranhos marcados."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Vampire Hunter D: Bloodlust",
-          "runs": [
-            {
-              "text": "Vampire Hunter D: Bloodlust",
-              "marks": [
-                "em"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=44xT9LSrgJ4",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/44xT9LSrgJ4"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "28/10 às 21h | Estação Claro Rio",
-              "runs": [
-                {
-                  "text": "28/10 às 21h | Estação Claro Rio",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "01/11 às 11h | Estação Claro Rio",
-              "runs": [
-                {
-                  "text": "01/11 às 11h | Estação Claro Rio",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            },
-            {
-              "text": "03/11 às 20h45 | Estação Claro Gávea",
-              "runs": [
-                {
-                  "text": "03/11 às 20h45 | Estação Claro Gávea",
-                  "marks": [
-                    "strong"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Lançado em 2000, o filme dirigido e escrito por Yoshiaki Kawajiri adapta o livro de Hideyuki Kikuchi. A produção conta com design de personagens de Yoshitaka Amano, o mesmo responsável pela série Final Fantasy.",
-          "runs": [
-            {
-              "text": "Lançado em 2000, o filme dirigido e escrito por "
-            },
-            {
-              "text": "Yoshiaki Kawajiri",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " adapta o livro de "
-            },
-            {
-              "text": "Hideyuki Kikuchi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A produção conta com design de personagens de "
-            },
-            {
-              "text": "Yoshitaka Amano",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", o mesmo responsável pela série "
-            },
-            {
-              "text": "Final Fantasy.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A história tem início quando a jovem Charlotte é sequestrada por um vampiro nobre. Desesperado em resgatar sua filha, o seu pai John contrata D, um caçador de recompensas que é um híbrido de humano com vampiro.",
-          "runs": [
-            {
-              "text": "A história tem início quando a jovem Charlotte é sequestrada por um vampiro nobre. Desesperado em resgatar sua filha, o seu pai John contrata D, um caçador de recompensas que é um híbrido de humano com vampiro."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Estação Claro",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Estação Claro",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://grupoestacao.com.br/experimente/mostra-terrivel-5/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-24T15:35:53.000Z",
-      "updatedAt": "2026-10-24T15:36:30.000Z",
-      "expiresAt": "2026-10-31T15:35:53.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/24/mostra-terrivel-5-exibe-o-grito-vampire-hunter-d-bloodlust-e-mais-no-rj",
-          "publishedAt": "2026-10-24T15:35:53.000Z",
-          "author": "Jean Clemente"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 532,
-      "qualityScore": 0.965,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 29,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 5,
         "sourcePagesRead": 0
       }
     }
