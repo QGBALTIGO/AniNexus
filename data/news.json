@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T08:24:02.269Z",
+  "generatedAt": "2026-11-02T18:44:57.518Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 38,
+      "count": 37,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,1762 @@
     }
   ],
   "stats": {
-    "collected": 48,
+    "collected": 47,
     "grouped": 26,
     "published": 26,
     "newStories": 26,
     "fullArticles": 26,
     "previewArticles": 0,
-    "avgWords": 389,
+    "avgWords": 424,
     "withHeroImage": 26,
     "withOrderedMedia": 26,
     "skippedTranslation": 0,
-    "skippedQuality": 21,
-    "durationMs": 3052
+    "skippedQuality": 20,
+    "durationMs": 7721
   },
   "items": [
+    {
+      "id": "jbox-5abe7781",
+      "slug": "critica-as-esculturas-sem-cabeca-pipoca-e-nanquim-jbox-5abe7781",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Crítica | As Esculturas sem Cabeça | Pipoca e Nanquim",
+      "originalTitle": "Crítica | As Esculturas sem Cabeça | Pipoca e Nanquim",
+      "summary": "Algo é inegável sobre Junji Ito: ele sabe causar uma grande impressão, principalmente quando se tem o primeiro contato com suas obras. As histórias repletas de mistério do autor, acompanhadas por desenhos que elevam o grotesco a outro nível, são sempre impactantes.",
+      "author": "Pedro Vieira",
+      "tags": [
+        "Mangá",
+        "Resenha",
+        "as esculturas sem cabeca",
+        "coletâneas de junji ito",
+        "Junji Ito",
+        "mangá de junji ito"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/02/critica-as-esculturas-sem-cabeca-pipoca-e-nanquim",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/02/critica-as-esculturas-sem-cabeca-pipoca-e-nanquim",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/jbox-critica-destacada-asesculturas.jpg",
+      "mediaQuery": "Crítica | As Esculturas sem Cabeça | Pipoca e Nanquim",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/asesculturassemcabeca-cena1.jpg",
+          "alt": "imagem: cenas de As Esculturas sem Cabeça",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/asesculturassemcabeca-cena2.jpg",
+          "alt": "imagem: cenas de As Esculturas sem Cabeça",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/asesculturassemcabecacapa.jpg",
+          "alt": "capa de as esculturas sem cabeça",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Algo é inegável sobre Junji Ito: ele sabe causar uma grande impressão, principalmente quando se tem o primeiro contato com suas obras. As histórias repletas de mistério do autor, acompanhadas por desenhos que elevam o grotesco a outro nível, são sempre impactantes.",
+          "runs": [
+            {
+              "text": "Algo é inegável sobre Junji Ito: ele sabe causar uma grande impressão, principalmente quando se tem o primeiro contato com suas obras. As histórias repletas de mistério do autor, acompanhadas por desenhos que elevam o grotesco a outro nível,"
+            },
+            {
+              "text": " são sempre impactantes",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Após algum tempo, porém, certos artifícios recorrentes do mangaká podem se tornar um tanto quanto insípidos devido à maneira como são explorados repetidamente. É o caso dos contos com finais em aberto (o que pode ou não ser consequência da limitação de páginas das revistas em que foram publicados) e das ilustrações de mortos-vivos corroídos, que parecem ficar cada vez menos assustadoras.",
+          "runs": [
+            {
+              "text": "Após algum tempo, porém, certos artifícios recorrentes do mangaká podem se tornar um tanto quanto insípidos devido à maneira como são explorados repetidamente. É o caso dos contos com finais em aberto (o que pode ou não ser consequência da limitação de páginas das revistas em que foram publicados) e das ilustrações de mortos-vivos corroídos, que parecem ficar cada vez menos assustadoras."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por esse motivo, a coletânea As Esculturas Sem Cabeça, que chegou ao Brasil em 2023 pela Pipoca & Nanquim reunindo 12 histórias macabras, pode ser enfadonha para alguns leitores. Isso, entretanto, não obscurece os diversos pontos altos da publicação, que merecem ser destacados. Afinal, se há algo que comprova a maestria de Ito como mangaká é sua capacidade de criar atmosferas de terror.",
+          "runs": [
+            {
+              "text": "Por esse motivo, a coletânea "
+            },
+            {
+              "text": "As Esculturas Sem Cabeça",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", que chegou ao Brasil em 2023 pela "
+            },
+            {
+              "text": "Pipoca & Nanquim",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " reunindo"
+            },
+            {
+              "text": " 12 histórias macabras",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", pode ser enfadonha para alguns leitores. Isso, entretanto, não obscurece os diversos pontos altos da publicação, que merecem ser destacados. Afinal, se há algo que comprova a maestria de Ito como mangaká é sua capacidade de criar atmosferas de terror."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/asesculturassemcabeca-cena1.jpg",
+          "alt": "imagem: cenas de As Esculturas sem Cabeça"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/Junji Ito/Pipoca e Nanquim",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/Junji Ito/Pipoca e Nanquim"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Essa qualidade pode ser notada logo no primeiro conto, o instigante “Fio Vermelho do Destino”. Aqui, além de flertar com o sobrenatural em uma história de obsessão e intrigas, o autor se permite explicar as origens das forças místicas que tomam conta de seu protagonista. A narrativa apresenta um desfecho mais fechado, algo incomum para Ito, mas as imagens grotescas e chocantes continuam presentes, de uma forma até mesmo divertida.",
+          "runs": [
+            {
+              "text": "Essa qualidade pode ser notada logo no primeiro conto, o instigante "
+            },
+            {
+              "text": "“Fio Vermelho do Destino”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". Aqui, além de flertar com o sobrenatural em uma história de obsessão e intrigas, o autor se permite explicar as origens das forças místicas que tomam conta de seu protagonista. A narrativa apresenta um desfecho mais fechado, algo incomum para Ito, mas as imagens grotescas e chocantes continuam presentes, de uma forma até mesmo divertida."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Curiosamente, a coletânea reúne um número expressivo de histórias que não recorrem a essa imagética bizarra, o que está longe de ser um ponto negativo. Algumas das melhores narrativas, como “O Circo Chegou” e “Cidade dos Mapas”, apostam muito mais na construção de situações terríveis e envolventes do que na produção de imagens já desgastadas de mortos em decomposição.",
+          "runs": [
+            {
+              "text": "Curiosamente, a coletânea reúne um número expressivo de histórias que não recorrem a essa imagética bizarra, o que está longe de ser um ponto negativo. Algumas das melhores narrativas, como "
+            },
+            {
+              "text": "“O Circo Chegou”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "“Cidade dos Mapas”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", apostam muito mais na construção de situações terríveis e envolventes do que na produção de imagens já desgastadas de mortos em decomposição."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Outros contos conduzem o autor por caminhos pouco explorados. O ótimo “Espantalho” mostra o que acontece quando espantalhos de um cemitério começam a assumir a forma das pessoas enterradas em suas tumbas; enquanto o curioso “Colmeia” apresenta uma narrativa de psicose e assassinato protagonizada por um rapaz fascinado por diferentes tipos de colmeias. Ambos os exemplos fogem do que tradicionalmente se vê em histórias de horror e elevam a coletânea a outro nível.",
+          "runs": [
+            {
+              "text": "Outros contos conduzem o autor por caminhos pouco explorados. O ótimo "
+            },
+            {
+              "text": "“Espantalho”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " mostra o que acontece quando espantalhos de um cemitério começam a assumir a forma das pessoas enterradas em suas tumbas; enquanto o curioso "
+            },
+            {
+              "text": "“Colmeia”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " apresenta uma narrativa de psicose e assassinato protagonizada por um rapaz fascinado por diferentes tipos de colmeias. Ambos os exemplos "
+            },
+            {
+              "text": "fogem do que tradicionalmente se vê",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " em histórias de horror e elevam a coletânea a outro nível."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/asesculturassemcabeca-cena2.jpg",
+          "alt": "imagem: cenas de As Esculturas sem Cabeça"
+        },
+        {
+          "type": "paragraph",
+          "text": "Estranhamente, o conto “As Esculturas Sem Cabeça”, que dá nome à publicação, figura entre os mais fracos aqui reunidos. Nele, todos os vícios narrativos de Ito se encontram: corpos mortos, situações sem explicação e um desfecho bastante aberto se combinam, mas não conseguem provocar qualquer impacto relevante.",
+          "runs": [
+            {
+              "text": "Estranhamente, o conto "
+            },
+            {
+              "text": "“As Esculturas Sem Cabeça”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", que dá nome à publicação, "
+            },
+            {
+              "text": "figura entre os mais fracos",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " aqui reunidos. Nele, todos os vícios narrativos de Ito se encontram: corpos mortos, situações sem explicação e um desfecho bastante aberto se combinam, mas não conseguem provocar qualquer impacto relevante."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Algo semelhante acontece com “Ponte”, “Vida Curta” e “Bilhete Suicida”. Embora apresentem estruturas iniciais bastante instigantes, com boas construções de suspense, essas histórias acabam desembocando em conclusões ineficientes ou desenvolvendo imagens tão corriqueiras na obra do mangaká que chegam a ser enfadonhas.",
+          "runs": [
+            {
+              "text": "Algo semelhante acontece com "
+            },
+            {
+              "text": "“Ponte”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ","
+            },
+            {
+              "text": " “Vida Curta”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " e"
+            },
+            {
+              "text": " “Bilhete Suicida”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". Embora apresentem estruturas iniciais bastante instigantes, com boas construções de suspense, essas histórias acabam desembocando em conclusões ineficientes ou desenvolvendo imagens tão corriqueiras na obra do mangaká que chegam a ser enfadonhas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entretanto, há um clichê que nunca deixa de ser bem-vindo: a qualidade das publicações da Pipoca & Nanquim. Aqui, o leitor recebe uma obra acompanhada de luva para a capa, cartões colecionáveis e marcador de página, um verdadeiro deleite para os admiradores do mestre do terror.",
+          "runs": [
+            {
+              "text": "Entretanto, há um clichê que nunca deixa de ser bem-vindo: a qualidade das publicações da Pipoca & Nanquim. Aqui, o leitor recebe uma obra acompanhada de luva para a capa, cartões colecionáveis e marcador de página, um verdadeiro deleite para os admiradores do mestre do terror."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Há charme na coletânea As Esculturas sem Cabeça, pois Junji Ito continua sendo uma leitura instigante, capaz de mexer com a imaginação de uma forma ou de outra. Ainda assim, existem outras obras do autor melhores e mais bem-acabadas, especialmente para aqueles que não são aficionados pelo universo de mistério desse mangaká — fica a recomendação da coletânea Calafrios, também publicada aqui pela Pipoca e Nanquim.",
+          "runs": [
+            {
+              "text": "Há charme na coletânea "
+            },
+            {
+              "text": "As Esculturas sem Cabeça",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", pois Junji Ito continua sendo uma leitura instigante, capaz de mexer com a imaginação de uma forma ou de outra. Ainda assim, existem outras obras do autor melhores e mais bem-acabadas, especialmente para aqueles que não são aficionados pelo universo de mistério desse mangaká — fica a recomendação da coletânea "
+            },
+            {
+              "text": "Calafrios",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2023/01/04/critica-calafrios-volume-unico-pipoca-nanquim/"
+            },
+            {
+              "text": ", também publicada aqui pela Pipoca e Nanquim."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Galeria de fotos",
+          "runs": [
+            {
+              "text": "Galeria de fotos",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira no álbum abaixo alguns registros da edição nacional de As Esculturas sem Cabeça pela Pipoca e Nanquim:",
+          "runs": [
+            {
+              "text": "Confira no álbum abaixo alguns registros da edição nacional de "
+            },
+            {
+              "text": "As Esculturas sem Cabeça",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " pela "
+            },
+            {
+              "text": "Pipoca e Nanquim",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ":"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Se interessou? Compre pelo nosso link*:",
+          "runs": [
+            {
+              "text": "Se interessou? ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "Compre pelo nosso link*:",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/asesculturassemcabecacapa.jpg",
+          "alt": "capa de as esculturas sem cabeça"
+        },
+        {
+          "type": "paragraph",
+          "text": "Edição física | Edição digital",
+          "runs": [
+            {
+              "text": "Edição física",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://link.amazon/B0iQXXGqN"
+            },
+            {
+              "text": " | "
+            },
+            {
+              "text": "Edição digital",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://link.amazon/B03bzjuhe"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Outras críticas de obras de Junji Ito:",
+          "runs": [
+            {
+              "text": "Outras críticas de obras de Junji Ito:",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "A Sala de Aula que Derreteu",
+              "runs": [
+                {
+                  "text": "A Sala de Aula que Derreteu",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2022/04/14/critica-a-sala-de-aula-que-derreteu-volume-unico-pipoca-nanquim/"
+                }
+              ]
+            },
+            {
+              "text": "Angústia",
+              "runs": [
+                {
+                  "text": "Angústia",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2024/10/30/critica-angustia-editora-jbc/"
+                }
+              ]
+            },
+            {
+              "text": "As Esculturas sem Cabeça",
+              "runs": [
+                {
+                  "text": "As Esculturas sem Cabeça",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "As Egocêntricas Maldições de Souichi",
+              "runs": [
+                {
+                  "text": "As Egocêntricas Maldições de Souichi",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2023/05/25/resenha-souichi-manga/"
+                }
+              ]
+            },
+            {
+              "text": "Calafrios",
+              "runs": [
+                {
+                  "text": "Calafrios",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2023/01/04/critica-calafrios-volume-unico-pipoca-nanquim/"
+                }
+              ]
+            },
+            {
+              "text": "Cidade das Lápides",
+              "runs": [
+                {
+                  "text": "Cidade das Lápides",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2026/07/24/critica-cidade-das-lapides-de-junji-ito-editora-pipoca-e-nanquim/"
+                }
+              ]
+            },
+            {
+              "text": "Contos Esmagadores",
+              "runs": [
+                {
+                  "text": "Contos Esmagadores",
+                  "marks": [
+                    "em",
+                    "strong"
+                  ],
+                  "href": "https://www.jbox.com.br/2023/10/24/critica-contos-esmagadores-editora-pipoca-e-nanquim/"
+                }
+              ]
+            },
+            {
+              "text": "Dismorfos",
+              "runs": [
+                {
+                  "text": "Dismorfos",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2023/08/01/resenha-dismorfos-junji-ito/"
+                }
+              ]
+            },
+            {
+              "text": "Frankenstein",
+              "runs": [
+                {
+                  "text": "Frankenstein",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2024/01/15/critica-o-frankenstein-de-junji-ito-editora-pipoca-e-nanquim/"
+                }
+              ]
+            },
+            {
+              "text": "Morada do Deserto",
+              "runs": [
+                {
+                  "text": "Morada do Deserto",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2023/11/25/critica-morada-do-desertor-de-junji-ito-editora-pipoca-nanquim/"
+                }
+              ]
+            },
+            {
+              "text": "Mortos de Amor",
+              "runs": [
+                {
+                  "text": "Mortos de Amor",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2023/09/12/critica-mortos-de-amor-de-amor-ninguem-morre-mas-de-maldicao-talvez-editora-pipoca-nanquim/"
+                }
+              ]
+            },
+            {
+              "text": "O Beco",
+              "runs": [
+                {
+                  "text": "O Beco",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2023/12/30/critica-o-beco-ter-uma-formula-de-sucesso-nao-e-algo-necessariamente-bom/"
+                }
+              ]
+            },
+            {
+              "text": "Sensor",
+              "runs": [
+                {
+                  "text": "Sensor",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2023/02/21/critica-sensor-o-horror-cosmico-de-junji-ito-editora-pipoca-nanquim/"
+                }
+              ]
+            },
+            {
+              "text": "Tomie",
+              "runs": [
+                {
+                  "text": "Tomie",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2021/06/06/critica-tomie-pipoca-e-nanquim/"
+                }
+              ]
+            },
+            {
+              "text": "Zona Fantasma",
+              "runs": [
+                {
+                  "text": "Zona Fantasma",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2026/06/04/critica-zona-fantasma-de-junji-ito-editora-pipoca-e-nanquim/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Essa resenha foi feita com base na edição cedida como material de divulgação para a imprensa pela editora Pipoca & Nanquim, que disponibilizou o volume da obra ao JBox.",
+          "runs": [
+            {
+              "text": "Essa resenha foi feita com base na edição cedida como material de divulgação para a imprensa pela editora Pipoca & Nanquim, que disponibilizou o volume da obra ao JBox.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+          "runs": [
+            {
+              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "*O JBox participa do programa de parceria da Amazon, podendo ganhar um valor em cima das compras realizadas a partir dos links do site. Contudo, o JBox não tem responsabilidade sobre possíveis erros presentes em recursos integrados ao site, mas produzidos por terceiros.",
+          "runs": [
+            {
+              "text": "*O JBox participa do programa de parceria da Amazon, podendo ganhar um valor em cima das compras realizadas a partir dos links do site. Contudo, o JBox não tem responsabilidade sobre possíveis erros presentes em recursos integrados ao site, mas produzidos por terceiros.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-02T18:01:54.000Z",
+      "updatedAt": "2026-11-02T18:14:17.000Z",
+      "expiresAt": "2026-11-09T18:01:54.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/02/critica-as-esculturas-sem-cabeca-pipoca-e-nanquim",
+          "publishedAt": "2026-11-02T18:01:54.000Z",
+          "author": "Pedro Vieira"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 4,
+      "wordCount": 757,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 25,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 3,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-33f7d516",
+      "slug": "bocchi-the-rock-recebe-adaptacao-para-novo-filme-animenew-33f7d516",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Bocchi the Rock! recebe adaptação para novo filme",
+      "originalTitle": "Bocchi the Rock! recebe adaptação para novo filme",
+      "summary": "O anime Bocchi the Rock! ganhará um novo filme previsto para estrear em 2027. O anúncio veio acompanhado de um trailer teaser e confirmou que a produção adaptará uma história especial centrada em Seika, irmã mais velha de Nijika.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Cinema",
+        "Notícias",
+        "Bocchi the Rock!"
+      ],
+      "url": "https://animenew.com.br/filme-bocchi-the-rock-2027",
+      "sourceUrl": "https://animenew.com.br/filme-bocchi-the-rock-2027",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Bocchi-the-Rock-recebe-adaptacao-para-novo-filme.webp",
+      "mediaQuery": "Bocchi the Rock! recebe adaptação para novo filme",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Bocchi-the-Rock-filme-2027.webp",
+          "alt": "Bocchi the Rock! filme 2027",
+          "caption": "© はまじあき／芳文社・アニプレックス"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/4pYw8hZRVCM"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Bocchi the Rock! ganhará um novo filme previsto para estrear em 2027. O anúncio veio acompanhado de um trailer teaser e confirmou que a produção adaptará uma história especial centrada em Seika, irmã mais velha de Nijika.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Bocchi the Rock!",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ganhará um novo filme previsto para estrear em 2027. O anúncio veio acompanhado de um trailer teaser e confirmou que a produção adaptará uma história especial centrada em "
+            },
+            {
+              "text": "Seika",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", irmã mais velha de "
+            },
+            {
+              "text": "Nijika",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Enako canta abertura e entra no elenco de Isshiki-san",
+              "runs": [
+                {
+                  "text": "Enako canta abertura e entra no elenco de Isshiki-san",
+                  "href": "https://animenew.com.br/isshiki-san-wants-to-know-about-love-enako"
+                }
+              ]
+            },
+            {
+              "text": "Hiragi-san’s House of Vampires ganhará anime",
+              "runs": [
+                {
+                  "text": "Hiragi-san’s House of Vampires ganhará anime",
+                  "href": "https://animenew.com.br/hiragi-san-house-of-vampires-anime"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=4pYw8hZRVCM",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/4pYw8hZRVCM"
+        },
+        {
+          "type": "paragraph",
+          "text": "Intitulado Eiga Bocchi the Rock! Hoshi no Ashiato, o longa adaptará o capítulo especial “Hoshi ni Tamukeru Ai no Hana”, publicado ao final do quinto volume do mangá de Aki Hamaji. A trama funciona como um prólogo e explora a história de Seika Ichiji.",
+          "runs": [
+            {
+              "text": "Intitulado "
+            },
+            {
+              "text": "Eiga Bocchi the Rock! Hoshi no Ashiato",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o longa adaptará o capítulo especial “"
+            },
+            {
+              "text": "Hoshi ni Tamukeru Ai no Hana",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "”, publicado ao final do quinto volume do mangá de "
+            },
+            {
+              "text": "Aki Hamaji",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A trama funciona como um prólogo e explora a história de Seika Ichiji."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Bocchi-the-Rock-filme-2027.webp",
+          "alt": "Bocchi the Rock! filme 2027",
+          "caption": "© はまじあき／芳文社・アニプレックス"
+        },
+        {
+          "type": "heading",
+          "text": "Equipe de produção",
+          "runs": [
+            {
+              "text": "Equipe de produção"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Shin Wakabayashi, conhecido por Wonder Egg Priority, dirigirá o filme no estúdio CloverWorks. Erika Yoshida retorna para escrever o roteiro, enquanto Yukiko Horiguchi assume o design dos personagens.",
+          "runs": [
+            {
+              "text": "Shin Wakabayashi, conhecido por Wonder Egg Priority, dirigirá o filme no estúdio CloverWorks. Erika Yoshida retorna para escrever o roteiro, enquanto Yukiko Horiguchi assume o design dos personagens."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A equipe também conta com Hiroaki Iriyama no figurino, Kazuko Nakashima na direção de cores e Akiko Fujita na direção de som. A distribuição ficará a cargo da Animec.",
+          "runs": [
+            {
+              "text": "A equipe também conta com Hiroaki Iriyama no figurino, Kazuko Nakashima na direção de cores e Akiko Fujita na direção de som. A distribuição ficará a cargo da Animec."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História e franquia de Bocchi the Rock",
+          "runs": [
+            {
+              "text": "História e franquia de "
+            },
+            {
+              "text": "Bocchi the Rock",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "O mangá acompanha Hitori Gotoh, uma guitarrista extremamente tímida que sonha em fazer amigos e acaba entrando na banda Kessoku Band. Assim a obra estreou na revista Manga Time Kirara Max, da Houbunsha, em dezembro de 2017.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " acompanha "
+            },
+            {
+              "text": "Hitori Gotoh",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", uma guitarrista extremamente tímida que sonha em fazer amigos e acaba entrando na banda "
+            },
+            {
+              "text": "Kessoku Band",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Assim a obra estreou na revista "
+            },
+            {
+              "text": "Manga Time Kirara Max",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da Houbunsha, em dezembro de 2017."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim, a adaptação para TV estreou em outubro de 2022, seguindo de uma segunda temporada que também está em produção, com Yusuke Yamamoto na direção.",
+          "runs": [
+            {
+              "text": "Por fim, a adaptação para TV estreou em outubro de 2022, seguindo de uma segunda temporada que também está em produção, com Yusuke Yamamoto na direção."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://bocchi.rocks/hoshinoashiato/news/?article_id=71600"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Bocchi the Rock! recebe adaptação para novo filme.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Bocchi the Rock! recebe adaptação para novo filme",
+              "href": "https://animenew.com.br/filme-bocchi-the-rock-2027/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-02T14:31:34.000Z",
+      "updatedAt": "2026-11-02T14:31:34.000Z",
+      "expiresAt": "2026-11-09T14:31:34.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/filme-bocchi-the-rock-2027",
+          "publishedAt": "2026-11-02T14:31:34.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 253,
+      "qualityScore": 0.974,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-27ee429d",
+      "slug": "dublagem-de-dragon-ball-super-chega-completa-via-streaming-pela-1-vez-no-disney-jbox-27ee429d",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Dublagem de ‘Dragon Ball Super’ chega completa via streaming pela 1ª vez no Disney+",
+      "originalTitle": "Dublagem de ‘Dragon Ball Super’ chega completa via streaming pela 1ª vez no Disney+",
+      "summary": "11 anos depois do lançamento da série e 9 desde que a dublagem estreou, acredita que Dragon Ball Super nunca esteve com áudio em português via streaming? Pois é, isso mudou no último dia 31, quando os 131 episódios do animê chegaram de uma vez no catálogo do Disney+ (que também exibe o atual remake Dragon Ball Super: Beerus, mas só legendado).",
+      "author": "Rafael Jiback",
+      "tags": [
+        "Anime",
+        "Dublagem",
+        "Streaming",
+        "animes no disney+",
+        "dragon ball disney plus",
+        "dragon ball streaming",
+        "dragon ball super dublado",
+        "onde assistir dragon ball super dublado"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/02/dublagem-de-dragon-ball-super-chega-completa-via-streaming-pela-1a-vez-no-disney",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/02/dublagem-de-dragon-ball-super-chega-completa-via-streaming-pela-1a-vez-no-disney",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/dragonballsuper-destacada.jpg",
+      "mediaQuery": "Dublagem de ‘Dragon Ball Super’ chega completa via streaming pela 1ª vez no Disney+",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/disneyplus-dragonballsuper.jpg",
+          "alt": "imagem: tela do Disney+ de Dragon Ball Super",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/dragonballsuper-episodio2cartela.jpg",
+          "alt": "título do episódio de Dragon Ball Super em dois idiomas",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/dragonballsuper-episodio2cartelacreditos.jpg",
+          "alt": "créditos do episódio de Dragon Ball Super em dois idiomas",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/k_rJB-yWCdg"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "11 anos depois do lançamento da série e 9 desde que a dublagem estreou, acredita que Dragon Ball Super nunca esteve com áudio em português via streaming? Pois é, isso mudou no último dia 31, quando os 131 episódios do animê chegaram de uma vez no catálogo do Disney+ (que também exibe o atual remake Dragon Ball Super: Beerus, mas só legendado).",
+          "runs": [
+            {
+              "text": "11 anos depois do lançamento da série e 9 desde que a dublagem estreou, acredita que "
+            },
+            {
+              "text": "Dragon Ball Super",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "nunca esteve com áudio em português via streaming? Pois é, isso mudou no último dia 31, quando o"
+            },
+            {
+              "text": "s 131 episódios",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " do animê chegaram de uma vez no catálogo do "
+            },
+            {
+              "text": "Disney+",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (que também exibe o atual remake "
+            },
+            {
+              "text": "Dragon Ball Super: Beerus",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", mas só legendado)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Até então, a dublagem brasileira feita pelo estúdio UniDub (atual Iyuno Brasil) tinha sido exibida oficialmente apenas em canais de TV. A estreia aconteceu pelo Cartoon Network em 5 de agosto de 2017 e mais tarde houve uma exibição pela Band e pelo Warner Channel.",
+          "runs": [
+            {
+              "text": "Até então, a dublagem brasileira feita pelo estúdio "
+            },
+            {
+              "text": "UniDub",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (atual Iyuno Brasil) tinha sido exibida oficialmente apenas em canais de TV. A estreia aconteceu pelo "
+            },
+            {
+              "text": "Cartoon Network",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " em 5 de agosto de 2017 e mais tarde houve uma exibição pela "
+            },
+            {
+              "text": "Band ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "e pelo"
+            },
+            {
+              "text": " Warner Channel",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Todos os episódios nos Disney+ estão apenas com o áudio em português. A versão em japonês legendada segue na Crunchyroll (mas, estranhamente, apenas a saga do Goku Black com legendas em português atualmente).",
+          "runs": [
+            {
+              "text": "Todos os episódios nos Disney+ estão"
+            },
+            {
+              "text": " apenas com o áudio em português",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A versão em japonês legendada segue na Crunchyroll (mas, estranhamente, apenas a saga do Goku Black com legendas em português atualmente)."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/disneyplus-dragonballsuper.jpg",
+          "alt": "imagem: tela do Disney+ de Dragon Ball Super"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/Disney+",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/Disney+"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "▶ Clique aqui para acessar a página da série no Disney+",
+          "runs": [
+            {
+              "text": "▶ Clique aqui para acessar a página da série no Disney+",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.disneyplus.com/pt-br/browse/entity-ceb1fd76-acbe-4269-a1f3-532614807772"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "heading",
+          "text": "Imagem diferente",
+          "runs": [
+            {
+              "text": "Imagem diferente"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Para a exibição do Disney+ está sendo usado o padrão de imagem original japonês, com créditos e títulos de episódios nesse idioma. Nas exibições pelo Cartoon e pela Band eram usadas traduções feitas pela UniDub.",
+          "runs": [
+            {
+              "text": "Para a exibição do Disney+ está sendo usado o padrão de imagem original japonês, com créditos e títulos de episódios nesse idioma. Nas exibições pelo Cartoon e pela Band eram usadas traduções feitas pela UniDub."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Também é usada a versão feita para o Blu-ray japonês, que conta com algumas melhorias pontuais no acabamento da animação (não que salve muita coisa, mas…).",
+          "runs": [
+            {
+              "text": "Também é usada a versão feita para o Blu-ray japonês, que conta com algumas melhorias pontuais no acabamento da animação (não que salve muita coisa, mas…)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Quanto aos créditos de dublagem, esses foram adicionados em cartelas padrão ao fim dos episódios.",
+          "runs": [
+            {
+              "text": "Quanto aos créditos de dublagem, esses foram adicionados em cartelas padrão ao fim dos episódios."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/dragonballsuper-episodio2cartela.jpg",
+          "alt": "título do episódio de Dragon Ball Super em dois idiomas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Comparativo do título do 2º episódio, na versão do Disney+ e a exibida pelo Cartoon Network. | Reprodução: Toei Animation/Disney+/Cartoon Network",
+          "runs": [
+            {
+              "text": "Comparativo do título do 2º episódio, na versão do Disney+ e a exibida pelo Cartoon Network. | Reprodução: Toei Animation/Disney+/Cartoon Network"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/dragonballsuper-episodio2cartelacreditos.jpg",
+          "alt": "créditos do episódio de Dragon Ball Super em dois idiomas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Comparativo de tela de créditos, na versão do Disney+ e a exibida pelo Cartoon Network. | Reprodução: Toei Animation/Disney+/Cartoon Network",
+          "runs": [
+            {
+              "text": "Comparativo de tela de créditos, na versão do Disney+ e a exibida pelo Cartoon Network. | Reprodução: Toei Animation/Disney+/Cartoon Network"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Dublagem é a mesma de sempre",
+          "runs": [
+            {
+              "text": "Dublagem é a mesma de sempre"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Quem acompanhou a época de lançamento de Dragon Ball Super dublado deve se lembrar de uma série de polêmicas em torno da tradução. Isso porque várias gírias e referências culturais brasileiras, que por vezes fugiam do tom da série, foram utilizadas.",
+          "runs": [
+            {
+              "text": "Quem acompanhou a época de lançamento de "
+            },
+            {
+              "text": "Dragon Ball Super",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " dublado deve se lembrar de uma série de polêmicas em torno da tradução. Isso porque várias gírias e referências culturais brasileiras, que por vezes fugiam do tom da série, foram utilizadas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre as cenas que mais chamaram atenção negativamente estavam uma menção de Vegeta ao poder de “mais de 8 mil” de Zamasu, e o Mestre Kame comentando do Broly antes do personagem ser oficializado no cânone das séries de TV (nenhuma dessas falas estava no roteiro original).",
+          "runs": [
+            {
+              "text": "Entre as cenas que mais chamaram atenção negativamente estavam uma menção de Vegeta ao poder de “mais de 8 mil” de Zamasu, e o Mestre Kame comentando do Broly antes do personagem ser oficializado no cânone das séries de TV (nenhuma dessas falas estava no roteiro original)."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=k_rJB-yWCdg",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/k_rJB-yWCdg"
+        },
+        {
+          "type": "paragraph",
+          "text": "Em 2019, Wendel Bezerra, dono da UniDub e voz do Goku, chegou a comentar que o estúdio teria redublado várias linhas de diálogos para “corrigir” falas desse tipo — porém, nenhuma emissora exibiu essa segunda versão, tampouco ela apareceu no Disney+, que usa a mesma de sempre (pelo menos até onde conseguimos checar).",
+          "runs": [
+            {
+              "text": "Em 2019",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://youtu.be/Vtjf_0cv67U?si=1hNXHUE0jZLueECl&t=177"
+            },
+            {
+              "text": ", Wendel Bezerra, dono da UniDub e voz do Goku, chegou a comentar que"
+            },
+            {
+              "text": " o estúdio teria redublado várias linhas de diálogos para “corrigir” falas desse tipo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " — porém, nenhuma emissora exibiu essa segunda versão, tampouco ela apareceu no Disney+, que usa a mesma de sempre (pelo menos até onde conseguimos checar)."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Onde assistir mais Dragon Ball?",
+          "runs": [
+            {
+              "text": "Onde assistir mais ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Dragon Ball",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "?",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A franquia está espalhada por diversas plataformas de streaming.",
+          "runs": [
+            {
+              "text": "A franquia está espalhada por diversas plataformas de streaming."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Dragon Ball (1986-1989): Crunchyroll (versão com censuras dublada e versão sem cortes legendada)",
+              "runs": [
+                {
+                  "text": "Dragon Ball ",
+                  "marks": [
+                    "em",
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "(1986-1989):",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " Crunchyroll (versão com censuras dublada e versão sem cortes legendada)"
+                }
+              ]
+            },
+            {
+              "text": "Dragon Ball Z (1989-1996): Crunchyroll (dublado e legendado); em exibição na TV pelo Adult Swim",
+              "runs": [
+                {
+                  "text": "Dragon Ball Z ",
+                  "marks": [
+                    "em",
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "(1989-1996):",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " Crunchyroll (dublado e legendado); em exibição na TV pelo Adult Swim"
+                }
+              ]
+            },
+            {
+              "text": "Dragon Ball GT (1996-1997): Crunchyroll (dublado e legendado)",
+              "runs": [
+                {
+                  "text": "Dragon Ball GT",
+                  "marks": [
+                    "em",
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " (1996-1997): ",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "Crunchyroll (dublado e legendado)"
+                }
+              ]
+            },
+            {
+              "text": "Dragon Ball Z Kai (2009-2011): Crunchyroll (dublado e legendado), HBO Max (dublado)",
+              "runs": [
+                {
+                  "text": "Dragon Ball Z Kai ",
+                  "marks": [
+                    "em",
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "(2009-2011): ",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "Crunchyroll (dublado e legendado), HBO Max (dublado)"
+                }
+              ]
+            },
+            {
+              "text": "Dragon Ball Z Kai – The Final Chapters (2014-2015): Crunchyroll (dublado e legendado), HBO Max (dublado e legendado)",
+              "runs": [
+                {
+                  "text": "Dragon Ball Z Kai – The Final Chapters",
+                  "marks": [
+                    "em",
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " (2014-2015): ",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "Crunchyroll (dublado e legendado), HBO Max (dublado e legendado)"
+                }
+              ]
+            },
+            {
+              "text": "Dragon Ball Super (2015-2018): Crunchyroll (legendado), Disney+ (dublado)",
+              "runs": [
+                {
+                  "text": "Dragon Ball Super",
+                  "marks": [
+                    "em",
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " (2015-2018): ",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "Crunchyroll (legendado), Disney+ (dublado)"
+                }
+              ]
+            },
+            {
+              "text": "Dragon Ball DAIMA (2024-2025): Crunchyroll (dublado e legendado), Netflix (legendado), HBO Max (dublado e legendado)",
+              "runs": [
+                {
+                  "text": "Dragon Ball DAIMA",
+                  "marks": [
+                    "em",
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " (2024-2025): ",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "Crunchyroll (dublado e legendado), Netflix (legendado), HBO Max (dublado e legendado)"
+                }
+              ]
+            },
+            {
+              "text": "Dragon Ball Super: Beerus (2026-): Crunchyroll (legendado), Netflix (legendado), HBO Max (legendado), Disney+ (legendado)",
+              "runs": [
+                {
+                  "text": "Dragon Ball Super: Beerus",
+                  "marks": [
+                    "em",
+                    "strong"
+                  ]
+                },
+                {
+                  "text": " (2026-): ",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "Crunchyroll (legendado), Netflix (legendado), HBO Max (legendado), Disney+ (legendado)"
+                }
+              ]
+            },
+            {
+              "text": "Dragon Ball Z – A Batalha dos Deuses (2013): Crunchyroll (dublado e legendado), Netflix (dublado e legendado)",
+              "runs": [
+                {
+                  "text": "Dragon Ball Z – A Batalha dos Deuses ",
+                  "marks": [
+                    "em",
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "(2013): ",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "Crunchyroll (dublado e legendado), Netflix (dublado e legendado)"
+                }
+              ]
+            },
+            {
+              "text": "Dragon Ball Super: Super Hero (2022): Crunchyroll (dublado e legendado), Disney+ (dublado e legendado)",
+              "runs": [
+                {
+                  "text": "Dragon Ball Super: Super Hero ",
+                  "marks": [
+                    "em",
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "(2022): ",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "text": "Crunchyroll (dublado e legendado), Disney+ (dublado e legendado)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Disney+",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Disney+",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.disneyplus.com/pt-br/browse/entity-ceb1fd76-acbe-4269-a1f3-532614807772"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-02T14:01:22.000Z",
+      "updatedAt": "2026-11-02T18:09:31.000Z",
+      "expiresAt": "2026-11-09T14:01:22.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/02/dublagem-de-dragon-ball-super-chega-completa-via-streaming-pela-1a-vez-no-disney",
+          "publishedAt": "2026-11-02T14:01:22.000Z",
+          "author": "Rafael Jiback"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 586,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 25,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 3,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-86f38c14",
       "slug": "enako-canta-abertura-e-entra-no-elenco-de-isshiki-san-animenew-86f38c14",
@@ -3262,7 +5004,7 @@
       "sourceCount": 1,
       "readingMinutes": 1,
       "wordCount": 199,
-      "qualityScore": 0.963,
+      "qualityScore": 0.903,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3627,7 +5369,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 229,
-      "qualityScore": 0.97,
+      "qualityScore": 0.91,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -4031,7 +5773,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 297,
-      "qualityScore": 0.977,
+      "qualityScore": 0.917,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -4293,7 +6035,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 245,
-      "qualityScore": 0.972,
+      "qualityScore": 0.912,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -8089,266 +9831,6 @@
       }
     },
     {
-      "id": "animenew-4cc977e7",
-      "slug": "bleach-mirrors-high-ganha-trailer-de-abertura-e-musica-tema-animenew-4cc977e7",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Bleach Mirrors High ganha trailer de abertura e música tema",
-      "originalTitle": "Bleach Mirrors High ganha trailer de abertura e música tema",
-      "summary": "O jogo mobile Bleach Mirrors High divulgou seu trailer de abertura nesta terça-feira (27), revelando a música tema “CRITICAL”, interpretada por suisoh. Sendo assim o lançamento acontece em 28 de outubro para iOS e Android.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Games",
-        "Notícias",
-        "Bleach Mirrors High"
-      ],
-      "url": "https://animenew.com.br/bleach-mirrors-high-trailer-lancamento",
-      "sourceUrl": "https://animenew.com.br/bleach-mirrors-high-trailer-lancamento",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Bleach-Mirrors-High-ganha-trailer-de-abertura-e-musica-tema.webp",
-      "mediaQuery": "Bleach Mirrors High ganha trailer de abertura e música tema",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Bleach-Mirrors-High-Mobile-Game.webp",
-          "alt": "Bleach Mirrors High Mobile Game",
-          "caption": "© K/STDP ©BNEI"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/Ev0FRl7IRkU"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O jogo mobile Bleach Mirrors High divulgou seu trailer de abertura nesta terça-feira (27), revelando a música tema “CRITICAL”, interpretada por suisoh. Sendo assim o lançamento acontece em 28 de outubro para iOS e Android.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "jogo mobile",
-              "href": "https://animenew.com.br/games"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Bleach Mirrors High",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " divulgou seu trailer de abertura nesta terça-feira (27), revelando a música tema “CRITICAL”, interpretada por suisoh. Sendo assim o lançamento acontece em 28 de outubro para iOS e Android."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "DanMachi anuncia novo jogo para PC e mobile",
-              "runs": [
-                {
-                  "text": "DanMachi anuncia novo jogo para PC e mobile",
-                  "href": "https://animenew.com.br/danmachi-frontier-zero-jogo-2027"
-                }
-              ]
-            },
-            {
-              "text": "Zelda: Ocarina of Time revela novidades no Switch 2",
-              "runs": [
-                {
-                  "text": "Zelda: Ocarina of Time revela novidades no Switch 2",
-                  "href": "https://animenew.com.br/zelda-ocarina-of-time-revela-novidades-no-switch-2"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A animação de abertura ganhou produção pelo Studio Pierrot Films, equipe ligada ao anime Bleach: Thousand-Year Blood War. O vídeo apresenta cenas da nova aventura baseada na obra de Tite Kubo.",
-          "runs": [
-            {
-              "text": "A animação de abertura ganhou produção pelo "
-            },
-            {
-              "text": "Studio Pierrot Films",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", equipe ligada ao anime "
-            },
-            {
-              "text": "Bleach: Thousand-Year Blood War",
-              "href": "https://animenew.com.br/anime/185874/bleach-sennen-kessen-hen-kashin-tan"
-            },
-            {
-              "text": ". O vídeo apresenta cenas da nova aventura baseada na obra de Tite Kubo."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=Ev0FRl7IRkU",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/Ev0FRl7IRkU"
-        },
-        {
-          "type": "heading",
-          "text": "Novos personagens em Bleach Mirrors High",
-          "runs": [
-            {
-              "text": "Novos personagens em Bleach Mirrors High"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Assim o game também contará com personagens inéditos desenhados pelo criador do mangá, incluindo Hachirota Rohbe, Tasuku Nimura, Kuon Hoshimura, Ibuki Kajimaru e Mizuki Gandera, além de outros novos Shinigamis.",
-          "runs": [
-            {
-              "text": "Assim o game também contará com personagens inéditos desenhados pelo criador do mangá, incluindo Hachirota Rohbe, Tasuku Nimura, Kuon Hoshimura, Ibuki Kajimaru e Mizuki Gandera, além de outros novos Shinigamis."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Bleach-Mirrors-High-Mobile-Game.webp",
-          "alt": "Bleach Mirrors High Mobile Game",
-          "caption": "© K/STDP ©BNEI"
-        },
-        {
-          "type": "heading",
-          "text": "História de Mirrors High",
-          "runs": [
-            {
-              "text": "História de Mirrors High"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A história se passa após a Guerra Sangrenta dos Mil Anos e acompanha uma alma recém-despertada em Karakura Town. Os jogadores poderão criar seu próprio personagem, personalizar sua aparência e desenvolver uma Zanpakuto exclusiva.",
-          "runs": [
-            {
-              "text": "A história se passa após a Guerra Sangrenta dos Mil Anos e acompanha uma alma recém-despertada em Karakura Town. Os jogadores poderão criar seu próprio personagem, personalizar sua aparência e desenvolver uma Zanpakuto exclusiva.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O sistema de combate permite formar equipes de três integrantes e combinar ataques baseados em cartas, golpes especiais e a técnica Soul Drive, que ativa ataques conjuntos.",
-          "runs": [
-            {
-              "text": "O sistema de combate permite formar equipes de três integrantes e combinar ataques baseados em cartas, golpes especiais e a técnica "
-            },
-            {
-              "text": "Soul Drive",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que ativa ataques conjuntos."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Portanto o elenco de vozes inclui Yū Sasahara como Maiko Tokishima, Shōgo Batori como Giro Hando e Fūka Izumi como Naru Jurinna. Ademais o jogo realizou um teste beta fechado entre 22 e 29 de julho.",
-          "runs": [
-            {
-              "text": "Portanto o elenco de vozes inclui Yū Sasahara como Maiko Tokishima, Shōgo Batori como Giro Hando e Fūka Izumi como Naru Jurinna. Ademais o jogo realizou um teste beta fechado entre 22 e 29 de julho."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://bleach-mh.bn-ent.net/en/news/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Bleach Mirrors High ganha trailer de abertura e música tema.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Bleach Mirrors High ganha trailer de abertura e música tema",
-              "href": "https://animenew.com.br/bleach-mirrors-high-trailer-lancamento/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-27T22:36:36.000Z",
-      "updatedAt": "2026-10-27T22:36:36.000Z",
-      "expiresAt": "2026-11-03T22:36:36.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/bleach-mirrors-high-trailer-lancamento",
-          "publishedAt": "2026-10-27T22:36:36.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 248,
-      "qualityScore": 0.914,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
       "id": "jbox-88801e78",
       "slug": "critica-digimon-beatbreak-jbox-88801e78",
       "source": "JBox",
@@ -9474,603 +10956,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 3,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-6ae6233b",
-      "slug": "cosmic-mimimi-autora-de-terra-das-gemas-anuncia-novo-manga-jbox-6ae6233b",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "COSMIC MIMIMI: Autora de ‘Terra das Gemas’ anuncia novo mangá",
-      "originalTitle": "COSMIC MIMIMI: Autora de ‘Terra das Gemas’ anuncia novo mangá",
-      "summary": "Foi anunciado na edição mais recente da revista Afternoon que a autora Haruko Ichikawa vai começar a publicar um novo mangá chamado COSMIC MIMIMI no próximo dia 25 de novembro.",
-      "author": "Teke",
-      "tags": [
-        "Mangá",
-        "COSMIC MIMIMI",
-        "Haruko Ichikawa"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/26/cosmic-mimimi-autora-de-terra-das-gemas-anuncia-novo-manga",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/26/cosmic-mimimi-autora-de-terra-das-gemas-anuncia-novo-manga",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/cosmic-mimimi-destacada.jpg",
-      "mediaQuery": "COSMIC MIMIMI: Autora de ‘Terra das Gemas’ anuncia novo mangá",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/cosmic-mimimi-personagens.jpg",
-          "alt": "imagem: ilustração para apresentação dos personagens e da cidade onde se passará o mangá 'Cosmic Mimimi'. Os personagens tem formas variadas, indo desde criaturas parecidas com humanos até algumas em forma de lagarta ou de uma mola.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Foi anunciado na edição mais recente da revista Afternoon que a autora Haruko Ichikawa vai começar a publicar um novo mangá chamado COSMIC MIMIMI no próximo dia 25 de novembro.",
-          "runs": [
-            {
-              "text": "Foi anunciado na edição mais recente da revista "
-            },
-            {
-              "text": "Afternoon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " que a autora "
-            },
-            {
-              "text": "Haruko Ichikawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " vai começar a publicar um novo mangá chamado "
-            },
-            {
-              "text": "COSMIC MIMIMI",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " no próximo dia "
-            },
-            {
-              "text": "25 de novembro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "COSMIC MIMIMI é descrito como uma “ficção científica neo kawaii”. A história acompanha a protagonista titular Mimimi, que vive em uma cidade dos sonhos e tem como objetivo deixar todos felizes. No entanto, coisas estranhas também acontecem envolvendo essa criatura moldada na felicidade.",
-          "runs": [
-            {
-              "text": "COSMIC MIMIMI",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é descrito como uma “ficção científica neo kawaii”. A história acompanha a protagonista titular Mimimi, que vive em uma cidade dos sonhos e tem como objetivo deixar todos felizes. No entanto, coisas estranhas também acontecem envolvendo essa criatura moldada na felicidade."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/cosmic-mimimi-personagens.jpg",
-          "alt": "imagem: ilustração para apresentação dos personagens e da cidade onde se passará o mangá 'Cosmic Mimimi'. Os personagens tem formas variadas, indo desde criaturas parecidas com humanos até algumas em forma de lagarta ou de uma mola."
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Ilustração apresentando personagens de ‘Cosmic Mimimi’ | Divulgação/Kodansha",
-          "runs": [
-            {
-              "text": "Imagem: Ilustração apresentando personagens de ‘Cosmic Mimimi’ | Divulgação/Kodansha"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ichikawa começou sua carreira como mangaká em 2006, mantendo o foco na produção de one shots até 2012, quando começou sua primeira série, Terra das Gemas (Houseki no Kuni). A obra premiada ficou em publicação até 2024 na revista Afternoon, sendo encadernada em 13 volumes pela Kodansha — no Brasil, a editora NewPOP publicou o mangá. O título foi adaptado para animê em 2017 pelo estúdio Orange, série que não está mais disponível no Brasil devido ao streaming Hidive ter encerrado seus serviços por aqui.",
-          "runs": [
-            {
-              "text": "Ichikawa começou sua carreira como mangaká em 2006, mantendo o foco na produção de"
-            },
-            {
-              "text": " one shots",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " até 2012, quando começou sua primeira série, "
-            },
-            {
-              "text": "Terra das Gemas",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Houseki no Kuni",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "). A obra premiada ficou em publicação até 2024 na revista"
-            },
-            {
-              "text": " Afternoon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", sendo encadernada em 13 volumes pela Kodansha — no Brasil, a editora "
-            },
-            {
-              "text": "NewPOP",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " publicou o mangá. O título foi adaptado para animê em 2017 pelo estúdio Orange, série que não está mais disponível no Brasil devido ao streaming Hidive ter encerrado seus serviços por aqui."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A artista é conhecida também por seu trabalho para a franquia Pokémon, tendo sido responsável por design tanto de monstrinhos quanto de personagens humanos de jogos da série desde a 7ª geração.",
-          "runs": [
-            {
-              "text": "A artista é conhecida também por seu trabalho para a franquia "
-            },
-            {
-              "text": "Pokémon",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", tendo sido responsável por design tanto de monstrinhos quanto de personagens humanos de jogos da série desde a 7ª geração."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Anime News Network",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Anime News Network",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.animenewsnetwork.com/news/2026-10-25/land-of-the-lustrous-haruko-ichikawa-launches-new-manga-cosmic-mimimi/.243167"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-26T17:25:02.000Z",
-      "updatedAt": "2026-10-26T17:25:40.000Z",
-      "expiresAt": "2026-11-02T17:25:02.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/26/cosmic-mimimi-autora-de-terra-das-gemas-anuncia-novo-manga",
-          "publishedAt": "2026-10-26T17:25:02.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 220,
-      "qualityScore": 0.906,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 9,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-c256aff9",
-      "slug": "novo-filme-de-kaiju-no-8-ganha-primeiro-teaser-jbox-c256aff9",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Novo filme de ‘Kaiju No. 8’ ganha primeiro teaser",
-      "originalTitle": "Novo filme de ‘Kaiju No. 8’ ganha primeiro teaser",
-      "summary": "A TOHO animation anunciou neste sábado (24) que o arco final do animê de Kaiju No. 8 será adaptado para um filme com estreia prevista para 2027. Intitulado Kaiju No. 8: The Final Mission, o longa teve um vídeo de super teaser visual divulgado junto ao anúncio:",
-      "author": "Igor Lunei",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "filme de kaiju no. 8",
-        "kaiju no 8",
-        "vídeo do filme de kaiju no 8"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/26/novo-filme-de-kaiju-no-8-ganha-primeiro-teaser",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/26/novo-filme-de-kaiju-no-8-ganha-primeiro-teaser",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/kaiju-no-8-filme-destacada.jpg",
-      "mediaQuery": "Novo filme de ‘Kaiju No. 8’ ganha primeiro teaser",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/kaiju-no-8-poster-scaled.jpg",
-          "alt": "Pôster do filme de 'Kaiju No. 8', mostrando um monstro gigante no meio da cidade.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/mrAj1c2iAuE"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A TOHO animation anunciou neste sábado (24) que o arco final do animê de Kaiju No. 8 será adaptado para um filme com estreia prevista para 2027. Intitulado Kaiju No. 8: The Final Mission, o longa teve um vídeo de super teaser visual divulgado junto ao anúncio:",
-          "runs": [
-            {
-              "text": "A TOHO animation anunciou neste sábado (24) que o arco final do animê de "
-            },
-            {
-              "text": "Kaiju No. 8",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " será adaptado para um filme com estreia prevista para 2027. Intitulado "
-            },
-            {
-              "text": "Kaiju No. 8: The Final Mission",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", o longa teve um vídeo de "
-            },
-            {
-              "text": "super teaser visual",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " divulgado junto ao anúncio:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=mrAj1c2iAuE",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/mrAj1c2iAuE"
-        },
-        {
-          "type": "paragraph",
-          "text": "O filme terá a direção de Shigeyuki Miya, que já atua como diretor da série animada. E ele será produzido pelo estúdio Production I.G.",
-          "runs": [
-            {
-              "text": "O filme terá a direção de "
-            },
-            {
-              "text": "Shigeyuki Miya",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que já atua como diretor da série animada. E ele será produzido pelo estúdio "
-            },
-            {
-              "text": "Production I.G",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A confirmação dessa produção veio pela conta oficial da franquia em inglês na rede social X, antigo Twitter. A arte promocional traz a frase “The era of humans is over” (“A era dos humanos acabou”) e foi desenhada por Shinji Kimura, diretor de arte da produção:",
-          "runs": [
-            {
-              "text": "A confirmação dessa produção veio pela conta oficial da franquia em inglês na rede social X, antigo Twitter. A arte promocional traz a frase "
-            },
-            {
-              "text": "“The era of humans is over”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " (“A era dos humanos acabou”) e foi desenhada por "
-            },
-            {
-              "text": "Shinji Kimura",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", diretor de arte da produção:"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/kaiju-no-8-poster-scaled.jpg",
-          "alt": "Pôster do filme de 'Kaiju No. 8', mostrando um monstro gigante no meio da cidade."
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Site oficial de ‘Kaiju No. 8’/Reprodução",
-          "runs": [
-            {
-              "text": "Imagem: Site oficial de ‘Kaiju No. 8’/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Kaiju No. 8 é um mangá com autoria de Naoya Matsumoto, publicado no Japão entre 2020 e 2025 na plataforma gratuita Shonen Jump+, da editora Shueisha, sendo que os capítulos também ficam disponíveis em português pelo aplicativo MANGA Plus. A versão compilada reuniu 16 volumes. No Brasil, essa edição é publicada pela Panini.",
-          "runs": [
-            {
-              "text": "Kaiju No. 8",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é um mangá com autoria de "
-            },
-            {
-              "text": "Naoya Matsumoto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", publicado no Japão entre 2020 e 2025 na plataforma gratuita "
-            },
-            {
-              "text": "Shonen Jump+",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", da editora "
-            },
-            {
-              "text": "Shueisha",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", sendo que os capítulos também ficam disponíveis em português pelo aplicativo MANGA Plus. A versão compilada reuniu 16 volumes. No Brasil, essa edição é publicada pela "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "As duas temporadas do animê são exibidas pela Crunchyroll, disponíveis com dublagem em português e legendas.",
-          "runs": [
-            {
-              "text": "As duas temporadas do animê são exibidas pela Crunchyroll, disponíveis com dublagem em português e legendas."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site oficial de Kaiju No. 8",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Site oficial de Kaiju No. 8",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://kaiju-no8.net/news/detail_261024_01.html"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-26T16:52:39.000Z",
-      "updatedAt": "2026-10-26T16:54:14.000Z",
-      "expiresAt": "2026-11-02T16:52:39.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/26/novo-filme-de-kaiju-no-8-ganha-primeiro-teaser",
-          "publishedAt": "2026-10-26T16:52:39.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 217,
-      "qualityScore": 0.908,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
