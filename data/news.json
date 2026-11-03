@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T18:44:57.518Z",
+  "generatedAt": "2026-11-03T01:18:47.625Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,17 +55,17 @@
   ],
   "stats": {
     "collected": 47,
-    "grouped": 26,
-    "published": 26,
-    "newStories": 26,
-    "fullArticles": 26,
+    "grouped": 25,
+    "published": 25,
+    "newStories": 25,
+    "fullArticles": 25,
     "previewArticles": 0,
-    "avgWords": 424,
-    "withHeroImage": 26,
-    "withOrderedMedia": 26,
+    "avgWords": 430,
+    "withHeroImage": 25,
+    "withOrderedMedia": 25,
     "skippedTranslation": 0,
-    "skippedQuality": 20,
-    "durationMs": 7721
+    "skippedQuality": 21,
+    "durationMs": 4632
   },
   "items": [
     {
@@ -3281,7 +3281,7 @@
       "sourceCount": 1,
       "readingMinutes": 7,
       "wordCount": 1385,
-      "qualityScore": 1,
+      "qualityScore": 0.97,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3792,7 +3792,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 357,
-      "qualityScore": 0.986,
+      "qualityScore": 0.926,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -4020,7 +4020,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 232,
-      "qualityScore": 0.968,
+      "qualityScore": 0.908,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -4509,7 +4509,7 @@
       "sourceCount": 1,
       "readingMinutes": 3,
       "wordCount": 481,
-      "qualityScore": 1,
+      "qualityScore": 0.942,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -4773,7 +4773,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 246,
-      "qualityScore": 0.972,
+      "qualityScore": 0.912,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -10551,411 +10551,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 2,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-992679a0",
-      "slug": "2-temporada-de-akane-banashi-ganha-novo-teaser-poster-e-nomes-do-elenco-jbox-992679a0",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "2ª temporada de ‘Akane-banashi’ ganha novo teaser, pôster e nomes do elenco",
-      "originalTitle": "2ª temporada de ‘Akane-banashi’ ganha novo teaser, pôster e nomes do elenco",
-      "summary": "A TV Asahi divulgou novos detalhes sobre a 2ª temporada de Akane-banashi, animê inspirado no mangá de Yuki Suenaga (roteirista) e Takamasa Moue (desenhista).",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Akane-banashi",
-        "Akane-banashi terá continuação?",
-        "anime de akane banashi",
-        "JBC",
-        "Segunda temporada de Akane-banashi"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/26/2a-temporada-de-akane-banashi-ganha-novo-teaser-poster-e-nomes-do-elenco",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/26/2a-temporada-de-akane-banashi-ganha-novo-teaser-poster-e-nomes-do-elenco",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Akane-Banashi-segunda-temporada-destacada.jpg",
-      "mediaQuery": "2ª temporada de ‘Akane-banashi’ ganha novo teaser, pôster e nomes do elenco",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Akane-Banashi-01-scaled.jpg",
-          "alt": "Pôster da 2ª temporada de Akane-banashi",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Akane-Banashi-02.jpg",
-          "alt": "Imagem da 2ª temporada de Akane-banashi",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Akane-Banashi-03.jpg",
-          "alt": "Imagem da 2ª temporada de Akane-banashi",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/wqryPbcFEKo"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A TV Asahi divulgou novos detalhes sobre a 2ª temporada de Akane-banashi, animê inspirado no mangá de Yuki Suenaga (roteirista) e Takamasa Moue (desenhista).",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "TV Asahi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " divulgou novos detalhes sobre a 2ª temporada de "
-            },
-            {
-              "text": "Akane-banashi",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", animê inspirado no mangá de "
-            },
-            {
-              "text": "Yuki Suenaga",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (roteirista) e "
-            },
-            {
-              "text": "Takamasa Moue",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (desenhista)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para começar, os novos episódios ganharam um teaser e um pôster, que apresenta personagens inéditos e mostram que a protagonista terá desafios inéditos para enfrentar dentro do Rakugo.",
-          "runs": [
-            {
-              "text": "Para começar, os novos episódios ganharam um teaser e um pôster, que apresenta personagens inéditos e mostram que a protagonista terá desafios inéditos para enfrentar dentro do Rakugo."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=wqryPbcFEKo",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/wqryPbcFEKo"
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Akane-Banashi-01-scaled.jpg",
-          "alt": "Pôster da 2ª temporada de Akane-banashi"
-        },
-        {
-          "type": "paragraph",
-          "text": "Pôster da 2ª temporada de Akane-banashi | TV Asahi/Divulgação",
-          "runs": [
-            {
-              "text": "Pôster da 2ª temporada de Akane-banashi | TV Asahi/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além destes detalhes, também foram revelados novos nomes no elenco de voz original. Na nova temporada Taku Yashiro (Phoenix em Gintama) faz o papel de Asagao Konjakutei e Youji Ueda (Rago em Black Torch) interpreta Hassho Tsubakiya.",
-          "runs": [
-            {
-              "text": "Além destes detalhes, também foram revelados novos nomes no elenco de voz original. Na nova temporada "
-            },
-            {
-              "text": "Taku Yashiro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Phoenix em "
-            },
-            {
-              "text": "Gintama",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") faz o papel de Asagao Konjakutei e "
-            },
-            {
-              "text": "Youji Ueda",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Rago em "
-            },
-            {
-              "text": "Black Torch",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") interpreta Hassho Tsubakiya."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Akane-Banashi-02.jpg",
-          "alt": "Imagem da 2ª temporada de Akane-banashi"
-        },
-        {
-          "type": "paragraph",
-          "text": "Taku Yashiro é uma das novidades do elenco de voz | TV Asahi/Reprodução",
-          "runs": [
-            {
-              "text": "Taku Yashiro é uma das novidades do elenco de voz | TV Asahi/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Akane-Banashi-03.jpg",
-          "alt": "Imagem da 2ª temporada de Akane-banashi"
-        },
-        {
-          "type": "paragraph",
-          "text": "E outro destaque é o misterioso personagem Hassho Tsubakiya | TV Asahi/Reprodução",
-          "runs": [
-            {
-              "text": "E outro destaque é o misterioso personagem Hassho Tsubakiya | TV Asahi/Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama original segue Akane Osaki (voz original de Anna Nagase), uma jovem que sempre admirou as performances de Rakugo feitas por seu pai, Shinta Arakawa (voz original de Jun Fukuyama). Porém, um incidente o tira da disputa para se tornar um mestre e, seis anos depois, Akane resolve vingar o pai e se tornar ela mesma uma mestra na arte de atuar e contar histórias cômicas e dramáticas.",
-          "runs": [
-            {
-              "text": "A trama original segue Akane Osaki (voz original de "
-            },
-            {
-              "text": "Anna Nagase",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/j-pedia/perfis/anna-nagase/"
-            },
-            {
-              "text": "), uma jovem que sempre admirou as performances de Rakugo feitas por seu pai, Shinta Arakawa (voz original de "
-            },
-            {
-              "text": "Jun Fukuyama",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/j-pedia/perfis/jun-fukuyama/"
-            },
-            {
-              "text": "). Porém, um incidente o tira da disputa para se tornar um mestre e, seis anos depois, Akane resolve vingar o pai e se tornar ela mesma uma mestra na arte de atuar e contar histórias cômicas e dramáticas."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A primeira temporada do animê teve transmissão global oficial pelo YouTube, com legendas, e chegou ao Brasil também pela Netflix, com capítulos dublados. Já os novos episódios têm estreia prevista para janeiro de 2027, dentro da Temporada de Inverno dos animês. O mangá é publicado no país pela JBC.",
-          "runs": [
-            {
-              "text": "A primeira temporada do animê teve transmissão global oficial pelo"
-            },
-            {
-              "text": " YouTube",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com legendas, e chegou ao Brasil também pela "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com capítulos dublados. Já os novos episódios têm estreia prevista para"
-            },
-            {
-              "text": " janeiro de 2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", dentro da "
-            },
-            {
-              "text": "Temporada de Inverno",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " dos animês. O mangá é publicado no país pela "
-            },
-            {
-              "text": "JBC",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "▶️ Crítica | Akane-banashi | 1ª temporada",
-          "runs": [
-            {
-              "text": "▶️ ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Crítica | Akane-banashi | 1ª temporada",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/06/25/critica-akane-banashi-1a-temporada/"
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Anime News Network",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Anime News Network",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.animenewsnetwork.com/news/2026-10-25/akane-banashi-season-2-anime-reveals-more-cast-teaser-trailer/.243178"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-26T19:14:52.000Z",
-      "updatedAt": "2026-10-30T16:27:48.000Z",
-      "expiresAt": "2026-11-02T19:14:52.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/26/2a-temporada-de-akane-banashi-ganha-novo-teaser-poster-e-nomes-do-elenco",
-          "publishedAt": "2026-10-26T19:14:52.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 269,
-      "qualityScore": 0.92,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 16,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 3,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
