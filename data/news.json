@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T07:58:21.665Z",
+  "generatedAt": "2026-11-03T16:01:57.026Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,852 @@
   ],
   "stats": {
     "collected": 47,
-    "grouped": 25,
-    "published": 25,
-    "newStories": 25,
-    "fullArticles": 25,
+    "grouped": 26,
+    "published": 26,
+    "newStories": 26,
+    "fullArticles": 26,
     "previewArticles": 0,
     "avgWords": 430,
-    "withHeroImage": 25,
-    "withOrderedMedia": 25,
+    "withHeroImage": 26,
+    "withOrderedMedia": 26,
     "skippedTranslation": 0,
-    "skippedQuality": 21,
-    "durationMs": 6858
+    "skippedQuality": 19,
+    "durationMs": 9661
   },
   "items": [
+    {
+      "id": "jbox-b9acb477",
+      "slug": "girls-band-cry-novo-filme-ganha-data-de-estreia-jbox-b9acb477",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Girls Band Cry: Novo filme ganha data de estreia",
+      "originalTitle": "Girls Band Cry: Novo filme ganha data de estreia",
+      "summary": "Além do filme de BOCCHI THE ROCK! recém-anunciado, outro animê de bandas de garotas teve sua estreia nos cinemas japoneses marcada para o ano que vem. A Toei Animation divulgou que o novo filme de Girls Band Cry estreia no dia 21 de maio de 2027. Um trailer e um novo pôster foram lançados junto com a data.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "filme de Girls Band Cry",
+        "Girls Band Cry",
+        "Toei Animation"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/03/girls-band-cry-novo-filme-ganha-data-de-estreia",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/03/girls-band-cry-novo-filme-ganha-data-de-estreia",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/girls-band-cry-filme-destacada.jpg",
+      "mediaQuery": "Girls Band Cry: Novo filme ganha data de estreia",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/girls-band-cry-filme-poster.jpg",
+          "alt": "imagem: pôster do filme de continuação de 'Girls Band Cry'. As cinco integrantes da banda TOGENASHI TOGEARI aparecem em destaque na ilustração.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/cuywy0zVBPo"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Além do filme de BOCCHI THE ROCK! recém-anunciado, outro animê de bandas de garotas teve sua estreia nos cinemas japoneses marcada para o ano que vem. A Toei Animation divulgou que o novo filme de Girls Band Cry estreia no dia 21 de maio de 2027. Um trailer e um novo pôster foram lançados junto com a data.",
+          "runs": [
+            {
+              "text": "Além do "
+            },
+            {
+              "text": "filme de ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/11/03/bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika/"
+            },
+            {
+              "text": "BOCCHI THE ROCK!",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/11/03/bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika/"
+            },
+            {
+              "text": " recém-anunciado",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/11/03/bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika/"
+            },
+            {
+              "text": ", outro animê de bandas de garotas teve sua estreia nos cinemas japoneses marcada para o ano que vem. A "
+            },
+            {
+              "text": "Toei Animation",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " divulgou que o novo filme de "
+            },
+            {
+              "text": "Girls Band Cry",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " estreia no dia "
+            },
+            {
+              "text": "21 de maio de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Um trailer e um novo pôster foram lançados junto com a data."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira abaixo:",
+          "runs": [
+            {
+              "text": "Confira abaixo:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=cuywy0zVBPo",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/cuywy0zVBPo"
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/girls-band-cry-filme-poster.jpg",
+          "alt": "imagem: pôster do filme de continuação de 'Girls Band Cry'. As cinco integrantes da banda TOGENASHI TOGEARI aparecem em destaque na ilustração."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Toei Animation",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Toei Animation"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O filme dá sequência aos acontecimentos do animê de TV exibido em 2024. A equipe de produção da série retorna para o longa-metragem, com Kazuo Sakai na direção, Jukki Hanada no roteiro, Nari Teshima no design de personagens e Yusuke Tanaka e Kenji Tamai da trilha sonora e produção musical. O animê original está disponível na Crunchyroll com legendas.",
+          "runs": [
+            {
+              "text": "O filme dá sequência aos acontecimentos do animê de TV exibido em 2024. A equipe de produção da série retorna para o longa-metragem, com "
+            },
+            {
+              "text": "Kazuo Sakai",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na direção, "
+            },
+            {
+              "text": "Jukki Hanada",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no roteiro, "
+            },
+            {
+              "text": "Nari Teshima",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no design de personagens e "
+            },
+            {
+              "text": "Yusuke Tanaka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Kenji Tamai",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " da trilha sonora e produção musical. O animê original está disponível na "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.crunchyroll.com/pt-br/series/G1XHJV0W8/girls-band-cry"
+            },
+            {
+              "text": " com legendas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na história, Nina larga o ensino médio para morar sozinha em Tóquio enquanto tenta estudar para entrar em uma universidade. Pouco depois de chegar, ela, por acaso, encontra Momoka, uma guitarrista que ela admira. Elas acabam se apresentando juntas na rua e decidem começar a ir atrás de pessoas para formar uma banda, enquanto tentam lidar com seus próprios desafios pessoais. Na história do filme, a banda que protagoniza o animê entra em uma turnê nacional.",
+          "runs": [
+            {
+              "text": "Na história, Nina larga o ensino médio para morar sozinha em Tóquio enquanto tenta estudar para entrar em uma universidade. Pouco depois de chegar, ela, por acaso, encontra Momoka, uma guitarrista que ela admira. Elas acabam se apresentando juntas na rua e decidem começar a ir atrás de pessoas para formar uma banda, enquanto tentam lidar com seus próprios desafios pessoais. Na história do filme, a banda que protagoniza o animê entra em uma turnê nacional."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Girls Band Cry é uma produção original e projeto mutimídia da Toei Animation, em colaboração com o grupo musical Ageha Springs e a produtora Universal Musical Japan. A banda principal do animê, TOGENASHI TOGEARI, faz várias apresentações ao vivo. Um jogo mobile também está em desenvolvimento.",
+          "runs": [
+            {
+              "text": "Girls Band Cry",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é uma produção original e projeto mutimídia da "
+            },
+            {
+              "text": "Toei Animation",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", em colaboração com o grupo musical Ageha Springs e a produtora "
+            },
+            {
+              "text": "Universal Musical Japan",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A banda principal do animê, "
+            },
+            {
+              "text": "TOGENASHI TOGEARI",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", faz várias apresentações ao vivo. Um jogo mobile também está em desenvolvimento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além do filme que vai ser lançado ano que vem, Girls Band Cry já ganhou dois outros filmes, ambos compilando a história do animê em versão para os cinemas.",
+          "runs": [
+            {
+              "text": "Além do filme que vai ser lançado ano que vem, "
+            },
+            {
+              "text": "Girls Band Cry",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " já ganhou dois outros filmes, ambos compilando a história do animê em versão para os cinemas."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Girls Band Cry (site oficial)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Girls Band Cry (site oficial)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://girls-band-cry.com/news/post-499.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-03T15:31:40.000Z",
+      "updatedAt": "2026-11-03T15:32:15.000Z",
+      "expiresAt": "2026-11-10T15:31:40.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/03/girls-band-cry-novo-filme-ganha-data-de-estreia",
+          "publishedAt": "2026-11-03T15:31:40.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 296,
+      "qualityScore": 0.978,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-9d52118f",
+      "slug": "bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika-jbox-9d52118f",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Bocchi the Rock!’ terá filme prelúdio sobre Seika, irmã mais velha de Nijika",
+      "originalTitle": "‘Bocchi the Rock!’ terá filme prelúdio sobre Seika, irmã mais velha de Nijika",
+      "summary": "Os fãs de Bocchi the Rock! podem comemorar: a Aniplex anunciou um novo filme da franquia, dessa vez focado em uma história prelúdio sobre as irmãs Seika e Nijika Ijichi.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "Bocchi the Rock!",
+        "Eiga Bocchi the Rock! Hoshi no Ashiato",
+        "filme de Bocchi the Rock!",
+        "Kessoku Band",
+        "Prelúdio de Bocchi the Rock!"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/03/bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/03/bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Bocchi-the-rock-filme-destacada.jpg",
+      "mediaQuery": "‘Bocchi the Rock!’ terá filme prelúdio sobre Seika, irmã mais velha de Nijika",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Bocchi-the-rock-filme-poster.jpg",
+          "alt": "Pôster do novo filme de Bocchi the Rock!",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/xuiter-bocchi2.jpg",
+          "alt": "imagem: mensagem do X de Bocchi the Rock",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/bocchitherockyusukeyamamoto.jpg",
+          "alt": "imagem: arte de bocchi the rock",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/4pYw8hZRVCM"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Os fãs de Bocchi the Rock! podem comemorar: a Aniplex anunciou um novo filme da franquia, dessa vez focado em uma história prelúdio sobre as irmãs Seika e Nijika Ijichi.",
+          "runs": [
+            {
+              "text": "Os fãs de "
+            },
+            {
+              "text": "Bocchi the Rock!",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " podem comemorar: a "
+            },
+            {
+              "text": "Aniplex",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou um novo filme da franquia, dessa vez focado em uma história prelúdio sobre as irmãs "
+            },
+            {
+              "text": "Seika e Nijika Ijichi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A novidade foi divulgada com um vídeo teaser e um pôster, que mostram as duas irmãs lado a lado. A estreia é prevista para 2027, com data certa a ser anunciada futuramente.",
+          "runs": [
+            {
+              "text": "A novidade foi divulgada com um vídeo teaser e um pôster, que mostram as duas irmãs lado a lado. A estreia é prevista para 2027, com data certa a ser anunciada futuramente."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=4pYw8hZRVCM",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/4pYw8hZRVCM"
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Bocchi-the-rock-filme-poster.jpg",
+          "alt": "Pôster do novo filme de Bocchi the Rock!"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pôster do novo filme de Bocchi the Rock! | Divulgação",
+          "runs": [
+            {
+              "text": "Pôster do novo filme de Bocchi the Rock! | Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Com o título original de Eiga Bocchi the Rock! Hoshi no Ashiato (algo como Bocchi the Rock!: o Filme – Pegadas das Estrelas, em tradução livre), o filme é inspirado em um capítulo extra do mangá de Aki Hamazi, focado na história de Seika antes dos acontecimentos da história principal.",
+          "runs": [
+            {
+              "text": "Com o título original de "
+            },
+            {
+              "text": "Eiga Bocchi the Rock! Hoshi no Ashiato",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " (algo como "
+            },
+            {
+              "text": "Bocchi the Rock!: o Filme – Pegadas das Estrelas",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", em tradução livre), o filme é inspirado em um capítulo extra do mangá de "
+            },
+            {
+              "text": "Aki Hamazi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", focado na história de Seika antes dos acontecimentos da história principal."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para quem não se lembra, Seika trabalha na casa de shows STARRY durante a primeira temporada do animê, e também foi guitarrista de sua própria banda no passado. Exatamente por isso, ela dá algumas dicas (e também cutucadas) nas meninas da Kessoku Band.",
+          "runs": [
+            {
+              "text": "Para quem não se lembra, Seika trabalha na casa de shows STARRY durante a primeira temporada do animê, e também foi guitarrista de sua própria banda no passado. Exatamente por isso, ela dá algumas dicas (e também cutucadas) nas meninas da "
+            },
+            {
+              "text": "Kessoku Band",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Erika Yoshida retorna do animê principal para escrever o roteiro, que terá a direção de Shin Wakabayashi (Attack on Titan). O estúdio de animação é o CloverWorks, e o design de personagens é assinado por Yukiko Horiguchi (Nichijou).",
+          "runs": [
+            {
+              "text": "Erika Yoshida",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " retorna do animê principal para escrever o roteiro, que terá a direção de "
+            },
+            {
+              "text": "Shin Wakabayashi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Attack on Titan",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). O estúdio de animação é o "
+            },
+            {
+              "text": "CloverWorks",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e o design de personagens é assinado por "
+            },
+            {
+              "text": "Yukiko Horiguchi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Nichijou",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ")."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já sobre o animê seriado, a equipe publicou no perfil oficial do X/Twitter que a 2ª temporada segue em produção, acompanhada por uma arte assinada pelo diretor da série, Yusuke Yamamoto.",
+          "runs": [
+            {
+              "text": "Já sobre o animê seriado, a equipe publicou no perfil oficial do "
+            },
+            {
+              "text": "X/Twitter",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " que a 2ª temporada segue em produção, acompanhada por uma arte assinada pelo diretor da série,"
+            },
+            {
+              "text": " Yusuke Yamamoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/xuiter-bocchi2.jpg",
+          "alt": "imagem: mensagem do X de Bocchi the Rock"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/X",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/X"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "“A 2ª temporada do animê Bocchi the Rock! está em produção a todo o vapor🎸 Chegou um quadro de mensagens com comentários do diretor Yusuke Yamamoto!",
+          "runs": [
+            {
+              "text": "“A 2ª temporada do animê Bocchi the Rock! está em produção a todo o vapor🎸 Chegou um quadro de mensagens com comentários do diretor Yusuke Yamamoto!"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/bocchitherockyusukeyamamoto.jpg",
+          "alt": "imagem: arte de bocchi the rock"
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama de Bocchi the Rock! é focada em Hitori Gotou, a Bocchi-chan, uma jovem solitária que ama tocar guitarra e quer entrar numa banda. Um dia, na escola, ela conhece Nijika Ijichi, que procura uma guitarrista substituta para tocar na Kessoku Band. A primeira temporada foi exibida entre outubro e dezembro de 2022, e rendeu dois filmes compilatórios, lançados em 2024. Já o mangá começou a ser publicado em 2017 na revista Manga Time Kirara Max, com oito volumes até o momento.",
+          "runs": [
+            {
+              "text": "A trama de "
+            },
+            {
+              "text": "Bocchi the Rock!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é focada em Hitori Gotou, a Bocchi-chan, uma jovem solitária que ama tocar guitarra e quer entrar numa banda. Um dia, na escola, ela conhece Nijika Ijichi, que procura uma guitarrista substituta para tocar na "
+            },
+            {
+              "text": "Kessoku Band",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A primeira temporada foi exibida entre outubro e dezembro de 2022, e rendeu dois filmes compilatórios, lançados em 2024. Já o mangá começou a ser publicado em 2017 na revista "
+            },
+            {
+              "text": "Manga Time Kirara Max",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", com oito volumes até o momento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Brasil, o público pode assistir à primeira temporada do animê na Crunchyroll, enquanto o mangá segue sem publicação oficial no país.",
+          "runs": [
+            {
+              "text": "No Brasil, o público pode assistir à primeira temporada do animê na "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", enquanto o mangá segue sem publicação oficial no país."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fontes: Anime News Network, X/Twitter de Bocchi the Rock!",
+          "runs": [
+            {
+              "text": "Fontes:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-11-01/bocchi-the-rock-manga-gets-anime-film-in-2027/.243417"
+            },
+            {
+              "text": ", ",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "X/Twitter de Bocchi the Rock!",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://x.com/BTR_anime/status/2116865084328653007"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-03T15:14:14.000Z",
+      "updatedAt": "2026-11-03T15:18:50.000Z",
+      "expiresAt": "2026-11-10T15:14:14.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/03/bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika",
+          "publishedAt": "2026-11-03T15:14:14.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 393,
+      "qualityScore": 0.996,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 18,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 3,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-5abe7781",
       "slug": "critica-as-esculturas-sem-cabeca-pipoca-e-nanquim-jbox-5abe7781",
@@ -805,324 +1638,6 @@
         "contentMode": "full",
         "mediaCount": 3,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-33f7d516",
-      "slug": "bocchi-the-rock-recebe-adaptacao-para-novo-filme-animenew-33f7d516",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Bocchi the Rock! recebe adaptação para novo filme",
-      "originalTitle": "Bocchi the Rock! recebe adaptação para novo filme",
-      "summary": "O anime Bocchi the Rock! ganhará um novo filme previsto para estrear em 2027. O anúncio veio acompanhado de um trailer teaser e confirmou que a produção adaptará uma história especial centrada em Seika, irmã mais velha de Nijika.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Cinema",
-        "Notícias",
-        "Bocchi the Rock!"
-      ],
-      "url": "https://animenew.com.br/filme-bocchi-the-rock-2027",
-      "sourceUrl": "https://animenew.com.br/filme-bocchi-the-rock-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Bocchi-the-Rock-recebe-adaptacao-para-novo-filme.webp",
-      "mediaQuery": "Bocchi the Rock! recebe adaptação para novo filme",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Bocchi-the-Rock-filme-2027.webp",
-          "alt": "Bocchi the Rock! filme 2027",
-          "caption": "© はまじあき／芳文社・アニプレックス"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/4pYw8hZRVCM"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Bocchi the Rock! ganhará um novo filme previsto para estrear em 2027. O anúncio veio acompanhado de um trailer teaser e confirmou que a produção adaptará uma história especial centrada em Seika, irmã mais velha de Nijika.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Bocchi the Rock!",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ganhará um novo filme previsto para estrear em 2027. O anúncio veio acompanhado de um trailer teaser e confirmou que a produção adaptará uma história especial centrada em "
-            },
-            {
-              "text": "Seika",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", irmã mais velha de "
-            },
-            {
-              "text": "Nijika",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Enako canta abertura e entra no elenco de Isshiki-san",
-              "runs": [
-                {
-                  "text": "Enako canta abertura e entra no elenco de Isshiki-san",
-                  "href": "https://animenew.com.br/isshiki-san-wants-to-know-about-love-enako"
-                }
-              ]
-            },
-            {
-              "text": "Hiragi-san’s House of Vampires ganhará anime",
-              "runs": [
-                {
-                  "text": "Hiragi-san’s House of Vampires ganhará anime",
-                  "href": "https://animenew.com.br/hiragi-san-house-of-vampires-anime"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=4pYw8hZRVCM",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/4pYw8hZRVCM"
-        },
-        {
-          "type": "paragraph",
-          "text": "Intitulado Eiga Bocchi the Rock! Hoshi no Ashiato, o longa adaptará o capítulo especial “Hoshi ni Tamukeru Ai no Hana”, publicado ao final do quinto volume do mangá de Aki Hamaji. A trama funciona como um prólogo e explora a história de Seika Ichiji.",
-          "runs": [
-            {
-              "text": "Intitulado "
-            },
-            {
-              "text": "Eiga Bocchi the Rock! Hoshi no Ashiato",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", o longa adaptará o capítulo especial “"
-            },
-            {
-              "text": "Hoshi ni Tamukeru Ai no Hana",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "”, publicado ao final do quinto volume do mangá de "
-            },
-            {
-              "text": "Aki Hamaji",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A trama funciona como um prólogo e explora a história de Seika Ichiji."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Bocchi-the-Rock-filme-2027.webp",
-          "alt": "Bocchi the Rock! filme 2027",
-          "caption": "© はまじあき／芳文社・アニプレックス"
-        },
-        {
-          "type": "heading",
-          "text": "Equipe de produção",
-          "runs": [
-            {
-              "text": "Equipe de produção"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Shin Wakabayashi, conhecido por Wonder Egg Priority, dirigirá o filme no estúdio CloverWorks. Erika Yoshida retorna para escrever o roteiro, enquanto Yukiko Horiguchi assume o design dos personagens.",
-          "runs": [
-            {
-              "text": "Shin Wakabayashi, conhecido por Wonder Egg Priority, dirigirá o filme no estúdio CloverWorks. Erika Yoshida retorna para escrever o roteiro, enquanto Yukiko Horiguchi assume o design dos personagens."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A equipe também conta com Hiroaki Iriyama no figurino, Kazuko Nakashima na direção de cores e Akiko Fujita na direção de som. A distribuição ficará a cargo da Animec.",
-          "runs": [
-            {
-              "text": "A equipe também conta com Hiroaki Iriyama no figurino, Kazuko Nakashima na direção de cores e Akiko Fujita na direção de som. A distribuição ficará a cargo da Animec."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "História e franquia de Bocchi the Rock",
-          "runs": [
-            {
-              "text": "História e franquia de "
-            },
-            {
-              "text": "Bocchi the Rock",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "O mangá acompanha Hitori Gotoh, uma guitarrista extremamente tímida que sonha em fazer amigos e acaba entrando na banda Kessoku Band. Assim a obra estreou na revista Manga Time Kirara Max, da Houbunsha, em dezembro de 2017.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " acompanha "
-            },
-            {
-              "text": "Hitori Gotoh",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", uma guitarrista extremamente tímida que sonha em fazer amigos e acaba entrando na banda "
-            },
-            {
-              "text": "Kessoku Band",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Assim a obra estreou na revista "
-            },
-            {
-              "text": "Manga Time Kirara Max",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", da Houbunsha, em dezembro de 2017."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim, a adaptação para TV estreou em outubro de 2022, seguindo de uma segunda temporada que também está em produção, com Yusuke Yamamoto na direção.",
-          "runs": [
-            {
-              "text": "Por fim, a adaptação para TV estreou em outubro de 2022, seguindo de uma segunda temporada que também está em produção, com Yusuke Yamamoto na direção."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://bocchi.rocks/hoshinoashiato/news/?article_id=71600"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Bocchi the Rock! recebe adaptação para novo filme.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Bocchi the Rock! recebe adaptação para novo filme",
-              "href": "https://animenew.com.br/filme-bocchi-the-rock-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-02T14:31:34.000Z",
-      "updatedAt": "2026-11-02T14:31:34.000Z",
-      "expiresAt": "2026-11-09T14:31:34.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/filme-bocchi-the-rock-2027",
-          "publishedAt": "2026-11-02T14:31:34.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 253,
-      "qualityScore": 0.974,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     },
@@ -2128,7 +2643,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 262,
-      "qualityScore": 0.974,
+      "qualityScore": 0.914,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
