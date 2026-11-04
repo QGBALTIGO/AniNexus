@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T16:09:48.893Z",
+  "generatedAt": "2026-11-04T21:54:54.901Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 37,
+      "count": 39,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,1206 @@
     }
   ],
   "stats": {
-    "collected": 47,
-    "grouped": 27,
-    "published": 27,
-    "newStories": 27,
-    "fullArticles": 27,
+    "collected": 49,
+    "grouped": 28,
+    "published": 28,
+    "newStories": 28,
+    "fullArticles": 28,
     "previewArticles": 0,
-    "avgWords": 374,
-    "withHeroImage": 27,
-    "withOrderedMedia": 26,
+    "avgWords": 393,
+    "withHeroImage": 28,
+    "withOrderedMedia": 27,
     "skippedTranslation": 0,
-    "skippedQuality": 19,
-    "durationMs": 8423
+    "skippedQuality": 20,
+    "durationMs": 5998
   },
   "items": [
+    {
+      "id": "jbox-8e16acda",
+      "slug": "primeira-edicao-do-nippon-anime-awards-e-anunciada-jbox-8e16acda",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Primeira edição do Nippon Anime Awards é anunciada",
+      "originalTitle": "Primeira edição do Nippon Anime Awards é anunciada",
+      "summary": "A Associação de Animações Japonesas (AJA, na sigla em inglês) anunciou que a primeira edição do Nippon Anime Awards, nova premiação internacional dedicada à indústria de animês, será realizada em 21 de novembro de 2027, no SGC Hall Ariake, em Tóquio, no Japão. Os detalhes foram divulgados na última segunda-feira (2), durante o evento de encerramento do Tokyo Anime Next, programação de quatro dias realizada paralelamente ao Festival Internacional de Cinema de Tóquio e ao mercado TIFFCOM.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "Premiação",
+        "Associação de Animações Japonesas",
+        "Nippon Anime Awards",
+        "nova premiacao de animes"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/04/primeira-edicao-do-nippon-anime-awards-e-anunciada",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/04/primeira-edicao-do-nippon-anime-awards-e-anunciada",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/ao-ashi.jpg",
+      "mediaQuery": "Primeira edição do Nippon Anime Awards é anunciada",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Nippon-Anime-Awards-1.jpg",
+          "alt": "Banner oficial do Nippon Anime Awards, contendo data e local.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Associação de Animações Japonesas (AJA, na sigla em inglês) anunciou que a primeira edição do Nippon Anime Awards, nova premiação internacional dedicada à indústria de animês, será realizada em 21 de novembro de 2027, no SGC Hall Ariake, em Tóquio, no Japão. Os detalhes foram divulgados na última segunda-feira (2), durante o evento de encerramento do Tokyo Anime Next, programação de quatro dias realizada paralelamente ao Festival Internacional de Cinema de Tóquio e ao mercado TIFFCOM.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Associação de Animações Japonesas",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "AJA",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", na sigla em inglês) anunciou que a primeira edição do "
+            },
+            {
+              "text": "Nippon Anime Awards",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", nova premiação internacional dedicada à indústria de animês, será realizada em "
+            },
+            {
+              "text": "21 de novembro de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", no SGC Hall Ariake, em Tóquio, no Japão. Os detalhes foram divulgados na última segunda-feira (2), durante o evento de encerramento do "
+            },
+            {
+              "text": "Tokyo Anime Next",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", programação de quatro dias realizada paralelamente ao "
+            },
+            {
+              "text": "Festival Internacional de Cinema de Tóquio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e ao mercado "
+            },
+            {
+              "text": "TIFFCOM",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A premiação foi criada para reconhecer produções de animê de destaque e os artistas envolvidos em sua realização, com o objetivo de alcançar tanto o público japonês quanto espectadores de outros países. Além da cerimônia, a AJA planeja colaborar com o Governo Metropolitano de Tóquio em iniciativas voltadas à criação de novas oportunidades de negócios e ao desenvolvimento de talentos emergentes.",
+          "runs": [
+            {
+              "text": "A premiação foi criada para reconhecer produções de animê de destaque e os artistas envolvidos em sua realização, com o objetivo de alcançar tanto o público japonês quanto espectadores de outros países. Além da cerimônia, a AJA planeja colaborar com o Governo Metropolitano de Tóquio em iniciativas voltadas à criação de novas oportunidades de negócios e ao desenvolvimento de talentos emergentes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em comunicado, a associação explicou que o nome Nippon Anime Awards representa seu compromisso em homenagear a história e a cultura da animação japonesa, levando sua popularidade duradoura para o futuro. A organização pretende reconhecer obras de destaque e celebrar as conquistas dos profissionais do setor, compartilhando o apelo dos animês com públicos do Japão e do restante do mundo. A meta é consolidar a premiação como uma das principais iniciativas japonesas do gênero, capaz de conquistar reconhecimento e carinho ao longo dos anos.",
+          "runs": [
+            {
+              "text": "Em comunicado, a associação explicou que o nome "
+            },
+            {
+              "text": "Nippon Anime Awards",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " representa seu compromisso em homenagear a história e a cultura da animação japonesa, levando sua popularidade duradoura para o futuro. A organização pretende reconhecer obras de destaque e celebrar as conquistas dos profissionais do setor, compartilhando o apelo dos animês com públicos do Japão e do restante do mundo. A meta é consolidar a premiação como uma das principais iniciativas japonesas do gênero, capaz de conquistar reconhecimento e carinho ao longo dos anos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Kazuko Ishikawa, presidente da AJA, declarou durante o anúncio:",
+          "runs": [
+            {
+              "text": "Kazuko Ishikawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", presidente da AJA, declarou durante o anúncio:"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "Esperamos compartilhar o apelo e o potencial dos animês com um público ainda mais amplo ao redor do mundo e construir esse futuro junto com todos vocês.",
+          "runs": [
+            {
+              "text": "Esperamos compartilhar o apelo e o potencial dos animês com um público ainda mais amplo ao redor do mundo e construir esse futuro junto com todos vocês."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A governadora de Tóquio, Yuriko Koike, também manifestou apoio à iniciativa em uma mensagem divulgada no evento:",
+          "runs": [
+            {
+              "text": "A governadora de Tóquio, "
+            },
+            {
+              "text": "Yuriko Koike",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", também manifestou apoio à iniciativa em uma mensagem divulgada no evento:"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "O Governo Metropolitano de Tóquio continuará oferecendo forte apoio aos animês e a todos os envolvidos em dar vida a eles.",
+          "runs": [
+            {
+              "text": "O Governo Metropolitano de Tóquio continuará oferecendo forte apoio aos animês e a todos os envolvidos em dar vida a eles."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "As categorias da premiação, os critérios de elegibilidade e os detalhes sobre os processos de votação e seleção ainda não foram divulgados. A organização deverá apresentar mais informações antes da realização da edição inaugural, prevista para daqui a um ano.",
+          "runs": [
+            {
+              "text": "As categorias da premiação, os critérios de elegibilidade e os detalhes sobre os processos de votação e seleção ainda não foram divulgados. A organização deverá apresentar mais informações antes da realização da edição inaugural, prevista para daqui a um ano."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Nippon-Anime-Awards-1.jpg",
+          "alt": "Banner oficial do Nippon Anime Awards, contendo data e local."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Banner oficial do Nippon Anime Awards/Divulgação",
+          "runs": [
+            {
+              "text": "Imagem: Banner oficial do Nippon Anime Awards/Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Cartoon Brew",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Cartoon Brew",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.cartoonbrew.com/awards/nippon-anime-awards-association-of-japanese-animations-268909.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-04T20:37:10.000Z",
+      "updatedAt": "2026-11-04T20:46:19.000Z",
+      "expiresAt": "2026-11-11T20:37:10.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/04/primeira-edicao-do-nippon-anime-awards-e-anunciada",
+          "publishedAt": "2026-11-04T20:37:10.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 363,
+      "qualityScore": 0.987,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-4cf2b083",
+      "slug": "naruto-filme-live-action-comeca-a-ser-produzido-em-2027-jbox-4cf2b083",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Naruto: Filme live-action começa a ser produzido em 2027",
+      "originalTitle": "Naruto: Filme live-action começa a ser produzido em 2027",
+      "summary": "Preparem suas bandanas! A adaptação em filme live-action de Naruto teve sua produção oficialmente aprovada pela Lionsgate e deve começar a ser filmada na primavera de 2027, (nosso outono, no 2º trimestre), segundo informações apuradas pelo The Hollywood Reporter. A Sony Pictures será parceira do projeto, participando do financiamento e assumindo a distribuição internacional do longa. A Lionsgate continuará responsável pelo desenvolvimento, pela produção e pela distribuição nos Estados Unidos.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Cinema",
+        "Live Action",
+        "Mangá",
+        "filme do naruto",
+        "filme live-action de naruto",
+        "Lionsgate",
+        "Naruto",
+        "sony naruto"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/04/naruto-filme-live-action-comeca-a-ser-produzido-em-2027",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/04/naruto-filme-live-action-comeca-a-ser-produzido-em-2027",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/naruto-destacada.png",
+      "mediaQuery": "Naruto: Filme live-action começa a ser produzido em 2027",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/destin-daniel-cretton.jpg",
+          "alt": "Imagem: foto do diretor Destin Daniel Cretton no palco da San Diego Comic Con, usando uma camiseta preta e falando com um microfone.",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/07/Naruto-01.webp",
+          "alt": "Imagem do animê de Naruto",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Preparem suas bandanas! A adaptação em filme live-action de Naruto teve sua produção oficialmente aprovada pela Lionsgate e deve começar a ser filmada na primavera de 2027, (nosso outono, no 2º trimestre), segundo informações apuradas pelo The Hollywood Reporter. A Sony Pictures será parceira do projeto, participando do financiamento e assumindo a distribuição internacional do longa. A Lionsgate continuará responsável pelo desenvolvimento, pela produção e pela distribuição nos Estados Unidos.",
+          "runs": [
+            {
+              "text": "Preparem suas bandanas! A adaptação em filme live-action de "
+            },
+            {
+              "text": "Naruto",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " teve sua produção oficialmente aprovada pela "
+            },
+            {
+              "text": "Lionsgate",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e deve começar a ser filmada na "
+            },
+            {
+              "text": "primavera de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", (nosso outono, no 2º trimestre), segundo informações apuradas pelo "
+            },
+            {
+              "text": "The Hollywood Reporter",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". A "
+            },
+            {
+              "text": "Sony Pictures",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " será parceira do projeto, participando do financiamento e assumindo a distribuição internacional do longa. A Lionsgate continuará responsável pelo desenvolvimento, pela produção e pela distribuição nos Estados Unidos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O longa será o próximo trabalho de Destin Daniel Cretton após o sucesso de Homem-Aranha: Um Novo Dia, que arrecadou US$ 2,5 bilhões. Ele escreverá o roteiro, dirigirá o filme e também atuará como produtor. O acordo entre Lionsgate e Sony foi firmado após uma disputa competitiva entre vários estúdios interessados no projeto.",
+          "runs": [
+            {
+              "text": "O longa será o próximo trabalho de "
+            },
+            {
+              "text": "Destin Daniel Cretton",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " após o sucesso de "
+            },
+            {
+              "text": "Homem-Aranha: Um Novo Dia",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", que arrecadou "
+            },
+            {
+              "text": "US$ 2,5 bilhões",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Ele escreverá o roteiro, dirigirá o filme e também atuará como produtor. O acordo entre Lionsgate e Sony foi firmado após uma disputa competitiva entre vários estúdios interessados no projeto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A parceria também se dá em meio à aproximação entre Cretton e a Sony Pictures. Em setembro, o cineasta assinou um contrato de três anos com o estúdio para desenvolver e produzir projetos com prioridade de negociação. A Sony, sediada no Japão, também é proprietária da Crunchyroll, que sabemos ser o maior serviço de streaming voltado a animês.",
+          "runs": [
+            {
+              "text": "A parceria também se dá em meio à aproximação entre Cretton e a Sony Pictures. Em setembro, o cineasta assinou um contrato de três anos com o estúdio para desenvolver e produzir projetos com prioridade de negociação. A Sony, sediada no Japão, também é proprietária da "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que sabemos ser o maior serviço de streaming voltado a animês."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/destin-daniel-cretton.jpg",
+          "alt": "Imagem: foto do diretor Destin Daniel Cretton no palco da San Diego Comic Con, usando uma camiseta preta e falando com um microfone."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Destin Daniel Cretton na San Diego Comic Con/Reprodução",
+          "runs": [
+            {
+              "text": "Imagem: Destin Daniel Cretton na San Diego Comic Con/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em comunicado, Adam Fogelson, presidente do Lionsgate Motion Picture Group, afirmou que a experiência da Sony com mangás e animês, além de sua capacidade de distribuição global, faz dela uma parceira ideal para o filme. Ele também destacou a ambição compartilhada de transformar Naruto em um evento cinematográfico mundial, fiel ao que os fãs da obra já conhecem e capaz de conquistar novos públicos.",
+          "runs": [
+            {
+              "text": "Em comunicado, "
+            },
+            {
+              "text": "Adam Fogelson",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", presidente do "
+            },
+            {
+              "text": "Lionsgate Motion Picture Group",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", afirmou que a experiência da Sony com mangás e animês, além de sua capacidade de distribuição global, faz dela uma parceira ideal para o filme. Ele também destacou a ambição compartilhada de transformar "
+            },
+            {
+              "text": "Naruto",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " em um evento cinematográfico mundial, fiel ao que os fãs da obra já conhecem e capaz de conquistar novos públicos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fogelson ainda elogiou Erin Westerman e James Myers pelo trabalho de desenvolvimento do projeto e por trazerem Cretton para a produção. Ele também agradeceu a Helen Lee-Kim por garantir a parceria internacional com a Sony, além de reconhecer o trabalho de Ari Arad, Tetsu Fujimura e da equipe de produção.",
+          "runs": [
+            {
+              "text": "Fogelson ainda elogiou Erin Westerman e James Myers pelo trabalho de desenvolvimento do projeto e por trazerem Cretton para a produção. Ele também agradeceu a Helen Lee-Kim por garantir a parceria internacional com a Sony, além de reconhecer o trabalho de Ari Arad, Tetsu Fujimura e da equipe de produção."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Tom Rothman, presidente e CEO do Sony Pictures Motion Picture Group, declarou que a Lionsgate realizou um trabalho exemplar na preparação da adaptação e que o estúdio se sente honrado por ter sido escolhido como parceiro. Rothman também destacou a satisfação de voltar a trabalhar com Cretton após o sucesso da colaboração anterior entre eles.",
+          "runs": [
+            {
+              "text": "Tom Rothman, presidente e CEO do Sony Pictures Motion Picture Group, declarou que a Lionsgate realizou um trabalho exemplar na preparação da adaptação e que o estúdio se sente honrado por ter sido escolhido como parceiro. Rothman também destacou a satisfação de voltar a trabalhar com Cretton após o sucesso da colaboração anterior entre eles."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Cretton afirmou ser fã de longa data de Naruto e destacou que, por trás das cenas de ação, a trama apresenta uma história marcada por emoção, humor e humanidade. Segundo o diretor, o mundo criado por Kishimoto mostra heróis improváveis realizando feitos extraordinários. Ele também declarou estar animado para voltar a trabalhar com a Sony e com a equipe da Lionsgate, com o objetivo de preservar os elementos que conquistaram os fãs e apresentar a franquia a uma nova geração.",
+          "runs": [
+            {
+              "text": "Cretton afirmou ser fã de longa data de "
+            },
+            {
+              "text": "Naruto",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e destacou que, por trás das cenas de ação, a trama apresenta uma história marcada por emoção, humor e humanidade. Segundo o diretor, o mundo criado por Kishimoto mostra heróis improváveis realizando feitos extraordinários. Ele também declarou estar animado para voltar a trabalhar com a Sony e com a equipe da Lionsgate, com o objetivo de preservar os elementos que conquistaram os fãs e apresentar a franquia a uma nova geração."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A produção ficará a cargo de Avi Arad, Ari Arad e Emmy Yu, pela Arad Productions. Cretton também produzirá o longa ao lado de Jeyun Munford, por meio de sua empresa, Hisako.",
+          "runs": [
+            {
+              "text": "A produção ficará a cargo de Avi Arad, Ari Arad e Emmy Yu, pela Arad Productions. Cretton também produzirá o longa ao lado de Jeyun Munford, por meio de sua empresa, Hisako."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Até o momento, Charles Melton, conhecido por Riverdale e Beef, é o único ator ligado ao projeto. Segundo o The Hollywood Reporter, ele está em negociações para interpretar o Kakashi-sensei. A busca pelo ator que interpretará o protagonista, assim como os da Sakura e do Sasuke, continua em andamento.",
+          "runs": [
+            {
+              "text": "Até o momento, "
+            },
+            {
+              "text": "Charles Melton, conhecido por",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/22/charles-melton-e-cotado-para-interpretar-kakashi-no-live-action-de-naruto/"
+            },
+            {
+              "text": " Riverdale",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/22/charles-melton-e-cotado-para-interpretar-kakashi-no-live-action-de-naruto/"
+            },
+            {
+              "text": " e ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/22/charles-melton-e-cotado-para-interpretar-kakashi-no-live-action-de-naruto/"
+            },
+            {
+              "text": "Beef",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/22/charles-melton-e-cotado-para-interpretar-kakashi-no-live-action-de-naruto/"
+            },
+            {
+              "text": ", é o único ator ligado ao projeto. Segundo o "
+            },
+            {
+              "text": "The Hollywood Reporter",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", ele está em negociações para interpretar o Kakashi-sensei. A busca pelo ator que interpretará o protagonista, assim como os da Sakura e do Sasuke, continua em andamento."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/07/Naruto-01.webp",
+          "alt": "Imagem do animê de Naruto"
+        },
+        {
+          "type": "paragraph",
+          "text": "A história de Naruto foi escrita e ilustrada por Masashi Kishimoto em 72 volumes, lançados entre 1999 e 2014. A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila. Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura.",
+          "runs": [
+            {
+              "text": "A história de"
+            },
+            {
+              "text": " Naruto",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi escrita e ilustrada por "
+            },
+            {
+              "text": "Masashi Kishimoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " em 72 volumes, lançados entre 1999 e 2014. A trama segue o protagonista Naruto Uzumaki, que sonha em se tornar um grande ninja e assumir a posição de Hokage, o líder de sua vila. Ao longo da narrativa, outros personagens e tramas são apresentadas, aprofundando o passado dos ninjas e revelando os destinos de Naruto, Sasuke e Sakura."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, Naruto Shippuden mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017. Atualmente, Kishimoto assina a publicação de Boruto ao lado de Ukyou Kodachi, contando a história do filho de Naruto.",
+          "runs": [
+            {
+              "text": "Enquanto o primeiro animê, lançado entre 2002 e 2007, conta a começo da jornada dos personagens, "
+            },
+            {
+              "text": "Naruto Shippuden",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " mostra a juventude e desenvolvimento dos poderes da nova geração de ninjas, com lançamento entre 2007 e 2017. Atualmente, Kishimoto assina a publicação de "
+            },
+            {
+              "text": "Boruto",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ao lado de "
+            },
+            {
+              "text": "Ukyou Kodachi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", contando a história do filho de Naruto."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para quem deseja retornar à Vila da Folha antes da chegada do live-action, os episódios de Naruto estão disponíveis em plataformas como Crunchyroll, Netflix, HBO Max, Disney+, Pluto TV e Mercado Play, além de ser exibido pelo canal Adult Swim. Já o mangá é publicado no Brasil pela Panini.",
+          "runs": [
+            {
+              "text": "Para quem deseja retornar à Vila da Folha antes da chegada do live-action, os episódios de "
+            },
+            {
+              "text": "Naruto",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estão disponíveis em plataformas como "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "HBO Max, Disney+, Pluto TV",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Mercado Play",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", além de ser exibido pelo canal Adult Swim. Já o mangá é publicado no Brasil pela"
+            },
+            {
+              "text": " Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: The Hollywood Reporter",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "The Hollywood Reporter",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.hollywoodreporter.com/movies/movie-news/naruto-movie-lionsgate-sony-destin-daniel-cretton-1236746650/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-04T18:08:04.000Z",
+      "updatedAt": "2026-11-04T18:10:04.000Z",
+      "expiresAt": "2026-11-11T18:08:04.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/04/naruto-filme-live-action-comeca-a-ser-produzido-em-2027",
+          "publishedAt": "2026-11-04T18:08:04.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 4,
+      "wordCount": 714,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 18,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-2d13e378",
+      "slug": "filme-live-action-de-mashle-magia-e-musculos-e-anunciado-jbox-2d13e378",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Filme live-action de ‘Mashle: Magia e Músculos’ é anunciado",
+      "originalTitle": "Filme live-action de ‘Mashle: Magia e Músculos’ é anunciado",
+      "summary": "O mangá Mashle: Magia e Músculos, de Hajime Komoto, vai ganhar uma adaptação em filme live-action com estreia marcada para 19 de março de 2027. A produção foi anunciada nesta quarta-feira (4) por meio da divulgação de uma prévia visual em formato de pôster. A Warner Bros. e a Fuji TV supervisionam o projeto, produzido pela CREDEUS e com distribuição da TOHO.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Cinema",
+        "Live Action",
+        "Mangá",
+        "filme de mashle",
+        "live-action de mashle",
+        "mashle",
+        "Mashle: Magia e Músculos"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/04/filme-live-action-de-mashle-magia-e-musculos-e-anunciado",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/04/filme-live-action-de-mashle-magia-e-musculos-e-anunciado",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/mashle-liveaction-destacada.jpg",
+      "mediaQuery": "Filme live-action de ‘Mashle: Magia e Músculos’ é anunciado",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/mashle-movie-teaser.jpg",
+          "alt": "Imagem: pôster anunciando o filme live-action do mangá 'Mashle: Magia e Músculos', com o protagonista Mash no centro, de costas, segurando um haltere.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O mangá Mashle: Magia e Músculos, de Hajime Komoto, vai ganhar uma adaptação em filme live-action com estreia marcada para 19 de março de 2027. A produção foi anunciada nesta quarta-feira (4) por meio da divulgação de uma prévia visual em formato de pôster. A Warner Bros. e a Fuji TV supervisionam o projeto, produzido pela CREDEUS e com distribuição da TOHO.",
+          "runs": [
+            {
+              "text": "O mangá "
+            },
+            {
+              "text": "Mashle: Magia e Músculos",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", de "
+            },
+            {
+              "text": "Hajime Komoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", vai ganhar uma adaptação em filme live-action com estreia marcada para "
+            },
+            {
+              "text": "19 de março de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A produção foi anunciada nesta quarta-feira (4) por meio da divulgação de uma prévia visual em formato de pôster. A Warner Bros. e a Fuji TV supervisionam o projeto, produzido pela CREDEUS e com distribuição da TOHO."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O pôster diz que “Finalmente chegou a hora de uma adaptação para o cinema, Mashle” (em livre tradução). Confira:",
+          "runs": [
+            {
+              "text": "O pôster diz que "
+            },
+            {
+              "text": "“Finalmente chegou a hora de uma adaptação para o cinema, Mashle”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (em livre tradução). Confira:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/mashle-movie-teaser.jpg",
+          "alt": "Imagem: pôster anunciando o filme live-action do mangá 'Mashle: Magia e Músculos', com o protagonista Mash no centro, de costas, segurando um haltere."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: @mashlemovie no Twitter/X/Reprodução",
+          "runs": [
+            {
+              "text": "Imagem: @mashlemovie no Twitter/X/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Mashle: Magia e Músculos foi um mangá lançado na revista Weekly Shonen Jump, da editora Shueisha, no Japão, entre janeiro de 2020 e julho de 2023, com 18 volumes compilados. Por aqui, a obra saiu pela editora Panini.",
+          "runs": [
+            {
+              "text": "Mashle: Magia e Músculos",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi um mangá lançado na revista "
+            },
+            {
+              "text": "Weekly Shonen Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da editora Shueisha, no Japão, entre janeiro de 2020 e julho de 2023, com 18 volumes compilados. Por aqui, a obra saiu pela editora Panini."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na trama, em um mundo onde a magia determina o lugar de cada pessoa na sociedade, Mash é um jovem fortão que vive isolado com seu pai adotivo e não possui nenhum poder mágico. Apaixonado por choux cream, um doce popular no Japão, ele acaba descoberto pelas autoridades e precisa entrar em uma renomada escola de magia para se tornar um Visionário, posição que lhe permitiria mudar as regras desse mundo e proteger aqueles que, como ele, nasceram sem magia. Para alcançar seu objetivo, Mash contará com sua força física absurda para enfrentar os desafios de um universo em que todos esperam que ele use magia.",
+          "runs": [
+            {
+              "text": "Na trama, em um mundo onde a magia determina o lugar de cada pessoa na sociedade, Mash é um jovem fortão que vive isolado com seu pai adotivo e não possui nenhum poder mágico. Apaixonado por "
+            },
+            {
+              "text": "choux cream",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", um doce popular no Japão, ele acaba descoberto pelas autoridades e precisa entrar em uma renomada escola de magia para se tornar um Visionário, posição que lhe permitiria mudar as regras desse mundo e proteger aqueles que, como ele, nasceram sem magia. Para alcançar seu objetivo, Mash contará com sua força física absurda para enfrentar os desafios de um universo em que todos esperam que ele use magia."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A primeira temporada do animê estreou em abril de 2023 e teve 12 episódios. A segunda em janeiro de 2024, igualmente com 12 episódios. Ambas foram exibidas simultaneamente por aqui à época, de maneira legendada e com dublagem em português na Crunchyroll. Posteriormente, as duas temporadas entraram no catálogo da Netflix. A produção da terceira temporada segue no estúdio A-1 Pictures, com direção de Tomoya Tanaka, roteiro de Yosuke Kuroda, trilha sonora de Masaru Yokoyama e Chiaki Furuzumi estreando no design de personagens.",
+          "runs": [
+            {
+              "text": "A primeira temporada do animê estreou em abril de 2023 e teve 12 episódios. A segunda em janeiro de 2024, igualmente com 12 episódios. Ambas foram exibidas simultaneamente por aqui à época, de maneira legendada e com dublagem em português na Crunchyroll. Posteriormente, as duas temporadas entraram no catálogo da Netflix. A produção da terceira temporada segue no estúdio "
+            },
+            {
+              "text": "A-1 Pictures",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com direção de "
+            },
+            {
+              "text": "Tomoya Tanaka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", roteiro de "
+            },
+            {
+              "text": "Yosuke Kuroda",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", trilha sonora de "
+            },
+            {
+              "text": "Masaru Yokoyama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Chiaki Furuzumi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " estreando no design de personagens."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Recentemente, foi também anunciada a terceira temporada do animê, com estreia marcada para janeiro do ano que vem.",
+          "runs": [
+            {
+              "text": "Recentemente, foi também "
+            },
+            {
+              "text": "anunciada a terceira temporada do animê",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/29/3a-temporada-de-mashle-magia-e-musculos-estreia-em-janeiro-de-2027/"
+            },
+            {
+              "text": ", com estreia marcada para janeiro do ano que vem."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "▶️ Crítica | Mashle – Volume 1",
+          "runs": [
+            {
+              "text": "▶️ Crítica | Mashle – Volume 1",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2022/06/11/mashle-volume-um-panini/"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: @mashlemovie no Twitter/X.",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "@mashlemovie no Twitter/X",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://x.com/mashlemovie"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-04T16:17:46.000Z",
+      "updatedAt": "2026-11-04T16:18:29.000Z",
+      "expiresAt": "2026-11-11T16:17:46.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/04/filme-live-action-de-mashle-magia-e-musculos-e-anunciado",
+          "publishedAt": "2026-11-04T16:17:46.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 358,
+      "qualityScore": 0.985,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-2e061750",
       "slug": "anime-free-fire-daybreak-tera-estreia-mundial-na-ccxp-2026-jbox-2e061750",
@@ -10393,646 +11579,6 @@
       "readingMinutes": 2,
       "wordCount": 316,
       "qualityScore": 0.918,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-480fb8c1",
-      "slug": "precure-tera-anime-spin-off-sombrio-com-heroinas-vilas-em-2027-jbox-480fb8c1",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Precure’ terá animê spin-off sombrio com heroínas vilãs em 2027",
-      "originalTitle": "‘Precure’ terá animê spin-off sombrio com heroínas vilãs em 2027",
-      "summary": "A franquia Precure ganhará um novo spin-off em 2027. Intitulado Dual Shadow ~Precure Villain Heroines~, o animê terá personagens e história originais, prometendo apresentar uma atmosfera sombria que contrasta com a proposta colorida e vibrante tradicional da série.",
-      "author": "Igor Lunei",
-      "tags": [
-        "Anime",
-        "Dual Shadow ~Precure Villain Heroines~",
-        "novo precure",
-        "precure",
-        "precure 2027",
-        "Pretty Cure",
-        "spinoff de precure"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/28/precure-tera-anime-spin-off-sombrio-com-heroinas-vilas-em-2027",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/28/precure-tera-anime-spin-off-sombrio-com-heroinas-vilas-em-2027",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/dual-shadow-precure-villain-heroines-teaser-destacada.jpg",
-      "mediaQuery": "‘Precure’ terá animê spin-off sombrio com heroínas vilãs em 2027",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/4H3qrB9yaJA"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A franquia Precure ganhará um novo spin-off em 2027. Intitulado Dual Shadow ~Precure Villain Heroines~, o animê terá personagens e história originais, prometendo apresentar uma atmosfera sombria que contrasta com a proposta colorida e vibrante tradicional da série.",
-          "runs": [
-            {
-              "text": "A franquia "
-            },
-            {
-              "text": "Precure",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ganhará um novo "
-            },
-            {
-              "text": "spin-off",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " em 2027. Intitulado "
-            },
-            {
-              "text": "Dual Shadow ~Precure Villain Heroines~",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", o animê terá personagens e história originais, prometendo apresentar uma atmosfera sombria que contrasta com a proposta colorida e vibrante tradicional da série."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira o teaser:",
-          "runs": [
-            {
-              "text": "Confira o "
-            },
-            {
-              "text": "teaser",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ":"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=4H3qrB9yaJA",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/4H3qrB9yaJA"
-        },
-        {
-          "type": "paragraph",
-          "text": "Desde 2004, a franquia Precure acompanha personagens que enfrentam diferentes inimigos para proteger o cotidiano. O novo spin-off, porém, incorpora a palavra “Villain” (vilão, em inglês) ao título. Enquanto os spin-offs anteriores destacavam personagens já conhecidos da franquia, Dual Shadow ~Precure Villain Heroines~ apresentará uma nova história protagonizada por personagens inéditas.",
-          "runs": [
-            {
-              "text": "Desde 2004, a franquia "
-            },
-            {
-              "text": "Precure",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " acompanha personagens que enfrentam diferentes inimigos para proteger o cotidiano. O novo "
-            },
-            {
-              "text": "spin-off",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", porém, incorpora a palavra "
-            },
-            {
-              "text": "“Villain”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " (vilão, em inglês) ao título. Enquanto os "
-            },
-            {
-              "text": "spin-offs",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " anteriores destacavam personagens já conhecidos da franquia, "
-            },
-            {
-              "text": "Dual Shadow ~Precure Villain Heroines~",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " apresentará uma nova história protagonizada por personagens inéditas."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O vídeo promocional começa com uma atmosfera alegre, mostrando um campo repleto de flores. O clima muda em seguida, quando surge a frase “Porque nós não somos Precure”. Na sequência, uma única flor aparece sob um holofote, balançando ao vento de maneira inquietante, enquanto um olhar suspeito surge ao fundo. A prévia apresenta um universo carregado de tensão, em sentido oposto à atmosfera habitual de Precure.",
-          "runs": [
-            {
-              "text": "O vídeo promocional começa com uma atmosfera alegre, mostrando um campo repleto de flores. O clima muda em seguida, quando surge a frase"
-            },
-            {
-              "text": " “Porque nós não somos Precure”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Na sequência, uma única flor aparece sob um holofote, balançando ao vento de maneira inquietante, enquanto um olhar suspeito surge ao fundo. A prévia apresenta um universo carregado de tensão, em sentido oposto à atmosfera habitual de "
-            },
-            {
-              "text": "Precure",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Atualmente, a série de Precure que está no ar é Star Detective Precure!, que aqui no Brasil tem os episódios inéditos lançados aos domingos, na Crunchyroll, com legenda em português.",
-          "runs": [
-            {
-              "text": "Atualmente, a série de "
-            },
-            {
-              "text": "Precure",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " que está no ar é "
-            },
-            {
-              "text": "Star Detective Precure!",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", que aqui no Brasil tem os episódios inéditos lançados aos domingos, na "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com legenda em português."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Comic Natalie",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Comic Natalie",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://natalie.mu/comic/news/695318"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-28T19:49:37.000Z",
-      "updatedAt": "2026-10-28T19:50:06.000Z",
-      "expiresAt": "2026-11-04T19:49:37.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/28/precure-tera-anime-spin-off-sombrio-com-heroinas-vilas-em-2027",
-          "publishedAt": "2026-10-28T19:49:37.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 1,
-      "wordCount": 208,
-      "qualityScore": 0.904,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 9,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-ba8bb70a",
-      "slug": "pokemon-unite-servicos-do-jogo-chegam-ao-fim-em-marco-de-2027-jbox-ba8bb70a",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Pokémon UNITE: Serviços do jogo chegam ao fim em março de 2027",
-      "originalTitle": "Pokémon UNITE: Serviços do jogo chegam ao fim em março de 2027",
-      "summary": "Foi anunciado nas redes oficiais de Pokémon que o jogo Pokémon UNITE terá seus serviços encerrados no dia 23 de março de 2027. As vendas de itens já foram interrompidas ontem, dia 27, tanto para compra de gemas quanto para a assinatura do UNITE Club.",
-      "author": "Teke",
-      "tags": [
-        "Games",
-        "fim de Pokémon UNITE",
-        "Pokemon",
-        "pokémon unite"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/28/pokemon-unite-servicos-do-jogo-chegam-ao-fim-em-marco-de-2027",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/28/pokemon-unite-servicos-do-jogo-chegam-ao-fim-em-marco-de-2027",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/pokemon-unite-destacada.jpg",
-      "mediaQuery": "Pokémon UNITE: Serviços do jogo chegam ao fim em março de 2027",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/tijBa8zfozM"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Foi anunciado nas redes oficiais de Pokémon que o jogo Pokémon UNITE terá seus serviços encerrados no dia 23 de março de 2027. As vendas de itens já foram interrompidas ontem, dia 27, tanto para compra de gemas quanto para a assinatura do UNITE Club.",
-          "runs": [
-            {
-              "text": "Foi anunciado nas redes oficiais de "
-            },
-            {
-              "text": "Pokémon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " que o jogo "
-            },
-            {
-              "text": "Pokémon UNITE",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " terá seus"
-            },
-            {
-              "text": " serviços encerrados no dia 23 de março de 2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". As vendas de itens já foram interrompidas ontem, dia 27, tanto para compra de gemas quanto para a assinatura do UNITE Club."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No dia 12 de novembro, um evento especial para o fim começa. Nele, os jogadores poderão conseguir itens variados, incluindo licenças de Pokémon e HoloWears, as roupinhas temáticas, para que assim consigam aproveitar os momentos finais com todas as opções disponíveis. Uma função de acervo também será adicionada, que permite aos jogadores verem seus registros do jogo.",
-          "runs": [
-            {
-              "text": "No dia 12 de novembro, um evento especial para o fim começa. Nele, os jogadores poderão conseguir itens variados, incluindo licenças de Pokémon e HoloWears, as roupinhas temáticas, para que assim consigam aproveitar os momentos finais com todas as opções disponíveis. Uma função de acervo também será adicionada, que permite aos jogadores verem seus registros do jogo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Foi divulgado também que o campeonato Pokémon UNITE Aeos Crown 2027 Tokyo ainda vai acontecer como já confirmado anteriormente, com fase de classificação começando em dezembro.",
-          "runs": [
-            {
-              "text": "Foi divulgado também que o campeonato "
-            },
-            {
-              "text": "Pokémon UNITE Aeos Crown 2027 Tokyo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ainda vai acontecer como já confirmado anteriormente, com fase de classificação começando em dezembro."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=tijBa8zfozM",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/tijBa8zfozM"
-        },
-        {
-          "type": "paragraph",
-          "text": "Pokémon UNITE é um jogo no estilo MOBA (mesmo gênero de arena de batalha de League of Legends e Dota) que foi lançado em 2021, chegando primeiramente ao Switch e posteriormente para celulares. O jogo é gratuito e contava com possibilidade de compras para desbloquear itens e facilitar o progresso, e teve também tradução e dublagem para português.",
-          "runs": [
-            {
-              "text": "Pokémon UNITE",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é um jogo no estilo MOBA (mesmo gênero de arena de batalha de "
-            },
-            {
-              "text": "League of Legends",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Dota",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") que foi lançado em 2021, chegando primeiramente ao Switch e posteriormente para celulares. O jogo é gratuito e contava com possibilidade de compras para desbloquear itens e facilitar o progresso, e teve também "
-            },
-            {
-              "text": "tradução e dublagem para português",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2022/01/20/pokemon-unite-chega-com-audio-e-interface-em-portugues/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O desenvolvimento é pelo estúdio TiMi, da Tencent, responsável por jogos como Honor of Kings e Call of Duty: Mobile. Ambientado na ilha Aeos, os jogadores formam equipes de cinco pokémon para competir entre si e aquela com maior pontuação vence.",
-          "runs": [
-            {
-              "text": "O desenvolvimento é pelo estúdio "
-            },
-            {
-              "text": "TiMi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "da Tencent",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2020/06/24/pokemon-com-envolvimento-da-dona-de-league-of-legends-pokemon-unite-e-o-1o-moba-da-franquia/"
-            },
-            {
-              "text": ", responsável por jogos como "
-            },
-            {
-              "text": "Honor of Kings",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Call of Duty: Mobile",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Ambientado na ilha Aeos, os jogadores formam equipes de cinco pokémon para competir entre si e aquela com maior pontuação vence."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Desde seu lançamento, o título começou a fazer parte dos eventos competitivos oficiais de Pokémon, inclusive neste ano de 2026. Apenas recentemente o jogo teve uma chance de ganhar representação em animê, durante o episódio 141 de Pokémon Horizontes, lançado no Japão no último mês de junho junto a um evento dentro de Pokémon UNITE. O jogo também inspirou um mangá.",
-          "runs": [
-            {
-              "text": "Desde seu lançamento, o título começou a fazer parte dos eventos competitivos oficiais de Pokémon, inclusive neste ano de 2026. Apenas recentemente o jogo teve uma chance de ganhar representação em animê, durante o episódio 141 de "
-            },
-            {
-              "text": "Pokémon Horizontes",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", lançado no Japão no último mês de junho junto a um evento dentro de "
-            },
-            {
-              "text": "Pokémon UNITE",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". O jogo também inspirou um mangá."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site oficial de Pokémon UNITE",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Site oficial de Pokémon UNITE",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://unite.pokemon.com/en-us/news/unite-end-of-service/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-28T19:14:22.000Z",
-      "updatedAt": "2026-10-28T19:16:15.000Z",
-      "expiresAt": "2026-11-04T19:14:22.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/28/pokemon-unite-servicos-do-jogo-chegam-ao-fim-em-marco-de-2027",
-          "publishedAt": "2026-10-28T19:14:22.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 311,
-      "qualityScore": 0.917,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
