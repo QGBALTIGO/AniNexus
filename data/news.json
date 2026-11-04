@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T01:41:30.063Z",
+  "generatedAt": "2026-11-04T08:04:14.246Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,1135 @@
   ],
   "stats": {
     "collected": 47,
-    "grouped": 25,
-    "published": 25,
-    "newStories": 25,
-    "fullArticles": 25,
+    "grouped": 26,
+    "published": 26,
+    "newStories": 26,
+    "fullArticles": 26,
     "previewArticles": 0,
-    "avgWords": 397,
-    "withHeroImage": 25,
-    "withOrderedMedia": 25,
+    "avgWords": 373,
+    "withHeroImage": 26,
+    "withOrderedMedia": 26,
     "skippedTranslation": 0,
     "skippedQuality": 20,
-    "durationMs": 5878
+    "durationMs": 6717
   },
   "items": [
+    {
+      "id": "animenew-6c263c02",
+      "slug": "otaku-vampire-s-love-bite-ganha-adaptacao-para-anime-animenew-6c263c02",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Otaku Vampire’s Love Bite ganha adaptação para anime",
+      "originalTitle": "Otaku Vampire’s Love Bite ganha adaptação para anime",
+      "summary": "O mangá Otaku Vampire’s Love Bite (Oshi ni Amagami), de Julietta Suzuki, criadora de Kamisama Kiss, receberá uma adaptação em anime. O anúncio chegou acompanhado de um vídeo promocional e uma ilustração oficial.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Oshi ni Amagami",
+        "Otaku Vampire's Love Bite"
+      ],
+      "url": "https://animenew.com.br/otaku-vampires-love-bite-anime",
+      "sourceUrl": "https://animenew.com.br/otaku-vampires-love-bite-anime",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Otaku-Vampires-Love-Bite-ganha-adaptacao-para-anime.webp",
+      "mediaQuery": "Otaku Vampire’s Love Bite ganha adaptação para anime",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Otaku-Vampires-Love-Bite.webp",
+          "alt": "Otaku Vampire's Love Bite",
+          "caption": "© Julietta Suzuki, HAKUSENSHA/Otaku Vampire’s Love Bite Project"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/u3EsxNAKqp0"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O mangá Otaku Vampire’s Love Bite (Oshi ni Amagami), de Julietta Suzuki, criadora de Kamisama Kiss, receberá uma adaptação em anime. O anúncio chegou acompanhado de um vídeo promocional e uma ilustração oficial.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Otaku Vampire’s Love Bite",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Oshi ni Amagami",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), de "
+            },
+            {
+              "text": "Julietta Suzuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", criadora de "
+            },
+            {
+              "text": "Kamisama Kiss",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", receberá uma adaptação em "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": ". O anúncio chegou acompanhado de um vídeo promocional e uma ilustração oficial."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Criador de Claymore lança novo mangá de fantasia",
+              "runs": [
+                {
+                  "text": "Criador de Claymore lança novo mangá de fantasia",
+                  "href": "https://animenew.com.br/bartlet-fairy-basslet-novo-manga-norihiro-yagi"
+                }
+              ]
+            },
+            {
+              "text": "Bocchi the Rock! recebe adaptação para novo filme",
+              "runs": [
+                {
+                  "text": "Bocchi the Rock! recebe adaptação para novo filme",
+                  "href": "https://animenew.com.br/filme-bocchi-the-rock-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=u3EsxNAKqp0",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/u3EsxNAKqp0"
+        },
+        {
+          "type": "paragraph",
+          "text": "A ShoPro Entertainment confirmou a novidade nesta quarta-feira (4), apresentando os primeiros materiais da produção. Até o momento, a equipe responsável, o elenco de voz e a previsão de estreia não foram divulgados.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "ShoPro Entertainment",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " confirmou a novidade nesta quarta-feira (4), apresentando os primeiros materiais da produção. Até o momento, a equipe responsável, o elenco de voz e a previsão de estreia não foram divulgados."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Otaku-Vampires-Love-Bite.webp",
+          "alt": "Otaku Vampire's Love Bite",
+          "caption": "© Julietta Suzuki, HAKUSENSHA/Otaku Vampire’s Love Bite Project"
+        },
+        {
+          "type": "heading",
+          "text": "História acompanha vampira otaku",
+          "runs": [
+            {
+              "text": "História acompanha vampira otaku"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama apresenta Hina, uma vampira que passou 30 anos isolada e decide se mudar para o Japão para aproveitar sua paixão pela cultura otaku. Lá, ela conhece Kyuta Amanatsu, um garoto que se parece com seu personagem favorito. Além da aparência, o sangue de Kyuta possui uma característica especial que desperta o interesse de outros vampiros. Com isso, Hina precisa lidar com sentimentos que vão além de sua admiração pelo rapaz.",
+          "runs": [
+            {
+              "text": "A trama apresenta Hina, uma vampira que passou 30 anos isolada e decide se mudar para o Japão para aproveitar sua paixão pela cultura otaku. Lá, ela conhece Kyuta Amanatsu, um garoto que se parece com seu personagem favorito. Além da aparência, o sangue de Kyuta possui uma característica especial que desperta o interesse de outros vampiros. Com isso, Hina precisa lidar com sentimentos que vão além de sua admiração pelo rapaz.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mangá começou em 2022",
+          "runs": [
+            {
+              "text": "Mangá começou em 2022"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Julietta Suzuki iniciou a publicação em novembro de 2022 na revista Hana to Yume, da editora Hakusensha. Assim a obra surgiu originalmente como um capítulo único lançado em abril do mesmo ano.",
+          "runs": [
+            {
+              "text": "Julietta Suzuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " iniciou a publicação em novembro de 2022 na revista Hana to Yume, da editora "
+            },
+            {
+              "text": "Hakusensha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Assim a obra surgiu originalmente como um capítulo único lançado em abril do mesmo ano."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim o mangá alcançou seu décimo volume no Japão em julho de 2026, enquanto o décimo primeiro chegará às lojas em 20 de novembro.",
+          "runs": [
+            {
+              "text": "Por fim o mangá alcançou seu décimo volume no Japão em julho de 2026, enquanto o décimo primeiro chegará às lojas em 20 de novembro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://oshiniamagami-anime.com/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Otaku Vampire’s Love Bite ganha adaptação para anime.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Otaku Vampire’s Love Bite ganha adaptação para anime",
+              "href": "https://animenew.com.br/otaku-vampires-love-bite-anime/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-04T02:10:06.000Z",
+      "updatedAt": "2026-11-04T02:10:06.000Z",
+      "expiresAt": "2026-11-11T02:10:06.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/otaku-vampires-love-bite-anime",
+          "publishedAt": "2026-11-04T02:10:06.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 250,
+      "qualityScore": 0.973,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-1d823b84",
+      "slug": "witch-on-the-holy-night-ganhara-adaptacao-em-manga-animenew-1d823b84",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Witch on the Holy Night ganhará adaptação em mangá",
+      "originalTitle": "Witch on the Holy Night ganhará adaptação em mangá",
+      "summary": "O filme de anime Witch on the Holy Night (Mahoutsukai no Yoru) ganhará uma adaptação em mangá desenhada por Keigo Maki, autor de Shikimori’s Not Just a Cutie. A publicação começa no dia 11 de novembro.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Mangás",
+        "Notícias",
+        "Mahoutsukai no Yoru",
+        "Witch on the Holy Night"
+      ],
+      "url": "https://animenew.com.br/witch-on-the-holy-night-ganha-manga",
+      "sourceUrl": "https://animenew.com.br/witch-on-the-holy-night-ganha-manga",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Witch-on-the-Holy-Night-ganhara-adaptacao-em-manga.webp",
+      "mediaQuery": "Witch on the Holy Night ganhará adaptação em mangá",
+      "mediaType": "manga",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/Hf4-i5u3Bbs"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O filme de anime Witch on the Holy Night (Mahoutsukai no Yoru) ganhará uma adaptação em mangá desenhada por Keigo Maki, autor de Shikimori’s Not Just a Cutie. A publicação começa no dia 11 de novembro.",
+          "runs": [
+            {
+              "text": "O filme de "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Witch on the Holy Night",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Mahoutsukai no Yoru",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") ganhará uma adaptação em "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " desenhada por "
+            },
+            {
+              "text": "Keigo Maki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", autor de "
+            },
+            {
+              "text": "Shikimori’s Not Just a Cutie",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A publicação começa no dia 11 de novembro."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Criador de Claymore lança novo mangá de fantasia",
+              "runs": [
+                {
+                  "text": "Criador de Claymore lança novo mangá de fantasia",
+                  "href": "https://animenew.com.br/bartlet-fairy-basslet-novo-manga-norihiro-yagi"
+                }
+              ]
+            },
+            {
+              "text": "Gyakusatsu Kigen ganha vídeo promocional animado",
+              "runs": [
+                {
+                  "text": "Gyakusatsu Kigen ganha vídeo promocional animado",
+                  "href": "https://animenew.com.br/gyakusatsu-kigen-video-promocional-animado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anúncio saiu na 49ª edição da revista Weekly Shonen Magazine, da editora Kodansha. Para divulgar o projeto, a empresa também publicou um comercial com as vozes de Haruka Tomatsu, intérprete de Aoko Aozaki, e Yusuke Kobayashi, que interpreta Soujyuro Sizuki.",
+          "runs": [
+            {
+              "text": "O anúncio saiu na 49ª edição da revista "
+            },
+            {
+              "text": "Weekly Shonen Magazine",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da editora "
+            },
+            {
+              "text": "Kodansha",
+              "href": "https://animenew.com.br/tag/kodansha/"
+            },
+            {
+              "text": ". Para divulgar o projeto, a empresa também publicou um comercial com as vozes de Haruka Tomatsu, intérprete de "
+            },
+            {
+              "text": "Aoko Aozaki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e "
+            },
+            {
+              "text": "Yusuke Kobayashi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que interpreta "
+            },
+            {
+              "text": "Soujyuro Sizuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=Hf4-i5u3Bbs",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Hf4-i5u3Bbs"
+        },
+        {
+          "type": "heading",
+          "text": "História de Witch on the Holy Night",
+          "runs": [
+            {
+              "text": "História de Witch on the Holy Night"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama original se passa no final dos anos 1980 e acompanha Aoko Aozaki, herdeira de uma família tradicional de magos. Mesmo sem interesse inicial por magia, ela assume o posto de sucessora e começa a treinar com Alice Kuonji, uma jovem bruxa que vive em uma mansão isolada. Enquanto concilia os estudos de magia com suas responsabilidades escolares, Aoko conhece Soujyuro Shizuki e enfrenta os planos de sua irmã mais velha, Toko Aozaki.",
+          "runs": [
+            {
+              "text": "A trama original se passa no final dos anos 1980 e acompanha Aoko Aozaki, herdeira de uma família tradicional de magos. Mesmo sem interesse inicial por magia, ela assume o posto de sucessora e começa a treinar com Alice Kuonji, uma jovem bruxa que vive em uma mansão isolada.",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Enquanto concilia os estudos de magia com suas responsabilidades escolares, Aoko conhece Soujyuro Shizuki e enfrenta os planos de sua irmã mais velha, Toko Aozaki.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O filme produzido pelo estúdio ufotable estreia nos cinemas japoneses em 20 de novembro de 2026. No mesmo dia, a visual novel original também receberá uma versão para smartphones.",
+          "runs": [
+            {
+              "text": "O filme produzido pelo estúdio "
+            },
+            {
+              "text": "ufotable",
+              "href": "https://animenew.com.br/tag/ufotable/"
+            },
+            {
+              "text": " estreia nos cinemas japoneses em 20 de novembro de 2026. No mesmo dia, a visual novel original também receberá uma versão para smartphones."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: ANN",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "ANN",
+              "href": "https://www.animenewsnetwork.com/news/2026-11-03/witch-on-the-holy-night-film-gets-manga-adaptation/.243494"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Witch on the Holy Night ganhará adaptação em mangá.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Witch on the Holy Night ganhará adaptação em mangá",
+              "href": "https://animenew.com.br/witch-on-the-holy-night-ganha-manga/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-04T02:04:09.000Z",
+      "updatedAt": "2026-11-04T02:04:09.000Z",
+      "expiresAt": "2026-11-11T02:04:09.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/witch-on-the-holy-night-ganha-manga",
+          "publishedAt": "2026-11-04T02:04:09.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 224,
+      "qualityScore": 0.966,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-915b0826",
+      "slug": "anunciado-anime-de-the-bloodthirsty-bride-devours-the-king-para-2027-animenew-915b0826",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Anunciado anime de The Bloodthirsty Bride Devours the King para 2027",
+      "originalTitle": "Anunciado anime de The Bloodthirsty Bride Devours the King para 2027",
+      "summary": "O mangá The Bloodthirsty Bride Devours the King (Chi ni Ueta Hanayome wa Ō o Kurau) ganhará uma adaptação em anime para TV em 2027. O anúncio aconteceu na segunda-feira, 2 de novembro, junto com detalhes da produção.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Chi ni Ueta Hanayome wa Ō o Kurau",
+        "The Bloodthirsty Bride Devours the King"
+      ],
+      "url": "https://animenew.com.br/the-bloodthirsty-bride-devours-the-king-anime",
+      "sourceUrl": "https://animenew.com.br/the-bloodthirsty-bride-devours-the-king-anime",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Anunciado-anime-de-The-Bloodthirsty-Bride-Devours-the-King-para-2027.webp",
+      "mediaQuery": "Anunciado anime de The Bloodthirsty Bride Devours the King para 2027",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/The-Bloodthirsty-Bride-Devours-the-King-anime.webp",
+          "alt": "The Bloodthirsty Bride Devours the King anime",
+          "caption": "© エンドルフィン/ホンコミックス/「血に飢えた花嫁は王を喰らう」製作委員会"
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O mangá The Bloodthirsty Bride Devours the King (Chi ni Ueta Hanayome wa Ō o Kurau) ganhará uma adaptação em anime para TV em 2027. O anúncio aconteceu na segunda-feira, 2 de novembro, junto com detalhes da produção.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "The Bloodthirsty Bride Devours the King",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Chi ni Ueta Hanayome wa Ō o Kurau",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") ganhará uma adaptação em "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " para TV em 2027. O anúncio aconteceu na segunda-feira, 2 de novembro, junto com detalhes da produção."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Bocchi the Rock! recebe adaptação para novo filme",
+              "runs": [
+                {
+                  "text": "Bocchi the Rock! recebe adaptação para novo filme",
+                  "href": "https://animenew.com.br/filme-bocchi-the-rock-2027"
+                }
+              ]
+            },
+            {
+              "text": "Enako canta abertura e entra no elenco de Isshiki-san",
+              "runs": [
+                {
+                  "text": "Enako canta abertura e entra no elenco de Isshiki-san",
+                  "href": "https://animenew.com.br/isshiki-san-wants-to-know-about-love-enako"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A animação ficará sob responsabilidade dos estúdios IMAGICA Infos e Imageworks Studio, com produção da empresa en-dolphin. Mariko Iwazaki assume a direção, enquanto Shiki, roteirista da obra original, também escreverá os roteiros do anime.",
+          "runs": [
+            {
+              "text": "A animação ficará sob responsabilidade dos "
+            },
+            {
+              "text": "estúdios IMAGICA Infos",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e"
+            },
+            {
+              "text": " Imageworks Studio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com produção da empresa "
+            },
+            {
+              "text": "en-dolphin",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". "
+            },
+            {
+              "text": "Mariko Iwazaki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " assume a direção, enquanto Shiki, roteirista da obra original, também escreverá os roteiros do anime."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/The-Bloodthirsty-Bride-Devours-the-King-anime.webp",
+          "alt": "The Bloodthirsty Bride Devours the King anime",
+          "caption": "© エンドルフィン/ホンコミックス/「血に飢えた花嫁は王を喰らう」製作委員会"
+        },
+        {
+          "type": "paragraph",
+          "text": "Taeko Miura cuidará da direção de som no estúdio RD, e Kujira Yumemi ficará responsável pela composição musical. Já Kazuya Takahashi participará como supervisor de produção.",
+          "runs": [
+            {
+              "text": "Taeko Miura cuidará da direção de som no estúdio RD, e Kujira Yumemi ficará responsável pela composição musical. Já Kazuya Takahashi participará como supervisor de produção."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História acompanha princesa vampira",
+          "runs": [
+            {
+              "text": "História acompanha princesa vampira"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama se passa em uma época marcada por guerras e acompanha Kate, uma princesa com poderes vampíricos que aceita um casamento arranjado com Luka, o rei mais poderoso do território, para proteger sua terra natal. Entretanto, durante a primeira noite juntos, o cheiro do sangue de Luka desperta a verdadeira natureza de Kate, colocando a relação dos dois em risco. A história explora os limites entre instinto, contrato e amor.",
+          "runs": [
+            {
+              "text": "A trama se passa em uma época marcada por guerras e acompanha Kate, uma princesa com poderes vampíricos que aceita um casamento arranjado com Luka, o rei mais poderoso do território, para proteger sua terra natal.",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Entretanto, durante a primeira noite juntos, o cheiro do sangue de Luka desperta a verdadeira natureza de Kate, colocando a relação dos dois em risco. A história explora os limites entre instinto, contrato e amor.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O mangá é escrito por Shiki e ilustrado por Yū Shinonome. O quarto volume e o capítulo 29 chegaram ao público japonês em outubro de 2026.",
+          "runs": [
+            {
+              "text": "O mangá é escrito por Shiki e ilustrado por Yū Shinonome. O quarto volume e o capítulo 29 chegaram ao público japonês em outubro de 2026."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://honto.jp/anime/chiniuetahanayome.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Anunciado anime de The Bloodthirsty Bride Devours the King para 2027.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Anunciado anime de The Bloodthirsty Bride Devours the King para 2027",
+              "href": "https://animenew.com.br/the-bloodthirsty-bride-devours-the-king-anime/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-04T01:58:47.000Z",
+      "updatedAt": "2026-11-04T01:58:47.000Z",
+      "expiresAt": "2026-11-11T01:58:47.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/the-bloodthirsty-bride-devours-the-king-anime",
+          "publishedAt": "2026-11-04T01:58:47.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 244,
+      "qualityScore": 0.97,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-3ff2bf7c",
+      "slug": "criador-de-claymore-lanca-novo-manga-de-fantasia-animenew-3ff2bf7c",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Criador de Claymore lança novo mangá de fantasia",
+      "originalTitle": "Criador de Claymore lança novo mangá de fantasia",
+      "summary": "O mangaká Norihiro Yagi, conhecido por Claymore, iniciou uma nova série intitulada BARTLET FAIRY BASSLET. O mangá estreou nesta no início de novembro, na plataforma Shonen Jump+.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Mangás",
+        "Notícias",
+        "Bartlett Fairy Basslet",
+        "Claymore",
+        "Norihiro Yagi"
+      ],
+      "url": "https://animenew.com.br/bartlet-fairy-basslet-novo-manga-norihiro-yagi",
+      "sourceUrl": "https://animenew.com.br/bartlet-fairy-basslet-novo-manga-norihiro-yagi",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Criador-de-Claymore-lanca-novo-manga.webp",
+      "mediaQuery": "Criador de Claymore lança novo mangá de fantasia",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Claymore-Manga.webp",
+          "alt": "Claymore Mangá",
+          "caption": "© Norihiro Yagi, Shueisha"
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O mangaká Norihiro Yagi, conhecido por Claymore, iniciou uma nova série intitulada BARTLET FAIRY BASSLET. O mangá estreou nesta no início de novembro, na plataforma Shonen Jump+.",
+          "runs": [
+            {
+              "text": "O mangaká "
+            },
+            {
+              "text": "Norihiro Yagi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", conhecido por "
+            },
+            {
+              "text": "Claymore",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", iniciou uma nova série intitulada "
+            },
+            {
+              "text": "BARTLET FAIRY BASSLET",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " estreou nesta no início de novembro, na plataforma "
+            },
+            {
+              "text": "Shonen Jump+",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Gyakusatsu Kigen ganha vídeo promocional animado",
+              "runs": [
+                {
+                  "text": "Gyakusatsu Kigen ganha vídeo promocional animado",
+                  "href": "https://animenew.com.br/gyakusatsu-kigen-video-promocional-animado"
+                }
+              ]
+            },
+            {
+              "text": "Masashi Kishimoto anuncia novo mangá de Naruto",
+              "runs": [
+                {
+                  "text": "Masashi Kishimoto anuncia novo mangá de Naruto",
+                  "href": "https://animenew.com.br/naruto-shadow-rising-novo-manga-kishimoto"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Shueisha confirmou que o segundo capítulo chegará em 9 de novembro. A obra também recebeu lançamento simultâneo em inglês pelas plataformas MANGA Plus e Shonen Jump, da Viz Media.",
+          "runs": [
+            {
+              "text": "A Shueisha confirmou que o segundo capítulo chegará em 9 de novembro. A obra também recebeu lançamento simultâneo em inglês pelas plataformas "
+            },
+            {
+              "text": "MANGA Plus",
+              "href": "https://mangaplus.shueisha.co.jp/titles/100856"
+            },
+            {
+              "text": " e Shonen Jump, da Viz Media."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Claymore-Manga.webp",
+          "alt": "Claymore Mangá",
+          "caption": "© Norihiro Yagi, Shueisha"
+        },
+        {
+          "type": "heading",
+          "text": "Conheça a história",
+          "runs": [
+            {
+              "text": "Conheça a história"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Brunhilde, uma princesa que também ocupa o posto de capitã dos cavaleiros. Após derrotar sua arquirrival, ela encontra um misterioso peixe brilhante que cai do céu. A partir desse acontecimento, começa uma nova aventura de fantasia e ação.",
+          "runs": [
+            {
+              "text": "A trama acompanha Brunhilde, uma princesa que também ocupa o posto de capitã dos cavaleiros. Após derrotar sua arquirrival, ela encontra um misterioso peixe brilhante que cai do céu. A partir desse acontecimento, começa uma nova aventura de fantasia e ação.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A descrição oficial apresenta a série como uma fantasia de combate com elementos de hack and slash.",
+          "runs": [
+            {
+              "text": "A descrição oficial apresenta a série como uma fantasia de combate com elementos de hack and slash."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Histórico do autor",
+          "runs": [
+            {
+              "text": "Histórico do autor"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Norihiro Yagi iniciou Claymore em 2001 e concluiu o mangá em 2014, com 27 volumes. A obra ganhou uma adaptação em anime para televisão em 2007. Ademais o autor também criou Angel Densetsu, publicado entre 1993 e 2000, e Ariadne in the Blue Sky, encerrado em fevereiro de 2023, com 22 volumes.",
+          "runs": [
+            {
+              "text": "Norihiro Yagi iniciou "
+            },
+            {
+              "text": "Claymore",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " em 2001 e concluiu o mangá em 2014, com 27 volumes. A obra ganhou uma adaptação em "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " para televisão em 2007. Ademais o autor também criou "
+            },
+            {
+              "text": "Angel Densetsu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", publicado entre 1993 e 2000, e Ariadne in the Blue Sky, encerrado em fevereiro de 2023, com 22 volumes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Viz",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Viz",
+              "href": "https://www.viz.com/shonenjump/chapters/bartlet-fairy-basslet"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Criador de Claymore lança novo mangá de fantasia.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Criador de Claymore lança novo mangá de fantasia",
+              "href": "https://animenew.com.br/bartlet-fairy-basslet-novo-manga-norihiro-yagi/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-04T01:49:12.000Z",
+      "updatedAt": "2026-11-04T01:49:12.000Z",
+      "expiresAt": "2026-11-11T01:49:12.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/bartlet-fairy-basslet-novo-manga-norihiro-yagi",
+          "publishedAt": "2026-11-04T01:49:12.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 212,
+      "qualityScore": 0.967,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-017684db",
       "slug": "gundam-0080-war-in-the-pocket-sera-exibido-no-rj-esta-semana-jbox-017684db",
@@ -5694,237 +6810,6 @@
       }
     },
     {
-      "id": "animenew-4ca3a8fe",
-      "slug": "jujutsu-kaisen-ganha-trailer-com-spoilers-da-4-temporada-animenew-4ca3a8fe",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
-      "originalTitle": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
-      "summary": "A Shonen Jump divulgou um trailer macabro de Jujutsu Kaisen que reúne momentos importantes do mangá de Gege Akutami e antecipa cenas que devem aparecer nos próximos episódios do anime.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Gege Akutami",
-        "Jujutsu Kaisen"
-      ],
-      "url": "https://animenew.com.br/jujutsu-kaisen-trailer-sombrio-4-temporada",
-      "sourceUrl": "https://animenew.com.br/jujutsu-kaisen-trailer-sombrio-4-temporada",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Jujutsu-Kaisen-ganha-trailer-com-spoilers-da-4a-temporada.webp",
-      "mediaQuery": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/YbGIhA9A_3U"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A Shonen Jump divulgou um trailer macabro de Jujutsu Kaisen que reúne momentos importantes do mangá de Gege Akutami e antecipa cenas que devem aparecer nos próximos episódios do anime.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Shonen Jump",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " divulgou um trailer macabro de "
-            },
-            {
-              "text": "Jujutsu Kaisen",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " que reúne momentos importantes do "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " de "
-            },
-            {
-              "text": "Gege Akutami",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e antecipa cenas que devem aparecer nos próximos episódios do "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Black Clover bate record com retorno da 2ª temporada",
-              "runs": [
-                {
-                  "text": "Black Clover bate record com retorno da 2ª temporada",
-                  "href": "https://animenew.com.br/black-clover-bate-record-com-retorno-da-2a-temporada"
-                }
-              ]
-            },
-            {
-              "text": "Precure anuncia anime derivado com heroínas vilãs",
-              "runs": [
-                {
-                  "text": "Precure anuncia anime derivado com heroínas vilãs",
-                  "href": "https://animenew.com.br/dual-shadow-precure-villain-heroines-anime"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O vídeo promocional apresenta uma montagem sombria com painéis da obra original, destacando acontecimentos que ainda serão adaptados para a animação. A prévia também serve como divulgação de uma exposição especial dedicada ao encerramento do mangá.",
-          "runs": [
-            {
-              "text": "O vídeo promocional apresenta uma montagem sombria com painéis da obra original, destacando acontecimentos que ainda serão adaptados para a animação. A prévia também serve como divulgação de uma exposição especial dedicada ao encerramento do mangá."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=YbGIhA9A_3U",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/YbGIhA9A_3U"
-        },
-        {
-          "type": "heading",
-          "text": "Exposição de Jujutsu Kaisen",
-          "runs": [
-            {
-              "text": "Exposição de Jujutsu Kaisen"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Intitulada Jujutsu Kaisen Final Exhibition, a mostra será realizada em Shinjuku, no Japão, entre 25 de dezembro de 2026 e 25 de janeiro de 2027. O evento reunirá materiais relacionados ao passado e ao futuro da franquia.",
-          "runs": [
-            {
-              "text": "Intitulada "
-            },
-            {
-              "text": "Jujutsu Kaisen Final Exhibition",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", a mostra será realizada em Shinjuku, no Japão, entre 25 de dezembro de 2026 e 25 de janeiro de 2027. O evento reunirá materiais relacionados ao passado e ao futuro da franquia."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Enquanto isso, a adaptação em anime segue em desenvolvimento, sendo assim a quarta temporada de Jujutsu Kaisen já está em produção e tem estreia prevista para o início de 2027.",
-          "runs": [
-            {
-              "text": "Enquanto isso, a adaptação em anime segue em desenvolvimento, sendo assim a quarta temporada de "
-            },
-            {
-              "text": "Jujutsu Kaisen",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " já está em produção e tem estreia prevista para o início de 2027."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim o trailer funciona como uma prévia de momentos importantes da história, mas também pode revelar acontecimentos significativos para quem acompanha apenas o anime.",
-          "runs": [
-            {
-              "text": "Por fim o trailer funciona como uma prévia de momentos importantes da história, mas também pode revelar acontecimentos significativos para quem acompanha apenas o anime."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Jujutsu Kaisen ganha trailer com spoilers da 4ª temporada",
-              "href": "https://animenew.com.br/jujutsu-kaisen-trailer-sombrio-4-temporada/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-30T18:32:49.000Z",
-      "updatedAt": "2026-10-30T18:32:49.000Z",
-      "expiresAt": "2026-11-06T18:32:49.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/jujutsu-kaisen-trailer-sombrio-4-temporada",
-          "publishedAt": "2026-10-30T18:32:49.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 1,
-      "wordCount": 199,
-      "qualityScore": 0.903,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 9,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
       "id": "jbox-82ca06e9",
       "slug": "filme-live-action-de-sakamoto-days-estreia-no-catalogo-do-prime-video-jbox-82ca06e9",
       "source": "JBox",
@@ -6690,268 +7575,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-ac867611",
-      "slug": "expelled-from-paradise-revela-video-com-novidades-do-game-animenew-ac867611",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Expelled from Paradise revela vídeo com novidades do game",
-      "originalTitle": "Expelled from Paradise revela vídeo com novidades do game",
-      "summary": "O jogo visual novel Expelled from Paradise -The Stellar Angel- ganhou um novo vídeo promocional em 29 de outubro, apresentando detalhes da história, sistemas de escolhas e duas personagens inéditas. O lançamento ocidental está marcado para novembro.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Games",
-        "Notícias",
-        "Expelled From Paradise"
-      ],
-      "url": "https://animenew.com.br/expelled-from-paradise-the-stellar-angel-video",
-      "sourceUrl": "https://animenew.com.br/expelled-from-paradise-the-stellar-angel-video",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/10/Expelled-from-Paradise-revela-video-com-novidades-do-game.webp",
-      "mediaQuery": "Expelled from Paradise revela vídeo com novidades do game",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/HVtODO6aoAAg_K1.webp",
-          "alt": "Expelled from Paradise",
-          "caption": "© 東映アニメーション・ニトロプラス/楽園追放ソサイエティ２"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/pabXOS3j-eM"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O jogo visual novel Expelled from Paradise -The Stellar Angel- ganhou um novo vídeo promocional em 29 de outubro, apresentando detalhes da história, sistemas de escolhas e duas personagens inéditas. O lançamento ocidental está marcado para novembro.",
-          "runs": [
-            {
-              "text": "O jogo visual novel "
-            },
-            {
-              "text": "Expelled from Paradise -The Stellar Angel-",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ganhou um novo vídeo promocional em 29 de outubro, apresentando detalhes da história, sistemas de escolhas e duas personagens inéditas. O lançamento ocidental está marcado para novembro."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Bleach Mirrors High ganha trailer de abertura e música tema",
-              "runs": [
-                {
-                  "text": "Bleach Mirrors High ganha trailer de abertura e música tema",
-                  "href": "https://animenew.com.br/bleach-mirrors-high-trailer-lancamento"
-                }
-              ]
-            },
-            {
-              "text": "DanMachi anuncia novo jogo para PC e mobile",
-              "runs": [
-                {
-                  "text": "DanMachi anuncia novo jogo para PC e mobile",
-                  "href": "https://animenew.com.br/danmachi-frontier-zero-jogo-2027"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=pabXOS3j-eM",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/pabXOS3j-eM"
-        },
-        {
-          "type": "paragraph",
-          "text": "O título chegará ao Nintendo Switch e PC, por meio da Steam, em 26 de novembro de 2026, com suporte aos idiomas inglês e japonês. Desenvolvido pelo Studio51, o projeto conta com roteiro de Shotaro Teshirogi, responsável pelo romance prelúdio Expelled from Paradise: mission.0.",
-          "runs": [
-            {
-              "text": "O título chegará ao "
-            },
-            {
-              "text": "Nintendo Switch",
-              "href": "https://animenew.com.br/tag/nintendo-switch/"
-            },
-            {
-              "text": " e PC, por meio da Steam, em "
-            },
-            {
-              "text": "26 de novembro de 2026",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com suporte aos idiomas inglês e japonês. Desenvolvido pelo Studio51, o projeto conta com roteiro de Shotaro Teshirogi, responsável pelo romance prelúdio "
-            },
-            {
-              "text": "Expelled from Paradise: mission.0",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/10/HVtODO6aoAAg_K1.webp",
-          "alt": "Expelled from Paradise",
-          "caption": "© 東映アニメーション・ニトロプラス/楽園追放ソサイエティ２"
-        },
-        {
-          "type": "heading",
-          "text": "História e sistema de escolhas",
-          "runs": [
-            {
-              "text": "História e sistema de escolhas"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama se passa no ano 2400, após o desastre conhecido como Nano Hazard. A maior parte da humanidade abandonou a Terra devastada para viver no mundo virtual DEVA. Entretanto, uma nova forma de vida chamada Paraflora começa a se espalhar pela superfície, enquanto criaturas gigantes atacam pessoas nas proximidades da cidade desértica de Svarga.",
-          "runs": [
-            {
-              "text": "A trama se passa no ano 2400, após o desastre conhecido como Nano Hazard. A maior parte da humanidade abandonou a Terra devastada para viver no mundo virtual DEVA. Entretanto, uma nova forma de vida chamada Paraflora começa a se espalhar pela superfície, enquanto criaturas gigantes atacam pessoas nas proximidades da cidade desértica de Svarga.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Sistema K2-System no jogo Expelled from Paradise",
-          "runs": [
-            {
-              "text": "Sistema "
-            },
-            {
-              "text": "K2-System",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no jogo Expelled from Paradise"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "O jogo utiliza o sistema K2-System, que divide as decisões entre Kizuna, voltadas aos laços de Angela, e Kakugo, relacionadas à determinação da personagem. Contudo as escolhas alteram os caminhos da narrativa e podem levar a finais ruins.",
-          "runs": [
-            {
-              "text": "O jogo utiliza o sistema "
-            },
-            {
-              "text": "K2-System",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que divide as decisões entre Kizuna, voltadas aos laços de Angela, e Kakugo, relacionadas à determinação da personagem. Contudo as escolhas alteram os caminhos da narrativa e podem levar a finais ruins."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim o vídeo também apresenta Naamah e Aradia, duas novas personagens da visual novel.",
-          "runs": [
-            {
-              "text": "Por fim o vídeo também apresenta Naamah e Aradia, duas novas personagens da visual novel."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site oficial",
-              "href": "https://game.rakuen-tsuiho.com/en/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Expelled from Paradise revela vídeo com novidades do game.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Expelled from Paradise revela vídeo com novidades do game",
-              "href": "https://animenew.com.br/expelled-from-paradise-the-stellar-angel-video/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-30T14:01:44.000Z",
-      "updatedAt": "2026-10-30T14:01:44.000Z",
-      "expiresAt": "2026-11-06T14:01:44.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/expelled-from-paradise-the-stellar-angel-video",
-          "publishedAt": "2026-10-30T14:01:44.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 245,
-      "qualityScore": 0.912,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     },
@@ -9879,512 +10502,6 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-dc18246d",
-      "slug": "morre-tetsuya-chiba-ilustrador-de-ashita-no-joe-jbox-dc18246d",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Morre Tetsuya Chiba, ilustrador de ‘Ashita no Joe’",
-      "originalTitle": "Morre Tetsuya Chiba, ilustrador de ‘Ashita no Joe’",
-      "summary": "Foi divulgado nos jornais japoneses que o artista Tetsuya Chiba faleceu no último dia 22 de outubro devido a uma síndrome mielodisplásica, um tipo de câncer que causa produção anormal de células sanguíneas na medula óssea. O autor tinha 87 anos de idade.",
-      "author": "Teke",
-      "tags": [
-        "Cotidiano",
-        "Mangá",
-        "ashita no joe",
-        "criador de ashita no joe",
-        "Tetsuya Chiba",
-        "tomorrow's joe"
-      ],
-      "url": "https://www.jbox.com.br/2026/10/27/morre-tetsuya-chiba-ilustrador-de-ashita-no-joe",
-      "sourceUrl": "https://www.jbox.com.br/2026/10/27/morre-tetsuya-chiba-ilustrador-de-ashita-no-joe",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/tetsuya-chiba-destacada.jpg",
-      "mediaQuery": "Morre Tetsuya Chiba, ilustrador de ‘Ashita no Joe’",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/ashitanojoearte.jpg",
-          "alt": "ilustração de ashita no joe",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Hinemosu-no-Tari-Nikki-capa.webp",
-          "alt": "imagem: capa japonesa de Hinemosu no Tari Nikki",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Foi divulgado nos jornais japoneses que o artista Tetsuya Chiba faleceu no último dia 22 de outubro devido a uma síndrome mielodisplásica, um tipo de câncer que causa produção anormal de células sanguíneas na medula óssea. O autor tinha 87 anos de idade.",
-          "runs": [
-            {
-              "text": "Foi divulgado nos jornais japoneses que o artista "
-            },
-            {
-              "text": "Tetsuya Chiba",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " faleceu no último dia 22 de outubro devido a uma síndrome mielodisplásica, um tipo de câncer que causa produção anormal de células sanguíneas na medula óssea. O autor tinha 87 anos de idade."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Chiba é conhecido principalmente por ter sido o ilustrador de Ashita no Joe, obra escrita por Ikki Kajiwara que se tornou um grande marco cultural não só para os animês e mangás, mas também para a própria população japonesa — a história e o protagonista Joe Yabuki se tornaram em sua época uma grande inspiração para a classe trabalhadora. Chiba, apesar de ser responsável principalmente pela ilustração de Ashita no Joe, também fazia apontamentos importantes para o roteiro da série. O autor foi o primeiro artista de mangá a receber a Ordem de Cultura do Japão, que é concedida para aqueles que contribuíram significativamente para o desenvolvimento da cultura do país.",
-          "runs": [
-            {
-              "text": "Chiba é conhecido principalmente por ter sido o "
-            },
-            {
-              "text": "ilustrador de ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Ashita no Joe",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", obra escrita por Ikki Kajiwara que se tornou um grande marco cultural não só para os animês e mangás, mas também para a própria população japonesa — a história e o protagonista Joe Yabuki se tornaram em sua época uma "
-            },
-            {
-              "text": "grande inspiração para a classe trabalhadora",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2021/07/02/ashita-no-joe-o-heroi-da-classe-trabalhadora-que-impactou-o-japao-artigo-especial/"
-            },
-            {
-              "text": ". Chiba, apesar de ser responsável principalmente pela ilustração de "
-            },
-            {
-              "text": "Ashita no Joe",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", também fazia apontamentos importantes para o roteiro da série. O autor foi o "
-            },
-            {
-              "text": "primeiro artista de mangá a receber a Ordem de Cultura do Japão",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2024/10/26/tetsuya-chiba-de-ashita-no-joe-recebe-a-ordem-da-cultura-no-japao/"
-            },
-            {
-              "text": ", que é concedida para aqueles que contribuíram significativamente para o desenvolvimento da cultura do país."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/ashitanojoearte.jpg",
-          "alt": "ilustração de ashita no joe"
-        },
-        {
-          "type": "paragraph",
-          "text": "Ashita no Joe. | Imagem: Reprodução",
-          "runs": [
-            {
-              "text": "Ashita no Joe. | Imagem: Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Nascido em janeiro de 1939, em Tóquio, Tetsuya Chiba passou boa parte do início de sua infância na China, durante a Segunda Guerra Mundial. Após o fim da guerra, o período de caos fez com que ele e sua família passassem por constante perigo de vida, mas eventualmente ele conseguiu retornar ao Japão e ser repatriado. Sua estreia profissional como mangaká teve início aos 17 anos de idade, em 1956, quando lançou Fukushu no Semushi, mas antes disso já havia criado um clube de mangá com seus amigos de escola, algo que ele precisava fazer em segredo dos pais, que tinham uma visão negativa sobre mangás.",
-          "runs": [
-            {
-              "text": "Nascido em janeiro de 1939, em Tóquio, Tetsuya Chiba passou boa parte do início de sua infância na China, durante a Segunda Guerra Mundial. Após o fim da guerra, o período de caos fez com que ele e sua família passassem por constante perigo de vida, mas eventualmente ele conseguiu retornar ao Japão e ser repatriado. Sua estreia profissional como mangaká teve início aos 17 anos de idade, em 1956, quando lançou "
-            },
-            {
-              "text": "Fukushu no Semushi",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", mas antes disso já havia criado um clube de mangá com seus amigos de escola, algo que ele precisava fazer em segredo dos pais, que tinham uma visão negativa sobre mangás."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A carreira já estava consolidada mesmo antes de Ashita no Joe, obra iniciada em 1968, tendo sido responsável por séries como Harris no Kaze e Missokasu, alternando entre títulos para revistas shounen e shoujo. Após o mangá de boxe de sucesso, Chiba, como ilustrador e também roteirista, conseguiu ainda mais sucesso no nicho esportivo, com Notari Matsutarou, obra sobre sumô, e Ashita Tenki ni Naare, mangá de golfe. Sua obra mais recente foi Hinemosu no Tari Nikki, história autobiográfica que estava em publicação desde 2015. Mês passado, o mangá foi paralisado por problemas de saúde do autor.",
-          "runs": [
-            {
-              "text": "A carreira já estava consolidada mesmo antes de "
-            },
-            {
-              "text": "Ashita no Joe",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", obra iniciada em 1968, tendo sido responsável por séries como "
-            },
-            {
-              "text": "Harris no Kaze",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Missokasu",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", alternando entre títulos para revistas "
-            },
-            {
-              "text": "shounen",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "shoujo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ". Após o mangá de boxe de sucesso, Chiba, como ilustrador e também roteirista, conseguiu ainda mais sucesso no nicho esportivo, com "
-            },
-            {
-              "text": "Notari Matsutarou",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", obra sobre sumô, e "
-            },
-            {
-              "text": "Ashita Tenki ni Naare",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", mangá de golfe. Sua obra mais recente foi "
-            },
-            {
-              "text": "Hinemosu no Tari Nikki",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", história autobiográfica que estava em publicação desde 2015. Mês passado, o mangá foi paralisado por problemas de saúde do autor."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Hinemosu-no-Tari-Nikki-capa.webp",
-          "alt": "imagem: capa japonesa de Hinemosu no Tari Nikki"
-        },
-        {
-          "type": "paragraph",
-          "text": "Hinemosu no Tari Nikki. | Imagem: Reprodução",
-          "runs": [
-            {
-              "text": "Hinemosu no Tari Nikki. | Imagem: Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Chiba já vinha tendo alguns problemas de saúde nos últimos anos, tendo sido internado em 2021 por problemas no coração e garganta. Ele fez tratamento para um tumor na garganta e, em 2022, também uma cirurgia para implantação de uma prótese na artéria coronária.",
-          "runs": [
-            {
-              "text": "Chiba já vinha tendo alguns problemas de saúde nos últimos anos, tendo sido internado em 2021 por problemas no coração e garganta. Ele fez tratamento para um tumor na garganta e, em 2022, também uma cirurgia para implantação de uma prótese na artéria coronária."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A Kodansha, que publicou vários mangás do autor, se manifestou sobre a morte de Chiba em um comunicado:",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Kodansha",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que publicou vários mangás do autor, "
-            },
-            {
-              "text": "se manifestou sobre a morte de Chiba em um comunicado",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.kodansha.co.jp/notices/733"
-            },
-            {
-              "text": ":"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "Durante seus 70 anos de carreira, Tetsuya Chiba criou várias obras-primas que carregavam sua paixão pelos mangás. O Prêmio Tetsuya Chiba já inspira novos talentos há 46 anos, com autores em atuação até hoje que levaram as palavras de Chiba-sensei para o coração por toda a vida. Suas imensas colaborações para o mundo dos mangás são insubstituíveis.",
-          "runs": [
-            {
-              "text": "Durante seus 70 anos de carreira, Tetsuya Chiba criou várias obras-primas que carregavam sua paixão pelos mangás. O Prêmio Tetsuya Chiba já inspira novos talentos há 46 anos, com autores em atuação até hoje que levaram as palavras de Chiba-sensei para o coração por toda a vida. Suas imensas colaborações para o mundo dos mangás são insubstituíveis.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Um comunicado também foi divulgado pela Associação de Cartunistas do Japão, organização onde Chiba foi diretor-geral e presidente:",
-          "runs": [
-            {
-              "text": "Um comunicado também foi divulgado pela Associação de Cartunistas do Japão",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://nihonmangakakyokai.or.jp/archives/news/20261027"
-            },
-            {
-              "text": ", organização onde Chiba foi diretor-geral e presidente:"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "O Sr. Tetsuya Chiba foi diretor-geral e presidente desta associação, tendo oferecido um grande apoio para várias de nossas iniciativas ao longo de vários anos. Ele também fez contribuições significativas para a indústria de mangás como um todo — aumentando o alcance dos mangás, nutrindo projetos criativos e elevando a reputação tanto de artistas quanto da mídia como um todo. Nós deixamos nossas sinceras condolências e oramos para que ele descanse em paz.",
-          "runs": [
-            {
-              "text": "O Sr. Tetsuya Chiba foi diretor-geral e presidente desta associação, tendo oferecido um grande apoio para várias de nossas iniciativas ao longo de vários anos. Ele também fez contribuições significativas para a indústria de mangás como um todo — aumentando o alcance dos mangás, nutrindo projetos criativos e elevando a reputação tanto de artistas quanto da mídia como um todo. Nós deixamos nossas sinceras condolências e oramos para que ele descanse em paz.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O estúdio TMS Enretainment, responsável pela 2ª adaptação em animê de Ashita no Joe, além do recente derivado Megalo Box, também deixou sua homenagem:",
-          "runs": [
-            {
-              "text": "O estúdio "
-            },
-            {
-              "text": "TMS Enretainment",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", responsável pela 2ª adaptação em animê de "
-            },
-            {
-              "text": "Ashita no Joe",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", além do recente derivado"
-            },
-            {
-              "text": " Megalo Box",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ","
-            },
-            {
-              "text": " também deixou sua homenagem",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://x.com/tmsanime/status/2115188143926202820"
-            },
-            {
-              "text": ":"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "Lamentamos profundamente saber do falecimento do lendário autor de mangá Tetsuya Chiba. A TMS teve a honra de trabalhar na adaptação em animê de Ashita no Joe, uma de suas muitas obras-primas. O legado do mestre Chiba viverá através de suas obras, continuando a inspirar fãs ao redor do mundo a seguir lutando por um amanhã melhor.",
-          "runs": [
-            {
-              "text": "Lamentamos profundamente saber do falecimento do lendário autor de mangá Tetsuya Chiba. A TMS teve a honra de trabalhar na adaptação em animê de Ashita no Joe, uma de suas muitas obras-primas. O legado do mestre Chiba viverá através de suas obras, continuando a inspirar fãs ao redor do mundo a seguir lutando por um amanhã melhor.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O JBox deixa seus sentimentos aos familiares, amigos e fãs de Tetsuya Chiba e agradecemos pelo legado que marcou a história dos animês e mangás.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "JBox",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " deixa seus sentimentos aos familiares, amigos e fãs de Tetsuya Chiba e agradecemos pelo legado que marcou a história dos animês e mangás."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Livedoor News",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Livedoor News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.livedoor.com/article/detail/32666250/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-10-28T01:50:47.000Z",
-      "updatedAt": "2026-10-28T01:51:45.000Z",
-      "expiresAt": "2026-11-04T01:50:47.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/10/27/morre-tetsuya-chiba-ilustrador-de-ashita-no-joe",
-          "publishedAt": "2026-10-28T01:50:47.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 4,
-      "wordCount": 706,
-      "qualityScore": 0.97,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 19,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 2,
-        "embedCount": 0,
         "sourcePagesRead": 0
       }
     }
