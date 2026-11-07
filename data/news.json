@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T22:09:21.284Z",
+  "generatedAt": "2026-11-07T01:57:38.061Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,786 @@
   ],
   "stats": {
     "collected": 48,
-    "grouped": 23,
-    "published": 23,
-    "newStories": 23,
-    "fullArticles": 23,
+    "grouped": 25,
+    "published": 25,
+    "newStories": 25,
+    "fullArticles": 25,
     "previewArticles": 0,
-    "avgWords": 349,
-    "withHeroImage": 23,
-    "withOrderedMedia": 21,
+    "avgWords": 351,
+    "withHeroImage": 25,
+    "withOrderedMedia": 23,
     "skippedTranslation": 0,
-    "skippedQuality": 23,
-    "durationMs": 6326
+    "skippedQuality": 20,
+    "durationMs": 4853
   },
   "items": [
+    {
+      "id": "jbox-820f5813",
+      "slug": "yuru-camp-4-temporada-ganha-previsao-de-estreia-em-novo-trailer-jbox-820f5813",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Yuru Camp: 4ª temporada ganha previsão de estreia em novo trailer",
+      "originalTitle": "Yuru Camp: 4ª temporada ganha previsão de estreia em novo trailer",
+      "summary": "Foi divulgado nas redes oficiais de Yuru Camp (conhecido também como Laid-Back Camp) que o animê retorna com sua quarta temporada em abril de 2027. Um novo trailer foi divulgado junto com a data, vídeo que conta com prévias das músicas-tema da nova fase da animação. O vídeo destaca principalmente as novas integrantes do clube de atividades ao ar livre para a nova temporada.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "4ª temporada de yuru camp",
+        "Laid-Back Camp",
+        "Yuru Camp",
+        "YURU CAMP 4"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/06/yuru-camp-4a-temporada-ganha-previsao-de-estreia-em-novo-trailer",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/06/yuru-camp-4a-temporada-ganha-previsao-de-estreia-em-novo-trailer",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/yuru-camp-4a-temporada-destacada.jpg",
+      "mediaQuery": "Yuru Camp: 4ª temporada ganha previsão de estreia em novo trailer",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/yuru-camp-4a-temporada-poster.jpg",
+          "alt": "imagem: as integrantes do clube de atividades ao ar livre em pôster da 4ª temporada de 'Yuru Camp'. As novas integrantes do clube aparecem em destaque junto com as protagonistas Nadeshiko e Rin.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/KIqV8aUPnr8"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi divulgado nas redes oficiais de Yuru Camp (conhecido também como Laid-Back Camp) que o animê retorna com sua quarta temporada em abril de 2027. Um novo trailer foi divulgado junto com a data, vídeo que conta com prévias das músicas-tema da nova fase da animação. O vídeo destaca principalmente as novas integrantes do clube de atividades ao ar livre para a nova temporada.",
+          "runs": [
+            {
+              "text": "Foi divulgado nas redes oficiais de "
+            },
+            {
+              "text": "Yuru Camp",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " (conhecido também como "
+            },
+            {
+              "text": "Laid-Back Camp",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") que o animê retorna com sua quarta temporada em "
+            },
+            {
+              "text": "abril de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Um novo trailer foi divulgado junto com a data, vídeo que conta com prévias das músicas-tema da nova fase da animação. O vídeo destaca principalmente as novas integrantes do clube de atividades ao ar livre para a nova temporada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além da abertura e encerramento, um tema geral para ao animê também foi divulgado. A abertura é a música “Brand New.“, cantada por Asaka. O encerramento é “Happa no Tegami“, de Eri Sasaki. Por fim, o tema geral da temporada é a música “Tonari ni Ireba“, da banda Kiminone.",
+          "runs": [
+            {
+              "text": "Além da abertura e encerramento, um tema geral para ao animê também foi divulgado. A abertura é a música “"
+            },
+            {
+              "text": "Brand New.",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "“, cantada por "
+            },
+            {
+              "text": "Asaka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O encerramento é “"
+            },
+            {
+              "text": "Happa no Tegami",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "“, de "
+            },
+            {
+              "text": "Eri Sasaki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Por fim, o tema geral da temporada é a música “"
+            },
+            {
+              "text": "Tonari ni Ireba",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "“, da banda "
+            },
+            {
+              "text": "Kiminone",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira o vídeo abaixo e também o novo pôster:",
+          "runs": [
+            {
+              "text": "Confira o vídeo abaixo e também o novo pôster:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=KIqV8aUPnr8",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/KIqV8aUPnr8"
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/yuru-camp-4a-temporada-poster.jpg",
+          "alt": "imagem: as integrantes do clube de atividades ao ar livre em pôster da 4ª temporada de 'Yuru Camp'. As novas integrantes do clube aparecem em destaque junto com as protagonistas Nadeshiko e Rin."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Houbunsha/Comitê de produção do animê",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Houbunsha/Comitê de produção do animê"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Shin Tosaka, que dirigiu a 3ª temporada do animê, retorna para os episódios da 4ª temporada; Pierre Sugiura assina os roteiros, Ryuuta Ura chega como o novo designer de personagens e Akiyuki Tateyama retorna para a trilha sonora. A série teve uma nova mudança de estúdio, com o FuRyu Pictures (Let’s go KAIKIGUMI) sendo o novo responsável no lugar do 8-bit, que já tinha substituído o C-Station na temporada anterior.",
+          "runs": [
+            {
+              "text": "Shin Tosaka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que dirigiu a 3ª temporada do animê, retorna para os episódios da 4ª temporada; "
+            },
+            {
+              "text": "Pierre Sugiura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " assina os roteiros, "
+            },
+            {
+              "text": "Ryuuta Ura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " chega como o novo designer de personagens e "
+            },
+            {
+              "text": "Akiyuki Tateyama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " retorna para a trilha sonora. A série teve uma nova mudança de estúdio, com o "
+            },
+            {
+              "text": "FuRyu Pictures",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Let’s go KAIKIGUMI",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") sendo o novo responsável no lugar do 8-bit, que já tinha substituído o C-Station na temporada anterior."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Escrito e ilustrado desde 2015 por Afro, o mangá original de Yuru Camp acompanha a jovem colegial Nadeshiko, que decide visitar o Monte Fuji após se mudar para a cidade de Yamanashi. Porém, ela passa mal no caminho e é salva por Rin, uma garota que está acampando por perto. A partir deste encontro as duas se tornam amigas e formam um grupo de jovens apaixonadas pelo hobby de acampamento. O mangá conta até então com 19 volumes lançados pela Houbunsha e é inédito no Brasil.",
+          "runs": [
+            {
+              "text": "Escrito e ilustrado desde 2015 por "
+            },
+            {
+              "text": "Afro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o mangá original de "
+            },
+            {
+              "text": "Yuru Camp",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " acompanha a jovem colegial Nadeshiko, que decide visitar o Monte Fuji após se mudar para a cidade de Yamanashi. Porém, ela passa mal no caminho e é salva por Rin, uma garota que está acampando por perto. A partir deste encontro as duas se tornam amigas e formam um grupo de jovens apaixonadas pelo hobby de acampamento. O mangá conta até então com 19 volumes lançados pela Houbunsha e é inédito no Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A adaptação para animê começou em 2018 e, desde então, já foram três temporadas, um filme, uma série spin-off chamada Heya Camp e vários OVAs e especiais. A Crunchyroll exibe o animê no Brasil com legendas e dublagem em português, contando com as três temporadas, alguns OVAs e também com Heya Camp.",
+          "runs": [
+            {
+              "text": "A adaptação para animê começou em 2018 e, desde então, já foram três temporadas, um filme, uma série spin-off chamada "
+            },
+            {
+              "text": "Heya Camp",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " e vários OVAs e especiais. A "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.crunchyroll.com/pt-br/series/GRWEW95KR/laid-back-camp"
+            },
+            {
+              "text": " exibe o animê no Brasil com legendas e dublagem em português, contando com as três temporadas, alguns OVAs e também com "
+            },
+            {
+              "text": "Heya Camp",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Comic Natalie",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Comic Natalie",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://natalie.mu/comic/news/696907"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-06T22:30:32.000Z",
+      "updatedAt": "2026-11-06T22:54:52.000Z",
+      "expiresAt": "2026-11-13T22:30:32.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/06/yuru-camp-4a-temporada-ganha-previsao-de-estreia-em-novo-trailer",
+          "publishedAt": "2026-11-06T22:30:32.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 356,
+      "qualityScore": 0.985,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-40df8716",
+      "slug": "hard-rock-cafe-do-japao-anuncia-colaboracao-com-neon-genesis-evangelion-jbox-40df8716",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Hard Rock Cafe do Japão anuncia colaboração com ‘Neon Genesis Evangelion’",
+      "originalTitle": "Hard Rock Cafe do Japão anuncia colaboração com ‘Neon Genesis Evangelion’",
+      "summary": "A rede de restaurantes Hard Rock Cafe anunciou uma colaboração com Neon Genesis Evangelion focada no mercado do Japão.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Produtos",
+        "Colaboração Hard Rock Cafe e Evangelion",
+        "Evangelion",
+        "Hard Rock Cafe",
+        "Hard Rock Cafe Japan",
+        "Neon Genesis Evangelion"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/06/hard-rock-cafe-do-japao-anuncia-colaboracao-com-neon-genesis-evangelion",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/06/hard-rock-cafe-do-japao-anuncia-colaboracao-com-neon-genesis-evangelion",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Hard-Rock-Cafe-Evangelion-destacada.jpg",
+      "mediaQuery": "Hard Rock Cafe do Japão anuncia colaboração com ‘Neon Genesis Evangelion’",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Hard-Rock-Cafe-Evangelion-capa.webp",
+          "alt": "Arte da colaboração entre Hard Rock Cafe e Neon Genesis Evangelion",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A rede de restaurantes Hard Rock Cafe anunciou uma colaboração com Neon Genesis Evangelion focada no mercado do Japão.",
+          "runs": [
+            {
+              "text": "A rede de restaurantes "
+            },
+            {
+              "text": "Hard Rock Cafe",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou uma colaboração com "
+            },
+            {
+              "text": "Neon Genesis Evangelion",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " focada no mercado do Japão."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A parceria inclui itens inspirados no Eva Unidade 01, com camisetas, jaqueta, boné, ímã de geladeira, um modelo de copo de shot e pins. Os valores ficam na faixa de 1.980 ienes (cerca de R$ 68,65, valor do copo de shot) a 66.000 ienes (aproximadamente R$ 2.288,18, valor da jaqueta), e as compras também são acompanhadas de uma sacola especial da collab.",
+          "runs": [
+            {
+              "text": "A parceria inclui itens inspirados no "
+            },
+            {
+              "text": "Eva Unidade 01",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com camisetas, jaqueta, boné, ímã de geladeira, um modelo de copo de shot e pins. Os valores ficam na faixa de 1.980 ienes (cerca de R$ 68,65, valor do copo de shot) a 66.000 ienes (aproximadamente R$ 2.288,18, valor da jaqueta), e as compras também são acompanhadas de uma sacola especial da collab."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além disso, a ação ganhou uma arte especial, que mostra Shinji, Rei e Asuka com itens do Hard Rock Cafe e próximos a uma unidade do restaurante, que estaria localizada em Tóquio-3, cenário da história. Os produtos já estão à venda exclusivamente no Japão, nas unidades de Tóquio, Ueno, Yokohama, Kyoto e Osaka.",
+          "runs": [
+            {
+              "text": "Além disso, a ação ganhou uma arte especial, que mostra "
+            },
+            {
+              "text": "Shinji, Rei e Asuka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " com itens do Hard Rock Cafe e próximos a uma unidade do restaurante, que estaria localizada em Tóquio-3, cenário da história. Os produtos já estão à venda exclusivamente no Japão, nas unidades de Tóquio, Ueno, Yokohama, Kyoto e Osaka."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Hard-Rock-Cafe-Evangelion-capa.webp",
+          "alt": "Arte da colaboração entre Hard Rock Cafe e Neon Genesis Evangelion"
+        },
+        {
+          "type": "paragraph",
+          "text": "Arte da colaboração entre Hard Rock Cafe e Neon Genesis Evangelion | Divulgação",
+          "runs": [
+            {
+              "text": "Arte da colaboração entre Hard Rock Cafe e Neon Genesis Evangelion | Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A franquia Neon Genesis Evangelion foi iniciada como um animê original, ou seja, sem ser baseado em outra obra prévia. A direção foi de Hideaki Anno com produção do estúdio Gainax. A trama é situada em um futuro distópico, em que a sociedade se recuperar após eventos cataclísmicos chamados de Primeiro e Segundo Impactos. Nesse contexto, a Terra também é constantemente atacada por seres chamados de “Anjos”, e a humanidade cria os “Evangelions”, unidades de combate que misturam robôs gigantes com partes orgânicas, para se defender dos ataques. O protagonista da história é Shinji Ikari, jovem recrutado para entrar nos robôs gigantes e defender a humanidade.",
+          "runs": [
+            {
+              "text": "A franquia "
+            },
+            {
+              "text": "Neon Genesis Evangelion",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi iniciada como um animê original, ou seja, sem ser baseado em outra obra prévia. A direção foi de "
+            },
+            {
+              "text": "Hideaki Anno",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " com produção do estúdio "
+            },
+            {
+              "text": "Gainax",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A trama é situada em um futuro distópico, em que a sociedade se recuperar após eventos cataclísmicos chamados de Primeiro e Segundo Impactos. Nesse contexto, a Terra também é constantemente atacada por seres chamados de “Anjos”, e a humanidade cria os “Evangelions”, unidades de combate que misturam robôs gigantes com partes orgânicas, para se defender dos ataques. O protagonista da história é Shinji Ikari, jovem recrutado para entrar nos robôs gigantes e defender a humanidade."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Junto à exibição original do animê, entre 1995 e 1996, começou a sair o mangá derivado (cujo primeiro capítulo saiu cerca de 8 meses antes da estreia da animação, a fim de promovê-la), finalizado apenas em 2019. Considerado um marco do animê em sua época, o sucesso de Evangelion rendeu outros mangás paralelos e filmes que recontam a história e seu final.",
+          "runs": [
+            {
+              "text": "Junto à exibição original do animê, entre 1995 e 1996, começou a sair o mangá derivado (cujo primeiro capítulo saiu cerca de 8 meses antes da estreia da animação, a fim de promovê-la), finalizado apenas em 2019. Considerado um marco do animê em sua época, o sucesso de "
+            },
+            {
+              "text": "Evangelion",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " rendeu outros mangás paralelos e filmes que recontam a história e seu final."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Vale lembrar que, recentemente, foi divulgado que a franquia terá um novo animê em breve, com roteiro de Yoko Taro (NieR) e direção conjunta de Kazuya Tsurumaki e Touko Yatabe.",
+          "runs": [
+            {
+              "text": "Vale lembrar que, recentemente, foi divulgado que a franquia"
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "terá um novo animê em breve",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/02/23/evangelion-ganha-anime-escrito-por-yoko-taro-criador-de-nier/"
+            },
+            {
+              "text": ", com roteiro de "
+            },
+            {
+              "text": "Yoko Taro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "NieR",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") e direção conjunta de "
+            },
+            {
+              "text": "Kazuya Tsurumaki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Touko Yatabe",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No Brasil, o animê original de Evangelion está disponível no catálogo da Netflix. A editora JBC lançou recentemente no país a edição de colecionador do mangá, composta por sete volumes, todos disponíveis para compra.",
+          "runs": [
+            {
+              "text": "No Brasil, o animê original de"
+            },
+            {
+              "text": " Evangelion",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " está disponível no catálogo da "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A editora "
+            },
+            {
+              "text": "JBC",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " lançou recentemente no país a edição de colecionador do mangá, composta por sete volumes, todos disponíveis para compra."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Hard Rock Cafe Japão",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Hard Rock Cafe Japão",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://hardrockjapan.com/event/12540/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-06T22:17:32.000Z",
+      "updatedAt": "2026-11-06T22:18:17.000Z",
+      "expiresAt": "2026-11-13T22:17:32.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/06/hard-rock-cafe-do-japao-anuncia-colaboracao-com-neon-genesis-evangelion",
+          "publishedAt": "2026-11-06T22:17:32.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 401,
+      "qualityScore": 0.81,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-3426e3e6",
       "slug": "norihiro-yagi-autor-de-claymore-comeca-a-publicar-novo-manga-jbox-3426e3e6",
@@ -6966,7 +7733,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 382,
-      "qualityScore": 0.989,
+      "qualityScore": 0.929,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
