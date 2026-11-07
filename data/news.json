@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T19:21:12.461Z",
+  "generatedAt": "2026-11-07T22:48:52.851Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,303 @@
   ],
   "stats": {
     "collected": 48,
-    "grouped": 25,
-    "published": 25,
-    "newStories": 25,
-    "fullArticles": 25,
+    "grouped": 26,
+    "published": 26,
+    "newStories": 26,
+    "fullArticles": 26,
     "previewArticles": 0,
-    "avgWords": 351,
-    "withHeroImage": 25,
-    "withOrderedMedia": 23,
+    "avgWords": 348,
+    "withHeroImage": 26,
+    "withOrderedMedia": 24,
     "skippedTranslation": 0,
-    "skippedQuality": 20,
-    "durationMs": 3776
+    "skippedQuality": 19,
+    "durationMs": 4463
   },
   "items": [
+    {
+      "id": "jbox-61f6a22c",
+      "slug": "bomba-veneta-anuncia-publicacao-de-mais-um-manga-de-osamu-tezuka-jbox-61f6a22c",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Bomba!: Veneta anuncia publicação de mais um mangá de Osamu Tezuka",
+      "originalTitle": "Bomba!: Veneta anuncia publicação de mais um mangá de Osamu Tezuka",
+      "summary": "Na última terça (03) a editora Veneta anunciou em suas redes sociais que publicará no Brasil o mangá Bomba!. A previsão de lançamento é para 2027.",
+      "author": "Jean Clemente",
+      "tags": [
+        "Mangá",
+        "bomba",
+        "editora veneta",
+        "mangá bomba",
+        "mangás da veneta",
+        "Osamu Tezuka",
+        "veneta"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/07/bomba-veneta-anuncia-publicacao-de-mais-um-manga-de-osamu-tezuka",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/07/bomba-veneta-anuncia-publicacao-de-mais-um-manga-de-osamu-tezuka",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/bomba-osamutezuka-destacada.jpg",
+      "mediaQuery": "Bomba!: Veneta anuncia publicação de mais um mangá de Osamu Tezuka",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/veneta-anuncio-bomba-osamutezuka.jpg",
+          "alt": "imagem de divulgação da editora Veneta destacando a capa do mangá 'Bomba!'",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Na última terça (03) a editora Veneta anunciou em suas redes sociais que publicará no Brasil o mangá Bomba!. A previsão de lançamento é para 2027.",
+          "runs": [
+            {
+              "text": "Na última terça (03) a editora "
+            },
+            {
+              "text": "Veneta",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou em suas redes sociais que publicará no Brasil o mangá "
+            },
+            {
+              "text": "Bomba!",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". A previsão de lançamento é para 2027."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anúncio também revelou a prévia da capa nacional:",
+          "runs": [
+            {
+              "text": "O anúncio também revelou a prévia da capa nacional:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/veneta-anuncio-bomba-osamutezuka.jpg",
+          "alt": "imagem de divulgação da editora Veneta destacando a capa do mangá 'Bomba!'"
+        },
+        {
+          "type": "paragraph",
+          "text": "Anúncio de publicação do mangá ‘Bomba!’, de Osamu Tezuka. | Imagem: Reprodução/Veneta",
+          "runs": [
+            {
+              "text": "Anúncio de publicação do mangá ‘Bomba!’, de Osamu Tezuka. | Imagem: Reprodução/Veneta"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anúncio foi feito no aniversário do autor do mangá, Osamu Tezuka (1928-1989), data considerada também como o Dia do Mangá. Esta será a segunda obra do autor pela editora, que trouxe anteriormente o gigantesco Ayako, em 2018.",
+          "runs": [
+            {
+              "text": "O anúncio foi feito no aniversário do autor do mangá, "
+            },
+            {
+              "text": "Osamu Tezuka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (1928-1989), data considerada também como o"
+            },
+            {
+              "text": " Dia do Mangá",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Esta será a segunda obra do autor pela editora, que trouxe anteriormente o gigantesco "
+            },
+            {
+              "text": "Ayako, ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "em 2018."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Publicado originalmente na revista Shonen Magazine, da editora Kodansha, nos meses finais de 1970, a obra foi compilada em volume único.",
+          "runs": [
+            {
+              "text": "Publicado originalmente na revista "
+            },
+            {
+              "text": "Shonen Magazine",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da editora Kodansha, nos meses finais de 1970, a obra foi compilada em volume único."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história é um suspense com toques de terror que acompanha o estudante Tetsu, de saúde frágil e cardíaco. Isso faz com que seja difícil de se defender, até mesmo de seu professor Kito, que o agride. Um dia, o estudante descobre que o professor que odeia tanto pretende se casar com a professora por quem Tetsu é apaixonado. É neste momento que um cavalo branco surge e o professor aparece morto. Agora, toda vez que sente ódio, o cavalo aparece. A misteriosa relação entre seus sentimentos, o equino e as mortes ao seu redor conduz o leitor ao longo da trama.",
+          "runs": [
+            {
+              "text": "A história é um suspense com toques de terror que acompanha o estudante Tetsu, de saúde frágil e cardíaco. Isso faz com que seja difícil de se defender, até mesmo de seu professor Kito, que o agride. Um dia, o estudante descobre que o professor que odeia tanto pretende se casar com a professora por quem Tetsu é apaixonado. É neste momento que um cavalo branco surge e o professor aparece morto. Agora, toda vez que sente ódio, o cavalo aparece. A misteriosa relação entre seus sentimentos, o equino e as mortes ao seu redor conduz o leitor ao longo da trama."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "De acordo com o site oficial de Osamu Tezuka, Bomba! foi concebido em um momento conturbado na vida e carreira do autor, que enfrentava problemas administrativos em suas empresas. A instabilidade se refletiu em sua arte, em um período que Tezuka buscava novas expressões, o que teria diretamente influenciado o mangá.",
+          "runs": [
+            {
+              "text": "De acordo com o"
+            },
+            {
+              "text": " site oficial de Osamu Tezuka",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://tezukaosamu.net/jp/manga/458.html"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Bomba!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi concebido em um momento conturbado na vida e carreira do autor, que enfrentava problemas administrativos em suas empresas. A instabilidade se refletiu em sua arte, em um período que Tezuka buscava novas expressões, o que teria diretamente influenciado o mangá."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Veneta (Instagram)",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Veneta (Instagram)",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.instagram.com/p/DfSoijRl09-/?img_index=5"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-07T22:15:55.000Z",
+      "updatedAt": "2026-11-07T22:18:51.000Z",
+      "expiresAt": "2026-11-14T22:15:55.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/07/bomba-veneta-anuncia-publicacao-de-mais-um-manga-de-osamu-tezuka",
+          "publishedAt": "2026-11-07T22:15:55.000Z",
+          "author": "Jean Clemente"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 279,
+      "qualityScore": 0.975,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-820f5813",
       "slug": "yuru-camp-4-temporada-ganha-previsao-de-estreia-em-novo-trailer-jbox-820f5813",
@@ -5589,7 +5873,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 363,
-      "qualityScore": 0.987,
+      "qualityScore": 0.927,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
