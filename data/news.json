@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T08:36:41.694Z",
+  "generatedAt": "2026-11-07T15:05:09.895Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -37,13 +37,11 @@
     {
       "key": "ANIMENEW",
       "name": "AnimeNew",
-      "ok": false,
+      "ok": true,
       "enabled": true,
-      "count": 0,
-      "mode": "failed",
-      "errors": [
-        "https://animenew.com.br/feed/: 404"
-      ]
+      "count": 10,
+      "mode": "rss-full",
+      "errors": []
     },
     {
       "key": "GNEWS",
@@ -56,18 +54,18 @@
     }
   ],
   "stats": {
-    "collected": 38,
-    "grouped": 17,
-    "published": 17,
-    "newStories": 17,
-    "fullArticles": 17,
+    "collected": 48,
+    "grouped": 25,
+    "published": 25,
+    "newStories": 25,
+    "fullArticles": 25,
     "previewArticles": 0,
-    "avgWords": 402,
-    "withHeroImage": 17,
-    "withOrderedMedia": 15,
+    "avgWords": 351,
+    "withHeroImage": 25,
+    "withOrderedMedia": 23,
     "skippedTranslation": 0,
     "skippedQuality": 20,
-    "durationMs": 4873
+    "durationMs": 7644
   },
   "items": [
     {
@@ -1560,6 +1558,1232 @@
       }
     },
     {
+      "id": "animenew-73bc9a36",
+      "slug": "naruto-shadow-rising-e-destaque-na-weekly-shonen-jump-animenew-73bc9a36",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Naruto: Shadow Rising é destaque na Weekly Shonen Jump",
+      "originalTitle": "Naruto: Shadow Rising é destaque na Weekly Shonen Jump",
+      "summary": "Um novo mangá de Naruto, intitulado Naruto: Shadow Rising, com autoria de Masashi Kishimoto, ganhou destaque na revista Weekly Shonen Jump. Mais informações serão reveladas em dezembro de 2026.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Mangás",
+        "Notícias",
+        "Naruto"
+      ],
+      "url": "https://animenew.com.br/naruto-shadow-rising-novo-manga-kishimoto-2",
+      "sourceUrl": "https://animenew.com.br/naruto-shadow-rising-novo-manga-kishimoto-2",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Naruto-Shadow-Rising-e-destaque-na-Weekly-Shonen-Jump.webp",
+      "mediaQuery": "Naruto: Shadow Rising é destaque na Weekly Shonen Jump",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/HWWeseOWEAA-WAN.webp",
+          "alt": "",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/B5QJZFYQ2Qs"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Um novo mangá de Naruto, intitulado Naruto: Shadow Rising, com autoria de Masashi Kishimoto, ganhou destaque na revista Weekly Shonen Jump. Mais informações serão reveladas em dezembro de 2026.",
+          "runs": [
+            {
+              "text": "Um novo "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Naruto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", intitulado "
+            },
+            {
+              "text": "Naruto: Shadow Rising",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com autoria de Masashi Kishimoto, ganhou destaque na revista "
+            },
+            {
+              "text": "Weekly Shonen Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Mais informações serão reveladas em dezembro de 2026."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Masashi Kishimoto anuncia novo mangá de Naruto",
+              "runs": [
+                {
+                  "text": "Masashi Kishimoto anuncia novo mangá de Naruto",
+                  "href": "https://animenew.com.br/naruto-shadow-rising-novo-manga-kishimoto"
+                }
+              ]
+            },
+            {
+              "text": "Toyotarō mostra seu time para o futuro de Dragon Ball",
+              "runs": [
+                {
+                  "text": "Toyotarō mostra seu time para o futuro de Dragon Ball",
+                  "href": "https://animenew.com.br/toyotaro-define-seu-time-para-o-futuro-de-dragon-ball"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Segundo o vazamento, o material promocional apresenta Naruto e Sasuke em uma nova fase de suas vidas, com os antigos integrantes do Time 7 já adultos. Uma das chamadas destaca Naruto erguendo seu chapéu de Hokage, enquanto outra sugere um possível confronto intenso entre ele e Sasuke.",
+          "runs": [
+            {
+              "text": "Segundo o vazamento, o material promocional apresenta "
+            },
+            {
+              "text": "Naruto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Sasuke",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " em uma nova fase de suas vidas, com os antigos integrantes do "
+            },
+            {
+              "text": "Time 7 já adultos",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Uma das chamadas destaca Naruto erguendo seu chapéu de Hokage, enquanto outra sugere um possível confronto intenso entre ele e Sasuke."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/HWWeseOWEAA-WAN.webp"
+        },
+        {
+          "type": "paragraph",
+          "text": "Além disso, as imagens mostram os dois personagens em diferentes momentos, levantando questionamentos sobre o rumo da história e o contexto desse novo projeto.",
+          "runs": [
+            {
+              "text": "Além disso, as imagens mostram os dois personagens em diferentes momentos, levantando questionamentos sobre o rumo da história e o contexto desse novo projeto."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Novidades na Jump Festa 2027",
+          "runs": [
+            {
+              "text": "Novidades na Jump Festa 2027"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=B5QJZFYQ2Qs",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/B5QJZFYQ2Qs"
+        },
+        {
+          "type": "paragraph",
+          "text": "A publicação também indica que o vídeo promocional apresenta os antigos membros do Time 7, agora crescidos, um após o outro. A próxima atualização está marcada para 19 de dezembro de 2026, durante a Jump Festa 2027, evento organizado pela editora Shueisha.",
+          "runs": [
+            {
+              "text": "A publicação também indica que o vídeo promocional apresenta os antigos membros do Time 7, agora crescidos, um após o outro. A próxima atualização está marcada para "
+            },
+            {
+              "text": "19 de dezembro de 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", durante a "
+            },
+            {
+              "text": "Jump Festa 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", evento organizado pela editora "
+            },
+            {
+              "text": "Shueisha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por enquanto, não foram apresentados detalhes sobre a quantidade de capítulos, formato de publicação ou previsão de lançamento de Naruto: Shadow Rising.",
+          "runs": [
+            {
+              "text": "Por enquanto, não foram apresentados detalhes sobre a quantidade de capítulos, formato de publicação ou previsão de lançamento de Naruto: Shadow Rising."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: X (MiraiTBV)",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "X",
+              "href": "https://x.com/MiraiTBV/status/2118171480454267267"
+            },
+            {
+              "text": " (MiraiTBV)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Naruto: Shadow Rising é destaque na Weekly Shonen Jump.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Naruto: Shadow Rising é destaque na Weekly Shonen Jump",
+              "href": "https://animenew.com.br/naruto-shadow-rising-novo-manga-kishimoto-2/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-06T01:36:17.000Z",
+      "updatedAt": "2026-11-06T01:36:17.000Z",
+      "expiresAt": "2026-11-13T01:36:17.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/naruto-shadow-rising-novo-manga-kishimoto-2",
+          "publishedAt": "2026-11-06T01:36:17.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 210,
+      "qualityScore": 0.967,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-30206635",
+      "slug": "the-dangers-in-my-heart-anuncia-3-temporada-para-abril-de-2027-animenew-30206635",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "The Dangers in My Heart anuncia 3ª temporada para abril de 2027",
+      "originalTitle": "The Dangers in My Heart anuncia 3ª temporada para abril de 2027",
+      "summary": "A franquia The Dangers in My Heart (Boku no Kokoro no Yabai Yatsu) divulgou um novo teaser, além de uma imagem promocional, confirmando a estreia da terceira temporada do anime para abril de 2027.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Boku no Kokoro no Yabai Yatsu",
+        "The Dangers in My Heart"
+      ],
+      "url": "https://animenew.com.br/the-dangers-in-my-heart-3-temporada-2027-2",
+      "sourceUrl": "https://animenew.com.br/the-dangers-in-my-heart-3-temporada-2027-2",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/The-Dangers-in-My-Heart-anuncia-3a-temporada-para-abril-de-2027.webp",
+      "mediaQuery": "The Dangers in My Heart anuncia 3ª temporada para abril de 2027",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/The-Dangers-in-My-Heart-temporada-3.webp",
+          "alt": "The Dangers in My Heart temporada 3",
+          "caption": "© 桜井のりお（秋田書店）／僕ヤバ製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/_D0hm_akpFw"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A franquia The Dangers in My Heart (Boku no Kokoro no Yabai Yatsu) divulgou um novo teaser, além de uma imagem promocional, confirmando a estreia da terceira temporada do anime para abril de 2027.",
+          "runs": [
+            {
+              "text": "A franquia "
+            },
+            {
+              "text": "The Dangers in My Heart",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Boku no Kokoro no Yabai Yatsu",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") divulgou um novo teaser, além de uma imagem promocional, confirmando a estreia da terceira temporada do "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " para abril de 2027."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Fool Night revela músicas e novos dubladores em trailer",
+              "runs": [
+                {
+                  "text": "Fool Night revela músicas e novos dubladores em trailer",
+                  "href": "https://animenew.com.br/fool-night-anime-trailer-elenco-musicas"
+                }
+              ]
+            },
+            {
+              "text": "Spirit Circle: Mangá tem adaptação para anime anunciada",
+              "runs": [
+                {
+                  "text": "Spirit Circle: Mangá tem adaptação para anime anunciada",
+                  "href": "https://animenew.com.br/anime-spirit-circle-adaptacao-anunciada"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=_D0hm_akpFw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/_D0hm_akpFw"
+        },
+        {
+          "type": "paragraph",
+          "text": "O anúncio aconteceu para o público nesta quinta-feira, 5 de novembro, no site oficial da adaptação baseada no mangá de Norio Sakurai. A prévia apresenta as primeiras cenas da nova fase, que dará continuidade à história de Kyotaro Ichikawa e Anna Yamada.",
+          "runs": [
+            {
+              "text": "O anúncio aconteceu para o público nesta quinta-feira, 5 de novembro, no site oficial da adaptação baseada no "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Norio Sakurai",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A prévia apresenta as primeiras cenas da nova fase, que dará continuidade à história de Kyotaro Ichikawa e Anna Yamada."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/The-Dangers-in-My-Heart-temporada-3.webp",
+          "alt": "The Dangers in My Heart temporada 3",
+          "caption": "© 桜井のりお（秋田書店）／僕ヤバ製作委員会"
+        },
+        {
+          "type": "paragraph",
+          "text": "As duas primeiras temporadas estrearam em abril de 2023 e janeiro de 2024, respectivamente. A série também ganhou um filme compilatório, lançado nos cinemas japoneses em 13 de fevereiro de 2026.",
+          "runs": [
+            {
+              "text": "As duas primeiras temporadas estrearam em abril de 2023 e janeiro de 2024, respectivamente. A série também ganhou um filme compilatório, lançado nos cinemas japoneses em 13 de fevereiro de 2026."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mangá chega ao fim",
+          "runs": [
+            {
+              "text": "Mangá chega ao fim"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Enquanto o anime se prepara para retornar, o mangá original também concluiu sua publicação em 15 de setembro. A Akita Shoten lançou o 14º e último volume na sexta-feira, 6 de novembro.",
+          "runs": [
+            {
+              "text": "Enquanto o anime se prepara para retornar, o mangá original também concluiu sua publicação em 15 de setembro. A Akita Shoten lançou o 14º e último volume na sexta-feira, 6 de novembro."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de The Dangers in My Heart",
+          "runs": [
+            {
+              "text": "História de "
+            },
+            {
+              "text": "The Dangers in My Heart",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A obra acompanha Kyotaro, um estudante que alimenta pensamentos sombrios e fantasias psicológicas, mas acaba desenvolvendo uma relação inesperada com Anna, uma das garotas mais populares da escola.",
+          "runs": [
+            {
+              "text": "A obra acompanha Kyotaro, um estudante que alimenta pensamentos sombrios e fantasias psicológicas, mas acaba desenvolvendo uma relação inesperada com Anna, uma das garotas mais populares da escola.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Contudo a terceira temporada de The Dangers in My Heart estreia em abril de 2027. Ademais, outros detalhes sobre a produção ainda não foram divulgados.",
+          "runs": [
+            {
+              "text": "Contudo a terceira temporada de "
+            },
+            {
+              "text": "The Dangers in My Heart",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " estreia em abril de 2027. Ademais, outros detalhes sobre a produção ainda não foram divulgados."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://bokuyaba-anime.com/news/detail/?id=1137059"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em The Dangers in My Heart anuncia 3ª temporada para abril de 2027.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "The Dangers in My Heart anuncia 3ª temporada para abril de 2027",
+              "href": "https://animenew.com.br/the-dangers-in-my-heart-3-temporada-2027-2/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-06T01:25:33.000Z",
+      "updatedAt": "2026-11-06T01:25:33.000Z",
+      "expiresAt": "2026-11-13T01:25:33.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/the-dangers-in-my-heart-3-temporada-2027-2",
+          "publishedAt": "2026-11-06T01:25:33.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 249,
+      "qualityScore": 0.974,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-71f77102",
+      "slug": "spirit-circle-manga-tem-adaptacao-para-anime-anunciada-animenew-71f77102",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Spirit Circle: Mangá tem adaptação para anime anunciada",
+      "originalTitle": "Spirit Circle: Mangá tem adaptação para anime anunciada",
+      "summary": "O mangá Spirit Circle, de Satoshi Mizukami, ganhará uma adaptação em anime para TV em dezembro de 2026. Portanto a produção terá 18 episódios e estreia com exibição no Japão e transmissão global.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Spirit Circle"
+      ],
+      "url": "https://animenew.com.br/anime-spirit-circle-adaptacao-anunciada",
+      "sourceUrl": "https://animenew.com.br/anime-spirit-circle-adaptacao-anunciada",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Spirit-Circle-Manga-tem-adaptacao-para-anime-anunciada.webp",
+      "mediaQuery": "Spirit Circle: Mangá tem adaptação para anime anunciada",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Spirit-Circle-Anime-scaled.webp",
+          "alt": "Spirit Circle Anime",
+          "caption": "©水上悟志・少年画報社／ツインエンジン"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/RQnO-Uj4HD8"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O mangá Spirit Circle, de Satoshi Mizukami, ganhará uma adaptação em anime para TV em dezembro de 2026. Portanto a produção terá 18 episódios e estreia com exibição no Japão e transmissão global.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Spirit Circle",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", de "
+            },
+            {
+              "text": "Satoshi Mizukami",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", ganhará uma adaptação em "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " para TV em dezembro de 2026. Portanto a produção terá 18 episódios e estreia com exibição no Japão e transmissão global."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Dragon Ball Super: Beerus ganha dublagem em português no Brasil",
+              "runs": [
+                {
+                  "text": "Dragon Ball Super: Beerus ganha dublagem em português no Brasil",
+                  "href": "https://animenew.com.br/dragon-ball-super-beerus-dublado-portugues"
+                }
+              ]
+            },
+            {
+              "text": "Code Geass: Star Chaser Aspal revela elenco e equipe",
+              "runs": [
+                {
+                  "text": "Code Geass: Star Chaser Aspal revela elenco e equipe",
+                  "href": "https://animenew.com.br/code-geass-star-chaser-aspal-elenco"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anúncio aconteceu através da empresa REMOW nesta quinta-feira (5), acompanhado de um teaser trailer, imagem promocional e detalhes do elenco principal. Assim o vídeo também apresenta uma prévia da música de encerramento, intitulada “No Matter the World”, interpretada por Anna Nagase.",
+          "runs": [
+            {
+              "text": "O anúncio aconteceu através da empresa "
+            },
+            {
+              "text": "REMOW",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " nesta quinta-feira (5), acompanhado de um teaser trailer, imagem promocional e detalhes do elenco principal. Assim o vídeo também apresenta uma prévia da música de encerramento, intitulada “"
+            },
+            {
+              "text": "No Matter the World",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "”, interpretada por "
+            },
+            {
+              "text": "Anna Nagase",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=RQnO-Uj4HD8",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/RQnO-Uj4HD8"
+        },
+        {
+          "type": "paragraph",
+          "text": "O elenco conta com Kazuki Ura como Fuuta Okeya, Anna Nagase como Kouko Ishigami, Eri Yukimura como Rune e Yuichi Nakamura como East.",
+          "runs": [
+            {
+              "text": "O elenco conta com Kazuki Ura como Fuuta Okeya, Anna Nagase como Kouko Ishigami, Eri Yukimura como Rune e Yuichi Nakamura como East."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Spirit-Circle-Anime-scaled.webp",
+          "alt": "Spirit Circle Anime",
+          "caption": "©水上悟志・少年画報社／ツインエンジン"
+        },
+        {
+          "type": "heading",
+          "text": "Produção do anime",
+          "runs": [
+            {
+              "text": "Produção do anime"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A direção ficou a cargo de Tatsuo Satō, conhecido por Martian Successor Nadesico e Stellvia. Este será seu último trabalho como diretor, com a produção concluída sob a liderança do diretor assistente Kentaro Mizuno. Satoru Fujimoto assina o design de personagens, enquanto a TWIN ENGINE produz a série.",
+          "runs": [
+            {
+              "text": "A direção ficou a cargo de "
+            },
+            {
+              "text": "Tatsuo Satō",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", conhecido por "
+            },
+            {
+              "text": "Martian Successor Nadesico",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e Stellvia. Este será seu último trabalho como diretor, com a produção concluída sob a liderança do diretor assistente "
+            },
+            {
+              "text": "Kentaro Mizuno",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Satoru Fujimoto assina o design de personagens, enquanto a "
+            },
+            {
+              "text": "TWIN ENGINE",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " produz a série."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de Spirit Circle",
+          "runs": [
+            {
+              "text": "História de Spirit Circle"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Fuuta Okeya, um estudante capaz de enxergar espíritos. Sua vida muda ao conhecer Kouko Ishigami, uma misteriosa aluna transferida que revela uma conexão entre os dois envolvendo vidas passadas e um ciclo de reencarnação.",
+          "runs": [
+            {
+              "text": "A trama acompanha Fuuta Okeya, um estudante capaz de enxergar espíritos. Sua vida muda ao conhecer Kouko Ishigami, uma misteriosa aluna transferida que revela uma conexão entre os dois envolvendo vidas passadas e um ciclo de reencarnação.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ademais o mangá estreou na revista Young King Ours, entre maio de 2012 e 2016, sendo concluído em seis volumes.",
+          "runs": [
+            {
+              "text": "Ademais o mangá estreou na revista "
+            },
+            {
+              "text": "Young King Ours",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", entre maio de 2012 e 2016, sendo concluído em seis volumes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://www.spiritcircle.jp/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Spirit Circle: Mangá tem adaptação para anime anunciada.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Spirit Circle: Mangá tem adaptação para anime anunciada",
+              "href": "https://animenew.com.br/anime-spirit-circle-adaptacao-anunciada/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-06T01:04:25.000Z",
+      "updatedAt": "2026-11-06T01:04:25.000Z",
+      "expiresAt": "2026-11-13T01:04:25.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/anime-spirit-circle-adaptacao-anunciada",
+          "publishedAt": "2026-11-06T01:04:25.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 253,
+      "qualityScore": 0.974,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-cbaa55e4",
+      "slug": "code-geass-star-chaser-aspal-revela-elenco-e-equipe-animenew-cbaa55e4",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Code Geass: Star Chaser Aspal revela elenco e equipe",
+      "originalTitle": "Code Geass: Star Chaser Aspal revela elenco e equipe",
+      "summary": "O novo anime Code Geass: Star Chaser Aspal (Code Geass Hoshi Oi no Aspal) revelou seus primeiros dubladores, novos integrantes da equipe de produção e um visual inédito. A estreia do anime está prevista para 2027.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Code Geass Hoshi Oi no Aspal",
+        "Code Geass Star Chaser Aspal",
+        "Sunrise"
+      ],
+      "url": "https://animenew.com.br/code-geass-star-chaser-aspal-elenco",
+      "sourceUrl": "https://animenew.com.br/code-geass-star-chaser-aspal-elenco",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Code-Geass-Star-Chaser-Aspal-elenco-e-equipe.webp",
+      "mediaQuery": "Code Geass: Star Chaser Aspal revela elenco e equipe",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Code-Geass-Star-Chaser-Aspal.webp",
+          "alt": "Code Geass: Star Chaser Aspal",
+          "caption": "©SUNRISE/PROJECT G-ASPAL"
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Ivan-Shibata.webp",
+          "alt": "Ivan Shibata como Aspal",
+          "caption": "©SUNRISE/PROJECT G-ASPAL"
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Hibiku-Yamamura-como-Zoe.webp",
+          "alt": "Hibiku Yamamura como Zoe",
+          "caption": "©SUNRISE/PROJECT G-ASPAL"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/j6cQAaNYYeA"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O novo anime Code Geass: Star Chaser Aspal (Code Geass Hoshi Oi no Aspal) revelou seus primeiros dubladores, novos integrantes da equipe de produção e um visual inédito. A estreia do anime está prevista para 2027.",
+          "runs": [
+            {
+              "text": "O novo "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Code Geass: Star Chaser Aspal",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Code Geass Hoshi Oi no Aspal",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") revelou seus primeiros dubladores, novos integrantes da equipe de produção e um visual inédito. A estreia do anime está prevista para 2027."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Dan-Katsu revela novo trailer, elenco e músicas do anime",
+              "runs": [
+                {
+                  "text": "Dan-Katsu revela novo trailer, elenco e músicas do anime",
+                  "href": "https://animenew.com.br/reincarnation-game-world-dan-katsu-trailer-elenco"
+                }
+              ]
+            },
+            {
+              "text": "Reincarnated as a Sword 2 revela trailer e novos dubladores",
+              "runs": [
+                {
+                  "text": "Reincarnated as a Sword 2 revela trailer e novos dubladores",
+                  "href": "https://animenew.com.br/reincarnated-as-a-sword-2-trailer-elenco"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Code-Geass-Star-Chaser-Aspal.webp",
+          "alt": "Code Geass: Star Chaser Aspal",
+          "caption": "©SUNRISE/PROJECT G-ASPAL"
+        },
+        {
+          "type": "paragraph",
+          "text": "A Bandai Namco Filmworks divulgou as novidades nesta quinta-feira (5), incluindo a confirmação de Ivan Shibata como Aspal e Hibiku Yamamura como Zoe. Contudo a empresa também anunciou sessões antecipadas em cinco grandes cidades japonesas durante janeiro de 2027, antes de exibições especiais limitadas ao público geral.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Bandai Namco Filmworks",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " divulgou as novidades nesta quinta-feira (5), incluindo a confirmação de "
+            },
+            {
+              "text": "Ivan Shibata",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Aspal e "
+            },
+            {
+              "text": "Hibiku Yamamura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Zoe. Contudo a empresa também anunciou sessões antecipadas em cinco grandes cidades japonesas durante janeiro de 2027, antes de exibições especiais limitadas ao público geral."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Ivan-Shibata.webp",
+          "alt": "Ivan Shibata como Aspal",
+          "caption": "©SUNRISE/PROJECT G-ASPAL"
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Hibiku-Yamamura-como-Zoe.webp",
+          "alt": "Hibiku Yamamura como Zoe",
+          "caption": "©SUNRISE/PROJECT G-ASPAL"
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=j6cQAaNYYeA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/j6cQAaNYYeA"
+        },
+        {
+          "type": "heading",
+          "text": "História e produção",
+          "runs": [
+            {
+              "text": "História e produção"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama se passa no ano 606 da era Kōreki, quando os cidadãos do Império Romano vivem sob o governo tirânico do imperador Fokasu. Assim nesse cenário, Aspal, um jovem escravizado na cidade imperial de Neapolis, conhece uma mulher misteriosa que possui apenas a cabeça. O encontro com Zoe dá início a uma nova história.",
+          "runs": [
+            {
+              "text": "A trama se passa no ano 606 da era Kōreki, quando os cidadãos do Império Romano vivem sob o governo tirânico do imperador Fokasu. Assim nesse cenário, Aspal, um jovem escravizado na cidade imperial de Neapolis, conhece uma mulher misteriosa que possui apenas a cabeça. O encontro com Zoe dá início a uma nova história.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A animação ficará sob responsabilidade do estúdio Sunrise, com direção de Kazuya Nomura e roteiros de Mado Nozaki. Rolua cuidará do design dos personagens, enquanto Yoshi. será responsável pelo visual dos Agarmatha. A trilha sonora ficará a cargo de Taro Iwashiro.",
+          "runs": [
+            {
+              "text": "A animação ficará sob responsabilidade do "
+            },
+            {
+              "text": "estúdio Sunrise",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com direção de "
+            },
+            {
+              "text": "Kazuya Nomura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e roteiros de "
+            },
+            {
+              "text": "Mado Nozaki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". "
+            },
+            {
+              "text": "Rolua",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " cuidará do design dos personagens, enquanto "
+            },
+            {
+              "text": "Yoshi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". será responsável pelo visual dos "
+            },
+            {
+              "text": "Agarmatha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A trilha sonora ficará a cargo de "
+            },
+            {
+              "text": "Taro Iwashiro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ademais o projeto faz parte das comemorações de 20 anos da franquia Code Geass.",
+          "runs": [
+            {
+              "text": "Ademais o projeto faz parte das comemorações de 20 anos da franquia Code Geass."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://geass.jp/aspal/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Code Geass: Star Chaser Aspal revela elenco e equipe.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Code Geass: Star Chaser Aspal revela elenco e equipe",
+              "href": "https://animenew.com.br/code-geass-star-chaser-aspal-elenco/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-06T00:39:48.000Z",
+      "updatedAt": "2026-11-06T00:39:48.000Z",
+      "expiresAt": "2026-11-13T00:39:48.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/code-geass-star-chaser-aspal-elenco",
+          "publishedAt": "2026-11-06T00:39:48.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 245,
+      "qualityScore": 0.973,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 3,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
       "id": "jbox-00962a4b",
       "slug": "dragon-s-dogma-2-dark-arisen-ganha-colaboracao-com-dungeon-meshi-jbox-00962a4b",
       "source": "JBox",
@@ -2690,6 +3914,1057 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-c747db2a",
+      "slug": "reincarnated-as-a-sword-2-revela-trailer-e-novos-dubladores-animenew-c747db2a",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Reincarnated as a Sword 2 revela trailer e novos dubladores",
+      "originalTitle": "Reincarnated as a Sword 2 revela trailer e novos dubladores",
+      "summary": "O anime Reincarnated as a Sword (Tensei Shitara Ken Deshita) divulgou um novo trailer, visual e cinco integrantes do elenco para o arco Seedrun da segunda temporada, que começa a partir do sexto episódio.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Reincarnated as a Sword",
+        "Tensei Shitara Ken Deshita"
+      ],
+      "url": "https://animenew.com.br/reincarnated-as-a-sword-2-trailer-elenco",
+      "sourceUrl": "https://animenew.com.br/reincarnated-as-a-sword-2-trailer-elenco",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Reincarnated-as-a-Sword-2-revela-trailer-e-novos-dubladores.webp",
+      "mediaQuery": "Reincarnated as a Sword 2 revela trailer e novos dubladores",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Reincarnated-as-a-Sword-anime.webp",
+          "alt": "Reincarnated as a Sword anime",
+          "caption": "© 棚架ユウ・るろお／マイクロマガジン社／転剣II製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/XUPewTvbu3I"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Reincarnated as a Sword (Tensei Shitara Ken Deshita) divulgou um novo trailer, visual e cinco integrantes do elenco para o arco Seedrun da segunda temporada, que começa a partir do sexto episódio.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Reincarnated as a Sword",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Tensei Shitara Ken Deshita",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") divulgou um novo trailer, visual e cinco integrantes do elenco para o arco "
+            },
+            {
+              "text": "Seedrun",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " da segunda temporada, que começa "
+            },
+            {
+              "text": "a partir do sexto episódio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Dan-Katsu revela novo trailer, elenco e músicas do anime",
+              "runs": [
+                {
+                  "text": "Dan-Katsu revela novo trailer, elenco e músicas do anime",
+                  "href": "https://animenew.com.br/reincarnation-game-world-dan-katsu-trailer-elenco"
+                }
+              ]
+            },
+            {
+              "text": "Promise Me the Spotlight revela trailer e elenco do anime",
+              "runs": [
+                {
+                  "text": "Promise Me the Spotlight revela trailer e elenco do anime",
+                  "href": "https://animenew.com.br/promise-me-the-spotlight-anime-trailer-elenco"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Os novos dubladores anunciados são Satsuki Kokubu como Fult, Yurie Kozakai como Satya, Hazuki Ogino como Miriam, Sayumi Suzushiro como Sellimea e Katsuyuki Konishi como Valuza.",
+          "runs": [
+            {
+              "text": "Os novos dubladores anunciados são "
+            },
+            {
+              "text": "Satsuki Kokubu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Fult, "
+            },
+            {
+              "text": "Yurie Kozakai",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Satya, "
+            },
+            {
+              "text": "Hazuki Ogino",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Miriam, "
+            },
+            {
+              "text": "Sayumi Suzushiro ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "como Sellimea e "
+            },
+            {
+              "text": "Katsuyuki Konishi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Valuza."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=XUPewTvbu3I",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/XUPewTvbu3I"
+        },
+        {
+          "type": "paragraph",
+          "text": "A segunda temporada estreou antecipadamente no serviço ABEMA em 30 de setembro, antes de chegar à televisão japonesa no dia 7 de outubro. O streaming HIDIVE transmite os episódios simultaneamente com a exibição no Japão.",
+          "runs": [
+            {
+              "text": "A segunda temporada estreou antecipadamente no serviço ABEMA em 30 de setembro, antes de chegar à televisão japonesa no dia 7 de outubro. O streaming "
+            },
+            {
+              "text": "HIDIVE",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " transmite os episódios simultaneamente com a exibição no Japão."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Reincarnated-as-a-Sword-anime.webp",
+          "alt": "Reincarnated as a Sword anime",
+          "caption": "© 棚架ユウ・るろお／マイクロマガジン社／転剣II製作委員会"
+        },
+        {
+          "type": "paragraph",
+          "text": "O estúdio C2C continua responsável pela animação, com direção de Shinji Ishihira. Takahiro Nagano supervisiona os roteiros, enquanto Atsuko Saito trabalha no design dos personagens. A trilha sonora fica novamente sob responsabilidade de Yasuharu Takanashi.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "estúdio C2C",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " continua responsável pela animação, com direção de "
+            },
+            {
+              "text": "Shinji Ishihira",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". "
+            },
+            {
+              "text": "Takahiro Nagano",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " supervisiona os roteiros, enquanto "
+            },
+            {
+              "text": "Atsuko Saito",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " trabalha no design dos personagens. A trilha sonora fica novamente sob responsabilidade de "
+            },
+            {
+              "text": "Yasuharu Takanashi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História Reincarnated as a Sword",
+          "runs": [
+            {
+              "text": "História "
+            },
+            {
+              "text": "Reincarnated as a Sword",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A história acompanha um homem que renasce em outro mundo como uma espada consciente, mantendo as memórias de sua vida anterior. Ele conhece Fran, uma jovem garota-fera que se torna sua portadora. Juntos, os dois partem em busca de força e respostas sobre a origem da espada.",
+          "runs": [
+            {
+              "text": "A história acompanha um homem que renasce em outro mundo como uma espada consciente, mantendo as memórias de sua vida anterior. Ele conhece Fran, uma jovem garota-fera que se torna sua portadora. Juntos, os dois partem em busca de força e respostas sobre a origem da espada.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Contudo grupo FZMZ interpreta a abertura “Dream of Butterfly”, enquanto Hanabie. canta o encerramento “Baribari Buddy”.",
+          "runs": [
+            {
+              "text": "Contudo grupo FZMZ interpreta a abertura “Dream of Butterfly”, enquanto Hanabie. canta o encerramento “Baribari Buddy”."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://tenken-anime.com/news.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Reincarnated as a Sword 2 revela trailer e novos dubladores.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Reincarnated as a Sword 2 revela trailer e novos dubladores",
+              "href": "https://animenew.com.br/reincarnated-as-a-sword-2-trailer-elenco/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-04T23:51:16.000Z",
+      "updatedAt": "2026-11-04T23:51:16.000Z",
+      "expiresAt": "2026-11-11T23:51:16.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/reincarnated-as-a-sword-2-trailer-elenco",
+          "publishedAt": "2026-11-04T23:51:16.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 244,
+      "qualityScore": 0.972,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-e4e4bdc9",
+      "slug": "dan-katsu-revela-novo-trailer-elenco-e-musicas-do-anime-animenew-e4e4bdc9",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Dan-Katsu revela novo trailer, elenco e músicas do anime",
+      "originalTitle": "Dan-Katsu revela novo trailer, elenco e músicas do anime",
+      "summary": "O anime Reincarnation in the Game World Dan-Katsu (Game Sekai Tensei -Gamer wa [Dungeon Shūkatsu no Susume] o Play Suru-) divulgou um novo vídeo promocional nesta quarta-feira (4), apresentando quatro integrantes adicionais do elenco e os artistas responsáveis pelas músicas de abertura e encerramento.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Game Sekai Tensei",
+        "Reincarnation in the Game World Dan-Katsu"
+      ],
+      "url": "https://animenew.com.br/reincarnation-game-world-dan-katsu-trailer-elenco",
+      "sourceUrl": "https://animenew.com.br/reincarnation-game-world-dan-katsu-trailer-elenco",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Dan-Katsu-revela-novo-trailer-elenco-e-musicas-do-anime.webp",
+      "mediaQuery": "Dan-Katsu revela novo trailer, elenco e músicas do anime",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/KXRkR5KP_WA"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Reincarnation in the Game World Dan-Katsu (Game Sekai Tensei -Gamer wa [Dungeon Shūkatsu no Susume] o Play Suru-) divulgou um novo vídeo promocional nesta quarta-feira (4), apresentando quatro integrantes adicionais do elenco e os artistas responsáveis pelas músicas de abertura e encerramento.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Reincarnation in the Game World Dan-Katsu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Game Sekai Tensei -Gamer wa [Dungeon Shūkatsu no Susume] o Play Suru-",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") divulgou um novo vídeo promocional nesta quarta-feira (4), apresentando quatro integrantes adicionais do elenco e os artistas responsáveis pelas músicas de abertura e encerramento."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Otaku Vampire’s Love Bite ganha adaptação para anime",
+              "runs": [
+                {
+                  "text": "Otaku Vampire’s Love Bite ganha adaptação para anime",
+                  "href": "https://animenew.com.br/otaku-vampires-love-bite-anime"
+                }
+              ]
+            },
+            {
+              "text": "Bocchi the Rock! recebe adaptação para novo filme",
+              "runs": [
+                {
+                  "text": "Bocchi the Rock! recebe adaptação para novo filme",
+                  "href": "https://animenew.com.br/filme-bocchi-the-rock-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A cantora MindaRyn interpretará a música de abertura, intitulada “Play the Play”, que também aparece no trailer. Já o grupo LINKL PLANET ficará responsável pelo tema de encerramento, chamado “My Life Story”.",
+          "runs": [
+            {
+              "text": "A cantora "
+            },
+            {
+              "text": "MindaRyn",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " interpretará a música de abertura, intitulada “Play the Play”, que também aparece no trailer. Já o grupo "
+            },
+            {
+              "text": "LINKL PLANET",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ficará responsável pelo tema de encerramento, chamado “My Life Story”."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=KXRkR5KP_WA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/KXRkR5KP_WA"
+        },
+        {
+          "type": "heading",
+          "text": "Novo elenco anunciado",
+          "runs": [
+            {
+              "text": "Novo elenco anunciado"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "As novas vozes confirmadas são Ayaka Nanase como Hanna, Kotone Izumi como Sierra, Hikaru Iida como Lana e Chihaya Asakura como Ester. O protagonista Zephyrus terá a voz de Yuto Uemura. Nagisa Miyazaki dirige a animação no STUDIO MASSKET, enquanto Yuji Kobayashi cuida dos roteiros.",
+          "runs": [
+            {
+              "text": "As novas vozes confirmadas são "
+            },
+            {
+              "text": "Ayaka Nanase",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Hanna, "
+            },
+            {
+              "text": "Kotone Izumi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Sierra, "
+            },
+            {
+              "text": "Hikaru Iida",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Lana e "
+            },
+            {
+              "text": "Chihaya Asakura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Ester. O protagonista Zephyrus terá a voz de Yuto Uemura. Nagisa Miyazaki dirige a animação no "
+            },
+            {
+              "text": "STUDIO MASSKET",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", enquanto Yuji Kobayashi cuida dos roteiros."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de Reincarnation in the Game World",
+          "runs": [
+            {
+              "text": "História de Reincarnation in the Game World"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha um jogador que passou mais de 8 mil horas em Dungeon Shūkatsu no Susume. Após perder todos os seus dados salvos e morrer de choque, ele renasce dentro do próprio jogo, assumindo a classe de herói. Sendo assim daí, Zephyrus começa uma nova partida em um mundo de masmorras que ainda não foi conquistado.",
+          "runs": [
+            {
+              "text": "A trama acompanha um jogador que passou mais de 8 mil horas em Dungeon Shūkatsu no Susume. Após perder todos os seus dados salvos e morrer de choque, ele renasce dentro do próprio jogo, assumindo a classe de herói. Sendo assim daí, Zephyrus começa uma nova partida em um mundo de masmorras que ainda não foi conquistado.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Reincarnation in the Game World Dan-Katsu estreia em janeiro de 2027. Ademais a obra original é uma light novel de Kaede Nishikigi, publicada pela TO Books desde março de 2022.",
+          "runs": [
+            {
+              "text": "Reincarnation in the Game World Dan-Katsu estreia em janeiro de 2027. Ademais a obra original é uma "
+            },
+            {
+              "text": "light novel",
+              "href": "https://animenew.com.br/light-novel"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Kaede Nishikigi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", publicada pela TO Books desde março de 2022."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: X @dankatsu_anime",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "X",
+              "href": "https://x.com/dankatsu_anime"
+            },
+            {
+              "text": " @dankatsu_anime"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Dan-Katsu revela novo trailer, elenco e músicas do anime.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Dan-Katsu revela novo trailer, elenco e músicas do anime",
+              "href": "https://animenew.com.br/reincarnation-game-world-dan-katsu-trailer-elenco/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-04T23:44:20.000Z",
+      "updatedAt": "2026-11-04T23:44:20.000Z",
+      "expiresAt": "2026-11-11T23:44:20.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/reincarnation-game-world-dan-katsu-trailer-elenco",
+          "publishedAt": "2026-11-04T23:44:20.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 258,
+      "qualityScore": 0.972,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-cc625e3c",
+      "slug": "promise-me-the-spotlight-revela-trailer-e-elenco-do-anime-animenew-cc625e3c",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Promise Me the Spotlight revela trailer e elenco do anime",
+      "originalTitle": "Promise Me the Spotlight revela trailer e elenco do anime",
+      "summary": "O anime Promise Me the Spotlight (Watashi o Center ni Suru to Chikaimasuka?) divulgou seu primeiro trailer, visual promocional, elenco principal e equipe de produção nesta quarta-feira (4). Sendo assim a série adaptará o mangá de Jun Wakatsuki.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Promise Me the Spotlight",
+        "Watashi o Center ni Suru to Chikaimasuka?"
+      ],
+      "url": "https://animenew.com.br/promise-me-the-spotlight-anime-trailer-elenco",
+      "sourceUrl": "https://animenew.com.br/promise-me-the-spotlight-anime-trailer-elenco",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Promise-Me-the-Spotlight-revela-trailer-e-elenco-do-anime.webp",
+      "mediaQuery": "Promise Me the Spotlight revela trailer e elenco do anime",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Promise-Me-the-Spotlight-anime.webp",
+          "alt": "Promise Me the Spotlight",
+          "caption": "©若月ジュン・講談社／私セン製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/rzDyLoSReNU"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Promise Me the Spotlight (Watashi o Center ni Suru to Chikaimasuka?) divulgou seu primeiro trailer, visual promocional, elenco principal e equipe de produção nesta quarta-feira (4). Sendo assim a série adaptará o mangá de Jun Wakatsuki.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Promise Me the Spotlight",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Watashi o Center ni Suru to Chikaimasuka?",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") divulgou seu primeiro trailer, visual promocional, elenco principal e equipe de produção nesta quarta-feira (4). Sendo assim a série adaptará o"
+            },
+            {
+              "text": " mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "Jun Wakatsuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Otaku Vampire’s Love Bite ganha adaptação para anime",
+              "runs": [
+                {
+                  "text": "Otaku Vampire’s Love Bite ganha adaptação para anime",
+                  "href": "https://animenew.com.br/otaku-vampires-love-bite-anime"
+                }
+              ]
+            },
+            {
+              "text": "Anunciado anime de The Bloodthirsty Bride para 2027",
+              "runs": [
+                {
+                  "text": "Anunciado anime de The Bloodthirsty Bride para 2027",
+                  "href": "https://animenew.com.br/the-bloodthirsty-bride-devours-the-king-anime"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Bandai Namco Filmworks também confirmou que a animação será exibida pela TV Tokyo e seus seis canais afiliados. O estúdio Team TillDawn ficará responsável pela produção.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Bandai Namco Filmworks",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " também confirmou que a animação será exibida pela TV Tokyo e seus seis canais afiliados. O estúdio "
+            },
+            {
+              "text": "Team TillDawn",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ficará responsável pela produção."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=rzDyLoSReNU",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/rzDyLoSReNU"
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre os nomes confirmados estão Haruna Mikawa como Mizuki Natsuno, Taihi Kimura como Koichi Okuta, Mai Kanno como Awayuki Shiroi e Yukari Anzai como Hatsune Fukuba.",
+          "runs": [
+            {
+              "text": "Entre os nomes confirmados estão "
+            },
+            {
+              "text": "Haruna Mikawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Mizuki Natsuno, "
+            },
+            {
+              "text": "Taihi Kimura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Koichi Okuta, "
+            },
+            {
+              "text": "Mai Kanno",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Awayuki Shiroi e "
+            },
+            {
+              "text": "Yukari Anzai",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Hatsune Fukuba."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Promise-Me-the-Spotlight-anime.webp",
+          "alt": "Promise Me the Spotlight",
+          "caption": "©若月ジュン・講談社／私セン製作委員会"
+        },
+        {
+          "type": "heading",
+          "text": "Equipe de produção",
+          "runs": [
+            {
+              "text": "Equipe de produção"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Seiji Kishi (Assassination Classroom) dirige o projeto, enquanto Yuko Kakihara cuida dos roteiros. Kazuaki Morita assume o design dos personagens. A cantora Yuika interpretará a música de abertura, intitulada “Nanimono demo nakatta Watashi dakara”.",
+          "runs": [
+            {
+              "text": "Seiji Kishi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Assassination Classroom",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") dirige o projeto, enquanto "
+            },
+            {
+              "text": "Yuko Kakihara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " cuida dos roteiros. "
+            },
+            {
+              "text": "Kazuaki Morita",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " assume o design dos personagens. A cantora "
+            },
+            {
+              "text": "Yuika",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " interpretará a música de abertura, intitulada “Nanimono demo nakatta Watashi dakara”."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de Promise Me the Spotlight",
+          "runs": [
+            {
+              "text": "História de Promise Me the Spotlight"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Mizuki, integrante menos popular do grupo idol Melty Strawberry. Sua vida muda quando conhece Koichi, um fã dedicado que acaba dividindo a mesma casa que ela. Assim juntos, os dois estabelecem uma meta: transformar Mizuki no novo centro do grupo.",
+          "runs": [
+            {
+              "text": "A trama acompanha Mizuki, integrante menos popular do grupo idol Melty Strawberry. Sua vida muda quando conhece Koichi, um fã dedicado que acaba dividindo a mesma casa que ela. Assim juntos, os dois estabelecem uma meta: transformar Mizuki no novo centro do grupo.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Jun Wakatsuki iniciou o mangá em 2022, na revista Shonen Magazine Edge. Por fim a Magazine Pocket, da Kodansha publica a obra pelo aplicativo contando com seis volumes.",
+          "runs": [
+            {
+              "text": "Jun Wakatsuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " iniciou o mangá em 2022, na revista "
+            },
+            {
+              "text": "Shonen Magazine Edge",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Por fim a "
+            },
+            {
+              "text": "Magazine Pocket",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", da "
+            },
+            {
+              "text": "Kodansha",
+              "href": "https://animenew.com.br/tag/kodansha/"
+            },
+            {
+              "text": " publica a obra pelo aplicativo contando com seis volumes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: ANN",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "ANN",
+              "href": "https://www.animenewsnetwork.com/news/2026-11-03/promise-me-the-spotlight-anime-unveils-teaser-main-cast-staff/.243469"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Promise Me the Spotlight revela trailer e elenco do anime.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Promise Me the Spotlight revela trailer e elenco do anime",
+              "href": "https://animenew.com.br/promise-me-the-spotlight-anime-trailer-elenco/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-04T23:37:36.000Z",
+      "updatedAt": "2026-11-04T23:37:36.000Z",
+      "expiresAt": "2026-11-11T23:37:36.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/promise-me-the-spotlight-anime-trailer-elenco",
+          "publishedAt": "2026-11-04T23:37:36.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 246,
+      "qualityScore": 0.974,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
         "sourcePagesRead": 0
       }
     },
@@ -4782,7 +7057,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 396,
-      "qualityScore": 0.989,
+      "qualityScore": 0.929,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -4793,6 +7068,291 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-6c263c02",
+      "slug": "otaku-vampire-s-love-bite-ganha-adaptacao-para-anime-animenew-6c263c02",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Otaku Vampire’s Love Bite ganha adaptação para anime",
+      "originalTitle": "Otaku Vampire’s Love Bite ganha adaptação para anime",
+      "summary": "O mangá Otaku Vampire’s Love Bite (Oshi ni Amagami), de Julietta Suzuki, criadora de Kamisama Kiss, receberá uma adaptação em anime. O anúncio chegou acompanhado de um vídeo promocional e uma ilustração oficial.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Oshi ni Amagami",
+        "Otaku Vampire's Love Bite"
+      ],
+      "url": "https://animenew.com.br/otaku-vampires-love-bite-anime",
+      "sourceUrl": "https://animenew.com.br/otaku-vampires-love-bite-anime",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Otaku-Vampires-Love-Bite-ganha-adaptacao-para-anime.webp",
+      "mediaQuery": "Otaku Vampire’s Love Bite ganha adaptação para anime",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Otaku-Vampires-Love-Bite.webp",
+          "alt": "Otaku Vampire's Love Bite",
+          "caption": "© Julietta Suzuki, HAKUSENSHA/Otaku Vampire’s Love Bite Project"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/u3EsxNAKqp0"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O mangá Otaku Vampire’s Love Bite (Oshi ni Amagami), de Julietta Suzuki, criadora de Kamisama Kiss, receberá uma adaptação em anime. O anúncio chegou acompanhado de um vídeo promocional e uma ilustração oficial.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Otaku Vampire’s Love Bite",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Oshi ni Amagami",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), de "
+            },
+            {
+              "text": "Julietta Suzuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", criadora de "
+            },
+            {
+              "text": "Kamisama Kiss",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", receberá uma adaptação em "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": ". O anúncio chegou acompanhado de um vídeo promocional e uma ilustração oficial."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Criador de Claymore lança novo mangá de fantasia",
+              "runs": [
+                {
+                  "text": "Criador de Claymore lança novo mangá de fantasia",
+                  "href": "https://animenew.com.br/bartlet-fairy-basslet-novo-manga-norihiro-yagi"
+                }
+              ]
+            },
+            {
+              "text": "Bocchi the Rock! recebe adaptação para novo filme",
+              "runs": [
+                {
+                  "text": "Bocchi the Rock! recebe adaptação para novo filme",
+                  "href": "https://animenew.com.br/filme-bocchi-the-rock-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=u3EsxNAKqp0",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/u3EsxNAKqp0"
+        },
+        {
+          "type": "paragraph",
+          "text": "A ShoPro Entertainment confirmou a novidade nesta quarta-feira (4), apresentando os primeiros materiais da produção. Até o momento, a equipe responsável, o elenco de voz e a previsão de estreia não foram divulgados.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "ShoPro Entertainment",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " confirmou a novidade nesta quarta-feira (4), apresentando os primeiros materiais da produção. Até o momento, a equipe responsável, o elenco de voz e a previsão de estreia não foram divulgados."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Otaku-Vampires-Love-Bite.webp",
+          "alt": "Otaku Vampire's Love Bite",
+          "caption": "© Julietta Suzuki, HAKUSENSHA/Otaku Vampire’s Love Bite Project"
+        },
+        {
+          "type": "heading",
+          "text": "História acompanha vampira otaku",
+          "runs": [
+            {
+              "text": "História acompanha vampira otaku"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama apresenta Hina, uma vampira que passou 30 anos isolada e decide se mudar para o Japão para aproveitar sua paixão pela cultura otaku. Lá, ela conhece Kyuta Amanatsu, um garoto que se parece com seu personagem favorito. Além da aparência, o sangue de Kyuta possui uma característica especial que desperta o interesse de outros vampiros. Com isso, Hina precisa lidar com sentimentos que vão além de sua admiração pelo rapaz.",
+          "runs": [
+            {
+              "text": "A trama apresenta Hina, uma vampira que passou 30 anos isolada e decide se mudar para o Japão para aproveitar sua paixão pela cultura otaku. Lá, ela conhece Kyuta Amanatsu, um garoto que se parece com seu personagem favorito. Além da aparência, o sangue de Kyuta possui uma característica especial que desperta o interesse de outros vampiros. Com isso, Hina precisa lidar com sentimentos que vão além de sua admiração pelo rapaz.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mangá começou em 2022",
+          "runs": [
+            {
+              "text": "Mangá começou em 2022"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Julietta Suzuki iniciou a publicação em novembro de 2022 na revista Hana to Yume, da editora Hakusensha. Assim a obra surgiu originalmente como um capítulo único lançado em abril do mesmo ano.",
+          "runs": [
+            {
+              "text": "Julietta Suzuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " iniciou a publicação em novembro de 2022 na revista Hana to Yume, da editora "
+            },
+            {
+              "text": "Hakusensha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Assim a obra surgiu originalmente como um capítulo único lançado em abril do mesmo ano."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim o mangá alcançou seu décimo volume no Japão em julho de 2026, enquanto o décimo primeiro chegará às lojas em 20 de novembro.",
+          "runs": [
+            {
+              "text": "Por fim o mangá alcançou seu décimo volume no Japão em julho de 2026, enquanto o décimo primeiro chegará às lojas em 20 de novembro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://oshiniamagami-anime.com/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Otaku Vampire’s Love Bite ganha adaptação para anime.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Otaku Vampire’s Love Bite ganha adaptação para anime",
+              "href": "https://animenew.com.br/otaku-vampires-love-bite-anime/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-04T02:10:06.000Z",
+      "updatedAt": "2026-11-04T02:10:06.000Z",
+      "expiresAt": "2026-11-11T02:10:06.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/otaku-vampires-love-bite-anime",
+          "publishedAt": "2026-11-04T02:10:06.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 250,
+      "qualityScore": 0.913,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
         "sourcePagesRead": 0
       }
     },
