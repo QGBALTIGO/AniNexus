@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T23:33:08.059Z",
+  "generatedAt": "2026-11-09T02:55:31.927Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,260 @@
   ],
   "stats": {
     "collected": 48,
-    "grouped": 27,
-    "published": 27,
-    "newStories": 27,
-    "fullArticles": 27,
+    "grouped": 28,
+    "published": 28,
+    "newStories": 28,
+    "fullArticles": 28,
     "previewArticles": 0,
-    "avgWords": 342,
-    "withHeroImage": 27,
-    "withOrderedMedia": 24,
+    "avgWords": 338,
+    "withHeroImage": 28,
+    "withOrderedMedia": 25,
     "skippedTranslation": 0,
     "skippedQuality": 19,
-    "durationMs": 5329
+    "durationMs": 8624
   },
   "items": [
+    {
+      "id": "animenew-2b678d64",
+      "slug": "spy-x-family-tera-4-temporada-e-novo-filme-em-2027-animenew-2b678d64",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Spy x Family terá 4ª temporada e novo filme em 2027",
+      "originalTitle": "Spy x Family terá 4ª temporada e novo filme em 2027",
+      "summary": "O anime Spy x Family teve sua quarta temporada oficialmente anunciada neste domingo (8). Além da continuação, a franquia também ganhará um novo filme para os cinemas japoneses em 2027.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Cinema",
+        "Notícias",
+        "Spy × Family"
+      ],
+      "url": "https://animenew.com.br/spy-x-family-4-temporada-filme-2027",
+      "sourceUrl": "https://animenew.com.br/spy-x-family-4-temporada-filme-2027",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Spy-x-Family-tera-4a-temporada-e-novo-filme-em-2027.webp",
+      "mediaQuery": "Spy x Family terá 4ª temporada e novo filme em 2027",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Spy-x-Family-quarta-temporada.webp",
+          "alt": "Spy x Family quarta temporada",
+          "caption": "© 遠藤達哉／集英社・SPY×FAMILY製作委員会"
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Spy x Family teve sua quarta temporada oficialmente anunciada neste domingo (8). Além da continuação, a franquia também ganhará um novo filme para os cinemas japoneses em 2027.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Spy x Family",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " teve sua quarta temporada oficialmente anunciada neste domingo (8). Além da continuação, a franquia também ganhará um novo filme para os cinemas japoneses em 2027."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Bride of the Barrier Master revela vídeos dos protagonistas",
+              "runs": [
+                {
+                  "text": "Bride of the Barrier Master revela vídeos dos protagonistas",
+                  "href": "https://animenew.com.br/bride-of-the-barrier-master-videos-protagonistas"
+                }
+              ]
+            },
+            {
+              "text": "Minami-ke: Korekara revela elenco e estreia em abril",
+              "runs": [
+                {
+                  "text": "Minami-ke: Korekara revela elenco e estreia em abril",
+                  "href": "https://animenew.com.br/minami-ke-korekara-anime-elenco-estreia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anúncio veio acompanhado da primeira imagem promocional da quarta temporada, divulgada pela equipe responsável pela produção. Por enquanto, não foram revelados detalhes sobre a história ou a data de estreia dos novos projetos.",
+          "runs": [
+            {
+              "text": "O anúncio veio acompanhado da primeira imagem promocional da quarta temporada, divulgada pela equipe responsável pela produção. Por enquanto, não foram revelados detalhes sobre a história ou a data de estreia dos novos projetos."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Spy-x-Family-quarta-temporada.webp",
+          "alt": "Spy x Family quarta temporada",
+          "caption": "© 遠藤達哉／集英社・SPY×FAMILY製作委員会"
+        },
+        {
+          "type": "paragraph",
+          "text": "Sendo assim a franquia já conta com três temporadas, contudo a mais recente exibida em outubro de 2025, com 13 episódios.",
+          "runs": [
+            {
+              "text": "Sendo assim a franquia já conta com três temporadas, contudo a mais recente exibida em outubro de 2025, com 13 episódios."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Novo filme de Spy x Family",
+          "runs": [
+            {
+              "text": "Novo filme de Spy x Family"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "O próximo longa será o segundo filme da franquia. O anterior, SPY×FAMILY Code: White, estreou no Japão em dezembro de 2023 e conquistou a primeira posição nas bilheterias durante seu fim de semana de lançamento.",
+          "runs": [
+            {
+              "text": "O próximo longa será o segundo filme da franquia. O anterior, "
+            },
+            {
+              "text": "SPY×FAMILY Code: White",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", estreou no Japão em dezembro de 2023 e conquistou a primeira posição nas bilheterias durante seu fim de semana de lançamento."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Sinopse",
+          "runs": [
+            {
+              "text": "Sinopse"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A história original acompanha Twilight, um espião que precisa formar uma família falsa para cumprir uma missão. Assim sem saber, ele acaba se envolvendo com uma assassina e uma garota telepata.",
+          "runs": [
+            {
+              "text": "A história original acompanha Twilight, um espião que precisa formar uma família falsa para cumprir uma missão. Assim sem saber, ele acaba se envolvendo com uma assassina e uma garota telepata.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O mangá de Tatsuya Endo iniciou sua publicação na plataforma Shonen Jump+ em março de 2019. Ademais a obra chegou ao seu 18º volume em 4 de novembro de 2026.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " de Tatsuya Endo iniciou sua publicação na plataforma Shonen Jump+ em março de 2019. Ademais a obra chegou ao seu 18º volume em 4 de novembro de 2026."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: ANN",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "ANN",
+              "href": "https://www.animenewsnetwork.com/news/2026-11-08/spy-family-anime-gets-4th-season-theatrical-film-in-2027/.243614"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Spy x Family terá 4ª temporada e novo filme em 2027.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Spy x Family terá 4ª temporada e novo filme em 2027",
+              "href": "https://animenew.com.br/spy-x-family-4-temporada-filme-2027/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-08T23:59:03.000Z",
+      "updatedAt": "2026-11-08T23:59:03.000Z",
+      "expiresAt": "2026-11-15T23:59:03.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/spy-x-family-4-temporada-filme-2027",
+          "publishedAt": "2026-11-08T23:59:03.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 232,
+      "qualityScore": 0.971,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-c3a1b0f1",
       "slug": "bride-of-the-barrier-master-revela-videos-dos-protagonistas-animenew-c3a1b0f1",
@@ -364,7 +605,14 @@
       "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Minami-ke-Korekara-revela-elenco-e-estreia-em-abril.webp",
       "mediaQuery": "Minami-ke: Korekara revela elenco e estreia em abril",
       "mediaType": "anime",
-      "mediaGallery": [],
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Minami-ke-Korekara.webp",
+          "alt": "Minami-ke Korekara",
+          "caption": "© 桜場コハル・講談社／「みなみけ これから」製作委員会"
+        }
+      ],
       "mediaEmbeds": [
         {
           "type": "youtube",
@@ -459,9 +707,51 @@
           "text": "Entre os nomes confirmados estão Rina Satō como Haruka Minami, Marina Inoue como Kana Minami e Minori Chihara como Chiaki Minami. Nana Mizuki também retorna como Tōma Minami.",
           "runs": [
             {
-              "text": "Entre os nomes confirmados estão Rina Satō como Haruka Minami, Marina Inoue como Kana Minami e Minori Chihara como Chiaki Minami. Nana Mizuki também retorna como Tōma Minami."
+              "text": "Entre os nomes confirmados estão "
+            },
+            {
+              "text": "Rina Satō",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Haruka Minami, "
+            },
+            {
+              "text": "Marina Inoue",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Kana Minami e "
+            },
+            {
+              "text": "Minori Chihara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " como Chiaki Minami. "
+            },
+            {
+              "text": "Nana Mizuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " também retorna como Tōma Minami."
             }
           ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Minami-ke-Korekara.webp",
+          "alt": "Minami-ke Korekara",
+          "caption": "© 桜場コハル・講談社／「みなみけ これから」製作委員会"
         },
         {
           "type": "heading",
@@ -478,7 +768,16 @@
           "text": "A animação ficará sob responsabilidade do estúdio LIDEN FILMS, com direção de Jun’ichi Kitamura. Takamitsu Kōno retorna para supervisionar os roteiros, enquanto Nobuhiro Andō assume o design de personagens. Esta será a quinta série de TV da franquia.",
           "runs": [
             {
-              "text": "A animação ficará sob responsabilidade do estúdio LIDEN FILMS, com direção de Jun’ichi Kitamura. Takamitsu Kōno retorna para supervisionar os roteiros, enquanto Nobuhiro Andō assume o design de personagens. Esta será a quinta série de TV da franquia."
+              "text": "A animação ficará sob responsabilidade do estúdio "
+            },
+            {
+              "text": "LIDEN FILMS",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com direção de Jun’ichi Kitamura. Takamitsu Kōno retorna para supervisionar os roteiros, enquanto Nobuhiro Andō assume o design de personagens. Esta será a quinta série de TV da franquia."
             }
           ]
         },
@@ -497,7 +796,23 @@
           "text": "Criado por Coharu Sakuraba, o mangá acompanha as irmãs Haruka, Kana e Chiaki Minami, que vivem situações cotidianas enquanto contam umas com as outras. A obra teve início de suas publicações em 2004 na revista Weekly Young Magazine, da Kodansha.",
           "runs": [
             {
-              "text": "Criado por Coharu Sakuraba, o mangá acompanha as irmãs Haruka, Kana e Chiaki Minami, que vivem situações cotidianas enquanto contam umas com as outras. A obra teve início de suas publicações em 2004 na revista Weekly Young Magazine, da Kodansha."
+              "text": "Criado por Coharu Sakuraba, o mangá acompanha as irmãs Haruka, Kana e Chiaki Minami, que vivem situações cotidianas enquanto contam umas com as outras. A obra teve início de suas publicações em 2004 na revista "
+            },
+            {
+              "text": "Weekly Young Magazine",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da "
+            },
+            {
+              "text": "Kodansha",
+              "href": "https://animenew.com.br/tag/kodansha/"
+            },
+            {
+              "text": "."
             }
           ]
         },
@@ -552,17 +867,17 @@
       ],
       "sourceCount": 1,
       "readingMinutes": 2,
-      "wordCount": 235,
-      "qualityScore": 0.97,
+      "wordCount": 238,
+      "qualityScore": 0.971,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
         "sections": 0,
-        "blocks": 11,
+        "blocks": 12,
         "sourceCount": 1,
         "ingestMode": "rss-full",
         "contentMode": "full",
-        "mediaCount": 0,
+        "mediaCount": 1,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
@@ -3330,7 +3645,7 @@
       "sourceCount": 1,
       "readingMinutes": 1,
       "wordCount": 210,
-      "qualityScore": 0.967,
+      "qualityScore": 0.907,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3606,7 +3921,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 249,
-      "qualityScore": 0.974,
+      "qualityScore": 0.914,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3943,7 +4258,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 226,
-      "qualityScore": 0.971,
+      "qualityScore": 0.911,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -4266,7 +4581,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 253,
-      "qualityScore": 0.974,
+      "qualityScore": 0.914,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
