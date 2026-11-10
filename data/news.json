@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T18:53:33.778Z",
+  "generatedAt": "2026-11-10T23:57:53.432Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -60,14 +60,531 @@
     "newStories": 28,
     "fullArticles": 28,
     "previewArticles": 0,
-    "avgWords": 339,
+    "avgWords": 341,
     "withHeroImage": 28,
     "withOrderedMedia": 24,
     "skippedTranslation": 0,
     "skippedQuality": 18,
-    "durationMs": 4911
+    "durationMs": 4206
   },
   "items": [
+    {
+      "id": "jbox-2d512d23",
+      "slug": "madoka-magica-konnichiwa-promete-novidades-sobre-o-novo-filme-no-brasil-jbox-2d512d23",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Madoka Magica: Konnichiwa promete novidades sobre o novo filme no Brasil",
+      "originalTitle": "Madoka Magica: Konnichiwa promete novidades sobre o novo filme no Brasil",
+      "summary": "Foi divulgado pela Konnichiwa na conta da empresa no X/Twitter que a distribuidora deve dar novidades sobre o lançamento do filme Puella Magi Madoka Magica the Movie: Walpurgisnacht Rising no Brasil em breve. A empresa já fez o lançamento do longa-metragem em outros países da América Latina, mas a situação para o Brasil continua incerta.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "Madoka Magica cinemas brasileiros",
+        "novo filme de madoka magica",
+        "Puella Magi Madoka Magica The Movie: Walpurgisnacht: Rising"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/10/madoka-magica-konnichiwa-promete-novidades-sobre-o-novo-filme-no-brasil",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/10/madoka-magica-konnichiwa-promete-novidades-sobre-o-novo-filme-no-brasil",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/07/Madoka-Magica-destacada.jpg",
+      "mediaQuery": "Madoka Magica: Konnichiwa promete novidades sobre o novo filme no Brasil",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/konnichiwa-madoka-magica-filme.jpg",
+          "alt": "imagem: captura de tela de postagem no perfil no X (antigo Twitter) do Konnichiwa Festival comentando sobre o lançamento dos filmes de 'Madoka' para os streaming enquanto aponta que em breve novidades devem ser divulgados para o lançamento no Brasil.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/mESs-ii2l6A"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi divulgado pela Konnichiwa na conta da empresa no X/Twitter que a distribuidora deve dar novidades sobre o lançamento do filme Puella Magi Madoka Magica the Movie: Walpurgisnacht Rising no Brasil em breve. A empresa já fez o lançamento do longa-metragem em outros países da América Latina, mas a situação para o Brasil continua incerta.",
+          "runs": [
+            {
+              "text": "Foi divulgado pela "
+            },
+            {
+              "text": "Konnichiwa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na conta da empresa no X/Twitter que a distribuidora deve dar novidades sobre o lançamento do filme  "
+            },
+            {
+              "text": "Puella Magi Madoka Magica the Movie: Walpurgisnacht Rising",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " no Brasil em breve. A empresa já fez o lançamento do longa-metragem em outros países da América Latina, mas a situação para o Brasil continua incerta."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/konnichiwa-madoka-magica-filme.jpg",
+          "alt": "imagem: captura de tela de postagem no perfil no X (antigo Twitter) do Konnichiwa Festival comentando sobre o lançamento dos filmes de 'Madoka' para os streaming enquanto aponta que em breve novidades devem ser divulgados para o lançamento no Brasil."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/X (antigo Twitter)",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/X (antigo Twitter)"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "Você agora pode aproveitar o animê e a trilogia de filmes de #MadokaMagica em streamings na América Latina! Para nossos amigos do Brasil, em breve traremos notícias sobre o lançamento de ‘Walpurgisnacht Rising’ nos cinemas.",
+          "runs": [
+            {
+              "text": "Você agora pode aproveitar o animê e a trilogia de filmes de #MadokaMagica em streamings na América Latina! ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Para nossos amigos do Brasil, em breve traremos notícias sobre o lançamento de ‘Walpurgisnacht Rising’ nos cinemas.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O lançamento do novo filme de Madoka Magica no Brasil é esperado desde agosto, quando representantes da Aniplex divulgaram a informação do lançamento no Brasil para o JBox durante a LicensingCon Latam 2026. No entanto, o filme começou a chegar a outros países da América Latina em outubro, mas nada por aqui. A Sato Company chegou a divulgar que tinha interesse em trazer o longa para os cinemas brasileiros.",
+          "runs": [
+            {
+              "text": "O lançamento do novo filme de "
+            },
+            {
+              "text": "Madoka Magica",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " no Brasil é esperado desde agosto, quando "
+            },
+            {
+              "text": "representantes da Aniplex divulgaram a informação do lançamento no Brasil para o ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/12/exclusivo-novo-filme-de-madoka-magica-sera-lancado-no-brasil/"
+            },
+            {
+              "text": "JBox",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/08/12/exclusivo-novo-filme-de-madoka-magica-sera-lancado-no-brasil/"
+            },
+            {
+              "text": " durante a LicensingCon Latam 2026. No entanto, o filme começou a chegar a outros países da América Latina em outubro, mas nada por aqui. A Sato Company chegou a divulgar que tinha "
+            },
+            {
+              "text": "interesse em trazer o longa para os cinemas brasileiros",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/14/sato-company-confirma-reunioes-para-trazer-novo-filme-de-madoka-magica-ao-brasil-mas-pede-cautela-aos-fas/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Walpurgisnacht: Rising estava originalmente previsto para 2024, passando por uma série de adiamentos até finalmente ser lançado no Japão no último dia 28 de agosto. Dando continuidade ao longa Rebellion (2013), esse novo filme é colocado como o “começo de um novo capítulo” – o que sugere que deve haver mais planos a caminho.",
+          "runs": [
+            {
+              "text": "Walpurgisnacht: Rising",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estava originalmente previsto para 2024, passando por uma série de adiamentos até finalmente ser lançado no Japão no último dia "
+            },
+            {
+              "text": "28 de agosto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Dando continuidade ao longa"
+            },
+            {
+              "text": " Rebellion",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (2013), esse novo filme é colocado como o "
+            },
+            {
+              "text": "“começo de um novo capítulo”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " – o que sugere que deve haver mais planos a caminho."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além do roteirista original Gen Urobuchi, estão de volta Akiyuki Shimbo e Yukihiro Miyamoto na direção, Ume Aoki no desenho de personagens e Yuki Kajiura compondo a trilha sonora. O estúdio SHAFT segue responsável pela animação. Entre adições estão Tomohiro Furukawa no storyboard e no design artístico conceitual e Shuiichi Kusamori na arte.",
+          "runs": [
+            {
+              "text": "Além do roteirista original "
+            },
+            {
+              "text": "Gen Urobuchi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", estão de volta "
+            },
+            {
+              "text": "Akiyuki Shimbo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Yukihiro Miyamoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na direção,"
+            },
+            {
+              "text": " Ume Aoki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no desenho de personagens e "
+            },
+            {
+              "text": "Yuki Kajiura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " compondo a trilha sonora. O estúdio"
+            },
+            {
+              "text": " SHAFT",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " segue responsável pela animação. Entre adições estão "
+            },
+            {
+              "text": "Tomohiro Furukawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no storyboard e no design artístico conceitual e "
+            },
+            {
+              "text": "Shuiichi Kusamori",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na arte."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O longa foi anunciado oficialmente em 2021, porém, ainda em 2015, já se esperava um novo filme para o projeto, quando foi lançado um trailer de apresentação para o “futuro da franquia”.",
+          "runs": [
+            {
+              "text": "O longa foi anunciado oficialmente em 2021, porém, ainda em 2015, já se esperava um novo filme para o projeto, quando foi lançado um trailer de apresentação para o “futuro da franquia”."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=mESs-ii2l6A",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/mESs-ii2l6A"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ainda no mês passado, o animê original de Puella Magi Madoka Magica foi lançado com legendas em português na Crunchyroll. O serviço de streaming prometeu o lançamento de uma dublagem inédita para a trilogia de filmes, composta por Beginnings, Eternal — filmes que compilam a série de TV com algumas sutis mudanças — e a continuação Rebellion, para o próximo dia 15 de novembro. Os filmes estrearam na Crunchyroll com legendas no último dia 8.",
+          "runs": [
+            {
+              "text": "Ainda no mês passado, o animê original de "
+            },
+            {
+              "text": "Puella Magi Madoka Magica",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/22/anime-original-de-madoka-magica-entra-no-catalogo-da-crunchyroll-brasil/"
+            },
+            {
+              "text": " foi lançado com legendas em português na Crunchyroll",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/22/anime-original-de-madoka-magica-entra-no-catalogo-da-crunchyroll-brasil/"
+            },
+            {
+              "text": ". O serviço de "
+            },
+            {
+              "text": "streaming",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "prometeu o lançamento de uma dublagem inédita para a trilogia de filmes",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", composta por "
+            },
+            {
+              "text": "Beginnings, Eternal",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " — filmes que compilam a série de TV com algumas sutis mudanças — e a continuação "
+            },
+            {
+              "text": "Rebellion",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", para o próximo dia "
+            },
+            {
+              "text": "15 de novembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Os filmes "
+            },
+            {
+              "text": "estrearam na Crunchyroll com legendas no último dia 8",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.crunchyroll.com/pt-br/series/GT00393376/puella-magi-madoka-magica-movies"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Lembrando que o lançamento de Madoka Magica também está previsto para acontecer na Netflix. A série, que já teve passagem por lá, está com página ativa e deve receber a trilogia de filmes de forma dublada no dia 2 de janeiro de 2027.",
+          "runs": [
+            {
+              "text": "Lembrando que o lançamento de "
+            },
+            {
+              "text": "Madoka Magica",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " também está previsto para acontecer na Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A série, que já teve passagem por lá, está com "
+            },
+            {
+              "text": "página ativa",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.netflix.com/pt/title/70302572"
+            },
+            {
+              "text": " e deve receber a trilogia de filmes de forma dublada no dia "
+            },
+            {
+              "text": "2 de janeiro de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Konnichiwa Festival (X/Twitter)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Konnichiwa Festival (X/Twitter)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://x.com/KonnichiwaFest/status/2119966063400017962"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-10T21:32:41.000Z",
+      "updatedAt": "2026-11-10T22:30:56.000Z",
+      "expiresAt": "2026-11-17T21:32:41.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/10/madoka-magica-konnichiwa-promete-novidades-sobre-o-novo-filme-no-brasil",
+          "publishedAt": "2026-11-10T21:32:41.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 441,
+      "qualityScore": 0.996,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 14,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-ee9d9fee",
       "slug": "personagem-kuromi-da-sanrio-vai-ganhar-primeiro-filme-em-2027-jbox-ee9d9fee",
@@ -4134,7 +4651,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 279,
-      "qualityScore": 0.975,
+      "qualityScore": 0.915,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -9769,397 +10286,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 0,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-017684db",
-      "slug": "gundam-0080-war-in-the-pocket-sera-exibido-no-rj-esta-semana-jbox-017684db",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Gundam 0080: War in the Pocket’ será exibido no RJ esta semana",
-      "originalTitle": "‘Gundam 0080: War in the Pocket’ será exibido no RJ esta semana",
-      "summary": "Você é um fã carioca de Gundam que sempre sonhou passar a madrugada assistindo a robôs gigantes no cinema? Se sim, esta notícia é especialmente para você. O cinema Estação Claro Rio exibe na próxima sexta (6) Mobile Suit Gundam 0080: War in the Pocket. O “filme” será exibido como parte da sessão Filmes da Meia-Noite e começará às 23h59, seguindo madrugada adentro do sábado (7).",
-      "author": "Jean Clemente",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "estação claro rio",
-        "Gundam",
-        "mecha",
-        "Mobile Suit Gundam",
-        "Rio de Janeiro",
-        "robo gigante",
-        "war in the pocket"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/03/gundam-0080-war-in-the-pocket-sera-exibido-no-rj-esta-semana",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/03/gundam-0080-war-in-the-pocket-sera-exibido-no-rj-esta-semana",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/gundam-WarinthePocket-destacada.jpg",
-      "mediaQuery": "‘Gundam 0080: War in the Pocket’ será exibido no RJ esta semana",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/sessaomeianoite-gundam.jpg",
-          "alt": "imagem: cartaz de divulgação de Gundam no Filmes da Meia-Noite",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Você é um fã carioca de Gundam que sempre sonhou passar a madrugada assistindo a robôs gigantes no cinema? Se sim, esta notícia é especialmente para você. O cinema Estação Claro Rio exibe na próxima sexta (6) Mobile Suit Gundam 0080: War in the Pocket. O “filme” será exibido como parte da sessão Filmes da Meia-Noite e começará às 23h59, seguindo madrugada adentro do sábado (7).",
-          "runs": [
-            {
-              "text": "Você é um fã carioca de "
-            },
-            {
-              "text": "Gundam",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " que sempre sonhou passar a madrugada assistindo a robôs gigantes no cinema? Se sim, esta notícia é especialmente para você. O cinema "
-            },
-            {
-              "text": "Estação Claro Rio",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " exibe na próxima sexta (6) "
-            },
-            {
-              "text": "Mobile Suit Gundam 0080: War in the Pocket",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ". O “filme” será exibido como parte da sessão "
-            },
-            {
-              "text": "Filmes da Meia-Noite",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e começará às "
-            },
-            {
-              "text": "23h59",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", seguindo madrugada adentro do sábado (7)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Não foi informado se a exibição de três horas de duração contará com intermissão e nem se a projeção será na íntegra com aberturas e encerramentos, ou se haverá alguma edição em formato de longa-metragem.",
-          "runs": [
-            {
-              "text": "Não foi informado se a exibição de três horas de duração contará com intermissão e nem se a projeção será na íntegra com aberturas e encerramentos, ou se haverá alguma edição em formato de longa-metragem."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "War in the Pocket é uma minissérie lançada originalmente no Japão para o mercado de home vídeo (o famoso OVA) entre março e agosto de 1989, totalizando 6 episódios. A direção foi de Fumihiko Takayama, que trabalhou em alguns episódios do Macross original (Guerra das Galáxias, no Brasil) e Bubblegum Crisis, além de dirigir o esquecido animê Mágico de Oz (lançado por aqui em VHS, incluindo uma versão inusitada com a apresentadora Angélica).",
-          "runs": [
-            {
-              "text": "War in the Pocket",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é uma minissérie lançada originalmente no Japão para o mercado de home vídeo (o famoso OVA) entre março e agosto de 1989, totalizando 6 episódios. A direção foi de "
-            },
-            {
-              "text": "Fumihiko Takayama",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que trabalhou em alguns episódios do "
-            },
-            {
-              "text": "Macross",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " original ("
-            },
-            {
-              "text": "Guerra das Galáxias",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", no Brasil)"
-            },
-            {
-              "text": " e Bubblegum Crisis",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", além de dirigir o esquecido animê "
-            },
-            {
-              "text": "Mágico de Oz",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " (lançado por aqui em VHS, incluindo uma "
-            },
-            {
-              "text": "versão inusitada com a apresentadora Angélica",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2023/11/30/50-anos-de-angelica-a-loura-e-o-japao/"
-            },
-            {
-              "text": ")."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/sessaomeianoite-gundam.jpg",
-          "alt": "imagem: cartaz de divulgação de Gundam no Filmes da Meia-Noite"
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Reprodução/Instagram",
-          "runs": [
-            {
-              "text": "Imagem: Reprodução/Instagram"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Sinopse oficial pelo Estação Claro:",
-          "runs": [
-            {
-              "text": "Sinopse oficial pelo Estação Claro:",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "Durante a Guerra de Um Ano, o jovem Al Izuruha vive em uma colônia espacial neutra e sonha em conhecer os mobile suits e participar de batalhas. Ao conhecer Bernie Wiseman, um soldado de Zeon envolvido em uma missão secreta, Al se aproxima dos conflitos entre Zeon e a Federação Terrestre e descobre as consequências humanas da guerra.",
-          "runs": [
-            {
-              "text": "Durante a Guerra de Um Ano, o jovem Al Izuruha vive em uma colônia espacial neutra e sonha em conhecer os mobile suits e participar de batalhas. Ao conhecer Bernie Wiseman, um soldado de Zeon envolvido em uma missão secreta, Al se aproxima dos conflitos entre Zeon e a Federação Terrestre e descobre as consequências humanas da guerra."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Dentro do universo Gundam e suas diversas linhas do tempo, War in the Pocket é uma história paralela que se situa no Universal Century, que é a cronologia principal, se passando logo após os eventos da série original.",
-          "runs": [
-            {
-              "text": "Dentro do universo "
-            },
-            {
-              "text": "Gundam",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e suas diversas linhas do tempo, "
-            },
-            {
-              "text": "War in the Pocket",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é uma história paralela que se situa no Universal Century, que é a cronologia principal, se passando logo após os eventos da série original."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A animação ainda foi adaptada em dois mangás, ambos inéditos no Brasil. O primeiro, com autoria de Yutaro Mochizuki, foi publicado ainda em 1989 na revista Comic BomBom, da editora Kodansha. Os capítulos foram compilados em um único tomo.",
-          "runs": [
-            {
-              "text": "A animação ainda foi adaptada em dois mangás, ambos inéditos no Brasil. O primeiro, com autoria de "
-            },
-            {
-              "text": "Yutaro Mochizuki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", foi publicado ainda em 1989 na revista "
-            },
-            {
-              "text": "Comic BomBom",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", da editora Kodansha. Os capítulos foram compilados em um único tomo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O segundo, com autoria de Hiroyuki Takamoshi, começou a ser publicado em 2021 na revista Gundam Ace, da editora Kadokawa. Com 4 volumes até o momento, a obra passou por alguns hiatos entre 2022 e fevereiro deste ano, enquanto o autor seguia um tratamento de saúde.",
-          "runs": [
-            {
-              "text": "O segundo, com autoria de "
-            },
-            {
-              "text": "Hiroyuki Takamoshi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", começou a ser publicado em 2021 na revista "
-            },
-            {
-              "text": "Gundam Ace",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", da editora Kadokawa. Com 4 volumes até o momento, a obra passou por alguns hiatos entre 2022 e fevereiro deste ano, enquanto o autor seguia um tratamento de saúde."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Estação Claro",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Estação Claro",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.instagram.com/p/DfLOXN7vHZG/?rpxt=MWR2c3I3MnF1MThvYw%3D%3D"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-03T23:29:25.000Z",
-      "updatedAt": "2026-11-03T23:30:48.000Z",
-      "expiresAt": "2026-11-10T23:29:25.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/03/gundam-0080-war-in-the-pocket-sera-exibido-no-rj-esta-semana",
-          "publishedAt": "2026-11-03T23:29:25.000Z",
-          "author": "Jean Clemente"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 382,
-      "qualityScore": 0.929,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
         "embedCount": 0,
         "sourcePagesRead": 0
       }
