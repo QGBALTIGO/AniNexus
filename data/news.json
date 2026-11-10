@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T11:49:19.318Z",
+  "generatedAt": "2026-11-10T18:53:33.778Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,329 @@
   ],
   "stats": {
     "collected": 48,
-    "grouped": 29,
-    "published": 29,
-    "newStories": 29,
-    "fullArticles": 29,
+    "grouped": 28,
+    "published": 28,
+    "newStories": 28,
+    "fullArticles": 28,
     "previewArticles": 0,
-    "avgWords": 344,
-    "withHeroImage": 29,
-    "withOrderedMedia": 25,
+    "avgWords": 339,
+    "withHeroImage": 28,
+    "withOrderedMedia": 24,
     "skippedTranslation": 0,
-    "skippedQuality": 17,
-    "durationMs": 4956
+    "skippedQuality": 18,
+    "durationMs": 4911
   },
   "items": [
+    {
+      "id": "jbox-ee9d9fee",
+      "slug": "personagem-kuromi-da-sanrio-vai-ganhar-primeiro-filme-em-2027-jbox-ee9d9fee",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Personagem Kuromi, da Sanrio, vai ganhar primeiro filme em 2027",
+      "originalTitle": "Personagem Kuromi, da Sanrio, vai ganhar primeiro filme em 2027",
+      "summary": "A personagem Kuromi, da Sanrio, terá seu primeiro filme lançado em 2027. A novidade foi divulgada no último dia 31 de outubro, que marca o Halloween e também o aniversário da personagem.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "filme da Kuromi",
+        "filme da Kuromi em 2027",
+        "Hello Kitty and Friends",
+        "Kuromi",
+        "My Melody e Kuromi",
+        "sanrio"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/10/personagem-kuromi-da-sanrio-vai-ganhar-primeiro-filme-em-2027",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/10/personagem-kuromi-da-sanrio-vai-ganhar-primeiro-filme-em-2027",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Filme-Kuromi-2027-destacada-02.jpg",
+      "mediaQuery": "Personagem Kuromi, da Sanrio, vai ganhar primeiro filme em 2027",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Filme-Kuromi-2027-01.jpg",
+          "alt": "Cartaz do filme da Kuromi",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/IrB1Uqx0Jzg"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/bvSylR-NPLY"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A personagem Kuromi, da Sanrio, terá seu primeiro filme lançado em 2027. A novidade foi divulgada no último dia 31 de outubro, que marca o Halloween e também o aniversário da personagem.",
+          "runs": [
+            {
+              "text": "A personagem "
+            },
+            {
+              "text": "Kuromi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", da "
+            },
+            {
+              "text": "Sanrio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", terá seu primeiro filme lançado em 2027. A novidade foi divulgada no último dia 31 de outubro, que marca o Halloween e também o aniversário da personagem."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Junto ao anúncio, foram lançados um vídeo e uma arte, que podem indicar qual será o visual e o traço utilizado no longa-metragem. Por enquanto a estreia do filme está marcada para o Japão, pela distribuidora GAGA, em data a ser confirmada. Detalhes sobre a possível estreia em outros territórios devem ser divulgados futuramente.",
+          "runs": [
+            {
+              "text": "Junto ao anúncio, foram lançados um vídeo e uma arte, que podem indicar qual será o visual e o traço utilizado no longa-metragem. Por enquanto a estreia do filme está marcada para o Japão, pela distribuidora GAGA, em data a ser confirmada. Detalhes sobre a possível estreia em outros territórios devem ser divulgados futuramente."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=IrB1Uqx0Jzg",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/IrB1Uqx0Jzg"
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Filme-Kuromi-2027-01.jpg",
+          "alt": "Cartaz do filme da Kuromi"
+        },
+        {
+          "type": "paragraph",
+          "text": "Cartaz do filme da Kuromi | Sanrio/Divulgação",
+          "runs": [
+            {
+              "text": "Cartaz do filme da Kuromi | Sanrio/Divulgação"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ao lado de Hello Kitty, Cinnamoroll e Pompompurin, Kuromi faz parte do hall de personagens mais populares da Sanrio. Ela foi criada em 2005 como uma antagonista da animação Onegai My Melody, mas eventualmente fez sucesso por conta própria e passou a protagonizar produções e ter produtos próprios à venda nas lojas.",
+          "runs": [
+            {
+              "text": "Ao lado de "
+            },
+            {
+              "text": "Hello Kitty",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Cinnamoroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Pompompurin",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", Kuromi faz parte do hall de personagens mais populares da Sanrio. Ela foi criada em 2005 como uma antagonista da animação "
+            },
+            {
+              "text": "Onegai My Melody",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", mas eventualmente fez sucesso por conta própria e passou a protagonizar produções e ter produtos próprios à venda nas lojas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além de aparecer também em séries como Hello Kitty and Friends Supercute Adventures (2020), e a recente My Melody & Kuromi, feita em stop-motion e lançada em 2025 na Netflix, a personagem também ganhou uma animação própria em 2023, chamada de Kuromi’s Pretty Journey, e disponível no canal Hello Kitty & Amigos Brasil.",
+          "runs": [
+            {
+              "text": "Além de aparecer também em séries como "
+            },
+            {
+              "text": "Hello Kitty and Friends Supercute Adventures",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (2020), e a recente "
+            },
+            {
+              "text": "My Melody & Kuromi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", feita em stop-motion e lançada em 2025 na "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", a personagem também ganhou uma animação própria em 2023, chamada de "
+            },
+            {
+              "text": "Kuromi’s Pretty Journey",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", e disponível no canal "
+            },
+            {
+              "text": "Hello Kitty & Amigos Brasil",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=bvSylR-NPLY",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/bvSylR-NPLY"
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Anime News Network",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-10-30/sanrio-kuromi-character-gets-1st-film-in-2027/.243372"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-10T15:38:24.000Z",
+      "updatedAt": "2026-11-10T15:44:55.000Z",
+      "expiresAt": "2026-11-17T15:38:24.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/10/personagem-kuromi-da-sanrio-vai-ganhar-primeiro-filme-em-2027",
+          "publishedAt": "2026-11-10T15:38:24.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 219,
+      "qualityScore": 0.968,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 2,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-b58313d1",
       "slug": "spy-x-family-novo-filme-e-4-temporada-serao-lancados-em-2027-jbox-b58313d1",
@@ -9851,839 +10161,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-b9acb477",
-      "slug": "girls-band-cry-novo-filme-ganha-data-de-estreia-jbox-b9acb477",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Girls Band Cry: Novo filme ganha data de estreia",
-      "originalTitle": "Girls Band Cry: Novo filme ganha data de estreia",
-      "summary": "Além do filme de BOCCHI THE ROCK! recém-anunciado, outro animê de bandas de garotas teve sua estreia nos cinemas japoneses marcada para o ano que vem. A Toei Animation divulgou que o novo filme de Girls Band Cry estreia no dia 21 de maio de 2027. Um trailer e um novo pôster foram lançados junto com a data.",
-      "author": "Teke",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "filme de Girls Band Cry",
-        "Girls Band Cry",
-        "Toei Animation"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/03/girls-band-cry-novo-filme-ganha-data-de-estreia",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/03/girls-band-cry-novo-filme-ganha-data-de-estreia",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/girls-band-cry-filme-destacada.jpg",
-      "mediaQuery": "Girls Band Cry: Novo filme ganha data de estreia",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/girls-band-cry-filme-poster.jpg",
-          "alt": "imagem: pôster do filme de continuação de 'Girls Band Cry'. As cinco integrantes da banda TOGENASHI TOGEARI aparecem em destaque na ilustração.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/cuywy0zVBPo"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Além do filme de BOCCHI THE ROCK! recém-anunciado, outro animê de bandas de garotas teve sua estreia nos cinemas japoneses marcada para o ano que vem. A Toei Animation divulgou que o novo filme de Girls Band Cry estreia no dia 21 de maio de 2027. Um trailer e um novo pôster foram lançados junto com a data.",
-          "runs": [
-            {
-              "text": "Além do "
-            },
-            {
-              "text": "filme de ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/11/03/bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika/"
-            },
-            {
-              "text": "BOCCHI THE ROCK!",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/11/03/bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika/"
-            },
-            {
-              "text": " recém-anunciado",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/11/03/bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika/"
-            },
-            {
-              "text": ", outro animê de bandas de garotas teve sua estreia nos cinemas japoneses marcada para o ano que vem. A "
-            },
-            {
-              "text": "Toei Animation",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " divulgou que o novo filme de "
-            },
-            {
-              "text": "Girls Band Cry",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " estreia no dia "
-            },
-            {
-              "text": "21 de maio de 2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Um trailer e um novo pôster foram lançados junto com a data."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira abaixo:",
-          "runs": [
-            {
-              "text": "Confira abaixo:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=cuywy0zVBPo",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/cuywy0zVBPo"
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/girls-band-cry-filme-poster.jpg",
-          "alt": "imagem: pôster do filme de continuação de 'Girls Band Cry'. As cinco integrantes da banda TOGENASHI TOGEARI aparecem em destaque na ilustração."
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Divulgação/Toei Animation",
-          "runs": [
-            {
-              "text": "Imagem: Divulgação/Toei Animation"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O filme dá sequência aos acontecimentos do animê de TV exibido em 2024. A equipe de produção da série retorna para o longa-metragem, com Kazuo Sakai na direção, Jukki Hanada no roteiro, Nari Teshima no design de personagens e Yusuke Tanaka e Kenji Tamai da trilha sonora e produção musical. O animê original está disponível na Crunchyroll com legendas.",
-          "runs": [
-            {
-              "text": "O filme dá sequência aos acontecimentos do animê de TV exibido em 2024. A equipe de produção da série retorna para o longa-metragem, com "
-            },
-            {
-              "text": "Kazuo Sakai",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " na direção, "
-            },
-            {
-              "text": "Jukki Hanada",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no roteiro, "
-            },
-            {
-              "text": "Nari Teshima",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no design de personagens e "
-            },
-            {
-              "text": "Yusuke Tanaka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Kenji Tamai",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " da trilha sonora e produção musical. O animê original está disponível na "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.crunchyroll.com/pt-br/series/G1XHJV0W8/girls-band-cry"
-            },
-            {
-              "text": " com legendas."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na história, Nina larga o ensino médio para morar sozinha em Tóquio enquanto tenta estudar para entrar em uma universidade. Pouco depois de chegar, ela, por acaso, encontra Momoka, uma guitarrista que ela admira. Elas acabam se apresentando juntas na rua e decidem começar a ir atrás de pessoas para formar uma banda, enquanto tentam lidar com seus próprios desafios pessoais. Na história do filme, a banda que protagoniza o animê entra em uma turnê nacional.",
-          "runs": [
-            {
-              "text": "Na história, Nina larga o ensino médio para morar sozinha em Tóquio enquanto tenta estudar para entrar em uma universidade. Pouco depois de chegar, ela, por acaso, encontra Momoka, uma guitarrista que ela admira. Elas acabam se apresentando juntas na rua e decidem começar a ir atrás de pessoas para formar uma banda, enquanto tentam lidar com seus próprios desafios pessoais. Na história do filme, a banda que protagoniza o animê entra em uma turnê nacional."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Girls Band Cry é uma produção original e projeto mutimídia da Toei Animation, em colaboração com o grupo musical Ageha Springs e a produtora Universal Musical Japan. A banda principal do animê, TOGENASHI TOGEARI, faz várias apresentações ao vivo. Um jogo mobile também está em desenvolvimento.",
-          "runs": [
-            {
-              "text": "Girls Band Cry",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é uma produção original e projeto mutimídia da "
-            },
-            {
-              "text": "Toei Animation",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", em colaboração com o grupo musical Ageha Springs e a produtora "
-            },
-            {
-              "text": "Universal Musical Japan",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A banda principal do animê, "
-            },
-            {
-              "text": "TOGENASHI TOGEARI",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", faz várias apresentações ao vivo. Um jogo mobile também está em desenvolvimento."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além do filme que vai ser lançado ano que vem, Girls Band Cry já ganhou dois outros filmes, ambos compilando a história do animê em versão para os cinemas.",
-          "runs": [
-            {
-              "text": "Além do filme que vai ser lançado ano que vem, "
-            },
-            {
-              "text": "Girls Band Cry",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " já ganhou dois outros filmes, ambos compilando a história do animê em versão para os cinemas."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Girls Band Cry (site oficial)",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Girls Band Cry (site oficial)",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://girls-band-cry.com/news/post-499.html"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-03T15:31:40.000Z",
-      "updatedAt": "2026-11-03T15:32:15.000Z",
-      "expiresAt": "2026-11-10T15:31:40.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/03/girls-band-cry-novo-filme-ganha-data-de-estreia",
-          "publishedAt": "2026-11-03T15:31:40.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 296,
-      "qualityScore": 0.918,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-9d52118f",
-      "slug": "bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika-jbox-9d52118f",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Bocchi the Rock!’ terá filme prelúdio sobre Seika, irmã mais velha de Nijika",
-      "originalTitle": "‘Bocchi the Rock!’ terá filme prelúdio sobre Seika, irmã mais velha de Nijika",
-      "summary": "Os fãs de Bocchi the Rock! podem comemorar: a Aniplex anunciou um novo filme da franquia, dessa vez focado em uma história prelúdio sobre as irmãs Seika e Nijika Ijichi.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "Bocchi the Rock!",
-        "Eiga Bocchi the Rock! Hoshi no Ashiato",
-        "filme de Bocchi the Rock!",
-        "Kessoku Band",
-        "Prelúdio de Bocchi the Rock!"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/03/bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/03/bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Bocchi-the-rock-filme-destacada.jpg",
-      "mediaQuery": "‘Bocchi the Rock!’ terá filme prelúdio sobre Seika, irmã mais velha de Nijika",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Bocchi-the-rock-filme-poster.jpg",
-          "alt": "Pôster do novo filme de Bocchi the Rock!",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/xuiter-bocchi2.jpg",
-          "alt": "imagem: mensagem do X de Bocchi the Rock",
-          "caption": ""
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/bocchitherockyusukeyamamoto.jpg",
-          "alt": "imagem: arte de bocchi the rock",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/4pYw8hZRVCM"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Os fãs de Bocchi the Rock! podem comemorar: a Aniplex anunciou um novo filme da franquia, dessa vez focado em uma história prelúdio sobre as irmãs Seika e Nijika Ijichi.",
-          "runs": [
-            {
-              "text": "Os fãs de "
-            },
-            {
-              "text": "Bocchi the Rock!",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " podem comemorar: a "
-            },
-            {
-              "text": "Aniplex",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " anunciou um novo filme da franquia, dessa vez focado em uma história prelúdio sobre as irmãs "
-            },
-            {
-              "text": "Seika e Nijika Ijichi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A novidade foi divulgada com um vídeo teaser e um pôster, que mostram as duas irmãs lado a lado. A estreia é prevista para 2027, com data certa a ser anunciada futuramente.",
-          "runs": [
-            {
-              "text": "A novidade foi divulgada com um vídeo teaser e um pôster, que mostram as duas irmãs lado a lado. A estreia é prevista para 2027, com data certa a ser anunciada futuramente."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=4pYw8hZRVCM",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/4pYw8hZRVCM"
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Bocchi-the-rock-filme-poster.jpg",
-          "alt": "Pôster do novo filme de Bocchi the Rock!"
-        },
-        {
-          "type": "paragraph",
-          "text": "Pôster do novo filme de Bocchi the Rock! | Divulgação",
-          "runs": [
-            {
-              "text": "Pôster do novo filme de Bocchi the Rock! | Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Com o título original de Eiga Bocchi the Rock! Hoshi no Ashiato (algo como Bocchi the Rock!: o Filme – Pegadas das Estrelas, em tradução livre), o filme é inspirado em um capítulo extra do mangá de Aki Hamazi, focado na história de Seika antes dos acontecimentos da história principal.",
-          "runs": [
-            {
-              "text": "Com o título original de "
-            },
-            {
-              "text": "Eiga Bocchi the Rock! Hoshi no Ashiato",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " (algo como "
-            },
-            {
-              "text": "Bocchi the Rock!: o Filme – Pegadas das Estrelas",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", em tradução livre), o filme é inspirado em um capítulo extra do mangá de "
-            },
-            {
-              "text": "Aki Hamazi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", focado na história de Seika antes dos acontecimentos da história principal."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para quem não se lembra, Seika trabalha na casa de shows STARRY durante a primeira temporada do animê, e também foi guitarrista de sua própria banda no passado. Exatamente por isso, ela dá algumas dicas (e também cutucadas) nas meninas da Kessoku Band.",
-          "runs": [
-            {
-              "text": "Para quem não se lembra, Seika trabalha na casa de shows STARRY durante a primeira temporada do animê, e também foi guitarrista de sua própria banda no passado. Exatamente por isso, ela dá algumas dicas (e também cutucadas) nas meninas da "
-            },
-            {
-              "text": "Kessoku Band",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Erika Yoshida retorna do animê principal para escrever o roteiro, que terá a direção de Shin Wakabayashi (Attack on Titan). O estúdio de animação é o CloverWorks, e o design de personagens é assinado por Yukiko Horiguchi (Nichijou).",
-          "runs": [
-            {
-              "text": "Erika Yoshida",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " retorna do animê principal para escrever o roteiro, que terá a direção de "
-            },
-            {
-              "text": "Shin Wakabayashi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Attack on Titan",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "). O estúdio de animação é o "
-            },
-            {
-              "text": "CloverWorks",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e o design de personagens é assinado por "
-            },
-            {
-              "text": "Yukiko Horiguchi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Nichijou",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ")."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já sobre o animê seriado, a equipe publicou no perfil oficial do X/Twitter que a 2ª temporada segue em produção, acompanhada por uma arte assinada pelo diretor da série, Yusuke Yamamoto.",
-          "runs": [
-            {
-              "text": "Já sobre o animê seriado, a equipe publicou no perfil oficial do "
-            },
-            {
-              "text": "X/Twitter",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " que a 2ª temporada segue em produção, acompanhada por uma arte assinada pelo diretor da série,"
-            },
-            {
-              "text": " Yusuke Yamamoto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/xuiter-bocchi2.jpg",
-          "alt": "imagem: mensagem do X de Bocchi the Rock"
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Reprodução/X",
-          "runs": [
-            {
-              "text": "Imagem: Reprodução/X"
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "“A 2ª temporada do animê Bocchi the Rock! está em produção a todo o vapor🎸 Chegou um quadro de mensagens com comentários do diretor Yusuke Yamamoto!",
-          "runs": [
-            {
-              "text": "“A 2ª temporada do animê Bocchi the Rock! está em produção a todo o vapor🎸 Chegou um quadro de mensagens com comentários do diretor Yusuke Yamamoto!"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/bocchitherockyusukeyamamoto.jpg",
-          "alt": "imagem: arte de bocchi the rock"
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama de Bocchi the Rock! é focada em Hitori Gotou, a Bocchi-chan, uma jovem solitária que ama tocar guitarra e quer entrar numa banda. Um dia, na escola, ela conhece Nijika Ijichi, que procura uma guitarrista substituta para tocar na Kessoku Band. A primeira temporada foi exibida entre outubro e dezembro de 2022, e rendeu dois filmes compilatórios, lançados em 2024. Já o mangá começou a ser publicado em 2017 na revista Manga Time Kirara Max, com oito volumes até o momento.",
-          "runs": [
-            {
-              "text": "A trama de "
-            },
-            {
-              "text": "Bocchi the Rock!",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é focada em Hitori Gotou, a Bocchi-chan, uma jovem solitária que ama tocar guitarra e quer entrar numa banda. Um dia, na escola, ela conhece Nijika Ijichi, que procura uma guitarrista substituta para tocar na "
-            },
-            {
-              "text": "Kessoku Band",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A primeira temporada foi exibida entre outubro e dezembro de 2022, e rendeu dois filmes compilatórios, lançados em 2024. Já o mangá começou a ser publicado em 2017 na revista "
-            },
-            {
-              "text": "Manga Time Kirara Max",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", com oito volumes até o momento."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No Brasil, o público pode assistir à primeira temporada do animê na Crunchyroll, enquanto o mangá segue sem publicação oficial no país.",
-          "runs": [
-            {
-              "text": "No Brasil, o público pode assistir à primeira temporada do animê na "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", enquanto o mangá segue sem publicação oficial no país."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fontes: Anime News Network, X/Twitter de Bocchi the Rock!",
-          "runs": [
-            {
-              "text": "Fontes:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Anime News Network",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.animenewsnetwork.com/news/2026-11-01/bocchi-the-rock-manga-gets-anime-film-in-2027/.243417"
-            },
-            {
-              "text": ", ",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": "X/Twitter de Bocchi the Rock!",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://x.com/BTR_anime/status/2116865084328653007"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-03T15:14:14.000Z",
-      "updatedAt": "2026-11-03T15:18:50.000Z",
-      "expiresAt": "2026-11-10T15:14:14.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/03/bocchi-the-rock-tera-filme-preludio-sobre-seika-irma-mais-velha-de-nijika",
-          "publishedAt": "2026-11-03T15:14:14.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 393,
-      "qualityScore": 0.936,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 18,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 3,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     }
