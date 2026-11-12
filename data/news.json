@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T17:43:18.957Z",
+  "generatedAt": "2026-11-12T22:52:27.212Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 37,
+      "count": 38,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,632 @@
     }
   ],
   "stats": {
-    "collected": 47,
-    "grouped": 24,
-    "published": 24,
-    "newStories": 24,
-    "fullArticles": 24,
+    "collected": 48,
+    "grouped": 23,
+    "published": 23,
+    "newStories": 23,
+    "fullArticles": 23,
     "previewArticles": 0,
-    "avgWords": 341,
-    "withHeroImage": 24,
-    "withOrderedMedia": 22,
+    "avgWords": 349,
+    "withHeroImage": 23,
+    "withOrderedMedia": 20,
     "skippedTranslation": 0,
-    "skippedQuality": 21,
-    "durationMs": 8266
+    "skippedQuality": 23,
+    "durationMs": 6385
   },
   "items": [
+    {
+      "id": "jbox-43919745",
+      "slug": "kaqreal-editora-kodansha-lanca-selo-de-mangas-jornalisticos-jbox-43919745",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Kaqreal: Editora Kodansha lança selo de mangás jornalísticos",
+      "originalTitle": "Kaqreal: Editora Kodansha lança selo de mangás jornalísticos",
+      "summary": "A editora japonesa Kodansha lançou ontem (11) um novo selo de mangás voltado à adaptação de acontecimentos históricos, investigações e reportagens para histórias em quadrinhos ficcionais. Batizado de Kaqreal, o projeto busca atrair leitores adultos que têm se afastado dos livros tradicionais e gibis em favor de conteúdos consumidos por telas.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Mangá",
+        "Kaqreal",
+        "kodansha"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/12/kaqreal-editora-kodansha-lanca-selo-de-mangas-jornalisticos",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/12/kaqreal-editora-kodansha-lanca-selo-de-mangas-jornalisticos",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/kaqreal-destacada.jpg",
+      "mediaQuery": "Kaqreal: Editora Kodansha lança selo de mangás jornalísticos",
+      "mediaType": "manga",
+      "mediaGallery": [],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A editora japonesa Kodansha lançou ontem (11) um novo selo de mangás voltado à adaptação de acontecimentos históricos, investigações e reportagens para histórias em quadrinhos ficcionais. Batizado de Kaqreal, o projeto busca atrair leitores adultos que têm se afastado dos livros tradicionais e gibis em favor de conteúdos consumidos por telas.",
+          "runs": [
+            {
+              "text": "A editora japonesa "
+            },
+            {
+              "text": "Kodansha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " lançou ontem (11) um novo selo de mangás voltado à adaptação de acontecimentos históricos, investigações e reportagens para histórias em quadrinhos ficcionais. Batizado de"
+            },
+            {
+              "text": " Kaqreal",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o projeto busca atrair leitores adultos que têm se afastado dos livros tradicionais e gibis em favor de conteúdos consumidos por telas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A iniciativa pretende unir a experiência jornalística de publicações da empresa, como as revistas Weekly Gendai e Friday, à sua tradição no mercado de mangás, que inclui obras internacionalmente reconhecidas como Attack on Titan, Akira, Sailor Moon e Blue Lock.",
+          "runs": [
+            {
+              "text": "A iniciativa pretende unir a experiência jornalística de publicações da empresa, como as revistas "
+            },
+            {
+              "text": "Weekly Gendai",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Friday",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", à sua tradição no mercado de mangás, que inclui obras internacionalmente reconhecidas como "
+            },
+            {
+              "text": "Attack on Titan",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Akira",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Sailor Moon",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Blue Lock",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Toshihiro Tsuchiya, editor-chefe da Kaqreal, afirma que o selo pretende se conectar com novos leitores por meio das mensagens do jornalismo e da empatia que o mangá proporciona. Ele também comentou sobre o cenário atual e o impacto das novas tecnologias, afirmando que este será o ano das redes sociais e, a partir de 2027, o poder da inteligência artificial será ainda maior. E em meio a tudo isso, eles querem capturar a realidade da sociedade.",
+          "runs": [
+            {
+              "text": "Toshihiro Tsuchiya",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", editor-chefe da Kaqreal, afirma que o selo pretende se conectar com novos leitores por meio das mensagens do jornalismo e da empatia que o mangá proporciona. Ele também comentou sobre o cenário atual e o impacto das novas tecnologias, afirmando que este será o ano das redes sociais e, a partir de 2027, o poder da inteligência artificial será ainda maior. E em meio a tudo isso, eles querem capturar a realidade da sociedade."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O site da Kaqreal, acessível em japonês pelo portal online da Weekly Gendai, reúne títulos originais e mangás já publicados por outros selos da Kodansha. No caso dos títulos já publicados, o site de Kaqreal direciona os leitores às páginas originais das obras quando eles clicam em seus nomes.",
+          "runs": [
+            {
+              "text": "O site da Kaqreal, acessível em japonês pelo "
+            },
+            {
+              "text": "portal online da ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://gendai.media/kaqreal"
+            },
+            {
+              "text": "Weekly Gendai",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://gendai.media/kaqreal"
+            },
+            {
+              "text": ", reúne títulos originais e mangás já publicados por outros selos da Kodansha. No caso dos títulos já publicados, o site de Kaqreal direciona os leitores às páginas originais das obras quando eles clicam em seus nomes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O catálogo de novembro já tem 13 obras programadas: Inoki Kyoudai, sobre Antonio Inoki, escrita a partir do livro de seu irmão, Keisuke Inoki; Tokyo Underground, de Itaru Mizuno e Tatsubi; Art no Kizashi, de Daisuke Nishijima; e Watashi no Toushijutsu: Shijou wa Dare ni Hohoemu ka, adaptação em mangá de um livro sobre investimentos de Tatsuro Kiyohara.",
+          "runs": [
+            {
+              "text": "O catálogo de novembro já tem 13 obras programadas: "
+            },
+            {
+              "text": "Inoki Kyoudai",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", sobre Antonio Inoki, escrita a partir do livro de seu irmão, Keisuke Inoki; "
+            },
+            {
+              "text": "Tokyo Underground",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", de Itaru Mizuno e Tatsubi; "
+            },
+            {
+              "text": "Art no Kizashi",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", de Daisuke Nishijima; e "
+            },
+            {
+              "text": "Watashi no Toushijutsu: Shijou wa Dare ni Hohoemu ka",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", adaptação em mangá de um livro sobre investimentos de Tatsuro Kiyohara."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A lista também inclui Tsuresari Fukushi Jigokuhen, que aborda os problemas do sistema de tutela de adultos no Japão, Uchuujin to Deau Mae ni Yomu Hon, sobre a exploração espacial, e Pikorin no Uchū to JAXA Tansa Memo, uma produção original do selo dedicada às atividades da agência espacial japonesa. Outros títulos previstos para o mês são Nankai Trough Kyodai Jishin, Hapusuburukuke no Kareinaru Junan, Hito wa Donoyōni Shinu no ka, Kachou no Yagi-san, Mataide Nanbo e o conto Uchuu Numa e Youkoso!, programado para chegar à plataforma ainda em novembro.",
+          "runs": [
+            {
+              "text": "A lista também inclui "
+            },
+            {
+              "text": "Tsuresari Fukushi Jigokuhen",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", que aborda os problemas do sistema de tutela de adultos no Japão, "
+            },
+            {
+              "text": "Uchuujin to Deau Mae ni Yomu Hon",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", sobre a exploração espacial, e "
+            },
+            {
+              "text": "Pikorin no Uchū to JAXA Tansa Memo",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", uma produção original do selo dedicada às atividades da agência espacial japonesa. Outros títulos previstos para o mês são"
+            },
+            {
+              "text": " Nankai Trough Kyodai Jishin",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Hapusuburukuke no Kareinaru Junan",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Hito wa Donoyōni Shinu no ka",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Kachou no Yagi-san",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Mataide Nanbo",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " e o conto "
+            },
+            {
+              "text": "Uchuu Numa e Youkoso!",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", programado para chegar à plataforma ainda em novembro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Kodansha também confirmou outras cinco obras para o futuro catálogo . Entre elas estão Hazukashii Byouki dewa Arimasen, sobre doenças que não devem ser motivo de vergonha; Shireba Gochisou Shiraneba Michikusa, com histórias do caçador de alimentos silvestres Akira Takemoto; e Sherlock Holmes o Koroshitai, título provisório que apresenta uma história sobre o desejo de Arthur Conan Doyle de matar seu famoso detetive. A lista ainda inclui Shikeishuu no Riyougakari, adaptação de um livro sobre o barbeiro de presos condenados à morte, e Shingeki no Gachuuka, obra sobre a culinária chinesa autêntica no Japão.",
+          "runs": [
+            {
+              "text": "A Kodansha também confirmou outras cinco obras para o futuro catálogo . Entre elas estão "
+            },
+            {
+              "text": "Hazukashii Byouki dewa Arimasen",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", sobre doenças que não devem ser motivo de vergonha; "
+            },
+            {
+              "text": "Shireba Gochisou Shiraneba Michikusa",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", com histórias do caçador de alimentos silvestres Akira Takemoto; e "
+            },
+            {
+              "text": "Sherlock Holmes o Koroshitai",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", título provisório que apresenta uma história sobre o desejo de Arthur Conan Doyle de matar seu famoso detetive. A lista ainda inclui "
+            },
+            {
+              "text": "Shikeishuu no Riyougakari",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", adaptação de um livro sobre o barbeiro de presos condenados à morte, e "
+            },
+            {
+              "text": "Shingeki no Gachuuka",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", obra sobre a culinária chinesa autêntica no Japão."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O lançamento faz parte dos esforços da Kodansha para expandir suas atividades para além da publicação tradicional e conquistar consumidores em um cenário no qual cada vez mais pessoas trocam o material impresso por conteúdos digitais. O laboratório de inovação da empresa, responsável pelo desenvolvimento do Kaqreal, foi criado para desenvolver projetos criativos envolvendo diferentes departamentos. No início deste ano, o setor também lançou o Thinkpod, uma plataforma de vídeos voltada ao mercado empresarial que reúne especialistas da própria Kodansha, de suas publicações e de outras áreas.",
+          "runs": [
+            {
+              "text": "O lançamento faz parte dos esforços da Kodansha para expandir suas atividades para além da publicação tradicional e conquistar consumidores em um cenário no qual cada vez mais pessoas trocam o material impresso por conteúdos digitais. O laboratório de inovação da empresa, responsável pelo desenvolvimento do Kaqreal, foi criado para desenvolver projetos criativos envolvendo diferentes departamentos. No início deste ano, o setor também lançou o "
+            },
+            {
+              "text": "Thinkpod",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", uma plataforma de vídeos voltada ao mercado empresarial que reúne especialistas da própria Kodansha, de suas publicações e de outras áreas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A editora é responsável por revistas de sucesso com diferentes fatias de público, com as shounen Weekly Shonen Magazine, Montly Shonen Magazine, as seinen Weekly Morning, Good! Afternoon e Evening, as shoujo e josei Nakayoshi, Dessert, Bessatsu Friend, dentre outras.",
+          "runs": [
+            {
+              "text": "A editora é responsável por revistas de sucesso com diferentes fatias de público, com as "
+            },
+            {
+              "text": "shounen ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "Weekly Shonen Magazine",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Montly Shonen Magazine",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", as "
+            },
+            {
+              "text": "seinen ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "Weekly Morning",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Good! Afternoon",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Evening",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", as "
+            },
+            {
+              "text": "shoujo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "josei ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "Nakayoshi",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Dessert",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Bessatsu Friend",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", dentre outras."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Japan Times e Comic Natalie",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Japan Times",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.japantimes.co.jp/culture/2026/11/11/books/kodansha-manga-kaqreal/"
+            },
+            {
+              "text": " e ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Comic Natalie",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://natalie.mu/comic/news/697496"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-12T18:55:12.000Z",
+      "updatedAt": "2026-11-12T18:59:04.000Z",
+      "expiresAt": "2026-11-19T18:55:12.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/12/kaqreal-editora-kodansha-lanca-selo-de-mangas-jornalisticos",
+          "publishedAt": "2026-11-12T18:55:12.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 610,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-a4f4b5d6",
       "slug": "gundam-seed-freedom-zero-ganhara-novel-em-janeiro-animenew-a4f4b5d6",
@@ -4428,7 +5040,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 283,
-      "qualityScore": 0.975,
+      "qualityScore": 0.915,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -4948,7 +5560,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 345,
-      "qualityScore": 0.987,
+      "qualityScore": 0.927,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -5382,7 +5994,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 354,
-      "qualityScore": 0.983,
+      "qualityScore": 0.923,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -8100,846 +8712,6 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-00962a4b",
-      "slug": "dragon-s-dogma-2-dark-arisen-ganha-colaboracao-com-dungeon-meshi-jbox-00962a4b",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Dragon’s Dogma 2: Dark Arisen’ ganha colaboração com ‘Dungeon Meshi’",
-      "originalTitle": "‘Dragon’s Dogma 2: Dark Arisen’ ganha colaboração com ‘Dungeon Meshi’",
-      "summary": "A Capcom anunciou uma colaboração entre o jogo Dragon’s Dogma 2: Dark Arisen e o animê Dungeon Meshi (Delicious in Dungeon).",
-      "author": "Igor Lunei",
-      "tags": [
-        "Anime",
-        "Games",
-        "Delicious in Dungeon",
-        "dlc de dungeon meshi em dragon's dogma 2",
-        "dragon's dogma",
-        "Dragon's Dogma 2",
-        "Dragon's Dogma 2: Dark Arisen",
-        "Dungeon Meshi"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/05/dragons-dogma-2-dark-arisen-ganha-colaboracao-com-dungeon-meshi",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/05/dragons-dogma-2-dark-arisen-ganha-colaboracao-com-dungeon-meshi",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/dragons-dogma-2-arise-dungeon-meshi-dlc-destacada.jpg",
-      "mediaQuery": "‘Dragon’s Dogma 2: Dark Arisen’ ganha colaboração com ‘Dungeon Meshi’",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/marcille-e-laios-peoes-em-dragons-dogma-2.jpg",
-          "alt": "Imagem: os peões dos personagens Marcille e Laios dentro da DLC de 'Dungeon Meshi' no jogo 'Dragon's Dogma II'. É uma elfa loira com vestido azul e um cavaleiro loiro com armadura prateada.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/VXiVTWtABCw"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A Capcom anunciou uma colaboração entre o jogo Dragon’s Dogma 2: Dark Arisen e o animê Dungeon Meshi (Delicious in Dungeon).",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "Capcom",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " anunciou uma colaboração entre o jogo "
-            },
-            {
-              "text": "Dragon’s Dogma 2: Dark Arisen",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " e o animê "
-            },
-            {
-              "text": "Dungeon Meshi",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Delicious in Dungeon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ")."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O evento, que rola por tempo limitado, começou ontem (4) dentro das plataformas PlayStation 5, Xbox Series X|S e PC, enquanto a versão de Nintendo Switch 2 receberá o conteúdo a partir de 12 de novembro. A colaboração ficará disponível até 28 de janeiro de 2027.",
-          "runs": [
-            {
-              "text": "O evento, que rola por tempo limitado, começou ontem (4) dentro das plataformas "
-            },
-            {
-              "text": "PlayStation 5",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Xbox Series X|S",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "PC",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", enquanto a versão de "
-            },
-            {
-              "text": "Nintendo Switch 2",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " receberá o conteúdo a partir de "
-            },
-            {
-              "text": "12 de novembro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A colaboração ficará disponível até "
-            },
-            {
-              "text": "28 de janeiro de 2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Nesse tempo, os jogadores poderão encontrar os peões oficiais do Laios e da Marcille nas Riftstones, estruturas espalhadas pelo mundo do jogo que permitem recrutar personagens de apoio para acompanhar a equipe nas aventuras. Além disso, será possível adicionar trajes inspirados na dupla.",
-          "runs": [
-            {
-              "text": "Nesse tempo, os jogadores poderão encontrar os peões oficiais do "
-            },
-            {
-              "text": "Laios",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e da "
-            },
-            {
-              "text": "Marcille",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " nas "
-            },
-            {
-              "text": "Riftstones",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", estruturas espalhadas pelo mundo do jogo que permitem recrutar personagens de apoio para acompanhar a equipe nas aventuras. Além disso, será possível adicionar trajes inspirados na dupla."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira o trailer:",
-          "runs": [
-            {
-              "text": "Confira o trailer:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=VXiVTWtABCw",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/VXiVTWtABCw"
-        },
-        {
-          "type": "paragraph",
-          "text": "Para receber os trajes inspirados nos dois personagens do animê, basta acessar o jogo durante o período promocional. Os conjuntos serão adicionados automaticamente ao inventário dos jogadores e, diferentemente dos peões, continuarão disponíveis mesmo depois do encerramento do evento. O resgate pode ser feito tanto em Dragon’s Dogma 2 quanto na expansão Dark Arisen.",
-          "runs": [
-            {
-              "text": "Para receber os trajes inspirados nos dois personagens do animê, basta acessar o jogo durante o período promocional. Os conjuntos serão adicionados automaticamente ao inventário dos jogadores e, diferentemente dos peões, continuarão disponíveis mesmo depois do encerramento do evento. O resgate pode ser feito tanto em "
-            },
-            {
-              "text": "Dragon’s Dogma 2",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " quanto na expansão "
-            },
-            {
-              "text": "Dark Arisen",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/marcille-e-laios-peoes-em-dragons-dogma-2.jpg",
-          "alt": "Imagem: os peões dos personagens Marcille e Laios dentro da DLC de 'Dungeon Meshi' no jogo 'Dragon's Dogma II'. É uma elfa loira com vestido azul e um cavaleiro loiro com armadura prateada."
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Capcom/Divulgação",
-          "runs": [
-            {
-              "text": "Imagem: Capcom/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A colaboração aproxima duas obras que compartilham o universo de aventuras em masmorras habitadas por monstros. Em Dungeon Meshi, a história acompanha Laios e seu grupo após um confronto com um dragão vermelho, que devora Falin, irmã do protagonista.",
-          "runs": [
-            {
-              "text": "A colaboração aproxima duas obras que compartilham o universo de aventuras em masmorras habitadas por monstros. Em "
-            },
-            {
-              "text": "Dungeon Meshi",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", a história acompanha Laios e seu grupo após um confronto com um dragão vermelho, que devora Falin, irmã do protagonista."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Sem dinheiro e provisões para retornar à masmorra e resgatá-la, os aventureiros encontram uma solução inusitada para sobreviver durante a jornada: caçar e preparar refeições com as criaturas que encontram pelo caminho. Slimes, basiliscos e até dragões entram no cardápio do grupo.",
-          "runs": [
-            {
-              "text": "Sem dinheiro e provisões para retornar à masmorra e resgatá-la, os aventureiros encontram uma solução inusitada para sobreviver durante a jornada: caçar e preparar refeições com as criaturas que encontram pelo caminho. Slimes, basiliscos e até dragões entram no cardápio do grupo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A primeira temporada do animê de Dungeon Meshi está disponível na Netflix. A segunda temporada tem estreia mundial prevista para outubro de 2027, também pela plataforma. A produção continuará sob direção de Yoshihiro Miyajima no estúdio TRIGGER.",
-          "runs": [
-            {
-              "text": "A primeira temporada do animê de "
-            },
-            {
-              "text": "Dungeon Meshi",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " está disponível na "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". "
-            },
-            {
-              "text": "A segunda temporada tem estreia mundial prevista para outubro de 2027",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/07/15/2a-temporada-de-dungeon-meshi-ganha-poster-e-previsao-de-estreia/"
-            },
-            {
-              "text": ", também pela plataforma. A produção continuará sob direção de "
-            },
-            {
-              "text": "Yoshihiro Miyajima",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no estúdio "
-            },
-            {
-              "text": "TRIGGER",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A animação adapta o mangá homônimo de Ryoko Kui, publicado na revista Harta, da Enterbrain (pertencente à KADOKAWA), de 2014 a 2023, com 14 volumes. Aqui no Brasil, todas as edições já foram lançadas pela editora Panini.",
-          "runs": [
-            {
-              "text": "A animação adapta o mangá homônimo de "
-            },
-            {
-              "text": "Ryoko Kui",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", publicado na revista "
-            },
-            {
-              "text": "Harta",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", da "
-            },
-            {
-              "text": "Enterbrain",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (pertencente à "
-            },
-            {
-              "text": "KADOKAWA",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "), de 2014 a 2023, com 14 volumes. Aqui no Brasil, todas as edições já foram lançadas pela editora "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Canal da Capcom USA no YouTube",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Canal da Capcom USA no YouTube",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://www.youtube.com/watch?v=VXiVTWtABCw&pp=ygUbZHJhZ29ucyBkb2dtYSBkdW5nZW9uIG1lc2hp"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-05T19:01:52.000Z",
-      "updatedAt": "2026-11-05T19:02:32.000Z",
-      "expiresAt": "2026-11-12T19:01:52.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/05/dragons-dogma-2-dark-arisen-ganha-colaboracao-com-dungeon-meshi",
-          "publishedAt": "2026-11-05T19:01:52.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 348,
-      "qualityScore": 0.927,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 15,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-5c23091e",
-      "slug": "jbc-divulga-capa-aprovada-da-republicacao-de-ranma-em-formato-wideban-jbox-5c23091e",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "JBC divulga capa aprovada da republicação de ‘Ranma ½’ em formato wideban",
-      "originalTitle": "JBC divulga capa aprovada da republicação de ‘Ranma ½’ em formato wideban",
-      "summary": "A editora JBC divulgou a capa aprovada da versão wideban de Ranma ½. A imagem é a mesma da versão japonesa, com as devidas traduções, o logo da editora no canto direito e o nome da autora Rumiko Takahashi na cor branca.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Mangá",
-        "CCXP",
-        "CCXP 2026",
-        "CCXP26",
-        "Editora JBC",
-        "mangá de ranma",
-        "ranma",
-        "ranma 12",
-        "ranma meio",
-        "ranma wideban"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/05/jbc-divulga-capa-aprovada-da-republicacao-de-ranma-%c2%bd-em-formato-wideban",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/05/jbc-divulga-capa-aprovada-da-republicacao-de-ranma-%c2%bd-em-formato-wideban",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/ranma-1-2-manga-wideban-destacada.jpg",
-      "mediaQuery": "JBC divulga capa aprovada da republicação de ‘Ranma ½’ em formato wideban",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/CCXP-26-Ranma.jpg",
-          "alt": "Lançamentos da JBC na CCXP deste ano",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A editora JBC divulgou a capa aprovada da versão wideban de Ranma ½. A imagem é a mesma da versão japonesa, com as devidas traduções, o logo da editora no canto direito e o nome da autora Rumiko Takahashi na cor branca.",
-          "runs": [
-            {
-              "text": "A editora "
-            },
-            {
-              "text": "JBC",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " divulgou a capa aprovada da versão wideban de "
-            },
-            {
-              "text": "Ranma ½",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ". A imagem é a mesma da versão japonesa, com as devidas traduções, o logo da editora no canto direito e o nome da autora "
-            },
-            {
-              "text": "Rumiko Takahashi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " na cor branca."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Em uma live realizada na última semana de outubro, e nas redes sociais, a editora também confirmou que o primeiro volume da republicação será lançado na CCXP deste ano, e detalhes da pré-venda serão divulgados futuramente.",
-          "runs": [
-            {
-              "text": "Em uma live realizada na última semana de outubro, e nas redes sociais, a editora também confirmou que o primeiro volume da republicação será lançado na "
-            },
-            {
-              "text": "CCXP",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " deste ano, e detalhes da pré-venda serão divulgados futuramente."
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "View this post on Instagram",
-          "runs": [
-            {
-              "text": " View this post on Instagram ",
-              "href": "https://www.instagram.com/p/DfFMtb1DWGD/?utm_source=ig_embed&utm_campaign=loading"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/CCXP-26-Ranma.jpg",
-          "alt": "Lançamentos da JBC na CCXP deste ano"
-        },
-        {
-          "type": "paragraph",
-          "text": "Lançamentos da JBC na CCXP deste ano | Reprodução",
-          "runs": [
-            {
-              "text": "Lançamentos da JBC na CCXP deste ano | Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Com as dimensões de 12,8 x 18,2 cm, sobrecapa com reserva em verniz e cor especial, a republicação em formato wideban tem aproximadamente 350 páginas, e a coleção será completa em 20 volumes.",
-          "runs": [
-            {
-              "text": "Com as dimensões de 12,8 x 18,2 cm, sobrecapa com reserva em verniz e cor especial, a republicação em formato wideban tem aproximadamente 350 páginas, e a coleção será "
-            },
-            {
-              "text": "completa em 20 volumes",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O anúncio do retorno do mangá aconteceu em março de 2025 e a reimpressão vai incluir arquivos remasterizados enviados pela Shogakukan. Na época da confirmação, foi mencionado que os pedidos para trazer a obra de volta se intensificaram após o remake do animê lançado pela Netflix, que está com a 3ª temporada em transmissão atualmente.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anúncio do retorno do mangá aconteceu em março de 2025",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2025/03/23/ranma-%c2%bd-manga-sera-reimpresso-no-brasil-pela-editora-jbc/"
-            },
-            {
-              "text": " e a reimpressão vai incluir arquivos remasterizados enviados pela "
-            },
-            {
-              "text": "Shogakukan",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Na época da confirmação, foi mencionado que os pedidos para trazer a obra de volta se intensificaram após o remake do animê lançado pela "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que está com a 3ª temporada em transmissão atualmente."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Publicada no Japão de 1987 a 1996, Ranma ½ é uma comédia romântica de artes marciais focada no cotidiano de Ranma Saotome, um rapaz amaldiçoado após um acidente durante um treinamento na China. Quando molhado com água fria, ele se transforma em mulher, voltando a ser homem apenas quando molhado com água quente. As coisas se complicam ainda mais quando ele é obrigado por seu pai a conviver com a família Tendo, devido aos arranjos dos patriarcas, tornando-se noivo da jovem Akane (que não gosta nada da situação).",
-          "runs": [
-            {
-              "text": "Publicada no Japão de 1987 a 1996, "
-            },
-            {
-              "text": "Ranma ½",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é uma comédia romântica de artes marciais focada no cotidiano de Ranma Saotome, um rapaz amaldiçoado após um acidente durante um treinamento na China. Quando molhado com água fria, ele se transforma em mulher, voltando a ser homem apenas quando molhado com água quente. As coisas se complicam ainda mais quando ele é obrigado por seu pai a conviver com a família Tendo, devido aos arranjos dos patriarcas, tornando-se noivo da jovem Akane (que não gosta nada da situação)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A obra rendeu sua primeira série animada em 1989, com 161 episódios, além de filmes, especiais e jogos de videogame. Em 2011 ainda virou uma série live-action na TV japonesa, antes de ganhar seu remake em animê, lançado em 2024 com produção do MAPPA.",
-          "runs": [
-            {
-              "text": "A obra rendeu sua primeira série animada em 1989, com 161 episódios, além de filmes, especiais e jogos de videogame. Em 2011 ainda virou uma série live-action na TV japonesa, antes de ganhar seu remake em animê, lançado em 2024 com produção do "
-            },
-            {
-              "text": "MAPPA",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O mangá chegou pela primeira vez ao Brasil em 1998, quando a extinta loja Animangá se aventurou como editora, trazendo para cá a versão em formato americano (revistas com poucas páginas e sentido de leitura invertido, com a arte espelhada). Essa publicação não chegou até o final da história, paralisando após 29 edições.",
-          "runs": [
-            {
-              "text": "O mangá chegou pela primeira vez ao Brasil em 1998, quando a extinta loja "
-            },
-            {
-              "text": "Animangá",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " se aventurou como editora, trazendo para cá a versão em formato americano (revistas com poucas páginas e sentido de leitura invertido, com a arte espelhada). Essa publicação não chegou até o final da história, paralisando após 29 edições."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O final só pôde ser visto pela JBC, que trouxe a edição baseada no formato original a partir de 2009.",
-          "runs": [
-            {
-              "text": "O final só pôde ser visto pela JBC, que trouxe a edição baseada no formato original a partir de 2009."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Editora JBC (YouTube), (Instagram)",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Editora JBC (YouTube)",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.youtube.com/watch?v=i3Z_HaJxeWE"
-            },
-            {
-              "text": ", ",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": "(Instagram)",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.instagram.com/p/DfFArD-DfY5/?img_index=7"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-05T18:44:00.000Z",
-      "updatedAt": "2026-11-05T18:44:38.000Z",
-      "expiresAt": "2026-11-12T18:44:00.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/05/jbc-divulga-capa-aprovada-da-republicacao-de-ranma-%c2%bd-em-formato-wideban",
-          "publishedAt": "2026-11-05T18:44:00.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 407,
-      "qualityScore": 0.933,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 14,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
         "sourcePagesRead": 0
       }
     }
