@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T22:52:27.212Z",
+  "generatedAt": "2026-11-13T03:19:42.753Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 38,
+      "count": 37,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,1541 @@
     }
   ],
   "stats": {
-    "collected": 48,
-    "grouped": 23,
-    "published": 23,
-    "newStories": 23,
-    "fullArticles": 23,
+    "collected": 47,
+    "grouped": 25,
+    "published": 25,
+    "newStories": 25,
+    "fullArticles": 25,
     "previewArticles": 0,
-    "avgWords": 349,
-    "withHeroImage": 23,
-    "withOrderedMedia": 20,
+    "avgWords": 320,
+    "withHeroImage": 25,
+    "withOrderedMedia": 23,
     "skippedTranslation": 0,
-    "skippedQuality": 23,
-    "durationMs": 6385
+    "skippedQuality": 21,
+    "durationMs": 5896
   },
   "items": [
+    {
+      "id": "animenew-d91f00ef",
+      "slug": "metaphor-refantazio-chega-ao-nintendo-switch-2-animenew-d91f00ef",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Metaphor: ReFantazio chega ao Nintendo Switch 2",
+      "originalTitle": "Metaphor: ReFantazio chega ao Nintendo Switch 2",
+      "summary": "O jogo RPG Metaphor: ReFantazio já está disponível para Nintendo Switch 2. O lançamento aconteceu nesta quinta-feira, 12 de novembro de 2026, com melhorias gráficas e diferentes opções de desempenho.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Games",
+        "Nintendo",
+        "Notícias",
+        "Metaphor: ReFantazio",
+        "Nintendo Switch 2"
+      ],
+      "url": "https://animenew.com.br/metaphor-refantazio-nintendo-switch-2",
+      "sourceUrl": "https://animenew.com.br/metaphor-refantazio-nintendo-switch-2",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Metaphor-ReFantazio-chega-ao-Nintendo-Switch-2.webp",
+      "mediaQuery": "Metaphor: ReFantazio chega ao Nintendo Switch 2",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/GQh5iMOkceU"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O jogo RPG Metaphor: ReFantazio já está disponível para Nintendo Switch 2. O lançamento aconteceu nesta quinta-feira, 12 de novembro de 2026, com melhorias gráficas e diferentes opções de desempenho.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "jogo RPG",
+              "href": "https://animenew.com.br/games"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Metaphor: ReFantazio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " já está disponível para "
+            },
+            {
+              "text": "Nintendo Switch 2",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O lançamento aconteceu nesta quinta-feira, 12 de novembro de 2026, com melhorias gráficas e diferentes opções de desempenho."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Zelda: Ocarina of Time vende 5,2 milhões em 4 dias",
+              "runs": [
+                {
+                  "text": "Zelda: Ocarina of Time vende 5,2 milhões em 4 dias",
+                  "href": "https://animenew.com.br/zelda-ocarina-of-time-remake-vendas-switch-2"
+                }
+              ]
+            },
+            {
+              "text": "GTA 6 bate recorde de pré-vendas na PlayStation Store",
+              "runs": [
+                {
+                  "text": "GTA 6 bate recorde de pré-vendas na PlayStation Store",
+                  "href": "https://animenew.com.br/gta-6-recorde-pre-vendas-playstation-store"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Desenvolvido pela ATLUS, o jogo também recebeu um ajuste de preço na edição padrão em todas as plataformas. No novo console da Nintendo, os jogadores podem escolher entre três configurações: Desempenho, Equilibrado e Gráficos.",
+          "runs": [
+            {
+              "text": "Desenvolvido pela "
+            },
+            {
+              "text": "ATLUS",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://animenew.com.br/tag/atlus/"
+            },
+            {
+              "text": ", o jogo também recebeu um ajuste de preço na edição padrão em todas as plataformas. No novo console da Nintendo, os jogadores podem escolher entre três configurações: Desempenho, Equilibrado e Gráficos."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=GQh5iMOkceU",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/GQh5iMOkceU"
+        },
+        {
+          "type": "heading",
+          "text": "Melhorias em Metaphor: ReFantazio para Switch 2",
+          "runs": [
+            {
+              "text": "Melhorias em "
+            },
+            {
+              "text": "Metaphor: ReFantazio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " para Switch 2"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Cada opção prioriza um aspecto diferente da experiência, seja a taxa de quadros ou a qualidade visual. A versão para Switch 2 também recebeu otimizações nos modos portátil e TV, com o objetivo de manter 30 FPS estáveis ou ultrapassar essa marca em determinados momentos.",
+          "runs": [
+            {
+              "text": "Cada opção prioriza um aspecto diferente da experiência, seja a taxa de quadros ou a qualidade visual. A versão para Switch 2 também recebeu otimizações nos modos portátil e TV, com o objetivo de manter 30 FPS estáveis ou ultrapassar essa marca em determinados momentos."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Demo gratuita e premiações",
+          "runs": [
+            {
+              "text": "Demo gratuita e premiações",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Liderado por Katsura Hashino, com design de personagens de Shigenori Soejima e trilha sonora de Shoji Meguro, o RPG conquistou três prêmios no The Game Awards 2024: Melhor RPG, Melhor Narrativa e Melhor Direção de Arte.",
+          "runs": [
+            {
+              "text": "Liderado por "
+            },
+            {
+              "text": "Katsura Hashino",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com design de personagens de Shigenori Soejima e trilha sonora de Shoji Meguro, o RPG conquistou três prêmios no "
+            },
+            {
+              "text": "The Game Awards 2024",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": Melhor RPG, Melhor Narrativa e Melhor Direção de Arte."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Uma demo gratuita do prólogo também está disponível. Assim o progresso pode ser transferido para a versão completa, preservando as escolhas e os laços estabelecidos durante o início da aventura.",
+          "runs": [
+            {
+              "text": "Uma demo gratuita do prólogo também está disponível.",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Assim o progresso pode ser transferido para a versão completa, preservando as escolhas e os laços estabelecidos durante o início da aventura."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ademais Metaphor: ReFantazio está disponível para Nintendo Switch 2, PS5, PS4, Xbox Series X|S e PC.",
+          "runs": [
+            {
+              "text": "Ademais "
+            },
+            {
+              "text": "Metaphor: ReFantazio",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " está disponível para "
+            },
+            {
+              "text": "Nintendo Switch 2",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", PS5, PS4, Xbox Series X|S e PC."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://metaphor.atlus.com/index.html?lang=en"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Metaphor: ReFantazio chega ao Nintendo Switch 2.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Metaphor: ReFantazio chega ao Nintendo Switch 2",
+              "href": "https://animenew.com.br/metaphor-refantazio-nintendo-switch-2/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-13T00:46:23.000Z",
+      "updatedAt": "2026-11-13T00:46:23.000Z",
+      "expiresAt": "2026-11-20T00:46:23.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/metaphor-refantazio-nintendo-switch-2",
+          "publishedAt": "2026-11-13T00:46:23.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 243,
+      "qualityScore": 0.972,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-72ecbd35",
+      "slug": "tsugumi-project-ganha-data-de-estreia-para-janeiro-de-2027-animenew-72ecbd35",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Tsugumi Project ganha data de estreia para janeiro de 2027",
+      "originalTitle": "Tsugumi Project ganha data de estreia para janeiro de 2027",
+      "summary": "O anime Tsugumi Project (Tora Tsugumi) confirmou sua estreia para janeiro de 2027, contudo o anúncio também apresentou um novo visual da adaptação, baseada no mangá de ippatu.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Mangás",
+        "Notícias",
+        "Tora Tsugumi",
+        "Tsugumi Project"
+      ],
+      "url": "https://animenew.com.br/anime-tsugumi-project-estreia-janeiro-2027",
+      "sourceUrl": "https://animenew.com.br/anime-tsugumi-project-estreia-janeiro-2027",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Tsugumi-Project-ganha-data-de-estreia-para-janeiro-de-2027.webp",
+      "mediaQuery": "Tsugumi Project ganha data de estreia para janeiro de 2027",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Tsugumi-Project-Anime.webp",
+          "alt": "Tsugumi Project Anime",
+          "caption": "©ippatu/Ki-oon・「虎鶫 －ＴＳＵＧＵＭＩ ＰＲＯＪＥＣＴ－」製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/v79n9_MRLrk"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Tsugumi Project (Tora Tsugumi) confirmou sua estreia para janeiro de 2027, contudo o anúncio também apresentou um novo visual da adaptação, baseada no mangá de ippatu.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Tsugumi Project",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Tora Tsugumi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") confirmou sua estreia para janeiro de 2027, contudo o anúncio também apresentou um novo visual da adaptação, baseada no "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " de "
+            },
+            {
+              "text": "ippatu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro",
+              "runs": [
+                {
+                  "text": "Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro",
+                  "href": "https://animenew.com.br/nabe-ni-tama-wo-ukenagara-anime-estreia"
+                }
+              ]
+            },
+            {
+              "text": "Berserk of Gluttony anuncia estreia da 2ª temporada",
+              "runs": [
+                {
+                  "text": "Berserk of Gluttony anuncia estreia da 2ª temporada",
+                  "href": "https://animenew.com.br/berserk-of-gluttony-2-temporada-estreia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A novidade aconteceu nesta quinta-feira (12) pelo site oficial da produção. A série adapta o mangá também conhecido como Tora Tsugumi, que já teve três integrantes do elenco anunciados.",
+          "runs": [
+            {
+              "text": "A novidade aconteceu nesta quinta-feira (12) pelo site oficial da produção. A série adapta o mangá também conhecido como "
+            },
+            {
+              "text": "Tora Tsugumi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que já teve três integrantes do elenco anunciados."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Tsugumi-Project-Anime.webp",
+          "alt": "Tsugumi Project Anime",
+          "caption": "©ippatu/Ki-oon・「虎鶫 －ＴＳＵＧＵＭＩ ＰＲＯＪＥＣＴ－」製作委員会"
+        },
+        {
+          "type": "paragraph",
+          "text": "Masaaki Mizunaka dará voz ao protagonista Leon, enquanto Haruki Ishiya interpretará Dudu. Já Misaki Watada será responsável pela voz de Tsugumi.",
+          "runs": [
+            {
+              "text": "Masaaki Mizunaka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dará voz ao protagonista Leon, enquanto "
+            },
+            {
+              "text": "Haruki Ishiya",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " interpretará Dudu. Já "
+            },
+            {
+              "text": "Misaki Watada",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " será responsável pela voz de Tsugumi."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=v79n9_MRLrk",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/v79n9_MRLrk"
+        },
+        {
+          "type": "heading",
+          "text": "História de Tsugumi Project",
+          "runs": [
+            {
+              "text": "História de Tsugumi Project"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Leon, um soldado que acaba separado de sua família após receber uma acusação falsa. Como punição, ele é enviado para uma missão suicida: recuperar uma arma perigosa em uma região conhecida como Japão, cerca de 200 anos depois de sua destruição. O território agora abriga monstros gigantes, mutantes e irradiados. A única pista sobre o objetivo da missão é o nome da arma: Tsugumi.",
+          "runs": [
+            {
+              "text": "A trama acompanha Leon, um soldado que acaba separado de sua família após receber uma acusação falsa. Como punição, ele é enviado para uma missão suicida: recuperar uma arma perigosa em uma região conhecida como Japão, cerca de 200 anos depois de sua destruição.",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "O território agora abriga monstros gigantes, mutantes e irradiados. A única pista sobre o objetivo da missão é o nome da arma: Tsugumi.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "A história do Mangá terminou",
+          "runs": [
+            {
+              "text": "A história do "
+            },
+            {
+              "text": "Mangá terminou",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Sendo assim o mangá criado por ippatu, estreou sua publicação na França pela editora Ki-oon em 2019. No Japão, a obra chegou à revista Weekly Young Magazine, da Kodansha, em janeiro de 2021.",
+          "runs": [
+            {
+              "text": "Sendo assim o mangá criado por ippatu, estreou sua publicação na França pela editora "
+            },
+            {
+              "text": "Ki-oon",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " em 2019. No Japão, a obra chegou à revista "
+            },
+            {
+              "text": "Weekly Young Magazine",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da "
+            },
+            {
+              "text": "Kodansha",
+              "href": "https://animenew.com.br/tag/kodansha/"
+            },
+            {
+              "text": ", em janeiro de 2021."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A publicação terminou em setembro de 2023, com sete volumes compilados. Ademais a Kodansha USA lançou o volume final em setembro de 2025.",
+          "runs": [
+            {
+              "text": "A publicação terminou em setembro de 2023, com sete volumes compilados. Ademais a "
+            },
+            {
+              "text": "Kodansha USA",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " lançou o volume final em setembro de 2025."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://toratsugumi.jp/news/2026-11-12_01.html"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Tsugumi Project ganha data de estreia para janeiro de 2027.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Tsugumi Project ganha data de estreia para janeiro de 2027",
+              "href": "https://animenew.com.br/anime-tsugumi-project-estreia-janeiro-2027/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-13T00:08:12.000Z",
+      "updatedAt": "2026-11-13T00:08:12.000Z",
+      "expiresAt": "2026-11-20T00:08:12.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/anime-tsugumi-project-estreia-janeiro-2027",
+          "publishedAt": "2026-11-13T00:08:12.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 257,
+      "qualityScore": 0.975,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-2cac4cc2",
+      "slug": "nabe-ni-tama-wo-ukenagara-revela-elenco-e-estreia-em-janeiro-animenew-2cac4cc2",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro",
+      "originalTitle": "Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro",
+      "summary": "O anime Nabe ni Tama wo Ukenagara (Getting Shots on a Frying Pan or Nabetama for short) divulgou seu primeiro vídeo promocional, elenco principal e equipe de produção. A série estreia em janeiro de 2027.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Getting Shots on a Frying Pan or Nabetama for short",
+        "J.C.Staff",
+        "Nabe ni Tama wo Ukenagara"
+      ],
+      "url": "https://animenew.com.br/nabe-ni-tama-wo-ukenagara-anime-estreia",
+      "sourceUrl": "https://animenew.com.br/nabe-ni-tama-wo-ukenagara-anime-estreia",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Nabe-ni-Tama-wo-Ukenagara-revela-elenco-e-estreia-em-janeiro.webp",
+      "mediaQuery": "Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/fmafMZNXeHw"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O anime Nabe ni Tama wo Ukenagara (Getting Shots on a Frying Pan or Nabetama for short) divulgou seu primeiro vídeo promocional, elenco principal e equipe de produção. A série estreia em janeiro de 2027.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Nabe ni Tama wo Ukenagara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Getting Shots on a Frying Pan or Nabetama for short",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") divulgou seu primeiro vídeo promocional, elenco principal e equipe de produção. A série estreia em janeiro de 2027."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Gundam Seed Freedom Zero ganhará novel em janeiro",
+              "runs": [
+                {
+                  "text": "Gundam Seed Freedom Zero ganhará novel em janeiro",
+                  "href": "https://animenew.com.br/gundam-seed-freedom-zero-novel"
+                }
+              ]
+            },
+            {
+              "text": "Berserk of Gluttony anuncia estreia da 2ª temporada",
+              "runs": [
+                {
+                  "text": "Berserk of Gluttony anuncia estreia da 2ª temporada",
+                  "href": "https://animenew.com.br/berserk-of-gluttony-2-temporada-estreia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anúncio também confirmou que Shū Uchida e Masaaki Mizunaka darão voz ao protagonista Juntarō. Contudo a produção ficará a cargo do estúdio J.C.STAFF, conhecido por trabalhos como Magilumiere Magical Girls Inc.",
+          "runs": [
+            {
+              "text": "O anúncio também confirmou que "
+            },
+            {
+              "text": "Shū Uchida",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Masaaki Mizunaka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " darão voz ao protagonista Juntarō. Contudo a produção ficará a cargo do estúdio "
+            },
+            {
+              "text": "J.C.STAFF",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", conhecido por trabalhos como Magilumiere Magical Girls Inc."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=fmafMZNXeHw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/fmafMZNXeHw"
+        },
+        {
+          "type": "paragraph",
+          "text": "Masahiro Hiraoka dirige a série Nabe ni Tama wo Ukenagara, enquanto Susumu Yamakawa cuida dos roteiros. Natsuki Ōyama assina o design dos personagens e também atua como diretor-chefe de animação. Yoshihide Otomo compõe a trilha sonora, e Yoshikazu Iwanami assume a direção de áudio.",
+          "runs": [
+            {
+              "text": "Masahiro Hiraoka dirige a série "
+            },
+            {
+              "text": "Nabe ni Tama wo Ukenagara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", enquanto Susumu Yamakawa cuida dos roteiros. Natsuki Ōyama assina o design dos personagens e também atua como diretor-chefe de animação. Yoshihide Otomo compõe a trilha sonora, e Yoshikazu Iwanami assume a direção de áudio."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de Nabe ni Tama wo Ukenagara",
+          "runs": [
+            {
+              "text": "História de Nabe ni Tama wo Ukenagara",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A obra acompanha Juntarō, uma garota bonita (?) que viaja por regiões perigosas do mundo para experimentar pratos locais exóticos. Assim a protagonista participa de uma espécie de reportagem gastronômica sem ficção e tem como objetivo alcançar 50 mil pontos de sabor.",
+          "runs": [
+            {
+              "text": "A obra acompanha Juntarō, uma garota bonita (?) que viaja por regiões perigosas do mundo para experimentar pratos locais exóticos. Assim a protagonista participa de uma espécie de reportagem gastronômica sem ficção e tem como objetivo alcançar 50 mil pontos de sabor.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Criado por Juntarō Aoki e Shin Moriyama, o mangá começou a publicação em 2021 na revista digital Comic Newtype, da Kadokawa. Por fim a obra também apareceu entre os 20 melhores mangás para leitores masculinos no guia Kono Manga ga Sugoi! de 2023.",
+          "runs": [
+            {
+              "text": "Criado por "
+            },
+            {
+              "text": "Juntarō Aoki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Shin Moriyama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " começou a publicação em 2021 na revista digital "
+            },
+            {
+              "text": "Comic Newtype",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", da "
+            },
+            {
+              "text": "Kadokawa",
+              "href": "https://animenew.com.br/tag/kadokawa/"
+            },
+            {
+              "text": ". Por fim a obra também apareceu entre os 20 melhores mangás para leitores masculinos no guia Kono Manga ga Sugoi! de 2023."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://nabetama.asmik-ace.co.jp/news/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro",
+              "href": "https://animenew.com.br/nabe-ni-tama-wo-ukenagara-anime-estreia/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-12T23:53:24.000Z",
+      "updatedAt": "2026-11-12T23:53:24.000Z",
+      "expiresAt": "2026-11-19T23:53:24.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/nabe-ni-tama-wo-ukenagara-anime-estreia",
+          "publishedAt": "2026-11-12T23:53:24.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 245,
+      "qualityScore": 0.97,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-3bf5c0a9",
+      "slug": "galneryus-fara-turne-pela-america-latina-em-2027-com-dois-shows-no-brasil-jbox-3bf5c0a9",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "GALNERYUS fará turnê pela América Latina em 2027 com dois shows no Brasil",
+      "originalTitle": "GALNERYUS fará turnê pela América Latina em 2027 com dois shows no Brasil",
+      "summary": "Começando a virar figurinha carimbada em eventos e apresentações solo no Brasil, a GALNERYUS anunciou que retorna ao país em 2027, como parte de uma nova turnê pela América Latina.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Eventos",
+        "Música",
+        "Anime Summit Brasil",
+        "GALNERYUS",
+        "GALNERYUS no brasil",
+        "GALNERYUS no Brasil em 2027",
+        "Show do GALNERYUS em 2027"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/12/galneryus-fara-turne-pela-america-latina-em-2027-com-dois-shows-no-brasil",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/12/galneryus-fara-turne-pela-america-latina-em-2027-com-dois-shows-no-brasil",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/03/galnaryus-destacada.jpg",
+      "mediaQuery": "GALNERYUS fará turnê pela América Latina em 2027 com dois shows no Brasil",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/galneryus-cartaz-scaled.jpg",
+          "alt": "cartaz da turnê latinoamericana do Galneryus",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/6FhmyWT-_0U"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Começando a virar figurinha carimbada em eventos e apresentações solo no Brasil, a GALNERYUS anunciou que retorna ao país em 2027, como parte de uma nova turnê pela América Latina.",
+          "runs": [
+            {
+              "text": "Começando a virar figurinha carimbada em eventos e apresentações solo no Brasil, a "
+            },
+            {
+              "text": "GALNERYUS",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou que retorna ao país em 2027, como parte de uma nova turnê pela América Latina."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Nas redes sociais, a RIT Agency confirmou as duas apresentações: uma em São Paulo, no dia 5 de fevereiro, no Espaço Fabrique, e outra em Brasília, no dia 7 de fevereiro, em uma parceria com o Anime Summit Brasil.",
+          "runs": [
+            {
+              "text": "Nas redes sociais, a "
+            },
+            {
+              "text": "RIT Agency",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " confirmou as duas apresentações: uma em "
+            },
+            {
+              "text": "São Paulo, no dia 5 de fevereiro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", no Espaço Fabrique, e outra em "
+            },
+            {
+              "text": "Brasília, no dia 7 de fevereiro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", em uma parceria com o "
+            },
+            {
+              "text": "Anime Summit Brasil.",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ainda dentro da turnê, a banda vai passar por Buenos Aires (Argentina), Santiago (Chile), Lima (Peru) e Cidade do México (México).",
+          "runs": [
+            {
+              "text": "Ainda dentro da turnê, a banda vai passar por Buenos Aires (Argentina), Santiago (Chile), Lima (Peru) e Cidade do México (México)."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/galneryus-cartaz-scaled.jpg",
+          "alt": "cartaz da turnê latinoamericana do Galneryus"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Curiosamente, embora a apresentação em Brasília esteja anunciada no Anime Summit Brasil, este evento está marcado somente para o mês de maio, o que indica que o show deve ser uma parceria com os organizadores. Por enquanto, não há detalhes sobre o local e venda de ingressos. Já as entradas para a apresentação em São Paulo estão disponíveis pelo site Meaple.",
+          "runs": [
+            {
+              "text": "Curiosamente, embora a apresentação em Brasília esteja anunciada no Anime Summit Brasil, este evento está marcado somente para o mês de maio, o que indica que o show deve ser uma parceria com os organizadores. Por enquanto, não há detalhes sobre o local e venda de ingressos. Já as entradas para a apresentação em São Paulo estão disponíveis pelo site "
+            },
+            {
+              "text": "Meaple",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://meaple.com.br/rit/galneryus-sao-paulo-2027"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A inteira tem o valor de R$ 300 (+ R$ 45 de taxa), enquanto a meia-entrada tem o valor de R$ 150 (+ R$ 22,50 de taxa). No site também é possível comprar o Meet & Greet no valor separado de R$ 300 (+ R$ 45 de taxa), que inclui pôster para autógrafo, entrada e merchandising antecipados e foto oficial com a banda.",
+          "runs": [
+            {
+              "text": "A inteira tem o valor de"
+            },
+            {
+              "text": " R$ 300",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (+ R$ 45 de taxa), enquanto a meia-entrada tem o valor de "
+            },
+            {
+              "text": "R$ 150",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (+ R$ 22,50 de taxa). No site também é possível comprar o "
+            },
+            {
+              "text": "Meet & Greet",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no valor separado de R$ 300 (+ R$ 45 de taxa), que inclui pôster para autógrafo, entrada e merchandising antecipados e foto oficial com a banda."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A GALNERYUS passou pelo Brasil em 2026 dentro do Anime Friends, e aproveitou a vinda para se apresentar também no Rio Grande do Norte, no evento GGCON.",
+          "runs": [
+            {
+              "text": "A GALNERYUS "
+            },
+            {
+              "text": "passou pelo Brasil em 2026 dentro do Anime Friends",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/03/06/galneryus-e-mais-uma-atracao-confirmada-para-o-anime-friends-2026/"
+            },
+            {
+              "text": ", e aproveitou a vinda para se "
+            },
+            {
+              "text": "apresentar também no Rio Grande do Norte, no evento GGCON",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/03/17/rio-grande-do-norte-recebe-show-da-galneryus-em-julho/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A banda foi formada em 2001, unindo os gostos musicais do guitarrista Syu e do vocal Yama-B. Em 2009, Yama-B acabou se retirando por acreditar que o rumo do som havia se distanciado do que ele pretendia, abrindo a vaga para Masatoshi Ono, que segue até hoje na banda.",
+          "runs": [
+            {
+              "text": "A banda foi formada em 2001, unindo os gostos musicais do guitarrista "
+            },
+            {
+              "text": "Syu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e do vocal "
+            },
+            {
+              "text": "Yama-B",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Em 2009, Yama-B acabou se retirando por acreditar que o rumo do som havia se distanciado do que ele pretendia, abrindo a vaga para "
+            },
+            {
+              "text": "Masatoshi Ono",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que segue até hoje na banda."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Desde meados de 2009, o grupo se apresenta também com Yuhki nos teclados, Taka no baixo e Junichi Satoh (que entrou em 2003) na bateria. Resurrection, de 2010, foi o 1º álbum dessa formação, que desde então só viu seu prestígio subir na cena do metal, com boas posições na Oricon para o gênero.",
+          "runs": [
+            {
+              "text": "Desde meados de 2009, o grupo se apresenta também com "
+            },
+            {
+              "text": "Yuhki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " nos teclados,"
+            },
+            {
+              "text": " Taka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no baixo e "
+            },
+            {
+              "text": "Junichi Satoh",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (que entrou em 2003) na bateria. "
+            },
+            {
+              "text": "Resurrection",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", de 2010, foi o 1º álbum dessa formação, que desde então só viu seu prestígio subir na cena do metal, com boas posições na Oricon para o gênero."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ao longo da carreira, o GALNERYUS também colecionou participações em trilhas de animês. Uma das mais famosas é na versão de 2011 de Hunter x Hunter, onde a banda interpreta o 2º tema de encerramento, “Hunting for Your Dream.”, sendo que o vocalista Masatoshi Ono já havia emprestado sua voz para “departure”, 1º tema de abertura da série.",
+          "runs": [
+            {
+              "text": "Ao longo da carreira, o GALNERYUS também colecionou participações em trilhas de animês. Uma das mais famosas é na versão de 2011 de "
+            },
+            {
+              "text": "Hunter x Hunter",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", onde a banda interpreta o 2º tema de encerramento, "
+            },
+            {
+              "text": "“Hunting for Your Dream.”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", sendo que o vocalista Masatoshi Ono já havia emprestado sua voz para "
+            },
+            {
+              "text": "“departure”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", 1º tema de abertura da série."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=6FhmyWT-_0U",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/6FhmyWT-_0U"
+        },
+        {
+          "type": "paragraph",
+          "text": "Rainbow, os sete do bloco 2, cela 6 (2010) e Laughing Under the Clouds (2014) também contam com temas da banda, sendo que a formação anterior ainda foi responsável pelos temas de Mnemosyne (2008).",
+          "runs": [
+            {
+              "text": "Rainbow, os sete do bloco 2, cela 6",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " (2010) e "
+            },
+            {
+              "text": "Laughing Under the Clouds",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " (2014) também contam com temas da banda, sendo que a formação anterior ainda foi responsável pelos temas de "
+            },
+            {
+              "text": "Mnemosyne",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (2008)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O álbum mais recente é The Stars Will Light the Way, lançado em 2024, e que chegou a ser divulgado na América Latina em 2025, numa turnê que passou por México e Chile, mas que deixou o Brasil de fora.",
+          "runs": [
+            {
+              "text": "O álbum mais recente é"
+            },
+            {
+              "text": " The Stars Will Light the Way",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", lançado em 2024, e que chegou a ser divulgado na América Latina em 2025, numa turnê que passou por México e Chile, mas que deixou o Brasil de fora."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Serviço",
+          "runs": [
+            {
+              "text": "Serviço"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "GALNERYUS The Cry Echoes Through The Sky Latin America Tour 2027",
+          "runs": [
+            {
+              "text": "GALNERYUS The Cry Echoes Through The Sky Latin America Tour 2027",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "São Paulo, 05/02/2027 Local: Fabrique Club, R. Barra Funda, 1071 – Barra Funda, São Paulo – SP Ingressos: à venda no site Meaple",
+          "runs": [
+            {
+              "text": "São Paulo, 05/02/2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "  "
+            },
+            {
+              "text": "Local:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " Fabrique Club, R. Barra Funda, 1071 – Barra Funda, São Paulo – SP  "
+            },
+            {
+              "text": "Ingressos: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "à venda no site Meaple",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://meaple.com.br/rit/galneryus-sao-paulo-2027"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Brasília, 07/02/2027 Local: a confirmar Ingressos: a confirmar",
+          "runs": [
+            {
+              "text": "Brasília, 07/02/2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "  "
+            },
+            {
+              "text": "Local:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " a confirmar  "
+            },
+            {
+              "text": "Ingressos: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "a confirmar"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Instagram RIT Agency e GALNERYUS",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Instagram RIT Agency",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.instagram.com/p/Deh36rXHFau/?utm_source=ig_embed&ig_rid=AIAnyzhfoguhC1ESEY9T7nu"
+            },
+            {
+              "text": " e GALNERYUS",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-12T23:35:31.000Z",
+      "updatedAt": "2026-11-12T23:42:30.000Z",
+      "expiresAt": "2026-11-19T23:35:31.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/12/galneryus-fara-turne-pela-america-latina-em-2027-com-dois-shows-no-brasil",
+          "publishedAt": "2026-11-12T23:35:31.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 544,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 21,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-43919745",
       "slug": "kaqreal-editora-kodansha-lanca-selo-de-mangas-jornalisticos-jbox-43919745",
@@ -3575,352 +5096,6 @@
       }
     },
     {
-      "id": "animenew-7bab19d8",
-      "slug": "my-hero-ultra-rumble-ganhara-versao-mobile-animenew-7bab19d8",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "My Hero Ultra Rumble ganhará versão mobile",
-      "originalTitle": "My Hero Ultra Rumble ganhará versão mobile",
-      "summary": "O jogo My Hero Ultra Rumble (My Hero Academia Ultra Rumble in Japan), baseado no universo de My Hero Academia, ganhará uma versão para dispositivos móveis. Contudo a empresa Bandai Namco confirmou a novidade e divulgou dois vídeos promocionais.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Games",
-        "Notícias",
-        "My Hero Ultra Rumble"
-      ],
-      "url": "https://animenew.com.br/my-hero-ultra-rumble-versao-mobile",
-      "sourceUrl": "https://animenew.com.br/my-hero-ultra-rumble-versao-mobile",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/My-Hero-Ultra-Rumble-ganhara-versao-mobile.webp",
-      "mediaQuery": "My Hero Ultra Rumble ganhará versão mobile",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/My-Hero-Ultra-Rumble-Mobile-.webp",
-          "alt": "My Hero Ultra Rumble Mobile",
-          "caption": "© Bandai Namco Entertainment Inc."
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/_8tCyet7nWo"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O jogo My Hero Ultra Rumble (My Hero Academia Ultra Rumble in Japan), baseado no universo de My Hero Academia, ganhará uma versão para dispositivos móveis. Contudo a empresa Bandai Namco confirmou a novidade e divulgou dois vídeos promocionais.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "jogo",
-              "href": "https://animenew.com.br/games"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "My Hero Ultra Rumble",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "My Hero Academia Ultra Rumble in Japan",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "), baseado no universo de "
-            },
-            {
-              "text": "My Hero Academia",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", ganhará uma versão para dispositivos móveis. Contudo a empresa "
-            },
-            {
-              "text": "Bandai Namco",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " confirmou a novidade e divulgou dois vídeos promocionais."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Expelled from Paradise revela vídeo com novidades do game",
-              "runs": [
-                {
-                  "text": "Expelled from Paradise revela vídeo com novidades do game",
-                  "href": "https://animenew.com.br/expelled-from-paradise-the-stellar-angel-video"
-                }
-              ]
-            },
-            {
-              "text": "Bleach Mirrors High ganha trailer de abertura e música tema",
-              "runs": [
-                {
-                  "text": "Bleach Mirrors High ganha trailer de abertura e música tema",
-                  "href": "https://animenew.com.br/bleach-mirrors-high-trailer-lancamento"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A empresa apresentou os teasers em inglês e japonês na segunda-feira, 9 de novembro. No entanto, apesar do anúncio, a Bandai Namco ainda não revelou a data de lançamento nem as plataformas da versão mobile.",
-          "runs": [
-            {
-              "text": "A empresa apresentou os teasers em inglês e japonês na segunda-feira, 9 de novembro. No entanto, apesar do anúncio, a "
-            },
-            {
-              "text": "Bandai Namco",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ainda não revelou a data de lançamento nem as plataformas da versão mobile."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=_8tCyet7nWo",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/_8tCyet7nWo"
-        },
-        {
-          "type": "paragraph",
-          "text": "Sendo assim lançado originalmente em setembro de 2023, o título está disponível para PlayStation 4, Xbox One, Nintendo Switch e PC via Steam.",
-          "runs": [
-            {
-              "text": "Sendo assim lançado originalmente em setembro de 2023, o título está disponível para "
-            },
-            {
-              "text": "PlayStation 4",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Xbox One",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Nintendo Switch",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e PC via Steam."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/My-Hero-Ultra-Rumble-Mobile-.webp",
-          "alt": "My Hero Ultra Rumble Mobile",
-          "caption": "© Bandai Namco Entertainment Inc."
-        },
-        {
-          "type": "heading",
-          "text": "Como funciona o jogo?",
-          "runs": [
-            {
-              "text": "Como funciona o jogo?"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "My Hero Ultra Rumble é um jogo de ação no estilo battle royale. Cada partida reúne oito equipes com três jogadores, que disputam a vitória utilizando as individualidades, conhecidas como Quirks, dos personagens da franquia.",
-          "runs": [
-            {
-              "text": "My Hero Ultra Rumble",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " é um jogo de ação no estilo "
-            },
-            {
-              "text": "battle royale",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Cada partida reúne oito equipes com três jogadores, que disputam a vitória utilizando as individualidades, conhecidas como Quirks, dos personagens da franquia."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Outros jogos de My Hero Academia",
-          "runs": [
-            {
-              "text": "Outros jogos de My Hero Academia"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A novidade amplia a presença dos jogos de My Hero Academia em diferentes plataformas. O título mais recente da série, My Hero Academia: All’s Justice, chegou ao mercado em 6 de fevereiro de 2026 para PlayStation 5, Xbox Series X|S e PC.",
-          "runs": [
-            {
-              "text": "A novidade amplia a presença dos jogos de My Hero Academia em diferentes plataformas. O título mais recente da série, "
-            },
-            {
-              "text": "My Hero Academia: All’s Justice",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", chegou ao mercado em 6 de fevereiro de 2026 para "
-            },
-            {
-              "text": "PlayStation 5",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Xbox Series X|S",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "PC",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ademais até o momento, a Bandai Namco não informou quando a versão mobile de Ultra Rumble será lançada.",
-          "runs": [
-            {
-              "text": "Ademais até o momento, a Bandai Namco não informou quando a versão mobile de Ultra Rumble será lançada."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Gematsu",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Gematsu",
-              "href": "https://www.gematsu.com/2026/11/my-hero-ultra-rumble-mobile-teaser-trailer"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em My Hero Ultra Rumble ganhará versão mobile.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "My Hero Ultra Rumble ganhará versão mobile",
-              "href": "https://animenew.com.br/my-hero-ultra-rumble-versao-mobile/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-11T01:56:11.000Z",
-      "updatedAt": "2026-11-11T01:56:11.000Z",
-      "expiresAt": "2026-11-18T01:56:11.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/my-hero-ultra-rumble-versao-mobile",
-          "publishedAt": "2026-11-11T01:56:11.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 247,
-      "qualityScore": 0.974,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
       "id": "jbox-2d512d23",
       "slug": "madoka-magica-konnichiwa-promete-novidades-sobre-o-novo-filme-no-brasil-jbox-2d512d23",
       "source": "JBox",
@@ -6005,459 +7180,6 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-7ee0ec85",
-      "slug": "crunchyroll-e-outras-plataformas-de-anime-enfrentam-novas-questoes-sobre-a-privacidade-dos-usuarios-animenew-7ee0ec85",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Crunchyroll e outras plataformas de anime enfrentam novas questões sobre a privacidade dos usuários",
-      "originalTitle": "Crunchyroll e outras plataformas de anime enfrentam novas questões sobre a privacidade dos usuários",
-      "summary": "Assistir a animes por streaming envolve muito mais do que escolher uma série e acompanhar seus episódios. Plataformas como Crunchyroll registram informações sobre contas, dispositivos e hábitos de visualização, dados que também podem ser utilizados por ferramentas de análise e publicidade. Em março de 2026, uma ação coletiva apresentada nos Estados Unidos colocou essas práticas novamente em discussão, desta vez envolvendo o compartilhamento de informações de assinantes da Crunchyroll.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Notícias",
-        "Otaku",
-        "Crunchyroll"
-      ],
-      "url": "https://animenew.com.br/crunchyroll-plataformas-de-anime-novas-questoes-privacidade-usuarios",
-      "sourceUrl": "https://animenew.com.br/crunchyroll-plataformas-de-anime-novas-questoes-privacidade-usuarios",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Crunchyroll-e-outras-plataformas-de-anime-enfrentam-novas-questoes-sobre-a-privacidade-dos-usuarios.webp",
-      "mediaQuery": "Crunchyroll e outras plataformas de anime enfrentam novas questões sobre a privacidade dos usuários",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Assistir a animes por streaming envolve muito mais do que escolher uma série e acompanhar seus episódios. Plataformas como Crunchyroll registram informações sobre contas, dispositivos e hábitos de visualização, dados que também podem ser utilizados por ferramentas de análise e publicidade. Em março de 2026, uma ação coletiva apresentada nos Estados Unidos colocou essas práticas novamente em discussão, desta vez envolvendo o compartilhamento de informações de assinantes da Crunchyroll.",
-          "runs": [
-            {
-              "text": "Assistir a "
-            },
-            {
-              "text": "animes por streaming",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " envolve muito mais do que escolher uma série e acompanhar seus episódios. Plataformas como "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " registram informações sobre contas, dispositivos e hábitos de visualização, dados que também podem ser utilizados por ferramentas de análise e publicidade. Em março de 2026, uma ação coletiva apresentada nos Estados Unidos colocou essas práticas novamente em discussão, desta vez envolvendo o compartilhamento de informações de assinantes da "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Crunchyroll adquire filme de The Apothecary Diaries",
-              "runs": [
-                {
-                  "text": "Crunchyroll adquire filme de The Apothecary Diaries",
-                  "href": "https://animenew.com.br/filme-the-apothecary-diaries-crunchyroll"
-                }
-              ]
-            },
-            {
-              "text": "Dragon Ball Super: Beerus ganha dublagem em português no Brasil",
-              "runs": [
-                {
-                  "text": "Dragon Ball Super: Beerus ganha dublagem em português no Brasil",
-                  "href": "https://animenew.com.br/dragon-ball-super-beerus-dublado-portugues"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O processo levanta questões sobre o tratamento de dados pessoais e o conhecimento dos usuários sobre sua utilização. O caso também se soma a disputas anteriores envolvendo serviços de streaming, mostrando que a privacidade passou a ocupar um espaço maior nas discussões sobre a distribuição digital de animes.",
-          "runs": [
-            {
-              "text": "O processo levanta questões sobre o tratamento de dados pessoais e o conhecimento dos usuários sobre sua utilização. O caso também se soma a disputas anteriores envolvendo serviços de streaming, mostrando que a privacidade passou a ocupar um espaço maior nas discussões sobre a distribuição digital de animes."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Processo contra a Crunchyroll questiona compartilhamento de dados pessoais",
-          "runs": [
-            {
-              "text": "Processo contra a Crunchyroll questiona compartilhamento de dados pessoais"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "Em março de 2026, uma ação coletiva apresentada ao Tribunal Distrital dos Estados Unidos para o Distrito Central da Califórnia acusou a Crunchyroll de violar a Video Privacy Protection Act (VPPA), legislação americana que protege informações relacionadas ao consumo de vídeos.",
-          "runs": [
-            {
-              "text": "Em março de 2026, uma ação coletiva apresentada ao Tribunal Distrital dos Estados Unidos para o Distrito Central da Califórnia acusou a Crunchyroll de violar a "
-            },
-            {
-              "text": "Video Privacy Protection Act (VPPA)",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", legislação americana que protege informações relacionadas ao consumo de vídeos."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O processo, identificado como Cabonios v. Crunchyroll, LLC, afirma que a plataforma utilizou um software da empresa de marketing Braze para transmitir endereços de e-mail, identificadores persistentes de dispositivos e históricos específicos de animes assistidos sem o consentimento adequado dos usuários.",
-          "runs": [
-            {
-              "text": "O processo, identificado como "
-            },
-            {
-              "text": "Cabonios v. Crunchyroll, LLC",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", afirma que a plataforma utilizou um software da empresa de marketing Braze para transmitir endereços de e-mail, identificadores persistentes de dispositivos e históricos específicos de animes assistidos sem o consentimento adequado dos usuários."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Essas informações merecem atenção porque permitem relacionar a identidade de uma pessoa aos seus hábitos de visualização. O endereço de e-mail é particularmente importante, pois também costuma ser utilizado para acessar contas, recuperar senhas e receber comunicações dos serviços de streaming.",
-          "runs": [
-            {
-              "text": "Essas informações merecem atenção porque permitem relacionar a identidade de uma pessoa aos seus hábitos de visualização. O endereço de e-mail é particularmente importante, pois também costuma ser utilizado para acessar contas, recuperar senhas e receber comunicações dos serviços de streaming."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por isso, a proteção dos dados pessoais também passa pelos cuidados com as credenciais de acesso. Utilizar um gerador de senhas ajuda a criar combinações fortes e exclusivas para cada plataforma, evitando a repetição de senhas entre diferentes contas. Essa prática reduz o risco de acessos não autorizados e oferece uma camada adicional de proteção às informações pessoais dos assinantes.",
-          "runs": [
-            {
-              "text": "Por isso, a proteção dos dados pessoais também passa pelos cuidados com as credenciais de acesso. Utilizar um "
-            },
-            {
-              "text": "gerador de senhas",
-              "href": "https://proton.me/pt-br/pass/password-generator"
-            },
-            {
-              "text": " ajuda a criar combinações fortes e exclusivas para cada plataforma, evitando a repetição de senhas entre diferentes contas. Essa prática reduz o risco de acessos não autorizados e oferece uma camada adicional de proteção às informações pessoais dos assinantes."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Assinantes gratuitos e pagos estão entre os usuários mencionados",
-          "runs": [
-            {
-              "text": "Assinantes gratuitos e pagos estão entre os usuários mencionados"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "Um dos pontos apresentados na ação contra a Crunchyroll é que a suposta transmissão de informações não estaria limitada aos usuários que assistem a animes gratuitamente. Segundo os autores, assinantes de planos pagos, sem publicidade durante a reprodução, também poderiam ter seus dados compartilhados por meio do SDK da Braze.",
-          "runs": [
-            {
-              "text": "Um dos pontos apresentados na ação contra a Crunchyroll é que a suposta transmissão de informações não estaria limitada aos usuários que assistem a animes gratuitamente. Segundo os autores, assinantes de planos pagos, sem publicidade durante a reprodução, também poderiam ter seus dados compartilhados por meio do SDK da Braze."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Essa distinção importa porque a ausência de anúncios durante os episódios não significa necessariamente que ferramentas de análise e marketing deixem de funcionar. Serviços digitais podem utilizar tecnologias de medição para estudar o funcionamento de seus aplicativos, acompanhar o uso de recursos e avaliar campanhas comerciais.",
-          "runs": [
-            {
-              "text": "Essa distinção importa porque a ausência de anúncios durante os episódios não significa necessariamente que ferramentas de análise e marketing deixem de funcionar. Serviços digitais podem utilizar tecnologias de medição para estudar o funcionamento de seus aplicativos, acompanhar o uso de recursos e avaliar campanhas comerciais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Os autores solicitam indenizações previstas na VPPA, incluindo US$ 2.500 por violação, além de outras medidas judiciais relacionadas aos dados coletados. Esses valores representam pedidos apresentados no processo, não uma condenação já estabelecida.",
-          "runs": [
-            {
-              "text": "Os autores solicitam indenizações previstas na VPPA, incluindo US$ 2.500 por violação, além de outras medidas judiciais relacionadas aos dados coletados. Esses valores representam pedidos apresentados no processo, não uma condenação já estabelecida."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A discussão, portanto, não envolve apenas a existência dessas ferramentas, mas quais informações são transmitidas, para quem são enviadas e se os usuários receberam esclarecimentos e consentiram com o compartilhamento.",
-          "runs": [
-            {
-              "text": "A discussão, portanto, não envolve apenas a existência dessas ferramentas, mas quais informações são transmitidas, para quem são enviadas e se os usuários receberam esclarecimentos e consentiram com o compartilhamento."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Crunchyroll já enfrentou uma disputa semelhante em 2023",
-          "runs": [
-            {
-              "text": "Crunchyroll já enfrentou uma disputa semelhante em 2023"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "O processo de 2026 não é o primeiro episódio envolvendo a Crunchyroll e a legislação americana de privacidade de vídeos. Em 2023, a plataforma concordou com um acordo de US$ 16 milhões para encerrar uma ação coletiva relacionada ao uso do Facebook Pixel, ferramenta associada à medição de atividades e campanhas publicitárias.",
-          "runs": [
-            {
-              "text": "O processo de 2026 não é o primeiro episódio envolvendo a Crunchyroll e a legislação americana de privacidade de vídeos. Em 2023, a plataforma concordou com um acordo de US$ 16 milhões para encerrar uma ação coletiva "
-            },
-            {
-              "text": "relacionada ao uso do Facebook Pixel",
-              "href": "https://www.otakupt.com/anime/crunchyroll-nova-acao-coletiva-dados-utilizadores/"
-            },
-            {
-              "text": ", ferramenta associada à medição de atividades e campanhas publicitárias."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Naquela disputa, o questionamento envolvia a transmissão de informações de visualização ao Facebook. O acordo permitiu encerrar o processo sem que fosse necessário estabelecer uma decisão judicial definitiva sobre todas as alegações apresentadas.",
-          "runs": [
-            {
-              "text": "Naquela disputa, o questionamento envolvia a transmissão de informações de visualização ao Facebook. O acordo permitiu encerrar o processo sem que fosse necessário estabelecer uma decisão judicial definitiva sobre todas as alegações apresentadas."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A diferença entre os dois episódios está principalmente na tecnologia mencionada. Enquanto a disputa anterior envolvia o Facebook Pixel, a ação de março de 2026 aponta para o SDK da Braze e sua possível utilização na transmissão de dados de assinantes.",
-          "runs": [
-            {
-              "text": "A diferença entre os dois episódios está principalmente na tecnologia mencionada. Enquanto a disputa anterior envolvia o Facebook Pixel, a ação de março de 2026 aponta para o SDK da Braze e sua possível utilização na transmissão de dados de assinantes."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Os casos mostram como ferramentas incorporadas aos aplicativos podem se tornar objeto de questionamento jurídico. Para serviços com catálogos extensos e assinaturas recorrentes, as regras de tratamento de dados passaram a receber tanta atenção quanto os próprios sistemas de distribuição de conteúdo.",
-          "runs": [
-            {
-              "text": "Os casos mostram como ferramentas incorporadas aos aplicativos podem se tornar objeto de questionamento jurídico. Para serviços com catálogos extensos e assinaturas recorrentes, as regras de tratamento de dados passaram a receber tanta atenção quanto os próprios sistemas de distribuição de conteúdo."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Rakuten Viki e Cartoon Network também passaram por questionamentos",
-          "runs": [
-            {
-              "text": "Rakuten Viki e Cartoon Network também passaram por questionamentos"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "A Crunchyroll não é a única plataforma ligada à animação e às produções asiáticas que aparece em discussões jurídicas sobre dados de visualização. A Rakuten Viki, conhecida por distribuir doramas, filmes e outros conteúdos asiáticos, também foi alvo de uma investigação anunciada pelo escritório americano Girard Sharp.",
-          "runs": [
-            {
-              "text": "A Crunchyroll não é a única plataforma ligada à animação e às produções asiáticas que aparece em discussões jurídicas sobre dados de visualização. A Rakuten Viki, conhecida por distribuir doramas, filmes e outros conteúdos asiáticos, também foi alvo de uma investigação anunciada pelo escritório americano Girard Sharp."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O questionamento envolve a possível divulgação de informações que permitiriam associar assinantes aos títulos assistidos. A investigação não deve ser confundida com uma decisão judicial que tenha confirmado as alegações.",
-          "runs": [
-            {
-              "text": "O questionamento envolve a possível divulgação de informações que permitiriam associar assinantes aos títulos assistidos. A investigação não deve ser confundida com uma decisão judicial que tenha confirmado as alegações."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Outro caso relevante é Ellis v. Cartoon Network, analisado pelo Tribunal Federal de Apelações do 11º Circuito dos Estados Unidos. A discussão envolvia identificadores de dispositivos e informações transmitidas pelo aplicativo da emissora a uma empresa de análise.",
-          "runs": [
-            {
-              "text": "Outro caso relevante é Ellis v. Cartoon Network, analisado pelo Tribunal Federal de Apelações do 11º Circuito dos Estados Unidos. A discussão envolvia identificadores de dispositivos e informações transmitidas pelo aplicativo da emissora a uma empresa de análise."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O tribunal decidiu a favor da Cartoon Network, considerando que o usuário que apenas havia baixado o aplicativo gratuito, sem criar uma conta ou pagar pelo serviço, não se enquadrava na definição de assinante adotada naquela interpretação da VPPA.",
-          "runs": [
-            {
-              "text": "O tribunal decidiu a favor da "
-            },
-            {
-              "text": "Cartoon Network",
-              "href": "https://animenew.com.br/warner-bros-animation-e-cartoon-network-vai-produzir-animes"
-            },
-            {
-              "text": ", considerando que o usuário que apenas havia baixado o aplicativo gratuito, sem criar uma conta ou pagar pelo serviço, não se enquadrava na definição de assinante adotada naquela interpretação da VPPA."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Contudo essa decisão mostrou como o tipo de relacionamento entre usuário e plataforma pode influenciar o resultado dessas disputas.",
-          "runs": [
-            {
-              "text": "Contudo essa decisão mostrou como o tipo de relacionamento entre usuário e plataforma pode influenciar o resultado dessas disputas."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Privacidade de visualização também preocupa outros serviços de streaming",
-          "runs": [
-            {
-              "text": "Privacidade de visualização também preocupa outros serviços de streaming"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "As discussões sobre privacidade ultrapassam o mercado especializado em animes. Serviços como Hulu e HBO Max também foram mencionados em disputas relacionadas ao uso de tecnologias de rastreamento, especialmente ferramentas capazes de associar identificadores de usuários aos conteúdos reproduzidos.",
-          "runs": [
-            {
-              "text": "As discussões sobre privacidade ultrapassam o mercado especializado em animes. Serviços como Hulu e HBO Max também foram mencionados em disputas relacionadas ao uso de tecnologias de rastreamento, especialmente ferramentas capazes de associar identificadores de usuários aos conteúdos reproduzidos."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No caso do Hulu, questionamentos envolvendo o Facebook ajudaram a estabelecer discussões sobre quais informações poderiam identificar uma pessoa e revelar seus hábitos de visualização. A HBO Max também enfrentou alegações relacionadas ao compartilhamento de registros de consumo com plataformas de publicidade.",
-          "runs": [
-            {
-              "text": "No caso do "
-            },
-            {
-              "text": "Hulu",
-              "href": "https://animenew.com.br/undead-unluck-anime-sera-exibido-na-hulu"
-            },
-            {
-              "text": ", questionamentos envolvendo o Facebook ajudaram a estabelecer discussões sobre quais informações poderiam identificar uma pessoa e revelar seus hábitos de visualização. A HBO Max também enfrentou alegações relacionadas ao compartilhamento de registros de consumo com plataformas de publicidade."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Esses episódios mostram que a questão não depende exclusivamente do gênero disponível no catálogo. Uma plataforma pode distribuir animes, filmes, séries ou produções televisivas e ainda enfrentar dúvidas semelhantes sobre a utilização de informações pessoais.",
-          "runs": [
-            {
-              "text": "Esses episódios mostram que a questão "
-            },
-            {
-              "text": "não depende exclusivamente do gênero disponível no catálogo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Uma plataforma pode distribuir animes, filmes, séries ou produções televisivas e ainda enfrentar dúvidas semelhantes sobre a utilização de informações pessoais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Para o público, algumas medidas permanecem úteis: consultar as configurações de privacidade, revisar permissões dos aplicativos, utilizar autenticação em duas etapas quando disponível e acompanhar comunicados oficiais sobre alterações no tratamento de dados.",
-          "runs": [
-            {
-              "text": "Para o público, algumas medidas permanecem úteis: consultar as configurações de privacidade, revisar permissões dos aplicativos, utilizar autenticação em duas etapas quando disponível e acompanhar comunicados oficiais sobre alterações no tratamento de dados."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Enquanto o processo contra a Crunchyroll segue sujeito à análise judicial, o debate permanece concentrado em um ponto: quanto controle os assinantes realmente possuem sobre as informações geradas durante a reprodução de seus conteúdos.",
-          "runs": [
-            {
-              "text": "Enquanto o processo contra a Crunchyroll segue sujeito à análise judicial, o debate permanece concentrado em um ponto: quanto controle os assinantes realmente possuem sobre as informações geradas durante a reprodução de seus conteúdos."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Crunchyroll e outras plataformas de anime enfrentam novas questões sobre a privacidade dos usuários.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Crunchyroll e outras plataformas de anime enfrentam novas questões sobre a privacidade dos usuários",
-              "href": "https://animenew.com.br/crunchyroll-plataformas-de-anime-novas-questoes-privacidade-usuarios/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-09T14:09:57.000Z",
-      "updatedAt": "2026-11-09T14:09:57.000Z",
-      "expiresAt": "2026-11-16T14:09:57.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/crunchyroll-plataformas-de-anime-novas-questoes-privacidade-usuarios",
-          "publishedAt": "2026-11-09T14:09:57.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 6,
-      "wordCount": 1070,
-      "qualityScore": 0.97,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 31,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 0,
         "sourcePagesRead": 0
       }
     },
