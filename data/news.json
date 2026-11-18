@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T12:19:24.956Z",
+  "generatedAt": "2026-11-18T20:39:55.137Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 34,
+      "count": 35,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,4010 @@
     }
   ],
   "stats": {
-    "collected": 44,
-    "grouped": 20,
-    "published": 20,
-    "newStories": 20,
-    "fullArticles": 20,
+    "collected": 45,
+    "grouped": 23,
+    "published": 23,
+    "newStories": 23,
+    "fullArticles": 23,
     "previewArticles": 0,
-    "avgWords": 332,
-    "withHeroImage": 20,
-    "withOrderedMedia": 17,
+    "avgWords": 369,
+    "withHeroImage": 23,
+    "withOrderedMedia": 20,
     "skippedTranslation": 0,
-    "skippedQuality": 24,
-    "durationMs": 4179
+    "skippedQuality": 22,
+    "durationMs": 3551
   },
   "items": [
+    {
+      "id": "animenew-29d5f8b7",
+      "slug": "mistress-kanan-ganha-trailer-e-estreia-em-2027-animenew-29d5f8b7",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Mistress Kanan ganha trailer e estreia em 2027",
+      "originalTitle": "Mistress Kanan ganha trailer e estreia em 2027",
+      "summary": "A segunda temporada de Mistress Kanan is Devilishly Easy (Kanan-sama wa Akumade Choroi) ganhou seu primeiro trailer completo, novo visual promocional e detalhes do elenco e da equipe de produção. A estreia está prevista para 2027.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Kanan-sama wa Akumade Choroi",
+        "Mistress Kanan is Devilishly Easy"
+      ],
+      "url": "https://animenew.com.br/mistress-kanan-temporada-2-trailer-2027",
+      "sourceUrl": "https://animenew.com.br/mistress-kanan-temporada-2-trailer-2027",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Mistress-Kanan-ganha-trailer-e-estreia-em-2027.webp",
+      "mediaQuery": "Mistress Kanan ganha trailer e estreia em 2027",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Mistress-Kanan-is-Devilishly-Easy.webp",
+          "alt": "Mistress Kanan is Devilishly Easy",
+          "caption": "©nonco・講談社／カナン様はあくまでチョロい製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/SJdisi3kEhQ"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A segunda temporada de Mistress Kanan is Devilishly Easy (Kanan-sama wa Akumade Choroi) ganhou seu primeiro trailer completo, novo visual promocional e detalhes do elenco e da equipe de produção. A estreia está prevista para 2027.",
+          "runs": [
+            {
+              "text": "A segunda temporada de "
+            },
+            {
+              "text": "Mistress Kanan is Devilishly Easy",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Kanan-sama wa Akumade Choroi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") ganhou seu primeiro trailer completo, novo visual promocional e detalhes do elenco e da equipe de produção. A estreia está prevista para 2027."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "The Days of Diamond terá adaptação para anime",
+              "runs": [
+                {
+                  "text": "The Days of Diamond terá adaptação para anime",
+                  "href": "https://animenew.com.br/the-days-of-diamond-anime"
+                }
+              ]
+            },
+            {
+              "text": "Re:ZERO ganha sua 5ª temporada",
+              "runs": [
+                {
+                  "text": "Re:ZERO ganha sua 5ª temporada",
+                  "href": "https://animenew.com.br/rezero-5-temporada-anunciada"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=SJdisi3kEhQ",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/SJdisi3kEhQ"
+        },
+        {
+          "type": "paragraph",
+          "text": "Intitulada Kanan-sama wa Akumade Choroi 2 EASY, a continuação também confirmou quatro novas integrantes no elenco: Sendo assim, Misato Matsuoka como Tekka Shinryūji, Miku Itō como Hanako Ohanabatake, Miyu Tomita como Lily Kageno e Lynn como Koko Kyōgi.",
+          "runs": [
+            {
+              "text": "Intitulada "
+            },
+            {
+              "text": "Kanan-sama wa Akumade Choroi 2 EASY",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", a continuação também confirmou quatro novas integrantes no elenco: Sendo assim, Misato Matsuoka como Tekka Shinryūji, Miku Itō como Hanako Ohanabatake, Miyu Tomita como Lily Kageno e Lynn como Koko Kyōgi."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Mistress-Kanan-is-Devilishly-Easy.webp",
+          "alt": "Mistress Kanan is Devilishly Easy",
+          "caption": "©nonco・講談社／カナン様はあくまでチョロい製作委員会"
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre os retornos estão Aoi Koga como Kanan Takakiyo e Seiichirō Yamashita como Yōji Kyōgi, além de Sayumi Suzushiro, Maki Kawase e Ayana Nanase.",
+          "runs": [
+            {
+              "text": "Entre os retornos estão Aoi Koga como Kanan Takakiyo e Seiichirō Yamashita como Yōji Kyōgi, além de Sayumi Suzushiro, Maki Kawase e Ayana Nanase."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Equipe de produção",
+          "runs": [
+            {
+              "text": "Equipe de produção",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Yasushi Muroya retorna à direção no Studio KAI, com Hisashi Isogawa como assistente. Rintarō Ikeda novamente cuida dos roteiros, enquanto Akari Minagawa assume mais uma vez o design de personagens.",
+          "runs": [
+            {
+              "text": "Yasushi Muroya retorna à direção no "
+            },
+            {
+              "text": "Studio KAI",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com Hisashi Isogawa como assistente. Rintarō Ikeda novamente cuida dos roteiros, enquanto Akari Minagawa assume mais uma vez o design de personagens."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de Mistress Kanan",
+          "runs": [
+            {
+              "text": "História de Mistress Kanan"
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A história acompanha Kanan, uma demônio que se infiltra na sociedade humana como estudante do ensino médio para devorar almas. Entretanto, seus planos mudam quando ela acaba se tornando namorada de um garoto antes mesmo de conseguir atacá-lo.",
+          "runs": [
+            {
+              "text": "A história acompanha Kanan, uma demônio que se infiltra na sociedade humana como estudante do ensino médio para devorar almas. Entretanto, seus planos mudam quando ela acaba se tornando namorada de um garoto antes mesmo de conseguir atacá-lo.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A primeira temporada estreou em 4 de abril de 2026, com transmissão pela Crunchyroll. O mangá de nonco começou a ser publicado na Weekly Shōnen Magazine, da Kodansha, em junho de 2022.",
+          "runs": [
+            {
+              "text": "A primeira temporada estreou em 4 de abril de 2026, com transmissão pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "href": "https://animenew.com.br/tag/crunchyroll/"
+            },
+            {
+              "text": ". O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " de nonco começou a ser publicado na "
+            },
+            {
+              "text": "Weekly Shōnen Magazine",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da "
+            },
+            {
+              "text": "Kodansha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", em junho de 2022."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://kanachoro-anime.com/news/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Mistress Kanan ganha trailer e estreia em 2027.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Mistress Kanan ganha trailer e estreia em 2027",
+              "href": "https://animenew.com.br/mistress-kanan-temporada-2-trailer-2027/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-18T20:32:33.000Z",
+      "updatedAt": "2026-11-18T20:32:33.000Z",
+      "expiresAt": "2026-11-25T20:32:33.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/mistress-kanan-temporada-2-trailer-2027",
+          "publishedAt": "2026-11-18T20:32:33.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 242,
+      "qualityScore": 0.973,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-ec7d420e",
+      "slug": "critica-fall-in-love-you-false-angels-volume-1-jbc-jbox-ec7d420e",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Crítica | Fall in Love, You False Angels – Volume 1 | JBC",
+      "originalTitle": "Crítica | Fall in Love, You False Angels – Volume 1 | JBC",
+      "summary": "Quem já passou (ou está passando) pela adolescência sabe que este é um período peculiar na vida de uma pessoa. Ser normal é difícil, ser estranho gera olhares atravessados, e até ser bonito demais pode ter seus problemas. É pensando neste último grupo que Coco Uzuki escreve a história de Fall in Love, You False Angels, mangá que chega ao Brasil pela editora JBC. Porém, ainda que tente ter algumas camadas, a história tem um começo pouco inspirado.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Mangá",
+        "Resenha",
+        "Coco Uzuki",
+        "Fall in Love",
+        "JBC",
+        "Koiseyo Mayakashi Tenshi-domo",
+        "Otogi Katsura",
+        "Toki Ninomae",
+        "You False Angels",
+        "You False Angels JBC",
+        "You False Angels Volume 1"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/18/critica-fall-in-love-you-false-angels-volume-1-jbc",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/18/critica-fall-in-love-you-false-angels-volume-1-jbc",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/jbox-critica-destacada-fallinloveyoufalseangel1.jpg",
+      "mediaQuery": "Crítica | Fall in Love, You False Angels – Volume 1 | JBC",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Fall-in-Love-You-False-Angels-01-scaled.jpg",
+          "alt": "Imagem de Fall in Love, You False Angels",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Fall-in-Love-You-False-Angels-02-scaled.jpg",
+          "alt": "Imagem de Fall in Love, You False Angels",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Fall-in-Love-You-False-Angels-03-scaled.jpg",
+          "alt": "Imagem de Fall in Love, You False Angels",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/fallinloveyoufalseangel-volume1-capa.avif",
+          "alt": "imagem: capa do volume 1 de Fall in Love, You False Angel",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/fallinloveyoufalseangel-volume2-capa.avif",
+          "alt": "imagem: capa do volume 2 de Fall in Love, You False Angel",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Quem já passou (ou está passando) pela adolescência sabe que este é um período peculiar na vida de uma pessoa. Ser normal é difícil, ser estranho gera olhares atravessados, e até ser bonito demais pode ter seus problemas. É pensando neste último grupo que Coco Uzuki escreve a história de Fall in Love, You False Angels, mangá que chega ao Brasil pela editora JBC. Porém, ainda que tente ter algumas camadas, a história tem um começo pouco inspirado.",
+          "runs": [
+            {
+              "text": "Quem já passou (ou está passando) pela adolescência sabe que este é um período peculiar na vida de uma pessoa. Ser normal é difícil, ser estranho gera olhares atravessados, e até ser bonito demais pode ter seus problemas. É pensando neste último grupo que "
+            },
+            {
+              "text": "Coco Uzuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " escreve a história de "
+            },
+            {
+              "text": "Fall in Love, You False Angels",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", mangá que chega ao Brasil pela editora "
+            },
+            {
+              "text": "JBC",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Porém, ainda que tente ter algumas camadas, a história tem um começo pouco inspirado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama é focada em Otogi Katsura, uma jovem praticamente perfeita e considerada a “madonna” da escola, ou seja, uma garota muito admirada. E, claro, além de bonita, ela participa ativamente da vida escolar, como presidente do comitê dos alunos. Curiosamente (ou não), o vice-presidente do comitê é ninguém menos do que Toki Ninomae, um rapaz também bonitão, com cabelos sedosos e traços marcantes. Juntos, eles formam uma “realeza” dentro da escola e, como vocês podem imaginar, tudo isso eventualmente vai acabar em romance.",
+          "runs": [
+            {
+              "text": "A trama é focada em "
+            },
+            {
+              "text": "Otogi Katsura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", uma jovem praticamente perfeita e considerada a “madonna” da escola, ou seja, uma garota muito admirada. E, claro, além de bonita, ela participa ativamente da vida escolar, como presidente do comitê dos alunos. Curiosamente (ou não), o vice-presidente do comitê é ninguém menos do que"
+            },
+            {
+              "text": " Toki Ninomae",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", um rapaz também bonitão, com cabelos sedosos e traços marcantes. Juntos, eles formam uma “realeza” dentro da escola e, como vocês podem imaginar, tudo isso eventualmente vai acabar em romance."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O curioso é que Coco Uzuki estabelece rapidamente que os dois terão algum envolvimento, mas indica que a trama não será apenas focada nisso. Ela quer falar sobre as “faces ocultas” de cada um dos personagens, e é aí que mora o grande problema do começo desta história.",
+          "runs": [
+            {
+              "text": "O curioso é que Coco Uzuki estabelece rapidamente que os dois terão algum envolvimento, mas indica que a trama não será apenas focada nisso. Ela quer falar sobre as “faces ocultas” de cada um dos personagens, e é aí que mora o grande problema do começo desta história."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Fall-in-Love-You-False-Angels-01-scaled.jpg",
+          "alt": "Imagem de Fall in Love, You False Angels"
+        },
+        {
+          "type": "paragraph",
+          "text": "O começao do mangá enfatiza a “perfeição” dos protagonistas especialmente pela beleza e comportamento | JBC/Reprodução",
+          "runs": [
+            {
+              "text": "O começao do mangá enfatiza a “perfeição” dos protagonistas especialmente pela beleza e comportamento | JBC/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Quem você realmente é?",
+          "runs": [
+            {
+              "text": "Quem você realmente é?"
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Como dito, a juventude é uma época deveras complicada, em que é preciso também lapidar traços de personalidade. Fall in Love, You False Angels começa indicando que Katsura e Ninomae possuem a personalidade de… serem bonitos, algo que é um tanto raso — e a autora sabe disso. Por isso, ao longo do primeiro volume, Uzuki insere uma problemática que poderia ser boa, mas é desperdiçada: na verdade, os dois protagonistas não são estes “anjos perfeitos” que aparentam, mas sim possuem uma face oculta cada, permeada de mistérios. Só que, em momento nenhum do primeiro volume, há um peso ou uma dimensão real do que isso significa.",
+          "runs": [
+            {
+              "text": "Como dito, a juventude é uma época deveras complicada, em que é preciso também lapidar traços de personalidade. "
+            },
+            {
+              "text": "Fall in Love, You False Angels",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " começa indicando que Katsura e Ninomae possuem a personalidade de… "
+            },
+            {
+              "text": "serem bonitos, algo que é um tanto raso — e a autora sabe disso",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Por isso, ao longo do primeiro volume, Uzuki insere uma problemática que poderia ser boa, mas é desperdiçada: na verdade, os dois protagonistas não são estes “anjos perfeitos” que aparentam, mas sim possuem uma face oculta cada, permeada de mistérios. Só que, em momento nenhum do primeiro volume, há um peso ou uma dimensão real do que isso significa."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Para tentar exemplificar quem seriam os verdadeiros Katsura e Ninomae, a autora coloca algumas problemáticas, como uma questão envolvendo uma aluna e um professor. Sem entrar em detalhes (mas o leitor deve imaginar do que se trata), essa trama um tanto pesada demais é inserida do nada no mangá, obrigando que os protagonistas tomem alguma atitude e revelem seus “lados ocultos”.",
+          "runs": [
+            {
+              "text": "Para tentar exemplificar quem seriam os verdadeiros Katsura e Ninomae, a autora coloca algumas problemáticas, como uma questão envolvendo uma aluna e um professor. Sem entrar em detalhes (mas o leitor deve imaginar do que se trata), essa trama um tanto pesada demais é inserida do nada no mangá, obrigando que os protagonistas tomem alguma atitude e revelem seus “lados ocultos”."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Fall-in-Love-You-False-Angels-02-scaled.jpg",
+          "alt": "Imagem de Fall in Love, You False Angels"
+        },
+        {
+          "type": "paragraph",
+          "text": "Parece que o grande lado obscuro da protagonista é… falar meio atravessado às vezes (?) | JBC/Reprodução",
+          "runs": [
+            {
+              "text": "Parece que o grande lado obscuro da protagonista é… falar meio atravessado às vezes (?) | JBC/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Só que tudo soa tão afobado, que a aplicação prática do problema não se justifica em momento nenhum. Ninomae se envolve com a questão meio do nada, toma uma atitude que nem de longe parece tão sombria assim, e pronto, essa parte da história é resolvida e termina por aí. Parece genérico demais tanto para um assunto tão importante quanto para o desenvolvimento do protagonista.",
+          "runs": [
+            {
+              "text": "Só que tudo soa tão afobado, que a aplicação prática do problema não se justifica em momento nenhum. Ninomae se envolve com a questão meio do nada, toma uma atitude que nem de longe parece tão sombria assim, e pronto, essa parte da história é resolvida e termina por aí. Parece genérico demais tanto para um assunto tão importante quanto para o desenvolvimento do protagonista."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "E essa característica se repete nas páginas finais. A todo momento, Fall in Love, You False Angels dá um peso importante para uma certa obscuridade dos personagens, mas ela nunca é mostrada de fato, portanto, o peso de toda a narrativa diminui. Ao ler questões trazidas pelos personagens, não é raro pensar: “tá bom, mas e aí?”.",
+          "runs": [
+            {
+              "text": "E essa característica se repete nas páginas finais.",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " A todo momento, "
+            },
+            {
+              "text": "Fall in Love, You False Angels",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " dá um peso importante para uma certa obscuridade dos personagens, mas ela nunca é mostrada de fato, portanto, o peso de toda a narrativa diminui. Ao ler questões trazidas pelos personagens, não é raro pensar: "
+            },
+            {
+              "text": "“tá bom, mas e aí?”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em meio a tudo isso, o romance vai se criando de forma também pouco convincente. O foco aqui não é exatamente em um amor mútuo, mas no fato de Katsura, acostumada a ser cortejada a todo tempo, de repente se ver gostando de alguém e não saber exatamente como lidar com esse sentimento. Ela tem o hábito de receber olhares, mas nunca de sentir algo tão forte por ninguém. E essa parte até poderia ser mais interessante do que o restante do mangá, mas não é bem trabalhada o suficiente para justificar a leitura.",
+          "runs": [
+            {
+              "text": "Em meio a tudo isso, o romance vai se criando de forma também pouco convincente. O foco aqui não é exatamente em um amor mútuo, mas no fato de Katsura, acostumada a ser cortejada a todo tempo, de repente se ver gostando de alguém e não saber exatamente como lidar com esse sentimento. Ela tem o hábito de receber olhares, mas nunca de sentir algo tão forte por ninguém. E essa parte até poderia ser mais interessante do que o restante do mangá, mas não é bem trabalhada o suficiente para justificar a leitura."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Fall-in-Love-You-False-Angels-03-scaled.jpg",
+          "alt": "Imagem de Fall in Love, You False Angels"
+        },
+        {
+          "type": "paragraph",
+          "text": "A insegurança de Katsura poderia ser algo interessante, mas ganha pouco espaço no volume de estreia | JBC/Reprodução",
+          "runs": [
+            {
+              "text": "A insegurança de Katsura poderia ser algo interessante, mas ganha pouco espaço no volume de estreia | JBC/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "No fim, o 1º volume de Fall in Love, You False Angels peca ao escolher uma premissa que poderia ser interessante, mas não tem o desenvolvimento profundo dos personagens. Não acreditamos tanto assim na obscuridade dos protagonistas, porque a própria “perfeição” de ambos não é bem construída. Em duas ou três páginas ambos recebem elogios dos colegas da escola, mas isso não passa nem perto de criar algo robusto, que fará diferença se for desconstruído — ainda mais se essa tal desconstrução for mostrada pelas atitudes mais “água com açúcar” possíveis. É muito conceito para pouca história.",
+          "runs": [
+            {
+              "text": "No fim, o 1º volume de "
+            },
+            {
+              "text": "Fall in Love, You False Angels",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " peca ao escolher uma premissa que poderia ser interessante, mas não tem o desenvolvimento profundo dos personagens. Não acreditamos tanto assim na obscuridade dos protagonistas, porque a própria “perfeição” de ambos não é bem construída. Em duas ou três páginas ambos recebem elogios dos colegas da escola, mas isso não passa nem perto de criar algo robusto, que fará diferença se for desconstruído — ainda mais se essa tal desconstrução for mostrada pelas atitudes mais “água com açúcar” possíveis. É muito conceito para pouca história."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Galeria de fotos",
+          "runs": [
+            {
+              "text": "Galeria de fotos",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira no álbum abaixo alguns registros da edição nacional do 1º volume de Fall in Love, You False Angels pela Editora JBC:",
+          "runs": [
+            {
+              "text": "Confira no álbum abaixo alguns registros da edição nacional do 1º volume de"
+            },
+            {
+              "text": " Fall in Love, You False Angels",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " pela Editora JBC:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Se interessou? Compre pelos nossos links*:",
+          "runs": [
+            {
+              "text": "Se interessou? ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "Compre pelos nossos links*:",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/fallinloveyoufalseangel-volume1-capa.avif",
+          "alt": "imagem: capa do volume 1 de Fall in Love, You False Angel"
+        },
+        {
+          "type": "paragraph",
+          "text": "Volume 1",
+          "runs": [
+            {
+              "text": "Volume 1",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://link.amazon/B08bMChQy"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/fallinloveyoufalseangel-volume2-capa.avif",
+          "alt": "imagem: capa do volume 2 de Fall in Love, You False Angel"
+        },
+        {
+          "type": "paragraph",
+          "text": "Volume 2",
+          "runs": [
+            {
+              "text": "Volume 2",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://link.amazon/B02LpN9Z6"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Essa resenha foi feita com base na edição cedida como material de divulgação para a imprensa pela editora JBC, que disponibilizou o 1º volume ao JBox.",
+          "runs": [
+            {
+              "text": "Essa resenha foi feita com base na edição cedida como material de divulgação para a imprensa pela editora JBC, que disponibilizou o 1º volume ao JBox.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+          "runs": [
+            {
+              "text": "O texto presente é de responsabilidade de seu autor e não reflete necessariamente a opinião do site JBox.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "*O JBox participa do programa de parceria da Amazon, podendo ganhar um valor em cima das compras realizadas a partir dos links do site. Contudo, o JBox não tem responsabilidade sobre possíveis erros presentes em recursos integrados ao site, mas produzidos por terceiros.",
+          "runs": [
+            {
+              "text": "*O JBox participa do programa de parceria da Amazon, podendo ganhar um valor em cima das compras realizadas a partir dos links do site. Contudo, o JBox não tem responsabilidade sobre possíveis erros presentes em recursos integrados ao site, mas produzidos por terceiros.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-18T14:38:17.000Z",
+      "updatedAt": "2026-11-18T14:38:52.000Z",
+      "expiresAt": "2026-11-25T14:38:17.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/18/critica-fall-in-love-you-false-angels-volume-1-jbc",
+          "publishedAt": "2026-11-18T14:38:17.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 5,
+      "wordCount": 885,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 28,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 5,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-7990438e",
+      "slug": "2-temporada-de-cyberpunk-mercenarios-e-indicada-ao-the-game-awards-jbox-7990438e",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "2ª temporada de ‘Cyberpunk: Mercenários’ é indicada ao The Game Awards",
+      "originalTitle": "2ª temporada de ‘Cyberpunk: Mercenários’ é indicada ao The Game Awards",
+      "summary": "Os organizadores do The Game Awards anunciaram os indicados ao evento deste ano, e a 2ª temporada de Cyberpunk: Mercenários foi lembrada na categoria de Melhor Adaptação.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Games",
+        "Premiação",
+        "2ª temporada de Cyberpunk: Edgerunners",
+        "2ª temporada de Cyberpunk: Mercenários",
+        "cyberpunk",
+        "Cyberpunk: Edgerunners",
+        "TGA",
+        "The Game Awards 2026"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/18/2a-temporada-de-cyberpunk-mercenarios-e-indicada-ao-the-game-awards",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/18/2a-temporada-de-cyberpunk-mercenarios-e-indicada-ao-the-game-awards",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Cyberpunk-mercenarios-2-destacada.jpg",
+      "mediaQuery": "2ª temporada de ‘Cyberpunk: Mercenários’ é indicada ao The Game Awards",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/QBlPg818lGI"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Os organizadores do The Game Awards anunciaram os indicados ao evento deste ano, e a 2ª temporada de Cyberpunk: Mercenários foi lembrada na categoria de Melhor Adaptação.",
+          "runs": [
+            {
+              "text": "Os organizadores do "
+            },
+            {
+              "text": "The Game Awards",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciaram os indicados ao evento deste ano, e a 2ª temporada de "
+            },
+            {
+              "text": "Cyberpunk: Mercenários",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " foi lembrada na categoria de Melhor Adaptação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O animê concorre ao lado da 2ª temporada de Fallout, com o filme Mortal Kombat II, com a nova adaptação de Resident Evil e com Super Mario Galaxy: O Filme. Ainda dentro do tema, MY HERO ACADEMIA: All’s Justice foi indicado na categoria de Melhor Jogo de Luta.",
+          "runs": [
+            {
+              "text": "O animê concorre ao lado da 2ª temporada de "
+            },
+            {
+              "text": "Fallout",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", com o filme "
+            },
+            {
+              "text": "Mortal Kombat II",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", com a nova adaptação de "
+            },
+            {
+              "text": "Resident Evil ",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/18/critica-resident-evil-2026/"
+            },
+            {
+              "text": "e com "
+            },
+            {
+              "text": "Super Mario Galaxy: O Filme",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/04/04/critica-super-mario-galaxy-o-filme/"
+            },
+            {
+              "text": ". Ainda dentro do tema, "
+            },
+            {
+              "text": "MY HERO ACADEMIA: All’s Justice",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " foi indicado na categoria de Melhor Jogo de Luta."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=QBlPg818lGI",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/QBlPg818lGI"
+        },
+        {
+          "type": "paragraph",
+          "text": "▶️ Primeiras impressões de ‘Cyberpunk: Mercenários 2’",
+          "runs": [
+            {
+              "text": "▶️ ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Primeiras impressões de ",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/02/primeiras-impressoes-de-cyberpunk-mercenarios-2/"
+            },
+            {
+              "text": "‘Cyberpunk: Mercenários 2’",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/02/primeiras-impressoes-de-cyberpunk-mercenarios-2/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já no prêmio principal do evento, de Melhor Jogo — também conhecida pela sigla GOTY (Game of the Year) — concorrem GTA VI, The Legend of Zelda: Ocarina of Time, Phantom Blade Zero, 007: First Light, Control Resonant e Resident Evil Requiem.",
+          "runs": [
+            {
+              "text": "Já no prêmio principal do evento, de Melhor Jogo — também conhecida pela sigla GOTY (Game of the Year) — concorrem "
+            },
+            {
+              "text": "GTA VI",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "The Legend of Zelda: Ocarina of Time",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Phantom Blade Zero",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "007: First Light",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Control Resonant",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Resident Evil Requiem",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Sobre a participação brasileira no evento, o youtuber Cellbit foi indicado na categoria de Criador de Conteúdo do Ano.",
+          "runs": [
+            {
+              "text": "Sobre a participação brasileira no evento, o youtuber "
+            },
+            {
+              "text": "Cellbit",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " foi indicado na categoria de Criador de Conteúdo do Ano."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Veja abaixo os indicados em cada categoria:",
+          "runs": [
+            {
+              "text": "Veja abaixo os indicados em cada categoria:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Adaptação",
+          "runs": [
+            {
+              "text": "Melhor Adaptação",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Cyberpunk: Mercenários, 2ª temporada",
+              "runs": [
+                {
+                  "text": "Cyberpunk: Mercenários, 2ª temporada",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2026/10/02/primeiras-impressoes-de-cyberpunk-mercenarios-2/"
+                }
+              ]
+            },
+            {
+              "text": "Fallout, 2ª temporada",
+              "runs": [
+                {
+                  "text": "Fallout, 2ª temporada",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Mortal Kombat II",
+              "runs": [
+                {
+                  "text": "Mortal Kombat II",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Resident Evil",
+              "runs": [
+                {
+                  "text": "Resident Evil",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2026/09/18/critica-resident-evil-2026/"
+                }
+              ]
+            },
+            {
+              "text": "Super Mario Galaxy: O Filme",
+              "runs": [
+                {
+                  "text": "Super Mario Galaxy: O Filme",
+                  "marks": [
+                    "strong",
+                    "em"
+                  ],
+                  "href": "https://www.jbox.com.br/2026/04/04/critica-super-mario-galaxy-o-filme/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Jogo do Ano",
+          "runs": [
+            {
+              "text": "Jogo do Ano",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "007 First Light",
+              "runs": [
+                {
+                  "text": "007 First Light",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Control Resonant",
+              "runs": [
+                {
+                  "text": "Control Resonant",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Grand Theft Auto VI",
+              "runs": [
+                {
+                  "text": "Grand Theft Auto VI",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Phantom Blade Zero",
+              "runs": [
+                {
+                  "text": "Phantom Blade Zero",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Resident Evil Requiem",
+              "runs": [
+                {
+                  "text": "Resident Evil Requiem",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "The Legend of Zelda: Ocarina of Time",
+              "runs": [
+                {
+                  "text": "The Legend of Zelda: Ocarina of Time",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Direção",
+          "runs": [
+            {
+              "text": "Melhor Direção",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Control Resonant",
+              "runs": [
+                {
+                  "text": "Control Resonant",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Grand Theft Auto VI",
+              "runs": [
+                {
+                  "text": "Grand Theft Auto VI",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Phantom Blade Zero",
+              "runs": [
+                {
+                  "text": "Phantom Blade Zero",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Pragmata",
+              "runs": [
+                {
+                  "text": "Pragmata",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Resident Evil Requiem",
+              "runs": [
+                {
+                  "text": "Resident Evil Requiem",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Narrativa",
+          "runs": [
+            {
+              "text": "Melhor Narrativa",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "007 First Light",
+              "runs": [
+                {
+                  "text": "007 First Light",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Control Resonant",
+              "runs": [
+                {
+                  "text": "Control Resonant",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Grand Theft Auto VI",
+              "runs": [
+                {
+                  "text": "Grand Theft Auto VI",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Resident Evil Requiem",
+              "runs": [
+                {
+                  "text": "Resident Evil Requiem",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "The Blood of Dawnwalker",
+              "runs": [
+                {
+                  "text": "The Blood of Dawnwalker",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Direção de Arte",
+          "runs": [
+            {
+              "text": "Melhor Direção de Arte",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Control Resonant",
+              "runs": [
+                {
+                  "text": "Control Resonant",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Grand Theft Auto VI",
+              "runs": [
+                {
+                  "text": "Grand Theft Auto VI",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Mouse: P.I. for Hire",
+              "runs": [
+                {
+                  "text": "Mouse: P.I. for Hire",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Phantom Blade Zero",
+              "runs": [
+                {
+                  "text": "Phantom Blade Zero",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "The Legend of Zelda: Ocarina of Time",
+              "runs": [
+                {
+                  "text": "The Legend of Zelda: Ocarina of Time",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Música e Trilha Sonora",
+          "runs": [
+            {
+              "text": "Melhor Música e Trilha Sonora",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Ace Combat 8: Wings of Theve",
+              "runs": [
+                {
+                  "text": "Ace Combat 8: Wings of Theve",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Grand Theft Auto VI",
+              "runs": [
+                {
+                  "text": "Grand Theft Auto VI",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Mixtape",
+              "runs": [
+                {
+                  "text": "Mixtape",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Phantom Blade Zero",
+              "runs": [
+                {
+                  "text": "Phantom Blade Zero",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "The Legend of Zelda: Ocarina of Time",
+              "runs": [
+                {
+                  "text": "The Legend of Zelda: Ocarina of Time",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Design de Áudio",
+          "runs": [
+            {
+              "text": "Melhor Design de Áudio",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Ace Combat 8: Wings of Theve",
+              "runs": [
+                {
+                  "text": "Ace Combat 8: Wings of Theve",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Control Resonant",
+              "runs": [
+                {
+                  "text": "Control Resonant",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Grand Theft Auto VI",
+              "runs": [
+                {
+                  "text": "Grand Theft Auto VI",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Resident Evil Requiem",
+              "runs": [
+                {
+                  "text": "Resident Evil Requiem",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Star Wars: Galactic Racer",
+              "runs": [
+                {
+                  "text": "Star Wars: Galactic Racer",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Performance",
+          "runs": [
+            {
+              "text": "Melhor Performance",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Angela Sant’Albano, Resident Evil Requiem",
+              "runs": [
+                {
+                  "text": "Angela Sant’Albano, "
+                },
+                {
+                  "text": "Resident Evil Requiem",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Liam McIntyre, Wolverine",
+              "runs": [
+                {
+                  "text": "Liam McIntyre, "
+                },
+                {
+                  "text": "Wolverine",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Manni L. Perez, Grand Theft Auto VI",
+              "runs": [
+                {
+                  "text": "Manni L. Perez, "
+                },
+                {
+                  "text": "Grand Theft Auto VI",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Patrick Gibson, 007 First Light",
+              "runs": [
+                {
+                  "text": "Patrick Gibson, "
+                },
+                {
+                  "text": "007 First Light",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Rahul Kohli, Saros",
+              "runs": [
+                {
+                  "text": "Rahul Kohli, "
+                },
+                {
+                  "text": "Saros",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Jogo de Impacto",
+          "runs": [
+            {
+              "text": "Melhor Jogo de Impacto",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Big Walk",
+              "runs": [
+                {
+                  "text": "Big Walk",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Cairn",
+              "runs": [
+                {
+                  "text": "Cairn",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Forever Ago",
+              "runs": [
+                {
+                  "text": "Forever Ago",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Life Is Strange: Reunion",
+              "runs": [
+                {
+                  "text": "Life Is Strange: Reunion",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Lily’s Word XD",
+              "runs": [
+                {
+                  "text": "Lily’s Word XD",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Mixtape",
+              "runs": [
+                {
+                  "text": "Mixtape",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Inovação em Acessibilidade",
+          "runs": [
+            {
+              "text": "Melhor Inovação em Acessibilidade",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Assassin’s Creed Black Flag Resynced",
+              "runs": [
+                {
+                  "text": "Assassin’s Creed Black Flag Resynced",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Forza Horizon 6",
+              "runs": [
+                {
+                  "text": "Forza Horizon 6",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Gears of War: E-Day",
+              "runs": [
+                {
+                  "text": "Gears of War: E-Day",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Marvel’s Wolverine",
+              "runs": [
+                {
+                  "text": "Marvel’s Wolverine",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Rhythm Heaven Groove",
+              "runs": [
+                {
+                  "text": "Rhythm Heaven Groove",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Jogo Contínuo",
+          "runs": [
+            {
+              "text": "Melhor Jogo Contínuo",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "ARC Raiders",
+              "runs": [
+                {
+                  "text": "ARC Raiders",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Final Fantasy XIV",
+              "runs": [
+                {
+                  "text": "Final Fantasy XIV",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Fortnite",
+              "runs": [
+                {
+                  "text": "Fortnite",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "No Man’s Sky",
+              "runs": [
+                {
+                  "text": "No Man’s Sky",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "The Witcher 3: Wild Hunt",
+              "runs": [
+                {
+                  "text": "The Witcher 3: Wild Hunt",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Suporte à Comunidade",
+          "runs": [
+            {
+              "text": "Melhor Suporte à Comunidade",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Crimson Desert",
+              "runs": [
+                {
+                  "text": "Crimson Desert",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Helldivers 2",
+              "runs": [
+                {
+                  "text": "Helldivers 2",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "No Man’s Sky",
+              "runs": [
+                {
+                  "text": "No Man’s Sky",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "The Witcher 3: Wild Hunt",
+              "runs": [
+                {
+                  "text": "The Witcher 3: Wild Hunt",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Warframe",
+              "runs": [
+                {
+                  "text": "Warframe",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Estreia de Jogo Indie",
+          "runs": [
+            {
+              "text": "Melhor Estreia de Jogo Indie",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Dressmaker",
+              "runs": [
+                {
+                  "text": "Dressmaker",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Esoteric Ebb",
+              "runs": [
+                {
+                  "text": "Esoteric Ebb",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Orbitals",
+              "runs": [
+                {
+                  "text": "Orbitals",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Replaced",
+              "runs": [
+                {
+                  "text": "Replaced",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Silver Pines",
+              "runs": [
+                {
+                  "text": "Silver Pines",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Jogo Mobile",
+          "runs": [
+            {
+              "text": "Melhor Jogo Mobile",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Arknights: Endfield",
+              "runs": [
+                {
+                  "text": "Arknights: Endfield",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Monster Hunter Outlanders",
+              "runs": [
+                {
+                  "text": "Monster Hunter Outlanders",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Neverness to Everness",
+              "runs": [
+                {
+                  "text": "Neverness to Everness",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Pokémon Champions",
+              "runs": [
+                {
+                  "text": "Pokémon Champions",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Where Winds Meet",
+              "runs": [
+                {
+                  "text": "Where Winds Meet",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Jogo em VR/AR",
+          "runs": [
+            {
+              "text": "Melhor Jogo em VR/AR",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Forefront",
+              "runs": [
+                {
+                  "text": "Forefront",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Into the Radius 2",
+              "runs": [
+                {
+                  "text": "Into the Radius 2",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Little Nightmares VR: Altered Echoes",
+              "runs": [
+                {
+                  "text": "Little Nightmares VR: Altered Echoes",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Teenage Mutant Ninja Turtles: Empire City",
+              "runs": [
+                {
+                  "text": "Teenage Mutant Ninja Turtles: Empire City",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Thief VR: Legacy of Shadow",
+              "runs": [
+                {
+                  "text": "Thief VR: Legacy of Shadow",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Jogo de Ação",
+          "runs": [
+            {
+              "text": "Melhor Jogo de Ação",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Ace Combat 8: Wings of Theve",
+              "runs": [
+                {
+                  "text": "Ace Combat 8: Wings of Theve",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Gears of War: E-Day",
+              "runs": [
+                {
+                  "text": "Gears of War: E-Day",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Onimusha: Way of the Sword",
+              "runs": [
+                {
+                  "text": "Onimusha: Way of the Sword",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Phantom Blade Zero",
+              "runs": [
+                {
+                  "text": "Phantom Blade Zero",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Saros",
+              "runs": [
+                {
+                  "text": "Saros",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Jogo de Aventura",
+          "runs": [
+            {
+              "text": "Melhor Jogo de Aventura",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "007 First Light",
+              "runs": [
+                {
+                  "text": "007 First Light",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Control Resonant",
+              "runs": [
+                {
+                  "text": "Control Resonant",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Grand Theft Auto VI",
+              "runs": [
+                {
+                  "text": "Grand Theft Auto VI",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Pragmata",
+              "runs": [
+                {
+                  "text": "Pragmata",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Resident Evil Requiem",
+              "runs": [
+                {
+                  "text": "Resident Evil Requiem",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "The Legend of Zelda: Ocarina of Time",
+              "runs": [
+                {
+                  "text": "The Legend of Zelda: Ocarina of Time",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor RPG",
+          "runs": [
+            {
+              "text": "Melhor RPG",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Final Fantasy Resonance",
+              "runs": [
+                {
+                  "text": "Final Fantasy Resonance",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Fire Emblem: Fortune’s Weave",
+              "runs": [
+                {
+                  "text": "Fire Emblem: Fortune’s Weave",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Monster Hunter Stories 3: Twisted Reflection",
+              "runs": [
+                {
+                  "text": "Monster Hunter Stories 3: Twisted Reflection",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "The Blood of Dawnwalker",
+              "runs": [
+                {
+                  "text": "The Blood of Dawnwalker",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Trails in the Sky 2nd Chapter",
+              "runs": [
+                {
+                  "text": "Trails in the Sky 2nd Chapter",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Jogo de Luta",
+          "runs": [
+            {
+              "text": "Melhor Jogo de Luta",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "2XKO",
+              "runs": [
+                {
+                  "text": "2XKO",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Avatar Legends: The Fighting Game",
+              "runs": [
+                {
+                  "text": "Avatar Legends: The Fighting Game",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Invincible VS",
+              "runs": [
+                {
+                  "text": "Invincible VS",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Marvel Tōkon: Fighting Souls",
+              "runs": [
+                {
+                  "text": "Marvel Tōkon: Fighting Souls",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "MY HERO ACADEMIA: All’s Justice",
+              "runs": [
+                {
+                  "text": "MY HERO ACADEMIA: All’s Justice",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Jogo para a Família",
+          "runs": [
+            {
+              "text": "Melhor Jogo para a Família",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Big Walk",
+              "runs": [
+                {
+                  "text": "Big Walk",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Lego Batman: Legacy of the Dark Knight",
+              "runs": [
+                {
+                  "text": "Lego Batman: Legacy of the Dark Knight",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Nintendo Switch Sports Resort",
+              "runs": [
+                {
+                  "text": "Nintendo Switch Sports Resort",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Pokémon Pokopia",
+              "runs": [
+                {
+                  "text": "Pokémon Pokopia",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Yoshi and the Mysterious Book",
+              "runs": [
+                {
+                  "text": "Yoshi and the Mysterious Book",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Jogo de Simulação/Estratégia",
+          "runs": [
+            {
+              "text": "Melhor Jogo de Simulação/Estratégia",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Mewgenics",
+              "runs": [
+                {
+                  "text": "Mewgenics",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Planet Zoo 2",
+              "runs": [
+                {
+                  "text": "Planet Zoo 2",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Pokémon Pokopia",
+              "runs": [
+                {
+                  "text": "Pokémon Pokopia",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Slay the Spire 2",
+              "runs": [
+                {
+                  "text": "Slay the Spire 2",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Star Wars Zero Company",
+              "runs": [
+                {
+                  "text": "Star Wars Zero Company",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Jogo de Esporte/Corrida",
+          "runs": [
+            {
+              "text": "Melhor Jogo de Esporte/Corrida",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "EA Sports FC 27",
+              "runs": [
+                {
+                  "text": "EA Sports FC 27",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Forza Horizon 6",
+              "runs": [
+                {
+                  "text": "Forza Horizon 6",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Nintendo Switch Sports Resort",
+              "runs": [
+                {
+                  "text": "Nintendo Switch Sports Resort",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Screamer",
+              "runs": [
+                {
+                  "text": "Screamer",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Star Wars: Galactic Racer",
+              "runs": [
+                {
+                  "text": "Star Wars: Galactic Racer",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Jogo Multiplayer",
+          "runs": [
+            {
+              "text": "Melhor Jogo Multiplayer",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Big Walk",
+              "runs": [
+                {
+                  "text": "Big Walk",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Call of Duty: Modern Warfare 4",
+              "runs": [
+                {
+                  "text": "Call of Duty: Modern Warfare 4",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Gears of War: E-Day",
+              "runs": [
+                {
+                  "text": "Gears of War: E-Day",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Marathon",
+              "runs": [
+                {
+                  "text": "Marathon",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Meccha Chameleon",
+              "runs": [
+                {
+                  "text": "Meccha Chameleon",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Orbitals",
+              "runs": [
+                {
+                  "text": "Orbitals",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Criação dos Usuários",
+          "runs": [
+            {
+              "text": "Melhor Criação dos Usuários",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "A Dream of Silence: ReVamped",
+              "runs": [
+                {
+                  "text": "A Dream of Silence: ReVamped",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Create Aeronautics",
+              "runs": [
+                {
+                  "text": "Create Aeronautics",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "NoPixel V",
+              "runs": [
+                {
+                  "text": "NoPixel V",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Star Wars: Droid Tycoon",
+              "runs": [
+                {
+                  "text": "Star Wars: Droid Tycoon",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "TTK",
+              "runs": [
+                {
+                  "text": "TTK",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Criador de Conteúdo do Ano",
+          "runs": [
+            {
+              "text": "Criador de Conteúdo do Ano",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "CDawg",
+              "runs": [
+                {
+                  "text": "CDawg",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Cellbit",
+              "runs": [
+                {
+                  "text": "Cellbit",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "IShowSpeed",
+              "runs": [
+                {
+                  "text": "IShowSpeed",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Lilsimsie",
+              "runs": [
+                {
+                  "text": "Lilsimsie",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "ohnePixel",
+              "runs": [
+                {
+                  "text": "ohnePixel",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Atleta de Esports",
+          "runs": [
+            {
+              "text": "Melhor Atleta de Esports",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Chovy",
+              "runs": [
+                {
+                  "text": "Chovy",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Donk",
+              "runs": [
+                {
+                  "text": "Donk",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Erde",
+              "runs": [
+                {
+                  "text": "Erde",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Yatoro",
+              "runs": [
+                {
+                  "text": "Yatoro",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Zywoo",
+              "runs": [
+                {
+                  "text": "Zywoo",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Jogo de Esports",
+          "runs": [
+            {
+              "text": "Melhor Jogo de Esports",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Counter-Strike 2",
+              "runs": [
+                {
+                  "text": "Counter-Strike 2",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Dota 2",
+              "runs": [
+                {
+                  "text": "Dota 2",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "League of Legends",
+              "runs": [
+                {
+                  "text": "League of Legends",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Mobile Legends: Bang Bang",
+              "runs": [
+                {
+                  "text": "Mobile Legends: Bang Bang",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Valorant",
+              "runs": [
+                {
+                  "text": "Valorant",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Melhor Equipe de Esports",
+          "runs": [
+            {
+              "text": "Melhor Equipe de Esports",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Gen.G, League of Legends",
+              "runs": [
+                {
+                  "text": "Gen.G, League of Legends",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "LOUD, Valorant",
+              "runs": [
+                {
+                  "text": "LOUD, Valorant",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Team Falcons, Counter-Strike 2",
+              "runs": [
+                {
+                  "text": "Team Falcons, Counter-Strike 2",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Team Falcons, Rocket League",
+              "runs": [
+                {
+                  "text": "Team Falcons, Rocket League",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Team Spirit, Dota 2",
+              "runs": [
+                {
+                  "text": "Team Spirit, Dota 2",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Team Vitality, Counter-Strike 2",
+              "runs": [
+                {
+                  "text": "Team Vitality, Counter-Strike 2",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Jogo Mais Aguardado",
+          "runs": [
+            {
+              "text": "Jogo Mais Aguardado",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Fable",
+              "runs": [
+                {
+                  "text": "Fable",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Final Fantasy VII Revelation",
+              "runs": [
+                {
+                  "text": "Final Fantasy VII Revelation",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "God of War Laufey",
+              "runs": [
+                {
+                  "text": "God of War Laufey",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Resident Evil Veronica",
+              "runs": [
+                {
+                  "text": "Resident Evil Veronica",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "The Witcher 4",
+              "runs": [
+                {
+                  "text": "The Witcher 4",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A cerimônia de entrega do The Game Awards acontece no dia 10 de dezembro, a partir das 21h30, no horário de Brasília. A transmissão no país acontece no YouTube, Twitch e redes sociais oficiais do evento. O Disney+ também anunciou que vai exibir a premiação nos EUA e em “mercados internacionais selecionados”, o que pode ou não incluir o Brasil.",
+          "runs": [
+            {
+              "text": "A cerimônia de entrega do "
+            },
+            {
+              "text": "The Game Awards",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " acontece no dia 10 de dezembro, a partir das 21h30, no horário de Brasília. A transmissão no país acontece no "
+            },
+            {
+              "text": "YouTube",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ","
+            },
+            {
+              "text": " Twitch",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e redes sociais oficiais do evento. O "
+            },
+            {
+              "text": "Disney+",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " também anunciou que vai exibir a premiação nos EUA e em "
+            },
+            {
+              "text": "“mercados internacionais selecionados”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", o que pode ou não incluir o Brasil."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Discussing Film",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Discussing Film",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://discussingfilm.net/2026/11/17/game-awards-2026-nominations-list/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-18T14:26:35.000Z",
+      "updatedAt": "2026-11-18T14:27:16.000Z",
+      "expiresAt": "2026-11-25T14:26:35.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/18/2a-temporada-de-cyberpunk-mercenarios-e-indicada-ao-the-game-awards",
+          "publishedAt": "2026-11-18T14:26:35.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 4,
+      "wordCount": 802,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 69,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-ce876a70",
+      "slug": "marchen-crown-manga-com-autor-de-oshi-no-ko-chega-ao-fim-esta-semana-jbox-ce876a70",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Märchen Crown: Mangá com autor de ‘Oshi no Ko’ chega ao fim esta semana",
+      "originalTitle": "Märchen Crown: Mangá com autor de ‘Oshi no Ko’ chega ao fim esta semana",
+      "summary": "Foi divulgado na edição mais recente da revista Young Jump que Märchen Crown chega ao fim amanhã, dia 18 de novembro. O mangá está em publicação desde 2025 e vai ser encerrado com 57 capítulos.",
+      "author": "Teke",
+      "tags": [
+        "Mangá",
+        "aka akasaka",
+        "AoiKujira",
+        "Azychika",
+        "Märchen Crown"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/18/marchen-crown-manga-com-autor-de-oshi-no-ko-chega-ao-fim-esta-semana",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/18/marchen-crown-manga-com-autor-de-oshi-no-ko-chega-ao-fim-esta-semana",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/marchen-crown-destacada.jpg",
+      "mediaQuery": "Märchen Crown: Mangá com autor de ‘Oshi no Ko’ chega ao fim esta semana",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/marchen-crown-volume-1.jpg",
+          "alt": "imagem: capa do volume 1 de 'Märchen Crown', destacando a protagonista Rapunzel.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi divulgado na edição mais recente da revista Young Jump que Märchen Crown chega ao fim amanhã, dia 18 de novembro. O mangá está em publicação desde 2025 e vai ser encerrado com 57 capítulos.",
+          "runs": [
+            {
+              "text": "Foi divulgado na edição mais recente da revista "
+            },
+            {
+              "text": "Young Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " que "
+            },
+            {
+              "text": "Märchen Crown",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "chega ao fim amanhã, dia 18 de novembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O mangá está em publicação desde 2025 e vai ser encerrado com 57 capítulos."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/marchen-crown-volume-1.jpg",
+          "alt": "imagem: capa do volume 1 de 'Märchen Crown', destacando a protagonista Rapunzel."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Shueisha",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Shueisha"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Märchen Crown é escrito por Aka Akasaka, autor conhecido por Oshi no Ko e Kaguya-sama. A adaptação da história para quadrinhos é por conta de AoiKujira (Geek Circle Crisis) e os desenhos são de Azychika (Record of Ragnarok). A história faz uma releitura de Rapunzel, fazendo a apresentação clássica da princesa que vive isolada em uma torre e não sabe nada sobre o mundo. Certo dia, Mikel, um garoto plebeu, sobe a torre e, eventualmente, tira Rapunzel de lá, mas logo ela descobre que a vida lá fora não é cheia de belezas desconhecidas como imaginava.",
+          "runs": [
+            {
+              "text": "Märchen Crown",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é escrito por "
+            },
+            {
+              "text": "Aka Akasaka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", autor conhecido por "
+            },
+            {
+              "text": "Oshi no Ko",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Kaguya-sama",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". A adaptação da história para quadrinhos é por conta de "
+            },
+            {
+              "text": "AoiKujira",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Geek Circle Crisis",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") e os desenhos são de "
+            },
+            {
+              "text": "Azychika",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Record of Ragnarok",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). A história faz uma releitura de Rapunzel, fazendo a apresentação clássica da princesa que vive isolada em uma torre e não sabe nada sobre o mundo. Certo dia, Mikel, um garoto plebeu, sobe a torre e, eventualmente, tira Rapunzel de lá, mas logo ela descobre que a vida lá fora não é cheia de belezas desconhecidas como imaginava."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O título é publicado no MANGA Plus, contando apenas com tradução para o inglês. No Japão, a série conta com 5 volumes encadernados lançados até então pela Shueisha.",
+          "runs": [
+            {
+              "text": "O título é publicado no "
+            },
+            {
+              "text": "MANGA Plus",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://mangaplus.shueisha.co.jp/titles/100468"
+            },
+            {
+              "text": ", contando apenas com tradução para o inglês. No Japão, a série conta com 5 volumes encadernados lançados até então pela Shueisha."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além de Märchen Crown, Aka Akasaka está atualmente responsável pela história de Karubi, Momareru., mangá sobre a VTuber Akami Karubi.",
+          "runs": [
+            {
+              "text": "Além de "
+            },
+            {
+              "text": "Märchen Crown",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", Aka Akasaka está atualmente responsável pela história de "
+            },
+            {
+              "text": "Karubi, Momareru.",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", mangá sobre a VTuber Akami Karubi."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Anime News Network",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-11-16/marchen-crown-manga-ends-in-next-chapter/.243838"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-18T13:58:04.000Z",
+      "updatedAt": "2026-11-18T14:00:49.000Z",
+      "expiresAt": "2026-11-25T13:58:04.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/18/marchen-crown-manga-com-autor-de-oshi-no-ko-chega-ao-fim-esta-semana",
+          "publishedAt": "2026-11-18T13:58:04.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 202,
+      "qualityScore": 0.964,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "animenew-8488d792",
+      "slug": "the-days-of-diamond-tera-adaptacao-para-anime-animenew-8488d792",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "The Days of Diamond terá adaptação para anime",
+      "originalTitle": "The Days of Diamond terá adaptação para anime",
+      "summary": "O mangá The Days of Diamond, de Ōhashi Hirai, ganhará uma adaptação em anime para TV. O anúncio revelou a primeira imagem promocional e os principais nomes da equipe de produção.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "The Days of Diamond"
+      ],
+      "url": "https://animenew.com.br/the-days-of-diamond-anime",
+      "sourceUrl": "https://animenew.com.br/the-days-of-diamond-anime",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/The-Days-of-Diamond-tera-adaptacao-para-anime.webp",
+      "mediaQuery": "The Days of Diamond terá adaptação para anime",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/The-Days-of-Diamond.webp",
+          "alt": "The Days of Diamond",
+          "caption": "© 平井大橋／集英社・ダイヤモンドの功罪製作委員会"
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O mangá The Days of Diamond, de Ōhashi Hirai, ganhará uma adaptação em anime para TV. O anúncio revelou a primeira imagem promocional e os principais nomes da equipe de produção.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "The Days of Diamond",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", de Ōhashi Hirai, ganhará uma adaptação em "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " para TV. O anúncio revelou a primeira imagem promocional e os principais nomes da equipe de produção."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Re:ZERO é renovado para sua 5ª temporada",
+              "runs": [
+                {
+                  "text": "Re:ZERO é renovado para sua 5ª temporada",
+                  "href": "https://animenew.com.br/rezero-5-temporada-anunciada"
+                }
+              ]
+            },
+            {
+              "text": "Gushing Over Magical Girls 2 estreia em 2027",
+              "runs": [
+                {
+                  "text": "Gushing Over Magical Girls 2 estreia em 2027",
+                  "href": "https://animenew.com.br/gushing-over-magical-girls-2-temporada-2027"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A direção ficará com Takakazu Nagatomo, conhecido por You and I Are Polar Opposites, no estúdio Lapin Track. Chigusa Kiyota assume a direção assistente, enquanto Atsushi Saitō ficará responsável pelo design de personagens.",
+          "runs": [
+            {
+              "text": "A direção ficará com Takakazu Nagatomo, conhecido por "
+            },
+            {
+              "text": "You and I Are Polar Opposites",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", no estúdio "
+            },
+            {
+              "text": "Lapin Track",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Chigusa Kiyota assume a direção assistente, enquanto Atsushi Saitō ficará responsável pelo design de personagens."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/The-Days-of-Diamond.webp",
+          "alt": "The Days of Diamond",
+          "caption": "© 平井大橋／集英社・ダイヤモンドの功罪製作委員会"
+        },
+        {
+          "type": "paragraph",
+          "text": "Contudo Teruko Utsumi cuidará da composição da série e dos roteiros. Já Kumiko Yanagisawa será responsável pelo design de cores, e Hisako Akagi assumirá a direção de arte.",
+          "runs": [
+            {
+              "text": "Contudo Teruko Utsumi cuidará da composição da série e dos roteiros. Já "
+            },
+            {
+              "text": "Kumiko Yanagisawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " será responsável pelo design de cores, e "
+            },
+            {
+              "text": "Hisako Akagi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " assumirá a direção de arte."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "História de The Days of Diamond",
+          "runs": [
+            {
+              "text": "História de The Days of Diamond",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Jiro Ayasegawa, um jovem com talento natural para os esportes, especialmente o beisebol. Entretanto, sua habilidade acaba prejudicando outros jogadores, que chegam a abandonar seus sonhos por não conseguirem competir com ele.",
+          "runs": [
+            {
+              "text": "A trama acompanha Jiro Ayasegawa, um jovem com talento natural para os esportes, especialmente o beisebol. Entretanto, sua habilidade acaba prejudicando outros jogadores, que chegam a abandonar seus sonhos por não conseguirem competir com ele.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Tudo muda quando Jiro conhece os Bambies, um pequeno time infantil que joga apenas por diversão. Acreditando ter encontrado um ambiente descontraído, ele decide entrar para a equipe.",
+          "runs": [
+            {
+              "text": "Tudo muda quando Jiro conhece os Bambies, um pequeno time infantil que joga apenas por diversão. Acreditando ter encontrado um ambiente descontraído, ele decide entrar para a equipe."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ōhashi Hirai iniciou o mangá na revista Young Jump, da Shueisha, em fevereiro de 2023. A obra recebeu seu 11º volume em 18 de novembro de 2026.",
+          "runs": [
+            {
+              "text": "Ōhashi Hirai iniciou o mangá na revista "
+            },
+            {
+              "text": "Young Jump",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", da "
+            },
+            {
+              "text": "Shueisha",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", em fevereiro de 2023. A obra recebeu seu 11º volume em 18 de novembro de 2026."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://diamond-kouzai-anime.jp/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em The Days of Diamond terá adaptação para anime.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "The Days of Diamond terá adaptação para anime",
+              "href": "https://animenew.com.br/the-days-of-diamond-anime/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-18T13:06:06.000Z",
+      "updatedAt": "2026-11-18T13:06:06.000Z",
+      "expiresAt": "2026-11-25T13:06:06.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/the-days-of-diamond-anime",
+          "publishedAt": "2026-11-18T13:06:06.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 228,
+      "qualityScore": 0.969,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-37029bd9",
       "slug": "manga-marchen-crown-sera-encerrado-em-novembro-animenew-37029bd9",
@@ -6380,566 +10370,6 @@
         "contentMode": "full",
         "mediaCount": 0,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-a4f4b5d6",
-      "slug": "gundam-seed-freedom-zero-ganhara-novel-em-janeiro-animenew-a4f4b5d6",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Gundam Seed Freedom Zero ganhará novel em janeiro",
-      "originalTitle": "Gundam Seed Freedom Zero ganhará novel em janeiro",
-      "summary": "A franquia Gundam Seed ganhará uma nova adaptação em formato de novel. Sendo assim a obra será baseada em Mobile Suit Gundam Seed FREEDOM ZERO, prelúdio do filme lançado em 2024.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Cinema",
-        "Notícias",
-        "Otaku",
-        "Gundam Seed"
-      ],
-      "url": "https://animenew.com.br/gundam-seed-freedom-zero-novel",
-      "sourceUrl": "https://animenew.com.br/gundam-seed-freedom-zero-novel",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Gundam-Seed-Freedom-Zero-ganhara-novel-em-janeiro.webp",
-      "mediaQuery": "Gundam Seed Freedom Zero ganhará novel em janeiro",
-      "mediaType": "manga",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/GSFZ_TSR_B1_ENG_RGB_small-scaled.webp",
-          "alt": "Mobile Suit Gundam Seed FREEDOM ZERO",
-          "caption": "© Sunrise"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/FEeahlHaGyk"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A franquia Gundam Seed ganhará uma nova adaptação em formato de novel. Sendo assim a obra será baseada em Mobile Suit Gundam Seed FREEDOM ZERO, prelúdio do filme lançado em 2024.",
-          "runs": [
-            {
-              "text": "A franquia "
-            },
-            {
-              "text": "Gundam Seed",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ganhará uma nova adaptação em formato de novel. Sendo assim a obra será baseada em "
-            },
-            {
-              "text": "Mobile Suit Gundam Seed FREEDOM ZERO",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", prelúdio do filme lançado em 2024."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Berserk of Gluttony anuncia estreia da 2ª temporada",
-              "runs": [
-                {
-                  "text": "Berserk of Gluttony anuncia estreia da 2ª temporada",
-                  "href": "https://animenew.com.br/berserk-of-gluttony-2-temporada-estreia"
-                }
-              ]
-            },
-            {
-              "text": "Black Clover confirma Asta como uma entidade divina",
-              "runs": [
-                {
-                  "text": "Black Clover confirma Asta como uma entidade divina",
-                  "href": "https://animenew.com.br/asta-black-clover-entidade-divina"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A editora Kadokawa confirmou o lançamento do livro para 19 de janeiro de 2027. Liu Goto, roteirista de Mobile Suit Gundam Seed FREEDOM, ficará responsável pela história. Ele também escreveu a a história nova do longa-metragem.",
-          "runs": [
-            {
-              "text": "A editora "
-            },
-            {
-              "text": "Kadokawa",
-              "href": "https://animenew.com.br/tag/kadokawa/"
-            },
-            {
-              "text": " confirmou o lançamento do livro para 19 de janeiro de 2027. Liu Goto, roteirista de "
-            },
-            {
-              "text": "Mobile Suit Gundam Seed FREEDOM",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", ficará responsável pela história. Ele também escreveu a a história nova do longa-metragem."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/GSFZ_TSR_B1_ENG_RGB_small-scaled.webp",
-          "alt": "Mobile Suit Gundam Seed FREEDOM ZERO",
-          "caption": "© Sunrise"
-        },
-        {
-          "type": "paragraph",
-          "text": "Portanto Tomofumi Ogasawara, conhecido pelas ilustrações das novels de Mobile Suit Gundam Seed, retornará para trabalhar nas artes da nova publicação.",
-          "runs": [
-            {
-              "text": "Portanto "
-            },
-            {
-              "text": "Tomofumi Ogasawara",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", conhecido pelas ilustrações das novels de Mobile Suit Gundam Seed, retornará para trabalhar nas artes da nova publicação."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Filme de Gundam Seed estreia em janeiro",
-          "runs": [
-            {
-              "text": "Filme de Gundam Seed estreia em janeiro"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=FEeahlHaGyk",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/FEeahlHaGyk"
-        },
-        {
-          "type": "paragraph",
-          "text": "A animação de Gundam Seed FREEDOM ZERO chegará aos cinemas japoneses em 15 de janeiro de 2027. Já a estreia na América do Norte está prevista para fevereiro do mesmo ano. O projeto funciona como prelúdio de Mobile Suit Gundam Seed FREEDOM.",
-          "runs": [
-            {
-              "text": "A animação de Gundam Seed FREEDOM ZERO chegará aos cinemas japoneses em 15 de janeiro de 2027.",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " Já a estreia na América do Norte está prevista para fevereiro do mesmo ano. O projeto funciona como prelúdio de Mobile Suit Gundam Seed FREEDOM."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Assim segundo o diretor Mitsuo Fukuda, a equipe concluiu o roteiro há aproximadamente 20 anos, quando planejava lançar a produção como um OVA.",
-          "runs": [
-            {
-              "text": "Assim segundo o diretor Mitsuo Fukuda, a equipe concluiu o roteiro há aproximadamente 20 anos, quando planejava lançar a produção como um OVA."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A equipe já concluiu quase metade dos storyboards e finalizou as gravações de voz. Por fim ainda não há confirmação sobre o formato final de lançamento da animação.",
-          "runs": [
-            {
-              "text": "A equipe já concluiu quase metade dos storyboards e finalizou as gravações de voz. Por fim ainda não há confirmação sobre o formato final de lançamento da animação."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Kadokawa",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Kadokawa",
-              "href": "https://www.kadokawa.co.jp/product/322609000810/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Gundam Seed Freedom Zero ganhará novel em janeiro.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Gundam Seed Freedom Zero ganhará novel em janeiro",
-              "href": "https://animenew.com.br/gundam-seed-freedom-zero-novel/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-12T02:50:40.000Z",
-      "updatedAt": "2026-11-12T02:50:40.000Z",
-      "expiresAt": "2026-11-19T02:50:40.000Z",
-      "category": "Mangás & novels",
-      "eventType": "MANGA",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/gundam-seed-freedom-zero-novel",
-          "publishedAt": "2026-11-12T02:50:40.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 228,
-      "qualityScore": 0.91,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-9f0803d7",
-      "slug": "zelda-ocarina-of-time-vende-5-2-milhoes-em-4-dias-animenew-9f0803d7",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Zelda: Ocarina of Time vende 5,2 milhões em 4 dias",
-      "originalTitle": "Zelda: Ocarina of Time vende 5,2 milhões em 4 dias",
-      "summary": "O remake de The Legend of Zelda: Ocarina of Time para Nintendo Switch 2 ultrapassou 5,2 milhões de unidades vendidas em apenas quatro dias, estabelecendo um novo recorde para a Nintendo.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Games",
-        "Nintendo",
-        "Notícias",
-        "Nintendo Switch 2",
-        "The Legend of Zelda: Ocarina of Time"
-      ],
-      "url": "https://animenew.com.br/zelda-ocarina-of-time-remake-vendas-switch-2",
-      "sourceUrl": "https://animenew.com.br/zelda-ocarina-of-time-remake-vendas-switch-2",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Zelda-Ocarina-of-Time-vende-52-milhoes-em-4-dias.webp",
-      "mediaQuery": "Zelda: Ocarina of Time vende 5,2 milhões em 4 dias",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Zelda-Ocarina-of-Time.webp",
-          "alt": "",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/T4Eh0M-Sh_g"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O remake de The Legend of Zelda: Ocarina of Time para Nintendo Switch 2 ultrapassou 5,2 milhões de unidades vendidas em apenas quatro dias, estabelecendo um novo recorde para a Nintendo.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "remake",
-              "href": "https://animenew.com.br/zelda-ocarina-of-time-remake-switch-2"
-            },
-            {
-              "text": " de "
-            },
-            {
-              "text": "The Legend of Zelda: Ocarina of Time",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " para "
-            },
-            {
-              "text": "Nintendo Switch 2",
-              "href": "https://animenew.com.br/tag/nintendo-switch-2/"
-            },
-            {
-              "text": " ultrapassou 5,2 milhões de unidades vendidas em apenas quatro dias, estabelecendo um novo recorde para a "
-            },
-            {
-              "text": "Nintendo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "GTA 6 bate recorde de pré-vendas na PlayStation Store",
-              "runs": [
-                {
-                  "text": "GTA 6 bate recorde de pré-vendas na PlayStation Store",
-                  "href": "https://animenew.com.br/gta-6-recorde-pre-vendas-playstation-store"
-                }
-              ]
-            },
-            {
-              "text": "Dragon Quest RPG mobile será lançado em 2027",
-              "runs": [
-                {
-                  "text": "Dragon Quest RPG mobile será lançado em 2027",
-                  "href": "https://animenew.com.br/dragon-quest-rpg-mobile-lancamento-2027"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O anúncio aconteceu nesta quarta-feira (11) pela empresa Nintendo. Com o resultado, o jogo se tornou o título publicado pela empresa que vendeu mais rapidamente no Switch 2, tanto mundialmente quanto nos Estados Unidos, Canadá e América Latina.",
-          "runs": [
-            {
-              "text": "O anúncio aconteceu nesta quarta-feira (11) pela empresa Nintendo. Com o resultado, o jogo se tornou o título publicado pela empresa que vendeu mais rapidamente no Switch 2, tanto mundialmente quanto nos "
-            },
-            {
-              "text": "Estados Unidos",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Canadá",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "América Latina",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Zelda-Ocarina-of-Time.webp"
-        },
-        {
-          "type": "paragraph",
-          "text": "Contudo o desempenho também superou as vendas acumuladas de Donkey Kong Bananza, anteriormente o segundo jogo mais vendido do console, com 5,05 milhões de cópias até 30 de setembro. O remake chegou ao mercado em 5 de novembro de 2026 e apresenta diversas mudanças em relação à versão original.",
-          "runs": [
-            {
-              "text": "Contudo o desempenho também superou as vendas acumuladas de "
-            },
-            {
-              "text": "Donkey Kong Bananza",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", anteriormente o segundo jogo mais vendido do console, com "
-            },
-            {
-              "text": "5,05 milhões de cópias até 30 de setembro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". O remake chegou ao mercado em 5 de novembro de 2026 e apresenta diversas mudanças em relação à versão original."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Novidades do remake de Zelda",
-          "runs": [
-            {
-              "text": "Novidades do remake de Zelda"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=T4Eh0M-Sh_g",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/T4Eh0M-Sh_g"
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre as melhorias e novidades estão controles tradicionais de câmera, comandos por movimento, botão dedicado para pular e uma nova ação de esquiva. O jogo também ganhou o menu Threads of Time, que ajuda a relembrar acontecimentos da história e identificar o próximo objetivo.",
-          "runs": [
-            {
-              "text": "Entre as melhorias e novidades estão controles tradicionais de câmera, comandos por movimento, botão dedicado para pular e uma nova ação de esquiva. O "
-            },
-            {
-              "text": "jogo",
-              "href": "https://animenew.com.br/games"
-            },
-            {
-              "text": " também ganhou o menu "
-            },
-            {
-              "text": "Threads of Time",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que ajuda a relembrar acontecimentos da história e identificar o próximo objetivo."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Outra novidade permite tocar músicas utilizando o microfone do console ou uma ocarina real. Assim a versão também inclui novos diálogos e permite que os jogadores visitem a área Hall of Fallen Foes, onde podem rever os inimigos derrotados e enfrentá-los novamente.",
-          "runs": [
-            {
-              "text": "Outra novidade permite tocar músicas utilizando o microfone do console ou uma ocarina real. Assim a versão também inclui novos diálogos e permite que os jogadores visitem a área "
-            },
-            {
-              "text": "Hall of Fallen Foes",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", onde podem rever os inimigos derrotados e enfrentá-los novamente."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Por fim originalmente lançado em novembro de 1998 para Nintendo 64, Ocarina of Time é um dos principais títulos da franquia The Legend of Zelda.",
-          "runs": [
-            {
-              "text": "Por fim originalmente lançado em novembro de 1998 para "
-            },
-            {
-              "text": "Nintendo 64",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", Ocarina of Time é um dos principais títulos da franquia The Legend of Zelda."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Zelda: Ocarina of Time vende 5,2 milhões em 4 dias.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Zelda: Ocarina of Time vende 5,2 milhões em 4 dias",
-              "href": "https://animenew.com.br/zelda-ocarina-of-time-remake-vendas-switch-2/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-12T00:57:33.000Z",
-      "updatedAt": "2026-11-12T00:57:33.000Z",
-      "expiresAt": "2026-11-19T00:57:33.000Z",
-      "category": "Em alta",
-      "eventType": "TRENDING",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/zelda-ocarina-of-time-remake-vendas-switch-2",
-          "publishedAt": "2026-11-12T00:57:33.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 273,
-      "qualityScore": 0.914,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     },
