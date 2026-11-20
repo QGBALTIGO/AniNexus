@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T18:57:08.084Z",
+  "generatedAt": "2026-11-20T01:08:33.903Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,747 @@
   ],
   "stats": {
     "collected": 45,
-    "grouped": 22,
-    "published": 22,
-    "newStories": 22,
-    "fullArticles": 22,
+    "grouped": 20,
+    "published": 20,
+    "newStories": 20,
+    "fullArticles": 20,
     "previewArticles": 0,
-    "avgWords": 348,
-    "withHeroImage": 22,
-    "withOrderedMedia": 21,
+    "avgWords": 354,
+    "withHeroImage": 20,
+    "withOrderedMedia": 19,
     "skippedTranslation": 0,
-    "skippedQuality": 23,
-    "durationMs": 3277
+    "skippedQuality": 25,
+    "durationMs": 3500
   },
   "items": [
+    {
+      "id": "jbox-95c4c1d5",
+      "slug": "gta-6-japones-remove-nudez-e-reduz-violencia-em-versao-censurada-jbox-95c4c1d5",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘GTA 6’ japonês remove nudez e reduz violência em versão censurada",
+      "originalTitle": "‘GTA 6’ japonês remove nudez e reduz violência em versão censurada",
+      "summary": "Apesar da classificação indicativa para maiores de 18 anos, Grand Theft Auto VI chegou ao Japão com mudanças de conteúdo em relação à versão internacional. A edição japonesa remove cenas de nudez, altera momentos de violência e oferece menos opções de idiomas, em adaptações feitas para atender às restrições locais.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Cotidiano",
+        "Games",
+        "censura em gta 6",
+        "Grand Theft Auto",
+        "Grand Theft Auto VI",
+        "GTA",
+        "GTA 6",
+        "gta 6 censurado no japao"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/19/gta-6-japones-remove-nudez-e-reduz-violencia-em-versao-censurada",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/19/gta-6-japones-remove-nudez-e-reduz-violencia-em-versao-censurada",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/gtavi-destacada.jpg",
+      "mediaQuery": "‘GTA 6’ japonês remove nudez e reduz violência em versão censurada",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/gtavi-cenajaponesa-reproducao.jpeg",
+          "alt": "imagem: reprodução de uma cena de GTA VI com um homem tomando banho de costas e uma roupa de baixo",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Apesar da classificação indicativa para maiores de 18 anos, Grand Theft Auto VI chegou ao Japão com mudanças de conteúdo em relação à versão internacional. A edição japonesa remove cenas de nudez, altera momentos de violência e oferece menos opções de idiomas, em adaptações feitas para atender às restrições locais.",
+          "runs": [
+            {
+              "text": "Apesar da classificação indicativa para maiores de 18 anos, "
+            },
+            {
+              "text": "Grand Theft Auto VI",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "chegou ao Japão com mudanças de conteúdo em relação à versão internacional. A edição japonesa remove cenas de nudez, altera momentos de violência e oferece menos opções de idiomas, em adaptações feitas para atender às restrições locais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "As diferenças começaram a chamar atenção durante o pré-download, quando jogadores perceberam que a versão japonesa ocupava mais de 1 GB a menos de espaço. Além disso, referências a conteúdo sexual presentes nas classificações de outros países não apareciam na avaliação da CERO, órgão responsável pela classificação de jogos no Japão. A Rockstar não havia confirmado alterações antes do lançamento, e os jogadores descobriram as modificações somente após começarem a jogar.",
+          "runs": [
+            {
+              "text": "As diferenças começaram a chamar atenção durante o pré-download, quando jogadores perceberam que a versão japonesa ocupava mais de 1 GB a menos de espaço. Além disso, referências a conteúdo sexual presentes nas classificações de outros países não apareciam na avaliação da "
+            },
+            {
+              "text": "CERO",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", órgão responsável pela classificação de jogos no Japão. A "
+            },
+            {
+              "text": "Rockstar",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " não havia confirmado alterações antes do lançamento, e os jogadores descobriram as modificações somente após começarem a jogar."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "As principais mudanças envolvem a nudez, que foi completamente removida da edição japonesa. Cenas de sexo e situações envolvendo personagens nus, inclusive em praias, foram modificadas para incluir roupas ou simplesmente retiradas. Até mesmo tomar banho no jogo agora significa fazê-lo de roupa íntima.",
+          "runs": [
+            {
+              "text": "As principais mudanças envolvem a nudez, que foi completamente removida da edição japonesa. Cenas de sexo e situações envolvendo personagens nus, inclusive em praias, foram modificadas para incluir roupas ou simplesmente retiradas. "
+            },
+            {
+              "text": "Até mesmo tomar banho no jogo agora significa fazê-lo de roupa íntima.",
+              "marks": [
+                "strong"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/gtavi-cenajaponesa-reproducao.jpeg",
+          "alt": "imagem: reprodução de uma cena de GTA VI com um homem tomando banho de costas e uma roupa de baixo"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/X",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/X"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A violência também foi amenizada. Efeitos que mostram fragmentos de crânios, cérebros e outras partes do corpo durante mortes foram reduzidos, assim como a quantidade de sangue exibida na tela. O sangue também desaparece mais rapidamente, conforme observado em transmissões de jogadores japoneses.",
+          "runs": [
+            {
+              "text": "A violência também foi amenizada. Efeitos que mostram fragmentos de crânios, cérebros e outras partes do corpo durante mortes foram reduzidos, assim como a quantidade de sangue exibida na tela. O sangue também desaparece mais rapidamente, conforme observado em transmissões de jogadores japoneses."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A edição local ainda possui restrições de idiomas. Enquanto a versão internacional oferece mais de uma dezena de opções, a japonesa conta apenas com áudio em inglês e legendas em japonês ou inglês. Por outro lado, cópias internacionais não incluem legendas em japonês, medida que busca impedir que jogadores contornem as limitações regionais por meio de versões importadas ou digitais.",
+          "runs": [
+            {
+              "text": "A edição local ainda possui restrições de idiomas. Enquanto a versão internacional oferece mais de uma dezena de opções, a "
+            },
+            {
+              "text": "japonesa conta apenas com áudio em inglês e legendas em japonês ou inglês",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Por outro lado, cópias internacionais não incluem legendas em japonês, medida que busca impedir que jogadores contornem as limitações regionais por meio de versões importadas ou digitais."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "As restrições também afetam a edição física que acompanha um código para download. Por exigências locais, o código possui prazo de validade de 170 dias após o lançamento, período dentro do qual precisa ser resgatado.",
+          "runs": [
+            {
+              "text": "As restrições também afetam a edição física que acompanha um código para download. Por exigências locais, o código possui prazo de validade de 170 dias após o lançamento, período dentro do qual precisa ser resgatado."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Apesar das mudanças, a versão japonesa mantém boa parte do conteúdo original. Os jogadores ainda podem visitar clubes de strip-tease, consumir drogas dentro do jogo e encontrar personagens com roupas bastante reveladoras. A diferença é que a nudez explícita foi eliminada e o sangue aparece com menos frequência, tornando a experiência um pouco menos gráfica.",
+          "runs": [
+            {
+              "text": "Apesar das mudanças, a versão japonesa mantém boa parte do conteúdo original. Os jogadores ainda podem visitar clubes de"
+            },
+            {
+              "text": " strip-tease",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", consumir drogas dentro do jogo e encontrar personagens com roupas bastante reveladoras. A diferença é que a nudez explícita foi eliminada e o sangue aparece com menos frequência, tornando a experiência um pouco menos gráfica."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Grand Theft Auto VI foi lançado hoje, 19 de novembro de 2026, para PlayStation 5, PS5 Pro, Xbox Series X e Xbox Series S. Até então, a Rockstar, estúdio responsável pelo jogo, ainda não confirmou datas de lançamento para PC ou Nintendo Switch 2.",
+          "runs": [
+            {
+              "text": "Grand Theft Auto VI",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi lançado hoje, 19 de novembro de 2026, para "
+            },
+            {
+              "text": "PlayStation 5",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "PS5 Pro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Xbox Series X",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Xbox Series S",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Até então, a Rockstar, estúdio responsável pelo jogo, ainda não confirmou datas de lançamento para PC ou Nintendo Switch 2."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Kotaku",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Kotaku",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://kotaku.com/gta-6-japan-censored-showers-nudity-blood-violence-rockstar-2000758211"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-19T22:43:42.000Z",
+      "updatedAt": "2026-11-19T22:44:24.000Z",
+      "expiresAt": "2026-11-26T22:43:42.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/19/gta-6-japones-remove-nudez-e-reduz-violencia-em-versao-censurada",
+          "publishedAt": "2026-11-19T22:43:42.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 423,
+      "qualityScore": 0.993,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-1ae9a25d",
+      "slug": "mahjong-soul-ganha-crossover-com-frieren-jbox-1ae9a25d",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Mahjong Soul’ ganha crossover com ‘Frieren’",
+      "originalTitle": "‘Mahjong Soul’ ganha crossover com ‘Frieren’",
+      "summary": "Seguindo a linha do jogo de contar com crossover com várias franquias, foi lançada em Mahjong Soul uma colaboração com Frieren e a Jornada para o Além (Sousou no Frieren). O evento foi iniciado no último dia 17 e vai ficar no ar até o dia 9 de dezembro.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "Games",
+        "Frieren e a Jornada para o Além",
+        "Mahjong Soul",
+        "sousou no frieren"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/19/mahjong-soul-ganha-crossover-com-frieren",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/19/mahjong-soul-ganha-crossover-com-frieren",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/frieren-mahjong-soul-destacada.jpg",
+      "mediaQuery": "‘Mahjong Soul’ ganha crossover com ‘Frieren’",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/N01IQYW6YGU"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Seguindo a linha do jogo de contar com crossover com várias franquias, foi lançada em Mahjong Soul uma colaboração com Frieren e a Jornada para o Além (Sousou no Frieren). O evento foi iniciado no último dia 17 e vai ficar no ar até o dia 9 de dezembro.",
+          "runs": [
+            {
+              "text": "Seguindo a linha do jogo de contar com "
+            },
+            {
+              "text": "crossover",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " com várias franquias, foi lançada em "
+            },
+            {
+              "text": "Mahjong Soul",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " uma colaboração com "
+            },
+            {
+              "text": "Frieren e a Jornada para o Além",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Sousou no Frieren",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). O evento foi iniciado no último dia 17 e vai ficar no ar até o dia 9 de dezembro."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira o vídeo divulgado para a colaboração:",
+          "runs": [
+            {
+              "text": "Confira o vídeo divulgado para a colaboração:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=N01IQYW6YGU",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/N01IQYW6YGU"
+        },
+        {
+          "type": "paragraph",
+          "text": "Quatro personagens chegam através da parceria, Frieren, Fern, Stark e Übel, com cada um contando com dois visuais especiais para o jogo, sendo um deles limitado. Decorações para a mesa e peças de mahjong também chegam através do evento. Uma história com uma mecânica de síntese de ítens também está disponível como parte da colaboração.",
+          "runs": [
+            {
+              "text": "Quatro personagens chegam através da parceria, "
+            },
+            {
+              "text": "Frieren",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Fern",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Stark",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Übel",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com cada um contando com dois visuais especiais para o jogo, sendo um deles limitado. Decorações para a mesa e peças de mahjong também chegam através do evento. Uma história com uma mecânica de síntese de ítens também está disponível como parte da colaboração."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Mahjong Soul traz o clássico jogo de mesa com um toque do mundo dos animês, contando com os próprios personagens originais, mas também colaborações com franquias como Code Geass, Kakegurui, Akagi, Saki, entre outras. O título está disponível para celulares e PC, tanto através de navegadores quanto programas e aplicativos. Também inspirou um animê de duas temporadas (Mahjong Soul Pon☆ e Mahjong Soul KAN!!) — a Crunchyroll disponibiliza a primeira.",
+          "runs": [
+            {
+              "text": "Mahjong Soul",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " traz o clássico jogo de mesa com um toque do mundo dos animês, contando com os próprios personagens originais, mas também colaborações com franquias como "
+            },
+            {
+              "text": "Code Geass",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Kakegurui",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Akagi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Saki",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", entre outras. O título está disponível para celulares e PC, tanto através de navegadores quanto programas e aplicativos. Também inspirou um animê de duas temporadas ("
+            },
+            {
+              "text": "Mahjong Soul Pon☆",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Mahjong Soul KAN!!",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ") — a "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.crunchyroll.com/pt-br/series/G1XHJVE9P/mahjong-soul-pon"
+            },
+            {
+              "text": " disponibiliza a primeira."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Frieren e a Jorada para o Além é um mangá em publicação desde 2020, estando em hiato desde o ano passado — a publicação no Brasil é pela Panini. A obra começou a ser adaptada para animê em 2023 pelo estúdio Madhouse, já contando com duas temporadas e uma terceira anunciada para outubro de 2027. A Crunchyroll conta com as duas temporadas com dublagem, com a primeira fase estando disponível também na Netflix e HBO Max. A série ainda ganhou exibição na TV pelo Adult Swim.",
+          "runs": [
+            {
+              "text": "Frieren e a Jorada para o Além",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é um mangá em publicação desde 2020, estando em hiato desde o ano passado — a publicação no Brasil é pela "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A obra começou a ser adaptada para animê em 2023 pelo estúdio "
+            },
+            {
+              "text": "Madhouse",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", já contando com duas temporadas e uma "
+            },
+            {
+              "text": "terceira anunciada para outubro de 2027",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/03/27/frieren-3a-temporada-e-anunciada-para-outubro-de-2027/"
+            },
+            {
+              "text": ". A "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.crunchyroll.com/pt-br/series/GG5H5XQX4/frieren-beyond-journeys-end"
+            },
+            {
+              "text": " conta com as duas temporadas com dublagem, com a primeira fase estando disponível também na "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.netflix.com/br-en/title/81726714"
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "HBO Max",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.hbomax.com/br/pt/show/e9ee4017-9572-447c-8f97-d97acaef6624"
+            },
+            {
+              "text": ". A série ainda ganhou exibição na TV pelo "
+            },
+            {
+              "text": "Adult Swim",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Mahjong Soul (YouTube)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Mahjong Soul (YouTube)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://youtu.be/N01IQYW6YGU"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-19T20:55:18.000Z",
+      "updatedAt": "2026-11-19T20:56:07.000Z",
+      "expiresAt": "2026-11-26T20:55:18.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/19/mahjong-soul-ganha-crossover-com-frieren",
+          "publishedAt": "2026-11-19T20:55:18.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 288,
+      "qualityScore": 0.973,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-edf2d979",
       "slug": "novo-trailer-de-sakamoto-days-revela-musica-de-abertura-e-confirma-data-de-estreia-da-2-temporada-jbox-edf2d979",
@@ -5784,7 +6512,7 @@
       "sourceCount": 1,
       "readingMinutes": 1,
       "wordCount": 189,
-      "qualityScore": 0.964,
+      "qualityScore": 0.904,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -6216,7 +6944,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 382,
-      "qualityScore": 0.987,
+      "qualityScore": 0.927,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -6620,7 +7348,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 317,
-      "qualityScore": 0.979,
+      "qualityScore": 0.919,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -6922,7 +7650,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 217,
-      "qualityScore": 0.968,
+      "qualityScore": 0.908,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -8966,1527 +9694,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-d91f00ef",
-      "slug": "metaphor-refantazio-chega-ao-nintendo-switch-2-animenew-d91f00ef",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Metaphor: ReFantazio chega ao Nintendo Switch 2",
-      "originalTitle": "Metaphor: ReFantazio chega ao Nintendo Switch 2",
-      "summary": "O jogo RPG Metaphor: ReFantazio já está disponível para Nintendo Switch 2. O lançamento aconteceu nesta quinta-feira, 12 de novembro de 2026, com melhorias gráficas e diferentes opções de desempenho.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Games",
-        "Nintendo",
-        "Notícias",
-        "Metaphor: ReFantazio",
-        "Nintendo Switch 2"
-      ],
-      "url": "https://animenew.com.br/metaphor-refantazio-nintendo-switch-2",
-      "sourceUrl": "https://animenew.com.br/metaphor-refantazio-nintendo-switch-2",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Metaphor-ReFantazio-chega-ao-Nintendo-Switch-2.webp",
-      "mediaQuery": "Metaphor: ReFantazio chega ao Nintendo Switch 2",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/GQh5iMOkceU"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O jogo RPG Metaphor: ReFantazio já está disponível para Nintendo Switch 2. O lançamento aconteceu nesta quinta-feira, 12 de novembro de 2026, com melhorias gráficas e diferentes opções de desempenho.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "jogo RPG",
-              "href": "https://animenew.com.br/games"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Metaphor: ReFantazio",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " já está disponível para "
-            },
-            {
-              "text": "Nintendo Switch 2",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". O lançamento aconteceu nesta quinta-feira, 12 de novembro de 2026, com melhorias gráficas e diferentes opções de desempenho."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Zelda: Ocarina of Time vende 5,2 milhões em 4 dias",
-              "runs": [
-                {
-                  "text": "Zelda: Ocarina of Time vende 5,2 milhões em 4 dias",
-                  "href": "https://animenew.com.br/zelda-ocarina-of-time-remake-vendas-switch-2"
-                }
-              ]
-            },
-            {
-              "text": "GTA 6 bate recorde de pré-vendas na PlayStation Store",
-              "runs": [
-                {
-                  "text": "GTA 6 bate recorde de pré-vendas na PlayStation Store",
-                  "href": "https://animenew.com.br/gta-6-recorde-pre-vendas-playstation-store"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Desenvolvido pela ATLUS, o jogo também recebeu um ajuste de preço na edição padrão em todas as plataformas. No novo console da Nintendo, os jogadores podem escolher entre três configurações: Desempenho, Equilibrado e Gráficos.",
-          "runs": [
-            {
-              "text": "Desenvolvido pela "
-            },
-            {
-              "text": "ATLUS",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://animenew.com.br/tag/atlus/"
-            },
-            {
-              "text": ", o jogo também recebeu um ajuste de preço na edição padrão em todas as plataformas. No novo console da Nintendo, os jogadores podem escolher entre três configurações: Desempenho, Equilibrado e Gráficos."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=GQh5iMOkceU",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/GQh5iMOkceU"
-        },
-        {
-          "type": "heading",
-          "text": "Melhorias em Metaphor: ReFantazio para Switch 2",
-          "runs": [
-            {
-              "text": "Melhorias em "
-            },
-            {
-              "text": "Metaphor: ReFantazio",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " para Switch 2"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Cada opção prioriza um aspecto diferente da experiência, seja a taxa de quadros ou a qualidade visual. A versão para Switch 2 também recebeu otimizações nos modos portátil e TV, com o objetivo de manter 30 FPS estáveis ou ultrapassar essa marca em determinados momentos.",
-          "runs": [
-            {
-              "text": "Cada opção prioriza um aspecto diferente da experiência, seja a taxa de quadros ou a qualidade visual. A versão para Switch 2 também recebeu otimizações nos modos portátil e TV, com o objetivo de manter 30 FPS estáveis ou ultrapassar essa marca em determinados momentos."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Demo gratuita e premiações",
-          "runs": [
-            {
-              "text": "Demo gratuita e premiações",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Liderado por Katsura Hashino, com design de personagens de Shigenori Soejima e trilha sonora de Shoji Meguro, o RPG conquistou três prêmios no The Game Awards 2024: Melhor RPG, Melhor Narrativa e Melhor Direção de Arte.",
-          "runs": [
-            {
-              "text": "Liderado por "
-            },
-            {
-              "text": "Katsura Hashino",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com design de personagens de Shigenori Soejima e trilha sonora de Shoji Meguro, o RPG conquistou três prêmios no "
-            },
-            {
-              "text": "The Game Awards 2024",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": Melhor RPG, Melhor Narrativa e Melhor Direção de Arte."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Uma demo gratuita do prólogo também está disponível. Assim o progresso pode ser transferido para a versão completa, preservando as escolhas e os laços estabelecidos durante o início da aventura.",
-          "runs": [
-            {
-              "text": "Uma demo gratuita do prólogo também está disponível.",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " Assim o progresso pode ser transferido para a versão completa, preservando as escolhas e os laços estabelecidos durante o início da aventura."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ademais Metaphor: ReFantazio está disponível para Nintendo Switch 2, PS5, PS4, Xbox Series X|S e PC.",
-          "runs": [
-            {
-              "text": "Ademais "
-            },
-            {
-              "text": "Metaphor: ReFantazio",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " está disponível para "
-            },
-            {
-              "text": "Nintendo Switch 2",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", PS5, PS4, Xbox Series X|S e PC."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://metaphor.atlus.com/index.html?lang=en"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Metaphor: ReFantazio chega ao Nintendo Switch 2.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Metaphor: ReFantazio chega ao Nintendo Switch 2",
-              "href": "https://animenew.com.br/metaphor-refantazio-nintendo-switch-2/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-13T00:46:23.000Z",
-      "updatedAt": "2026-11-13T00:46:23.000Z",
-      "expiresAt": "2026-11-20T00:46:23.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/metaphor-refantazio-nintendo-switch-2",
-          "publishedAt": "2026-11-13T00:46:23.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 243,
-      "qualityScore": 0.912,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 12,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-72ecbd35",
-      "slug": "tsugumi-project-ganha-data-de-estreia-para-janeiro-de-2027-animenew-72ecbd35",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Tsugumi Project ganha data de estreia para janeiro de 2027",
-      "originalTitle": "Tsugumi Project ganha data de estreia para janeiro de 2027",
-      "summary": "O anime Tsugumi Project (Tora Tsugumi) confirmou sua estreia para janeiro de 2027, contudo o anúncio também apresentou um novo visual da adaptação, baseada no mangá de ippatu.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Tora Tsugumi",
-        "Tsugumi Project"
-      ],
-      "url": "https://animenew.com.br/anime-tsugumi-project-estreia-janeiro-2027",
-      "sourceUrl": "https://animenew.com.br/anime-tsugumi-project-estreia-janeiro-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Tsugumi-Project-ganha-data-de-estreia-para-janeiro-de-2027.webp",
-      "mediaQuery": "Tsugumi Project ganha data de estreia para janeiro de 2027",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Tsugumi-Project-Anime.webp",
-          "alt": "Tsugumi Project Anime",
-          "caption": "©ippatu/Ki-oon・「虎鶫 －ＴＳＵＧＵＭＩ ＰＲＯＪＥＣＴ－」製作委員会"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/v79n9_MRLrk"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Tsugumi Project (Tora Tsugumi) confirmou sua estreia para janeiro de 2027, contudo o anúncio também apresentou um novo visual da adaptação, baseada no mangá de ippatu.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Tsugumi Project",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Tora Tsugumi",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") confirmou sua estreia para janeiro de 2027, contudo o anúncio também apresentou um novo visual da adaptação, baseada no "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " de "
-            },
-            {
-              "text": "ippatu",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro",
-              "runs": [
-                {
-                  "text": "Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro",
-                  "href": "https://animenew.com.br/nabe-ni-tama-wo-ukenagara-anime-estreia"
-                }
-              ]
-            },
-            {
-              "text": "Berserk of Gluttony anuncia estreia da 2ª temporada",
-              "runs": [
-                {
-                  "text": "Berserk of Gluttony anuncia estreia da 2ª temporada",
-                  "href": "https://animenew.com.br/berserk-of-gluttony-2-temporada-estreia"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A novidade aconteceu nesta quinta-feira (12) pelo site oficial da produção. A série adapta o mangá também conhecido como Tora Tsugumi, que já teve três integrantes do elenco anunciados.",
-          "runs": [
-            {
-              "text": "A novidade aconteceu nesta quinta-feira (12) pelo site oficial da produção. A série adapta o mangá também conhecido como "
-            },
-            {
-              "text": "Tora Tsugumi",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que já teve três integrantes do elenco anunciados."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Tsugumi-Project-Anime.webp",
-          "alt": "Tsugumi Project Anime",
-          "caption": "©ippatu/Ki-oon・「虎鶫 －ＴＳＵＧＵＭＩ ＰＲＯＪＥＣＴ－」製作委員会"
-        },
-        {
-          "type": "paragraph",
-          "text": "Masaaki Mizunaka dará voz ao protagonista Leon, enquanto Haruki Ishiya interpretará Dudu. Já Misaki Watada será responsável pela voz de Tsugumi.",
-          "runs": [
-            {
-              "text": "Masaaki Mizunaka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " dará voz ao protagonista Leon, enquanto "
-            },
-            {
-              "text": "Haruki Ishiya",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " interpretará Dudu. Já "
-            },
-            {
-              "text": "Misaki Watada",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " será responsável pela voz de Tsugumi."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=v79n9_MRLrk",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/v79n9_MRLrk"
-        },
-        {
-          "type": "heading",
-          "text": "História de Tsugumi Project",
-          "runs": [
-            {
-              "text": "História de Tsugumi Project"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A trama acompanha Leon, um soldado que acaba separado de sua família após receber uma acusação falsa. Como punição, ele é enviado para uma missão suicida: recuperar uma arma perigosa em uma região conhecida como Japão, cerca de 200 anos depois de sua destruição. O território agora abriga monstros gigantes, mutantes e irradiados. A única pista sobre o objetivo da missão é o nome da arma: Tsugumi.",
-          "runs": [
-            {
-              "text": "A trama acompanha Leon, um soldado que acaba separado de sua família após receber uma acusação falsa. Como punição, ele é enviado para uma missão suicida: recuperar uma arma perigosa em uma região conhecida como Japão, cerca de 200 anos depois de sua destruição.",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "O território agora abriga monstros gigantes, mutantes e irradiados. A única pista sobre o objetivo da missão é o nome da arma: Tsugumi.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "A história do Mangá terminou",
-          "runs": [
-            {
-              "text": "A história do "
-            },
-            {
-              "text": "Mangá terminou",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Sendo assim o mangá criado por ippatu, estreou sua publicação na França pela editora Ki-oon em 2019. No Japão, a obra chegou à revista Weekly Young Magazine, da Kodansha, em janeiro de 2021.",
-          "runs": [
-            {
-              "text": "Sendo assim o mangá criado por ippatu, estreou sua publicação na França pela editora "
-            },
-            {
-              "text": "Ki-oon",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " em 2019. No Japão, a obra chegou à revista "
-            },
-            {
-              "text": "Weekly Young Magazine",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", da "
-            },
-            {
-              "text": "Kodansha",
-              "href": "https://animenew.com.br/tag/kodansha/"
-            },
-            {
-              "text": ", em janeiro de 2021."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A publicação terminou em setembro de 2023, com sete volumes compilados. Ademais a Kodansha USA lançou o volume final em setembro de 2025.",
-          "runs": [
-            {
-              "text": "A publicação terminou em setembro de 2023, com sete volumes compilados. Ademais a "
-            },
-            {
-              "text": "Kodansha USA",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " lançou o volume final em setembro de 2025."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://toratsugumi.jp/news/2026-11-12_01.html"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Tsugumi Project ganha data de estreia para janeiro de 2027.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Tsugumi Project ganha data de estreia para janeiro de 2027",
-              "href": "https://animenew.com.br/anime-tsugumi-project-estreia-janeiro-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-13T00:08:12.000Z",
-      "updatedAt": "2026-11-13T00:08:12.000Z",
-      "expiresAt": "2026-11-20T00:08:12.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/anime-tsugumi-project-estreia-janeiro-2027",
-          "publishedAt": "2026-11-13T00:08:12.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 257,
-      "qualityScore": 0.915,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-2cac4cc2",
-      "slug": "nabe-ni-tama-wo-ukenagara-revela-elenco-e-estreia-em-janeiro-animenew-2cac4cc2",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro",
-      "originalTitle": "Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro",
-      "summary": "O anime Nabe ni Tama wo Ukenagara (Getting Shots on a Frying Pan or Nabetama for short) divulgou seu primeiro vídeo promocional, elenco principal e equipe de produção. A série estreia em janeiro de 2027.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Getting Shots on a Frying Pan or Nabetama for short",
-        "J.C.Staff",
-        "Nabe ni Tama wo Ukenagara"
-      ],
-      "url": "https://animenew.com.br/nabe-ni-tama-wo-ukenagara-anime-estreia",
-      "sourceUrl": "https://animenew.com.br/nabe-ni-tama-wo-ukenagara-anime-estreia",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Nabe-ni-Tama-wo-Ukenagara-revela-elenco-e-estreia-em-janeiro.webp",
-      "mediaQuery": "Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/fmafMZNXeHw"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O anime Nabe ni Tama wo Ukenagara (Getting Shots on a Frying Pan or Nabetama for short) divulgou seu primeiro vídeo promocional, elenco principal e equipe de produção. A série estreia em janeiro de 2027.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Nabe ni Tama wo Ukenagara",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Getting Shots on a Frying Pan or Nabetama for short",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") divulgou seu primeiro vídeo promocional, elenco principal e equipe de produção. A série estreia em janeiro de 2027."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Gundam Seed Freedom Zero ganhará novel em janeiro",
-              "runs": [
-                {
-                  "text": "Gundam Seed Freedom Zero ganhará novel em janeiro",
-                  "href": "https://animenew.com.br/gundam-seed-freedom-zero-novel"
-                }
-              ]
-            },
-            {
-              "text": "Berserk of Gluttony anuncia estreia da 2ª temporada",
-              "runs": [
-                {
-                  "text": "Berserk of Gluttony anuncia estreia da 2ª temporada",
-                  "href": "https://animenew.com.br/berserk-of-gluttony-2-temporada-estreia"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O anúncio também confirmou que Shū Uchida e Masaaki Mizunaka darão voz ao protagonista Juntarō. Contudo a produção ficará a cargo do estúdio J.C.STAFF, conhecido por trabalhos como Magilumiere Magical Girls Inc.",
-          "runs": [
-            {
-              "text": "O anúncio também confirmou que "
-            },
-            {
-              "text": "Shū Uchida",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Masaaki Mizunaka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " darão voz ao protagonista Juntarō. Contudo a produção ficará a cargo do estúdio "
-            },
-            {
-              "text": "J.C.STAFF",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", conhecido por trabalhos como Magilumiere Magical Girls Inc."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=fmafMZNXeHw",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/fmafMZNXeHw"
-        },
-        {
-          "type": "paragraph",
-          "text": "Masahiro Hiraoka dirige a série Nabe ni Tama wo Ukenagara, enquanto Susumu Yamakawa cuida dos roteiros. Natsuki Ōyama assina o design dos personagens e também atua como diretor-chefe de animação. Yoshihide Otomo compõe a trilha sonora, e Yoshikazu Iwanami assume a direção de áudio.",
-          "runs": [
-            {
-              "text": "Masahiro Hiraoka dirige a série "
-            },
-            {
-              "text": "Nabe ni Tama wo Ukenagara",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", enquanto Susumu Yamakawa cuida dos roteiros. Natsuki Ōyama assina o design dos personagens e também atua como diretor-chefe de animação. Yoshihide Otomo compõe a trilha sonora, e Yoshikazu Iwanami assume a direção de áudio."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "História de Nabe ni Tama wo Ukenagara",
-          "runs": [
-            {
-              "text": "História de Nabe ni Tama wo Ukenagara",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A obra acompanha Juntarō, uma garota bonita (?) que viaja por regiões perigosas do mundo para experimentar pratos locais exóticos. Assim a protagonista participa de uma espécie de reportagem gastronômica sem ficção e tem como objetivo alcançar 50 mil pontos de sabor.",
-          "runs": [
-            {
-              "text": "A obra acompanha Juntarō, uma garota bonita (?) que viaja por regiões perigosas do mundo para experimentar pratos locais exóticos. Assim a protagonista participa de uma espécie de reportagem gastronômica sem ficção e tem como objetivo alcançar 50 mil pontos de sabor.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Criado por Juntarō Aoki e Shin Moriyama, o mangá começou a publicação em 2021 na revista digital Comic Newtype, da Kadokawa. Por fim a obra também apareceu entre os 20 melhores mangás para leitores masculinos no guia Kono Manga ga Sugoi! de 2023.",
-          "runs": [
-            {
-              "text": "Criado por "
-            },
-            {
-              "text": "Juntarō Aoki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Shin Moriyama",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", o "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " começou a publicação em 2021 na revista digital "
-            },
-            {
-              "text": "Comic Newtype",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", da "
-            },
-            {
-              "text": "Kadokawa",
-              "href": "https://animenew.com.br/tag/kadokawa/"
-            },
-            {
-              "text": ". Por fim a obra também apareceu entre os 20 melhores mangás para leitores masculinos no guia Kono Manga ga Sugoi! de 2023."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://nabetama.asmik-ace.co.jp/news/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Nabe ni Tama wo Ukenagara revela elenco e estreia em janeiro",
-              "href": "https://animenew.com.br/nabe-ni-tama-wo-ukenagara-anime-estreia/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-12T23:53:24.000Z",
-      "updatedAt": "2026-11-12T23:53:24.000Z",
-      "expiresAt": "2026-11-19T23:53:24.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/nabe-ni-tama-wo-ukenagara-anime-estreia",
-          "publishedAt": "2026-11-12T23:53:24.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 245,
-      "qualityScore": 0.91,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-3bf5c0a9",
-      "slug": "galneryus-fara-turne-pela-america-latina-em-2027-com-dois-shows-no-brasil-jbox-3bf5c0a9",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "GALNERYUS fará turnê pela América Latina em 2027 com dois shows no Brasil",
-      "originalTitle": "GALNERYUS fará turnê pela América Latina em 2027 com dois shows no Brasil",
-      "summary": "Começando a virar figurinha carimbada em eventos e apresentações solo no Brasil, a GALNERYUS anunciou que retorna ao país em 2027, como parte de uma nova turnê pela América Latina.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Eventos",
-        "Música",
-        "Anime Summit Brasil",
-        "GALNERYUS",
-        "GALNERYUS no brasil",
-        "GALNERYUS no Brasil em 2027",
-        "Show do GALNERYUS em 2027"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/12/galneryus-fara-turne-pela-america-latina-em-2027-com-dois-shows-no-brasil",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/12/galneryus-fara-turne-pela-america-latina-em-2027-com-dois-shows-no-brasil",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/03/galnaryus-destacada.jpg",
-      "mediaQuery": "GALNERYUS fará turnê pela América Latina em 2027 com dois shows no Brasil",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/galneryus-cartaz-scaled.jpg",
-          "alt": "cartaz da turnê latinoamericana do Galneryus",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/6FhmyWT-_0U"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Começando a virar figurinha carimbada em eventos e apresentações solo no Brasil, a GALNERYUS anunciou que retorna ao país em 2027, como parte de uma nova turnê pela América Latina.",
-          "runs": [
-            {
-              "text": "Começando a virar figurinha carimbada em eventos e apresentações solo no Brasil, a "
-            },
-            {
-              "text": "GALNERYUS",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " anunciou que retorna ao país em 2027, como parte de uma nova turnê pela América Latina."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Nas redes sociais, a RIT Agency confirmou as duas apresentações: uma em São Paulo, no dia 5 de fevereiro, no Espaço Fabrique, e outra em Brasília, no dia 7 de fevereiro, em uma parceria com o Anime Summit Brasil.",
-          "runs": [
-            {
-              "text": "Nas redes sociais, a "
-            },
-            {
-              "text": "RIT Agency",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " confirmou as duas apresentações: uma em "
-            },
-            {
-              "text": "São Paulo, no dia 5 de fevereiro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", no Espaço Fabrique, e outra em "
-            },
-            {
-              "text": "Brasília, no dia 7 de fevereiro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", em uma parceria com o "
-            },
-            {
-              "text": "Anime Summit Brasil.",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ainda dentro da turnê, a banda vai passar por Buenos Aires (Argentina), Santiago (Chile), Lima (Peru) e Cidade do México (México).",
-          "runs": [
-            {
-              "text": "Ainda dentro da turnê, a banda vai passar por Buenos Aires (Argentina), Santiago (Chile), Lima (Peru) e Cidade do México (México)."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/galneryus-cartaz-scaled.jpg",
-          "alt": "cartaz da turnê latinoamericana do Galneryus"
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Reprodução",
-          "runs": [
-            {
-              "text": "Imagem: Reprodução"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Curiosamente, embora a apresentação em Brasília esteja anunciada no Anime Summit Brasil, este evento está marcado somente para o mês de maio, o que indica que o show deve ser uma parceria com os organizadores. Por enquanto, não há detalhes sobre o local e venda de ingressos. Já as entradas para a apresentação em São Paulo estão disponíveis pelo site Meaple.",
-          "runs": [
-            {
-              "text": "Curiosamente, embora a apresentação em Brasília esteja anunciada no Anime Summit Brasil, este evento está marcado somente para o mês de maio, o que indica que o show deve ser uma parceria com os organizadores. Por enquanto, não há detalhes sobre o local e venda de ingressos. Já as entradas para a apresentação em São Paulo estão disponíveis pelo site "
-            },
-            {
-              "text": "Meaple",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://meaple.com.br/rit/galneryus-sao-paulo-2027"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A inteira tem o valor de R$ 300 (+ R$ 45 de taxa), enquanto a meia-entrada tem o valor de R$ 150 (+ R$ 22,50 de taxa). No site também é possível comprar o Meet & Greet no valor separado de R$ 300 (+ R$ 45 de taxa), que inclui pôster para autógrafo, entrada e merchandising antecipados e foto oficial com a banda.",
-          "runs": [
-            {
-              "text": "A inteira tem o valor de"
-            },
-            {
-              "text": " R$ 300",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (+ R$ 45 de taxa), enquanto a meia-entrada tem o valor de "
-            },
-            {
-              "text": "R$ 150",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (+ R$ 22,50 de taxa). No site também é possível comprar o "
-            },
-            {
-              "text": "Meet & Greet",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no valor separado de R$ 300 (+ R$ 45 de taxa), que inclui pôster para autógrafo, entrada e merchandising antecipados e foto oficial com a banda."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A GALNERYUS passou pelo Brasil em 2026 dentro do Anime Friends, e aproveitou a vinda para se apresentar também no Rio Grande do Norte, no evento GGCON.",
-          "runs": [
-            {
-              "text": "A GALNERYUS "
-            },
-            {
-              "text": "passou pelo Brasil em 2026 dentro do Anime Friends",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/03/06/galneryus-e-mais-uma-atracao-confirmada-para-o-anime-friends-2026/"
-            },
-            {
-              "text": ", e aproveitou a vinda para se "
-            },
-            {
-              "text": "apresentar também no Rio Grande do Norte, no evento GGCON",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/03/17/rio-grande-do-norte-recebe-show-da-galneryus-em-julho/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A banda foi formada em 2001, unindo os gostos musicais do guitarrista Syu e do vocal Yama-B. Em 2009, Yama-B acabou se retirando por acreditar que o rumo do som havia se distanciado do que ele pretendia, abrindo a vaga para Masatoshi Ono, que segue até hoje na banda.",
-          "runs": [
-            {
-              "text": "A banda foi formada em 2001, unindo os gostos musicais do guitarrista "
-            },
-            {
-              "text": "Syu",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e do vocal "
-            },
-            {
-              "text": "Yama-B",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Em 2009, Yama-B acabou se retirando por acreditar que o rumo do som havia se distanciado do que ele pretendia, abrindo a vaga para "
-            },
-            {
-              "text": "Masatoshi Ono",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", que segue até hoje na banda."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Desde meados de 2009, o grupo se apresenta também com Yuhki nos teclados, Taka no baixo e Junichi Satoh (que entrou em 2003) na bateria. Resurrection, de 2010, foi o 1º álbum dessa formação, que desde então só viu seu prestígio subir na cena do metal, com boas posições na Oricon para o gênero.",
-          "runs": [
-            {
-              "text": "Desde meados de 2009, o grupo se apresenta também com "
-            },
-            {
-              "text": "Yuhki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " nos teclados,"
-            },
-            {
-              "text": " Taka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no baixo e "
-            },
-            {
-              "text": "Junichi Satoh",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (que entrou em 2003) na bateria. "
-            },
-            {
-              "text": "Resurrection",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", de 2010, foi o 1º álbum dessa formação, que desde então só viu seu prestígio subir na cena do metal, com boas posições na Oricon para o gênero."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ao longo da carreira, o GALNERYUS também colecionou participações em trilhas de animês. Uma das mais famosas é na versão de 2011 de Hunter x Hunter, onde a banda interpreta o 2º tema de encerramento, “Hunting for Your Dream.”, sendo que o vocalista Masatoshi Ono já havia emprestado sua voz para “departure”, 1º tema de abertura da série.",
-          "runs": [
-            {
-              "text": "Ao longo da carreira, o GALNERYUS também colecionou participações em trilhas de animês. Uma das mais famosas é na versão de 2011 de "
-            },
-            {
-              "text": "Hunter x Hunter",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", onde a banda interpreta o 2º tema de encerramento, "
-            },
-            {
-              "text": "“Hunting for Your Dream.”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", sendo que o vocalista Masatoshi Ono já havia emprestado sua voz para "
-            },
-            {
-              "text": "“departure”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", 1º tema de abertura da série."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=6FhmyWT-_0U",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/6FhmyWT-_0U"
-        },
-        {
-          "type": "paragraph",
-          "text": "Rainbow, os sete do bloco 2, cela 6 (2010) e Laughing Under the Clouds (2014) também contam com temas da banda, sendo que a formação anterior ainda foi responsável pelos temas de Mnemosyne (2008).",
-          "runs": [
-            {
-              "text": "Rainbow, os sete do bloco 2, cela 6",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " (2010) e "
-            },
-            {
-              "text": "Laughing Under the Clouds",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " (2014) também contam com temas da banda, sendo que a formação anterior ainda foi responsável pelos temas de "
-            },
-            {
-              "text": "Mnemosyne",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " (2008)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O álbum mais recente é The Stars Will Light the Way, lançado em 2024, e que chegou a ser divulgado na América Latina em 2025, numa turnê que passou por México e Chile, mas que deixou o Brasil de fora.",
-          "runs": [
-            {
-              "text": "O álbum mais recente é"
-            },
-            {
-              "text": " The Stars Will Light the Way",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", lançado em 2024, e que chegou a ser divulgado na América Latina em 2025, numa turnê que passou por México e Chile, mas que deixou o Brasil de fora."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Serviço",
-          "runs": [
-            {
-              "text": "Serviço"
-            }
-          ],
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "text": "GALNERYUS The Cry Echoes Through The Sky Latin America Tour 2027",
-          "runs": [
-            {
-              "text": "GALNERYUS The Cry Echoes Through The Sky Latin America Tour 2027",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "São Paulo, 05/02/2027 Local: Fabrique Club, R. Barra Funda, 1071 – Barra Funda, São Paulo – SP Ingressos: à venda no site Meaple",
-          "runs": [
-            {
-              "text": "São Paulo, 05/02/2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "  "
-            },
-            {
-              "text": "Local:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " Fabrique Club, R. Barra Funda, 1071 – Barra Funda, São Paulo – SP  "
-            },
-            {
-              "text": "Ingressos: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "à venda no site Meaple",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://meaple.com.br/rit/galneryus-sao-paulo-2027"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Brasília, 07/02/2027 Local: a confirmar Ingressos: a confirmar",
-          "runs": [
-            {
-              "text": "Brasília, 07/02/2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "  "
-            },
-            {
-              "text": "Local:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " a confirmar  "
-            },
-            {
-              "text": "Ingressos: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "a confirmar"
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Instagram RIT Agency e GALNERYUS",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Instagram RIT Agency",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.instagram.com/p/Deh36rXHFau/?utm_source=ig_embed&ig_rid=AIAnyzhfoguhC1ESEY9T7nu"
-            },
-            {
-              "text": " e GALNERYUS",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-12T23:35:31.000Z",
-      "updatedAt": "2026-11-12T23:42:30.000Z",
-      "expiresAt": "2026-11-19T23:35:31.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/12/galneryus-fara-turne-pela-america-latina-em-2027-com-dois-shows-no-brasil",
-          "publishedAt": "2026-11-12T23:35:31.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 544,
-      "qualityScore": 0.957,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 21,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
