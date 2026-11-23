@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T09:09:35.055Z",
+  "generatedAt": "2026-11-23T21:28:25.005Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 35,
+      "count": 36,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,799 @@
     }
   ],
   "stats": {
-    "collected": 45,
-    "grouped": 23,
-    "published": 23,
-    "newStories": 23,
-    "fullArticles": 23,
+    "collected": 46,
+    "grouped": 22,
+    "published": 22,
+    "newStories": 22,
+    "fullArticles": 22,
     "previewArticles": 0,
-    "avgWords": 334,
-    "withHeroImage": 23,
+    "avgWords": 332,
+    "withHeroImage": 22,
     "withOrderedMedia": 22,
     "skippedTranslation": 0,
-    "skippedQuality": 22,
-    "durationMs": 2668
+    "skippedQuality": 23,
+    "durationMs": 2849
   },
   "items": [
+    {
+      "id": "jbox-e6f93195",
+      "slug": "classroom-of-the-elite-5-temporada-estreia-em-2027-jbox-e6f93195",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Classroom of the Elite: 5ª temporada estreia em 2027",
+      "originalTitle": "Classroom of the Elite: 5ª temporada estreia em 2027",
+      "summary": "Foi divulgado um vídeo pela Kadokawa que confirma que a quinta temporada de Classroom of the Elite (Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e) estreia em 2027.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "5ª temporada de Classroom of the Elite",
+        "Classroom of the Elite",
+        "YouJitsu",
+        "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+        "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 5th Season 2-nensei-hen Ni Gakki [Zen-han]",
+        "Youzitsu"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/23/classroom-of-the-elite-5a-temporada-estreia-em-2027",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/23/classroom-of-the-elite-5a-temporada-estreia-em-2027",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/classroom-of-the-elite-5a-temporada-destacada.jpg",
+      "mediaQuery": "Classroom of the Elite: 5ª temporada estreia em 2027",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/classroom-of-the-elite-5a-temporada-poster.jpg",
+          "alt": "imagem: Ayanokouji em destaque em pôster da 5ª temporada de 'Classroom of the Elite'. Vários estudantes aparecem junto ao rapaz na ilustração.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/HGjA4D5IKPI"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi divulgado um vídeo pela Kadokawa que confirma que a quinta temporada de Classroom of the Elite (Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e) estreia em 2027.",
+          "runs": [
+            {
+              "text": "Foi divulgado um vídeo pela "
+            },
+            {
+              "text": "Kadokawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " que confirma que a quinta temporada de "
+            },
+            {
+              "text": "Classroom of the Elite",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") estreia em "
+            },
+            {
+              "text": "2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=HGjA4D5IKPI",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/HGjA4D5IKPI"
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/classroom-of-the-elite-5a-temporada-poster.jpg",
+          "alt": "imagem: Ayanokouji em destaque em pôster da 5ª temporada de 'Classroom of the Elite'. Vários estudantes aparecem junto ao rapaz na ilustração."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Kadokawa",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Kadokawa"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Foi divulgado que o título completo da nova fase é Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 5th Season 2-nensei-hen Ni Gakki [Zen-han] (Classroom of the Elite 5ª Temporada: 2º ano, 2º semestre [1ª metade], em adaptação para português). O título abarrotado de numerações serve de indício que a nova temporada deve ser dividida em dois cours, um para cada metade do segundo semestre.",
+          "runs": [
+            {
+              "text": "Foi divulgado que o título completo da nova fase é "
+            },
+            {
+              "text": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 5th Season 2-nensei-hen Ni Gakki [Zen-han]",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Classroom of the Elite 5ª Temporada: 2º ano, 2º semestre [1ª metade]",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", em adaptação para português). O título abarrotado de numerações serve de indício que a nova temporada deve ser dividida em dois "
+            },
+            {
+              "text": "cours",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", um para cada metade do segundo semestre."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Noriyuki Nomata assume novamente a direção para a nova temporada, assim como Kou Shigenobu é responsável de novo pelo roteiro. Maki Kouno retorna para o design de personagens, trabalho em parceria com Saori Yonemoto e Hina Nagata, que cuidaram da direção de animação na fase anterior. O estúdio responsável continua sendo o Lerche.",
+          "runs": [
+            {
+              "text": "Noriyuki Nomata",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " assume novamente a direção para a nova temporada, assim como "
+            },
+            {
+              "text": "Kou Shigenobu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " é responsável de novo pelo roteiro. "
+            },
+            {
+              "text": "Maki Kouno",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " retorna para o design de personagens, trabalho em parceria com "
+            },
+            {
+              "text": "Saori Yonemoto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Hina Nagata",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que cuidaram da direção de animação na fase anterior. O estúdio responsável continua sendo o "
+            },
+            {
+              "text": "Lerche",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O animê mais recente, exibido entre abril e junho deste ano, deu início à adaptação das light novels do 2º Ano da franquia, que é uma sequência da série original — adaptada nas três primeiras temporadas, tendo início em 2017. A Crunchyroll exibe todas as fases com dublagem e legendas em português.",
+          "runs": [
+            {
+              "text": "O animê mais recente, exibido entre abril e junho deste ano, deu início à adaptação das "
+            },
+            {
+              "text": "light novels",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " do "
+            },
+            {
+              "text": "2º Ano",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " da franquia",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que é uma sequência da série original — adaptada nas três primeiras temporadas, tendo início em 2017. A Crunchyroll exibe todas as fases com dublagem e legendas em português."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A série de light novels escrita por Syougo Kinugasa e ilustrada por Tomoseshunsaku é publicada pelo selo MF Bunko J da Media Factory (Kadokawa) desde 2015, com o 1º Ano tendo sido encerrado em 2019 e o 2º Ano tendo sido encerrado em 2024. O 3º Ano começou a ser publicado em 2025, ainda estando em andamento. Somando todas as partes, já são 35 volumes lançados para a série principal. A NewPOP começou a publicar os livros no Brasil este ano.",
+          "runs": [
+            {
+              "text": "A série de "
+            },
+            {
+              "text": "light novels",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " escrita por "
+            },
+            {
+              "text": "Syougo Kinugasa ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "e ilustrada por "
+            },
+            {
+              "text": "Tomoseshunsaku ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "é publicada pelo selo "
+            },
+            {
+              "text": "MF Bunko J",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " da "
+            },
+            {
+              "text": "Media Factory",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Kadokawa) desde 2015, com o "
+            },
+            {
+              "text": "1º Ano",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " tendo sido encerrado em 2019 e o "
+            },
+            {
+              "text": "2º Ano",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " tendo sido encerrado em 2024. O "
+            },
+            {
+              "text": "3º Ano",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " começou a ser publicado em 2025, ainda estando em andamento. Somando todas as partes, já são 35 volumes lançados para a série principal. A "
+            },
+            {
+              "text": "NewPOP",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " começou a publicar os livros no Brasil este ano."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história começa com Kiyotaka Ayanokouji prestes a entrar em sua vida escolar no colégio Tokyo Koudo Ikusei, local estabelecido pelo governo para criar as gerações que cuidarão do futuro do país. No entanto, a escola segue alguns padrões fora do comum, já que tem um sistema de pontuação que, todo mês, premia os melhores alunos com 100 mil ienes, permitindo que eles até mesmo sabotem uns aos outros. Nessa situação que Ayanokouji, que faz parte da turma dos problemáticos, conhece Suzune, que decidiu se isolar porque não suporta a liberdade descontrolada dada aos alunos do colégio.",
+          "runs": [
+            {
+              "text": "A história começa com Kiyotaka Ayanokouji prestes a entrar em sua vida escolar no colégio Tokyo Koudo Ikusei, local estabelecido pelo governo para criar as gerações que cuidarão do futuro do país. No entanto, a escola segue alguns padrões fora do comum, já que tem um sistema de pontuação que, todo mês, premia os melhores alunos com 100 mil ienes, permitindo que eles até mesmo sabotem uns aos outros. Nessa situação que Ayanokouji, que faz parte da turma dos problemáticos, conhece Suzune, que decidiu se isolar porque não suporta a liberdade descontrolada dada aos alunos do colégio."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Classroom of the Elite (X/Twitter)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Classroom of the Elite (X/Twitter)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://x.com/youkosozitsu/status/2124340844635582900"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-23T19:34:31.000Z",
+      "updatedAt": "2026-11-23T19:35:06.000Z",
+      "expiresAt": "2026-11-30T19:34:31.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/23/classroom-of-the-elite-5a-temporada-estreia-em-2027",
+          "publishedAt": "2026-11-23T19:34:31.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 399,
+      "qualityScore": 0.989,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-a5527128",
+      "slug": "2-temporada-de-akane-banashi-ganha-data-de-estreia-em-janeiro-jbox-a5527128",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "2ª temporada de ‘Akane-banashi’ ganha data de estreia em janeiro",
+      "originalTitle": "2ª temporada de ‘Akane-banashi’ ganha data de estreia em janeiro",
+      "summary": "A 2ª temporada do animê Akane-banashi já estava com o mês de lançamento marcado, e agora a data de estreia também foi confirmada.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Akane-banashi",
+        "Akane-banashi terá continuação?",
+        "anime de akane banashi",
+        "JBC",
+        "Segunda temporada de Akane-banashi"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/23/2a-temporada-de-akane-banashi-ganha-data-de-estreia-em-janeiro",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/23/2a-temporada-de-akane-banashi-ganha-data-de-estreia-em-janeiro",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/10/Akane-Banashi-segunda-temporada-destacada.jpg",
+      "mediaQuery": "2ª temporada de ‘Akane-banashi’ ganha data de estreia em janeiro",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/akanebanashi-twitter11-22.jpg",
+          "alt": "imagem: post das Redes sociais de Akane-banashi",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A 2ª temporada do animê Akane-banashi já estava com o mês de lançamento marcado, e agora a data de estreia também foi confirmada.",
+          "runs": [
+            {
+              "text": "A 2ª temporada do animê "
+            },
+            {
+              "text": "Akane-banashi",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " já estava com o mês de lançamento marcado, e agora a data de estreia também foi confirmada."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "De acordo com as redes sociais oficiais da produção, os novos episódios chegam no dia 9 de janeiro, sábado, dentro da Temporada de Inverno de 2026.",
+          "runs": [
+            {
+              "text": "De acordo com as redes sociais oficiais da produção, os novos episódios chegam no dia "
+            },
+            {
+              "text": "9 de janeiro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", sábado, dentro da "
+            },
+            {
+              "text": "Temporada de Inverno ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "de 2026."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/akanebanashi-twitter11-22.jpg",
+          "alt": "imagem: post das Redes sociais de Akane-banashi"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/X",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/X"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "text": "Edição 52 da Weekly Shonen Jump! O capítulo mais recente de Akane-banashi está publicado! Guriko aparece diante de Akane! O que Akane fará diante de uma fala de seu veterano…? A 2ª temporada do animê estreia em 9 de janeiro de 2027 (sábado)! Não percam!",
+          "runs": [
+            {
+              "text": "Edição 52 da "
+            },
+            {
+              "text": "Weekly Shonen Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "! O capítulo mais recente de "
+            },
+            {
+              "text": "Akane-banashi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " está publicado! Guriko aparece diante de Akane! O que Akane fará diante de uma fala de seu veterano…? A 2ª temporada do animê estreia em "
+            },
+            {
+              "text": "9 de janeiro de 2027 (sábado)",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "! Não percam!"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama de Akane-banashi segue Akane Osaki (voz original de Anna Nagase), uma jovem que sempre admirou as performances de Rakugo feitas por seu pai, Shinta Arakawa (voz original de Jun Fukuyama). Porém, um incidente o tira da disputa para se tornar um mestre e, seis anos depois, Akane resolve vingar o pai e se tornar ela mesma uma mestra na arte de atuar e contar histórias cômicas e dramáticas.",
+          "runs": [
+            {
+              "text": "A trama de "
+            },
+            {
+              "text": "Akane-banashi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " segue Akane Osaki (voz original de "
+            },
+            {
+              "text": "Anna Nagase",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/j-pedia/perfis/anna-nagase/"
+            },
+            {
+              "text": "), uma jovem que sempre admirou as performances de Rakugo feitas por seu pai, Shinta Arakawa (voz original de "
+            },
+            {
+              "text": "Jun Fukuyama",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/j-pedia/perfis/jun-fukuyama/"
+            },
+            {
+              "text": "). Porém, um incidente o tira da disputa para se tornar um mestre e, seis anos depois, Akane resolve vingar o pai e se tornar ela mesma uma mestra na arte de atuar e contar histórias cômicas e dramáticas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A primeira temporada do animê teve transmissão global oficial pelo YouTube, com legendas, e chegou ao Brasil também pela Netflix, com capítulos dublados. A expectativa é que os novos episódios sigam o mesmo formato de lançamento. O mangá original de Yuki Suenaga e Takamasa Moue, seriado na Shonen Jump desde 2022, é publicado em nosso país pela JBC.",
+          "runs": [
+            {
+              "text": "A primeira temporada do animê teve transmissão global oficial pelo"
+            },
+            {
+              "text": " YouTube",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com legendas, e chegou ao Brasil também pela "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com capítulos dublados. A expectativa é que os novos episódios sigam o mesmo formato de lançamento. O mangá original de Yuki Suenaga e Takamasa Moue, seriado na "
+            },
+            {
+              "text": "Shonen Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " desde 2022, é publicado em nosso país pela "
+            },
+            {
+              "text": "JBC",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "▶️ Crítica | Akane-banashi | 1ª temporada",
+          "runs": [
+            {
+              "text": "▶️ ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Crítica | Akane-banashi | 1ª temporada",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/06/25/critica-akane-banashi-1a-temporada/"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: X/Twitter oficial de Akane-banashi",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "X/Twitter oficial de Akane-banashi",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://x.com/akanebanashi_PR/status/2124684363916886499"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-23T16:39:37.000Z",
+      "updatedAt": "2026-11-23T16:43:29.000Z",
+      "expiresAt": "2026-11-30T16:39:37.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/23/2a-temporada-de-akane-banashi-ganha-data-de-estreia-em-janeiro",
+          "publishedAt": "2026-11-23T16:39:37.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 253,
+      "qualityScore": 0.972,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-587612f1",
       "slug": "bride-of-the-barrier-master-estreia-em-janeiro-com-especial-de-1-hora-animenew-587612f1",
@@ -677,276 +1456,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-635d2e97",
-      "slug": "classroom-of-the-elite-revela-titulo-e-visual-da-5-temporada-animenew-635d2e97",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Classroom of the Elite revela título e visual da 5ª temporada",
-      "originalTitle": "Classroom of the Elite revela título e visual da 5ª temporada",
-      "summary": "A quinta temporada do anime Classroom of the Elite ganhou título oficial, novo visual promocional e previsão de estreia para 2027. A continuação adaptará a primeira metade do segundo semestre do segundo ano escolar.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Classroom of the Elite",
-        "Lerche"
-      ],
-      "url": "https://animenew.com.br/classroom-of-the-elite-5-temporada-2027",
-      "sourceUrl": "https://animenew.com.br/classroom-of-the-elite-5-temporada-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Classroom-of-the-Elite-revela-titulo-e-visual-da-5a-temporada.webp",
-      "mediaQuery": "Classroom of the Elite revela título e visual da 5ª temporada",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Classroom-of-the-Elite-5.webp",
-          "alt": "Classroom of the Elite revela título e visual da 5ª temporada",
-          "caption": "©Syougo Kinugasa,PUBLISHED BY KADOKAWA CORPORATION/YOUZITSU5 PARTNERS"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/HGjA4D5IKPI"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A quinta temporada do anime Classroom of the Elite ganhou título oficial, novo visual promocional e previsão de estreia para 2027. A continuação adaptará a primeira metade do segundo semestre do segundo ano escolar.",
-          "runs": [
-            {
-              "text": "A quinta temporada do "
-            },
-            {
-              "text": "anime",
-              "href": "https://animenew.com.br/animes"
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Classroom of the Elite",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ganhou título oficial, novo visual promocional e previsão de estreia para 2027. A continuação adaptará a primeira metade do segundo semestre do segundo ano escolar."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Jimoto no Ijimekko-tachi ganha anime na temporada de 2027",
-              "runs": [
-                {
-                  "text": "Jimoto no Ijimekko-tachi ganha anime na temporada de 2027",
-                  "href": "https://animenew.com.br/jimoto-no-ijimekko-tachi-anime-2027"
-                }
-              ]
-            },
-            {
-              "text": "I Lost My Adventurer’s License estreia dia 7 de janeiro",
-              "runs": [
-                {
-                  "text": "I Lost My Adventurer’s License estreia dia 7 de janeiro",
-                  "href": "https://animenew.com.br/i-lost-my-adventurers-license-estreia-janeiro-2027"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=HGjA4D5IKPI",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/HGjA4D5IKPI"
-        },
-        {
-          "type": "paragraph",
-          "text": "A novidade foi anunciada pela Kadokawa neste domingo (22), junto da divulgação de um vídeo promocional e uma ilustração inédita. O novo arco recebeu o título Classroom of the Elite 5th Season: Second Year, Second Semester (First Half).",
-          "runs": [
-            {
-              "text": "A novidade foi anunciada pela "
-            },
-            {
-              "text": "Kadokawa",
-              "href": "https://animenew.com.br/tag/kadokawa/"
-            },
-            {
-              "text": " neste domingo (22), junto da divulgação de um vídeo promocional e uma ilustração inédita. O novo arco recebeu o título "
-            },
-            {
-              "text": "Classroom of the Elite 5th Season: Second Year, Second Semester (First Half)",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Classroom-of-the-Elite-5.webp",
-          "alt": "Classroom of the Elite revela título e visual da 5ª temporada",
-          "caption": "©Syougo Kinugasa,PUBLISHED BY KADOKAWA CORPORATION/YOUZITSU5 PARTNERS"
-        },
-        {
-          "type": "heading",
-          "text": "Equipe de produção retorna",
-          "runs": [
-            {
-              "text": "Equipe de produção retorna",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A direção ficará novamente nas mãos de Noriyuki Nomata, com animação do estúdio Lerche. Kou Shigenobu retorna para supervisionar os roteiros, enquanto Satoki Iida continua responsável pela direção de som.",
-          "runs": [
-            {
-              "text": "A direção ficará novamente nas mãos de "
-            },
-            {
-              "text": "Noriyuki Nomata",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com animação do estúdio "
-            },
-            {
-              "text": "Lerche",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Kou Shigenobu retorna para supervisionar os roteiros, enquanto "
-            },
-            {
-              "text": "Satoki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " Iida continua responsável pela direção de som."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Maki Kōno também retorna como designer de personagens, acompanhado por Saori Yonemoto e Hina Nagata, que trabalharam como diretoras-chefes de animação na temporada anterior.",
-          "runs": [
-            {
-              "text": "Maki Kōno também retorna como designer de personagens, acompanhado por Saori Yonemoto e Hina Nagata, que trabalharam como diretoras-chefes de animação na temporada anterior."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A quarta temporada estreou em 1º de abril de 2026 com um especial de 90 minutos e encerrou sua exibição em junho, totalizando 16 episódios. Por fim, até o momento, a quinta temporada de Classroom of the Elite tem estreia prevista para 2027, mas ainda não recebeu uma data específica.",
-          "runs": [
-            {
-              "text": "A quarta temporada estreou em 1º de abril de 2026 com um especial de 90 minutos e encerrou sua exibição em junho, totalizando 16 episódios. Por fim, até o momento, a quinta temporada de "
-            },
-            {
-              "text": "Classroom of the Elite",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " tem estreia prevista para 2027, mas ainda não recebeu uma data específica."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://you-zitsu.com/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Classroom of the Elite revela título e visual da 5ª temporada.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Classroom of the Elite revela título e visual da 5ª temporada",
-              "href": "https://animenew.com.br/classroom-of-the-elite-5-temporada-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-22T22:38:49.000Z",
-      "updatedAt": "2026-11-22T22:38:49.000Z",
-      "expiresAt": "2026-11-29T22:38:49.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/classroom-of-the-elite-5-temporada-2027",
-          "publishedAt": "2026-11-22T22:38:49.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 231,
-      "qualityScore": 0.969,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     },
@@ -2266,7 +2775,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 329,
-      "qualityScore": 0.983,
+      "qualityScore": 0.923,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -9570,1036 +10079,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-d73d7bac",
-      "slug": "godzilla-minus-zero-ultrapassa-us-100-milhoes-mundialmente-animenew-d73d7bac",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Godzilla Minus Zero ultrapassa US$ 100 milhões mundialmente",
-      "originalTitle": "Godzilla Minus Zero ultrapassa US$ 100 milhões mundialmente",
-      "summary": "Godzilla Minus Zero ultrapassou a marca de US$ 100 milhões em bilheteria mundial, apesar de registrar uma queda de 73% na arrecadação durante seu segundo fim de semana nos cinemas dos Estados Unidos.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Cinema",
-        "Notícias",
-        "Godzilla Minus Zero"
-      ],
-      "url": "https://animenew.com.br/godzilla-minus-zero-bilheteria-mundial",
-      "sourceUrl": "https://animenew.com.br/godzilla-minus-zero-bilheteria-mundial",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Godzilla-Minus-Zero-ultrapassa-US-100-milhoes-mundialmente.webp",
-      "mediaQuery": "Godzilla Minus Zero ultrapassa US$ 100 milhões mundialmente",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/sd16LovUaEA"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Godzilla Minus Zero ultrapassou a marca de US$ 100 milhões em bilheteria mundial, apesar de registrar uma queda de 73% na arrecadação durante seu segundo fim de semana nos cinemas dos Estados Unidos.",
-          "runs": [
-            {
-              "text": "Godzilla Minus Zero",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ultrapassou a marca de "
-            },
-            {
-              "text": "US$ 100 milhões em bilheteria mundial",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", apesar de registrar uma queda de 73% na arrecadação durante seu segundo fim de semana nos "
-            },
-            {
-              "text": "cinemas dos Estados",
-              "href": "https://animenew.com.br/cinema"
-            },
-            {
-              "text": " Unidos."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Takopi’s Original Sin divulga música de filme compilatório",
-              "runs": [
-                {
-                  "text": "Takopi’s Original Sin divulga música de filme compilatório",
-                  "href": "https://animenew.com.br/takopis-original-sin-filme-musica-trailer"
-                }
-              ]
-            },
-            {
-              "text": "Gundam Seed Freedom Zero estreia em janeiro de 2027",
-              "runs": [
-                {
-                  "text": "Gundam Seed Freedom Zero estreia em janeiro de 2027",
-                  "href": "https://animenew.com.br/gundam-seed-freedom-zero-estreia-2027"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O longa arrecadou aproximadamente US$ 8 milhões no mercado norte-americano, garantindo a terceira posição no ranking. Desse total, cerca de US$ 48 milhões correspondem à bilheteria doméstica acumulada. Os números foram divulgados pela Variety, enquanto o Box Office Mojo ainda não contabilizava os resultados de domingo.",
-          "runs": [
-            {
-              "text": "O longa arrecadou aproximadamente "
-            },
-            {
-              "text": "US$ 8 milhões",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no mercado norte-americano, garantindo a terceira posição no ranking. Desse total, cerca de "
-            },
-            {
-              "text": "US$ 48 milhões",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " correspondem à bilheteria doméstica acumulada. Os números foram divulgados pela "
-            },
-            {
-              "text": "Variety",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", enquanto o "
-            },
-            {
-              "text": "Box Office Mojo",
-              "href": "https://www.boxofficemojo.com/weekend/2026W46/"
-            },
-            {
-              "text": " ainda não contabilizava os resultados de domingo."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=sd16LovUaEA",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/sd16LovUaEA"
-        },
-        {
-          "type": "heading",
-          "text": "Recordes Godzilla Minus na estreia",
-          "runs": [
-            {
-              "text": "Recordes Godzilla Minus na estreia",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Em seu primeiro fim de semana na América do Norte, a produção arrecadou US$ 31,61 milhões. Desse valor, 74% vieram de salas com telas premium, incluindo US$ 12 milhões em sessões IMAX.",
-          "runs": [
-            {
-              "text": "Em seu primeiro fim de semana na América do Norte, a produção arrecadou "
-            },
-            {
-              "text": "US$ 31,61 milhões",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Desse valor, 74% vieram de salas com telas premium, incluindo "
-            },
-            {
-              "text": "US$ 12 milhões",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " em sessões "
-            },
-            {
-              "text": "IMAX",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Contudo o filme também estabeleceu o maior fim de semana de estreia de um longa live-action estrangeiro nos Estados Unidos.",
-          "runs": [
-            {
-              "text": "Contudo o filme também estabeleceu o maior fim de semana de estreia de um longa "
-            },
-            {
-              "text": "live-action",
-              "href": "https://animenew.com.br/live-action"
-            },
-            {
-              "text": " estrangeiro nos Estados Unidos."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Lançamento no Japão de Minus Zero",
-          "runs": [
-            {
-              "text": "Lançamento no Japão",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " de Minus Zero"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Dirigido por Takashi Yamazaki, o filme estreou no Japão em 3 de novembro de 2026, durante o Godzilla Day. Por fim a história se passa em 1949, dois anos após os acontecimentos de Godzilla Minus One.",
-          "runs": [
-            {
-              "text": "Dirigido por Takashi Yamazaki, o filme estreou no Japão em 3 de novembro de 2026, durante o Godzilla Day. Por fim a história se passa em 1949, dois anos após os acontecimentos de "
-            },
-            {
-              "text": "Godzilla Minus One",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Variety",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Variety",
-              "href": "https://variety.com/2026/film/box-office/johnny-depp-ebenezer-ramayana-godzilla-minus-zero-global-box-office-1236948618/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Godzilla Minus Zero ultrapassa US$ 100 milhões mundialmente.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Godzilla Minus Zero ultrapassa US$ 100 milhões mundialmente",
-              "href": "https://animenew.com.br/godzilla-minus-zero-bilheteria-mundial/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-16T19:48:04.000Z",
-      "updatedAt": "2026-11-16T19:48:04.000Z",
-      "expiresAt": "2026-11-23T19:48:04.000Z",
-      "category": "Em alta",
-      "eventType": "TRENDING",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/godzilla-minus-zero-bilheteria-mundial",
-          "publishedAt": "2026-11-16T19:48:04.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 217,
-      "qualityScore": 0.908,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 11,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-601194e2",
-      "slug": "madoka-magica-conheca-o-elenco-principal-de-dublagem-dos-filmes-no-brasil-jbox-601194e2",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Madoka Magica: Conheça o elenco principal de dublagem dos filmes no Brasil",
-      "originalTitle": "Madoka Magica: Conheça o elenco principal de dublagem dos filmes no Brasil",
-      "summary": "Os fãs brasileiros de Madoka Magica seguem ganhando algumas novidades, e uma delas é a dublagem dos filmes Beginnings, Eternal e Rebellion, que chegaram no último dia 15 ao catálogo da Crunchyroll.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Cinema",
-        "Dublagem",
-        "Streaming",
-        "Elenco de dublagem de Madoka Magica",
-        "Filmes de Madoka Magica",
-        "Filmes de Madoka Magica dublados",
-        "Madoka Magica",
-        "Madoka Magica dublado"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/16/madoka-magica-conheca-o-elenco-principal-de-dublagem-dos-filmes-no-brasil",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/16/madoka-magica-conheca-o-elenco-principal-de-dublagem-dos-filmes-no-brasil",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/madoka-magica-beginnings-destacada.jpg",
-      "mediaQuery": "Madoka Magica: Conheça o elenco principal de dublagem dos filmes no Brasil",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Os fãs brasileiros de Madoka Magica seguem ganhando algumas novidades, e uma delas é a dublagem dos filmes Beginnings, Eternal e Rebellion, que chegaram no último dia 15 ao catálogo da Crunchyroll.",
-          "runs": [
-            {
-              "text": "Os fãs brasileiros de "
-            },
-            {
-              "text": "Madoka Magica",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " seguem ganhando algumas novidades, e uma delas é a dublagem dos filmes "
-            },
-            {
-              "text": "Beginnings",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Eternal",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Rebellion",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", que chegaram no último dia 15 ao catálogo da "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Essa é a primeira vez que a história clássica de Madoka Magica é dublada no Brasil — anteriormente, somente a série derivada Magia Record havia ganhado as vozes em português, o que incluiu também trechos com aparições das personagens originais.",
-          "runs": [
-            {
-              "text": "Essa é a primeira vez que a história clássica de "
-            },
-            {
-              "text": "Madoka Magica",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é dublada no Brasil — anteriormente, somente a série derivada "
-            },
-            {
-              "text": "Magia Record",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " havia ganhado as vozes em português, o que incluiu também trechos com aparições das personagens originais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Segundo informações do WDN – World Dubbing News, em publicação feita em conjunto com parte das atrizes, o elenco de dublagem principal dos filmes é composto por:",
-          "runs": [
-            {
-              "text": "Segundo informações do "
-            },
-            {
-              "text": "WDN – World Dubbing News",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", em publicação feita em conjunto com parte das atrizes, o elenco de dublagem principal dos filmes é composto por:"
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "Tatiane Keplmair (Sakura Haruno de Naruto) como Akemi Homura;",
-              "runs": [
-                {
-                  "text": "Tatiane Keplmair",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " (Sakura Haruno de"
-                },
-                {
-                  "text": " Naruto",
-                  "marks": [
-                    "em"
-                  ]
-                },
-                {
-                  "text": ") como Akemi Homura;"
-                }
-              ]
-            },
-            {
-              "text": "Flora Paulita (Caulifla em Dragon Ball Super) como Mami Tomoe;",
-              "runs": [
-                {
-                  "text": "Flora Paulita",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " (Caulifla em "
-                },
-                {
-                  "text": "Dragon Ball Super",
-                  "marks": [
-                    "em"
-                  ]
-                },
-                {
-                  "text": ") como Mami Tomoe;"
-                }
-              ]
-            },
-            {
-              "text": "Carol Ruis (Tohru Honda em Fruits Basket) como Madoka Kaname;",
-              "runs": [
-                {
-                  "text": "Carol Ruis",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " (Tohru Honda em "
-                },
-                {
-                  "text": "Fruits Basket",
-                  "marks": [
-                    "em"
-                  ]
-                },
-                {
-                  "text": ") como Madoka Kaname;"
-                }
-              ]
-            },
-            {
-              "text": "Larissa Cardoso (Eliza Shimizu em Bocchi the Rock!) como Kyoko Sakura;",
-              "runs": [
-                {
-                  "text": "Larissa Cardoso",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " (Eliza Shimizu em "
-                },
-                {
-                  "text": "Bocchi the Rock!",
-                  "marks": [
-                    "em"
-                  ]
-                },
-                {
-                  "text": ") como Kyoko Sakura;"
-                }
-              ]
-            },
-            {
-              "text": "Maitê Cunha (Annie Leonhart em Attack on Titan) como Sayaka Miki;",
-              "runs": [
-                {
-                  "text": "Maitê Cunha",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " (Annie Leonhart em "
-                },
-                {
-                  "text": "Attack on Titan",
-                  "marks": [
-                    "em"
-                  ]
-                },
-                {
-                  "text": ") como Sayaka Miki;"
-                }
-              ]
-            },
-            {
-              "text": "Sicília Vidal (Kiki em O Serviço de Entregas da Kiki, versão da Netflix) como Kyubey;",
-              "runs": [
-                {
-                  "text": "Sicília Vidal",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " (Kiki em "
-                },
-                {
-                  "text": "O Serviço de Entregas da Kiki",
-                  "marks": [
-                    "em"
-                  ]
-                },
-                {
-                  "text": ", versão da Netflix) como Kyubey;"
-                }
-              ]
-            },
-            {
-              "text": "Bianca Lua (Zelda no jogo The Legend of Zelda: Ocarina of Time) como Hitomi Shizuki.",
-              "runs": [
-                {
-                  "text": "Bianca Lua",
-                  "marks": [
-                    "strong"
-                  ]
-                },
-                {
-                  "text": " (Zelda no jogo "
-                },
-                {
-                  "text": "The Legend of Zelda: Ocarina of Time",
-                  "marks": [
-                    "em"
-                  ]
-                },
-                {
-                  "text": ") como Hitomi Shizuki."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "text": "View this post on Instagram",
-          "runs": [
-            {
-              "text": " View this post on Instagram ",
-              "href": "https://www.instagram.com/p/DfxK_pZRrJt/?utm_source=ig_embed&utm_campaign=loading"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Em comparação com a dublagem de Magia Record, algumas vozes foram mantidas e outras foram trocadas. No derivado, por exemplo, Bianca Lua fez a voz de Kyubey. Já Carol Ruis foi mantida como Madoka, e o mesmo aconteceu com Maitê Cunha como Sayaka.",
-          "runs": [
-            {
-              "text": "Em comparação com a dublagem de "
-            },
-            {
-              "text": "Magia Record",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", algumas vozes foram mantidas e outras foram trocadas. No derivado, por exemplo, "
-            },
-            {
-              "text": "Bianca Lua",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " fez a voz de Kyubey. Já "
-            },
-            {
-              "text": "Carol Ruis",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " foi mantida como Madoka, e o mesmo aconteceu com "
-            },
-            {
-              "text": "Maitê Cunha",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " como Sayaka."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já as vozes de Homura (anteriormente Samantha Rossetti), Mami (anteriormente Mariana Pozatto) e Kyoko (anteriormente Juliana Yamada) foram trocadas para a nova versão.",
-          "runs": [
-            {
-              "text": "Já as vozes de Homura (anteriormente "
-            },
-            {
-              "text": "Samantha Rossetti",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "), Mami (anteriormente "
-            },
-            {
-              "text": "Mariana Pozatto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ") e Kyoko (anteriormente "
-            },
-            {
-              "text": "Juliana Yamada",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ") foram trocadas para a nova versão."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O JBox confirmou junto a Victor Olavo Rocca, responsável pela adaptação do texto da dublagem, que o Artworks Digital Studio é o responsável pela dublagem, com direção de Rodrigo Rossi. Até o fechamento desse texto, a Crunchyroll não incluiu os créditos de dublagem ao final dos filmes.",
-          "runs": [
-            {
-              "text": "O "
-            },
-            {
-              "text": "JBox",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " confirmou junto a "
-            },
-            {
-              "text": "Victor Olavo Rocca",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", responsável pela adaptação do texto da dublagem, que o "
-            },
-            {
-              "text": "Artworks Digital Studio",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " é o responsável pela dublagem, com direção de "
-            },
-            {
-              "text": "Rodrigo Rossi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Até o fechamento desse texto, a Crunchyroll não incluiu os créditos de dublagem ao final dos filmes."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Outro detalhe que vale a pena pontuar: embora os filmes Beginnings e Eternal sejam compilados do animê seriado original, até o momento, os episódios não aparecem com a opção de dublagem na Crunchyroll — ainda que o conteúdo, em teoria, seja praticamente o mesmo. Vale ficar de olho se isso será atualizado futuramente.",
-          "runs": [
-            {
-              "text": "Outro detalhe que vale a pena pontuar: embora os filmes "
-            },
-            {
-              "text": "Beginnings ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "e "
-            },
-            {
-              "text": "Eternal",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " sejam compilados do animê seriado original, até o momento, os episódios não aparecem com a opção de dublagem na Crunchyroll — ainda que o conteúdo, em teoria, seja praticamente o mesmo. Vale ficar de olho se isso será atualizado futuramente."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Lembrando que o lançamento da série original de Madoka Magica também está previsto para acontecer na Netflix. A produção, que já teve passagem por lá, está com página ativa e deve receber a trilogia de filmes de forma dublada no dia 2 de janeiro de 2027.",
-          "runs": [
-            {
-              "text": "Lembrando que o lançamento da série original de "
-            },
-            {
-              "text": "Madoka Magica",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " também está previsto para acontecer na Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A produção, que já teve passagem por lá, está com "
-            },
-            {
-              "text": "página ativa",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.netflix.com/pt/title/70302572"
-            },
-            {
-              "text": " e deve receber a trilogia de filmes de forma dublada no dia "
-            },
-            {
-              "text": "2 de janeiro de 2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Enquanto isso, os fãs seguem aguardando também novidades sobre o lançamento no Brasil de Walpurgisnacht Rising, quarto longa da franquia já lançado no Japão e em outros territórios da América Latina. No último dia 9 de novembro, a empresa Konnichiwa prometeu novidades em breve sobre a estreia nos cinemas do nosso país.",
-          "runs": [
-            {
-              "text": "Enquanto isso, os fãs seguem aguardando também novidades sobre o lançamento no Brasil de "
-            },
-            {
-              "text": "Walpurgisnacht Rising",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", quarto longa da franquia já lançado no Japão e em outros territórios da América Latina. No último dia 9 de novembro, "
-            },
-            {
-              "text": "a empresa Konnichiwa prometeu novidades em breve",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/11/10/madoka-magica-konnichiwa-promete-novidades-sobre-o-novo-filme-no-brasil/"
-            },
-            {
-              "text": " sobre a estreia nos cinemas do nosso país."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A chegada do novo filme ao nosso território é esperada desde agosto, quando representantes da Aniplex divulgaram a informação do lançamento no Brasil para o JBox durante a LicensingCon Latam 2026. No entanto, o filme começou a chegar a outros países da América Latina em outubro, mas nada por aqui. A Sato Company chegou a divulgar que tinha interesse em trazer o longa para os cinemas brasileiros.",
-          "runs": [
-            {
-              "text": "A chegada do novo filme ao nosso território é esperada desde agosto, quando "
-            },
-            {
-              "text": "representantes da Aniplex divulgaram a informação do lançamento no Brasil para o ",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/12/exclusivo-novo-filme-de-madoka-magica-sera-lancado-no-brasil/"
-            },
-            {
-              "text": "JBox",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/08/12/exclusivo-novo-filme-de-madoka-magica-sera-lancado-no-brasil/"
-            },
-            {
-              "text": " durante a LicensingCon Latam 2026. No entanto, o filme começou a chegar a outros países da América Latina em outubro, mas nada por aqui. A Sato Company chegou a divulgar que tinha "
-            },
-            {
-              "text": "interesse em trazer o longa para os cinemas brasileiros",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/09/14/sato-company-confirma-reunioes-para-trazer-novo-filme-de-madoka-magica-ao-brasil-mas-pede-cautela-aos-fas/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Walpurgisnacht: Rising estava originalmente previsto para 2024, passando por uma série de adiamentos até finalmente ser lançado no Japão no último dia 28 de agosto. Dando continuidade ao longa Rebellion (2013), esse novo filme é colocado como o “começo de um novo capítulo” – o que sugere que deve haver mais planos a caminho..",
-          "runs": [
-            {
-              "text": "Walpurgisnacht: Rising",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " estava originalmente previsto para 2024, passando por uma série de adiamentos até finalmente ser lançado no Japão no último dia "
-            },
-            {
-              "text": "28 de agosto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Dando continuidade ao longa"
-            },
-            {
-              "text": " Rebellion",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " (2013), esse novo filme é colocado como o "
-            },
-            {
-              "text": "“começo de um novo capítulo”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " – o que sugere que deve haver mais planos a caminho.."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fontes: WDN, Victor Olavo Rocca",
-          "runs": [
-            {
-              "text": "Fontes:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "WDN",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.instagram.com/wdn_br/?g=5"
-            },
-            {
-              "text": ", Victor Olavo Rocca",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-16T15:36:27.000Z",
-      "updatedAt": "2026-11-16T15:37:15.000Z",
-      "expiresAt": "2026-11-23T15:36:27.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/16/madoka-magica-conheca-o-elenco-principal-de-dublagem-dos-filmes-no-brasil",
-          "publishedAt": "2026-11-16T15:36:27.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 592,
-      "qualityScore": 0.956,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 16,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
         "embedCount": 0,
         "sourcePagesRead": 0
       }
