@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T16:13:15.157Z",
+  "generatedAt": "2026-11-25T00:47:50.829Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 36,
+      "count": 35,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,670 @@
     }
   ],
   "stats": {
-    "collected": 46,
-    "grouped": 21,
-    "published": 21,
-    "newStories": 21,
-    "fullArticles": 21,
+    "collected": 45,
+    "grouped": 22,
+    "published": 22,
+    "newStories": 22,
+    "fullArticles": 22,
     "previewArticles": 0,
-    "avgWords": 331,
-    "withHeroImage": 21,
-    "withOrderedMedia": 21,
+    "avgWords": 325,
+    "withHeroImage": 22,
+    "withOrderedMedia": 22,
     "skippedTranslation": 0,
-    "skippedQuality": 24,
-    "durationMs": 3490
+    "skippedQuality": 22,
+    "durationMs": 3120
   },
   "items": [
+    {
+      "id": "jbox-ddbdd837",
+      "slug": "smoking-behind-the-supermarket-with-you-deve-ser-publicado-pela-jbc-jbox-ddbdd837",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Smoking Behind the Supermarket with You’ deve ser publicado pela JBC",
+      "originalTitle": "‘Smoking Behind the Supermarket with You’ deve ser publicado pela JBC",
+      "summary": "Segundo registro da editora no ISBN, a JBC deve publicar no Brasil o mangá Smoking Behind the Supermarket with You (Super no Ura de Yani Suu Futari). Nenhum anúncio oficial foi feito até o momento da postagem desta notícia.",
+      "author": "Teke",
+      "tags": [
+        "Mangá",
+        "Editora JBC",
+        "JBC",
+        "mangas jbc",
+        "Smoking Behind the Supermarket with You",
+        "Super no Ura de Yani Suu Futari",
+        "Yanisuu"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/24/smoking-behind-the-supermarket-with-you-deve-ser-publicado-pela-jbc",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/24/smoking-behind-the-supermarket-with-you-deve-ser-publicado-pela-jbc",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Smoking-Behind-the-Supermarket-with-You-destacada.jpg",
+      "mediaQuery": "‘Smoking Behind the Supermarket with You’ deve ser publicado pela JBC",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Smoking-Behind-the-Supermarket-with-You-isbn.jpg",
+          "alt": "imagem: registro do mangá 'Smoking Behind the Supermarket with You' no ISBN.",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Smoking-Behind-the-Supermarket-with-You-volume-1.jpg",
+          "alt": "imagem: Sasaki e Tayama fumando juntos em ilustração de capa do volume 1 do mangá 'Smoking Behind the Supermarket with You'.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Segundo registro da editora no ISBN, a JBC deve publicar no Brasil o mangá Smoking Behind the Supermarket with You (Super no Ura de Yani Suu Futari). Nenhum anúncio oficial foi feito até o momento da postagem desta notícia.",
+          "runs": [
+            {
+              "text": "Segundo registro da editora no ISBN, a "
+            },
+            {
+              "text": "JBC",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " deve publicar no Brasil o mangá "
+            },
+            {
+              "text": "Smoking Behind the Supermarket with You",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Super no Ura de Yani Suu Futari",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). Nenhum anúncio oficial foi feito até o momento da postagem desta notícia."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Smoking-Behind-the-Supermarket-with-You-isbn.jpg",
+          "alt": "imagem: registro do mangá 'Smoking Behind the Supermarket with You' no ISBN."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/ISBN",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/ISBN"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Smoking Behind the Supermarket with You é um mangá de Jinushi que está em publicação desde 2022, tendo surgido inicialmente como um quadrinho para X/Twitter e ganhado no mesmo ano publicação oficial na revista Big Gangan, da Square Enix. 9 volumes encadernados foram lançados no Japão até o momento.",
+          "runs": [
+            {
+              "text": "Smoking Behind the Supermarket with You",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é um mangá de "
+            },
+            {
+              "text": "Jinushi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " que está em publicação desde 2022, tendo surgido inicialmente como um quadrinho para X/Twitter e ganhado no mesmo ano publicação oficial na revista "
+            },
+            {
+              "text": "Big Gangan",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da "
+            },
+            {
+              "text": "Square Enix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". 9 volumes encadernados foram lançados no Japão até o momento."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Smoking-Behind-the-Supermarket-with-You-volume-1.jpg",
+          "alt": "imagem: Sasaki e Tayama fumando juntos em ilustração de capa do volume 1 do mangá 'Smoking Behind the Supermarket with You'."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Square Enix",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Square Enix"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A obra ganhou uma adaptação para animê este ano, produção do estúdio Asahi Production que está disponível com dublagem e legendas em português na Crunchyroll. A plataforma descreve a história como a seguir:",
+          "runs": [
+            {
+              "text": "A obra ganhou uma adaptação para animê este ano, produção do estúdio "
+            },
+            {
+              "text": "Asahi Production",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " que está disponível com dublagem e legendas em português na "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.crunchyroll.com/pt-br/series/GT00378116/smoking-behind-the-supermarket-with-you"
+            },
+            {
+              "text": ". A plataforma descreve a história como a seguir:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Sasaki é um funcionário sobrecarregado que vive à deriva na rotina corporativa, sustentado pelos cigarros e pelo atendimento alegre e sorridente de Yamada, a balconista de seu supermercado favorito. Mas, certa noite, após um turno exaustivo, ele chega atrasado e não encontra Yamada em lugar algum. Sem ter onde fumar, ele desanima — até que uma jovem com piercings o chama: “Você pode fumar aqui.”",
+          "runs": [
+            {
+              "text": "Sasaki é um funcionário sobrecarregado que vive à deriva na rotina corporativa, sustentado pelos cigarros e pelo atendimento alegre e sorridente de Yamada, a balconista de seu supermercado favorito. Mas, certa noite, após um turno exaustivo, ele chega atrasado e não encontra Yamada em lugar algum. Sem ter onde fumar, ele desanima — até que uma jovem com piercings o chama: “Você pode fumar aqui.”",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: ISBN",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "ISBN",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.cblservicos.org.br/isbn/pesquisa/?page=1&q=smoking%20behind%20the%20supermarket&filtrar_por%5B0%5D=todos&ord%5B0%5D=relevancia&dir%5B0%5D=asc"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-24T22:18:12.000Z",
+      "updatedAt": "2026-11-24T23:01:45.000Z",
+      "expiresAt": "2026-12-01T22:18:12.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/24/smoking-behind-the-supermarket-with-you-deve-ser-publicado-pela-jbc",
+          "publishedAt": "2026-11-24T22:18:12.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 210,
+      "qualityScore": 0.967,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-42cec266",
+      "slug": "witch-on-the-holy-night-filme-tem-continuacao-anunciada-jbox-42cec266",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Witch on the Holy Night: Filme tem continuação anunciada",
+      "originalTitle": "Witch on the Holy Night: Filme tem continuação anunciada",
+      "summary": "Foi anunciado nas redes oficiais de Witch on the Holy Night (Mahoutsukai no Yoru) que o filme vai ganhar uma continuação. Detalhes sobre a sequência ainda não foram divulgados.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "Cinema",
+        "2º filme de Witch on the Holy Night",
+        "Mahoutsukai no Yoru",
+        "mahoyoru",
+        "Witch on the Holy Night"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/24/witch-on-the-holy-night-filme-tem-continuacao-anunciada",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/24/witch-on-the-holy-night-filme-tem-continuacao-anunciada",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/02/witch-on-the-holy-night-destacada.jpg",
+      "mediaQuery": "Witch on the Holy Night: Filme tem continuação anunciada",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/witch-on-the-holy-night-poster.jpg",
+          "alt": "imagem: pôster divulgado para o lançamento do primeiro filme de 'Witch on the Holy Night' destacando a protagonista Aoko.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/rUB3yfko6Aw"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado nas redes oficiais de Witch on the Holy Night (Mahoutsukai no Yoru) que o filme vai ganhar uma continuação. Detalhes sobre a sequência ainda não foram divulgados.",
+          "runs": [
+            {
+              "text": "Foi anunciado nas redes oficiais de "
+            },
+            {
+              "text": "Witch on the Holy Night",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Mahoutsukai no Yoru",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") que o filme vai ganhar uma continuação. Detalhes sobre a sequência ainda não foram divulgados."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/witch-on-the-holy-night-poster.jpg",
+          "alt": "imagem: pôster divulgado para o lançamento do primeiro filme de 'Witch on the Holy Night' destacando a protagonista Aoko."
+        },
+        {
+          "type": "paragraph",
+          "text": "Pôster de lançamento do primeiro filme. | Imagem: Divulgação/Aniplex",
+          "runs": [
+            {
+              "text": "Pôster de lançamento do primeiro filme. | Imagem: Divulgação/Aniplex"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O primeiro filme de Witch on the Holy Night estreou nos cinemas japoneses no último dia 20 de novembro, contando com produção da animação pelo estúdio ufotable. A obra é uma adaptação da visual novel homônima desenvolvida pela Type-Moon, que tem os mesmos criadores de Fate/stay night. O longa-metragem teve lançamento confirmado nos cinemas brasileiros para o dia 28 de janeiro de 2027.",
+          "runs": [
+            {
+              "text": "O primeiro filme de "
+            },
+            {
+              "text": "Witch on the Holy Night",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estreou nos cinemas japoneses no último dia "
+            },
+            {
+              "text": "20 de novembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", contando com produção da animação pelo estúdio "
+            },
+            {
+              "text": "ufotable",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A obra é uma adaptação da visual novel homônima desenvolvida pela "
+            },
+            {
+              "text": "Type-Moon",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que tem os "
+            },
+            {
+              "text": "mesmos criadores de ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Fate/stay night",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". O longa-metragem teve "
+            },
+            {
+              "text": "lançamento confirmado nos cinemas brasileiros para o dia 28 de janeiro de 2027",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/10/witch-on-the-holy-night-filme-chega-aos-cinemas-brasileiros-em-janeiro/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A sinopse oficial da produção é a seguinte:",
+          "runs": [
+            {
+              "text": "A sinopse oficial da produção é a seguinte:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Aoko Aozaki, uma estudante do ensino médio comum, é na verdade uma maga que vive no mundo atual… apesar de ainda ser apenas uma aprendiz. Ela passa seus dias morando com sua colega de quarto, Alice Kuonji, enquanto se esforça para se tornar uma maga completa…",
+          "runs": [
+            {
+              "text": "Aoko Aozaki, uma estudante do ensino médio comum, é na verdade uma maga que vive no mundo atual… apesar de ainda ser apenas uma aprendiz. Ela passa seus dias morando com sua colega de quarto, Alice Kuonji, enquanto se esforça para se tornar uma maga completa…",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A garota conhece um garoto.",
+          "runs": [
+            {
+              "text": "A garota conhece um garoto.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Esse é o início da história de uma jovem… o conto de uma Bruxa.",
+          "runs": [
+            {
+              "text": "Esse é o início da história de uma jovem… o conto de uma Bruxa.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=rUB3yfko6Aw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/rUB3yfko6Aw"
+        },
+        {
+          "type": "paragraph",
+          "text": "A visual novel original foi lançada em 2012 no Japão, ganhando em 2022 uma remasterização que contou com lançamento mundial. A versão mais recente está disponível para PlayStation 4, Switch e PC.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "visual novel",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " original foi lançada em 2012 no Japão, ganhando em 2022 uma remasterização que contou com lançamento mundial. A versão mais recente está disponível para PlayStation 4, Switch e PC."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O jogo escrito por Kinoko Nasu foi pensado primeiramente como um livro ainda nos anos 1990, mas foi ganhar seu lançamento oficial apenas na forma de visual novel em 2012. Na época do lançamento no Japão, foi divulgado que o título tem duas continuações em produção, porém elas não foram lançadas até hoje.",
+          "runs": [
+            {
+              "text": "O jogo escrito por "
+            },
+            {
+              "text": "Kinoko Nasu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " foi pensado primeiramente como um livro ainda nos anos 1990, mas foi ganhar seu lançamento oficial apenas na forma de "
+            },
+            {
+              "text": "visual novel",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " em 2012. Na época do lançamento no Japão, foi divulgado que o título tem duas continuações em produção, porém elas não foram lançadas até hoje."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Witch on the Holy Night (X/Twitter)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Witch on the Holy Night (X/Twitter)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://x.com/mahoyo_movie/status/2125109659879002609"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-24T19:39:49.000Z",
+      "updatedAt": "2026-11-24T19:40:34.000Z",
+      "expiresAt": "2026-12-01T19:39:49.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/24/witch-on-the-holy-night-filme-tem-continuacao-anunciada",
+          "publishedAt": "2026-11-24T19:39:49.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 283,
+      "qualityScore": 0.979,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 14,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-d1978af5",
       "slug": "as-a-reincarnated-aristocrat-revela-novos-dubladores-na-3-temporada-animenew-d1978af5",
@@ -9317,418 +9967,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-9921eaa1",
-      "slug": "divulgada-nova-previa-da-2-temporada-de-skip-loafer-jbox-9921eaa1",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Divulgada nova prévia da 2ª temporada de ‘Skip & Loafer’",
-      "originalTitle": "Divulgada nova prévia da 2ª temporada de ‘Skip & Loafer’",
-      "summary": "A segunda temporada do animê Skip and Loafer divulgou mais um vídeo promocional nesta segunda-feira (17), acompanhado do anúncio de novos integrantes do elenco. A continuação da adaptação do mangá de Misaki Takamatsu tem estreia prevista para abril de 2027, com transmissão aqui no Brasil pela Crunchyroll.",
-      "author": "Igor Lunei",
-      "tags": [
-        "Anime",
-        "2ª temporada de Skip & Loafer",
-        "Skip and Loafer",
-        "skip and loafer 2",
-        "vídeo de skip and loafer"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/17/divulgada-nova-previa-da-2a-temporada-de-skip-loafer",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/17/divulgada-nova-previa-da-2a-temporada-de-skip-loafer",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/skip-and-loafer-season-2-destacada.jpg",
-      "mediaQuery": "Divulgada nova prévia da 2ª temporada de ‘Skip & Loafer’",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/Mu1bChJEm1c"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A segunda temporada do animê Skip and Loafer divulgou mais um vídeo promocional nesta segunda-feira (17), acompanhado do anúncio de novos integrantes do elenco. A continuação da adaptação do mangá de Misaki Takamatsu tem estreia prevista para abril de 2027, com transmissão aqui no Brasil pela Crunchyroll.",
-          "runs": [
-            {
-              "text": "A segunda temporada do animê "
-            },
-            {
-              "text": "Skip and Loafer",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " divulgou mais um vídeo promocional nesta segunda-feira (17), acompanhado do anúncio de novos integrantes do elenco. A continuação da adaptação do mangá de Misaki Takamatsu tem estreia prevista para "
-            },
-            {
-              "text": "abril de 2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com transmissão aqui no Brasil pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre as novidades estão Reina Ueda (a Reze, de Chainsaw Man, e a Kanao, de Demon Slayer) e Yuto Takenaka (que fez participações em Oshi no Ko e Minha Amiga Nokotan É um Cervo), que se juntam ao elenco de vozes nessa nova temporada. Eles interpretarão os personagens Chieri Yasaka e Kiyohiko Ujiie.",
-          "runs": [
-            {
-              "text": "Entre as novidades estão "
-            },
-            {
-              "text": "Reina Ueda",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (a Reze, de "
-            },
-            {
-              "text": "Chainsaw Man",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", e a Kanao, de "
-            },
-            {
-              "text": "Demon Slayer",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") e "
-            },
-            {
-              "text": "Yuto Takenaka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (que fez participações em "
-            },
-            {
-              "text": "Oshi no Ko",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Minha Amiga Nokotan É um Cervo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "), que se juntam ao elenco de vozes nessa nova temporada. Eles interpretarão os personagens "
-            },
-            {
-              "text": "Chieri Yasaka",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Kiyohiko Ujiie",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira o trailer:",
-          "runs": [
-            {
-              "text": "Confira o "
-            },
-            {
-              "text": "trailer",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ":"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=Mu1bChJEm1c",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/Mu1bChJEm1c"
-        },
-        {
-          "type": "paragraph",
-          "text": "O animê segue no estúdio P.A. Works, com a direção ainda nas mãos de Kotomi Deai e roteiro agora feito por Yoko Yonaiyama. A primeira temporada foi lançada em 2023 e foi dublada em português pelo estúdio Dubrasil, sob direção de André Rinaldi e Filipe Teófilo. Mitsumi é interpretada por Naiaame Belle (Nadia em Nanatsu) e Sousuke é encarnado por Vitor Mello (Relâmpago Genji em One-Punch Man).",
-          "runs": [
-            {
-              "text": "O animê segue no estúdio "
-            },
-            {
-              "text": "P.A. Works",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com a direção ainda nas mãos de "
-            },
-            {
-              "text": "Kotomi Deai",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e roteiro agora feito por "
-            },
-            {
-              "text": "Yoko Yonaiyama",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A primeira temporada foi lançada em 2023 e foi dublada em português pelo estúdio "
-            },
-            {
-              "text": "Dubrasil",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", sob direção de "
-            },
-            {
-              "text": "André Rinaldi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e"
-            },
-            {
-              "text": " Filipe Teófilo",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Mitsumi é interpretada por "
-            },
-            {
-              "text": "Naiaame Belle",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Nadia em "
-            },
-            {
-              "text": "Nanatsu",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") e Sousuke é encarnado por"
-            },
-            {
-              "text": " Vitor Mello",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Relâmpago Genji em "
-            },
-            {
-              "text": "One-Punch Man",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ")."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A obra adapta o mangá homônimo escrito por Misaki Takamatsu, em publicação desde 2018 na revista Monthly Afternoon, atualmente com 13 volumes fechados. Aqui no Brasil, o gibi é publicado pela editora JBC.",
-          "runs": [
-            {
-              "text": "A obra adapta o mangá homônimo escrito por "
-            },
-            {
-              "text": "Misaki Takamatsu",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", em publicação desde 2018 na revista "
-            },
-            {
-              "text": "Monthly Afternoon",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", atualmente com 13 volumes fechados. Aqui no Brasil, o gibi é publicado pela editora JBC."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na trama, acompanhamos a saga de Mitsumi Iwakura, uma estudante do primeiro ano do ensino médio que vai do interior da cidade de Suzu para uma escola de alto nível em Tóquio. Os choques culturais de uma menina rural com o movimento cosmopolita são grandes, inclusive na maneira como ela usa o japonês, mas as coisas se tornam bem mais fáceis pela companhia de Sousuke Shima, pelo qual ela descobre desenvolver um sentimento ainda mais forte que a amizade.",
-          "runs": [
-            {
-              "text": "Na trama, acompanhamos a saga de Mitsumi Iwakura, uma estudante do primeiro ano do ensino médio que vai do interior da cidade de Suzu para uma escola de alto nível em Tóquio. Os choques culturais de uma menina rural com o movimento cosmopolita são grandes, inclusive na maneira como ela usa o japonês, mas as coisas se tornam bem mais fáceis pela companhia de Sousuke Shima, pelo qual ela descobre desenvolver um sentimento ainda mais forte que a amizade."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site oficial de Skip & Loafer",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Site oficial de Skip & Loafer",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://skip-and-loafer.com/news.html"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-17T23:25:22.000Z",
-      "updatedAt": "2026-11-17T23:28:03.000Z",
-      "expiresAt": "2026-11-24T23:25:22.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/17/divulgada-nova-previa-da-2a-temporada-de-skip-loafer",
-          "publishedAt": "2026-11-17T23:25:22.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 306,
-      "qualityScore": 0.917,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     }
