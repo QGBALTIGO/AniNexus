@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T19:20:20.175Z",
+  "generatedAt": "2026-11-26T02:17:03.718Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 35,
+      "count": 34,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,712 @@
     }
   ],
   "stats": {
-    "collected": 45,
-    "grouped": 18,
-    "published": 18,
-    "newStories": 18,
-    "fullArticles": 18,
+    "collected": 44,
+    "grouped": 17,
+    "published": 17,
+    "newStories": 17,
+    "fullArticles": 17,
     "previewArticles": 0,
-    "avgWords": 279,
-    "withHeroImage": 18,
-    "withOrderedMedia": 18,
+    "avgWords": 272,
+    "withHeroImage": 17,
+    "withOrderedMedia": 17,
     "skippedTranslation": 0,
     "skippedQuality": 26,
-    "durationMs": 2655
+    "durationMs": 3339
   },
   "items": [
+    {
+      "id": "jbox-602419da",
+      "slug": "frieren-ganha-minisserie-especial-em-dezembro-jbox-602419da",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Frieren’ ganha minissérie especial em dezembro",
+      "originalTitle": "‘Frieren’ ganha minissérie especial em dezembro",
+      "summary": "Foi anunciado nas redes oficiais de Frieren e a Jornada para o Além (Sousou no Frieren) que o mangá vai ganhar uma minissérie especial, com início marcado para o dia 2 de dezembro.",
+      "author": "Teke",
+      "tags": [
+        "Mangá",
+        "Frieren e a Jornada para o Além",
+        "Frieren: Beyond Journey’s End",
+        "sousou no frieren",
+        "Sousou no Frieren Betsutan"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/25/frieren-ganha-minisserie-especial-em-dezembro",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/25/frieren-ganha-minisserie-especial-em-dezembro",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/frieren-e-a-jornada-para-o-alem-heiter-destacada.jpg",
+      "mediaQuery": "‘Frieren’ ganha minissérie especial em dezembro",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/shonen-sunday-frieren-betsutan.jpg",
+          "alt": "imagem: página da revista 'Shonen Sunday' com o anúncio da minissérie 'Sousou no Frieren Betsutan'.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado nas redes oficiais de Frieren e a Jornada para o Além (Sousou no Frieren) que o mangá vai ganhar uma minissérie especial, com início marcado para o dia 2 de dezembro.",
+          "runs": [
+            {
+              "text": "Foi anunciado nas redes oficiais de "
+            },
+            {
+              "text": "Frieren e a Jornada para o Além",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Sousou no Frieren",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") que o mangá vai ganhar uma minissérie especial, com início marcado para o dia "
+            },
+            {
+              "text": "2 de dezembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O spin-off, chamado Sousou no Frieren Betsutan, se passa entre o primeiro e o segundo capítulo do mangá original, mostrando um pouco das jornadas de Frieren e de Heiter no período dos 20 anos que se passam nesse intervalo.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "spin-off",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", chamado "
+            },
+            {
+              "text": "Sousou no Frieren Betsutan",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", se passa entre o primeiro e o segundo capítulo do mangá original, mostrando um pouco das jornadas de Frieren e de Heiter no período dos 20 anos que se passam nesse intervalo."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/shonen-sunday-frieren-betsutan.jpg",
+          "alt": "imagem: página da revista 'Shonen Sunday' com o anúncio da minissérie 'Sousou no Frieren Betsutan'."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Shogakukan",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Shogakukan"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A minissérie é escrita por Mei Hachimoku, responsável também pela novel Frieren e a Viagem para o Além – Prelúdio — livro que foi publicado no Brasil pela Panini. As ilustrações são por conta de Tsukasa Abe, que também desenha o mangá original. O autor Kanehito Yamada supervisiona a história.",
+          "runs": [
+            {
+              "text": "A minissérie é escrita por "
+            },
+            {
+              "text": "Mei Hachimoku",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", responsável também pela novel "
+            },
+            {
+              "text": "Frieren e a Viagem para o Além – Prelúdio",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " — livro que foi publicado no Brasil pela Panini. As ilustrações são por conta de "
+            },
+            {
+              "text": "Tsukasa Abe",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que também desenha o mangá original. O autor "
+            },
+            {
+              "text": "Kanehito Yamada",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " supervisiona a história."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Lembrando que o mangá principal de Frieren está atualmente em hiato, paralisado desde outubro do ano passado por questões de saúde dos autores e para ajustes na publicação. A obra foi iniciada na Shonen Sunday em 2020, contando atualmente com 15 volumes encadernados pela Shogakukan.",
+          "runs": [
+            {
+              "text": "Lembrando que o mangá principal de "
+            },
+            {
+              "text": "Frieren",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " está atualmente em hiato, paralisado desde outubro do ano passado por questões de saúde dos autores e para ajustes na publicação. A obra foi iniciada na "
+            },
+            {
+              "text": "Shonen Sunday",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " em 2020, contando atualmente com 15 volumes encadernados pela Shogakukan."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Anime News Network",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-11-24/frieren-beyond-journey-end-manga-gets-spinoff-manga-mini-series/.244165"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-25T21:01:22.000Z",
+      "updatedAt": "2026-11-25T21:03:08.000Z",
+      "expiresAt": "2026-12-02T21:01:22.000Z",
+      "category": "Notícias",
+      "eventType": "OTHER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/25/frieren-ganha-minisserie-especial-em-dezembro",
+          "publishedAt": "2026-11-25T21:01:22.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 190,
+      "qualityScore": 0.962,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-721988fe",
+      "slug": "now-that-we-draw-divulgado-trailer-com-previa-da-musica-de-abertura-jbox-721988fe",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Now That We Draw: Divulgado trailer com prévia da música de abertura",
+      "originalTitle": "Now That We Draw: Divulgado trailer com prévia da música de abertura",
+      "summary": "A adaptação em animê do mangá Now That We Draw (Kakunaru Ue wa), de Kyu Takahata e Yuji Kaba, estreia em 8 de janeiro de 2027.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "animê de now that we draw",
+        "Inner Journey",
+        "Kakunaru Ue wa",
+        "Now That We Draw",
+        "shallm"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/25/now-that-we-draw-divulgado-trailer-com-previa-da-musica-de-abertura",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/25/now-that-we-draw-divulgado-trailer-com-previa-da-musica-de-abertura",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/now-that-we-draw-destacada.jpg",
+      "mediaQuery": "Now That We Draw: Divulgado trailer com prévia da música de abertura",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/95LE9JQNpRI"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A adaptação em animê do mangá Now That We Draw (Kakunaru Ue wa), de Kyu Takahata e Yuji Kaba, estreia em 8 de janeiro de 2027.",
+          "runs": [
+            {
+              "text": "A adaptação em animê do mangá "
+            },
+            {
+              "text": "Now That We Draw",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Kakunaru Ue wa",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), de "
+            },
+            {
+              "text": "Kyu Takahata",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Yuji Kaba",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", estreia em "
+            },
+            {
+              "text": "8 de janeiro de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O anúncio foi acompanhado pela divulgação de um novo trailer, que apresenta uma prévia da música de abertura, “Kimiiro Hikari”, interpretada pela banda shallm. Já a música de encerramento, “Serifu wa Iranai”, ficará por conta da banda de Inner Journey.",
+          "runs": [
+            {
+              "text": "O anúncio foi acompanhado pela divulgação de um novo "
+            },
+            {
+              "text": "trailer",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", que apresenta uma prévia da música de abertura, "
+            },
+            {
+              "text": "“Kimiiro Hikari”",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", interpretada pela banda "
+            },
+            {
+              "text": "shallm",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". Já a música de encerramento, "
+            },
+            {
+              "text": "“Serifu wa Iranai”",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", ficará por conta da banda de "
+            },
+            {
+              "text": "Inner Journey",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira:",
+          "runs": [
+            {
+              "text": "Confira:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=95LE9JQNpRI",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/95LE9JQNpRI"
+        },
+        {
+          "type": "paragraph",
+          "text": "Na trama, acompanhamos Yuki Uehara, um estudante do ensino médio tímido que cria uma protagonista ideal para sua comédia romântica: uma garota ingênua, desajeitada e recatada. Quando um editor rejeita seu mangá por considerá-lo pouco original e distante da realidade, ele conhece Niina Miyamoto, uma colega de classe extrovertida e bonita que também sonha em se tornar mangaká. Após receber críticas semelhantes, ela propõe que os dois finjam estar em um relacionamento, já que nenhum deles tem experiência amorosa. A partir daí, a dupla tenta transformar suas ideias em histórias convincentes, mesmo sem corresponder aos protagonistas que imaginou.",
+          "runs": [
+            {
+              "text": "Na trama, acompanhamos Yuki Uehara, um estudante do ensino médio tímido que cria uma protagonista ideal para sua comédia romântica: uma garota ingênua, desajeitada e recatada. Quando um editor rejeita seu mangá por considerá-lo pouco original e distante da realidade, ele conhece Niina Miyamoto, uma colega de classe extrovertida e bonita que também sonha em se tornar mangaká. Após receber críticas semelhantes, ela propõe que os dois finjam estar em um relacionamento, já que nenhum deles tem experiência amorosa. A partir daí, a dupla tenta transformar suas ideias em histórias convincentes, mesmo sem corresponder aos protagonistas que imaginou."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A direção do animê é de Shunsuke Ishikawa (BLUE LOCK THE MOVIE -EPISODE NAGI-), com produção no estúdio ROLL2, roteiro de Deko Akao (Arakawa Under the Bridge, Komi Can’t Communicate), e design de personagens de Hiromi Nakagawa (WATATEN!: an Angel Flew Down to Me, Saint Cecilia and Pastor Lawrence).",
+          "runs": [
+            {
+              "text": "A direção do animê é de "
+            },
+            {
+              "text": "Shunsuke Ishikawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "BLUE LOCK THE MOVIE -EPISODE NAGI-",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), com produção no estúdio "
+            },
+            {
+              "text": "ROLL2",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", roteiro de "
+            },
+            {
+              "text": "Deko Akao",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Arakawa Under the Bridge",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Komi Can’t Communicate",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), e "
+            },
+            {
+              "text": "design",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de personagens de "
+            },
+            {
+              "text": "Hiromi Nakagawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "WATATEN!: an Angel Flew Down to Me",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Saint Cecilia and Pastor Lawrence",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ")."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O mangá começou a ser publicado em 2023 na revista seinen Young Animal, da editora Hakusensha, já acumulando 8 volumes fechados até então. Aqui no Brasil, por enquanto, não houve anúncio de lançamento da obra.",
+          "runs": [
+            {
+              "text": "O mangá começou a ser publicado em 2023 na revista "
+            },
+            {
+              "text": "seinen",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Young Animal",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", da editora Hakusensha, já acumulando 8 volumes fechados até então. Aqui no Brasil, por enquanto, não houve anúncio de lançamento da obra."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Comic Natalie",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Comic Natalie",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://natalie.mu/comic/news/699613"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-25T20:27:06.000Z",
+      "updatedAt": "2026-11-25T20:28:36.000Z",
+      "expiresAt": "2026-12-02T20:27:06.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/25/now-that-we-draw-divulgado-trailer-com-previa-da-musica-de-abertura",
+          "publishedAt": "2026-11-25T20:27:06.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 269,
+      "qualityScore": 0.972,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-ddbdd837",
       "slug": "smoking-behind-the-supermarket-with-you-deve-ser-publicado-pela-jbc-jbox-ddbdd837",
@@ -2919,7 +3611,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 239,
-      "qualityScore": 0.973,
+      "qualityScore": 0.913,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3178,7 +3870,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 226,
-      "qualityScore": 0.968,
+      "qualityScore": 0.908,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3508,7 +4200,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 254,
-      "qualityScore": 0.976,
+      "qualityScore": 0.916,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3793,7 +4485,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 227,
-      "qualityScore": 0.969,
+      "qualityScore": 0.909,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -4120,7 +4812,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 249,
-      "qualityScore": 0.974,
+      "qualityScore": 0.914,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -5246,1027 +5938,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 0,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-edf2d979",
-      "slug": "novo-trailer-de-sakamoto-days-revela-musica-de-abertura-e-confirma-data-de-estreia-da-2-temporada-jbox-edf2d979",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Novo trailer de ‘Sakamoto Days’ revela música de abertura e confirma data de estreia da 2ª temporada",
-      "originalTitle": "Novo trailer de ‘Sakamoto Days’ revela música de abertura e confirma data de estreia da 2ª temporada",
-      "summary": "A TMS Entertainment divulgou novos detalhes sobre a 2ª temporada de Sakamoto Days, incluindo trailer, pôster e mais nomes no elenco de voz original.",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Anime",
-        "Música",
-        "2ª temporada de sakamoto days",
-        "anime de sakamoto days",
-        "Creepy Nuts",
-        "quando lança a 2ª temporada de sakamoto days",
-        "Sakamoto Days"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/18/novo-trailer-de-sakamoto-days-revela-musica-de-abertura-e-confirma-data-de-estreia-da-2a-temporada",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/18/novo-trailer-de-sakamoto-days-revela-musica-de-abertura-e-confirma-data-de-estreia-da-2a-temporada",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Sakamoto-Days-segunda-temporada-destacada.jpg",
-      "mediaQuery": "Novo trailer de ‘Sakamoto Days’ revela música de abertura e confirma data de estreia da 2ª temporada",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Sakamoto-Days-poster-01.jpg",
-          "alt": "Pôster da 2ª temporada de Sakamoto Days",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/l0jhSyImrVs"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A TMS Entertainment divulgou novos detalhes sobre a 2ª temporada de Sakamoto Days, incluindo trailer, pôster e mais nomes no elenco de voz original.",
-          "runs": [
-            {
-              "text": "A "
-            },
-            {
-              "text": "TMS Entertainment",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " divulgou novos detalhes sobre a 2ª temporada de "
-            },
-            {
-              "text": "Sakamoto Days",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", incluindo trailer, pôster e mais nomes no elenco de voz original."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Com mais de um minuto de duração, a prévia antecipa todos os perigos que Taro Sakamoto e cia. vão enfrentar nos novos episódios, e também tem um trechinho da abertura da 2ª temporada. A canção se chama “Papa wa Imada ni Juvenile”, e é assinada pelo Creepy Nuts. O vídeo confirma, ainda, que a estreia dos novos episódios acontece em 18 de janeiro, dentro da Temporada de Inverno dos animês de 2027.",
-          "runs": [
-            {
-              "text": "Com mais de um minuto de duração, a prévia antecipa todos os perigos que Taro Sakamoto e cia. vão enfrentar nos novos episódios, e também tem um trechinho da abertura da 2ª temporada. A canção se chama "
-            },
-            {
-              "text": "“Papa wa Imada ni Juvenile”",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", e é assinada pelo "
-            },
-            {
-              "text": "Creepy Nuts",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". O vídeo confirma, ainda, que a estreia dos novos episódios acontece em "
-            },
-            {
-              "text": "18 de janeiro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", dentro da "
-            },
-            {
-              "text": "Temporada de Inverno",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " dos animês de 2027."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=l0jhSyImrVs",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/l0jhSyImrVs"
-        },
-        {
-          "type": "paragraph",
-          "text": "Além do vídeo, os novos episódios ganharam um pôster, e a confirmação de mais nomes no elenco de voz original. Kenyu Horiuchi (Tasuku Tenma em Digimon Beatbreak) faz a voz do zelador Byodo, enquanto Kishou Taniyama (Jean Kirstein em Attack on Titan) retorna como Club Jam, principal antagonista do Arco da Infiltração na JCC.",
-          "runs": [
-            {
-              "text": "Além do vídeo, os novos episódios ganharam um pôster, e a confirmação de mais nomes no elenco de voz original. "
-            },
-            {
-              "text": "Kenyu Horiuchi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Tasuku Tenma em "
-            },
-            {
-              "text": "Digimon Beatbreak",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.jbox.com.br/2026/10/27/critica-digimon-beatbreak/"
-            },
-            {
-              "text": ") faz a voz do zelador Byodo, enquanto "
-            },
-            {
-              "text": "Kishou Taniyama",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Jean Kirstein em"
-            },
-            {
-              "text": " Attack on Titan",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") retorna como Club Jam, principal antagonista do Arco da Infiltração na JCC."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Sakamoto-Days-poster-01.jpg",
-          "alt": "Pôster da 2ª temporada de Sakamoto Days"
-        },
-        {
-          "type": "paragraph",
-          "text": "Será que Sakamoto já começa a temporada com dores nos ombros? | TMS/Divulgação",
-          "runs": [
-            {
-              "text": "Será que Sakamoto já começa a temporada com dores nos ombros? | TMS/Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Sakamoto Days adapta o mangá escrito por Yuto Suzuki na revista Weekly Shonen Jump desde 2020, ainda em andamento. Até então, já são 28 volumes encadernados, com a publicação aqui no Brasil feita pela editora Panini.",
-          "runs": [
-            {
-              "text": "Sakamoto Days",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " adapta o mangá escrito por "
-            },
-            {
-              "text": "Yuto Suzuki",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " na revista"
-            },
-            {
-              "text": " Weekly Shonen Jump",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " desde 2020, ainda em andamento. Até então, já são 28 volumes encadernados, com a publicação aqui no Brasil feita pela editora "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na trama, Taro Sakamoto já foi o assassino de aluguel mais temido e respeitado do submundo. No auge de sua carreira, porém, ele abandonou as armas por amor e escolheu uma vida simples ao lado da esposa e da filha, administrando uma pequena loja de conveniência. Anos depois, seu passado volta para cobrar a conta. Alvos, antigos rivais e assassinos determinados a eliminá-lo começam a aparecer, obrigando Sakamoto a colocar suas habilidades novamente à prova. O problema é que ele fez uma promessa à família: nunca mais matar.",
-          "runs": [
-            {
-              "text": "Na trama, Taro Sakamoto já foi o assassino de aluguel mais temido e respeitado do submundo. No auge de sua carreira, porém, ele abandonou as armas por amor e escolheu uma vida simples ao lado da esposa e da filha, administrando uma pequena loja de conveniência. Anos depois, seu passado volta para cobrar a conta. Alvos, antigos rivais e assassinos determinados a eliminá-lo começam a aparecer, obrigando Sakamoto a colocar suas habilidades novamente à prova. O problema é que ele fez uma promessa à família: nunca mais matar."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Ao lado de Shin, um jovem telepata que deveria ser seu inimigo, e de Lu, uma princesa do submundo, Sakamoto precisa proteger aqueles que ama enquanto tenta conciliar sua antiga vida de assassino com a rotina aparentemente banal de um lojista.",
-          "runs": [
-            {
-              "text": "Ao lado de Shin, um jovem telepata que deveria ser seu inimigo, e de Lu, uma princesa do submundo, Sakamoto precisa proteger aqueles que ama enquanto tenta conciliar sua antiga vida de assassino com a rotina aparentemente banal de um lojista."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "No Brasil, o público pode assistir à primeira temporada do animê, dividida em duas partes, na Netflix, além do filme live-action, disponibilizado no catálogo do Amazon Prime Video.",
-          "runs": [
-            {
-              "text": "No Brasil, o público pode assistir à primeira temporada do animê, dividida em duas partes, na "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", além do filme live-action, "
-            },
-            {
-              "text": "disponibilizado no catálogo do Amazon Prime Video",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/10/30/filme-live-action-de-sakamoto-days-estreia-no-catalogo-do-prime-video/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Aqui no site, tem crítica do primeiro volume do mangá e da primeira parte do animê.",
-          "runs": [
-            {
-              "text": "Aqui no site, tem crítica do "
-            },
-            {
-              "text": "primeiro volume do mangá",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2023/03/22/critica-sakamoto-days-volume-1-editora-panini/"
-            },
-            {
-              "text": " e da "
-            },
-            {
-              "text": "primeira parte do animê",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2025/05/19/critica-sakamoto-days-1a-temporada-parte-1/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Anime News Network",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Anime News Network",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://www.animenewsnetwork.com/news/2026-11-17/sakamoto-days-season-2-trailer-unveils-more-cast-opening-song-january-18-debut/.243925"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-18T23:22:40.000Z",
-      "updatedAt": "2026-11-18T23:23:11.000Z",
-      "expiresAt": "2026-11-25T23:22:40.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/18/novo-trailer-de-sakamoto-days-revela-musica-de-abertura-e-confirma-data-de-estreia-da-2a-temporada",
-          "publishedAt": "2026-11-18T23:22:40.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 393,
-      "qualityScore": 0.931,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 14,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-0e5ccff9",
-      "slug": "spice-and-wolf-2-temporada-do-remake-estreia-em-janeiro-jbox-0e5ccff9",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Spice and Wolf: 2ª temporada do remake estreia em janeiro",
-      "originalTitle": "Spice and Wolf: 2ª temporada do remake estreia em janeiro",
-      "summary": "Foi anunciado no site oficial de Spice and Wolf que a segunda temporada da nova adaptação animada estreia em janeiro de 2027. Um pôster foi divulgado junto com a previsão de estreia:",
-      "author": "Teke",
-      "tags": [
-        "Anime",
-        "2ª temporada de Spice and Wolf",
-        "Ookami to Koushinryou",
-        "spice and wolf",
-        "Spice and Wolf remake",
-        "Spice and Wolf: MERCHANT MEETS THE WISE WOLF"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/18/spice-and-wolf-2a-temporada-do-remake-estreia-em-janeiro",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/18/spice-and-wolf-2a-temporada-do-remake-estreia-em-janeiro",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/spice-and-wolf-remake-2a-temporada-destacada.jpg",
-      "mediaQuery": "Spice and Wolf: 2ª temporada do remake estreia em janeiro",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/spice-and-wolf-remake-2a-temporada-poster.jpg",
-          "alt": "imagem: pôster da 2ª temporada do remake de 'Spice and Wolf'.",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/e8Heas5oYOw"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Foi anunciado no site oficial de Spice and Wolf que a segunda temporada da nova adaptação animada estreia em janeiro de 2027. Um pôster foi divulgado junto com a previsão de estreia:",
-          "runs": [
-            {
-              "text": "Foi anunciado no site oficial de "
-            },
-            {
-              "text": "Spice and Wolf",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " que a segunda temporada da nova adaptação animada estreia em "
-            },
-            {
-              "text": "janeiro de 2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Um pôster foi divulgado junto com a previsão de estreia:"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/spice-and-wolf-remake-2a-temporada-poster.jpg",
-          "alt": "imagem: pôster da 2ª temporada do remake de 'Spice and Wolf'."
-        },
-        {
-          "type": "paragraph",
-          "text": "A segunda temporada de Spice and Wolf: MERCHANT MEETS THE WISE WOLF conta com o retorno Taleo Takahashi para a chefia de direção, trabalho que ele faz junto de Hijiri Sanpei, diretor da primeira temporada. A direção da série em si agora é por conta de Nobuyoshi Nagayama (Smile Down the Runway) e Takahiro Majima (direção de episódios em Kengan Ashura). Outros retornos incluem Koji Haneda no design de personagens e Kevin Penkin na trilha sonora, além da produção da animação continuar nas mãos do estúdio Passione.",
-          "runs": [
-            {
-              "text": "A segunda temporada de "
-            },
-            {
-              "text": "Spice and Wolf: MERCHANT MEETS THE WISE WOLF",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " conta com o retorno "
-            },
-            {
-              "text": "Taleo Takahashi",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " para a chefia de direção, trabalho que ele faz junto de "
-            },
-            {
-              "text": "Hijiri Sanpei",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", diretor da primeira temporada. A direção da série em si agora é por conta de "
-            },
-            {
-              "text": "Nobuyoshi Nagayama",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Smile Down the Runway",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") e "
-            },
-            {
-              "text": "Takahiro Majima ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "(direção de episódios em "
-            },
-            {
-              "text": "Kengan Ashura",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "). Outros retornos incluem "
-            },
-            {
-              "text": "Koji Haneda",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no design de personagens e "
-            },
-            {
-              "text": "Kevin Penkin",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " na trilha sonora, além da produção da animação continuar nas mãos do estúdio "
-            },
-            {
-              "text": "Passione",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Já a primeira temporada do remake foi exibida em 2024, contando com 25 episódios ao todo. O animê está disponível com dublagem e legendas em português na Crunchyroll, tratamento que a adaptação original exibida entre 2008 e 2009 também recebeu na plataforma.",
-          "runs": [
-            {
-              "text": "Já a primeira temporada do remake foi exibida em 2024, contando com 25 episódios ao todo. O animê está disponível com dublagem e legendas em português na "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", tratamento que a adaptação original exibida entre 2008 e 2009 também recebeu na plataforma."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Spice and Wolf (Ookami to Koushinryou) conta sobre o mercador andarilho Lawrence e a deusa-loba Holo, capaz de se transformar em uma garota. Ofuscada pelos novos métodos de colheita, Holo quer sair em uma aventura e eventualmente voltar para sua terra natal, Yoitsu. Após convencer Lawrence, eles partem em uma jornada juntos.",
-          "runs": [
-            {
-              "text": "Spice and Wolf",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "(Ookami to Koushinryou) ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "conta sobre o mercador andarilho Lawrence e a deusa-loba Holo, capaz de se transformar em uma garota. Ofuscada pelos novos métodos de colheita, Holo quer sair em uma aventura e eventualmente voltar para sua terra natal, Yoitsu. Após convencer Lawrence, eles partem em uma jornada juntos."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=e8Heas5oYOw",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/e8Heas5oYOw"
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Spice and Wolf (site oficial)",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Spice and Wolf (site oficial)",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://spice-and-wolf.com/news/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-18T22:56:54.000Z",
-      "updatedAt": "2026-11-18T22:59:39.000Z",
-      "expiresAt": "2026-11-25T22:56:54.000Z",
-      "category": "Animes",
-      "eventType": "SEASON",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/18/spice-and-wolf-2a-temporada-do-remake-estreia-em-janeiro",
-          "publishedAt": "2026-11-18T22:56:54.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 236,
-      "qualityScore": 0.907,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 9,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "animenew-29d5f8b7",
-      "slug": "mistress-kanan-ganha-trailer-e-estreia-em-2027-animenew-29d5f8b7",
-      "source": "AnimeNew",
-      "sourceType": "ANIMENEW",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Mistress Kanan ganha trailer e estreia em 2027",
-      "originalTitle": "Mistress Kanan ganha trailer e estreia em 2027",
-      "summary": "A segunda temporada de Mistress Kanan is Devilishly Easy (Kanan-sama wa Akumade Choroi) ganhou seu primeiro trailer completo, novo visual promocional e detalhes do elenco e da equipe de produção. A estreia está prevista para 2027.",
-      "author": "Rafael Shinzo",
-      "tags": [
-        "Animes",
-        "Notícias",
-        "Kanan-sama wa Akumade Choroi",
-        "Mistress Kanan is Devilishly Easy"
-      ],
-      "url": "https://animenew.com.br/mistress-kanan-temporada-2-trailer-2027",
-      "sourceUrl": "https://animenew.com.br/mistress-kanan-temporada-2-trailer-2027",
-      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Mistress-Kanan-ganha-trailer-e-estreia-em-2027.webp",
-      "mediaQuery": "Mistress Kanan ganha trailer e estreia em 2027",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Mistress-Kanan-is-Devilishly-Easy.webp",
-          "alt": "Mistress Kanan is Devilishly Easy",
-          "caption": "©nonco・講談社／カナン様はあくまでチョロい製作委員会"
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/SJdisi3kEhQ"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A segunda temporada de Mistress Kanan is Devilishly Easy (Kanan-sama wa Akumade Choroi) ganhou seu primeiro trailer completo, novo visual promocional e detalhes do elenco e da equipe de produção. A estreia está prevista para 2027.",
-          "runs": [
-            {
-              "text": "A segunda temporada de "
-            },
-            {
-              "text": "Mistress Kanan is Devilishly Easy",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Kanan-sama wa Akumade Choroi",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") ganhou seu primeiro trailer completo, novo visual promocional e detalhes do elenco e da equipe de produção. A estreia está prevista para 2027."
-            }
-          ]
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "text": "The Days of Diamond terá adaptação para anime",
-              "runs": [
-                {
-                  "text": "The Days of Diamond terá adaptação para anime",
-                  "href": "https://animenew.com.br/the-days-of-diamond-anime"
-                }
-              ]
-            },
-            {
-              "text": "Re:ZERO ganha sua 5ª temporada",
-              "runs": [
-                {
-                  "text": "Re:ZERO ganha sua 5ª temporada",
-                  "href": "https://animenew.com.br/rezero-5-temporada-anunciada"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=SJdisi3kEhQ",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/SJdisi3kEhQ"
-        },
-        {
-          "type": "paragraph",
-          "text": "Intitulada Kanan-sama wa Akumade Choroi 2 EASY, a continuação também confirmou quatro novas integrantes no elenco: Sendo assim, Misato Matsuoka como Tekka Shinryūji, Miku Itō como Hanako Ohanabatake, Miyu Tomita como Lily Kageno e Lynn como Koko Kyōgi.",
-          "runs": [
-            {
-              "text": "Intitulada "
-            },
-            {
-              "text": "Kanan-sama wa Akumade Choroi 2 EASY",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", a continuação também confirmou quatro novas integrantes no elenco: Sendo assim, Misato Matsuoka como Tekka Shinryūji, Miku Itō como Hanako Ohanabatake, Miyu Tomita como Lily Kageno e Lynn como Koko Kyōgi."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Mistress-Kanan-is-Devilishly-Easy.webp",
-          "alt": "Mistress Kanan is Devilishly Easy",
-          "caption": "©nonco・講談社／カナン様はあくまでチョロい製作委員会"
-        },
-        {
-          "type": "paragraph",
-          "text": "Entre os retornos estão Aoi Koga como Kanan Takakiyo e Seiichirō Yamashita como Yōji Kyōgi, além de Sayumi Suzushiro, Maki Kawase e Ayana Nanase.",
-          "runs": [
-            {
-              "text": "Entre os retornos estão Aoi Koga como Kanan Takakiyo e Seiichirō Yamashita como Yōji Kyōgi, além de Sayumi Suzushiro, Maki Kawase e Ayana Nanase."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Equipe de produção",
-          "runs": [
-            {
-              "text": "Equipe de produção",
-              "marks": [
-                "strong"
-              ]
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "Yasushi Muroya retorna à direção no Studio KAI, com Hisashi Isogawa como assistente. Rintarō Ikeda novamente cuida dos roteiros, enquanto Akari Minagawa assume mais uma vez o design de personagens.",
-          "runs": [
-            {
-              "text": "Yasushi Muroya retorna à direção no "
-            },
-            {
-              "text": "Studio KAI",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com Hisashi Isogawa como assistente. Rintarō Ikeda novamente cuida dos roteiros, enquanto Akari Minagawa assume mais uma vez o design de personagens."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "História de Mistress Kanan",
-          "runs": [
-            {
-              "text": "História de Mistress Kanan"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "text": "A história acompanha Kanan, uma demônio que se infiltra na sociedade humana como estudante do ensino médio para devorar almas. Entretanto, seus planos mudam quando ela acaba se tornando namorada de um garoto antes mesmo de conseguir atacá-lo.",
-          "runs": [
-            {
-              "text": "A história acompanha Kanan, uma demônio que se infiltra na sociedade humana como estudante do ensino médio para devorar almas. Entretanto, seus planos mudam quando ela acaba se tornando namorada de um garoto antes mesmo de conseguir atacá-lo.",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A primeira temporada estreou em 4 de abril de 2026, com transmissão pela Crunchyroll. O mangá de nonco começou a ser publicado na Weekly Shōnen Magazine, da Kodansha, em junho de 2022.",
-          "runs": [
-            {
-              "text": "A primeira temporada estreou em 4 de abril de 2026, com transmissão pela "
-            },
-            {
-              "text": "Crunchyroll",
-              "href": "https://animenew.com.br/tag/crunchyroll/"
-            },
-            {
-              "text": ". O "
-            },
-            {
-              "text": "mangá",
-              "href": "https://animenew.com.br/mangas"
-            },
-            {
-              "text": " de nonco começou a ser publicado na "
-            },
-            {
-              "text": "Weekly Shōnen Magazine",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", da "
-            },
-            {
-              "text": "Kodansha",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", em junho de 2022."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Site Oficial",
-          "runs": [
-            {
-              "text": "Fonte: "
-            },
-            {
-              "text": "Site Oficial",
-              "href": "https://kanachoro-anime.com/news/"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Mistress Kanan ganha trailer e estreia em 2027.",
-          "runs": [
-            {
-              "text": "Este artigo foi publicado originalmente no "
-            },
-            {
-              "text": "AnimeNew",
-              "href": "https://animenew.com.br/"
-            },
-            {
-              "text": ".  Leia a versão completa em "
-            },
-            {
-              "text": "Mistress Kanan ganha trailer e estreia em 2027",
-              "href": "https://animenew.com.br/mistress-kanan-temporada-2-trailer-2027/"
-            },
-            {
-              "text": "."
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-18T20:32:33.000Z",
-      "updatedAt": "2026-11-18T20:32:33.000Z",
-      "expiresAt": "2026-11-25T20:32:33.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "AnimeNew",
-          "url": "https://animenew.com.br/mistress-kanan-temporada-2-trailer-2027",
-          "publishedAt": "2026-11-18T20:32:33.000Z",
-          "author": "Rafael Shinzo"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 242,
-      "qualityScore": 0.913,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
