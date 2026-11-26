@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T10:57:52.245Z",
+  "generatedAt": "2026-11-26T20:03:19.184Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 34,
+      "count": 33,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,1651 @@
     }
   ],
   "stats": {
-    "collected": 44,
-    "grouped": 17,
-    "published": 17,
-    "newStories": 17,
-    "fullArticles": 17,
+    "collected": 43,
+    "grouped": 20,
+    "published": 20,
+    "newStories": 20,
+    "fullArticles": 20,
     "previewArticles": 0,
-    "avgWords": 272,
-    "withHeroImage": 17,
-    "withOrderedMedia": 17,
+    "avgWords": 277,
+    "withHeroImage": 19,
+    "withOrderedMedia": 20,
     "skippedTranslation": 0,
-    "skippedQuality": 26,
-    "durationMs": 2544
+    "skippedQuality": 21,
+    "durationMs": 8418
   },
   "items": [
+    {
+      "id": "jbox-3f971453",
+      "slug": "historie-novo-trailer-divulgado-confirma-estreia-da-adaptacao-em-janeiro-jbox-3f971453",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Historie: Novo trailer divulgado confirma estreia da adaptação em janeiro",
+      "originalTitle": "Historie: Novo trailer divulgado confirma estreia da adaptação em janeiro",
+      "summary": "Nessa quarta-feira (25), foi divulgado um novo trailer para o animê Historie. Baseado no mangá de mesmo nome escrito por Hitoshi Iwaaki, autor de Parasyte, sua estreia está marcada para 8 de janeiro, na Temporada de Inverno de 2027.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "Música",
+        "animê de historie",
+        "Historie",
+        "Hitoshi Iwaaki",
+        "RETRORIRON",
+        "yorushika"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/26/historie-novo-trailer-divulgado-confirma-estreia-da-adaptacao-em-janeiro",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/26/historie-novo-trailer-divulgado-confirma-estreia-da-adaptacao-em-janeiro",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/historie-destacada.jpg",
+      "mediaQuery": "Historie: Novo trailer divulgado confirma estreia da adaptação em janeiro",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/MSYV142dqsg"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Nessa quarta-feira (25), foi divulgado um novo trailer para o animê Historie. Baseado no mangá de mesmo nome escrito por Hitoshi Iwaaki, autor de Parasyte, sua estreia está marcada para 8 de janeiro, na Temporada de Inverno de 2027.",
+          "runs": [
+            {
+              "text": "Nessa quarta-feira (25), foi divulgado um novo trailer para o animê "
+            },
+            {
+              "text": "Historie",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ". Baseado no mangá de mesmo nome escrito por "
+            },
+            {
+              "text": "Hitoshi Iwaaki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", autor de "
+            },
+            {
+              "text": "Parasyte",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", sua estreia está marcada para "
+            },
+            {
+              "text": "8 de janeiro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", na "
+            },
+            {
+              "text": "Temporada de Inverno",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de 2027."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ambientada na antiguidade, a história acompanha Eumenes, um jovem de raciocínio rápido que tem um destino grandioso pela frente: ele se tornará um famoso comandante militar e secretário pessoal de Alexandre, o Grande. Contudo, seu caminho até a glória será repleto de perigos.",
+          "runs": [
+            {
+              "text": "Ambientada na antiguidade, a história acompanha Eumenes, um jovem de raciocínio rápido que tem um destino grandioso pela frente: ele se tornará um famoso comandante militar e secretário pessoal de Alexandre, o Grande. Contudo, seu caminho até a glória será repleto de perigos."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira:",
+          "runs": [
+            {
+              "text": "Confira:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=MSYV142dqsg",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/MSYV142dqsg"
+        },
+        {
+          "type": "paragraph",
+          "text": "A banda yorushika interpreta a música de abertura, “Masshiro”, que pode ser ouvida no trailer. Já o tema de encerramento, “Amphoria”, é gravado pelo grupo RETRORIRON.",
+          "runs": [
+            {
+              "text": "A banda "
+            },
+            {
+              "text": "yorushika",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " interpreta a música de abertura, "
+            },
+            {
+              "text": "“Masshiro”",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", que pode ser ouvida no "
+            },
+            {
+              "text": "trailer",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Já o tema de encerramento, "
+            },
+            {
+              "text": "“Amphoria”",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", é gravado pelo grupo "
+            },
+            {
+              "text": "RETRORIRON",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A produção é do estúdio LIDEN FILMS, com direção de Nobuharu Kamanaka (Detective Conan, episódios 975 em diante, Roll Over and Die e Big Order) e assistência de Takatoshi Suzuki. O roteiro é de Toshiya Ono (Land of the Lustrous, SHOSHIMIN: How to Become Ordinary e 86). Isoroku Koga (Detectives These Days Are Crazy!) assina o design de personagens e a direção-chefe de animação, enquanto Gin Hashiba é o compositor da trilha sonora. O pesquisador e consultor histórico Sisin Fujimura também participa da produção.",
+          "runs": [
+            {
+              "text": "A produção é do estúdio"
+            },
+            {
+              "text": " LIDEN FILMS",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com direção de "
+            },
+            {
+              "text": "Nobuharu Kamanaka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Detective Conan",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", episódios 975 em diante, "
+            },
+            {
+              "text": "Roll Over and Die ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "e "
+            },
+            {
+              "text": "Big Order",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") e assistência de "
+            },
+            {
+              "text": "Takatoshi Suzuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O roteiro é de "
+            },
+            {
+              "text": "Toshiya Ono",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Land of the Lustrous",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "SHOSHIMIN: How to Become Ordinary",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "86",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). "
+            },
+            {
+              "text": "Isoroku Koga",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Detectives These Days Are Crazy!",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") assina o design de personagens e a direção-chefe de animação, enquanto "
+            },
+            {
+              "text": "Gin Hashiba",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " é o compositor da trilha sonora. O pesquisador e consultor histórico "
+            },
+            {
+              "text": "Sisin Fujimura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " também participa da produção."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O mangá de Historie teve início em outubro de 2004 na revista de demografia seinen Monthly Afternoon, da editora Kodansha, passando, desde então, por diversos hiatos. Ainda assim, ele já reuniu 12 volumes compilados, com o último sendo lançado no Japão em 21 de junho de 2024. No entanto, a obra volta às páginas da revista em dezembro, tendo também um capítulo já confirmado para a edição de janeiro de 2027, casando com a estreia do animê.",
+          "runs": [
+            {
+              "text": "O mangá de "
+            },
+            {
+              "text": "Historie ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "teve início em outubro de 2004 na revista de demografia "
+            },
+            {
+              "text": "seinen",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Monthly Afternoon",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", da editora Kodansha, passando, desde então, por diversos hiatos. Ainda assim, ele já reuniu 12 volumes compilados, com o último sendo lançado no Japão em 21 de junho de 2024. No entanto, a obra volta às páginas da revista em dezembro, tendo também um capítulo já confirmado para a edição de janeiro de 2027, casando com a estreia do animê."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Até então, Historie já ultrapassou 4,7 milhões de cópias em circulação. Aqui no Brasil, o mangá é lançado pela editora Taverna do Rei, já com 4 volumes disponíveis.",
+          "runs": [
+            {
+              "text": "Até então, "
+            },
+            {
+              "text": "Historie",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " já ultrapassou 4,7 milhões de cópias em circulação. Aqui no Brasil, o mangá é lançado pela editora "
+            },
+            {
+              "text": "Taverna do Rei",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", já com 4 volumes disponíveis."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Anime News Network",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-11-24/historie-anime-video-unveils-more-cast-and-staff-theme-songs-january-8-debut/.244173"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-26T20:01:09.000Z",
+      "updatedAt": "2026-11-26T20:02:07.000Z",
+      "expiresAt": "2026-12-03T20:01:09.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/26/historie-novo-trailer-divulgado-confirma-estreia-da-adaptacao-em-janeiro",
+          "publishedAt": "2026-11-26T20:01:09.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 319,
+      "qualityScore": 0.979,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-ff149246",
+      "slug": "anime-the-kept-man-of-the-princess-knight-ganha-nova-previa-com-musica-de-encerramento-e-mais-jbox-ff149246",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Animê ‘The Kept Man of the Princess Knight’ ganha nova prévia com música de encerramento e mais",
+      "originalTitle": "Animê ‘The Kept Man of the Princess Knight’ ganha nova prévia com música de encerramento e mais",
+      "summary": "A Kadokawa divulgou uma nova prévia de The Kept Man of the Princess Knight, animê que adapta a light novel de mesmo nome escrita por Toru Shirogane e ilustrada por Saki Mashima.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Anime",
+        "Música",
+        "Animê de The Kept Man of the Princess Knight",
+        "Saki Mashima",
+        "The Kept Man of the Princess Knight",
+        "Toru Shirogane"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/26/anime-the-kept-man-of-the-princess-knight-ganha-nova-previa-com-musica-de-encerramento-e-mais",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/26/anime-the-kept-man-of-the-princess-knight-ganha-nova-previa-com-musica-de-encerramento-e-mais",
+      "image": "",
+      "mediaQuery": "Animê ‘The Kept Man of the Princess Knight’ ganha nova prévia com música de encerramento e mais",
+      "mediaType": "manga",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/H3o1pIdPU74"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Kadokawa divulgou uma nova prévia de The Kept Man of the Princess Knight, animê que adapta a light novel de mesmo nome escrita por Toru Shirogane e ilustrada por Saki Mashima.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Kadokawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " divulgou uma nova prévia de "
+            },
+            {
+              "text": "The Kept Man of the Princess Knight",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", animê que adapta a light novel de mesmo nome escrita por "
+            },
+            {
+              "text": "Toru Shirogane",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e ilustrada por "
+            },
+            {
+              "text": "Saki Mashima",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além de mostrar novas cenas da produção, o vídeo dá uma prévia de “Gika”, música de encerramento assinada pelo grupo Sajou no Hana.",
+          "runs": [
+            {
+              "text": "Além de mostrar novas cenas da produção, o vídeo dá uma prévia de "
+            },
+            {
+              "text": "“Gika”",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", música de encerramento assinada pelo grupo "
+            },
+            {
+              "text": "Sajou no Hana",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=H3o1pIdPU74",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/H3o1pIdPU74"
+        },
+        {
+          "type": "paragraph",
+          "text": "Também foram revelados novos nomes no elenco de voz original. Yuya Hirose (Takuya Yamamoto em Tokyo Revengers) faz o papel do jovem guerreiro Ralph; Manaka Iwami (Tohru Honda em Fruits Basket) é a novata Noel; Shion Wakayama (Momo Ayase em Dan Da Dan) é a maga Beatrice e Saori Onishi (Nagisa em Daemons do Reino das Sombras) fecha a lista de novidades como Cecilia, outra maga e irmã mais velha de Beatrice.",
+          "runs": [
+            {
+              "text": "Também foram revelados novos nomes no elenco de voz original. "
+            },
+            {
+              "text": "Yuya Hirose",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Takuya Yamamoto em "
+            },
+            {
+              "text": "Tokyo Revengers",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2021/06/27/critica-tokyo-revengers-quando-uma-idealizacao-adolescente-da-errado-episodios-1-ao-12/"
+            },
+            {
+              "text": ") faz o papel do jovem guerreiro Ralph; "
+            },
+            {
+              "text": "Manaka Iwami",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Tohru Honda em "
+            },
+            {
+              "text": "Fruits Basket",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") é a novata Noel; "
+            },
+            {
+              "text": "Shion Wakayama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Momo Ayase em"
+            },
+            {
+              "text": " Dan Da Dan",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2024/12/26/critica-dan-da-dan-1a-temporada/"
+            },
+            {
+              "text": ") é a maga Beatrice e "
+            },
+            {
+              "text": "Saori Onishi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (Nagisa em "
+            },
+            {
+              "text": "Daemons do Reino das Sombras",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2026/09/23/critica-daemons-of-the-shadow-realm-1a-temporada/"
+            },
+            {
+              "text": ") fecha a lista de novidades como Cecilia, outra maga e irmã mais velha de Beatrice."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história de The Kept Man of the Princess Knight é situada em uma realidade fantástica, mas perigosa, em que existem masmorras infestadas de monstros. Disposta a reconstruir seu reino caído, a princesa Arwin organiza um grupo de aventureiros para descer às masmorras e encontrar um importante tesouro perdido. Uma das pessoas que faz parte do grupo é Matthew, um homem desprezado por todos na cidade, mas que eventualmente pode provar seu valor.",
+          "runs": [
+            {
+              "text": "A história de "
+            },
+            {
+              "text": "The Kept Man of the Princess Knight",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é situada em uma realidade fantástica, mas perigosa, em que existem masmorras infestadas de monstros. Disposta a reconstruir seu reino caído, a princesa Arwin organiza um grupo de aventureiros para descer às masmorras e encontrar um importante tesouro perdido. Uma das pessoas que faz parte do grupo é Matthew, um homem desprezado por todos na cidade, mas que eventualmente pode provar seu valor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A light novel começou a ser publicada em fevereiro de 2022 e segue até os dias atuais, com 7 volumes até o momento. Uma adaptação em mangá também foi lançada em 2022 pela editora ASCII Media Works.",
+          "runs": [
+            {
+              "text": "A light novel começou a ser publicada em fevereiro de 2022 e segue até os dias atuais, com 7 volumes até o momento. Uma adaptação em mangá também foi lançada em 2022 pela editora "
+            },
+            {
+              "text": "ASCII Media Works",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O animê de The Kept Man of the Princess Knight é assinado pelo estúdio Blade, e estreia em 3 de janeiro de 2027, como parte da Temporada de Inverno dos animês do próximo ano. Até o momento, a plataforma de transmissão no Brasil ainda não foi confirmada.",
+          "runs": [
+            {
+              "text": "O animê de "
+            },
+            {
+              "text": "The Kept Man of the Princess Knight",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é assinado pelo estúdio "
+            },
+            {
+              "text": "Blade",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e estreia em "
+            },
+            {
+              "text": "3 de janeiro de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", como parte da "
+            },
+            {
+              "text": "Temporada de Inverno",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " dos animês do próximo ano. Até o momento, a plataforma de transmissão no Brasil ainda não foi confirmada."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Anime News Network",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-11-25/the-kept-man-of-the-princess-knight-anime-new-video-reveals-more-cast-ending-song-january-3-debut/.244177"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-26T18:58:14.000Z",
+      "updatedAt": "2026-11-26T18:59:08.000Z",
+      "expiresAt": "2026-12-03T18:58:14.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/26/anime-the-kept-man-of-the-princess-knight-ganha-nova-previa-com-musica-de-encerramento-e-mais",
+          "publishedAt": "2026-11-26T18:58:14.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 305,
+      "qualityScore": 0.836,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-d5efc31c",
+      "slug": "kindergarten-wars-ganha-trailer-com-musica-de-abertura-da-ado-jbox-d5efc31c",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Kindergarten Wars’ ganha trailer com música de abertura da Ado",
+      "originalTitle": "‘Kindergarten Wars’ ganha trailer com música de abertura da Ado",
+      "summary": "O animê de Kindergarten Wars, adaptação do mangá de mesmo nome escrito e desenhado por Yu Chiba, estreia em abril de 2027, Temporada de Primavera lá no Japão. E a Bandai Namco Filmworks divulgou ontem (25) seu primeiro trailer completo, que conta com uma prévia da música de abertura, “Bibayatarametta”, interpretada pela cantora Ado.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "Música",
+        "ado",
+        "animê de kindergarten wars",
+        "kindergarten wars",
+        "música da ado"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/26/kindergarten-wars-ganha-trailer-com-musica-de-abertura-da-ado",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/26/kindergarten-wars-ganha-trailer-com-musica-de-abertura-da-ado",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/kindergarden-wars-destacada.jpg",
+      "mediaQuery": "‘Kindergarten Wars’ ganha trailer com música de abertura da Ado",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/kindergarden-wars-1.jpg",
+          "alt": "Imagem: arte especial feita pelo mangaká Yu Chiba com dois personagens de 'Kindergarden Wars\", um ao lado do outro, cercados por crianças, num fundo amarelo.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/o5Ua73kZCUU"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O animê de Kindergarten Wars, adaptação do mangá de mesmo nome escrito e desenhado por Yu Chiba, estreia em abril de 2027, Temporada de Primavera lá no Japão. E a Bandai Namco Filmworks divulgou ontem (25) seu primeiro trailer completo, que conta com uma prévia da música de abertura, “Bibayatarametta”, interpretada pela cantora Ado.",
+          "runs": [
+            {
+              "text": "O animê de "
+            },
+            {
+              "text": "Kindergarten Wars",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", adaptação do mangá de mesmo nome escrito e desenhado por "
+            },
+            {
+              "text": "Yu Chiba",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", estreia em "
+            },
+            {
+              "text": "abril de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Temporada de Primavera",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " lá no Japão. E a "
+            },
+            {
+              "text": "Bandai Namco Filmworks",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " divulgou ontem (25) seu primeiro trailer completo, que conta com uma prévia da música de abertura, "
+            },
+            {
+              "text": "“Bibayatarametta”",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", interpretada pela cantora "
+            },
+            {
+              "text": "Ado",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira:",
+          "runs": [
+            {
+              "text": "Confira:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=o5Ua73kZCUU",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/o5Ua73kZCUU"
+        },
+        {
+          "type": "paragraph",
+          "text": "Na trama, acompanhamos Rita, conhecida como Condenada 999, uma lendária assassina que agora trabalha no Kindergarten Noir, o jardim de infância mais seguro do mundo, frequentado por filhos de líderes mundiais, celebridades e grandes empresários. Sua missão é proteger as crianças de assassinos enviados para atacá-las. Apesar de suas habilidades excepcionais, Rita tem uma fraqueza perfeitamente compreensível: não consegue resistir a homens bonitos!",
+          "runs": [
+            {
+              "text": "Na trama, acompanhamos Rita, conhecida como Condenada 999, uma lendária assassina que agora trabalha no Kindergarten Noir, o jardim de infância mais seguro do mundo, frequentado por filhos de líderes mundiais, celebridades e grandes empresários. Sua missão é proteger as crianças de assassinos enviados para atacá-las. Apesar de suas habilidades excepcionais, Rita tem uma fraqueza perfeitamente compreensível: não consegue resistir a homens bonitos!"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A direção do animê é de Shinsuke Gomi, que já trabalhou em episódios de Demon Slayer e Secrets of the Silent Witch. Junko Yamanaka, de Kamisama Kiss e Servamp, fica com o design de personagens. E Takaomi Kanasaki, diretor de KonoSuba e Princess Connect! Re:Dive, é o roteirista.",
+          "runs": [
+            {
+              "text": "A direção do animê é de "
+            },
+            {
+              "text": "Shinsuke Gomi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que já trabalhou em episódios de "
+            },
+            {
+              "text": "Demon Slayer",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Secrets of the Silent Witch",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". "
+            },
+            {
+              "text": "Junko Yamanaka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", de "
+            },
+            {
+              "text": "Kamisama Kiss ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "e "
+            },
+            {
+              "text": "Servamp",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", fica com o "
+            },
+            {
+              "text": "design",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de personagens. E "
+            },
+            {
+              "text": "Takaomi Kanasaki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", diretor de "
+            },
+            {
+              "text": "KonoSuba",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Princess Connect! Re:Dive",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", é o roteirista."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A equipe também conta com Satoru Kuwabara na direção de arte, Saori Yoshiida na definição de cores, Masaomi Suzuki na direção de CG, Naoki Eto na direção de fotografia e composição, Kashiko Kimura na edição e Ryoshi Tanaka na direção de som. A trilha sonora é composta por Hiroshi Nakamura, Kenta Higashiohji e Dai Haraguchi.",
+          "runs": [
+            {
+              "text": "A equipe também conta com "
+            },
+            {
+              "text": "Satoru Kuwabara",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na direção de arte, "
+            },
+            {
+              "text": "Saori Yoshiida",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na definição de cores, "
+            },
+            {
+              "text": "Masaomi Suzuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na direção de CG, "
+            },
+            {
+              "text": "Naoki Eto",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na direção de fotografia e composição, "
+            },
+            {
+              "text": "Kashiko Kimura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na edição e "
+            },
+            {
+              "text": "Ryoshi Tanaka",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " na direção de som. A trilha sonora é composta por "
+            },
+            {
+              "text": "Hiroshi Nakamura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Kenta Higashiohji ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "e"
+            },
+            {
+              "text": " Dai Haraguchi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A publicação do mangá começou em setembro de 2022, na plataforma digital Shonen Jump+, da editora Shueisha. Até agosto desse ano, já foram lançados 18 volumes compilados da obra, que entrou em seu arco final em março de 2025. A série já ultrapassou 2 milhões de cópias em circulação. Aqui no Brasil, ele está disponível, justamente, através da Shonen Jump+, em português. A versão física ainda não foi anunciada por nenhuma editora.",
+          "runs": [
+            {
+              "text": "A publicação do mangá começou em setembro de 2022, na plataforma digital "
+            },
+            {
+              "text": "Shonen Jump+",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", da editora Shueisha. Até agosto desse ano, já foram lançados 18 volumes compilados da obra, que entrou em seu arco final em março de 2025. A série já ultrapassou 2 milhões de cópias em circulação. Aqui no Brasil, ele está disponível, justamente, através da "
+            },
+            {
+              "text": "Shonen Jump+",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", em português. A versão física ainda não foi anunciada por nenhuma editora."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em outubro, em comemoração ao anúncio do animê, o mangaká Yu Chiba divulgou uma arte especial:",
+          "runs": [
+            {
+              "text": "Em outubro, em comemoração ao anúncio do animê, o mangaká Yu Chiba divulgou uma arte especial:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/kindergarden-wars-1.jpg",
+          "alt": "Imagem: arte especial feita pelo mangaká Yu Chiba com dois personagens de 'Kindergarden Wars\", um ao lado do outro, cercados por crianças, num fundo amarelo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Yu Chiba/Reprodução",
+          "runs": [
+            {
+              "text": "Imagem: Yu Chiba/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Anime News Network",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-11-25/kindergarten-wars-anime-video-reveals-more-staff-ado-opening-song-april-debut/.244176"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-26T15:32:45.000Z",
+      "updatedAt": "2026-11-26T15:34:29.000Z",
+      "expiresAt": "2026-12-03T15:32:45.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/26/kindergarten-wars-ganha-trailer-com-musica-de-abertura-da-ado",
+          "publishedAt": "2026-11-26T15:32:45.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 333,
+      "qualityScore": 0.983,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-ddcebeea",
+      "slug": "migratory-birds-snail-anime-esta-previsto-para-a-temporada-de-verao-de-2027-jbox-ddcebeea",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Migratory Birds & Snail: Animê está previsto para a Temporada de Verão de 2027",
+      "originalTitle": "Migratory Birds & Snail: Animê está previsto para a Temporada de Verão de 2027",
+      "summary": "O animê adaptando o mangá Migratory Birds & Snail (Wataridori to Katatsumuri), de Makoto Takatsu, tem estreia prevista para a Temporada de Verão de 2027, que costuma começar em julho (3º trimestre). A informação foi divulgada nesta quarta-feira (25), na cinta promocional (obi) que envolve o sétimo volume da obra lá no Japão.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "animê de Migratory Birds & Snail",
+        "Migratory Birds & Snail",
+        "Wataridori to Katatsumuri"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/26/migratory-birds-snail-anime-esta-previsto-para-a-temporada-de-verao-de-2027",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/26/migratory-birds-snail-anime-esta-previsto-para-a-temporada-de-verao-de-2027",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/migratory-birds-and-snail-destacada.jpg",
+      "mediaQuery": "Migratory Birds & Snail: Animê está previsto para a Temporada de Verão de 2027",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/migratory-birds-and-snail-2.jpg",
+          "alt": "Imagem: anúncio do animê de 'Migratory Bird and Snail', com uma menina de vestido branco e casaco azul e um rapaz loiro de camiseta branca andando em pedras num rio ao por do sol.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O animê adaptando o mangá Migratory Birds & Snail (Wataridori to Katatsumuri), de Makoto Takatsu, tem estreia prevista para a Temporada de Verão de 2027, que costuma começar em julho (3º trimestre). A informação foi divulgada nesta quarta-feira (25), na cinta promocional (obi) que envolve o sétimo volume da obra lá no Japão.",
+          "runs": [
+            {
+              "text": "O animê adaptando o mangá "
+            },
+            {
+              "text": "Migratory Birds & Snail",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Wataridori to Katatsumuri",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), de "
+            },
+            {
+              "text": "Makoto Takatsu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", tem estreia prevista para a "
+            },
+            {
+              "text": "Temporada de Verão",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que costuma começar em julho (3º trimestre). A informação foi divulgada nesta quarta-feira (25), na cinta promocional ("
+            },
+            {
+              "text": "obi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") que envolve o sétimo volume da obra lá no Japão."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/migratory-birds-and-snail-2.jpg",
+          "alt": "Imagem: anúncio do animê de 'Migratory Bird and Snail', com uma menina de vestido branco e casaco azul e um rapaz loiro de camiseta branca andando em pedras num rio ao por do sol."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: @waka_kata no X/Reprodução",
+          "runs": [
+            {
+              "text": "Imagem: "
+            },
+            {
+              "text": "@waka_kata",
+              "href": "https://x.com/wata_kata/status/2125507756895719898"
+            },
+            {
+              "text": " no X/Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na trama, acompanhamos Unpei Mochizuki, um jovem em seu segundo ano de trabalho em uma distribuidora de peças para máquinas. Após cometer um erro que causa problemas a um cliente, ele sente vontade de ir para algum lugar distante, onde ninguém o conheça. Ao parar o carro à beira da estrada, conhece Tsugumi Nagisa, uma escritora de livros ilustrados que viaja de carro acompanhada de seu cachorro. Os dois decidem então percorrer o Japão numa road trip sem grandes planos, viajando e dormindo dentro do veículo.",
+          "runs": [
+            {
+              "text": "Na trama, acompanhamos Unpei Mochizuki, um jovem em seu segundo ano de trabalho em uma distribuidora de peças para máquinas. Após cometer um erro que causa problemas a um cliente, ele sente vontade de ir para algum lugar distante, onde ninguém o conheça. Ao parar o carro à beira da estrada, conhece Tsugumi Nagisa, uma escritora de livros ilustrados que viaja de carro acompanhada de seu cachorro. Os dois decidem então percorrer o Japão numa "
+            },
+            {
+              "text": "road trip",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " sem grandes planos, viajando e dormindo dentro do veículo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A adaptação para animê foi anunciada originalmente em 2024. Outros detalhes, como estúdio ou direção, ainda não foram divulgados.",
+          "runs": [
+            {
+              "text": "A adaptação para animê foi anunciada originalmente em 2024. Outros detalhes, como estúdio ou direção, ainda não foram divulgados."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O mangá teve início em outubro de 2019 na revista digital NewsCrunch, da Wani Books. O primeiro volume foi lançado em agosto de 2020 e entrou em hiato após o terceiro, que saiu em setembro de 2021, retornando em 2024. Aqui no Brasil, a obra ainda não foi anunciada por nenhuma editora.",
+          "runs": [
+            {
+              "text": "O mangá teve início em outubro de 2019 na revista digital "
+            },
+            {
+              "text": "NewsCrunch",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", da "
+            },
+            {
+              "text": "Wani Books",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". O primeiro volume foi lançado em agosto de 2020 e entrou em hiato após o terceiro, que saiu em setembro de 2021, retornando em 2024. Aqui no Brasil, a obra ainda não foi anunciada por nenhuma editora."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Anime News Network e @waka_kata no X (antigo Twitter)",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-11-25/migratory-birds-and-snail-tv-anime-debuts-next-summer/.244185"
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "@waka_kata no X (antigo Twitter)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://x.com/wata_kata/status/2125507756895719898"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-26T14:49:58.000Z",
+      "updatedAt": "2026-11-26T14:59:07.000Z",
+      "expiresAt": "2026-12-03T14:49:58.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/26/migratory-birds-snail-anime-esta-previsto-para-a-temporada-de-verao-de-2027",
+          "publishedAt": "2026-11-26T14:49:58.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 241,
+      "qualityScore": 0.968,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 9,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-602419da",
       "slug": "frieren-ganha-minisserie-especial-em-dezembro-jbox-602419da",
@@ -356,407 +1987,6 @@
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-721988fe",
-      "slug": "now-that-we-draw-divulgado-trailer-com-previa-da-musica-de-abertura-jbox-721988fe",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Now That We Draw: Divulgado trailer com prévia da música de abertura",
-      "originalTitle": "Now That We Draw: Divulgado trailer com prévia da música de abertura",
-      "summary": "A adaptação em animê do mangá Now That We Draw (Kakunaru Ue wa), de Kyu Takahata e Yuji Kaba, estreia em 8 de janeiro de 2027.",
-      "author": "Igor Lunei",
-      "tags": [
-        "Anime",
-        "animê de now that we draw",
-        "Inner Journey",
-        "Kakunaru Ue wa",
-        "Now That We Draw",
-        "shallm"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/25/now-that-we-draw-divulgado-trailer-com-previa-da-musica-de-abertura",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/25/now-that-we-draw-divulgado-trailer-com-previa-da-musica-de-abertura",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/now-that-we-draw-destacada.jpg",
-      "mediaQuery": "Now That We Draw: Divulgado trailer com prévia da música de abertura",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/95LE9JQNpRI"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "A adaptação em animê do mangá Now That We Draw (Kakunaru Ue wa), de Kyu Takahata e Yuji Kaba, estreia em 8 de janeiro de 2027.",
-          "runs": [
-            {
-              "text": "A adaptação em animê do mangá "
-            },
-            {
-              "text": "Now That We Draw",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Kakunaru Ue wa",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "), de "
-            },
-            {
-              "text": "Kyu Takahata",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Yuji Kaba",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", estreia em "
-            },
-            {
-              "text": "8 de janeiro de 2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O anúncio foi acompanhado pela divulgação de um novo trailer, que apresenta uma prévia da música de abertura, “Kimiiro Hikari”, interpretada pela banda shallm. Já a música de encerramento, “Serifu wa Iranai”, ficará por conta da banda de Inner Journey.",
-          "runs": [
-            {
-              "text": "O anúncio foi acompanhado pela divulgação de um novo "
-            },
-            {
-              "text": "trailer",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", que apresenta uma prévia da música de abertura, "
-            },
-            {
-              "text": "“Kimiiro Hikari”",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", interpretada pela banda "
-            },
-            {
-              "text": "shallm",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Já a música de encerramento, "
-            },
-            {
-              "text": "“Serifu wa Iranai”",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", ficará por conta da banda de "
-            },
-            {
-              "text": "Inner Journey",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira:",
-          "runs": [
-            {
-              "text": "Confira:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=95LE9JQNpRI",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/95LE9JQNpRI"
-        },
-        {
-          "type": "paragraph",
-          "text": "Na trama, acompanhamos Yuki Uehara, um estudante do ensino médio tímido que cria uma protagonista ideal para sua comédia romântica: uma garota ingênua, desajeitada e recatada. Quando um editor rejeita seu mangá por considerá-lo pouco original e distante da realidade, ele conhece Niina Miyamoto, uma colega de classe extrovertida e bonita que também sonha em se tornar mangaká. Após receber críticas semelhantes, ela propõe que os dois finjam estar em um relacionamento, já que nenhum deles tem experiência amorosa. A partir daí, a dupla tenta transformar suas ideias em histórias convincentes, mesmo sem corresponder aos protagonistas que imaginou.",
-          "runs": [
-            {
-              "text": "Na trama, acompanhamos Yuki Uehara, um estudante do ensino médio tímido que cria uma protagonista ideal para sua comédia romântica: uma garota ingênua, desajeitada e recatada. Quando um editor rejeita seu mangá por considerá-lo pouco original e distante da realidade, ele conhece Niina Miyamoto, uma colega de classe extrovertida e bonita que também sonha em se tornar mangaká. Após receber críticas semelhantes, ela propõe que os dois finjam estar em um relacionamento, já que nenhum deles tem experiência amorosa. A partir daí, a dupla tenta transformar suas ideias em histórias convincentes, mesmo sem corresponder aos protagonistas que imaginou."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A direção do animê é de Shunsuke Ishikawa (BLUE LOCK THE MOVIE -EPISODE NAGI-), com produção no estúdio ROLL2, roteiro de Deko Akao (Arakawa Under the Bridge, Komi Can’t Communicate), e design de personagens de Hiromi Nakagawa (WATATEN!: an Angel Flew Down to Me, Saint Cecilia and Pastor Lawrence).",
-          "runs": [
-            {
-              "text": "A direção do animê é de "
-            },
-            {
-              "text": "Shunsuke Ishikawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "BLUE LOCK THE MOVIE -EPISODE NAGI-",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "), com produção no estúdio "
-            },
-            {
-              "text": "ROLL2",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", roteiro de "
-            },
-            {
-              "text": "Deko Akao",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Arakawa Under the Bridge",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Komi Can’t Communicate",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "), e "
-            },
-            {
-              "text": "design",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " de personagens de "
-            },
-            {
-              "text": "Hiromi Nakagawa",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "WATATEN!: an Angel Flew Down to Me",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Saint Cecilia and Pastor Lawrence",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ")."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O mangá começou a ser publicado em 2023 na revista seinen Young Animal, da editora Hakusensha, já acumulando 8 volumes fechados até então. Aqui no Brasil, por enquanto, não houve anúncio de lançamento da obra.",
-          "runs": [
-            {
-              "text": "O mangá começou a ser publicado em 2023 na revista "
-            },
-            {
-              "text": "seinen",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Young Animal",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": ", da editora Hakusensha, já acumulando 8 volumes fechados até então. Aqui no Brasil, por enquanto, não houve anúncio de lançamento da obra."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Comic Natalie",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "Comic Natalie",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://natalie.mu/comic/news/699613"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-25T20:27:06.000Z",
-      "updatedAt": "2026-11-25T20:28:36.000Z",
-      "expiresAt": "2026-12-02T20:27:06.000Z",
-      "category": "Trailers",
-      "eventType": "TRAILER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/25/now-that-we-draw-divulgado-trailer-com-previa-da-musica-de-abertura",
-          "publishedAt": "2026-11-25T20:27:06.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 269,
-      "qualityScore": 0.972,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 10,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
-        "embedCount": 1,
         "sourcePagesRead": 0
       }
     },
@@ -2922,7 +4152,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 399,
-      "qualityScore": 0.989,
+      "qualityScore": 0.929,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3258,7 +4488,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 253,
-      "qualityScore": 0.972,
+      "qualityScore": 0.912,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
