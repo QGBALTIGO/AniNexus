@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T11:26:35.501Z",
+  "generatedAt": "2026-11-27T20:12:05.881Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -55,19 +55,671 @@
   ],
   "stats": {
     "collected": 44,
-    "grouped": 21,
-    "published": 21,
-    "newStories": 21,
-    "fullArticles": 21,
+    "grouped": 22,
+    "published": 22,
+    "newStories": 22,
+    "fullArticles": 22,
     "previewArticles": 0,
     "avgWords": 273,
-    "withHeroImage": 21,
-    "withOrderedMedia": 21,
+    "withHeroImage": 22,
+    "withOrderedMedia": 22,
     "skippedTranslation": 0,
-    "skippedQuality": 21,
-    "durationMs": 2967
+    "skippedQuality": 20,
+    "durationMs": 2671
   },
   "items": [
+    {
+      "id": "jbox-250b2b4d",
+      "slug": "harpercollins-brasil-vai-apresentar-novo-selo-de-mangas-e-quadrinhos-na-ccxp-2026-jbox-250b2b4d",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "HarperCollins Brasil vai apresentar novo selo de mangás e quadrinhos na CCXP 2026",
+      "originalTitle": "HarperCollins Brasil vai apresentar novo selo de mangás e quadrinhos na CCXP 2026",
+      "summary": "A editora HarperCollins anunciou que vai lançar um novo selo focado em mangás e quadrinhos durante a CCXP 2026.",
+      "author": "Cakes Sousa",
+      "tags": [
+        "Eventos",
+        "Mangá",
+        "CCXP",
+        "CCXP 2026",
+        "HarperCollins",
+        "Kazé",
+        "nova editora de mangá"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/27/harpercollins-brasil-vai-apresentar-novo-selo-de-mangas-e-quadrinhos-na-ccxp-2026",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/27/harpercollins-brasil-vai-apresentar-novo-selo-de-mangas-e-quadrinhos-na-ccxp-2026",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/harper-collins-destacada.jpg",
+      "mediaQuery": "HarperCollins Brasil vai apresentar novo selo de mangás e quadrinhos na CCXP 2026",
+      "mediaType": "manga",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/HarperCollins.png",
+          "alt": "HarperCollins na CCXP 2026",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Kaze-editora.webp",
+          "alt": "Editora Kazé",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A editora HarperCollins anunciou que vai lançar um novo selo focado em mangás e quadrinhos durante a CCXP 2026.",
+          "runs": [
+            {
+              "text": "A editora "
+            },
+            {
+              "text": "HarperCollins",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " anunciou que vai lançar um novo selo focado em mangás e quadrinhos durante a "
+            },
+            {
+              "text": "CCXP 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A informação foi divulgada junto com detalhes do painel da empresa no evento, marcado para o dia 04 (sexta-feira), a partir das 18h, no Palco Omni.",
+          "runs": [
+            {
+              "text": "A informação foi divulgada junto com detalhes do painel da empresa no evento, marcado para o dia 04 (sexta-feira), a partir das 18h, no Palco Omni."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/HarperCollins.png",
+          "alt": "HarperCollins na CCXP 2026"
+        },
+        {
+          "type": "paragraph",
+          "text": "Detalhes do painel da HarperCollins na CCXP 2026 | Reprodução",
+          "runs": [
+            {
+              "text": "Detalhes do painel da HarperCollins na CCXP 2026 | Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Vale lembrar que, em agosto deste ano, foi anunciado que a Kazé, editora francesa especializada em animês e mangás, e parte do grupo HarperCollins, faria uma expansão das operações para outros países, incluindo o Brasil.",
+          "runs": [
+            {
+              "text": "Vale lembrar que, em agosto deste ano, foi anunciado que a "
+            },
+            {
+              "text": "Kazé",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", editora francesa especializada em animês e mangás, e parte do grupo HarperCollins, faria uma expansão das operações para outros países, incluindo o Brasil."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Com isso, há grandes chances de que o painel anuncie a chegada da Kazé ao Brasil, mas essa parte ainda não foi confirmada.",
+          "runs": [
+            {
+              "text": "Com isso, há grandes chances de que o painel anuncie a chegada da Kazé ao Brasil, mas essa parte ainda não foi confirmada."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Kaze-editora.webp",
+          "alt": "Editora Kazé"
+        },
+        {
+          "type": "paragraph",
+          "text": "Detalhes da expansão da Kazé para outros territórios | Reprodução",
+          "runs": [
+            {
+              "text": "Detalhes da expansão da Kazé para outros territórios | Reprodução"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fundada na década de 1990, a Kazé é conhecida por fazer a distribuição de diversas franquias japonesas na Europa. Após o foco inicial em publicações, a empresa diversificou as operações com um selo musical, e também lançou alguns longas-metragens de animê na região.",
+          "runs": [
+            {
+              "text": "Fundada na década de 1990, a Kazé é conhecida por fazer a distribuição de diversas franquias japonesas na Europa. Após o foco inicial em publicações, a empresa diversificou as operações com um selo musical, e também lançou alguns longas-metragens de animê na região."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Em 2022, a Kazé foi adquirida pela Crunchyroll e, na época, a marca foi retrabalhada para se chamar Crunchyroll Mangá. Já em 2025, a HarperCollins adquiriu as operações da Crunchyroll Mangá na França e Alemanha, e trouxe a Kazé de volta com o nome original.",
+          "runs": [
+            {
+              "text": "Em 2022, a Kazé foi adquirida pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e, na época, a marca foi retrabalhada para se chamar Crunchyroll Mangá. Já em 2025, a HarperCollins adquiriu as operações da Crunchyroll Mangá na França e Alemanha, e trouxe a Kazé de volta com o nome original."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Entre as produções licenciadas pela Kazé no Reino Unido, estão franquias como Bakuman, Code Geass, JoJo’s Bizarre Adventure, One-Punch Man, entre outros.",
+          "runs": [
+            {
+              "text": "Entre as produções licenciadas pela Kazé no Reino Unido, estão franquias como "
+            },
+            {
+              "text": "Bakuman",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Code Geass",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "JoJo’s Bizarre Adventure",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "One-Punch Man",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", entre outros."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A CCXP 2026 acontece entre os dias 3 a 6 de dezembro de 2026 no São Paulo Expo, na capital paulista.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "CCXP 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " acontece entre os dias "
+            },
+            {
+              "text": "3 a 6 de dezembro de 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no "
+            },
+            {
+              "text": "São Paulo Expo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", na capital paulista."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fontes: Site oficial da CCXP, Fora do Plástico",
+          "runs": [
+            {
+              "text": "Fontes: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Site oficial da CCXP",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://ccxp.com.br/programacao/?refinementList%5Blocal%5D%5B0%5D=Palco+Omni&refinementList%5Bday%5D%5B0%5D=04%2F12+%28sexta-feira%29&page=1&configure%5BhitsPerPage%5D=250&configure%5Bfilters%5D=locale%3Apt-br+%26%26+endDate%3A%3E1795712400&configure%5Banalytics%5D=false&configure%5BenablePersonalization%5D=true&configure%5BurlSync%5D=true&utm_source=foradoplastico.com.br&utm_medium=referral&utm_campaign=external_link#modal-hqv62makb136y0yykfziytfk"
+            },
+            {
+              "text": ", ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Fora do Plástico",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://foradoplastico.com.br/harpercollins-brasil-apresentara-novo-selo-dedicado-a-mangas-em-painel-na-ccxp26/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-27T19:12:11.000Z",
+      "updatedAt": "2026-11-27T19:14:35.000Z",
+      "expiresAt": "2026-12-04T19:12:11.000Z",
+      "category": "Mangás & novels",
+      "eventType": "MANGA",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/27/harpercollins-brasil-vai-apresentar-novo-selo-de-mangas-e-quadrinhos-na-ccxp-2026",
+          "publishedAt": "2026-11-27T19:12:11.000Z",
+          "author": "Cakes Sousa"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 279,
+      "qualityScore": 0.8,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 15,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 2,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-e9e07a96",
+      "slug": "ultraman-teo-novo-filme-ganha-titulo-sinopse-e-data-de-estreia-no-japao-jbox-e9e07a96",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Ultraman Teo: Novo filme ganha título, sinopse e data de estreia no Japão",
+      "originalTitle": "Ultraman Teo: Novo filme ganha título, sinopse e data de estreia no Japão",
+      "summary": "A Tsuburaya Productions anunciou oficialmente a produção de um novo longa-metragem derivado da série atual da franquia Ultra. Intitulado Ultraman Teo the Movie: The Wrath of Menessias, o filme tem estreia marcada para o dia 23 de fevereiro de 2027 nos cinemas japoneses.",
+      "author": "Matheus Mossmann",
+      "tags": [
+        "Cinema",
+        "Tokusatsu",
+        "menessias",
+        "ultraman teo",
+        "ultraman teo movie"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/27/ultraman-teo-novo-filme-ganha-titulo-sinopse-e-data-de-estreia-no-japao",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/27/ultraman-teo-novo-filme-ganha-titulo-sinopse-e-data-de-estreia-no-japao",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/ultrateo.jpg",
+      "mediaQuery": "Ultraman Teo: Novo filme ganha título, sinopse e data de estreia no Japão",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/inimigosteo.jpeg",
+          "alt": "",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/ieZO9MwU5so"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "A Tsuburaya Productions anunciou oficialmente a produção de um novo longa-metragem derivado da série atual da franquia Ultra. Intitulado Ultraman Teo the Movie: The Wrath of Menessias, o filme tem estreia marcada para o dia 23 de fevereiro de 2027 nos cinemas japoneses.",
+          "runs": [
+            {
+              "text": "A Tsuburaya Productions anunciou oficialmente a produção de um novo longa-metragem derivado da série atual da franquia Ultra. Intitulado "
+            },
+            {
+              "text": "Ultraman Teo the Movie: The Wrath of Menessias",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", o filme tem estreia marcada para o dia "
+            },
+            {
+              "text": "23 de fevereiro de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " nos cinemas japoneses."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A produção contará com o retorno de todo o elenco principal da série de TV. Entre eles está a jovem atriz Noa Nakada (intérprete de Kanna Izumi), que faleceu no início de novembro. Segundo o comunicado oficial, as gravações do longa já haviam sido concluídas antes de seu falecimento e, com a autorização de seus familiares e de sua agência, o lançamento seguirá o cronograma original, marcando seu último papel no cinema.",
+          "runs": [
+            {
+              "text": "A produção contará com o retorno de todo o elenco principal da série de TV. Entre eles está a jovem atriz "
+            },
+            {
+              "text": "Noa Nakada",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (intérprete de Kanna Izumi), que "
+            },
+            {
+              "text": "faleceu no início de novembro",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://tokusatsu.com.br/morre-noa-nakada-atriz-que-interpretou-kanna-izumi-em-ultraman-teo/"
+            },
+            {
+              "text": ". Segundo o comunicado oficial, as gravações do longa já haviam sido concluídas antes de seu falecimento e, com a autorização de seus familiares e de sua agência, o lançamento seguirá o cronograma original, marcando seu último papel no cinema."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=ieZO9MwU5so",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/ieZO9MwU5so"
+        },
+        {
+          "type": "paragraph",
+          "text": "A história se passa na Faculdade de Medicina Veterinária da Universidade Meishin e ganha um reforço de peso no elenco: Sho Kasamatsu (Tokyo Vice), que interpretará o biólogo Mamiya Higaki. Vindo do exterior para trabalhar ao lado de seu ídolo, o Professor Minobe, Higaki ajudará a fundar um Seminário de Pesquisa de Kaijus ao lado do protagonista Ibuki Mitsuishi e dos membros do Clube de Astronomia.",
+          "runs": [
+            {
+              "text": "A história se passa na Faculdade de Medicina Veterinária da Universidade Meishin e ganha um reforço de peso no elenco: "
+            },
+            {
+              "text": "Sho Kasamatsu",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Tokyo Vice",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), que interpretará o biólogo Mamiya Higaki. Vindo do exterior para trabalhar ao lado de seu ídolo, o Professor Minobe, Higaki ajudará a fundar um Seminário de Pesquisa de Kaijus ao lado do protagonista Ibuki Mitsuishi e dos membros do Clube de Astronomia."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O filme também apresentará duas novas ameaças gigantes para o herói enfrentar. A primeira é Menessias, conhecido como o Guerreiro da Retribuição. Com 45 metros de altura e 38 mil toneladas, ele é um sobrevivente da destruição do planeta natal H12, assim como o próprio Teo. Movido por um rancor misterioso, o guerreiro surge diante de um ferido Ibuki e volta sua lâmina contra o protagonista.",
+          "runs": [
+            {
+              "text": "O filme também apresentará duas novas ameaças gigantes para o herói enfrentar. A primeira é "
+            },
+            {
+              "text": "Menessias",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", conhecido como o Guerreiro da Retribuição. Com 45 metros de altura e 38 mil toneladas, ele é um sobrevivente da destruição do planeta natal H12, assim como o próprio Teo. Movido por um rancor misterioso, o guerreiro surge diante de um ferido Ibuki e volta sua lâmina contra o protagonista."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/inimigosteo.jpeg"
+        },
+        {
+          "type": "paragraph",
+          "text": "Menessias e Areimegas | Divulgação: Tsuburaya",
+          "runs": [
+            {
+              "text": "Menessias e Areimegas | Divulgação: Tsuburaya"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Já o segundo inimigo é Areimegas, o Super Kaiju Estelar Fundido. Trata-se de uma criatura espacial feroz de 52 metros e 46 mil toneladas que viaja de planeta em planeta transformando tudo que estiver por seu caminho em cristal.",
+          "runs": [
+            {
+              "text": "Já o segundo inimigo é "
+            },
+            {
+              "text": "Areimegas",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", o Super Kaiju Estelar Fundido. Trata-se de uma criatura espacial feroz de 52 metros e 46 mil toneladas que viaja de planeta em planeta transformando tudo que estiver por seu caminho em cristal."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Ainda não há previsão de lançamento oficial do longa no Brasil.",
+          "runs": [
+            {
+              "text": "Ainda não há previsão de lançamento oficial do longa no Brasil."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: UkiyaSeed",
+          "runs": [
+            {
+              "text": "Fonte: ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "UkiyaSeed",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://ukiyaseed.weebly.com/ukiyaseeds-other-blog/ultraman-teo-the-movie-the-wrath-of-menessias-announced"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-27T17:43:19.000Z",
+      "updatedAt": "2026-11-27T17:51:22.000Z",
+      "expiresAt": "2026-12-04T17:43:19.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/27/ultraman-teo-novo-filme-ganha-titulo-sinopse-e-data-de-estreia-no-japao",
+          "publishedAt": "2026-11-27T17:43:19.000Z",
+          "author": "Matheus Mossmann"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 322,
+      "qualityScore": 0.981,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 12,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "animenew-0d53b1a8",
       "slug": "killer-shark-in-another-world-ganhara-anime-animenew-0d53b1a8",
@@ -3911,7 +4563,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 283,
-      "qualityScore": 0.979,
+      "qualityScore": 0.919,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -7335,394 +7987,6 @@
         "blocks": 13,
         "sourceCount": 1,
         "ingestMode": "rss-full",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-f6de4b23",
-      "slug": "filme-live-action-de-mashle-magia-e-musculos-ganha-poster-com-mash-comendo-um-choux-cream-jbox-f6de4b23",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "Filme live-action de ‘Mashle: Magia e Músculos’ ganha pôster com Mash comendo um choux cream",
-      "originalTitle": "Filme live-action de ‘Mashle: Magia e Músculos’ ganha pôster com Mash comendo um choux cream",
-      "summary": "O filme live-action de Mashle: Magia e Músculos ganhou um novo pôster, que mostra o protagonista Mash Burnedead comendo o famoso choux cream (ou profiterole, na dublagem do animê, embora não seja exatamente o mesmo doce).",
-      "author": "Cakes Sousa",
-      "tags": [
-        "Cinema",
-        "Live Action",
-        "Mangá",
-        "filme de mashle",
-        "live-action de mashle",
-        "mackenyu",
-        "mashle",
-        "Mashle: Magia e Músculos"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/20/filme-live-action-de-mashle-magia-e-musculos-ganha-poster-com-mash-comendo-um-choux-cream",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/20/filme-live-action-de-mashle-magia-e-musculos-ganha-poster-com-mash-comendo-um-choux-cream",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Mashle-live-action-destacada.jpg",
-      "mediaQuery": "Filme live-action de ‘Mashle: Magia e Músculos’ ganha pôster com Mash comendo um choux cream",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Mashle-live-action-poster-scaled.jpeg",
-          "alt": "Pôster do live-action de Mashle: Magia e Músculos",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/lXbeeEDLruc"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "O filme live-action de Mashle: Magia e Músculos ganhou um novo pôster, que mostra o protagonista Mash Burnedead comendo o famoso choux cream (ou profiterole, na dublagem do animê, embora não seja exatamente o mesmo doce).",
-          "runs": [
-            {
-              "text": "O filme live-action de "
-            },
-            {
-              "text": "Mashle: Magia e Músculos",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ganhou um novo pôster, que mostra o protagonista Mash Burnedead comendo o famoso "
-            },
-            {
-              "text": "choux cream",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " (ou profiterole, na dublagem do animê, embora não seja exatamente o mesmo doce)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Além de replicar o gosto culinário do protagonista da história, a imagem também mostra um pouco mais da caracterização de Mackenyu (Zoro em One Piece: A Série) como o personagem e detalhes do uniforme escolar do filme.",
-          "runs": [
-            {
-              "text": "Além de replicar o gosto culinário do protagonista da história, a imagem também mostra um pouco mais da caracterização de "
-            },
-            {
-              "text": "Mackenyu",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (Zoro em "
-            },
-            {
-              "text": "One Piece: A Série",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") como o personagem e detalhes do uniforme escolar do filme."
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/Mashle-live-action-poster-scaled.jpeg",
-          "alt": "Pôster do live-action de Mashle: Magia e Músculos"
-        },
-        {
-          "type": "paragraph",
-          "text": "Pôster do live-action de Mashle: Magia e Músculos | Divulgação",
-          "runs": [
-            {
-              "text": "Pôster do live-action de Mashle: Magia e Músculos | Divulgação"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Mashle: Magia e Músculos é um mangá de Hajime Komoto, lançado na revista Weekly Shonen Jump, da editora Shueisha, no Japão, entre janeiro de 2020 e julho de 2023, com 18 volumes compilados. Por aqui, a obra saiu pela editora Panini.",
-          "runs": [
-            {
-              "text": "Mashle: Magia e Músculos",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é um mangá de "
-            },
-            {
-              "text": "Hajime Komoto",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", lançado na revista "
-            },
-            {
-              "text": "Weekly Shonen Jump",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", da editora "
-            },
-            {
-              "text": "Shueisha",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", no Japão, entre janeiro de 2020 e julho de 2023, com 18 volumes compilados. Por aqui, a obra saiu pela editora "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Na trama, em um mundo onde a magia determina o lugar de cada pessoa na sociedade, Mash é um jovem fortão que vive isolado com seu pai adotivo e não possui nenhum poder mágico. Apaixonado por choux cream, um doce popular no Japão, ele acaba descoberto pelas autoridades e precisa entrar em uma renomada escola de magia para se tornar um Visionário, posição que lhe permitiria mudar as regras desse mundo e proteger aqueles que, como ele, nasceram sem magia. Para alcançar seu objetivo, Mash contará com sua força física absurda para enfrentar os desafios de um universo em que todos esperam que ele use magia.",
-          "runs": [
-            {
-              "text": "Na trama, em um mundo onde a magia determina o lugar de cada pessoa na sociedade, Mash é um jovem fortão que vive isolado com seu pai adotivo e não possui nenhum poder mágico. Apaixonado por choux cream, um doce popular no Japão, ele acaba descoberto pelas autoridades e precisa entrar em uma renomada escola de magia para se tornar um Visionário, posição que lhe permitiria mudar as regras desse mundo e proteger aqueles que, como ele, nasceram sem magia. Para alcançar seu objetivo, Mash contará com sua força física absurda para enfrentar os desafios de um universo em que todos esperam que ele use magia."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "O filme live-action é produzido pela CREDEUS, com distribuição da TOHO, e supervisão da Warner Bros. e da Fuji TV. Yuichi Fukuda (do recente live-action de Sakamoto Days) assina roteiro e direção da produção, que estreia em 19 de março de 2027 no Japão — ainda sem data confirmada no Brasil.",
-          "runs": [
-            {
-              "text": "O filme live-action é produzido pela "
-            },
-            {
-              "text": "CREDEUS",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com distribuição da "
-            },
-            {
-              "text": "TOHO",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", e supervisão da"
-            },
-            {
-              "text": " Warner Bros.",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e da "
-            },
-            {
-              "text": "Fuji TV",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". "
-            },
-            {
-              "text": "Yuichi Fukuda",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " (do recente live-action de "
-            },
-            {
-              "text": "Sakamoto Days",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ") assina roteiro e direção da produção, que estreia em "
-            },
-            {
-              "text": "19 de março de 2027",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " no Japão — ainda sem data confirmada no Brasil."
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=lXbeeEDLruc",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/lXbeeEDLruc"
-        },
-        {
-          "type": "paragraph",
-          "text": "Recentemente, foi também anunciada a terceira temporada da adaptação em animê, com estreia marcada para janeiro do ano que vem.",
-          "runs": [
-            {
-              "text": "Recentemente, foi também "
-            },
-            {
-              "text": "anunciada a terceira temporada da adaptação em animê",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/10/29/3a-temporada-de-mashle-magia-e-musculos-estreia-em-janeiro-de-2027/"
-            },
-            {
-              "text": ", com estreia marcada para janeiro do ano que vem."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "▶️ Crítica | Mashle – Volume 1",
-          "runs": [
-            {
-              "text": "▶️ Crítica | Mashle – Volume 1",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2022/06/11/mashle-volume-um-panini/"
-            }
-          ],
-          "level": 3
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: X/Twitter do filme",
-          "runs": [
-            {
-              "text": "Fonte:",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " "
-            },
-            {
-              "text": "X/Twitter do filme",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://x.com/mashlemovie"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-20T17:58:13.000Z",
-      "updatedAt": "2026-11-20T18:05:28.000Z",
-      "expiresAt": "2026-11-27T17:58:13.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/20/filme-live-action-de-mashle-magia-e-musculos-ganha-poster-com-mash-comendo-um-choux-cream",
-          "publishedAt": "2026-11-20T17:58:13.000Z",
-          "author": "Cakes Sousa"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 329,
-      "qualityScore": 0.923,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 1,
         "embedCount": 1,
