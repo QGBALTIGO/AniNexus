@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T20:03:19.184Z",
+  "generatedAt": "2026-11-27T02:44:58.620Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 33,
+      "count": 34,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,1305 @@
     }
   ],
   "stats": {
-    "collected": 43,
-    "grouped": 20,
-    "published": 20,
-    "newStories": 20,
-    "fullArticles": 20,
+    "collected": 44,
+    "grouped": 21,
+    "published": 21,
+    "newStories": 21,
+    "fullArticles": 21,
     "previewArticles": 0,
-    "avgWords": 277,
-    "withHeroImage": 19,
-    "withOrderedMedia": 20,
+    "avgWords": 273,
+    "withHeroImage": 21,
+    "withOrderedMedia": 21,
     "skippedTranslation": 0,
     "skippedQuality": 21,
-    "durationMs": 8418
+    "durationMs": 2145
   },
   "items": [
+    {
+      "id": "animenew-0d53b1a8",
+      "slug": "killer-shark-in-another-world-ganhara-anime-animenew-0d53b1a8",
+      "source": "AnimeNew",
+      "sourceType": "ANIMENEW",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Killer Shark in Another World ganhará anime",
+      "originalTitle": "Killer Shark in Another World ganhará anime",
+      "summary": "O mangá Killer Shark in Another World, de kuboken (Isekai Kuimetsu no Same), terá uma adaptação em anime para televisão. O anúncio aconteceu através da Kadokawa nesta quinta-feira, 26 de novembro de 2026, junto com a divulgação da equipe de produção.",
+      "author": "Rafael Shinzo",
+      "tags": [
+        "Animes",
+        "Notícias",
+        "Isekai Kuimetsu no Same",
+        "Killer Shark in Another World",
+        "Studio Lings"
+      ],
+      "url": "https://animenew.com.br/killer-shark-in-another-world-anime",
+      "sourceUrl": "https://animenew.com.br/killer-shark-in-another-world-anime",
+      "image": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Killer-Shark-in-Another-World-ganhara-anime.webp",
+      "mediaQuery": "Killer Shark in Another World ganhará anime",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Killer-Shark-in-Another-World-Anime.webp",
+          "alt": "Killer Shark in Another World Anime",
+          "caption": "©くぼけん/キルタイムコミュニケーション/異世界喰滅のサメ製作委員会"
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/juZQyMKROvI"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O mangá Killer Shark in Another World, de kuboken (Isekai Kuimetsu no Same), terá uma adaptação em anime para televisão. O anúncio aconteceu através da Kadokawa nesta quinta-feira, 26 de novembro de 2026, junto com a divulgação da equipe de produção.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "mangá",
+              "href": "https://animenew.com.br/mangas"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Killer Shark in Another World",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", de kuboken ("
+            },
+            {
+              "text": "Isekai Kuimetsu no Same",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "), terá uma adaptação em "
+            },
+            {
+              "text": "anime",
+              "href": "https://animenew.com.br/animes"
+            },
+            {
+              "text": " para televisão. O anúncio aconteceu através da "
+            },
+            {
+              "text": "Kadokawa",
+              "href": "https://animenew.com.br/tag/kadokawa/"
+            },
+            {
+              "text": " nesta quinta-feira, 26 de novembro de 2026, junto com a divulgação da equipe de produção."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "text": "Mangá Märchen Crown será encerrado em novembro",
+              "runs": [
+                {
+                  "text": "Mangá Märchen Crown será encerrado em novembro",
+                  "href": "https://animenew.com.br/marchen-crown-manga-chega-ao-fim"
+                }
+              ]
+            },
+            {
+              "text": "As a Reincarnated Aristocrat revela novos dubladores na 3ª temporada",
+              "runs": [
+                {
+                  "text": "As a Reincarnated Aristocrat revela novos dubladores na 3ª temporada",
+                  "href": "https://animenew.com.br/as-a-reincarnated-aristocrat-temporada-3-elenco"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A direção ficará nas mãos de Shige Fukase, que trabalhará no projeto pelo estúdio Studio Lings. Shigeru Murakoshi será responsável pela composição e supervisão dos roteiros, enquanto Nozomi Ikuyama cuidará do design dos personagens.",
+          "runs": [
+            {
+              "text": "A direção ficará nas mãos de "
+            },
+            {
+              "text": "Shige Fukase",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que trabalhará no projeto pelo estúdio "
+            },
+            {
+              "text": "Studio Lings",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". "
+            },
+            {
+              "text": "Shigeru Murakoshi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " será responsável pela composição e supervisão dos roteiros, enquanto "
+            },
+            {
+              "text": "Nozomi Ikuyama",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " cuidará do design dos personagens."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=juZQyMKROvI",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/juZQyMKROvI"
+        },
+        {
+          "type": "paragraph",
+          "text": "Iroha Mizuki ficará encarregado do design dos tubarões, e Keiji Inai assinará a trilha sonora. A produção da série será realizada pela Infinite.",
+          "runs": [
+            {
+              "text": "Iroha Mizuki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ficará encarregado do design dos tubarões, e "
+            },
+            {
+              "text": "Keiji Inai",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " assinará a trilha sonora. A produção da série será realizada pela "
+            },
+            {
+              "text": "Infinite",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://wp.animenew.com.br/wp-content/uploads/2026/11/Killer-Shark-in-Another-World-Anime.webp",
+          "alt": "Killer Shark in Another World Anime",
+          "caption": "©くぼけん/キルタイムコミュニケーション/異世界喰滅のサメ製作委員会"
+        },
+        {
+          "type": "heading",
+          "text": "História de Killer Shark in Another World",
+          "runs": [
+            {
+              "text": "História de Killer Shark in Another World",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A trama acompanha Shiromi Lovecut-Toothrough, considerada a pior invocadora do mundo. Contudo sua situação muda quando ela consegue invocar Sharkiller, uma criatura capaz de se transformar em tubarões inspirados nos filmes de terror de Hollywood.",
+          "runs": [
+            {
+              "text": "A trama acompanha Shiromi Lovecut-Toothrough, considerada a pior invocadora do mundo. Contudo sua situação muda quando ela consegue invocar Sharkiller, uma criatura capaz de se transformar em tubarões inspirados nos filmes de terror de Hollywood.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Com um companheiro extremamente violento, Shiromi precisa enfrentar o Rei Demônio e tentar acabar com seu reinado de terror. No entanto, o poder destrutivo de Sharkiller pode acabar sendo um problema ainda maior para o próprio mundo.",
+          "runs": [
+            {
+              "text": "Com um companheiro extremamente violento, Shiromi precisa enfrentar o Rei Demônio e tentar acabar com seu reinado de terror. No entanto, o poder destrutivo de Sharkiller pode acabar sendo um problema ainda maior para o próprio mundo.",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O mangá estreou sua publicação pela kuboken em outubro de 2020, na revista Comic Valkyrie, da Kill Time Communication. A obra recebeu seu 12º volume compilado em 8 de julho.",
+          "runs": [
+            {
+              "text": "O mangá estreou sua publicação pela "
+            },
+            {
+              "text": "kuboken",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " em outubro de 2020, na revista "
+            },
+            {
+              "text": "Comic Valkyri",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "e, da "
+            },
+            {
+              "text": "Kill Time Communication",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A obra recebeu seu 12º volume compilado em 8 de julho."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Por fim a Seven Seas Entertainment publica o mangá em inglês.",
+          "runs": [
+            {
+              "text": "Por fim a "
+            },
+            {
+              "text": "Seven Seas Entertainment",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " publica o mangá em inglês."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Site Oficial",
+          "runs": [
+            {
+              "text": "Fonte: "
+            },
+            {
+              "text": "Site Oficial",
+              "href": "https://killershark.jp/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Este artigo foi publicado originalmente no AnimeNew. Leia a versão completa em Killer Shark in Another World ganhará anime.",
+          "runs": [
+            {
+              "text": "Este artigo foi publicado originalmente no "
+            },
+            {
+              "text": "AnimeNew",
+              "href": "https://animenew.com.br/"
+            },
+            {
+              "text": ".  Leia a versão completa em "
+            },
+            {
+              "text": "Killer Shark in Another World ganhará anime",
+              "href": "https://animenew.com.br/killer-shark-in-another-world-anime/"
+            },
+            {
+              "text": "."
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-27T01:02:19.000Z",
+      "updatedAt": "2026-11-27T01:02:19.000Z",
+      "expiresAt": "2026-12-04T01:02:19.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "AnimeNew",
+          "url": "https://animenew.com.br/killer-shark-in-another-world-anime",
+          "publishedAt": "2026-11-27T01:02:19.000Z",
+          "author": "Rafael Shinzo"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 258,
+      "qualityScore": 0.975,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "rss-full",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-69d7b482",
+      "slug": "kagurabachi-exibicao-antecipada-na-ccxp-2026-contara-com-dublagem-em-portugues-jbox-69d7b482",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Kagurabachi: Exibição antecipada na CCXP 2026 contará com dublagem em português",
+      "originalTitle": "Kagurabachi: Exibição antecipada na CCXP 2026 contará com dublagem em português",
+      "summary": "Foi anunciado pela Crunchyroll que a exibição antecipada do primeiro episódio de Kagurabachi durante a CCXP 2026 será dublada em português. A transmissão acontece no dia 6 de dezembro, às 17h15, durante um painel para o animê no evento.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "Dublagem",
+        "Eventos",
+        "CCXP 2026",
+        "Crunchyroll",
+        "erick bougleux",
+        "Kagurabachi dublado",
+        "Kagurachi",
+        "leonardo santhos"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/26/kagurabachi-exibicao-antecipada-na-ccxp-2026-contara-com-dublagem-em-portugues",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/26/kagurabachi-exibicao-antecipada-na-ccxp-2026-contara-com-dublagem-em-portugues",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/06/Kagurabachi-destacada.jpg",
+      "mediaQuery": "Kagurabachi: Exibição antecipada na CCXP 2026 contará com dublagem em português",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/kagurabachi-ativacao-estande-crunchyroll-ccxp-2026.jpg",
+          "alt": "imagem: prévia da ativação de 'Kagurabachi' no estande da Crunchyroll na CCXP 2026.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado pela Crunchyroll que a exibição antecipada do primeiro episódio de Kagurabachi durante a CCXP 2026 será dublada em português. A transmissão acontece no dia 6 de dezembro, às 17h15, durante um painel para o animê no evento.",
+          "runs": [
+            {
+              "text": "Foi anunciado pela "
+            },
+            {
+              "text": "Crunchyroll",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " que a exibição antecipada do primeiro episódio de "
+            },
+            {
+              "text": "Kagurabachi",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " durante a"
+            },
+            {
+              "text": " CCXP 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " será"
+            },
+            {
+              "text": " dublada em português",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A transmissão acontece no dia "
+            },
+            {
+              "text": "6 de dezembro, às 17h15",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", durante um painel para o animê no evento."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O painel conta com a presença de Erick Bougleux e Leonardo Santhos, confirmados como codiretores da dublagem de Kagurabachi. Bougleux foi responsável também pela adaptação do roteiro para português. Ele ainda divulgou em suas redes sociais que haverá divulgação de mais nomes do elenco, incluindo presença dos dubladores não divulgados.",
+          "runs": [
+            {
+              "text": "O painel conta com a presença de "
+            },
+            {
+              "text": "Erick Bougleux",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e"
+            },
+            {
+              "text": " Leonardo Santhos",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", confirmados como codiretores da dublagem de "
+            },
+            {
+              "text": "Kagurabachi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Bougleux foi responsável também pela adaptação do roteiro para português. Ele ainda "
+            },
+            {
+              "text": "divulgou em suas redes sociais",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://x.com/erickbglx/status/2125624124311523585"
+            },
+            {
+              "text": " que haverá divulgação de mais nomes do elenco, incluindo presença dos dubladores não divulgados."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Crunchyroll também confirmou uma área especial para Kagurabachi em seu estande no evento. Uma prévia do local pode ser conferida abaixo:",
+          "runs": [
+            {
+              "text": "A Crunchyroll também confirmou uma área especial para "
+            },
+            {
+              "text": "Kagurabachi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " em seu estande no evento. Uma prévia do local pode ser conferida abaixo:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/kagurabachi-ativacao-estande-crunchyroll-ccxp-2026.jpg",
+          "alt": "imagem: prévia da ativação de 'Kagurabachi' no estande da Crunchyroll na CCXP 2026."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Crunchyroll",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Crunchyroll"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O animê de Kagurachi já teve transmissão confirmada na Crunchyroll para abril de 2027. A exibição antecipada durante a CCXP 2026 faz parte da uma turnê mundial para divulgação da série.",
+          "runs": [
+            {
+              "text": "O animê de "
+            },
+            {
+              "text": "Kagurachi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " já teve "
+            },
+            {
+              "text": "transmissão confirmada na Crunchyroll para abril de 2027",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/06/26/crunchyroll-confirma-transmissao-do-anime-de-kagurabachi-em-2027/"
+            },
+            {
+              "text": ". A exibição antecipada durante a CCXP 2026 faz parte da uma turnê mundial para divulgação da série."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Na história de Kagurabachi, Chihiro é um garoto que sonhava em ser um ferreiro tão renomado quanto seu pai, responsável por forjar seis espadas encantadas. No entanto, sua vida feliz é interrompida por uma tragédia, o que faz com que o rapaz parta em uma jornada em busca de vingança com a ajuda do poder de uma sétima lâmina encantada, que até então era secreta.",
+          "runs": [
+            {
+              "text": "Na história de "
+            },
+            {
+              "text": "Kagurabachi",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", Chihiro é um garoto que sonhava em ser um ferreiro tão renomado quanto seu pai, responsável por forjar seis espadas encantadas. No entanto, sua vida feliz é interrompida por uma tragédia, o que faz com que o rapaz parta em uma jornada em busca de vingança com a ajuda do poder de uma sétima lâmina encantada, que até então era secreta."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Além de Tetsuya Takeuchi (From Bureaucrat to Villainess) na direção, o animê tem design de personagens de Keigo Sasaki (Blue Exorcist). A produção da animação é pelo estúdio CyPic, nova nomenclatura adotada pelo CygamesPictures (O Verão em que Hikaru Morreu).",
+          "runs": [
+            {
+              "text": "Além de "
+            },
+            {
+              "text": "Tetsuya Takeuchi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "From Bureaucrat to Villainess",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") na direção, o animê tem design de personagens de "
+            },
+            {
+              "text": "Keigo Sasaki",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Blue Exorcist",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). A produção da animação é pelo estúdio "
+            },
+            {
+              "text": "CyPic",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", nova nomenclatura adotada pelo "
+            },
+            {
+              "text": "CygamesPictures",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "O Verão em que Hikaru Morreu",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ")."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O mangá, que fez bastante sucesso no lançamento e gerou grandes expectativas para o animê, é escrito e ilustrado por Takeru Hokazono, e seriado na Shonen Jump desde setembro de 2023, com 10 volumes encadernados disponíveis no Japão até o momento. Capítulos recentes podem ser lidos gratuitamente na MANGA Plus, contando com tradução para português. A versão encadernada sai no Brasil pela Panini.",
+          "runs": [
+            {
+              "text": "O mangá, que fez bastante sucesso no lançamento e gerou grandes expectativas para o animê, é escrito e ilustrado por "
+            },
+            {
+              "text": "Takeru Hokazono",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", e seriado na "
+            },
+            {
+              "text": "Shonen Jump",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " desde setembro de 2023, com 10 volumes encadernados disponíveis no Japão até o momento. Capítulos recentes podem ser lidos gratuitamente na "
+            },
+            {
+              "text": "MANGA Plus",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://mangaplus.shueisha.co.jp/titles/500007"
+            },
+            {
+              "text": ", contando com tradução para português. A versão encadernada sai no Brasil pela "
+            },
+            {
+              "text": "Panini",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "ACCXP 2026 acontece entre os dias 3 a 6 de dezembro de 2026 no São Paulo Expo, na capital paulista.",
+          "runs": [
+            {
+              "text": "ACCXP 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " acontece entre os dias "
+            },
+            {
+              "text": "3 a 6 de dezembro de 2026",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " no "
+            },
+            {
+              "text": "São Paulo Expo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", na capital paulista."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Comunicado de imprensa, Erick Bougleux (X/Twitter)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Comunicado de imprensa, ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Erick Bougleux (X/Twitter)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://x.com/erickbglx/status/2125624124311523585"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-26T22:06:23.000Z",
+      "updatedAt": "2026-11-26T22:07:03.000Z",
+      "expiresAt": "2026-12-03T22:06:23.000Z",
+      "category": "Episódios",
+      "eventType": "EPISODE",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/26/kagurabachi-exibicao-antecipada-na-ccxp-2026-contara-com-dublagem-em-portugues",
+          "publishedAt": "2026-11-26T22:06:23.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 356,
+      "qualityScore": 0.986,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 13,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 0,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-5fad45b9",
+      "slug": "haru-to-gen-tem-novo-trailer-com-musica-de-encerramento-jbox-5fad45b9",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Haru to Gen’ tem novo trailer com música de encerramento",
+      "originalTitle": "‘Haru to Gen’ tem novo trailer com música de encerramento",
+      "summary": "O animê de episódios curtos Haru to Gen ~70-sai, Hajimete Kosodate~ (Haru e Gen: criando uma criança pela primeira vez aos 70 anos, em livre tradução), baseado no mangá de mesmo nome de Yuka Oshima, ganhou um novo trailer nesta quarta-feira (25). Ele estreia no Japão no dia 4 de janeiro, na Temporada de Inverno de 2027.",
+      "author": "Igor Lunei",
+      "tags": [
+        "Anime",
+        "Música",
+        "animê de Haru to Gen ~70-sai Hajimete Kosodate~",
+        "Haru to Gen ~70-sai Hajimete Kosodate~",
+        "Nono-chan"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/26/haru-to-gen-tem-novo-trailer-com-musica-de-encerramento",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/26/haru-to-gen-tem-novo-trailer-com-musica-de-encerramento",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/haru-to-gen-destacada-1.jpg",
+      "mediaQuery": "‘Haru to Gen’ tem novo trailer com música de encerramento",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/q-LKeN4TruM"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "O animê de episódios curtos Haru to Gen ~70-sai, Hajimete Kosodate~ (Haru e Gen: criando uma criança pela primeira vez aos 70 anos, em livre tradução), baseado no mangá de mesmo nome de Yuka Oshima, ganhou um novo trailer nesta quarta-feira (25). Ele estreia no Japão no dia 4 de janeiro, na Temporada de Inverno de 2027.",
+          "runs": [
+            {
+              "text": "O animê de episódios curtos "
+            },
+            {
+              "text": "Haru to Gen ~70-sai, Hajimete Kosodate~",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Haru e Gen: criando uma criança pela primeira vez aos 70 anos",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", em livre tradução), baseado no mangá de mesmo nome de "
+            },
+            {
+              "text": "Yuka Oshima",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", ganhou um novo trailer nesta quarta-feira (25). Ele estreia no Japão no dia "
+            },
+            {
+              "text": "4 de janeiro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", na "
+            },
+            {
+              "text": "Temporada de Inverno",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " de 2027."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O vídeo apresenta uma prévia da música de encerramento, “Chokin-bako Mitai na♡Song”, interpretada por Nono-chan.",
+          "runs": [
+            {
+              "text": "O vídeo apresenta uma prévia da música de encerramento, "
+            },
+            {
+              "text": "“Chokin-bako Mitai na♡Song”",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", interpretada por "
+            },
+            {
+              "text": "Nono-chan",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira:",
+          "runs": [
+            {
+              "text": "Confira:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=q-LKeN4TruM",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/q-LKeN4TruM"
+        },
+        {
+          "type": "paragraph",
+          "text": "Na trama, Gen é um homem de 70 anos que, após se divorciar muitos anos antes, acabou afastado da esposa e da filha. Quando sua filha morre, ele fica responsável por cuidar de Haru, sua neta de três anos. Depois de ter negligenciado a família no passado, Gen precisa enfrentar pela primeira vez os desafios de criar uma criança, com todas as surpresas e dificuldades que essa nova rotina traz.",
+          "runs": [
+            {
+              "text": "Na trama, Gen é um homem de 70 anos que, após se divorciar muitos anos antes, acabou afastado da esposa e da filha. Quando sua filha morre, ele fica responsável por cuidar de Haru, sua neta de três anos. Depois de ter negligenciado a família no passado, Gen precisa enfrentar pela primeira vez os desafios de criar uma criança, com todas as surpresas e dificuldades que essa nova rotina traz."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A produção desse animê é uma colaboração entre três estúdios: IMAGICA Infos, Imageworks Studio e Studio Nanahoshi. A direção é de Kodai Sato (Tom e Jerry Gokko, o animê de Tom e Jerry). Taeko Miura (Kanagawa Elves, Hyakki Yakou Shou) faz a direção de áudio, enquanto Maki Takuma (After-School Hanako-kun, Love Live! Nijigasaki High School Idol Club) cuida dos efeitos sonoros e Bermei Inazawa (Potion, Waga Mi o Tasukeru, Marukano) faz a trilha sonora.",
+          "runs": [
+            {
+              "text": "A produção desse animê é uma colaboração entre três estúdios: "
+            },
+            {
+              "text": "IMAGICA Infos",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Imageworks Studio",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Studio Nanahoshi",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ". A direção é de "
+            },
+            {
+              "text": "Kodai Sato",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Tom e Jerry Gokko",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.jbox.com.br/2025/07/25/tom-jerry-gokko-em-exibicao-pelo-cartoon-network-anime-chega-em-agosto-na-hbo-max/"
+            },
+            {
+              "text": ", o animê de "
+            },
+            {
+              "text": "Tom e Jerry",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). "
+            },
+            {
+              "text": "Taeko Miura",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Kanagawa Elves",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Hyakki Yakou Shou",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") faz a direção de áudio, enquanto"
+            },
+            {
+              "text": " Maki Takuma",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "After-School Hanako-kun",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Love Live! Nijigasaki High School Idol Club",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") cuida dos efeitos sonoros e "
+            },
+            {
+              "text": "Bermei Inazawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " ("
+            },
+            {
+              "text": "Potion",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Waga Mi o Tasukeru",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Marukano",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ") faz a trilha sonora."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Haru to Gen ~70-sai, Hajimete Kosodate~ originalmente é um mangá escrito por Yuka Oshima e lançado a partir de 2022 no TATESC Comic, um serviço de webtoons, que são histórias em quadrinhos digitais feitas para serem roladas verticalmente no celular, da editora Kadokawa. Aqui no Brasil, ele ainda não tem previsão de lançamento.",
+          "runs": [
+            {
+              "text": "Haru to Gen ~70-sai, Hajimete Kosodate~",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " originalmente é um mangá escrito por Yuka Oshima e lançado a partir de 2022 no "
+            },
+            {
+              "text": "TATESC Comic",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": ", um serviço de "
+            },
+            {
+              "text": "webtoons,",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " que são histórias em quadrinhos digitais feitas para serem roladas verticalmente no celular, da editora Kadokawa"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " Aqui no Brasil, ele ainda não tem previsão de lançamento."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Anime News Network",
+          "runs": [
+            {
+              "text": "Fonte:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": "Anime News Network",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://www.animenewsnetwork.com/news/2026-11-24/haru-to-gen-~70-sai-hajimete-kosodate~-anime-teaser-reveals-more-cast-ending-song/.244149"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-26T21:12:19.000Z",
+      "updatedAt": "2026-11-26T21:17:59.000Z",
+      "expiresAt": "2026-12-03T21:12:19.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/26/haru-to-gen-tem-novo-trailer-com-musica-de-encerramento",
+          "publishedAt": "2026-11-26T21:12:19.000Z",
+          "author": "Igor Lunei"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 291,
+      "qualityScore": 0.975,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 10,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-3f971453",
       "slug": "historie-novo-trailer-divulgado-confirma-estreia-da-adaptacao-em-janeiro-jbox-3f971453",
@@ -563,7 +1848,7 @@
       ],
       "url": "https://www.jbox.com.br/2026/11/26/anime-the-kept-man-of-the-princess-knight-ganha-nova-previa-com-musica-de-encerramento-e-mais",
       "sourceUrl": "https://www.jbox.com.br/2026/11/26/anime-the-kept-man-of-the-princess-knight-ganha-nova-previa-com-musica-de-encerramento-e-mais",
-      "image": "",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/The-Kept-Man-of-the-Princess-Knight-destacada-1.jpg",
       "mediaQuery": "Animê ‘The Kept Man of the Princess Knight’ ganha nova prévia com música de encerramento e mais",
       "mediaType": "manga",
       "mediaGallery": [],
@@ -897,7 +2182,7 @@
       ],
       "contentMode": "full",
       "publishedAt": "2026-11-26T18:58:14.000Z",
-      "updatedAt": "2026-11-26T18:59:08.000Z",
+      "updatedAt": "2026-11-26T20:06:28.000Z",
       "expiresAt": "2026-12-03T18:58:14.000Z",
       "category": "Mangás & novels",
       "eventType": "MANGA",
@@ -914,7 +2199,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 305,
-      "qualityScore": 0.836,
+      "qualityScore": 0.976,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -2961,7 +4246,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 233,
-      "qualityScore": 0.971,
+      "qualityScore": 0.911,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3288,7 +4573,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 250,
-      "qualityScore": 0.977,
+      "qualityScore": 0.917,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -3709,7 +4994,7 @@
       "sourceCount": 1,
       "readingMinutes": 2,
       "wordCount": 296,
-      "qualityScore": 0.977,
+      "qualityScore": 0.917,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
@@ -6440,734 +7725,6 @@
         "ingestMode": "wp-rest",
         "contentMode": "full",
         "mediaCount": 1,
-        "embedCount": 1,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-95c4c1d5",
-      "slug": "gta-6-japones-remove-nudez-e-reduz-violencia-em-versao-censurada-jbox-95c4c1d5",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘GTA 6’ japonês remove nudez e reduz violência em versão censurada",
-      "originalTitle": "‘GTA 6’ japonês remove nudez e reduz violência em versão censurada",
-      "summary": "Apesar da classificação indicativa para maiores de 18 anos, Grand Theft Auto VI chegou ao Japão com mudanças de conteúdo em relação à versão internacional. A edição japonesa remove cenas de nudez, altera momentos de violência e oferece menos opções de idiomas, em adaptações feitas para atender às restrições locais.",
-      "author": "Igor Lunei",
-      "tags": [
-        "Cotidiano",
-        "Games",
-        "censura em gta 6",
-        "Grand Theft Auto",
-        "Grand Theft Auto VI",
-        "GTA",
-        "GTA 6",
-        "gta 6 censurado no japao"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/19/gta-6-japones-remove-nudez-e-reduz-violencia-em-versao-censurada",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/19/gta-6-japones-remove-nudez-e-reduz-violencia-em-versao-censurada",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/gtavi-destacada.jpg",
-      "mediaQuery": "‘GTA 6’ japonês remove nudez e reduz violência em versão censurada",
-      "mediaType": "anime",
-      "mediaGallery": [
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/gtavi-cenajaponesa-reproducao.jpeg",
-          "alt": "imagem: reprodução de uma cena de GTA VI com um homem tomando banho de costas e uma roupa de baixo",
-          "caption": ""
-        }
-      ],
-      "mediaEmbeds": [],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Apesar da classificação indicativa para maiores de 18 anos, Grand Theft Auto VI chegou ao Japão com mudanças de conteúdo em relação à versão internacional. A edição japonesa remove cenas de nudez, altera momentos de violência e oferece menos opções de idiomas, em adaptações feitas para atender às restrições locais.",
-          "runs": [
-            {
-              "text": "Apesar da classificação indicativa para maiores de 18 anos, "
-            },
-            {
-              "text": "Grand Theft Auto VI",
-              "marks": [
-                "strong",
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "chegou ao Japão com mudanças de conteúdo em relação à versão internacional. A edição japonesa remove cenas de nudez, altera momentos de violência e oferece menos opções de idiomas, em adaptações feitas para atender às restrições locais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "As diferenças começaram a chamar atenção durante o pré-download, quando jogadores perceberam que a versão japonesa ocupava mais de 1 GB a menos de espaço. Além disso, referências a conteúdo sexual presentes nas classificações de outros países não apareciam na avaliação da CERO, órgão responsável pela classificação de jogos no Japão. A Rockstar não havia confirmado alterações antes do lançamento, e os jogadores descobriram as modificações somente após começarem a jogar.",
-          "runs": [
-            {
-              "text": "As diferenças começaram a chamar atenção durante o pré-download, quando jogadores perceberam que a versão japonesa ocupava mais de 1 GB a menos de espaço. Além disso, referências a conteúdo sexual presentes nas classificações de outros países não apareciam na avaliação da "
-            },
-            {
-              "text": "CERO",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ", órgão responsável pela classificação de jogos no Japão. A "
-            },
-            {
-              "text": "Rockstar",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " não havia confirmado alterações antes do lançamento, e os jogadores descobriram as modificações somente após começarem a jogar."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "As principais mudanças envolvem a nudez, que foi completamente removida da edição japonesa. Cenas de sexo e situações envolvendo personagens nus, inclusive em praias, foram modificadas para incluir roupas ou simplesmente retiradas. Até mesmo tomar banho no jogo agora significa fazê-lo de roupa íntima.",
-          "runs": [
-            {
-              "text": "As principais mudanças envolvem a nudez, que foi completamente removida da edição japonesa. Cenas de sexo e situações envolvendo personagens nus, inclusive em praias, foram modificadas para incluir roupas ou simplesmente retiradas. "
-            },
-            {
-              "text": "Até mesmo tomar banho no jogo agora significa fazê-lo de roupa íntima.",
-              "marks": [
-                "strong"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/gtavi-cenajaponesa-reproducao.jpeg",
-          "alt": "imagem: reprodução de uma cena de GTA VI com um homem tomando banho de costas e uma roupa de baixo"
-        },
-        {
-          "type": "paragraph",
-          "text": "Imagem: Reprodução/X",
-          "runs": [
-            {
-              "text": "Imagem: Reprodução/X"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A violência também foi amenizada. Efeitos que mostram fragmentos de crânios, cérebros e outras partes do corpo durante mortes foram reduzidos, assim como a quantidade de sangue exibida na tela. O sangue também desaparece mais rapidamente, conforme observado em transmissões de jogadores japoneses.",
-          "runs": [
-            {
-              "text": "A violência também foi amenizada. Efeitos que mostram fragmentos de crânios, cérebros e outras partes do corpo durante mortes foram reduzidos, assim como a quantidade de sangue exibida na tela. O sangue também desaparece mais rapidamente, conforme observado em transmissões de jogadores japoneses."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "A edição local ainda possui restrições de idiomas. Enquanto a versão internacional oferece mais de uma dezena de opções, a japonesa conta apenas com áudio em inglês e legendas em japonês ou inglês. Por outro lado, cópias internacionais não incluem legendas em japonês, medida que busca impedir que jogadores contornem as limitações regionais por meio de versões importadas ou digitais.",
-          "runs": [
-            {
-              "text": "A edição local ainda possui restrições de idiomas. Enquanto a versão internacional oferece mais de uma dezena de opções, a "
-            },
-            {
-              "text": "japonesa conta apenas com áudio em inglês e legendas em japonês ou inglês",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Por outro lado, cópias internacionais não incluem legendas em japonês, medida que busca impedir que jogadores contornem as limitações regionais por meio de versões importadas ou digitais."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "As restrições também afetam a edição física que acompanha um código para download. Por exigências locais, o código possui prazo de validade de 170 dias após o lançamento, período dentro do qual precisa ser resgatado.",
-          "runs": [
-            {
-              "text": "As restrições também afetam a edição física que acompanha um código para download. Por exigências locais, o código possui prazo de validade de 170 dias após o lançamento, período dentro do qual precisa ser resgatado."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Apesar das mudanças, a versão japonesa mantém boa parte do conteúdo original. Os jogadores ainda podem visitar clubes de strip-tease, consumir drogas dentro do jogo e encontrar personagens com roupas bastante reveladoras. A diferença é que a nudez explícita foi eliminada e o sangue aparece com menos frequência, tornando a experiência um pouco menos gráfica.",
-          "runs": [
-            {
-              "text": "Apesar das mudanças, a versão japonesa mantém boa parte do conteúdo original. Os jogadores ainda podem visitar clubes de"
-            },
-            {
-              "text": " strip-tease",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", consumir drogas dentro do jogo e encontrar personagens com roupas bastante reveladoras. A diferença é que a nudez explícita foi eliminada e o sangue aparece com menos frequência, tornando a experiência um pouco menos gráfica."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Grand Theft Auto VI foi lançado hoje, 19 de novembro de 2026, para PlayStation 5, PS5 Pro, Xbox Series X e Xbox Series S. Até então, a Rockstar, estúdio responsável pelo jogo, ainda não confirmou datas de lançamento para PC ou Nintendo Switch 2.",
-          "runs": [
-            {
-              "text": "Grand Theft Auto VI",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " foi lançado hoje, 19 de novembro de 2026, para "
-            },
-            {
-              "text": "PlayStation 5",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "PS5 Pro",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Xbox Series X",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Xbox Series S",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". Até então, a Rockstar, estúdio responsável pelo jogo, ainda não confirmou datas de lançamento para PC ou Nintendo Switch 2."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Kotaku",
-          "runs": [
-            {
-              "text": "Fonte: ",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "Kotaku",
-              "marks": [
-                "strong",
-                "em"
-              ],
-              "href": "https://kotaku.com/gta-6-japan-censored-showers-nudity-blood-violence-rockstar-2000758211"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-19T22:43:42.000Z",
-      "updatedAt": "2026-11-19T22:44:24.000Z",
-      "expiresAt": "2026-11-26T22:43:42.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/19/gta-6-japones-remove-nudez-e-reduz-violencia-em-versao-censurada",
-          "publishedAt": "2026-11-19T22:43:42.000Z",
-          "author": "Igor Lunei"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 3,
-      "wordCount": 423,
-      "qualityScore": 0.933,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 13,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 1,
-        "embedCount": 0,
-        "sourcePagesRead": 0
-      }
-    },
-    {
-      "id": "jbox-1ae9a25d",
-      "slug": "mahjong-soul-ganha-crossover-com-frieren-jbox-1ae9a25d",
-      "source": "JBox",
-      "sourceType": "JBOX",
-      "sourceLanguage": "pt-BR",
-      "language": "pt-BR",
-      "title": "‘Mahjong Soul’ ganha crossover com ‘Frieren’",
-      "originalTitle": "‘Mahjong Soul’ ganha crossover com ‘Frieren’",
-      "summary": "Seguindo a linha do jogo de contar com crossover com várias franquias, foi lançada em Mahjong Soul uma colaboração com Frieren e a Jornada para o Além (Sousou no Frieren). O evento foi iniciado no último dia 17 e vai ficar no ar até o dia 9 de dezembro.",
-      "author": "Teke",
-      "tags": [
-        "Anime",
-        "Games",
-        "Frieren e a Jornada para o Além",
-        "Mahjong Soul",
-        "sousou no frieren"
-      ],
-      "url": "https://www.jbox.com.br/2026/11/19/mahjong-soul-ganha-crossover-com-frieren",
-      "sourceUrl": "https://www.jbox.com.br/2026/11/19/mahjong-soul-ganha-crossover-com-frieren",
-      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/frieren-mahjong-soul-destacada.jpg",
-      "mediaQuery": "‘Mahjong Soul’ ganha crossover com ‘Frieren’",
-      "mediaType": "anime",
-      "mediaGallery": [],
-      "mediaEmbeds": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube-nocookie.com/embed/N01IQYW6YGU"
-        }
-      ],
-      "sourceContent": [
-        {
-          "type": "paragraph",
-          "text": "Seguindo a linha do jogo de contar com crossover com várias franquias, foi lançada em Mahjong Soul uma colaboração com Frieren e a Jornada para o Além (Sousou no Frieren). O evento foi iniciado no último dia 17 e vai ficar no ar até o dia 9 de dezembro.",
-          "runs": [
-            {
-              "text": "Seguindo a linha do jogo de contar com "
-            },
-            {
-              "text": "crossover",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " com várias franquias, foi lançada em "
-            },
-            {
-              "text": "Mahjong Soul",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " uma colaboração com "
-            },
-            {
-              "text": "Frieren e a Jornada para o Além",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " ("
-            },
-            {
-              "text": "Sousou no Frieren",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "). O evento foi iniciado no último dia 17 e vai ficar no ar até o dia 9 de dezembro."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Confira o vídeo divulgado para a colaboração:",
-          "runs": [
-            {
-              "text": "Confira o vídeo divulgado para a colaboração:"
-            }
-          ]
-        },
-        {
-          "type": "video",
-          "provider": "youtube",
-          "url": "https://www.youtube.com/watch?v=N01IQYW6YGU",
-          "embedUrl": "https://www.youtube-nocookie.com/embed/N01IQYW6YGU"
-        },
-        {
-          "type": "paragraph",
-          "text": "Quatro personagens chegam através da parceria, Frieren, Fern, Stark e Übel, com cada um contando com dois visuais especiais para o jogo, sendo um deles limitado. Decorações para a mesa e peças de mahjong também chegam através do evento. Uma história com uma mecânica de síntese de ítens também está disponível como parte da colaboração.",
-          "runs": [
-            {
-              "text": "Quatro personagens chegam através da parceria, "
-            },
-            {
-              "text": "Frieren",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Fern",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Stark",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Übel",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", com cada um contando com dois visuais especiais para o jogo, sendo um deles limitado. Decorações para a mesa e peças de mahjong também chegam através do evento. Uma história com uma mecânica de síntese de ítens também está disponível como parte da colaboração."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Mahjong Soul traz o clássico jogo de mesa com um toque do mundo dos animês, contando com os próprios personagens originais, mas também colaborações com franquias como Code Geass, Kakegurui, Akagi, Saki, entre outras. O título está disponível para celulares e PC, tanto através de navegadores quanto programas e aplicativos. Também inspirou um animê de duas temporadas (Mahjong Soul Pon☆ e Mahjong Soul KAN!!) — a Crunchyroll disponibiliza a primeira.",
-          "runs": [
-            {
-              "text": "Mahjong Soul",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " traz o clássico jogo de mesa com um toque do mundo dos animês, contando com os próprios personagens originais, mas também colaborações com franquias como "
-            },
-            {
-              "text": "Code Geass",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Kakegurui",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Akagi",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", "
-            },
-            {
-              "text": "Saki",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": ", entre outras. O título está disponível para celulares e PC, tanto através de navegadores quanto programas e aplicativos. Também inspirou um animê de duas temporadas ("
-            },
-            {
-              "text": "Mahjong Soul Pon☆",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "Mahjong Soul KAN!!",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": ") — a "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.crunchyroll.com/pt-br/series/G1XHJVE9P/mahjong-soul-pon"
-            },
-            {
-              "text": " disponibiliza a primeira."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Frieren e a Jorada para o Além é um mangá em publicação desde 2020, estando em hiato desde o ano passado — a publicação no Brasil é pela Panini. A obra começou a ser adaptada para animê em 2023 pelo estúdio Madhouse, já contando com duas temporadas e uma terceira anunciada para outubro de 2027. A Crunchyroll conta com as duas temporadas com dublagem, com a primeira fase estando disponível também na Netflix e HBO Max. A série ainda ganhou exibição na TV pelo Adult Swim.",
-          "runs": [
-            {
-              "text": "Frieren e a Jorada para o Além",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " é um mangá em publicação desde 2020, estando em hiato desde o ano passado — a publicação no Brasil é pela "
-            },
-            {
-              "text": "Panini",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ". A obra começou a ser adaptada para animê em 2023 pelo estúdio "
-            },
-            {
-              "text": "Madhouse",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ", já contando com duas temporadas e uma "
-            },
-            {
-              "text": "terceira anunciada para outubro de 2027",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.jbox.com.br/2026/03/27/frieren-3a-temporada-e-anunciada-para-outubro-de-2027/"
-            },
-            {
-              "text": ". A "
-            },
-            {
-              "text": "Crunchyroll",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.crunchyroll.com/pt-br/series/GG5H5XQX4/frieren-beyond-journeys-end"
-            },
-            {
-              "text": " conta com as duas temporadas com dublagem, com a primeira fase estando disponível também na "
-            },
-            {
-              "text": "Netflix",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.netflix.com/br-en/title/81726714"
-            },
-            {
-              "text": " e "
-            },
-            {
-              "text": "HBO Max",
-              "marks": [
-                "strong"
-              ],
-              "href": "https://www.hbomax.com/br/pt/show/e9ee4017-9572-447c-8f97-d97acaef6624"
-            },
-            {
-              "text": ". A série ainda ganhou exibição na TV pelo "
-            },
-            {
-              "text": "Adult Swim",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": "."
-            }
-          ]
-        },
-        {
-          "type": "divider"
-        },
-        {
-          "type": "paragraph",
-          "text": "Fonte: Mahjong Soul (YouTube)",
-          "runs": [
-            {
-              "text": "Fonte",
-              "marks": [
-                "strong"
-              ]
-            },
-            {
-              "text": ": "
-            },
-            {
-              "text": "Mahjong Soul (YouTube)",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://youtu.be/N01IQYW6YGU"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
-          "runs": [
-            {
-              "text": "Siga e acompanhe as notícias do JBox também pelo",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": " ",
-              "marks": [
-                "em",
-                "strong"
-              ]
-            },
-            {
-              "text": "Google News",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
-            },
-            {
-              "text": " e em nosso ",
-              "marks": [
-                "em"
-              ]
-            },
-            {
-              "text": "grupo no Telegram",
-              "marks": [
-                "em",
-                "strong"
-              ],
-              "href": "https://l.jbox.com.br/telegram"
-            },
-            {
-              "text": ".",
-              "marks": [
-                "em"
-              ]
-            }
-          ]
-        }
-      ],
-      "contentMode": "full",
-      "publishedAt": "2026-11-19T20:55:18.000Z",
-      "updatedAt": "2026-11-19T20:56:07.000Z",
-      "expiresAt": "2026-11-26T20:55:18.000Z",
-      "category": "Notícias",
-      "eventType": "OTHER",
-      "facts": [],
-      "contentSections": [],
-      "sources": [
-        {
-          "name": "JBox",
-          "url": "https://www.jbox.com.br/2026/11/19/mahjong-soul-ganha-crossover-com-frieren",
-          "publishedAt": "2026-11-19T20:55:18.000Z",
-          "author": "Teke"
-        }
-      ],
-      "sourceCount": 1,
-      "readingMinutes": 2,
-      "wordCount": 288,
-      "qualityScore": 0.913,
-      "contentVersion": 2,
-      "coverage": {
-        "facts": 0,
-        "sections": 0,
-        "blocks": 9,
-        "sourceCount": 1,
-        "ingestMode": "wp-rest",
-        "contentMode": "full",
-        "mediaCount": 0,
         "embedCount": 1,
         "sourcePagesRead": 0
       }
