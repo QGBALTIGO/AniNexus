@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T20:12:05.881Z",
+  "generatedAt": "2026-11-28T02:43:45.027Z",
   "retentionDays": 7,
   "staleGraceDays": 14,
   "language": "pt-BR",
@@ -19,7 +19,7 @@
       "name": "JBox",
       "ok": true,
       "enabled": true,
-      "count": 34,
+      "count": 35,
       "mode": "wp-rest",
       "errors": []
     },
@@ -54,20 +54,1374 @@
     }
   ],
   "stats": {
-    "collected": 44,
-    "grouped": 22,
-    "published": 22,
-    "newStories": 22,
-    "fullArticles": 22,
+    "collected": 45,
+    "grouped": 25,
+    "published": 25,
+    "newStories": 25,
+    "fullArticles": 25,
     "previewArticles": 0,
-    "avgWords": 273,
-    "withHeroImage": 22,
-    "withOrderedMedia": 22,
+    "avgWords": 285,
+    "withHeroImage": 25,
+    "withOrderedMedia": 25,
     "skippedTranslation": 0,
-    "skippedQuality": 20,
-    "durationMs": 2671
+    "skippedQuality": 18,
+    "durationMs": 3464
   },
   "items": [
+    {
+      "id": "jbox-75198898",
+      "slug": "pokemon-volta-a-tv-aberta-pelo-sbt-mas-com-episodio-aleatorio-jbox-75198898",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "‘Pokémon’ volta à TV aberta pelo SBT, mas com episódio aleatório",
+      "originalTitle": "‘Pokémon’ volta à TV aberta pelo SBT, mas com episódio aleatório",
+      "summary": "Desde o último dia 21 de novembro, o Sábado Animado do SBT passou a contar com o animê Pokémon Jornadas em sua grade de desenhos animados (enquanto Beyblade X saiu fora). O tradicional infantil da casa vai ao ar a partir de 7h30 até 11h — a 1ª parte do bloco, até 9h30, é horário local de SP (transmitido nacionalmente via streaming pelo aplicativo gratuito +SBT ou pelo YouTube da emissora).",
+      "author": "Rafael Jiback",
+      "tags": [
+        "Anime",
+        "Streaming",
+        "TV",
+        "POKEMON JORNADAS",
+        "Pokémon no SBT",
+        "Sábado Animado"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/27/pokemon-volta-a-tv-aberta-pelo-sbt-mas-com-episodio-aleatorio",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/27/pokemon-volta-a-tv-aberta-pelo-sbt-mas-com-episodio-aleatorio",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/01/POKEMONJORNADAS-DESTACADA.jpg",
+      "mediaQuery": "‘Pokémon’ volta à TV aberta pelo SBT, mas com episódio aleatório",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/pokemon-epSBT-cena-e1795823638194.jpeg",
+          "alt": "imagem: título do episódio de Pokémon exibido no SBT",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/1APQAyzaH_Y"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Desde o último dia 21 de novembro, o Sábado Animado do SBT passou a contar com o animê Pokémon Jornadas em sua grade de desenhos animados (enquanto Beyblade X saiu fora). O tradicional infantil da casa vai ao ar a partir de 7h30 até 11h — a 1ª parte do bloco, até 9h30, é horário local de SP (transmitido nacionalmente via streaming pelo aplicativo gratuito +SBT ou pelo YouTube da emissora).",
+          "runs": [
+            {
+              "text": "Desde o último dia 21 de novembro, o "
+            },
+            {
+              "text": "Sábado Animado",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " do SBT passou a contar com o animê "
+            },
+            {
+              "text": "Pokémon Jornadas",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " em sua grade de desenhos animados (enquanto "
+            },
+            {
+              "text": "Beyblade X",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " saiu fora). O tradicional infantil da casa vai ao ar a partir de"
+            },
+            {
+              "text": " 7h30",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " até "
+            },
+            {
+              "text": "11h",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " — a 1ª parte do bloco, até 9h30, é horário local de SP (transmitido nacionalmente via streaming pelo aplicativo gratuito "
+            },
+            {
+              "text": "+SBT",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://mais.sbt.com.br/"
+            },
+            {
+              "text": " ou pelo YouTube da emissora)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A exibição na TV acompanha também a entrada da série no catálogo do +SBT, que havia sido anunciada lá em janeiro, mas foi efetivada somente no último dia 19 de novembro. Estão disponíveis sob demanda os 48 episódios dublados da 1ª temporada de Pokémon Jornadas, que é a série da franquia lançada em 2019, exibida também na grade linear do canal SBT Kids desde o dia 16 (segunda a sexta às 13h, 17h30 e 20h, sábado às 12h e 20h e domingo 14h e 19h).",
+          "runs": [
+            {
+              "text": "A exibição na TV acompanha também a entrada da série no "
+            },
+            {
+              "text": "catálogo do +SBT",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://mais.sbt.com.br/serie/141936e0-609e-4d6a-a569-953f9a988e0d"
+            },
+            {
+              "text": ", que havia sido anunciada lá "
+            },
+            {
+              "text": "em janeiro",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/01/05/sbt-kids-tera-pokemon-jornadas-em-sua-programacao/"
+            },
+            {
+              "text": ", mas foi efetivada somente no último dia 19 de novembro. Estão disponíveis sob demanda os 48 episódios dublados da"
+            },
+            {
+              "text": " 1ª temporada de ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Pokémon Jornadas",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", que é a série da franquia lançada em 2019, exibida também na grade linear do canal "
+            },
+            {
+              "text": "SBT Kids",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " desde o dia 16 (segunda a sexta às 13h, 17h30 e 20h, sábado às 12h e 20h e domingo 14h e 19h)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Porém, no Sábado Animado a série começou bem mais pra frente. No início do programa, por volta de 7h30, foi exibido o episódio “O Expresso Espectral”, que abre Pokémon Jornadas Supremas, a 3ª temporada dessa fase (25ª, considerando todo o animê de Pokémon). Depois de outros desenhos, o animê retornou por volta de 10h, horário nacional, com a exibição do episódio seguinte, “O Caminho Tortuoso para a Grandeza”.",
+          "runs": [
+            {
+              "text": "Porém, no "
+            },
+            {
+              "text": "Sábado Animado",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " a série começou bem mais pra frente. No início do programa, por volta de 7h30, foi exibido o episódio "
+            },
+            {
+              "text": "“O Expresso Espectral”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", que abre "
+            },
+            {
+              "text": "Pokémon Jornadas Supremas",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", a "
+            },
+            {
+              "text": "3ª temporada",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dessa fase (25ª, considerando todo o animê de "
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). Depois de outros desenhos, o animê retornou por volta de 10h, horário nacional, com a exibição do episódio seguinte, "
+            },
+            {
+              "text": "“O Caminho Tortuoso para a Grandeza”",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/pokemon-epSBT-cena-e1795823638194.jpeg",
+          "alt": "imagem: título do episódio de Pokémon exibido no SBT"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Reprodução/SBT/X",
+          "runs": [
+            {
+              "text": "Imagem: Reprodução/SBT/X"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O JBox tentou contato com o SBT para tentar entender a escolha de exibir a 3ª fase na TV, enquanto exibe a 1ª no streaming, mas não tivemos retorno até o fechamento do texto. Atualizaremos se houver alguma novidade.",
+          "runs": [
+            {
+              "text": "O "
+            },
+            {
+              "text": "JBox",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " tentou contato com o SBT para tentar entender a escolha de exibir a 3ª fase na TV, enquanto exibe a 1ª no streaming, mas não tivemos retorno até o fechamento do texto. Atualizaremos se houver alguma novidade."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=1APQAyzaH_Y",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/1APQAyzaH_Y"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pokémon Jornadas foi exibido no Japão com o título simples de Pocket Monsters (o mesmo da 1ª fase) de 2019 a 2022, trazendo uma nova jornada para Ash Ketchum e seu companheiro Pikachu, que agora contam também com a companhia do novato Goh. Enquanto Ash segue seu sonho de se tornar um Mestre Pokémon, Goh demonstra interesse especial pelo lendário Mew, almejando capturá-lo. A história dessa vez acompanha os protagonistas por todas as regiões conhecidas do universo da franquia até Galar.",
+          "runs": [
+            {
+              "text": "Pokémon Jornadas",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " foi exibido no Japão com o título simples de "
+            },
+            {
+              "text": "Pocket Monsters",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " (o mesmo da 1ª fase) de 2019 a 2022, trazendo uma nova jornada para Ash Ketchum e seu companheiro Pikachu, que agora contam também com a companhia do novato Goh. Enquanto Ash segue seu sonho de se tornar um Mestre Pokémon, Goh demonstra interesse especial pelo lendário Mew, almejando capturá-lo. A história dessa vez acompanha os protagonistas por todas as regiões conhecidas do universo da franquia até Galar."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A versão exibida no Brasil divide os episódios em três temporadas: Pokémon Jornadas, Jornadas de Mestre e Jornadas Supremas . Após o final, um mini-arco especial chamado por aqui de Mestre Pokémon: A Série foi exibido, encerrando a saga de Ash nos animês. Todas essas fases foram exibidas por aqui pela Netflix e pela Prime Video, mas já saíram do catálogo de ambas.",
+          "runs": [
+            {
+              "text": "A versão exibida no Brasil divide os episódios em três temporadas: "
+            },
+            {
+              "text": "Pokémon Jornadas",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Jornadas de Mestre",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Jornadas Supremas",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " . Após o final, um mini-arco especial chamado por aqui de "
+            },
+            {
+              "text": "Mestre Pokémon: A Série",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": " foi exibido, encerrando a saga de Ash nos animês. Todas essas fases foram exibidas por aqui pela "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " e pela "
+            },
+            {
+              "text": "Prime Video",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", mas já saíram do catálogo de ambas."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Havia também uma expectativa de retorno para o canal pago Cartoon Network, o que não se concretizou.",
+          "runs": [
+            {
+              "text": "Havia também uma expectativa de retorno para o canal pago Cartoon Network",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2026/10/16/pokemon-pode-voltar-a-programacao-do-cartoon-network-na-america-latina-em-novembro/"
+            },
+            {
+              "text": ", o que não se concretizou."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Retorno à TV aberta após anos",
+          "runs": [
+            {
+              "text": "Retorno à TV aberta após anos",
+              "marks": [
+                "strong"
+              ]
+            }
+          ],
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A última exibição oficial de uma série Pokémon em nossa TV aberta faz algum tempinho. Foi em 2018, quando a RedeTV! reexibiu episódios da 1ª temporada por um curto período.",
+          "runs": [
+            {
+              "text": "A última exibição oficial de uma série "
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " em nossa TV aberta faz algum tempinho. Foi "
+            },
+            {
+              "text": "em 2018",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://www.jbox.com.br/2018/05/09/pokemon-deixa-a-grade-da-redetv/"
+            },
+            {
+              "text": ", quando a RedeTV! reexibiu episódios da 1ª temporada por um curto período."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "O animê estreou por aqui pela Record em maio de 1999. Depois de 4 temporadas exibidas pela emissora (com algumas reprises pela Rede Gênesis, do mesmo grupo), migrou para a Globo em 2005, que comprou as temporadas 5, 6 e 7. Em 2008, chegou à RedeTV!, canal aberto que mais episódios transmitiu: temporadas 1 a 12, com exceção da 6 e da 7.",
+          "runs": [
+            {
+              "text": "O animê estreou por aqui pela Record em maio de 1999. Depois de 4 temporadas exibidas pela emissora (com algumas reprises pela Rede Gênesis, do mesmo grupo), migrou para a Globo em 2005, que comprou as temporadas 5, 6 e 7. Em 2008, chegou à RedeTV!, canal aberto que mais episódios transmitiu: temporadas 1 a 12, com exceção da 6 e da 7."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fontes: Instagram +SBT, registros no X por @anmtv, @jimmyborbagato",
+          "runs": [
+            {
+              "text": "Fontes",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Instagram +SBT",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.instagram.com/p/DfxG107SPVX/"
+            },
+            {
+              "text": ", registros no X por "
+            },
+            {
+              "text": "@anmtv",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://x.com/ANMTV/status/2124093622983462952"
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "@jimmyborbagato",
+              "marks": [
+                "strong"
+              ],
+              "href": "https://x.com/jimmyborbagatto/status/2124234619671253362"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-28T00:01:10.000Z",
+      "updatedAt": "2026-11-28T00:03:25.000Z",
+      "expiresAt": "2026-12-05T00:01:10.000Z",
+      "category": "Episódios",
+      "eventType": "EPISODE",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/27/pokemon-volta-a-tv-aberta-pelo-sbt-mas-com-episodio-aleatorio",
+          "publishedAt": "2026-11-28T00:01:10.000Z",
+          "author": "Rafael Jiback"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 3,
+      "wordCount": 551,
+      "qualityScore": 1,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 16,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-c95519c8",
+      "slug": "monogatari-novo-episodio-de-off-monster-season-estreia-em-dezembro-jbox-c95519c8",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Monogatari: Novo episódio de ‘Off & Monster Season’ estreia em dezembro",
+      "originalTitle": "Monogatari: Novo episódio de ‘Off & Monster Season’ estreia em dezembro",
+      "summary": "Foi anunciado pela Aniplex através um trailer que o novo episódio Monogatari Series: Off & Monster Season estreia no dia 31 de dezembro deste ano. O capítulo especial se chama Wazamonogatari: Karen Ogre.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "Karen Ogre",
+        "Monogatari",
+        "Monogatari Series Off & Monster Season",
+        "Wazamonogatari"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/27/monogatari-novo-episodio-de-off-monster-season-estreia-em-dezembro",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/27/monogatari-novo-episodio-de-off-monster-season-estreia-em-dezembro",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/monogatari-off-monster-season-karen-ogre-destacada.jpg",
+      "mediaQuery": "Monogatari: Novo episódio de ‘Off & Monster Season’ estreia em dezembro",
+      "mediaType": "anime",
+      "mediaGallery": [
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/monogatari-off-monster-season-karen-ogre-poster.jpg",
+          "alt": "imagem: Karen em pôster do especial 'Karen Ogre', episódio de 'Monogatari Series: Monster & Off Season'.",
+          "caption": ""
+        }
+      ],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/t_SuSzu3A08"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado pela Aniplex através um trailer que o novo episódio Monogatari Series: Off & Monster Season estreia no dia 31 de dezembro deste ano. O capítulo especial se chama Wazamonogatari: Karen Ogre.",
+          "runs": [
+            {
+              "text": "Foi anunciado pela "
+            },
+            {
+              "text": "Aniplex",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " através um trailer que o "
+            },
+            {
+              "text": "novo episódio ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Monogatari Series: Off & Monster Season ",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": "estreia no dia"
+            },
+            {
+              "text": " 31 de dezembro",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " deste ano. O capítulo especial se chama "
+            },
+            {
+              "text": "Wazamonogatari: Karen Ogre",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confira abaixo o trailer e o pôster divulgados:",
+          "runs": [
+            {
+              "text": "Confira abaixo o trailer e o pôster divulgados:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=t_SuSzu3A08",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/t_SuSzu3A08"
+        },
+        {
+          "type": "image",
+          "url": "https://www.jbox.com.br/wp/wp-content/uploads/2026/11/monogatari-off-monster-season-karen-ogre-poster.jpg",
+          "alt": "imagem: Karen em pôster do especial 'Karen Ogre', episódio de 'Monogatari Series: Monster & Off Season'."
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagem: Divulgação/Aniplex",
+          "runs": [
+            {
+              "text": "Imagem: Divulgação/Aniplex"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Midori Yoshizawa dirige o novo especial, com Akiyuki Shimbo assumindo novamente como diretor-chefe. A produção continua sendo do estúdio SHAFT, mantendo também nomes responsáveis pela adaptação animada desde o início na produção, com Fuyashi Tou cuidando dos roteiros e Akio Watanabe do design de personagens e direção de animação.",
+          "runs": [
+            {
+              "text": "Midori Yoshizawa",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dirige o novo especial, com "
+            },
+            {
+              "text": "Akiyuki Shimbo",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " assumindo novamente como diretor-chefe. A produção continua sendo do estúdio "
+            },
+            {
+              "text": "SHAFT",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", mantendo também nomes responsáveis pela adaptação animada desde o início na produção, com "
+            },
+            {
+              "text": "Fuyashi Tou",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " cuidando dos roteiros e "
+            },
+            {
+              "text": "Akio Watanabe",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " do design de personagens e direção de animação."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A música-tema do especial se chama “Shelter“, canção por Mulasaki Ima, que cantou temas para animês como Blue Exorcist e Eren the Southpaw. Karen Ogro é originalmente um dos capítulos presentes na light novel Wazamonogatari, 2º volume da Off Season. Na história, Karen Araragi decide morar nas montanhas em uma jornada de autodescoberta e, durante o processo, acaba encontrando Shinobu.",
+          "runs": [
+            {
+              "text": "A música-tema do especial se chama “"
+            },
+            {
+              "text": "Shelter",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "“, canção por "
+            },
+            {
+              "text": "Mulasaki Ima",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", que cantou temas para animês como "
+            },
+            {
+              "text": "Blue Exorcist",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Eren the Southpaw",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". "
+            },
+            {
+              "text": "Karen Ogro",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " é originalmente um dos capítulos presentes na "
+            },
+            {
+              "text": "light novel Wazamonogatari",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", 2º volume da "
+            },
+            {
+              "text": "Off Season",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". Na história, Karen Araragi decide morar nas montanhas em uma jornada de autodescoberta e, durante o processo, acaba encontrando Shinobu."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Wazamonogatari é oficialmente o 20º volume de Monogatari como um todo, contando, além de Karen Ogro, com outras três histórias: O Conto de Fadas Cruel: A Bela Princesa, Acerola Bon Appétit e Tsubasa Sonolenta.",
+          "runs": [
+            {
+              "text": "Wazamonogatari",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é oficialmente o 20º volume de "
+            },
+            {
+              "text": "Monogatari",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " como um todo, contando, além de "
+            },
+            {
+              "text": "Karen Ogro",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", com outras três histórias: "
+            },
+            {
+              "text": "O Conto de Fadas Cruel: A Bela Princesa",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", "
+            },
+            {
+              "text": "Acerola Bon Appétit",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Tsubasa Sonolenta",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Aniplex (YouTube), Site oficial de Monogatari",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Aniplex (YouTube)",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://youtu.be/t_SuSzu3A08"
+            },
+            {
+              "text": ", ",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "Site oficial de Monogatari",
+              "marks": [
+                "strong",
+                "em"
+              ],
+              "href": "https://www.monogatari-series.com/oms/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-27T21:21:39.000Z",
+      "updatedAt": "2026-11-27T21:22:37.000Z",
+      "expiresAt": "2026-12-04T21:21:39.000Z",
+      "category": "Trailers",
+      "eventType": "TRAILER",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/27/monogatari-novo-episodio-de-off-monster-season-estreia-em-dezembro",
+          "publishedAt": "2026-11-27T21:21:39.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 1,
+      "wordCount": 210,
+      "qualityScore": 0.967,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 1,
+        "embedCount": 1,
+        "sourcePagesRead": 0
+      }
+    },
+    {
+      "id": "jbox-f6204f03",
+      "slug": "pokemon-nova-temporada-tem-estreia-marcada-para-outubro-de-2027-jbox-f6204f03",
+      "source": "JBox",
+      "sourceType": "JBOX",
+      "sourceLanguage": "pt-BR",
+      "language": "pt-BR",
+      "title": "Pokémon: Nova temporada tem estreia marcada para outubro de 2027",
+      "originalTitle": "Pokémon: Nova temporada tem estreia marcada para outubro de 2027",
+      "summary": "Foi anunciado nas redes oficiais de Pokémon que Horizontes, a série animada atual, chega ao fim no dia 18 de dezembro deste ano, tendo apenas mais três episódios pela frente.",
+      "author": "Teke",
+      "tags": [
+        "Anime",
+        "nova temporada de Pokémon",
+        "novo anime de pokemon",
+        "pokemon horizons",
+        "Pokémon: Horizontes"
+      ],
+      "url": "https://www.jbox.com.br/2026/11/27/pokemon-nova-temporada-tem-estreia-marcada-para-outubro-de-2027",
+      "sourceUrl": "https://www.jbox.com.br/2026/11/27/pokemon-nova-temporada-tem-estreia-marcada-para-outubro-de-2027",
+      "image": "https://www.jbox.com.br/wp/wp-content/uploads/2025/07/pokemonhorizontes2-parte3-destacada.jpg",
+      "mediaQuery": "Pokémon: Nova temporada tem estreia marcada para outubro de 2027",
+      "mediaType": "anime",
+      "mediaGallery": [],
+      "mediaEmbeds": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/Ru2TqdHcND4"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube-nocookie.com/embed/upjK7lOq3Y4"
+        }
+      ],
+      "sourceContent": [
+        {
+          "type": "paragraph",
+          "text": "Foi anunciado nas redes oficiais de Pokémon que Horizontes, a série animada atual, chega ao fim no dia 18 de dezembro deste ano, tendo apenas mais três episódios pela frente.",
+          "runs": [
+            {
+              "text": "Foi anunciado nas redes oficiais de "
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "que "
+            },
+            {
+              "text": "Horizontes",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", a série animada atual, "
+            },
+            {
+              "text": "chega ao fim no dia 18 de dezembro deste ano",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", tendo apenas mais três episódios pela frente."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Também foi confirmado o retorno do animê para outubro de 2027, com os personagens Liko e Rain confirmados na nova fase (ainda sem título, mas lembrando que no Japão a série é chamada apenas de Pocket Monsters). Essa animação deve vir para acompanhar a 10ª geração dos jogos, Pokémon Ventos e Ondas, títulos previstos para o ano que vem e exclusivos do Nintendo Switch 2.",
+          "runs": [
+            {
+              "text": "Também foi confirmado "
+            },
+            {
+              "text": "o retorno do animê para outubro de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ", com os personagens Liko e Rain confirmados na nova fase (ainda sem título, mas lembrando que no Japão a série é chamada apenas de"
+            },
+            {
+              "text": " Pocket Monsters",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "). Essa animação deve vir para acompanhar a "
+            },
+            {
+              "text": "10ª geração",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " dos jogos, "
+            },
+            {
+              "text": "Pokémon Ventos",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " e "
+            },
+            {
+              "text": "Ondas",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", títulos previstos para o ano que vem e exclusivos do "
+            },
+            {
+              "text": "Nintendo Switch 2",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Um novo programa de TV também foi anunciado, visando comemorar os 30 anos da estreia do animê (no caso, o do Ash). Ele estreia em janeiro no Japão.",
+          "runs": [
+            {
+              "text": "Um novo programa de TV também foi anunciado, visando comemorar os"
+            },
+            {
+              "text": " 30 anos da estreia do animê",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " (no caso, o do Ash). Ele estreia em janeiro no Japão."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=Ru2TqdHcND4",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Ru2TqdHcND4"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pokémon Horizontes estreou no Japão em abril de 2023, sendo a série que sucedeu a longa saga de Ash Ketchum (1997 — 2022). Ganhou exibição internacional pela Netflix a partir de março do ano seguinte. Quando começou, o animê acompanhou o lançamento da nova geração dos jogos de Pokémon, com a dupla Scarlet & Violet — que trouxe mais elementos de mundo aberto, sem um caminho “certo” para o jogador seguir pelos ginásios, sendo possível montar sua própria jornada. O lançamento dos jogos ocorreu em 18 de novembro de 2022, apenas para Nintendo Switch.",
+          "runs": [
+            {
+              "text": "Pokémon Horizontes",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " estreou no Japão em abril de 2023, sendo a série que sucedeu a longa saga de Ash Ketchum (1997 — 2022). Ganhou exibição internacional pela Netflix a partir de março do ano seguinte. Quando começou, o animê acompanhou o lançamento da nova geração dos jogos de "
+            },
+            {
+              "text": "Pokémon",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ", com a dupla "
+            },
+            {
+              "text": "Scarlet & Violet",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " — que trouxe mais elementos de mundo aberto, sem um caminho “certo” para o jogador seguir pelos ginásios, sendo possível montar sua própria jornada. O lançamento dos jogos ocorreu em 18 de novembro de 2022, apenas para "
+            },
+            {
+              "text": "Nintendo Switch",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A história de Horizontes é centrada principalmente na dupla Liko e Rain (Roy na versão original), que começam a se aventurar pelo mundo junto aos Trovonautas, um grupo de aventureiros que acabam se deparando com a ameaça dos Desbravadores que, por algum motivo, têm interesse no pingente que Liko ganhou de sua avó.",
+          "runs": [
+            {
+              "text": "A história de "
+            },
+            {
+              "text": "Horizontes",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " é centrada principalmente na dupla Liko e Rain (Roy na versão original), que começam a se aventurar pelo mundo junto aos Trovonautas, um grupo de aventureiros que acabam se deparando com a ameaça dos Desbravadores que, por algum motivo, têm interesse no pingente que Liko ganhou de sua avó."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A Netflix lança a série dividida em temporadas. O lançamento mais recente na plataforma foi a parte 4 da 3ª temporada, chamada por aqui de Altas Esperanças. A 4ª temporada na divisão internacional, chamada no Brasil de Maravilhas à Vista, estreia no serviço de streaming no dia 27 de fevereiro de 2027.",
+          "runs": [
+            {
+              "text": "A "
+            },
+            {
+              "text": "Netflix",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": " lança a série dividida em temporadas. O lançamento mais recente na plataforma foi a parte 4 da 3ª temporada, chamada por aqui de "
+            },
+            {
+              "text": "Altas Esperanças",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": ". A 4ª temporada na divisão internacional, chamada no Brasil de "
+            },
+            {
+              "text": "Maravilhas à Vista",
+              "marks": [
+                "strong",
+                "em"
+              ]
+            },
+            {
+              "text": ", estreia no serviço de streaming no dia "
+            },
+            {
+              "text": "27 de fevereiro de 2027",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "url": "https://www.youtube.com/watch?v=upjK7lOq3Y4",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/upjK7lOq3Y4"
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "Fonte: Pokémon (YouTube)",
+          "runs": [
+            {
+              "text": "Fonte",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "text": ": "
+            },
+            {
+              "text": "Pokémon (YouTube)",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://youtu.be/Ru2TqdHcND4"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Siga e acompanhe as notícias do JBox também pelo Google News e em nosso grupo no Telegram.",
+          "runs": [
+            {
+              "text": "Siga e acompanhe as notícias do JBox também pelo",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": " ",
+              "marks": [
+                "em",
+                "strong"
+              ]
+            },
+            {
+              "text": "Google News",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://news.google.com/publications/CAAqBwgKMNi2oQsw8MC5Aw?ceid=BR:pt-419&oc=3"
+            },
+            {
+              "text": " e em nosso ",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "text": "grupo no Telegram",
+              "marks": [
+                "em",
+                "strong"
+              ],
+              "href": "https://l.jbox.com.br/telegram"
+            },
+            {
+              "text": ".",
+              "marks": [
+                "em"
+              ]
+            }
+          ]
+        }
+      ],
+      "contentMode": "full",
+      "publishedAt": "2026-11-27T20:18:42.000Z",
+      "updatedAt": "2026-11-27T20:19:09.000Z",
+      "expiresAt": "2026-12-04T20:18:42.000Z",
+      "category": "Animes",
+      "eventType": "SEASON",
+      "facts": [],
+      "contentSections": [],
+      "sources": [
+        {
+          "name": "JBox",
+          "url": "https://www.jbox.com.br/2026/11/27/pokemon-nova-temporada-tem-estreia-marcada-para-outubro-de-2027",
+          "publishedAt": "2026-11-27T20:18:42.000Z",
+          "author": "Teke"
+        }
+      ],
+      "sourceCount": 1,
+      "readingMinutes": 2,
+      "wordCount": 342,
+      "qualityScore": 0.982,
+      "contentVersion": 2,
+      "coverage": {
+        "facts": 0,
+        "sections": 0,
+        "blocks": 11,
+        "sourceCount": 1,
+        "ingestMode": "wp-rest",
+        "contentMode": "full",
+        "mediaCount": 0,
+        "embedCount": 2,
+        "sourcePagesRead": 0
+      }
+    },
     {
       "id": "jbox-250b2b4d",
       "slug": "harpercollins-brasil-vai-apresentar-novo-selo-de-mangas-e-quadrinhos-na-ccxp-2026-jbox-250b2b4d",
@@ -4208,7 +5562,7 @@
       "sourceCount": 1,
       "readingMinutes": 1,
       "wordCount": 210,
-      "qualityScore": 0.967,
+      "qualityScore": 0.907,
       "contentVersion": 2,
       "coverage": {
         "facts": 0,
